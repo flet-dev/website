@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-### Containers with background color
+### Containers with different properties
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
