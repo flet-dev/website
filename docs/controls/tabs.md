@@ -11,31 +11,79 @@ Control description goes here.
 
 ## Examples
 
-### Example 1
-
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
 import flet
+from flet import Container, Icon, Page, Tab, Tabs, Text, alignment, icons
 
-# ...
+def main(page: Page):
+
+    t = Tabs(
+        selected_index=1,
+        animation_duration=300,
+        tabs=[
+            Tab(
+                text="Tab 1",
+                content=Container(
+                    content=Text("This is Tab 1"), alignment=alignment.center
+                ),
+            ),
+            Tab(
+                tab_content=Icon(icons.SEARCH),
+                content=Text("This is Tab 2"),
+            ),
+            Tab(
+                text="Tab 3",
+                icon=icons.SETTINGS,
+                content=Text("This is Tab 3"),
+            ),
+        ],
+        expand=1,
+    )
+
+    page.add(t)
+
+flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
-## Properties
+## `Tabs` properties
 
-| Name          | Type    | Default | Description |
-| ------------- | ------- | ------- | ----------- |
-| `property1`   | string  |         | Description. |
+### `tabs`
 
-## Events
+A list of `Tab` controls.
 
-| Name      | Description |
-| --------- | ----------- |
-| `event_name` | Fires when ... |
+### `selected_index`
 
-## Child controls
+The index of currently selected tab.
 
-* Something
+### `animation_duration`
+
+Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
+
+## `Tabs` events
+
+### `on_change`
+
+Fires when `selected_index` changes.
+
+## `Tab` properties
+
+### `text`
+
+Tab's display name.
+
+### `icon`
+
+An icon to display on the left of Tab text.
+
+### `content`
+
+A `Control` to display below the Tab when it is selected.
+
+### `tab_content`
+
+A `Control` representing custom tab content replacing `text` and `icon`.

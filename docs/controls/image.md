@@ -111,7 +111,7 @@ How to inscribe the image into the space allocated during layout. Supported valu
 
 ### `border_radius`
 
-Clip image to have rounded corners. See `[Container.border_radius](/docs/controls/container#border_radius)` for more information and examples.
+Clip image to have rounded corners. See [`Container.border_radius`](/docs/controls/container#border_radius) for more information and examples.
 
 ### `tooltip`
 
