@@ -38,6 +38,7 @@ module.exports = {
             'controls/listview',
             'controls/listtile',
             'controls/gridview',
+            'controls/tabs',
             'controls/card',
             'controls/divider',
             'controls/verticaldivider',
