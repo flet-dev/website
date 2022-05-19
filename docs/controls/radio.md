@@ -13,183 +13,101 @@ Radio buttons let people select a single option from two or more choices.
 
 [Live demo](https://python-choicegroup-example.pgletio.repl.co)
 
-### Basic ChoiceGroup
+### Basic RadioGroup
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
 import flet
-from flet import ChoiceGroup, choicegroup, Button, Text
-with flet.page("basic-choicegroup") as page:
+from flet import Column, ElevatedButton, Radio, RadioGroup, Text
+
+def main(page):
   def button_clicked(e):
-    t.value = f"ChoiceGroup value is:  {cg.value}"
+    t.value = f"Your favorite color is:  {cg.value}"
     page.update()
 
   t = Text()
-  b = Button(text='Submit', on_click=button_clicked)
-  cg = ChoiceGroup(label='Select color', options=[
-    choicegroup.Option('Red'),
-    choicegroup.Option('Green'),
-    choicegroup.Option('Blue')])
+  b = ElevatedButton(text='Submit', on_click=button_clicked)
+  cg = RadioGroup(content=Column([
+    Radio(value="red", label="Red"),
+    Radio(value="green", label="Green"),
+    Radio(value="blue", label="Blue")]))
   
-  page.add(cg, b, t)
-  input()
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
+  page.add(Text("Select your favorite color:"), cg, b, t)
 
-```powershell
-# TODO
+flet.app(target=main)
 ```
-
   </TabItem>
 </Tabs>
 
 <img src="/img/docs/controls/choicegroup/basic-choicegroup.gif" width="25%" />
 
-### ChoiceGroup with icons
+### RadioGroup with `on_change` event
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
 import flet
-from flet import ChoiceGroup, choicegroup
-with flet.page("choicegroup-with-icons") as page:
-  page.add(ChoiceGroup(label='Pick one icon', options=[
-    choicegroup.Option(key='day', text='Day', icon='CalendarDay'),
-    choicegroup.Option(key='week', text='Week', icon='CalendarWeek'),
-    choicegroup.Option(key='month', text='Month', icon='Calendar')
-  ]))
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
+from flet import Column, Radio, RadioGroup, Text
 
-```powershell
-# TODO
-```
-
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/choicegroup/choicegroup-with-icons.png" width="35%" />
-
-### ChoiceGroup with `change` event
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet
-from flet import ChoiceGroup, choicegroup, Text
-with flet.page("choicegroup-with-change-event") as page:
-  
-  def choicegroup_changed(e):
-        t.value = f"ChoiceGroup value changed to {cg.value}" 
-        t.update()
-
-  cg = ChoiceGroup(label='Select color', on_change=choicegroup_changed, options=[
-    choicegroup.Option('Red'),
-    choicegroup.Option('Green'),
-    choicegroup.Option('Blue')
-  ])
+def main(page):
+  def radiogroup_changed(e):
+    t.value = f"Your favorite color is:  {e.control.value}"
+    page.update()
 
   t = Text()
+  cg = RadioGroup(content=Column([
+    Radio(value="red", label="Red"),
+    Radio(value="green", label="Green"),
+    Radio(value="blue", label="Blue")]), on_change=radiogroup_changed)
+  
+  page.add(Text("Select your favorite color:"), cg, t)
 
-  page.add(cg, t)
-
-  input()
+flet.app(target=main)
 ```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
   </TabItem>
 </Tabs>
 
 <img src="/img/docs/controls/choicegroup/choicegroup-with-change-event.gif" width="35%" />
 
-### Change items in ChoiceGroup options
+## `RadioGroup` properties
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+### `value`
 
-```python
-import flet
-from flet import ChoiceGroup, choicegroup, Textbox, Button, Stack
-with flet.page("change-choicegroup-options") as page:
+Current value of the RadioGroup.
 
-  def find_option(option_name):
-    for option in cg.options:
-        if option.key == option_name:
-          return option          
-    return None
+## `RadioGroup` events
 
-  def add_clicked(e):
-    cg.options.append(choicegroup.Option(option_textbox.value))
-    option_textbox.value = ''
-    page.update()
+### `on_change`
 
-  def delete_clicked(e):
-    option = find_option(cg.value)
-    if option !=None:
-      cg.options.remove(option)   
-      page.update()
+Fires when the state of the RadioGroup is changed.
 
-  cg = ChoiceGroup()
-  option_textbox = Textbox(placeholder='Enter new item name')
-  
-  add = Button("Add", on_click=add_clicked)
-  delete = Button("Delete selected", on_click=delete_clicked)
-  stack = Stack(controls = [cg, Stack(horizontal=True, controls=[option_textbox, add, delete])])
+## `Radio` properties
 
-  page.add(stack)
+### `value`
 
-  input()
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
+The value to set to containing `RadioGroup` when the radio is selected..
 
-```powershell
-# TODO
-```
+### `label`
 
-  </TabItem>
-</Tabs>
+The clickable label to display on the right of a Radio.
 
-<img src="/img/docs/controls/choicegroup/change-choicegroup-options.gif" width="50%" />
+### `label_position`
 
-## Properties
+Set to `left` if `label` should be displayed on the left side of the Radio; otherwise `right` (default).
 
-| Name           | Type    | Default | Description |
-| -------------- | ------- | ------- | ----------- |
-| `value`        | string  |         | `key` value of the selected option. |
-| `label`        | string  |         | Descriptive label for the choice group. |
-| `focused`      | bool    | `false` | When set to `true` the focus is set on the control when it's shown on the page or page opened. || `data`         | string  |         | Additional data attached to the control. The value is passed in `change` event data along with a ChoiceGroup selected value. |
+### `autofocus`
 
-## Events
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
-| Name      | Description |
-| --------- | ----------- |
-| `change`  | Fires when the choice has been changed. |
-| `focus`   | Fires when the control has received focus. |
-| `blur`    | Fires when the control has lost focus. |
+## `Radio` events
 
-## Child controls
+### `on_focus`
 
-* [`Option`](#option-control)
+Fires when the control has received focus.
 
-## `Option` control
+### `on_blur`
 
-`Option` represents an item within ChoiceGroup.
-
-| Name           | Type    | Default | Description |
-| -------------- | ------- | ------- | ----------- |
-| `key`          | string  |         | Option's key. `text` value will be used instead if `key` is not specified. |
-| `text`         | string  |         | Option's display text. `key` value will be used instead if `text` is not specified. |
-| `icon`         | string  |         | Icon name to display with this option. |
-| `iconColor`    | string  |         | Icon color. |
+Fires when the control has lost focus.

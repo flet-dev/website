@@ -20,19 +20,17 @@ A slider provides a visual indication of adjustable content, as well as the curr
 
 ```python
 import flet
-from flet import Slider
-with flet.page("basic-sliders") as page:
-  page.add(
-    Slider(label='Default slider'),
-    Slider(label='Default disabled slider', disabled=True))
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
+from flet import Slider, Text
 
-```powershell
-# TODO
-```
+def main(page):
+    page.add(
+        Text("Default slider:"),
+        Slider(),
+        Text("Default disabled slider:"),
+        Slider(disabled=True))
 
+flet.app(target=main)
+```
   </TabItem>
 </Tabs>
 
@@ -45,36 +43,23 @@ with flet.page("basic-sliders") as page:
 
 ```python
 import flet
-from flet import Slider, Button, Text
-with flet.page("sliders-with-values") as page:
+from flet import Slider, Text
 
-  def button_clicked(e):
-        t.value = f"Sliders values are:  {s1.value}, {s2.value}, {s3.value}."
-        page.update()
+def main(page):
+    page.add(
+        Text("Slider with value:"),
+        Slider(value=0.3),
+        Text("Slider with a custom range and label:"),
+        Slider(min=0, max=100, divisions=10, label="{value}%"))
 
-  t = Text()
-  s1 = Slider(width='50%', label='Slider with value', show_value=True, value=4)
-  s2 = Slider(width='50%', label='Slider with formatted value', show_value=True, min=0, max=100, value=40, value_format='{value}%')
-  s3 = Slider(width='50%', show_value=True, label='Origin from zero', min=-5, max=15, step=1, value=-2)
-  
-  b = Button(text='Submit', on_click=button_clicked)
-  page.add(s1, s2, s3, b, t)
-
-  input()
+flet.app(target=main)
 ```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
   </TabItem>
 </Tabs>
 
 <img src="/img/docs/controls/slider/sliders-with-values.gif" width="75%" />
 
-### Slider with `change` event
+### Slider with `on_change` event
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -82,26 +67,20 @@ with flet.page("sliders-with-values") as page:
 ```python
 import flet
 from flet import Slider, Text
-with flet.page("slider-with-change-event") as page:
 
-  def slider_changed(e):
-    t.value = f"Slider changed to {int(s.value)}"
-    page.update()
+def main(page):
 
-  t = Text()
-  s = Slider(width='50%', label="Slider with 'change' event", on_change=slider_changed, data=0)
-  
-  page.add(s, t)
+    def slider_changed(e):
+        t.value = f"Slider changed to {e.control.value}"
+        page.update()
 
-  input()
+    t = Text()
+    page.add(
+        Text("Slider with 'on_change' event:"),
+        Slider(min=0, max=100, divisions=10, label="{value}%", on_change=slider_changed), t)
+
+flet.app(target=main)
 ```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
   </TabItem>
 </Tabs>
 
@@ -109,23 +88,60 @@ with flet.page("slider-with-change-event") as page:
 
 ## Properties
 
-| Name      | Type    | Default | Description |
-| --------- | ------- | ------- | ----------- |
-| `value`   | number  |         | Current value of the slider. |
-| `label`   | string  |         | Description label of the slider. |
-| `min`     | number  |         | The min value of the slider. |
-| `max`     | number  |         | The max value of the slider. |
-| `step`    | number  |         | The difference between the two adjacent values of the slider. |
-| `showValue`   | bool    | `false` | Whether to show the value on the right of the slider. |
-| `valueFormat` | string  | `{value}` | Optional format string for the slider value, for example `{value}%`. |
-| `vertical`    | bool    | `false` | Optional flag to render the slider vertically. Defaults to rendering horizontal. |
-| `focused`     | bool    | `false` | When set to `true` the focus is set on the control when it's shown on the page or page opened. |
-| `data`     | string  |         | Additional data attached to the control. The value is passed in `change` event data along with a slider value. |
+### `value`
+
+The currently selected value for this slider.
+
+The slider's thumb is drawn at a position that corresponds to this value.
+
+### `min`
+
+The minimum value the user can select.
+
+Defaults to `0.0`. Must be less than or equal to `max`.
+
+If the `max` is equal to the `min`, then the slider is disabled.
+
+### `max`
+
+The maximum value the user can select.
+
+Defaults to `1.0`. Must be greater than or equal to `min`.
+
+If the `max` is equal to the `min`, then the slider is disabled.
+
+### `divisions`
+
+The number of discrete divisions.
+
+Typically used with `label` to show the current discrete value.
+
+If not set, the slider is continuous.
+
+### `label`
+
+Format with `{value}`.
+
+A label to show above the slider when the slider is active. The value of `label` must contain `{value}` which will be replaced with a current slider value.
+
+It is used to display the value of a discrete slider, and it is displayed as part of the value indicator shape.
+
+If not set, then the value indicator will not be displayed.
+
+### `autofocus`
+
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
 ## Events
 
-| Name      | Description |
-| --------- | ----------- |
-| `change`  | Fires when the value of a slider has been changed. |
-| `focus`   | Fires when the control has received focus. |
-| `blur`    | Fires when the control has lost focus. |
+### `on_change`
+
+Fires when the state of the Slider is changed.
+
+### `on_focus`
+
+Fires when the control has received focus.
+
+### `on_blur`
+
+Fires when the control has lost focus.
