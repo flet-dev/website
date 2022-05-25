@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-### Example 1
+### Basic and modal dialogs
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
