@@ -6,193 +6,96 @@ slug: banner
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A banner displays errors, warnings, or important information about an open app or file. For example, if a file failed to upload an error message bar should appear.
+A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). A user action is required for it to be dismissed.
+
+Banners are displayed at the top of the screen, below a top app bar. They are persistent and non-modal, allowing the user to either ignore them or interact with them at any time.
 
 ## Examples
 
-[Live demo](https://python-message-example.pgletio.repl.co)
-
-### Basic messages
+### Banner with leading icon and actions
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
 import flet
-from flet import Message
-with flet.page("basic-messages") as page:
-  page.add(
-    Message(value='This is just a message.'),
-    Message(value='Success message with dismiss button', dismiss=True, type='success'),
-    Message(value='Error message with dismiss button', dismiss=True, type='error'))
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
+from flet import Banner, ElevatedButton, Icon, Text, TextButton, colors, icons
 
-```powershell
-# TODO
-```
+def main(page):
+    def close_banner(e):
+        page.banner.open = False
+        page.update()
 
+    page.banner = Banner(
+        bgcolor=colors.AMBER_100,
+        leading=Icon(icons.WARNING_AMBER_ROUNDED, color=colors.AMBER, size=40),
+        content=Text(
+            "Oops, there were some errors while trying to delete the file. What would you like me to do?"
+        ),
+        actions=[
+            TextButton("Retry", on_click=close_banner),
+            TextButton("Ignore", on_click=close_banner),
+            TextButton("Cancel", on_click=close_banner),
+        ],
+    )
+
+    def show_banner_click(e):
+        page.banner.open = True
+        page.update()
+
+    page.add(ElevatedButton("Show Banner", on_click=show_banner_click))
+
+flet.app(target=main)
+```
   </TabItem>
 </Tabs>
 
 <img src="/img/docs/controls/message/basic-messages.png" width="70%" />
 
-### Truncated message
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet
-from flet import Message
-with flet.page("truncated-message") as page:
-  page.add(
-    Message(type='blocked', truncated=True, dismiss=True, value='Blocked Message - single line, with dismiss button and truncated text. Truncation is not available if you use action buttons or multiline and should be used sparingly. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi luctus, purus a lobortis tristique, odio augue pharetra metus, ac placerat nunc mi nec dui. Vestibulum aliquam et nunc semper scelerisque. Curabitur vitae orci nec quam condimentum porttitor et sed lacus. Vivamus ac efficitur leo. Cras faucibus mauris libero, ac placerat erat euismod et. Donec pulvinar commodo odio sit amet faucibus. In hac habitasse platea dictumst. Duis eu ante commodo, condimentum nibh pellentesque, laoreet enim. Fusce massa lorem, ultrices eu mi a, fermentum suscipit magna. Integer porta purus pulvinar, hendrerit felis eget, condimentum mauris. You\'ve been warned!'))
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/message/truncated-message.gif" width="70%" />
-
-### Messages with buttons
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet
-from flet import Message, MessageButton
-with flet.page("myapp") as page:
-
-    page.add(
-      Message(type='warning', dismiss=True, value='Warning message with buttons', buttons=[
-        MessageButton(text='Yes', action='yes'),
-        MessageButton(text='No', action='no')
-      ]),
-      Message(type='severeWarning', multiline=True, value='SevereWarning defaults to multiline. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi luctus, purus a lobortis tristique, odio augue pharetra metus, ac placerat nunc mi nec dui. Vestibulum aliquam et nunc semper scelerisque. Curabitur vitae orci nec quam condimentum porttitor et sed lacus. Vivamus ac efficitur leo. Cras faucibus mauris libero, ac placerat erat euismod et. Donec pulvinar commodo odio sit amet faucibus. In hac habitasse platea dictumst. Duis eu ante commodo, condimentum nibh pellentesque, laoreet enim. Fusce massa lorem, ultrices eu mi a, fermentum suscipit magna. Integer porta purus pulvinar, hendrerit felis eget, condimentum mauris.', buttons=[
-        MessageButton('OK'),
-        MessageButton('Cancel')
-      ]))
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/message/messages-with-buttons.png" width="70%" />
-
-### Message with dismiss event
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet
-from flet import Message, Text
-with flet.page("message-with-dismiss-event") as page:
-    
-  def message_dismissed(e):
-    t.value = "Message dismissed!"
-    page.update()
-
-  m = Message(value="Message with 'dismiss' event", dismiss=True, on_dismiss=message_dismissed)
-  t = Text()
-  
-  page.add(m, t)
-  input()
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/message/message-with-dismiss-event.gif" width="80%" />
-
-### Message with dismiss event and buttons
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet
-from flet import Message, MessageButton, Text
-with flet.page("message-with-dismiss-event-and-buttons") as page:
-  
-  def message_dismissed(e):
-    t.value = f"Message dismissed with {e.data} action"
-    page.update()
-
-  m = Message(value="Message with 'dismiss' event and buttons", dismiss=True, on_dismiss=message_dismissed, buttons=[
-      MessageButton('OK'),
-      MessageButton('Cancel')
-  ])
-  t = Text()
-  
-  page.add(m, t)
-  input()
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/message/message-with-dismiss-event-and-buttons.gif" width="80%" />
-
 ## Properties
 
-| Name            | Type   | Default | Description |
-| --------------- | ------ | ------- | ----------- |
-| `value`         | string |         | Message text. |
-| `type`          | string | `info`  | Message type: `info` (default), `error`, `blocked`, `severeWarning`, `success`, `warning` |
-| `multiline`     | bool   | `false` | Determines if the message bar is multi lined. If false, and the text overflows over buttons or to another line, it is clipped. |
-| `truncated`     | bool   | `false` | Determines if the message bar text is truncated. If true, a button will render to toggle between a single line view and multiline view. This prop is for single line message bars with no buttons only in a limited space scenario. |
-| `dismiss`       | bool   | `false` | Whether to display "dismiss" button. |
-| `icon`          | string |         | Custom icon to replace the message bar icon. If unset, default will be the icon set by message `type`. |
-| `iconColor`     | string |         | Message icon color. |
-| `dismissIcon`   | string |         | Custom icon to replace the dismiss icon. If unset, default will be "Clear" icon. |
-| `dismissIconColor` | string |      | Custom dismiss icon color. |
-| `data`          | string |         | Additional data attached to the control. The value is passed in `click` event data. |
+### `open`
 
-## Events
+Set to `True` to display a banner.
 
-| Name      | Description |
-| --------- | ----------- |
-| `dismiss` | Fires when the message is dismissed. |
+### `leading`
 
-## Child controls
+The (optional) leading `Control` of the Banner.
 
-* [`Button`](#button-control)
+Typically an [`Icon`](icon) control.
 
-## `Button` control
+### `leading_padding`
 
-Allows adding custom action buttons on the right side or message, e.g. "Yes/No", "Abort/Retry/Ignore".
+The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
 
-### Properties
+### `content`
 
-| Name            | Type   | Default | Description |
-| --------------- | ------ | ------- | ----------- |
-| `text`          | string |         | Button text. |
-| `action`        | string |         | The value to pass into `dismiss` event when the button is clicked. The `text` value is used if `action` is not specified. |
+The content of the Banner. Typically a [`Text`](text) control.
+
+### `content_padding`
+
+The amount of space by which to inset the content.
+
+If the actions are below the content, this defaults to `padding.only(left=16.0, top=24.0, right=16.0, bottom=4.0)`.
+
+If the actions are trailing the content, this defaults to `padding.only(left=16.0, top=2.0)`.
+
+See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+
+### `actions`
+
+The set of actions that are displayed at the bottom or trailing side of the Banner.
+
+Typically this is a list of [`TextButton`](textbutton) controls.
+
+### `force_actions_below`
+
+An override to force the actions to be below the content regardless of how many there are.
+
+If this is `True`, the actions will be placed below the content. If this is `False`, the actions will be placed on the trailing side of the content if actions's length is 1 and below the content if greater than 1.
+
+Defaults to `False`.
+
+### `bgcolor`
+
+The color of the surface of this Banner.
