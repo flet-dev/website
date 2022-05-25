@@ -195,4 +195,4 @@ The label must be provided when used with the NavigationRail. When `label_type='
 
 The amount of space to inset the destination item.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+See [`Container.padding`](container#padding) for more information about padding and possible values.

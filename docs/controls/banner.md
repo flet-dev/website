@@ -67,7 +67,7 @@ Typically an [`Icon`](icon) control.
 
 ### `leading_padding`
 
-The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](container#padding) for more information about padding and possible values.
 
 ### `content`
 
@@ -81,7 +81,7 @@ If the actions are below the content, this defaults to `padding.only(left=16.0, 
 
 If the actions are trailing the content, this defaults to `padding.only(left=16.0, top=2.0)`.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+See [`Container.padding`](container#padding) for more information about padding and possible values.
 
 ### `actions`
 

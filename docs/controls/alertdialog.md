@@ -89,11 +89,11 @@ If there is no title, no padding will be provided. Otherwise, this padding is us
 
 This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+See [`Container.padding`](container#padding) for more information about padding and possible values.
 
 ### `content`
 
-The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](control) that contains the dialog's [`Text`](text) message.
+The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](column) that contains the dialog's [`Text`](text) message.
 
 ### `content_padding`
 
@@ -101,7 +101,7 @@ Padding around the content.
 
 If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+See [`Container.padding`](container#padding) for more information about padding and possible values.
 
 ### `actions`
 
@@ -117,7 +117,7 @@ Typically used to provide padding to the button bar between the button bar and t
 
 If are no actions, then no padding will be included. The padding around the button bar defaults to zero.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+See [`Container.padding`](container#padding) for more information about padding and possible values.
 
 ### `actions_alignment`
 

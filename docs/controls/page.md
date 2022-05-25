@@ -101,7 +101,7 @@ page.update()
   </TabItem>
 </Tabs>
 
-See Container's [`padding`](/docs/controls/container#padding) property for more information and possible values.
+See [`Container.padding`](container#padding) for more information and possible values.
 
 ### `bgcolor`
 
