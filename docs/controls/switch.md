@@ -10,8 +10,6 @@ A toggle represents a physical switch that allows someone to choose between two 
 
 ## Examples
 
-[Live demo](https://python-toggle-example.pgletio.repl.co)
-
 ### Basic switches
 
 <Tabs groupId="language">

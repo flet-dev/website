@@ -11,8 +11,6 @@ Checkbox allows to select one or more items from a group, or switch between two 
 
 ## Examples
 
-[Live demo](https://python-checkbox-example.pgletio.repl.co)
-
 ### Basic checkboxes
 
 <Tabs groupId="language">

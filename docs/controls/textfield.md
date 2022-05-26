@@ -326,6 +326,6 @@ Fires when user presses ENTER while focus is on TextField.
 
 Fires when the control has received focus.
 
-### `on_blue`
+### `on_blur`
 
 Fires when the control has lost focus.

@@ -11,8 +11,6 @@ Radio buttons let people select a single option from two or more choices.
 
 ## Examples
 
-[Live demo](https://python-choicegroup-example.pgletio.repl.co)
-
 ### Basic RadioGroup
 
 <Tabs groupId="language">

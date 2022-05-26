@@ -11,8 +11,6 @@ A slider provides a visual indication of adjustable content, as well as the curr
 
 ## Examples
 
-[Live demo](https://python-slider-example.pgletio.repl.co)
-
 ### Basic sliders
 
 <Tabs groupId="language">
