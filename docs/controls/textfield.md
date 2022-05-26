@@ -3,16 +3,17 @@ title: TextField
 sidebar_label: TextField
 slug: textfield
 ---
+
+A material design text field.
+
+A text field lets the user enter text, either with hardware keyboard or with an onscreen keyboard.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Represents a textbox element with optional label, hint and validation messages.
-
 ## Examples
 
-[Live demo](https://python-textbox-example.pgletio.repl.co)
-
-### Basic textboxes
+### Basic TextFields
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -37,57 +38,11 @@ with flet.page("basic-textboxes") as page:
   input()
 ```
   </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
 </Tabs>
 
 <img src="/img/docs/controls/textbox/basic-textboxes.gif" width="45%" />
 
-### Required textboxes
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet
-from flet import Textbox, Button
-with flet.page("required-textboxes-with-error-messages") as page:
-  def button_clicked(e):
-    if tb1.value =='':
-        tb1.error_message = 'Field is required'
-    else:
-        tb1.error_message = ''
-    if tb2.value =='':
-        tb2.error_message = 'Field is required'
-    else:
-        tb2.error_message = ''
-    page.update()
-
-  b = Button(text='Validate', on_click=button_clicked)
-  tb1 = Textbox(label='Required:', required=True)
-  tb2 = Textbox(required=True)
-
-  page.add(tb1, tb2, b)
-  input()
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/textbox/required-textboxes.gif" width="45%" />
-
-### Textbox with `change` event
+### TextField with `on_change` event
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -112,13 +67,6 @@ with flet.page("textbox-with-change-event") as page:
     input()
 ```
   </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
 </Tabs>
 
 <img src="/img/docs/controls/textbox/textbox-with-change-event.gif" width="45%" />
@@ -137,18 +85,11 @@ with flet.page("password-with-reveal-button") as page:
   
 ```
   </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
 </Tabs>
 
 <img src="/img/docs/controls/textbox/password-with-reveal-button.gif" width="45%" />
 
-### Multiline textboxes
+### Multiline TextFields
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -165,18 +106,11 @@ with flet.page("multiline-textboxes") as page:
   
 ```
   </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
 </Tabs>
 
 <img src="/img/docs/controls/textbox/multiline-textboxes.gif" width="45%" />
 
-### Underlined and borderless textboxes
+### Underlined and borderless TextFields
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -192,18 +126,11 @@ with flet.page("underlined-and-borderless-textboxes") as page:
   
 ```
   </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
 </Tabs>
 
 <img src="/img/docs/controls/textbox/underlined-and-borderless-textboxes.gif" width="45%" />
 
-### Underlined and borderless textboxes
+### TextFields with prefixes and suffixes
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -223,7 +150,7 @@ with flet.page("suffix-prefix-textboxes") as page:
   <TabItem value="powershell" label="PowerShell">
 
 ```powershell
-# TODO
+# TODOcontrol,
 ```
 
   </TabItem>
@@ -233,35 +160,172 @@ with flet.page("suffix-prefix-textboxes") as page:
 
 ## Properties
 
-| Name           | Type   | Default | Description |
-| -------------- | ------ | ------- | ----------- |
-| `value`        | string |         | Current value of the textbox. |
-| `label`        | string |         | Label to display above the textbox.  |
-| `placeholder`  | string |         | The short hint displayed in the textbox before the user enters a value. |
-| `errorMessage` | string |         | Static error message displayed below the textbox. |
-| `description`  | string |         | Description displayed below the textbox to provide additional details about what text to enter. |
-| `prefix`       | string |         | Prefix displayed before the textbox contents. This is not included in the value. |
-| `suffix`       | string |         | Suffix displayed after the textbox contents. This is not included in the value. |
-| `icon`         | string |         | Icon shown in the textbox. |
-| `iconColor`    | string |         | Icon color. |
-| `multiline`    | bool   | `false` | Whether or not the textbox is a multiline text field. |
-| `rows`         | number | `3`     | Initial size in rows of `multiline` TextBox. |
-| `shiftEnter`   | bool   | `false` | Blocks `Enter` button in `multiline` TextBox, but pops up the event, so `Stack.submit` could be triggered. New line could still be entered with `Shift`+`Enter`. |
-| `resizable`    | bool   | `true`  | Controls whether `multiline` TextBox is resizable by the user. Default is `true`. `autoAdjustHeight` is still respected even if `resizable` is `false`. |
-| `required`     | bool   | `false` | Display textbox as required. |
-| `readOnly`     | bool   | `false` | If true, the textbox is readonly. |
-| `autoAdjustHeight`     | bool   | `false` | For multiline textboxes, whether or not to auto adjust textbox height. |
-| `borderless`   | bool   | `false` | Whether or not the textbox is borderless. |
-| `underlined`   | bool   | `false` | Whether or not the textbox is underlined. |
-| `align`        | string | `left`  | Text alignment within textbox: `left` or `right`. |
-| `password`     | bool   | `false` | Whether the textbox is a masked field for entering password. |
-| `focused`      | bool   | `false` | When set to `true` the focus is set on the control when it's shown on the page or page opened. |
-| `onChange`     | bool   | `false` | Whether `change` event should be fired while text is typed into the Textbox. This property is used by command-based client libraries only like Bash. |
+### `value`
+
+Current value of the TextField.
+
+### `keyboard_type`
+
+The type of keyboard to use for editing the text:
+
+* `text`
+* `multiline`
+* `number`
+* `phone`
+* `datetime`
+* `email`
+* `url`
+* `visiblePassword`
+* `name`
+* `streetAddress`
+* `none`
+
+### `multiline`
+
+`True` if TextField can contain multiple lines of text.
+
+### `min_lines`
+
+The minimum number of lines to occupy when the content spans fewer lines.
+
+This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
+
+Default is `1`.
+
+### `max_lines`
+
+The maximum number of lines to show at one time, wrapping if necessary.
+
+This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
+
+If this is `1` (the default), the text will not wrap, but will scroll horizontally instead.
+
+### `password`
+
+Whether to hide the text being edited. Default is `False`.
+
+### `can_reveal_password`
+
+Displays a toggle icon button that allows revealing the entered password.
+
+### `read_only`
+
+Whether the text can be changed.
+
+When this is set to `True`, the text cannot be modified by any shortcut or keyboard operation. The text is still selectable.
+
+Defaults to `False`.
+
+### `shift_enter`
+
+Changes the behavior of `Enter` button in `multiline` TextField to be chat-like, i.e. new line can be added with `Shift`+`Enter` and pressing just `Enter` fires `on_submit` event.
+
+### `text_align`
+
+How the text should be aligned horizontally: `left` (default), `right`, `center`, `justify`, `start`, `end`.
+
+### `autofocus`
+
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `label`
+
+Optional text that describes the input field.
+
+When the input field is empty and unfocused, the label is displayed on top of the input field (i.e., at the same location on the screen where text may be entered in the input field). When the input field receives focus (or if the field is non-empty) the label moves above, either vertically adjacent to, or to the center of the input field.
+
+### `icon`
+
+The name of the icon to show before the input field and outside of the decoration's container.
+
+### `border`
+
+Border around input: `outline` (default), `underline`, `none`.
+
+### `content_padding`
+
+The padding for the input decoration's container.
+
+See [`Container.padding`](container#padding) for more information about padding and possible values.
+
+### `filled`
+
+If `True` the decoration's container is filled with theme fillColor.
+
+### `hint_text`
+
+Text that suggests what sort of input the field accepts.
+
+Displayed on top of the input when the it's empty and either (a) `label` is null or (b) the input has the focus.
+
+### `helper_text`
+
+Text that provides context about the input's value, such as how the value will be used.
+
+If non-null, the text is displayed below the input decorator, in the same location as `error_text`. If a non-null `error_text` value is specified then the helper text is not shown.
+
+### `counter_text`
+
+Optional text to place below the line as a character count.
+
+If null or an empty string and counter isn't specified, then nothing will appear in the counter's location.
+
+### `error_text`
+
+Text that appears below the input border.
+
+If non-null, the border's color animates to red and the `helper_text` is not shown.
+
+### `prefix`
+
+Optional `Control` to place on the line before the input.
+
+This can be used, for example, to add some padding to text that would otherwise be specified using `prefix_text`, or to add a custom control in front of the input. The control's baseline is lined up with the input baseline.
+
+Only one of `prefix` and `prefix_text` can be specified.
+
+The `prefix` appears after the `prefix_icon`, if both are specified.
+
+### `prefix_icon`
+
+An icon that appears before the `prefix` or `prefix_text` and before the editable part of the text field, within the decoration's container.
+
+### `prefix_text`
+
+Optional text `prefix` to place on the line before the input.
+
+### `suffix`
+
+Optional `Control` to place on the line after the input.
+
+This can be used, for example, to add some padding to the text that would otherwise be specified using `suffix_text`, or to add a custom control after the input. The control's baseline is lined up with the input baseline.
+
+Only one of `suffix` and `suffix_text` can be specified.
+
+The `suffix` appears before the `suffix_icon`, if both are specified.
+
+### `suffix_icon`
+
+An icon that appears after the editable part of the text field and after the `suffix` or `suffix_text`, within the decoration's container.
+
+### `suffix_text`
+
+Optional text `suffix` to place on the line after the input.
 
 ## Events
 
-| Name      | Description |
-| --------- | ----------- |
-| `change`  | Fires when the typed input for the Textbox has changed. For performance optimization this event is disabled unless `onChange` property set to `true`. |
-| `focus`   | Fires when the control has received focus. |
-| `blur`    | Fires when the control has lost focus. |
+### `on_change`
+
+Fires when the typed input for the TextField has changed.
+
+### `on_submit`
+
+Fires when user presses ENTER while focus is on TextField.
+
+### `on_focus`
+
+Fires when the control has received focus.
+
+### `on_blue`
+
+Fires when the control has lost focus.
