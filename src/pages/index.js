@@ -26,7 +26,8 @@ const features = [
     imageUrl: 'img/home-no-html.svg',
     description: (
       <>
-        This is another feature we would like to tell you about.
+        A common app architecture is inherently complex with a lot of boilerplate: JavaScript frontend, REST API backend, database, cache, etc.
+        With Flet you just write a monolith stateful app in only one language with user sessions running as threads.
       </>
     ),
   },
@@ -35,7 +36,8 @@ const features = [
     imageUrl: 'img/home-zero-deploy.svg',
     description: (
       <>
-        This is another feature we would like to tell you about.
+        To start developing with Flet you just need your favorite IDE or text editor.
+        No SDKs, no thousands of dependencies, no complex tooling - Flet has built-in web server with assets hosting and desktop clients.
       </>
     ),
   },
