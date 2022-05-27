@@ -26,8 +26,8 @@ const features = [
     imageUrl: 'img/home-no-html.svg',
     description: (
       <>
-        A common app architecture is inherently complex with a lot of boilerplate: JavaScript frontend, REST API backend, database, cache, etc.
-        With Flet you just write a monolith stateful app in only one language with user sessions running as threads.
+        No more complex architecture with JavaScript frontend, REST API backend, database, cache, etc.
+        With Flet you just write a monolith stateful app in Python only and get multi-user, realtime Single-Page Application (SPA).
       </>
     ),
   },
@@ -36,7 +36,7 @@ const features = [
     imageUrl: 'img/home-zero-deploy.svg',
     description: (
       <>
-        To start developing with Flet you just need your favorite IDE or text editor.
+        To start developing with Flet, you just need your favorite IDE or text editor.
         No SDKs, no thousands of dependencies, no complex tooling - Flet has built-in web server with assets hosting and desktop clients.
       </>
     ),
@@ -47,7 +47,7 @@ const features = [
     description: (
       <>
         Flet UI is built with <a href="https://flutter.dev">Flutter</a>, so your app looks professional and could be delivered to any platform.
-        Flet simplifies Flutter model by combining smaller "widgets" to ready-to-eat "controls" with imperative programming model.
+        Flet simplifies Flutter model by combining smaller "widgets" to ready-to-use "controls" with imperative programming model.
       </>
     ),
   },
@@ -65,7 +65,7 @@ const features = [
     imageUrl: 'img/home-zero-deploy.svg',
     description: (
       <>
-        Deploy Flet app as a web and view it in the browser. Package it as a standalone desktop app for Windows, macOS and Linux.
+        Deploy Flet app as a web app and view it in a browser. Package it as a standalone desktop app for Windows, macOS and Linux.
         Install it on mobile as <a href="https://web.dev/what-are-pwas/">PWA</a> or view via Flet app for iOS and Android.
       </>
     ),
