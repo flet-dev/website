@@ -13,7 +13,7 @@ import CodeBlock from '@theme/CodeBlock';
 const features = [
   {
     title: <>From idea to app in minutes</>,
-    imageUrl: 'img/home-languages.svg',
+    imageUrl: 'img/pages/home/feature-bolt.svg',
     description: (
       <>
         An internal tool or a dashboard for your team, weekend project, data entry form, kiosk app or high-fidelity prototype
@@ -22,8 +22,8 @@ const features = [
     ),
   },
   {
-    title: <>Easy to learn</>,
-    imageUrl: 'img/home-no-html.svg',
+    title: <>Simple architecture</>,
+    imageUrl: 'img/pages/home/feature-house.svg',
     description: (
       <>
         No more complex architecture with JavaScript frontend, REST API backend, database, cache, etc.
@@ -33,7 +33,7 @@ const features = [
   },
   {
     title: <>Batteries included</>,
-    imageUrl: 'img/home-zero-deploy.svg',
+    imageUrl: 'img/pages/home/feature-battery.svg',
     description: (
       <>
         To start developing with Flet, you just need your favorite IDE or text editor.
@@ -43,7 +43,7 @@ const features = [
   },
   {
     title: <>Powered by Flutter</>,
-    imageUrl: 'img/home-zero-deploy.svg',
+    imageUrl: 'img/pages/home/feature-flutter.svg',
     description: (
       <>
         Flet UI is built with <a href="https://flutter.dev">Flutter</a>, so your app looks professional and could be delivered to any platform.
@@ -53,7 +53,7 @@ const features = [
   },
   {
     title: <>Speaks your language</>,
-    imageUrl: 'img/home-zero-deploy.svg',
+    imageUrl: 'img/pages/home/feature-language.svg',
     description: (
       <>
         Flet is language-agnostic, so anyone on your team could develop Flet apps in their favorite language. <a href="/docs/getting-started/python">Python</a> is already supported, Go, C# and others are <a href="/docs/roadmap">coming next</a>.
@@ -62,7 +62,7 @@ const features = [
   },
   {
     title: <>Deliver to any device</>,
-    imageUrl: 'img/home-zero-deploy.svg',
+    imageUrl: 'img/pages/home/feature-mobile.svg',
     description: (
       <>
         Deploy Flet app as a web app and view it in a browser. Package it as a standalone desktop app for Windows, macOS and Linux.
@@ -76,11 +76,11 @@ function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
-      {/* {imgUrl && (
+      {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
-      )} */}
+      )}
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
