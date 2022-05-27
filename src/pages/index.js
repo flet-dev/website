@@ -12,7 +12,7 @@ import CodeBlock from '@theme/CodeBlock';
 
 const features = [
   {
-    title: <>Quickly visualize your ideas</>,
+    title: <>From idea to app in minutes</>,
     imageUrl: 'img/home-languages.svg',
     description: (
       <>
@@ -22,7 +22,7 @@ const features = [
     ),
   },
   {
-    title: <>Easy to learn programming model</>,
+    title: <>Easy to learn</>,
     imageUrl: 'img/home-no-html.svg',
     description: (
       <>
@@ -31,7 +31,7 @@ const features = [
     ),
   },
   {
-    title: <>Speaks your language</>,
+    title: <>Batteries included</>,
     imageUrl: 'img/home-zero-deploy.svg',
     description: (
       <>
@@ -49,11 +49,11 @@ const features = [
     ),
   },
   {
-    title: <>An Electron alternative</>,
+    title: <>Speaks your language</>,
     imageUrl: 'img/home-zero-deploy.svg',
     description: (
       <>
-        This is another feature we would like to tell you about.
+        Flet is language-agnostic, so any on your team could develop Flet apps in their favorite language. <a href="/docs/getting-started/python">Python</a> is already supported, Go, C# and others are <a href="/docs/roadmap">coming next</a>.
       </>
     ),
   },
