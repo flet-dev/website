@@ -18,6 +18,8 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
+<img src="/img/docs/controls/row/row-spacing.gif" />
+
 ```python
 import flet
 from flet import (
@@ -70,12 +72,12 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/stack/horizontal-stack-gap-padding.gif" width="75%" />
-
 ### Row wrapping
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
+
+<img src="/img/docs/controls/row/row-wrap.gif" />
 
 ```python
 import flet
@@ -145,12 +147,12 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/stack/horizontal-stack-wrapping.gif" width="75%" />
-
 ### Row horizontal alignments
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
+
+<img src="/img/docs/controls/row/row-alignment.png" />
 
 ```python
 import flet
@@ -196,12 +198,12 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/stack/horizontal-stack-horizontal-alignments.png" width="75%" />
-
 ### Row vertical alignments
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
+
+<img src="/img/docs/controls/row/row-vertical-alignment.png" width="70%"/>
 
 ```python
 import flet
@@ -244,8 +246,6 @@ flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/stack/horizontal-stack-vertical-alignments.png" width="75%" />
 
 ## Properties
 
