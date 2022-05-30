@@ -11,7 +11,7 @@ module.exports = {
   projectName: 'flet', // Usually your repo name.
   customFields: {
     heroTitle: 'The fastest way to build Flutter apps in Python',
-    heroSubTitle: 'Flet enables backend developers to easily build realtime web, mobile and desktop apps in their favorite language. No frontend experience required.',
+    heroSubTitle: 'Flet enables backend developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.',
   },
   themeConfig: {
     docs: {
@@ -41,6 +41,12 @@ module.exports = {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Docs',
+          position: 'left',
+        },
+        {
+          to: 'docs/roadmap',
+          activeBasePath: 'roadmap',
+          label: 'Roadmap',
           position: 'left',
         },
         {

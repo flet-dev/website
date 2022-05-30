@@ -121,6 +121,7 @@ module.exports = {
           ]
         },
       ]
-    }
+    },
+    'roadmap',
   ]
 };

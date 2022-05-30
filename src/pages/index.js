@@ -12,8 +12,8 @@ import CodeBlock from '@theme/CodeBlock';
 
 const features = [
   {
-    title: <>Quickly visualize your ideas</>,
-    imageUrl: 'img/home-languages.svg',
+    title: <>From idea to app in minutes</>,
+    imageUrl: 'img/pages/home/feature-bolt.svg',
     description: (
       <>
         An internal tool or a dashboard for your team, weekend project, data entry form, kiosk app or high-fidelity prototype
@@ -22,47 +22,51 @@ const features = [
     ),
   },
   {
-    title: <>Easy to learn programming model</>,
-    imageUrl: 'img/home-no-html.svg',
+    title: <>Simple architecture</>,
+    imageUrl: 'img/pages/home/feature-house.svg',
     description: (
       <>
-        This is another feature we would like to tell you about.
+        No more complex architecture with JavaScript frontend, REST API backend, database, cache, etc.
+        With Flet you just write a monolith stateful app in Python only and get multi-user, realtime Single-Page Application (SPA).
       </>
     ),
   },
   {
-    title: <>Speaks your language</>,
-    imageUrl: 'img/home-zero-deploy.svg',
+    title: <>Batteries included</>,
+    imageUrl: 'img/pages/home/feature-battery.svg',
     description: (
       <>
-        This is another feature we would like to tell you about.
+        To start developing with Flet, you just need your favorite IDE or text editor.
+        No SDKs, no thousands of dependencies, no complex tooling - Flet has built-in web server with assets hosting and desktop clients.
       </>
     ),
   },
   {
     title: <>Powered by Flutter</>,
-    imageUrl: 'img/home-zero-deploy.svg',
+    imageUrl: 'img/pages/home/feature-flutter.svg',
     description: (
       <>
-        This is another feature we would like to tell you about.
+        Flet UI is built with <a href="https://flutter.dev">Flutter</a>, so your app looks professional and could be delivered to any platform.
+        Flet simplifies Flutter model by combining smaller "widgets" to ready-to-use "controls" with imperative programming model.
       </>
     ),
   },
   {
-    title: <>An Electron alternative</>,
-    imageUrl: 'img/home-zero-deploy.svg',
+    title: <>Speaks your language</>,
+    imageUrl: 'img/pages/home/feature-language.svg',
     description: (
       <>
-        This is another feature we would like to tell you about.
+        Flet is language-agnostic, so anyone on your team could develop Flet apps in their favorite language. <a href="/docs/getting-started/python">Python</a> is already supported, Go, C# and others are <a href="/docs/roadmap">coming next</a>.
       </>
     ),
   },
   {
-    title: <>Deliver your apps to any device</>,
-    imageUrl: 'img/home-zero-deploy.svg',
+    title: <>Deliver to any device</>,
+    imageUrl: 'img/pages/home/feature-mobile.svg',
     description: (
       <>
-        This is another feature we would like to tell you about.
+        Deploy Flet app as a web app and view it in a browser. Package it as a standalone desktop app for Windows, macOS and Linux.
+        Install it on mobile as <a href="https://web.dev/what-are-pwas/">PWA</a> or view via Flet app for iOS and Android.
       </>
     ),
   },
@@ -72,11 +76,11 @@ function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
-      {/* {imgUrl && (
+      {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
-      )} */}
+      )}
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
