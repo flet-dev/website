@@ -15,10 +15,10 @@ import TabItem from '@theme/TabItem';
 
 ### Row spacing
 
+<img src="/img/docs/controls/row/row-spacing.gif" />
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
-
-<img src="/img/docs/controls/row/row-spacing.gif" />
 
 ```python
 import flet
@@ -74,10 +74,10 @@ flet.app(target=main)
 
 ### Row wrapping
 
+<img src="/img/docs/controls/row/row-wrap.gif" />
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
-
-<img src="/img/docs/controls/row/row-wrap.gif" />
 
 ```python
 import flet
@@ -149,10 +149,10 @@ flet.app(target=main)
 
 ### Row horizontal alignments
 
+<img src="/img/docs/controls/row/row-alignment.png" />
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
-
-<img src="/img/docs/controls/row/row-alignment.png" />
 
 ```python
 import flet
@@ -198,12 +198,12 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-### Row vertical alignments
+### Row vertical 
+
+<img src="/img/docs/controls/row/row-vertical-alignment.png" width="70%"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
-
-<img src="/img/docs/controls/row/row-vertical-alignment.png" width="70%"/>
 
 ```python
 import flet

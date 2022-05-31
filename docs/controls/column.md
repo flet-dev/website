@@ -15,6 +15,8 @@ import TabItem from '@theme/TabItem';
 
 ### Column spacing
 
+<img src="/img/docs/controls/column/column-spacing.gif" width="50%"/>
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
@@ -62,6 +64,8 @@ flet.app(target=main)
 </Tabs>
 
 ### Column wrapping
+
+<img src="/img/docs/controls/column/column-wrapping.gif" width="70%"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -139,6 +143,8 @@ flet.app(target=main)
 
 ### Column vertical alignments
 
+<img src="/img/docs/controls/column/column-alignment.png" width="70%"/>
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
@@ -194,6 +200,8 @@ flet.app(target=main)
 </Tabs>
 
 ### Column horizontal alignments
+
+<img src="/img/docs/controls/column/column-horiz-alignment.png" width="50%"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
