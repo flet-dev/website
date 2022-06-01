@@ -145,12 +145,12 @@ module.exports = {
           // It is recommended to set document id as docs home page (`docs/` path).
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/flet-dev/website/edit/master/',
+            'https://github.com/flet-dev/website/edit/main/',
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/flet-dev/website/edit/master/',
+            'https://github.com/flet-dev/website/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
