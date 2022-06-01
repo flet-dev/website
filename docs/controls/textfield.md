@@ -40,8 +40,6 @@ with flet.page("basic-textboxes") as page:
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textbox/basic-textboxes.gif" width="45%" />
-
 ### TextField with `on_change` event
 
 <Tabs groupId="language">
@@ -69,8 +67,6 @@ with flet.page("textbox-with-change-event") as page:
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textbox/textbox-with-change-event.gif" width="45%" />
-
 ### Password with reveal button
 
 <Tabs groupId="language">
@@ -86,8 +82,6 @@ with flet.page("password-with-reveal-button") as page:
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/textbox/password-with-reveal-button.gif" width="45%" />
 
 ### Multiline TextFields
 
@@ -108,8 +102,6 @@ with flet.page("multiline-textboxes") as page:
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textbox/multiline-textboxes.gif" width="45%" />
-
 ### Underlined and borderless TextFields
 
 <Tabs groupId="language">
@@ -127,8 +119,6 @@ with flet.page("underlined-and-borderless-textboxes") as page:
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/textbox/underlined-and-borderless-textboxes.gif" width="45%" />
 
 ### TextFields with prefixes and suffixes
 
@@ -155,8 +145,6 @@ with flet.page("suffix-prefix-textboxes") as page:
 
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/textbox/suffix-prefix-textboxes.png" width="45%" />
 
 ## Properties
 

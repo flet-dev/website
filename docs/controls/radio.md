@@ -39,8 +39,6 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/choicegroup/basic-choicegroup.gif" width="25%" />
-
 ### RadioGroup with `on_change` event
 
 <Tabs groupId="language">
@@ -67,8 +65,6 @@ flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/choicegroup/choicegroup-with-change-event.gif" width="35%" />
 
 ## `RadioGroup` properties
 

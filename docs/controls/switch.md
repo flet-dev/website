@@ -41,8 +41,6 @@ flet.app(target=main, view=flet.WEB_BROWSER)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/toggle/basic-toggles.gif" width="45%" />
-
 
 ### Switch with `on_change` event
 
@@ -68,8 +66,6 @@ flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/toggle/toggle-with-change-event.gif" width="45%" />
 
 ## Properties
 

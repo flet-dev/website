@@ -51,8 +51,6 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/message/basic-messages.png" width="70%" />
-
 ## Properties
 
 ### `open`

@@ -44,8 +44,6 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/dropdown/basic-dropdown.gif" width="40%" />
-
 ### Dropdown with label and hint
 
 <Tabs groupId="language">
@@ -73,8 +71,6 @@ flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/dropdown/dropdown-with-label-and-placeholder.png" width="25%" />
 
 ### Dropdown with `on_change` event
 
@@ -106,8 +102,6 @@ flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/dropdown/dropdown-with-change-event.gif" width="40%" />
 
 ### Change items in dropdown options
 
@@ -149,8 +143,6 @@ with flet.page("change-dropdown-options") as page:
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/dropdown/change-dropdown-options.gif" width="50%" />
 
 ## `Dropdown` properties
 

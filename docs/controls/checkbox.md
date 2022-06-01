@@ -43,8 +43,6 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/checkbox/basic-checkboxes.gif" width="45%" />
-
 ### Checkbox with `on_change` event
 
 <Tabs groupId="language">
@@ -68,8 +66,6 @@ flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/checkbox/checkbox-with-change-event.gif" width="40%" />
 
 ## Properties
 
