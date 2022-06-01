@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import styles from './styles.module.css';
 
 export default function SignupForm() {
     const [token, setToken] = useState(null);
@@ -39,7 +40,7 @@ export default function SignupForm() {
     }, [token, email]);
 
     return (
-        <div id="signup" className="signup-form">
+        <div id="signup" className={styles.signupForm}>
             <BrowserOnly fallback={<div>Loading...</div>}>
                 {() => {
                     if (token) {
