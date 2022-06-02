@@ -16,7 +16,7 @@ No more complex architecture with JavaScript frontend, REST API backend, databas
 
 To start developing with Flet, you just need your favorite IDE or text editor. No SDKs, no thousands of dependencies, no complex tooling - Flet has built-in web server with assets hosting and desktop clients.
 
-Flet UI is built with [Flutter](https://flutter.dev), so your app looks professional and could be delivered to any platform. Flet simplifies Flutter model by combining smaller "widgets" to ready-to-use "controls" with imperative programming model.
+Flet UI is built with [Flutter](https://flutter.dev), so your app looks professional and can be delivered to any platform. Flet simplifies Flutter model by combining smaller "widgets" into ready-to-use "controls" with imperative programming model.
 You get all the power of Flutter without having to learn Dart!
 
 Flet app is deployed as a regular web app and can be instanly accessed with a browser or installed as a [PWA](https://web.dev/what-are-pwas/) on a mobile device. Web app also exposes an API that can be used by a Flet client (planned for [future releases](/docs/roadmap)) running on iOS and Android and providing native mobile experience.

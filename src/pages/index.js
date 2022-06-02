@@ -46,8 +46,8 @@ const features = [
     imageUrl: 'img/pages/home/feature-flutter.svg',
     description: (
       <>
-        Flet UI is built with <a href="https://flutter.dev">Flutter</a>, so your app looks professional and could be delivered to any platform.
-        Flet simplifies Flutter model by combining smaller "widgets" to ready-to-use "controls" with imperative programming model.
+        Flet UI is built with <a href="https://flutter.dev">Flutter</a>, so your app looks professional and can be delivered to any platform.
+        Flet simplifies Flutter model by combining smaller "widgets" into ready-to-use "controls" with imperative programming model.
       </>
     ),
   },
