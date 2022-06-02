@@ -3,25 +3,116 @@ title: Image
 sidebar_label: Image
 slug: image
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 An image is a graphic representation of something (e.g photo or illustration).
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Examples
 
-[Live demo](https://python-image-example.pgletio.repl.co)
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+import flet
+from flet import Image, Page, Row, border_radius
+
+def main(page: Page):
+    page.title = "Images Example"
+    page.theme_mode = "light"
+    page.padding = 50
+    page.update()
+
+    img = Image(
+        src=f"/icons/icon-512.png",
+        width=100,
+        height=100,
+        fit="contain",
+    )
+    images = Row(expand=1, wrap=False, scroll="always")
+
+    page.add(img, images)
+
+    for i in range(0, 30):
+        images.controls.append(
+            Image(
+                src=f"https://picsum.photos/200/200?{i}",
+                width=200,
+                height=200,
+                fit="none",
+                repeat="noRepeat",
+                border_radius=border_radius.all(10),
+            )
+        )
+    page.update()
+
+flet.app(target=main)
+```
+  </TabItem>
+</Tabs>
 
 ## Properties
 
-| Name           | Type     | Default  | Description |
-| -------------- | -------- | -------- | ----------- |
-| `src`          | string    |          | Image source URL. |
-| `alt`          | string    |          | The `imageAlt` attribute holds a text description of the image, which isn't mandatory but is incredibly useful for accessibility — screen readers read this description out to their users so they know what the image means. Alt text is also displayed on the page if the image can't be loaded for some reason: for example, network errors, content blocking, or linkrot. |
-| `title`        | string    |          | Popup hint. |
-| `fit`          | string    |          | Used to determine how the image is scaled and cropped to fit the frame. Allowed values: `none`, `contain`, `cover`, `center`, `centerContain`, `centerCover` |
-| `maximizeFrame` | boolean | `false`  | If `true`, the image frame will expand to fill its parent container. |
-| `borderWidth`  | string  |         | Border width in pixels around control, e.g. `1`. Multiple values separated with spaces can be provided to set border width for each of the sides: `top right bottom left`, e.g. `2 0 2 0`. |
-| `borderColor`  | string  |         | Border color around control. Multiple values separated with spaces can be provided to set border color for each of the sides: `top right bottom left`, e.g. `yellow green blue gray`. |
-| `borderStyle`  | string  |         | Border style around control: `none` (default), `dotted`, `dashed`, `solid`, `double`, `groove`, `ridge`, `inset`, `outset`. Multiple values separated with spaces can be provided to set border style for each of the sides: `top right bottom left`, e.g. `solid none none none`. |
-| `borderRadius` | string  |         | Border radius in pixels, e.g. `5`. Multiple values separated with spaces can be provided to set border style for each of the sides: `top right bottom left`, e.g. `10 10 0 0`. |
+### `src`
+
+Image URL. This could be an external URL, e.g. `https://picsum.photos/200/200` or internal URL to reference side-loaded assets, e.g. `/my-image.png`.
+
+You can specify `assets_dir` in `flet.app()` call to set the location of assets that should be available to the application. `assets_dir` could be a relative to your `main.py` directory or an absolute path. For example, consider the following program structure:
+
+```
+/assets
+   /images/my-image.png
+main.py
+```
+
+You can access your images in the application as following:
+
+```python {5,9}
+import flet
+from flet import Page, Image
+
+def main(page: Page):
+    page.add(Image(src=f"/images/my-image.png"))
+
+flet.app(
+    target=main,
+    assets_dir="assets"
+)
+```
+
+### `width`
+
+If set, require the image to have this width.
+
+If not set, the image will pick a size that best preserves its intrinsic aspect ratio.
+
+:::note
+It is strongly recommended that either both the width and the height be specified, or that the Image be placed in a context that sets tight layout constraints, so that the image does not change size as it loads. Consider using `fit` to adapt the image's rendering to fit the given width and height if the exact image dimensions are not known in advance.
+:::
+
+### `height`
+
+If set, require the image to have this height.
+
+If not set, the image will pick a size that best preserves its intrinsic aspect ratio.
+
+:::note
+It is strongly recommended that either both the width and the height be specified, or that the Image be placed in a context that sets tight layout constraints, so that the image does not change size as it loads. Consider using `fit` to adapt the image's rendering to fit the given width and height if the exact image dimensions are not known in advance.
+:::
+
+### `repeat`
+
+How to paint any portions of the layout bounds not covered by the image. Supported values: `noRepeat` (default), `repeat`, `repeatX`, `repeatY`.
+
+### `fit`
+
+How to inscribe the image into the space allocated during layout. Supported values: `none` (default), `contain`, `cover`, `fill`, `fitHeight`, `fitWidth`, `scaleDown`.
+
+### `border_radius`
+
+Clip image to have rounded corners. See [`Container.border_radius`](container#border_radius) for more information and examples.
+
+### `tooltip`
+
+The text displayed when hovering a mouse over the Image.

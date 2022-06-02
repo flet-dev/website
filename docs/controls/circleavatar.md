@@ -1,0 +1,106 @@
+---
+title: CircleAvatar
+sidebar_label: CircleAvatar
+slug: circleavatar
+---
+
+A circle that represents a user.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Typically used with a user's profile image, or, in the absence of such an image, the user's initials. A given user's initials should always be paired with the same background color, for consistency.
+
+If `foreground_image_url` fails then `background_image_url` is used. If `background_image_url` fails too, `bgcolor` is used.
+
+## Examples
+
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+import flet
+from flet import CircleAvatar, Icon, Stack, Text, alignment, colors, icons
+from flet.container import Container
+
+
+def main(page):
+    # a "normal" avatar with background image
+    a1 = CircleAvatar(
+        foreground_image_url="https://avatars.githubusercontent.com/u/5041459?s=88&v=4",
+        content=Text("FF"),
+    )
+    # avatar with failing foregroung image and fallback text
+    a2 = CircleAvatar(
+        foreground_image_url="https://avatars.githubusercontent.com/u/_5041459?s=88&v=4",
+        content=Text("FF"),
+    )
+    # avatar with icon, aka icon with inverse background
+    a3 = CircleAvatar(
+        content=Icon(icons.ABC),
+    )
+    # avatar with icon and custom colors
+    a4 = CircleAvatar(
+        content=Icon(icons.WARNING_ROUNDED),
+        color=colors.YELLOW_200,
+        bgcolor=colors.AMBER_700,
+    )
+    # avatar with online status
+    a5 = Stack(
+        [
+            CircleAvatar(
+                foreground_image_url="https://avatars.githubusercontent.com/u/5041459?s=88&v=4"
+            ),
+            Container(
+                content=CircleAvatar(bgcolor=colors.GREEN, radius=5),
+                alignment=alignment.bottom_left,
+            ),
+        ],
+        width=40,
+        height=40,
+    )
+    page.add(a1, a2, a3, a4, a5)
+
+
+flet.app(target=main)
+```
+  </TabItem>
+</Tabs>
+
+## Properties
+
+### `foreground_image_url`
+
+The foreground image of the circle. Typically used as profile image. For fallback use `background_image_url`.
+
+### `background_image_url`
+
+The background image of the circle. Changing the background image will cause the avatar to animate to the new image. Typically used as a fallback image for `foreground_image_url`. If the CircleAvatar is to have the user's initials, use `content` instead.
+
+### `bgcolor`
+
+The color with which to fill the circle. Changing the background color will cause the avatar to animate to the new color.
+
+### `color`
+
+The default text color for text in the circle. Defaults to the primary text theme color if no `bgcolor` is specified.
+
+### `radius`
+
+The size of the avatar, expressed as the radius (half the diameter). If radius is specified, then neither minRadius nor maxRadius may be specified.
+
+### `min_radius`
+
+The minimum size of the avatar, expressed as the radius (half the diameter). If minRadius is specified, then radius must not also be specified. Defaults to zero.
+
+### `max_radius`
+
+The maximum size of the avatar, expressed as the radius (half the diameter). If maxRadius is specified, then radius must not also be specified. Defaults to "infinity".
+
+### `tooltip`
+
+The text displayed when hovering the mouse over the button.
+
+### `content`
+
+Typically a `Text` control. If the CircleAvatar is to have an image, use `background_image_url` instead.

@@ -8,32 +8,65 @@ import styles from './styles.module.css';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SignupForm from '@site/src/components/signup-form'
+import CodeBlock from '@theme/CodeBlock';
 
 const features = [
   {
-    title: <>Build web apps in your language</>,
-    imageUrl: 'img/home-languages.svg',
+    title: <>From idea to app in minutes</>,
+    imageUrl: 'img/pages/home/feature-bolt.svg',
     description: (
       <>
-        Add rich interactive web UI to your backend apps, scripts, jobs written in <a href="/docs/tutorials/python">Python</a>, <a href="/docs/tutorials/bash">Bash</a>, <a href="/docs/tutorials/powershell">PowerShell</a> or <a href="/docs/tutorials/node">Node.js</a>.
+        An internal tool or a dashboard for your team, weekend project, data entry form, kiosk app or high-fidelity prototype
+        - Flet is an ideal framework to quickly hack a great-looking interactive apps to serve a group of users.
       </>
     ),
   },
   {
-    title: <>No HTML/CSS/JavaScript required</>,
-    imageUrl: 'img/home-no-html.svg',
+    title: <>Simple architecture</>,
+    imageUrl: 'img/pages/home/feature-house.svg',
     description: (
       <>
-        Focus on your work rather than fighting with endless JavaScript frameworks, HTML templates, requests parsing or state management.
+        No more complex architecture with JavaScript frontend, REST API backend, database, cache, etc.
+        With Flet you just write a monolith stateful app in Python only and get multi-user, realtime Single-Page Application (SPA).
       </>
     ),
   },
   {
-    title: <>Something else</>,
-    imageUrl: 'img/home-zero-deploy.svg',
+    title: <>Batteries included</>,
+    imageUrl: 'img/pages/home/feature-battery.svg',
     description: (
       <>
-        This is another feature we would like to tell you about.
+        To start developing with Flet, you just need your favorite IDE or text editor.
+        No SDKs, no thousands of dependencies, no complex tooling - Flet has built-in web server with assets hosting and desktop clients.
+      </>
+    ),
+  },
+  {
+    title: <>Powered by Flutter</>,
+    imageUrl: 'img/pages/home/feature-flutter.svg',
+    description: (
+      <>
+        Flet UI is built with <a href="https://flutter.dev">Flutter</a>, so your app looks professional and could be delivered to any platform.
+        Flet simplifies Flutter model by combining smaller "widgets" to ready-to-use "controls" with imperative programming model.
+      </>
+    ),
+  },
+  {
+    title: <>Speaks your language</>,
+    imageUrl: 'img/pages/home/feature-language.svg',
+    description: (
+      <>
+        Flet is language-agnostic, so anyone on your team could develop Flet apps in their favorite language. <a href="/docs/getting-started/python">Python</a> is already supported, Go, C# and others are <a href="/docs/roadmap">coming next</a>.
+      </>
+    ),
+  },
+  {
+    title: <>Deliver to any device</>,
+    imageUrl: 'img/pages/home/feature-mobile.svg',
+    description: (
+      <>
+        Deploy Flet app as a web app and view it in a browser. Package it as a standalone desktop app for Windows, macOS and Linux.
+        Install it on mobile as <a href="https://web.dev/what-are-pwas/">PWA</a> or view via Flet app for iOS and Android.
       </>
     ),
   },
@@ -43,11 +76,11 @@ function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
-      {/* {imgUrl && (
+      {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
-      )} */}
+      )}
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
@@ -61,11 +94,15 @@ function Home() {
     <Layout
       title={`${siteConfig.customFields.heroTitle}`}
       description={`${siteConfig.tagline}`}>
-      <div className="container">
-        <header className={clsx('flet-hero', styles.heroBanner)}>
-          <div className="row">
-            <div className="col">
-              <div className={styles.right}>
+      <main>
+        <div className="container margin-bottom--lg">
+          <div className={clsx('flet-hero', styles.heroBanner)}>
+            <div className="row">
+              <div className="col  col--6">
+                {/* <h2>It's amazing how little code you need to get amazing results!</h2> */}
+                <img src="img/pages/home/flet-home.png" style={{ width: '100%' }}></img>
+              </div>
+              <div className="col col--6">
                 <h1 className="hero__title">{siteConfig.customFields.heroTitle}</h1>
                 <p className="hero__subtitle">{siteConfig.customFields.heroSubTitle}</p>
                 <div className={styles.buttons}>
@@ -78,32 +115,22 @@ function Home() {
               </div>
             </div>
           </div>
-        </header>
-      </div>
-      <main>
-        <SignupForm />
-        {features && features.length > 0 && (
-          <section className={styles.features}>
-            <div className="container">
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
+        </div>
+        <div className="container text--center">
+          <h2>Main features</h2>
+          {features && features.length > 0 && (
+            <section className={styles.features}>
+              <div className="container">
+                <div className="row">
+                  {features.map((props, idx) => (
+                    <Feature key={idx} {...props} />
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
-        )}
-        {/* <Tabs>
-          <TabItem value="apple" label="Apple" default>
-            This is an apple 🍎
-          </TabItem>
-          <TabItem value="orange" label="Orange">
-            This is an orange 🍊
-          </TabItem>
-          <TabItem value="banana" label="Banana">
-            This is a banana 🍌
-          </TabItem>
-        </Tabs> */}
+            </section>
+          )}
+        </div>
+        <SignupForm />
       </main>
     </Layout>
   );

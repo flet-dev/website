@@ -3,211 +3,179 @@ title: Text
 sidebar_label: Text
 slug: text
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 Text is a control for displaying text.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Examples
 
-[Live demo](https://python-text-example.pgletio.repl.co)
-
-### Size
+### Custom text styles
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
 import flet
-from flet import Text
-with flet.page("text-size") as page:
-  
-  page.add(
-    Text('tiny', size='tiny'),
-    Text('xSmall', size='xSmall'),
-    Text('small', size='small'),
-    Text('smallPlus', size='smallPlus'),
-    Text('medium', size='medium'),
-    Text('mediumPlus', size='mediumPlus'),
-    Text('large', size='large'),
-    Text('xLarge', size='xLarge'),
-    Text('xxLarge', size='xxLarge'),
-    Text('superLarge', size='superLarge'),
-    Text('mega', size='mega'))
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
+from flet import Page, Text, colors
 
-```powershell
-# TODO
-```
+def main(page: Page):
+    page.title = "Text custom styles"
+    page.scroll = "adaptive"
 
+    page.add(
+        Text("Size 10", size=10),
+        Text("Size 30, Italic", size=20, color="pink600", italic=True),
+        Text(
+            "Size 40, w100",
+            size=40,
+            color=colors.WHITE,
+            bgcolor=colors.BLUE_600,
+            weight="w100",
+        ),
+        Text(
+            "Size 50, Normal",
+            size=50,
+            color=colors.WHITE,
+            bgcolor=colors.ORANGE_800,
+            weight="normal",
+        ),
+        Text(
+            "Size 60, Bold, Italic",
+            size=50,
+            color=colors.WHITE,
+            bgcolor=colors.GREEN_700,
+            weight="bold",
+            italic=True,
+        ),
+        Text("Size 70, w900, selectable", size=70, weight="w900", selectable=True),
+        Text("Limit long text to 1 line with ellipsis", style="headlineSmall"),
+        Text(
+            "Proin rutrum, purus sit amet elementum volutpat, nunc lacus vulputate orci, cursus ultrices neque dui quis purus. Ut ultricies purus nec nibh bibendum, eget vestibulum metus varius. Duis convallis maximus justo, eu rutrum libero maximus id. Donec ullamcorper arcu in sapien molestie, non pellentesque tellus pellentesque. Nulla nec tristique ex. Maecenas euismod nisl enim, a convallis arcu laoreet at. Ut at tortor finibus, rutrum massa sit amet, pulvinar velit. Phasellus diam lorem, viverra vitae leo vitae, consequat suscipit lorem.",
+            max_lines=1,
+            overflow="ellipsis",
+        ),
+        Text("Limit long text to 2 lines and fading", style="headlineSmall"),
+        Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Nam varius at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
+            max_lines=2,
+        ),
+        Text("Limit the width and height of long text", style="headlineSmall"),
+        Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Nam varius at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
+            width=700,
+            height=100,
+        ),
+    )
+
+flet.app(target=main)
+```
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/text/text-size.png" width="50%" />
-
-### Font styles
+### Pre-defined theme text styles
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
 import flet
-from flet import Text
-with flet.page("text-with-different-font-styles") as page:
-  
-  page.add(
-    Text('Bold', bold=True),
-    Text('Italic', italic=True),
-    Text('Preformatted text in monospace font', pre=True))
-  
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
+from flet import ListView, Page, Text
 
-```powershell
-# TODO
-```
+def main(page: Page):
+    page.title = "Text theme styles"
+    page.scroll = "adaptive"
 
+    page.add(
+        Text("Display Large", style="displayLarge"),
+        Text("Display Medium", style="displayMedium"),
+        Text("Display Small", style="displaySmall"),
+        Text("Headline Large", style="headlineLarge"),
+        Text("Headline Medium", style="headlineMedium"),
+        Text("Headline Small", style="headlineMedium"),
+        Text("Title Large", style="titleLarge"),
+        Text("Title Medium", style="titleMedium"),
+        Text("Title Small", style="titleSmall"),
+        Text("Label Large", style="labelLarge"),
+        Text("Label Medium", style="labelMedium"),
+        Text("Label Small", style="labelSmall"),
+        Text("Body Large", style="bodylLarge"),
+        Text("Body Medium", style="bodyMedium"),
+        Text("Body Small", style="bodySmall"),
+    )
+
+flet.app(target=main)
+```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/text/text-font-styles.png" width="50%" />
-
-### Horizontal and vertical alignments
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet
-from flet import Text, Stack
-with flet.page("text-alignments") as page:
-  
-  page.add(
-    Stack(horizontal=True, controls=[
-            Text('left top', align='left', vertical_align='top', width=100, height=100, bgcolor='salmon', color='white', padding=5),
-            Text('center top', align='center', vertical_align='top', width=100, height=100, bgcolor='salmon', color='white', padding=5, size='large', border='1px solid #555'),
-            Text('right top', align='right', vertical_align='top', width=100, height=100, bgcolor='salmon', color='white', padding=5, border='2px solid #555')
-        ]),
-        Stack(horizontal=True, controls=[
-            Text('left center', align='left', vertical_align='center', width=100, height=100, bgcolor='PaleGoldenrod', padding=5),
-            Text('center center', align='center', vertical_align='center', width=100, height=100, bgcolor='PaleGoldenrod', padding=5, size='large', border='1px solid #555'),
-            Text('right center', align='right', vertical_align='center', width=100, height=100, bgcolor='PaleGoldenrod', padding=5, border='2px solid #555')
-        ]),
-        Stack(horizontal=True, controls=[
-            Text('left bottom', align='left', vertical_align='bottom', width=100, height=100, bgcolor='PaleGreen', padding=5),
-            Text('center bottom', align='center', vertical_align='bottom', width=100, height=100, bgcolor='PaleGreen', padding=5, size='large', border='1px solid #555'),
-            Text('right bottom', align='right', vertical_align='bottom', width=100, height=100, bgcolor='PaleGreen', padding=5, border='2px solid #555')
-        ]))
-  
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/text/text-alignments.png" width="50%" />
-
-### Border with rounded corners
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet
-from flet import Text, Stack
-with flet.page("text-rounded-corners") as page:
-  
-  page.add(Stack(horizontal=True, controls=[
-    Text('Border radius 10% of width/height', align='center', vertical_align='center', width=100, height=100, border_radius=10, bgcolor='salmon'),
-    Text('Border radius 25% of width/height', align='center', vertical_align='center', width=100, height=100, border_radius=25, bgcolor='PaleGoldenrod', border='1px solid #555'),
-    Text('Border radius 50% of width/height', align='center', vertical_align='center', width=100, height=100, border_radius=50, bgcolor='PaleGreen', border='2px solid #555')
-    ])
-  )
-```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/text/text-rounded-corners.png" width="50%" />
-
-### Markdown
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-````python
-import flet
-from flet import Text
-with flet.page("text-markdown") as page:
-  
-  page.add(Text('''
-# Heading1
-
-## Autolink literals
-
-www.example.com, https://example.com, and contact@example.com.
-
-## Strikethrough
-
-~one~ or ~~two~~ tildes.
-
-### Code sample
-
-```
-import flet
-page = page.page()
-```
-
-## Table
-
-| a | b  |  c |  d  |
-| - | :- | -: | :-: |
-
-        ''', markdown=True))
-````
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODO
-```
-
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/text/text-markdown.png" width="50%" />
 
 ## Properties
 
-| Name      | Type    | Default | Description |
-| --------- | ------- | ------- | ----------- |
-| `value`   | string  |         | The text displayed. |
-| `markdown` | bool  | `false` | Treat `value` as [markdown](https://remarkjs.github.io/react-markdown/). [GitHub Flavored Markdown](https://github.github.com/gfm/) is supported. |
-| `align`   | string  | `left`  | `left`, `center`, `right`, `justify`  |
-| `verticalAlign`   | string  |   | `top`, `center`, `bottom`  |
-| `size`    | string  |         | `tiny`, `xSmall`, `small`, `smallPlus`, `medium`, `mediumPlus`, `large`, `xLarge`, `xxLarge`, `superLarge`, `mega`  |
-| `bold`    | bool    | `false` | Whether font weight is bold. |
-| `italic`  | bool    | `false` | Whether font style is italic. |
-| `pre`     | bool    | `false` | Preformatted text in monospace font. |
-| `nowrap`  | bool    | `false` | Whether the text is not wrapped. |
-| `block`   | bool    | `false` | Whether the text is displayed as a block element. |
-| `color`   | string  |         | Font color. |
-| `bgcolor` | string  |         | Text background color. |
-| `borderWidth`  | string   |          | Border width in pixels around control, e.g. `1`. Multiple values separated with spaces can be provided to set border width for each of the sides: `top right bottom left`, e.g. `2 0 2 0`. |
-| `borderColor`  | string   |          | Border color around control. Multiple values separated with spaces can be provided to set border color for each of the sides: `top right bottom left`, e.g. `yellow green blue gray`. |
-| `borderStyle`  | string   |          | Border style around control: `none` (default), `dotted`, `dashed`, `solid`, `double`, `groove`, `ridge`, `inset`, `outset`. Multiple values separated with spaces can be provided to set border style for each of the sides: `top right bottom left`, e.g. `solid none none none`. |
-| `borderRadius` | string   |          | Border radius in pixels around control, e.g. `5`. Multiple values separated with spaces can be provided to set border style for each of the sides: `top right bottom left`, e.g. `10 10 0 0`. |
+### `value`
+
+The text displayed.
+
+### `text_align`
+
+Text horizontal align. Supported values: `left` (default), `right`, `center`, `justify`, `start`, `end`.
+
+### `size`
+
+Text size in virtual pixels. Default is `14`.
+
+### `weight`
+
+Font weight. Supported values: `normal` (default), `bold`, `w100`, `w200`, `w300`, `w400`, `w500`, `w600`, `w700`, `w800`, `w900`.
+
+### `italic`
+
+`True` to use italic typeface.
+
+### `no_wrap`
+
+If `False` (default) the text should break at soft line breaks.
+
+If `True`, the glyphs in the text will be positioned as if there was unlimited horizontal space.
+
+### `style`
+
+One of the pre-defined theme styles:
+
+* `displayLarge`
+* `displayMedium`
+* `displaySmall`
+* `headlineLarge`
+* `headlineMedium`
+* `headlineSmall`
+* `titleLarge`
+* `titleMedium`
+* `titleSmall`
+* `labelLarge`
+* `labelMedium`
+* `labelSmall`
+* `bodyLarge`
+* `bodyMedium`
+* `bodySmall`
+
+### `max_lines`
+
+An optional maximum number of lines for the text to span, wrapping if necessary. If the text exceeds the given number of lines, it will be truncated according to `overflow`.
+
+If this is 1, text will not wrap. Otherwise, text will be wrapped at the edge of the box.
+
+### `overflow`
+
+How visual overflow should be handled. Supported values: `fade` (default), `ellipsis`, `clip`, `visible`.
+
+### `selectable`
+
+`True` if text should be selectable.
+
+### `color`
+
+Text foreground color.
+
+### `bgcolor`
+
+Text background color.

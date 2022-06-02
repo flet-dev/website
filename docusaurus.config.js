@@ -10,11 +10,16 @@ module.exports = {
   organizationName: 'flet-dev', // Usually your GitHub org/user name.
   projectName: 'flet', // Usually your repo name.
   customFields: {
-    heroTitle: 'Build awesome apps that run anywere',
-    heroSubTitle: 'Flet enables backend developers to easily build realtime web, mobile and desktop apps in their favorite language. No frontend experience required.',
+    heroTitle: 'The fastest way to build Flutter apps in Python',
+    heroSubTitle: 'Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.',
   },
   themeConfig: {
-    hideableSidebar: true,
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      }
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
@@ -40,14 +45,21 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/roadmap',
+          activeBasePath: 'roadmap',
+          label: 'Roadmap',
+          position: 'left',
+        },
+        {
           to: 'blog',
           label: 'Blog',
           position: 'left'
         },
         {
           href: 'https://github.com/flet-dev/flet',
-          label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
@@ -68,7 +80,7 @@ module.exports = {
             },
             {
               label: 'Python tutorial',
-              to: 'docs/tutorials/python/',
+              to: 'docs/getting-started/python/',
             },
             {
               label: 'Controls reference',
@@ -81,7 +93,7 @@ module.exports = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/rWjf7xx',
+              href: 'https://discord.gg/dhYUcB3R',
             },
             {
               label: 'Twitter',
@@ -133,12 +145,12 @@ module.exports = {
           // It is recommended to set document id as docs home page (`docs/` path).
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/flet-dev/website/edit/master/',
+            'https://github.com/flet-dev/website/edit/main/',
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/flet-dev/website/edit/master/',
+            'https://github.com/flet-dev/website/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

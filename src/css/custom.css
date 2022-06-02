@@ -20,9 +20,11 @@
   --ifm-code-font-size: 95%;
   --ifm-h4-font-size: 1.1rem;
 
-  --flet-link-color: #02aaf2;
+  --flet-link-color: #008dfb;
   --ifm-link-color: var(--flet-link-color);
   --ifm-navbar-link-hover-color: var(--flet-link-color);
+
+  --docusaurus-highlighted-code-line-bg: rgb(220, 221, 223);
 
   /* navbar */
   /* --ifm-navbar-padding-vertical: 0.5rem;
@@ -34,32 +36,64 @@
   --ifm-tabs-color-active: var(--flet-link-color);
 }
 
+
+
 .navbar__logo {
   /* width: 42px; */
   height: 30px;
 }
 
-.docusaurus-highlight-code-line {
-  background-color: rgb(234, 236, 238);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
 .flet-hero h1 {
-  color: #02aaf2;
+  color: #008dfb;
   font-size: 50px;
-  font-weight: 500;
+  font-weight: 700;
+  margin-top: 2rem;
 }
 
 .hero__subtitle {
-  color: #333;
+  color: #555;
   font-size: 24px;
+  font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
+@media only screen and (max-width: 768px) {
+
+  /* For mobile phones: */
+  .flet-hero h1 {
+    font-size: 38px;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .hero__subtitle {
+    font-size: 18px;
+  }
 }
+
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+}
+
+[data-theme='dark'] .header-github-link::before {
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+} */
 
 .control-screenshot {
   padding: 10px;
@@ -88,6 +122,7 @@ html[data-theme='dark']:root {
   --ifm-navbar-background-color: #181A21;
   --ifm-footer-background-color: #1f2127;
   --ifm-color-secondary: #2f2f2f;
+  --docusaurus-highlighted-code-line-bg: rgb(76, 81, 90);
 }
 
 html[data-theme='dark'] .navbar__title {
@@ -95,7 +130,7 @@ html[data-theme='dark'] .navbar__title {
 }
 
 html[data-theme='dark'] .flet-hero h1 {
-  color: var(--ifm-font-color-base);
+  color: #3ba9fd;
 }
 
 html[data-theme='dark'] .hero__subtitle {
@@ -111,7 +146,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   list-style-type: none;
 }
 
-.legal > ol > li {
+.legal>ol>li {
   text-transform: uppercase;
   font-size: 1.1rem;
   margin: 1.5rem 0;
@@ -145,55 +180,4 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .legal ol ol ol ol ol {
   list-style-type: upper-alpha;
-}
-
-.signup-form {
-  text-align: center;
-  margin: 2rem auto 1rem auto;
-  padding: 20px;
-  max-width: 600px;
-  width: 100%;
-  /* background-color: var(--ifm-color-secondary); */
-  border-radius: 8px;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);;
-}
-
-.signup-form h3 {
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.signup-form input[type=email],
-.signup-form input[type=email]:focus {
-  border-style: solid;
-  border-width: 1px 0 1px 1px;
-  border-color: var(--ifm-color-primary-light);
-  border-radius: 4px 0 0 4px;
-  background-color: transparent;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 0 15px;
-  height: 40px;
-  width: 80%;
-}
-
-.signup-form input[type=submit] {
-  background-color: #e5e5e5;
-  display: inline-block;
-  line-height: 1.2em;
-  text-decoration: none !important;
-  transition: background 0.6s;
-  border-color: var(--ifm-color-primary-light);
-  border-style: solid;
-  border-radius: 0 4px 4px 0;
-  border-width: 1px 1px 1px 0;
-  /* color: var(--ifm-color-primary-dark); */
-  font-size: 15px;
-  font-weight: 500;
-  height: 40px;
-  padding: 0 20px;
-}
-
-html[data-theme='dark'] .signup-form input[type=submit] {
-  background-color: #333;
 }

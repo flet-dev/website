@@ -4,47 +4,88 @@ sidebar_label: Tabs
 slug: tabs
 ---
 
-The Tabs control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Tabs allow for navigation between two or more content views and relies on text headers to articulate the different sections of content.
+The Tabs control is used for navigating frequently accessed, distinct content categories. Tabs allow for navigation between two or more content views and relies on text headers to articulate the different sections of content.
 
-import { CodeSample } from '@site/src/components/code-sample';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Examples
 
-<CodeSample src="https://python-tabs-example.pgletio.repl.co" height="400px"
-    python="https://github.com/pglet/examples/blob/main/python/controls/tabs_control.py"
-    bash="https://github.com/pglet/examples/blob/main/bash/controls/tabs.sh"
-    />
+### Tabs
 
-## Properties
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
 
-| Name            | Type   | Default | Description |
-| --------------- | ------ | ------- | ----------- |
-| `value`         | string |         | Key of the selected tab item. |
-| `solid`         | bool   | `false` | `true` to display tabs as solid rectangles instead of links. |
+```python
+import flet
+from flet import Container, Icon, Page, Tab, Tabs, Text, alignment, icons
 
-## Events
+def main(page: Page):
 
-| Name      | Description |
-| --------- | ----------- |
-| `change`  | Fires when the selected tab item is changed. |
+    t = Tabs(
+        selected_index=1,
+        animation_duration=300,
+        tabs=[
+            Tab(
+                text="Tab 1",
+                content=Container(
+                    content=Text("This is Tab 1"), alignment=alignment.center
+                ),
+            ),
+            Tab(
+                tab_content=Icon(icons.SEARCH),
+                content=Text("This is Tab 2"),
+            ),
+            Tab(
+                text="Tab 3",
+                icon=icons.SETTINGS,
+                content=Text("This is Tab 3"),
+            ),
+        ],
+        expand=1,
+    )
 
-## Child controls
+    page.add(t)
 
-* [`Tab`](#tab-control)
+flet.app(target=main)
+```
+  </TabItem>
+</Tabs>
 
-## `Tab` control
+## `Tabs` properties
 
-Represents a tab within Tabs control.
+### `tabs`
 
-### Properties
+A list of `Tab` controls.
 
-| Name            | Type   | Default | Description |
-| --------------- | ------ | ------- | ----------- |
-| `key`           | string |         | An key to uniquely identify a tab. `text` value is used if `key` is not specified.  |
-| `text`          | string |         | The text displayed of each tab link. `key` value is used if `text` is not specified. |
-| `icon`          | string |         | An optional icon to show next to the tab link. |
-| `count`         | string |         | Defines an optional item count displayed in parentheses just after the linkText. Examples: Completed (4), Unread (99+). |
+### `selected_index`
 
-### Child controls
+The index of currently selected tab.
 
-* Any control - will be rendered in the body of the tab.
+### `animation_duration`
+
+Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
+
+## `Tabs` events
+
+### `on_change`
+
+Fires when `selected_index` changes.
+
+## `Tab` properties
+
+### `text`
+
+Tab's display name.
+
+### `icon`
+
+An icon to display on the left of Tab text.
+
+### `content`
+
+A `Control` to display below the Tab when it is selected.
+
+### `tab_content`
+
+A `Control` representing custom tab content replacing `text` and `icon`.
