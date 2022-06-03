@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
 
 ### Photo gallery
 
+<img src="/img/docs/controls/gridview/photo-gallery.png" width="50%"/>
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
