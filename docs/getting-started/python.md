@@ -11,7 +11,7 @@ In this guide we'll study the structure of a Flet app, learn how to output data 
 
 ## Installing `flet` module
 
-Flet requires Python 3.8 or above. To start with Flet, you need to install `flet` module first:
+Flet requires Python 3.7 or above. To start with Flet, you need to install `flet` module first:
 
 ```bash
 pip install flet
