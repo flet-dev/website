@@ -1,43 +1,36 @@
 ---
 title: Create To-Do app in Python with Flet
 sidebar_label: To-Do app in Python
-slug: todo-python
+slug: python-todo
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-In this tutorial we will show you, step-by-step, how to create a ToDo web/desktop app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [100 lines of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI.
+In this tutorial we will show you, step-by-step, how to create a ToDo web app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [100 lines of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI.
 
-You can play with the live demo below:
+You can find the live demo [here](TBD).
 
-<iframe src="https://todo-web-app-in-python.pglet.repl.co"
-        style={{
-            border: 'none',
-            width: '100%',
-            height: '400px',
-        }}/>
-
-We chose a ToDo app for the tutorial, because it covers all of the basic concepts you would need to create any web app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and deploy options.
+We chose a ToDo app for the tutorial, because it covers all of the basic concepts you would need to create any web app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and deployment options.
 
 The tutorial consists of the following steps:
 
-* [Getting started with Pglet](#getting-started-with-pglet)
-* [Pglet app structure](#pglet-app-structure)
+* [Getting started with Flet](#getting-started-with-flet)
+* [Flet app structure](#flet-app-structure)
 * [Adding page controls and handling events](#adding-page-controls-and-handling-events)
 * [View, edit and delete list items](#view-edit-and-delete-list-items)
 * [Filtering list items](#filtering-list-items)
 * [Final touches](#final-touches)
 * [Deploying the app](#deploying-the-app)
 
-## Getting started with Pglet
+## Getting started with Flet
 
-To write a Pglet web app you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
+To write a Flet web app you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
 
-Pglet requires Python 3.7 or above. To create a web app in Python with Pglet, you need to install `pglet` module first:
+Flet requires Python 3.8 or above. To create a web app in Python with Flet, you need to install `flet` module first:
 
 ```bash
-pip install pglet
+pip install flet
 ```
 
 To start, let's create a simple hello-world app.
@@ -45,86 +38,46 @@ To start, let's create a simple hello-world app.
 Create `hello.py` with the following contents:
 
 ```python title="hello.py"
-import pglet
-from pglet import Text
+import flet
+from flet import Page, Text
 
-page = pglet.page()
-page.add(Text(value="Hello, world!"))
+
+def main(page: Page):
+    page.add(Text(value="Hello, world!"))
+
+
+flet.app(target=main)
 ```
 
-Run this app and you will see a new browser window with a greeting:
+Run this app and you will see a new window with a greeting:
 
 <p style={{ textAlign: 'center' }}><img style={{ width: '50%', border: 'solid 1px #999' }} src="/img/docs/tutorial/todo-app-hello-world.png" /></p>
-
-:::note
-In this example, the page URL is a random string, because we didn't specify it in `pglet.page()` call. Try changing it to `pglet.page('hello')`.
-:::
-
-## Pglet app structure
-
-In the [previous step](#getting-started-with-pglet), we learned how to create a simple Pglet page. On that page, all users work with the same contents ("**shared app**").
-
-:::note
-
-Try adding `Textbox` control instead of `Text`:
-
-```python
-import pglet
-from pglet import Textbox
-
-page = pglet.page()
-page.add(Textbox())
-```
-
-Run the app and open its URL in multiple browser tabs. You'll see that changing Textbox contents in one tab is instantly reflected in others.
-
-:::
-
-A shared page may be useful for certain types of apps, such as dashboards, status pages, or reports. But for a ToDo app, we want every user to see their own set of tasks. To achieve this, we need to create a "**multi-user app**".
-
-Create `hello-app.py` with the following contents:
-
-```python title="hello-app.py"
-import pglet
-from pglet import Textbox
-
-def main(page):
-  page.add(Textbox())
-
-pglet.app("hello-app", target=main)
-```
-
-While the application is running, for every new user session Pglet calls `main` function with unique page contents.
-
-:::note
-To see multiple sessions in action, open the application URL in a new "incognito" browser window.
-:::
 
 ## Adding page controls and handling events
 
 Now we're ready to create a multi-user ToDo app.
 
-To start, we'll need a Textbox for entering a task name, and an "Add" button with an event handler that will display a checkbox with a new task.
+To start, we'll need a [TextField](https://flet.dev/docs/controls/textfield) for entering a task name, and an "Add" [FloatingActionButton](https://flet.dev/docs/controls/floatingactionbutton) with an event handler that will display a [Checkbox](https://flet.dev/docs/controls/checkbox) with a new task.
 
 Create `todo.py` with the following contents:
 
 ```python title="todo.py"
-import pglet
-from pglet import Textbox, Button, Checkbox
+import flet
+from flet import TextField, FloatingActionButton, Checkbox, icons
 
-def main(page):
+def main(page: Page):
     
     def add_clicked(e):
         page.add(Checkbox(label=new_task.value))
 
-    new_task = Textbox(placeholder='Whats needs to be done?')
+    new_task = TextField(placeholder='Whats needs to be done?')
 
     page.add(
         new_task,
-        Button('Add', on_click=add_clicked)
+        FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked)
     )
 
-pglet.app("todo-app", target=main)
+flet.app(target=main)
 ```
 
 Run the app and you should see a page like this:
