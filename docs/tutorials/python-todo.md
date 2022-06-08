@@ -57,25 +57,25 @@ Run this app and you will see a new window with a greeting:
 
 Now we're ready to create a multi-user ToDo app.
 
-To start, we'll need a [TextField](https://flet.dev/docs/controls/textfield) for entering a task name, and an "Add" [FloatingActionButton](https://flet.dev/docs/controls/floatingactionbutton) with an event handler that will display a [Checkbox](https://flet.dev/docs/controls/checkbox) with a new task.
+To start, we'll need a [TextField](https://flet.dev/docs/controls/textfield) for entering a task name, and an "+" [FloatingActionButton](https://flet.dev/docs/controls/floatingactionbutton) with an event handler that will display a [Checkbox](https://flet.dev/docs/controls/checkbox) with a new task.
 
 Create `todo.py` with the following contents:
 
 ```python title="todo.py"
 import flet
-from flet import TextField, FloatingActionButton, Checkbox, icons
+from flet import Checkbox, FloatingActionButton, Page, TextField, icons
+
 
 def main(page: Page):
-    
     def add_clicked(e):
         page.add(Checkbox(label=new_task.value))
+        new_task.value = ""
+        page.update()
 
-    new_task = TextField(placeholder='Whats needs to be done?')
+    new_task = TextField(hint_text="Whats needs to be done?")
 
-    page.add(
-        new_task,
-        FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked)
-    )
+    page.add(new_task, FloatingActionButton(icon=icons.ADD, on_click=add_clicked))
+
 
 flet.app(target=main)
 ```
@@ -86,40 +86,47 @@ Run the app and you should see a page like this:
 
 ### Page layout
 
-Now let's make the app look nice! We want the entire app to be at the top center of the page, stretched over 70% of the page width. The textbox and the button should be aligned horizontally, and take up full app width:
+Now let's make the app look nice! We want the entire app to be at the top center of the page, taking up 600 px width. The TextField and the "+" button should be aligned horizontally, and take up full app width:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '90%' }} src="/img/docs/tutorial/todo-diagram-1.svg" /></p>
+<p style={{ textAlign: 'center' }}><img style={{ width: '90%' }} src="/img/docs/tutorial/ToDo tutorial-Step 1.drawio.png" /></p>
 
-`Stack` is a container control that is used to lay other controls out on a page. `Stack` can be vertical (default) or horizontal, and can contain other stacks.
+`Row` is a (container) control that is used to lay other controls out horizontally on a page. `Column` is a (container) control that is used to lay other controls out vertically on a page.
 
 Replace `todo.py` contents with the following:
 
 ```python title="todo.py"
-import pglet
-from pglet import Stack, Textbox, Button, Checkbox
+import flet
+from flet import Checkbox, Column, FloatingActionButton, Page, Row, TextField, icons
 
-def main(page):
 
-    page.title = "ToDo App"
-    page.horizontal_align = 'center'
-    page.update() # needs to be called every time "page" control is changed
-    
+def main(page: Page):
     def add_clicked(e):
         tasks_view.controls.append(Checkbox(label=new_task.value))
-        tasks_view.update()
+        # page.add(Checkbox(label=new_task.value))
+        new_task.value = ""
+        page.update()
 
-    new_task = Textbox(placeholder='Whats needs to be done?', width='100%')
-    tasks_view = Stack()
+    new_task = TextField(hint_text="Whats needs to be done?", expand=True)
+    tasks_view = Column()
 
-    page.add(Stack(width='70%', controls=[
-        Stack(horizontal=True, on_submit=add_clicked, controls=[
-            new_task,
-            Button('Add', on_click=add_clicked)
-        ]),
-        tasks_view
-    ]))
+    page.horizontal_alignment = "center"
+    page.add(
+        Column(
+            width=600,
+            controls=[
+                Row(
+                    controls=[
+                        new_task,
+                        FloatingActionButton(icon=icons.ADD, on_click=add_clicked),
+                    ],
+                ),
+                tasks_view,
+            ],
+        )
+    )
 
-pglet.app("todo-app", target=main)
+
+flet.app(target=main)
 ```
 
 Run the app and you should see a page like this:
@@ -133,30 +140,38 @@ While we could continue writing our app in the `main` function, the best practic
 To make a reusable ToDo app component, we are going to encapsulate its state and presentation logic in a separate class: 
 
 ```python title="todo.py"
-import pglet
-from pglet import Stack, Textbox, Button, Checkbox
+import flet
+from flet import Checkbox, Column, FloatingActionButton, Page, Row, TextField, icons
 
-class TodoApp():
+
+class TodoApp:
     def __init__(self):
-        self.new_task = Textbox(placeholder='Whats needs to be done?', width='100%')
-        self.tasks_view = Stack()
+        self.new_task = TextField(hint_text="Whats needs to be done?", expand=True)
+        self.tasks_view = Column()
 
-        # application's root control (i.e. "view") containing all other controls
-        self.view = Stack(width='70%', controls=[
-            Stack(horizontal=True, on_submit=self.add_clicked, controls=[
-                self.new_task,
-                Button('Add', on_click=self.add_clicked)
-            ]),
-            self.tasks_view
-        ])
+        #         # application's root control (i.e. "view") containing all other controls
+        self.view = Column(
+            width=600,
+            controls=[
+                Row(
+                    controls=[
+                        self.new_task,
+                        FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked),
+                    ],
+                ),
+                self.tasks_view,
+            ],
+        )
 
     def add_clicked(self, e):
         self.tasks_view.controls.append(Checkbox(label=self.new_task.value))
-        self.tasks_view.update()
+        self.new_task.value = ""
+        self.view.update()
 
-def main(page):
+
+def main(page: Page):
     page.title = "ToDo App"
-    page.horizontal_align = 'center'
+    page.horizontal_alignment = "center"
     page.update()
 
     # create application instance
@@ -165,7 +180,8 @@ def main(page):
     # add application's root control to the page
     page.add(app.view)
 
-pglet.app("todo-app", target=main)
+
+flet.app(target=main)
 ```
 
 :::note
