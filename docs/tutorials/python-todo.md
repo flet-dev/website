@@ -90,7 +90,7 @@ Now let's make the app look nice! We want the entire app to be at the top center
 
 <p style={{ textAlign: 'center' }}><img style={{ width: '90%' }} src="/img/docs/tutorial/ToDo tutorial-Step 1.drawio.png" /></p>
 
-`Row` is a (container) control that is used to lay other controls out horizontally on a page. `Column` is a (container) control that is used to lay other controls out vertically on a page.
+[`Row`](https://flet.dev/docs/controls/row)  is a control that is used to lay its children controls out horizontally on a page. [`Column`](https://flet.dev/docs/controls/column) is a control that is used to lay its children controls out vertically on a page.
 
 Replace `todo.py` contents with the following:
 
@@ -102,29 +102,26 @@ from flet import Checkbox, Column, FloatingActionButton, Page, Row, TextField, i
 def main(page: Page):
     def add_clicked(e):
         tasks_view.controls.append(Checkbox(label=new_task.value))
-        # page.add(Checkbox(label=new_task.value))
         new_task.value = ""
-        page.update()
+        view.update()
 
     new_task = TextField(hint_text="Whats needs to be done?", expand=True)
     tasks_view = Column()
-
-    page.horizontal_alignment = "center"
-    page.add(
-        Column(
-            width=600,
-            controls=[
-                Row(
-                    controls=[
-                        new_task,
-                        FloatingActionButton(icon=icons.ADD, on_click=add_clicked),
-                    ],
-                ),
-                tasks_view,
-            ],
-        )
+    view = Column(
+        width=600,
+        controls=[
+            Row(
+                controls=[
+                    new_task,
+                    FloatingActionButton(icon=icons.ADD, on_click=add_clicked),
+                ],
+            ),
+            tasks_view,
+        ],
     )
 
+    page.horizontal_alignment = "center"
+    page.add(view)
 
 flet.app(target=main)
 ```
