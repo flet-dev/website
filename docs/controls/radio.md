@@ -4,10 +4,10 @@ sidebar_label: Radio
 slug: radio
 ---
 
+Radio buttons let people select a single option from two or more choices.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-Radio buttons let people select a single option from two or more choices.
 
 ## Examples
 

@@ -33,7 +33,7 @@ flet.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/basic-elevated-buttons.png" width="40%" />
+<img src="/img/docs/controls/elevated-button/basic-elevated-buttons.png" className="screenshot-40" />
 
 ### Elevated buttons with icons
 
@@ -62,7 +62,7 @@ flet.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" width="50%" />
+<img src="/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" className="screenshot-50" />
 
 ### Elevated button with `click` event
 
@@ -93,7 +93,7 @@ flet.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-button-with-click-event.gif" width="50%" />
+<img src="/img/docs/controls/elevated-button/elevated-button-with-click-event.gif" className="screenshot-50" />
 
 ### Elevated button with custom content 
 
@@ -153,7 +153,7 @@ flet.app(target=main)
   
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" width="40%" />
+<img src="/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-40" />
 
 ## Properties
 

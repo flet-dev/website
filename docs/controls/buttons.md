@@ -7,7 +7,7 @@ slug: buttons
 import Card from '@site/src/components/card';
 
 export const ImageCard = ({title, href, imageUrl}) => (
-    <div class="col col--4 margin-bottom--lg">
+    <div className="col col--4 margin-bottom--lg">
       <Card href={href}>
         <img src={"/img/docs/controls/button/" + imageUrl}/>
         <h2>{title}</h2>
@@ -15,8 +15,8 @@ export const ImageCard = ({title, href, imageUrl}) => (
     </div>
 );
 
-<div class="margin-top--lg">
-  <section class="row">
+<div className="margin-top--lg">
+  <section className="row">
     <ImageCard title="Elevated" href="/docs/controls/elevatedbutton" imageUrl="elevated-button.png" />
     <ImageCard title="Filled" href="/docs/controls/filledbutton" imageUrl="filled-button.png" />
     <ImageCard title="Filled Tonal" href="/docs/controls/filledtonalbutton" imageUrl="filled-tonal-button.png" />
