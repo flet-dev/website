@@ -34,7 +34,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/text-button/basic-text-buttons.png" width="40%" />
+<img src="/img/docs/controls/text-button/basic-text-buttons.png" className="screenshot-40" />
 
 ### Text buttons with icons
 
@@ -62,7 +62,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/text-button/text-buttons-with-icons.png" width="40%" />
+<img src="/img/docs/controls/text-button/text-buttons-with-icons.png" className="screenshot-40" />
 
 ### Text button with `click` event
 
@@ -93,7 +93,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/text-button/text-button-with-click-event.gif" width="50%" />
+<img src="/img/docs/controls/text-button/text-button-with-click-event.gif" className="screenshot-50" />
 
 ### Text button with custom content 
 
@@ -143,7 +143,7 @@ flet.app(target=main)
   
 </Tabs>
 
-<img src="/img/docs/controls/text-button/text-buttons-with-custom-content.png" width="40%" />
+<img src="/img/docs/controls/text-button/text-buttons-with-custom-content.png" className="screenshot-40" />
 
 ## Properties
 

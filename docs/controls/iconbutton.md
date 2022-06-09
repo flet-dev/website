@@ -50,7 +50,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/icon-button/icon-buttons.gif" width="50%" />
+<img src="/img/docs/controls/icon-button/icon-buttons.gif" className="screenshot-50" />
 
 ### Icon button with `click` event
 
@@ -82,7 +82,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/icon-button/icon-button-with-click-event.gif" width="50%" />
+<img src="/img/docs/controls/icon-button/icon-button-with-click-event.gif" className="screenshot-50" />
 
 ## Properties
 

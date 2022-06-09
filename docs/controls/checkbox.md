@@ -4,10 +4,10 @@ sidebar_label: Checkbox
 slug: checkbox
 ---
 
+Checkbox allows to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-Checkbox allows to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).
 
 ## Examples
 

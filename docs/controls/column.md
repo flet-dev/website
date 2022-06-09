@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ### Column spacing
 
-<img src="/img/docs/controls/column/column-spacing.gif" width="50%"/>
+<img src="/img/docs/controls/column/column-spacing.gif" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -65,7 +65,7 @@ flet.app(target=main)
 
 ### Column wrapping
 
-<img src="/img/docs/controls/column/column-wrapping.gif" width="70%"/>
+<img src="/img/docs/controls/column/column-wrapping.gif" className="screenshot-70"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -143,7 +143,7 @@ flet.app(target=main)
 
 ### Column vertical alignments
 
-<img src="/img/docs/controls/column/column-alignment.png" width="70%"/>
+<img src="/img/docs/controls/column/column-alignment.png"  className="screenshot-70"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -201,7 +201,7 @@ flet.app(target=main)
 
 ### Column horizontal alignments
 
-<img src="/img/docs/controls/column/column-horiz-alignment.png" width="50%"/>
+<img src="/img/docs/controls/column/column-horiz-alignment.png"  className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -298,6 +298,10 @@ Enables a vertical scrolling for the Column to prevent its content overflow. Sup
 * `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
 * `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `always` - scrolling is enabled and scroll bar is always shown.
+
+### `auto_scroll`
+
+`True` if scrollbar should automatically move its position to the end when children update.
 
 ## Expanding children
 

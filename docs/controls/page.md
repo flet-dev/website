@@ -118,6 +118,10 @@ Enables a vertical scrolling for the Page to prevent its content overflow. Suppo
 * `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `always` - scrolling is enabled and scroll bar is always shown.
 
+### `auto_scroll`
+
+`True` if scrollbar should automatically move its position to the end when children update.
+
 ### `theme_mode`
 
 A theme to use: `system` (default), `light` or `dark`.

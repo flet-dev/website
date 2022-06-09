@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-<img src="/img/docs/controls/listtile/listtiles.png" width="50%"/>
+<img src="/img/docs/controls/listtile/listtiles.png" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

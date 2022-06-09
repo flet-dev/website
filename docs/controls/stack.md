@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ### Transparent title over an image
 
-<img src="/img/docs/controls/stack/image-title.png" width="40%"/>
+<img src="/img/docs/controls/stack/image-title.png" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -60,7 +60,7 @@ flet.app(target=main, view=flet.WEB_BROWSER)
 
 ### Avatar with online status
 
-<img src="/img/docs/controls/stack/avatar-with-status.png" width="10%"/>
+<img src="/img/docs/controls/stack/avatar-with-status.png" className="screenshot-10"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
