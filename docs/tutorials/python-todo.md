@@ -198,35 +198,59 @@ page.add(app1.view, app2.view)
 
 In the [previous step](#adding-page-controls-and-handling-events), we created a basic ToDo app with task items shown as checkboxes. Let's improve the app by adding "Edit" and "Delete" buttons next to a task name. The "Edit" button will switch a task item to edit mode.
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '90%' }} src="/img/docs/tutorial/todo-diagram-2.svg" /></p>
+<p style={{ textAlign: 'center' }}><img style={{ width: '90%' }} src="/img/docs/tutorial/ToDo tutorial-Step 2.drawio.png" /></p>
 
-Each task item is represented by two stacks: `display_view` stack with Checkbox, "Edit" and "Delete" buttons and `edit_view` stack with Textbox and "Save" button. `view` stack serves as a container for both `display_view` and `edit_view` stacks.
+Each task item is represented by two rows: `display_view` row with Checkbox, "Edit" and "Delete" buttons and `edit_view` row with TextField and "Save" button. `view` column serves as a container for both `display_view` and `edit_view` rows.
 
 Before this step, the code was short enough to be fully included in the tutorial. Going forward, we will be highlighting only the changes introduced in a step.
 
-Copy the entire code for this step from [here](https://github.com/pglet/examples/blob/main/python/todo/todo-with-delete.py). Below we will explain the changes we've done to implement view, edit, and delete tasks.
+Copy the entire code for this step from [here](TBD). Below we will explain the changes we've done to implement view, edit, and delete tasks.
 
 To encapsulate task item views and actions, we introduced a new `Task` class:
 
 ```python
-class Task():
+class Task:
     def __init__(self, name):
         self.display_task = Checkbox(value=False, label=name)
-        self.edit_name = Textbox(width='100%')
+        self.edit_name = TextField(expand=1)
 
-        self.display_view = Stack(horizontal=True, horizontal_align='space-between',
-                vertical_align='center', controls=[
-            self.display_task,
-            Stack(horizontal=True, gap='0', controls=[
-                Button(icon='Edit', title='Edit todo', on_click=self.edit_clicked),
-                Button(icon='Delete', title='Delete todo')]),
-            ])
-        
-        self.edit_view = Stack(visible=False, horizontal=True, horizontal_align='space-between',
-                vertical_align='center', controls=[
-            self.edit_name, Button(text='Save', on_click=self.save_clicked)
-            ])
-        self.view = Stack(controls=[self.display_view, self.edit_view])
+        self.display_view = Row(
+            alignment="spaceBetween",
+            vertical_alignment="center",
+            controls=[
+                self.display_task,
+                Row(
+                    spacing=0,
+                    controls=[
+                        IconButton(
+                            icon=icons.CREATE_OUTLINED,
+                            tooltip="Edit To-Do",
+                            on_click=self.edit_clicked,
+                        ),
+                        IconButton(
+                            icons.DELETE_OUTLINE,
+                            tooltip="Delete To-Do"
+                        ),
+                    ],
+                ),
+            ],
+        )
+
+        self.edit_view = Row(
+            visible=False,
+            alignment="spaceBetween",
+            vertical_alignment="center",
+            controls=[
+                self.edit_name,
+                IconButton(
+                    icon=icons.DONE_OUTLINE_OUTLINED,
+                    icon_color=colors.GREEN,
+                    tooltip="Update To-Do",
+                    on_click=self.save_clicked,
+                ),
+            ],
+        )
+        self.view = Column(controls=[self.display_view, self.edit_view])
 
     def edit_clicked(self, e):
         self.edit_name.value = self.display_task.label
@@ -272,75 +296,93 @@ class TodoApp():
 
 Then, we passed a reference to `TodoApp` into Task constructor and called `TodoApp.delete_task()` in "Delete" button event handler:
 
-```python {2-3,11,16-17,24}
+```python {2-3,23,33-34}
 class Task():
     def __init__(self, app, name):
         self.app = app
         
         # ...
 
-        self.display_view = Stack(horizontal=True, horizontal_align='space-between', vertical_align='center', controls=[
-            self.display_task,
-            Stack(horizontal=True, gap='0', controls=[
-                Button(icon='Edit', title='Edit todo', on_click=self.edit_clicked),
-                Button(icon='Delete', title='Delete todo', on_click=self.delete_clicked)]),
-            ])
+        self.display_view = Row(
+            alignment="spaceBetween",
+            vertical_alignment="center",
+            controls=[
+                self.display_task,
+                Row(
+                    spacing=0,
+                    controls=[
+                        IconButton(
+                            icon=icons.CREATE_OUTLINED,
+                            tooltip="Edit To-Do",
+                            on_click=self.edit_clicked,
+                        ),
+                        IconButton(
+                            icons.DELETE_OUTLINE,
+                            tooltip="Delete To-Do",
+                            on_click=self.delete_clicked,
+                        ),
+                    ],
+                ),
+            ],
+        )
+
 
         # ...        
 
     def delete_clicked(self, e):
         self.app.delete_task(self)
-
-class TodoApp():
-
-    # ...
-
-    def add_clicked(self, e):
-        task = Task(self, self.new_task.value)
-        # ...
 ```
 
 Run the app and try to edit and delete tasks:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '50%', border: 'solid 1px #999' }} src="/img/docs/tutorial/todo-app-3.png" /></p>
+<p style={{ textAlign: 'center' }}><img style={{ width: '50%', border: 'solid 1px #999' }} src="/img/docs/tutorial/view-edit-delete.gif" /></p>
 
 ## Filtering list items
 
 We already have a functional ToDo app where we can create, edit, and delete tasks. To be even more productive, we want to be able to filter tasks by their status.
 
-Copy the entire code for this step from [here](https://github.com/pglet/examples/blob/main/python/todo/todo-with-filter.py). Below we will explain the changes we've done to implement filtering.
+Copy the entire code for this step from [here](TBD). Below we will explain the changes we've done to implement filtering.
 
 `Tabs` control is used to display filter:
 
-```python {1,11-14,22}
-from pglet import Tabs, Tab
+```python {1,11-15,29}
+from flet import Tabs, Tab
 
 # ...
 
-class TodoApp():
+class TodoApp:
     def __init__(self):
         self.tasks = []
-        self.new_task = Textbox(placeholder='Whats needs to be done?', width='100%')
-        self.tasks_view = Stack()
+        self.new_task = TextField(hint_text="Whats needs to be done?", expand=True)
+        self.tasks_view = Column()
 
-        self.filter = Tabs(value='all', on_change=self.tabs_changed, tabs=[
-                Tab(text='all'),
-                Tab(text='active'),
-                Tab(text='completed')])
+        self.filter = Tabs(
+            selected_index=0,
+            on_change=self.tabs_changed,
+            tabs=[Tab(text="all"), Tab(text="active"), Tab(text="completed")],
+        )
 
-        self.view = Stack(width='70%', controls=[
-            Text(value='Todos', size='large', align='center'),
-            Stack(horizontal=True, on_submit=self.add_clicked, controls=[
-                self.new_task,
-                Button(primary=True, text='Add', on_click=self.add_clicked)]),
-            Stack(gap=25, controls=[
-                self.filter,
-                self.tasks_view
-            ])
-        ])
+        self.view = Column(
+            width=600,
+            controls=[
+                Row(
+                    controls=[
+                        self.new_task,
+                        FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked),
+                    ],
+                ),
+                Column(
+                    spacing=25,
+                    controls=[
+                        self.filter,
+                        self.tasks_view,
+                    ],
+                ),
+            ],
+        )
 ```
 
-To display different lists of tasks depending on their statuses, we could maintain three lists with "All", "Active" and "Completed" tasks. We, however, chose an easier approach where we maintain the same list and only change a task's visibility depending on the status.
+To display different lists of tasks depending on their statuses, we could maintain three lists with "All", "Active" and "Completed" tasks. We, however, chose an easier approach where we maintain the same list and only change a task's visibility depending on its status.
 
 In `TodoApp` class we introduced `update()` method which iterates through all the tasks and updates their `view` Stack's `visible` property depending on the status of the task:
 
@@ -350,11 +392,13 @@ class TodoApp():
     # ...
 
     def update(self):
-        status = self.filter.value
+        status = self.filter.tabs[self.filter.selected_index].text
         for task in self.tasks:
-            task.view.visible = (status == 'all'
-                or (status == 'active' and task.display_task.value == False)
-                or (status == 'completed' and task.display_task.value))
+            task.view.visible = (
+                status == "all"
+                or (status == "active" and task.display_task.value == False)
+                or (status == "completed" and task.display_task.value)
+            )
         self.view.update()
 ```
 
@@ -370,7 +414,8 @@ class TodoApp():
 
 class Task():
     def __init__(self, app, name):
-        self.display_task = Checkbox(value=False, label=name, on_change=self.status_changed)
+        self.display_task = Checkbox(
+            value=False, label=name, on_change=self.status_changed)
         # ...
 
     def status_changed(self, e):
@@ -379,7 +424,7 @@ class Task():
 
 Run the app and try filtering tasks by clicking on the tabs:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '50%', borderLeft: 'solid 1px #999' }} src="/img/docs/tutorial/todo-app-filtering.gif" /></p>
+<p style={{ textAlign: 'center' }}><img style={{ width: '50%', borderLeft: 'solid 1px #999' }} src="/img/docs/tutorial/filtering.gif" /></p>
 
 ## Final touches
 
