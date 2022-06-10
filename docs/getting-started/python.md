@@ -513,6 +513,9 @@ import flet
 from flet import Column, ElevatedButton, Page, Row, Text, TextField
 
 def main(page: Page):
+    page.title = "Flet Chat"
+
+    # subscribe to broadcast messages
     def on_message(msg):
         messages.controls.append(Text(msg))
         page.update()
@@ -534,7 +537,7 @@ def main(page: Page):
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
-
+<img src="/img/docs/getting-started/chat-app-example.gif" className="screenshot-70" />
 
 ## Deploying web app
 
