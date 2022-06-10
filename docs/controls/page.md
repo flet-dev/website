@@ -223,11 +223,11 @@ A height of a browser or native OS window containing Flet app. This property is 
 
 ### `pubsub`
 
-A simple PubSub implementation for passing messages between user sessions.
+A simple PubSub implementation for passing messages between app sessions.
 
 #### `subscribe(handler)`
 
-Subscribe current page session for broadcast (no topic) messages. `handler` is a function or method with a single `message` argument, for example:
+Subscribe current app session for broadcast (no topic) messages. `handler` is a function or method with a single `message` argument, for example:
 
 ```python
 def main(page: Page):
@@ -240,7 +240,7 @@ def main(page: Page):
 
 #### `subscribe_topic(topic, handler)`
 
-Subscribe current page session to a specific topic. `handler` is a function or method with two arguments: `topic` and `message`, for example:
+Subscribe current app session to a specific topic. `handler` is a function or method with two arguments: `topic` and `message`, for example:
 
 ```python
 def main(page: Page):
@@ -285,11 +285,11 @@ Broadcast message to all subscribers except sender.
 
 #### `send_others_on_topic(topic, message)`
 
-Send message to all subscribers except sender on specific topic.
+Send message to all subscribers on specific topic except sender.
 
 #### `unsubscribe()`
 
-Unsubscribe current page session from broadcast messages, for example:
+Unsubscribe current app session from broadcast messages, for example:
 
 ```python
 @dataclass
@@ -307,11 +307,11 @@ def main(page: Page):
 
 #### `unsubscribe_topic(topic)`
 
-Unsubscribe current page session from specific topic.
+Unsubscribe current app session from specific topic.
 
 #### `unsubscribe_all()`
 
-Unsubscribe current page session from broadcast messages and all topics, for example:
+Unsubscribe current app session from broadcast messages and all topics, for example:
 
 ```python
 def main(page: Page):
