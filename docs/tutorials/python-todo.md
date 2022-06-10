@@ -424,49 +424,66 @@ class Task():
 
 Run the app and try filtering tasks by clicking on the tabs:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '50%', borderLeft: 'solid 1px #999' }} src="/img/docs/tutorial/filtering.gif" /></p>
+<p style={{ textAlign: 'center' }}><img style={{ width: '50%', borderLeft: 'solid 1px #999' }} src="/img/docs/tutorial/todo-app-filtering.gif" /></p>
 
 ## Final touches
 
-Our Todo app is almost complete now. As a final touch, we will add a footer (`Stack` control) displaying the number of incomplete tasks (`Text` control) and a "Clear completed" button.
+Our Todo app is almost complete now. As a final touch, we will add a footer (`Column` control) displaying the number of incomplete tasks (`Text` control) and a "Clear completed" button.
 
-Copy the entire code for this step from [here](https://github.com/pglet/examples/blob/main/python/todo/todo-complete.py). Below we highlighted the changes we've done to implement the footer:
+Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py). Below we highlighted the changes we've done to implement the footer:
 
-```python {5,15-18,26,31-33,36-39}
+```python {5,17-33,41,48-50,53-56}
 class TodoApp():
     def __init__(self):
         # ...
 
-        self.items_left = Text('0 items left')
+        self.items_left = Text("0 items left")
 
-        self.view = Stack(width='70%', controls=[
-            Text(value='Todos', size='large', align='center'),
-            Stack(horizontal=True, on_submit=self.add_clicked, controls=[
-                self.new_task,
-                Button(primary=True, text='Add', on_click=self.add_clicked)]),
-            Stack(gap=25, controls=[
-                self.filter,
-                self.tasks_view,
-                Stack(horizontal=True, horizontal_align='space-between', vertical_align='center', controls=[
-                    self.items_left,
-                    Button(text='Clear completed', on_click=self.clear_clicked)
-                ])
-            ])
-        ])
+        self.view = Column(
+            width=600,
+            controls=[
+                Row([Text(value="Todos", style="headlineMedium")], alignment="center"),
+                Row(
+                    controls=[
+                        self.new_task,
+                        FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked),
+                    ],
+                ),
+                Column(
+                    spacing=25,
+                    controls=[
+                        self.filter,
+                        self.tasks_view,
+                        Row(
+                            alignment="spaceBetween",
+                            vertical_alignment="center",
+                            controls=[
+                                self.items_left,
+                                OutlinedButton(
+                                    text="Clear completed", on_click=self.clear_clicked
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ],
+        )
 
     # ...
 
     def update(self):
-        status = self.filter.value
+        status = self.filter.tabs[self.filter.selected_index].text
         count = 0
         for task in self.tasks:
-            task.view.visible = (status == 'all'
-                or (status == 'active' and task.display_task.value == False)
-                or (status == 'completed' and task.display_task.value))
+            task.view.visible = (
+                status == "all"
+                or (status == "active" and task.display_task.value == False)
+                or (status == "completed" and task.display_task.value)
+            )
             if task.display_task.value == False:
                 count += 1
         self.items_left.value = f"{count} active item(s) left"
-        self.view.update()        
+        self.view.update()   
 
     def clear_clicked(self, e):
         for task in self.tasks[:]:
@@ -480,7 +497,7 @@ Run the app:
 
 ## Deploying the app
 
-Congratulations! You have created your first Python web app with Pglet, and it looks awesome!
+Congratulations! You have created your first Python web app with Flet, and it looks awesome!
 
 Now it's time to share your app with the world!
 
