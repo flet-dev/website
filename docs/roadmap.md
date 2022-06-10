@@ -91,7 +91,7 @@ slug: roadmap
 
 ### Core functionality
 
-* PubSub
+* :white_check_mark: PubSub
 
 ### User education
 
