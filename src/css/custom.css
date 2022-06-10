@@ -95,9 +95,52 @@ h6 {
   font-weight: 700;
 } */
 
-.control-screenshot {
-  padding: 10px;
+.screenshot,
+.screenshot-10,
+.screenshot-40,
+.screenshot-50,
+.screenshot-60,
+.screenshot-70 {
+  display: block;
   text-align: center;
+  margin: auto auto var(--ifm-paragraph-margin-bottom);
+}
+
+.screenshot {
+  width: 100%;
+}
+
+.screenshot-10 {
+  width: 10%;
+}
+
+.screenshot-40 {
+  width: 40%;
+}
+
+.screenshot-50 {
+  width: 50%;
+}
+
+.screenshot-60 {
+  width: 60%;
+}
+
+.screenshot-70 {
+  width: 70%;
+}
+
+@media only screen and (max-width: 768px) {
+  .screenshot,
+  .screenshot-40,
+  .screenshot-50,
+  .screenshot-60,
+  .screenshot-70 {
+    width: auto;
+  }
+  .screenshot-10 {
+    width: 30%;
+  }
 }
 
 .control-demo {

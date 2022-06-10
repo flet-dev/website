@@ -35,7 +35,7 @@ flet.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/outlined-button/basic-outlined-buttons.png" width="40%" />
+<img src="/img/docs/controls/outlined-button/basic-outlined-buttons.png" className="screenshot-40" />
 
 ### Outlined buttons with icons
 
@@ -64,7 +64,7 @@ flet.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/outlined-button/outlined-buttons-with-icons.png" width="50%" />
+<img src="/img/docs/controls/outlined-button/outlined-buttons-with-icons.png" className="screenshot-50" />
 
 ### Outlined button with `click` event
 
@@ -96,7 +96,7 @@ flet.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/outlined-button/outlined-button-with-click-event.gif" width="50%" />
+<img src="/img/docs/controls/outlined-button/outlined-button-with-click-event.gif" className="screenshot-50" />
 
 ### Outlined button with custom content 
 
@@ -155,7 +155,7 @@ flet.app(target=main)
   
 </Tabs>
 
-<img src="/img/docs/controls/outlined-button/outlined-buttons-with-custom-content.png" width="40%" />
+<img src="/img/docs/controls/outlined-button/outlined-buttons-with-custom-content.png" className="screenshot-50" />
 
 
 ## Properties

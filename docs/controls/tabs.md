@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 ### Tabs
 
-<img src="/img/docs/controls/tabs/tabs-simple.gif" width="60%"/>
+<img src="/img/docs/controls/tabs/tabs-simple.gif" className="screenshot-60"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

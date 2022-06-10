@@ -3,10 +3,13 @@ title: Switch
 sidebar_label: Switch
 slug: switch
 ---
+
+A toggle represents a physical switch that allows someone to choose between two mutually exclusive options.
+
+For example, "On/Off", "Show/Hide". Choosing an option should produce an immediate result.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-A toggle represents a physical switch that allows someone to choose between two mutually exclusive options.  For example, "On/Off", "Show/Hide". Choosing an option should produce an immediate result.
 
 ## Examples
 

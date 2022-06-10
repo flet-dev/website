@@ -118,6 +118,10 @@ Enables a vertical scrolling for the Page to prevent its content overflow. Suppo
 * `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `always` - scrolling is enabled and scroll bar is always shown.
 
+### `auto_scroll`
+
+`True` if scrollbar should automatically move its position to the end when children update.
+
 ### `theme_mode`
 
 A theme to use: `system` (default), `light` or `dark`.
@@ -216,6 +220,106 @@ A width of a browser or native OS window containing Flet app. This property is r
 ### `window_height`
 
 A height of a browser or native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+
+### `pubsub`
+
+A simple PubSub implementation for passing messages between app sessions.
+
+#### `subscribe(handler)`
+
+Subscribe current app session for broadcast (no topic) messages. `handler` is a function or method with a single `message` argument, for example:
+
+```python
+def main(page: Page):
+
+    def on_broadcast_message(message):
+        print(message)
+
+    page.pubsub.subscribe(on_broadcast_message)
+```
+
+#### `subscribe_topic(topic, handler)`
+
+Subscribe current app session to a specific topic. `handler` is a function or method with two arguments: `topic` and `message`, for example:
+
+```python
+def main(page: Page):
+
+    def on_message(topic, message):
+        print(topic, message)
+
+    page.pubsub.subscribe_topic("general", on_message)
+```
+
+#### `send_all(message)`
+
+Broadcast message to all subscribers. `message` could be anything: a simple literal or a class instance, for example:
+
+
+```python
+@dataclass
+class Message:
+    user: str
+    text: str
+
+def main(page: Page):
+
+    def on_broadcast_message(message):
+        page.add(Text(f"{message.user}: {message.text}"))
+
+    page.pubsub.subscribe(on_broadcast_message)
+
+    def on_send_click(e):
+        page.pubsub.send_all(Message("John", "Hello, all!"))
+
+    page.add(ElevatedButton(text="Send message", on_click=on_send_click))
+```
+
+#### `send_all_on_topic(topic, message)`
+
+Send message to all subscribers on specific topic.
+
+#### `send_others(message)`
+
+Broadcast message to all subscribers except sender.
+
+#### `send_others_on_topic(topic, message)`
+
+Send message to all subscribers on specific topic except sender.
+
+#### `unsubscribe()`
+
+Unsubscribe current app session from broadcast messages, for example:
+
+```python
+@dataclass
+class Message:
+    user: str
+    text: str
+
+def main(page: Page):
+
+    def on_leave_click(e):
+        page.pubsub.unsubscribe()
+
+    page.add(ElevatedButton(text="Leave chat", on_click=on_leave_click))
+```
+
+#### `unsubscribe_topic(topic)`
+
+Unsubscribe current app session from specific topic.
+
+#### `unsubscribe_all()`
+
+Unsubscribe current app session from broadcast messages and all topics, for example:
+
+```python
+def main(page: Page):
+    def client_exited(e):
+        page.pubsub.unsubscribe_all()
+
+    page.on_close = client_exited
+```
 
 ## Events
 

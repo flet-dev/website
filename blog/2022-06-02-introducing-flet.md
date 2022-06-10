@@ -23,10 +23,10 @@ Flet app is deployed as a regular web app and can be instanly accessed with a br
 
 Some examples:
 
-* [Greeter](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/greeter/greeter.py)
-* [Counter](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/counter/counter-home.py)
-* [To-Do](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/todo/todo.py)
-* [Icons Browser](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/icons-browser/icons-browser.py) ([Online Demo](https://flet-icons-browser.fly.dev/))
+* [Greeter](https://github.com/flet-dev/examples/blob/main/python/apps/greeter/greeter.py)
+* [Counter](https://github.com/flet-dev/examples/blob/main/python/apps/counter/counter.py)
+* [To-Do](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py)
+* [Icons Browser](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py) ([Online Demo](https://flet-icons-browser.fly.dev/))
 
-[Give Flet a try](/docs/getting-started/python) and [let us know](https://discord.gg/dhYUcB3R) what you think!
+[Give Flet a try](/docs/getting-started/python) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
 

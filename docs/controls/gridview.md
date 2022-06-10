@@ -7,7 +7,7 @@ slug: gridview
 A scrollable, 2D array of controls.
 
 :::info
-GridView is very effective for large lists (thousands of items). Prefer it over wrapping [`Column`](column) or [`Row`](row) for smooth scrolling. See [Flet Icons Browser](https://github.com/flet-dev/examples/blob/main/python/icons-browser/main.py) for GridView usage example.
+GridView is very effective for large lists (thousands of items). Prefer it over wrapping [`Column`](column) or [`Row`](row) for smooth scrolling. See [Flet Icons Browser](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py) for GridView usage example.
 :::
 
 import Tabs from '@theme/Tabs';
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 ### Photo gallery
 
-<img src="/img/docs/controls/gridview/photo-gallery.png" width="50%"/>
+<img src="/img/docs/controls/gridview/photo-gallery.png" className="screenshot-50"/>
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
