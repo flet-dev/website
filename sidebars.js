@@ -16,6 +16,19 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Tutorials',
+      link: {
+        type: 'generated-index',
+        description: 'Flet apps can be created in multiple languages. Follow a getting-started guide below for your language.',
+        slug: "/tutorials"
+      },
+      collapsed: false,
+      items: [
+        'tutorials/python-todo',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Controls',
       link: {
         type: 'doc',
