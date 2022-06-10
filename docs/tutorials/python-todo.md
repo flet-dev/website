@@ -7,7 +7,7 @@ slug: python-todo
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-In this tutorial we will show you, step-by-step, how to create a ToDo web app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [100 lines of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI.
+In this tutorial we will show you, step-by-step, how to create a ToDo web app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [180 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI.
 
 You can find the live demo [here](TBD).
 
@@ -41,30 +41,27 @@ Create `hello.py` with the following contents:
 import flet
 from flet import Page, Text
 
-
 def main(page: Page):
     page.add(Text(value="Hello, world!"))
-
 
 flet.app(target=main)
 ```
 
 Run this app and you will see a new window with a greeting:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '50%', border: 'solid 1px #999' }} src="/img/docs/tutorial/todo-app-hello-world.png" /></p>
+<img src="/img/docs/tutorial/todo-app-hello-world.png" className="screenshot-40" />
 
 ## Adding page controls and handling events
 
 Now we're ready to create a multi-user ToDo app.
 
-To start, we'll need a [TextField](https://flet.dev/docs/controls/textfield) for entering a task name, and an "+" [FloatingActionButton](https://flet.dev/docs/controls/floatingactionbutton) with an event handler that will display a [Checkbox](https://flet.dev/docs/controls/checkbox) with a new task.
+To start, we'll need a [TextField](/docs/controls/textfield) for entering a task name, and an "+" [FloatingActionButton](/docs/controls/floatingactionbutton) with an event handler that will display a [Checkbox](/docs/controls/checkbox) with a new task.
 
 Create `todo.py` with the following contents:
 
 ```python title="todo.py"
 import flet
 from flet import Checkbox, FloatingActionButton, Page, TextField, icons
-
 
 def main(page: Page):
     def add_clicked(e):
@@ -76,21 +73,20 @@ def main(page: Page):
 
     page.add(new_task, FloatingActionButton(icon=icons.ADD, on_click=add_clicked))
 
-
 flet.app(target=main)
 ```
 
 Run the app and you should see a page like this:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '50%', border: 'solid 1px #999' }} src="/img/docs/tutorial/todo-app-1.png" /></p>
+<img src="/img/docs/tutorial/todo-app-1.png" className="screenshot-40" />
 
 ### Page layout
 
 Now let's make the app look nice! We want the entire app to be at the top center of the page, taking up 600 px width. The TextField and the "+" button should be aligned horizontally, and take up full app width:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '90%' }} src="/img/docs/tutorial/ToDo tutorial-Step 1.drawio.png" /></p>
+<img src="/img/docs/tutorial/todo-diagram-1.svg" className="screenshot" />
 
-[`Row`](https://flet.dev/docs/controls/row)  is a control that is used to lay its children controls out horizontally on a page. [`Column`](https://flet.dev/docs/controls/column) is a control that is used to lay its children controls out vertically on a page.
+[`Row`](/docs/controls/row)  is a control that is used to lay its children controls out horizontally on a page. [`Column`](/docs/controls/column) is a control that is used to lay its children controls out vertically on a page.
 
 Replace `todo.py` contents with the following:
 
@@ -128,7 +124,7 @@ flet.app(target=main)
 
 Run the app and you should see a page like this:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '50%', border: 'solid 1px #999' }} src="/img/docs/tutorial/todo-app-2.png" /></p>
+<img src="/img/docs/tutorial/todo-app-2.png" className="screenshot-50" />
 
 ### Reusable UI components
 
@@ -198,13 +194,13 @@ page.add(app1.view, app2.view)
 
 In the [previous step](#adding-page-controls-and-handling-events), we created a basic ToDo app with task items shown as checkboxes. Let's improve the app by adding "Edit" and "Delete" buttons next to a task name. The "Edit" button will switch a task item to edit mode.
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '90%' }} src="/img/docs/tutorial/ToDo tutorial-Step 2.drawio.png" /></p>
+<img src="/img/docs/tutorial/todo-diagram-2.svg" className="screenshot" />
 
 Each task item is represented by two rows: `display_view` row with Checkbox, "Edit" and "Delete" buttons and `edit_view` row with TextField and "Save" button. `view` column serves as a container for both `display_view` and `edit_view` rows.
 
 Before this step, the code was short enough to be fully included in the tutorial. Going forward, we will be highlighting only the changes introduced in a step.
 
-Copy the entire code for this step from [here](TBD). Below we will explain the changes we've done to implement view, edit, and delete tasks.
+Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/todo/to-do-4.py). Below we will explain the changes we've done to implement view, edit, and delete tasks.
 
 To encapsulate task item views and actions, we introduced a new `Task` class:
 
@@ -335,13 +331,13 @@ class Task():
 
 Run the app and try to edit and delete tasks:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '50%', border: 'solid 1px #999' }} src="/img/docs/tutorial/view-edit-delete.gif" /></p>
+<img src="/img/docs/tutorial/view-edit-delete.gif" className="screenshot-50" />
 
 ## Filtering list items
 
 We already have a functional ToDo app where we can create, edit, and delete tasks. To be even more productive, we want to be able to filter tasks by their status.
 
-Copy the entire code for this step from [here](TBD). Below we will explain the changes we've done to implement filtering.
+Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/todo/to-do-5.py). Below we will explain the changes we've done to implement filtering.
 
 `Tabs` control is used to display filter:
 
@@ -424,7 +420,7 @@ class Task():
 
 Run the app and try filtering tasks by clicking on the tabs:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '50%', borderLeft: 'solid 1px #999' }} src="/img/docs/tutorial/todo-app-filtering.gif" /></p>
+<img src="/img/docs/tutorial/todo-app-filtering.gif" className="screenshot-50" />
 
 ## Final touches
 
@@ -493,74 +489,26 @@ class TodoApp():
 
 Run the app:
 
-<p style={{ textAlign: 'center' }}><img style={{ width: '50%', border: 'solid 1px #999' }} src="/img/docs/tutorial/todo-app-4.png" /></p>
+<img src="/img/docs/tutorial/todo-app-4.png" className="screenshot-50" />
 
 ## Deploying the app
 
-Congratulations! You have created your first Python web app with Flet, and it looks awesome!
+Congratulations! You have created your first Python app with Flet, and it looks awesome!
 
 Now it's time to share your app with the world!
 
-### Instant sharing
-
-Pglet is not only a framework for building web apps, but it is also a service for hosting apps' UI.
-You can have the application running on your computer while its UI is streaming to Pglet service in real-time.
-
-To make the app instantly available on the Internet, just add `web=True` parameter to `pglet.app()` call at the very end of the program:
-
-```python
-# ...
-
-pglet.app(target=main, web=True)
-```
-
-A new browser windows will be opened with the URL like this:
-
-```
-https://app.pglet.io/public/{random}
-```
-
-:::note
-[Pglet Service](/docs/pglet-service) is in technical preview now and you are sharing the app in a public namespace.
-
-Please note that we have removed the name of the page from the call above, so it's generated randomly to avoid name collision on public Pglet service with other users.
-:::
-
-### Replit
-
-Instant sharing is a great option to quickly share an app on the web, but it requires your computer to be on all the time.
-
-[Replit](https://replit.com/) is an online IDE and hosting platform for web apps written in any language. Their free tier allows running any number of apps with some limitations.
-
-To run your ToDo app on Replit:
-
-* [Sign up](https://replit.com/signup?from=landing) on Replit.
-* Click "New repl" button.
-* Select "Python" language from a list and provide repl name, e.g. `my-todo`.
-* Click "Packages" tab and search for `pglet` package; select its latest version.
-* Switch back to "Files" tab and copy-paste the [code of Todo app](https://github.com/pglet/examples/blob/main/python/todo/todo-complete.py) into `main.py`.
-* Update `pglet.app()` call (at the very end of the program) to:
-
-```python
-pglet.app("index", target=main)
-```
-
-* Run the app. Now both the application code and UI are running on Replit service as a "standalone" app.
-
-:::note
-We are not affiliated with Replit - we just love the service. Todo app demo for this tutorial is [hosted on Replit](https://replit.com/@pglet/ToDo-web-app-in-Python) and you can just "fork" it there and play.
-:::
+[Follow these instructions](/docs/getting-started/python#deploying-web-app) to deploy you Flet app as a web app to Fly.io or Replit.
 
 ## Summary
 
 In this tutorial you have learned how to:
 
-* Create a shared page and a multi-user web app;
+* Create a simple Flet app;
 * Work with Reusable UI components;
-* Design UI layout using `Stack` control;
+* Design UI layout using `Column` and `Row` controls;
 * Work with lists: view, edit and delete items, filtering;
-* Deploy your app two ways: Pglet Service and Replit;
+* Deploy your Flet app to the web;
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/pglet/examples/tree/main/python).
 
-We would love to hear your feedback! Please drop us an [email](mailto:hello@pglet.io), join the discussion on [Discord](https://discord.gg/rWjf7xx), follow on [Twitter](https://twitter.com/pgletio).
+We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
