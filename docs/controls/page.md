@@ -149,7 +149,7 @@ Set this property to an instance of `theme.Theme` to customize dark theme.
 
 ### `fonts`
 
-Allows importing custom fonts and use them with [`Text.font_face`](/docs/controls/text) or apply to the entire app via `theme`.
+Allows importing custom fonts and use them with [`Text.font_family`](/docs/controls/text#font_family) or apply to the entire app via `theme.font_family`.
 
 The following font formats can be used with Flet:
 

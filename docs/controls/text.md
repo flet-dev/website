@@ -120,6 +120,10 @@ The text displayed.
 
 Text horizontal align. Supported values: `left` (default), `right`, `center`, `justify`, `start`, `end`.
 
+### `font_family`
+
+System or custom font family to render text with. Check [`page.fonts`](/docs/controls/page#fonts) for instructions on how to import and use custom fonts in your application.
+
 ### `size`
 
 Text size in virtual pixels. Default is `14`.
