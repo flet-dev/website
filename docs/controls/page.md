@@ -179,7 +179,7 @@ from flet import Page, Text, Theme
 def main(page: Page):
     page.fonts = {
         "Kanit": "https://raw.githubusercontent.com/google/fonts/master/ofl/kanit/Kanit-Bold.ttf",
-        "Open Sans": "fonts/OpenSans-Regular.ttf"
+        "Open Sans": "/fonts/OpenSans-Regular.ttf"
     }
 
     page.theme = Theme(font_family="Kanit")
