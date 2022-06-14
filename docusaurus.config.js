@@ -61,6 +61,10 @@ module.exports = {
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
         },
+        {
+          type: 'localeDropdown',
+          position: 'left',
+        },
       ],
     },
     prism: {
@@ -158,4 +162,22 @@ module.exports = {
       },
     ],
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'th'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+      },
+      th: {
+        label: 'ภาษาไทย',
+        direction: 'ltr',
+        htmlLang: 'th-TH',
+        calendar: 'gregory',
+      },
+    },
+  },
 };
