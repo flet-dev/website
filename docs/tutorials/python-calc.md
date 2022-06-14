@@ -1,7 +1,7 @@
 ---
-title: Create To-Do app in Python with Flet
-sidebar_label: To-Do app in Python
-slug: python-todo
+title: Create Calculator app in Python with Flet
+sidebar_label: Calculator app in Python
+slug: python-calc
 ---
 
 In this tutorial we will show you, step-by-step, how to create a ToDo web app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [180 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI.
@@ -13,6 +13,7 @@ We chose a ToDo app for the tutorial, because it covers all of the basic concept
 The tutorial consists of the following steps:
 
 * [Getting started with Flet](#getting-started-with-flet)
+* [Flet app structure](#flet-app-structure)
 * [Adding page controls and handling events](#adding-page-controls-and-handling-events)
 * [View, edit and delete list items](#view-edit-and-delete-list-items)
 * [Filtering list items](#filtering-list-items)

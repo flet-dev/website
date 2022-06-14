@@ -25,6 +25,7 @@ module.exports = {
       collapsed: false,
       items: [
         'tutorials/python-todo',
+        'tutorials/python-calc',
       ],
     },
     {
