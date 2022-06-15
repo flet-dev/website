@@ -42,14 +42,14 @@ export default function SignupForm() {
 
     return (
         <div id="signup" className={styles.signupForm}>
-            <BrowserOnly fallback={<div>Loading...</div>}>
+            <BrowserOnly fallback={<div><Translate>Loading...</Translate></div>}>
                 {() => {
                     if (token) {
                         // signup submitted
-                        return <div>Thank you! You will receive the confirmation email shortly.</div>
+                        return <div><Translate>Thank you! You will receive the confirmation email shortly.</Translate></div>
                     } else if (window.location.href.endsWith('?signup-confirmed')) {
                         // signup confirmed
-                        return <div><span style={{ fontSize: '25px', marginRight: '10px' }}>🎉</span>Congratulations! You have successfully subscribed to Flet newsletter.</div>
+                        return <div><span style={{ fontSize: '25px', marginRight: '10px' }}>🎉</span><Translate>Congratulations! You have successfully subscribed to Flet newsletter.</Translate></div>
                     } else {
                         // signup form
                         return <form onSubmit={onSubmit}>

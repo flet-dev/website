@@ -6,7 +6,7 @@ slug: roadmap
 
 ## เมษายน-พฤษภาคม 2565
 
-### การควบคุม
+### ตัวควบคุม
 
 * เค้าโครง
     * :white_check_mark: [Container](/docs/controls/container)
@@ -23,7 +23,7 @@ slug: roadmap
 * โครงสร้างแอพและตัวนำทาง
     * :white_check_mark: [AppBar](/docs/controls/appbar)
     * :white_check_mark: [NavigationRail](/docs/controls/navigationrail)
-* การควบคุมพื้นฐาน
+* ตัวควบคุมพื้นฐาน
     * :white_check_mark: [Text](/docs/controls/text)
     * :white_check_mark: [Icon](/docs/controls/icon)
     * :white_check_mark: [Image](/docs/controls/image)
@@ -81,7 +81,7 @@ slug: roadmap
 * แอพ Flet Android บน Google Play
 * Windows และ macOS เพื่อให้สามารถ hot reload หรือแก้ไขแล้วแอปสามารถเปลี่ยนแปลงและทำงานต่อไปได้ การทำงานจะเป็น `flet main.py`
 
-### การควบคุม
+### ตัวควบคุม
 
 * Routing และ navigation
 * Navigation
@@ -107,11 +107,11 @@ slug: roadmap
 
 ## ปี 2565
 
-### การควบคุม
+### ตัวควบคุม
 
 * DataTable
 * Charts
-* Adaptive controls (การควบคุมที่สามารถเปลี่ยนรูปลักษณ์อ้างอิงตามแพลตฟอร์ม)
+* Adaptive controls (ตัวควบคุมที่สามารถเปลี่ยนรูปลักษณ์อ้างอิงตามแพลตฟอร์ม)
 * Animations
 
 ### ฟังก์ชั่นหลัก

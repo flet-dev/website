@@ -1,103 +1,103 @@
 ---
-title: Creating Flet apps in Python
-description: Learn how to build Flet apps in Python.
-sidebar_label: Python
+title: การสร้างแอพ Flet บน Python
+description: เรียนรู้วิธีสร้างแอพ Flet บน Python
+sidebar_label: ไพธอน
 slug: python
 ---
 
-To write a Flet app you don't need to be front-end guru, but it's recommended to have a basic knowledge of Python and object-oriented programming.
+ในการเขียนแอป Flet คุณไม่จำเป็นต้องเป็นผู้เชี่ยวชาญด้าน Front-end แต่เราขอแนะนำให้คุณมีความรู้พื้นฐานเกี่ยวกับ Python และการเขียนโปรแกรมเชิงวัตถุไว้ก่อน
 
-In this guide we'll study the structure of a Flet app, learn how to output data using Flet controls, request data from a user and build basic page layouts. We will also cover some packaging and deployment options to deliver a ready app to your users.
+ในคู่มือนี้ เราจะพาคุณศึกษาโครงสร้างของแอป Flet และเรียนรู้วิธีการส่งออกข้อมูลโดยใช้ตัวควบคุมของ Flet การรับคำขอข้อมูลจากผู้ใช้ และสร้างหน้าเค้าโครงพื้นฐาน นอกจากนี้ เราจะ
+ครอบคลุมตัวเลือกรวมรวบและการปรับใช้งานเพื่อส่งมอบแอปที่พร้อมใช้งานให้กับผู้ใช้ของคุณ
 
-## Installing `flet` module
+## การติดตั้งโมดูล `flet` 
 
-Flet requires Python 3.7 or above. To start with Flet, you need to install `flet` module first:
+Flet จำต้องใช้ Python 3.7 ขึ้นไป ในการเริ่มต้นใช้งาน Flet คุณต้องติดตั้งโมดูล `flet` ก่อนโดยใช้คำสั่ง:
 
 ```bash
 pip install flet
 ```
 
 :::note
-To upgrade `flet` module run:
+ในการอัพเกรดโมดูล `flet` สามารถใช้คำสั่ง:
 
 ```bash
 pip install flet --upgrade
 ```
 :::
 
-## Basic app structure
+## โครงสร้างแอพพื้นฐาน
 
-A very minimal Flet app has the following structure:
+แอป Flet มีโครงสร้างที่เรียบง่ายมากๆมีโครงสร้างดังต่อไปนี้:
 
 ```python
 import flet
 from flet import Page
 
 def main(page: Page):
-    # add/update controls on Page
+    # เพิ่ม/อัปเดตตัวควบคุมใน Page
     pass
 
 flet.app(target=main)
 ```
 
 :::note
-This section is intentionally called "basic" as later in this guide we'll look at more real-world approaches to app structure with reusable controls.
+ส่วนนี้เรียกได้ว่าคือ `พื้นฐาน` ในคู่มือนี้ เราจะทำให้ดูเป็นแนวทางที่ใช้จริงในโลกแห่งความเป็นจริงด้วยโครงสร้างแอปจากการใช้ตัวควบคุมที่นำกลับมาใช้ใหม่ได้ใน Page
 :::
 
-A typical Flet program ends with a call to `flet.app()` where the app starts waiting for new user sessions. Function `main()` is an entry point in a Flet application. It's being called on a new thread for every user session with a `Page` instance passed into it. When running Flet app in the browser a new user session is started for every opened tab or page. When running as a desktop app there is only one session created.
+โปรแกรม Flet ทั่วๆไปลงท้ายด้วยการเรียกคำสั่ง `flet.app()` เมื่อแอปเริ่มต้นก็จะรอเซสชันผู้ใช้ใหม่โดยในฟังก์ชัน `main()` เป็นจุดเริ่มต้นในการพัฒนาแอปพลิเคชัน Flet มันจะเริ่มเรียกใช้งานเธรดใหม่จากทุกเซสชันของผู้ใช้กับ `Page` อินสแตนซ์ที่ส่งผ่านเข้ามา หากเรียกใช้แอป Flet บนเบราว์เซอร์ เซสชันผู้ใช้ใหม่จะเริ่มต้นขึ้นใหม่เมื่อเปิดแท็บใหม่หรือเปิดหน้าใหม่ เมื่อทำงานเป็นแอปเดสก์ท็อปจะมีการสร้างเซสชันเดียวเท่านั้น
 
-`Page` is like a "canvas" specific to a user, a visual state of a user session. To build an application UI you add and remove controls to a page, update their properties. Code sample above will be displaying just a blank page to every user.
+`Page` เป็นเหมือน `canvas` ส่วนเฉพาะสำหรับผู้ใช้ ซึ่งเป็นสถานะภาพของเซสชันของผู้ใช้ ในการสร้าง UI ของแอปพลิเคชันที่คุณสามารถเพิ่มและลบตัวควบคุมไปยัง Page ได้จากการอัปเดตคุณสมบัติของ Page ตัวอย่างโค้ดด้านบนจะแสดงเพียงหน้าว่างให้กับผู้ใช้ทุกคน
 
-By default, Flet app starts in a native OS window, which is very handy for developing. However, you can open it in a new browser window by modifying a call to `flet.app` as following:
+โดยค่าเริ่มต้นของแอป Flet จะเริ่มทำงานในหน้าต่าง native OS ซึ่งสะดวกมากสำหรับการพัฒนา อย่างไรก็ตาม คุณสามารถเปิดในหน้าต่างเบราว์เซอร์ใหม่ได้โดยแก้ไขที่ `flet.app` โดยเป็นดังต่อไปนี้:
 
 ```python
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
 :::info
-Internally, every Flet app is a web app and even if it's opened in a native OS window a built-in web server is still started on a background. Flet web server is called "Fletd" and by default it's listening on a random TCP port. You can specify a custom TCP port and then open the app in the browser along with desktop view:
+ภายใน แอป Flet ทุกแอปคือเว็บแอป และแม้ว่าจะเปิดในหน้าต่าง native OS ตัวเว็บเซิร์ฟเวอร์ภายในเริ่มต้นทำงานในพื้นหลัง Flet เว็บเซิร์ฟเวอร์นี้เรียกว่า `Fletd` โดยค่าเริ่มต้นจะเชื่อมต่อกับพอร์ต TCP แบบสุ่ม คุณสามารถระบุพอร์ต TCP ที่กำหนดเองได้ จากนั้นเปิดแอปในเบราว์เซอร์พร้อมกับมุมมองเดสก์ท็อปได้หมือนกัน:
 
 ```python
 flet.app(port=8550, target=main)
 ```
 
-Open `http://localhost:<port>` in your browser to see web version of your Flet app.
+เปิด `http://localhost:<พอร์ต>` ในเบราว์เซอร์ของคุณเพื่อดูเวอร์ชันเว็บของแอป Flet ของคุณ
 :::
 
-## Controls
+## ตัวควบคุม
 
-User interface is made of **Controls** (aka widgets). To make controls visible to a user they must be added to a `Page` or inside other controls. Page is the top-most control. Nesting controls into each other could be represented as a tree with Page as a root.
+หน้าจอผู้ใช้สามารถสร้างมันได้จาก **ตัวควบคุม** (หรืออีกชื่อคือวิดเจ็ต) หากต้องการให้ผู้ใช้มองเห็นตัวควบคุม จะต้องเพิ่มตัวควบคุมดังกล่าวใน "Page" หรือในตัวควบคุมอื่นๆ Page คือตัวควบคุมที่อยู่สูงสุด ตัวควบคุมที่ซ้อนกันสามารถแสดงเป็นต้นไม้ได้โดย Page ก็คือ Root นั่นเอง
 
-Controls are just regular Python classes. Create control instances via constructors with parameters matching their properties, for example:
+ตัวควบคุมเป็นเพียงคลาสใน Python ปกติ สร้างอินสแตนซ์ตัวควบคุมผ่านตัวสร้างด้วยพารามิเตอร์ที่ตรงกับคุณสมบัติ เช่น:
 
 ```python
-t = Text(value="Hello, world!", color="green")
+t = Text(value="สวัสดีชาวโลก!", color="green")
 ```
 
-To display control on a page add it to `controls` list of a Page and call `page.update()` to send page changes to a browser or desktop client:
+หากต้องการแสดงตัวควบคุมบน Page ให้คุณเพิ่มตัวควบคุมลงไปใน list Page ก็คือ `page.controls.append(ตัวควบคุม)` และเรียกใช้เมธอด `page.update()` เพื่ออัพเดทหรือเปลี่ยนแปลง Page ไปยังเบราว์เซอร์หรือไคลเอนต์เดสก์ท็อป:
 
 ```python
 import flet
 from flet import Page
 
 def main(page: Page):
-    t = Text(value="Hello, world!", color="green")
-    page.controls.append(t)
+    t = Text(value="สวัสดีชาวโลก!", color="green")
+    page.controls.append(t) # เพิ่มตัวควบคุมลงไปใน list Page
     page.update()
 
 flet.app(target=main)
 ```
 
 :::note
-In the following examples we will be showing just the contents of `main` function.
+ในตัวอย่างต่อไปนี้ เราจะแสดงเฉพาะเนื้อหาของฟังก์ชัน `main`
 :::
 
-You can modify control properties and the UI will be updated on the next `page.update()`:
+คุณสามารถแก้ไขคุณสมบัติของคัวควบคุมและ UI อัพเดทการเปลี่ยนแปลงด้วย `page.update()`:
 
 ```python
 t = Text()
-page.add(t) # it's a shortcut for page.controls.add(t) and then page.update()
-
+page.add(t) # นี่คือเขียนแบบลัดของ page.controls.add(t) และ page.update() ก็คือเพิ่มและอัพเดทในตัวเดียว
 for i in range(10):
     t.value = f"Step {i}"
     page.update()

@@ -132,11 +132,11 @@ function Feature({ imageUrl, title, description }) {
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
-  console.log(siteConfig);
+  
   return (
     <Layout
-      title={`${siteConfig.customFields.heroTitle}`}
-      description={`${siteConfig.tagline}`}>
+      title={`${translate({ message:siteConfig.customFields.heroTitle })}`}
+      description={`${translate({ message:siteConfig.tagline })}`}>
       <main>
         <div className="container margin-bottom--lg">
           <div className={clsx('flet-hero', styles.heroBanner)}>
@@ -145,6 +145,7 @@ function Home() {
                 {/* <h2>It's amazing how little code you need to get amazing results!</h2> */}
                 <img src="img/pages/home/flet-home.png" style={{ width: '100%' }}></img>
               </div>
+              
               <div className="col col--6">
                 <h1 className="hero__title">
                 <Translate id="homepage.heroTitle">
