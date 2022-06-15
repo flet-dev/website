@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import styles from './styles.module.css';
+import Translate, {translate} from '@docusaurus/Translate';
 
 export default function SignupForm() {
     const [token, setToken] = useState(null);
@@ -52,14 +53,22 @@ export default function SignupForm() {
                     } else {
                         // signup form
                         return <form onSubmit={onSubmit}>
-                            <h3>Subscribe to Flet newsletter for project updates and tutorials!</h3>
+                            <h3><Translate id="homepage.Subscribe">{'Subscribe to Flet newsletter for project updates and tutorials!'}</Translate></h3>
                             <input
                                 type="email"
                                 value={email}
-                                placeholder="Your email address"
+                                placeholder={
+                                    translate({
+                                      message: "Your email address",
+                                    })
+                                  }
                                 onChange={(evt) => setEmail(evt.target.value)}
                             />
-                            <input type="submit" value="Submit" />
+                            <input type="submit" value={
+                                    translate({
+                                      message: "Submit",
+                                    })
+                                  } />
                             <HCaptcha
                                 sitekey="db49a301-288d-491b-9746-ebd3354dc5ff"
                                 size="invisible"

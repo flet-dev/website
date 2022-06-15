@@ -9,22 +9,22 @@ import TabItem from '@theme/TabItem';
 
 ## Flet คืออะไร
 
-Flet เป็นเฟรมเวิร์กที่อนุญาตให้สร้างแอปพลิเคชันบนเว็บ เดสก์ท็อป และบนมือถือ สำหรับผู้ใช้งานหลากหลายแบบโต้ตอบในภาษาที่คุณชื่นชอบ โดยไม่ต้องมีประสบการณ์มาก่อนในการพัฒนาส่วนหน้า
+Flet เป็นเฟรมเวิร์กที่อนุญาตให้สร้างแอปพลิเคชันบนเว็บ เดสก์ท็อป และบนมือถือ ที่ผู้ใช้สามารถโต้ตอบได้มากกว่าหนึ่งคนพร้อมกัน ในภาษาที่คุณชื่นชอบ โดยไม่ต้องมีประสบการณ์ frontend พัฒนามาก่อน
 
-คุณสร้าง UI สำหรับโปรแกรมของคุณด้วย Flet [controls](/docs/controls) ซึ่งมีพื้นฐานมาจาก [Flutter](https://flutter.dev) ของ Google แต่ Flet ไม่ได้เพียงแค่ห่อหุ้มวิดเจ็ตจาก Flutter เท่านั้น แต่ยังเพิ่มสิ่งที่พิเศษเป็นเองลักษณ์ของตัวเองด้วยการรวมวิดเจ็ตขนาดเล็ก ลบความซับซ้อน และนำแนวทางปฏิบัติที่ดีที่สุดในการวาง UI ใช้ค่าเริ่มต้นที่เหมาะสม ทั้งหมดนี้เพื่อให้แน่ใจว่าแอปของคุณดูดีและเป็นมืออาชีพโดยไม่ต้องใช้ความพยายามเพิ่มเติม
+คุณสร้าง UI สำหรับโปรแกรมของคุณด้วย Flet [controls](/docs/controls) ซึ่งมีพื้นฐานมาจาก [Flutter](https://flutter.dev) ของ Google แต่ Flet ไม่ได้เพียงแค่ห่อหุ้มวิดเจ็ตจาก Flutter เพียงเท่านั้น แต่ยังเพิ่มสิ่งที่พิเศษเป็นเอกลักษณ์ของตัวเองด้วยการรวมวิดเจ็ตให้มีขนาดเล็ก ลบความซับซ้อน และนำแนวทางปฏิบัติที่ดีที่สุดในการวาง UI ใช้ค่าเริ่มต้นที่เหมาะสม ทั้งหมดนี้เพื่อให้แน่ใจว่าแอปของคุณจะดูดีและเป็นมืออาชีพโดยไม่ต้องใช้ความพยายามอะไรมากมาย
 
-## Flet app example
+## ตัวอย่างแอป Flet
 
-At the moment you can write Flet apps in Python and other languages will be added soon.
+ในขณะนี้ คุณสามารถเขียนแอป Flet ด้วยภาษา Python ได้แล้ว ส่วนภาษาอื่นๆ จะถูกเพิ่มมาในไม่ช้า
 
-Here is a sample "Counter" app:
+นี่คือตัวอย่างแอป "เครื่องนับจํานวน" :
 
-```python title="counter.py"
+```python title="ไฟล์ counter.py"
 import flet
 from flet import IconButton, Page, Row, TextField, icons
 
 def main(page: Page):
-    page.title = "Flet counter example"
+    page.title = "ตัวอย่างเครื่องนับจํานวน"
     page.vertical_alignment = "center"
 
     txt_number = TextField(value="0", text_align="right", width=100)
@@ -51,43 +51,43 @@ def main(page: Page):
 flet.app(target=main)
 ```
 
-To run the app install `flet` module:
+เพื่อเรียกใช้งานติดตั้งโมดูลแอป `flet` ก่อนด้วยคำสั่ง:
 
 ```bash
 pip install flet
 ```
 
-and run the program:
+และเรียกใช้งานโปรแกรมได้เลย:
 
 ```bash
 python counter.py
 ```
 
-The app will be started in a native OS window - what a nice alternative to Electron!
+แอปนี้จะเริ่มทำงานเปิดหน้าต่าง native OS ขึ้นมา - ทางเลือกที่เหมือน Electron
 
 <div className="row">
   <div className="col col--6" style={{textAlign: 'center'}}>
     <h3>macOS</h3>
-    <img src="/img/docs/getting-started/flet-counter-macos.png" className="screenshot-70" />
+    <img src="https://github.com/watchakorn-18k/website/blob/main/static/img/docs/getting-started/flet-counter-macos.png?raw=true" className="screenshot-70" />
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
     <h3>Windows</h3>
-    <img src="/img/docs/getting-started/flet-counter-windows.png"className="screenshot-60" />
+    <img src="https://github.com/watchakorn-18k/website/blob/main/static/img/docs/getting-started/flet-counter-windows.png?raw=true"className="screenshot-60" />
   </div>  
 </div>
 
-Now, if you want to run the app as a web app, just replace the last line with:
+ตอนนี้ ถ้าคุณต้องการเรียกใช้แอปเป็นเว็บแอปล่ะก็ เพียงแค่แทนที่บรรทัดสุดท้ายด้วยคำสั่ง :
 
 ```python
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
-run again and now you instantly get a web app:
+เรียกใช้แอปอีกครั้งและตอนนี้คุณจะได้รับเว็บแอปทันที:
 
-<img src="/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
+<img src="https://github.com/watchakorn-18k/website/blob/main/static/img/docs/getting-started/flet-counter-safari.png?raw=true" className="screenshot-50" />
 
-## Tutorials
+## บทช่วยสอน
 
-Want to learn how to build a real app? Jump to a getting started guide for your language:
+ต้องการเรียนรู้วิธีสร้างแอปจริงๆใช่มั้ย สามารถข้ามไปดูที่คู่มือเริ่มต้นใช้งานภาษาของคุณได้เลย :
 
 * [Python](/docs/getting-started/python)
