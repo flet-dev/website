@@ -355,7 +355,7 @@ flet.app(target=main, view=flet.WEB_BROWSER)
 
 เรียกใช้งานโปรแกรมและสังเกตว่ามัน มันไม่ได้ใช้เวลาแค่ 2-3 วินาทีในการเริ่มโหลดและแสดงข้อความแต่ละบรรทัดทั้งหมด แต่ว่าการเลื่อนก็ช้าและกระตุกอีกด้วย:
 
-<img src="/img/docs/getting-started/scroll-column.gif" className="screenshot-50" />
+<img src="/img/docs/getting-started/TH-scroll-column.gif" className="screenshot-50" />
 
 สำหรับการแสดงรายการที่มีรายการจำนวนมาก แนะนำให้ใช้ตัวควบคุม [`ListView`](/docs/controls/listview) และ [`GridView`](/docs/controls/gridview) ซึ่งจะแสดงรายการได้ตามต้องการ และมองเห็นได้แค่ตำแหน่งหรือจุดที่เลื่อนอยู่ในปัจจุบันเท่านั้น
 
@@ -379,9 +379,9 @@ def main(page: Page):
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
-ตอนนี้การเลื่อนเป็นไปอย่างราบรื่นและเร็วพอที่จะเคลื่อนไหวตามเมาส์ทันได้:
+ตอนนี้การเลื่อนเป็นไปอย่างราบรื่นและเร็วพอที่จะเคลื่อนไหวตามเมาส์ทัน:
 
-<img src="/img/docs/getting-started/scroll-listview.gif" className="screenshot-50" />
+<img src="/img/docs/getting-started/TH-scroll-listview.gif" className="screenshot-50" />
 
 :::note
 เราใช้ `expand=True` ใน เพื่อให้ทำงาน ListView ได้อย่างถูกต้อง จะต้องระบุความสูง (หรือความกว้าง ถ้าเป็น `horizontal`) คุณสามารถกำหนดขนาดที่แน่นอนได้ เช่น `ListView(height=300, spacing=10)`ต่ในตัวอย่างด้านบน เรากำหนดให้ ListView ใช้พื้นที่ทั้งหมดในหน้า เช่น expand อ่านเพิ่มเติมเกี่ยวกับคุณสมบัติ [`Control.expand`](/docs/controls#expand)
