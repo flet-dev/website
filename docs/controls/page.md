@@ -143,6 +143,10 @@ page.update()
   </TabItem>
 </Tabs>
 
+:::note
+Read this [note about system fonts](/docs/controls/text#using-system-fonts) if you like to use them in `font_family` of your theme.
+:::
+
 ### `dark_theme`
 
 Set this property to an instance of `theme.Theme` to customize dark theme.
@@ -204,21 +208,6 @@ However, if you need to use a variable font in your app you can create static "i
 To explore available font features (e.g. possible options for `wght`) use [**Wakamai Fondue**](https://wakamaifondue.com/beta/) online tool.
 :::
 
-### `clipboard`
-
-Changing this property sends its value to a clipboard on a client side (user's web browser or a desktop), for example:
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-page.clipboard = "This value comes from Flet app"
-page.update()
-```
-
-  </TabItem>
-</Tabs>
-
 ### `splash`
 
 A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
@@ -257,10 +246,6 @@ A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to displ
 ### `banner`
 
 A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
-
-### `snack_bar`
-
-A [`SnackBar`](/docs/controls/snackbar) control to display at the bottom of the Page.
 
 ### `dialog`
 
@@ -377,6 +362,28 @@ def main(page: Page):
 
     page.on_close = client_exited
 ```
+
+## Methods
+
+### `set_clipboard(data)`
+
+Set clipboard data a client side (user's web browser or a desktop), for example:
+
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+page.set_clipboard("This value comes from Flet app")
+```
+
+  </TabItem>
+</Tabs>
+
+### `show_snack_bar(snack_bar)`
+
+Displays SnackBar at the bottom of the page.
+
+`snack_bar` - A [`SnackBar`](/docs/controls/snackbar) control to display at the bottom of the Page.
 
 ## Events
 
