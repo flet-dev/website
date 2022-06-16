@@ -1,103 +1,103 @@
 ---
-title: การสร้างแอพ Flet บน Python
-description: เรียนรู้วิธีสร้างแอพ Flet บน Python
-sidebar_label: ไพธอน
+title: Creating Flet apps in Python
+description: Learn how to build Flet apps in Python.
+sidebar_label: Python
 slug: python
 ---
 
-ในการเขียนแอป Flet คุณไม่จำเป็นต้องเป็นผู้เชี่ยวชาญด้าน Front-end แต่เราขอแนะนำให้คุณมีความรู้พื้นฐานเกี่ยวกับ Python และการเขียนโปรแกรมเชิงวัตถุไว้ก่อน
+To write a Flet app you don't need to be front-end guru, but it's recommended to have a basic knowledge of Python and object-oriented programming.
 
-ในคู่มือนี้ เราจะพาคุณศึกษาโครงสร้างของแอป Flet และเรียนรู้วิธีการส่งออกข้อมูลโดยใช้ตัวควบคุมของ Flet การรับคำขอข้อมูลจากผู้ใช้ และสร้างหน้าเค้าโครงพื้นฐาน นอกจากนี้ เราจะ
-ครอบคลุมตัวเลือกรวมรวบและการปรับใช้งานเพื่อส่งมอบแอปที่พร้อมใช้งานให้กับผู้ใช้ของคุณ
+In this guide we'll study the structure of a Flet app, learn how to output data using Flet controls, request data from a user and build basic page layouts. We will also cover some packaging and deployment options to deliver a ready app to your users.
 
-## การติดตั้งโมดูล `flet` 
+## Installing `flet` module
 
-Flet จำต้องใช้ Python 3.7 ขึ้นไป ในการเริ่มต้นใช้งาน Flet คุณต้องติดตั้งโมดูล `flet` ก่อนโดยใช้คำสั่ง:
+Flet requires Python 3.7 or above. To start with Flet, you need to install `flet` module first:
 
 ```bash
 pip install flet
 ```
 
 :::note
-ในการอัพเกรดโมดูล `flet` สามารถใช้คำสั่ง:
+To upgrade `flet` module run:
 
 ```bash
 pip install flet --upgrade
 ```
 :::
 
-## โครงสร้างแอพพื้นฐาน
+## Basic app structure
 
-แอป Flet มีโครงสร้างที่เรียบง่ายมากๆมีโครงสร้างดังต่อไปนี้:
+A very minimal Flet app has the following structure:
 
 ```python
 import flet
 from flet import Page
 
 def main(page: Page):
-    # เพิ่ม/อัปเดตตัวควบคุมใน Page
+    # add/update controls on Page
     pass
 
 flet.app(target=main)
 ```
 
 :::note
-ส่วนนี้เรียกได้ว่าคือ `พื้นฐาน` ในคู่มือนี้ เราจะทำให้ดูเป็นแนวทางที่ใช้จริงในโลกแห่งความเป็นจริงด้วยโครงสร้างแอปจากการใช้ตัวควบคุมที่นำกลับมาใช้ใหม่ได้ใน Page
+This section is intentionally called "basic" as later in this guide we'll look at more real-world approaches to app structure with reusable controls.
 :::
 
-โปรแกรม Flet ทั่วๆไปลงท้ายด้วยการเรียกคำสั่ง `flet.app()` เมื่อแอปเริ่มต้นก็จะรอเซสชันผู้ใช้ใหม่โดยในฟังก์ชัน `main()` เป็นจุดเริ่มต้นในการพัฒนาแอปพลิเคชัน Flet มันจะเริ่มเรียกใช้งานเธรดใหม่จากทุกเซสชันของผู้ใช้กับ `Page` อินสแตนซ์ที่ส่งผ่านเข้ามา หากเรียกใช้แอป Flet บนเบราว์เซอร์ เซสชันผู้ใช้ใหม่จะเริ่มต้นขึ้นใหม่เมื่อเปิดแท็บใหม่หรือเปิดหน้าใหม่ เมื่อทำงานเป็นแอปเดสก์ท็อปจะมีการสร้างเซสชันเดียวเท่านั้น
+A typical Flet program ends with a call to `flet.app()` where the app starts waiting for new user sessions. Function `main()` is an entry point in a Flet application. It's being called on a new thread for every user session with a `Page` instance passed into it. When running Flet app in the browser a new user session is started for every opened tab or page. When running as a desktop app there is only one session created.
 
-`Page` เป็นเหมือน `canvas` ส่วนเฉพาะสำหรับผู้ใช้ ซึ่งเป็นสถานะภาพของเซสชันของผู้ใช้ ในการสร้าง UI ของแอปพลิเคชันที่คุณสามารถเพิ่มและลบตัวควบคุมไปยัง Page ได้จากการอัปเดตคุณสมบัติของ Page ตัวอย่างโค้ดด้านบนจะแสดงเพียงหน้าว่างให้กับผู้ใช้ทุกคน
+`Page` is like a "canvas" specific to a user, a visual state of a user session. To build an application UI you add and remove controls to a page, update their properties. Code sample above will be displaying just a blank page to every user.
 
-โดยค่าเริ่มต้นของแอป Flet จะเริ่มทำงานในหน้าต่าง native OS ซึ่งสะดวกมากสำหรับการพัฒนา อย่างไรก็ตาม คุณสามารถเปิดในหน้าต่างเบราว์เซอร์ใหม่ได้โดยแก้ไขที่ `flet.app` โดยเป็นดังต่อไปนี้:
+By default, Flet app starts in a native OS window, which is very handy for developing. However, you can open it in a new browser window by modifying a call to `flet.app` as following:
 
 ```python
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
 :::info
-ภายใน แอป Flet ทุกแอปคือเว็บแอป และแม้ว่าจะเปิดในหน้าต่าง native OS ตัวเว็บเซิร์ฟเวอร์ภายในเริ่มต้นทำงานในพื้นหลัง Flet เว็บเซิร์ฟเวอร์นี้เรียกว่า `Fletd` โดยค่าเริ่มต้นจะเชื่อมต่อกับพอร์ต TCP แบบสุ่ม คุณสามารถระบุพอร์ต TCP ที่กำหนดเองได้ จากนั้นเปิดแอปในเบราว์เซอร์พร้อมกับมุมมองเดสก์ท็อปได้หมือนกัน:
+Internally, every Flet app is a web app and even if it's opened in a native OS window a built-in web server is still started on a background. Flet web server is called "Fletd" and by default it's listening on a random TCP port. You can specify a custom TCP port and then open the app in the browser along with desktop view:
 
 ```python
 flet.app(port=8550, target=main)
 ```
 
-เปิด `http://localhost:<พอร์ต>` ในเบราว์เซอร์ของคุณเพื่อดูเวอร์ชันเว็บของแอป Flet ของคุณ
+Open `http://localhost:<port>` in your browser to see web version of your Flet app.
 :::
 
-## ตัวควบคุม
+## Controls
 
-หน้าจอผู้ใช้สามารถสร้างมันได้จาก **ตัวควบคุม** (หรืออีกชื่อคือวิดเจ็ต) หากต้องการให้ผู้ใช้มองเห็นตัวควบคุม จะต้องเพิ่มตัวควบคุมดังกล่าวใน "Page" หรือในตัวควบคุมอื่นๆ Page คือตัวควบคุมที่อยู่สูงสุด ตัวควบคุมที่ซ้อนกันสามารถแสดงเป็นต้นไม้ได้โดย Page ก็คือ Root นั่นเอง
+User interface is made of **Controls** (aka widgets). To make controls visible to a user they must be added to a `Page` or inside other controls. Page is the top-most control. Nesting controls into each other could be represented as a tree with Page as a root.
 
-ตัวควบคุมเป็นเพียงคลาสใน Python ปกติ สร้างอินสแตนซ์ตัวควบคุมผ่านตัวสร้างด้วยพารามิเตอร์ที่ตรงกับคุณสมบัติ เช่น:
+Controls are just regular Python classes. Create control instances via constructors with parameters matching their properties, for example:
 
 ```python
-t = Text(value="สวัสดีชาวโลก!", color="green")
+t = Text(value="Hello, world!", color="green")
 ```
 
-หากต้องการแสดงตัวควบคุมบน Page ให้คุณเพิ่มตัวควบคุมลงไปใน list Page ก็คือ `page.controls.append(ตัวควบคุม)` และเรียกใช้เมธอด `page.update()` เพื่ออัพเดทหรือเปลี่ยนแปลง Page ไปยังเบราว์เซอร์หรือไคลเอนต์เดสก์ท็อป:
+To display control on a page add it to `controls` list of a Page and call `page.update()` to send page changes to a browser or desktop client:
 
 ```python
 import flet
 from flet import Page
 
 def main(page: Page):
-    t = Text(value="สวัสดีชาวโลก!", color="green")
-    page.controls.append(t) # เพิ่มตัวควบคุมลงไปใน list Page
+    t = Text(value="Hello, world!", color="green")
+    page.controls.append(t)
     page.update()
 
 flet.app(target=main)
 ```
 
 :::note
-ในตัวอย่างต่อไปนี้ เราจะแสดงเฉพาะเนื้อหาของฟังก์ชัน `main`
+In the following examples we will be showing just the contents of `main` function.
 :::
 
-คุณสามารถแก้ไขคุณสมบัติของคัวควบคุมและ UI อัพเดทการเปลี่ยนแปลงด้วย `page.update()`:
+You can modify control properties and the UI will be updated on the next `page.update()`:
 
 ```python
 t = Text()
-page.add(t) # นี่คือเขียนแบบลัดของ page.controls.add(t) และ page.update() ก็คือเพิ่มและอัพเดทในตัวเดียว
+page.add(t) # it's a shortcut for page.controls.add(t) and then page.update()
+
 for i in range(10):
     t.value = f"Step {i}"
     page.update()
@@ -250,7 +250,7 @@ Side-loading assets
 
 Making interactive web apps with Flet is a breeze! It's not just limited to displaying data, but you can request an input from a user and respond to various events generated by page controls.
 
-### Button
+### Buttons
 
 `Button` is the most essential input control which generates `click` event when pressed:
 
@@ -538,6 +538,146 @@ flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
 <img src="/img/docs/getting-started/chat-app-example.gif" className="screenshot-70" />
+
+## User controls
+
+User control (`UserControl`) allows building isolated re-usable components by combining existing Flet controls. User control behaves like a `Control`, could have methods and properties.
+
+Below is a minimal example of user control:
+
+```python
+class GreeterControl(UserControl):
+    def build(self):
+        return Text("Hello!")
+
+def main(page):
+    page.add(GreeterControl())
+
+flet.app(target=main)
+```
+
+UserControl must implement `build()` method that is called to build control's UI and should returns a single `Control` instance or a `List` of controls. `UserControl` is inhrited from [`Stack`](/docs/controls/stack), so multiple children will be arranged on top of each other. If you need to arrange control's UI differently use [`Row`](/docs/controls/row), [`Column`](/docs/controls/column) or other [layout controls](/docs/controls/layout), for example:
+
+```python
+class GreeterControl(UserControl):
+    def build(self):
+        return Column([
+            TextField(label="Your name"),
+            ElevatedButton("Login")
+        ])
+```
+
+UserControl is isolated from outside layout, i.e. when `update()` method is called for the parent control any changes inside the UserControl are not included into the update digest. UserControl should call `self.update()` to push its changes to a Flet page, for example:
+
+```python
+class Counter(UserControl):
+    def add_click(self, e):
+        self.counter += 1
+        self.text.value = str(self.counter)
+        self.update()
+
+    def build(self):
+        self.counter = 0
+        self.text = Text(str(self.counter))
+        return Row([self.text, ElevatedButton("Add", on_click=self.add_click)])
+
+def main(page):
+    page.add(Counter(), Counter())
+
+flet.app(target=main)
+```
+
+<img src="/img/docs/getting-started/user-control-counter.gif" className="screenshot-40" />
+
+You could either declare event handlers (e.g. `def add_click(self, e)`) and control references (e.g. `self.text`) as class members or implement all UserControl's logic inside `build()` method using local variables and inner functions. For example, the code above could be rewritten as:
+
+```python
+class Counter(UserControl):
+    def build(self):
+
+        self.counter = 0
+        text = Text(str(self.counter))
+
+        def add_click(e):
+            self.counter += 1
+            text.value = str(self.counter)
+            self.update()
+
+        return Row([text, ElevatedButton("Add", on_click=add_click)])
+```
+
+:::note
+`counter` cannot be declared as a local variable as it won't be visible inside `add_click` method, so it must be declared as a class field `self.counter`.
+:::
+
+User control can have a constructor to pass custom data, for example:
+
+```python
+class Counter(UserControl):
+    def __init__(self, initial_count):
+        super().__init__()
+        self.counter = initial_count
+
+    def build(self):
+        text = Text(str(self.counter))
+        def add_click(e):
+            self.counter += 1
+            text.value = str(self.counter)
+            self.update()
+
+        return Row([text, ElevatedButton("Add", on_click=add_click)])
+
+# then use the control
+def main(page):
+    page.add(
+        Counter(100),
+        Counter(200))
+```
+
+:::note
+`super().__init__()` must be always called in your own constructor.
+:::
+
+User control provides lifecycle "hook" methods:
+
+* `did_mount()` - called after the UserControl added to a page and assigned transient `id`.
+* `will_unmount()` - called before the UserControl is removed from a page.
+
+Using those methods we could implement a simple "countdown" control:
+
+```python
+class Countdown(UserControl):
+    def __init__(self, seconds):
+        super().__init__()
+        self.seconds = seconds
+
+    def did_mount(self):
+        self.running = True
+        self.th = threading.Thread(target=self.update_timer, args=(), daemon=True)
+        self.th.start()
+
+    def will_unmount(self):
+        self.running = False
+
+    def update_timer(self):
+        while self.seconds and self.running:
+            mins, secs = divmod(self.seconds, 60)
+            self.countdown.value = "{:02d}:{:02d}".format(mins, secs)
+            self.update()
+            time.sleep(1)
+            self.seconds -= 1
+
+    def build(self):
+        self.countdown = Text()
+        return self.countdown
+
+def main(page):
+    page.add(Countdown(120), Countdown(60))
+
+flet.app(target=main)
+```
+
+<img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
 
 ## Deploying web app
 
