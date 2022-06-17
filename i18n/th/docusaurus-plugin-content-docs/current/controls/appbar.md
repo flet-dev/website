@@ -4,14 +4,14 @@ sidebar_label: AppBar
 slug: appbar
 ---
 
-A material design app bar.
+แถบดีไซน์ Material
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Examples
+## ตัวอย่าง
 
-### AppBar
+### AppBar (แถบแอป)
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -62,17 +62,17 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-## Properties
+## คุณสมบัติ
 
 ### `leading`
 
 A `Control` to display before the toolbar's title.
 
-Typically the leading control is an [`Icon`](icon) or an [`IconButton`](iconbutton).
+Typically the leading control is an [`Icon`](icon) หรือ [`IconButton`](iconbutton).
 
 ### `leading_width`
 
-Defines the width of leading control. By default, the value of `leading_width` is `56.0`.
+กำหนดความกว้างของการควบคุมคุณสมบัติโดยค่าเริ่มต้นของ "leading_width" คือ "56.0"
 
 ### `title`
 
@@ -90,12 +90,12 @@ Typically these controls are [`IconButtons`](iconbutton) representing common ope
 
 ### `toolbar_height`
 
-Defines the height of the toolbar component of an AppBar. By default, the value of toolbarHeight is `56.0`.
+กำหนดความสูงของส่วนประกอบแถบเครื่องมือของ AppBar โดยค่าเริ่มต้น ของความสูงของแถบเครื่องมือคือ "56.0"
 
 ### `color`
 
-The default color for Text and Icons within the app bar. Default color is defined by current theme.
+สีเริ่มต้นสำหรับข้อความและไอคอนภายในแถบแอปโดยที่สีเริ่มต้นจะถูกกำหนดโดยธีมปัจจุบัน
 
 ### `bgcolor`
 
-The fill color to use for an AppBar. Default color is defined by current theme.
+สีที่จะใช้สำหรับ AppBar โดยที่สีเริ่มต้นจะถูกกำหนดโดยธีมปัจจุบัน
