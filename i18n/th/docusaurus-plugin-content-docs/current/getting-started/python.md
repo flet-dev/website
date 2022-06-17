@@ -346,7 +346,7 @@ from flet import Page, Text
 
 def main(page: Page):
     for i in range(5000):
-        page.controls.append(Text(f"บรรทัด {i}"))
+        page.controls.append(Text(f"บรรทัดที่ {i}"))
     page.scroll = "always"
     page.update()
 
@@ -373,7 +373,7 @@ from flet import ListView, Page, Text
 def main(page: Page):
     lv = ListView(expand=True, spacing=10)
     for i in range(5000):
-        lv.controls.append(Text(f"บรรทัด {i}"))
+        lv.controls.append(Text(f"บรรทัดที่ {i}"))
     page.add(lv)
 
 flet.app(target=main, view=flet.WEB_BROWSER)
@@ -387,11 +387,11 @@ flet.app(target=main, view=flet.WEB_BROWSER)
 เราใช้ `expand=True` ใน เพื่อให้ทำงาน ListView ได้อย่างถูกต้อง จะต้องระบุความสูง (หรือความกว้าง ถ้าเป็น `horizontal`) คุณสามารถกำหนดขนาดที่แน่นอนได้ เช่น `ListView(height=300, spacing=10)`ต่ในตัวอย่างด้านบน เรากำหนดให้ ListView ใช้พื้นที่ทั้งหมดในหน้า เช่น expand อ่านเพิ่มเติมเกี่ยวกับคุณสมบัติ [`Control.expand`](/docs/controls#expand)
 :::
 
-### GridView
+### GridView (มุมมองกริด)
 
-[`GridView`](/docs/controls/gridview) allows arranging controls into a scrollable grid.
+[`GridView`](/docs/controls/gridview) อนุญาตให้จัดการตัวควบคุมลงในตารางที่สามารถเลื่อนลงได้
 
-You can make a "grid" with `Column(wrap=True)` or `Row(wrap=True)`, for example:
+คุณสามารถสร้างตาราง "กริด" ด้วย `Column(wrap=True)` หรือ `Row(wrap=True)` ได้ ตัวอย่างเช่น:
 
 ```python
 import os
@@ -407,7 +407,7 @@ def main(page: Page):
     for i in range(5000):
         r.controls.append(
             Container(
-                Text(f"รายการ {i}"),
+                Text(f"รายการที่ {i}"),
                 width=100,
                 height=100,
                 alignment=alignment.center,
@@ -421,17 +421,17 @@ def main(page: Page):
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
-<img src="/img/docs/getting-started/row-wrap-as-grid.png" className="screenshot-50" />
+<img src="/img/docs/getting-started/TH-row-wrap-as-grid.png" className="screenshot-50" />
 
 ลองเลื่อนลงและปรับขนาดหน้าต่างเบราว์เซอร์ - แน่นอนว่าทุกอย่างทำงานได้ แต่หน่วงมาก
 
 :::note
-At the start of the program we are setting the value of `FLET_WS_MAX_MESSAGE_SIZE` environment variable to `8000000` - this is the maximum size of WebSocket message in bytes that can be received by Flet Server rendering the page. Default size is 1 MB, but the size of JSON message describing 5,000 container controls would exceed 1 MB, so we are increasing allowed size to 8 MB.
+เมื่อเริ่มต้นโปรแกรม ตั้งค่าตัวแปรสภาพแวดล้อม `FLET_WS_MAX_MESSAGE_SIZE` เป็น `8000000` - นี่คือขนาดสูงสุดของข้อความ WebSocket ในหน่วยไบต์ที่ Flet Server จะแสดงผลบนหน้า Page ได้ ขนาดเริ่มต้นคือ 1 MB แต่ขนาดของข้อความ JSON โดยตัวควบคุม container 5,000 รายการจะเกิน 1 MB ดังนั้นเราจึงเพิ่มอนุญาตให้ขนาดเป็น 8 MB
 
-Squeezing large messages through WebSocket channel is, generally, not a good idea, so use [batched updates](#batch-updates) aproach to control channel load.
+ในการบีบข้อความขนาดใหญ่ผ่านช่องทาง WebSocket โดยทั่วไปไม่ใช่ความคิดที่ดีนั้น ดังนั้นให้ใช้ [batched updates](#batch-updates) เป็นแนวทางการควบคุมช่องโหลด
 :::
 
-GridView, similar to ListView, is very effective to render a lot of children. Let's implement the example above using GridView:
+GridView ซึ่งคล้ายกับ ListView จะมีประสิทธิภาพมากในการแสดงข้อมูลโหลดลูกจำนวนมาก ลองใช้ตัวอย่างข้างต้นโดยใช้ GridView ดู:
 
 ```python
 import os
@@ -447,7 +447,7 @@ def main(page: Page):
     for i in range(5000):
         gv.controls.append(
             Container(
-                Text(f"Item {i}"),
+                Text(f"รายการที่ {i}"),
                 alignment=alignment.center,
                 bgcolor=colors.AMBER_100,
                 border=border.all(1, colors.AMBER_400),
@@ -459,15 +459,15 @@ def main(page: Page):
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
-With GridView scrolling and window resizing are smooth and responsive!
+จากการเลื่อนลงใน GridView และการปรับขนาดหน้าต่างจะเป็นไปอย่างราบรื่นและ responsive
 
-You can specify either fixed number of rows or columns (runs) with `runs_count` property or the maximum size of a "tile" with `max_extent` property, so the number of runs can vary automatically. In our example we set the maximum tile size to 150 pixels and set its shape to "square" with `child_aspect_ratio=1`. `child_aspect_ratio` is the ratio of the cross-axis to the main-axis extent of each child. Try changing it to `0.5` or `2`.
+คุณสามารถระบุจำนวนแถวหรือคอลัมน์ที่ค่าแบบคงที่ได้ด้วยคุณสมบัติ `runs_count` หรือขนาดสูงสุดของ "tile (ขนาดตัวรายการ)" ด้วย คุณสมบัติ `max_extent` ดังนั้นจำนวนคอลัมน์อาจแตกต่างกันไปโดยอัตโนมัติ ตัวอย่างเช่น เราตั้งค่าขนาด tile สูงสุดเป็น 150 พิกเซล และตั้งค่ารูปร่างเป็น "สี่เหลี่ยม" ด้วย `child_aspect_ratio=1`. คุณสมบัติ `child_aspect_ratio` คืออัตราส่วนของ cross-axis กับ main-axis ของโหนดลูกแต่ละตัว ลองเปลี่ยนเป็น `0.5` หรือ `2` เพื่อดูผลลักษณะของการแสดงผล
 
 ### Batch updates
 
-When `page.update()` is called a message is being sent to Flet server over WebSockets containing page updates since the last `page.update()`. Sending a large message with thousands of added controls could make a user waiting for a few seconds until the messages is fully received and controls rendered.
+เมื่อเรียกใช้ `page.update()` จะเรียกข้อความและส่งไปยัง Flet server ผ่าน WebSockets ที่มีการอัพเดท Page ตั้งแต่ครั้งล่าสุดของการเรียก `page.update()` การส่งข้อความขนาดใหญ่พร้อมตัวควบคุมที่เพิ่มเข้ามานับพันอาจทำให้ผู้ใช้ต้องใช้เวลารอสักครู่จนกว่าข้อความจะได้รับมาอย่างสมบูรณ์แล้วตัวควบคุมจะแสดงผล
 
-To increase usability of your program and present the results to a user as soon as possible you can send page updates in batches. For example, the following program adds 5,100 child controls to a ListView in batches of 500 items:
+เพื่อเพิ่มความสามารถในการใช้งานโปรแกรมของคุณและนำเสนอผลลัพธ์แก่ผู้ใช้ให้เร็วที่สุด คุณสามารถส่งการอัปเดต Page เป็นชุดๆได้ ตัวอย่าง โปรแกรมต่อไปนี้จะเป็นการเพิ่มตัวควบคุมย่อย 5,100 รายการโดยให้ ListView แบ่งเป็นชุดละ 500 รายการ:
 
 ```python
 import flet
@@ -480,7 +480,7 @@ def main(page: Page):
     page.add(lv)
 
     for i in range(5100):
-        lv.controls.append(Text(f"Line {i}"))
+        lv.controls.append(Text(f"บรรทัดที่ {i}"))
         # send page to a page
         if i % 500 == 0:
             page.update()
@@ -490,29 +490,29 @@ def main(page: Page):
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
-## Communicating between sessions
+## การสื่อสารระหว่างเซสชัน
 
-If you build a chat app using Flet you need somehow to pass user messages between sessions. When a user sends a message it should be broadcasted to all other app sessions and displayed on their pages.
+หากคุณสร้างแอปแชทโดยใช้ Flet คุณจะต้องส่งข้อความของผู้ใช้ระหว่างเซสชัน เมื่อผู้ใช้ส่งข้อความ ข้อความนั้นมาแล้วควรถูกเผยแพร่ไปยังเซสชันอื่นๆทั้งหมดในแอป และแสดงพวกมันลงบนหน้า Page
 
-Flet provides a simple built-in PubSub mechanism for asynchronous communication between page sessions.
+Flet มีกลไกที่เรียกว่า PubSub อยู่ในตัวอยู่แล้วง่ายสำหรับการสื่อสารแบบอะซิงโครนัสระหว่างเซสชัน Page
 
-Flet PubSub allows broadcasting messages to all app sessions or sending only to specific "topic" (or "channel") subscribers.
+Flet PubSub อนุญาตให้เผยแพร่ข้อความไปยังเซสชันของแอปทั้งหมดหรือจะส่งเฉพาะ สมาชิก "หัวข้อ" (หรือ "ช่อง") ที่ระบุไว้เท่านั้นก็ได้
 
-A typical PubSub usage would be:
+การใช้งาน PubSub ทั่วไปจะเป็นดังนี้:
 
-* [subscribe](/docs/controls/page#subscribehandler) to broadcast messages or [subscribe to a topic](/docs/controls/page#subscribe_topictopic-handler) on app session start.
-* [send](/docs/controls/page#send_allmessage) broadcast message or [send to a topic](/docs/controls/page#send_all_on_topictopic-message) on some event, like "Send" button click.
-* [unsubscribe](/docs/controls/page#unsubscribe) from broadcast messages or [unsubscribe from a topic](/docs/controls/page#unsubscribe_topictopic) on some event, like "Leave" button click.
-* [unsubscribe](/docs/controls/page#unsubscribe_all) from everything on [`page.on_close`](#on_close).
+* [subscribe](/docs/controls/page#subscribehandler) เพื่อ broadcast ข้อความหรือ [subscribe to a topic](/docs/controls/page#subscribe_topictopic-handler) เมื่อเริ่มเซสชันแอป
+* [send](/docs/controls/page#send_allmessage) broadcast ข้อความหรือ [send to a topic](/docs/controls/page#send_all_on_topictopic-message) กระทำในบางเหตุการณ์ เช่น คลิกปุ่ม "ส่ง"
+* [unsubscribe](/docs/controls/page#unsubscribe) จาก broadcast ข้อความหรือ [unsubscribe from a topic](/docs/controls/page#unsubscribe_topictopic) กระทำในบางเหตุการณ์ เช่นปุ่ม ปุ่มคลิก "ออก"
+* [unsubscribe](/docs/controls/page#unsubscribe_all) ทุกอย่างใน [`page.on_close`](#on_close)
 
-This is an example of a simple chat application:
+นี่คือตัวอย่างแอปพลิเคชันแชทง่ายๆ:
 
 ```python
 import flet
 from flet import Column, ElevatedButton, Page, Row, Text, TextField
 
 def main(page: Page):
-    page.title = "Flet Chat"
+    page.title = "Flet แชท"
 
     # subscribe to broadcast messages
     def on_message(msg):
@@ -528,21 +528,21 @@ def main(page: Page):
         page.update()
 
     messages = Column()
-    user = TextField(hint_text="Your name", width=150)
-    message = TextField(hint_text="Your message...", expand=True)  # fill all the space
-    send = ElevatedButton("Send", on_click=send_click)
+    user = TextField(hint_text="ชื่อคุณ", width=150)
+    message = TextField(hint_text="ข้อความของคุณ...", expand=True)  # fill all the space
+    send = ElevatedButton("ส่ง", on_click=send_click)
     page.add(messages, Row(controls=[user, message, send]))
 
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
-<img src="/img/docs/getting-started/chat-app-example.gif" className="screenshot-70" />
+<img src="/img/docs/getting-started/TH-chat-app-example.gif" className="screenshot-70" />
 
-## User controls
+## UserControl (การควบคุมผู้ใช้)
 
-User control (`UserControl`) allows building isolated re-usable components by combining existing Flet controls. User control behaves like a `Control`, could have methods and properties.
+การควบคุมผู้ใช้ (`UserControl`) อนุญาตให้สร้างส่วนประกอบที่นำกลับมาใช้ใหม่ได้โดยแยกการรวมตัวควบคุม Flet ออกมา การควบคุมของผู้ใช้มีลักษณะเหมือน `ตัวควบคุม` อาจมีเมธอดและคุณสมบัติ
 
-Below is a minimal example of user control:
+ด้านล่างนี้คือตัวอย่างการควบคุมของผู้ใช้แบบเรียบง่าย:
 
 ```python
 class GreeterControl(UserControl):
@@ -555,7 +555,7 @@ def main(page):
 flet.app(target=main)
 ```
 
-UserControl must implement `build()` method that is called to build control's UI and should returns a single `Control` instance or a `List` of controls. `UserControl` is inhrited from [`Stack`](/docs/controls/stack), so multiple children will be arranged on top of each other. If you need to arrange control's UI differently use [`Row`](/docs/controls/row), [`Column`](/docs/controls/column) or other [layout controls](/docs/controls/layout), for example:
+UserControl ต้องดำเนินการด้วยเมธอด `build()` เมธอดนี้หากถูกเรียกจะให้สร้าง UI จากตัวควบคุมและควรคืนค่า `ตัวควบคุม` เดี่ยวๆเป็น instance หรือจะตัวควบคุม `List` `UserControl` สืบทอดมาจาก [`Stack`](/docs/controls/stack), ดังนั้นโหลดลูกหลายๆตัวจะถูกจัดวางทับกัน หากคุณต้องการจัดเรียง UI ของตัวควบคุมให้แตกต่างกันให้ใช้ [`Row`](/docs/controls/row) และ [`Column`](/docs/controls/column) หรือ [layout controls](/docs/controls/layout) ตัวอย่างเช่น:
 
 ```python
 class GreeterControl(UserControl):
@@ -566,9 +566,12 @@ class GreeterControl(UserControl):
         ])
 ```
 
-UserControl is isolated from outside layout, i.e. when `update()` method is called for the parent control any changes inside the UserControl are not included into the update digest. UserControl should call `self.update()` to push its changes to a Flet page, for example:
+UserControl ถูกแยกออกจากเค้าโครงภายนอก อย่างเช่น เมื่อใช้เมธอด `update()` เมธอดถูกเรียกสำหรับอัปเดทตัวควบคุมหลัก ในการเปลี่ยนแปลงใดๆภายใน UserControl จะไม่รวมอยู่ในการอัปเดทนี้ ใน UserControl ควรเรียก `self.update()` เพื่อใช้ในการอัปเดทภายใน UserControl เพื่อไปแสดงผลที่ Page ตัวอย่างเช่น:
 
 ```python
+import flet
+from flet import ElevatedButton, Row, Text, UserControl
+
 class Counter(UserControl):
     def add_click(self, e):
         self.counter += 1
@@ -586,9 +589,9 @@ def main(page):
 flet.app(target=main)
 ```
 
-<img src="/img/docs/getting-started/user-control-counter.gif" className="screenshot-40" />
+<img src="/img/docs/getting-started/TH-user-control-counter.gif" className="screenshot-40" />
 
-You could either declare event handlers (e.g. `def add_click(self, e)`) and control references (e.g. `self.text`) as class members or implement all UserControl's logic inside `build()` method using local variables and inner functions. For example, the code above could be rewritten as:
+คุณสามารถประกาศตัวจัดการเหตุการณ์ได้ (เช่น `def add_click(self, e)`) และตัวควบคุมด้วยการอ้างอิงถึง (เช่น `self.text`) สมาชิกของคลาสหรือใช้ logic ของตัวควบคุม UserControl ทั้งหมดภายในเมธอด `build()` โดยใช้ตัวแปร local และฟังก์ชันที่อยู่ภายใน ตัวอย่างเช่น โค้ดด้านบนสามารถเขียนใหม่ได้เป็น:
 
 ```python
 class Counter(UserControl):
@@ -602,14 +605,14 @@ class Counter(UserControl):
             text.value = str(self.counter)
             self.update()
 
-        return Row([text, ElevatedButton("Add", on_click=add_click)])
+        return Row([text, ElevatedButton("เพิ่ม", on_click=add_click)])
 ```
 
 :::note
-`counter` cannot be declared as a local variable as it won't be visible inside `add_click` method, so it must be declared as a class field `self.counter`.
+`counter` ไม่สามารถประกาศเป็นตัวแปร local ได้เนื่องจากจะมองไม่เห็นภายในเมธอด `add_click` เพราะงั้นจึงต้องประกาศเป็นรูปแบบคลาสคือ `self.counter`
 :::
 
-User control can have a constructor to pass custom data, for example:
+User control สามารถมีส่งผ่านข้อมูลที่กำหนดเองได้ ตัวอย่างเช่น:
 
 ```python
 class Counter(UserControl):
@@ -624,7 +627,7 @@ class Counter(UserControl):
             text.value = str(self.counter)
             self.update()
 
-        return Row([text, ElevatedButton("Add", on_click=add_click)])
+        return Row([text, ElevatedButton("เพิ่ม", on_click=add_click)])
 
 # then use the control
 def main(page):
@@ -634,17 +637,21 @@ def main(page):
 ```
 
 :::note
-`super().__init__()` must be always called in your own constructor.
+`super().__init__()` ต้องถูกเรียกในตัว __init__ ของคุณเสมอ
 :::
 
-User control provides lifecycle "hook" methods:
+User control มีเมธอด "hook" lifecycle:
 
-* `did_mount()` - called after the UserControl added to a page and assigned transient `id`.
-* `will_unmount()` - called before the UserControl is removed from a page.
+* `did_mount()` - จะถูกเรียกหลังจาก UserControl ถูกเพิ่มไปยัง Page และได้ถูกมอบหมายชั่วคราวเป็น `id`
+* `will_unmount()` - ถูกเรียกก่อนที่ UserControl จะถูกลบออกจาก Page
 
-Using those methods we could implement a simple "countdown" control:
+การใช้เมธอดพวกนั้นทำให้เราสามารถควบคุม "เวลานับถอยหลัง" อย่างง่ายได้เช่น:
 
 ```python
+import flet
+from flet import Text, UserControl
+import threading
+import time
 class Countdown(UserControl):
     def __init__(self, seconds):
         super().__init__()
@@ -676,41 +683,41 @@ def main(page):
 flet.app(target=main)
 ```
 
-<img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
+<img src="/img/docs/getting-started/TH-user-control-countdown.gif" className="screenshot-40" />
 
-## Deploying web app
+## Deploying web app (การปรับใช้เว็บแอป)
 
-Flet app can be deployed as a "standalone" web app which means both your Python app and Flet web server are deployed together as a bundle.
+แอป Flet สามารถปรับใช้เป็นเว็บแอปแบบ "standalone" ได้ ซึ่งหมายความว่าทั้งแอป Python และเว็บเซิร์ฟเวอร์ Flet ของคุณจะถูกปรับใช้ร่วมกันเป็น bundle
 
-Flet apps use WebSockets for real-time partial updates of their UI and sending events back to your program.
-When choosing a hosting provider for your Flet app you should pay attention to their support of WebSockets. Sometimes WebSockets are not allowed or come as a part of more expensive offering, sometimes there is a proxy that periodically breakes WebSocket connection by a timeout (Flet implements re-connection logic, but it could be unpleasant behavior for users of your app anyway).
+แอป Flet ใช้ WebSockets สำหรับการอัปเดต UI บางส่วนเป็นแบบเรียลไทม์และส่งกิจกรรมกลับไปยังโปรแกรมของคุณ
+เมื่อเลือกผู้ให้บริการโฮสต์สำหรับแอป Flet ของคุณแล้ว คุณควรให้ความสนใจเรื่องของการสนับสนุน WebSockets บางครั้ง WebSockets อาจจะไม่อนุญาตหรือเป็นอาจจะส่วนหนึ่งของข้อเสนอที่มีราคาแพงกว่าปกติ บางครั้งมีพร็อกซี่ที่หยุดการเชื่อมต่อ WebSocket เป็นระยะหรือหมดเวลาเชื่อมต่อ (Flet ใช้ logic เชื่อมต่อใหม่ แต่อาจเป็นพฤติกรรมที่ไม่พึงประสงค์สำหรับผู้ใช้แอปของคุณอยู่ดี)
 
-Another important factor while choosing a hosting provider for Flet app is latency. Every user action on UI sends a message to Flet app and the app sends udpdated UI back to user. Make sure your hosting provider has multiple data centers, so you can run your app closer to the majority of your users.
+ปัจจัยสำคัญอีกหนึ่งอย่างคือการเลือกผู้ให้บริการโฮสต์สำหรับแอพ Flet คือ latency ทุกการกระทำของผู้ใช้กับ UI จะส่งข้อความไปยังแอพ Flet และแอพจะส่ง UI ที่อัปเดทแล้ว กลับไปหาผู้ใช้ ตรวจสอบให้แน่ใจว่าผู้ให้บริการโฮสติ้งของคุณมีศูนย์ข้อมูลหลายแห่งเพียงพอ เพื่อให้คุณสามารถเรียกใช้แอปของคุณได้ใกล้ชิดกับผู้ใช้ส่วนใหญ่ยิ่งขึ้น
 
 :::note
-We are not affiliated with hosting providers in this section - we just use their service and love it.
+เราไม่มีส่วนเกี่ยวข้องกับผู้ให้บริการโฮสต์ในส่วนนี้ เราแค่ใช้บริการของพวกเขาและชอบที่ใช้มัน
 :::
 
 ### Fly.io
 
-[Fly.io](https://fly.io) has robust WebSocket support and can deploy your app to a [data center](https://fly.io/docs/reference/regions/) that is close to your users. They have very attractive pricing with a [generous free tier](https://fly.io/docs/about/pricing/#free-allowances) which allows you to host up to 3 applications for free.
+[Fly.io](https://fly.io) มีการสนับสนุน WebSocket ที่แข็งแกร่งและสามารถปรับใช้แอพของคุณกับ [data center](https://fly.io/docs/reference/regions/) ที่ใกล้ชิดกับผู้ใช้ของคุณ พวกเขามีราคาที่น่าดึงดูดใจมากกับ[generous free tier](https://fly.io/docs/about/pricing/#free-allowances) ซึ่งให้คุณโฮสต์ได้ถึง 3 แอปพลิเคชั่นแบบฟรีๆ
 
-To get started with Fly install [flyctl](https://fly.io/docs/getting-started/installing-flyctl/) and then authenticate:
+ในการเริ่มต้นใช้งาน Fly ติดตั้ง [flyctl](https://fly.io/docs/getting-started/installing-flyctl/) แล้วตรวจสอบความถูกต้องยืนยนัตัวตน:
 
     flyctl auth login
 
-To deploy the app with `flyctl` you have to add the following 3 files into the folder with your Python app.
+ในการปรับใช้แอพกับ `flyctl` คุณต้องเพิ่ม 3 ไฟล์ต่อไปนี้ลงในโฟลเดอร์ด้วยแอพ Python ของคุณ
 
-Create `requirements.txt` with a list of application dependencies. At minimum it should contain `flet` module:
+สร้างไฟล์ `requirements.txt` พร้อมรายการไลบรารี่ที่ต้องใช้ในแอปพลิเคชัน อย่างน้อยควรมี โมดูล `flet` อยู่ในนั้น:
 
 ```txt title="requirements.txt"
 flet>=0.1.29
 ```
 
-Create `fly.toml` describing Fly application:
+สร้างไฟล์ `fly.toml` อธิบายการใช้งาน Fly:
 
 ```toml title="fly.toml" {1,8}
-app = "<your-app-name>"
+app = "<ชื่อแอปของคุณ>"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
@@ -751,11 +758,11 @@ processes = []
     timeout = "2s"
 ```
 
-Replace `<your-app-name>` with desired application name which will be also used in application URL, such as `https://<your-app-name>.fly.dev`.
+แทนที่ `<ชื่อแอปของคุณ>` ด้วยชื่อแอปพลิเคชันที่ต้องการ ซึ่งจะใช้เป็น URL ของแอปพลิเคชัน เช่น `https://<ชื่อแอปของคุณ>.fly.dev`.
 
-Note we are setting the value of `FLET_SERVER_PORT` environment variable to `8080` which is an internal TCP port Flet web app is going to run on.
+โปรดทราบว่าเราตั้งค่าตัวแปรสภาพแวดล้อม `FLET_SERVER_PORT` เป็น `8080` ซึ่งเป็นพอร์ต TCP ของเว็บแอป Flet ที่จะใช้ในการทำงานของแอปพลิเคชัน
 
-Create `Dockerfile` containing the commands to build your application container:
+สร้างไฟล์ `Dockerfile` และคำสั่งสำหรับสร้าง container แอปพลิเคชันของคุณ:
 
 ```Dockerfile title="Dockerfile"
 FROM python:3-alpine
@@ -775,34 +782,34 @@ CMD ["python", "./main.py"]
 `main.py` is a file with your Python program.
 
 :::note
-Fly.io deploys every app as a Docker container, but a great thing about Fly is that it provides a free remote Docker builder, so you don't need Docker installed on your machine.
+Fly.io จะปรับใช้ทุกแอปเป็น container ของ Docker แต่สิ่งที่ยอดเยี่ยมเกี่ยวกับ Fly ก็คือมันมีตัวสร้าง Docker ระยะไกลให้ฟรีอยู่แล้ว ดังนั้นคุณไม่จำเป็นต้องติดตั้ง Docker บนเครื่องของคุณ
 :::
 
-Next, switch command line to a folder with your app and run the following command to create and initialize a new Fly app:
+ถัดไป สลับบรรทัดคำสั่งไปยังโฟลเดอร์ที่มีแอปของคุณ แล้วเรียกใช้คำสั่งต่อไปนี้เพื่อสร้างและเริ่มต้นแอป Fly ใหม่:
 
-    flyctl apps create --name <your-app-name>
+    flyctl apps create --name <ชื่อแอปของคุณ>
 
-Deploy the app by running:
+ปรับใช้แอพโดยการเรียกใช้:
 
     flyctl deploy
 
-That's it! Open your app in the browser by running:
+แค่นั้นแหละ! จากนั้นเปิดแอปของคุณในเบราว์เซอร์โดยการเรียกใช้:
 
     flyctl apps open
 
 ### Replit
 
-[Replit](https://replit.com/) is an online IDE and hosting platform for web apps written in any language. Their free tier allows running any number of apps with some performance limitations.
+[Replit](https://replit.com/) เป็น IDE ออนไลน์และแพลตฟอร์มโฮสติ้งสำหรับเว็บแอปที่เขียนในภาษาใดก็ได้ ของพวกนี้ฟรีช่วยให้สามารถเรียกใช้แอปจำนวนเท่าใดก็ได้แต่อาจจะมีข้อจำกัดด้านประสิทธิภาพบางอย่าง
 
-To run your app on Replit:
+ในการเรียกใช้แอปของคุณบน Replit:
 
-* [Sign up](https://replit.com/signup?from=landing) on Replit.
-* Click "New repl" button.
-* Select "Python" language from a list and provide repl name, e.g. `my-app`.
-* Click "Packages" tab and search for `flet` package; select its latest version.
-* Click "Secrets" tab and add `FLET_SERVER_PORT` variable with value `5000`.
-* Switch back to "Files" tab and copy-paste your app into `main.py`.
-* Run the app. Enjoy.
+* [Sign up](https://replit.com/signup?from=landing) บน Replit.
+* คลิกปุ่ม "New repl"
+* เลือกภาษา "Python" จากรายการและระบุชื่อ เช่น `แอปของฉัน`.
+* คลิกแท็บ "Packages" และค้นหา `flet` package; เลือกเวอร์ชันล่าสุด
+* คลิกแท็บ "Secrets" และเพิ่มตัวแปร `FLET_SERVER_PORT` มีค่าเท่ากับ `5000`
+* สลับกลับไปที่แท็บ "Files" แล้วคัดลอกและวางแอปของคุณลงไปใน `main.py`
+* เรียกใช้แอป แล้วสนุกไปกับมัน
 
 ## สรุป
 
@@ -811,9 +818,10 @@ To run your app on Replit:
 * สร้างหน้าที่สามารถแชร์เว็บแอปที่มีผู้ใช้หลายคนได้
 * ทำงานกับส่วนประกอบ UI ที่นำกลับมาใช้ใหม่ได้
 * ออกแบบเค้าโครง UI โดยใช้ตัวควบคุม 'Stack'
-* Work with lists: view, edit and delete items, filtering;
-* Deploy your app two ways: Flet Service and Replit;
+* ทำงานกับรายการ: ดู แก้ไข และลบรายการ การกรอง;
+* ปรับใช้แอพของคุณสองวิธีด้วย: Flet Service และ Replit;
 
 หากต้องการอ่านเพิ่มเติมคุณสามารถสำรวจได้ที่ [controls](/docs/controls) และ [examples repository](https://github.com/pglet/examples/tree/main/python)
 
-We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
+เราชอบที่จะได้ยินความคิดเห็นจากคุณอยู่ กรุณาบอกมาที่เราได้ที่
+[email](mailto:hello@flet.dev), เข้าร่วมการสนทนาได้ที่ [Discord](https://discord.gg/dzWXP8SHG8), ติดตามได้ที่ [Twitter](https://twitter.com/fletdev)
