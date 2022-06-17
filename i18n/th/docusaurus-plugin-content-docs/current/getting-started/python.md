@@ -804,16 +804,16 @@ To run your app on Replit:
 * Switch back to "Files" tab and copy-paste your app into `main.py`.
 * Run the app. Enjoy.
 
-## Summary
+## สรุป
 
-In this tutorial you have learned how to:
+ในบทช่วยสอนนี้ คุณจะได้เรียนรู้วิธี
 
-* Create a shared page and a multi-user web app;
-* Work with Reusable UI components;
-* Design UI layout using `Stack` control;
+* สร้างหน้าที่สามารถแชร์เว็บแอปที่มีผู้ใช้หลายคนได้
+* ทำงานกับส่วนประกอบ UI ที่นำกลับมาใช้ใหม่ได้
+* ออกแบบเค้าโครง UI โดยใช้ตัวควบคุม 'Stack'
 * Work with lists: view, edit and delete items, filtering;
 * Deploy your app two ways: Flet Service and Replit;
 
-For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/pglet/examples/tree/main/python).
+หากต้องการอ่านเพิ่มเติมคุณสามารถสำรวจได้ที่ [controls](/docs/controls) และ [examples repository](https://github.com/pglet/examples/tree/main/python)
 
 We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
