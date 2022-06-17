@@ -407,7 +407,7 @@ def main(page: Page):
     for i in range(5000):
         r.controls.append(
             Container(
-                Text(f"Item {i}"),
+                Text(f"รายการ {i}"),
                 width=100,
                 height=100,
                 alignment=alignment.center,
@@ -423,7 +423,7 @@ flet.app(target=main, view=flet.WEB_BROWSER)
 
 <img src="/img/docs/getting-started/row-wrap-as-grid.png" className="screenshot-50" />
 
-Try scrolling and resizing the browser window - everything works, but very laggy.
+ลองเลื่อนลงและปรับขนาดหน้าต่างเบราว์เซอร์ - แน่นอนว่าทุกอย่างทำงานได้ แต่หน่วงมาก
 
 :::note
 At the start of the program we are setting the value of `FLET_WS_MAX_MESSAGE_SIZE` environment variable to `8000000` - this is the maximum size of WebSocket message in bytes that can be received by Flet Server rendering the page. Default size is 1 MB, but the size of JSON message describing 5,000 container controls would exceed 1 MB, so we are increasing allowed size to 8 MB.
