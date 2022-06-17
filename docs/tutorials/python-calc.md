@@ -5,7 +5,8 @@ slug: python-calc
 ---
 
 In this tutorial we will show you, step-by-step, how to create a Calculator app in Python using Flet framework and deploy it as a web app. The app is [a simple console program](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py), yet it is a multi-platform application with similar to iPhone calculator app UI:
-<img src="/img/docs/calc-tutorial/calc-app.png" className="screenshot-40" />
+
+<img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
 
 You can find the live demo [here](https://flet-calc.fly.dev/).
 
@@ -179,22 +180,22 @@ Just what we wanted!
 
 While you can continue writing your app in the `main` function, the best practice would be to create a reusable UI component. 
 
-Imagine you are working on an app header, a side menu, or UI that will be a part of a larger project (for example, at Flet we will be using this Calculator app in a bigger "Demo" app that will show all the examples for Flet framework). 
+Imagine you are working on an app header, a side menu, or UI that will be a part of a larger project (for example, at Flet we will be using this Calculator app in a bigger "Gallery" app that will show all the examples for Flet framework). 
 
 Even if you can't think of such uses right now, we still recommend creating all your web apps with composability and reusability in mind. 
 
-To make a reusable Calc app component, we are going to encapsulate its state and presentation logic in a separate CalcApp class. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc-4.py).
+To make a reusable Calc app component, we are going to encapsulate its state and presentation logic in a separate `CalculatorApp` class. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc-4.py).
 
 :::noteTry something
-Try adding two `CalcApp` components to the page:
+Try adding two `CalculatorApp` components to the page:
 
 ```python
 # create application instance
-app1 = CalcApp()
-app2 = CalcApp()
+calc1 = CalculatorApp()
+calc2 = CalculatorApp()
 
 # add application's root control to the page
-page.add(app1.view, app2.view)
+page.add(calc1, calc2)
 ```
 :::
 
