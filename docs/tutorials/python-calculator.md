@@ -167,7 +167,7 @@ Run the app and you should see a page like this:
 ### Using Container for decoration
 
 To add a black background with rounded border around the calculator, we will be using [Container](/docs/controls/container) control. Container may decorate only one control, so we will need to wrap all the 6 rows into a single vertical [Column](/docs/controls/container) that will be used as the container's `content`:
-<img src="/img/docs/calc-tutorial/Calc App tutorial-Step 1.drawio.svg" className="screenshot" />
+<img src="/img/docs/calc-tutorial/container-layout.svg" className="screenshot" />
 
 To complete the UI portion of the program, update `color` and `size` properties for the Text, and `color` and `bgcolor` properties for the buttons. For even alignment of the buttons within the rows, we will be using `expand` property as shown on the diagram above.  
 
