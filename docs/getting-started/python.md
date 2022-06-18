@@ -705,7 +705,7 @@ To deploy the app with `flyctl` you have to add the following 3 files into the f
 Create `requirements.txt` with a list of application dependencies. At minimum it should contain `flet` module:
 
 ```txt title="requirements.txt"
-flet>=0.1.29
+flet>=0.1.33
 ```
 
 Create `fly.toml` describing Fly application:
