@@ -1,12 +1,14 @@
 ---
 title: Create To-Do app in Python with Flet
-sidebar_label: To-Do app in Python
+sidebar_label: Python - To-Do app
 slug: python-todo
 ---
 
-In this tutorial we will show you, step-by-step, how to create a ToDo web app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [180 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI.
+In this tutorial we will show you, step-by-step, how to create a ToDo web app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [180 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI:
 
-You can find the live demo [here](https://flet-todo.fly.dev/).
+<img src="/img/docs/tutorial/todo-complete-demo-web.gif" className="screenshot-70" />
+
+You can see the live demo [here](https://flet-todo.fly.dev/).
 
 We chose a ToDo app for the tutorial, because it covers all of the basic concepts you would need to create any web app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and deployment options.
 
@@ -130,16 +132,15 @@ To make a reusable ToDo app component, we are going to encapsulate its state and
 
 ```python title="todo.py"
 import flet
-from flet import Checkbox, Column, FloatingActionButton, Page, Row, TextField, icons
+from flet import Checkbox, Column, FloatingActionButton, Page, Row, TextField, UserControl, icons
 
-
-class TodoApp:
-    def __init__(self):
+class TodoApp(UserControl):
+    def build(self):
         self.new_task = TextField(hint_text="Whats needs to be done?", expand=True)
-        self.tasks_view = Column()
+        self.tasks = Column()
 
-        #         # application's root control (i.e. "view") containing all other controls
-        self.view = Column(
+        # application's root control (i.e. "view") containing all other controls
+        return Column(
             width=600,
             controls=[
                 Row(
@@ -148,14 +149,14 @@ class TodoApp:
                         FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked),
                     ],
                 ),
-                self.tasks_view,
+                self.tasks,
             ],
         )
 
     def add_clicked(self, e):
-        self.tasks_view.controls.append(Checkbox(label=self.new_task.value))
+        self.tasks.controls.append(Checkbox(label=self.new_task.value))
         self.new_task.value = ""
-        self.view.update()
+        self.update()
 
 
 def main(page: Page):
@@ -164,11 +165,10 @@ def main(page: Page):
     page.update()
 
     # create application instance
-    app = TodoApp()
+    todo = TodoApp()
 
     # add application's root control to the page
-    page.add(app.view)
-
+    page.add(todo)
 
 flet.app(target=main)
 ```
@@ -182,7 +182,7 @@ app1 = TodoApp()
 app2 = TodoApp()
 
 # add application's root control to the page
-page.add(app1.view, app2.view)
+page.add(app1, app2)
 ```
 :::
 
@@ -201,99 +201,14 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 To encapsulate task item views and actions, we introduced a new `Task` class:
 
 ```python
-class Task:
-    def __init__(self, name):
-        self.display_task = Checkbox(value=False, label=name)
+class Task(UserControl):
+    def __init__(self, task_name):
+        super().__init__()
+        self.task_name = task_name
+
+    def build(self):
+        self.display_task = Checkbox(value=False, label=self.task_name)
         self.edit_name = TextField(expand=1)
-
-        self.display_view = Row(
-            alignment="spaceBetween",
-            vertical_alignment="center",
-            controls=[
-                self.display_task,
-                Row(
-                    spacing=0,
-                    controls=[
-                        IconButton(
-                            icon=icons.CREATE_OUTLINED,
-                            tooltip="Edit To-Do",
-                            on_click=self.edit_clicked,
-                        ),
-                        IconButton(
-                            icons.DELETE_OUTLINE,
-                            tooltip="Delete To-Do"
-                        ),
-                    ],
-                ),
-            ],
-        )
-
-        self.edit_view = Row(
-            visible=False,
-            alignment="spaceBetween",
-            vertical_alignment="center",
-            controls=[
-                self.edit_name,
-                IconButton(
-                    icon=icons.DONE_OUTLINE_OUTLINED,
-                    icon_color=colors.GREEN,
-                    tooltip="Update To-Do",
-                    on_click=self.save_clicked,
-                ),
-            ],
-        )
-        self.view = Column(controls=[self.display_view, self.edit_view])
-
-    def edit_clicked(self, e):
-        self.edit_name.value = self.display_task.label
-        self.display_view.visible = False
-        self.edit_view.visible = True
-        self.view.update()
-
-    def save_clicked(self, e):
-        self.display_task.label = self.edit_name.value
-        self.display_view.visible = True
-        self.edit_view.visible = False
-        self.view.update()
-```
-
-Additionally, we changed `TodoApp` class to create and hold `Task` instances when the "Add" button is clicked:
-
-```python
-class TodoApp():
-    def __init__(self):
-        self.tasks = []
-        # ... the rest of constructor is the same
-
-    def add_clicked(self, e):
-        task = Task(self.new_task.value)
-        self.tasks.append(task)
-        self.tasks_view.controls.append(task.view)
-        self.new_task.value = ''
-        self.view.update()
-```
-
-For "Delete" task operation, we implemented `delete_task()` method in `TodoApp` class which accepts task instance as a parameter:
-
-```python
-class TodoApp():
-    
-    # ...
-
-    def delete_task(self, task):
-        self.tasks.remove(task)
-        self.tasks_view.controls.remove(task.view)
-        self.view.update()
-```
-
-Then, we passed a reference to `TodoApp` into Task constructor and called `TodoApp.delete_task()` in "Delete" button event handler:
-
-```python {2-3,23,33-34}
-class Task():
-    def __init__(self, app, name):
-        self.app = app
-        
-        # ...
 
         self.display_view = Row(
             alignment="spaceBetween",
@@ -318,11 +233,74 @@ class Task():
             ],
         )
 
+        self.edit_view = Row(
+            visible=False,
+            alignment="spaceBetween",
+            vertical_alignment="center",
+            controls=[
+                self.edit_name,
+                IconButton(
+                    icon=icons.DONE_OUTLINE_OUTLINED,
+                    icon_color=colors.GREEN,
+                    tooltip="Update To-Do",
+                    on_click=self.save_clicked,
+                ),
+            ],
+        )
+        return Column(controls=[self.display_view, self.edit_view])
 
+    def edit_clicked(self, e):
+        self.edit_name.value = self.display_task.label
+        self.display_view.visible = False
+        self.edit_view.visible = True
+        self.update()
+
+    def save_clicked(self, e):
+        self.display_task.label = self.edit_name.value
+        self.display_view.visible = True
+        self.edit_view.visible = False
+        self.update()
+```
+
+Additionally, we changed `TodoApp` class to create and hold `Task` instances when the "Add" button is clicked:
+
+```python {4,8,9}
+class TodoApp(UserControl):
+    def build(self):
+        self.new_task = TextField(hint_text="Whats needs to be done?", expand=True)
+        self.tasks = Column()
+        # ...
+
+    def add_clicked(self, e):
+        task = Task(self.new_task.value, self.task_delete)
+        self.tasks.controls.append(task)
+        self.new_task.value = ""
+        self.update()
+```
+
+For "Delete" task operation, we implemented `task_delete()` method in `TodoApp` class which accepts task control instance as a parameter:
+
+```python
+class TodoApp(UserControl):
+    # ...
+    def task_delete(self, task):
+        self.tasks.controls.remove(task)
+        self.update()
+```
+
+Then, we passed a reference to `task_delete` method into Task constructor and called it on "Delete" button event handler:
+
+```python {2,5,10}
+class Task(UserControl):
+    def __init__(self, task_name, task_delete):
+        super().__init__()
+        self.task_name = task_name
+        self.task_delete = task_delete
+        
         # ...        
 
     def delete_clicked(self, e):
-        self.app.delete_task(self)
+        self.task_delete(self)
 ```
 
 Run the app and try to edit and delete tasks:
@@ -342,11 +320,11 @@ from flet import Tabs, Tab
 
 # ...
 
-class TodoApp:
+class TodoApp(UserControl):
     def __init__(self):
         self.tasks = []
         self.new_task = TextField(hint_text="Whats needs to be done?", expand=True)
-        self.tasks_view = Column()
+        self.tasks = Column()
 
         self.filter = Tabs(
             selected_index=0,
@@ -367,7 +345,7 @@ class TodoApp:
                     spacing=25,
                     controls=[
                         self.filter,
-                        self.tasks_view,
+                        self.tasks,
                     ],
                 ),
             ],
@@ -376,42 +354,51 @@ class TodoApp:
 
 To display different lists of tasks depending on their statuses, we could maintain three lists with "All", "Active" and "Completed" tasks. We, however, chose an easier approach where we maintain the same list and only change a task's visibility depending on its status.
 
-In `TodoApp` class we introduced `update()` method which iterates through all the tasks and updates their `view` Stack's `visible` property depending on the status of the task:
+In `TodoApp` class we overrided `update()` method which iterates through all the tasks and updates their `visible` property depending on the status of the task:
 
 ```python
-class TodoApp():
+class TodoApp(UserControl):
 
     # ...
 
     def update(self):
         status = self.filter.tabs[self.filter.selected_index].text
-        for task in self.tasks:
-            task.view.visible = (
+        for task in self.tasks.controls:
+            task.visible = (
                 status == "all"
-                or (status == "active" and task.display_task.value == False)
-                or (status == "completed" and task.display_task.value)
+                or (status == "active" and task.completed == False)
+                or (status == "completed" and task.completed)
             )
-        self.view.update()
+        super().update()
 ```
 
 Filtering should occur when we click on a tab or change a task status. `TodoApp.update()` method is called when Tabs selected value is changed or Task item checkbox is clicked:
 
 ```python
-class TodoApp():
+class TodoApp(UserControl):
 
     # ...
 
     def tabs_changed(self, e):
         self.update()
 
-class Task():
-    def __init__(self, app, name):
+class Task(UserControl):
+    def __init__(self, task_name, task_status_change, task_delete):
+        super().__init__()
+        self.completed = False
+        self.task_name = task_name
+        self.task_status_change = task_status_change
+        self.task_delete = task_delete
+
+    def build(self):
         self.display_task = Checkbox(
-            value=False, label=name, on_change=self.status_changed)
+            value=False, label=self.task_name, on_change=self.status_changed
+        )
         # ...
 
     def status_changed(self, e):
-        self.app.update() 
+        self.completed = self.display_task.value
+        self.task_status_change(self)
 ```
 
 Run the app and try filtering tasks by clicking on the tabs:
@@ -424,7 +411,7 @@ Our Todo app is almost complete now. As a final touch, we will add a footer (`Co
 
 Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py). Below we highlighted the changes we've done to implement the footer:
 
-```python {5,17-33,41,48-50,53-56}
+```python {5,17-33,39-42,46,53-55}
 class TodoApp():
     def __init__(self):
         # ...
@@ -445,7 +432,7 @@ class TodoApp():
                     spacing=25,
                     controls=[
                         self.filter,
-                        self.tasks_view,
+                        self.tasks,
                         Row(
                             alignment="spaceBetween",
                             vertical_alignment="center",
@@ -463,24 +450,24 @@ class TodoApp():
 
     # ...
 
+    def clear_clicked(self, e):
+        for task in self.tasks.controls[:]:
+            if task.completed:
+                self.task_delete(task)
+
     def update(self):
         status = self.filter.tabs[self.filter.selected_index].text
         count = 0
-        for task in self.tasks:
-            task.view.visible = (
+        for task in self.tasks.controls:
+            task.visible = (
                 status == "all"
-                or (status == "active" and task.display_task.value == False)
-                or (status == "completed" and task.display_task.value)
+                or (status == "active" and task.completed == False)
+                or (status == "completed" and task.completed)
             )
-            if task.display_task.value == False:
+            if not task.completed:
                 count += 1
         self.items_left.value = f"{count} active item(s) left"
-        self.view.update()   
-
-    def clear_clicked(self, e):
-        for task in self.tasks[:]:
-            if task.display_task.value == True:
-                self.delete_task(task)
+        super().update()
 ```
 
 Run the app:

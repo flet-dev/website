@@ -1,7 +1,7 @@
 ---
 title: Create Calculator app in Python with Flet
-sidebar_label: Calculator app in Python
-slug: python-calc
+sidebar_label: Python - Calculator app
+slug: python-calculator
 ---
 
 In this tutorial we will show you, step-by-step, how to create a Calculator app in Python using Flet framework and deploy it as a web app. The app is [a simple console program](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py), yet it is a multi-platform application with similar to iPhone calculator app UI:
