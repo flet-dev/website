@@ -171,7 +171,7 @@ To add a black background with rounded border around the calculator, we will be 
 
 To complete the UI portion of the program, update `color` and `size` properties for the Text, and `color` and `bgcolor` properties for the buttons. For even alignment of the buttons within the rows, we will be using `expand` property as shown on the diagram above.  
 
-Since the program is too long now to be fully included in this tutorial, copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc-3.py). Run the app and you should see a page like this:
+Since the program is too long now to be fully included in this tutorial, copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc3.py). Run the app and you should see a page like this:
 <img src="/img/docs/calc-tutorial/calc-app.png" className="screenshot-40" />
 
 Just what we wanted!
@@ -184,7 +184,7 @@ Imagine you are working on an app header, a side menu, or UI that will be a part
 
 Even if you can't think of such uses right now, we still recommend creating all your web apps with composability and reusability in mind. 
 
-To make a reusable Calc app component, we are going to encapsulate its state and presentation logic in a separate `CalculatorApp` class. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc-4.py).
+To make a reusable Calc app component, we are going to encapsulate its state and presentation logic in a separate `CalculatorApp` class. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc4.py).
 
 :::noteTry something
 Try adding two `CalculatorApp` components to the page:
@@ -221,7 +221,7 @@ def button_clicked(self, e):
         self.result.value = "0"
             
 ```
-With similar approach, specify `on_click` event and `data` property for each button and add expected action to the `button_clicked` event handler depending on `e.data` value. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc-4.py).
+With similar approach, specify `on_click` event and `data` property for each button and add expected action to the `button_clicked` event handler depending on `e.data` value. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc4.py).
 
 Run the app and see it in the action:
 <img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
