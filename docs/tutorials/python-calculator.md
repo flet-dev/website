@@ -186,6 +186,8 @@ Even if you can't think of such uses right now, we still recommend creating all 
 
 To make a reusable Calc app component, we are going to encapsulate its state and presentation logic in a separate `CalculatorApp` class. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc4.py).
 
+Read more about [creating user controls](/docs/getting-started/python#user-controls).
+
 :::noteTry something
 Try adding two `CalculatorApp` components to the page:
 
@@ -221,7 +223,7 @@ def button_clicked(self, e):
         self.result.value = "0"
             
 ```
-With similar approach, specify `on_click` event and `data` property for each button and add expected action to the `button_clicked` event handler depending on `e.data` value. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc4.py).
+With similar approach, specify `on_click` event and `data` property for each button and add expected action to the `button_clicked` event handler depending on `e.data` value. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py).
 
 Run the app and see it in the action:
 <img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />

@@ -492,6 +492,6 @@ In this tutorial you have learned how to:
 * Work with lists: view, edit and delete items, filtering;
 * Deploy your Flet app to the web;
 
-For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/pglet/examples/tree/main/python).
+For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
 
 We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
