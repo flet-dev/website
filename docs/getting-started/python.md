@@ -679,6 +679,88 @@ flet.app(target=main)
 
 <img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
 
+## Packaging desktop app
+
+[PyInstaller](https://pyinstaller.org/en/stable/index.html) is used to package Flet Python app and all its dependencies into a single package. The user can run the packaged app without installing a Python interpreter or any modules.
+
+PyInstall can build packages for Windows, macOS and Linux. To make Windows package PyInstaller must be run on Windows, to build Linux app it must be run on Linux and to build macOS app - on macOS.
+
+Start from installing PyInstaller:
+
+```
+pip install pyinstaller
+```
+
+Navigate to the directory where your `.py` file is located and build your app with the following command:
+
+```
+pyinstaller your_program.py
+```
+
+Your bundled Flet app should now be available in `dist/your_program` folder. Try running the program to see it works.
+
+On macOS/Linux:
+
+```
+./dist/your_program/your_program
+```
+
+on Windows:
+
+```
+dist\your_program\your_program.exe
+```
+
+Now you can just zip the contents of `dist/your_program` folder and distribute to your users! They don't need Python or Flet installed to run your packaged program - what a great alternative to Electron!
+
+You'll notice though when you run a packaged program from macOS Finder or Windows Explorer a new console window is opened and then a window with app UI on top of it.
+
+You can hide that console window by rebuilding the package with `--noconsole` switch:
+
+```
+pyinstaller your_program.py --noconsole --noconfirm
+```
+
+### Bundling to one file
+
+Contents of `dist/your_program` directory is an app executable plus supporting resources: Python runtime, modules, libraries.
+
+You can package all these in a single executable by using `--onefile` switch:
+
+```
+pyinstaller your_program.py --noconsole --noconfirm --onefile
+```
+
+You'll get a larger executable in `dist` folder. That executable is a self-running archive with your program and runtime resources which gets unpacked into temp directory when run - that's why it takes longer to start "onefile" package.
+
+:::note
+For macOS you can distribute either `dist/your_program` or `dist/your_program.app` which is an application bundle.
+:::
+
+### Packaging assets
+
+Your Flet app can include [assets](/docs/controls/image#src). Provided app assets are in `assets` folder next to `your_program.py` they can be added to an application package with `--add-data` argument, on macOS/Linux:
+
+```
+pyinstaller your_program.py --noconsole --noconfirm --onefile --add-data "assets:assets"
+```
+
+On Windows `assets;assets` must be delimited with `;`:
+
+```
+pyinstaller your_program.py --noconsole --noconfirm --onefile --add-data "assets;assets"
+```
+
+:::note
+You can find here [all PyInstaller command-line options](https://pyinstaller.org/en/stable/usage.html)
+:::
+
+### Using CI for multi-platform packaging
+
+As noted before PyInstaller is not a cross-compiler, i.e. to create an app package for specific OS it must be run on that OS.
+
+If you don't have an access to Mac or PC you can bundle your app for all three platforms with [AppVeyor](https://www.appveyor.com) - Continuous Integration service for Windows, Linux and macOS.
+
 ## Deploying web app
 
 Flet app can be deployed as a "standalone" web app which means both your Python app and Flet web server are deployed together as a bundle.

@@ -56,7 +56,7 @@ flet.app(target=main)
 
 ### `src`
 
-Image URL. This could be an external URL, e.g. `https://picsum.photos/200/200` or internal URL to reference side-loaded assets, e.g. `/my-image.png`.
+Image URL. This could be an external URL, e.g. `https://picsum.photos/200/200` or internal URL to reference app assets, e.g. `/my-image.png`.
 
 You can specify `assets_dir` in `flet.app()` call to set the location of assets that should be available to the application. `assets_dir` could be a relative to your `main.py` directory or an absolute path. For example, consider the following program structure:
 
