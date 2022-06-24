@@ -683,7 +683,7 @@ flet.app(target=main)
 
 [PyInstaller](https://pyinstaller.org/en/stable/index.html) is used to package Flet Python app and all its dependencies into a single package. The user can run the packaged app without installing a Python interpreter or any modules.
 
-PyInstall can build packages for Windows, macOS and Linux. To make Windows package PyInstaller must be run on Windows, to build Linux app it must be run on Linux and to build macOS app - on macOS.
+PyInstaller can build packages for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
 
 Start from installing PyInstaller:
 
@@ -697,7 +697,7 @@ Navigate to the directory where your `.py` file is located and build your app wi
 pyinstaller your_program.py
 ```
 
-Your bundled Flet app should now be available in `dist/your_program` folder. Try running the program to see it works.
+Your bundled Flet app should now be available in `dist/your_program` folder. Try running the program to see if it works.
 
 On macOS/Linux:
 
@@ -777,19 +777,19 @@ To create an app package with PyInstaller for specific OS it must be run on that
 
 If you don't have an access to Mac or PC you can bundle your app for all three platforms with [AppVeyor](https://www.appveyor.com) - Continuous Integration service for Windows, Linux and macOS. In short, Continuous Integration (CI) is an automated process of building, testing and deploying (Continuous Delivery - CD) application on every push to a repository.
 
-AppVeyor is free for open source projects hosted on GitHub, GitLab and Bitbucket. To use AppVeyor push your app to a repository within one of those source-control providers.
+AppVeyor is free for open source projects hosted on GitHub, GitLab and Bitbucket. To use AppVeyor, push your app to a repository within one of those source-control providers.
 
 To get started with AppVeyor [sign up for a free account](https://ci.appveyor.com/signup).
 
 Click "New project" button, authorize AppVeyor to access your GitHub, GitLab or Bitbucket account, choose a repository with your program and create a new project.
 
-Now, to configure packaging of your app for Windows, Linux and macOS add into the root of your repository `appveyor.yml` file with [the following contents](https://github.com/flet-dev/python-ci-example/blob/main/appveyor.yml). `appveyor.yml` is a build configuration file, or CI workflow, describing build, test, packaging and deploy commands that must be run on every commit.
+Now, to configure packaging of your app for Windows, Linux and macOS, add file with [the following contents](https://github.com/flet-dev/python-ci-example/blob/main/appveyor.yml) into the root of your repository `appveyor.yml`. `appveyor.yml` is a build configuration file, or CI workflow, describing build, test, packaging and deploy commands that must be run on every commit.
 
 :::note
-You can just fork [flet-dev/python-ci-example](https://github.com/flet-dev/python-ci-example) repository and customize to your needs.
+You can just fork [flet-dev/python-ci-example](https://github.com/flet-dev/python-ci-example) repository and customize it to your needs.
 :::
 
-When you push any changes to GitHub repository AppVeyor will automatically start a new build:
+When you push any changes to GitHub repository, AppVeyor will automatically start a new build:
 
 <img src="/img/docs/getting-started/appveyor-ci-flet-python-project.png" className="screenshot-70" />
 
