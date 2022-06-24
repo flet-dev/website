@@ -147,9 +147,9 @@ Flet web app can render its UI with one of these renderers:
 * **HTML renderer** - uses a combination of HTML elements, CSS, Canvas elements, and SVG elements. This renderer has a smaller download size.
 * **CanvasKit renderer** - this renderer is fully consistent with Flutter mobile and desktop, has faster performance with higher widget density, but adds about 2MB in download size.
 
-By default, desktop browser uses `CanvasKit` renderer and mobile browser uses `HTML`.
+By default, Flet uses `CanvasKit` renderer for both desktop and mobile browsers.
 
-You can explicitly set which renderer to use when running a Flet program:
+You can explicitly set what renderer to use when running a Flet program:
 
 ```python
 # ...
@@ -160,9 +160,9 @@ Now, when you run the same program you'll see "Consolas" font is used.
 
 Supported `web_renderer` values:
 
-* `auto` (default) - optimizing for download size on mobile browsers and optimizing for performance on desktop browsers.
+* `canvaskit` (default) - prioritizing performance and pixel-perfect consistency on both desktop and mobile browsers.
 * `html` - optimizing download size over performance on both desktop and mobile browsers.
-* `canvaskit` - prioritizing performance and pixel-perfect consistency on both desktop and mobile browsers.
+* `auto` - optimizing for download size on mobile browsers and optimizing for performance on desktop browsers.
 
 ### `size`
 
