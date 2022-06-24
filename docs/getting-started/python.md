@@ -773,9 +773,9 @@ You can find here [all PyInstaller command-line options](https://pyinstaller.org
 
 ### Using CI for multi-platform packaging
 
-As noted before PyInstaller is not a cross-compiler, i.e. to create an app package for specific OS it must be run on that OS.
+To create an app package with PyInstaller for specific OS it must be run on that OS.
 
-If you don't have an access to Mac or PC you can bundle your app for all three platforms with [AppVeyor](https://www.appveyor.com) - Continuous Integration service for Windows, Linux and macOS.
+If you don't have an access to Mac or PC you can bundle your app for all three platforms with [AppVeyor](https://www.appveyor.com) - Continuous Integration service for Windows, Linux and macOS. In short, Continuous Integration (CI) is an automated process of building, testing and deploying (Continuous Delivery - CD) application on every push to a repository.
 
 AppVeyor is free for open source projects hosted on GitHub, GitLab and Bitbucket. To use AppVeyor push your app to a repository within one of those source-control providers.
 
@@ -783,20 +783,33 @@ To get started with AppVeyor [sign up for a free account](https://ci.appveyor.co
 
 Click "New project" button, authorize AppVeyor to access your GitHub, GitLab or Bitbucket account, choose a repository with your program and create a new project.
 
-Now, to package your app for Windows, Linux and macOS add into the root of your repository `appveyor.yml` file - build configuration - with [the following contents](https://github.com/flet-dev/python-ci-example/blob/main/appveyor.yml). When you push your changes to GitHub repository a new AppVeyor build will automatically start.
+Now, to configure packaging of your app for Windows, Linux and macOS add into the root of your repository `appveyor.yml` file with [the following contents](https://github.com/flet-dev/python-ci-example/blob/main/appveyor.yml). `appveyor.yml` is a build configuration file, or CI workflow, describing build, test, packaging and deploy commands that must be run on every commit.
 
 :::note
-You can also just fork [flet-dev/python-ci-example](https://github.com/flet-dev/python-ci-example) repository and customize to your needs.
+You can just fork [flet-dev/python-ci-example](https://github.com/flet-dev/python-ci-example) repository and customize to your needs.
 :::
 
-What that CI workflow does:
-
-* [Packages Python app](https://ci.appveyor.com/project/flet-dev/python-ci-example) into "onefile" packages for **Windows**, **macOS** and **Ubuntu** on every push to the repository and uploads packages to build ["Artifacts"](https://ci.appveyor.com/project/flet-dev/python-ci-example/build/job/g2j2lhstv04eyxcm/artifacts).
-* Uploads packages to [**GitHub releases**](https://github.com/flet-dev/python-ci-example/releases) when a new tag is pushed.
+When you push any changes to GitHub repository AppVeyor will automatically start a new build:
 
 <img src="/img/docs/getting-started/appveyor-ci-flet-python-project.png" className="screenshot-70" />
 
-`GITHUB_TOKEN` in `appveyor.yml` is a GitHub Personal Access Token (PAT) used to publish created packages to repository "Releases". You need to generate your own token and replace it in `appveyor.yml`. To generate token login to your GitHub account and navigate to [Personal access token](https://github.com/settings/tokens) page. Click "Generate new token" and select "public_repo" or "repo" scope for public or private repository respectively. Copy generated token to a clipboard and return to AppVeyor Portal. Navigate to [Encrypt configuration data](https://ci.appveyor.com/tools/encrypt) page and paste token to "Value to encrypt" field, click "Encrypt" button. Put encrypted value under `GITHUB_TOKEN` in your `appveyor.yml`.
+What that [CI workflow](https://ci.appveyor.com/project/flet-dev/python-ci-example) does on every push to the repository:
+
+* Clones the repository to a clean virtual machine.
+* Installs app dependencies using `pip`.
+* Runs `pyinstaller` to package Python app into "onefile" bundle for **Windows**, **macOS** and **Ubuntu**.
+* Zip/Tar packages and uploads them to ["Artifacts"](https://ci.appveyor.com/project/flet-dev/python-ci-example/build/job/g2j2lhstv04eyxcm/artifacts).
+* Uploads packages to [**GitHub releases**](https://github.com/flet-dev/python-ci-example/releases) when a new tag is pushed. Just push a new tag to make a release!
+
+:::noteGITHUB_TOKEN
+`GITHUB_TOKEN` in `appveyor.yml` is a GitHub Personal Access Token (PAT) used by AppVeyor to publish created packages to repository "Releases". You need to generate your own token and replace it in `appveyor.yml`. Login to your GitHub account and navigate to [Personal access token](https://github.com/settings/tokens) page. Click "Generate new token" and select "public_repo" or "repo" scope for public or private repository respectively. Copy generated token to a clipboard and return to AppVeyor Portal. Navigate to [Encrypt configuration data](https://ci.appveyor.com/tools/encrypt) page and paste token to "Value to encrypt" field, click "Encrypt" button. Put encrypted value under `GITHUB_TOKEN` in your `appveyor.yml`.
+:::
+
+Configure AppVeyor for your Python project, push a new tag to a repository and "automagically" get desktop bundle for all three platforms in GitHub releases! 🎉
+
+<img src="/img/docs/getting-started/appveyor-ci-flet-github-releases.png" className="screenshot-70" />
+
+In addition to [GitHub Releases](https://www.appveyor.com/docs/deployment/github/), you can also configure releasing of artifacts to [Amazon S3 bucket](https://www.appveyor.com/docs/deployment/amazon-s3/) or [Azure Blob storage](https://www.appveyor.com/docs/deployment/azure-blob/).
 
 ## Deploying web app
 
