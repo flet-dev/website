@@ -679,11 +679,11 @@ flet.app(target=main)
 
 <img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
 
-## Packaging desktop app
+## Packaging a desktop app
 
-[PyInstaller](https://pyinstaller.org/en/stable/index.html) is used to package Flet Python app and all its dependencies into a single package. The user can run the packaged app without installing a Python interpreter or any modules.
+Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
 
-PyInstaller can build packages for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
+[PyInstaller](https://pyinstaller.org/en/stable/index.html) is used to package Flet Python app and all its dependencies into a single package for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
 
 Start from installing PyInstaller:
 
@@ -811,7 +811,7 @@ Configure AppVeyor for your Python project, push a new tag to a repository and "
 
 In addition to [GitHub Releases](https://www.appveyor.com/docs/deployment/github/), you can also configure releasing of artifacts to [Amazon S3 bucket](https://www.appveyor.com/docs/deployment/amazon-s3/) or [Azure Blob storage](https://www.appveyor.com/docs/deployment/azure-blob/).
 
-## Deploying web app
+## Deploying a web app
 
 Flet app can be deployed as a "standalone" web app which means both your Python app and Flet web server are deployed together as a bundle.
 
