@@ -14,12 +14,9 @@ In this tutorial, we will cover all of the basic concepts for creating a web app
 
 The tutorial consists of the following steps:
 
-* [Getting started with Flet](#getting-started-with-flet)
-* [Adding page controls](#adding-page-controls)
-* [Building page layout](#building-page-layout)
-* [Reusable UI components](#reusable-ui-components)
-* [Handling events](#handling-events)
-* [Deploying the app](#deploying-the-app)
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} maxHeadingLevel={2} />
 
 ## Getting started with Flet
 
@@ -228,13 +225,17 @@ With similar approach, specify `on_click` event and `data` property for each but
 Run the app and see it in the action:
 <img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
 
-## Deploying the app
+## Packaging as a desktop app
 
-Congratulations! You have created your Calculator app with Flet, and it looks awesome!
+Congratulations! You have created your Calculator app with Flet, and it looks awesome! Now it's time to share your app with the world!
 
-Now it's time to share your app with the world!
+Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
 
-[Follow these instructions](/docs/getting-started/python#deploying-web-app) to deploy you Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/getting-started/python#packaging-a-desktop-app) to package your Calculator app into an executable.
+
+## Deploying a web app
+
+[Follow these instructions](/docs/getting-started/python#deploying-a-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## Summary
 
@@ -244,6 +245,7 @@ In this tutorial you have learned how to:
 * Work with Reusable UI components;
 * Design UI layout using `Column`, `Row` and `Container` controls;
 * Handle events;
+* Package your Flet app into an executable;
 * Deploy your Flet app to the web;
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).

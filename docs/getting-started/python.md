@@ -679,11 +679,11 @@ flet.app(target=main)
 
 <img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
 
-## Packaging desktop app
+## Packaging a desktop app
 
-[PyInstaller](https://pyinstaller.org/en/stable/index.html) is used to package Flet Python app and all its dependencies into a single package. The user can run the packaged app without installing a Python interpreter or any modules.
+Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
 
-PyInstaller can build packages for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
+[PyInstaller](https://pyinstaller.org/en/stable/index.html) is used to package Flet Python app and all its dependencies into a single package for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
 
 Start from installing PyInstaller:
 
@@ -811,14 +811,14 @@ Configure AppVeyor for your Python project, push a new tag to a repository and "
 
 In addition to [GitHub Releases](https://www.appveyor.com/docs/deployment/github/), you can also configure releasing of artifacts to [Amazon S3 bucket](https://www.appveyor.com/docs/deployment/amazon-s3/) or [Azure Blob storage](https://www.appveyor.com/docs/deployment/azure-blob/).
 
-## Deploying web app
+## Deploying a web app
 
 Flet app can be deployed as a "standalone" web app which means both your Python app and Flet web server are deployed together as a bundle.
 
 Flet apps use WebSockets for real-time partial updates of their UI and sending events back to your program.
-When choosing a hosting provider for your Flet app you should pay attention to their support of WebSockets. Sometimes WebSockets are not allowed or come as a part of more expensive offering, sometimes there is a proxy that periodically breakes WebSocket connection by a timeout (Flet implements re-connection logic, but it could be unpleasant behavior for users of your app anyway).
+When choosing a hosting provider for your Flet app you should pay attention to their support of WebSockets. Sometimes WebSockets are not allowed or come as a part of more expensive offering, sometimes there is a proxy that periodically breaks WebSocket connection by a timeout (Flet implements re-connection logic, but it could be unpleasant behavior for users of your app anyway).
 
-Another important factor while choosing a hosting provider for Flet app is latency. Every user action on UI sends a message to Flet app and the app sends udpdated UI back to user. Make sure your hosting provider has multiple data centers, so you can run your app closer to the majority of your users.
+Another important factor while choosing a hosting provider for Flet app is latency. Every user action on UI sends a message to Flet app and the app sends updated UI back to user. Make sure your hosting provider has multiple data centers, so you can run your app closer to the majority of your users.
 
 :::note
 We are not affiliated with hosting providers in this section - we just use their service and love it.
@@ -937,15 +937,7 @@ To run your app on Replit:
 * Switch back to "Files" tab and copy-paste your app into `main.py`.
 * Run the app. Enjoy.
 
-## Summary
-
-In this tutorial you have learned how to:
-
-* Create a shared page and a multi-user web app;
-* Work with Reusable UI components;
-* Design UI layout using `Stack` control;
-* Work with lists: view, edit and delete items, filtering;
-* Deploy your app two ways: Flet Service and Replit;
+## What's next
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/pglet/examples/tree/main/python).
 

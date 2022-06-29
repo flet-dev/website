@@ -480,7 +480,7 @@ Congratulations! You have created your first Python app with Flet, and it looks 
 
 Now it's time to share your app with the world!
 
-[Follow these instructions](/docs/getting-started/python#deploying-web-app) to deploy you Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/getting-started/python#deploying-a-web-app) to deploy you Flet app as a web app to Fly.io or Replit.
 
 ## Summary
 

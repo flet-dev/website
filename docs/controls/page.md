@@ -208,6 +208,10 @@ However, if you need to use a variable font in your app you can create static "i
 To explore available font features (e.g. possible options for `wght`) use [**Wakamai Fondue**](https://wakamaifondue.com/beta/) online tool.
 :::
 
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
+
 ### `splash`
 
 A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
