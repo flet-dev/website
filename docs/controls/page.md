@@ -259,13 +259,85 @@ An [`AlertDialog`](/docs/controls/alertdialog) control to display.
 
 A unique ID of user's session. This property is read-only.
 
+### `width`
+
+A width of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+
+### `height`
+
+A height of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+
 ### `window_width`
 
-A width of a browser or native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+🖥️ Desktop only. Get or set the width of a native OS window containing Flet app.
 
 ### `window_height`
 
-A height of a browser or native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+🖥️ Desktop only. Get or set the height of a native OS window containing Flet app.
+
+### `window_top`
+
+🖥️ Desktop only. Get or set a vertical position of a native OS window - a distance in virtual pixels from the top edge of the screen.
+
+### `window_left`
+
+🖥️ Desktop only. Get or set a horizontal position of a native OS window - a distance in virtual pixels from the left edge of the screen.
+
+### `window_max_width`
+
+🖥️ Desktop only. Get or set the maximum width of a native OS window containing Flet app.
+
+### `window_max_height`
+
+🖥️ Desktop only. Get or set the maximum height of a native OS window containing Flet app.
+
+### `window_min_width`
+
+🖥️ Desktop only. Get or set the minimum width of a native OS window containing Flet app.
+
+### `window_min_height`
+
+🖥️ Desktop only. Get or set the minimum height of a native OS window containing Flet app.
+
+### `window_opacity`
+
+🖥️ Desktop only. Sets the opacity of a native OS window. The value must be between `0.0` (fully transparent) and `1.0` (fully opaque).
+
+### `window_maximized`
+
+🖥️ Desktop only. `True` if a native OS window containing Flet app is maximized; otherwise `False`. Set this property to `True` to programmatically maximize the window and set it to `False` to unmaximize it.
+
+### `window_minimized`
+
+🖥️ Desktop only. `True` if a native OS window containing Flet app is minimized; otherwise `False`. Set this property to `True` to programmatically minimize the window and set it to `False` to restore it.
+
+### `window_minimizable`
+
+🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button. Default is `True`.
+
+### `window_resizable`
+
+🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app. Default is `True`.
+
+### `window_movable`
+
+🖥️ Desktop only. macOS only. Set to `False` to prevent user from changing a position of a native OS window containing Flet app. Default is `True`.
+
+### `window_full_screen`
+
+🖥️ Desktop only. Set to `True` to switch app's native OS window to a fullscreen mode. Default is `False`.
+
+### `window_always_on_top`
+
+🖥️ Desktop only. Sets whether the window should show always on top of other windows. Default is `False`.
+
+### `window_prevent_close`
+
+🖥️ Desktop only. Set to `True` to intercept the native close signal. Could be used together with [`page.on_window_event (close)`](#on_window_event) event handler and [`page.window_destroy()`](#window_destroy) to implement app exit confirmation logic - see [`page.window_destroy()`](#window_destroy) for code example.
+
+### `window_focused`
+
+🖥️ Desktop only. Set to `True` to focus a native OS window with a Flet app.
 
 ### `pubsub`
 
@@ -389,6 +461,53 @@ Displays SnackBar at the bottom of the page.
 
 `snack_bar` - A [`SnackBar`](/docs/controls/snackbar) control to display at the bottom of the Page.
 
+### `window_center()`
+
+Move app's native OS window to a center of the screen.
+
+### `window_destroy()`
+
+Forces closing app's native OS window. This method could be used with `page.window_prevent_close = True` to implement app exit confirmation:
+
+```python
+import flet
+from flet import AlertDialog, ElevatedButton, OutlinedButton, Page, Text
+
+def main(page: Page):
+    page.title = "MyApp"
+
+    def window_event(e):
+        if e.data == "close":
+            page.dialog = confirm_dialog
+            confirm_dialog.open = True
+            page.update()
+
+    page.window_prevent_close = True
+    page.on_window_event = window_event
+
+    def yes_click(e):
+        page.window_destroy()
+
+    def no_click(e):
+        confirm_dialog.open = False
+        page.update()
+
+    confirm_dialog = AlertDialog(
+        modal=True,
+        title=Text("Please confirm"),
+        content=Text("Do you really want to exit this app?"),
+        actions=[
+            ElevatedButton("Yes", on_click=yes_click),
+            OutlinedButton("No", on_click=no_click),
+        ],
+        actions_alignment="end",
+    )
+
+    page.add(Text('Try exiting this app by clicking window\'s "Close" button!'))
+
+flet.app(target=main)
+```
+
 ## Events
 
 ### `on_resize`
@@ -407,6 +526,26 @@ page.on_resize = page_resize
 
   </TabItem>
 </Tabs>
+
+### `on_window_event`
+
+Fires when an application's native OS window changes its state: position, size, maximized, minimized, etc.
+
+`data` contains window's event name:
+
+* `close`
+* `focus`
+* `blur`
+* `maximize`
+* `unmaximize`
+* `minimize`
+* `restore`
+* `resize`
+* `resized` (macOS and Windows only)
+* `move`
+* `moved` (macOS and Windows only)
+* `enterFullScreen`
+* `leaveFullScreen`
 
 ### `on_connect`
 
