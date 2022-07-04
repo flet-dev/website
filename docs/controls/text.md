@@ -120,6 +120,50 @@ The text displayed.
 
 Text horizontal align. Supported values: `left` (default), `right`, `center`, `justify`, `start`, `end`.
 
+### `font_family`
+
+System or custom font family to render text with. Check [`page.fonts`](/docs/controls/page#fonts) for instructions on how to import and use custom fonts in your application.
+
+#### Using system fonts
+
+You can use the fonts installed on your computer, e.g. "Consolas", "Arial", "Verdana", "Tahoma", etc. For example:
+
+```python
+import flet
+from flet import Page, Text
+
+def main(page: Page):
+    page.add(
+        Text("This text is rendered with Consolas font", font_family="Consolas")
+    )
+
+flet.app(target=main)
+```
+
+There is one limitation though - system fonts cannot be used in a Flet web app with "CanvasKit" renderer.
+
+Flet web app can render its UI with one of these renderers:
+
+* **HTML renderer** - uses a combination of HTML elements, CSS, Canvas elements, and SVG elements. This renderer has a smaller download size.
+* **CanvasKit renderer** - this renderer is fully consistent with Flutter mobile and desktop, has faster performance with higher widget density, but adds about 2MB in download size.
+
+By default, Flet uses `CanvasKit` renderer for both desktop and mobile browsers.
+
+You can explicitly set what renderer to use when running a Flet program:
+
+```python
+# ...
+flet.app(target=main, view=flet.WEB_BROWSER, web_renderer="html")
+```
+
+Now, when you run the same program you'll see "Consolas" font is used.
+
+Supported `web_renderer` values:
+
+* `canvaskit` (default) - prioritizing performance and pixel-perfect consistency on both desktop and mobile browsers.
+* `html` - optimizing download size over performance on both desktop and mobile browsers.
+* `auto` - optimizing for download size on mobile browsers and optimizing for performance on desktop browsers.
+
 ### `size`
 
 Text size in virtual pixels. Default is `14`.

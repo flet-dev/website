@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ### Row spacing
 
-<img src="/img/docs/controls/row/row-spacing.gif" />
+<img src="/img/docs/controls/row/row-spacing.gif" className="screenshot" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -74,7 +74,7 @@ flet.app(target=main)
 
 ### Row wrapping
 
-<img src="/img/docs/controls/row/row-wrap.gif" />
+<img src="/img/docs/controls/row/row-wrap.gif" className="screenshot" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -149,7 +149,7 @@ flet.app(target=main)
 
 ### Row horizontal alignments
 
-<img src="/img/docs/controls/row/row-alignment.png" />
+<img src="/img/docs/controls/row/row-alignment.png" className="screenshot" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -200,7 +200,7 @@ flet.app(target=main)
 
 ### Row vertical 
 
-<img src="/img/docs/controls/row/row-vertical-alignment.png" width="70%"/>
+<img src="/img/docs/controls/row/row-vertical-alignment.png" className="screenshot-70" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -289,6 +289,10 @@ Enables horizontal scrolling for the Row to prevent its content overflow. Suppor
 * `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
 * `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `always` - scrolling is enabled and scroll bar is always shown.
+
+### `auto_scroll`
+
+`True` if scrollbar should automatically move its position to the end when children update.
 
 ## Expanding children
 

@@ -242,6 +242,12 @@ An icon that appears after the editable part of the text field and after the `su
 
 Optional text `suffix` to place on the line after the input.
 
+## `Dropdown` methods
+
+### `focus()`
+
+Moves focus to a Dropdown.
+
 ## `Dropdown` events
 
 ### `on_change`
