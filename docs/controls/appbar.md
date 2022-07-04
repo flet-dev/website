@@ -99,3 +99,7 @@ The default color for Text and Icons within the app bar. Default color is define
 ### `bgcolor`
 
 The fill color to use for an AppBar. Default color is defined by current theme.
+
+### `elevation`
+
+This property controls the size of the shadow below the app bar. Default value is 4.
