@@ -21,7 +21,7 @@ page title
 
 textbox props
 
-user control for chat message
+user control for chat message`
 
 ## Deploying the app
 
