@@ -20,22 +20,23 @@ import TabItem from '@theme/TabItem';
 
 ```python
 import flet
-from flet import Textbox, Button, Text
-with flet.page("basic-textboxes") as page:
-  def button_clicked(e):
+from flet import ElevatedButton, Page, Text, TextField, icons
+
+def main(page: Page):
+    def button_clicked(e):
         t.value = f"Textboxes values are:  '{tb1.value}', '{tb2.value}', '{tb3.value}', '{tb4.value}', '{tb5.value}'."
         page.update()
 
-  t = Text()
-  tb1 = Textbox(label='Standard')
-  tb2 = Textbox(label='Disabled', disabled=True, value='First name')
-  tb3 = Textbox(label='Read-only', read_only=True, value='Last name')  
-  tb4 = Textbox(label="With placeholder", placeholder='Please enter text here')
-  tb5 = Textbox(label='With an icon', icon='Emoji2')
-  b = Button(text='Submit', on_click=button_clicked)
-  page.add(tb1, tb2, tb3, tb4, tb5, b, t)
+    t = Text()
+    tb1 = TextField(label="Standard")
+    tb2 = TextField(label="Disabled", disabled=True, value="First name")
+    tb3 = TextField(label="Read-only", read_only=True, value="Last name")
+    tb4 = TextField(label="With placeholder", hint_text="Please enter text here")
+    tb5 = TextField(label="With an icon", icon=icons.EMOJI_EMOTIONS)
+    b = ElevatedButton(text="Submit", on_click=button_clicked)
+    page.add(tb1, tb2, tb3, tb4, tb5, b, t)
 
-  input()
+flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -47,22 +48,22 @@ with flet.page("basic-textboxes") as page:
 
 ```python
 import flet
-from flet import Text, Textbox
+from flet import ElevatedButton, Page, Text, TextField
 
-with flet.page("textbox-with-change-event") as page:
-
+def main(page: Page):
     def textbox_changed(e):
         t.value = e.control.value
         page.update()
 
     t = Text()
-    tb = Textbox(
+    tb = TextField(
         label="Textbox with 'change' event:",
         on_change=textbox_changed,
     )
 
     page.add(tb, t)
-    input()
+
+flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -74,11 +75,16 @@ with flet.page("textbox-with-change-event") as page:
 
 ```python
 import flet
-from flet import Textbox
-with flet.page("password-with-reveal-button") as page:
+from flet import Page, TextField
 
-  page.add(Textbox(label='Password with reveal button', password=True))
-  
+def main(page: Page):
+    page.add(
+        TextField(
+            label="Password with reveal button", password=True, can_reveal_password=True
+        )
+    )
+
+flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -90,14 +96,26 @@ with flet.page("password-with-reveal-button") as page:
 
 ```python
 import flet
-from flet import Textbox
-with flet.page("multiline-textboxes") as page:
+from flet import Page, TextField
 
-  page.add(
-      Textbox(label='standard', multiline=True),
-      Textbox(label='disabled', multiline=True, disabled=True, value='line1\nline2\nline3\nline4\nline5\n'),
-      Textbox(label='With auto adjusted height', multiline=True, auto_adjust_height=True))
-  
+def main(page: Page):
+    page.add(
+        TextField(label="standard", multiline=True),
+        TextField(
+            label="disabled",
+            multiline=True,
+            disabled=True,
+            value="line1\nline2\nline3\nline4\nline5",
+        ),
+        TextField(
+            label="Auto adjusted height with max lines",
+            multiline=True,
+            min_lines=1,
+            max_lines=3,
+        ),
+    )
+
+flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -109,13 +127,27 @@ with flet.page("multiline-textboxes") as page:
 
 ```python
 import flet
-from flet import Textbox
-with flet.page("underlined-and-borderless-textboxes") as page:
+from flet import Page, TextField
 
-  page.add(
-    Textbox(label='Underlined', underlined=True, placeholder='Enter text here'),
-    Textbox(label='Borderless', borderless=True, placeholder='Enter text here'))
-  
+def main(page: Page):
+    page.add(
+        TextField(label="Underlined", border="underline", hint_text="Enter text here"),
+        TextField(
+            label="Underlined filled",
+            border="underline",
+            filled=True,
+            hint_text="Enter text here",
+        ),
+        TextField(label="Borderless", border="none", hint_text="Enter text here"),
+        TextField(
+            label="Borderless filled",
+            border="none",
+            filled=True,
+            hint_text="Enter text here",
+        ),
+    )
+
+flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -127,22 +159,28 @@ with flet.page("underlined-and-borderless-textboxes") as page:
 
 ```python
 import flet
-from flet import Textbox
-with flet.page("suffix-prefix-textboxes") as page:
+from flet import Page, TextField, icons
 
-  page.add(
-    Textbox(label='With prefix', prefix='https://'),
-    Textbox(label='With suffix', suffix='.com'),
-    Textbox(label='With prefix and suffix', prefix='https://', suffix='.com'))
-  
+def main(page: Page):
+    page.add(
+        TextField(label="With prefix", prefix_text="https://"),
+        TextField(label="With suffix", suffix_text=".com"),
+        TextField(
+            label="With prefix and suffix", prefix_text="https://", suffix_text=".com"
+        ),
+        TextField(
+            label="My favorite color",
+            icon=icons.FORMAT_SIZE,
+            hint_text="Type your favorite color",
+            helper_text="You can type only one color",
+            counter_text="0 symbols typed",
+            prefix_icon=icons.COLOR_LENS,
+            suffix_text="...is your color",
+        ),
+    )
+
+flet.app(target=main)
 ```
-  </TabItem>
-  <TabItem value="powershell" label="PowerShell">
-
-```powershell
-# TODOcontrol,
-```
-
   </TabItem>
 </Tabs>
 
