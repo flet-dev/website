@@ -17,7 +17,7 @@ Flet requires Python 3.7 or above. To start with Flet, you need to install `flet
 pip install flet
 ```
 
-:::note
+:::noteUpgrading Flet
 To upgrade `flet` module run:
 
 ```bash
