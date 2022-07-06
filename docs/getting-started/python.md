@@ -78,7 +78,7 @@ To display control on a page add it to `controls` list of a Page and call `page.
 
 ```python
 import flet
-from flet import Page
+from flet import Page, Text
 
 def main(page: Page):
     t = Text(value="Hello, world!", color="green")
