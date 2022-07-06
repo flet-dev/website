@@ -6,11 +6,13 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy"
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-beta.21",
     "@docusaurus/preset-classic": "^2.0.0-beta.21",
+    "@docusaurus/theme-classic": "^2.0.0-beta.21",
     "@hcaptcha/react-hcaptcha": "^1.0.0",
     "clsx": "^1.1.1",
     "react": "^17.0.1",
