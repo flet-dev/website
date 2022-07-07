@@ -1,9 +1,9 @@
 ---
-title: Creating real-time chat app in Python
+title: Developing real-time chat app in Python
 sidebar_label: Python - Real-time Chat app
 ---
 
-## Introduction
+Flet is...
 
 There are already two Flet tutorials for Python: ["classic" TodoMVC-like app](/docs/tutorials/python-todo) and [simple Calculator app](/docs/tutorials/python-calculator) - "beginner" tutorials demonstrating Flet essentials plus some packaging and deployment approaches.
 
@@ -13,19 +13,19 @@ As the title says it's going to be a chat app - an attempt to explore if it's po
 
 ### Why chat?
 
-Because ["this is a story for collaboration!"](https://youtu.be/ohClxMmNLQQ?t=103) (you should play that game)! Look around - we use chats every day at work and home, on laptops and phones: WhatsApp, Facebook Messanger, Skype, Discord, Telegram just to name a few! Every programmer dreams about writing a chat after learning about WebSockets and every WebSocket library comes with a chat example. Chat app would help us better demonstrate a realtime nature of Flet framework where response-requests replaced with always-on "streams" of user events and UI updates.
+Because ["this is a story for collaboration!"](https://youtu.be/ohClxMmNLQQ?t=103) (you should play this game)! Look around - we use chats every day at work and home, on laptops and phones: WhatsApp, Facebook Messanger, Skype, Discord, Telegram, just to name a few! Every programmer dreams of writing a chat after learning about WebSockets and every WebSocket library comes with a chat example. Chat app would help us better demonstrate a realtime nature of Flet framework, where response-requests replaced with always-on "streams" of user events and UI updates.
 
-I've got a sneak peek into a few Chat examples for other frameworks ([one](https://dev.to/appwrite/building-a-realtime-chat-application-using-angular-and-appwrite-i3o), [two](https://github.com/denoland/showcase_chat)) and become disappointed. Is it really necessary to be so complex for the app having such a basic functionality? Is it really necessary to use Firebase, Appwrite, Supabase or other begemoth frameworks on backend? Why do you always need "frontend" and "backend"? Is it an established commonly-accepted architecture for the next decade? Can we make a trivial chat like in those examples but with less code? Can we keep the architecture simple yet performant and maintainable? Yes, we can! With Flet instead of developing JavaScript frontend with REST backend you are just writing a monolithic server-driven app using only Python and yet get multi-user Single-Page Application (SPA) with realtime, partial UI updates.
+I've got a sneak peek into a few Chat examples for other frameworks ([one](https://dev.to/appwrite/building-a-realtime-chat-application-using-angular-and-appwrite-i3o), [two](https://github.com/denoland/showcase_chat)) and became disappointed. Is it really necessary for the app having such a basic functionality to be so complex? Does it have to use Firebase, Appwrite, Supabase or other begemoth framework for a backend? Why do you always need "frontend" and "backend"? Is it an established commonly-accepted architecture for the next decade? Can we make a trivial chat like in those examples, but with less code? Can we keep the architecture simple yet performant and maintainable? Yes, we can! With Flet, instead of developing JavaScript frontend with REST backend you are just writing a monolithic server-driven app using only Python and yet get multi-user Single-Page Application (SPA) with realtime, partial UI updates.
 
-### Product differentiation
+### How Flet Chat is better?
 
-This is how "our" chat will be different from competitors:
+This is how "Flet Chat" will be different from competitors:
 
-1. User owns the data. App data will be stored in SQLite database which is portable and can be constantly [replicated in the background](https://github.com/benbjohnson/litestream) - easy migration between self-hosted and cloud versions.
-2. Extensibility with "apps". An extension "app" could mix some functionality into existing UI or introduce a completely new experience on a separate URL/route.
+1. User owns the data. App data will be stored in SQLite database which is portable and can be constantly [replicated on the background](https://github.com/benbjohnson/litestream) - free backups and easy migration between self-hosted and cloud versions.
+2. Extensibility with "apps". An extension "app" could mix some functionality into existing UI or introduce a completely new experience at a separate URL/route.
 3. Requires minimum resources to run, ideally, a single Docker container with shared CPU and 256 MB or memory.
 4. On par functionality across web, desktop and mobile clients - a single codebase drives the app on all platforms. Desktop and mobile clients should not be lagging behind web UI.
-5. On-demand delivery of white-labeled desktop and mobile clients to customers' App/Play/Microsoft store accounts with a push of a button.
+5. On-demand delivery of white-labeled desktop and mobile clients to the customer's App/Play/Microsoft store accounts with a push of a button.
 6. Application source code that can be understood and maintained by an intermediate Python programmer. Contributions are welcome!
 
 ### In this article
@@ -38,7 +38,7 @@ In this article we are going to start from a really trivial in-memory Chat app, 
 * Building page layout with reusable controls
 * Delivering the app as a Progressive Web App (PWA)
 
-A ready application will be looking like this:
+The complete application will be looking like this:
 
 [SCREENSHOT]
 
@@ -46,9 +46,9 @@ You can play with a live demo [here](https://flet-chat.fly.dev).
 
 ## Getting started with Flet
 
-It's a good tradition to start from "Hello, world!" app!
+It's a tradition to start with "Hello, world!" app!
 
-Flet requires Python 3.7 or above. To create a web app in Python with Flet, you need to install `flet` module first:
+Flet requires Python 3.7 or above. To create a Flet app in Python, you need to install `flet` module first:
 
 ```bash
 pip install flet
