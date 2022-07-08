@@ -79,6 +79,6 @@ html[data-theme='dark'] .bkg {
 }
 
 .indexCtasGetStartedButton:hover {
-  color: #fff;
+  color: #fff!important;
   background-color: #db0f49;
 }
