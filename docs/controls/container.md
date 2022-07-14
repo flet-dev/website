@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
 
 ### Containers with different background color
 
+<img src="/img/docs/controls/container/containers-background-color.png" className="screenshot-50" />
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
@@ -51,7 +53,78 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/container/containers-background-color.png" width="40%" />
+### Clickable container
+
+<img src="/img/docs/controls/container/clickable-container.gif"className="screenshot-50" />
+
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+import flet
+from flet import Container, Page, Row, Text, alignment, colors
+
+def main(page: Page):
+    page.title = "Containers - clickable and not"
+    page.horizontal_alignment = "center"
+    page.vertical_alignment = "center"
+
+    page.add(
+        Row(
+            [
+                Container(
+                    content=Text("Non clickable"),
+                    margin=10,
+                    padding=10,
+                    alignment=alignment.center,
+                    bgcolor=colors.AMBER,
+                    width=150,
+                    height=150,
+                    border_radius=10,
+                ),
+                Container(
+                    content=Text("Clickable without Ink"),
+                    margin=10,
+                    padding=10,
+                    alignment=alignment.center,
+                    bgcolor=colors.GREEN_200,
+                    width=150,
+                    height=150,
+                    border_radius=10,
+                    on_click=lambda e: print("Clickable without Ink clicked!"),
+                ),
+                Container(
+                    content=Text("Clickable with Ink"),
+                    margin=10,
+                    padding=10,
+                    alignment=alignment.center,
+                    bgcolor=colors.CYAN_200,
+                    width=150,
+                    height=150,
+                    border_radius=10,
+                    ink=True,
+                    on_click=lambda e: print("Clickable with Ink clicked!"),
+                ),
+                Container(
+                    content=Text("Clickable transparent with Ink"),
+                    margin=10,
+                    padding=10,
+                    alignment=alignment.center,
+                    width=150,
+                    height=150,
+                    border_radius=10,
+                    ink=True,
+                    on_click=lambda e: print("Clickable transparent with Ink clicked!"),
+                ),
+            ],
+            alignment="center",
+        ),
+    )
+
+flet.app(target=main)
+```
+  </TabItem>
+</Tabs>
 
 ## Properties
 
@@ -164,3 +237,13 @@ For example:
 from flet import border_radius
 container_1.border_radius = border_radius.all(30)
 ```
+
+### `ink`
+
+`True` to produce ink ripples effect when user clicks the container. Default is `False`.
+
+## Events
+
+### `on_click`
+
+Fires when a user clicks the container.
