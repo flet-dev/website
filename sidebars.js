@@ -134,6 +134,18 @@ module.exports = {
             'controls/alertdialog',
           ]
         },
+        {
+          type: 'category',
+          label: 'Utility',
+          link: {
+            type: 'generated-index',
+            slug: 'controls/utility'
+          },
+          items: [
+            'controls/draggable',
+            'controls/dragtarget',
+          ]
+        },
       ]
     },
     'roadmap',
