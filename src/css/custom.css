@@ -97,6 +97,7 @@ h6 {
 
 .screenshot,
 .screenshot-10,
+.screenshot-30,
 .screenshot-40,
 .screenshot-50,
 .screenshot-60,
@@ -112,6 +113,10 @@ h6 {
 
 .screenshot-10 {
   width: 10%;
+}
+
+.screenshot-30 {
+  width: 30%;
 }
 
 .screenshot-40 {

@@ -493,7 +493,7 @@ flet.app(target=main, view=flet.WEB_BROWSER)
 
 ## Drag and Drop
 
-The mechanics of drag-and-drop in Flet is pretty simple - a user starts dragging [`Draggable`](/docs/controls/draggable.md) control and "drops" it on [`DragTarget`](/docs/controls/dragtarget.md). If both draggable and drag target has the same `group` a drag target will call `on_accept` event handler and pass draggable control ID as event data. In this case draggable serves as a source "data" for drag-and-drop operation.
+The mechanics of drag-and-drop in Flet is pretty simple - a user starts dragging [`Draggable`](/docs/controls/draggable) control and "drops" it on [`DragTarget`](/docs/controls/dragtarget). If both draggable and drag target has the same `group` a drag target will call `on_accept` event handler and pass draggable control ID as event data. In this case draggable serves as a source "data" for drag-and-drop operation.
 
 Let's take a look at the following example. In the program below you can drag left control displaying "1" on top of the right control dislaying "0" and when drag operation completes left control is replaced with "0" and the right control becomes "1":
 
