@@ -115,7 +115,7 @@ A group this draggable belongs to. For [DragTarget](dragtarget) to accept incomi
 
 ### `content`
 
-`Draggable` control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#contentwhendragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this widget always displays `content`.
+`Draggable` control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#contentwhendragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this control always displays `content`.
 
 ### `content_when_dragging`
 
