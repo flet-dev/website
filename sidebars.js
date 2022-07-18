@@ -26,6 +26,7 @@ module.exports = {
       items: [
         'tutorials/python-todo',
         'tutorials/python-calculator',
+        'tutorials/python-realtime-chat',
       ],
     },
     {
