@@ -1,5 +1,5 @@
 ---
-slug: 2022-07-22-flet-mobile-strategy
+slug: flet-mobile-strategy
 title: Flet Mobile Strategy
 author: Feodor Fitsner
 author_title: Flet founder and developer
