@@ -101,7 +101,8 @@ h6 {
 .screenshot-40,
 .screenshot-50,
 .screenshot-60,
-.screenshot-70 {
+.screenshot-70,
+.screenshot-100 {
   display: block;
   text-align: center;
   margin: auto auto var(--ifm-paragraph-margin-bottom);
@@ -133,6 +134,10 @@ h6 {
 
 .screenshot-70 {
   width: 70%;
+}
+
+.screenshot-100 {
+  width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
