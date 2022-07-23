@@ -4,9 +4,9 @@ sidebar_label: Page
 slug: page
 ---
 
-Page is the top most container for all other controls.
+Page is a container for [`View`](view) controls.
 
-A page instance is automatically created when a new user session started. From layout perspective the Page represents a [Column](column) control, so it has a similar behavior and shares same properties.
+A page instance and the root view are automatically created when a new user session started.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

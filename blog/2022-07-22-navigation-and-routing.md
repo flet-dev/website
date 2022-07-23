@@ -167,10 +167,24 @@ Notice the usage of [`page.on_view_pop`](/docs/controls/page#on_view_pop) event 
 
 ## Route templates
 
-`TemplateRoute` class.
+Flet offers [`TemplateRoute`](https://github.com/flet-dev/flet/blob/main/sdk/python/flet/template_route.py) - an utility class based on [repath](https://github.com/nickcoutsos/python-repath) library which allows matching ExpressJS-like routes and parsing their parameters, for example `/account/:account_id/orders/:order_id`.
 
-Pop view (appbar), confirmation dialog on pop view
-Parsing URLs with https://github.com/synacor/python-repath
+`TemplateRoute` plays great with route change event:
+
+```python
+troute = TemplateRoute(page.route)
+
+if troute.match("/books/:id"):
+    print("Book view ID:", troute.id)
+elif troute.match("/account/:account_id/orders/:order_id"):
+    print("Account:", troute.account_id, "Order:", troute.order_id)
+else:
+    print("Unknown route")
+```
+
+You can read more about template syntax supported by `repath` library [here](https://github.com/nickcoutsos/python-repath#parameters).
+
+That's all for today!
 
 [Give Flet a try](/docs/getting-started/python) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
 
