@@ -8,6 +8,12 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [product]
 ---
 
+Flet project has got a lot of attention recently and we would like to thank all developers who tried Flet and have been spreading the word about it in the communities! Your support motivates to move Flet project forward with faster pace!
+
+New Flet developers are constantly asking if there is a way to package Flet program to an `.apk` file to deploy to Android devices or `.ipa` to deploy to iOS.
+
+In this post I would like to discuss or vision for Flet going mobile and provide some roadmap.
+
 ## Server-Driven UI
 
 ## Flet widget for Flutter
