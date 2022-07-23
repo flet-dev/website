@@ -45,6 +45,7 @@ module.exports = {
           },
           items: [
             'controls/page',
+            'controls/view',
             'controls/container',
             'controls/row',
             'controls/column',
