@@ -8,7 +8,7 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-[Flet 0.1.41](https://pypi.org/project/flet/0.1.41/) has been released with navigation and routing!
+[Flet 0.1.42](https://pypi.org/project/flet/0.1.42/) has been released with navigation and routing!
 
 Navigation and routing is an essential feature of Single Page Applications (SPA) which allows organizing application user interface into virtual pages (views) and "navigate" between them while application URL reflects the current state of the app.
 
