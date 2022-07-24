@@ -16,7 +16,16 @@ In this post I would like to discuss our vision for Flet going mobile and provid
 
 ## Server-Driven UI
 
-[TBD]
+Flet is a Server-driven UI (SDUI) framework. SDUI is an emerging technology which is best described in [Technology Radar post](https://www.thoughtworks.com/en-ca/radar/techniques/server-driven-ui):
+
+> Server-driven UI separates the rendering into a generic container in the mobile app while the structure and data for each view is provided by the server. This means that changes that once required a round trip to an app store can now be accomplished via simple changes to the responses the server sends.
+
+
+https://medium.com/airbnb-engineering/a-deep-dive-into-airbnbs-server-driven-ui-system-842244c5f5
+
+https://podcasts.apple.com/us/podcast/server-driven-ui-with-kevin-fang-jeff-hurray/id1453587931?i=1000509742062
+
+https://www.judo.app/
 
 ## Flet widget for Flutter
 
