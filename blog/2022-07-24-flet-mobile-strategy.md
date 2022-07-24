@@ -20,8 +20,8 @@ In this post I would like to discuss our vision for Flet going mobile and provid
 
 ## Flet widget for Flutter
 
-The first thing we are going to do is to separate Flet client into a Flutter Widget and publish the package at https://pub.dev.
-Flet widget could be then integrated by mobile developers into existing or new Flutter apps for adding dynamic server-driven UI experiences to the core app functionality. A new Flutter app could be also created with just a single Flet widget to host a complete Flet app.
+The first step we are going to do is to separate Flet client into a Flutter Widget and publish the package at https://pub.dev.
+Flet widget could be then integrated by mobile developers into existing or new Flutter apps for adding dynamic server-driven UI experiences to the core app functionality. A new Flutter app could be also created with just a single Flet widget for the purpose of hosting a complete Flet app.
 
 Developers will follow Flutter guide for packaging, signing and distributing their apps to [Android](https://docs.flutter.dev/deployment/android), [iOS](https://docs.flutter.dev/deployment/ios), [Linux](https://docs.flutter.dev/deployment/linux), [macOS](https://docs.flutter.dev/deployment/macos) or [Windows](https://docs.flutter.dev/deployment/windows) platforms.
 
@@ -29,11 +29,12 @@ Flet team will provide sample CI pipelines to automate packaging, signing and pu
 
 ## Flet app for iOS and Android
 
-The next step is a standalone "Flet" app in Apple Store and Google Play for "testing mobile experiences developed with Flet". Using this app developers will be able to add Flet app URL as a new project and instantly use the app
+The next step is a standalone "Flet" app (aka "runner" or "studio") in App Store and Google Play for "testing mobile experiences developed with Flet framework". Developers or beta testers will be able to "register" URL of their hosted Flet app within "Flet" app and instantly see how it performs on a mobile device.
 
 ## Embedding Flet into native apps
+ 
+We are going to provide a guide, sample apps and CI pipeline to integrate Flet widget into existing native Android and iOS apps (not written in Flutter) using [Flutter Add-to-App](https://docs.flutter.dev/development/add-to-app) feature. [Put Flutter to work](https://medium.com/flutter/put-flutter-to-work-95f5fdcc592e) article gives a real-world example on how to integrate Flutter into existing mobile app.
 
-[Put Flutter to work](https://medium.com/flutter/put-flutter-to-work-95f5fdcc592e)
+## While-labeled Flet mobile app
 
-## While-labeling Flet mobile app
-
+We are going to provide a guide and CI pipeline for automatic publishing of while-labeled Flet app to a user App Store or Google Play account. This app will be "pinned" to a specific app URL and could additionally bundle app assets (media, fonts) to minimize network usage.
