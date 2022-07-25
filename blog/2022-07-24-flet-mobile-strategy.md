@@ -54,3 +54,7 @@ We are going to provide a guide, sample apps and CI pipeline to integrate Flet w
 ### While-labeled Flet mobile app
 
 We are going to provide a guide and CI pipeline for automatic publishing of while-labeled Flet app to a user App Store or Google Play account. This app will be "pinned" to a specific app URL and could additionally bundle app assets (media, fonts) to minimize network usage.
+
+This is the current plan.
+
+In the meantime, [give Flet a try](/docs/getting-started/python) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
