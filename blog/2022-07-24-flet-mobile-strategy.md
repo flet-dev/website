@@ -8,11 +8,11 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [product]
 ---
 
-Flet project has got a lot of attention recently and we would like to thank all developers who tried Flet and have been spreading the word about it in the communities! Your support motivates to move Flet project forward with faster pace!
+Flet project has received a lot of attention recently and we would like to thank all the developers who tried Flet and have been spreading the word about it in the communities! Your support motivates us to move Flet project forward with faster pace!
 
 New Flet developers are constantly asking if there is a way to package Flet program to an `.apk` file to deploy to Android devices or `.ipa` to deploy to iOS.
 
-In this post I would like to discuss our vision for Flet going mobile and provide some roadmap.
+In this post I would like to share our vision for Flet going mobile and provide a roadmap.
 
 ## Server-Driven UI
 
@@ -28,11 +28,11 @@ Flet is going to implement Server-Driven UI approach where program written in Py
 
 <img src="/img/docs/getting-started/flet-highlevel-diagram.svg" className="screenshot-100" />
 
-Building a standalone mobile package bundling together Flet framework, user program, language runtime and all dependencies, so the program does not require a web server to run, is currently out of scope though we might reconsider that in the future.
+At the moment we would like to focus on SDUI approach and don't have plans to build a standalone mobile package that will bundle together Flet framework, user program, language runtime and all dependencies, so Flet program does not require a web server to run. If this scenario is a priority for you please let us know.
 
 ## Roadmap
 
-To provide the best Flet apps experience on mobile platforms we plan to release the following items by the end of this year:
+To provide the best experience for Flet apps on mobile platforms, we plan to release the following items by the end of this year:
 
 ### Flet widget for Flutter
 
@@ -49,11 +49,11 @@ The next step is a standalone "Flet Studio" app (the name is not final) in App S
 
 ### Embedding Flet into native apps
  
-We are going to provide a guide, sample apps and CI pipeline to integrate Flet widget into existing native Android and iOS apps (not written in Flutter) using [Flutter Add-to-App](https://docs.flutter.dev/development/add-to-app) feature. [Put Flutter to work](https://medium.com/flutter/put-flutter-to-work-95f5fdcc592e) article gives a real-world example on how to integrate Flutter into existing mobile app.
+We are going to provide a guide, sample apps and CI pipeline to integrate Flet widget into existing native Android and iOS apps (not developed with Flutter) using [Flutter Add-to-App](https://docs.flutter.dev/development/add-to-app) feature. [Put Flutter to work](https://medium.com/flutter/put-flutter-to-work-95f5fdcc592e) article gives a real-world example on how to integrate Flutter into existing mobile app.
 
-### While-labeled Flet mobile app
+### White-labeled Flet mobile app
 
-We are going to provide a guide and CI pipeline for automatic publishing of while-labeled Flet app to a user App Store or Google Play account. This app will be "pinned" to a specific app URL and could additionally bundle app assets (media, fonts) to minimize network usage.
+We are going to provide a guide and CI pipeline for automatic publishing of white-labeled Flet app to a user App Store or Google Play account. This app will be "pinned" to a specific app URL and could additionally bundle app assets (media, fonts) to minimize network usage.
 
 This is the current plan.
 
