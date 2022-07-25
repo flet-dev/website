@@ -43,9 +43,9 @@ Developers will follow Flutter guide for packaging, signing and distributing the
 
 Flet team will provide sample CI pipelines to automate packaging, signing and publishing of Flutter apps.
 
-### Flet app for iOS and Android
+### Flet Studio for iOS and Android
 
-The next step is a standalone "Flet" app (aka "runner" or "studio") in App Store and Google Play for "testing mobile experiences developed with Flet framework". Developers or beta testers will be able to "register" URL of their hosted Flet app within "Flet" app and instantly see how it performs on a mobile device.
+The next step is a standalone "Flet Studio" app (the name is not final) in App Store and Google Play for "testing mobile experiences developed with Flet framework". Developers or beta testers will be able to "register" URL of their hosted Flet app within Flet Studio and instantly see how it performs on a mobile device.
 
 ### Embedding Flet into native apps
  
