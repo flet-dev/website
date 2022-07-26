@@ -168,7 +168,7 @@ module.exports = {
   //         // /docs/oldDoc -> /docs/newDoc
   //         {
   //           to: '/docs/guides/python/getting-started',
-  //           from: '/docs/getting-started/python',
+  //           from: '/docs/guides/python/getting-started',
   //         },
   //         // Redirect from multiple old paths to the new path
   //         // {

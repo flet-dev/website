@@ -183,7 +183,7 @@ Even if you can't think of such uses right now, we still recommend creating all 
 
 To make a reusable Calc app component, we are going to encapsulate its state and presentation logic in a separate `CalculatorApp` class. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc4.py).
 
-Read more about [creating user controls](/docs/getting-started/python#user-controls).
+Read more about [creating user controls](/docs/guides/python/getting-started#user-controls).
 
 :::noteTry something
 Try adding two `CalculatorApp` components to the page:
@@ -231,11 +231,11 @@ Congratulations! You have created your Calculator app with Flet, and it looks aw
 
 Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
 
-[Follow these instructions](/docs/getting-started/python#packaging-a-desktop-app) to package your Calculator app into an executable.
+[Follow these instructions](/docs/guides/python/getting-started#packaging-a-desktop-app) to package your Calculator app into an executable.
 
 ## Deploying a web app
 
-[Follow these instructions](/docs/getting-started/python#deploying-a-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/guides/python/getting-started#deploying-a-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## Summary
 
