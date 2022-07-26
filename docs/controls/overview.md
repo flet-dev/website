@@ -1,6 +1,6 @@
 ---
-title: Overview
-sidebar_label: Overview
+title: Controls reference
+sidebar_label: Controls reference
 slug: /controls
 ---
 
