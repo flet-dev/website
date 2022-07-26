@@ -90,4 +90,4 @@ run again and now you instantly get a web app:
 
 Want to learn how to build a real app? Jump to a getting started guide for your language:
 
-* [Python](/docs/getting-started/python)
+* [Python](/docs/guides/python/getting-started)

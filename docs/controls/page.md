@@ -4,9 +4,9 @@ sidebar_label: Page
 slug: page
 ---
 
-Page is the top most container for all other controls.
+Page is a container for [`View`](view) controls.
 
-A page instance is automatically created when a new user session started. From layout perspective the Page represents a [Column](column) control, so it has a similar behavior and shares same properties.
+A page instance and the root view are automatically created when a new user session started.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -55,6 +55,14 @@ page.update()
   </TabItem>
 </Tabs>
 
+### `views`
+
+A list of [`View`](view) controls to build navigation history.
+
+The last view in the list is the one displayed on a page.
+
+The first view is a "root" view which cannot be poped.
+
 ### `title`
 
 A title of browser or native OS window, for example:
@@ -69,6 +77,10 @@ page.update()
 
   </TabItem>
 </Tabs>
+
+### `route`
+
+Route
 
 ### `horizontal_alignment`
 
@@ -242,6 +254,10 @@ flet.app(target=main)
 
   </TabItem>
 </Tabs>
+
+### `appbar`
+
+A [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
 
 ### `floating_action_button`
 
@@ -441,6 +457,10 @@ def main(page: Page):
 
 ## Methods
 
+### `go(route)`
+
+A helper method that updates [`page.route`](#route), calls [`page.on_route_change`](#on_route_change) event handler to update views and finally calls `page.update()`.
+
 ### `set_clipboard(data)`
 
 Set clipboard data a client side (user's web browser or a desktop), for example:
@@ -546,6 +566,18 @@ Fires when an application's native OS window changes its state: position, size, 
 * `moved` (macOS and Windows only)
 * `enterFullScreen`
 * `leaveFullScreen`
+
+### `on_route_change`
+
+Fires when page route changes either programmatically, by editing application URL or using browser Back/Forward buttons.
+
+The first argument of event handler is a new route.
+
+### `on_view_pop`
+
+Fires when the user clicks automatic "Back" button in [`AppBar`](/docs/controls/appbar) control.
+
+The first argument of event handler is an instance of [`View`](/docs/controls/view) control that contains the AppBar.
 
 ### `on_connect`
 

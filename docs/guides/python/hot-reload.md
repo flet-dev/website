@@ -1,7 +1,6 @@
 ---
 title: Hot reload
 sidebar_label: Hot reload
-slug: hot-reload
 ---
 
 In this How-To we are going to show how to speed up the development of Flet Python apps with hot reload tool.
@@ -22,7 +21,7 @@ To install on Windows:
 choco install watchexec
 ```
 
-[Other installation options](https://github.com/watchexec/watchexec/tree/main/cli#installation)
+[Other installation options](https://github.com/watchexec/watchexec#install)
 
 Now use the following command to call/restart `python your-app.py` when any Python file in the current directory (and all subdirectories) changes:
 
@@ -31,9 +30,3 @@ watchexec -r -e py -- python your-app.py
 ```
 
 Once the app is restarted just hit refresh in your browser to reload it.
-
-You also need to modify your Flet app and set an application name to run on a permanent URL and disable browser opening on the start:
-
-```python
-flet.app("my-app", target=main, no_window=True)
-```

@@ -3,15 +3,30 @@ module.exports = {
     'introduction',
     {
       type: 'category',
-      label: 'Getting Started',
-      link: {
-        type: 'generated-index',
-        description: 'Flet apps can be created in multiple languages. Follow a getting-started guide below for your language.',
-        slug: "/getting-started"
-      },
-      collapsed: false,
+      label: 'Python Guide',
       items: [
-        'getting-started/python',
+        'guides/python/getting-started',
+        'guides/python/displaying-data',
+        'guides/python/getting-user-input',
+        'guides/python/large-lists',
+        'guides/python/drag-and-drop',
+        'guides/python/navigation-and-routing',
+        'guides/python/pub-sub',
+        'guides/python/user-controls',
+        // 'guides/python/hot-reload',
+        'guides/python/packaging-desktop-app',
+        {
+          type: 'category',
+          label: 'Deploying web app',
+          link: {
+            type: 'doc',
+            id: 'guides/python/deploying-web-app/overview'
+          },
+          items: [
+            'guides/python/deploying-web-app/fly-io',
+            'guides/python/deploying-web-app/replit'
+          ]
+        }
       ],
     },
     {
@@ -22,7 +37,6 @@ module.exports = {
         description: 'Flet apps can be created in multiple languages. Follow a getting-started guide below for your language.',
         slug: "/tutorials"
       },
-      collapsed: false,
       items: [
         'tutorials/python-todo',
         'tutorials/python-calculator',
@@ -46,6 +60,7 @@ module.exports = {
           },
           items: [
             'controls/page',
+            'controls/view',
             'controls/container',
             'controls/row',
             'controls/column',
@@ -133,6 +148,18 @@ module.exports = {
             'controls/banner',
             'controls/snackbar',
             'controls/alertdialog',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Utility',
+          link: {
+            type: 'generated-index',
+            slug: 'controls/utility'
+          },
+          items: [
+            'controls/draggable',
+            'controls/dragtarget',
           ]
         },
       ]

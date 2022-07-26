@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-rc.1",
+    "@docusaurus/plugin-client-redirects": "^2.0.0-rc.1",
     "@docusaurus/preset-classic": "^2.0.0-rc.1",
     "@hcaptcha/react-hcaptcha": "^1.0.0",
     "clsx": "^1.1.1",

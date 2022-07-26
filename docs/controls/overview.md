@@ -1,6 +1,6 @@
 ---
-title: Overview
-sidebar_label: Overview
+title: Controls reference
+sidebar_label: Controls reference
 slug: /controls
 ---
 
@@ -28,7 +28,31 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## Common control properties
 
-All Flet controls have the following properties:
+Flet controls have the following properties:
+
+### `width`
+
+Imposed Control width in virtual pixels.
+
+### `height`
+
+Imposed Control height in virtual pixels.
+
+### `left`
+
+Effective inside [`Stack`](controls/stack) only. The distance that the child's left edge is inset from the left of the stack.
+
+### `top`
+
+Effective inside [`Stack`](controls/stack) only. The distance that the child's top edge is inset from the top of the stack.
+
+### `right`
+
+Effective inside [`Stack`](controls/stack) only. The distance that the child's right edge is inset from the right of the stack.
+
+### `bottom`
+
+Effective inside [`Stack`](controls/stack) only. The distance that the child's bottom edge is inset from the bottom of the stack.
 
 ### `visible`
 
