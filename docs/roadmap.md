@@ -10,10 +10,14 @@ slug: roadmap
 
 * Authentication (OAuth): GitHub, Google, Azure (Microsoft Account).
 
-### Platform support
+### Mobile
 
-* Flet iOS app in App Store
-* Flet Android app in Google Play
+* Flet widget for Flutter
+* Flet Studio iOS app in App Store
+* Flet Studio Android app in Google Play
+
+### Desktop
+
 * Windows and macOS "host" client with hot reload, so the app could be run as `flet main.py`
 
 ### Controls
@@ -33,14 +37,13 @@ slug: roadmap
 * Sample apps in Python:
     * Chat
 
-## August-September 2022
+## September-December 2022
 
-### Language support
+### Mobile
 
-* Go
-* C# (.NET)
-
-## Year 2022
+* White-labeled Flet mobile app
+* Standalone mobile package for Flet app
+* Embedding Flet into native apps
 
 ### Controls
 
@@ -48,6 +51,12 @@ slug: roadmap
 * Charts
 * Adaptive controls (controls that change their look depending on platform)
 * Animations
+
+### Language support
+
+* JavaScript/TypeScript
+* Go
+* C# (.NET)
 
 ### Core functionality
 
