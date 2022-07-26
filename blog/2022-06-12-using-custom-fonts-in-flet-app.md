@@ -82,5 +82,5 @@ However, if you need to use a variable font in your app you can create static "i
 
 To explore available font features (e.g. possible options for `wght`) use [Wakamai Fondue](https://wakamaifondue.com/beta/) online tool.
 
-[Give Flet a try](/docs/getting-started/python) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+[Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
 

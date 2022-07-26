@@ -1,14 +1,7 @@
 ---
-slug: navigation-and-routing
-title: Navigation and Routing
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
-tags: [release]
+title: Navigation and routing
+sidebar_label: Navigation and routing
 ---
-
-[Flet 0.1.42](https://pypi.org/project/flet/0.1.42/) has been released with navigation and routing!
 
 Navigation and routing is an essential feature of Single Page Applications (SPA) which allows organizing application user interface into virtual pages (views) and "navigate" between them while application URL reflects the current state of the app.
 
@@ -183,8 +176,3 @@ else:
 ```
 
 You can read more about template syntax supported by `repath` library [here](https://github.com/nickcoutsos/python-repath#parameters).
-
-That's all for today!
-
-[Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
-
