@@ -1,6 +1,6 @@
 ---
-title: Developing real-time chat app in Python
-sidebar_label: Python - Real-time Chat app
+title: Creating realtime chat app in Python
+sidebar_label: Python - Realtime Chat app
 ---
 
 Flet is...
