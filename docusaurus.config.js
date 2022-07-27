@@ -129,13 +129,13 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Appveyor Systems Inc. Built with Docusaurus.`,
+    },
+    algolia: {
+      apiKey: '4b060907ba79d92e8869e9d1ff80bce7',
+      indexName: 'flet',
+      appId: 'ESNSJEY7OD', // Optional, if you run the DocSearch crawler on your own
+      algoliaOptions: {}, // Optional, if provided by Algolia
     }
-    // algolia: {
-    //   apiKey: 'api-key',
-    //   indexName: 'index-name',
-    //   appId: 'app-id', // Optional, if you run the DocSearch crawler on your own
-    //   algoliaOptions: {}, // Optional, if provided by Algolia
-    // }
   },
   presets: [
     [
