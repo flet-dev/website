@@ -254,23 +254,39 @@ Later, when we deside to improve control layout or its logic it won't affect the
 
 ### Keyboard support
 
-#### Inputs focus
+From the first releases of Flet framework we've trying to care about keyboard support. We started from managing controls focus and and submitting forms on Enter, which are crucial. Key bindings/shortcuts are coming in the future releases.
 
-autofocus textboxes
-.focus() after message entered
+#### Focusing input controls
 
-#### Submit on Enter
+All data entry controls have `autofocus` property which when set to `True` moves initial focus to the control. If there is more than one control on a page with `autofocus` set, then the first one added to the page will get focus.
 
-textbox.on_submit
-textbox with shift_enter
+We set `autofocus=True` on a username TextField inside a dialog and then on a TextField for entering chat message to set initial focus on it when the dialog is closed.
+
+When a user click "Send" button or presses Enter to submit a chat message TextField loses focus.
+To programmatically set control focus we used [`TextField.focus()`](https://flet.dev/docs/controls/textfield#focus) method.
+
+#### Submitting forms on `Enter`
+
+It's so tempting to submit forms with just pushing `Enter` button on the keyboard! Type your name in the dialog, hit `Enter`, type a new message, hit `Enter`, type another, hit `Enter` - no mouse involved at all! 🚀
+
+Flet has support for that by providing [`TextField.on_submit`](https://flet.dev/docs/controls/textfield#on_submit) event handler which fires when a user press `Enter` button while the focus is on the TextField.
+
+#### Entering multiline messages
+
+What about multiline TextFields where `Enter` must advance a cursor to the next line? We've got that covered too! `TextField` control has [`shift_enter`](https://flet.dev/docs/controls/textfield#shift_enter) property which when set to `True` enables Discord-like behavior: to get to a new line user presses `Shift`+`Enter` while hitting just `Enter` submits a form.
+
+### Animated scrolling to the last message
+
+Noticed a nice animation of scrolling to the last message in a chat window? It could be enabled by setting [`ListView.auto_scroll`](https://flet.dev/docs/controls/listview#auto_scroll) property to `True`. The top most `Page` class, being a scrollable container itself, also supports [`auto_scroll`](https://flet.dev/docs/controls/page#auto_scroll).
 
 ### Page title
 
-page title
+Final touch - page title that could be changed as simply as:
 
-### Scroll to the last message
-
-listview with auto_scroll
+```python
+page.title = "Flet Chat"
+page.update()
+```
 
 ## Deploying the app
 
