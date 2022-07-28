@@ -40,7 +40,7 @@ In this article we are going to start from a really trivial in-memory Chat app, 
 
 The complete application will be looking like this:
 
-[SCREENSHOT]
+<img src="/img/docs/chat-tutorial/chat.gif" className="screenshot-50" />
 
 You can play with a live demo [here](https://flet-chat.fly.dev).
 
@@ -97,8 +97,10 @@ def main(page: Page):
         chat, Row(controls=[new_message, ElevatedButton("Send", on_click=send_click)])
     )
 
-flet.app("chat", target=main)
+flet.app(target=main)
 ```
+
+<img src="/img/docs/chat-tutorial/chat-1.png" className="screenshot-40" />
 
 ## Broadcasting chat messages
 
@@ -135,6 +137,8 @@ def main(page: Page):
 
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
+
+<img src="/img/docs/chat-tutorial/chat-2.gif" className="screenshot-100" />
 
 ## User name dialog
 
@@ -198,22 +202,55 @@ def main(page: Page):
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
+<img src="/img/docs/chat-tutorial/chat-3.gif" className="screenshot-100" />
+
 ## Enhancing user interface
 
 ### Laying out controls
 
 [diagram with page layout]
 
-[pseudo-code]
+```
+Page
+  Container expand=True
+    ListView expand=True
+  Row
+    TextField expand=True
+	IconButton
+```
 
 ### Re-usable user controls
 
-composability, reusability
-encapsulation
+User control (`UserControl`) allows building isolated re-usable components by combining existing Flet controls. User control behaves like a `Control`, could have methods and properties.
 
-(User controls)[/docs/getting-started/python#user-controls]
+:::info
+You can read more about User Controls in [Flet Guide for Python](https://flet.dev/docs/guides/python/user-controls).
+:::
 
-user control for chat message
+In a chat app we are going to use user control for displaying a single chat message with user name and user avatar.
+
+When creating an instance of `ChatMessage` control we pass just a username and the message and then it's a control's "responsibility" to display a message based on those two parameters:
+
+```python {2}
+class ChatMessage(UserControl):
+    def __init__(self, username: str, text: str):
+        super().__init__()
+        self.username = username
+        self.text = text
+# ...
+```
+
+and later in `on_message` handler:
+
+```python {3}
+    def on_message(message: Message):
+        if message.user != None:
+            m = ChatMessage(message.user, message.text)
+        # ...
+```
+
+`ChatMessage` control extracts initials and algorithmically derives avatar color from a username.
+Later, when we deside to improve control layout or its logic it won't affect the rest of the program - that's the power of encapsulation!
 
 ### Keyboard support
 
