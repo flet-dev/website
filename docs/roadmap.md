@@ -60,4 +60,4 @@ slug: roadmap
 
 ### Core functionality
 
-* Built-in database with a simple ORM
+* Built-in database with a simple ORM ( Object–relational mapping )  
