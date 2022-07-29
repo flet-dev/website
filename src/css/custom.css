@@ -95,6 +95,14 @@ h6 {
   font-weight: 700;
 } */
 
+.icon-button {
+  vertical-align:text-bottom;
+  background-color: #eee;
+  border-radius: 2px;
+  padding: 1px;
+  width: 22px;
+}
+
 .screenshot,
 .screenshot-10,
 .screenshot-30,

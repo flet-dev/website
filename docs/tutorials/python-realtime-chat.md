@@ -292,6 +292,24 @@ page.update()
 
 Deploy as a web app and deliver as Progressive Web App (PWA).
 
+### Customizing web app
+
+Tell about "assets" directory.
+
+#### Favicon
+
+favicon - 32x32 png - when running in the browser
+
+#### Loading animation
+
+icon for loading animation: icons/icon-192.png
+
+https://docs.flutter.dev/development/platform-integration/web/initialization
+
+https://github.com/flutter/gallery/blob/master/web/index.html
+
+### Progressive web app (PWA)
+
 Browsers that support PWA:
 
 * Chrome on all platforms
@@ -305,9 +323,9 @@ Additional information about PWAs:
 * [PWA manifests](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 * [General information about PWAs](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
-A note about webrenderer.
+A note about webrenderer: /docs/controls/text/#using-system-fonts
 
-### Customizing app details and palette
+#### Customizing PWA manifest
 
 name
 short name
@@ -315,20 +333,21 @@ description
 theme_color
 background
 
-### Customizing icons
-
-favicon - 32x32 png - when running in the browser
-
-icon for loading animation: icons/icon-192.png
+#### Customizing PWA icons
 
 Windows - round
 
 iOS - touch in HTML: icons/apple-touch-icon-192.png
 
+### Deploying as web app
+
+https://flet.dev/docs/guides/python/deploying-web-app
+
 ## What's next
 
 The future articles we will cover things like:
 
+* Upload/download images
 * Authentication, avatars
 * Using database for the storage
 * Chat channels, topics
