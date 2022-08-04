@@ -56,7 +56,7 @@ Is `first_name` a TextField, does it have autofocus set? Is greetings a `Row` or
 
 ## `Ref` class
 
-Flet contains `Ref` helper class which allows to define a reference to the control, use that reference in event handlers and set the reference to a real control later, while building a tree. The idea comes from [React](https://reactjs.org/docs/refs-and-the-dom.html).
+Flet provides `Ref` utility class which allows to define a reference to the control, use that reference in event handlers and set the reference to a real control later, while building a tree. The idea comes from [React](https://reactjs.org/docs/refs-and-the-dom.html).
 
 To define a new typed control reference:
 
