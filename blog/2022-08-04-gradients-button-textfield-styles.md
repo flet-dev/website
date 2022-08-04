@@ -177,60 +177,156 @@ flet.app(target=main)
 
 Empty string (`""`) state is a fallback style.
 
-For a complete description of `ButtonStyle` class and its properties check [`ElevatedButton.style`](/docs/controls/elevatedbutton#style) property docs.
+Button shape could also be changed with `ButtonStyle.shape` property:
 
-You can change the shape of a button with `shape` property:
+<img src="/img/blog/gradients/button-shapes.png" className="screenshot-30" />
 
 ```python
-# button styles
+import flet
+from flet import ButtonStyle, FilledButton, Page
+from flet.buttons import (
+    BeveledRectangleBorder,
+    CircleBorder,
+    CountinuosRectangleBorder,
+    RoundedRectangleBorder,
+    StadiumBorder,
+)
+
+def main(page: Page):
+    page.padding = 30
+    page.spacing = 30
+    page.add(
+        FilledButton(
+            "Stadium",
+            style=ButtonStyle(
+                shape=StadiumBorder(),
+            ),
+        ),
+        FilledButton(
+            "Rounded rectangle",
+            style=ButtonStyle(
+                shape=RoundedRectangleBorder(radius=10),
+            ),
+        ),
+        FilledButton(
+            "Continuous rectangle",
+            style=ButtonStyle(
+                shape=CountinuosRectangleBorder(radius=30),
+            ),
+        ),
+        FilledButton(
+            "Beveled rectangle",
+            style=ButtonStyle(
+                shape=BeveledRectangleBorder(radius=10),
+            ),
+        ),
+        FilledButton(
+            "Circle",
+            style=ButtonStyle(shape=CircleBorder(), padding=30),
+        ),
+    )
+
+flet.app(target=main)
 ```
 
-[screenshot]
+Check [`ElevatedButton.style`](/docs/controls/elevatedbutton#style) property docs for a complete description of `ButtonStyle` class and its properties.
 
 ## TextField and Dropdown styling
 
-It is now possible to configure text size, border style and corners radius for normal and focused states of `TextField` and `Dropdown`.
-
-```python
-# TextField example
-```
-
-[screenshot]
-
-```python
-# Dropdown example
-```
-
-[screenshot]
-
-## TextField improvements
-
-`TextField` allows configuring colors for a cursor and selection:
-
-```python
-# TextField example
-```
-
-[screenshot]
+It is now possible to configure text size, border style and corners radius for normal and focused states of `TextField` and `Dropdown` controls. `TextField` also allows configuring colors for a cursor and selection.
 
 Additionally, the maximum length of entered into `TextField` can now be limited with `max_length` property.
 
-We also introduced `capitalization` property for automatic capitalization of characters as you type them into `TextField`. You can choose from 4 capitalization strategies: `none` (default), `characters`, `words` and `sentences`:
+We also introduced `capitalization` property for automatic capitalization of characters as you type them into `TextField`. You can choose from 4 capitalization strategies: `none` (default), `characters`, `words` and `sentences`.
+
+An example of styled `TextField` with `max_length` and `capitalization`:
+
+<img src="/img/blog/gradients/styled-textfield.gif" className="screenshot-50" />
 
 ```python
-code
+import flet
+from flet import Page, TextField, colors
+
+def main(page: Page):
+    page.padding = 50
+    page.add(
+        TextField(
+            text_size=30,
+            cursor_color=colors.RED,
+            selection_color=colors.YELLOW,
+            color=colors.PINK,
+            bgcolor=colors.BLACK26,
+            filled=True,
+            focused_color=colors.GREEN,
+            focused_bgcolor=colors.CYAN_200,
+            border_radius=30,
+            border_color=colors.GREEN_800,
+            focused_border_color=colors.GREEN_ACCENT_400,
+            max_length=20,
+            capitalization="characters",
+        )
+    )
+
+flet.app(target=main)
 ```
 
-[screenshot]
+An example of styled `Dropdown` control:
+
+<img src="/img/blog/gradients/styled-dropdown.gif" className="screenshot-50" />
+
+```python
+import flet
+from flet import Dropdown, Page, colors, dropdown
+
+def main(page: Page):
+    page.padding = 50
+    page.add(
+        Dropdown(
+            options=[
+                dropdown.Option("a", "Item A"),
+                dropdown.Option("b", "Item B"),
+                dropdown.Option("c", "Item C"),
+            ],
+            border_radius=30,
+            filled=True,
+            border_color=colors.TRANSPARENT,
+            bgcolor=colors.BLACK12,
+            focused_bgcolor=colors.BLUE_100,
+        )
+    )
+
+flet.app(target=main)
+```
 
 ## Other changes
 
-`IconButton` got `selected` state with distinctive style that can be toggled in your logic:
+`IconButton` got `selected` state which plays nice with a new `style`.
+
+This is an example of a toggle icon button:
+
+<img src="/img/blog/gradients/toggle-icon-button.gif" className="screenshot-20" />
 
 ```python
-code
-```
+import flet
+from flet import ButtonStyle, IconButton, Page, colors, icons
 
-[screenshot]
+def main(page: Page):
+
+    def toggle_icon_button(e):
+        e.control.selected = not e.control.selected
+        e.control.update()
+
+    page.add(
+        IconButton(
+            icon=icons.BATTERY_1_BAR,
+            selected_icon=icons.BATTERY_FULL,
+            on_click=toggle_icon_button,
+            selected=False,
+            style=ButtonStyle(color={"selected": colors.GREEN, "": colors.RED}),
+        )
+    )
+
+flet.app(target=main)
+```
 
 [Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
