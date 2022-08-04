@@ -15,81 +15,177 @@ We've just released [Flet 0.1.44](https://pypi.org/project/flet/0.1.44/) adding 
 
 ## Gradient backgrounds
 
-### Linear
+### Linear gradient
 
-An instance of `LinearGradient` class:
+<img src="/img/blog/gradients/linear-gradient.png" className="screenshot-30" />
 
-* `begin` - An instance of `Alignment` class. The offset at which stop 0.0 of the gradient is placed.
-* `end` - An instance of `Alignment` class. The offset at which stop 1.0 of the gradient is placed.
-* `colors` - The colors the gradient should obtain at each of the stops. If stops is non-null, this list must have the same length as stops. This list must have at least two colors in it (otherwise, it's not a gradient!).
-* `stops` - A list of values from 0.0 to 1.0 that denote fractions along the gradient. If non-null, this list must have the same length as `colors`. If the first value is not 0.0, then a stop with position 0.0 and a color equal to the first color in `colors` is implied. If the last value is not 1.0, then a stop with position 1.0 and a color equal to the last color in `colors` is implied.
-* `tile_mode` - How this gradient should tile the plane beyond in the region before `begin` and after `end`. Supported values: `clamp` (default), `decal`, `mirror`, `repeated`. More info [here](https://api.flutter.dev/flutter/dart-ui/TileMode.html).
-* `rotation` - rotation for the gradient, in [radians](https://en.wikipedia.org/wiki/Radian), around the center-point of its bounding box.
+```python
+import math
+import flet
+from flet import Alignment, Container, LinearGradient, Page, alignment
 
-More information:
+def main(page: Page):
 
-* [Linear gradient](https://api.flutter.dev/flutter/painting/LinearGradient-class.html) in Flutter documentation.
-* [Radian measuring unit](https://en.wikipedia.org/wiki/Radian) on Wikipedia.
+    page.add(
+        Container(
+            alignment=alignment.center,
+            gradient=LinearGradient(
+                begin=alignment.top_left,
+                end=Alignment(0.8, 1),
+                colors=[
+                    "0xff1f005c",
+                    "0xff5b0060",
+                    "0xff870160",
+                    "0xffac255e",
+                    "0xffca485c",
+                    "0xffe16b5c",
+                    "0xfff39060",
+                    "0xffffb56b",
+                ],
+                tile_mode="mirror",
+                rotation=math.pi / 3,
+            ),
+            width=150,
+            height=150,
+            border_radius=5,
+        )
+    )
 
-### Radial
+flet.app(target=main)
+```
 
-An instance of `RadialGradient` class:
+Check [`Container.gradient`](/docs/controls/container#lineargradient) docs for more information about `LinearGradient` properties.
 
-* `colors`, `stops`, `tile_mode`, `rotation` - see Linear gradient for description of these properties.
-* `center` - An instance of `Alignment` class. The center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For example, an alignment of (0.0, 0.0) will place the radial gradient in the center of the box.
-* `radius` - The radius of the gradient, as a fraction of the shortest side of the paint box. For example, if a radial gradient is painted on a box that is 100.0 pixels wide and 200.0 pixels tall, then a radius of 1.0 will place the 1.0 stop at 100.0 pixels from the `center`.
-* `focal` - The focal point of the gradient. If specified, the gradient will appear to be focused along the vector from `center` to focal.
-* `focal_radius` - The radius of the focal point of gradient, as a fraction of the shortest side of the paint box. For example, if a radial gradient is painted on a box that is 100.0 pixels wide and 200.0 pixels tall, then a radius of 1.0 will place the 1.0 stop at 100.0 pixels from the focal point.
+### Radial gradient
 
-More information:
+<img src="/img/blog/gradients/radial-gradient.png" className="screenshot-30" />
 
-* [Radial gradient](https://api.flutter.dev/flutter/painting/RadialGradient-class.html) in Flutter documentation.
+```python
+import flet
+from flet import Alignment, Container, Page, RadialGradient, alignment
 
-### Sweep
+def main(page: Page):
 
-* `center` - The center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For example, an alignment of (0.0, 0.0) will place the sweep gradient in the center of the box.
-* `start_angle` - The angle in radians at which stop 0.0 of the gradient is placed. Defaults to 0.0.
-* `end_angle` - The angle in radians at which stop 1.0 of the gradient is placed. Defaults to math.pi * 2.
+    page.add(
+        Container(
+            alignment=alignment.center,
+            gradient=RadialGradient(
+                center=Alignment(0.7, -0.6),
+                radius=0.2,
+                colors=[
+                    "0xFFFFFF00",  # yellow sun
+                    "0xFF0099FF",  # blue sky
+                ],
+                stops=[0.4, 1.0],
+            ),
+            width=150,
+            height=150,
+            border_radius=5,
+        )
+    )
 
-More information:
+flet.app(target=main)
+```
 
-* [Sweep gradient](https://api.flutter.dev/flutter/painting/SweepGradient-class.html) in Flutter documentation.
+Check [`Container.gradient`](/docs/controls/container#radialgradient) docs for more information about `RadialGradient` properties.
+
+### Sweep gradient
+
+<img src="/img/blog/gradients/sweep-gradient.png" className="screenshot-30" />
+
+```python
+import math
+import flet
+from flet import Container, Page, SweepGradient, alignment
+
+def main(page: Page):
+
+    page.add(
+        Container(
+            alignment=alignment.center,
+            gradient=SweepGradient(
+                center=alignment.center,
+                start_angle=0.0,
+                end_angle=math.pi * 2,
+                colors=[
+                    "0xFF4285F4",
+                    "0xFF34A853",
+                    "0xFFFBBC05",
+                    "0xFFEA4335",
+                    "0xFF4285F4",
+                ],
+                stops=[0.0, 0.25, 0.5, 0.75, 1.0],
+            ),
+            width=150,
+            height=150,
+            border_radius=5,
+        )
+    )
+
+flet.app(target=main)
+```
+
+Check [`Container.gradient`](/docs/controls/container#sweepgradient) docs for more information about `SweepGradient` properties.
 
 ## Buttons styling
 
-`ButtonStyle` class:
-* color - The color for the button's Text and Icon control descendants.
-* bgcolor - The button's background fill color.
-* overlay_color - The highlight color that's typically used to indicate that the button is focused, hovered, or pressed.
-* shadow_color - The shadow color of the button's Material.
-* surface_tint_color - The surface tint color of the button's Material.
-* elevation - The elevation of the button's Material.
-* animation_duration - Defines the duration in milliseconds of animated changes for shape and elevation.
-* padding - The padding between the button's boundary and its child.
-* side - An instance of `BorderSide` class, the color and weight of the button's outline.
-* shape - The shape of the button's underlying Material, an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CountinuosRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+This Flet release introduces `style` property to all button controls which is an instance of `ButtonStyle` class.
+`ButtonStyle` allows controling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius!
 
-Dictionary of a value.
+Moreover, each individual style attribute could be configured for a different "Material states" of a button, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
 
-Material states:
+Check this "extreme" styling example:
 
-* `hovered`
-* `focused`
-* `pressed`
-* `dragged`
-* `selected`
-* `scrolledUnder`
-* `disabled`
-* `error`
-* (empty string)
+<img src="/img/blog/gradients/styled-button.gif" className="screenshot-30" />
+
+```python
+import flet
+from flet import ButtonStyle, ElevatedButton, Page, colors
+from flet.border import BorderSide
+from flet.buttons import RoundedRectangleBorder
+
+def main(page: Page):
+
+    page.add(
+        ElevatedButton(
+            "Styled button 1",
+            style=ButtonStyle(
+                color={
+                    "hovered": colors.WHITE,
+                    "focused": colors.BLUE,
+                    "": colors.BLACK,
+                },
+                bgcolor={"focused": colors.PINK_200, "": colors.YELLOW},
+                padding={"hovered": 20},
+                overlay_color=colors.TRANSPARENT,
+                elevation={"pressed": 0, "": 1},
+                animation_duration=500,
+                side={
+                    "": BorderSide(1, colors.BLUE),
+                    "hovered": BorderSide(2, colors.BLUE),
+                },
+                shape={
+                    "hovered": RoundedRectangleBorder(radius=20),
+                    "": RoundedRectangleBorder(radius=2),
+                },
+            ),
+        )
+    )
+
+flet.app(target=main)
+```
+
+Empty string (`""`) state is a fallback style.
+
+For a complete description of `ButtonStyle` class and its properties check [`ElevatedButton.style`](/docs/controls/elevatedbutton#style) property docs.
+
+You can change the shape of a button with `shape` property:
+
+```python
+# button styles
+```
+
+[screenshot]
 
 ## TextField and Dropdown styling
 
