@@ -240,11 +240,28 @@ container_1.border_radius = border_radius.all(30)
 
 ### `gradient`
 
+Configures gradient background. The value must be an instance of one of the following classes:
+
 * `LinearGradient`
 * `RadialGradient`
 * `SweepGradient`
 
 #### `LinearGradient`
+
+<img src="/img/docs/controls/container/linear-gradient.png" className="screenshot-20" />
+
+```python
+Container(
+    gradient=LinearGradient(
+        begin=alignment.top_center,
+        end=alignment.bottom_center,
+        colors=[colors.BLUE, colors.YELLOW],
+    ),
+    width=150,
+    height=150,
+    border_radius=5,
+)
+```
 
 `LinearGradient` class has the following properties:
 
@@ -262,6 +279,19 @@ More information:
 
 #### `RadialGradient`
 
+<img src="/img/docs/controls/container/radial-gradient.png" className="screenshot-20" />
+
+```python
+Container(
+    gradient=RadialGradient(
+        colors=[colors.YELLOW, colors.BLUE],
+    ),
+    width=150,
+    height=150,
+    border_radius=5,
+)
+```
+
 `RadialGradient` class has the following properties:
 
 * `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#lineargradient) for description of these properties.
@@ -275,6 +305,22 @@ More information:
 * [Radial gradient](https://api.flutter.dev/flutter/painting/RadialGradient-class.html) in Flutter documentation.
 
 #### `SweepGradient`
+
+<img src="/img/docs/controls/container/sweep-gradient.png" className="screenshot-20" />
+
+```python
+Container(
+    gradient=SweepGradient(
+        center=alignment.center,
+        start_angle=0.0,
+        end_angle=math.pi * 2,
+        colors=[colors.YELLOW, colors.BLUE],
+    ),
+    width=150,
+    height=150,
+    border_radius=5,
+)
+```
 
 `SweepGradient` class has the following properties:
 
@@ -296,3 +342,7 @@ More information:
 ### `on_click`
 
 Fires when a user clicks the container.
+
+### `on_long_press`
+
+Fires when the container is long-pressed.

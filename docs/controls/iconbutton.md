@@ -98,6 +98,49 @@ Icon color.
 
 Icon size in virtual pixels.
 
+### `selected`
+
+Turns icon button to a toggle button: `True` - the button is in selected state, `False` - in normal.
+
+### `selected_icon`
+
+Icon shown in the button in selected state.
+
+### `selected_icon_color`
+
+Icon color for the selected state.
+
+En example of icon toggle button:
+
+<img src="/img/blog/gradients/toggle-icon-button.gif" className="screenshot-10" />
+
+```python
+import flet
+from flet import ButtonStyle, IconButton, Page, colors, icons
+
+def main(page: Page):
+
+    def toggle_icon_button(e):
+        e.control.selected = not e.control.selected
+        e.control.update()
+
+    page.add(
+        IconButton(
+            icon=icons.BATTERY_1_BAR,
+            selected_icon=icons.BATTERY_FULL,
+            on_click=toggle_icon_button,
+            selected=False,
+            style=ButtonStyle(color={"selected": colors.GREEN, "": colors.RED}),
+        )
+    )
+
+flet.app(target=main)
+```
+
+### `style`
+
+See [ElevatedButton.style](elevatedbutton#style) for more information about this property.
+
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.

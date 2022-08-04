@@ -185,8 +185,6 @@ Icon color.
 
 The value is an instance of `ButtonStyle` class. `ButtonStyle` allows controling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
 
-
-
 Each individual style attribute could be configured for all or particular "Material states" of a button, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
 
 The following material states are supported:
@@ -285,6 +283,58 @@ flet.app(target=main)
   * `CountinuosRectangleBorder`
     * `radius` - border radius, an instance of `BorderRadius` class or a number.
 
+This is an example demonstrating various button shapes:
+
+<img src="/img/blog/gradients/button-shapes.png" className="screenshot-20" />
+
+```python
+import flet
+from flet import ButtonStyle, FilledButton, Page
+from flet.buttons import (
+    BeveledRectangleBorder,
+    CircleBorder,
+    CountinuosRectangleBorder,
+    RoundedRectangleBorder,
+    StadiumBorder,
+)
+
+def main(page: Page):
+    page.padding = 30
+    page.spacing = 30
+    page.add(
+        FilledButton(
+            "Stadium",
+            style=ButtonStyle(
+                shape=StadiumBorder(),
+            ),
+        ),
+        FilledButton(
+            "Rounded rectangle",
+            style=ButtonStyle(
+                shape=RoundedRectangleBorder(radius=10),
+            ),
+        ),
+        FilledButton(
+            "Continuous rectangle",
+            style=ButtonStyle(
+                shape=CountinuosRectangleBorder(radius=30),
+            ),
+        ),
+        FilledButton(
+            "Beveled rectangle",
+            style=ButtonStyle(
+                shape=BeveledRectangleBorder(radius=10),
+            ),
+        ),
+        FilledButton(
+            "Circle",
+            style=ButtonStyle(shape=CircleBorder(), padding=30),
+        ),
+    )
+
+flet.app(target=main)
+```
+
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
@@ -302,3 +352,7 @@ A Control representing custom button content.
 ### `on_click`
 
 Fires when a user clicks the button.
+
+### `on_long_press`
+
+Fires when the button is long-pressed.
