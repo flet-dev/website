@@ -12,6 +12,7 @@ We've just released [Flet 0.1.44](https://pypi.org/project/flet/0.1.44/) adding 
 
 * Gradient backgrounds in Container
 * Extensive styling for buttons, TextField and Dropdown controls
+* ...and more
 
 ## Gradient backgrounds
 
