@@ -8,7 +8,7 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-We've just released [Flet 0.1.45](https://pypi.org/project/flet/0.1.45/) adding new exciting features:
+We've just released [Flet 0.1.46](https://pypi.org/project/flet/0.1.46/) adding new exciting features:
 
 * Gradient backgrounds in Container
 * Extensive styling for buttons, TextField and Dropdown controls
