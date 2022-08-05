@@ -289,6 +289,7 @@ Enables horizontal scrolling for the Row to prevent its content overflow. Suppor
 * `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
 * `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `always` - scrolling is enabled and scroll bar is always shown.
+* `hidden` - scrolling is enabled, but scroll bar is always hidden.
 
 ### `auto_scroll`
 

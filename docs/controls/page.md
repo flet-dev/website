@@ -129,6 +129,7 @@ Enables a vertical scrolling for the Page to prevent its content overflow. Suppo
 * `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
 * `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `always` - scrolling is enabled and scroll bar is always shown.
+* `hidden` - scrolling is enabled, but scroll bar is always hidden.
 
 ### `auto_scroll`
 
@@ -154,6 +155,14 @@ page.update()
 
   </TabItem>
 </Tabs>
+
+`Theme` class has the following properties:
+
+* `color_scheme_seed` - a seed color to algorithmically derive the rest of theme colors from.
+* `brightness` - either `light` (default) or `dark`.
+* `font_family` - the base font for all UI elements.
+* `use_material3` - `True` (default) to use Material 3 design; otherwise Material 2.
+* `visual_density` - `standard` (default), `compact`, `comfortable`, `adaptivePlatformDensity`.
 
 :::note
 Read this [note about system fonts](/docs/controls/text#using-system-fonts) if you like to use them in `font_family` of your theme.

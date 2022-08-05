@@ -181,6 +181,160 @@ Icon shown in the button.
 
 Icon color.
 
+### `style`
+
+The value is an instance of `ButtonStyle` class. `ButtonStyle` allows controling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
+
+Each individual style attribute could be configured for all or particular "Material states" of a button, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
+
+The following material states are supported:
+
+* `hovered`
+* `focused`
+* `pressed`
+* `dragged`
+* `selected`
+* `scrolledUnder`
+* `disabled`
+* `error`
+* `""` (empty string) - fallback state, meaning "all other states".
+
+To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `color` property to a literal the value will be applied to all button states:
+
+```python
+ButtonStyle(
+    color=colors.WHITE
+)
+```
+
+To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For example, to configure different background colors for `hovered` and `focused` states and another colors for all other states:
+
+```python
+ButtonStyle(
+    color={
+        "hovered": colors.WHITE,
+        "focused": colors.BLUE,
+        "": colors.BLACK,
+    }
+)
+```
+
+Check the following example:
+
+<img src="/img/blog/gradients/styled-button.gif" className="screenshot-30" />
+
+```python
+import flet
+from flet import ButtonStyle, ElevatedButton, Page, colors
+from flet.border import BorderSide
+from flet.buttons import RoundedRectangleBorder
+
+def main(page: Page):
+
+    page.add(
+        ElevatedButton(
+            "Styled button 1",
+            style=ButtonStyle(
+                color={
+                    "hovered": colors.WHITE,
+                    "focused": colors.BLUE,
+                    "": colors.BLACK,
+                },
+                bgcolor={"focused": colors.PINK_200, "": colors.YELLOW},
+                padding={"hovered": 20},
+                overlay_color=colors.TRANSPARENT,
+                elevation={"pressed": 0, "": 1},
+                animation_duration=500,
+                side={
+                    "": BorderSide(1, colors.BLUE),
+                    "hovered": BorderSide(2, colors.BLUE),
+                },
+                shape={
+                    "hovered": RoundedRectangleBorder(radius=20),
+                    "": RoundedRectangleBorder(radius=2),
+                },
+            ),
+        )
+    )
+
+flet.app(target=main)
+```
+
+#### `ButtonStyle` class
+
+ `ButtonStyle` class has the following properties:
+
+* `color` - The color for the button's Text and Icon control descendants.
+* `bgcolor` - The button's background fill color.
+* `overlay_color` - The highlight color that's typically used to indicate that the button is focused, hovered, or pressed.
+* `shadow_color` - The shadow color of the button's Material.
+* `surface_tint_color` - The surface tint color of the button's Material.
+* `elevation` - The elevation of the button's Material.
+* `animation_duration` - Defines the duration in milliseconds of animated changes for shape and elevation.
+* `padding` - The padding between the button's boundary and its child.
+* `side` - An instance of `BorderSide` class, the color and weight of the button's outline.
+* `shape` - The shape of the button's underlying Material, an instance of one of the following implementations:
+  * `StadiumBorder`
+  * `RoundedRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `CircleBorder`
+  * `BeveledRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `CountinuosRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+
+This is an example demonstrating various button shapes:
+
+<img src="/img/blog/gradients/button-shapes.png" className="screenshot-20" />
+
+```python
+import flet
+from flet import ButtonStyle, FilledButton, Page
+from flet.buttons import (
+    BeveledRectangleBorder,
+    CircleBorder,
+    CountinuosRectangleBorder,
+    RoundedRectangleBorder,
+    StadiumBorder,
+)
+
+def main(page: Page):
+    page.padding = 30
+    page.spacing = 30
+    page.add(
+        FilledButton(
+            "Stadium",
+            style=ButtonStyle(
+                shape=StadiumBorder(),
+            ),
+        ),
+        FilledButton(
+            "Rounded rectangle",
+            style=ButtonStyle(
+                shape=RoundedRectangleBorder(radius=10),
+            ),
+        ),
+        FilledButton(
+            "Continuous rectangle",
+            style=ButtonStyle(
+                shape=CountinuosRectangleBorder(radius=30),
+            ),
+        ),
+        FilledButton(
+            "Beveled rectangle",
+            style=ButtonStyle(
+                shape=BeveledRectangleBorder(radius=10),
+            ),
+        ),
+        FilledButton(
+            "Circle",
+            style=ButtonStyle(shape=CircleBorder(), padding=30),
+        ),
+    )
+
+flet.app(target=main)
+```
+
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
@@ -198,3 +352,7 @@ A Control representing custom button content.
 ### `on_click`
 
 Fires when a user clicks the button.
+
+### `on_long_press`
+
+Fires when the button is long-pressed.

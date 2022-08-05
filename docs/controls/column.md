@@ -298,6 +298,7 @@ Enables a vertical scrolling for the Column to prevent its content overflow. Sup
 * `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
 * `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `always` - scrolling is enabled and scroll bar is always shown.
+* `hidden` - scrolling is enabled, but scroll bar is always hidden.
 
 ### `auto_scroll`
 

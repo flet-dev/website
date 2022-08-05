@@ -278,6 +278,67 @@ See [`Container.padding`](container#padding) for more information about padding 
 
 If `True` the decoration's container is filled with theme fillColor.
 
+### `text_size`
+
+Text size in virtual pixels.
+
+### `color`
+
+Text color.
+
+### `bgcolor`
+
+TextField background color.
+
+### `border_radius`
+
+See [`Container.border_radius`] property docs for more information about border radius.
+
+### `border_width`
+
+The width of the border in virtual pixels. Default is 1. Set to 0 to commpletely remove border.
+
+### `border_color`
+
+Border color. Could be `transparent` to hide the border.
+
+### `focused_color`
+
+Text color when TextField is focused.
+
+### `focused_bgcolor`
+
+Background color of TextField in focused state.
+
+### `focused_border_width`
+
+Border width in focused state.
+
+### `focused_border_color`
+
+Border color in focused state.
+
+### `cursor_color`
+
+The color of TextField cursor.
+
+### `selected_color`
+
+The color of TextField selection.
+
+### `max_length`
+
+Limits a maximum number of characters that can be entered into TextField.
+
+### `capitalization`
+
+Enables automatic on-the-fly capitalization of entered text:
+
+* `none` (default) - do not change entered text.
+* `characters` - every entered symbol is capitalized.
+* `words` - capitalize the first letter of every word.
+* `sentences` - capitalize the first letter of every sentese.
+
 ### `hint_text`
 
 Text that suggests what sort of input the field accepts.

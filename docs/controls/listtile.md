@@ -154,3 +154,7 @@ Whether this list tile is part of a vertically dense list. Dense list tiles defa
 ### `on_click`
 
 Fires when a user clicks or taps the list tile.
+
+### `on_long_press`
+
+Fires when the user long-presses on this list tile.

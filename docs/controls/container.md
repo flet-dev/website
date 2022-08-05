@@ -238,6 +238,101 @@ from flet import border_radius
 container_1.border_radius = border_radius.all(30)
 ```
 
+### `gradient`
+
+Configures gradient background. The value must be an instance of one of the following classes:
+
+* `LinearGradient`
+* `RadialGradient`
+* `SweepGradient`
+
+#### `LinearGradient`
+
+<img src="/img/docs/controls/container/linear-gradient.png" className="screenshot-20" />
+
+```python
+Container(
+    gradient=LinearGradient(
+        begin=alignment.top_center,
+        end=alignment.bottom_center,
+        colors=[colors.BLUE, colors.YELLOW],
+    ),
+    width=150,
+    height=150,
+    border_radius=5,
+)
+```
+
+`LinearGradient` class has the following properties:
+
+* `begin` - An instance of `Alignment` class. The offset at which stop 0.0 of the gradient is placed.
+* `end` - An instance of `Alignment` class. The offset at which stop 1.0 of the gradient is placed.
+* `colors` - The colors the gradient should obtain at each of the stops. If stops is non-null, this list must have the same length as stops. This list must have at least two colors in it (otherwise, it's not a gradient!).
+* `stops` - A list of values from 0.0 to 1.0 that denote fractions along the gradient. If non-null, this list must have the same length as `colors`. If the first value is not 0.0, then a stop with position 0.0 and a color equal to the first color in `colors` is implied. If the last value is not 1.0, then a stop with position 1.0 and a color equal to the last color in `colors` is implied.
+* `tile_mode` - How this gradient should tile the plane beyond in the region before `begin` and after `end`. Supported values: `clamp` (default), `decal`, `mirror`, `repeated`. More info [here](https://api.flutter.dev/flutter/dart-ui/TileMode.html).
+* `rotation` - rotation for the gradient, in [radians](https://en.wikipedia.org/wiki/Radian), around the center-point of its bounding box.
+
+More information:
+
+* [Linear gradient](https://api.flutter.dev/flutter/painting/LinearGradient-class.html) in Flutter documentation.
+* [Radian measuring unit](https://en.wikipedia.org/wiki/Radian) on Wikipedia.
+
+#### `RadialGradient`
+
+<img src="/img/docs/controls/container/radial-gradient.png" className="screenshot-20" />
+
+```python
+Container(
+    gradient=RadialGradient(
+        colors=[colors.YELLOW, colors.BLUE],
+    ),
+    width=150,
+    height=150,
+    border_radius=5,
+)
+```
+
+`RadialGradient` class has the following properties:
+
+* `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#lineargradient) for description of these properties.
+* `center` - An instance of `Alignment` class. The center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For example, an alignment of (0.0, 0.0) will place the radial gradient in the center of the box.
+* `radius` - The radius of the gradient, as a fraction of the shortest side of the paint box. For example, if a radial gradient is painted on a box that is 100.0 pixels wide and 200.0 pixels tall, then a radius of 1.0 will place the 1.0 stop at 100.0 pixels from the `center`.
+* `focal` - The focal point of the gradient. If specified, the gradient will appear to be focused along the vector from `center` to focal.
+* `focal_radius` - The radius of the focal point of gradient, as a fraction of the shortest side of the paint box. For example, if a radial gradient is painted on a box that is 100.0 pixels wide and 200.0 pixels tall, then a radius of 1.0 will place the 1.0 stop at 100.0 pixels from the focal point.
+
+More information:
+
+* [Radial gradient](https://api.flutter.dev/flutter/painting/RadialGradient-class.html) in Flutter documentation.
+
+#### `SweepGradient`
+
+<img src="/img/docs/controls/container/sweep-gradient.png" className="screenshot-20" />
+
+```python
+Container(
+    gradient=SweepGradient(
+        center=alignment.center,
+        start_angle=0.0,
+        end_angle=math.pi * 2,
+        colors=[colors.YELLOW, colors.BLUE],
+    ),
+    width=150,
+    height=150,
+    border_radius=5,
+)
+```
+
+`SweepGradient` class has the following properties:
+
+* `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#lineargradient) for description of these properties.
+* `center` - The center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For example, an alignment of (0.0, 0.0) will place the sweep gradient in the center of the box.
+* `start_angle` - The angle in radians at which stop 0.0 of the gradient is placed. Defaults to 0.0.
+* `end_angle` - The angle in radians at which stop 1.0 of the gradient is placed. Defaults to math.pi * 2.
+
+More information:
+
+* [Sweep gradient](https://api.flutter.dev/flutter/painting/SweepGradient-class.html) in Flutter documentation.
+
 ### `ink`
 
 `True` to produce ink ripples effect when user clicks the container. Default is `False`.
@@ -247,3 +342,7 @@ container_1.border_radius = border_radius.all(30)
 ### `on_click`
 
 Fires when a user clicks the container.
+
+### `on_long_press`
+
+Fires when the container is long-pressed.

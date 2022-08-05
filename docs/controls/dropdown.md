@@ -182,6 +182,46 @@ See [`Container.padding`](container#padding) for more information about padding 
 
 If `True` the decoration's container is filled with theme fillColor.
 
+### `text_size`
+
+Text size in virtual pixels.
+
+### `color`
+
+Text color.
+
+### `bgcolor`
+
+Dropdown background color.
+
+### `border_radius`
+
+See [`Container.border_radius`] property docs for more information about border radius.
+
+### `border_width`
+
+The width of the border in virtual pixels. Default is 1. Set to 0 to commpletely remove border.
+
+### `border_color`
+
+Border color. Could be `transparent` to hide the border.
+
+### `focused_color`
+
+Text color when Dropdown is focused.
+
+### `focused_bgcolor`
+
+Background color of dropdown in focused state.
+
+### `focused_border_width`
+
+Border width in focused state.
+
+### `focused_border_color`
+
+Border color in focused state.
+
 ### `hint_text`
 
 Text that suggests what sort of input the field accepts.

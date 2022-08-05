@@ -172,6 +172,10 @@ Icon shown in the button.
 
 Icon color.
 
+### `style`
+
+See [ElevatedButton.style](elevatedbutton#style) for more information about this property.
+
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
@@ -189,3 +193,7 @@ A Control representing custom button content.
 ### `on_click`
 
 Fires when a user clicks the button.
+
+### `on_long_press`
+
+Fires when the button is long-pressed.
