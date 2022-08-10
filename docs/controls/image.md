@@ -95,6 +95,18 @@ def main(page: Page):
 flet.app(target=main)
 ```
 
+Use `base64` command (Linux, macOS, WSL) to convert file to Base64 format, for example:
+
+```
+base64 -i <image.png> -o <image-base64.txt>
+```
+
+On Windows you can use PowerShell to encode string into Base64 format:
+
+```posh
+[convert]::ToBase64String((Get-Content -path "your_file_path" -Encoding byte))
+```
+
 ### `width`
 
 If set, require the image to have this width.

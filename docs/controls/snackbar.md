@@ -64,6 +64,10 @@ For example, the snack bar might let the user undo the operation that prompted t
 
 The action should not be "dismiss" or "cancel".
 
+### `bgcolor`
+
+SnackBar background color.
+
 ## Events
 
 ### `on_action`
