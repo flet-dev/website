@@ -346,3 +346,7 @@ Fires when a user clicks the container.
 ### `on_long_press`
 
 Fires when the container is long-pressed.
+
+### `on_hover`
+
+Fires when a mouse pointer enters or exists the container area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
