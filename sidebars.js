@@ -152,6 +152,17 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Animations',
+          link: {
+            type: 'generated-index',
+            slug: 'controls/animations'
+          },
+          items: [
+            'controls/animatedswitcher',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Utility',
           link: {
             type: 'generated-index',
