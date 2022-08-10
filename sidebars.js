@@ -97,6 +97,7 @@ module.exports = {
             'controls/text',
             'controls/icon',
             'controls/image',
+            'controls/markdown',
             'controls/circleavatar',
             'controls/progressbar',
             'controls/progressring',
@@ -157,6 +158,7 @@ module.exports = {
             slug: 'controls/utility'
           },
           items: [
+            'controls/shadermask',
             'controls/draggable',
             'controls/dragtarget',
           ]
