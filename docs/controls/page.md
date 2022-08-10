@@ -484,6 +484,10 @@ page.set_clipboard("This value comes from Flet app")
   </TabItem>
 </Tabs>
 
+### `launch_url(url)`
+
+Opens `url` in a new browser window.
+
 ### `show_snack_bar(snack_bar)`
 
 Displays SnackBar at the bottom of the page.
