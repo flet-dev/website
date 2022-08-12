@@ -403,7 +403,52 @@ flet.app(target=main)
 
 ### `on_click`
 
-Fires when a user clicks the container.
+Fires when a user clicks the container. Event object `e` is an instance of `ContainerTapEventData` class:
+
+```python
+class ContainerTapEventData():
+    local_x: float
+    local_y: float
+    global_x: float
+    global_y: float
+```
+
+A simple usage example:
+
+```python
+import flet
+from flet import Column, Container, ContainerTapEventData, Page, Text, alignment, colors
+
+def main(page: Page):
+    page.horizontal_alignment = "center"
+    page.vertical_alignment = "center"
+
+    t = Text()
+
+    def container_click(e: ContainerTapEventData):
+        t.value = f"local_x: {e.local_x}\nlocal_y: {e.local_y}\nglobal_x: {e.global_x}\nglobal_y: {e.global_y}"
+        t.update()
+
+    page.add(
+        Column(
+            [
+                Container(
+                    content=Text("Clickable inside container"),
+                    alignment=alignment.center,
+                    bgcolor=colors.GREEN_200,
+                    width=200,
+                    height=200,
+                    border_radius=10,
+                    on_click=container_click,
+                ),
+                t,
+            ],
+            horizontal_alignment="center",
+        ),
+    )
+
+flet.app(target=main)
+```
 
 ### `on_long_press`
 
