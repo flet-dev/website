@@ -116,6 +116,18 @@ flet.app(target=main)
 
 The text displayed.
 
+### `semantics_label`
+
+An alternative semantics label for this text.
+
+If present, the semantics of this control will contain this value instead of the actual text.
+
+This is useful for replacing abbreviations or shorthands with the full text value:
+
+```python
+Text("$$", semantics_label="Double dollars")
+```
+
 ### `text_align`
 
 Text horizontal align. Supported values: `left` (default), `right`, `center`, `justify`, `start`, `end`.

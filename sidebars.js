@@ -172,6 +172,7 @@ module.exports = {
             'controls/shadermask',
             'controls/draggable',
             'controls/dragtarget',
+            'controls/semantics',
           ]
         },
       ]
