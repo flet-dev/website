@@ -52,6 +52,10 @@ flet.app(target=main)
 
 ## `PopupMenuButton` properties
 
+### `content`
+
+A `Control` that will be displayed instead of "more" icon.
+
 ### `icon`
 
 If provided an icon to draw on the button.
