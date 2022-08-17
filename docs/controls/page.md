@@ -586,11 +586,11 @@ Fires when an application's native OS window changes its state: position, size, 
 
 ### `on_keyboard_event`
 
-Fires when a keyboard key is pressed. Event object `e` is an instance of `KeyboardEventData` class:
+Fires when a keyboard key is pressed. Event object `e` is an instance of `KeyboardEvent` class:
 
 ```python
 @dataclass
-class KeyboardEventData:
+class KeyboardEvent:
     key: str
     shift: bool
     ctrl: bool

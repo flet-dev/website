@@ -403,10 +403,10 @@ flet.app(target=main)
 
 ### `on_click`
 
-Fires when a user clicks the container. Event object `e` is an instance of `ContainerTapEventData` class:
+Fires when a user clicks the container. Event object `e` is an instance of `ContainerTapEvent` class:
 
 ```python
-class ContainerTapEventData():
+class ContainerTapEvent():
     local_x: float
     local_y: float
     global_x: float
