@@ -14,6 +14,7 @@ module.exports = {
         'guides/python/navigation-and-routing',
         'guides/python/pub-sub',
         'guides/python/user-controls',
+        'guides/python/accessibility',
         // 'guides/python/hot-reload',
         'guides/python/packaging-desktop-app',
         {
