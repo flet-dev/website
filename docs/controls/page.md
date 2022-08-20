@@ -604,13 +604,25 @@ Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/py
 
 Fires when page route changes either programmatically, by editing application URL or using browser Back/Forward buttons.
 
-The first argument of event handler is a new route.
+Event object `e` is an instance of `RouteChangeEvent` class:
+
+```python
+class RouteChangeEvent(ControlEvent):
+    route: str     # a new page root
+```
 
 ### `on_view_pop`
 
 Fires when the user clicks automatic "Back" button in [`AppBar`](/docs/controls/appbar) control.
 
-The first argument of event handler is an instance of [`View`](/docs/controls/view) control that contains the AppBar.
+Event object `e` is an instance of `ViewPopEvent` class:
+
+```python
+class ViewPopEvent(ControlEvent):
+    view: View
+```
+
+where `view` is an instance of [`View`](/docs/controls/view) control that contains the AppBar.
 
 ### `on_connect`
 
