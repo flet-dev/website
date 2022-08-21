@@ -138,6 +138,12 @@ flet.app(target=main)
 
 ### Offset animation
 
+Setting control's `animate_offset` to either `True`, number or an instance of `animation.Animation` class (see above) enables implicit animation of `Control.offset` property.
+
+`offset` property is an instance of `transform.Offset` class which specifies horizontal `x` and vertical `y` offset of a control scaled to control's size. For example, an offset `transform.Offset(-0.25, 0)` will result in a horizontal translation of one quarter the width of the control.
+
+Offset animation is used for various sliding effects:
+
 <img src="/img/docs/getting-started/animations/animate-offset.gif" className="screenshot-20" />
 
 ```python
@@ -168,6 +174,10 @@ flet.app(target=main)
 ```
 
 ### Position animation
+
+Setting control's `animate_position` to either `True`, number or an instance of `animation.Animation` class (see above) enables implicit animation of [Control's `left`, `top`, `right` and `bottom` properties](/docs/controls#left).
+
+Please note Control position works inside `Stack` control only.
 
 <img src="/img/docs/getting-started/animations/animate-position.gif" className="screenshot-30" />
 
@@ -206,6 +216,8 @@ flet.app(target=main)
 
 ### Animated container
 
+Setting [`Container.animate`](/docs/controls/container#animate) to either `True`, number or an instance of `animation.Animation` class (see above) enables implicit animation of container properties such as size, background color, border style, gradient.
+
 <img src="/img/docs/getting-started/animations/animate-container.gif" className="screenshot-20" />
 
 ```python
@@ -233,6 +245,8 @@ flet.app(target=main)
 ```
 
 ### Animated content switcher
+
+[`AnimatedSwitcher`](/docs/controls/animatedswitcher) allows animated transition between a new control and the control previously set on the AnimatedSwitcher as a `content`.
 
 <img src="/img/docs/getting-started/animations/animated-switcher-images.gif" className="screenshot-20" />
 
