@@ -123,7 +123,7 @@ Transforms control using a rotation around the center.
 
 The value of `rotate` property could be one of the following types:
 
-* `number` - a rotation in clockwise radians.
+* `number` - a rotation in clockwise radians. Full circle `360°` is `math.pi * 2` radians, `90°` is `pi / 2`, `45°` is `pi / 4`, etc.
 * `transform.Rotate` - allows to specify rotation `angle` as well as `alignment` - the location of rotation center.
 
 For example:
