@@ -12,6 +12,7 @@ module.exports = {
         'guides/python/large-lists',
         'guides/python/drag-and-drop',
         'guides/python/navigation-and-routing',
+        'guides/python/animations',
         'guides/python/pub-sub',
         'guides/python/user-controls',
         'guides/python/accessibility',
