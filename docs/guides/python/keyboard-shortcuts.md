@@ -19,10 +19,10 @@ This is a simple usage example:
 
 ```python
 import flet
-from flet import KeyboardEventData, Page, Text
+from flet import KeyboardEvent, Page, Text
 
 def main(page: Page):
-    def on_keyboard(e: KeyboardEventData):
+    def on_keyboard(e: KeyboardEvent):
         page.add(
             Text(
                 f"Key: {e.key}, Shift: {e.shift}, Control: {e.ctrl}, Alt: {e.alt}, Meta: {e.meta}"
