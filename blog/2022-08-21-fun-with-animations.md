@@ -12,7 +12,7 @@ Despite Flet release debuting animations support was released some time ago, we'
 
 Flutter offers [multiple approaches](https://docs.flutter.dev/development/ui/animations) for creating animations such "implicit", "explicit", "tween", "stagered", "pre-canned" animations as well as displaying animation scenes prepared in Rive and Lottie editors.
 
-So, we are starting with "implicit" animations which allows you to animate a control property by setting a target value; whenever that target value changes, the control animates the property from the old value to the new one.
+We are starting with "implicit" animations which allows you to animate a control property by setting a target value; whenever that target value changes, the control animates the property from the old value to the new one.
 
 <a href="https://flet-animation.herokuapp.com/"><img src="/img/blog/animations/flet-animation-demo.gif" className="screenshot-100" /></a>
 
