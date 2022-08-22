@@ -8,11 +8,14 @@ module.exports = {
         'guides/python/getting-started',
         'guides/python/displaying-data',
         'guides/python/getting-user-input',
+        'guides/python/keyboard-shortcuts',
         'guides/python/large-lists',
         'guides/python/drag-and-drop',
         'guides/python/navigation-and-routing',
+        'guides/python/animations',
         'guides/python/pub-sub',
         'guides/python/user-controls',
+        'guides/python/accessibility',
         // 'guides/python/hot-reload',
         'guides/python/packaging-desktop-app',
         {
@@ -97,6 +100,7 @@ module.exports = {
             'controls/text',
             'controls/icon',
             'controls/image',
+            'controls/markdown',
             'controls/circleavatar',
             'controls/progressbar',
             'controls/progressring',
@@ -151,14 +155,27 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Animations',
+          link: {
+            type: 'generated-index',
+            slug: 'controls/animations'
+          },
+          items: [
+            'controls/animatedswitcher',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Utility',
           link: {
             type: 'generated-index',
             slug: 'controls/utility'
           },
           items: [
+            'controls/shadermask',
             'controls/draggable',
             'controls/dragtarget',
+            'controls/semantics',
           ]
         },
       ]

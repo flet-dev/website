@@ -55,7 +55,7 @@ flet.app(target=main)
 
 ### Clickable container
 
-<img src="/img/docs/controls/container/clickable-container.gif"className="screenshot-50" />
+<img src="/img/docs/controls/container/clickable-container.gif" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -128,7 +128,7 @@ flet.app(target=main)
 
 ## Properties
 
-<img src="/img/docs/controls/container/container-diagram.png" width="60%" />
+<img src="/img/docs/controls/container/container-diagram.png" className="screenshot-50" />
 
 ### `content`
 
@@ -155,7 +155,7 @@ container_3.padding = padding.symmetric(horizontal=10)
 container_4.padding=padding.only(left=10)
 ```
 
-<img src="/img/docs/controls/container/container-padding-diagram.png" width="60%" />
+<img src="/img/docs/controls/container/container-padding-diagram.png" className="screenshot-50" />
 
 ### `margin`
 
@@ -177,7 +177,7 @@ container_2.margin = 20 # same as margin.all(20)
 container_3.margin = margin.symmetric(vertical=10)
 container_3.margin = margin.only(left=10)
 ```
-<img src="/img/docs/controls/container/container-margin-diagram.png" width="60%" />
+<img src="/img/docs/controls/container/container-margin-diagram.png" className="screenshot-50" />
 
 ### `alignment`
 
@@ -185,7 +185,7 @@ Align the child control within the container.
 
 Alignment is an instance of `alignment.Alignment` class object with `x` and `y` properties representing the distance from the center of a rectangle. `x=0`, `y=0` represents the center of the rectangle. `x=-1`, `y=-1` represents the top left of the rectangle, `x=1.0`, `y=1.0` represents the bottom right of the rectangle. There are pre-defined alignment constants in `flet.alignment` module: `topLeft`, `topCenter`, `topRight`, `centerLeft`, `center`, `centerRight`, `bottomLeft`, `bottomCenter`, `bottomRight`.
 
-<img src="/img/docs/controls/container/container-alignments-diagram.png" width="40%" />
+<img src="/img/docs/controls/container/container-alignments-diagram.png" className="screenshot-40" />
 
 For example:
 
@@ -196,7 +196,7 @@ container_1.alignment = alignment.center
 container_2.alignment = alignment.top_left
 container_3.alignment = alignment.Alignment(-0.5, -0.5)
 ```
-<img src="/img/docs/controls/container/containers-alignments.png" width="60%" />
+<img src="/img/docs/controls/container/containers-alignments.png" className="screenshot-50" />
 
 ### `bgcolor`
 
@@ -333,6 +333,68 @@ More information:
 
 * [Sweep gradient](https://api.flutter.dev/flutter/painting/SweepGradient-class.html) in Flutter documentation.
 
+### `image_src`
+
+Sets an image as a container background. See [`Image.src`](image#src) for more details.
+
+### `image_src_base64`
+
+Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](image#src_base64) for more details.
+
+### `image_repeat`
+
+See [`Image.repeat`](image#repeat) for more details.
+
+### `image_fit`
+
+See [`Image.fit`](image#fit) for more details.
+
+### `image_opacity`
+
+Sets image opacity when blending with a background: value between `0.0` and `1.0`.
+
+### `blend_mode`
+
+The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details. 
+
+### `animate`
+
+Enables container "implicit" animation that gradually changes its values over a period of time.
+
+The value of `animate` property could be one of the following types:
+
+* `bool` - `True` to enable container animation with `linear` curve with `1000` milliseconds duration.
+* `int` - enable container animation with `linear` curve and specified number of milliseconds. 
+* `animation.Animation(duration: int, curve: str)` - enable container animation with specified duration and transition curve.
+
+For example:
+
+<img src="/img/docs/controls/container/animate-container.gif" className="screenshot-20" />
+
+```python
+import flet
+from flet import Container, ElevatedButton, Page, animation
+
+def main(page: Page):
+
+    c = Container(
+        width=200,
+        height=200,
+        bgcolor="red",
+        animate=animation.Animation(1000, "bounceOut"),
+    )
+
+    def animate_container(e):
+        c.width = 100 if c.width == 200 else 200
+        c.height = 100 if c.height == 200 else 200
+        c.bgcolor = "blue" if c.bgcolor == "red" else "red"
+        c.update()
+
+    page.add(c, ElevatedButton("Animate container", on_click=animate_container))
+
+flet.app(target=main)
+```
+
 ### `ink`
 
 `True` to produce ink ripples effect when user clicks the container. Default is `False`.
@@ -341,8 +403,75 @@ More information:
 
 ### `on_click`
 
-Fires when a user clicks the container.
+Fires when a user clicks the container. Event object `e` is an instance of `ContainerTapEvent` class:
+
+```python
+class ContainerTapEvent():
+    local_x: float
+    local_y: float
+    global_x: float
+    global_y: float
+```
+
+A simple usage example:
+
+```python
+import flet
+from flet import Column, Container, ContainerTapEventData, Page, Text, alignment, colors
+
+def main(page: Page):
+    page.horizontal_alignment = "center"
+    page.vertical_alignment = "center"
+
+    t = Text()
+
+    def container_click(e: ContainerTapEventData):
+        t.value = f"local_x: {e.local_x}\nlocal_y: {e.local_y}\nglobal_x: {e.global_x}\nglobal_y: {e.global_y}"
+        t.update()
+
+    page.add(
+        Column(
+            [
+                Container(
+                    content=Text("Clickable inside container"),
+                    alignment=alignment.center,
+                    bgcolor=colors.GREEN_200,
+                    width=200,
+                    height=200,
+                    border_radius=10,
+                    on_click=container_click,
+                ),
+                t,
+            ],
+            horizontal_alignment="center",
+        ),
+    )
+
+flet.app(target=main)
+```
 
 ### `on_long_press`
 
 Fires when the container is long-pressed.
+
+### `on_hover`
+
+Fires when a mouse pointer enters or exists the container area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
+
+A simple example of a container changing its background color on mouse hover:
+
+```python
+import flet
+from flet import Container, Page
+
+def main(page: Page):
+    def on_hover(e):
+        e.control.bgcolor = "blue" if e.data == "true" else "red"
+        e.control.update()
+
+    page.add(
+        Container(width=100, height=100, bgcolor="red", ink=False, on_hover=on_hover)
+    )
+
+flet.app(target=main)
+```

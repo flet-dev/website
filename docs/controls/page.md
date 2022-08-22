@@ -233,6 +233,10 @@ To explore available font features (e.g. possible options for `wght`) use [**Wak
 
 `True` to set text direction to right-to-left. Default is `False`.
 
+### `show_semantics_debugger`
+
+`True` turns on an overlay that shows the accessibility information reported by the framework.
+
 ### `splash`
 
 A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
@@ -484,6 +488,10 @@ page.set_clipboard("This value comes from Flet app")
   </TabItem>
 </Tabs>
 
+### `launch_url(url)`
+
+Opens `url` in a new browser window.
+
 ### `show_snack_bar(snack_bar)`
 
 Displays SnackBar at the bottom of the page.
@@ -575,6 +583,22 @@ Fires when an application's native OS window changes its state: position, size, 
 * `moved` (macOS and Windows only)
 * `enterFullScreen`
 * `leaveFullScreen`
+
+### `on_keyboard_event`
+
+Fires when a keyboard key is pressed. Event object `e` is an instance of `KeyboardEvent` class:
+
+```python
+@dataclass
+class KeyboardEvent:
+    key: str
+    shift: bool
+    ctrl: bool
+    alt: bool
+    meta: bool
+```
+
+Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py).
 
 ### `on_route_change`
 
