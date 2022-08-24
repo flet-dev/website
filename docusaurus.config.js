@@ -25,10 +25,10 @@ module.exports = {
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
-    // announcementBar: {
-    //   id: 'announcementBar-2', // Increment on change
-    //   content: `⭐️ If you like Flet, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/fletdev" >Twitter</a> ${TwitterSvg}`,
-    // },    
+    announcementBar: {
+      id: 'announcementBar-2', // Increment on change
+      content: `⭐️ If you like Flet, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/fletdev" >Twitter</a> ${TwitterSvg}`,
+    },
     navbar: {
       hideOnScroll: true,
       title: 'Flet',
