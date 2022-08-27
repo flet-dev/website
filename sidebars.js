@@ -16,7 +16,7 @@ module.exports = {
         'guides/python/pub-sub',
         'guides/python/user-controls',
         'guides/python/accessibility',
-        // 'guides/python/hot-reload',
+        'guides/python/hot-reload',
         'guides/python/packaging-desktop-app',
         {
           type: 'category',
@@ -176,6 +176,7 @@ module.exports = {
             'controls/draggable',
             'controls/dragtarget',
             'controls/semantics',
+            'controls/windowdragarea',
           ]
         },
       ]

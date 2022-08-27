@@ -80,7 +80,30 @@ page.update()
 
 ### `route`
 
-Route
+Get or sets page's navigation route. See [Navigation and routing](/docs/guides/python/navigation-and-routing) section for 
+more information and examples.
+
+### `session_id`
+
+A unique ID of user's session. This property is read-only.
+
+### `pwa`
+
+`True` if the application is running as Progressive Web App (PWA). Read-only.
+
+### `web`
+
+`True` if the application is running in the web browser.
+
+### `platform`
+
+Operating system the application is running on:
+
+* `ios`
+* `android`
+* `macos`
+* `linux`
+* `windows`
 
 ### `horizontal_alignment`
 
@@ -159,14 +182,38 @@ page.update()
 `Theme` class has the following properties:
 
 * `color_scheme_seed` - a seed color to algorithmically derive the rest of theme colors from.
-* `brightness` - either `light` (default) or `dark`.
 * `font_family` - the base font for all UI elements.
 * `use_material3` - `True` (default) to use Material 3 design; otherwise Material 2.
 * `visual_density` - `standard` (default), `compact`, `comfortable`, `adaptivePlatformDensity`.
+* `page_transitions` - an instance of `PageTransitionsTheme` that allows customizing navigation page transitions for different platforms. See section [below](#navigation-transitions).
 
 :::note
 Read this [note about system fonts](/docs/controls/text#using-system-fonts) if you like to use them in `font_family` of your theme.
 :::
+
+#### Navigation transitions
+
+`theme.page_transitions` allows customizing navigation page transitions for different platforms. The value is an instance of `PageTransitionsTheme` class with the following optional properties:
+  * `android` (default value is `fadeUpwards`)
+  * `ios` (default value is `cupertino`)
+  * `macos` (default value is `zoom`)
+  * `linux` (default value is `zoom`)
+  * `windows` (default value is `zoom`)
+
+Supported transitions: `fadeUpwards`, `openUpwards`, `zoom`, `cupertino`.
+
+An simple example:
+
+```python
+theme = Theme()
+theme.page_transitions.android = "openUpwards"
+theme.page_transitions.ios = "cupertino"
+theme.page_transitions.macos = "fadeUpwards"
+theme.page_transitions.linux = "zoom"
+theme.page_transitions.windows = "zoom"
+page.theme = theme
+page.update()
+```
 
 ### `dark_theme`
 
@@ -284,10 +331,6 @@ A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
 
 An [`AlertDialog`](/docs/controls/alertdialog) control to display.
 
-### `session_id`
-
-A unique ID of user's session. This property is read-only.
-
 ### `width`
 
 A width of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
@@ -367,6 +410,55 @@ A height of a web page or content area of a native OS window containing Flet app
 ### `window_focused`
 
 🖥️ Desktop only. Set to `True` to focus a native OS window with a Flet app.
+
+### `window_title_bar_hidden`
+
+🖥️ Desktop only. Set to `True` to hide window title bar. See [`WindowDragArea`](windowdragarea) control that allows moving
+an app window with hidden title bar.
+
+### `window_title_bar_buttons_hidden`
+
+🖥️ Desktop only. Set to `True` to hide window action buttons when a title bar is hidden. macOS only.
+
+### `window_frameless`
+
+🖥️ Desktop only. Set to `True` to make app window frameless.
+
+### `window_skip_task_bar`
+
+🖥️ Desktop only. Set to `True` to hide application from the Task Bar (Windows) or Dock (macOS).
+
+### `window_progress_bar`
+
+🖥️ Desktop only. The value from `0.0` to `1.0` to display a progress bar on Task Bar (Windows) or Dock (macOS) application button.
+
+### `window_visible`
+
+🖥️ Desktop only. Set to `True` to make application window visible. Used when the app is starting with a hidden window.
+
+The following program starts with a hidden window and makes it visible in 3 seconds:
+
+```python
+from time import sleep
+
+import flet
+from flet import Page, Text
+
+
+def main(page: Page):
+    
+    page.add(
+        Text("Hello!")
+    )
+
+    sleep(3)
+    page.window_visible = True
+    page.update()  
+
+flet.app(target=main, view=flet.FLET_APP_HIDDEN)
+```
+
+Note `view=flet.FLET_APP_HIDDEN` which hides app window on start.
 
 ### `pubsub`
 
@@ -500,11 +592,15 @@ Displays SnackBar at the bottom of the page.
 
 ### `window_center()`
 
-Move app's native OS window to a center of the screen.
+🖥️ Desktop only. Move app's native OS window to a center of the screen.
+
+### `window_close()`
+
+🖥️ Desktop only. Closes application window.
 
 ### `window_destroy()`
 
-Forces closing app's native OS window. This method could be used with `page.window_prevent_close = True` to implement app exit confirmation:
+🖥️ Desktop only. Forces closing app's native OS window. This method could be used with `page.window_prevent_close = True` to implement app exit confirmation:
 
 ```python
 import flet
