@@ -169,3 +169,12 @@ flet.app(target=main)
 ### `controls`
 
 A list of Controls to display inside the Stack. The last control in the list is displayed on top.
+
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. Supported values:
+
+* `none`
+* `antiAlias`
+* `antiAliasWithSaveLayer`
+* `hardEdge` (default)
