@@ -59,16 +59,18 @@ Works for "Save file" dialog only. Can be set to a non-empty string to provide a
 
 ### `result`
 
-`FilePickerResultEvent` class:
+Result is set when the dialog is closed.
 
-* `path`
-* `files: List[FilePickerFile]`
+The value of this property is an instance of `FilePickerResultEvent` class:
 
-`FilePickerFile` class:
+* `path` - result of "Save file" or "Get directory path" dialogs: selected file path or directory path respectively. `None` if dialog was cancelled.
+* `files` result of "Pick files" dialog: a list of `FilePickerFile` class instances. `None` if dialog was cancelled.
 
-* `name: str`
-* `path`
-* `size`
+`FilePickerFile` class properties:
+
+* `name` - file name without a path.
+* `path` - full path to a file. `None` on web.
+* `size` - file size in bytes.
 
 ## Methods
 
