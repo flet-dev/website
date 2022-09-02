@@ -11,16 +11,58 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-### Pick files
+### Pick multiple files
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
-# TODO
+import flet
+from flet import (ElevatedButton, FilePicker, FilePickerResultEvent, Page, Row, Text, icons)
+
+def main(page: Page):
+    def pick_files_result(e: FilePickerResultEvent):
+        selected_files.value = (
+            ", ".join(map(lambda f: f.name, e.files)) if e.files else "Cancelled!"
+        )
+        selected_files.update()
+
+    pick_files_dialog = FilePicker(on_result=pick_files_result)
+    selected_files = Text()
+
+    page.overlay.append(pick_files_dialog)
+
+    page.add(
+        Row(
+            [
+                ElevatedButton(
+                    "Pick files",
+                    icon=icons.UPLOAD_FILE,
+                    on_click=lambda _: pick_files_dialog.pick_files(
+                        allow_multiple=True
+                    ),
+                ),
+                selected_files,
+            ]
+        )
+    )
+
+flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
+
+### All dialog modes
+
+<img src="/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-70" />
+
+[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-all-modes.py)
+
+### Upload multiple files
+
+<img src="/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
+
+[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py)
 
 ## Properties
 
@@ -69,7 +111,7 @@ The value of this property is an instance of `FilePickerResultEvent` class:
 `FilePickerFile` class properties:
 
 * `name` - file name without a path.
-* `path` - full path to a file. `None` on web.
+* `path` - full path to a file. Works for desktop and mobile only. `None` on web.
 * `size` - file size in bytes.
 
 ## Methods
@@ -148,12 +190,16 @@ flet.app(target=main, upload_dir="uploads")
 
 ### `on_result`
 
-TBD
+Fires when file picker dialog is closed.
+
+Event object is an instance of `FilePickerResultEvent` class. See [`FilePicker.result`](#result) for class properties.
 
 ### `on_upload`
 
-`FilePickerUploadEvent` class:
+Fires when a file upload progress is updated.
+
+Event object is an instance of `FilePickerUploadEvent` class:
 
 * `file_name`
-* `progress`
+* `progress` - a value from `0.0` to `1.0`.
 * `error`
