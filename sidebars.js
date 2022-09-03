@@ -175,6 +175,7 @@ module.exports = {
             'controls/shadermask',
             'controls/draggable',
             'controls/dragtarget',
+            'controls/filepicker',
             'controls/semantics',
             'controls/windowdragarea',
           ]

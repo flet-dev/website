@@ -284,6 +284,10 @@ To explore available font features (e.g. possible options for `wght`) use [**Wak
 
 `True` turns on an overlay that shows the accessibility information reported by the framework.
 
+### `overlay`
+
+A list of `Control`s displayed as a stack on top of main page contents.
+
 ### `splash`
 
 A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
@@ -589,6 +593,25 @@ Opens `url` in a new browser window.
 Displays SnackBar at the bottom of the page.
 
 `snack_bar` - A [`SnackBar`](/docs/controls/snackbar) control to display at the bottom of the Page.
+
+### `page.get_upload_url(file_name, expires)`
+
+Generates presigned upload URL for built-in upload storage:
+
+* `file_name` - a relative to upload storage path.
+* `expires` - a URL time-to-live in seconds.
+
+For example:
+
+```python
+upload_url = page.get_upload_url("dir/filename.ext", 60)
+```
+
+To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
+
+```python
+flet.app(target=main, upload_dir="uploads")
+```
 
 ### `window_center()`
 
