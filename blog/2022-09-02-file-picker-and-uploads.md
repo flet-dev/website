@@ -8,7 +8,7 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-Finally, file picker is here! 🎉
+Finally, File picker with uploads has arrived! 🎉
 
 File picker control opens a native OS dialog for selecting files and directories. It's based on a fantastic [file_picker](https://pub.dev/packages/file_picker) Flutter package.
 
@@ -72,6 +72,8 @@ file_picker = FilePicker(on_result=on_dialog_result)
 
 The last result is always available in `FilePicker.result` property.
 
+Check [File picker](/docs/controls/filepicker) control docs for all available dialog methods and their parameters.
+
 ## Uploading files
 
 File picker has built-in upload capabilities that work on all platforms and the web.
@@ -130,10 +132,22 @@ page.add(Image(src="/uploads/<some-uploaded-picture.png>"))
 
 ### Upload progress
 
+Once `FilePicker.upload()` method is called Flet client asynchronously starts uploading selected files one-by-one and reports the progress via `FilePicker.on_upload` callback.
+
+Event object of `on_upload` event is an instance of `FilePickerUploadEvent` class with the following fields:
+
+* `file_name`
+* `progress` - a value from `0.0` to `1.0`.
+* `error`
+
+The callback is called at least twice for every uploaded file: with `0` progress before upload begins and with `1.0` progress when upload is finished. For files larger than 1 MB a progress is additionally reported for every 10% uploaded.
+
+Check that [example](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py) demonstrating multiple file uploads:
+
 <img src="/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
 
-[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py)
-
 See [File picker](/docs/controls/filepicker) control docs for all its properties and examples.
+
+Upgrade Flet module to the latest version (`pip install flet --upgrade`), give File Picker a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
 
 Enjoy!
