@@ -1,16 +1,9 @@
 ---
-slug: file-picker-and-uploads
 title: File picker and uploads
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
-tags: [release]
+sidebar_label: File picker and uploads
 ---
 
-Finally, File picker with uploads has arrived! 🎉
-
-File picker control opens a native OS dialog for selecting files and directories. It's based on a fantastic [file_picker](https://pub.dev/packages/file_picker) Flutter package.
+[File picker](/docs/controls/filepicker) control opens a native OS dialog for selecting files and directories.
 
 It works on all platforms: Web, macOS, Window, Linux, iOS and Android.
 
@@ -157,7 +150,3 @@ Check that [example](https://github.com/flet-dev/examples/blob/main/python/contr
 <img src="/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
 
 See [File picker](/docs/controls/filepicker) control docs for all its properties and examples.
-
-Upgrade Flet module to the latest version (`pip install flet --upgrade`), give File Picker a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
-
-Enjoy!
