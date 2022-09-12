@@ -95,7 +95,7 @@ You can modify control properties and the UI will be updated on the next `page.u
 
 ```python
 t = Text()
-page.add(t) # it's a shortcut for page.controls.add(t) and then page.update()
+page.add(t) # it's a shortcut for page.controls.append(t) and then page.update()
 
 for i in range(10):
     t.value = f"Step {i}"
