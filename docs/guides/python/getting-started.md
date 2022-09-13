@@ -235,7 +235,7 @@ flet.app(target=main)
 
 In the very beginning of `main()` method we create three controls which we are going to use in button's `on_click` handler: two `TextField` for first and last names and a `Column` - container for greeting messages. We create controls with all their properties set and in the end of `main()` method, in `page.add()` call, we use their references (variables).
 
-When more and mode controls and event handlers added it becomes challenging to keep all control definitions in one place, so they become scattered across `main()` body. Glancing at `page.add()` parameters it's hard to imagine (without constant jumping to variable definitions in IDE) what would the end form look like:
+When more and more controls and event handlers are added it becomes challenging to keep all control definitions in one place, so they become scattered across `main()` body. Glancing at `page.add()` parameters it's hard to imagine (without constant jumping to variable definitions in IDE) what would the end form look like:
 
 ```python {2-5}
     page.add(
@@ -263,7 +263,7 @@ To access referenced control (control de-reference) use `Ref.current` property:
 first_name.current.value = ""
 ```
 
-To assign control to a reference set `Control.ref` property to a reference:
+To assign control to a reference, set `Control.ref` property to a reference:
 
 ```python {2}
 page.add(
