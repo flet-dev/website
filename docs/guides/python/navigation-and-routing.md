@@ -109,45 +109,47 @@ Let's put everything together into a complete example which allows navigating be
 
 ```python
 import flet
-from flet import AppBar, ElevatedButton, Page, Text, View, colors
+from flet import AppBar, ElevatedButton, Page, Text, View, colors,RouteChangeEvent
 
 def main(page: Page):
     page.title = "Routes Example"
-
-    def route_change(route):
-        page.views.clear()
-        page.views.append(
-            View(
-                "/",
-                [
-                    AppBar(title=Text("Flet app"), bgcolor=colors.SURFACE_VARIANT),
-                    ElevatedButton("Visit Store", on_click=lambda _: page.go("/store")),
-                ],
-            )
+    
+    routes = {
+        "/":View(
+            "/",
+            [
+                AppBar(title=Text("Flet app"), bgcolor=colors.SURFACE_VARIANT),
+                ElevatedButton("Visit Store", on_click=lambda _: page.go("/store")),
+            ],
+        ),
+        "/store":View(
+            "/store",
+            [
+                AppBar(title=Text("Store"), bgcolor=colors.SURFACE_VARIANT),
+                ElevatedButton("Go Home", on_click=lambda _: page.go("/")),
+            ],
         )
-        if page.route == "/store":
-            page.views.append(
-                View(
-                    "/store",
-                    [
-                        AppBar(title=Text("Store"), bgcolor=colors.SURFACE_VARIANT),
-                        ElevatedButton("Go Home", on_click=lambda _: page.go("/")),
-                    ],
-                )
-            )
+    }
+
+    routes_list = []
+
+    def route_change(route:RouteChangeEvent):
+        print(route.route)
+        page.views.clear()
+        if(route.route in routes.keys()):
+            page.views.append(routes[route.route])
+        routes_list.append(route.route)
         page.update()
 
     def view_pop(view):
-        page.views.pop()
-        top_view = page.views[-1]
-        page.go(top_view.route)
+        routes_list.pop()
+        page.go(routes_list[-1].route)
 
     page.on_route_change = route_change
     page.on_view_pop = view_pop
-    page.go(page.route)
+    page.go('/')
 
-
-flet.app(target=main, view=flet.WEB_BROWSER)
+flet.app(target=main,view=flet.WEB_BROWSER)
 ```
 
 Try navigating between pages using "Visit Store" and "Go Home" buttons, Back/Forward browser buttons, manually changing route in the URL - it works no matter what! :)
