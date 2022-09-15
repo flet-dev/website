@@ -109,7 +109,7 @@ from flet import Container, GridView, Page, Text, alignment, border, border_radi
 os.environ["FLET_WS_MAX_MESSAGE_SIZE"] = "8000000"
 
 def main(page: Page):
-    gv = GridView(expand=True, max_extent=100, child_aspect_ratio=0.5)
+    gv = GridView(expand=True, max_extent=150, child_aspect_ratio=1)
     page.add(gv)
 
     for i in range(5000):
