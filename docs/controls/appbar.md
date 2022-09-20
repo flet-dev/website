@@ -90,7 +90,7 @@ Typically these controls are [`IconButtons`](iconbutton) representing common ope
 
 ### `toolbar_height`
 
-Defines the height of the toolbar component of an AppBar. By default, the value of toolbarHeight is `56.0`.
+Defines the height of the toolbar component of an AppBar. By default, the value of `toolbar_height` is `56.0`.
 
 ### `color`
 
