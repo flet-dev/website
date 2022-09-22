@@ -100,7 +100,7 @@ def main(page: Page):
         Text("Label Large", style="labelLarge"),
         Text("Label Medium", style="labelMedium"),
         Text("Label Small", style="labelSmall"),
-        Text("Body Large", style="bodylLarge"),
+        Text("Body Large", style="bodyLarge"),
         Text("Body Medium", style="bodyMedium"),
         Text("Body Small", style="bodySmall"),
     )
