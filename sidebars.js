@@ -14,6 +14,7 @@ module.exports = {
         'guides/python/navigation-and-routing',
         'guides/python/file-picker-and-uploads',
         'guides/python/animations',
+        'guides/python/authentication',
         'guides/python/pub-sub',
         'guides/python/user-controls',
         'guides/python/control-refs',
