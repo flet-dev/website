@@ -3,7 +3,7 @@ const TwitterSvg =
 
 module.exports = {
   title: 'Flet',
-  tagline: '用您熟悉的语言快速构建内部Webapp。',
+  tagline: '用您熟悉的语言快速构建内部Web应用。',
   url: 'https://flet.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
@@ -11,7 +11,7 @@ module.exports = {
   projectName: 'flet', // Usually your repo name.
   customFields: {
     heroTitle: '用Python构建Flutter应用最快的方式',
-    heroSubTitle: 'Flet使无前端经验的开发者能够在Python中轻松建立实时的Web端、移动端和桌面端应用程序。',
+    heroSubTitle: 'Flet令无前端经验的开发者能够在Python中轻松构建实时的Web端、移动端和桌面端应用程序。',
   },
   themeConfig: {
     docs: {
@@ -76,24 +76,24 @@ module.exports = {
       style: 'light',
       links: [
         {
-          title: 'Docs',
+          title: '文档',
           items: [
             {
-              label: 'Introduction',
+              label: '简介',
               to: 'docs',
             },
             {
-              label: 'Python guide',
+              label: '基于Python的指南',
               to: 'docs/guides/python/getting-started',
             },
             {
-              label: 'Controls reference',
+              label: 'Controls参考',
               to: 'docs/controls',
             }
           ],
         },
         {
-          title: 'Community',
+          title: '社区',
           items: [
             {
               label: 'Discord',
@@ -110,10 +110,10 @@ module.exports = {
           ],
         },
         {
-          title: 'More',
+          title: '更多',
           items: [
             {
-              label: 'Blog',
+              label: '博客',
               to: 'blog',
             },
             {
@@ -123,16 +123,16 @@ module.exports = {
           ],
         },
         {
-          title: 'Legal',
+          title: '法务',
           items: [
             {
-              label: 'Privacy policy',
+              label: '隐私政策',
               to: 'privacy-policy',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Appveyor Systems Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Appveyor Systems Inc. 基于Docusaurus构建。`,
     },
     algolia: {
       apiKey: '4b060907ba79d92e8869e9d1ff80bce7',

@@ -1,5 +1,5 @@
 ---
-title: Flet Privacy Policy
+title: Flet 隐私政策
 hide_table_of_contents: true
 ---
 
