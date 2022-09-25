@@ -12,7 +12,7 @@ import CodeBlock from '@theme/CodeBlock';
 
 const features = [
   {
-    title: <>From idea to app in minutes</>,
+    title: <>从想法到APP只要几分钟</>,
     imageUrl: 'img/pages/home/feature-bolt.svg',
     description: (
       <>
@@ -22,7 +22,7 @@ const features = [
     ),
   },
   {
-    title: <>Simple architecture</>,
+    title: <>简单的架构</>,
     imageUrl: 'img/pages/home/feature-house.svg',
     description: (
       <>
@@ -32,7 +32,7 @@ const features = [
     ),
   },
   {
-    title: <>Batteries included</>,
+    title: <>自备动力</>,
     imageUrl: 'img/pages/home/feature-battery.svg',
     description: (
       <>
@@ -42,7 +42,7 @@ const features = [
     ),
   },
   {
-    title: <>Powered by Flutter</>,
+    title: <>基于Flutter</>,
     imageUrl: 'img/pages/home/feature-flutter.svg',
     description: (
       <>
@@ -52,7 +52,7 @@ const features = [
     ),
   },
   {
-    title: <>Speaks your language</>,
+    title: <>用你熟悉的语言</>,
     imageUrl: 'img/pages/home/feature-language.svg',
     description: (
       <>
@@ -61,7 +61,7 @@ const features = [
     ),
   },
   {
-    title: <>Deliver to any device</>,
+    title: <>在各类设备上分发</>,
     imageUrl: 'img/pages/home/feature-mobile.svg',
     description: (
       <>
