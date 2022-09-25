@@ -189,4 +189,13 @@ module.exports = {
   //     },
   //   ],
   // ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh-Hans'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      }
+    },
+  },
 };
