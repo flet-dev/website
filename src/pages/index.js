@@ -117,7 +117,7 @@ function Home() {
           </div>
         </div>
         <div className="container text--center">
-          <h2>Main features</h2>
+          <h2>主要特性</h2>
           {features && features.length > 0 && (
             <section className={styles.features}>
               <div className="container">

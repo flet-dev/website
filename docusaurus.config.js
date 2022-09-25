@@ -3,15 +3,15 @@ const TwitterSvg =
 
 module.exports = {
   title: 'Flet',
-  tagline: 'Build internal web apps quickly in the language you already know.',
+  tagline: '用您熟悉的语言快速构建内部Webapp。',
   url: 'https://flet.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'flet-dev', // Usually your GitHub org/user name.
   projectName: 'flet', // Usually your repo name.
   customFields: {
-    heroTitle: 'The fastest way to build Flutter apps in Python',
-    heroSubTitle: 'Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.',
+    heroTitle: '用Python构建Flutter应用最快的方式',
+    heroSubTitle: 'Flet使无前端经验的开发者能够在Python中轻松建立实时的Web端、移动端和桌面端应用程序。',
   },
   themeConfig: {
     docs: {
@@ -27,7 +27,7 @@ module.exports = {
     },
     announcementBar: {
       id: 'announcementBar-2', // Increment on change
-      content: `⭐️ If you like Flet, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/fletdev" >Twitter</a> ${TwitterSvg}`,
+      content: `⭐️ 如果您喜欢Flet，在<a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a>上为我们标星并在${TwitterSvg}<a target="_blank" rel="noopener noreferrer" href="https://twitter.com/fletdev" >Twitter</a>上关注我们吧！`,
     },
     navbar: {
       hideOnScroll: true,
@@ -41,18 +41,18 @@ module.exports = {
         {
           to: 'docs/',
           activeBasePath: 'docs',
-          label: 'Docs',
+          label: '文档',
           position: 'left',
         },
         {
           to: 'docs/roadmap',
           activeBasePath: 'roadmap',
-          label: 'Roadmap',
+          label: '路线图',
           position: 'left',
         },
         {
           to: 'blog',
-          label: 'Blog',
+          label: '博客',
           position: 'left'
         },
         {
