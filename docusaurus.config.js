@@ -56,6 +56,10 @@ module.exports = {
           position: 'left'
         },
         {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/flet-dev/flet',
           position: 'right',
           className: 'header-github-link',
