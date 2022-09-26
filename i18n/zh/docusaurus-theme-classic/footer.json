@@ -1,3 +1,44 @@
 {
-    
-}
+    "links.title.Docs":{
+        "message":"文档"
+    },
+    "links.items.label.Introduction":{
+        "message":"简介f"
+    },
+    "links.items.label.Python guide":{
+        "message":"基于Python的指南"
+    },
+    "links.items.label.Controls reference":{
+        "message":"Controls参考"
+    },
+    "links.title.Community":{
+        "message":"社区"
+    },
+    "links.items.label.Discord":{
+        "message":"Discord"
+    },
+    "links.items.label.Twitter":{
+        "message":"Twitter"
+    },
+    "links.items.label.Stack Overflow":{
+        "message":"Stack Overflow"
+    },
+    "links.title.More":{
+        "message":"更多"
+    },
+    "links.items.label.Blog":{
+        "message":"博客"
+    },
+    "links.items.label.GitHub":{
+        "message":"GitHub"
+    },
+    "links.title.Legal":{
+        "message":"条款"
+    },
+    "links.items.label.Privacy policy":{
+        "message":"隐私政策"
+    },
+    "copyright":{
+        "message":"Copyright © ${new Date().getFullYear()} Appveyor Systems Inc. 基于Docusaurus构建。"
+    }
+} 
