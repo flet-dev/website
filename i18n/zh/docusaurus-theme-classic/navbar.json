@@ -1,3 +1,11 @@
 {
-    
+    "item.label.Docs": {
+      "message": "文档"
+    },
+    "item.label.Roadmap": {
+      "message": "路线图"
+    },
+    "item.label.Blog": {
+      "message": "博客"
+    }
 }
