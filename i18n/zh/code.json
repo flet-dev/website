@@ -1,12 +1,18 @@
 {
-    "Build internal web apps quickly in the language you already know.":{
+    "homepage.tagline":{
         "message":"用您熟悉的语言快速构建内部Web应用。"
     },
-    "The fastest way to build Flutter apps in Python":{
+    "homepage.heroTitle":{
         "message":"用Python构建Flutter应用最快的方式"
     },
-    "heroTitle": {
+    "homepage.heroSubTitle": {
         "message": "Flet令无前端经验的开发者能够在Python中轻松构建实时的Web端、移动端和桌面端应用程序。"
+    },
+    "homepage.get_started": {
+        "message":"马上开始"
+    },
+    "homepage.main_features": {
+        "message":"主要特性"
     },
     "homepage.signup_loading":{
         "message":"加载中……"
