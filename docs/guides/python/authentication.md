@@ -71,11 +71,12 @@ def main(page: Page):
         provider = GitHubOAuthProvider(
             client_id="<client_id>",
             client_secret="<client_secret>",
-            redirect_url="<redirect_url>",
-            scope=["public_repo"])
+            redirect_url="<redirect_url>")
 
         # perform login
-        page.login(provider)
+        page.login(
+            provider,
+            scope=["public_repo"])
 
     def on_login(e):
         print("Access token:", page.auth.token.access_token)
@@ -89,26 +90,70 @@ def main(page: Page):
 flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
 ```
 
+Run the program and click "Login with GitHub" button. GitHub authorize app page will be opened in:
+
+* **Desktop** app - a new browser window or tab.
+* **Web** app - a new popup window (make sure popup blocker is off).
+* **Mobile** app - an in-app web browser.
+
+<img src="/img/docs/getting-started/authentication/github-oauth-authorize.png" className="screenshot-40" />
+
 ### Redirect URL
 
-Scopes
+We used `http://localhost:8550/api/oauth/callback` as a redirect URL while registering GitHub OAuth app.
+Notice it has a fixed port `8550`. To run your Flet app on a fixed port use `port` argument in `flet.app` call:
 
 ```python
-provider = GitHubOAuthProvider(
-  "<client_id>",
-  "<client_secret>",
-  "<redirect_url>",
-  ["user", "public_repo])
+flet.app(target=main, port=8550)
 ```
 
-## Perform login
+### Scope
+
+Most of OAuth providers allows applications to request one or more scopes to limit application's access to a
+user's account.
+
+Built-in Flet providers, by default, request scopes to access user profile, but you can request additional scopes in login method, like `public_repo` in the example above:
 
 ```python
-page.login(provider)
+page.login(
+    provider,
+    scope=["public_repo"])
 ```
 
-starting OAuth web flow.
-checking for errors
+`page.login()` method has a number of arguments to control authentication process:
+
+* `fetch_user` (bool) - whether to fetch user details into `page.auth.user`. Default is `True`.
+* `fetch_groups` (bool) - whether to fetch user groups into `page.auth.user.groups`. Default is `False`.
+* `scope` - a list of scopes to request.
+* `saved_token` - a JSON snapshot of `page.auth.token` to restore authorization from. Token can be serialized with `page.auth.token.to_json()`, enscrypted and saved in `page.client_storage`. See below.
+* `on_open_authorization_url` - a callback to open a browser with authorization URL. See below.
+* `complete_page_html` - a custom HTML contents of "You've been successfully authenticated. Close this page now" page.
+* `redirect_to_page` (bool) - used with Flet web app only when authorization page is opened in the same browser tab.
+
+The result of `page.login()` call is an instance of `Authorization` class with the following fields:
+
+* **`token`** - OAuth token used to access provider's API:
+  * `access_token` - access token used as an authorization token in API request header.
+  * `scope` - token's scope.
+  * `token_type` - access token type, e.g. `Bearer`.
+  * `expires_in` - optional number of seconds when access token expires.
+  * `expires_at` - optional time (`time.time()` + `expires_in`) when access token expires.
+  * `refresh_token` - optional refresh token which is used to get a new access token, when the old one expires.
+* **`user`** - user details with a mandatory `id` field and other fields specific to OAuth provider.
+* **`provider`** - an instance of OAuth provider used for authorization.
+
+A reference to the last authorization is saved in `page.auth` property.
+
+### Checking authentication results
+
+`page.on_login` event handler.
+
+An instance of `LoginEvent`:
+
+* `error` (str) - OAuth error.
+* `error_description` (str) - OAuth error description.
+
+
 
 ## Accessing user details
 
@@ -135,13 +180,18 @@ Saving token in a client storage
 
 TBD
 
+## Customizing authorization flow
+
+How to open in a new tab, the same tab (redirect URL)?
+How to customize "complete" page?
+
 ## Configuring generic OAuth provider
 
-TBD
+[LinkedIn](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?context=linkedin%2Fcontext&tabs=HTTPS)
 
 ## Implementing custom OAuth provider
 
-TBD
+LinkedIn
 
 
 
