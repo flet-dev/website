@@ -7,5 +7,20 @@
     },
     "heroTitle": {
         "message": "Flet令无前端经验的开发者能够在Python中轻松构建实时的Web端、移动端和桌面端应用程序。"
+    },
+    "signup_submitted":{
+        "message":"谢谢您！您将很快收到确认邮件。"
+    },
+    "signup_confirmed":{
+        "message":"恭喜！您已成功订阅Flet新闻。"
+    },
+    "signup_form_title":{
+        "message":"订阅Flet新闻以获取项目进展和指南！"
+    },
+    "signup_form_address":{
+        "message":"您的电子邮件地址"
+    },
+    "signup_form_submit":{
+        "message":"提交"
     }
 }
