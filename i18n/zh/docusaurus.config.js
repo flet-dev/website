@@ -119,7 +119,7 @@ module.exports = {
           ],
         },
         {
-          title: '法务',
+          title: '条款',
           items: [
             {
               label: '隐私政策',
