@@ -42,31 +42,31 @@ export default function SignupForm() {
 
     return (
         <div id="signup" className={styles.signupForm}>
-            <BrowserOnly fallback={<div><Translate>Loading...</Translate></div>}>
+            <BrowserOnly fallback={<div><Translate id="homepage.signup_loading">Loading...</Translate></div>}>
                 {() => {
                     if (token) {
                         // signup submitted
-                        return <div><Translate>Thank you! You will receive the confirmation email shortly.</Translate></div>
+                        return <div><Translate id="homepage.signup_submitted">Thank you! You will receive the confirmation email shortly.</Translate></div>
                     } else if (window.location.href.endsWith('?signup-confirmed')) {
                         // signup confirmed
-                        return <div><span style={{ fontSize: '25px', marginRight: '10px' }}>🎉</span><Translate>Congratulations! You have successfully subscribed to Flet newsletter.</Translate></div>
+                        return <div><span style={{ fontSize: '25px', marginRight: '10px' }}>🎉</span><Translate id="homepage.signup_confirmed">Congratulations! You have successfully subscribed to Flet newsletter.</Translate></div>
                     } else {
                         // signup form
                         return <form onSubmit={onSubmit}>
-                            <h3><Translate id="homepage.Subscribe">{'Subscribe to Flet newsletter for project updates and tutorials!'}</Translate></h3>
+                            <h3><Translate id="homepage.signup_form_subscribe_title">{'Subscribe to Flet newsletter for project updates and tutorials!'}</Translate></h3>
                             <input
                                 type="email"
                                 value={email}
                                 placeholder={
                                     translate({
-                                      message: "Your email address",
+                                      "id":"homepage.signup_form_address"
                                     })
                                   }
                                 onChange={(evt) => setEmail(evt.target.value)}
                             />
                             <input type="submit" value={
                                     translate({
-                                      message: "Submit",
+                                        "id":"homepage.signup_form_submit"
                                     })
                                   } />
                             <HCaptcha
