@@ -13,7 +13,7 @@ import Translate, {translate} from '@docusaurus/Translate';
 
 const features = [
   {
-    title: <><Translate>From idea to app in minutes</Translate></>,
+    title: <><Translate id="homepage.card_1_title">From idea to app in minutes</Translate></>,
     imageUrl: 'img/pages/home/feature-bolt.svg',
     description: (
       <><Translate id="homepage.card_1">{'An internal tool or a dashboard for your team, weekend project, data entry form, kiosk app or high-fidelity prototype - Flet is an ideal framework to quickly hack a great-looking interactive apps to serve a group of users.'}</Translate>
@@ -21,7 +21,7 @@ const features = [
     ),
   },
   {
-    title: <><Translate>Simple architecture</Translate></>,
+    title: <><Translate id="homepage.card_2_title">Simple architecture</Translate></>,
     imageUrl: 'img/pages/home/feature-house.svg',
     description: (
       <>
@@ -30,7 +30,7 @@ const features = [
     ),
   },
   {
-    title: <><Translate>Batteries included</Translate></>,
+    title: <><Translate id="homepage.card_3_title">Batteries included</Translate></>,
     imageUrl: 'img/pages/home/feature-battery.svg',
     description: (
       <>
@@ -39,7 +39,7 @@ const features = [
     ),
   },
   {
-    title: <><Translate>Powered by Flutter</Translate></>,
+    title: <><Translate id="homepage.card_4_title">Powered by Flutter</Translate></>,
     imageUrl: 'img/pages/home/feature-flutter.svg',
     description: (
       <>
@@ -48,7 +48,7 @@ const features = [
           linkflutter: (
             <Link to="https://flutter.dev">
               <Translate
-                id="homepage.homepage.card_4.linkFlutter"
+                id="homepage.card_4.linkFlutter"
               >
                 Flutter
               </Translate>
@@ -61,7 +61,7 @@ const features = [
     ),
   },
   {
-    title: <><Translate>Speaks your language</Translate></>,
+    title: <><Translate id="homepage.card_5_title">Speaks your language</Translate></>,
     imageUrl: 'img/pages/home/feature-language.svg',
     description: (
       <>
@@ -70,7 +70,7 @@ const features = [
           linkPython: (
             <Link to="/docs/getting-started/python">
               <Translate
-                id="homepage.homepage.card_5.linkPython"
+                id="homepage.card_5.linkPython"
               >
                 Python
               </Translate>
@@ -79,7 +79,7 @@ const features = [
           linkroadmap: (
             <Link to="/docs/roadmap">
               <Translate
-                id="homepage.homepage.card_5.linkroadmap"
+                id="homepage.card_5.linkroadmap"
               >
               coming next
               </Translate>
@@ -92,7 +92,7 @@ const features = [
     ),
   },
   {
-    title: <><Translate>Deliver to any device</Translate></>,
+    title: <><Translate id="homepage.card_6_title">Deliver to any device</Translate></>,
     imageUrl: 'img/pages/home/feature-mobile.svg',
     description: (
       <>
@@ -101,7 +101,7 @@ const features = [
           linkPWA: (
             <Link to="https://web.dev/what-are-pwas/">
               <Translate
-                id="homepage.homepage.card_6.linkPWA"
+                id="homepage.card_6.linkPWA"
               >
                 PWA
               </Translate>
@@ -135,8 +135,8 @@ function Home() {
   
   return (
     <Layout
-      title={`${translate({ message:siteConfig.customFields.heroTitle })}`}
-      description={`${translate({ message:siteConfig.tagline })}`}>
+      title={`${translate({ "id":"siteconfig.heroTitle" })}`}
+      description={`${translate({ "id":"siteconfig.tagline" })}`}>
       <main>
         <div className="container margin-bottom--lg">
           <div className={clsx('flet-hero', styles.heroBanner)}>
@@ -148,11 +148,11 @@ function Home() {
               
               <div className="col col--6">
                 <h1 className="hero__title">
-                <Translate id="homepage.heroTitle">
+                <Translate id="siteconfig.heroTitle">
                 {siteConfig.customFields.heroTitle}
                 </Translate></h1>
                 <p className="hero__subtitle">
-                <Translate id="homepage.heroSubTitle">
+                <Translate id="siteconfig.heroSubTitle">
                 {siteConfig.customFields.heroSubTitle}
                 </Translate>
                   </p>
@@ -160,7 +160,7 @@ function Home() {
                   <Link
                     className={styles.indexCtasGetStartedButton}
                     to={useBaseUrl('docs/')}>
-                    <Translate>Get Started</Translate>
+                    <Translate id="homepage.get_started">Get Started</Translate>
                   </Link>
                 </div>
               </div>
@@ -168,7 +168,7 @@ function Home() {
           </div>
         </div>
         <div className="container text--center">
-          <h2><Translate>Main features</Translate></h2>
+          <h2><Translate id="homepage.main_features">Main features</Translate></h2>
           {features && features.length > 0 && (
             <section className={styles.features}>
               <div className="container">

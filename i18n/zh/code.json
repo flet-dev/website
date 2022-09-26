@@ -1,11 +1,11 @@
 {
-    "homepage.tagline":{
+    "siteconfig.tagline":{
         "message":"用您熟悉的语言快速构建内部Web应用。"
     },
-    "homepage.heroTitle":{
+    "siteconfig.heroTitle":{
         "message":"用Python构建Flutter应用最快的方式"
     },
-    "homepage.heroSubTitle": {
+    "siteconfig.heroSubTitle": {
         "message": "Flet令无前端经验的开发者能够在Python中轻松构建实时的Web端、移动端和桌面端应用程序。"
     },
     "homepage.get_started": {
@@ -13,6 +13,54 @@
     },
     "homepage.main_features": {
         "message":"主要特性"
+    },
+    "homepage.card_1_title": {
+        "message":"从想法到APP只要几分钟"
+    },
+    "homepage.card_1": {
+        "message":"一个您团队的内部工具或数据大屏、业余项目、数据收集表、布告板应用或全真原型——Flet都是快速码出一个服务众多用户的美观可交互应用的理想框架。"
+    },
+    "homepage.card_2_title": {
+        "message":"简单的架构"
+    },
+    "homepage.card_2": {
+        "message":"没有复杂的JavaScript前端架构、REST API后端、数据库、缓存等。在Flet的帮助下你只需要用Python写一个有状态的一体应用，且它能做到多用户、实时单页等(SPA)。"
+    },
+    "homepage.card_3_title": {
+        "message":"自备动力"
+    },
+    "homepage.card_3": {
+        "message":"要开始基于Flet的开发，您仅需您惯用的IDE或文本编辑器即可。无需若干SDK，无需成百上千个依赖，无需复杂的工具——Flet有内建的可托管资源的Web服务器与桌面客户端。"
+    },
+    "homepage.card_4_title": {
+        "message":"基于Flutter"
+    },
+    "homepage.card_4": {
+        "message":"Flet UI基于{linkflutter}构建，因此您的应用会看起来更专业并能分发至各种平台。Flet通过将较小的“widgets”组合成“controls”，用命令式编程模型简化了Flutter模型。"
+    },
+    "homepage.card_5_title": {
+        "message":"用你熟悉的语言"
+    },
+    "homepage.card_5": {
+        "message":"Flet是无语言障碍的，因此您团队中任何人都可以用他们熟悉的语言来开发Flet应用。目前已支持{linkPython}，Go、C#及其他语言的支持{linkroadmap}。"
+    },
+    "homepage.card_6_title": {
+        "message":"在各类设备上分发"
+    },
+    "homepage.card_6": {
+        "message":"像Web应用那样部署Flet应用并在浏览器里体验它。或将其打包为在Windows、macOS和Linux上独立的桌面端应用。在移动设备上安装为{linkPWA}或通过适用于iOS和Android的Flet应用来体验。"
+    },
+    "homepage.card_4.linkFlutter": {
+        "message":"Flutter"
+    },
+    "homepage.card_5.linkPython": {
+        "message":"Python"
+    },
+    "homepage.card_5.linkroadmap": {
+        "message":"即将推出"
+    },
+    "homepage.card_6.linkPWA": {
+        "message":"渐进式应用"
     },
     "homepage.signup_loading":{
         "message":"加载中……"
