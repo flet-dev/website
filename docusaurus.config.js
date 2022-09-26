@@ -201,11 +201,13 @@ module.exports = {
         label: 'English',
         direction: 'ltr',
         htmlLang: 'en-GB',
+        calendar: 'gregory',
       },
       zh:{
         label: '中文',
         direction: 'ltr',
         htmlLang: 'zh-Hans',
+        calendar: 'gregory',
       }
     },
   },
