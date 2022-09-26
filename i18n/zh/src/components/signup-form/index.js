@@ -45,21 +45,21 @@ export default function SignupForm() {
                 {() => {
                     if (token) {
                         // signup submitted
-                        return <div>Thank you! You will receive the confirmation email shortly.</div>
+                        return <div>谢谢您！您将很快收到确认邮件。</div>
                     } else if (window.location.href.endsWith('?signup-confirmed')) {
                         // signup confirmed
-                        return <div><span style={{ fontSize: '25px', marginRight: '10px' }}>🎉</span>Congratulations! You have successfully subscribed to Flet newsletter.</div>
+                        return <div><span style={{ fontSize: '25px', marginRight: '10px' }}>🎉</span>恭喜！您已成功订阅Flet新闻。</div>
                     } else {
                         // signup form
                         return <form onSubmit={onSubmit}>
-                            <h3>Subscribe to Flet newsletter for project updates and tutorials!</h3>
+                            <h3>订阅Flet新闻以获取项目进展和指南！</h3>
                             <input
                                 type="email"
                                 value={email}
-                                placeholder="Your email address"
+                                placeholder="您的电子邮件地址"
                                 onChange={(evt) => setEmail(evt.target.value)}
                             />
-                            <input type="submit" value="Submit" />
+                            <input type="submit" value="提交" />
                             <HCaptcha
                                 sitekey="db49a301-288d-491b-9746-ebd3354dc5ff"
                                 size="invisible"
