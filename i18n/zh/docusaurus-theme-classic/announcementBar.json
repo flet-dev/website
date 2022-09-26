@@ -1,0 +1,5 @@
+{
+    "theme.AnnouncementBar.announcementBar-2": {
+        "message": "⭐️ 如果您喜欢Flet，在<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/flet-dev/flet\">GitHub</a>上为我们标星并在${TwitterSvg}<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://twitter.com/fletdev\" >Twitter</a>上关注我们吧！",
+      }
+}
