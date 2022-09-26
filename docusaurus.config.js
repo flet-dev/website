@@ -195,10 +195,17 @@ module.exports = {
   // ],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
+    locales: ['en', 'zh'],
     localeConfigs: {
       en: {
+        label: 'English',
+        direction: 'ltr',
         htmlLang: 'en-GB',
+      },
+      zh:{
+        label: '中文',
+        direction: 'ltr',
+        htmlLang: 'zh-Hans',
       }
     },
   },

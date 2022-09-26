@@ -1,0 +1,14 @@
+{
+    "Build internal web apps quickly in the language you already know.":{
+        "message":"用您熟悉的语言快速构建内部Web应用。"
+    },
+    "The fastest way to build Flutter apps in Python":{
+        "message":"用Python构建Flutter应用最快的方式"
+    },
+    "adgafafdaf": {
+        "message": "Flet令无前端经验的开发者能够在Python中轻松构建实时的Web端、移动端和桌面端应用程序。"
+    },
+    "adgafafdasfafaaf": {
+        "message": "⭐️ 如果您喜欢Flet，在<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/flet-dev/flet\">GitHub</a>上为我们标星并在${TwitterSvg}<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://twitter.com/fletdev\" >Twitter</a>上关注我们吧！"
+    }
+}
