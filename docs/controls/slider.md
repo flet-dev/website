@@ -34,6 +34,8 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/slider/basic-slider.gif"/>
+
 ### Sliders with values
 
 <Tabs groupId="language">
@@ -54,6 +56,8 @@ flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
+
+<img src="/img/docs/controls/slider/slider-with-custom-content.gif"/>
 
 ### Slider with `on_change` event
 
@@ -79,6 +83,8 @@ flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
+
+<img src="/img/docs/controls/slider/slider-with-change-event.gif"/>
 
 ## Properties
 

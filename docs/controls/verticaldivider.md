@@ -59,6 +59,8 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/vertical-divider/vertical-divider.png" width="40%" />
+
 ## Properties
 
 ### `width`
