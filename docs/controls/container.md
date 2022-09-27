@@ -413,11 +413,15 @@ class ContainerTapEvent():
     global_y: float
 ```
 
+:::info
+If `ink` is `True`, `e` will be plain `ControlEvent` with empty `data` instead of `ContainerTapEvent`.
+:::
+
 A simple usage example:
 
 ```python
 import flet
-from flet import Column, Container, ContainerTapEventData, Page, Text, alignment, colors
+from flet import Column, Container, ContainerTapEvent, Page, Text, alignment, colors
 
 def main(page: Page):
     page.horizontal_alignment = "center"
@@ -425,7 +429,7 @@ def main(page: Page):
 
     t = Text()
 
-    def container_click(e: ContainerTapEventData):
+    def container_click(e: ContainerTapEvent):
         t.value = f"local_x: {e.local_x}\nlocal_y: {e.local_y}\nglobal_x: {e.global_x}\nglobal_y: {e.global_y}"
         t.update()
 
