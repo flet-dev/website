@@ -286,8 +286,7 @@ jt = page.auth.token.to_json()
 Encrypt sensitive data before sending it to a client storage.
 :::
 
-Flet includes utility methods for encrypting text data using symmetric algorithm (where the same key is used for encryption and decryption). They use Fernet lib from [cryptography](https://pypi.org/project/cryptography/) package, which is AES-256 with some additional features, plus PBKDF2 to derive encryption
-key from a user passphrase.
+Flet includes utility methods for encrypting text data using symmetric algorithm (where the same key is used for encryption and decryption). They use [Fernet](https://github.com/fernet/spec/blob/master/Spec.md) implementation from [cryptography](https://pypi.org/project/cryptography/) package, which is AES 128 with some additional hardening, plus PBKDF2 to derive encryption key from a user passphrase.
 
 To encrypt JSON token:
 
@@ -301,7 +300,7 @@ ejt = encrypt(jt, secret_key)
 ```
 
 :::caution
-Notice, we are fetching a passphrase (secret key, password, etc.) from an environment variable.
+Notice, we are fetching a secret key (aka passphrase, password, etc.) from an environment variable.
 Do not embed any secrets into source code to avoid accidential exposure to a public!
 :::
 

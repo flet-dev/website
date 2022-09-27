@@ -17,6 +17,7 @@ module.exports = {
         'guides/python/authentication',
         'guides/python/client-storage',
         'guides/python/session-storage',
+        'guides/python/encrypting-sensitive-data',
         'guides/python/pub-sub',
         'guides/python/user-controls',
         'guides/python/control-refs',

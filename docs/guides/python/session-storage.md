@@ -3,16 +3,9 @@ title: Session storage
 sidebar_label: Session storage
 ---
 
-Flet's API for storing key-value data in user's session on a server side.
+Flet provides an API for storing key-value data in user's session on a server side.
 
-The actual storage mechanism depends on a platform where Flet app is running:
-
-* Web - [Local storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage).
-* Desktop - JSON file.
-* iOS - [NSUserDefaults](https://developer.apple.com/documentation/foundation/nsuserdefaults).
-* Android - [SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences).
-
-Writing data to the storage:
+Writing data to the session:
 
 ```python
 # strings
