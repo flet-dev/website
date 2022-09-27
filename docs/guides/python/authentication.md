@@ -3,22 +3,28 @@ title: Authentication
 sidebar_label: Authentication
 ---
 
-Flet authentication depends on existing OAuth 2.0 provider (GitHub, Google, Azure, Auth0, etc.) and implements [Authorization Code Flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow) to retrieve API access token. Built-in Flet user management is planned for future releases.
+You can implement user authentication ("Login with X" buttons) in your Flet app using 3rd-party identity providers such as GitHub, Google, Azure, Auth0, LinkedId and others.
 
-Features:
+Identity provider must support [OAuth 2.0 Authorization Code Flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow) to retrieve API access token.
 
-* Works with desktop, web and mobile Flet apps.
+Built-in Flet login with credentials and user management is planned for future releases.
+If you have a requirement to create and manage user accounts in your app you can implement it
+by your own or use [Auth0](https://auth0.com/user-management) identity provider which provides
+a generous free tier.
+
+🔐 Flet authentication features:
+
+* Works with Flet desktop, web and mobile apps.
+* Using multiple authentication providers in one app.
 * Built-in OAuth providers with automatic user details fetching:
   * GitHub
   * Azure
   * Google
   * Auth0
 * Optional groups fetching.
-* Custom OAuth providers.
 * Automatic token refresh.
-* Session storage (saving authorizations).
-* Client storage (sample with encryption).
 * Login with a saved token ("Remember me").
+* Custom OAuth providers.
 
 ## Login process overview
 
@@ -344,33 +350,104 @@ def logout_button_click(e):
 
 ## Customizing authorization flow
 
-How to open in a new tab, the same tab (redirect URL)?
-How to customize "complete" page?
+By default, OAuth authorization flow is happening in either new browser window/tab (desktop app), browser popup window (web) or in-app web view (mobile).
+
+Upon completion of authorization flow a user is redirected to Flet's OAuth callback page (`/api/oauth/redirect`) which tries to close a browser window/tab with JavaScript and provides user with instructions to close the window manually if JavaScript close didn't work.
+
+This section is applicable to Flet desktop and web apps only as in-app web view in mobile apps can be closed by Flet without relying on JavaScript.
+
+You can customize the contents of "Authorization complete" page in `page.login()` method, for example:
 
 ```python
-p = """
+complete_page_html = """
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Signed in successfully</title>
-</head>
+  <head>
+    <title>Signed in to MyApp</title>
+  </head>
 <body>
   <script type="text/javascript">
-    window.close();
+      window.close();
   </script>
   <p>You've been successfully signed in! You can close this tab or window now.</p>
 </body>
 </html>
 """
+
+page.login(
+    provider,
+    complete_page_html=complete_page_html,
+)
 ```
 
-## Configuring generic OAuth provider
+You can also change web app to open provider's authorization page in the same tab which might be more familiar to your users and save them from dealing with popup blockers:
 
-[LinkedIn](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?context=linkedin%2Fcontext&tabs=HTTPS)
+```python
+page.login(
+    provider,
+    on_open_authorization_url=lambda url: page.launch_url(url, web_window_name="_self"),
+    redirect_to_page=True
+)
+```
 
-## Implementing custom OAuth provider
+To open flow in a new tab (notice `_self` replaced with `_blank`):
 
-LinkedIn
+```python
+page.login(
+    provider,
+    on_open_authorization_url=lambda url: page.launch_url(url, web_window_name="_blank")
+)
+```
 
+## Configuring a custom OAuth provider
 
+You can configure any OAuth-compatible authentication provider in your app with `flet.auth.oauth_provider.OAuthProvider` class.
 
+Following the instructions in [LinkedIn Authorization Code Flow guide](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?context=linkedin%2Fcontext&tabs=HTTPS) we are able
+to get all required parameters to configure LinkedIn OAuth provider to allow users of your Flet app to login
+with their LinkedIn accounts:
+
+```python {9-18}
+import os
+
+import flet
+from flet import ElevatedButton, Page
+from flet.auth.oauth_provider import OAuthProvider
+
+def main(page: Page):
+
+    provider = OAuthProvider(
+        client_id=os.getenv("LINKEDIN_CLIENT_ID"),
+        client_secret=os.getenv("LINKEDIN_CLIENT_SECRET"),
+        authorization_endpoint="https://www.linkedin.com/oauth/v2/authorization",
+        token_endpoint="https://www.linkedin.com/oauth/v2/accessToken",
+        redirect_url="http://localhost:8550/api/oauth/redirect",
+        user_endpoint="https://api.linkedin.com/v2/me",
+        user_scopes=["r_liteprofile", "r_emailaddress"],
+        user_id_fn=lambda u: u["id"]
+    )
+
+    def login_click(e):
+        page.login(provider)
+
+    def on_login(e):
+        if e.error:
+            raise Exception(e.error)
+        print("User ID:", page.auth.user.id)
+        print("Access token:", page.auth.token.access_token)
+
+    page.on_login = on_login
+    page.add(ElevatedButton("Login with LinkedIn", on_click=login_click))
+
+flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
+```
+
+Mandatory provider settings:
+
+* `client_id`
+* `client_secret`
+* `authorization_endpoint`
+* `token_endpoint`
+* `redirect_url`
+
+Similar to other examples client ID and client secret are fetched from environment variables.
