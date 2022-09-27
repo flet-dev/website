@@ -343,6 +343,28 @@ A width of a web page or content area of a native OS window containing Flet app.
 
 A height of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
 
+### `window_bgcolor`
+
+🖥️ Desktop only. Sets background color of an application window.
+
+Use together with `page.bgcolor` to make a window transparent:
+
+```python
+import flet
+from flet import ElevatedButton, Page, colors
+
+def main(page: Page):
+    page.window_bgcolor = colors.TRANSPARENT
+    page.bgcolor = colors.TRANSPARENT
+    page.window_title_bar_hidden = True
+    page.window_frameless = True
+    page.window_left = 400
+    page.window_top = 200
+    page.add(ElevatedButton("I'm a floating button!"))
+
+flet.app(target=main)
+```
+
 ### `window_width`
 
 🖥️ Desktop only. Get or set the width of a native OS window containing Flet app.
@@ -572,7 +594,7 @@ A helper method that updates [`page.route`](#route), calls [`page.on_route_chang
 
 ### `set_clipboard(data)`
 
-Set clipboard data a client side (user's web browser or a desktop), for example:
+Set clipboard data on a client side (user's web browser or a desktop), for example:
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -584,9 +606,20 @@ page.set_clipboard("This value comes from Flet app")
   </TabItem>
 </Tabs>
 
+### `get_clipboard()`
+
+Get the last text value saved to a clipboard on a client side.
+
 ### `launch_url(url)`
 
 Opens `url` in a new browser window.
+
+Optional method arguments:
+
+* `web_window_name`
+* `web_popup_window`
+* `window_width`
+* `window_height`
 
 ### `show_snack_bar(snack_bar)`
 
@@ -612,6 +645,14 @@ To enable built-in upload storage provide `upload_dir` argument to `flet.app()` 
 ```python
 flet.app(target=main, upload_dir="uploads")
 ```
+
+### `close_in_app_web_view()`
+
+📱 Mobile only. Closes in-app web view opened with `launch_url()`.
+
+### `window_to_front()`
+
+🖥️ Desktop only. Brings application window to a foreground.
 
 ### `window_center()`
 

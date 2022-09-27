@@ -282,3 +282,28 @@ def main(page: Page):
 
 flet.app(target=main)
 ```
+
+### Animation end callback
+
+All controls with `animate_*` properties have `on_animation_end` event handler which is called
+when animation complete and cab be used to chain multiple animations.
+
+Event's object `data` field contains the name of animation:
+
+* `opacity`
+* `rotation`
+* `scale`
+* `offset`
+* `position`
+* `container`
+
+For example:
+
+```python
+ c = Container(
+        Text("Animate me!"),
+        # ...
+        animate=animation.Animation(1000, "bounceOut"),
+        on_animation_end=lambda e: print("Container animation end:", e.data)
+    )
+```

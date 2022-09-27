@@ -15,6 +15,8 @@ module.exports = {
         'guides/python/file-picker-and-uploads',
         'guides/python/animations',
         'guides/python/authentication',
+        'guides/python/client-storage',
+        'guides/python/session-storage',
         'guides/python/pub-sub',
         'guides/python/user-controls',
         'guides/python/control-refs',
