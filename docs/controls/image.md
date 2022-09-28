@@ -151,6 +151,10 @@ The default is `srcIn`. In terms of the blend mode, color is the source and this
 
 See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
 
+### `gapless_playback`
+
+Whether to continue showing the old image (`True`), or briefly show nothing (`False`), when the image provider changes. The default value is `False`.
+
 ### `tooltip`
 
 The text displayed when hovering a mouse over the Image.

@@ -616,10 +616,10 @@ Opens `url` in a new browser window.
 
 Optional method arguments:
 
-* `web_window_name`
-* `web_popup_window`
-* `window_width`
-* `window_height`
+* `web_window_name` - window tab/name to open URL in: `_self` - the same tab, `_blank` - a new tab or `<your name>` - a named tab.
+* `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
+* `window_width` - optional, popup window width.
+* `window_height` - optional, popup window height.
 
 ### `show_snack_bar(snack_bar)`
 

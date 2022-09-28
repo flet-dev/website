@@ -3,7 +3,7 @@ title: Authentication
 sidebar_label: Authentication
 ---
 
-You can implement user authentication ("Login with X" buttons) in your Flet app using 3rd-party identity providers such as GitHub, Google, Azure, Auth0, LinkedId and others.
+You can implement user authentication ("Login with X" buttons) in your Flet app using 3rd-party identity providers such as GitHub, Google, Azure, Auth0, LinkedIn and others.
 
 Identity provider must support [OAuth 2.0 Authorization Code Flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow) to retrieve API access token.
 
@@ -12,7 +12,7 @@ If you have a requirement to create and manage user accounts in your app you can
 by your own or use [Auth0](https://auth0.com/user-management) identity provider which provides
 a generous free tier.
 
-🔐 Flet authentication features:
+Flet authentication features:
 
 * Works with Flet desktop, web and mobile apps.
 * Using multiple authentication providers in one app.

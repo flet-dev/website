@@ -10,38 +10,143 @@ tags: [release]
 
 import TOCInline from '@theme/TOCInline';
 
-User authentication in Flet is here! 🔐🎉
+User authentication in Flet is here! 🎉
 
-It allows you to ...
+Now you can implement user authentication ("Login with X" buttons) in your Flet app using 3rd-party identity providers such as GitHub, Google, Azure, Auth0, LinkedIn and others:
 
-This release is not just about authentication, but it adds a bunch of accompaning functionality:
+<img src="/img/docs/getting-started/authentication/github-oauth-authorize.png" className="screenshot-40" />
+
+Traditionally, this release is not just about authentication, but it adds a ton of accompanying functionality and small improvements:
 
 <TOCInline toc={toc} maxHeadingLevel={2} />
 
 ## Authentication
 
-[More info](/docs/guides/python/authentication)
+Flet authentication features:
+
+* Works with Flet desktop, web and mobile apps.
+* Using multiple authentication providers in one app.
+* Built-in OAuth providers with automatic user details fetching:
+  * GitHub
+  * Azure
+  * Google
+  * Auth0
+* Optional groups fetching.
+* Automatic token refresh.
+* Login with a saved token ("Remember me").
+* Custom OAuth providers.
+
+A simple example on how to add "Login with GitHub" button to your Flet app:
+
+```python
+import os
+
+import flet
+from flet import ElevatedButton, Page
+from flet.auth.providers.github_oauth_provider import GitHubOAuthProvider
+
+def main(page: Page):
+
+    provider = GitHubOAuthProvider(
+        client_id=os.getenv("GITHUB_CLIENT_ID"),
+        client_secret=os.getenv("GITHUB_CLIENT_SECRET"),
+        redirect_url="http://localhost:8550/api/oauth/redirect",
+    )
+
+    def login_click(e):
+        page.login(provider)
+
+    def on_login(e):
+        print("Access token:", page.auth.token.access_token)
+        print("User ID:", page.auth.user.id)
+
+    page.on_login = on_login
+    page.add(ElevatedButton("Login with GitHub", on_click=login_click))
+
+flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
+```
+
+:::note
+Before running the app set the secret environment variables in a command line:
+
+```
+$ export GITHUB_CLIENT_ID="<client_id>"
+$ export GITHUB_CLIENT_SECRET="<client_secret>"
+```
+:::
+
+[Read Authentication guide for more information and examples](/docs/guides/python/authentication).
 
 ## Client storage
 
-[More info](/docs/guides/python/client-storage)
+Flet's client storage API that allows storing key-value data on a client side in a persistent storage. Flet implementation uses [`shared_preferences`](https://pub.dev/packages/shared_preferences) Flutter package.
+
+Writing data to the storage:
+
+```python
+page.client_storage.set("key", "value")
+```
+
+Reading data:
+
+```python
+value = page.client_storage.get("key")
+```
+
+[Read Client storage guide for more information and examples](/docs/guides/python/client-storage).
 
 ## Session storage
 
-[More info](/docs/guides/python/session-storage)
+Flet introduces an API for storing key-value data in user's session on a server side.
+
+Writing data to the session:
+
+```python
+page.session.set("key", "value")
+```
+
+Reading data:
+
+```python
+value = page.session.get("key")
+```
+
+[Read Session storage guide for more information and examples](/docs/guides/python/session-storage)
 
 ## Encryption API
 
-[More info](/docs/guides/python/encrypting-sensitive-data)
+In this release Flet introduces utility methods to encrypt and decrypt sensitive text data using symmetric algorithm (where the same key is used for encryption and decryption). It uses [Fernet](https://github.com/fernet/spec/blob/master/Spec.md) implementation from [cryptography](https://pypi.org/project/cryptography/) package, which is AES 128 with some additional hardening, plus PBKDF2 to derive encryption key from a user passphrase.
 
-## Other improvements and bug fixes
+Encrypting data:
 
-* SVG images support. [`Image.color`](/docs/controls/image#color), [`Image.color_blend_mode`](/docs/controls/image#color_blend_mode), [`Image.semantics_label`](/docs/controls/image#semantics_label) properties.
-* [`on_animation_end` callback](/docs/guides/python/animations#animation-end-callback).
+```python
+from flet.security import encrypt, decrypt
+secret_key = "S3CreT!"
+plain_text = "This is a secret message!"
+encrypted_data = encrypt(plain_text, secret_key)
+```
+
+Decrypting data:
+
+```python
+from flet.security import encrypt, decrypt
+secret_key = "S3CreT!"
+plain_text = decrypt(encrypted_data, secret_key)
+print(plain_text)
+```
+
+[Continue reading for more information and examples](/docs/guides/python/encrypting-sensitive-data).
+
+## Other improvements
+
+* SVG image support ([example](https://github.com/flet-dev/examples/blob/main/python/controls/image/svg-image.py)) and new images properties:
+  * [`Image.color`](/docs/controls/image#color)
+  * [`Image.color_blend_mode`](/docs/controls/image#color_blend_mode)
+  * [`Image.semantics_label`](/docs/controls/image#semantics_label)
+  * [`Image.gapless_playback`](/docs/controls/image#gapless_playback)
+* [`on_animation_end` callback](/docs/guides/python/animations#animation-end-callback) to chain animations.
 * [`Container.clip_behavior` property](/docs/controls/container#clip_behavior).
-* [`page.window_bgcolor`](/docs/controls/page#window_bgcolor):
-
-Use together with `page.bgcolor` to make a window transparent:
+* [`page.window_bgcolor`](/docs/controls/page#window_bgcolor) to make cool transparent app window:
 
 ```python
 import flet
@@ -52,17 +157,17 @@ def main(page: Page):
     page.window_title_bar_hidden = True
     page.window_frameless = True
     page.window_left = 400
-    page.window_top = 200
+    page.window_top = 400
     page.add(ElevatedButton("I'm a floating button!"))
 flet.app(target=main)
 ```
 
 * [`page.get_clipboard()`](/docs/controls/page#get_clipboard)
-* [`page.launch_url()`](/docs/controls/page#launch_urlurl)
-    * `web_window_name`
-    * `web_popup_window`
-    * `window_width`
-    * `window_height`
+* [`page.launch_url()`](/docs/controls/page#launch_urlurl) - better control with additional arguments:
+    * `web_window_name` - window tab/name to open URL in: `_self` - the same tab, `_blank` - a new tab or `<your name>` - a named tab.
+    * `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
+    * `window_width` - optional, popup window width.
+    * `window_height` - optional, popup window height.
 * [`page.window_to_front()`](/docs/controls/page#window_to_front)
 * [`page.close_in_app_web_view()`](/docs/controls/page#close_in_app_web_view)
 
