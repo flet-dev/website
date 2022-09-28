@@ -399,6 +399,15 @@ flet.app(target=main)
 
 `True` to produce ink ripples effect when user clicks the container. Default is `False`.
 
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. Supported values:
+
+* `none` (default)
+* `antiAlias`
+* `antiAliasWithSaveLayer`
+* `hardEdge`
+
 ## Events
 
 ### `on_click`

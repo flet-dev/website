@@ -139,6 +139,26 @@ How to inscribe the image into the space allocated during layout. Supported valu
 
 Clip image to have rounded corners. See [`Container.border_radius`](container#border_radius) for more information and examples.
 
+### `color`
+
+If set, this color is blended with each image pixel using `color_blend_mode`.
+
+### `color_blend_mode`
+
+Used to combine `color` with the image.
+
+The default is `srcIn`. In terms of the blend mode, color is the source and this image is the destination.
+
+See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
+
+### `gapless_playback`
+
+Whether to continue showing the old image (`True`), or briefly show nothing (`False`), when the image provider changes. The default value is `False`.
+
 ### `tooltip`
 
 The text displayed when hovering a mouse over the Image.
+
+### `semantics_label`
+
+A semantics label for this image.
