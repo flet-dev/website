@@ -50,6 +50,8 @@ flet.app(target=main, view=flet.WEB_BROWSER)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/card/card-with-custom-content.png" width="40%" />
+
 ## Properties
 
 ### `content`
