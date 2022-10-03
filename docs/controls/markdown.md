@@ -95,14 +95,14 @@ void main() {
 """
 
 def main(page: Page):
+    page.scroll = "auto"
     page.add(
         Markdown(
             md1,
             selectable=True,
             extension_set="gitHubWeb",
             on_tap_link=lambda e: page.launch_url(e.data),
-            expand=True,
-        ),
+        )
     )
 
 flet.app(target=main)
