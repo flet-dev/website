@@ -191,3 +191,5 @@ flet.app(target=main, route_url_strategy="path")
 ```
 
 URL strategy for Flet Server can be configured with `FLET_ROUTE_URL_STRATEGY` environment variable which could be set to either `path` or `hash` (default).
+
+## Querystring
