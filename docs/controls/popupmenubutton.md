@@ -50,6 +50,8 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/popup-menu-button/popup-menu-button-with-custom-content.gif"/>
+
 ## `PopupMenuButton` properties
 
 ### `content`
