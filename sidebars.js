@@ -123,11 +123,11 @@ module.exports = {
             'controls/elevatedbutton',
             'controls/filledbutton',
             'controls/filledtonalbutton',
-            'controls/outlinedbutton',
-            'controls/textbutton',
-            'controls/iconbutton',
             'controls/floatingactionbutton',
+            'controls/iconbutton',
+            'controls/outlinedbutton',
             'controls/popupmenubutton',
+            'controls/textbutton',
           ]
         },
         {
@@ -154,9 +154,9 @@ module.exports = {
             slug: 'controls/dialogs-alerts-panels'
           },
           items: [
+            'controls/alertdialog',
             'controls/banner',
             'controls/snackbar',
-            'controls/alertdialog',
           ]
         },
         {
@@ -178,11 +178,12 @@ module.exports = {
             slug: 'controls/utility'
           },
           items: [
-            'controls/shadermask',
+            'controls/audio',
             'controls/draggable',
             'controls/dragtarget',
             'controls/filepicker',
             'controls/semantics',
+            'controls/shadermask',
             'controls/windowdragarea',
           ]
         },
