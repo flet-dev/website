@@ -596,7 +596,7 @@ def main(page: Page):
 
 ## Methods
 
-### `go(routem **kwargs)`
+### `go(route, **kwargs)`
 
 A helper method that updates [`page.route`](#route), calls [`page.on_route_change`](#on_route_change) event handler to update views and finally calls `page.update()`.
 
