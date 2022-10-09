@@ -491,7 +491,7 @@ Note `view=flet.FLET_APP_HIDDEN` which hides app window on start.
 A simple PubSub implementation for passing messages between app sessions.
 
 ### `query`
-`query` property supports the following methods:
+
 * go(key: str)
 * to_dict
 * path
@@ -596,7 +596,7 @@ def main(page: Page):
 
 ## Methods
 
-### `go(route)`
+### `go(routem **kwargs)`
 
 A helper method that updates [`page.route`](#route), calls [`page.on_route_change`](#on_route_change) event handler to update views and finally calls `page.update()`.
 
