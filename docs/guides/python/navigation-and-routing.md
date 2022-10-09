@@ -202,13 +202,13 @@ Building querystring parser made some changes with old methods and added new one
 `go` method of `Page` object now supports `**kwargs` arguments. You can pass key-value pairs to `go` method after the url to receive result like this: `...some_path/?name=John&surname=Doe`
 
 
-Example:
+* Example:
 
 ```python
 page.go("/products/", "id" = 5, "name_startswith" = "g")
 ```
 
-Result: https://www.localhost/products/?id=5&name_startswith=g
+* Result: `https://www.localhost/products/?id=5&name_startswith=g`
 
 
 ### New methods for querystring parsing
@@ -217,35 +217,35 @@ Result: https://www.localhost/products/?id=5&name_startswith=g
 * page.query.to_dict
 * page.query.path
 
-#### Examples
+#### Examples for new methods
 
 Lets say we have a URL structure like this
 
-https://www.localhost/products/?id=5&name_startswith=g
+`https://www.localhost/products/?id=5&name_startswith=g`
 
-- Example:
+Example:
 
 ```python
 page.query.get('id')
 ```
 
-Result: 5
+* Result: `5`
 
-- Example:
+Example:
 
 ```python
 page.query.to_dict
 ```
 
-Result: {"id": 5, "name_startswith": "g"}
+* Result: `{"id": 5, "name_startswith": "g"}`
 
-- Example:
+Example:
 
 ```python
 page.query.path
 ```
 
-Result: '/products/'
+* Result: `'/products/'`
 
 ### Sample Project
 ```python
