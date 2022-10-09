@@ -205,14 +205,11 @@ Building querystring parser made some changes with old methods and added new one
 Example:
 
 ```python
-page.go("/products/", id=5, name_startswith='g')
+page.go("/products/", "id" = 5, "name_startswith" = "g")
 ```
 
-Result:
+Result: https://www.localhost/products/?id=5&name_startswith=g
 
-```
-https://www.localhost.com/products/?id=5&name_startswith=g
-```
 
 ### New methods for querystring parsing
 
@@ -224,24 +221,30 @@ https://www.localhost.com/products/?id=5&name_startswith=g
 
 Lets say we have a URL structure like this
 
-https://www.localhost.com/products/?id=5&name_startswith=g
+https://www.localhost/products/?id=5&name_startswith=g
 
 - Example:
+
 ```python
 page.query.get('id')
 ```
+
 Result: 5
 
 - Example:
+
 ```python
 page.query.to_dict
 ```
+
 Result: {"id": 5, "name_startswith": "g"}
 
 - Example:
+
 ```python
 page.query.path
 ```
+
 Result: '/products/'
 
 ### Sample Project
