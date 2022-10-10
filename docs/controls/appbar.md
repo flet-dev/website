@@ -103,3 +103,9 @@ The fill color to use for an AppBar. Default color is defined by current theme.
 ### `elevation`
 
 This property controls the size of the shadow below the app bar. Default value is 4.
+
+### `automatically_imply_leading`
+
+Controls whether we should try to imply the leading widget if null.
+
+If `True` and `leading` is null, automatically try to deduce what the leading widget should be. If `False` and `leading` is null, leading space is given to title. If leading widget is not null, this parameter has no effect.

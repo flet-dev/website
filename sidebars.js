@@ -182,6 +182,7 @@ module.exports = {
             'controls/draggable',
             'controls/dragtarget',
             'controls/filepicker',
+            'controls/gesturedetector',
             'controls/semantics',
             'controls/shadermask',
             'controls/windowdragarea',

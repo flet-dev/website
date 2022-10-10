@@ -34,7 +34,7 @@ def main(page: Page):
         e.control.update()
 
     def drag_accept(e):
-        src = page.get_control(e.data)
+        src = page.get_control(e.src_id)
         e.control.content.bgcolor = src.content.bgcolor
         e.control.content.border = None
         e.control.update()
@@ -123,7 +123,13 @@ Fires when draggable is dragged on top of a drag target. `data` field of event d
 
 ### `on_accept`
 
-Fires when the user does drop the draggable on top of the drag target (and the drag target is in the same `group` with draggable). `data` field of event details contains ID of draggable control. Use `page.get_control(id)` to retrieve Control reference by its ID.
+Fires when the user does drop the draggable on top of the drag target (and the drag target is in the same `group` with draggable). Event handler argument is an instance of `DragTargetAcceptEvent` class with the following fields:
+
+* `src_id` - unique control ID of draggable.
+* `x` - x component of the global position when the specific pointer event occurred on the draggable.
+* `y` - y component of the global position when the specific pointer event occurred on the draggable.
+
+Use `page.get_control(e.src_id)` to retrieve Control reference by its ID.
 
 ### `on_leave`
 
