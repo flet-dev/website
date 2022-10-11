@@ -21,6 +21,8 @@ The following example demonstraits how a control can be freelly dragged inside a
 
 The sample also shows that GestureDetector can have a child control (blue container) as well as be nested inside another control (yellow container) giving the same results.
 
+<img src="/img/docs/controls/gesture-detector/gesture-detector-two-containers.gif" className="screenshot-50" />
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
