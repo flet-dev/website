@@ -22,6 +22,7 @@ module.exports = {
         'guides/python/user-controls',
         'guides/python/control-refs',
         'guides/python/accessibility',
+        'guides/python/mobile-support',
         'guides/python/hot-reload',
         'guides/python/packaging-desktop-app',
         {
@@ -182,6 +183,7 @@ module.exports = {
             'controls/draggable',
             'controls/dragtarget',
             'controls/filepicker',
+            'controls/gesturedetector',
             'controls/semantics',
             'controls/shadermask',
             'controls/windowdragarea',

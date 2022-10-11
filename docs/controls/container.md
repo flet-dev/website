@@ -238,6 +238,13 @@ from flet import border_radius
 container_1.border_radius = border_radius.all(30)
 ```
 
+### `shape`
+
+Sets the shape of the container. The value is `BoxShape` enum:
+
+* `RECTANGLE` (default)
+* `CIRCLE`
+
 ### `gradient`
 
 Configures gradient background. The value must be an instance of one of the following classes:

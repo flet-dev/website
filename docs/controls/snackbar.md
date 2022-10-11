@@ -68,6 +68,10 @@ The action should not be "dismiss" or "cancel".
 
 SnackBar background color.
 
+### `action_color`
+
+The foreground color of action button.
+
 ## Events
 
 ### `on_action`
