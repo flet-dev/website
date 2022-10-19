@@ -127,6 +127,8 @@ def main(page: Page):
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
 
+<img src="/img/docs/getting-started/grid-view.png" className="screenshot-50" />
+
 With GridView scrolling and window resizing are smooth and responsive!
 
 You can specify either fixed number of rows or columns (runs) with `runs_count` property or the maximum size of a "tile" with `max_extent` property, so the number of runs can vary automatically. In our example we set the maximum tile size to 150 pixels and set its shape to "square" with `child_aspect_ratio=1`. `child_aspect_ratio` is the ratio of the cross-axis to the main-axis extent of each child. Try changing it to `0.5` or `2`.
@@ -157,3 +159,4 @@ def main(page: Page):
 
 flet.app(target=main, view=flet.WEB_BROWSER)
 ```
+<img src="/img/docs/getting-started/sending-page-updates-in-batches.png" className="screenshot-50" />
