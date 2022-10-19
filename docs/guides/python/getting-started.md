@@ -38,6 +38,7 @@ def main(page: Page):
 
 flet.app(target=main)
 ```
+<img src="/img/docs/getting-started/basic-app-structure.png" className="screenshot-50" />
 
 :::note
 This section is intentionally called "basic" as later in this guide we'll look at more real-world approaches to app structure with reusable controls.
@@ -86,6 +87,7 @@ def main(page: Page):
 
 flet.app(target=main)
 ```
+<img src="/img/docs/getting-started/controls-text.png" className="screenshot-50" />
 
 :::note
 In the following examples we will be showing just the contents of `main` function.
@@ -161,6 +163,8 @@ def main(page):
 
 flet.app(target=main)
 ```
+<img src="/img/docs/getting-started/simple-ToDo.png" className="screenshot-50" />
+
 
 :::info
 Flet implements *imperative* UI model where you "manually" build application UI with stateful controls and then mutate it by updating control properties. Flutter implements *declarative* model where UI is automatically re-built on application data changes.
@@ -232,6 +236,8 @@ def main(page):
 
 flet.app(target=main)
 ```
+<img src="/img/docs/getting-started/control-refs.png" className="screenshot-50" />
+
 
 In the very beginning of `main()` method we create three controls which we are going to use in button's `on_click` handler: two `TextField` for first and last names and a `Column` - container for greeting messages. We create controls with all their properties set and in the end of `main()` method, in `page.add()` call, we use their references (variables).
 
@@ -306,6 +312,7 @@ def main(page):
 
 flet.app(target=main)
 ```
+<img src="/img/docs/getting-started/control-refs-rewritten.png" className="screenshot-50" />
 
 Now we can clearly see in `page.add()` the structure of the page and all the controls it's built of.
 

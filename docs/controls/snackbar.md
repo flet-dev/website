@@ -46,6 +46,8 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/snackbar/snackbar-with-custom-content.gif"/>
+
 ## Properties
 
 ### `open`
