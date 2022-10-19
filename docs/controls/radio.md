@@ -100,6 +100,36 @@ Set to `left` if `label` should be displayed on the left side of the Radio; othe
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
+### `fill_color`
+
+The color that fills the radio, in all Material states:
+
+* `hovered`
+* `focused`
+* `pressed`
+* `dragged`
+* `selected`
+* `scrolledUnder`
+* `disabled`
+* `error`
+* `""` (empty string) - fallback state, meaning "all other states".
+
+To configure radio fill color for all Material states set `fill_color` value to a literal, for example:
+
+```python
+rd.fill_color=colors.GREEN
+```
+
+To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `hovered` and `focused` states and another color for all other states:
+
+```python
+rd.fill_color={
+    "hovered": colors.GREEN,
+    "focused": colors.RED,
+    "": colors.BLACK,
+}
+```
+
 ## `Radio` events
 
 ### `on_focus`

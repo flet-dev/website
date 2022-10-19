@@ -148,6 +148,10 @@ Sets the stereo balance.
 Setting balance is supported on Windows and Linux only.
 :::
 
+### `playback_rate`
+
+Sets the playback rate. iOS and macOS have limits between 0.5 and 2x Android SDK version should be 23 or higher.
+
 ### `release_mode`
 
 Sets the release mode. The following values are supported:

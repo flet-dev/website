@@ -50,7 +50,7 @@ slug: roadmap
 * DataTable
 * Charts
 * Adaptive controls (controls that change their look depending on platform)
-* Animations
+* :white_check_mark: [Animations](/docs/guides/python/animations)
 
 ### Language support
 
