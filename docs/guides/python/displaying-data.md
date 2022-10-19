@@ -18,6 +18,7 @@ t = Text(
 )
 page.add(t)
 ```
+<img src="/img/docs/getting-started/displaying-data-text.png" className="screenshot-50" />
 
 ### Text styles
 

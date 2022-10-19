@@ -36,5 +36,7 @@ def main(page: Page):
 
 flet.app(target=main)
 ```
+<img src="/img/docs/getting-started/keyboard-shortcuts.png" className="screenshot-100" />
+
 
 Here is [more advanced example](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py).
