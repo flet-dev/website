@@ -74,6 +74,8 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/text/custom-text-styles.gif"/>
+
 ### Pre-defined theme text styles
 
 <Tabs groupId="language">
@@ -109,6 +111,8 @@ flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
+
+<img src="/img/docs/controls/text/predefined-text-styles.png" width="40%" />
 
 ## Properties
 
