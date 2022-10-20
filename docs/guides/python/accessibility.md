@@ -51,14 +51,14 @@ You can implement a specific [keyboard shortcut](/docs/guides/python/keyboard-sh
 
 ```python
 import flet
-from flet import FloatingActionButton, KeyboardEventData, Page, Text, icons
+from flet import FloatingActionButton, KeyboardEvent, Page, Text, icons
 
 def main(page: Page):
     page.title = "Flet counter example"
     page.vertical_alignment = "center"
     page.horizontal_alignment = "center"
 
-    def on_keyboard(e: KeyboardEventData):
+    def on_keyboard(e: KeyboardEvent):
         print(e)
         if e.key == "S" and e.ctrl:
             page.show_semantics_debugger = not page.show_semantics_debugger
