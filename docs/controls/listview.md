@@ -51,6 +51,8 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/listview/custom-listview.gif"/>
+
 ## Properties
 
 ### `controls`

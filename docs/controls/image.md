@@ -52,6 +52,8 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/image/custom-images.gif"/>
+
 ## Properties
 
 ### `src`

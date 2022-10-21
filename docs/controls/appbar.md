@@ -62,6 +62,8 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/app-bar/app-bar.gif"/>
+
 ## Properties
 
 ### `leading`

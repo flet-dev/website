@@ -67,6 +67,8 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/circle-avatar/circle-avatar.png" width="40%" />
+
 ## Properties
 
 ### `foreground_image_url`
