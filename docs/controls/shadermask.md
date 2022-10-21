@@ -134,7 +134,7 @@ Supported values:
 * `values`
 * `xor`
 
-### `gradient`
+### `shader`
 
 Use gradient as a shader. See [`Container.gradient`](container#gradient) property docs for more information about gradients.
 
