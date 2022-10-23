@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 Filled buttons have the most visual impact after the [FloatingActionButton](floatingactionbutton), and should be used for important, final actions that complete a flow, like **Save**, **Join now**, or **Confirm**. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
 
-<img src="/img/docs/controls/button/filled-button.png" width="40%" />
+<img src="/img/docs/controls/button/filled-button.png" className="screenshot-30" />
 
 ## Examples
 
@@ -36,8 +36,6 @@ flet.app(target=main)
   </TabItem>
 
 </Tabs>
-
-<img src="/img/docs/controls/button/filled-buttons.png" width="40%" />
 
 ## Properties
 

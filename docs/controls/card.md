@@ -44,13 +44,13 @@ def main(page):
         )
     )
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+flet.app(target=main)
 
 ```
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/card/card-with-custom-content.png" width="40%" />
+<img src="/img/docs/controls/card/card.gif" className="screenshot-40" />
 
 ## Properties
 

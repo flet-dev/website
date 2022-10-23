@@ -39,7 +39,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/radio/basic-radio.gif"/>
+<img src="/img/docs/controls/radio/basic-radio.gif" className="screenshot-30"/>
 
 ### RadioGroup with `on_change` event
 
@@ -68,7 +68,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/radio/radio-with-change-event.gif"/>
+<img src="/img/docs/controls/radio/radio-with-change-event.gif" className="screenshot-30"/>
 
 ## `RadioGroup` properties
 

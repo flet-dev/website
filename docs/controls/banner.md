@@ -51,7 +51,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/banner/banner-with-custom-content.gif"/>
+<img src="/img/docs/controls/banner/banner-with-custom-content.gif" className="screenshot-40"/>
 
 ## Properties
 

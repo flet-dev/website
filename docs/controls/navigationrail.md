@@ -73,7 +73,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/navigation-rail/custom-navrail.png" width="40%" />
+<img src="/img/docs/controls/navigation-rail/custom-navrail.png" className="screenshot-50" />
 
 ## `NavigationRail` properties
 
