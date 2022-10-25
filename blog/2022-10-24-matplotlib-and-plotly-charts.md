@@ -8,9 +8,9 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [release]
 ---
 
-We are thrilled to add Matplotlib and Plotly charts in [Flet 0.1.63](https://pypi.org/project/flet/0.1.63/)!
+We are thrilled to introduce Matplotlib and Plotly charting controls in [Flet 0.1.63](https://pypi.org/project/flet/0.1.63/)!
 
-[Matplotlib](https://matplotlib.org/) and [Plotly](https://plotly.com/python/) are the most recognized in Python community charting libraries with a tons of features. They are greatly compatible with other scientific Python libraries such as Numpy or Pandas.
+[Matplotlib](https://matplotlib.org/) and [Plotly](https://plotly.com/python/) are the most recognized Python charting libraries with a ton of features. They are greatly compatible with other scientific Python libraries such as Numpy or Pandas.
 
 No doubt, it would be nearly impossible to replicate their functionality as pure Flutter widgets. Fortunately, both Matplotlib and Plotly can export charts into various formats, such as SVG. On the other hand Flet can [display SVG images](https://github.com/flet-dev/examples/blob/main/python/controls/image/svg-image.py) and that gives a perfect combination - Flet charting controls for Matplotlib and Plotly!
 
@@ -33,16 +33,16 @@ Check the docs for Matplotlib and Plotly charting controls:
 * [MatplotlibChart](/docs/controls/matplotlibchart)
 * [PlotlyChart](/docs/controls/plotlychart)
 
-Explore [charting examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts).
+Explore [Flet chart examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts).
 
-Learn libraries by examples:
+Learn Python libraries by examples:
 
 * [Matplotlib gallery](https://matplotlib.org/stable/gallery/index.html)
 * [Plotly gallery](https://plotly.com/python/)
 
 In the future releases, we may add an interactive "toolbar" for Matplotlib charts by implementing a custom [backend](https://matplotlib.org/stable/users/explain/backends.html). Or maybe it's a great excersize for Flet users? 😉
 
-Also, when it's time for Flet to support other languages we would need to re-visit charting to make it language agnostic as the current charting implementation relies on Python libraries.
+Also, when it's time for Flet to support other languages we would need to re-visit charting to make it language-agnostic as the current charting implementation relies on Python libraries.
 
 Upgrade Flet module to the latest version (`pip install flet --upgrade`), integrate auth in your app and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
 
