@@ -111,7 +111,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/markdown/custom-markdown.gif"/>
+<img src="/img/docs/controls/markdown/custom-markdown.gif" className="screenshot-40"/>
 
 :::info
 As Markdown control is a scrollable control (with "infinite" height) it must have `expand` property set or be put inside a container with a fixed height.

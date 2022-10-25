@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ### Drag and drop colors
 
-<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif"className="screenshot-50" />
+<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

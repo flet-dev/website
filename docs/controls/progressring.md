@@ -49,7 +49,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/progress-ring/custom-progress-rings.gif"/>
+<img src="/img/docs/controls/progress-ring/custom-progress-rings.gif" className="screenshot-30"/>
 
 ## Properties
 

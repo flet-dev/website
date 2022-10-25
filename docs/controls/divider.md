@@ -55,7 +55,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/divider/divider.png" width="40%" />
+<img src="/img/docs/controls/divider/divider.png" className="screenshot-40" />
 
 ## Properties
 

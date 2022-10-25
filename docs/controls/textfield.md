@@ -41,7 +41,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/basic-textfield.gif"/>
+<img src="/img/docs/controls/textfield/basic-textfield.gif" className="screenshot-40"/>
 
 ### TextField with `on_change` event
 
@@ -70,7 +70,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-change-event.gif"/>
+<img src="/img/docs/controls/textfield/textfield-with-change-event.gif" className="screenshot-40"/>
 
 ### Password with reveal button
 
@@ -93,7 +93,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-password.gif"/>
+<img src="/img/docs/controls/textfield/textfield-with-password.gif" className="screenshot-40"/>
 
 ### Multiline TextFields
 
@@ -126,7 +126,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-multiline.gif"/>
+<img src="/img/docs/controls/textfield/textfield-with-multiline.gif" className="screenshot-40"/>
 
 ### Underlined and borderless TextFields
 
@@ -160,7 +160,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-underline-and-borderless.gif"/>
+<img src="/img/docs/controls/textfield/textfield-with-underline-and-borderless.gif" className="screenshot-40"/>
 
 ### TextFields with prefixes and suffixes
 
@@ -194,7 +194,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/textfield-with-prefix-and-suffix.gif"/>
+<img src="/img/docs/controls/textfield/textfield-with-prefix-and-suffix.gif" className="screenshot-40"/>
 
 ## Properties
 

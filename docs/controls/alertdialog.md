@@ -65,7 +65,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/alertdialog/alertdialog-with-custom-content.gif"/>
+<img src="/img/docs/controls/alertdialog/alertdialog-with-custom-content.gif" className="screenshot-50" />
 
 ## Properties
 

@@ -35,8 +35,6 @@ flet.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/outlined-button/basic-outlined-buttons.png" width="40%" />
-
 ## Properties
 
 ### `text`

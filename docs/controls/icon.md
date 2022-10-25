@@ -39,7 +39,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/icon/custom-icons.png"/>
+<img src="/img/docs/controls/icon/custom-icons.png" className="screenshot-20" />
 
 ## Properties
 

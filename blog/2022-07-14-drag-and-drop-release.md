@@ -14,7 +14,7 @@ We have just released [Flet 0.1.41](https://pypi.org/project/flet/0.1.41/) with 
 
 Making drag-and-drop in Flet is a real joy - thanks to a smart drag-and-drop implementation in Flutter! You just have "draggable" control which could be dragged to a "drag target" which calls `on_accept` event handler when draggable is dropped.
 
-<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif"className="screenshot-50" />
+<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
 
 Take a look at [Drag-and-Drop example](https://github.com/flet-dev/examples/blob/main/python/controls/drag-and-drop/drag-drop-colors.py).
 
@@ -55,13 +55,13 @@ def main(page: Page):
 flet.app(target=main)
 ```
 
-<img src="/img/blog/drag-and-drop/absolute-positioned-numbers.png"className="screenshot-30" />
+<img src="/img/blog/drag-and-drop/absolute-positioned-numbers.png" className="screenshot-30" />
 
 ## Clickable container
 
 [`Container`](/docs/controls/container) control has got `on_click` event which allows you to make a button from any control and with a beautiful material ripple effect when `ink` is set to `True`!
 
-<img src="/img/docs/controls/container/clickable-container.gif"className="screenshot-70" />
+<img src="/img/docs/controls/container/clickable-container.gif" className="screenshot-70" />
 
 See [source code](https://github.com/flet-dev/examples/blob/main/python/controls/container/clickable-container.py) for the example above.
 

@@ -47,7 +47,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/progress-bar/custom-progress-bars.gif"/>
+<img src="/img/docs/controls/progress-bar/custom-progress-bars.gif" className="screenshot-30"/>
 
 ## Properties
 

@@ -44,7 +44,7 @@ flet.app(target=main, view=flet.WEB_BROWSER)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/switch/basic-switch.gif"/>
+<img src="/img/docs/controls/switch/basic-switch.gif" className="screenshot-30"/>
 
 ### Switch with `on_change` event
 
@@ -71,7 +71,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/switch/switch-with-change-event.gif"/>
+<img src="/img/docs/controls/switch/switch-with-change-event.gif" className="screenshot-30"/>
 
 ## Properties
 

@@ -162,6 +162,18 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Charts',
+          link: {
+            type: 'generated-index',
+            slug: 'controls/charts'
+          },
+          items: [
+            'controls/matplotlibchart',
+            'controls/plotlychart',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Animations',
           link: {
             type: 'generated-index',

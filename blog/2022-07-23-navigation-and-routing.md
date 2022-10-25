@@ -20,7 +20,7 @@ Well, it took [more efforts](https://github.com/flet-dev/flet/pull/95/files) tha
 2. An easy way to intercept a call to "Back" button in AppBar.
 3. Robust synchronization with browser history.
 
-<img src="/img/docs/navigation-routing/routing-app-example.gif"className="screenshot-60" />
+<img src="/img/docs/navigation-routing/routing-app-example.gif" className="screenshot-60" />
 
 Explore [source code](https://github.com/flet-dev/examples/blob/main/python/apps/routing-navigation/building-views-on-route-change.py) of the example above.
 
@@ -28,7 +28,7 @@ Explore [source code](https://github.com/flet-dev/examples/blob/main/python/apps
 
 Page route is a portion of application URL after `#` symbol:
 
-<img src="/img/docs/navigation-routing/page-address-route.png"className="screenshot-50" />
+<img src="/img/docs/navigation-routing/page-address-route.png" className="screenshot-50" />
 
 Default application route, if not set in application URL by the user, is `/`. All routes start with `/`, for example `/store`, `/authors/1/books/2`.
 
@@ -66,7 +66,7 @@ flet.app(target=main, view=flet.WEB_BROWSER)
 
 Now try updating URL hash a few times and then use Back/Forward buttons! You should see a new message added to a page each time the route changes:
 
-<img src="/img/docs/navigation-routing/page-route-change-event.gif"className="screenshot-60" />
+<img src="/img/docs/navigation-routing/page-route-change-event.gif" className="screenshot-60" />
 
 Route can be changed programmatically, by updating `page.route` property:
 

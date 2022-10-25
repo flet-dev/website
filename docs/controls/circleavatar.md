@@ -67,7 +67,7 @@ flet.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/circle-avatar/circle-avatar.png" width="40%" />
+<img src="/img/docs/controls/circle-avatar/circle-avatar.png" className="screenshot-10" />
 
 ## Properties
 
