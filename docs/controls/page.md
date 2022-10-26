@@ -490,6 +490,14 @@ Note `view=flet.FLET_APP_HIDDEN` which hides app window on start.
 
 A simple PubSub implementation for passing messages between app sessions.
 
+### `query`
+
+* go(key: str)
+* to_dict
+* path
+
+See details [`Querystring`](/docs/guides/python/navigation-and-routing)
+
 #### `subscribe(handler)`
 
 Subscribe current app session for broadcast (no topic) messages. `handler` is a function or method with a single `message` argument, for example:
@@ -588,7 +596,7 @@ def main(page: Page):
 
 ## Methods
 
-### `go(route)`
+### `go(route, **kwargs)`
 
 A helper method that updates [`page.route`](#route), calls [`page.on_route_change`](#on_route_change) event handler to update views and finally calls `page.update()`.
 
