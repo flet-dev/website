@@ -4,29 +4,29 @@ description: 学习如何用Python构建Flet应用。
 sidebar_label: 马上开始
 ---
 
-To write a Flet app you don't need to be front-end guru, but it's recommended to have a basic knowledge of Python and object-oriented programming.
+要用Flet来完成一个应用并不需要你精通前端技能，反而是强烈推荐你学习Python和面向对象编程的基本知识。
 
-In this guide we'll study the structure of a Flet app, learn how to output data using Flet controls, request data from a user and build basic page layouts. We will also cover some packaging and deployment options to deliver a ready app to your users.
+在这个教程中我们将学习一个Flet应用的基本结构，了解如何使用Flet controls输出数据，从用户处获取数据以及构建简单的页面布局。我们亦会涵盖一些为将应用发放到用户手中所必须的打包和部署选项的内容。
 
-## Installing `flet` module
+## 安装 `flet` module
 
-Flet requires Python 3.7 or above. To start with Flet, you need to install `flet` module first:
+Flet需要Python 3.7或更高版本。要开始使用Flet，你需要首先安装`flet` module：
 
 ```bash
 pip install flet
 ```
 
 :::note
-To upgrade `flet` module run:
+要升级`flet` module时运行：
 
 ```bash
 pip install flet --upgrade
 ```
 :::
 
-## Basic app structure
+## 基本的应用结构
 
-A very minimal Flet app has the following structure:
+一个最简化的Flet应用具有如下的结构：
 
 ```python
 import flet
