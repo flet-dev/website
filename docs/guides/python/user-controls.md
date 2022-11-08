@@ -75,6 +75,9 @@ class Counter(UserControl):
 User control can have a constructor to pass custom data, for example:
 
 ```python
+import flet
+from flet import Text, UserControl, Row, ElevatedButton
+
 class Counter(UserControl):
     def __init__(self, initial_count):
         super().__init__()
@@ -94,6 +97,8 @@ def main(page):
     page.add(
         Counter(100),
         Counter(200))
+
+flet.app(target=main)
 ```
 
 :::note
@@ -108,6 +113,10 @@ User control provides lifecycle "hook" methods:
 Using those methods we could implement a simple "countdown" control:
 
 ```python
+import time
+import flet
+from flet import Page, Text, UserControl, threading
+
 class Countdown(UserControl):
     def __init__(self, seconds):
         super().__init__()
@@ -133,7 +142,7 @@ class Countdown(UserControl):
         self.countdown = Text()
         return self.countdown
 
-def main(page):
+def main(page: Page):
     page.add(Countdown(120), Countdown(60))
 
 flet.app(target=main)
