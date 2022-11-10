@@ -198,6 +198,7 @@ module.exports = {
             'controls/gesturedetector',
             'controls/semantics',
             'controls/shadermask',
+            'controls/tooltip',
             'controls/windowdragarea',
           ]
         },
