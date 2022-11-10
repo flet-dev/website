@@ -21,31 +21,20 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Column,
-    Container,
-    Page,
-    Row,
-    Slider,
-    Text,
-    alignment,
-    border_radius,
-    colors,
-)
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def items(count):
         items = []
         for i in range(1, count + 1):
             items.append(
-                Container(
-                    content=Text(value=i),
-                    alignment=alignment.center,
-                    width=50,
-                    height=50,
-                    bgcolor=colors.AMBER,
-                    border_radius=border_radius.all(5),
+                ft.Container(
+                    content = ft.Text(value=i),
+                    alignment = ft.alignment.center,
+                    width = 50,
+                    height = 50,
+                    bgcolor = ft.colors.AMBER,
+                    border_radius = ft.border_radius.all(5),
                 )
             )
         return items
@@ -54,20 +43,20 @@ def main(page: Page):
         row.spacing = int(e.control.value)
         row.update()
 
-    gap_slider = Slider(
+    gap_slider = ft.Slider(
         min=0,
         max=50,
         divisions=50,
         value=0,
         label="{value}",
-        on_change=gap_slider_change,
+        on_change = gap_slider_change,
     )
 
-    row = Row(spacing=0, controls=items(10))
+    row = ft.Row(spacing = 0, controls = items(10))
 
-    page.add(Column([Text("Spacing between items"), gap_slider]), row)
+    page.add(ft.Column([ ft.Text("Spacing between items"), gap_slider]), row)
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
@@ -80,31 +69,20 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Column,
-    Container,
-    Page,
-    Row,
-    Slider,
-    Text,
-    alignment,
-    border_radius,
-    colors,
-)
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def items(count):
         items = []
         for i in range(1, count + 1):
             items.append(
-                Container(
-                    content=Text(value=i),
-                    alignment=alignment.center,
-                    width=50,
-                    height=50,
-                    bgcolor=colors.AMBER,
-                    border_radius=border_radius.all(5),
+                ft.Container(
+                    content = ft.Text(value=i),
+                    alignment = ft.alignment.center,
+                    width = 50,
+                    height = 50,
+                    bgcolor = ft.colors.AMBER,
+                    border_radius = ft.border_radius.all(5),
                 )
             )
         return items
@@ -113,27 +91,27 @@ def main(page: Page):
         row.width = float(e.control.value)
         row.update()
 
-    width_slider = Slider(
+    width_slider = ft.Slider(
         min=0,
         max=page.window_width,
         divisions=20,
         value=page.window_width,
         label="{value}",
-        on_change=slider_change,
+        on_change = slider_change,
     )
 
-    row = Row(
+    row = ft.Row(
         wrap=True,
-        spacing=10,
-        run_spacing=10,
-        controls=items(30),
-        width=page.window_width,
+        spacing = 10,
+        run_spacing = 10,
+        controls = items(30),
+        width = page.window_width,
     )
 
     page.add(
-        Column(
+        ft.Column(
             [
-                Text(
+                ft.Text(
                     "Change the row width to see how child items wrap onto multiple rows:"
                 ),
                 width_slider,
@@ -142,7 +120,7 @@ def main(page: Page):
         row,
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
@@ -155,31 +133,30 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Column, Container, Page, Row, Text, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def items(count):
         items = []
         for i in range(1, count + 1):
             items.append(
-                Container(
-                    content=Text(value=i),
-                    alignment=alignment.center,
-                    width=50,
-                    height=50,
-                    bgcolor=colors.AMBER_500,
+                ft.Container(
+                    content = ft.Text(value=i),
+                    alignment = ft.alignment.center,
+                    width = 50,
+                    height = 50,
+                    bgcolor = ft.colors.AMBER_500,
                 )
             )
         return items
 
     def row_with_alignment(align):
-        return Column(
+        return ft.Column(
             [
-                Text(align, size=16),
-                Container(
-                    content=Row(items(3), alignment=align),
-                    bgcolor=colors.AMBER_100,
+                ft.Text(align, size=16),
+                ft.Container(
+                    content = ft.Row(items(3), alignment = align),
+                    bgcolor = ft.colors.AMBER_100,
                 ),
             ]
         )
@@ -193,7 +170,7 @@ def main(page: Page):
         row_with_alignment("spaceEvenly"),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
@@ -206,32 +183,31 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Column, Container, Page, Row, Text, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def items(count):
         items = []
         for i in range(1, count + 1):
             items.append(
-                Container(
-                    content=Text(value=i),
-                    alignment=alignment.center,
-                    width=50,
-                    height=50,
-                    bgcolor=colors.AMBER_500,
+                ft.Container(
+                    content = ft.Text(value=i),
+                    alignment = ft.alignment.center,
+                    width = 50,
+                    height = 50,
+                    bgcolor = ft.colors.AMBER_500,
                 )
             )
         return items
 
     def row_with_vertical_alignment(align):
-        return Column(
+        return ft.Column(
             [
-                Text(align, size=16),
-                Container(
-                    content=Row(items(3), vertical_alignment=align),
-                    bgcolor=colors.AMBER_100,
-                    height=150,
+                ft.Text(align, size=16),
+                ft.Container(
+                    content = ft.Row(items(3), vertical_alignment = align),
+                    bgcolor = ft.colors.AMBER_100,
+                    height = 150,
                 ),
             ]
         )
@@ -242,7 +218,7 @@ def main(page: Page):
         row_with_vertical_alignment("end"),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
@@ -300,19 +276,19 @@ Enables horizontal scrolling for the Row to prevent its content overflow. Suppor
 When a child Control is placed into a Row you can "expand" it to fill the available space. Every Control has `expand` property that can have either a boolean value (`True` - expand control to fill all available space) or an integer - an "expand factor" specifying how to divide a free space with other expanded child controls. For example, this code creates a row with a TextField taking all available space and an ElevatedButton next to it:
 
 ```python
-r = Row([
-  TextField(hint_text="Enter your name", expand=True),
-  ElevatedButton(text="Join chat")
+r = ft.Row([
+  ft.TextField(hint_text="Enter your name", expand=True),
+  ft.ElevatedButton(text="Join chat")
 ])
 ```
 
 The following example with numeric expand factors creates a Row with 3 containers in it and having widths of `20% (1/5)`, `60% (3/5)` and `20% (1/5)` respectively:
 
 ```python
-r = Row([
-  Container(expand=1, content=Text("A")),
-  Container(expand=3, content=Text("B")),
-  Container(expand=1, content=Text("C"))
+r = ft.Row([
+  ft.Container(expand=1, content = ft.Text("A")),
+  ft.Container(expand=3, content = ft.Text("B")),
+  ft.Container(expand=1, content = ft.Text("C"))
 ])
 ```
 

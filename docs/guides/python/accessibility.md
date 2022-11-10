@@ -50,15 +50,14 @@ You can implement a specific [keyboard shortcut](/docs/guides/python/keyboard-sh
 <img src="/img/docs/getting-started/debug-accessibility-toggle.gif" className="screenshot-50" />
 
 ```python
-import flet
-from flet import FloatingActionButton, KeyboardEvent, Page, Text, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Flet counter example"
     page.vertical_alignment = "center"
     page.horizontal_alignment = "center"
 
-    def on_keyboard(e: KeyboardEvent):
+    def on_keyboard(e: ft.KeyboardEvent):
         print(e)
         if e.key == "S" and e.ctrl:
             page.show_semantics_debugger = not page.show_semantics_debugger
@@ -66,7 +65,7 @@ def main(page: Page):
 
     page.on_keyboard_event = on_keyboard
 
-    txt_number = Text("0", size=40)
+    txt_number = ft.Text("0", size=40)
 
     def button_click(e):
         txt_number.value = int(txt_number.value) + 1
@@ -74,11 +73,11 @@ def main(page: Page):
 
     page.add(
         txt_number,
-        Text("Press CTRL+S to toggle semantics debugger"),
-        FloatingActionButton(
-            icon=icons.ADD, tooltip="Increment number", on_click=button_click
+        ft.Text("Press CTRL+S to toggle semantics debugger"),
+        ft.FloatingActionButton(
+            icon = ft.icons.ADD, tooltip = "Increment number", on_click = button_click
         ),
     )
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target = main, view = ft.WEB_BROWSER)
 ```

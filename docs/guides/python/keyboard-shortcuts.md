@@ -18,23 +18,22 @@ To capture all keystrokes implement `page.on_keyboard_event` handler. Event hand
 This is a simple usage example:
 
 ```python
-import flet
-from flet import KeyboardEvent, Page, Text
+import flet as ft
 
-def main(page: Page):
-    def on_keyboard(e: KeyboardEvent):
+def main(page: ft.Page):
+    def on_keyboard(e: ft.KeyboardEvent):
         page.add(
-            Text(
+            ft.Text(
                 f"Key: {e.key}, Shift: {e.shift}, Control: {e.ctrl}, Alt: {e.alt}, Meta: {e.meta}"
             )
         )
 
     page.on_keyboard_event = on_keyboard
     page.add(
-        Text("Press any key with a combination of CTRL, ALT, SHIFT and META keys...")
+        ft.Text("Press any key with a combination of CTRL, ALT, SHIFT and META keys...")
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 <img src="/img/docs/getting-started/keyboard-shortcuts.png" className="screenshot-100" />
 

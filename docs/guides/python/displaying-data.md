@@ -8,11 +8,11 @@ sidebar_label: Displaying data
 `Text` control is used to output textual data. Its main properties are `value` and `size`, but it also has a number of formatting properties to control its appearence. For example:
 
 ```python
-t = Text(
+t = ft.Text(
     value="This is a Text control sample",
     size=30,
     color="white",
-    bgcolor="pink",
+    bgcolor = "pink",
     weight="bold",
     italic=True,
 )

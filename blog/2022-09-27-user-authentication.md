@@ -41,11 +41,10 @@ A simple example on how to add "Login with GitHub" button to your Flet app:
 ```python
 import os
 
-import flet
-from flet import ElevatedButton, Page
+import flet as ft
 from flet.auth.providers.github_oauth_provider import GitHubOAuthProvider
 
-def main(page: Page):
+def main(page: ft.Page):
 
     provider = GitHubOAuthProvider(
         client_id=os.getenv("GITHUB_CLIENT_ID"),
@@ -61,9 +60,9 @@ def main(page: Page):
         print("User ID:", page.auth.user.id)
 
     page.on_login = on_login
-    page.add(ElevatedButton("Login with GitHub", on_click=login_click))
+    page.add(ft.ElevatedButton("Login with GitHub", on_click = login_click))
 
-flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
+ft.app(target = main, port=8550, view = ft.WEB_BROWSER)
 ```
 
 :::note
@@ -149,17 +148,16 @@ print(plain_text)
 * [`page.window_bgcolor`](/docs/controls/page#window_bgcolor) to make cool transparent app window:
 
 ```python
-import flet
-from flet import ElevatedButton, Page, colors
-def main(page: Page):
-    page.window_bgcolor = colors.TRANSPARENT
-    page.bgcolor = colors.TRANSPARENT
+import flet as ft
+def main(page: ft.Page):
+    page.window_bgcolor = ft.colors.TRANSPARENT
+    page.bgcolor = ft.colors.TRANSPARENT
     page.window_title_bar_hidden = True
     page.window_frameless = True
     page.window_left = 400
     page.window_top = 400
-    page.add(ElevatedButton("I'm a floating button!"))
-flet.app(target=main)
+    page.add(ft.ElevatedButton("I'm a floating button!"))
+ft.app(target = main)
 ```
 
 * [`page.get_clipboard()`](/docs/controls/page#get_clipboard)

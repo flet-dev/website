@@ -19,19 +19,18 @@ Filled buttons have the most visual impact after the [FloatingActionButton](floa
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import FilledButton, Page
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Basic filled buttons"
     page.add(
-        FilledButton(text="Filled button"),
-        FilledButton("Disabled button", disabled=True),
-        FilledButton("Button with icon", icon="add"),
+        ft.FilledButton(text="Filled button"),
+        ft.FilledButton("Disabled button", disabled=True),
+        ft.FilledButton("Button with icon", icon="add"),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 

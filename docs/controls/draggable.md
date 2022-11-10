@@ -23,15 +23,14 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Column, Container, Draggable, DragTarget, Page, Row, border, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Drag and Drop example"
 
     def drag_will_accept(e):
-        e.control.content.border = border.all(
-            2, colors.BLACK45 if e.data == "true" else colors.RED
+        e.control.content.border = ft.border.all(
+            2, ft.colors.BLACK45 if e.data == "true" else ft.colors.RED
         )
         e.control.update()
 
@@ -46,53 +45,53 @@ def main(page: Page):
         e.control.update()
 
     page.add(
-        Row(
+        ft.Row(
             [
-                Column(
+                ft.Column(
                     [
-                        Draggable(
+                        ft.Draggable(
                             group="color",
-                            content=Container(
-                                width=50,
-                                height=50,
-                                bgcolor=colors.CYAN,
-                                border_radius=5,
+                            content = ft.Container(
+                                width = 50,
+                                height = 50,
+                                bgcolor = ft.colors.CYAN,
+                                border_radius = 5,
                             ),
-                            content_feedback=Container(
-                                width=20,
-                                height=20,
-                                bgcolor=colors.CYAN,
-                                border_radius=3,
+                            content_feedback=ft.Container(
+                                width = 20,
+                                height = 20,
+                                bgcolor = ft.colors.CYAN,
+                                border_radius = 3,
                             ),
                         ),
-                        Draggable(
+                        ft.Draggable(
                             group="color",
-                            content=Container(
-                                width=50,
-                                height=50,
-                                bgcolor=colors.YELLOW,
-                                border_radius=5,
+                            content = ft.Container(
+                                width = 50,
+                                height = 50,
+                                bgcolor = ft.colors.YELLOW,
+                                border_radius = 5,
                             ),
                         ),
-                        Draggable(
+                        ft.Draggable(
                             group="color1",
-                            content=Container(
-                                width=50,
-                                height=50,
-                                bgcolor=colors.GREEN,
-                                border_radius=5,
+                            content = ft.Container(
+                                width = 50,
+                                height = 50,
+                                bgcolor = ft.colors.GREEN,
+                                border_radius = 5,
                             ),
                         ),
                     ]
                 ),
-                Container(width=100),
-                DragTarget(
+                ft.Container(width = 100),
+                ft.DragTarget(
                     group="color",
-                    content=Container(
-                        width=50,
-                        height=50,
-                        bgcolor=colors.BLUE_GREY_100,
-                        border_radius=5,
+                    content = ft.Container(
+                        width = 50,
+                        height = 50,
+                        bgcolor = ft.colors.BLUE_GREY_100,
+                        border_radius = 5,
                     ),
                     on_will_accept=drag_will_accept,
                     on_accept=drag_accept,
@@ -102,7 +101,7 @@ def main(page: Page):
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>

@@ -69,11 +69,10 @@ Copy "Client ID" and "Client secret" values to a safe place - you'll need them i
 ```python
 import os
 
-import flet
-from flet import ElevatedButton, Page
+import flet as ft
 from flet.auth.providers.github_oauth_provider import GitHubOAuthProvider
 
-def main(page: Page):
+def main(page: ft.Page):
 
     provider = GitHubOAuthProvider(
         client_id=os.getenv("GITHUB_CLIENT_ID"),
@@ -89,9 +88,9 @@ def main(page: Page):
         print("User ID:", page.auth.user.id)
 
     page.on_login = on_login
-    page.add(ElevatedButton("Login with GitHub", on_click=login_click))
+    page.add(ft.ElevatedButton("Login with GitHub", on_click = login_click))
 
-flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
+ft.app(target = main, port=8550, view = ft.WEB_BROWSER)
 ```
 
 :::caution
@@ -120,7 +119,7 @@ We used `http://localhost:8550/api/oauth/redirect` as a redirect URL while regis
 Notice it has a fixed port `8550`. To run your Flet app on a fixed port use `port` argument in `flet.app` call:
 
 ```python
-flet.app(target=main, port=8550)
+ft.app(target = main, port=8550)
 ```
 
 ### Scope
@@ -178,11 +177,10 @@ You can use this event handler to toggle signed in/out UI, for example:
 ```python
 import os
 
-import flet
-from flet import ElevatedButton, LoginEvent, Page
+import flet as ft
 from flet.auth.providers.github_oauth_provider import GitHubOAuthProvider
 
-def main(page: Page):
+def main(page: ft.Page):
 
     provider = GitHubOAuthProvider(
         client_id=os.getenv("GITHUB_CLIENT_ID"),
@@ -193,7 +191,7 @@ def main(page: Page):
     def login_button_click(e):
         page.login(provider, scope=["public_repo"])
 
-    def on_login(e: LoginEvent):
+    def on_login(e: ft.LoginEvent):
         if not e.error:
             toggle_login_buttons()
 
@@ -208,14 +206,14 @@ def main(page: Page):
         logout_button.visible = page.auth is not None
         page.update()
 
-    login_button = ElevatedButton("Login with GitHub", on_click=login_button_click)
-    logout_button = ElevatedButton("Logout", on_click=logout_button_click)
+    login_button = ft.ElevatedButton("Login with GitHub", on_click = login_button_click)
+    logout_button = ft.ElevatedButton("Logout", on_click = logout_button_click)
     toggle_login_buttons()
     page.on_login = on_login
     page.on_logout = on_logout
     page.add(login_button, logout_button)
 
-flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
+ft.app(target = main, port=8550, view = ft.WEB_BROWSER)
 ```
 
 ## Accessing user details
@@ -410,11 +408,10 @@ with their LinkedIn accounts:
 ```python {9-18}
 import os
 
-import flet
-from flet import ElevatedButton, Page
+import flet as ft
 from flet.auth.oauth_provider import OAuthProvider
 
-def main(page: Page):
+def main(page: ft.Page):
 
     provider = OAuthProvider(
         client_id=os.getenv("LINKEDIN_CLIENT_ID"),
@@ -437,9 +434,9 @@ def main(page: Page):
         print("Access token:", page.auth.token.access_token)
 
     page.on_login = on_login
-    page.add(ElevatedButton("Login with LinkedIn", on_click=login_click))
+    page.add(ft.ElevatedButton("Login with LinkedIn", on_click = login_click))
 
-flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
+ft.app(target = main, port=8550, view = ft.WEB_BROWSER)
 ```
 
 Mandatory provider settings:

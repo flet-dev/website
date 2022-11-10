@@ -17,28 +17,27 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (ElevatedButton, FilePicker, FilePickerResultEvent, Page, Row, Text, icons)
+import flet as ft
 
-def main(page: Page):
-    def pick_files_result(e: FilePickerResultEvent):
+def main(page: ft.Page):
+    def pick_files_result(e: ft.FilePickerResultEvent):
         selected_files.value = (
             ", ".join(map(lambda f: f.name, e.files)) if e.files else "Cancelled!"
         )
         selected_files.update()
 
-    pick_files_dialog = FilePicker(on_result=pick_files_result)
-    selected_files = Text()
+    pick_files_dialog = ft.FilePicker(on_result=pick_files_result)
+    selected_files = ft.Text()
 
     page.overlay.append(pick_files_dialog)
 
     page.add(
-        Row(
+        ft.Row(
             [
-                ElevatedButton(
+                ft.ElevatedButton(
                     "Pick files",
-                    icon=icons.UPLOAD_FILE,
-                    on_click=lambda _: pick_files_dialog.pick_files(
+                    icon = ft.icons.UPLOAD_FILE,
+                    on_click = lambda _: pick_files_dialog.pick_files(
                         allow_multiple=True
                     ),
                 ),
@@ -47,7 +46,7 @@ def main(page: Page):
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
@@ -183,7 +182,7 @@ Second argument is a URL time-to-live in seconds.
 To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
 
 ```python
-flet.app(target=main, upload_dir="uploads")
+ft.app(target = main, upload_dir="uploads")
 ```
 
 ## Events

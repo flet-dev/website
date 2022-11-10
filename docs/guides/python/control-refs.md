@@ -8,17 +8,16 @@ Flet controls are objects and to access their properties we need to keep referen
 Consider the following example:
 
 ```python {6-8,18,19,21}
-import flet
-from flet import Column, ElevatedButton, Text, TextField
+import flet as ft
 
 def main(page):
 
-    first_name = TextField(label="First name", autofocus=True)
-    last_name = TextField(label="Last name")
-    greetings = Column()
+    first_name = ft.TextField(label="First name", autofocus=True)
+    last_name = ft.TextField(label="Last name")
+    greetings = ft.Column()
 
     def btn_click(e):
-        greetings.controls.append(Text(f"Hello, {first_name.value} {last_name.value}!"))
+        greetings.controls.append(ft.Text(f"Hello, {first_name.value} {last_name.value}!"))
         first_name.value = ""
         last_name.value = ""
         page.update()
@@ -27,11 +26,11 @@ def main(page):
     page.add(
         first_name,
         last_name,
-        ElevatedButton("Say hello!", on_click=btn_click),
+        ft.ElevatedButton("Say hello!", on_click = btn_click),
         greetings,
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 In the very beginning of `main()` method we create three controls which we are going to use in button's `on_click` handler: two `TextField` for first and last names and a `Column` - container for greeting messages. We create controls with all their properties set and in the end of `main()` method, in `page.add()` call, we use their references (variables).
@@ -42,7 +41,7 @@ When more and mode controls and event handlers added it becomes challenging to k
     page.add(
         first_name,
         last_name,
-        ElevatedButton("Say hello!", on_click=btn_click),
+        ft.ElevatedButton("Say hello!", on_click = btn_click),
         greetings,
     )
 ```
@@ -56,7 +55,7 @@ Flet provides `Ref` utility class which allows to define a reference to the cont
 To define a new typed control reference:
 
 ```python
-first_name = Ref[TextField]()
+first_name = ft.Ref[ft.TextField]()
 ```
 
 To access referenced control (control de-reference) use `Ref.current` property:
@@ -70,7 +69,7 @@ To assign control to a reference set `Control.ref` property to a reference:
 
 ```python {2}
 page.add(
-    TextField(ref=first_name, label="First name", autofocus=True)
+    ft.TextField(ref=first_name, label="First name", autofocus=True)
 )
 ```
 
@@ -81,19 +80,18 @@ All Flet controls have `ref` property.
 We could re-write our program to use references:
 
 ```python {7-9,21-24}
-import flet
-from flet import Column, ElevatedButton, Text, TextField
-from flet.ref import Ref
+import flet as ft
+
 
 def main(page):
 
-    first_name = Ref[TextField]()
-    last_name = Ref[TextField]()
-    greetings = Ref[Column]()
+    first_name = ft.Ref[ft.TextField]()
+    last_name = ft.Ref[ft.TextField]()
+    greetings = ft.Ref[ft.Column]()
 
     def btn_click(e):
         greetings.current.controls.append(
-            Text(f"Hello, {first_name.current.value} {last_name.current.value}!")
+            ft.Text(f"Hello, {first_name.current.value} {last_name.current.value}!")
         )
         first_name.current.value = ""
         last_name.current.value = ""
@@ -101,13 +99,13 @@ def main(page):
         first_name.current.focus()
 
     page.add(
-        TextField(ref=first_name, label="First name", autofocus=True),
-        TextField(ref=last_name, label="Last name"),
-        ElevatedButton("Say hello!", on_click=btn_click),
-        Column(ref=greetings),
+        ft.TextField(ref=first_name, label="First name", autofocus=True),
+        ft.TextField(ref=last_name, label="Last name"),
+        ft.ElevatedButton("Say hello!", on_click = btn_click),
+        ft.Column(ref=greetings),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 Now we can clearly see in `page.add()` the structure of the page and all the controls it's built of.

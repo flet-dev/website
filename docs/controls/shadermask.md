@@ -21,25 +21,24 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Image, Page, RadialGradient, Row, ShaderMask, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.add(
-        Row(
+        ft.Row(
             [
-                ShaderMask(
-                    Image(
+                ft.ShaderMask(
+                    ft.Image(
                         src="https://picsum.photos/200/200?1",
-                        width=200,
-                        height=200,
+                        width = 200,
+                        height = 200,
                         fit="fill",
                     ),
                     blend_mode="multiply",
-                    shader=RadialGradient(
-                        center=alignment.center,
+                    shader=ft.RadialGradient(
+                        center=ft.alignment.center,
                         radius=2.0,
-                        colors=[colors.WHITE, colors.PINK],
+                       colors=[ft.colors.WHITE, ft.colors.PINK],
                         tile_mode="clamp",
                     ),
                 ),
@@ -47,7 +46,7 @@ def main(page: Page):
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
   </TabItem>
@@ -61,29 +60,28 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Image, LinearGradient, Page, Row, ShaderMask, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.add(
-        Row(
+        ft.Row(
             [
-                ShaderMask(
-                    Image(src="https://picsum.photos/100/200?2"),
+                ft.ShaderMask(
+                    ft.Image(src="https://picsum.photos/100/200?2"),
                     blend_mode="dstIn",
-                    shader=LinearGradient(
-                        begin=alignment.top_center,
-                        end=alignment.bottom_center,
-                        colors=[colors.BLACK, colors.TRANSPARENT],
+                    shader=ft.LinearGradient(
+                        begin=ft.alignment.top_center,
+                        end=ft.alignment.bottom_center,
+                       colors=[ft.colors.BLACK, ft.colors.TRANSPARENT],
                         stops=[0.5, 1.0],
                     ),
-                    border_radius=10,
+                    border_radius = 10,
                 ),
             ]
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
   </TabItem>

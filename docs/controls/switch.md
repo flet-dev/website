@@ -19,8 +19,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import ElevatedButton, Switch, Text
+import flet as ft
 
 def main(page):
     def button_clicked(e):
@@ -29,17 +28,17 @@ def main(page):
         )
         page.update()
 
-    t = Text()
-    c1 = Switch(label="Unchecked switch", value=False)
-    c2 = Switch(label="Checked switch", value=True)
-    c3 = Switch(label="Disabled switch", disabled=True)
-    c4 = Switch(
+    t = ft.Text()
+    c1 = ft.Switch(label="Unchecked switch", value=False)
+    c2 = ft.Switch(label="Checked switch", value=True)
+    c3 = ft.Switch(label="Disabled switch", disabled=True)
+    c4 = ft.Switch(
         label="Switch with rendered label_position='left'", label_position="left"
     )
-    b = ElevatedButton(text="Submit", on_click=button_clicked)
+    b = ft.ElevatedButton(text="Submit", on_click = button_clicked)
     page.add(c1, c2, c3, c4, b, t)
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target = main, view = ft.WEB_BROWSER)
 ```
   </TabItem>
 </Tabs>
@@ -52,10 +51,9 @@ flet.app(target=main, view=flet.WEB_BROWSER)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Page, Switch
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
   def theme_changed(e):
     page.theme_mode = "dark" if page.theme_mode == "light" else "light"
@@ -63,10 +61,10 @@ def main(page: Page):
     page.update()
 
   page.theme_mode = "light"
-  c = Switch(label="Light theme", on_change=theme_changed)
+  c = ft.Switch(label="Light theme", on_change = theme_changed)
   page.add(c)
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>

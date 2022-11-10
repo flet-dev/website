@@ -17,26 +17,25 @@ Here is a simple example of an app which allows you to drag containers inside a 
 <img src="/img/blog/gesture-detector/gesture-detector-demo.gif" className="screenshot-50" />
 
 ```python
-import flet
-from flet import Container, DragUpdateEvent, GestureDetector, MouseCursor, Page, Stack, colors
+import flet as ft
 
-def main(page: Page):
-    def on_pan_update(e: DragUpdateEvent):
+def main(page: ft.Page):
+    def on_pan_update(e: ft.DragUpdateEvent):
         e.control.top = max(0, e.control.top + e.delta_y)
         e.control.left = max(0, e.control.left + e.delta_x)
         e.control.update()
 
-    gd = GestureDetector(
-        mouse_cursor=MouseCursor.MOVE,
+    gd = ft.GestureDetector(
+        mouse_cursor=ft.MouseCursor.MOVE,
         on_vertical_drag_update=on_pan_update,
         left=100,
         top=100,
-        content=Container(bgcolor=colors.BLUE, width=50, height=50, border_radius=5),
+        content = ft.Container(bgcolor = ft.colors.BLUE, width = 50, height = 50, border_radius = 5),
     )
 
-    page.add(Stack([gd], expand=True))
+    page.add( ft.Stack([gd], expand=True))
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 Gesture detector is yet another great addition to a collection of Flet primitives that allows you to build apps limited only by your imagination. 2D drawing coming later this month is going to complete that ensemble!

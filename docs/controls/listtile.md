@@ -17,84 +17,71 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Card,
-    Column,
-    Container,
-    Icon,
-    Image,
-    ListTile,
-    PopupMenuButton,
-    PopupMenuItem,
-    Text,
-    icons,
-    padding,
-)
+import flet as ft
 
 def main(page):
     page.title = "ListTile Examples"
     page.add(
-        Card(
-            content=Container(
-                width=500,
-                content=Column(
+        ft.Card(
+            content = ft.Container(
+                width = 500,
+                content = ft.Column(
                     [
-                        ListTile(
-                            title=Text("One-line list tile"),
+                        ft.ListTile(
+                            title=ft.Text("One-line list tile"),
                         ),
-                        ListTile(title=Text("One-line dense list tile"), dense=True),
-                        ListTile(
-                            leading=Icon(icons.SETTINGS),
-                            title=Text("One-line selected list tile"),
+                        ft.ListTile(title=ft.Text("One-line dense list tile"), dense=True),
+                        ft.ListTile(
+                            leading=ft.Icon(ft.icons.SETTINGS),
+                            title=ft.Text("One-line selected list tile"),
                             selected=True,
                         ),
-                        ListTile(
-                            leading=Image(src="/icons/icon-192.png", fit="contain"),
-                            title=Text("One-line with leading control"),
+                        ft.ListTile(
+                            leading=ft.Image(src="/icons/icon-192.png", fit="contain"),
+                            title=ft.Text("One-line with leading control"),
                         ),
-                        ListTile(
-                            title=Text("One-line with trailing control"),
-                            trailing=PopupMenuButton(
-                                icon=icons.MORE_VERT,
+                        ft.ListTile(
+                            title=ft.Text("One-line with trailing control"),
+                            trailing=ft.PopupMenuButton(
+                                icon = ft.icons.MORE_VERT,
                                 items=[
-                                    PopupMenuItem(text="Item 1"),
-                                    PopupMenuItem(text="Item 2"),
+                                    ft.PopupMenuItem(text="Item 1"),
+                                    ft.PopupMenuItem(text="Item 2"),
                                 ],
                             ),
                         ),
-                        ListTile(
-                            leading=Icon(icons.ALBUM),
-                            title=Text("One-line with leading and trailing controls"),
-                            trailing=PopupMenuButton(
-                                icon=icons.MORE_VERT,
+                        ft.ListTile(
+                            leading=ft.Icon(ft.icons.ALBUM),
+                            title=ft.Text("One-line with leading and trailing controls"),
+                            trailing=ft.PopupMenuButton(
+                                icon = ft.icons.MORE_VERT,
                                 items=[
-                                    PopupMenuItem(text="Item 1"),
-                                    PopupMenuItem(text="Item 2"),
+                                    ft.PopupMenuItem(text="Item 1"),
+                                    ft.PopupMenuItem(text="Item 2"),
                                 ],
                             ),
                         ),
-                        ListTile(
-                            leading=Icon(icons.SNOOZE),
-                            title=Text("Two-line with leading and trailing controls"),
-                            subtitle=Text("Here is a second title."),
-                            trailing=PopupMenuButton(
-                                icon=icons.MORE_VERT,
+                        ft.ListTile(
+                            leading=ft.Icon(ft.icons.SNOOZE),
+                            title=ft.Text("Two-line with leading and trailing controls"),
+                            subtitle=ft.Text("Here is a second title."),
+                            trailing=ft.PopupMenuButton(
+                                icon = ft.icons.MORE_VERT,
                                 items=[
-                                    PopupMenuItem(text="Item 1"),
-                                    PopupMenuItem(text="Item 2"),
+                                    ft.PopupMenuItem(text="Item 1"),
+                                    ft.PopupMenuItem(text="Item 2"),
                                 ],
                             ),
                         ),
                     ],
-                    spacing=0,
+                    spacing = 0,
                 ),
-                padding=padding.symmetric(vertical=10),
+                padding = ft.padding.symmetric(vertical=10),
             )
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
@@ -103,7 +90,7 @@ flet.app(target=main)
 
 ### `content_padding`
 
-The tile's internal padding. Insets a ListTile's contents: its `leading`, `title`, `subtitle`, and `trailing` controls.
+The tile's internal ft.padding. Insets a ListTile's contents: its `leading`, `title`, `subtitle`, and `trailing` controls.
 
 If not set, `padding.symmetric(horizontal=16)` is used.
 

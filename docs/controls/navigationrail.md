@@ -15,60 +15,48 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Column,
-    FloatingActionButton,
-    Icon,
-    NavigationRail,
-    NavigationRailDestination,
-    Page,
-    Row,
-    Text,
-    VerticalDivider,
-    icons,
-)
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    rail = NavigationRail(
+    rail = ft.NavigationRail(
         selected_index=0,
         label_type="all",
         # extended=True,
-        min_width=100,
-        min_extended_width=400,
-        leading=FloatingActionButton(icon=icons.CREATE, text="Add"),
-        group_alignment=-0.9,
+        min_width = 100,
+        min_extended_width = 400,
+        leading=ft.FloatingActionButton(icon = ft.icons.CREATE, text="Add"),
+        group_alignment = -0.9,
         destinations=[
             NavigationRailDestination(
-                icon=icons.FAVORITE_BORDER, selected_icon=icons.FAVORITE, label="First"
+                icon = ft.icons.FAVORITE_BORDER, selected_icon = ft.icons.FAVORITE, label="First"
             ),
             NavigationRailDestination(
-                icon_content=Icon(icons.BOOKMARK_BORDER),
-                selected_icon_content=Icon(icons.BOOKMARK),
+                icon_content = ft.Icon(ft.icons.BOOKMARK_BORDER),
+                selected_icon_content = ft.Icon(ft.icons.BOOKMARK),
                 label="Second",
             ),
             NavigationRailDestination(
-                icon=icons.SETTINGS_OUTLINED,
-                selected_icon_content=Icon(icons.SETTINGS),
-                label_content=Text("Settings"),
+                icon = ft.icons.SETTINGS_OUTLINED,
+                selected_icon_content = ft.Icon(ft.icons.SETTINGS),
+                label_content = ft.Text("Settings"),
             ),
         ],
-        on_change=lambda e: print("Selected destination:", e.control.selected_index),
+        on_change = lambda e: print("Selected destination:", e.control.selected_index),
     )
 
     page.add(
-        Row(
+        ft.Row(
             [
                 rail,
-                VerticalDivider(width=1),
-                Column([Text("Body!")], alignment="start", expand=True),
+                 ft.VerticalDivider(width = 1),
+                ft.Column([ ft.Text("Body!")], alignment = "start", expand=True),
             ],
             expand=True,
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>

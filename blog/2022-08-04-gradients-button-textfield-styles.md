@@ -22,16 +22,15 @@ We've just released [Flet 0.1.46](https://pypi.org/project/flet/0.1.46/) adding 
 
 ```python
 import math
-import flet
-from flet import Alignment, Container, LinearGradient, Page, alignment
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.add(
-        Container(
-            alignment=alignment.center,
-            gradient=LinearGradient(
-                begin=alignment.top_left,
+        ft.Container(
+            alignment = ft.alignment.center,
+            gradient=ft.LinearGradient(
+                begin=ft.alignment.top_left,
                 end=Alignment(0.8, 1),
                 colors=[
                     "0xff1f005c",
@@ -46,13 +45,13 @@ def main(page: Page):
                 tile_mode="mirror",
                 rotation=math.pi / 3,
             ),
-            width=150,
-            height=150,
-            border_radius=5,
+            width = 150,
+            height = 150,
+            border_radius = 5,
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 Check [`Container.gradient`](/docs/controls/container#lineargradient) docs for more information about `LinearGradient` properties.
@@ -62,15 +61,14 @@ Check [`Container.gradient`](/docs/controls/container#lineargradient) docs for m
 <img src="/img/blog/gradients/radial-gradient.png" className="screenshot-30" />
 
 ```python
-import flet
-from flet import Alignment, Container, Page, RadialGradient, alignment
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.add(
-        Container(
-            alignment=alignment.center,
-            gradient=RadialGradient(
+        ft.Container(
+            alignment = ft.alignment.center,
+            gradient=ft.RadialGradient(
                 center=Alignment(0.7, -0.6),
                 radius=0.2,
                 colors=[
@@ -79,13 +77,13 @@ def main(page: Page):
                 ],
                 stops=[0.4, 1.0],
             ),
-            width=150,
-            height=150,
-            border_radius=5,
+            width = 150,
+            height = 150,
+            border_radius = 5,
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 Check [`Container.gradient`](/docs/controls/container#radialgradient) docs for more information about `RadialGradient` properties.
@@ -96,16 +94,15 @@ Check [`Container.gradient`](/docs/controls/container#radialgradient) docs for m
 
 ```python
 import math
-import flet
-from flet import Container, Page, SweepGradient, alignment
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.add(
-        Container(
-            alignment=alignment.center,
+        ft.Container(
+            alignment = ft.alignment.center,
             gradient=SweepGradient(
-                center=alignment.center,
+                center=ft.alignment.center,
                 start_angle=0.0,
                 end_angle=math.pi * 2,
                 colors=[
@@ -117,13 +114,13 @@ def main(page: Page):
                 ],
                 stops=[0.0, 0.25, 0.5, 0.75, 1.0],
             ),
-            width=150,
-            height=150,
-            border_radius=5,
+            width = 150,
+            height = 150,
+            border_radius = 5,
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 Check [`Container.gradient`](/docs/controls/container#sweepgradient) docs for more information about `SweepGradient` properties.
@@ -140,30 +137,29 @@ Check this "extreme" styling example:
 <img src="/img/blog/gradients/styled-button.gif" className="screenshot-30" />
 
 ```python
-import flet
-from flet import ButtonStyle, ElevatedButton, Page, colors
+import flet as ft
 from flet.border import BorderSide
 from flet.buttons import RoundedRectangleBorder
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.add(
-        ElevatedButton(
+        ft.ElevatedButton(
             "Styled button 1",
-            style=ButtonStyle(
+            style=ft.ButtonStyle(
                 color={
-                    "hovered": colors.WHITE,
-                    "focused": colors.BLUE,
-                    "": colors.BLACK,
+                    "hovered": ft.colors.WHITE,
+                    "focused": ft.colors.BLUE,
+                    "": ft.colors.BLACK,
                 },
-                bgcolor={"focused": colors.PINK_200, "": colors.YELLOW},
-                padding={"hovered": 20},
-                overlay_color=colors.TRANSPARENT,
+                bgcolor = {"focused": ft.colors.PINK_200, "": ft.colors.YELLOW},
+                padding = {"hovered": 20},
+                overlay_color= ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
                 animation_duration=500,
                 side={
-                    "": BorderSide(1, colors.BLUE),
-                    "hovered": BorderSide(2, colors.BLUE),
+                    "": BorderSide(1, ft.colors.BLUE),
+                    "hovered": BorderSide(2, ft.colors.BLUE),
                 },
                 shape={
                     "hovered": RoundedRectangleBorder(radius=20),
@@ -173,7 +169,7 @@ def main(page: Page):
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 Empty string (`""`) state is a fallback style.
@@ -183,8 +179,7 @@ Button shape could also be changed with `ButtonStyle.shape` property:
 <img src="/img/blog/gradients/button-shapes.png" className="screenshot-30" />
 
 ```python
-import flet
-from flet import ButtonStyle, FilledButton, Page
+import flet as ft
 from flet.buttons import (
     BeveledRectangleBorder,
     CircleBorder,
@@ -193,41 +188,41 @@ from flet.buttons import (
     StadiumBorder,
 )
 
-def main(page: Page):
+def main(page: ft.Page):
     page.padding = 30
     page.spacing = 30
     page.add(
-        FilledButton(
+        ft.FilledButton(
             "Stadium",
-            style=ButtonStyle(
-                shape=StadiumBorder(),
+            style=ft.ButtonStyle(
+                shape=ft.StadiumBorder(),
             ),
         ),
-        FilledButton(
+        ft.FilledButton(
             "Rounded rectangle",
-            style=ButtonStyle(
-                shape=RoundedRectangleBorder(radius=10),
+            style=ft.ButtonStyle(
+                shape=ft.RoundedRectangleBorder(radius=10),
             ),
         ),
-        FilledButton(
+        ft.FilledButton(
             "Continuous rectangle",
-            style=ButtonStyle(
-                shape=CountinuosRectangleBorder(radius=30),
+            style=ft.ButtonStyle(
+                shape=ft.CountinuosRectangleBorder(radius=30),
             ),
         ),
-        FilledButton(
+        ft.FilledButton(
             "Beveled rectangle",
-            style=ButtonStyle(
-                shape=BeveledRectangleBorder(radius=10),
+            style=ft.ButtonStyle(
+                shape=ft.BeveledRectangleBorder(radius=10),
             ),
         ),
-        FilledButton(
+        ft.FilledButton(
             "Circle",
-            style=ButtonStyle(shape=CircleBorder(), padding=30),
+            style=ft.ButtonStyle(shape=ft.CircleBorder(), padding = 30),
         ),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 Check [`ElevatedButton.style`](/docs/controls/elevatedbutton#style) property docs for a complete description of `ButtonStyle` class and its properties.
@@ -245,30 +240,29 @@ An example of styled `TextField` with `max_length` and `capitalization`:
 <img src="/img/blog/gradients/styled-textfield.gif" className="screenshot-50" />
 
 ```python
-import flet
-from flet import Page, TextField, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.padding = 50
     page.add(
-        TextField(
+        ft.TextField(
             text_size=30,
-            cursor_color=colors.RED,
-            selection_color=colors.YELLOW,
-            color=colors.PINK,
-            bgcolor=colors.BLACK26,
+            cursor_color= ft.colors.RED,
+            selection_color= ft.colors.YELLOW,
+            color= ft.colors.PINK,
+            bgcolor = ft.colors.BLACK26,
             filled=True,
-            focused_color=colors.GREEN,
-            focused_bgcolor=colors.CYAN_200,
-            border_radius=30,
-            border_color=colors.GREEN_800,
-            focused_border_color=colors.GREEN_ACCENT_400,
+            focused_color= ft.colors.GREEN,
+            focused_bgcolor = ft.colors.CYAN_200,
+            border_radius = 30,
+            border_color= ft.colors.GREEN_800,
+            focused_border_color= ft.colors.GREEN_ACCENT_400,
             max_length=20,
             capitalization="characters",
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 An example of styled `Dropdown` control:
@@ -276,27 +270,26 @@ An example of styled `Dropdown` control:
 <img src="/img/blog/gradients/styled-dropdown.gif" className="screenshot-50" />
 
 ```python
-import flet
-from flet import Dropdown, Page, colors, dropdown
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.padding = 50
     page.add(
-        Dropdown(
+        ft.Dropdown(
             options=[
-                dropdown.Option("a", "Item A"),
-                dropdown.Option("b", "Item B"),
-                dropdown.Option("c", "Item C"),
+                ft.dropdown.Option("a", "Item A"),
+                ft.dropdown.Option("b", "Item B"),
+                ft.dropdown.Option("c", "Item C"),
             ],
-            border_radius=30,
+            border_radius = 30,
             filled=True,
-            border_color=colors.TRANSPARENT,
-            bgcolor=colors.BLACK12,
-            focused_bgcolor=colors.BLUE_100,
+            border_color= ft.colors.TRANSPARENT,
+            bgcolor = ft.colors.BLACK12,
+            focused_bgcolor = ft.colors.BLUE_100,
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 ## Other changes
@@ -308,26 +301,25 @@ This is an example of a toggle icon button:
 <img src="/img/blog/gradients/toggle-icon-button.gif" className="screenshot-20" />
 
 ```python
-import flet
-from flet import ButtonStyle, IconButton, Page, colors, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     def toggle_icon_button(e):
         e.control.selected = not e.control.selected
         e.control.update()
 
     page.add(
-        IconButton(
-            icon=icons.BATTERY_1_BAR,
-            selected_icon=icons.BATTERY_FULL,
-            on_click=toggle_icon_button,
+        ft.IconButton(
+            icon = ft.icons.BATTERY_1_BAR,
+            selected_icon = ft.icons.BATTERY_FULL,
+            on_click = toggle_icon_button,
             selected=False,
-            style=ButtonStyle(color={"selected": colors.GREEN, "": colors.RED}),
+            style=ft.ButtonStyle(color={"selected": ft.colors.GREEN, "": ft.colors.RED}),
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 [Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!

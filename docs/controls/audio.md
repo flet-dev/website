@@ -24,20 +24,19 @@ Autoplay works in desktop, mobile apps and Safari browser, but doesn't work in C
 :::
 
 ```python
-import flet
-from flet import Audio, ElevatedButton, Page, Text
+import flet as ft
 
-def main(page: Page):
-    audio1 = Audio(
+def main(page: ft.Page):
+    audio1 = ft.Audio(
         src="https://luan.xyz/files/audio/ambient_c_motion.mp3", autoplay=True
     )
     page.overlay.append(audio1)
     page.add(
-        Text("This is an app with background audio."),
-        ElevatedButton("Stop playing", on_click=lambda _: audio1.pause()),
+        ft.Text("This is an app with background audio."),
+        ft.ElevatedButton("Stop playing", on_click = lambda _: audio1.pause()),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
@@ -48,12 +47,11 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Audio, ElevatedButton, Page, Row, Text
+import flet as ft
 
 url = "https://github.com/mdn/webaudio-examples/blob/main/audio-analyser/viper.mp3?raw=true"
 
-def main(page: Page):
+def main(page: ft.Page):
     def volume_down(_):
         audio1.volume -= 0.1
         audio1.update()
@@ -70,7 +68,7 @@ def main(page: Page):
         audio1.balance += 0.1
         audio1.update()
 
-    audio1 = Audio(
+    audio1 = ft.Audio(
         src=url,
         autoplay=False,
         volume=1,
@@ -83,33 +81,33 @@ def main(page: Page):
     )
     page.overlay.append(audio1)
     page.add(
-        ElevatedButton("Play", on_click=lambda _: audio1.play()),
-        ElevatedButton("Pause", on_click=lambda _: audio1.pause()),
-        ElevatedButton("Resume", on_click=lambda _: audio1.resume()),
-        ElevatedButton("Release", on_click=lambda _: audio1.release()),
-        ElevatedButton("Seek 2s", on_click=lambda _: audio1.seek(2000)),
-        Row(
+        ft.ElevatedButton("Play", on_click = lambda _: audio1.play()),
+        ft.ElevatedButton("Pause", on_click = lambda _: audio1.pause()),
+        ft.ElevatedButton("Resume", on_click = lambda _: audio1.resume()),
+        ft.ElevatedButton("Release", on_click = lambda _: audio1.release()),
+        ft.ElevatedButton("Seek 2s", on_click = lambda _: audio1.seek(2000)),
+        ft.Row(
             [
-                ElevatedButton("Volume down", on_click=volume_down),
-                ElevatedButton("Volume up", on_click=volume_up),
+                ft.ElevatedButton("Volume down", on_click = volume_down),
+                ft.ElevatedButton("Volume up", on_click = volume_up),
             ]
         ),
-        Row(
+        ft.Row(
             [
-                ElevatedButton("Balance left", on_click=balance_left),
-                ElevatedButton("Balance right", on_click=balance_right),
+                ft.ElevatedButton("Balance left", on_click = balance_left),
+                ft.ElevatedButton("Balance right", on_click = balance_right),
             ]
         ),
-        ElevatedButton(
-            "Get duration", on_click=lambda _: print("Duration:", audio1.get_duration())
+        ft.ElevatedButton(
+            "Get duration", on_click = lambda _: print("Duration:", audio1.get_duration())
         ),
-        ElevatedButton(
+        ft.ElevatedButton(
             "Get current position",
-            on_click=lambda _: print("Current position:", audio1.get_duration()),
+            on_click = lambda _: print("Current position:", audio1.get_duration()),
         ),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>

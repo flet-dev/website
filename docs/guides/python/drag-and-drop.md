@@ -8,10 +8,9 @@ The mechanics of drag-and-drop in Flet is pretty simple - a user starts dragging
 Let's take a look at the following example. In the program below you can drag left control displaying "1" on top of the right control displaying "0" and when drag operation completes left control is replaced with "0" and the right control becomes "1":
 
 ```python
-import flet
-from flet import Container, Draggable, DragTarget, Page, Row, Text, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Drag and Drop example"
 
     def drag_accept(e):
@@ -24,29 +23,29 @@ def main(page: Page):
         page.update()
 
     page.add(
-        Row(
+        ft.Row(
             [
-                Draggable(
+                ft.Draggable(
                     group="number",
-                    content=Container(
-                        width=50,
-                        height=50,
-                        bgcolor=colors.CYAN_200,
-                        border_radius=5,
-                        content=Text("1", size=20),
-                        alignment=alignment.center,
+                    content = ft.Container(
+                        width = 50,
+                        height = 50,
+                        bgcolor = ft.colors.CYAN_200,
+                        border_radius = 5,
+                        content = ft.Text("1", size=20),
+                        alignment = ft.alignment.center,
                     ),
                 ),
-                Container(width=100),
-                DragTarget(
+                ft.Container(width = 100),
+                ft.DragTarget(
                     group="number",
-                    content=Container(
-                        width=50,
-                        height=50,
-                        bgcolor=colors.PINK_200,
-                        border_radius=5,
-                        content=Text("0", size=20),
-                        alignment=alignment.center,
+                    content = ft.Container(
+                        width = 50,
+                        height = 50,
+                        bgcolor = ft.colors.PINK_200,
+                        border_radius = 5,
+                        content = ft.Text("0", size=20),
+                        alignment = ft.alignment.center,
                     ),
                     on_accept=drag_accept,
                 ),
@@ -54,7 +53,7 @@ def main(page: Page):
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 <img src="/img/docs/getting-started/drag-and-drop-number.gif"className="screenshot-50" />
@@ -71,23 +70,23 @@ Let's modify Draggable in our example to display a "hole" in place of dragged co
 
 ```python
 ...
-                Draggable(
+                ft.Draggable(
                     group="number",
-                    content=Container(
-                        width=50,
-                        height=50,
-                        bgcolor=colors.CYAN_200,
-                        border_radius=5,
-                        content=Text("1", size=20),
-                        alignment=alignment.center,
+                    content = ft.Container(
+                        width = 50,
+                        height = 50,
+                        bgcolor = ft.colors.CYAN_200,
+                        border_radius = 5,
+                        content = ft.Text("1", size=20),
+                        alignment = ft.alignment.center,
                     ),
-                    content_when_dragging=Container(
-                        width=50,
-                        height=50,
-                        bgcolor=colors.BLUE_GREY_200,
-                        border_radius=5,
+                    content_when_dragging=ft.Container(
+                        width = 50,
+                        height = 50,
+                        bgcolor = ft.colors.BLUE_GREY_200,
+                        border_radius = 5,
                     ),
-                    content_feedback=Text("1"),
+                    content_feedback=ft.Text("1"),
                 ),
 ...
 ```
@@ -97,10 +96,9 @@ Let's modify Draggable in our example to display a "hole" in place of dragged co
 Drag target control additionally has `on_will_accept` and `on_leave` event handlers which help better visualize when it's a good time to "drop" something on the target. Let's modify DragTarget in our example to draw a border around target control when it's ready to accept incoming drag:
 
 ```python
-import flet
-from flet import (Container, Draggable, DragTarget, Page, Row, Text, alignment, border, colors)
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Drag and Drop example 2"
 
     def drag_accept(e):
@@ -118,8 +116,8 @@ def main(page: Page):
 
     def drag_will_accept(e):
         # black border when it's allowed to drop and red when it's not
-        e.control.content.border = border.all(
-            2, colors.BLACK45 if e.data == "true" else colors.RED
+        e.control.content.border = ft.border.all(
+            2, ft.colors.BLACK45 if e.data == "true" else ft.colors.RED
         )
         e.control.update()
 
@@ -128,36 +126,36 @@ def main(page: Page):
         e.control.update()
 
     page.add(
-        Row(
+        ft.Row(
             [
-                Draggable(
+                ft.Draggable(
                     group="number",
-                    content=Container(
-                        width=50,
-                        height=50,
-                        bgcolor=colors.CYAN_200,
-                        border_radius=5,
-                        content=Text("1", size=20),
-                        alignment=alignment.center,
+                    content = ft.Container(
+                        width = 50,
+                        height = 50,
+                        bgcolor = ft.colors.CYAN_200,
+                        border_radius = 5,
+                        content = ft.Text("1", size=20),
+                        alignment = ft.alignment.center,
                     ),
-                    content_when_dragging=Container(
-                        width=50,
-                        height=50,
-                        bgcolor=colors.BLUE_GREY_200,
-                        border_radius=5,
+                    content_when_dragging=ft.Container(
+                        width = 50,
+                        height = 50,
+                        bgcolor = ft.colors.BLUE_GREY_200,
+                        border_radius = 5,
                     ),
-                    content_feedback=Text("1"),
+                    content_feedback=ft.Text("1"),
                 ),
-                Container(width=100),
-                DragTarget(
+                ft.Container(width = 100),
+                ft.DragTarget(
                     group="number",
-                    content=Container(
-                        width=50,
-                        height=50,
-                        bgcolor=colors.PINK_200,
-                        border_radius=5,
-                        content=Text("0", size=20),
-                        alignment=alignment.center,
+                    content = ft.Container(
+                        width = 50,
+                        height = 50,
+                        bgcolor = ft.colors.PINK_200,
+                        border_radius = 5,
+                        content = ft.Text("0", size=20),
+                        alignment = ft.alignment.center,
                     ),
                     on_accept=drag_accept,
                     on_will_accept=drag_will_accept,
@@ -167,7 +165,7 @@ def main(page: Page):
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 <img src="/img/docs/getting-started/drag-and-drop-number-3.gif"className="screenshot-50" />

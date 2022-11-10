@@ -18,18 +18,17 @@ Outlined buttons pair well with filled buttons to indicate an alternative, secon
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import OutlinedButton, Page
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Basic outlined buttons"
     page.add(
-        OutlinedButton(text="Outlined button"),
-        OutlinedButton("Disabled button", disabled=True),
+        ft.OutlinedButton(text="Outlined button"),
+        ft.OutlinedButton("Disabled button", disabled=True),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 
@@ -43,22 +42,21 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import OutlinedButton, Page
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Outlined buttons with icons"
     page.add(
-        OutlinedButton("Button with icon", icon="chair_outlined"),
-        OutlinedButton(
+        ft.OutlinedButton("Button with icon", icon="chair_outlined"),
+        ft.OutlinedButton(
             "Button with colorful icon",
             icon="park_rounded",
-            icon_color="green400",
+            icon_color ="green400",
         ),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 
@@ -72,11 +70,10 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import OutlinedButton, Page, Text
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Outlined button with 'click' event"
 
     def button_clicked(e):
@@ -84,12 +81,12 @@ def main(page: Page):
         t.value = f"Button clicked {b.data} time(s)"
         page.update()
 
-    b = OutlinedButton("Button with 'click' event", on_click=button_clicked, data=0)
-    t = Text()
+    b = ft.OutlinedButton("Button with 'click' event", on_click = button_clicked, data=0)
+    t = ft.Text()
 
     page.add(b, t)
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
   </TabItem>
@@ -104,50 +101,38 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Column,
-    Container,
-    Icon,
-    OutlinedButton,
-    Page,
-    Row,
-    Text,
-    icons,
-    padding,
-)
+import flet as ft
 
-
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Outlined buttons with custom content"
     page.add(
-        OutlinedButton(
-            width=150,
-            content=Row(
+        ft.OutlinedButton(
+            width = 150,
+            content = ft.Row(
                 [
-                    Icon(name=icons.FAVORITE, color="pink"),
-                    Icon(name=icons.AUDIOTRACK, color="green"),
-                    Icon(name=icons.BEACH_ACCESS, color="blue"),
+                    ft.Icon(name= ft.icons.FAVORITE, color="pink"),
+                    ft.Icon(name= ft.icons.AUDIOTRACK, color="green"),
+                    ft.Icon(name= ft.icons.BEACH_ACCESS, color="blue"),
                 ],
-                alignment="spaceAround",
+                alignment = "spaceAround",
             ),
         ),
-        OutlinedButton(
-            content=Container(
-                content=Column(
+        ft.OutlinedButton(
+            content = ft.Container(
+                content = ft.Column(
                     [
-                        Text(value="Compound button", size=20),
-                        Text(value="This is secondary text"),
+                        ft.Text(value="Compound button", size=20),
+                        ft.Text(value="This is secondary text"),
                     ],
-                    alignment="center",
-                    spacing=5,
+                    alignment = "center",
+                    spacing = 5,
                 ),
-                padding=padding.all(10),
+                padding = ft.padding.all(10),
             ),
         ),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 
 ```
 

@@ -29,14 +29,13 @@ pip install flet --upgrade
 A very minimal Flet app has the following structure:
 
 ```python
-import flet
-from flet import Page
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     # add/update controls on Page
     pass
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 <img src="/img/docs/getting-started/basic-app-structure.png" className="screenshot-50" />
 
@@ -51,14 +50,14 @@ A typical Flet program ends with a call to `flet.app()` where the app starts wai
 By default, Flet app starts in a native OS window, which is very handy for developing. However, you can open it in a new browser window by modifying a call to `flet.app` as following:
 
 ```python
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target = main, view = ft.WEB_BROWSER)
 ```
 
 :::info
 Internally, every Flet app is a web app and even if it's opened in a native OS window a built-in web server is still started on a background. Flet web server is called "Fletd" and by default it's listening on a random TCP port. You can specify a custom TCP port and then open the app in the browser along with desktop view:
 
 ```python
-flet.app(port=8550, target=main)
+flet.app(port=8550, target = main)
 ```
 
 Open `http://localhost:<port>` in your browser to see web version of your Flet app.
@@ -71,21 +70,20 @@ User interface is made of **Controls** (aka widgets). To make controls visible t
 Controls are just regular Python classes. Create control instances via constructors with parameters matching their properties, for example:
 
 ```python
-t = Text(value="Hello, world!", color="green")
+t = ft.Text(value="Hello, world!", color="green")
 ```
 
 To display control on a page add it to `controls` list of a Page and call `page.update()` to send page changes to a browser or desktop client:
 
 ```python
-import flet
-from flet import Page, Text
+import flet as ft
 
-def main(page: Page):
-    t = Text(value="Hello, world!", color="green")
+def main(page: ft.Page):
+    t = ft.Text(value="Hello, world!", color="green")
     page.controls.append(t)
     page.update()
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 <img src="/img/docs/getting-started/controls-text.png" className="screenshot-50" />
 
@@ -96,7 +94,7 @@ In the following examples we will be showing just the contents of `main` functio
 You can modify control properties and the UI will be updated on the next `page.update()`:
 
 ```python
-t = Text()
+t = ft.Text()
 page.add(t) # it's a shortcut for page.controls.append(t) and then page.update()
 
 for i in range(10):
@@ -109,10 +107,10 @@ Some controls are "container" controls (like Page) which could contain other con
 
 ```python
 page.add(
-    Row(controls=[
-        Text("A"),
-        Text("B"),
-        Text("C")
+    ft.Row(controls = [
+        ft.Text("A"),
+        ft.Text("B"),
+        ft.Text("C")
     ])
 )
 ```
@@ -121,9 +119,9 @@ or `TextField` and `ElevatedButton` next to it:
 
 ```python
 page.add(
-    Row(controls=[
-        TextField(label="Your name"),
-        ElevatedButton(text="Say my name!")
+    ft.Row(controls = [
+        ft.TextField(label="Your name"),
+        ft.ElevatedButton(text="Say my name!")
     ])
 )
 ```
@@ -132,7 +130,7 @@ page.add(
 
 ```python
 for i in range(10):
-    page.controls.append(Text(f"Line {i}"))
+    page.controls.append(ft.Text(f"Line {i}"))
     if i > 4:
         page.controls.pop(0)
     page.update()
@@ -143,25 +141,24 @@ Some controls, like buttons, could have event handlers reacting on a user input,
 
 ```python
 def button_clicked(e):
-    page.add(Text("Clicked!"))
+    page.add(ft.Text("Clicked!"))
 
-page.add(ElevatedButton(text="Click me", on_click=button_clicked))
+page.add(ft.ElevatedButton(text="Click me", on_click = button_clicked))
 ```
 
 and more advanced example for a simple To-Do:
 
 ```python
-import flet
-from flet import Checkbox, ElevatedButton, Row, TextField
+import flet as ft
 
 def main(page):
     def add_clicked(e):
-        page.add(Checkbox(label=new_task.value))
+        page.add(ft.Checkbox(label=new_task.value))
 
-    new_task = TextField(hint_text="Whats needs to be done?", width=300)
-    page.add(Row([new_task, ElevatedButton("Add", on_click=add_clicked)]))
+    new_task = ft.TextField(hint_text="Whats needs to be done?", width = 300)
+    page.add(ft.Row([new_task, ft.ElevatedButton("Add", on_click = add_clicked)]))
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 <img src="/img/docs/getting-started/simple-ToDo.png" className="screenshot-50" />
 
@@ -184,8 +181,8 @@ However, `disabled` could be set to a parent control and its value will be propa
 For example, if you have a form with multiple entry control you can set `disabled` property for each control individually:
 
 ```python
-first_name = TextField()
-last_name = TextField()
+first_name = ft.TextField()
+last_name = ft.TextField()
 first_name.disabled = True
 last_name.disabled = True
 page.add(first_name, last_name)
@@ -194,9 +191,9 @@ page.add(first_name, last_name)
 or you can put form controls into container, e.g. `Column` and then set `disabled` for the column:
 
 ```python
-first_name = TextField()
-last_name = TextField()
-c = Column(controls=[
+first_name = ft.TextField()
+last_name = ft.TextField()
+c = ft.Column(controls = [
     first_name,
     last_name
 ])
@@ -211,17 +208,16 @@ Flet controls are objects and to access their properties we need to keep referen
 Consider the following example:
 
 ```python {6-8,18,19,21}
-import flet
-from flet import Column, ElevatedButton, Text, TextField
+import flet as ft
 
 def main(page):
 
-    first_name = TextField(label="First name", autofocus=True)
-    last_name = TextField(label="Last name")
-    greetings = Column()
+    first_name = ft.TextField(label="First name", autofocus=True)
+    last_name = ft.TextField(label="Last name")
+    greetings = ft.Column()
 
     def btn_click(e):
-        greetings.controls.append(Text(f"Hello, {first_name.value} {last_name.value}!"))
+        greetings.controls.append(ft.Text(f"Hello, {first_name.value} {last_name.value}!"))
         first_name.value = ""
         last_name.value = ""
         page.update()
@@ -230,11 +226,11 @@ def main(page):
     page.add(
         first_name,
         last_name,
-        ElevatedButton("Say hello!", on_click=btn_click),
+        ft.ElevatedButton("Say hello!", on_click = btn_click),
         greetings,
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 <img src="/img/docs/getting-started/control-refs.png" className="screenshot-50" />
 
@@ -247,7 +243,7 @@ When more and more controls and event handlers are added it becomes challenging 
     page.add(
         first_name,
         last_name,
-        ElevatedButton("Say hello!", on_click=btn_click),
+        ft.ElevatedButton("Say hello!", on_click = btn_click),
         greetings,
     )
 ```
@@ -259,7 +255,7 @@ Flet provides `Ref` utility class which allows to define a reference to the cont
 To define a new typed control reference:
 
 ```python
-first_name = Ref[TextField]()
+first_name = ft.Ref[ft.TextField]()
 ```
 
 To access referenced control (control de-reference) use `Ref.current` property:
@@ -273,7 +269,7 @@ To assign control to a reference, set `Control.ref` property to a reference:
 
 ```python {2}
 page.add(
-    TextField(ref=first_name, label="First name", autofocus=True)
+    ft.TextField(ref=first_name, label="First name", autofocus=True)
 )
 ```
 
@@ -284,19 +280,18 @@ All Flet controls have `ref` property.
 We could re-write our program to use references:
 
 ```python {7-9,21-24}
-import flet
-from flet import Column, ElevatedButton, Text, TextField
-from flet.ref import Ref
+import flet as ft
+
 
 def main(page):
 
-    first_name = Ref[TextField]()
-    last_name = Ref[TextField]()
-    greetings = Ref[Column]()
+    first_name = ft.Ref[ft.TextField]()
+    last_name = ft.Ref[ft.TextField]()
+    greetings = ft.Ref[ft.Column]()
 
     def btn_click(e):
         greetings.current.controls.append(
-            Text(f"Hello, {first_name.current.value} {last_name.current.value}!")
+            ft.Text(f"Hello, {first_name.current.value} {last_name.current.value}!")
         )
         first_name.current.value = ""
         last_name.current.value = ""
@@ -304,13 +299,13 @@ def main(page):
         first_name.current.focus()
 
     page.add(
-        TextField(ref=first_name, label="First name", autofocus=True),
-        TextField(ref=last_name, label="Last name"),
-        ElevatedButton("Say hello!", on_click=btn_click),
-        Column(ref=greetings),
+        ft.TextField(ref=first_name, label="First name", autofocus=True),
+        ft.TextField(ref=last_name, label="Last name"),
+        ft.ElevatedButton("Say hello!", on_click = btn_click),
+        ft.Column(ref=greetings),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 <img src="/img/docs/getting-started/control-refs-rewritten.png" className="screenshot-50" />
 

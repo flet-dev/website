@@ -19,33 +19,32 @@ Icon buttons are commonly used in the toolbars [link TBD], but they can be used 
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import IconButton, Page, Row, icons
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Icon buttons"
     page.add(
-        Row(
+        ft.Row(
             [
-                IconButton(
-                    icon=icons.PAUSE_CIRCLE_FILLED_ROUNDED,
-                    icon_color="blue400",
+                ft.IconButton(
+                    icon = ft.icons.PAUSE_CIRCLE_FILLED_ROUNDED,
+                    icon_color ="blue400",
                     icon_size=20,
-                    tooltip="Pause record",
+                    tooltip = "Pause record",
                 ),
-                IconButton(
-                    icon=icons.DELETE_FOREVER_ROUNDED,
-                    icon_color="pink600",
+                ft.IconButton(
+                    icon = ft.icons.DELETE_FOREVER_ROUNDED,
+                    icon_color ="pink600",
                     icon_size=40,
-                    tooltip="Delete record",
+                    tooltip = "Delete record",
                 ),
             ]
         ),
     )
 
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
@@ -58,11 +57,10 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import IconButton, Page, Text, icons
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Icon button with 'click' event"
 
     def button_clicked(e):
@@ -70,14 +68,14 @@ def main(page: Page):
         t.value = f"Button clicked {b.data} time(s)"
         page.update()
 
-    b = IconButton(
-        icon=icons.PLAY_CIRCLE_FILL_OUTLINED, on_click=button_clicked, data=0
+    b = ft.IconButton(
+        icon = ft.icons.PLAY_CIRCLE_FILL_OUTLINED, on_click = button_clicked, data=0
     )
-    t = Text()
+    t = ft.Text()
 
     page.add(b, t)
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
@@ -115,26 +113,25 @@ En example of icon toggle button:
 <img src="/img/blog/gradients/toggle-icon-button.gif" className="screenshot-10" />
 
 ```python
-import flet
-from flet import ButtonStyle, IconButton, Page, colors, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     def toggle_icon_button(e):
         e.control.selected = not e.control.selected
         e.control.update()
 
     page.add(
-        IconButton(
-            icon=icons.BATTERY_1_BAR,
-            selected_icon=icons.BATTERY_FULL,
-            on_click=toggle_icon_button,
+        ft.IconButton(
+            icon = ft.icons.BATTERY_1_BAR,
+            selected_icon = ft.icons.BATTERY_FULL,
+            on_click = toggle_icon_button,
             selected=False,
-            style=ButtonStyle(color={"selected": colors.GREEN, "": colors.RED}),
+            style=ft.ButtonStyle(color={"selected": ft.colors.GREEN, "": ft.colors.RED}),
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 ### `style`

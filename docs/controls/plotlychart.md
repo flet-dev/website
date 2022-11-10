@@ -17,18 +17,17 @@ The following example is based on [original example from Plotly docs](https://pl
 ```python
 import plotly.express as px
 
-import flet
-from flet import Page
+import flet as ft
 from flet.plotly_chart import PlotlyChart
 
-def main(page: Page):
+def main(page: ft.Page):
 
     df = px.data.gapminder().query("continent=='Oceania'")
     fig = px.line(df, x="year", y="lifeExp", color="country")
 
     page.add(PlotlyChart(fig, expand=True))
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 ### Bar chart
@@ -40,11 +39,10 @@ The following example is based on [original example from Plotly docs](https://pl
 ```python
 import plotly.express as px
 
-import flet
-from flet import Page
+import flet as ft
 from flet.plotly_chart import PlotlyChart
 
-def main(page: Page):
+def main(page: ft.Page):
 
     df = px.data.gapminder().query("continent == 'Oceania'")
     fig = px.bar(
@@ -54,12 +52,12 @@ def main(page: Page):
         hover_data=["lifeExp", "gdpPercap"],
         color="country",
         labels={"pop": "population of Canada"},
-        height=400,
+        height = 400,
     )
 
     page.add(PlotlyChart(fig, expand=True))
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 ### Pie chart
@@ -71,11 +69,10 @@ The following example is based on [original example from Plotly docs](https://pl
 ```python
 import plotly.graph_objects as go
 
-import flet
-from flet import Page
+import flet as ft
 from flet.plotly_chart import PlotlyChart
 
-def main(page: Page):
+def main(page: ft.Page):
 
     labels = ["Oxygen", "Hydrogen", "Carbon_Dioxide", "Nitrogen"]
     values = [4500, 2500, 1053, 500]
@@ -84,7 +81,7 @@ def main(page: Page):
 
     page.add(PlotlyChart(fig, expand=True))
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 ### Box chart
@@ -96,12 +93,11 @@ The following example is based on [original example from Plotly docs](https://pl
 ```python
 import plotly.graph_objects as go
 
-import flet
-from flet import Page
+import flet as ft
 from flet.plotly_chart import PlotlyChart
 
 
-def main(page: Page):
+def main(page: ft.Page):
 
     x = ['day 1', 'day 1', 'day 1', 'day 1', 'day 1', 'day 1',
         'day 2', 'day 2', 'day 2', 'day 2', 'day 2', 'day 2']
@@ -134,7 +130,7 @@ def main(page: Page):
 
     page.add(PlotlyChart(fig, expand=True))
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 ## Properties

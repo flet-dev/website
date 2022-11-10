@@ -17,19 +17,18 @@ A filled tonal button is an alternative middle ground between [FilledButton](fil
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import FilledTonalButton, Page
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Basic filled buttons"
     page.add(
-        FilledTonalButton(text="Filled tonal button"),
-        FilledTonalButton("Disabled button", disabled=True),
-        FilledTonalButton("Button with icon", icon="add"),
+        ft.FilledTonalButton(text="Filled tonal button"),
+        ft.FilledTonalButton("Disabled button", disabled=True),
+        ft.FilledTonalButton("Button with icon", icon="add"),
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 

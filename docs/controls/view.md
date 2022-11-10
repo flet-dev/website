@@ -6,7 +6,7 @@ slug: view
 
 View is the top most container for all other controls.
 
-A root view is automatically created when a new user session started. From layout perspective the View represents a [Column](column) control, so it has a similar behavior and shares same properties.
+A root view is automatically created when a new user session started. From layout perspective the View represents a [ft.Column](column) control, so it has a similar behavior and shares same properties.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -27,7 +27,7 @@ For example, to add a new control to a page:
   <TabItem value="python" label="Python" default>
 
 ```python
-page.controls.append(Text("Hello!"))
+page.controls.append(ft.Text("Hello!"))
 page.update()
 ```
 
@@ -40,7 +40,7 @@ or to get the same result as above using `page.add()` shortcut method:
   <TabItem value="python" label="Python" default>
 
 ```python
-page.add(Text("Hello!"))
+page.add(ft.Text("Hello!"))
 ```
 
   </TabItem>

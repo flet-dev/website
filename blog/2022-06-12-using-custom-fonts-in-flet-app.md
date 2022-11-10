@@ -21,7 +21,7 @@ Use [`page.fonts`](/docs/controls/page#fonts) property to import fonts.
 Set `page.fonts` property to a dictionary where key is the font family name to refer that font and the value is the URL of the font file to import:
 
 ```python
-def main(page: Page):
+def main(page: ft.Page):
     page.fonts = {
         "Kanit": "https://raw.githubusercontent.com/google/fonts/master/ofl/kanit/Kanit-Bold.ttf",
         "Aleo Bold Italic": "https://raw.githubusercontent.com/google/fonts/master/ofl/aleo/Aleo-BoldItalic.ttf"
@@ -47,10 +47,9 @@ main.py
 The following program loads "Kanit" font from GitHub and "Open Sans" from the assets. "Kanit" is set as a default app font and "Open Sans" is used for a specific Text control:
 
 ```python
-import flet
-from flet import Page, Text, Theme
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Custom fonts"
 
     page.fonts = {
@@ -58,14 +57,14 @@ def main(page: Page):
         "Open Sans": "fonts/OpenSans-Regular.ttf",
     }
 
-    page.theme = Theme(font_family="Kanit")
+    page.theme = Theme(font_family = "Kanit")
 
     page.add(
-        Text("This is rendered with Kanit font"),
-        Text("This is Open Sans font example", font_family="Open Sans"),
+        ft.Text("This is rendered with Kanit font"),
+        ft.Text("This is Open Sans font example", font_family = "Open Sans"),
     )
 
-flet.app(target=main, assets_dir="assets")
+ft.app(target = main, assets_dir="assets")
 ```
 
 <img src="/img/blog/using-custom-fonts-in-flet-app/custom-fonts-example.png" className="screenshot-50" />

@@ -32,14 +32,13 @@ To start, let's create a simple hello-world app.
 
 Create `hello.py` with the following contents:
 
-```python title="hello.py"
-import flet
-from flet import Page, Text
+```python
+import flet as ft
 
-def main(page: Page):
-    page.add(Text(value="Hello, world!"))
+def main(page: ft.Page):
+    page.add(ft.Text(value="Hello, world!"))
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 Run this app and you will see a new window with a greeting:
@@ -54,40 +53,39 @@ To start, you'll need a [Text](/docs/controls/text) control for showing the resu
 
 Create `calc.py` with the following contents:
 
-```python title="calc.py"
-import flet
-from flet import ElevatedButton, Page, Text
+```python
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Calc App"
-    result = Text(value="0")
+    result = ft.Text(value="0")
 
     page.add(
         result,
-        ElevatedButton(text="AC"),
-        ElevatedButton(text="+/-"),
-        ElevatedButton(text="%"),
-        ElevatedButton(text="/"),
-        ElevatedButton(text="7"),
-        ElevatedButton(text="8"),
-        ElevatedButton(text="9"),
-        ElevatedButton(text="*"),
-        ElevatedButton(text="4"),
-        ElevatedButton(text="5"),
-        ElevatedButton(text="6"),
-        ElevatedButton(text="-"),
-        ElevatedButton(text="1"),
-        ElevatedButton(text="2"),
-        ElevatedButton(text="3"),
-        ElevatedButton(text="+"),
-        ElevatedButton(text="0"),
-        ElevatedButton(text="."),
-        ElevatedButton(text="="),
+        ft.ElevatedButton(text="AC"),
+        ft.ElevatedButton(text="+/-"),
+        ft.ElevatedButton(text="%"),
+        ft.ElevatedButton(text="/"),
+        ft.ElevatedButton(text="7"),
+        ft.ElevatedButton(text="8"),
+        ft.ElevatedButton(text="9"),
+        ft.ElevatedButton(text="*"),
+        ft.ElevatedButton(text="4"),
+        ft.ElevatedButton(text="5"),
+        ft.ElevatedButton(text="6"),
+        ft.ElevatedButton(text="-"),
+        ft.ElevatedButton(text="1"),
+        ft.ElevatedButton(text="2"),
+        ft.ElevatedButton(text="3"),
+        ft.ElevatedButton(text="+"),
+        ft.ElevatedButton(text="0"),
+        ft.ElevatedButton(text="."),
+        ft.ElevatedButton(text="="),
     )
 
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 Run the app and you should see a page like this:
@@ -100,61 +98,59 @@ Now let's arrange the text and buttons in 6 horizontal [rows](/docs/controls/row
 
 Replace `calc.py` contents with the following:
 
-```python title="calc.py"
-import flet
-from flet import ElevatedButton, Page, Row, Text
+```python
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Calc App"
-    result = Text(value="0")
+    result = ft.Text(value="0")
 
     page.add(
-        Row(controls=[result]),
-        Row(
-            controls=[
-                ElevatedButton(text="AC"),
-                ElevatedButton(text="+/-"),
-                ElevatedButton(text="%"),
-                ElevatedButton(text="/"),
+        ft.Row(controls = [result]),
+        ft.Row(
+            controls = [
+                ft.ElevatedButton(text="AC"),
+                ft.ElevatedButton(text="+/-"),
+                ft.ElevatedButton(text="%"),
+                ft.ElevatedButton(text="/"),
             ]
         ),
-        Row(
-            controls=[
-                ElevatedButton(text="7"),
-                ElevatedButton(text="8"),
-                ElevatedButton(text="9"),
-                ElevatedButton(text="*"),
+        ft.Row(
+            controls = [
+                ft.ElevatedButton(text="7"),
+                ft.ElevatedButton(text="8"),
+                ft.ElevatedButton(text="9"),
+                ft.ElevatedButton(text="*"),
             ]
         ),
-        Row(
-            controls=[
-                ElevatedButton(text="4"),
-                ElevatedButton(text="5"),
-                ElevatedButton(text="6"),
-                ElevatedButton(text="-"),
+        ft.Row(
+            controls = [
+                ft.ElevatedButton(text="4"),
+                ft.ElevatedButton(text="5"),
+                ft.ElevatedButton(text="6"),
+                ft.ElevatedButton(text="-"),
             ]
         ),
-        Row(
-            controls=[
-                ElevatedButton(text="1"),
-                ElevatedButton(text="2"),
-                ElevatedButton(text="3"),
-                ElevatedButton(text="+"),
+        ft.Row(
+            controls = [
+                ft.ElevatedButton(text="1"),
+                ft.ElevatedButton(text="2"),
+                ft.ElevatedButton(text="3"),
+                ft.ElevatedButton(text="+"),
             ]
         ),
-        Row(
-            controls=[
-                ElevatedButton(text="0"),
-                ElevatedButton(text="."),
-                ElevatedButton(text="="),
+        ft.Row(
+            controls = [
+                ft.ElevatedButton(text="0"),
+                ft.ElevatedButton(text="."),
+                ft.ElevatedButton(text="="),
             ]
         ),
     )
 
 
-flet.app(target=main)
-
+ft.app(target = main)
 ```
 
 Run the app and you should see a page like this:
@@ -196,30 +192,32 @@ calc2 = CalculatorApp()
 # add application's root control to the page
 page.add(calc1, calc2)
 ```
+
 :::
 
 ## Handling events
 
-Now let's make the calculator do its job. We will be using the same event handler for all the buttons and use `data` property to differenciate between the actions depending on the button clicked. For each ElevatedButton control, specify `on_click=self.button_clicked` event and set `data` property equal to button's text, for example:
+Now let's make the calculator do its job. We will be using the same event handler for all the buttons and use `data` property to differentiate between the actions depending on the button clicked. For each `ElevatedButton` control, specify `on_click=self.button_clicked` event and set `data` property equal to button's text, for example:
 
 ```python
-ElevatedButton(
+ft.ElevatedButton(
     text="AC",
-    bgcolor=colors.BLUE_GREY_100,
-    color=colors.BLACK,
+    bgcolor = ft.colors.BLUE_GREY_100,
+    color= ft.colors.BLACK,
     expand=1,
-    on_click=self.button_clicked,
+    on_click = self.button_clicked,
     data="AC",
 )
 ```
 
 Below is `on_click` event handler that will reset the Text value when "AC" button is clicked:
+
 ```python
 def button_clicked(self, e):
     if e.data == "AC":
         self.result.value = "0"
-            
 ```
+
 With similar approach, specify `on_click` event and `data` property for each button and add expected action to the `button_clicked` event handler depending on `e.data` value. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py).
 
 Run the app and see it in the action:

@@ -25,34 +25,33 @@ Explore [`Draggable`](/docs/controls/draggable) and [`DragTarget`](/docs/control
 All visible controls now have `left` `top`, `right` and `bottom` properties to let them be absolutely positioned inside [`Stack`](/docs/controls/stack), for example:
 
 ```python {13-17}
-import flet
-from flet import Container, Page, Stack, Text, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.horizontal_alignment = "center"
     page.vertical_alignment = "center"
 
     page.add(
-        Container(
-            Stack(
+        ft.Container(
+            ft.Stack(
                 [
-                    Text("1", color=colors.WHITE),
-                    Text("2", color=colors.WHITE, right=0),
-                    Text("3", color=colors.WHITE, right=0, bottom=0),
-                    Text("4", color=colors.WHITE, left=0, bottom=0),
-                    Text("5", color=colors.WHITE, left=40, top=35),
+                    ft.Text("1", color= ft.colors.WHITE),
+                    ft.Text("2", color= ft.colors.WHITE, right=0),
+                    ft.Text("3", color= ft.colors.WHITE, right=0, bottom=0),
+                    ft.Text("4", color= ft.colors.WHITE, left=0, bottom=0),
+                    ft.Text("5", color= ft.colors.WHITE, left=40, top=35),
                 ]
             ),
-            border_radius=8,
-            padding=5,
-            width=100,
-            height=100,
-            bgcolor=colors.BROWN_700,
+            border_radius = 8,
+            padding = 5,
+            width = 100,
+            height = 100,
+            bgcolor = ft.colors.BROWN_700,
         )
     )
 
-flet.app(target=main)
+ft.app(target = main)
 ```
 
 <img src="/img/blog/drag-and-drop/absolute-positioned-numbers.png" className="screenshot-30" />

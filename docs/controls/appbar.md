@@ -17,47 +17,36 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    AppBar,
-    Icon,
-    IconButton,
-    Page,
-    PopupMenuButton,
-    PopupMenuItem,
-    Text,
-    colors,
-    icons,
-)
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def check_item_clicked(e):
         e.control.checked = not e.control.checked
         page.update()
 
-    page.appbar = AppBar(
-        leading=Icon(icons.PALETTE),
-        leading_width=40,
-        title=Text("AppBar Example"),
+    page.appbar = ft.AppBar(
+        leading=ft.Icon(ft.icons.PALETTE),
+        leading_width = 40,
+        title=ft.Text("AppBar Example"),
         center_title=False,
-        bgcolor=colors.SURFACE_VARIANT,
+        bgcolor = ft.colors.SURFACE_VARIANT,
         actions=[
-            IconButton(icons.WB_SUNNY_OUTLINED),
-            IconButton(icons.FILTER_3),
-            PopupMenuButton(
+            ft.IconButton(ft.icons.WB_SUNNY_OUTLINED),
+            ft.IconButton(ft.icons.FILTER_3),
+            ft.PopupMenuButton(
                 items=[
-                    PopupMenuItem(text="Item 1"),
-                    PopupMenuItem(),  # divider
-                    PopupMenuItem(
-                        text="Checked item", checked=False, on_click=check_item_clicked
+                    ft.PopupMenuItem(text="Item 1"),
+                    ft.PopupMenuItem(),  # divider
+                    ft.PopupMenuItem(
+                        text="Checked item", checked=False, on_click = check_item_clicked
                     ),
                 ]
             ),
         ],
     )
-    page.add(Text("Body!"))
+    page.add(ft.Text("Body!"))
 
-flet.app(target=main)
+ft.app(target = main)
 ```
   </TabItem>
 </Tabs>
