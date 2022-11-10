@@ -6,22 +6,105 @@ slug: navigationbar
 
 Material 3 Navigation Bar component.
 
+Navigation bars offer a persistent and convenient way to switch between primary destinations in an app.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Examples
 
-### NavigationBar
+### A simple NavigationBar
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
-# TBD
+import flet
+from flet import NavigationBar, NavigationDestination, Page, Text, icons
+
+def main(page: Page):
+
+    page.title = "NavigationBar Example"
+    page.navigation_bar = NavigationBar(
+        destinations=[
+            NavigationDestination(icon=icons.EXPLORE, label="Explore"),
+            NavigationDestination(icon=icons.COMMUTE, label="Commute"),
+            NavigationDestination(
+                icon=icons.BOOKMARK_BORDER,
+                selected_icon=icons.BOOKMARK,
+                label="Explore",
+            ),
+        ]
+    )
+    page.add(Text("Body!"))
+
+flet.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
-## Properties
+## `NavigationBar` properties
 
-### `property 1`
+### `destinations`
+
+Defines the appearance of the button items that are arrayed within the navigation bar.
+
+The value must be a list of two or more `NavigationDestination` instances.
+
+### `selected_index`
+
+The index into `destinations` for the current selected `NavigationDestination` or `None` if no destination is selected.
+
+### `bgcolor`
+
+The color of the NavigationBar itself.
+
+### `label_behavior`
+
+Defines how the destinations' labels will be laid out and when they'll be displayed.
+
+Can be used to show all labels, show only the selected label, or hide all labels.
+
+Supported values:
+
+* `alwaysShow` (default) - Always shows all of the labels under each navigation bar destination, selected and unselected.
+* `alwaysHide` - Never shows any of the labels under the navigation bar destinations, regardless of selected vs unselected.
+* `onlyShowSelected` - Only shows the labels of the selected navigation bar destination. When a destination is unselected, the label will be faded out, and the icon will be centered. When a destination is selected, the label will fade in and the label and icon will slide up so that they are both centered.
+
+### `elevation`
+
+The elevation of the NavigationBar itself.
+
+## `NavigationBar` events
+
+### `on_change`
+
+Fires when selected destination changed.
+
+## `NavigationDestination` properties
+
+### `icon`
+
+The name of the icon of the destination.
+
+### `icon_content`
+
+The icon `Control` of the destination. Typically the icon is an [`Icon`](icon) control. Used instead of `icon` property.
+
+If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
+
+To make the NavigationBar more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
+
+### `selected_icon`
+
+The name of alternative icon displayed when this destination is selected.
+
+### `selected_icon_content`
+
+An alternative icon `Control` displayed when this destination is selected.
+
+If this icon is not provided, the NavigationBar will display `icon_content` in either state.
+
+### `label`
+
+The text label that appears below the icon of this `NavigationDestination`.

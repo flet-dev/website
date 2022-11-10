@@ -93,7 +93,7 @@ module.exports = {
           items: [
             'controls/appbar',
             'controls/navigationrail',
-            //'controls/navigationbar',
+            'controls/navigationbar',
           ]
         },
         {
