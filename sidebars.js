@@ -157,6 +157,7 @@ module.exports = {
           items: [
             'controls/alertdialog',
             'controls/banner',
+            'controls/bottomsheet',
             'controls/snackbar',
           ]
         },
