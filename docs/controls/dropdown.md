@@ -203,6 +203,10 @@ If `True` the decoration's container is filled with theme fillColor.
 
 Text size in virtual pixels.
 
+### `text_style`
+
+The text style to use for text in the dropdown button and the dropdown menu that appears when you tap the button.
+
 ### `color`
 
 Text color.

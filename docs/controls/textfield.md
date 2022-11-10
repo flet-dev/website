@@ -294,6 +294,10 @@ If `True` the decoration's container is filled with theme fillColor.
 
 Text size in virtual pixels.
 
+### `text_style`
+
+The style to use for the text being edited.
+
 ### `color`
 
 Text color.
