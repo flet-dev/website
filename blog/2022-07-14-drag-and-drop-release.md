@@ -43,15 +43,15 @@ def main(page: ft.Page):
                     ft.Text("5", color= ft.colors.WHITE, left=40, top=35),
                 ]
             ),
-            border_radius = 8,
+            border_radius=8,
             padding = 5,
-            width = 100,
-            height = 100,
-            bgcolor = ft.colors.BROWN_700,
+            width=100,
+            height=100,
+            bgcolor=ft.colors.BROWN_700,
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 <img src="/img/blog/drag-and-drop/absolute-positioned-numbers.png" className="screenshot-30" />

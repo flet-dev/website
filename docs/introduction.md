@@ -26,7 +26,7 @@ def main(page: ft.Page):
     page.title = "Flet counter example"
     page.vertical_alignment = "center"
 
-    txt_number = ft.TextField(value="0", text_align="right", width = 100)
+    txt_number = ft.TextField(value="0", text_align="right", width=100)
 
     def minus_click(e):
         txt_number.value = int(txt_number.value) - 1
@@ -39,15 +39,15 @@ def main(page: ft.Page):
     page.add(
         ft.Row(
             [
-                ft.IconButton(ft.icons.REMOVE, on_click = minus_click),
+                ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
                 txt_number,
-                ft.IconButton(ft.icons.ADD, on_click = plus_click),
+                ft.IconButton(ft.icons.ADD, on_click=plus_click),
             ],
-            alignment = "center",
+            alignment="center",
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 To run the app install `flet` module:
@@ -78,7 +78,7 @@ The app will be started in a native OS window - what a nice alternative to Elect
 Now, if you want to run the app as a web app, just replace the last line with:
 
 ```python
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 run again and now you instantly get a web app:

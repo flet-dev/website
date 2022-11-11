@@ -60,9 +60,9 @@ def main(page: ft.Page):
         print("User ID:", page.auth.user.id)
 
     page.on_login = on_login
-    page.add(ft.ElevatedButton("Login with GitHub", on_click = login_click))
+    page.add(ft.ElevatedButton("Login with GitHub", on_click=login_click))
 
-ft.app(target = main, port=8550, view = ft.WEB_BROWSER)
+ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
 ```
 
 :::note
@@ -157,7 +157,7 @@ def main(page: ft.Page):
     page.window_left = 400
     page.window_top = 400
     page.add(ft.ElevatedButton("I'm a floating button!"))
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 * [`page.get_clipboard()`](/docs/controls/page#get_clipboard)

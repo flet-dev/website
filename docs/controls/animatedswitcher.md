@@ -25,17 +25,17 @@ def main(page: ft.Page):
 
     c1 = ft.Container(
         ft.Text("Hello!", style="headlineMedium"),
-        alignment = ft.alignment.center,
-        width = 200,
-        height = 200,
-        bgcolor = ft.colors.GREEN,
+        alignment=ft.alignment.center,
+        width=200,
+        height=200,
+        bgcolor=ft.colors.GREEN,
     )
     c2 = ft.Container(
         ft.Text("Bye!", size=50),
-        alignment = ft.alignment.center,
-        width = 200,
-        height = 200,
-        bgcolor = ft.colors.YELLOW,
+        alignment=ft.alignment.center,
+        width=200,
+        height=200,
+        bgcolor=ft.colors.YELLOW,
     )
     c = ft.AnimatedSwitcher(
         c1,
@@ -52,10 +52,10 @@ def main(page: ft.Page):
 
     page.add(
         c,
-        ft.ElevatedButton("Animate!", on_click = animate),
+        ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

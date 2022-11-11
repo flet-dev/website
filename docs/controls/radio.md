@@ -25,7 +25,7 @@ def main(page):
     page.update()
 
   t = ft.Text()
-  b = ft.ElevatedButton(text='Submit', on_click = button_clicked)
+  b = ft.ElevatedButton(text='Submit', on_click=button_clicked)
   cg = ft.RadioGroup(content = ft.Column([
     ft.Radio(value="red", label="Red"),
     ft.Radio(value="green", label="Green"),
@@ -33,7 +33,7 @@ def main(page):
   
   page.add(ft.Text("Select your favorite color:"), cg, b, t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -57,11 +57,11 @@ def main(page):
   cg = ft.RadioGroup(content = ft.Column([
     ft.Radio(value="red", label="Red"),
     ft.Radio(value="green", label="Green"),
-    ft.Radio(value="blue", label="Blue")]), on_change = radiogroup_changed)
+    ft.Radio(value="blue", label="Blue")]), on_change=radiogroup_changed)
   
   page.add(ft.Text("Select your favorite color:"), cg, t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

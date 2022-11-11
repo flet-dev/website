@@ -42,7 +42,7 @@ def main(page: ft.Page):
                 label_content = ft.Text("Settings"),
             ),
         ],
-        on_change = lambda e: print("Selected destination:", e.control.selected_index),
+        on_change=lambda e: print("Selected destination:", e.control.selected_index),
     )
 
     page.add(
@@ -50,13 +50,13 @@ def main(page: ft.Page):
             [
                 rail,
                  ft.VerticalDivider(width = 1),
-                ft.Column([ ft.Text("Body!")], alignment = "start", expand=True),
+                ft.Column([ ft.Text("Body!")], alignment="start", expand=True),
             ],
             expand=True,
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

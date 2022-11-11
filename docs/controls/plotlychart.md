@@ -27,7 +27,7 @@ def main(page: ft.Page):
 
     page.add(PlotlyChart(fig, expand=True))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Bar chart
@@ -52,12 +52,12 @@ def main(page: ft.Page):
         hover_data=["lifeExp", "gdpPercap"],
         color="country",
         labels={"pop": "population of Canada"},
-        height = 400,
+        height=400,
     )
 
     page.add(PlotlyChart(fig, expand=True))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Pie chart
@@ -81,7 +81,7 @@ def main(page: ft.Page):
 
     page.add(PlotlyChart(fig, expand=True))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Box chart
@@ -130,7 +130,7 @@ def main(page: ft.Page):
 
     page.add(PlotlyChart(fig, expand=True))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ## Properties

@@ -29,7 +29,7 @@ import flet as ft
 def main(page: ft.Page):
     page.title = "Auto-scrolling ListView"
 
-    lv = ft.ListView(expand=1, spacing = 10, padding = 20, auto_scroll=True)
+    lv = ft.ListView(expand=1, spacing=10, padding = 20, auto_scroll=True)
 
     count = 1
 
@@ -45,7 +45,7 @@ def main(page: ft.Page):
         count += 1
         page.update()
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

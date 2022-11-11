@@ -27,25 +27,25 @@ def main(page: ft.Page):
             [
                 ft.Draggable(
                     group="number",
-                    content = ft.Container(
-                        width = 50,
-                        height = 50,
-                        bgcolor = ft.colors.CYAN_200,
-                        border_radius = 5,
-                        content = ft.Text("1", size=20),
-                        alignment = ft.alignment.center,
+                    content=ft.Container(
+                        width=50,
+                        height=50,
+                        bgcolor=ft.colors.CYAN_200,
+                        border_radius=5,
+                        content=ft.Text("1", size=20),
+                        alignment=ft.alignment.center,
                     ),
                 ),
                 ft.Container(width = 100),
                 ft.DragTarget(
                     group="number",
-                    content = ft.Container(
-                        width = 50,
-                        height = 50,
-                        bgcolor = ft.colors.PINK_200,
-                        border_radius = 5,
-                        content = ft.Text("0", size=20),
-                        alignment = ft.alignment.center,
+                    content=ft.Container(
+                        width=50,
+                        height=50,
+                        bgcolor=ft.colors.PINK_200,
+                        border_radius=5,
+                        content=ft.Text("0", size=20),
+                        alignment=ft.alignment.center,
                     ),
                     on_accept=drag_accept,
                 ),
@@ -53,7 +53,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 <img src="/img/docs/getting-started/drag-and-drop-number.gif"className="screenshot-50" />
@@ -72,19 +72,19 @@ Let's modify Draggable in our example to display a "hole" in place of dragged co
 ...
                 ft.Draggable(
                     group="number",
-                    content = ft.Container(
-                        width = 50,
-                        height = 50,
-                        bgcolor = ft.colors.CYAN_200,
-                        border_radius = 5,
-                        content = ft.Text("1", size=20),
-                        alignment = ft.alignment.center,
+                    content=ft.Container(
+                        width=50,
+                        height=50,
+                        bgcolor=ft.colors.CYAN_200,
+                        border_radius=5,
+                        content=ft.Text("1", size=20),
+                        alignment=ft.alignment.center,
                     ),
                     content_when_dragging=ft.Container(
-                        width = 50,
-                        height = 50,
-                        bgcolor = ft.colors.BLUE_GREY_200,
-                        border_radius = 5,
+                        width=50,
+                        height=50,
+                        bgcolor=ft.colors.BLUE_GREY_200,
+                        border_radius=5,
                     ),
                     content_feedback=ft.Text("1"),
                 ),
@@ -130,32 +130,32 @@ def main(page: ft.Page):
             [
                 ft.Draggable(
                     group="number",
-                    content = ft.Container(
-                        width = 50,
-                        height = 50,
-                        bgcolor = ft.colors.CYAN_200,
-                        border_radius = 5,
-                        content = ft.Text("1", size=20),
-                        alignment = ft.alignment.center,
+                    content=ft.Container(
+                        width=50,
+                        height=50,
+                        bgcolor=ft.colors.CYAN_200,
+                        border_radius=5,
+                        content=ft.Text("1", size=20),
+                        alignment=ft.alignment.center,
                     ),
                     content_when_dragging=ft.Container(
-                        width = 50,
-                        height = 50,
-                        bgcolor = ft.colors.BLUE_GREY_200,
-                        border_radius = 5,
+                        width=50,
+                        height=50,
+                        bgcolor=ft.colors.BLUE_GREY_200,
+                        border_radius=5,
                     ),
                     content_feedback=ft.Text("1"),
                 ),
                 ft.Container(width = 100),
                 ft.DragTarget(
                     group="number",
-                    content = ft.Container(
-                        width = 50,
-                        height = 50,
-                        bgcolor = ft.colors.PINK_200,
-                        border_radius = 5,
-                        content = ft.Text("0", size=20),
-                        alignment = ft.alignment.center,
+                    content=ft.Container(
+                        width=50,
+                        height=50,
+                        bgcolor=ft.colors.PINK_200,
+                        border_radius=5,
+                        content=ft.Text("0", size=20),
+                        alignment=ft.alignment.center,
                     ),
                     on_accept=drag_accept,
                     on_will_accept=drag_will_accept,
@@ -165,7 +165,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 <img src="/img/docs/getting-started/drag-and-drop-number-3.gif"className="screenshot-50" />

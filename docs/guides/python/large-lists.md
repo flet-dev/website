@@ -16,7 +16,7 @@ def main(page: ft.Page):
     page.scroll = "always"
     page.update()
 
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 Run the program and notice that it's not just it takes a couple of seconds to initially load and render all text lines on a page, but scrolling is slow and laggy too:
@@ -37,12 +37,12 @@ Let's output a list of 5,000 items using ListView control:
 import flet as ft
 
 def main(page: ft.Page):
-    lv = ft.ListView(expand=True, spacing = 10)
+    lv = ft.ListView(expand=True, spacing=10)
     for i in range(5000):
         lv.controls.append(ft.Text(f"Line {i}"))
     page.add(lv)
 
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 Now the scrolling is smooth and fast enough to follow mouse movements:
@@ -50,7 +50,7 @@ Now the scrolling is smooth and fast enough to follow mouse movements:
 <img src="/img/docs/getting-started/scroll-listview.gif" className="screenshot-50" />
 
 :::note
-We used `expand=True` in ListView constructor. In order to function properly, ListView must have a height (or width if `horizontal`) specified. You could set an absolute size, e.g. `ListView(height=300, spacing = 10)`, but in the example above we make ListView to take all available space on the page, i.e. expand. Read more about [`Control.expand`](/docs/controls#expand) property.
+We used `expand=True` in ListView constructor. In order to function properly, ListView must have a height (or width if `horizontal`) specified. You could set an absolute size, e.g. `ListView(height=300, spacing=10)`, but in the example above we make ListView to take all available space on the page, i.e. expand. Read more about [`Control.expand`](/docs/controls#expand) property.
 :::
 
 ## GridView
@@ -73,17 +73,17 @@ def main(page: ft.Page):
         r.controls.append(
             ft.Container(
                 ft.Text(f"Item {i}"),
-                width = 100,
-                height = 100,
-                alignment = ft.alignment.center,
-                bgcolor = ft.colors.AMBER_100,
+                width=100,
+                height=100,
+                alignment=ft.alignment.center,
+                bgcolor=ft.colors.AMBER_100,
                 border=ft.border.all(1, ft.colors.AMBER_400),
-                border_radius = ft.border_radius.all(5),
+                border_radius=ft.border_radius.all(5),
             )
         )
     page.update()
 
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 <img src="/img/docs/getting-started/row-wrap-as-grid.png" className="screenshot-50" />
@@ -112,15 +112,15 @@ def main(page: ft.Page):
         gv.controls.append(
             ft.Container(
                 ft.Text(f"Item {i}"),
-                alignment = ft.alignment.center,
-                bgcolor = ft.colors.AMBER_100,
+                alignment=ft.alignment.center,
+                bgcolor=ft.colors.AMBER_100,
                 border=ft.border.all(1, ft.colors.AMBER_400),
-                border_radius = ft.border_radius.all(5),
+                border_radius=ft.border_radius.all(5),
             )
         )
     page.update()
 
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 <img src="/img/docs/getting-started/grid-view.png" className="screenshot-50" />
@@ -141,7 +141,7 @@ import flet as ft
 def main(page: ft.Page):
 
     # add ListView to a page first
-    lv = ft.ListView(expand=1, spacing = 10, item_extent=50)
+    lv = ft.ListView(expand=1, spacing=10, item_extent=50)
     page.add(lv)
 
     for i in range(5100):
@@ -152,6 +152,6 @@ def main(page: ft.Page):
     # send the rest to a page
     page.update()
 
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 <img src="/img/docs/getting-started/sending-page-updates-in-batches.png" className="screenshot-50" />

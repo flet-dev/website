@@ -35,10 +35,10 @@ def main(page: ft.Page):
     dlg_modal = ft.AlertDialog(
         modal=True,
         title=ft.Text("Please confirm"),
-        content = ft.Text("Do you really want to delete all those files?"),
+        content=ft.Text("Do you really want to delete all those files?"),
         actions=[
-            ft.TextButton("Yes", on_click = close_dlg),
-            ft.TextButton("No", on_click = close_dlg),
+            ft.TextButton("Yes", on_click=close_dlg),
+            ft.TextButton("No", on_click=close_dlg),
         ],
         actions_alignment = "end",
         on_dismiss=lambda e: print("Modal dialog dismissed!"),
@@ -55,11 +55,11 @@ def main(page: ft.Page):
         page.update()
 
     page.add(
-        ft.ElevatedButton("Open dialog", on_click = open_dlg),
-        ft.ElevatedButton("Open modal dialog", on_click = open_dlg_modal),
+        ft.ElevatedButton("Open dialog", on_click=open_dlg),
+        ft.ElevatedButton("Open modal dialog", on_click=open_dlg_modal),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

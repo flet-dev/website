@@ -27,15 +27,15 @@ def main(page):
         page.update()
 
     page.banner = ft.Banner(
-        bgcolor = ft.colors.AMBER_100,
+        bgcolor=ft.colors.AMBER_100,
         leading=ft.Icon(ft.icons.WARNING_AMBER_ROUNDED, color= ft.colors.AMBER, size=40),
-        content = ft.Text(
+        content=ft.Text(
             "Oops, there were some errors while trying to delete the file. What would you like me to do?"
         ),
         actions=[
-            ft.TextButton("Retry", on_click = close_banner),
-            ft.TextButton("Ignore", on_click = close_banner),
-            ft.TextButton("Cancel", on_click = close_banner),
+            ft.TextButton("Retry", on_click=close_banner),
+            ft.TextButton("Ignore", on_click=close_banner),
+            ft.TextButton("Cancel", on_click=close_banner),
         ],
     )
 
@@ -43,9 +43,9 @@ def main(page):
         page.banner.open = True
         page.update()
 
-    page.add(ft.ElevatedButton("Show Banner", on_click = show_banner_click))
+    page.add(ft.ElevatedButton("Show Banner", on_click=show_banner_click))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

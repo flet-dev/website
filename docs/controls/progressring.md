@@ -26,7 +26,7 @@ from time import sleep
 import flet as ft
 
 def main(page: ft.Page):
-    pr = ProgressRing(width = 16, height = 16, stroke_width = 2)
+    pr = ProgressRing(width = 16, height=16, stroke_width = 2)
 
     page.add(
         ft.Text("Circular progress indicator", style="headlineSmall"),
@@ -43,7 +43,7 @@ def main(page: ft.Page):
         sleep(0.1)
         page.update()
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

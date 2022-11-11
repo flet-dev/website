@@ -64,7 +64,7 @@ def main(page: ft.Page):
         ft.Text("This is Open Sans font example", font_family = "Open Sans"),
     )
 
-ft.app(target = main, assets_dir="assets")
+ft.app(target=main, assets_dir="assets")
 ```
 
 <img src="/img/blog/using-custom-fonts-in-flet-app/custom-fonts-example.png" className="screenshot-50" />

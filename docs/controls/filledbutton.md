@@ -30,7 +30,7 @@ def main(page: ft.Page):
         ft.FilledButton("Button with icon", icon="add"),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 

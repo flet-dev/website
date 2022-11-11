@@ -88,9 +88,9 @@ def main(page: ft.Page):
         print("User ID:", page.auth.user.id)
 
     page.on_login = on_login
-    page.add(ft.ElevatedButton("Login with GitHub", on_click = login_click))
+    page.add(ft.ElevatedButton("Login with GitHub", on_click=login_click))
 
-ft.app(target = main, port=8550, view = ft.WEB_BROWSER)
+ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
 ```
 
 :::caution
@@ -119,7 +119,7 @@ We used `http://localhost:8550/api/oauth/redirect` as a redirect URL while regis
 Notice it has a fixed port `8550`. To run your Flet app on a fixed port use `port` argument in `flet.app` call:
 
 ```python
-ft.app(target = main, port=8550)
+ft.app(target=main, port=8550)
 ```
 
 ### Scope
@@ -206,14 +206,14 @@ def main(page: ft.Page):
         logout_button.visible = page.auth is not None
         page.update()
 
-    login_button = ft.ElevatedButton("Login with GitHub", on_click = login_button_click)
-    logout_button = ft.ElevatedButton("Logout", on_click = logout_button_click)
+    login_button = ft.ElevatedButton("Login with GitHub", on_click=login_button_click)
+    logout_button = ft.ElevatedButton("Logout", on_click=logout_button_click)
     toggle_login_buttons()
     page.on_login = on_login
     page.on_logout = on_logout
     page.add(login_button, logout_button)
 
-ft.app(target = main, port=8550, view = ft.WEB_BROWSER)
+ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
 ```
 
 ## Accessing user details
@@ -434,9 +434,9 @@ def main(page: ft.Page):
         print("Access token:", page.auth.token.access_token)
 
     page.on_login = on_login
-    page.add(ft.ElevatedButton("Login with LinkedIn", on_click = login_click))
+    page.add(ft.ElevatedButton("Login with LinkedIn", on_click=login_click))
 
-ft.app(target = main, port=8550, view = ft.WEB_BROWSER)
+ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
 ```
 
 Mandatory provider settings:

@@ -29,12 +29,12 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content = ft.Text(value=i),
-                    alignment = ft.alignment.center,
-                    width = 50,
-                    height = 50,
-                    bgcolor = ft.colors.AMBER,
-                    border_radius = ft.border_radius.all(5),
+                    content=ft.Text(value=i),
+                    alignment=ft.alignment.center,
+                    width=50,
+                    height=50,
+                    bgcolor=ft.colors.AMBER,
+                    border_radius=ft.border_radius.all(5),
                 )
             )
         return items
@@ -49,15 +49,15 @@ def main(page: ft.Page):
         divisions=10,
         value=0,
         label="{value}",
-        width = 500,
-        on_change = spacing_slider_change,
+        width=500,
+        on_change=spacing_slider_change,
     )
 
     col = ft.Column(spacing = 0, controls = items(5))
 
     page.add(ft.Column([ ft.Text("Spacing between items"), gap_slider]), col)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -80,12 +80,12 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content = ft.Text(value=i),
-                    alignment = ft.alignment.center,
-                    width = 30,
-                    height = 30,
-                    bgcolor = ft.colors.AMBER,
-                    border_radius = ft.border_radius.all(5),
+                    content=ft.Text(value=i),
+                    alignment=ft.alignment.center,
+                    width=30,
+                    height=30,
+                    bgcolor=ft.colors.AMBER,
+                    border_radius=ft.border_radius.all(5),
                 )
             )
         return items
@@ -100,16 +100,16 @@ def main(page: ft.Page):
         divisions=20,
         value=HEIGHT,
         label="{value}",
-        width = 500,
-        on_change = slider_change,
+        width=500,
+        on_change=slider_change,
     )
 
     col = ft.Column(
         wrap=True,
-        spacing = 10,
+        spacing=10,
         run_spacing = 10,
         controls = items(10),
-        height = HEIGHT,
+        height=HEIGHT,
     )
 
     page.add(
@@ -121,10 +121,10 @@ def main(page: ft.Page):
                 width_slider,
             ]
         ),
-        ft.Container(content = col, bgcolor = ft.colors.AMBER_100),
+        ft.Container(content = col, bgcolor=ft.colors.AMBER_100),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -145,11 +145,11 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content = ft.Text(value=i),
-                    alignment = ft.alignment.center,
-                    width = 50,
-                    height = 50,
-                    bgcolor = ft.colors.AMBER_500,
+                    content=ft.Text(value=i),
+                    alignment=ft.alignment.center,
+                    width=50,
+                    height=50,
+                    bgcolor=ft.colors.AMBER_500,
                 )
             )
         return items
@@ -159,9 +159,9 @@ def main(page: ft.Page):
             [
                 ft.Text(align, size=16),
                 ft.Container(
-                    content = ft.Column(items(3), alignment = align),
-                    bgcolor = ft.colors.AMBER_100,
-                    height = 400,
+                    content=ft.Column(items(3), alignment=align),
+                    bgcolor=ft.colors.AMBER_100,
+                    height=400,
                 ),
             ]
         )
@@ -176,12 +176,12 @@ def main(page: ft.Page):
                 column_with_alignment("spaceAround"),
                 column_with_alignment("spaceEvenly"),
             ],
-            spacing = 30,
-            alignment = "start",
+            spacing=30,
+            alignment="start",
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -202,11 +202,11 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content = ft.Text(value=i),
-                    alignment = ft.alignment.center,
-                    width = 50,
-                    height = 50,
-                    bgcolor = ft.colors.AMBER_500,
+                    content=ft.Text(value=i),
+                    alignment=ft.alignment.center,
+                    width=50,
+                    height=50,
+                    bgcolor=ft.colors.AMBER_500,
                 )
             )
         return items
@@ -216,11 +216,11 @@ def main(page: ft.Page):
             [
                 ft.Text(align, size=16),
                 ft.Container(
-                    content = ft.Column(
-                        items(3), alignment = "start", horizontal_alignment = align
+                    content=ft.Column(
+                        items(3), alignment="start", horizontal_alignment = align
                     ),
-                    bgcolor = ft.colors.AMBER_100,
-                    width = 100,
+                    bgcolor=ft.colors.AMBER_100,
+                    width=100,
                 ),
             ]
         )
@@ -232,12 +232,12 @@ def main(page: ft.Page):
                 column_with_horiz_alignment("center"),
                 column_with_horiz_alignment("end"),
             ],
-            spacing = 30,
-            alignment = "start",
+            spacing=30,
+            alignment="start",
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -296,7 +296,7 @@ When a child Control is placed into a Column you can "expand" it to fill the ava
 
 ```python
 r = ft.Column([
-  ft.Container(expand=True, content = ft.Text("Here is search results")),
+  ft.Container(expand=True, content=ft.Text("Here is search results")),
   ft.Text("Records found: 10")
 ])
 ```
@@ -305,9 +305,9 @@ The following example with numeric expand factors creates a Column with 3 contai
 
 ```python
 r = ft.Column([
-  ft.Container(expand=1, content = ft.Text("Header")),
-  ft.Container(expand=3, content = ft.Text("Body")),
-  ft.Container(expand=1, content = ft.Text("Footer"))
+  ft.Container(expand=1, content=ft.Text("Header")),
+  ft.Container(expand=3, content=ft.Text("Body")),
+  ft.Container(expand=1, content=ft.Text("Footer"))
 ])
 ```
 

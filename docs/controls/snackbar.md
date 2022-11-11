@@ -28,7 +28,7 @@ d = Data()
 def main(page):
 
     page.snack_bar = SnackBar(
-        content = ft.Text("Hello, world!"),
+        content=ft.Text("Hello, world!"),
         action="Alright!",
     )
 
@@ -38,9 +38,9 @@ def main(page):
         d.counter += 1
         page.update()
 
-    page.add(ft.ElevatedButton("Open SnackBar", on_click = on_click))
+    page.add(ft.ElevatedButton("Open SnackBar", on_click=on_click))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

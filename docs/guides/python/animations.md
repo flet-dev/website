@@ -38,10 +38,10 @@ import flet as ft
 def main(page: ft.Page):
 
     c = ft.Container(
-        width = 150,
-        height = 150,
-        bgcolor = "blue",
-        border_radius = 10,
+        width=150,
+        height=150,
+        bgcolor="blue",
+        border_radius=10,
         animate_opacity=300,
     )
 
@@ -53,11 +53,11 @@ def main(page: ft.Page):
         c,
         ft.ElevatedButton(
             "Animate opacity",
-            on_click = animate_opacity,
+            on_click=animate_opacity,
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Rotation animation
@@ -73,11 +73,11 @@ import flet as ft
 def main(page: ft.Page):
 
     c = ft.Container(
-        width = 100,
-        height = 70,
-        bgcolor = "blue",
-        border_radius = 5,
-        rotate=ft.transform.Rotate(0, alignment = ft.alignment.center),
+        width=100,
+        height=70,
+        bgcolor="blue",
+        border_radius=5,
+        rotate=ft.transform.Rotate(0, alignment=ft.alignment.center),
         animate_rotation=ft.animation.Animation(duration=300, curve="bounceOut"),
     )
 
@@ -90,10 +90,10 @@ def main(page: ft.Page):
     page.spacing = 30
     page.add(
         c,
-        ft.ElevatedButton("Animate!", on_click = animate),
+        ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Scale animation
@@ -109,10 +109,10 @@ from flet.transform import Scale
 def main(page: ft.Page):
 
     c = ft.Container(
-        width = 100,
-        height = 100,
-        bgcolor = "blue",
-        border_radius = 5,
+        width=100,
+        height=100,
+        bgcolor="blue",
+        border_radius=5,
         scale=Scale(scale=1),
         animate_scale=ft.animation.Animation(600, "bounceOut"),
     )
@@ -127,10 +127,10 @@ def main(page: ft.Page):
     page.spacing = 30
     page.add(
         c,
-        ft.ElevatedButton("Animate!", on_click = animate),
+        ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Offset animation
@@ -149,10 +149,10 @@ import flet as ft
 def main(page: ft.Page):
 
     c = ft.Container(
-        width = 150,
-        height = 150,
-        bgcolor = "blue",
-        border_radius = 10,
+        width=150,
+        height=150,
+        bgcolor="blue",
+        border_radius=10,
         offset=ft.transform.Offset(-2, 0),
         animate_offset=ft.animation.Animation(1000),
     )
@@ -163,10 +163,10 @@ def main(page: ft.Page):
 
     page.add(
         c,
-        ft.ElevatedButton("Reveal!", on_click = animate),
+        ft.ElevatedButton("Reveal!", on_click=animate),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Position animation
@@ -182,14 +182,14 @@ import flet as ft
 
 def main(page: ft.Page):
 
-    c1 = ft.Container(width = 50, height = 50, bgcolor = "red", animate_position=1000)
+    c1 = ft.Container(width = 50, height=50, bgcolor="red", animate_position=1000)
 
     c2 = ft.Container(
-        width = 50, height = 50, bgcolor = "green", top=60, left=0, animate_position=500
+        width=50, height=50, bgcolor="green", top=60, left=0, animate_position=500
     )
 
     c3 = ft.Container(
-        width = 50, height = 50, bgcolor = "blue", top=120, left=0, animate_position=1000
+        width=50, height=50, bgcolor="blue", top=120, left=0, animate_position=1000
     )
 
     def animate_container(e):
@@ -202,11 +202,11 @@ def main(page: ft.Page):
         page.update()
 
     page.add(
-        ft.Stack([c1, c2, c3], height = 250),
-        ft.ElevatedButton("Animate!", on_click = animate_container),
+        ft.Stack([c1, c2, c3], height=250),
+        ft.ElevatedButton("Animate!", on_click=animate_container),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Animated container
@@ -221,9 +221,9 @@ import flet as ft
 def main(page: ft.Page):
 
     c = ft.Container(
-        width = 150,
-        height = 150,
-        bgcolor = "red",
+        width=150,
+        height=150,
+        bgcolor="red",
         animate=ft.animation.Animation(1000, "bounceOut"),
     )
 
@@ -233,9 +233,9 @@ def main(page: ft.Page):
         c.bgcolor = "blue" if c.bgcolor == "red" else "red"
         c.update()
 
-    page.add(c, ft.ElevatedButton("Animate container", on_click = animate_container))
+    page.add(c, ft.ElevatedButton("Animate container", on_click=animate_container))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Animated content switcher
@@ -251,11 +251,11 @@ import flet as ft
 
 def main(page: ft.Page):
 
-    i = ft.Image(src="https://picsum.photos/150/150", width = 150, height = 150)
+    i = ft.Image(src="https://picsum.photos/150/150", width=150, height=150)
 
     def animate(e):
         sw.content = ft.Image(
-            src=f"https://picsum.photos/150/150?{time.time()}", width = 150, height = 150
+            src=f"https://picsum.photos/150/150?{time.time()}", width=150, height=150
         )
         page.update()
 
@@ -270,10 +270,10 @@ def main(page: ft.Page):
 
     page.add(
         sw,
-        ft.ElevatedButton("Animate!", on_click = animate),
+        ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### Animation end callback

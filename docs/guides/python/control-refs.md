@@ -26,11 +26,11 @@ def main(page):
     page.add(
         first_name,
         last_name,
-        ft.ElevatedButton("Say hello!", on_click = btn_click),
+        ft.ElevatedButton("Say hello!", on_click=btn_click),
         greetings,
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 In the very beginning of `main()` method we create three controls which we are going to use in button's `on_click` handler: two `TextField` for first and last names and a `Column` - container for greeting messages. We create controls with all their properties set and in the end of `main()` method, in `page.add()` call, we use their references (variables).
@@ -41,7 +41,7 @@ When more and mode controls and event handlers added it becomes challenging to k
     page.add(
         first_name,
         last_name,
-        ft.ElevatedButton("Say hello!", on_click = btn_click),
+        ft.ElevatedButton("Say hello!", on_click=btn_click),
         greetings,
     )
 ```
@@ -101,11 +101,11 @@ def main(page):
     page.add(
         ft.TextField(ref=first_name, label="First name", autofocus=True),
         ft.TextField(ref=last_name, label="Last name"),
-        ft.ElevatedButton("Say hello!", on_click = btn_click),
+        ft.ElevatedButton("Say hello!", on_click=btn_click),
         ft.Column(ref=greetings),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 Now we can clearly see in `page.add()` the structure of the page and all the controls it's built of.

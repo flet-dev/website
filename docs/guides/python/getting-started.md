@@ -35,7 +35,7 @@ def main(page: ft.Page):
     # add/update controls on Page
     pass
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 <img src="/img/docs/getting-started/basic-app-structure.png" className="screenshot-50" />
 
@@ -50,14 +50,14 @@ A typical Flet program ends with a call to `flet.app()` where the app starts wai
 By default, Flet app starts in a native OS window, which is very handy for developing. However, you can open it in a new browser window by modifying a call to `flet.app` as following:
 
 ```python
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 :::info
 Internally, every Flet app is a web app and even if it's opened in a native OS window a built-in web server is still started on a background. Flet web server is called "Fletd" and by default it's listening on a random TCP port. You can specify a custom TCP port and then open the app in the browser along with desktop view:
 
 ```python
-flet.app(port=8550, target = main)
+flet.app(port=8550, target=main)
 ```
 
 Open `http://localhost:<port>` in your browser to see web version of your Flet app.
@@ -83,7 +83,7 @@ def main(page: ft.Page):
     page.controls.append(t)
     page.update()
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 <img src="/img/docs/getting-started/controls-text.png" className="screenshot-50" />
 
@@ -143,7 +143,7 @@ Some controls, like buttons, could have event handlers reacting on a user input,
 def button_clicked(e):
     page.add(ft.Text("Clicked!"))
 
-page.add(ft.ElevatedButton(text="Click me", on_click = button_clicked))
+page.add(ft.ElevatedButton(text="Click me", on_click=button_clicked))
 ```
 
 and more advanced example for a simple To-Do:
@@ -155,10 +155,10 @@ def main(page):
     def add_clicked(e):
         page.add(ft.Checkbox(label=new_task.value))
 
-    new_task = ft.TextField(hint_text="Whats needs to be done?", width = 300)
-    page.add(ft.Row([new_task, ft.ElevatedButton("Add", on_click = add_clicked)]))
+    new_task = ft.TextField(hint_text="Whats needs to be done?", width=300)
+    page.add(ft.Row([new_task, ft.ElevatedButton("Add", on_click=add_clicked)]))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 <img src="/img/docs/getting-started/simple-ToDo.png" className="screenshot-50" />
 
@@ -226,11 +226,11 @@ def main(page):
     page.add(
         first_name,
         last_name,
-        ft.ElevatedButton("Say hello!", on_click = btn_click),
+        ft.ElevatedButton("Say hello!", on_click=btn_click),
         greetings,
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 <img src="/img/docs/getting-started/control-refs.png" className="screenshot-50" />
 
@@ -243,7 +243,7 @@ When more and more controls and event handlers are added it becomes challenging 
     page.add(
         first_name,
         last_name,
-        ft.ElevatedButton("Say hello!", on_click = btn_click),
+        ft.ElevatedButton("Say hello!", on_click=btn_click),
         greetings,
     )
 ```
@@ -301,11 +301,11 @@ def main(page):
     page.add(
         ft.TextField(ref=first_name, label="First name", autofocus=True),
         ft.TextField(ref=last_name, label="Last name"),
-        ft.ElevatedButton("Say hello!", on_click = btn_click),
+        ft.ElevatedButton("Say hello!", on_click=btn_click),
         ft.Column(ref=greetings),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 <img src="/img/docs/getting-started/control-refs-rewritten.png" className="screenshot-50" />
 

@@ -26,28 +26,28 @@ def main(page: ft.Page):
     page.title = "Containers with background color"
 
     c1 = ft.Container(
-        content = ft.ElevatedButton("Elevated Button in Container"),
-        bgcolor = ft.colors.YELLOW,
+        content=ft.ElevatedButton("Elevated Button in Container"),
+        bgcolor=ft.colors.YELLOW,
         padding = 5,
     )
 
     c2 = ft.Container(
-        content = ft.ElevatedButton(
+        content=ft.ElevatedButton(
             "Elevated Button with opacity=0.5 in Container", opacity=0.5
         ),
-        bgcolor = ft.colors.YELLOW,
+        bgcolor=ft.colors.YELLOW,
         padding = 5,
     )
 
     c3 = ft.Container(
-        content = ft.OutlinedButton("Outlined Button in Container"),
-        bgcolor = ft.colors.YELLOW,
+        content=ft.OutlinedButton("Outlined Button in Container"),
+        bgcolor=ft.colors.YELLOW,
         padding = 5,
     )
     page.add(c1, c2, c3)
 
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -71,55 +71,55 @@ def main(page: ft.Page):
         ft.Row(
             [
                 ft.Container(
-                    content = ft.Text("Non clickable"),
+                    content=ft.Text("Non clickable"),
                     margin = 10,
                     padding = 10,
-                    alignment = ft.alignment.center,
-                    bgcolor = ft.colors.AMBER,
-                    width = 150,
-                    height = 150,
-                    border_radius = 10,
+                    alignment=ft.alignment.center,
+                    bgcolor=ft.colors.AMBER,
+                    width=150,
+                    height=150,
+                    border_radius=10,
                 ),
                 ft.Container(
-                    content = ft.Text("Clickable without Ink"),
+                    content=ft.Text("Clickable without Ink"),
                     margin = 10,
                     padding = 10,
-                    alignment = ft.alignment.center,
-                    bgcolor = ft.colors.GREEN_200,
-                    width = 150,
-                    height = 150,
-                    border_radius = 10,
-                    on_click = lambda e: print("Clickable without Ink clicked!"),
+                    alignment=ft.alignment.center,
+                    bgcolor=ft.colors.GREEN_200,
+                    width=150,
+                    height=150,
+                    border_radius=10,
+                    on_click=lambda e: print("Clickable without Ink clicked!"),
                 ),
                 ft.Container(
-                    content = ft.Text("Clickable with Ink"),
+                    content=ft.Text("Clickable with Ink"),
                     margin = 10,
                     padding = 10,
-                    alignment = ft.alignment.center,
-                    bgcolor = ft.colors.CYAN_200,
-                    width = 150,
-                    height = 150,
-                    border_radius = 10,
+                    alignment=ft.alignment.center,
+                    bgcolor=ft.colors.CYAN_200,
+                    width=150,
+                    height=150,
+                    border_radius=10,
                     ink = True,
-                    on_click = lambda e: print("Clickable with Ink clicked!"),
+                    on_click=lambda e: print("Clickable with Ink clicked!"),
                 ),
                 ft.Container(
-                    content = ft.Text("Clickable transparent with Ink"),
+                    content=ft.Text("Clickable transparent with Ink"),
                     margin = 10,
                     padding = 10,
-                    alignment = ft.alignment.center,
-                    width = 150,
-                    height = 150,
-                    border_radius = 10,
+                    alignment=ft.alignment.center,
+                    width=150,
+                    height=150,
+                    border_radius=10,
                     ink = True,
-                    on_click = lambda e: print("Clickable transparent with Ink clicked!"),
+                    on_click=lambda e: print("Clickable transparent with Ink clicked!"),
                 ),
             ],
-            alignment = "center",
+            alignment="center",
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -257,9 +257,9 @@ Container(
         end=ft.alignment.bottom_center,
        colors=[ft.colors.BLUE, ft.colors.YELLOW],
     ),
-    width = 150,
-    height = 150,
-    border_radius = 5,
+    width=150,
+    height=150,
+    border_radius=5,
 )
 ```
 
@@ -286,9 +286,9 @@ Container(
     gradient=ft.RadialGradient(
        colors=[ft.colors.YELLOW, ft.colors.BLUE],
     ),
-    width = 150,
-    height = 150,
-    border_radius = 5,
+    width=150,
+    height=150,
+    border_radius=5,
 )
 ```
 
@@ -316,9 +316,9 @@ Container(
         end_angle=math.pi * 2,
        colors=[ft.colors.YELLOW, ft.colors.BLUE],
     ),
-    width = 150,
-    height = 150,
-    border_radius = 5,
+    width=150,
+    height=150,
+    border_radius=5,
 )
 ```
 
@@ -377,9 +377,9 @@ import flet as ft
 def main(page: ft.Page):
 
     c = ft.Container(
-        width = 200,
-        height = 200,
-        bgcolor = "red",
+        width=200,
+        height=200,
+        bgcolor="red",
         animate=ft.animation.Animation(1000, "bounceOut"),
     )
 
@@ -389,9 +389,9 @@ def main(page: ft.Page):
         c.bgcolor = "blue" if c.bgcolor == "red" else "red"
         c.update()
 
-    page.add(c, ft.ElevatedButton("Animate container", on_click = animate_container))
+    page.add(c, ft.ElevatedButton("Animate container", on_click=animate_container))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### `ink`
@@ -444,13 +444,13 @@ def main(page: ft.Page):
         ft.Column(
             [
                 ft.Container(
-                    content = ft.Text("Clickable inside container"),
-                    alignment = ft.alignment.center,
-                    bgcolor = ft.colors.GREEN_200,
-                    width = 200,
-                    height = 200,
-                    border_radius = 10,
-                    on_click = container_click,
+                    content=ft.Text("Clickable inside container"),
+                    alignment=ft.alignment.center,
+                    bgcolor=ft.colors.GREEN_200,
+                    width=200,
+                    height=200,
+                    border_radius=10,
+                    on_click=container_click,
                 ),
                 t,
             ],
@@ -458,7 +458,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### `on_long_press`
@@ -480,8 +480,8 @@ def main(page: ft.Page):
         e.control.update()
 
     page.add(
-        ft.Container(width = 100, height = 100, bgcolor = "red", ink = False, on_hover=on_hover)
+        ft.Container(width = 100, height=100, bgcolor="red", ink = False, on_hover=on_hover)
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```

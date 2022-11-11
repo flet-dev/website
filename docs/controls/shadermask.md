@@ -30,8 +30,8 @@ def main(page: ft.Page):
                 ft.ShaderMask(
                     ft.Image(
                         src="https://picsum.photos/200/200?1",
-                        width = 200,
-                        height = 200,
+                        width=200,
+                        height=200,
                         fit="fill",
                     ),
                     blend_mode="multiply",
@@ -46,7 +46,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
   </TabItem>
@@ -75,13 +75,13 @@ def main(page: ft.Page):
                        colors=[ft.colors.BLACK, ft.colors.TRANSPARENT],
                         stops=[0.5, 1.0],
                     ),
-                    border_radius = 10,
+                    border_radius=10,
                 ),
             ]
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
   </TabItem>

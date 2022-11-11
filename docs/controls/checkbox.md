@@ -34,10 +34,10 @@ def main(page):
     c5 = ft.Checkbox(
         label="Checkbox with rendered label_position='left'", label_position="left"
     )
-    b = ft.ElevatedButton(text="Submit", on_click = button_clicked)
+    b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(c1, c2, c3, c4, c5, b, t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -57,12 +57,12 @@ def main(page):
     t.value = f"Checkbox value changed to {c.value}" 
     t.update()
 
-  c = ft.Checkbox(label="Checkbox with 'change' event", on_change = checkbox_changed)
+  c = ft.Checkbox(label="Checkbox with 'change' event", on_change=checkbox_changed)
   t = ft.Text()
 
   page.add(c, t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

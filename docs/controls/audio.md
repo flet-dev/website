@@ -33,10 +33,10 @@ def main(page: ft.Page):
     page.overlay.append(audio1)
     page.add(
         ft.Text("This is an app with background audio."),
-        ft.ElevatedButton("Stop playing", on_click = lambda _: audio1.pause()),
+        ft.ElevatedButton("Stop playing", on_click=lambda _: audio1.pause()),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -81,33 +81,33 @@ def main(page: ft.Page):
     )
     page.overlay.append(audio1)
     page.add(
-        ft.ElevatedButton("Play", on_click = lambda _: audio1.play()),
-        ft.ElevatedButton("Pause", on_click = lambda _: audio1.pause()),
-        ft.ElevatedButton("Resume", on_click = lambda _: audio1.resume()),
-        ft.ElevatedButton("Release", on_click = lambda _: audio1.release()),
-        ft.ElevatedButton("Seek 2s", on_click = lambda _: audio1.seek(2000)),
+        ft.ElevatedButton("Play", on_click=lambda _: audio1.play()),
+        ft.ElevatedButton("Pause", on_click=lambda _: audio1.pause()),
+        ft.ElevatedButton("Resume", on_click=lambda _: audio1.resume()),
+        ft.ElevatedButton("Release", on_click=lambda _: audio1.release()),
+        ft.ElevatedButton("Seek 2s", on_click=lambda _: audio1.seek(2000)),
         ft.Row(
             [
-                ft.ElevatedButton("Volume down", on_click = volume_down),
-                ft.ElevatedButton("Volume up", on_click = volume_up),
+                ft.ElevatedButton("Volume down", on_click=volume_down),
+                ft.ElevatedButton("Volume up", on_click=volume_up),
             ]
         ),
         ft.Row(
             [
-                ft.ElevatedButton("Balance left", on_click = balance_left),
-                ft.ElevatedButton("Balance right", on_click = balance_right),
+                ft.ElevatedButton("Balance left", on_click=balance_left),
+                ft.ElevatedButton("Balance right", on_click=balance_right),
             ]
         ),
         ft.ElevatedButton(
-            "Get duration", on_click = lambda _: print("Duration:", audio1.get_duration())
+            "Get duration", on_click=lambda _: print("Duration:", audio1.get_duration())
         ),
         ft.ElevatedButton(
             "Get current position",
-            on_click = lambda _: print("Current position:", audio1.get_duration()),
+            on_click=lambda _: print("Current position:", audio1.get_duration()),
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

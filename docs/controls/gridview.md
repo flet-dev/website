@@ -36,7 +36,7 @@ def main(page: ft.Page):
         runs_count=5,
         max_extent=150,
         child_aspect_ratio=1.0,
-        spacing = 5,
+        spacing=5,
         run_spacing = 5,
     )
 
@@ -48,12 +48,12 @@ def main(page: ft.Page):
                 src=f"https://picsum.photos/150/150?{i}",
                 fit="none",
                 repeat="noRepeat",
-                border_radius = ft.border_radius.all(10),
+                border_radius=ft.border_radius.all(10),
             )
         )
     page.update()
 
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
   </TabItem>
 </Tabs>

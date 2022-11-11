@@ -17,7 +17,7 @@ class GreeterControl(ft.UserControl):
 def main(page):
     page.add(GreeterControl())
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 UserControl must implement `build()` method that is called to build control's UI and should returns a single `Control` instance or a `List` of controls. `UserControl` is inherited from [`Stack`](/docs/controls/stack), so multiple children will be arranged on top of each other. If you need to arrange control's UI differently use [`Row`](/docs/controls/row), [`Column`](/docs/controls/column) or other [layout controls](/docs/controls/layout), for example:
@@ -45,12 +45,12 @@ class Counter(ft.UserControl):
     def build(self):
         self.counter = 0
         self.text = ft.Text(str(self.counter))
-        return ft.Row([self.text, ft.ElevatedButton("Add", on_click = self.add_click)])
+        return ft.Row([self.text, ft.ElevatedButton("Add", on_click=self.add_click)])
 
 def main(page):
     page.add(Counter(), Counter())
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 <img src="/img/docs/getting-started/user-control-counter.gif" className="screenshot-40" />
@@ -69,7 +69,7 @@ class Counter(ft.UserControl):
             text.value = str(self.counter)
             self.update()
 
-        return ft.Row([text, ft.ElevatedButton("Add", on_click = add_click)])
+        return ft.Row([text, ft.ElevatedButton("Add", on_click=add_click)])
 ```
 
 :::note
@@ -91,7 +91,7 @@ class Counter(ft.UserControl):
             text.value = str(self.counter)
             self.update()
 
-        return ft.Row([text, ft.ElevatedButton("Add", on_click = add_click)])
+        return ft.Row([text, ft.ElevatedButton("Add", on_click=add_click)])
 
 # then use the control
 def main(page):
@@ -143,7 +143,7 @@ class Countdown(ft.UserControl):
 def main(page):
     page.add(Countdown(120), Countdown(60))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 <img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />

@@ -26,7 +26,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Disabled button", disabled=True),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 
@@ -54,7 +54,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 
@@ -78,12 +78,12 @@ def main(page: ft.Page):
         t.value = f"Button clicked {b.data} time(s)"
         page.update()
 
-    b = ft.ElevatedButton("Button with 'click' event", on_click = button_clicked, data=0)
+    b = ft.ElevatedButton("Button with 'click' event", on_click=button_clicked, data=0)
     t = ft.Text()
 
     page.add(b, t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
   </TabItem>
@@ -104,25 +104,25 @@ def main(page: ft.Page):
     page.title = "Elevated buttons with custom content"
     page.add(
         ft.ElevatedButton(
-            width = 150,
-            content = ft.Row(
+            width=150,
+            content=ft.Row(
                 [
                     ft.Icon(name= ft.icons.FAVORITE, color="pink"),
                     ft.Icon(name= ft.icons.AUDIOTRACK, color="green"),
                     ft.Icon(name= ft.icons.BEACH_ACCESS, color="blue"),
                 ],
-                alignment = "spaceAround",
+                alignment="spaceAround",
             ),
         ),
         ft.ElevatedButton(
-            content = ft.Container(
-                content = ft.Column(
+            content=ft.Container(
+                content=ft.Column(
                     [
                         ft.Text(value="Compound button", size=20),
                         ft.Text(value="This is secondary text"),
                     ],
-                    alignment = "center",
-                    spacing = 5,
+                    alignment="center",
+                    spacing=5,
                 ),
                 padding = ft.padding.all(10),
             ),
@@ -130,7 +130,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target = main)
+ft.app(target=main)
 
 ```
 
@@ -224,7 +224,7 @@ def main(page: ft.Page):
                     "focused": ft.colors.BLUE,
                     "": ft.colors.BLACK,
                 },
-                bgcolor = {"focused": ft.colors.PINK_200, "": ft.colors.YELLOW},
+                bgcolor={"focused": ft.colors.PINK_200, "": ft.colors.YELLOW},
                 padding = {"hovered": 20},
                 overlay_color= ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
@@ -241,7 +241,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 #### `ButtonStyle` class
@@ -308,7 +308,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### `tooltip`
@@ -347,9 +347,9 @@ def main(page: ft.Page):
 
     page.add(
         ft.ElevatedButton(
-            "I'm changing color on hover", bgcolor = "yellow", on_hover=on_hover
+            "I'm changing color on hover", bgcolor="yellow", on_hover=on_hover
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```

@@ -28,7 +28,7 @@ def main(page: ft.Page):
         ft.OutlinedButton("Disabled button", disabled=True),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 
@@ -56,7 +56,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 
@@ -81,12 +81,12 @@ def main(page: ft.Page):
         t.value = f"Button clicked {b.data} time(s)"
         page.update()
 
-    b = ft.OutlinedButton("Button with 'click' event", on_click = button_clicked, data=0)
+    b = ft.OutlinedButton("Button with 'click' event", on_click=button_clicked, data=0)
     t = ft.Text()
 
     page.add(b, t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
   </TabItem>
@@ -107,32 +107,32 @@ def main(page: ft.Page):
     page.title = "Outlined buttons with custom content"
     page.add(
         ft.OutlinedButton(
-            width = 150,
-            content = ft.Row(
+            width=150,
+            content=ft.Row(
                 [
                     ft.Icon(name= ft.icons.FAVORITE, color="pink"),
                     ft.Icon(name= ft.icons.AUDIOTRACK, color="green"),
                     ft.Icon(name= ft.icons.BEACH_ACCESS, color="blue"),
                 ],
-                alignment = "spaceAround",
+                alignment="spaceAround",
             ),
         ),
         ft.OutlinedButton(
-            content = ft.Container(
-                content = ft.Column(
+            content=ft.Container(
+                content=ft.Column(
                     [
                         ft.Text(value="Compound button", size=20),
                         ft.Text(value="This is secondary text"),
                     ],
-                    alignment = "center",
-                    spacing = 5,
+                    alignment="center",
+                    spacing=5,
                 ),
                 padding = ft.padding.all(10),
             ),
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 
 ```
 

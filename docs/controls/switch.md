@@ -35,10 +35,10 @@ def main(page):
     c4 = ft.Switch(
         label="Switch with rendered label_position='left'", label_position="left"
     )
-    b = ft.ElevatedButton(text="Submit", on_click = button_clicked)
+    b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(c1, c2, c3, c4, b, t)
 
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
   </TabItem>
 </Tabs>
@@ -61,10 +61,10 @@ def main(page: ft.Page):
     page.update()
 
   page.theme_mode = "light"
-  c = ft.Switch(label="Light theme", on_change = theme_changed)
+  c = ft.Switch(label="Light theme", on_change=theme_changed)
   page.add(c)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

@@ -30,21 +30,21 @@ def main(page: ft.Page):
             "Size 40, w100",
             size=40,
             color= ft.colors.WHITE,
-            bgcolor = ft.colors.BLUE_600,
+            bgcolor=ft.colors.BLUE_600,
             weight="w100",
         ),
         ft.Text(
             "Size 50, Normal",
             size=50,
             color= ft.colors.WHITE,
-            bgcolor = ft.colors.ORANGE_800,
+            bgcolor=ft.colors.ORANGE_800,
             weight="normal",
         ),
         ft.Text(
             "Size 60, Bold, Italic",
             size=50,
             color= ft.colors.WHITE,
-            bgcolor = ft.colors.GREEN_700,
+            bgcolor=ft.colors.GREEN_700,
             weight="bold",
             italic=True,
         ),
@@ -63,12 +63,12 @@ def main(page: ft.Page):
         ft.Text("Limit the width and height of long text", style="headlineSmall"),
         ft.Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Nam varius at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
-            width = 700,
-            height = 100,
+            width=700,
+            height=100,
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -105,7 +105,7 @@ def main(page: ft.Page):
         ft.Text("Body Small", style="bodySmall"),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -150,7 +150,7 @@ def main(page: ft.Page):
         ft.Text("This text is rendered with Consolas font", font_family = "Consolas")
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 There is one limitation though - system fonts cannot be used in a Flet web app with "CanvasKit" renderer.
@@ -166,7 +166,7 @@ You can explicitly set what renderer to use when running a Flet program:
 
 ```python
 # ...
-ft.app(target = main, view = ft.WEB_BROWSER, web_renderer="html")
+ft.app(target=main, view=ft.WEB_BROWSER, web_renderer="html")
 ```
 
 Now, when you run the same program you'll see "Consolas" font is used.

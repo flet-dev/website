@@ -23,9 +23,9 @@ def main(page):
     page.title = "ListTile Examples"
     page.add(
         ft.Card(
-            content = ft.Container(
-                width = 500,
-                content = ft.Column(
+            content=ft.Container(
+                width=500,
+                content=ft.Column(
                     [
                         ft.ListTile(
                             title=ft.Text("One-line list tile"),
@@ -74,14 +74,14 @@ def main(page):
                             ),
                         ),
                     ],
-                    spacing = 0,
+                    spacing=0,
                 ),
                 padding = ft.padding.symmetric(vertical=10),
             )
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

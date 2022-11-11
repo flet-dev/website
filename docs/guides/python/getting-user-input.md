@@ -29,7 +29,7 @@ def main(page: ft.Page):
     page.title = "Flet counter example"
     page.vertical_alignment = "center"
 
-    txt_number = ft.TextField(value="0", text_align="right", width = 100)
+    txt_number = ft.TextField(value="0", text_align="right", width=100)
 
     def minus_click(e):
         txt_number.value = int(txt_number.value) - 1
@@ -42,15 +42,15 @@ def main(page: ft.Page):
     page.add(
         ft.Row(
             [
-                ft.IconButton(ft.icons.REMOVE, on_click = minus_click),
+                ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
                 txt_number,
-                ft.IconButton(ft.icons.ADD, on_click = plus_click),
+                ft.IconButton(ft.icons.ADD, on_click=plus_click),
             ],
-            alignment = "center",
+            alignment="center",
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 <img src="/img/docs/getting-started/getting-user-input-event-handlers.png" className="screenshot-50" />
@@ -76,9 +76,9 @@ def main(page):
 
     txt_name = ft.TextField(label="Your name")
 
-    page.add(txt_name, ft.ElevatedButton("Say hello!", on_click = btn_click))
+    page.add(txt_name, ft.ElevatedButton("Say hello!", on_click=btn_click))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 <img src="/img/docs/getting-started/getting-user-input-textbox.png" className="screenshot-50" />
@@ -101,10 +101,10 @@ def main(page):
         page.update()
 
     output_text= ft.Text()
-    todo_check = ft.Checkbox(label="ToDo: Learn how to use ski", value=False, on_change = checkbox_changed)
+    todo_check = ft.Checkbox(label="ToDo: Learn how to use ski", value=False, on_change=checkbox_changed)
     page.add(todo_check, output_text)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 <img src="/img/docs/getting-started/getting-user-input-checkbox.png" className="screenshot-50" />
@@ -121,9 +121,9 @@ def main(page: ft.Page):
         page.update()
 
     output_text = ft.Text()
-    submit_btn = ft.ElevatedButton(text="Submit", on_click = button_clicked)
+    submit_btn = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     color_dropdown = ft.Dropdown(
-        width = 100,
+        width=100,
         options=[
             ft.dropdown.Option("Red"),
             ft.dropdown.Option("Green"),
@@ -132,7 +132,7 @@ def main(page: ft.Page):
     )
     page.add(color_dropdown, submit_btn, output_text)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 <img src="/img/docs/getting-started/getting-user-input-dropdown.png" className="screenshot-50" />

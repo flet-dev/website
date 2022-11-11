@@ -21,8 +21,8 @@ def main(page):
     page.title = "Card Example"
     page.add(
         ft.Card(
-            content = ft.Container(
-                content = ft.Column(
+            content=ft.Container(
+                content=ft.Column(
                     [
                         ft.ListTile(
                             leading=ft.Icon(ft.icons.ALBUM),
@@ -33,17 +33,17 @@ def main(page):
                         ),
                         ft.Row(
                             [TextButton("Buy tickets"), ft.TextButton("Listen")],
-                            alignment = "end",
+                            alignment="end",
                         ),
                     ]
                 ),
-                width = 400,
+                width=400,
                 padding = 10,
             )
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 
 ```
   </TabItem>

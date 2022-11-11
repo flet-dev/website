@@ -33,7 +33,7 @@ def main(page: ft.Page):
         ft.Text("Linear progress indicator", style="headlineSmall"),
         ft.Column([ ft.Text("Doing something..."), pb]),
         ft.Text("Indeterminate progress bar", style="headlineSmall"),
-        ft.ProgressBar(width = 400, color="amber", bgcolor = "#eeeeee"),
+        ft.ProgressBar(width = 400, color="amber", bgcolor="#eeeeee"),
     )
 
     for i in range(0, 101):
@@ -41,7 +41,7 @@ def main(page: ft.Page):
         sleep(0.1)
         page.update()
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

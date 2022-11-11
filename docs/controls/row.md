@@ -29,12 +29,12 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content = ft.Text(value=i),
-                    alignment = ft.alignment.center,
-                    width = 50,
-                    height = 50,
-                    bgcolor = ft.colors.AMBER,
-                    border_radius = ft.border_radius.all(5),
+                    content=ft.Text(value=i),
+                    alignment=ft.alignment.center,
+                    width=50,
+                    height=50,
+                    bgcolor=ft.colors.AMBER,
+                    border_radius=ft.border_radius.all(5),
                 )
             )
         return items
@@ -49,14 +49,14 @@ def main(page: ft.Page):
         divisions=50,
         value=0,
         label="{value}",
-        on_change = gap_slider_change,
+        on_change=gap_slider_change,
     )
 
     row = ft.Row(spacing = 0, controls = items(10))
 
     page.add(ft.Column([ ft.Text("Spacing between items"), gap_slider]), row)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -77,12 +77,12 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content = ft.Text(value=i),
-                    alignment = ft.alignment.center,
-                    width = 50,
-                    height = 50,
-                    bgcolor = ft.colors.AMBER,
-                    border_radius = ft.border_radius.all(5),
+                    content=ft.Text(value=i),
+                    alignment=ft.alignment.center,
+                    width=50,
+                    height=50,
+                    bgcolor=ft.colors.AMBER,
+                    border_radius=ft.border_radius.all(5),
                 )
             )
         return items
@@ -97,15 +97,15 @@ def main(page: ft.Page):
         divisions=20,
         value=page.window_width,
         label="{value}",
-        on_change = slider_change,
+        on_change=slider_change,
     )
 
     row = ft.Row(
         wrap=True,
-        spacing = 10,
+        spacing=10,
         run_spacing = 10,
         controls = items(30),
-        width = page.window_width,
+        width=page.window_width,
     )
 
     page.add(
@@ -120,7 +120,7 @@ def main(page: ft.Page):
         row,
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -141,11 +141,11 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content = ft.Text(value=i),
-                    alignment = ft.alignment.center,
-                    width = 50,
-                    height = 50,
-                    bgcolor = ft.colors.AMBER_500,
+                    content=ft.Text(value=i),
+                    alignment=ft.alignment.center,
+                    width=50,
+                    height=50,
+                    bgcolor=ft.colors.AMBER_500,
                 )
             )
         return items
@@ -155,8 +155,8 @@ def main(page: ft.Page):
             [
                 ft.Text(align, size=16),
                 ft.Container(
-                    content = ft.Row(items(3), alignment = align),
-                    bgcolor = ft.colors.AMBER_100,
+                    content=ft.Row(items(3), alignment=align),
+                    bgcolor=ft.colors.AMBER_100,
                 ),
             ]
         )
@@ -170,7 +170,7 @@ def main(page: ft.Page):
         row_with_alignment("spaceEvenly"),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -191,11 +191,11 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content = ft.Text(value=i),
-                    alignment = ft.alignment.center,
-                    width = 50,
-                    height = 50,
-                    bgcolor = ft.colors.AMBER_500,
+                    content=ft.Text(value=i),
+                    alignment=ft.alignment.center,
+                    width=50,
+                    height=50,
+                    bgcolor=ft.colors.AMBER_500,
                 )
             )
         return items
@@ -205,9 +205,9 @@ def main(page: ft.Page):
             [
                 ft.Text(align, size=16),
                 ft.Container(
-                    content = ft.Row(items(3), vertical_alignment = align),
-                    bgcolor = ft.colors.AMBER_100,
-                    height = 150,
+                    content=ft.Row(items(3), vertical_alignment = align),
+                    bgcolor=ft.colors.AMBER_100,
+                    height=150,
                 ),
             ]
         )
@@ -218,7 +218,7 @@ def main(page: ft.Page):
         row_with_vertical_alignment("end"),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -286,9 +286,9 @@ The following example with numeric expand factors creates a Row with 3 container
 
 ```python
 r = ft.Row([
-  ft.Container(expand=1, content = ft.Text("A")),
-  ft.Container(expand=3, content = ft.Text("B")),
-  ft.Container(expand=1, content = ft.Text("C"))
+  ft.Container(expand=1, content=ft.Text("A")),
+  ft.Container(expand=3, content=ft.Text("B")),
+  ft.Container(expand=1, content=ft.Text("C"))
 ])
 ```
 

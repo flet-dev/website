@@ -29,7 +29,7 @@ def main(page: ft.Page):
         leading_width = 40,
         title=ft.Text("AppBar Example"),
         center_title=False,
-        bgcolor = ft.colors.SURFACE_VARIANT,
+        bgcolor=ft.colors.SURFACE_VARIANT,
         actions=[
             ft.IconButton(ft.icons.WB_SUNNY_OUTLINED),
             ft.IconButton(ft.icons.FILTER_3),
@@ -38,7 +38,7 @@ def main(page: ft.Page):
                     ft.PopupMenuItem(text="Item 1"),
                     ft.PopupMenuItem(),  # divider
                     ft.PopupMenuItem(
-                        text="Checked item", checked=False, on_click = check_item_clicked
+                        text="Checked item", checked=False, on_click=check_item_clicked
                     ),
                 ]
             ),
@@ -46,7 +46,7 @@ def main(page: ft.Page):
     )
     page.add(ft.Text("Body!"))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

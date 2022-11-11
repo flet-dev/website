@@ -28,7 +28,7 @@ def main(page):
         ft.Text("Default disabled slider:"),
         ft.Slider(disabled=True))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -48,7 +48,7 @@ def main(page):
         ft.Text("Slider with a custom range and label:"),
         ft.Slider(min=0, max=100, divisions=10, label="{value}%"))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -72,9 +72,9 @@ def main(page):
     t = ft.Text()
     page.add(
         ft.Text("Slider with 'on_change' event:"),
-        ft.Slider(min=0, max=100, divisions=10, label="{value}%", on_change = slider_changed), t)
+        ft.Slider(min=0, max=100, divisions=10, label="{value}%", on_change=slider_changed), t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

@@ -75,9 +75,9 @@ def main(page: ft.Page):
         txt_number,
         ft.Text("Press CTRL+S to toggle semantics debugger"),
         ft.FloatingActionButton(
-            icon = ft.icons.ADD, tooltip = "Increment number", on_click = button_click
+            icon = ft.icons.ADD, tooltip = "Increment number", on_click=button_click
         ),
     )
 
-ft.app(target = main, view = ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```

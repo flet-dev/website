@@ -29,18 +29,18 @@ def main(page: ft.Page):
         tabs = [
             ft.Tab(
                 text="Tab 1",
-                content = ft.Container(
-                    content = ft.Text("This is Tab 1"), alignment = ft.alignment.center
+                content=ft.Container(
+                    content=ft.Text("This is Tab 1"), alignment=ft.alignment.center
                 ),
             ),
             ft.Tab(
                 tab_content = ft.Icon(ft.icons.SEARCH),
-                content = ft.Text("This is Tab 2"),
+                content=ft.Text("This is Tab 2"),
             ),
             ft.Tab(
                 text="Tab 3",
                 icon = ft.icons.SETTINGS,
-                content = ft.Text("This is Tab 3"),
+                content=ft.Text("This is Tab 3"),
             ),
         ],
         expand=1,
@@ -48,7 +48,7 @@ def main(page: ft.Page):
 
     page.add(t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

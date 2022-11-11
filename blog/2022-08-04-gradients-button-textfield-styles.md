@@ -28,7 +28,7 @@ def main(page: ft.Page):
 
     page.add(
         ft.Container(
-            alignment = ft.alignment.center,
+            alignment=ft.alignment.center,
             gradient=ft.LinearGradient(
                 begin=ft.alignment.top_left,
                 end=Alignment(0.8, 1),
@@ -45,13 +45,13 @@ def main(page: ft.Page):
                 tile_mode="mirror",
                 rotation=math.pi / 3,
             ),
-            width = 150,
-            height = 150,
-            border_radius = 5,
+            width=150,
+            height=150,
+            border_radius=5,
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 Check [`Container.gradient`](/docs/controls/container#lineargradient) docs for more information about `LinearGradient` properties.
@@ -67,7 +67,7 @@ def main(page: ft.Page):
 
     page.add(
         ft.Container(
-            alignment = ft.alignment.center,
+            alignment=ft.alignment.center,
             gradient=ft.RadialGradient(
                 center=Alignment(0.7, -0.6),
                 radius=0.2,
@@ -77,13 +77,13 @@ def main(page: ft.Page):
                 ],
                 stops=[0.4, 1.0],
             ),
-            width = 150,
-            height = 150,
-            border_radius = 5,
+            width=150,
+            height=150,
+            border_radius=5,
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 Check [`Container.gradient`](/docs/controls/container#radialgradient) docs for more information about `RadialGradient` properties.
@@ -100,7 +100,7 @@ def main(page: ft.Page):
 
     page.add(
         ft.Container(
-            alignment = ft.alignment.center,
+            alignment=ft.alignment.center,
             gradient=SweepGradient(
                 center=ft.alignment.center,
                 start_angle=0.0,
@@ -114,13 +114,13 @@ def main(page: ft.Page):
                 ],
                 stops=[0.0, 0.25, 0.5, 0.75, 1.0],
             ),
-            width = 150,
-            height = 150,
-            border_radius = 5,
+            width=150,
+            height=150,
+            border_radius=5,
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 Check [`Container.gradient`](/docs/controls/container#sweepgradient) docs for more information about `SweepGradient` properties.
@@ -152,7 +152,7 @@ def main(page: ft.Page):
                     "focused": ft.colors.BLUE,
                     "": ft.colors.BLACK,
                 },
-                bgcolor = {"focused": ft.colors.PINK_200, "": ft.colors.YELLOW},
+                bgcolor={"focused": ft.colors.PINK_200, "": ft.colors.YELLOW},
                 padding = {"hovered": 20},
                 overlay_color= ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
@@ -169,7 +169,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 Empty string (`""`) state is a fallback style.
@@ -222,7 +222,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 Check [`ElevatedButton.style`](/docs/controls/elevatedbutton#style) property docs for a complete description of `ButtonStyle` class and its properties.
@@ -250,11 +250,11 @@ def main(page: ft.Page):
             cursor_color= ft.colors.RED,
             selection_color= ft.colors.YELLOW,
             color= ft.colors.PINK,
-            bgcolor = ft.colors.BLACK26,
+            bgcolor=ft.colors.BLACK26,
             filled=True,
             focused_color= ft.colors.GREEN,
             focused_bgcolor = ft.colors.CYAN_200,
-            border_radius = 30,
+            border_radius=30,
             border_color= ft.colors.GREEN_800,
             focused_border_color= ft.colors.GREEN_ACCENT_400,
             max_length=20,
@@ -262,7 +262,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 An example of styled `Dropdown` control:
@@ -281,15 +281,15 @@ def main(page: ft.Page):
                 ft.dropdown.Option("b", "Item B"),
                 ft.dropdown.Option("c", "Item C"),
             ],
-            border_radius = 30,
+            border_radius=30,
             filled=True,
             border_color= ft.colors.TRANSPARENT,
-            bgcolor = ft.colors.BLACK12,
+            bgcolor=ft.colors.BLACK12,
             focused_bgcolor = ft.colors.BLUE_100,
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ## Other changes
@@ -313,13 +313,13 @@ def main(page: ft.Page):
         ft.IconButton(
             icon = ft.icons.BATTERY_1_BAR,
             selected_icon = ft.icons.BATTERY_FULL,
-            on_click = toggle_icon_button,
+            on_click=toggle_icon_button,
             selected=False,
             style=ft.ButtonStyle(color={"selected": ft.colors.GREEN, "": ft.colors.RED}),
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 [Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!

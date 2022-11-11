@@ -43,7 +43,7 @@ Lambda works pretty nice for that:
 
 ```python
 ft.ElevatedButton("Choose files...",
-    on_click = lambda _: file_picker.pick_files(allow_multiple=True))
+    on_click=lambda _: file_picker.pick_files(allow_multiple=True))
 ```
 
 When dialog is closed `FilePicker.on_result` event handler is called which event object has one of the following properties set:
@@ -89,7 +89,7 @@ def upload_files(e):
             )
         file_picker.upload(upload_list)
 
-ft.ElevatedButton("Upload", on_click = upload_files)
+ft.ElevatedButton("Upload", on_click=upload_files)
 ```
 
 :::note
@@ -115,13 +115,13 @@ The same technique should work for [Wasabi](https://wasabi.com/), [Backblaze](ht
 To enable Flet saving uploaded files to a directory provide full or relative path to that directory in `flet.app()` call:
 
 ```python
-ft.app(target = main, upload_dir="uploads")
+ft.app(target=main, upload_dir="uploads")
 ```
 
 You can even put uploads inside "assets" directory, so uploaded files, e.g. pictures, docs or other media, can be accessed from a Flet client right away:
 
 ```python
-ft.app(target = main, assets_dir="assets", upload_dir="assets/uploads")
+ft.app(target=main, assets_dir="assets", upload_dir="assets/uploads")
 ```
 
 and somewhere in your app you can display uploaded picture with:

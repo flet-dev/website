@@ -27,9 +27,9 @@ def main(page: ft.Page):
         page.update()
 
     t = ft.Text()
-    b = ft.ElevatedButton(text="Submit", on_click = button_clicked)
+    b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     dd = ft.Dropdown(
-        width = 100,
+        width=100,
         options=[
             ft.dropdown.Option("Red"),
             ft.dropdown.Option("Green"),
@@ -38,7 +38,7 @@ def main(page: ft.Page):
     )
     page.add(dd, b, t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -67,7 +67,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -89,17 +89,17 @@ def main(page: ft.Page):
 
     t = ft.Text()
     dd = ft.Dropdown(
-        on_change = dropdown_changed,
+        on_change=dropdown_changed,
         options=[
             ft.dropdown.Option("Red"),
             ft.dropdown.Option("Green"),
             ft.dropdown.Option("Blue"),
         ],
-        width = 200,
+        width=200,
     )
     page.add(dd, t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -136,11 +136,11 @@ def main(page: ft.Page):
 
     d = ft.Dropdown()
     option_textbox = ft.TextField(hint_text="Enter item name")
-    add = ft.ElevatedButton("Add", on_click = add_clicked)
-    delete = ft.OutlinedButton("Delete selected", on_click = delete_clicked)
+    add = ft.ElevatedButton("Add", on_click=add_clicked)
+    delete = ft.OutlinedButton("Delete selected", on_click=delete_clicked)
     page.add(d, ft.Row(controls = [option_textbox, add, delete]))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

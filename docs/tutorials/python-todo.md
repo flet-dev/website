@@ -41,7 +41,7 @@ import flet as ft
 def main(page: ft.Page):
     page.add(ft.Text(value="Hello, world!"))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 Run this app and you will see a new window with a greeting:
@@ -67,9 +67,9 @@ def main(page: ft.Page):
 
     new_task = ft.TextField(hint_text="Whats needs to be done?")
 
-    page.add(new_task, ft.FloatingActionButton(icon = ft.icons.ADD, on_click = add_clicked))
+    page.add(new_task, ft.FloatingActionButton(icon = ft.icons.ADD, on_click=add_clicked))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 Run the app and you should see a page like this:
@@ -99,12 +99,12 @@ def main(page: ft.Page):
     new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
     tasks_view = ft.Column()
     view = ft.Column(
-        width = 600,
+        width=600,
         controls = [
             ft.Row(
                 controls = [
                     new_task,
-                    ft.FloatingActionButton(icon = ft.icons.ADD, on_click = add_clicked),
+                    ft.FloatingActionButton(icon = ft.icons.ADD, on_click=add_clicked),
                 ],
             ),
             tasks_view,
@@ -114,7 +114,7 @@ def main(page: ft.Page):
     page.horizontal_alignment = "center"
     page.add(view)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 Run the app and you should see a page like this:
@@ -137,12 +137,12 @@ class TodoApp(ft.UserControl):
 
         # application's root control (i.e. "view") containing all other controls
         return ft.Column(
-            width = 600,
+            width=600,
             controls = [
                 ft.Row(
                     controls = [
                         self.new_task,
-                        ft.FloatingActionButton(icon = ft.icons.ADD, on_click = self.add_clicked),
+                        ft.FloatingActionButton(icon = ft.icons.ADD, on_click=self.add_clicked),
                     ],
                 ),
                 self.tasks,
@@ -166,7 +166,7 @@ def main(page: ft.Page):
     # add application's root control to the page
     page.add(todo)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 :::note
@@ -208,22 +208,22 @@ class Task(ft.UserControl):
         self.edit_name = ft.TextField(expand=1)
 
         self.display_view = ft.Row(
-            alignment = "spaceBetween",
+            alignment="spaceBetween",
             vertical_alignment = "center",
             controls = [
                 self.display_task,
                 ft.Row(
-                    spacing = 0,
+                    spacing=0,
                     controls = [
                         ft.IconButton(
                             icon = ft.icons.CREATE_OUTLINED,
                             tooltip = "Edit To-Do",
-                            on_click = self.edit_clicked,
+                            on_click=self.edit_clicked,
                         ),
                         ft.IconButton(
                             ft.icons.DELETE_OUTLINE,
                             tooltip = "Delete To-Do",
-                            on_click = self.delete_clicked,
+                            on_click=self.delete_clicked,
                         ),
                     ],
                 ),
@@ -232,7 +232,7 @@ class Task(ft.UserControl):
 
         self.edit_view = ft.Row(
             visible=False,
-            alignment = "spaceBetween",
+            alignment="spaceBetween",
             vertical_alignment = "center",
             controls = [
                 self.edit_name,
@@ -240,7 +240,7 @@ class Task(ft.UserControl):
                     icon = ft.icons.DONE_OUTLINE_OUTLINED,
                     icon_color = ft.colors.GREEN,
                     tooltip = "Update To-Do",
-                    on_click = self.save_clicked,
+                    on_click=self.save_clicked,
                 ),
             ],
         )
@@ -324,21 +324,21 @@ class TodoApp(ft.UserControl):
 
         self.filter = ft.Tabs(
             selected_index=0,
-            on_change = self.tabs_changed,
+            on_change=self.tabs_changed,
             tabs = [ft.Tab(text="all"), ft.Tab(text="active"), ft.Tab(text="completed")],
         )
 
         self.view = ft.Column(
-            width = 600,
+            width=600,
             controls = [
                 ft.Row(
                     controls = [
                         self.new_task,
-                        ft.FloatingActionButton(icon = ft.icons.ADD, on_click = self.add_clicked),
+                        ft.FloatingActionButton(icon = ft.icons.ADD, on_click=self.add_clicked),
                     ],
                 ),
                 ft.Column(
-                    spacing = 25,
+                    spacing=25,
                     controls = [
                         self.filter,
                         self.tasks,
@@ -388,7 +388,7 @@ class Task(ft.UserControl):
 
     def build(self):
         self.display_task = ft.Checkbox(
-            value=False, label=self.task_name, on_change = self.status_changed
+            value=False, label=self.task_name, on_change=self.status_changed
         )
         # ...
 
@@ -415,27 +415,27 @@ class TodoApp():
         self.items_left = ft.Text("0 items left")
 
         self.view = ft.Column(
-            width = 600,
+            width=600,
             controls = [
-                ft.Row([ ft.Text(value="Todos", style="headlineMedium")], alignment = "center"),
+                ft.Row([ ft.Text(value="Todos", style="headlineMedium")], alignment="center"),
                 ft.Row(
                     controls = [
                         self.new_task,
-                        ft.FloatingActionButton(icon = ft.icons.ADD, on_click = self.add_clicked),
+                        ft.FloatingActionButton(icon = ft.icons.ADD, on_click=self.add_clicked),
                     ],
                 ),
                 ft.Column(
-                    spacing = 25,
+                    spacing=25,
                     controls = [
                         self.filter,
                         self.tasks,
                         ft.Row(
-                            alignment = "spaceBetween",
+                            alignment="spaceBetween",
                             vertical_alignment = "center",
                             controls = [
                                 self.items_left,
                                 ft.OutlinedButton(
-                                    text="Clear completed", on_click = self.clear_clicked
+                                    text="Clear completed", on_click=self.clear_clicked
                                 ),
                             ],
                         ),

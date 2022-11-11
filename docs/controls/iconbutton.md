@@ -44,7 +44,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -69,13 +69,13 @@ def main(page: ft.Page):
         page.update()
 
     b = ft.IconButton(
-        icon = ft.icons.PLAY_CIRCLE_FILL_OUTLINED, on_click = button_clicked, data=0
+        icon = ft.icons.PLAY_CIRCLE_FILL_OUTLINED, on_click=button_clicked, data=0
     )
     t = ft.Text()
 
     page.add(b, t)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -125,13 +125,13 @@ def main(page: ft.Page):
         ft.IconButton(
             icon = ft.icons.BATTERY_1_BAR,
             selected_icon = ft.icons.BATTERY_FULL,
-            on_click = toggle_icon_button,
+            on_click=toggle_icon_button,
             selected=False,
             style=ft.ButtonStyle(color={"selected": ft.colors.GREEN, "": ft.colors.RED}),
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### `style`

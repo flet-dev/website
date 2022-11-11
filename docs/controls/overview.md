@@ -112,7 +112,7 @@ Either `scale` or `scale_x` and `scale_y` could be specified, but not all of the
 ```python
 ft.Image(
     src="https://picsum.photos/100/100",
-    width = 100,
+    width=100,
     height  =100,
     border_radius  =5,
     scale=Scale(scale_x = 2, scale_y = 0.5)
@@ -133,9 +133,9 @@ For example:
 ```python
 ft.Image(
     src="https://picsum.photos/100/100",
-    width = 100,
-    height = 100,
-    border_radius = 5,
-    rotate=Rotate(angle = 0.25 * pi, alignment = ft.alignment.center_left)
+    width=100,
+    height=100,
+    border_radius=5,
+    rotate=Rotate(angle = 0.25 * pi, alignment=ft.alignment.center_left)
 )
 ```

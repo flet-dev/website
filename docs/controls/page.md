@@ -259,7 +259,7 @@ def main(page: ft.Page):
       ft.Text("This is Open Sans font example", font_family = "Open Sans")
     )
 
-ft.app(target = main, assets_dir="assets")
+ft.app(target=main, assets_dir="assets")
 ```
 
 :::note
@@ -307,10 +307,10 @@ def main(page: ft.Page):
         btn.disabled = False
         page.update()
 
-    btn = ft.ElevatedButton("Do some lengthy task!", on_click = button_click)
+    btn = ft.ElevatedButton("Do some lengthy task!", on_click=button_click)
     page.add(btn)
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 </TabItem>
@@ -358,7 +358,7 @@ def main(page: ft.Page):
     page.window_top = 200
     page.add(ft.ElevatedButton("I'm a floating button!"))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ### `window_width`
@@ -476,7 +476,7 @@ def main(page: ft.Page):
     page.window_visible = True
     page.update()  
 
-ft.app(target = main, view = flet.FLET_APP_HIDDEN)
+ft.app(target=main, view = flet.FLET_APP_HIDDEN)
 ```
 
 Note `view = flet.FLET_APP_HIDDEN` which hides app window on start.
@@ -531,7 +531,7 @@ def main(page: ft.Page):
     def on_send_click(e):
         page.pubsub.send_all(Message("John", "Hello, all!"))
 
-    page.add(ft.ElevatedButton(text="Send message", on_click = on_send_click))
+    page.add(ft.ElevatedButton(text="Send message", on_click=on_send_click))
 ```
 
 #### `send_all_on_topic(topic, message)`
@@ -561,7 +561,7 @@ def main(page: ft.Page):
     def on_leave_click(e):
         page.pubsub.unsubscribe()
 
-    page.add(ft.ElevatedButton(text="Leave chat", on_click = on_leave_click))
+    page.add(ft.ElevatedButton(text="Leave chat", on_click=on_leave_click))
 ```
 
 #### `unsubscribe_topic(topic)`
@@ -637,7 +637,7 @@ upload_url = page.get_upload_url("dir/filename.ext", 60)
 To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
 
 ```python
-ft.app(target = main, upload_dir="uploads")
+ft.app(target=main, upload_dir="uploads")
 ```
 
 ### `close_in_app_web_view()`
@@ -685,17 +685,17 @@ def main(page: ft.Page):
     confirm_dialog = ft.AlertDialog(
         modal=True,
         title=ft.Text("Please confirm"),
-        content = ft.Text("Do you really want to exit this app?"),
+        content=ft.Text("Do you really want to exit this app?"),
         actions=[
-            ft.ElevatedButton("Yes", on_click = yes_click),
-            ft.OutlinedButton("No", on_click = no_click),
+            ft.ElevatedButton("Yes", on_click=yes_click),
+            ft.OutlinedButton("No", on_click=no_click),
         ],
         actions_alignment = "end",
     )
 
     page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))
 
-ft.app(target = main)
+ft.app(target=main)
 ```
 
 ## Events

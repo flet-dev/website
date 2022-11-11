@@ -37,7 +37,7 @@ def main(page: ft.Page):
                 ft.ElevatedButton(
                     "Pick files",
                     icon = ft.icons.UPLOAD_FILE,
-                    on_click = lambda _: pick_files_dialog.pick_files(
+                    on_click=lambda _: pick_files_dialog.pick_files(
                         allow_multiple=True
                     ),
                 ),
@@ -46,7 +46,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target = main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -182,7 +182,7 @@ Second argument is a URL time-to-live in seconds.
 To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
 
 ```python
-ft.app(target = main, upload_dir="uploads")
+ft.app(target=main, upload_dir="uploads")
 ```
 
 ## Events
