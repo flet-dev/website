@@ -127,6 +127,22 @@ Defines the horizontal layout of the actions according to the same rules as for 
 
 Supported values: `start`, `end` (default), `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
 
+### `shape`
+
+The shape of the dialog's border.
+
+The value is an instance of one of the following implementations:
+  * `StadiumBorder`
+  * `RoundedRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `CircleBorder`
+  * `BeveledRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `CountinuosRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+
+The default shape is a `RoundedRectangleBorder` with a radius of 4.0.
+
 ## Events
 
 ### `on_dismiss`

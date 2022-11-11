@@ -23,6 +23,12 @@ page.add(t)
 ### Text styles
 
 [TBD]
+Fonts?
+Variable weight?
+Built-in styles with customization.
+TextField class description.
+
+
 
 ## Icon
 
@@ -33,3 +39,10 @@ page.add(t)
 
 Note about CORS
 Side-loading assets
+HTML renderer in web to display all formats
+what formats are supported?
+
+in the desktop version it does support jpeg, jpg, png
+in the web version it only supports png 
+Could you try using html renderer for the web? https://flet.dev/docs/controls/text/#using-system-fonts
+Reading this I think "html" renderer must support any format supported by the browser: https://docs.flutter.dev/development/platform-integration/web/web-images

@@ -413,6 +413,10 @@ flet.app(target=main)
 
 🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button. Default is `True`.
 
+### `window_maximizable`
+
+🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Maximize" button. Default is `True`.
+
 ### `window_resizable`
 
 🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app. Default is `True`.
