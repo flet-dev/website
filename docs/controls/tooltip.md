@@ -12,24 +12,23 @@ Tooltips provide text labels which help explain the function of a button or othe
 
 ### Tooltip with a custom decoration
 
+<img src="/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
+
 ```python
 import math
+import flet as ft
+from flet import alignment
 
-import flet
-from flet import Page, Text, Tooltip, alignment, colors
-from flet.gradients import LinearGradient
-from flet.text_style import TextStyle
-
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Tooltip Example"
     page.add(
-        Tooltip(
+        ft.Tooltip(
             message="This is tooltip",
-            content=Text("Hover to see tooltip"),
+            content=ft.Text("Hover to see tooltip"),
             padding=20,
             border_radius=10,
-            text_style=TextStyle(size=20, color=colors.WHITE),
-            gradient=LinearGradient(
+            text_style=ft.TextStyle(size=20, color=ft.colors.WHITE),
+            gradient=ft.LinearGradient(
                 begin=alignment.top_left,
                 end=alignment.Alignment(0.8, 1),
                 colors=[
@@ -48,8 +47,7 @@ def main(page: Page):
         )
     )
 
-
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ## Properties

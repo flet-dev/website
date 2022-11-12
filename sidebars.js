@@ -198,8 +198,10 @@ module.exports = {
             'controls/dragtarget',
             'controls/filepicker',
             'controls/gesturedetector',
+            'controls/hapticfeedback',
             'controls/semantics',
             'controls/shadermask',
+            'controls/shakedetector',
             'controls/tooltip',
             'controls/windowdragarea',
           ]
