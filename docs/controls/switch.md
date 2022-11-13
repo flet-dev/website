@@ -89,6 +89,68 @@ Set to `left` if `label` should be displayed on the left side of the Switch; oth
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
+### `active_color`
+
+The color to use when this switch is on.
+
+### `active_track_color`
+
+The color to use on the track when this switch is on.
+
+If `track_color` returns a non-null color in the `selected` state, it will be used instead of this color.
+
+### `inactive_thumb_color`
+
+The color to use on the thumb when this switch is off.
+
+If `thumb_color` returns a non-null color in the default state, it will be used instead of this color.
+
+### `inactive_track_color`
+
+The color to use on the track when this switch is off.
+
+If `track_color` returns a non-null color in the default state, it will be used instead of this color.
+
+### `thumb_color`
+
+The color of this Switch's thumb.
+
+Resolved in the following Material states:
+
+* `selected`
+* `hovered`
+* `focused`
+* `disabled`
+* `""` (empty string) - fallback state, meaning "all other states".
+
+To configure thumb color for all Material states set `thumb_color` value to a literal, for example:
+
+```python
+sw.thumb_color=colors.GREEN
+```
+
+To configure thumb color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `hovered` and `focused` states and another color for all other states:
+
+```python
+sw.thumb_color={
+    "hovered": colors.GREEN,
+    "focused": colors.RED,
+    "": colors.BLACK,
+}
+```
+
+### `track_color`
+
+The color of this Switch's track.
+
+Resolved in the following states:
+
+* `selected`
+* `hovered`
+* `focused`
+* `disabled`
+* `""` (empty string) - fallback state, meaning "all other states".
+
 ## Events
 
 ### `on_change`

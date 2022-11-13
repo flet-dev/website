@@ -95,6 +95,8 @@ The fill color to use for an AppBar. Default color is defined by current theme.
 
 This property controls the size of the shadow below the app bar. Default value is 4.
 
+Note: This effect is only visible when using the Material 2 design (when `Theme.use_material3=False`).
+
 ### `automatically_imply_leading`
 
 Controls whether we should try to imply the leading widget if null.

@@ -167,6 +167,10 @@ Optional text that describes the input field.
 
 When the input field is empty and unfocused, the label is displayed on top of the input field (i.e., at the same location on the screen where text may be entered in the input field). When the input field receives focus (or if the field is non-empty) the label moves above, either vertically adjacent to, or to the center of the input field.
 
+### `label_style`
+
+The style to use for `label`.
+
 ### `icon`
 
 The name of the icon to show before the input field and outside of the decoration's container.
@@ -188,6 +192,10 @@ If `True` the decoration's container is filled with theme fillColor.
 ### `text_size`
 
 Text size in virtual pixels.
+
+### `text_style`
+
+The text style to use for text in the dropdown button and the dropdown menu that appears when you tap the button.
 
 ### `color`
 

@@ -79,6 +79,8 @@ class Counter(ft.UserControl):
 User control can have a constructor to pass custom data, for example:
 
 ```python
+import flet
+
 class Counter(ft.UserControl):
     def __init__(self, initial_count):
         super().__init__()
@@ -98,6 +100,8 @@ def main(page):
     page.add(
         Counter(100),
         Counter(200))
+
+flet.app(target=main)
 ```
 
 :::note
@@ -140,7 +144,7 @@ class Countdown(ft.UserControl):
         self.countdown = ft.Text()
         return self.countdown
 
-def main(page):
+def main(page: Page):
     page.add(Countdown(120), Countdown(60))
 
 ft.app(target=main)

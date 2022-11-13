@@ -6,7 +6,7 @@ module.exports = {
       label: 'Python Guide',
       items: [
         'guides/python/getting-started',
-        'guides/python/displaying-data',
+        //'guides/python/displaying-data',
         'guides/python/getting-user-input',
         'guides/python/keyboard-shortcuts',
         'guides/python/large-lists',
@@ -77,6 +77,7 @@ module.exports = {
             'controls/listview',
             'controls/listtile',
             'controls/gridview',
+            'controls/responsiverow',
             'controls/tabs',
             'controls/card',
             'controls/divider',
@@ -93,7 +94,7 @@ module.exports = {
           items: [
             'controls/appbar',
             'controls/navigationrail',
-            //'controls/navigationbar',
+            'controls/navigationbar',
           ]
         },
         {
@@ -157,6 +158,7 @@ module.exports = {
           items: [
             'controls/alertdialog',
             'controls/banner',
+            'controls/bottomsheet',
             'controls/snackbar',
           ]
         },
@@ -198,6 +200,7 @@ module.exports = {
             'controls/gesturedetector',
             'controls/semantics',
             'controls/shadermask',
+            'controls/tooltip',
             'controls/windowdragarea',
           ]
         },

@@ -344,3 +344,30 @@ Event handler argument is an instance of `HoverEvent` class.
 Triggered when a mouse pointer has exited this control.
 
 Event handler argument is an instance of `HoverEvent` class.
+
+### `on_multi_tap`
+
+Triggered when multiple pointers contacted the screen.
+
+Event handler argument is an instance of `MultiTapEvent` class with the following properties:
+
+* `correct_touches` - `True` a `multi_tap_touches` number of pointers touched the screen; otherwise `False`.
+
+### `multi_tap_touches`
+
+The minimum number of pointers to trigger `on_multi_tap` event.
+
+### `on_multi_long_press`
+
+Called when a long press gesture with multiple pointers has been recognized.
+
+### `on_scroll`
+
+Event handler argument is an instance of `ScrollEvent` class with the following properties:
+
+* `local_x` - x component of the local position of the pointer.
+* `local_y` - y component of the local position of the pointer.
+* `global_x` - x component of the global position of the pointer.
+* `global_y` - y component of the global position of the pointer.
+* `scroll_delta_x` - x component of the the amount to scroll, in logical pixels.
+* `scroll_delta_x` - y component of the the amount to scroll, in logical pixels.
