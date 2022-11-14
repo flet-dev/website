@@ -24,6 +24,8 @@ Breakpoints:
 
 ### ResponsiveRow
 
+<img src="/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
