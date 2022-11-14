@@ -75,7 +75,7 @@ def main(page):
                     foreground_image_url="https://avatars.githubusercontent.com/u/5041459?s=88&v=4"
                 ),
                 ft.Container(
-                    content=ft.CircleAvatar(bgcolor = ft.colors.GREEN, radius=5),
+                    content=ft.CircleAvatar(bgcolor=ft.colors.GREEN, radius=5),
                     alignment=ft.alignment.bottom_left,
                 ),
             ],
@@ -109,7 +109,7 @@ def main(page: ft.Page):
         ft.Container(
             ft.Stack(
                 [
-                    ft.Container(width = 20, height=20, bgcolor=ft.colors.RED, border_radius=5),
+                    ft.Container(width=20, height=20, bgcolor=ft.colors.RED, border_radius=5),
                     ft.Container(
                         width=20,
                         height=20,
@@ -148,7 +148,7 @@ def main(page: ft.Page):
                 ]
             ),
             border_radius=8,
-            padding = 5,
+            padding=5,
             width=100,
             height=100,
             bgcolor=ft.colors.BLACK,

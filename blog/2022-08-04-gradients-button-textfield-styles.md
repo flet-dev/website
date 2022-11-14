@@ -153,8 +153,8 @@ def main(page: ft.Page):
                     "": ft.colors.BLACK,
                 },
                 bgcolor={"focused": ft.colors.PINK_200, "": ft.colors.YELLOW},
-                padding = {"hovered": 20},
-                overlay_color= ft.colors.TRANSPARENT,
+                padding={"hovered": 20},
+                overlay_color=ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
                 animation_duration=500,
                 side={
@@ -218,7 +218,7 @@ def main(page: ft.Page):
         ),
         ft.FilledButton(
             "Circle",
-            style=ft.ButtonStyle(shape=ft.CircleBorder(), padding = 30),
+            style=ft.ButtonStyle(shape=ft.CircleBorder(), padding=30),
         ),
     )
 
@@ -247,16 +247,16 @@ def main(page: ft.Page):
     page.add(
         ft.TextField(
             text_size=30,
-            cursor_color= ft.colors.RED,
-            selection_color= ft.colors.YELLOW,
-            color= ft.colors.PINK,
+            cursor_color=ft.colors.RED,
+            selection_color=ft.colors.YELLOW,
+            color=ft.colors.PINK,
             bgcolor=ft.colors.BLACK26,
             filled=True,
-            focused_color= ft.colors.GREEN,
-            focused_bgcolor = ft.colors.CYAN_200,
+            focused_color=ft.colors.GREEN,
+            focused_bgcolor=ft.colors.CYAN_200,
             border_radius=30,
-            border_color= ft.colors.GREEN_800,
-            focused_border_color= ft.colors.GREEN_ACCENT_400,
+            border_color=ft.colors.GREEN_800,
+            focused_border_color=ft.colors.GREEN_ACCENT_400,
             max_length=20,
             capitalization="characters",
         )
@@ -283,9 +283,9 @@ def main(page: ft.Page):
             ],
             border_radius=30,
             filled=True,
-            border_color= ft.colors.TRANSPARENT,
+            border_color=ft.colors.TRANSPARENT,
             bgcolor=ft.colors.BLACK12,
-            focused_bgcolor = ft.colors.BLUE_100,
+            focused_bgcolor=ft.colors.BLUE_100,
         )
     )
 
@@ -311,8 +311,8 @@ def main(page: ft.Page):
 
     page.add(
         ft.IconButton(
-            icon = ft.icons.BATTERY_1_BAR,
-            selected_icon = ft.icons.BATTERY_FULL,
+            icon=ft.icons.BATTERY_1_BAR,
+            selected_icon=ft.icons.BATTERY_FULL,
             on_click=toggle_icon_button,
             selected=False,
             style=ft.ButtonStyle(color={"selected": ft.colors.GREEN, "": ft.colors.RED}),

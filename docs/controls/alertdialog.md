@@ -40,7 +40,7 @@ def main(page: ft.Page):
             ft.TextButton("Yes", on_click=close_dlg),
             ft.TextButton("No", on_click=close_dlg),
         ],
-        actions_alignment = "end",
+        actions_alignment="end",
         on_dismiss=lambda e: print("Modal dialog dismissed!"),
     )
 

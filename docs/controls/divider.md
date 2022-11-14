@@ -30,7 +30,7 @@ def main(page: ft.Page):
                     expand=True,
                 ),
                 ft.Divider(),
-                ft.Container(bgcolor = ft.colors.PINK, alignment=ft.alignment.center, expand=True),
+                ft.Container(bgcolor=ft.colors.PINK, alignment=ft.alignment.center, expand=True),
                 ft.Divider(height=1, color="white"),
                 ft.Container(
                     bgcolor=ft.colors.BLUE_300,

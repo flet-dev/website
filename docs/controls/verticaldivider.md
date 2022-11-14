@@ -35,13 +35,13 @@ def main(page: ft.Page):
                     alignment=ft.alignment.center,
                     expand=True,
                 ),
-                 ft.VerticalDivider(width = 1, color="white"),
+                 ft.VerticalDivider(width=1, color="white"),
                 ft.Container(
                     bgcolor=ft.colors.BLUE_300,
                     alignment=ft.alignment.center,
                     expand=True,
                 ),
-                 ft.VerticalDivider(width = 9, thickness=3),
+                 ft.VerticalDivider(width=9, thickness=3),
                 ft.Container(
                     bgcolor=ft.colors.GREEN_300,
                     alignment=ft.alignment.center,

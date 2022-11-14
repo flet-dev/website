@@ -182,7 +182,7 @@ import flet as ft
 
 def main(page: ft.Page):
 
-    c1 = ft.Container(width = 50, height=50, bgcolor="red", animate_position=1000)
+    c1 = ft.Container(width=50, height=50, bgcolor="red", animate_position=1000)
 
     c2 = ft.Container(
         width=50, height=50, bgcolor="green", top=60, left=0, animate_position=500

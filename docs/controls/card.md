@@ -38,7 +38,7 @@ def main(page):
                     ]
                 ),
                 width=400,
-                padding = 10,
+                padding=10,
             )
         )
     )

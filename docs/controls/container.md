@@ -28,7 +28,7 @@ def main(page: ft.Page):
     c1 = ft.Container(
         content=ft.ElevatedButton("Elevated Button in Container"),
         bgcolor=ft.colors.YELLOW,
-        padding = 5,
+        padding=5,
     )
 
     c2 = ft.Container(
@@ -36,13 +36,13 @@ def main(page: ft.Page):
             "Elevated Button with opacity=0.5 in Container", opacity=0.5
         ),
         bgcolor=ft.colors.YELLOW,
-        padding = 5,
+        padding=5,
     )
 
     c3 = ft.Container(
         content=ft.OutlinedButton("Outlined Button in Container"),
         bgcolor=ft.colors.YELLOW,
-        padding = 5,
+        padding=5,
     )
     page.add(c1, c2, c3)
 
@@ -72,8 +72,8 @@ def main(page: ft.Page):
             [
                 ft.Container(
                     content=ft.Text("Non clickable"),
-                    margin = 10,
-                    padding = 10,
+                    margin=10,
+                    padding=10,
                     alignment=ft.alignment.center,
                     bgcolor=ft.colors.AMBER,
                     width=150,
@@ -82,8 +82,8 @@ def main(page: ft.Page):
                 ),
                 ft.Container(
                     content=ft.Text("Clickable without Ink"),
-                    margin = 10,
-                    padding = 10,
+                    margin=10,
+                    padding=10,
                     alignment=ft.alignment.center,
                     bgcolor=ft.colors.GREEN_200,
                     width=150,
@@ -93,25 +93,25 @@ def main(page: ft.Page):
                 ),
                 ft.Container(
                     content=ft.Text("Clickable with Ink"),
-                    margin = 10,
-                    padding = 10,
+                    margin=10,
+                    padding=10,
                     alignment=ft.alignment.center,
                     bgcolor=ft.colors.CYAN_200,
                     width=150,
                     height=150,
                     border_radius=10,
-                    ink = True,
+                    ink=True,
                     on_click=lambda e: print("Clickable with Ink clicked!"),
                 ),
                 ft.Container(
                     content=ft.Text("Clickable transparent with Ink"),
-                    margin = 10,
-                    padding = 10,
+                    margin=10,
+                    padding=10,
                     alignment=ft.alignment.center,
                     width=150,
                     height=150,
                     border_radius=10,
-                    ink = True,
+                    ink=True,
                     on_click=lambda e: print("Clickable transparent with Ink clicked!"),
                 ),
             ],
@@ -134,7 +134,7 @@ A child Control contained by the container.
 
 ### `padding`
 
-Empty space to inscribe inside a container decoration (background, border). The child control is placed inside this ft.padding.
+Empty space to inscribe inside a container decoration (background, border). The child control is placed inside this padding.
 
 Padding is an instance of `padding.Padding` class with properties set padding for all sides of the rectangle: `left`, `top`, `right`, `bottom`. An instance of `padding.Padding` can be created via constructor with values for specific sides or created with helper methods:
 
@@ -228,7 +228,7 @@ If specified, the corners of the container are rounded by this radius. Border ra
 For example:
 
 ```python
-container_1.border_radius = ft.border_radius.all(30)
+container_1.border_radius= ft.border_radius.all(30)
 ```
 
 ### `shape`
@@ -454,7 +454,7 @@ def main(page: ft.Page):
                 ),
                 t,
             ],
-            horizontal_alignment = "center",
+            horizontal_alignment="center",
         ),
     )
 
@@ -480,7 +480,7 @@ def main(page: ft.Page):
         e.control.update()
 
     page.add(
-        ft.Container(width = 100, height=100, bgcolor="red", ink = False, on_hover=on_hover)
+        ft.Container(width=100, height=100, bgcolor="red", ink=False, on_hover=on_hover)
     )
 
 ft.app(target=main)

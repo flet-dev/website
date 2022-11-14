@@ -53,7 +53,7 @@ def main(page: ft.Page):
         on_change=spacing_slider_change,
     )
 
-    col = ft.Column(spacing = 0, controls = items(5))
+    col = ft.Column(spacing=0, controls=items(5))
 
     page.add(ft.Column([ ft.Text("Spacing between items"), gap_slider]), col)
 
@@ -107,8 +107,8 @@ def main(page: ft.Page):
     col = ft.Column(
         wrap=True,
         spacing=10,
-        run_spacing = 10,
-        controls = items(10),
+        run_spacing=10,
+        controls=items(10),
         height=HEIGHT,
     )
 
@@ -121,7 +121,7 @@ def main(page: ft.Page):
                 width_slider,
             ]
         ),
-        ft.Container(content = col, bgcolor=ft.colors.AMBER_100),
+        ft.Container(content=col, bgcolor=ft.colors.AMBER_100),
     )
 
 ft.app(target=main)
@@ -217,7 +217,7 @@ def main(page: ft.Page):
                 ft.Text(align, size=16),
                 ft.Container(
                     content=ft.Column(
-                        items(3), alignment="start", horizontal_alignment = align
+                        items(3), alignment="start", horizontal_alignment=align
                     ),
                     bgcolor=ft.colors.AMBER_100,
                     width=100,

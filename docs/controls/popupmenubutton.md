@@ -26,7 +26,7 @@ def main(page: ft.Page):
     pb = ft.PopupMenuButton(
         items=[
             ft.PopupMenuItem(text="Item 1"),
-            ft.PopupMenuItem(icon = ft.icons.POWER_INPUT, text="Check power"),
+            ft.PopupMenuItem(icon=ft.icons.POWER_INPUT, text="Check power"),
             ft.PopupMenuItem(
                 content=ft.Row(
                     [

@@ -29,21 +29,21 @@ def main(page: ft.Page):
         ft.Text(
             "Size 40, w100",
             size=40,
-            color= ft.colors.WHITE,
+            color=ft.colors.WHITE,
             bgcolor=ft.colors.BLUE_600,
             weight="w100",
         ),
         ft.Text(
             "Size 50, Normal",
             size=50,
-            color= ft.colors.WHITE,
+            color=ft.colors.WHITE,
             bgcolor=ft.colors.ORANGE_800,
             weight="normal",
         ),
         ft.Text(
             "Size 60, Bold, Italic",
             size=50,
-            color= ft.colors.WHITE,
+            color=ft.colors.WHITE,
             bgcolor=ft.colors.GREEN_700,
             weight="bold",
             italic=True,
@@ -147,7 +147,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.add(
-        ft.Text("This text is rendered with Consolas font", font_family = "Consolas")
+        ft.Text("This text is rendered with Consolas font", font_family="Consolas")
     )
 
 ft.app(target=main)

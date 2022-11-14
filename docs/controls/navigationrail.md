@@ -23,23 +23,23 @@ def main(page: ft.Page):
         selected_index=0,
         label_type="all",
         # extended=True,
-        min_width = 100,
-        min_extended_width = 400,
-        leading=ft.FloatingActionButton(icon = ft.icons.CREATE, text="Add"),
-        group_alignment = -0.9,
+        min_width=100,
+        min_extended_width=400,
+        leading=ft.FloatingActionButton(icon=ft.icons.CREATE, text="Add"),
+        group_alignment=-0.9,
         destinations=[
             NavigationRailDestination(
-                icon = ft.icons.FAVORITE_BORDER, selected_icon = ft.icons.FAVORITE, label="First"
+                icon=ft.icons.FAVORITE_BORDER, selected_icon=ft.icons.FAVORITE, label="First"
             ),
             NavigationRailDestination(
-                icon_content = ft.Icon(ft.icons.BOOKMARK_BORDER),
-                selected_icon_content = ft.Icon(ft.icons.BOOKMARK),
+                icon_content=ft.Icon(ft.icons.BOOKMARK_BORDER),
+                selected_icon_content=ft.Icon(ft.icons.BOOKMARK),
                 label="Second",
             ),
             NavigationRailDestination(
-                icon = ft.icons.SETTINGS_OUTLINED,
-                selected_icon_content = ft.Icon(ft.icons.SETTINGS),
-                label_content = ft.Text("Settings"),
+                icon=ft.icons.SETTINGS_OUTLINED,
+                selected_icon_content=ft.Icon(ft.icons.SETTINGS),
+                label_content=ft.Text("Settings"),
             ),
         ],
         on_change=lambda e: print("Selected destination:", e.control.selected_index),
@@ -49,7 +49,7 @@ def main(page: ft.Page):
         ft.Row(
             [
                 rail,
-                 ft.VerticalDivider(width = 1),
+                 ft.VerticalDivider(width=1),
                 ft.Column([ ft.Text("Body!")], alignment="start", expand=True),
             ],
             expand=True,

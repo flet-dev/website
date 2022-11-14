@@ -114,7 +114,7 @@ The color that fills the checkbox, in all Material states:
 To configure checkbox fill color for all Material states set `fill_color` value to a literal, for example:
 
 ```python
-chk.fill_color= ft.colors.GREEN
+chk.fill_color=ft.colors.GREEN
 ```
 
 To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `hovered` and `focused` states and another color for all other states:

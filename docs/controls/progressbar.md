@@ -27,13 +27,13 @@ from time import sleep
 import flet as ft
 
 def main(page: ft.Page):
-    pb = ft.ProgressBar(width = 400)
+    pb = ft.ProgressBar(width=400)
 
     page.add(
         ft.Text("Linear progress indicator", style="headlineSmall"),
         ft.Column([ ft.Text("Doing something..."), pb]),
         ft.Text("Indeterminate progress bar", style="headlineSmall"),
-        ft.ProgressBar(width = 400, color="amber", bgcolor="#eeeeee"),
+        ft.ProgressBar(width=400, color="amber", bgcolor="#eeeeee"),
     )
 
     for i in range(0, 101):

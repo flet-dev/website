@@ -6,7 +6,7 @@ slug: view
 
 View is the top most container for all other controls.
 
-A root view is automatically created when a new user session started. From layout perspective the View represents a [ft.Column](column) control, so it has a similar behavior and shares same properties.
+A root view is automatically created when a new user session started. From layout perspective the View represents a [Column](column) control, so it has a similar behavior and shares same properties.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

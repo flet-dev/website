@@ -138,7 +138,7 @@ def main(page: ft.Page):
     option_textbox = ft.TextField(hint_text="Enter item name")
     add = ft.ElevatedButton("Add", on_click=add_clicked)
     delete = ft.OutlinedButton("Delete selected", on_click=delete_clicked)
-    page.add(d, ft.Row(controls = [option_textbox, add, delete]))
+    page.add(d, ft.Row(controls=[option_textbox, add, delete]))
 
 ft.app(target=main)
 ```
@@ -211,11 +211,11 @@ See [`Container.border_radius`] property docs for more information about border 
 
 ### `border_width`
 
-The width of the border in virtual pixels. Default is 1. Set to 0 to commpletely remove ft.border.
+The width of the border in virtual pixels. Default is 1. Set to 0 to commpletely remove border.
 
 ### `border_color`
 
-Border color. Could be `transparent` to hide the ft.border.
+Border color. Could be `transparent` to hide the border.
 
 ### `focused_color`
 
@@ -265,7 +265,7 @@ The style to use for `counter_text`.
 
 ### `error_text`
 
-Text that appears below the input ft.border.
+Text that appears below the input border.
 
 If non-null, the border's color animates to red and the `helper_text` is not shown.
 

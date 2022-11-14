@@ -107,7 +107,7 @@ Some controls are "container" controls (like Page) which could contain other con
 
 ```python
 page.add(
-    ft.Row(controls = [
+    ft.Row(controls=[
         ft.Text("A"),
         ft.Text("B"),
         ft.Text("C")
@@ -119,7 +119,7 @@ or `TextField` and `ElevatedButton` next to it:
 
 ```python
 page.add(
-    ft.Row(controls = [
+    ft.Row(controls=[
         ft.TextField(label="Your name"),
         ft.ElevatedButton(text="Say my name!")
     ])
@@ -193,7 +193,7 @@ or you can put form controls into container, e.g. `Column` and then set `disable
 ```python
 first_name = ft.TextField()
 last_name = ft.TextField()
-c = ft.Column(controls = [
+c = ft.Column(controls=[
     first_name,
     last_name
 ])

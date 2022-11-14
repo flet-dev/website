@@ -43,7 +43,7 @@ def main(page):
                         ft.ListTile(
                             title=ft.Text("One-line with trailing control"),
                             trailing=ft.PopupMenuButton(
-                                icon = ft.icons.MORE_VERT,
+                                icon=ft.icons.MORE_VERT,
                                 items=[
                                     ft.PopupMenuItem(text="Item 1"),
                                     ft.PopupMenuItem(text="Item 2"),
@@ -54,7 +54,7 @@ def main(page):
                             leading=ft.Icon(ft.icons.ALBUM),
                             title=ft.Text("One-line with leading and trailing controls"),
                             trailing=ft.PopupMenuButton(
-                                icon = ft.icons.MORE_VERT,
+                                icon=ft.icons.MORE_VERT,
                                 items=[
                                     ft.PopupMenuItem(text="Item 1"),
                                     ft.PopupMenuItem(text="Item 2"),
@@ -66,7 +66,7 @@ def main(page):
                             title=ft.Text("Two-line with leading and trailing controls"),
                             subtitle=ft.Text("Here is a second title."),
                             trailing=ft.PopupMenuButton(
-                                icon = ft.icons.MORE_VERT,
+                                icon=ft.icons.MORE_VERT,
                                 items=[
                                     ft.PopupMenuItem(text="Item 1"),
                                     ft.PopupMenuItem(text="Item 2"),
@@ -76,7 +76,7 @@ def main(page):
                     ],
                     spacing=0,
                 ),
-                padding = ft.padding.symmetric(vertical=10),
+                padding=ft.padding.symmetric(vertical=10),
             )
         )
     )
@@ -90,7 +90,7 @@ ft.app(target=main)
 
 ### `content_padding`
 
-The tile's internal ft.padding. Insets a ListTile's contents: its `leading`, `title`, `subtitle`, and `trailing` controls.
+The tile's internal padding. Insets a ListTile's contents: its `leading`, `title`, `subtitle`, and `trailing` controls.
 
 If not set, `padding.symmetric(horizontal=16)` is used.
 

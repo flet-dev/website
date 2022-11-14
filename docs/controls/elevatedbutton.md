@@ -50,7 +50,7 @@ def main(page: ft.Page):
         ft.ElevatedButton(
             "Button with colorful icon",
             icon="park_rounded",
-            icon_color ="green400",
+            icon_color="green400",
         ),
     )
 
@@ -107,9 +107,9 @@ def main(page: ft.Page):
             width=150,
             content=ft.Row(
                 [
-                    ft.Icon(name= ft.icons.FAVORITE, color="pink"),
-                    ft.Icon(name= ft.icons.AUDIOTRACK, color="green"),
-                    ft.Icon(name= ft.icons.BEACH_ACCESS, color="blue"),
+                    ft.Icon(name=ft.icons.FAVORITE, color="pink"),
+                    ft.Icon(name=ft.icons.AUDIOTRACK, color="green"),
+                    ft.Icon(name=ft.icons.BEACH_ACCESS, color="blue"),
                 ],
                 alignment="spaceAround",
             ),
@@ -124,7 +124,7 @@ def main(page: ft.Page):
                     alignment="center",
                     spacing=5,
                 ),
-                padding = ft.padding.all(10),
+                padding=ft.padding.all(10),
             ),
         ),
     )
@@ -188,7 +188,7 @@ To configure style attribute for all Material states set its value to a literal 
 
 ```python
 ButtonStyle(
-    color= ft.colors.WHITE
+    color=ft.colors.WHITE
 )
 ```
 
@@ -225,8 +225,8 @@ def main(page: ft.Page):
                     "": ft.colors.BLACK,
                 },
                 bgcolor={"focused": ft.colors.PINK_200, "": ft.colors.YELLOW},
-                padding = {"hovered": 20},
-                overlay_color= ft.colors.TRANSPARENT,
+                padding={"hovered": 20},
+                overlay_color=ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
                 animation_duration=500,
                 side={
@@ -304,7 +304,7 @@ def main(page: ft.Page):
         ),
         ft.FilledButton(
             "Circle",
-            style=ft.ButtonStyle(shape=ft.CircleBorder(), padding = 30),
+            style=ft.ButtonStyle(shape=ft.CircleBorder(), padding=30),
         ),
     )
 

@@ -151,7 +151,7 @@ print(plain_text)
 import flet as ft
 def main(page: ft.Page):
     page.window_bgcolor = ft.colors.TRANSPARENT
-    page.bgcolor = ft.colors.TRANSPARENT
+    page.bgcolor=ft.colors.TRANSPARENT
     page.window_title_bar_hidden = True
     page.window_frameless = True
     page.window_left = 400

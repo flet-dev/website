@@ -57,7 +57,7 @@ We used `expand=True` in ListView constructor. In order to function properly, Li
 
 [`GridView`](/docs/controls/gridview) allows arranging controls into a scrollable grid.
 
-You can make a "grid" with `Column(wrap=True)` or `ft.Row(wrap=True)`, for example:
+You can make a "grid" with `ft.Column(wrap=True)` or `ft.Row(wrap=True)`, for example:
 
 ```python
 import os

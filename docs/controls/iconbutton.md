@@ -28,16 +28,16 @@ def main(page: ft.Page):
         ft.Row(
             [
                 ft.IconButton(
-                    icon = ft.icons.PAUSE_CIRCLE_FILLED_ROUNDED,
-                    icon_color ="blue400",
+                    icon=ft.icons.PAUSE_CIRCLE_FILLED_ROUNDED,
+                    icon_color="blue400",
                     icon_size=20,
-                    tooltip = "Pause record",
+                    tooltip="Pause record",
                 ),
                 ft.IconButton(
-                    icon = ft.icons.DELETE_FOREVER_ROUNDED,
-                    icon_color ="pink600",
+                    icon=ft.icons.DELETE_FOREVER_ROUNDED,
+                    icon_color="pink600",
                     icon_size=40,
-                    tooltip = "Delete record",
+                    tooltip="Delete record",
                 ),
             ]
         ),
@@ -69,7 +69,7 @@ def main(page: ft.Page):
         page.update()
 
     b = ft.IconButton(
-        icon = ft.icons.PLAY_CIRCLE_FILL_OUTLINED, on_click=button_clicked, data=0
+        icon=ft.icons.PLAY_CIRCLE_FILL_OUTLINED, on_click=button_clicked, data=0
     )
     t = ft.Text()
 
@@ -123,8 +123,8 @@ def main(page: ft.Page):
 
     page.add(
         ft.IconButton(
-            icon = ft.icons.BATTERY_1_BAR,
-            selected_icon = ft.icons.BATTERY_FULL,
+            icon=ft.icons.BATTERY_1_BAR,
+            selected_icon=ft.icons.BATTERY_FULL,
             on_click=toggle_icon_button,
             selected=False,
             style=ft.ButtonStyle(color={"selected": ft.colors.GREEN, "": ft.colors.RED}),

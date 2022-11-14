@@ -107,9 +107,9 @@ def main(page: ft.Page):
     result = ft.Text(value="0")
 
     page.add(
-        ft.Row(controls = [result]),
+        ft.Row(controls=[result]),
         ft.Row(
-            controls = [
+            controls=[
                 ft.ElevatedButton(text="AC"),
                 ft.ElevatedButton(text="+/-"),
                 ft.ElevatedButton(text="%"),
@@ -117,7 +117,7 @@ def main(page: ft.Page):
             ]
         ),
         ft.Row(
-            controls = [
+            controls=[
                 ft.ElevatedButton(text="7"),
                 ft.ElevatedButton(text="8"),
                 ft.ElevatedButton(text="9"),
@@ -125,7 +125,7 @@ def main(page: ft.Page):
             ]
         ),
         ft.Row(
-            controls = [
+            controls=[
                 ft.ElevatedButton(text="4"),
                 ft.ElevatedButton(text="5"),
                 ft.ElevatedButton(text="6"),
@@ -133,7 +133,7 @@ def main(page: ft.Page):
             ]
         ),
         ft.Row(
-            controls = [
+            controls=[
                 ft.ElevatedButton(text="1"),
                 ft.ElevatedButton(text="2"),
                 ft.ElevatedButton(text="3"),
@@ -141,7 +141,7 @@ def main(page: ft.Page):
             ]
         ),
         ft.Row(
-            controls = [
+             controls=[
                 ft.ElevatedButton(text="0"),
                 ft.ElevatedButton(text="."),
                 ft.ElevatedButton(text="="),
@@ -203,7 +203,7 @@ Now let's make the calculator do its job. We will be using the same event handle
 ft.ElevatedButton(
     text="AC",
     bgcolor=ft.colors.BLUE_GREY_100,
-    color= ft.colors.BLACK,
+    color=ft.colors.BLACK,
     expand=1,
     on_click=self.button_clicked,
     data="AC",

@@ -4,7 +4,7 @@ sidebar_label: Controls reference
 slug: /controls
 ---
 
-Flet UI is built of controls. Controls are organized into hierarchy, or a tree, where each control has a parent (except [Page](controls/page)) and container controls like [ft.Column](controls/column), [Dropdown](controls/dropdown) can contain child controls, for example:
+Flet UI is built of controls. Controls are organized into hierarchy, or a tree, where each control has a parent (except [Page](controls/page)) and container controls like [Column](controls/column), [Dropdown](controls/dropdown) can contain child controls, for example:
 
 ```
 Page
@@ -67,7 +67,7 @@ However, `disabled` could be set to a parent control and its value will be propa
 For example, if you have a form with multiple entry controls you can disable them all together by disabling container:
 
 ```python
-c = ft.Column(controls = [
+c = ft.Column(controls=[
     ft.TextField(),
     ft.TextField()
 ])
@@ -113,9 +113,9 @@ Either `scale` or `scale_x` and `scale_y` could be specified, but not all of the
 ft.Image(
     src="https://picsum.photos/100/100",
     width=100,
-    height  =100,
-    border_radius  =5,
-    scale=Scale(scale_x = 2, scale_y = 0.5)
+    height=100,
+    border_radius=5,
+    scale=Scale(scale_x=2, scale_y=0.5)
 )
 ```
 
@@ -136,6 +136,6 @@ ft.Image(
     width=100,
     height=100,
     border_radius=5,
-    rotate=Rotate(angle = 0.25 * pi, alignment=ft.alignment.center_left)
+    rotate=Rotate(angle=0.25 * pi, alignment=ft.alignment.center_left)
 )
 ```

@@ -170,7 +170,7 @@ Set this property to an instance of `theme.Theme` to customize light theme. Curr
   <TabItem value="python" label="Python" default>
 
 ```python
-page.theme = theme.Theme(color_scheme_seed = "green")
+page.theme = theme.Theme(color_scheme_seed="green")
 page.update()
 ```
 
@@ -252,11 +252,11 @@ def main(page: ft.Page):
         "Open Sans": "/fonts/OpenSans-Regular.ttf"
     }
 
-    page.theme = Theme(font_family = "Kanit")
+    page.theme = Theme(font_family="Kanit")
 
     page.add(
       ft.Text("This is rendered with Kanit font"),
-      ft.Text("This is Open Sans font example", font_family = "Open Sans")
+      ft.Text("This is Open Sans font example", font_family="Open Sans")
     )
 
 ft.app(target=main, assets_dir="assets")
@@ -480,10 +480,10 @@ def main(page: ft.Page):
     page.window_visible = True
     page.update()  
 
-ft.app(target=main, view = flet.FLET_APP_HIDDEN)
+ft.app(target=main, view=ft.FLET_APP_HIDDEN)
 ```
 
-Note `view = flet.FLET_APP_HIDDEN` which hides app window on start.
+Note `view=flet.FLET_APP_HIDDEN` which hides app window on start.
 
 ### `pubsub`
 
@@ -694,7 +694,7 @@ def main(page: ft.Page):
             ft.ElevatedButton("Yes", on_click=yes_click),
             ft.OutlinedButton("No", on_click=no_click),
         ],
-        actions_alignment = "end",
+        actions_alignment="end",
     )
 
     page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))

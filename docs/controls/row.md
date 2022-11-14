@@ -52,7 +52,7 @@ def main(page: ft.Page):
         on_change=gap_slider_change,
     )
 
-    row = ft.Row(spacing = 0, controls = items(10))
+    row = ft.Row(spacing=0, controls=items(10))
 
     page.add(ft.Column([ ft.Text("Spacing between items"), gap_slider]), row)
 
@@ -103,8 +103,8 @@ def main(page: ft.Page):
     row = ft.Row(
         wrap=True,
         spacing=10,
-        run_spacing = 10,
-        controls = items(30),
+        run_spacing=10,
+        controls=items(30),
         width=page.window_width,
     )
 

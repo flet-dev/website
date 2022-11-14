@@ -36,7 +36,7 @@ def main(page: ft.Page):
                         alignment=ft.alignment.center,
                     ),
                 ),
-                ft.Container(width = 100),
+                ft.Container(width=100),
                 ft.DragTarget(
                     group="number",
                     content=ft.Container(
@@ -146,7 +146,7 @@ def main(page: ft.Page):
                     ),
                     content_feedback=ft.Text("1"),
                 ),
-                ft.Container(width = 100),
+                ft.Container(width=100),
                 ft.DragTarget(
                     group="number",
                     content=ft.Container(

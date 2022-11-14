@@ -26,7 +26,7 @@ def main(page):
 
   t = ft.Text()
   b = ft.ElevatedButton(text='Submit', on_click=button_clicked)
-  cg = ft.RadioGroup(content = ft.Column([
+  cg = ft.RadioGroup(content=ft.Column([
     ft.Radio(value="red", label="Red"),
     ft.Radio(value="green", label="Green"),
     ft.Radio(value="blue", label="Blue")]))
@@ -54,7 +54,7 @@ def main(page):
     page.update()
 
   t = ft.Text()
-  cg = ft.RadioGroup(content = ft.Column([
+  cg = ft.RadioGroup(content=ft.Column([
     ft.Radio(value="red", label="Red"),
     ft.Radio(value="green", label="Green"),
     ft.Radio(value="blue", label="Blue")]), on_change=radiogroup_changed)
@@ -115,7 +115,7 @@ The color that fills the radio, in all Material states:
 To configure radio fill color for all Material states set `fill_color` value to a literal, for example:
 
 ```python
-rd.fill_color= ft.colors.GREEN
+rd.fill_color=ft.colors.GREEN
 ```
 
 To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `hovered` and `focused` states and another color for all other states:

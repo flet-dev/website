@@ -51,7 +51,7 @@ def main(page: ft.Page):
         ft.TextButton(
             "Button with colorful icon",
             icon="park_rounded",
-            icon_color ="green400",
+            icon_color="green400",
         ),
     )
 
@@ -108,9 +108,9 @@ def main(page: ft.Page):
             width=150,
             content=ft.Row(
                 [
-                    ft.Icon(name= ft.icons.FAVORITE, color="pink"),
-                    ft.Icon(name= ft.icons.AUDIOTRACK, color="green"),
-                    ft.Icon(name= ft.icons.BEACH_ACCESS, color="blue"),
+                    ft.Icon(name=ft.icons.FAVORITE, color="pink"),
+                    ft.Icon(name=ft.icons.AUDIOTRACK, color="green"),
+                    ft.Icon(name=ft.icons.BEACH_ACCESS, color="blue"),
                 ],
                 alignment="spaceAround",
             ),
@@ -125,7 +125,7 @@ def main(page: ft.Page):
                     alignment="center",
                     spacing=5,
                 ),
-                padding = ft.padding.all(10),
+                padding=ft.padding.all(10),
             ),
         ),
     )

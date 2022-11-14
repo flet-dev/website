@@ -41,7 +41,7 @@ def main(page):
     # avatar with icon and custom colors
     a4 = ft.CircleAvatar(
         content=ft.Icon(ft.icons.WARNING_ROUNDED),
-        color= ft.colors.YELLOW_200,
+        color=ft.colors.YELLOW_200,
         bgcolor=ft.colors.AMBER_700,
     )
     # avatar with online status
@@ -51,7 +51,7 @@ def main(page):
                 foreground_image_url="https://avatars.githubusercontent.com/u/5041459?s=88&v=4"
             ),
             ft.Container(
-                content=ft.CircleAvatar(bgcolor = ft.colors.GREEN, radius=5),
+                content=ft.CircleAvatar(bgcolor=ft.colors.GREEN, radius=5),
                 alignment=ft.alignment.bottom_left,
             ),
         ],

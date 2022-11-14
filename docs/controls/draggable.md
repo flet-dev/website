@@ -84,7 +84,7 @@ def main(page: ft.Page):
                         ),
                     ]
                 ),
-                ft.Container(width = 100),
+                ft.Container(width=100),
                 ft.DragTarget(
                     group="color",
                     content=ft.Container(

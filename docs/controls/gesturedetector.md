@@ -54,7 +54,7 @@ def main(page: ft.Page):
         on_vertical_drag_update=on_pan_update2,
         left=100,
         top=100,
-        content=ft.Container(bgcolor = ft.colors.BLUE, width=50, height=50),
+        content=ft.Container(bgcolor=ft.colors.BLUE, width=50, height=50),
     )
 
     page.add( ft.Stack([c, gd1], width=1000, height=500))

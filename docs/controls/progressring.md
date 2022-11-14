@@ -26,7 +26,7 @@ from time import sleep
 import flet as ft
 
 def main(page: ft.Page):
-    pr = ProgressRing(width = 16, height=16, stroke_width = 2)
+    pr = ProgressRing(width=16, height=16, stroke_width = 2)
 
     page.add(
         ft.Text("Circular progress indicator", style="headlineSmall"),
@@ -34,7 +34,7 @@ def main(page: ft.Page):
         ft.Text("Indeterminate cicrular progress", style="headlineSmall"),
         ft.Column(
             [ProgressRing(), ft.Text("I'm going to run for ages...")],
-            horizontal_alignment = "center",
+            horizontal_alignment="center",
         ),
     )
 

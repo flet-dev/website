@@ -28,7 +28,7 @@ def main(page):
 
     page.banner = ft.Banner(
         bgcolor=ft.colors.AMBER_100,
-        leading=ft.Icon(ft.icons.WARNING_AMBER_ROUNDED, color= ft.colors.AMBER, size=40),
+        leading=ft.Icon(ft.icons.WARNING_AMBER_ROUNDED, color=ft.colors.AMBER, size=40),
         content=ft.Text(
             "Oops, there were some errors while trying to delete the file. What would you like me to do?"
         ),
