@@ -7,18 +7,46 @@ slug: responsiverow
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A control that displays its children bound to virtual columns.
+`ResponsiveRow` borrows the idea of grid layout from [Bootstrap](https://getbootstrap.com/docs/5.2/layout/grid/) web framework.
 
-A child can span a variable number of columns depending on current page size and configured "breakpoints".
+`ResponsiveRow` allows aligning child controls to virtual columns. By default, a virtual grid has 12 columns, but that can be customized with `ResponsiveRow.columns` property.
 
-Breakpoints:
+Similar to `expand` property every control now has `col` property which allows specifying how many columns a control should span. For examle, to make a layout consisting of two columns spanning 6 virtual columns each:
 
-* `xs` - 0
-* `sm` - 576
-* `md` - 768
-* `lg` - 992
-* `xl` - 1200
-* `xxl` - 1400
+```python
+import flet as ft
+
+ft.ResponsiveRow([
+    ft.Column(col=6, controls=ft.Text("Column 1")),
+    ft.Column(col=6, controls=ft.Text("Column 2"))
+])
+```
+
+`ResponsiveRow` is "responsive" because it can adapt the size of its children to a changing screen (page, window) size. `col` property in the example above is a constant number which means the child will span 6 columns for any screen size.
+
+If `ResponsiveRow`'s child doesn't have `col` property specified it spans the maximum number of columns.
+
+`col` can be configured to have a different value for specific "breakpoints". Breakpoints are named dimension ranges:
+
+| Breakpoint | Dimension |
+|---|---|
+| xs | <576px |
+| sm | ≥576px |
+| md | ≥768px |
+| lg | ≥992px |
+| xl | ≥1200px |
+| xxl | ≥1400px |
+
+For example, the following example collapses content into a single column on a mobile device and takes two columns on larger screens:
+
+```python
+import flet as ft
+
+ft.ResponsiveRow([
+    ft.Column(col={"sm": 6}, controls=ft.Text("Column 1")),
+    ft.Column(col={"sm": 6}, controls=ft.Text("Column 2"))
+])
+```
 
 ## Examples
 
@@ -30,60 +58,58 @@ Breakpoints:
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Container, Page, ResponsiveRow, Text, TextField, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def page_resize(e):
         pw.value = f"{page.width} px"
         pw.update()
 
     page.on_resize = page_resize
 
-    pw = Text(bottom=50, right=50, style="displaySmall")
+    pw = ft.Text(bottom=50, right=50, style="displaySmall")
     page.overlay.append(pw)
     page.add(
-        ResponsiveRow(
+        ft.ResponsiveRow(
             [
-                Container(
-                    Text("Column 1"),
+                ft.Container(
+                    ft.Text("Column 1"),
                     padding=5,
-                    bgcolor=colors.YELLOW,
+                    bgcolor=ft.colors.YELLOW,
                     col={"sm": 6, "md": 4, "xl": 2},
                 ),
-                Container(
-                    Text("Column 2"),
+                ft.Container(
+                    ft.Text("Column 2"),
                     padding=5,
-                    bgcolor=colors.GREEN,
+                    bgcolor=ft.colors.GREEN,
                     col={"sm": 6, "md": 4, "xl": 2},
                 ),
-                Container(
-                    Text("Column 3"),
+                ft.Container(
+                    ft.Text("Column 3"),
                     padding=5,
-                    bgcolor=colors.BLUE,
+                    bgcolor=ft.colors.BLUE,
                     col={"sm": 6, "md": 4, "xl": 2},
                 ),
-                Container(
-                    Text("Column 4"),
+                ft.Container(
+                    ft.Text("Column 4"),
                     padding=5,
-                    bgcolor=colors.PINK_300,
+                    bgcolor=ft.colors.PINK_300,
                     col={"sm": 6, "md": 4, "xl": 2},
                 ),
             ],
         ),
-        ResponsiveRow(
+        ft.ResponsiveRow(
             [
-                TextField(label="TextField 1", col={"md": 4}),
-                TextField(label="TextField 2", col={"md": 4}),
-                TextField(label="TextField 3", col={"md": 4}),
+                ft.TextField(label="TextField 1", col={"md": 4}),
+                ft.TextField(label="TextField 2", col={"md": 4}),
+                ft.TextField(label="TextField 3", col={"md": 4}),
             ],
             run_spacing={"xs": 10},
         ),
     )
     page_resize(None)
 
-
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
