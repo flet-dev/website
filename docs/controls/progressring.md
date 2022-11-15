@@ -23,18 +23,17 @@ import TabItem from '@theme/TabItem';
 
 ```python
 from time import sleep
-import flet
-from flet import Column, Page, ProgressRing, Row, Text
+import flet as ft
 
-def main(page: Page):
-    pr = ProgressRing(width=16, height=16, stroke_width=2)
+def main(page: ft.Page):
+    pr = ProgressRing(width=16, height=16, stroke_width = 2)
 
     page.add(
-        Text("Circular progress indicator", style="headlineSmall"),
-        Row([pr, Text("Wait for the completion...")]),
-        Text("Indeterminate cicrular progress", style="headlineSmall"),
-        Column(
-            [ProgressRing(), Text("I'm going to run for ages...")],
+        ft.Text("Circular progress indicator", style="headlineSmall"),
+        ft.Row([pr, ft.Text("Wait for the completion...")]),
+        ft.Text("Indeterminate cicrular progress", style="headlineSmall"),
+        ft.Column(
+            [ProgressRing(), ft.Text("I'm going to run for ages...")],
             horizontal_alignment="center",
         ),
     )
@@ -44,7 +43,7 @@ def main(page: Page):
         sleep(0.1)
         page.update()
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

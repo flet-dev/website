@@ -24,17 +24,16 @@ import TabItem from '@theme/TabItem';
 ```python
 from time import sleep
 
-import flet
-from flet import Column, Page, ProgressBar, Text
+import flet as ft
 
-def main(page: Page):
-    pb = ProgressBar(width=400)
+def main(page: ft.Page):
+    pb = ft.ProgressBar(width=400)
 
     page.add(
-        Text("Linear progress indicator", style="headlineSmall"),
-        Column([Text("Doing something..."), pb]),
-        Text("Indeterminate progress bar", style="headlineSmall"),
-        ProgressBar(width=400, color="amber", bgcolor="#eeeeee"),
+        ft.Text("Linear progress indicator", style="headlineSmall"),
+        ft.Column([ ft.Text("Doing something..."), pb]),
+        ft.Text("Indeterminate progress bar", style="headlineSmall"),
+        ft.ProgressBar(width=400, color="amber", bgcolor="#eeeeee"),
     )
 
     for i in range(0, 101):
@@ -42,7 +41,7 @@ def main(page: Page):
         sleep(0.1)
         page.update()
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

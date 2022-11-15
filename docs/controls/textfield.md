@@ -19,24 +19,23 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import ElevatedButton, Page, Text, TextField, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def button_clicked(e):
         t.value = f"Textboxes values are:  '{tb1.value}', '{tb2.value}', '{tb3.value}', '{tb4.value}', '{tb5.value}'."
         page.update()
 
-    t = Text()
-    tb1 = TextField(label="Standard")
-    tb2 = TextField(label="Disabled", disabled=True, value="First name")
-    tb3 = TextField(label="Read-only", read_only=True, value="Last name")
-    tb4 = TextField(label="With placeholder", hint_text="Please enter text here")
-    tb5 = TextField(label="With an icon", icon=icons.EMOJI_EMOTIONS)
-    b = ElevatedButton(text="Submit", on_click=button_clicked)
+    t = ft.Text()
+    tb1 = ft.TextField(label="Standard")
+    tb2 = ft.TextField(label="Disabled", disabled=True, value="First name")
+    tb3 = ft.TextField(label="Read-only", read_only=True, value="Last name")
+    tb4 = ft.TextField(label="With placeholder", hint_text="Please enter text here")
+    tb5 = ft.TextField(label="With an icon", icon=ft.icons.EMOJI_EMOTIONS)
+    b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(tb1, tb2, tb3, tb4, tb5, b, t)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -49,23 +48,22 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import ElevatedButton, Page, Text, TextField
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def textbox_changed(e):
         t.value = e.control.value
         page.update()
 
-    t = Text()
-    tb = TextField(
+    t = ft.Text()
+    tb = ft.TextField(
         label="Textbox with 'change' event:",
         on_change=textbox_changed,
     )
 
     page.add(tb, t)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -78,17 +76,16 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Page, TextField
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.add(
-        TextField(
+        ft.TextField(
             label="Password with reveal button", password=True, can_reveal_password=True
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -101,19 +98,18 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Page, TextField
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.add(
-        TextField(label="standard", multiline=True),
-        TextField(
+        ft.TextField(label="standard", multiline=True),
+        ft.TextField(
             label="disabled",
             multiline=True,
             disabled=True,
             value="line1\nline2\nline3\nline4\nline5",
         ),
-        TextField(
+        ft.TextField(
             label="Auto adjusted height with max lines",
             multiline=True,
             min_lines=1,
@@ -121,7 +117,7 @@ def main(page: Page):
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -134,20 +130,19 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Page, TextField
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.add(
-        TextField(label="Underlined", border="underline", hint_text="Enter text here"),
-        TextField(
+        ft.TextField(label="Underlined", border="underline", hint_text="Enter text here"),
+        ft.TextField(
             label="Underlined filled",
             border="underline",
             filled=True,
             hint_text="Enter text here",
         ),
-        TextField(label="Borderless", border="none", hint_text="Enter text here"),
-        TextField(
+        ft.TextField(label="Borderless", border="none", hint_text="Enter text here"),
+        ft.TextField(
             label="Borderless filled",
             border="none",
             filled=True,
@@ -155,7 +150,7 @@ def main(page: Page):
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -168,28 +163,27 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Page, TextField, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.add(
-        TextField(label="With prefix", prefix_text="https://"),
-        TextField(label="With suffix", suffix_text=".com"),
-        TextField(
+        ft.TextField(label="With prefix", prefix_text="https://"),
+        ft.TextField(label="With suffix", suffix_text=".com"),
+        ft.TextField(
             label="With prefix and suffix", prefix_text="https://", suffix_text=".com"
         ),
-        TextField(
+        ft.TextField(
             label="My favorite color",
-            icon=icons.FORMAT_SIZE,
+            icon=ft.icons.FORMAT_SIZE,
             hint_text="Type your favorite color",
             helper_text="You can type only one color",
             counter_text="0 symbols typed",
-            prefix_icon=icons.COLOR_LENS,
+            prefix_icon=ft.icons.COLOR_LENS,
             suffix_text="...is your color",
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

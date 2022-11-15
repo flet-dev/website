@@ -17,8 +17,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ````python
-import flet
-from flet import Markdown, Page
+import flet as ft
 
 md1 = """
 # Markdown Example
@@ -87,17 +86,17 @@ Formatted Dart code looks really pretty too:
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
-      body: Markdown(data: markdownData),
+      body: ft.Markdown(data: markdownData),
     ),
   ));
 }
 ```
 """
 
-def main(page: Page):
+def main(page: ft.Page):
     page.scroll = "auto"
     page.add(
-        Markdown(
+        ft.Markdown(
             md1,
             selectable=True,
             extension_set="gitHubWeb",
@@ -105,7 +104,7 @@ def main(page: Page):
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ````
 
   </TabItem>
@@ -262,15 +261,14 @@ Fires when a link within Markdown document is clicked/tapped. `data` property of
 The following example opens markdown URLs in a new window:
 
 ```python
-import flet
-from flet import Markdown, Page
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def open_url(e):
         page.launch_url(e.data)
 
     page.add(
-        Markdown(
+        ft.Markdown(
             "[inline-style](https://www.google.com)",
             extension_set="gitHubWeb",
             on_tap_link=open_url,
@@ -278,5 +276,5 @@ def main(page: Page):
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```

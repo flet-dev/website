@@ -23,11 +23,11 @@ For example, to add a new control to a page:
   <TabItem value="python" label="Python" default>
 
 ```python
-page.controls.append(Text("Hello!"))
+page.controls.append(ft.Text("Hello!"))
 page.update()
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 or to get the same result as above using `page.add()` shortcut method:
@@ -36,10 +36,10 @@ or to get the same result as above using `page.add()` shortcut method:
   <TabItem value="python" label="Python" default>
 
 ```python
-page.add(Text("Hello!"))
+page.add(ft.Text("Hello!"))
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 To remove the top most control on the page:
@@ -52,7 +52,7 @@ page.controls.pop()
 page.update()
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 ### `views`
@@ -75,7 +75,7 @@ page.title = "My awesome app"
 page.update()
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 ### `route`
@@ -133,7 +133,7 @@ page.padding = 0
 page.update()
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 See [`Container.padding`](container#padding) for more information and possible values.
@@ -170,13 +170,11 @@ Set this property to an instance of `theme.Theme` to customize light theme. Curr
   <TabItem value="python" label="Python" default>
 
 ```python
-from flet import theme
-
 page.theme = theme.Theme(color_scheme_seed="green")
 page.update()
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 `Theme` class has the following properties:
@@ -194,11 +192,12 @@ Read this [note about system fonts](/docs/controls/text#using-system-fonts) if y
 #### Navigation transitions
 
 `theme.page_transitions` allows customizing navigation page transitions for different platforms. The value is an instance of `PageTransitionsTheme` class with the following optional properties:
-  * `android` (default value is `fadeUpwards`)
-  * `ios` (default value is `cupertino`)
-  * `macos` (default value is `zoom`)
-  * `linux` (default value is `zoom`)
-  * `windows` (default value is `zoom`)
+
+* `android` (default value is `fadeUpwards`)
+* `ios` (default value is `cupertino`)
+* `macos` (default value is `zoom`)
+* `linux` (default value is `zoom`)
+* `windows` (default value is `zoom`)
 
 Supported transitions: `fadeUpwards`, `openUpwards`, `zoom`, `cupertino`.
 
@@ -245,10 +244,9 @@ main.py
 Now, the following program loads "Kanit" font from GitHub and "Open Sans" from the assets. "Kanit" is set as a default app font and "Open Sans" is used for a specific Text control:
 
 ```python
-import flet
-from flet import Page, Text, Theme
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.fonts = {
         "Kanit": "https://raw.githubusercontent.com/google/fonts/master/ofl/kanit/Kanit-Bold.ttf",
         "Open Sans": "/fonts/OpenSans-Regular.ttf"
@@ -257,11 +255,11 @@ def main(page: Page):
     page.theme = Theme(font_family="Kanit")
 
     page.add(
-      Text("This is rendered with Kanit font"),
-      Text("This is Open Sans font example", font_family="Open Sans")
+      ft.Text("This is rendered with Kanit font"),
+      ft.Text("This is Open Sans font example", font_family="Open Sans")
     )
 
-flet.app(target=main, assets_dir="assets")
+ft.app(target=main, assets_dir="assets")
 ```
 
 :::note
@@ -297,12 +295,11 @@ A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/doc
 
 ```python
 from time import sleep
-import flet
-from flet import ElevatedButton, ProgressBar
+import flet as ft
 
-def main(page):
+def main(page: ft.Page):
     def button_click(e):
-        page.splash = ProgressBar()
+        page.splash = ft.ProgressBar()
         btn.disabled = True
         page.update()
         sleep(3)
@@ -310,13 +307,13 @@ def main(page):
         btn.disabled = False
         page.update()
 
-    btn = ElevatedButton("Do some lengthy task!", on_click=button_click)
+    btn = ft.ElevatedButton("Do some lengthy task!", on_click=button_click)
     page.add(btn)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 ### `appbar`
@@ -350,19 +347,18 @@ A height of a web page or content area of a native OS window containing Flet app
 Use together with `page.bgcolor` to make a window transparent:
 
 ```python
-import flet
-from flet import ElevatedButton, Page, colors
+import flet as ft
 
-def main(page: Page):
-    page.window_bgcolor = colors.TRANSPARENT
-    page.bgcolor = colors.TRANSPARENT
+def main(page: ft.Page):
+    page.window_bgcolor = ft.colors.TRANSPARENT
+    page.bgcolor = ft.colors.TRANSPARENT
     page.window_title_bar_hidden = True
     page.window_frameless = True
     page.window_left = 400
     page.window_top = 200
-    page.add(ElevatedButton("I'm a floating button!"))
+    page.add(ft.ElevatedButton("I'm a floating button!"))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### `window_width`
@@ -471,21 +467,20 @@ The following program starts with a hidden window and makes it visible in 3 seco
 ```python
 from time import sleep
 
-import flet
-from flet import Page, Text
+import flet as ft
 
 
-def main(page: Page):
-    
+def main(page: ft.Page):
+
     page.add(
-        Text("Hello!")
+        ft.Text("Hello!")
     )
 
     sleep(3)
     page.window_visible = True
     page.update()  
 
-flet.app(target=main, view=flet.FLET_APP_HIDDEN)
+ft.app(target=main, view=ft.FLET_APP_HIDDEN)
 ```
 
 Note `view=flet.FLET_APP_HIDDEN` which hides app window on start.
@@ -499,7 +494,7 @@ A simple PubSub implementation for passing messages between app sessions.
 Subscribe current app session for broadcast (no topic) messages. `handler` is a function or method with a single `message` argument, for example:
 
 ```python
-def main(page: Page):
+def main(page: ft.Page):
 
     def on_broadcast_message(message):
         print(message)
@@ -512,7 +507,7 @@ def main(page: Page):
 Subscribe current app session to a specific topic. `handler` is a function or method with two arguments: `topic` and `message`, for example:
 
 ```python
-def main(page: Page):
+def main(page: ft.Page):
 
     def on_message(topic, message):
         print(topic, message)
@@ -524,24 +519,23 @@ def main(page: Page):
 
 Broadcast message to all subscribers. `message` could be anything: a simple literal or a class instance, for example:
 
-
 ```python
 @dataclass
 class Message:
     user: str
     text: str
 
-def main(page: Page):
+def main(page: ft.Page):
 
     def on_broadcast_message(message):
-        page.add(Text(f"{message.user}: {message.text}"))
+        page.add(ft.Text(f"{message.user}: {message.text}"))
 
     page.pubsub.subscribe(on_broadcast_message)
 
     def on_send_click(e):
         page.pubsub.send_all(Message("John", "Hello, all!"))
 
-    page.add(ElevatedButton(text="Send message", on_click=on_send_click))
+    page.add(ft.ElevatedButton(text="Send message", on_click=on_send_click))
 ```
 
 #### `send_all_on_topic(topic, message)`
@@ -566,12 +560,12 @@ class Message:
     user: str
     text: str
 
-def main(page: Page):
+def main(page: ft.Page):
 
     def on_leave_click(e):
         page.pubsub.unsubscribe()
 
-    page.add(ElevatedButton(text="Leave chat", on_click=on_leave_click))
+    page.add(ft.ElevatedButton(text="Leave chat", on_click=on_leave_click))
 ```
 
 #### `unsubscribe_topic(topic)`
@@ -583,7 +577,7 @@ Unsubscribe current app session from specific topic.
 Unsubscribe current app session from broadcast messages and all topics, for example:
 
 ```python
-def main(page: Page):
+def main(page: ft.Page):
     def client_exited(e):
         page.pubsub.unsubscribe_all()
 
@@ -607,7 +601,7 @@ Set clipboard data on a client side (user's web browser or a desktop), for examp
 page.set_clipboard("This value comes from Flet app")
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 ### `get_clipboard()`
@@ -647,7 +641,7 @@ upload_url = page.get_upload_url("dir/filename.ext", 60)
 To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
 
 ```python
-flet.app(target=main, upload_dir="uploads")
+ft.app(target=main, upload_dir="uploads")
 ```
 
 ### `close_in_app_web_view()`
@@ -671,10 +665,9 @@ flet.app(target=main, upload_dir="uploads")
 🖥️ Desktop only. Forces closing app's native OS window. This method could be used with `page.window_prevent_close = True` to implement app exit confirmation:
 
 ```python
-import flet
-from flet import AlertDialog, ElevatedButton, OutlinedButton, Page, Text
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "MyApp"
 
     def window_event(e):
@@ -693,20 +686,20 @@ def main(page: Page):
         confirm_dialog.open = False
         page.update()
 
-    confirm_dialog = AlertDialog(
+    confirm_dialog = ft.AlertDialog(
         modal=True,
-        title=Text("Please confirm"),
-        content=Text("Do you really want to exit this app?"),
+        title=ft.Text("Please confirm"),
+        content=ft.Text("Do you really want to exit this app?"),
         actions=[
-            ElevatedButton("Yes", on_click=yes_click),
-            OutlinedButton("No", on_click=no_click),
+            ft.ElevatedButton("Yes", on_click=yes_click),
+            ft.OutlinedButton("No", on_click=no_click),
         ],
         actions_alignment="end",
     )
 
-    page.add(Text('Try exiting this app by clicking window\'s "Close" button!'))
+    page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ## Events
@@ -725,7 +718,7 @@ def page_resize(e):
 page.on_resize = page_resize
 ```
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 ### `on_window_event`
@@ -754,7 +747,7 @@ Fires when a keyboard key is pressed. Event object `e` is an instance of `Keyboa
 
 ```python
 @dataclass
-class KeyboardEvent:
+class ft.KeyboardEvent:
     key: str
     shift: bool
     ctrl: bool

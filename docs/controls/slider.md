@@ -19,17 +19,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Slider, Text
+import flet as ft
 
 def main(page):
     page.add(
-        Text("Default slider:"),
-        Slider(),
-        Text("Default disabled slider:"),
-        Slider(disabled=True))
+        ft.Text("Default slider:"),
+        ft.Slider(),
+        ft.Text("Default disabled slider:"),
+        ft.Slider(disabled=True))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -40,17 +39,16 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Slider, Text
+import flet as ft
 
 def main(page):
     page.add(
-        Text("Slider with value:"),
-        Slider(value=0.3),
-        Text("Slider with a custom range and label:"),
-        Slider(min=0, max=100, divisions=10, label="{value}%"))
+        ft.Text("Slider with value:"),
+        ft.Slider(value=0.3),
+        ft.Text("Slider with a custom range and label:"),
+        ft.Slider(min=0, max=100, divisions=10, label="{value}%"))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -63,8 +61,7 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Slider, Text
+import flet as ft
 
 def main(page):
 
@@ -72,12 +69,12 @@ def main(page):
         t.value = f"Slider changed to {e.control.value}"
         page.update()
 
-    t = Text()
+    t = ft.Text()
     page.add(
-        Text("Slider with 'on_change' event:"),
-        Slider(min=0, max=100, divisions=10, label="{value}%", on_change=slider_changed), t)
+        ft.Text("Slider with 'on_change' event:"),
+        ft.Slider(min=0, max=100, divisions=10, label="{value}%", on_change=slider_changed), t)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

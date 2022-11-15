@@ -17,8 +17,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import ElevatedButton, SnackBar, Text
+import flet as ft
 
 class Data:
     def __init__(self) -> None:
@@ -29,19 +28,19 @@ d = Data()
 def main(page):
 
     page.snack_bar = SnackBar(
-        content=Text("Hello, world!"),
+        content=ft.Text("Hello, world!"),
         action="Alright!",
     )
 
     def on_click(e):
-        page.snack_bar = SnackBar(Text(f"Hello {d.counter}"))
+        page.snack_bar = SnackBar(ft.Text(f"Hello {d.counter}"))
         page.snack_bar.open = True
         d.counter += 1
         page.update()
 
-    page.add(ElevatedButton("Open SnackBar", on_click=on_click))
+    page.add(ft.ElevatedButton("Open SnackBar", on_click=on_click))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

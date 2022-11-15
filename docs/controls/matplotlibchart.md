@@ -18,14 +18,13 @@ The following example is based on [original example from Matplotlib docs](https:
 import matplotlib
 import matplotlib.pyplot as plt
 
-import flet
-from flet import Page
+import flet as ft
 from flet.matplotlib_chart import MatplotlibChart
 
 matplotlib.use("svg")
 
 
-def main(page: Page):
+def main(page: ft.Page):
 
     fig, ax = plt.subplots()
 
@@ -43,7 +42,7 @@ def main(page: Page):
     page.add(MatplotlibChart(fig, expand=True))
 
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### Line chart
@@ -57,13 +56,12 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-import flet
-from flet import Page
+import flet as ft
 from flet.matplotlib_chart import MatplotlibChart
 
 matplotlib.use("svg")
 
-def main(page: Page):
+def main(page: ft.Page):
 
     # Fixing random state for reproducibility
     np.random.seed(19680801)
@@ -91,7 +89,7 @@ def main(page: Page):
 
     page.add(MatplotlibChart(fig, expand=True))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ## Properties
@@ -111,7 +109,7 @@ Every time when a page or parent chart control are updated with `page.update()` 
 Set `isolated` to `True` to enable explicit chart updates. To re-draw the chart call its `update()` method. For example the first example on this page could be modified as following:
 
 ```python
-def main(page: Page):
+def main(page: ft.Page):
 
     # ...
 
@@ -129,5 +127,5 @@ def main(page: Page):
     ax.legend(title="Colors")
     chart1.update()
 
-flet.app(target=main)
+ft.app(target=main)
 ```

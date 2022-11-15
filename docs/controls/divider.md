@@ -17,31 +17,30 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Column, Container, Divider, Page, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.add(
-        Column(
+        ft.Column(
             [
-                Container(
-                    bgcolor=colors.AMBER,
-                    alignment=alignment.center,
+                ft.Container(
+                    bgcolor=ft.colors.AMBER,
+                    alignment=ft.alignment.center,
                     expand=True,
                 ),
-                Divider(),
-                Container(bgcolor=colors.PINK, alignment=alignment.center, expand=True),
-                Divider(height=1, color="white"),
-                Container(
-                    bgcolor=colors.BLUE_300,
-                    alignment=alignment.center,
+                ft.Divider(),
+                ft.Container(bgcolor=ft.colors.PINK, alignment=ft.alignment.center, expand=True),
+                ft.Divider(height=1, color="white"),
+                ft.Container(
+                    bgcolor=ft.colors.BLUE_300,
+                    alignment=ft.alignment.center,
                     expand=True,
                 ),
-                Divider(height=9, thickness=3),
-                Container(
-                    bgcolor=colors.DEEP_PURPLE_200,
-                    alignment=alignment.center,
+                ft.Divider(height=9, thickness=3),
+                ft.Container(
+                    bgcolor=ft.colors.DEEP_PURPLE_200,
+                    alignment=ft.alignment.center,
                     expand=True,
                 ),
             ],
@@ -50,7 +49,7 @@ def main(page: Page):
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

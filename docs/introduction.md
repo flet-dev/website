@@ -20,14 +20,13 @@ At the moment you can write Flet apps in Python and other languages will be adde
 Here is a sample "Counter" app:
 
 ```python title="counter.py"
-import flet
-from flet import IconButton, Page, Row, TextField, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Flet counter example"
     page.vertical_alignment = "center"
 
-    txt_number = TextField(value="0", text_align="right", width=100)
+    txt_number = ft.TextField(value="0", text_align="right", width=100)
 
     def minus_click(e):
         txt_number.value = int(txt_number.value) - 1
@@ -38,17 +37,17 @@ def main(page: Page):
         page.update()
 
     page.add(
-        Row(
+        ft.Row(
             [
-                IconButton(icons.REMOVE, on_click=minus_click),
+                ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
                 txt_number,
-                IconButton(icons.ADD, on_click=plus_click),
+                ft.IconButton(ft.icons.ADD, on_click=plus_click),
             ],
             alignment="center",
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 To run the app install `flet` module:
@@ -79,7 +78,7 @@ The app will be started in a native OS window - what a nice alternative to Elect
 Now, if you want to run the app as a web app, just replace the last line with:
 
 ```python
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 run again and now you instantly get a web app:

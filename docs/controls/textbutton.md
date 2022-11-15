@@ -17,19 +17,18 @@ Text buttons are used for the lowest priority actions, especially when presentin
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Page, TextButton
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Basic text buttons"
     page.add(
-        TextButton(text="Text button"),
-        TextButton("Disabled button", disabled=True),
+        ft.TextButton(text="Text button"),
+        ft.TextButton("Disabled button", disabled=True),
     )
 
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -42,22 +41,21 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Page, TextButton
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Text buttons with icons"
     page.add(
-        TextButton("Button with icon", icon="chair_outlined"),
-        TextButton(
+        ft.TextButton("Button with icon", icon="chair_outlined"),
+        ft.TextButton(
             "Button with colorful icon",
             icon="park_rounded",
             icon_color="green400",
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -70,11 +68,10 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Page, Text, TextButton
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Text button with 'click' event"
 
     def button_clicked(e):
@@ -82,12 +79,12 @@ def main(page: Page):
         t.value = f"Button clicked {b.data} time(s)"
         page.update()
 
-    b = TextButton("Button with 'click' event", on_click=button_clicked, data=0)
-    t = Text()
+    b = ft.TextButton("Button with 'click' event", on_click=button_clicked, data=0)
+    t = ft.Text()
 
     page.add(b, t)
 
-flet.app(target=main)
+ft.app(target=main)
 
 ```
   </TabItem>
@@ -101,41 +98,40 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Column, Container, Icon, Page, Row, Text, TextButton, icons, padding
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Text buttons with custom content"
     page.add(
-        TextButton(
+        ft.TextButton(
             width=150,
-            content=Row(
+            content=ft.Row(
                 [
-                    Icon(name=icons.FAVORITE, color="pink"),
-                    Icon(name=icons.AUDIOTRACK, color="green"),
-                    Icon(name=icons.BEACH_ACCESS, color="blue"),
+                    ft.Icon(name=ft.icons.FAVORITE, color="pink"),
+                    ft.Icon(name=ft.icons.AUDIOTRACK, color="green"),
+                    ft.Icon(name=ft.icons.BEACH_ACCESS, color="blue"),
                 ],
                 alignment="spaceAround",
             ),
         ),
-        TextButton(
-            content=Container(
-                content=Column(
+        ft.TextButton(
+            content=ft.Container(
+                content=ft.Column(
                     [
-                        Text(value="Compound button", size=20),
-                        Text(value="This is secondary text"),
+                        ft.Text(value="Compound button", size=20),
+                        ft.Text(value="This is secondary text"),
                     ],
                     alignment="center",
                     spacing=5,
                 ),
-                padding=padding.all(10),
+                padding=ft.padding.all(10),
             ),
         ),
     )
 
 
-flet.app(target=main)
+ft.app(target=main)
 
 ```
 

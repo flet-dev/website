@@ -15,25 +15,24 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Card, Column, Container, Icon, ListTile, Row, Text, TextButton, icons
+import flet as ft
 
 def main(page):
     page.title = "Card Example"
     page.add(
-        Card(
-            content=Container(
-                content=Column(
+        ft.Card(
+            content=ft.Container(
+                content=ft.Column(
                     [
-                        ListTile(
-                            leading=Icon(icons.ALBUM),
-                            title=Text("The Enchanted Nightingale"),
-                            subtitle=Text(
+                        ft.ListTile(
+                            leading=ft.Icon(ft.icons.ALBUM),
+                            title=ft.Text("The Enchanted Nightingale"),
+                            subtitle=ft.Text(
                                 "Music by Julie Gable. Lyrics by Sidney Stein."
                             ),
                         ),
-                        Row(
-                            [TextButton("Buy tickets"), TextButton("Listen")],
+                        ft.Row(
+                            [TextButton("Buy tickets"), ft.TextButton("Listen")],
                             alignment="end",
                         ),
                     ]
@@ -44,7 +43,7 @@ def main(page):
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 
 ```
   </TabItem>

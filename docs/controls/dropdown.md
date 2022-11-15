@@ -19,27 +19,26 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Dropdown, ElevatedButton, Page, Text, dropdown
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def button_clicked(e):
         t.value = f"Dropdown value is:  {dd.value}"
         page.update()
 
-    t = Text()
-    b = ElevatedButton(text="Submit", on_click=button_clicked)
-    dd = Dropdown(
+    t = ft.Text()
+    b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
+    dd = ft.Dropdown(
         width=100,
         options=[
-            dropdown.Option("Red"),
-            dropdown.Option("Green"),
-            dropdown.Option("Blue"),
+            ft.dropdown.Option("Red"),
+            ft.dropdown.Option("Green"),
+            ft.dropdown.Option("Blue"),
         ],
     )
     page.add(dd, b, t)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -52,24 +51,23 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Dropdown, Page, dropdown
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.add(
-        Dropdown(
+        ft.Dropdown(
             label="Color",
             hint_text="Choose your favourite color?",
             options=[
-                dropdown.Option("Red"),
-                dropdown.Option("Green"),
-                dropdown.Option("Blue"),
+                ft.dropdown.Option("Red"),
+                ft.dropdown.Option("Green"),
+                ft.dropdown.Option("Blue"),
             ],
             autofocus=True,
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -82,27 +80,26 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Dropdown, Page, Text, dropdown
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def dropdown_changed(e):
         t.value = f"Dropdown changed to {dd.value}"
         page.update()
 
-    t = Text()
-    dd = Dropdown(
+    t = ft.Text()
+    dd = ft.Dropdown(
         on_change=dropdown_changed,
         options=[
-            dropdown.Option("Red"),
-            dropdown.Option("Green"),
-            dropdown.Option("Blue"),
+            ft.dropdown.Option("Red"),
+            ft.dropdown.Option("Green"),
+            ft.dropdown.Option("Blue"),
         ],
         width=200,
     )
     page.add(dd, t)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -115,20 +112,9 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Column,
-    Container,
-    Dropdown,
-    ElevatedButton,
-    OutlinedButton,
-    Page,
-    Row,
-    TextField,
-    dropdown,
-)
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def find_option(option_name):
         for option in d.options:
             if option_name == option.key:
@@ -136,7 +122,7 @@ def main(page: Page):
         return None
 
     def add_clicked(e):
-        d.options.append(dropdown.Option(option_textbox.value))
+        d.options.append(ft.dropdown.Option(option_textbox.value))
         d.value = option_textbox.value
         option_textbox.value = ""
         page.update()
@@ -148,13 +134,13 @@ def main(page: Page):
             # d.value = None
             page.update()
 
-    d = Dropdown()
-    option_textbox = TextField(hint_text="Enter item name")
-    add = ElevatedButton("Add", on_click=add_clicked)
-    delete = OutlinedButton("Delete selected", on_click=delete_clicked)
-    page.add(d, Row(controls=[option_textbox, add, delete]))
+    d = ft.Dropdown()
+    option_textbox = ft.TextField(hint_text="Enter item name")
+    add = ft.ElevatedButton("Add", on_click=add_clicked)
+    delete = ft.OutlinedButton("Delete selected", on_click=delete_clicked)
+    page.add(d, ft.Row(controls=[option_textbox, add, delete]))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

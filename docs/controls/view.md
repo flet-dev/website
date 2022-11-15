@@ -27,7 +27,7 @@ For example, to add a new control to a page:
   <TabItem value="python" label="Python" default>
 
 ```python
-page.controls.append(Text("Hello!"))
+page.controls.append(ft.Text("Hello!"))
 page.update()
 ```
 
@@ -40,7 +40,7 @@ or to get the same result as above using `page.add()` shortcut method:
   <TabItem value="python" label="Python" default>
 
 ```python
-page.add(Text("Hello!"))
+page.add(ft.Text("Hello!"))
 ```
 
   </TabItem>

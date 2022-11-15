@@ -19,22 +19,21 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Icon, Page, Row, colors, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.add(
-        Row(
+        ft.Row(
             [
-                Icon(name=icons.FAVORITE, color=colors.PINK),
-                Icon(name=icons.AUDIOTRACK, color=colors.GREEN_400, size=30),
-                Icon(name=icons.BEACH_ACCESS, color=colors.BLUE, size=50),
-                Icon(name="settings", color="#c1c1c1"),
+                ft.Icon(name=ft.icons.FAVORITE, color=ft.colors.PINK),
+                ft.Icon(name=ft.icons.AUDIOTRACK, color=ft.colors.GREEN_400, size=30),
+                ft.Icon(name=ft.icons.BEACH_ACCESS, color=ft.colors.BLUE, size=50),
+                ft.Icon(name="settings", color="#c1c1c1"),
             ]
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>

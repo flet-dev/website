@@ -28,13 +28,12 @@ Default application route, if not set in application URL by the user, is `/`. Al
 Application route can be obtained by reading `page.route` property, for example:
 
 ```python
-import flet
-from flet import Page, Text
+import flet as ft
 
-def main(page: Page):
-    page.add(Text(f"Initial route: {page.route}"))
+def main(page: ft.Page):
+    page.add(ft.Text(f"Initial route: {page.route}"))
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 Grab application URL, open a new browser tab, paste the URL, modify its part after `#` to `/test` and hit enter. You should see "Initial route: /test".
@@ -42,19 +41,18 @@ Grab application URL, open a new browser tab, paste the URL, modify its part aft
 Every time the route in the URL is changed (by editing the URL or navigating browser history with Back/Forward buttons) Flet calls `page.on_route_change` event handler:
 
 ```python
-import flet
-from flet import Page, Text
+import flet as ft
 
-def main(page: Page):
-    page.add(Text(f"Initial route: {page.route}"))
+def main(page: ft.Page):
+    page.add(ft.Text(f"Initial route: {page.route}"))
 
     def route_change(route):
-        page.add(Text(f"New route: {route}"))
+        page.add(ft.Text(f"New route: {route}"))
 
     page.on_route_change = route_change
     page.update()
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 Now try updating URL hash a few times and then use Back/Forward buttons! You should see a new message added to a page each time the route changes:
@@ -64,23 +62,22 @@ Now try updating URL hash a few times and then use Back/Forward buttons! You sho
 Route can be changed programmatically, by updating `page.route` property:
 
 ```python
-import flet
-from flet import ElevatedButton, Page, Text
+import flet as ft
 
-def main(page: Page):
-    page.add(Text(f"Initial route: {page.route}"))
+def main(page: ft.Page):
+    page.add(ft.Text(f"Initial route: {page.route}"))
 
     def route_change(route):
-        page.add(Text(f"New route: {route}"))
+        page.add(ft.Text(f"New route: {route}"))
 
     def go_store(e):
         page.route = "/store"
         page.update()
 
     page.on_route_change = route_change
-    page.add(ElevatedButton("Go to Store", on_click=go_store))
+    page.add(ft.ElevatedButton("Go to Store", on_click=go_store))
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 Click "Go to Store" button and you'll see application URL is changed and a new item is pushed in a browser history. You can use browser "Back" button to navigate to a previous route.
@@ -108,10 +105,9 @@ This place is [`page.on_route_change`](/docs/controls/page#on_route_change) even
 Let's put everything together into a complete example which allows navigating between two pages:
 
 ```python
-import flet
-from flet import AppBar, ElevatedButton, Page, Text, View, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Routes Example"
 
     def route_change(route):
@@ -120,8 +116,8 @@ def main(page: Page):
             View(
                 "/",
                 [
-                    AppBar(title=Text("Flet app"), bgcolor=colors.SURFACE_VARIANT),
-                    ElevatedButton("Visit Store", on_click=lambda _: page.go("/store")),
+                    ft.AppBar(title=ft.Text("Flet app"), bgcolor=ft.colors.SURFACE_VARIANT),
+                    ft.ElevatedButton("Visit Store", on_click=lambda _: page.go("/store")),
                 ],
             )
         )
@@ -130,8 +126,8 @@ def main(page: Page):
                 View(
                     "/store",
                     [
-                        AppBar(title=Text("Store"), bgcolor=colors.SURFACE_VARIANT),
-                        ElevatedButton("Go Home", on_click=lambda _: page.go("/")),
+                        ft.AppBar(title=ft.Text("Store"), bgcolor=ft.colors.SURFACE_VARIANT),
+                        ft.ElevatedButton("Go Home", on_click=lambda _: page.go("/")),
                     ],
                 )
             )
@@ -147,7 +143,7 @@ def main(page: Page):
     page.go(page.route)
 
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 Try navigating between pages using "Visit Store" and "Go Home" buttons, Back/Forward browser buttons, manually changing route in the URL - it works no matter what! :)
@@ -187,7 +183,7 @@ Flet web apps support two ways of configuring URL-based routing:
 To change URL strategy use `route_url_strategy` paremeter of `flet.app()` method, for example:
 
 ```python
-flet.app(target=main, route_url_strategy="path")
+ft.app(target=main, route_url_strategy="path")
 ```
 
 URL strategy for Flet Server can be configured with `FLET_ROUTE_URL_STRATEGY` environment variable which could be set to either `path` or `hash` (default).

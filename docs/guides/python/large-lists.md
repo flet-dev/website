@@ -8,16 +8,15 @@ You can use [`Column`](/docs/controls/column) and [`Row`](/docs/controls/row) co
 In the following example we are adding 5,000 text controls to a page. Page uses `Column` as a default layout container:
 
 ```python
-import flet
-from flet import Page, Text
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     for i in range(5000):
-        page.controls.append(Text(f"Line {i}"))
+        page.controls.append(ft.Text(f"Line {i}"))
     page.scroll = "always"
     page.update()
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 Run the program and notice that it's not just it takes a couple of seconds to initially load and render all text lines on a page, but scrolling is slow and laggy too:
@@ -35,16 +34,15 @@ ListView already implements effective on demand rendering of its children, but s
 Let's output a list of 5,000 items using ListView control:
 
 ```python
-import flet
-from flet import ListView, Page, Text
+import flet as ft
 
-def main(page: Page):
-    lv = ListView(expand=True, spacing=10)
+def main(page: ft.Page):
+    lv = ft.ListView(expand=True, spacing=10)
     for i in range(5000):
-        lv.controls.append(Text(f"Line {i}"))
+        lv.controls.append(ft.Text(f"Line {i}"))
     page.add(lv)
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 Now the scrolling is smooth and fast enough to follow mouse movements:
@@ -59,34 +57,33 @@ We used `expand=True` in ListView constructor. In order to function properly, Li
 
 [`GridView`](/docs/controls/gridview) allows arranging controls into a scrollable grid.
 
-You can make a "grid" with `Column(wrap=True)` or `Row(wrap=True)`, for example:
+You can make a "grid" with `ft.Column(wrap=True)` or `ft.Row(wrap=True)`, for example:
 
 ```python
 import os
-import flet
-from flet import Container, Page, Row, Text, alignment, border, border_radius, colors
+import flet as ft
 
 os.environ["FLET_WS_MAX_MESSAGE_SIZE"] = "8000000"
 
-def main(page: Page):
-    r = Row(wrap=True, scroll="always", expand=True)
+def main(page: ft.Page):
+    r = ft.Row(wrap=True, scroll="always", expand=True)
     page.add(r)
 
     for i in range(5000):
         r.controls.append(
-            Container(
-                Text(f"Item {i}"),
+            ft.Container(
+                ft.Text(f"Item {i}"),
                 width=100,
                 height=100,
-                alignment=alignment.center,
-                bgcolor=colors.AMBER_100,
-                border=border.all(1, colors.AMBER_400),
-                border_radius=border_radius.all(5),
+                alignment=ft.alignment.center,
+                bgcolor=ft.colors.AMBER_100,
+                border=ft.border.all(1, ft.colors.AMBER_400),
+                border_radius=ft.border_radius.all(5),
             )
         )
     page.update()
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 <img src="/img/docs/getting-started/row-wrap-as-grid.png" className="screenshot-50" />
@@ -103,28 +100,27 @@ GridView, similar to ListView, is very effective to render a lot of children. Le
 
 ```python
 import os
-import flet
-from flet import Container, GridView, Page, Text, alignment, border, border_radius, colors
+import flet as ft
 
 os.environ["FLET_WS_MAX_MESSAGE_SIZE"] = "8000000"
 
-def main(page: Page):
-    gv = GridView(expand=True, max_extent=150, child_aspect_ratio=1)
+def main(page: ft.Page):
+    gv = ft.GridView(expand=True, max_extent=150, child_aspect_ratio=1)
     page.add(gv)
 
     for i in range(5000):
         gv.controls.append(
-            Container(
-                Text(f"Item {i}"),
-                alignment=alignment.center,
-                bgcolor=colors.AMBER_100,
-                border=border.all(1, colors.AMBER_400),
-                border_radius=border_radius.all(5),
+            ft.Container(
+                ft.Text(f"Item {i}"),
+                alignment=ft.alignment.center,
+                bgcolor=ft.colors.AMBER_100,
+                border=ft.border.all(1, ft.colors.AMBER_400),
+                border_radius=ft.border_radius.all(5),
             )
         )
     page.update()
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 <img src="/img/docs/getting-started/grid-view.png" className="screenshot-50" />
@@ -140,23 +136,22 @@ When `page.update()` is called a message is being sent to Flet server over WebSo
 To increase usability of your program and present the results to a user as soon as possible you can send page updates in batches. For example, the following program adds 5,100 child controls to a ListView in batches of 500 items:
 
 ```python
-import flet
-from flet import ListView, Page, Text
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     # add ListView to a page first
-    lv = ListView(expand=1, spacing=10, item_extent=50)
+    lv = ft.ListView(expand=1, spacing=10, item_extent=50)
     page.add(lv)
 
     for i in range(5100):
-        lv.controls.append(Text(f"Line {i}"))
+        lv.controls.append(ft.Text(f"Line {i}"))
         # send page to a page
         if i % 500 == 0:
             page.update()
     # send the rest to a page
     page.update()
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 <img src="/img/docs/getting-started/sending-page-updates-in-batches.png" className="screenshot-50" />

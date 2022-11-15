@@ -21,21 +21,20 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Image, Page, Row, Stack, Text
+import flet as ft
 
-def main(page: Page):
-    st = Stack(
+def main(page: ft.Page):
+    st = ft.Stack(
         [
-            Image(
+            ft.Image(
                 src=f"https://picsum.photos/300/300",
                 width=300,
                 height=300,
                 fit="contain",
             ),
-            Row(
+            ft.Row(
                 [
-                    Text(
+                    ft.Text(
                         "Image title",
                         color="white",
                         size=40,
@@ -52,7 +51,7 @@ def main(page: Page):
 
     page.add(st)
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
   </TabItem>
@@ -66,19 +65,18 @@ flet.app(target=main, view=flet.WEB_BROWSER)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import CircleAvatar, Container, Stack, alignment, colors
+import flet as ft
 
 def main(page):
     page.add(
-        Stack(
+        ft.Stack(
             [
-                CircleAvatar(
+                ft.CircleAvatar(
                     foreground_image_url="https://avatars.githubusercontent.com/u/5041459?s=88&v=4"
                 ),
-                Container(
-                    content=CircleAvatar(bgcolor=colors.GREEN, radius=5),
-                    alignment=alignment.bottom_left,
+                ft.Container(
+                    content=ft.CircleAvatar(bgcolor=ft.colors.GREEN, radius=5),
+                    alignment=ft.alignment.bottom_left,
                 ),
             ],
             width=40,
@@ -86,7 +84,7 @@ def main(page):
         )
     )
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
   </TabItem>
@@ -100,48 +98,47 @@ flet.app(target=main, view=flet.WEB_BROWSER)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Container, Page, Stack, colors, Column
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.horizontal_alignment = "center"
     page.vertical_alignment = "center"
 
     page.add(
-        Container(
-            Stack(
+        ft.Container(
+            ft.Stack(
                 [
-                    Container(width=20, height=20, bgcolor=colors.RED, border_radius=5),
-                    Container(
+                    ft.Container(width=20, height=20, bgcolor=ft.colors.RED, border_radius=5),
+                    ft.Container(
                         width=20,
                         height=20,
-                        bgcolor=colors.YELLOW,
+                        bgcolor=ft.colors.YELLOW,
                         border_radius=5,
                         right=0,
                     ),
-                    Container(
+                    ft.Container(
                         width=20,
                         height=20,
-                        bgcolor=colors.BLUE,
+                        bgcolor=ft.colors.BLUE,
                         border_radius=5,
                         right=0,
                         bottom=0,
                     ),
-                    Container(
+                    ft.Container(
                         width=20,
                         height=20,
-                        bgcolor=colors.GREEN,
+                        bgcolor=ft.colors.GREEN,
                         border_radius=5,
                         left=0,
                         bottom=0,
                     ),
-                    Column(
+                    ft.Column(
                         [
-                            Container(
+                            ft.Container(
                                 width=20,
                                 height=20,
-                                bgcolor=colors.PURPLE,
+                                bgcolor=ft.colors.PURPLE,
                                 border_radius=5,
                             )
                         ],
@@ -154,11 +151,11 @@ def main(page: Page):
             padding=5,
             width=100,
             height=100,
-            bgcolor=colors.BLACK,
+            bgcolor=ft.colors.BLACK,
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
   </TabItem>

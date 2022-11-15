@@ -67,9 +67,9 @@ However, `disabled` could be set to a parent control and its value will be propa
 For example, if you have a form with multiple entry controls you can disable them all together by disabling container:
 
 ```python
-c = Column(controls=[
-    TextField(),
-    TextField()
+c = ft.Column(controls=[
+    ft.TextField(),
+    ft.TextField()
 ])
 c.disabled = True
 page.add(c)
@@ -98,6 +98,8 @@ Scale control along the 2D plane. Default scale factor is `1.0` - control is not
 Different scale multipliers can be specified for `x` and `y` axis, but setting `Control.scale` property to an instance of `transform.Scale` class:
 
 ```python
+from dataclasses import field
+
 class Scale:
     scale: float = field(default=None)
     scale_x: float = field(default=None)
@@ -108,7 +110,7 @@ class Scale:
 Either `scale` or `scale_x` and `scale_y` could be specified, but not all of them, for example:
 
 ```python
-Image(
+ft.Image(
     src="https://picsum.photos/100/100",
     width=100,
     height=100,
@@ -129,11 +131,11 @@ The value of `rotate` property could be one of the following types:
 For example:
 
 ```python
-Image(
+ft.Image(
     src="https://picsum.photos/100/100",
     width=100,
     height=100,
     border_radius=5,
-    rotate=Rotate(angle=0.25 * pi, alignment=alignment.center_left)
+    rotate=Rotate(angle=0.25 * pi, alignment=ft.alignment.center_left)
 )
 ```

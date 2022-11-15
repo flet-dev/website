@@ -19,36 +19,35 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Container, ElevatedButton, OutlinedButton, Page, colors
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Containers with background color"
 
-    c1 = Container(
-        content=ElevatedButton("Elevated Button in Container"),
-        bgcolor=colors.YELLOW,
+    c1 = ft.Container(
+        content=ft.ElevatedButton("Elevated Button in Container"),
+        bgcolor=ft.colors.YELLOW,
         padding=5,
     )
 
-    c2 = Container(
-        content=ElevatedButton(
+    c2 = ft.Container(
+        content=ft.ElevatedButton(
             "Elevated Button with opacity=0.5 in Container", opacity=0.5
         ),
-        bgcolor=colors.YELLOW,
+        bgcolor=ft.colors.YELLOW,
         padding=5,
     )
 
-    c3 = Container(
-        content=OutlinedButton("Outlined Button in Container"),
-        bgcolor=colors.YELLOW,
+    c3 = ft.Container(
+        content=ft.OutlinedButton("Outlined Button in Container"),
+        bgcolor=ft.colors.YELLOW,
         padding=5,
     )
     page.add(c1, c2, c3)
 
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -61,55 +60,54 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Container, Page, Row, Text, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Containers - clickable and not"
     page.horizontal_alignment = "center"
     page.vertical_alignment = "center"
 
     page.add(
-        Row(
+        ft.Row(
             [
-                Container(
-                    content=Text("Non clickable"),
+                ft.Container(
+                    content=ft.Text("Non clickable"),
                     margin=10,
                     padding=10,
-                    alignment=alignment.center,
-                    bgcolor=colors.AMBER,
+                    alignment=ft.alignment.center,
+                    bgcolor=ft.colors.AMBER,
                     width=150,
                     height=150,
                     border_radius=10,
                 ),
-                Container(
-                    content=Text("Clickable without Ink"),
+                ft.Container(
+                    content=ft.Text("Clickable without Ink"),
                     margin=10,
                     padding=10,
-                    alignment=alignment.center,
-                    bgcolor=colors.GREEN_200,
+                    alignment=ft.alignment.center,
+                    bgcolor=ft.colors.GREEN_200,
                     width=150,
                     height=150,
                     border_radius=10,
                     on_click=lambda e: print("Clickable without Ink clicked!"),
                 ),
-                Container(
-                    content=Text("Clickable with Ink"),
+                ft.Container(
+                    content=ft.Text("Clickable with Ink"),
                     margin=10,
                     padding=10,
-                    alignment=alignment.center,
-                    bgcolor=colors.CYAN_200,
+                    alignment=ft.alignment.center,
+                    bgcolor=ft.colors.CYAN_200,
                     width=150,
                     height=150,
                     border_radius=10,
                     ink=True,
                     on_click=lambda e: print("Clickable with Ink clicked!"),
                 ),
-                Container(
-                    content=Text("Clickable transparent with Ink"),
+                ft.Container(
+                    content=ft.Text("Clickable transparent with Ink"),
                     margin=10,
                     padding=10,
-                    alignment=alignment.center,
+                    alignment=ft.alignment.center,
                     width=150,
                     height=150,
                     border_radius=10,
@@ -121,7 +119,7 @@ def main(page: Page):
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -147,11 +145,10 @@ Padding is an instance of `padding.Padding` class with properties set padding fo
 For example:
 
 ```python
-from flet import padding
 
-container_1.padding = padding.all(10)
-container_2.padding = 20 # same as padding.all(20)
-container_3.padding = padding.symmetric(horizontal=10)
+container_1.padding = ft.padding.all(10)
+container_2.padding = 20 # same as ft.padding.all(20)
+container_3.padding = ft.padding.symmetric(horizontal=10)
 container_4.padding=padding.only(left=10)
 ```
 
@@ -170,7 +167,6 @@ Margin is an instance of `margin.Margin` class with properties set margins for a
 For example:
 
 ```python
-from flet import margin
 
 container_1.margin = margin.all(10)
 container_2.margin = 20 # same as margin.all(20)
@@ -190,7 +186,6 @@ Alignment is an instance of `alignment.Alignment` class object with `x` and `y` 
 For example:
 
 ```python
-from flet import alignment
 
 container_1.alignment = alignment.center
 container_2.alignment = alignment.top_left
@@ -217,9 +212,8 @@ Each side of the container border is described by an instance of `border.BorderS
 For example:
 
 ```python
-from flet import border, colors
-container_1.border = border.all(10, colors.PINK_600)
-container_1.border = border.only(bottom=border.BorderSide(1, "black"))
+container_1.border = ft.border.all(10, ft.colors.PINK_600)
+container_1.border = ft.border.only(bottom=ft.border.BorderSide(1, "black"))
 ```
 
 ### `border_radius`
@@ -234,8 +228,7 @@ If specified, the corners of the container are rounded by this radius. Border ra
 For example:
 
 ```python
-from flet import border_radius
-container_1.border_radius = border_radius.all(30)
+container_1.border_radius= ft.border_radius.all(30)
 ```
 
 ### `shape`
@@ -259,10 +252,10 @@ Configures gradient background. The value must be an instance of one of the foll
 
 ```python
 Container(
-    gradient=LinearGradient(
-        begin=alignment.top_center,
-        end=alignment.bottom_center,
-        colors=[colors.BLUE, colors.YELLOW],
+    gradient=ft.LinearGradient(
+        begin=ft.alignment.top_center,
+        end=ft.alignment.bottom_center,
+       colors=[ft.colors.BLUE, ft.colors.YELLOW],
     ),
     width=150,
     height=150,
@@ -290,8 +283,8 @@ More information:
 
 ```python
 Container(
-    gradient=RadialGradient(
-        colors=[colors.YELLOW, colors.BLUE],
+    gradient=ft.RadialGradient(
+       colors=[ft.colors.YELLOW, ft.colors.BLUE],
     ),
     width=150,
     height=150,
@@ -318,10 +311,10 @@ More information:
 ```python
 Container(
     gradient=SweepGradient(
-        center=alignment.center,
+        center=ft.alignment.center,
         start_angle=0.0,
         end_angle=math.pi * 2,
-        colors=[colors.YELLOW, colors.BLUE],
+       colors=[ft.colors.YELLOW, ft.colors.BLUE],
     ),
     width=150,
     height=150,
@@ -379,16 +372,15 @@ For example:
 <img src="/img/docs/controls/container/animate-container.gif" className="screenshot-20" />
 
 ```python
-import flet
-from flet import Container, ElevatedButton, Page, animation
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    c = Container(
+    c = ft.Container(
         width=200,
         height=200,
         bgcolor="red",
-        animate=animation.Animation(1000, "bounceOut"),
+        animate=ft.animation.Animation(1000, "bounceOut"),
     )
 
     def animate_container(e):
@@ -397,9 +389,9 @@ def main(page: Page):
         c.bgcolor = "blue" if c.bgcolor == "red" else "red"
         c.update()
 
-    page.add(c, ElevatedButton("Animate container", on_click=animate_container))
+    page.add(c, ft.ElevatedButton("Animate container", on_click=animate_container))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### `ink`
@@ -422,7 +414,7 @@ The content will be clipped (or not) according to this option. Supported values:
 Fires when a user clicks the container. Event object `e` is an instance of `ContainerTapEvent` class:
 
 ```python
-class ContainerTapEvent():
+class ft.ContainerTapEvent():
     local_x: float
     local_y: float
     global_x: float
@@ -436,26 +428,25 @@ If `ink` is `True`, `e` will be plain `ControlEvent` with empty `data` instead o
 A simple usage example:
 
 ```python
-import flet
-from flet import Column, Container, ContainerTapEvent, Page, Text, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.horizontal_alignment = "center"
     page.vertical_alignment = "center"
 
-    t = Text()
+    t = ft.Text()
 
-    def container_click(e: ContainerTapEvent):
+    def container_click(e: ft.ContainerTapEvent):
         t.value = f"local_x: {e.local_x}\nlocal_y: {e.local_y}\nglobal_x: {e.global_x}\nglobal_y: {e.global_y}"
         t.update()
 
     page.add(
-        Column(
+        ft.Column(
             [
-                Container(
-                    content=Text("Clickable inside container"),
-                    alignment=alignment.center,
-                    bgcolor=colors.GREEN_200,
+                ft.Container(
+                    content=ft.Text("Clickable inside container"),
+                    alignment=ft.alignment.center,
+                    bgcolor=ft.colors.GREEN_200,
                     width=200,
                     height=200,
                     border_radius=10,
@@ -467,7 +458,7 @@ def main(page: Page):
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### `on_long_press`
@@ -481,17 +472,16 @@ Fires when a mouse pointer enters or exists the container area. `data` property 
 A simple example of a container changing its background color on mouse hover:
 
 ```python
-import flet
-from flet import Container, Page
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def on_hover(e):
         e.control.bgcolor = "blue" if e.data == "true" else "red"
         e.control.update()
 
     page.add(
-        Container(width=100, height=100, bgcolor="red", ink=False, on_hover=on_hover)
+        ft.Container(width=100, height=100, bgcolor="red", ink=False, on_hover=on_hover)
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
