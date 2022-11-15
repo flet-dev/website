@@ -1,11 +1,16 @@
 ---
-title: ResponsiveRow
-sidebar_label: ResponsiveRow
-slug: responsiverow
+slug: responsive-row-and-mobile-controls
+title: ResponsiveRow and mobile controls
+author: Feodor Fitsner
+author_title: Flet founder and developer
+author_url: https://github.com/FeodorFitsner
+author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+tags: [release]
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+We just released [Flet 0.1.65](https://pypi.org/project/flet/0.1.65/) which is adding a bunch of mobile-optimized controls, fixing some bugs and introducing a new layout control - `ResponsiveRow`.
+
+## `ResponsiveRow` control
 
 `ResponsiveRow` borrows the idea of grid layout from [Bootstrap](https://getbootstrap.com/docs/5.2/layout/grid/) web framework.
 
@@ -48,14 +53,9 @@ ft.ResponsiveRow([
 ])
 ```
 
-## Examples
-
-### ResponsiveRow
+Here is more elaborate example of responsive layout:
 
 <img src="/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
 ```python
 import flet as ft
@@ -111,35 +111,65 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
-  </TabItem>
-</Tabs>
 
-## Properties
+`ResponsiveRow` [docs](/docs/controls/responsiverow), [example](https://github.com/flet-dev/examples/blob/main/python/controls/responsive-row/responsive-layout.py).
 
-### `controls`
+## Other new controls
 
-A list of Controls to display inside the ResponsiveRow.
+This release adds new visual and non-visual controls requested by Flet community and also required to build UI of the upcoming [Flet Studio](/docs/guides/python/mobile-support#flet-studio-for-ios-and-android).
 
-### `columns`
+### BottomSheet
 
-The numner of virtual columns to layout children. Default is 12.
+Shows a modal Material Design bottom sheet:
 
-### `alignment`
+<img src="/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
 
-How the child Controls should be placed horizontally.
+`BottomSheet` [docs](/docs/controls/bottomsheet), [example](https://github.com/flet-dev/examples/blob/main/python/controls/bottom-sheet/modal-bottom-sheet.py).
 
-For example, `start`, the default, places the children on the left of a Row. Supported values: `start`, `end`, `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
+### NavigationBar
 
-### `vertical_alignment`
+Bottom Navigation bar which offers a persistent and convenient way to switch between primary destinations in an app:
 
-How the child Controls should be placed vertically.
+<img src="/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
 
-Default value is `start`. Supported values: `start`, `center`, `end`, `stretch`, `baseline`.
+`NavigationBar` [docs](/docs/controls/navigationbar), [example](https://github.com/flet-dev/examples/blob/main/python/controls/navigation-bar/navigation-bar-sample.py).
 
-### `spacing`
+### Tooltip
 
-Spacing between controls in a row. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+A tooltip control:
 
-### `run_spacing`
+<img src="/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
 
-Spacing between runs when row content is wrapped on multiple lines. Default value is 10.
+`Tooltip` [docs](/docs/controls/tooltip), [example](https://github.com/flet-dev/examples/blob/main/python/controls/tooltip/custom-tooltip.py).
+
+### HapticFeedback
+
+Allows access to the haptic feedback (clicks and vibrates) interface on the device.
+
+`HapticFeedback` [docs](/docs/controls/hapticfeedback).
+
+### ShakeDetector
+
+A control to detect phone shakes. Based on [shake](https://pub.dev/packages/shake) widget.
+
+`ShakeDetector` [docs](/docs/controls/shakedetector).
+
+## Other improvements
+
+### Markdown code syntax highlight
+
+[Sample code](https://github.com/flet-dev/examples/blob/main/python/controls/markdown/markdown-code-highlight.py).
+
+<img src="/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
+
+### Variable fonts support
+
+Flutter has finally supported [variable fonts](https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts) and we bring that into Flet too! 
+
+[Sample code](https://github.com/flet-dev/examples/blob/main/python/controls/text/variable-weight-font.py).
+
+<img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
+
+Upgrade Flet module to the latest version (`pip install flet --upgrade`) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+
+Enjoy!

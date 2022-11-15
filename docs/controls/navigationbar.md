@@ -8,40 +8,33 @@ Material 3 Navigation Bar component.
 
 Navigation bars offer a persistent and convenient way to switch between primary destinations in an app.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## Examples
 
 ### A simple NavigationBar
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+<img src="/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
 
 ```python
-import flet
-from flet import NavigationBar, NavigationDestination, Page, Text, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.title = "NavigationBar Example"
-    page.navigation_bar = NavigationBar(
+    page.navigation_bar = ft.NavigationBar(
         destinations=[
-            NavigationDestination(icon=icons.EXPLORE, label="Explore"),
-            NavigationDestination(icon=icons.COMMUTE, label="Commute"),
-            NavigationDestination(
-                icon=icons.BOOKMARK_BORDER,
-                selected_icon=icons.BOOKMARK,
+            ft.NavigationDestination(icon=ft.icons.EXPLORE, label="Explore"),
+            ft.NavigationDestination(icon=ft.icons.COMMUTE, label="Commute"),
+            ft.NavigationDestination(
+                icon=ft.icons.BOOKMARK_BORDER,
+                selected_icon=ft.icons.BOOKMARK,
                 label="Explore",
             ),
         ]
     )
-    page.add(Text("Body!"))
+    page.add(ft.Text("Body!"))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
-  </TabItem>
-</Tabs>
 
 ## `NavigationBar` properties
 
