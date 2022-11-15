@@ -130,6 +130,22 @@ If not set, then the value indicator will not be displayed.
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
+### `active_color`
+
+The color to use for the portion of the slider track that is active.
+
+The "active" side of the slider is the side between the thumb and the minimum value.
+
+### `inactive_color`
+
+The color for the inactive portion of the slider track.
+
+The "inactive" side of the slider is the side between the thumb and the maximum value.
+
+### `thumb_color`
+
+The color of the thumb.
+
 ## Events
 
 ### `on_change`
