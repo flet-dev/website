@@ -28,15 +28,15 @@ def main(page: ft.Page):
         leading=ft.FloatingActionButton(icon=ft.icons.CREATE, text="Add"),
         group_alignment=-0.9,
         destinations=[
-            NavigationRailDestination(
+            ft.NavigationRailDestination(
                 icon=ft.icons.FAVORITE_BORDER, selected_icon=ft.icons.FAVORITE, label="First"
             ),
-            NavigationRailDestination(
+            ft.NavigationRailDestination(
                 icon_content=ft.Icon(ft.icons.BOOKMARK_BORDER),
                 selected_icon_content=ft.Icon(ft.icons.BOOKMARK),
                 label="Second",
             ),
-            NavigationRailDestination(
+            ft.NavigationRailDestination(
                 icon=ft.icons.SETTINGS_OUTLINED,
                 selected_icon_content=ft.Icon(ft.icons.SETTINGS),
                 label_content=ft.Text("Settings"),
@@ -49,7 +49,7 @@ def main(page: ft.Page):
         ft.Row(
             [
                 rail,
-                 ft.VerticalDivider(width=1),
+                ft.VerticalDivider(width=1),
                 ft.Column([ ft.Text("Body!")], alignment="start", expand=True),
             ],
             expand=True,
