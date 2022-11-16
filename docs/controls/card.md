@@ -32,7 +32,7 @@ def main(page):
                             ),
                         ),
                         ft.Row(
-                            [TextButton("Buy tickets"), ft.TextButton("Listen")],
+                            [ft.TextButton("Buy tickets"), ft.TextButton("Listen")],
                             alignment="end",
                         ),
                     ]
