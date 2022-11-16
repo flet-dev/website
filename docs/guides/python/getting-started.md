@@ -24,6 +24,16 @@ pip install flet --upgrade
 ```
 :::
 
+To install Flet pre-release (for advanced users) run:
+
+```bash
+pip install flet --pre
+```
+
+:::caution
+We recommend installing pre-release builds into a virtual environment.
+:::
+
 ## Basic app structure
 
 A very minimal Flet app has the following structure:
