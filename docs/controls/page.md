@@ -792,3 +792,7 @@ Fires when a web user disconnects from a page session, i.e. closes browser tab/w
 ### `on_close`
 
 Fires when a session has expired after configured amount of time (60 minutes by default).
+
+### `on_error`
+
+Fires when unhandled exception occurs.
