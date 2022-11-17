@@ -619,6 +619,15 @@ Optional method arguments:
 * `window_width` - optional, popup window width.
 * `window_height` - optional, popup window height.
 
+### `can_launch_url(url)`
+
+Checks whether the specified URL can be handled by some app installed on the device.
+
+Returns `True` if it is possible to verify that there is a handler available. A `False` return value can indicate either that there is no handler available, or that the application does not have permission to check. For example:
+
+* On recent versions of Android and iOS, this will always return `False` unless the application has been configuration to allow querying the system for launch support.
+* On web, this will always return `False` except for a few specific schemes that are always assumed to be supported (such as http(s)), as web pages are never allowed to query installed applications.
+
 ### `show_snack_bar(snack_bar)`
 
 Displays SnackBar at the bottom of the page.
