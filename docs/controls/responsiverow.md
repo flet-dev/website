@@ -17,8 +17,8 @@ Similar to `expand` property every control now has `col` property which allows s
 import flet as ft
 
 ft.ResponsiveRow([
-    ft.Column(col=6, controls=ft.Text("Column 1")),
-    ft.Column(col=6, controls=ft.Text("Column 2"))
+    ft.Column(col=6, controls=[ft.Text("Column 1")]),
+    ft.Column(col=6, controls=[ft.Text("Column 2")])
 ])
 ```
 
@@ -43,8 +43,8 @@ For example, the following example collapses content into a single column on a m
 import flet as ft
 
 ft.ResponsiveRow([
-    ft.Column(col={"sm": 6}, controls=ft.Text("Column 1")),
-    ft.Column(col={"sm": 6}, controls=ft.Text("Column 2"))
+    ft.Column(col={"sm": 6}, controls=[ft.Text("Column 1")]),
+    ft.Column(col={"sm": 6}, controls=[ft.Text("Column 2")])
 ])
 ```
 
