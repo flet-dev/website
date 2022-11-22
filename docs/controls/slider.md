@@ -133,6 +133,14 @@ True if the control will be selected as the initial focus. If there is more than
 
 Fires when the state of the Slider is changed.
 
+### `on_change_start`
+
+Fires when the user starts selecting a new value for the slider.
+
+### `on_change_end`
+
+Fires when the user is done selecting a new value for the slider.
+
 ### `on_focus`
 
 Fires when the control has received focus.
