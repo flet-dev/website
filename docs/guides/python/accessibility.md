@@ -68,7 +68,7 @@ def main(page: ft.Page):
     txt_number = ft.Text("0", size=40)
 
     def button_click(e):
-        txt_number.value = int(txt_number.value) + 1
+        txt_number.value = str(int(txt_number.value) + 1)
         page.update()
 
     page.add(

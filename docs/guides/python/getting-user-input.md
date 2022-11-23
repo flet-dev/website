@@ -32,11 +32,11 @@ def main(page: ft.Page):
     txt_number = ft.TextField(value="0", text_align="right", width=100)
 
     def minus_click(e):
-        txt_number.value = int(txt_number.value) - 1
+        txt_number.value = str(int(txt_number.value) - 1)
         page.update()
 
     def plus_click(e):
-        txt_number.value = int(txt_number.value) + 1
+        txt_number.value = str(int(txt_number.value) + 1)
         page.update()
 
     page.add(
