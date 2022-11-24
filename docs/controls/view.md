@@ -117,13 +117,17 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 
 ### `scroll`
 
-Enables a vertical scrolling for the Page to prevent its content overflow. Supported values:
+Enables a vertical scrolling for the Page to prevent its content overflow.
 
-* `none` (default) - the Page is non-scrollable and its content could overflow.
-* `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `always` - scrolling is enabled and scroll bar is always shown.
-* `hidden` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional `ScrollMode` enum with `None` as default.
+
+Supported values:
+
+* `None` (default) - the Row is non-scrollable and its content could overflow.
+* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
+* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
+* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
+* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
 
 ### `auto_scroll`
 

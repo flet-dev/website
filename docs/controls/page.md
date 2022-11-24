@@ -207,7 +207,7 @@ page.update()
 * `color_scheme_seed` - a seed color to algorithmically derive the rest of theme colors from.
 * `font_family` - the base font for all UI elements.
 * `use_material3` - `True` (default) to use Material 3 design; otherwise Material 2.
-* `visual_density` - `standard` (default), `compact`, `comfortable`, `adaptivePlatformDensity`.
+* `visual_density` - `ThemeVisualDensity` enum: `STANDARD` (default), `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 * `page_transitions` - an instance of `PageTransitionsTheme` that allows customizing navigation page transitions for different platforms. See section [below](#navigation-transitions).
 
 :::note
@@ -218,13 +218,13 @@ Read this [note about system fonts](/docs/controls/text#using-system-fonts) if y
 
 `theme.page_transitions` allows customizing navigation page transitions for different platforms. The value is an instance of `PageTransitionsTheme` class with the following optional properties:
 
-* `android` (default value is `fadeUpwards`)
-* `ios` (default value is `cupertino`)
-* `macos` (default value is `zoom`)
-* `linux` (default value is `zoom`)
-* `windows` (default value is `zoom`)
+* `android` (default value is `FADE_UPWARDS`)
+* `ios` (default value is `CUPERTINO`)
+* `macos` (default value is `ZOOM`)
+* `linux` (default value is `ZOOM`)
+* `windows` (default value is `ZOOM`)
 
-Supported transitions: `fadeUpwards`, `openUpwards`, `zoom`, `cupertino`.
+Supported transitions is `PageTransitionTheme` enum: `FADE_UPWARDS`, `OPEN_UPWARDS`, `ZOOM`, `CUPERTINO`.
 
 An simple example:
 

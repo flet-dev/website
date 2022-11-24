@@ -170,17 +170,17 @@ The value is an instance of `ButtonStyle` class. `ButtonStyle` allows controling
 
 Each individual style attribute could be configured for all or particular "Material states" of a button, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
 
-The following material states are supported:
+The following `MaterialState` values are supported:
 
-* `hovered`
-* `focused`
-* `pressed`
-* `dragged`
-* `selected`
-* `scrolledUnder`
-* `disabled`
-* `error`
-* `""` (empty string) - fallback state, meaning "all other states".
+* `HOVERED`
+* `FOCUSED`
+* `PRESSED`
+* `DRAGGED`
+* `SELECTED`
+* `SCROLLEDUNDER`
+* `DISABLED`
+* `ERROR`
+* `DEFAULT` - fallback state, meaning "all other states".
 
 To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `color` property to a literal the value will be applied to all button states:
 
@@ -190,14 +190,14 @@ ButtonStyle(
 )
 ```
 
-To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For example, to configure different background colors for `hovered` and `focused` states and another colors for all other states:
+To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For example, to configure different background colors for `HOVERED` and `FOCUSED` states and another colors for all other states:
 
 ```python
 ButtonStyle(
     color={
-        "hovered": ft.colors.WHITE,
-        "focused": ft.colors.BLUE,
-        "": ft.colors.BLACK,
+        ft.MaterialState.HOVERED: ft.colors.WHITE,
+        ft.MaterialState.FOCUSED: ft.colors.BLUE,
+        ft.MaterialState.DEFAULT: ft.colors.BLACK,
     }
 )
 ```
@@ -218,22 +218,22 @@ def main(page: ft.Page):
             "Styled button 1",
             style=ft.ButtonStyle(
                 color={
-                    "hovered": ft.colors.WHITE,
-                    "focused": ft.colors.BLUE,
-                    "": ft.colors.BLACK,
+                    ft.MaterialState.HOVERED: ft.colors.WHITE,
+                    ft.MaterialState.FOCUSED: ft.colors.BLUE,
+                    ft.MaterialState.DEFAULT: ft.colors.BLACK,
                 },
-                bgcolor={"focused": ft.colors.PINK_200, "": ft.colors.YELLOW},
-                padding={"hovered": 20},
+                bgcolor={ft.MaterialState.FOCUSED: ft.colors.PINK_200, "": ft.colors.YELLOW},
+                padding={ft.MaterialState.HOVERED: 20},
                 overlay_color=ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
                 animation_duration=500,
                 side={
-                    "": BorderSide(1, ft.colors.BLUE),
-                    "hovered": BorderSide(2, ft.colors.BLUE),
+                    ft.MaterialState.DEFAULT: BorderSide(1, ft.colors.BLUE),
+                    ft.MaterialState.HOVERED: BorderSide(2, ft.colors.BLUE),
                 },
                 shape={
-                    "hovered": RoundedRectangleBorder(radius=20),
-                    "": RoundedRectangleBorder(radius=2),
+                    ft.MaterialState.HOVERED: RoundedRectangleBorder(radius=20),
+                    ft.MaterialState.DEFAULT: RoundedRectangleBorder(radius=2),
                 },
             ),
         )

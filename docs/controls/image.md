@@ -150,7 +150,7 @@ If set, this color is blended with each image pixel using `color_blend_mode`.
 
 Used to combine `color` with the image.
 
-The default is `srcIn`. In terms of the blend mode, color is the source and this image is the destination.
+The default is `BlendMode.COLOR`. In terms of the blend mode, color is the source and this image is the destination.
 
 See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
 

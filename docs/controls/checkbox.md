@@ -101,15 +101,15 @@ The color to use for the check icon when this checkbox is checked.
 
 The color that fills the checkbox, in all Material states:
 
-* `hovered`
-* `focused`
-* `pressed`
-* `dragged`
-* `selected`
-* `scrolledUnder`
-* `disabled`
-* `error`
-* `""` (empty string) - fallback state, meaning "all other states".
+* `HOVERED`
+* `FOCUSED`
+* `PRESSED`
+* `DRAGGED`
+* `SELECTED`
+* `SCROLLEDUNDER`
+* `DISABLED`
+* `ERROR`
+* `DEFAULT` - fallback state, meaning "all other states".
 
 To configure checkbox fill color for all Material states set `fill_color` value to a literal, for example:
 
@@ -117,13 +117,13 @@ To configure checkbox fill color for all Material states set `fill_color` value 
 chk.fill_color=ft.colors.GREEN
 ```
 
-To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `hovered` and `focused` states and another color for all other states:
+To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
 
 ```python
 chk.fill_color={
-    "hovered": ft.colors.GREEN,
-    "focused": ft.colors.RED,
-    "": ft.colors.BLACK,
+    ft.MaterialState.HOVERED: ft.colors.GREEN,
+    ft.MaterialState.FOCUSED: ft.colors.RED,  
+    ft.MaterialState.DEFAULT: ft.colors.BLACK,
 }
 ```
 

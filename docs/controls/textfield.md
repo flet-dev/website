@@ -263,7 +263,7 @@ Property value is `TextAlign` enum with the following values:
 * `CENTER`
 * `JUSTIFY`
 * `START`
-* `END`.
+* `END`
 
 ### `autofocus`
 

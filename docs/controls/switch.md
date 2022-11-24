@@ -120,13 +120,13 @@ If `track_color` returns a non-null color in the default state, it will be used 
 
 The color of this Switch's thumb.
 
-Resolved in the following Material states:
+Resolved in the following `MaterialState` states:
 
-* `selected`
-* `hovered`
-* `focused`
-* `disabled`
-* `""` (empty string) - fallback state, meaning "all other states".
+* `SELECTED`
+* `HOVERED`
+* `FOCUSED`
+* `DISABLED`
+* `DEFAULT` - fallback state, meaning "all other states".
 
 To configure thumb color for all Material states set `thumb_color` value to a literal, for example:
 
@@ -134,13 +134,13 @@ To configure thumb color for all Material states set `thumb_color` value to a li
 sw.thumb_color=colors.GREEN
 ```
 
-To configure thumb color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `hovered` and `focused` states and another color for all other states:
+To configure thumb color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
 
 ```python
 sw.thumb_color={
-    "hovered": colors.GREEN,
-    "focused": colors.RED,
-    "": colors.BLACK,
+    ft.MaterialState.HOVERED: colors.GREEN,
+    ft.MaterialState.FOCUSED: colors.RED,
+    ft.MaterialState.DEFAULT: colors.BLACK,
 }
 ```
 
@@ -148,13 +148,13 @@ sw.thumb_color={
 
 The color of this Switch's track.
 
-Resolved in the following states:
+Resolved in the following `MaterialState` states:
 
-* `selected`
-* `hovered`
-* `focused`
-* `disabled`
-* `""` (empty string) - fallback state, meaning "all other states".
+* `SELECTED`
+* `HOVERED`
+* `FOCUSED`
+* `DISABLED`
+* `DEFAULT` - fallback state, meaning "all other states".
 
 ## Events
 

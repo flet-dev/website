@@ -99,7 +99,7 @@ def main(page: ft.Page):
         ft.Markdown(
             md1,
             selectable=True,
-            extension_set="gitHubWeb",
+            extension_set=ft.MarkdownExtensionSet.GITHUB_WEB,
             on_tap_link=lambda e: page.launch_url(e.data),
         )
     )
@@ -126,7 +126,7 @@ Markdown content to render.
 
 ### `extension_set`
 
-Markdown extension set: `none` (default), `commonMark`, `gitHubWeb`, `gitHubFlavored`.
+Property value is `MarkdownExtensionSet` enum with the following values: `NONE` (default), `COMMON_MARK`, `GITHUB_WEB`, `GITHUB_FLAVORED`.
 
 ### `code_theme`
 
