@@ -24,7 +24,7 @@ import flet as ft
 def main(page: ft.Page):
 
     c1 = ft.Container(
-        ft.Text("Hello!", style="headlineMedium"),
+        ft.Text("Hello!", style=ft.TextThemeStyle.HEADLINE_MEDIUM),
         alignment=ft.alignment.center,
         width=200,
         height=200,
@@ -39,11 +39,11 @@ def main(page: ft.Page):
     )
     c = ft.AnimatedSwitcher(
         c1,
-        transition="scale",
+        transition=ft.AnimatedSwitcherTransition.SCALE,
         duration=500,
         reverse_duration=100,
-        switch_in_curve="bounceOut",
-        switch_out_curve="bounceIn",
+        switch_in_curve=ft.AnimationCurve.BOUNCE_OUT,
+        switch_out_curve=ft.AnimationCurve.BOUNCE_IN,
     )
 
     def animate(e):
@@ -72,12 +72,12 @@ The duration, in milliseconds, of the transition from the new `content` value to
 
 ### `switch_in_curve`
 
-The animation curve to use when transitioning in a new `content`. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values. Default is `linear`.
+The animation curve to use when transitioning in a new `content`. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values. Property value is `AnimationCurve` enum with `AnimationCurve.LINEAR` as default.
 
 ### `switch_out_curve`
 
-The animation curve to use when transitioning a previous `content` out. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values. Default is `linear`.
+The animation curve to use when transitioning a previous `content` out. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values.  Property value is `AnimationCurve` enum with `AnimationCurve.LINEAR` as default.
 
 ### `transition`
 
-An animation type to transition between new and old `content`: `fade` (default), `rotation`, `scale`.
+An animation type to transition between new and old `content`. Property value is `AnimatedSwitcherTransition` enum with `AnimatedSwitcherTransition.FADE` as default.
