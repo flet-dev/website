@@ -59,17 +59,34 @@ page.update()
   </TabItem>
 </Tabs>
 
-### `horizontal_alignment`
-
-How the child Controls should be placed horizontally.
-
-Default value is `start` which means on the left side of the Page. Supported values: `start`, `center`, `end`, `stretch`, `baseline`.
-
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-For example, `start`, the default, places the children at the top of a Page. Supported values: `start`, `end`, `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
+For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
+
+Property value is `MainAxisAlignment` with the following values:
+
+* `START` (default)
+* `END`
+* `CENTER`
+* `SPACE_BETWEEN`
+* `SPACE_AROUND`
+* `SPACE_EVENLY`
+
+### `horizontal_alignment`
+
+How the child Controls should be placed horizontally.
+
+Default value is `CrossAxisAlignment.START` which means on the left side of the Page.
+
+Property value is `CrossAxisAlignment` with the following values:
+
+* `START` (default)
+* `CENTER`
+* `END`
+* `STRETCH`
+* `BASELINE`
 
 ### `spacing`
 

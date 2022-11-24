@@ -105,17 +105,34 @@ Operating system the application is running on:
 * `linux`
 * `windows`
 
-### `horizontal_alignment`
-
-How the child Controls should be placed horizontally.
-
-Property value is `CrossAxisAlignment` enum with `CrossAxisAlignment.START` as default.
-
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-Property value is `MainAxisAlignment` enum with `MainAxisAlignment.START` as default.
+For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
+
+Property value is `MainAxisAlignment` with the following values:
+
+* `START` (default)
+* `END`
+* `CENTER`
+* `SPACE_BETWEEN`
+* `SPACE_AROUND`
+* `SPACE_EVENLY`
+
+### `horizontal_alignment`
+
+How the child Controls should be placed horizontally.
+
+Default value is `CrossAxisAlignment.START` which means on the left side of the Page.
+
+Property value is `CrossAxisAlignment` with the following values:
+
+* `START` (default)
+* `CENTER`
+* `END`
+* `STRETCH`
+* `BASELINE`
 
 ### `spacing`
 

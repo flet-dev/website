@@ -234,13 +234,28 @@ A list of Controls to display inside the Row.
 
 How the child Controls should be placed horizontally.
 
-Property value is `MainAxisAlignment` enum with `MainAxisAlignment.START` as default.
+For example, `MainAxisAlignment.START`, the default, places the children on the left of a Row.
+
+Property value is `MainAxisAlignment` with the following values:
+
+* `START` (default)
+* `END`
+* `CENTER`
+* `SPACE_BETWEEN`
+* `SPACE_AROUND`
+* `SPACE_EVENLY`
 
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-Property value is `CrossAxisAlignment` enum with `CrossAxisAlignment.START` as default.
+Property value is `CrossAxisAlignment` with the following values:
+
+* `START` (default)
+* `CENTER`
+* `END`
+* `STRETCH`
+* `BASELINE`
 
 ### `tight`
 
