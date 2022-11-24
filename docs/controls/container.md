@@ -355,7 +355,7 @@ Sets image opacity when blending with a background: value between `0.0` and `1.0
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details. 
+The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
 
 ### `animate`
 
@@ -400,12 +400,14 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Supported values:
+The content will be clipped (or not) according to this option.
 
-* `none` (default)
-* `antiAlias`
-* `antiAliasWithSaveLayer`
-* `hardEdge`
+Property value is `ClipBehavior` enum with supported values:
+
+* `NONE` (default)
+* `ANTI_ALIAS`
+* `ANTI_ALIAS_WITH_SAVE_LAYER`
+* `HARD_EDGE`
 
 ## Events
 

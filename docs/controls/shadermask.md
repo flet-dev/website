@@ -32,16 +32,16 @@ def main(page: ft.Page):
                         src="https://picsum.photos/200/200?1",
                         width=200,
                         height=200,
-                        fit="fill",
+                        fit=ft.ImageFit.FILL,
                     ),
-                    blend_mode="multiply",
+                    blend_mode=ft.BlendMode.MULTIPLY,
                     shader=ft.RadialGradient(
                         center=ft.alignment.center,
                         radius=2.0,
-                       colors=[ft.colors.WHITE, ft.colors.PINK],
-                        tile_mode="clamp",
+                        colors=[ft.colors.WHITE, ft.colors.PINK],
+                        tile_mode=ft.GradientTileMode.CLAMP,
                     ),
-                ),
+                )
             ]
         )
     )
@@ -68,11 +68,11 @@ def main(page: ft.Page):
             [
                 ft.ShaderMask(
                     ft.Image(src="https://picsum.photos/100/200?2"),
-                    blend_mode="dstIn",
+                    blend_mode=ft.BlendMode.DST_IN,
                     shader=ft.LinearGradient(
                         begin=ft.alignment.top_center,
                         end=ft.alignment.bottom_center,
-                       colors=[ft.colors.BLACK, ft.colors.TRANSPARENT],
+                        colors=[ft.colors.BLACK, ft.colors.TRANSPARENT],
                         stops=[0.5, 1.0],
                     ),
                     border_radius=10,
@@ -97,40 +97,42 @@ A child `Control` to apply a shader to.
 
 The blend mode to use when applying the shader to the `content`.
 
-See [BlendMode](https://api.flutter.dev/flutter/dart-ui/BlendMode.html) from Flutter documentation for blend mode examples.
+Property value is `BlendMode` enum with `MODULATE` as default.
 
 Supported values:
 
-* `clear`
-* `color`
-* `colorBurn`
-* `colorDodge`
-* `darken`
-* `difference`
-* `dst`
-* `dstATop`
-* `dstIn`
-* `dstOut`
-* `dstOver`
-* `exclusion`
-* `hardLight`
-* `hue`
-* `lighten`
-* `luminosity`
-* `modulate` (default)
-* `multiply`
-* `overlay`
-* `plus`
-* `saturation`
-* `screen`
-* `softLight`
-* `src`
-* `srcATop`
-* `srcIn`
-* `srcOut`
-* `srcOver`
-* `values`
-* `xor`
+* `CLEAR`
+* `COLOR`
+* `COLOR_BURN`
+* `COLOR_DODGE`
+* `DARKEN`
+* `DIFFERENCE`
+* `DST`
+* `DST_A_TOP`
+* `DST_IN`
+* `DST_OUT`
+* `DST_OVER`
+* `EXCLUSION`
+* `HARD_LIGHT`
+* `HUE`
+* `LIGHTEN`
+* `LUMINOSITY`
+* `MODULATE` (default)
+* `MULTIPLY`
+* `OVERLAY`
+* `PLUS`
+* `SATURATION`
+* `SCREEN`
+* `SOFT_LIGHT`
+* `SRC`
+* `SRC_A_TOP`
+* `SRC_IN`
+* `SRC_OUT`
+* `SRC_OVER`
+* `VALUES`
+* `XOR`
+
+See [BlendMode](https://api.flutter.dev/flutter/dart-ui/BlendMode.html) from Flutter documentation for blend mode examples.
 
 ### `shader`
 
