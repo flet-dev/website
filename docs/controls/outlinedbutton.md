@@ -114,7 +114,7 @@ def main(page: ft.Page):
                     ft.Icon(name=ft.icons.AUDIOTRACK, color="green"),
                     ft.Icon(name=ft.icons.BEACH_ACCESS, color="blue"),
                 ],
-                alignment="spaceAround",
+                alignment=ft.MainAxisAlignment.SPACE_AROUND,
             ),
         ),
         ft.OutlinedButton(
@@ -124,7 +124,7 @@ def main(page: ft.Page):
                         ft.Text(value="Compound button", size=20),
                         ft.Text(value="This is secondary text"),
                     ],
-                    alignment="center",
+                    alignment=ft.MainAxisAlignment.CENTER,
                     spacing=5,
                 ),
                 padding=ft.padding.all(10),

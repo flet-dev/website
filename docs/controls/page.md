@@ -109,13 +109,13 @@ Operating system the application is running on:
 
 How the child Controls should be placed horizontally.
 
-Default value is `start` which means on the left side of the Page. Supported values: `start`, `center`, `end`, `stretch`, `baseline`.
+Property value is `CrossAxisAlignment` enum with `CrossAxisAlignment.START` as default.
 
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-For example, `start`, the default, places the children at the top of a Page. Supported values: `start`, `end`, `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
+Property value is `MainAxisAlignment` enum with `MainAxisAlignment.START` as default.
 
 ### `spacing`
 
@@ -146,13 +146,17 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 
 ### `scroll`
 
-Enables a vertical scrolling for the Page to prevent its content overflow. Supported values:
+Enables a vertical scrolling for the Page to prevent its content overflow.
 
-* `none` (default) - the Page is non-scrollable and its content could overflow.
-* `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `always` - scrolling is enabled and scroll bar is always shown.
-* `hidden` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional `ScrollMode` enum with `None` as default.
+
+Supported values:
+
+* `None` (default) - the Row is non-scrollable and its content could overflow.
+* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
+* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
+* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
+* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
 
 ### `auto_scroll`
 
@@ -694,7 +698,7 @@ def main(page: ft.Page):
             ft.ElevatedButton("Yes", on_click=yes_click),
             ft.OutlinedButton("No", on_click=no_click),
         ],
-        actions_alignment="end",
+        actions_alignment=ft.MainAxisAlignment.END,
     )
 
     page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))

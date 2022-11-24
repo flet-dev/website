@@ -33,7 +33,7 @@ def main(page):
                         ),
                         ft.Row(
                             [ft.TextButton("Buy tickets"), ft.TextButton("Listen")],
-                            alignment="end",
+                            alignment=ft.MainAxisAlignment.END,
                         ),
                     ]
                 ),

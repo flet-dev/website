@@ -64,8 +64,8 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "Containers - clickable and not"
-    page.horizontal_alignment = "center"
-    page.vertical_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     page.add(
         ft.Row(
@@ -115,7 +115,7 @@ def main(page: ft.Page):
                     on_click=lambda e: print("Clickable transparent with Ink clicked!"),
                 ),
             ],
-            alignment="center",
+            alignment=ft.MainAxisAlignment.CENTER,
         ),
     )
 
@@ -431,8 +431,8 @@ A simple usage example:
 import flet as ft
 
 def main(page: ft.Page):
-    page.horizontal_alignment = "center"
-    page.vertical_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     t = ft.Text()
 
@@ -454,7 +454,7 @@ def main(page: ft.Page):
                 ),
                 t,
             ],
-            horizontal_alignment="center",
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         ),
     )
 

@@ -23,7 +23,7 @@ import flet as ft
 def main(page: ft.Page):
     page.title = "Floating Action Button"
     page.theme_mode = "light"
-    page.horizontal_alignment = "center"
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.auto_scroll = True
     page.scroll = "hidden"
     page.appbar = ft.AppBar(

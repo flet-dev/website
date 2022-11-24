@@ -29,7 +29,7 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content=ft.Text(value=i),
+                    content=ft.Text(value=str(i)),
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
@@ -77,7 +77,7 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content=ft.Text(value=i),
+                    content=ft.Text(value=str(i)),
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
@@ -141,7 +141,7 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content=ft.Text(value=i),
+                    content=ft.Text(value=str(i)),
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
@@ -150,10 +150,10 @@ def main(page: ft.Page):
             )
         return items
 
-    def row_with_alignment(align):
+    def row_with_alignment(align: ft.MainAxisAlignment):
         return ft.Column(
             [
-                ft.Text(align, size=16),
+                ft.Text(str(align), size=16),
                 ft.Container(
                     content=ft.Row(items(3), alignment=align),
                     bgcolor=ft.colors.AMBER_100,
@@ -162,13 +162,14 @@ def main(page: ft.Page):
         )
 
     page.add(
-        row_with_alignment("start"),
-        row_with_alignment("center"),
-        row_with_alignment("end"),
-        row_with_alignment("spaceBetween"),
-        row_with_alignment("spaceAround"),
-        row_with_alignment("spaceEvenly"),
+        row_with_alignment(ft.MainAxisAlignment.START),
+        row_with_alignment(ft.MainAxisAlignment.CENTER),
+        row_with_alignment(ft.MainAxisAlignment.END),
+        row_with_alignment(ft.MainAxisAlignment.SPACE_BETWEEN),
+        row_with_alignment(ft.MainAxisAlignment.SPACE_AROUND),
+        row_with_alignment(ft.MainAxisAlignment.SPACE_EVENLY),
     )
+
 
 ft.app(target=main)
 ```
@@ -191,7 +192,7 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content=ft.Text(value=i),
+                    content=ft.Text(value=str(i)),
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
@@ -200,12 +201,12 @@ def main(page: ft.Page):
             )
         return items
 
-    def row_with_vertical_alignment(align):
+    def row_with_vertical_alignment(align: ft.CrossAxisAlignment):
         return ft.Column(
             [
-                ft.Text(align, size=16),
+                ft.Text(str(align), size=16),
                 ft.Container(
-                    content=ft.Row(items(3), vertical_alignment = align),
+                    content=ft.Row(items(3), vertical_alignment=align),
                     bgcolor=ft.colors.AMBER_100,
                     height=150,
                 ),
@@ -213,9 +214,9 @@ def main(page: ft.Page):
         )
 
     page.add(
-        row_with_vertical_alignment("start"),
-        row_with_vertical_alignment("center"),
-        row_with_vertical_alignment("end"),
+        row_with_vertical_alignment(ft.CrossAxisAlignment.START),
+        row_with_vertical_alignment(ft.CrossAxisAlignment.CENTER),
+        row_with_vertical_alignment(ft.CrossAxisAlignment.END),
     )
 
 ft.app(target=main)
@@ -233,13 +234,13 @@ A list of Controls to display inside the Row.
 
 How the child Controls should be placed horizontally.
 
-For example, `start`, the default, places the children on the left of a Row. Supported values: `start`, `end`, `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
+Property value is `MainAxisAlignment` enum with `MainAxisAlignment.START` as default.
 
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-Default value is `start`. Supported values: `start`, `center`, `end`, `stretch`, `baseline`.
+Property value is `CrossAxisAlignment` enum with `CrossAxisAlignment.START` as default.
 
 ### `tight`
 
@@ -259,13 +260,17 @@ Spacing between runs when `wrap=True`. Default value is 10.
 
 ### `scroll`
 
-Enables horizontal scrolling for the Row to prevent its content overflow. Supported values:
+Enables horizontal scrolling for the Row to prevent its content overflow.
 
-* `none` (default) - the Row is non-scrollable and its content could overflow.
-* `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `always` - scrolling is enabled and scroll bar is always shown.
-* `hidden` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional `ScrollMode` enum with `None` as default.
+
+Supported values:
+
+* `None` (default) - the Row is non-scrollable and its content could overflow.
+* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
+* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
+* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
+* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
 
 ### `auto_scroll`
 

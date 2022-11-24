@@ -111,7 +111,7 @@ def main(page: ft.Page):
         ],
     )
 
-    page.horizontal_alignment = "center"
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.add(view)
 
 ft.app(target=main)
@@ -157,7 +157,7 @@ class TodoApp(ft.UserControl):
 
 def main(page: ft.Page):
     page.title = "ToDo App"
-    page.horizontal_alignment = "center"
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.update()
 
     # create application instance
@@ -208,8 +208,8 @@ class Task(ft.UserControl):
         self.edit_name = ft.TextField(expand=1)
 
         self.display_view = ft.Row(
-            alignment="spaceBetween",
-            vertical_alignment="center",
+            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
             controls=[
                 self.display_task,
                 ft.Row(
@@ -232,8 +232,8 @@ class Task(ft.UserControl):
 
         self.edit_view = ft.Row(
             visible=False,
-            alignment="spaceBetween",
-            vertical_alignment="center",
+            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
             controls=[
                 self.edit_name,
                 ft.IconButton(
@@ -417,7 +417,7 @@ class TodoApp():
         self.view = ft.Column(
             width=600,
             controls=[
-                ft.Row([ ft.Text(value="Todos", style="headlineMedium")], alignment="center"),
+                ft.Row([ ft.Text(value="Todos", style="headlineMedium")], alignment=ft.MainAxisAlignment.CENTER),
                 ft.Row(
                     controls=[
                         self.new_task,
@@ -430,8 +430,8 @@ class TodoApp():
                         self.filter,
                         self.tasks,
                         ft.Row(
-                            alignment="spaceBetween",
-                            vertical_alignment="center",
+                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                            vertical_alignment=ft.CrossAxisAlignment.CENTER,
                             controls=[
                                 self.items_left,
                                 ft.OutlinedButton(

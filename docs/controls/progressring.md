@@ -34,7 +34,7 @@ def main(page: ft.Page):
         ft.Text("Indeterminate cicrular progress", style="headlineSmall"),
         ft.Column(
             [ProgressRing(), ft.Text("I'm going to run for ages...")],
-            horizontal_alignment="center",
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         ),
     )
 

@@ -50,7 +50,7 @@ def main(page: ft.Page):
             [
                 rail,
                 ft.VerticalDivider(width=1),
-                ft.Column([ ft.Text("Body!")], alignment="start", expand=True),
+                ft.Column([ ft.Text("Body!")], alignment=ft.MainAxisAlignment.START, expand=True),
             ],
             expand=True,
         )

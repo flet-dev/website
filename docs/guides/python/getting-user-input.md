@@ -27,7 +27,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
-    page.vertical_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
     txt_number = ft.TextField(value="0", text_align="right", width=100)
 
@@ -46,7 +46,7 @@ def main(page: ft.Page):
                 txt_number,
                 ft.IconButton(ft.icons.ADD, on_click=plus_click),
             ],
-            alignment="center",
+            alignment=ft.MainAxisAlignment.CENTER,
         )
     )
 
