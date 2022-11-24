@@ -32,7 +32,7 @@ def main(page):
     c3 = ft.Checkbox(label="Checked by default checkbox", value=True)
     c4 = ft.Checkbox(label="Disabled checkbox", disabled=True)
     c5 = ft.Checkbox(
-        label="Checkbox with rendered label_position='left'", label_position="left"
+        label="Checkbox with rendered label_position='left'", label_position=ft.LabelPosition.LEFT
     )
     b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(c1, c2, c3, c4, c5, b, t)
@@ -87,7 +87,7 @@ The clickable label to display on the right of a checkbox.
 
 ### `label_position`
 
-Set to `left` if `label` should be displayed on the left side of the checkbox; otherwise `right` (default).
+Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `autofocus`
 

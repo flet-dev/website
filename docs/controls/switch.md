@@ -33,7 +33,7 @@ def main(page):
     c2 = ft.Switch(label="Checked switch", value=True)
     c3 = ft.Switch(label="Disabled switch", disabled=True)
     c4 = ft.Switch(
-        label="Switch with rendered label_position='left'", label_position="left"
+        label="Switch with rendered label_position='left'", label_position=ft.LabelPosition.LEFT
     )
     b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(c1, c2, c3, c4, b, t)
@@ -83,7 +83,7 @@ The clickable label to display on the right of the Switch.
 
 ### `label_position`
 
-Set to `left` if `label` should be displayed on the left side of the Switch; otherwise `right` (default).
+Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `autofocus`
 

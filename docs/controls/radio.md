@@ -92,7 +92,7 @@ The clickable label to display on the right of a Radio.
 
 ### `label_position`
 
-Set to `left` if `label` should be displayed on the left side of the Radio; otherwise `right` (default).
+Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `autofocus`
 
