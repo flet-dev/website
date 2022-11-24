@@ -27,7 +27,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "GridView Example"
-    page.theme_mode = "dark"
+    page.theme_mode = ft.ThemeMode.DARK
     page.padding = 50
     page.update()
 

@@ -164,7 +164,11 @@ Supported values:
 
 ### `theme_mode`
 
-A theme to use: `system` (default), `light` or `dark`.
+Page theme.
+
+Property value is an optional `ThemeMode` enum with `SYSTEM` as default.
+
+Supported values: `SYSTEM` (default), `LIGHT` or `DARK`.
 
 ### `theme`
 
