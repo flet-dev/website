@@ -254,7 +254,7 @@ A list of Controls to display inside the Column.
 
 How the child Controls should be placed vertically.
 
-Property value is `MainAxisAlignment` with the following values:
+Property value is `MainAxisAlignment` enum with the following values:
 
 * `START` (default)
 * `END`
@@ -267,7 +267,7 @@ Property value is `MainAxisAlignment` with the following values:
 
 How the child Controls should be placed horizontally.
 
-Property value is `CrossAxisAlignment` with the following values:
+Property value is `CrossAxisAlignment` enum with the following values:
 
 * `START` (default)
 * `CENTER`
