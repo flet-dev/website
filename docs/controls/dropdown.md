@@ -177,7 +177,7 @@ The name of the icon to show before the input field and outside of the decoratio
 
 ### `border`
 
-Border around input: `outline` (default), `underline`, `none`.
+Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
 
 ### `content_padding`
 

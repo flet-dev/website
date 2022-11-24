@@ -137,14 +137,14 @@ def main(page: ft.Page):
         ft.TextField(label="Underlined", border="underline", hint_text="Enter text here"),
         ft.TextField(
             label="Underlined filled",
-            border="underline",
+            border=ft.InputBorder.UNDERLINE,
             filled=True,
             hint_text="Enter text here",
         ),
         ft.TextField(label="Borderless", border="none", hint_text="Enter text here"),
         ft.TextField(
             label="Borderless filled",
-            border="none",
+            border=ft.InputBorder.NONE,
             filled=True,
             hint_text="Enter text here",
         ),
@@ -198,19 +198,19 @@ Current value of the TextField.
 
 ### `keyboard_type`
 
-The type of keyboard to use for editing the text:
+The type of keyboard to use for editing the text. The property value is `KeyboardType` enum with the following values:
 
-* `text`
-* `multiline`
-* `number`
-* `phone`
-* `datetime`
-* `email`
-* `url`
-* `visiblePassword`
-* `name`
-* `streetAddress`
-* `none`
+* `TEXT` (default)
+* `MULTILINE`
+* `NUMBER`
+* `PHONE`
+* `DATETIME`
+* `EMAIL`
+* `URL`
+* `VISIBLE_PASSWORD`
+* `NAME`
+* `STREET_ADDRESS`
+* `NONE`
 
 ### `multiline`
 
@@ -254,7 +254,16 @@ Changes the behavior of `Enter` button in `multiline` TextField to be chat-like,
 
 ### `text_align`
 
-How the text should be aligned horizontally: `left` (default), `right`, `center`, `justify`, `start`, `end`.
+How the text should be aligned horizontally.
+
+Property value is `TextAlign` enum with the following values:
+
+* `LEFT` (default)
+* `RIGHT`
+* `CENTER`
+* `JUSTIFY`
+* `START`
+* `END`.
 
 ### `autofocus`
 
@@ -276,7 +285,7 @@ The name of the icon to show before the input field and outside of the decoratio
 
 ### `border`
 
-Border around input: `outline` (default), `underline`, `none`.
+Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
 
 ### `content_padding`
 
@@ -346,12 +355,14 @@ Limits a maximum number of characters that can be entered into TextField.
 
 ### `capitalization`
 
-Enables automatic on-the-fly capitalization of entered text:
+Enables automatic on-the-fly capitalization of entered text.
 
-* `none` (default) - do not change entered text.
-* `characters` - every entered symbol is capitalized.
-* `words` - capitalize the first letter of every word.
-* `sentences` - capitalize the first letter of every sentese.
+Property value is `TextCapitalization` enum with the following values:
+
+* `NONE` (default) - do not change entered text.
+* `CHARACTERS` - every entered symbol is capitalized.
+* `WORDS` - capitalize the first letter of every word.
+* `SENTENCES` - capitalize the first letter of every sentese.
 
 ### `hint_text`
 
