@@ -317,6 +317,12 @@ Optional text `suffix` to place on the line after the input.
 
 The style to use for `suffix_text`.
 
+### `alignment`
+
+Defines how the hint or the selected item is positioned within the dropdown.
+
+See [`Container.alignment`](/docs/controls/container#alignment) property for possible values.
+
 ## `Dropdown` methods
 
 ### `focus()`
