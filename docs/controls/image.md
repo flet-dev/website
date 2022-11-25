@@ -19,7 +19,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "Images Example"
-    page.theme_mode = "light"
+    page.theme_mode = ft.ThemeMode.LIGHT
     page.padding = 50
     page.update()
 
@@ -27,7 +27,7 @@ def main(page: ft.Page):
         src=f"/icons/icon-512.png",
         width=100,
         height=100,
-        fit="contain",
+        fit=ft.ImageFit.CONTAIN,
     )
     images = ft.Row(expand=1, wrap=False, scroll="always")
 
@@ -39,8 +39,8 @@ def main(page: ft.Page):
                 src=f"https://picsum.photos/200/200?{i}",
                 width=200,
                 height=200,
-                fit="none",
-                repeat="noRepeat",
+                fit=ft.ImageFit.NONE,
+                repeat=ft.ImageRepeat.NO_REPEAT,
                 border_radius=ft.border_radius.all(10),
             )
         )
@@ -128,11 +128,15 @@ It is strongly recommended that either both the width and the height be specifie
 
 ### `repeat`
 
-How to paint any portions of the layout bounds not covered by the image. Supported values: `noRepeat` (default), `repeat`, `repeatX`, `repeatY`.
+How to paint any portions of the layout bounds not covered by the image.
+
+Property value is `ImageRepeat` enum with supported values: `NO_REPEAT` (default), `REPEAT`, `REPEAT_X`, `REPEAT_Y`.
 
 ### `fit`
 
-How to inscribe the image into the space allocated during layout. Supported values: `none` (default), `contain`, `cover`, `fill`, `fitHeight`, `fitWidth`, `scaleDown`.
+How to inscribe the image into the space allocated during layout.
+
+Property value is `ImageFit` enum with supported values: `NONE` (default), `CONTAIN`, `COVER`, `FILL`, `FIT_HEIGHT`, `FIT_WIDTH`, `SCALE_DOWN`.
 
 ### `border_radius`
 
@@ -146,7 +150,7 @@ If set, this color is blended with each image pixel using `color_blend_mode`.
 
 Used to combine `color` with the image.
 
-The default is `srcIn`. In terms of the blend mode, color is the source and this image is the destination.
+The default is `BlendMode.COLOR`. In terms of the blend mode, color is the source and this image is the destination.
 
 See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
 

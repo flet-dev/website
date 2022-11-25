@@ -29,7 +29,7 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content=ft.Text(value=i),
+                    content=ft.Text(value=str(i)),
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
@@ -80,7 +80,7 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content=ft.Text(value=i),
+                    content=ft.Text(value=str(i)),
                     alignment=ft.alignment.center,
                     width=30,
                     height=30,
@@ -145,7 +145,7 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content=ft.Text(value=i),
+                    content=ft.Text(value=str(i)),
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
@@ -154,10 +154,10 @@ def main(page: ft.Page):
             )
         return items
 
-    def column_with_alignment(align):
+    def column_with_alignment(align: ft.MainAxisAlignment):
         return ft.Column(
             [
-                ft.Text(align, size=16),
+                ft.Text(str(align), size=10),
                 ft.Container(
                     content=ft.Column(items(3), alignment=align),
                     bgcolor=ft.colors.AMBER_100,
@@ -169,15 +169,15 @@ def main(page: ft.Page):
     page.add(
         ft.Row(
             [
-                column_with_alignment("start"),
-                column_with_alignment("center"),
-                column_with_alignment("end"),
-                column_with_alignment("spaceBetween"),
-                column_with_alignment("spaceAround"),
-                column_with_alignment("spaceEvenly"),
+                column_with_alignment(ft.MainAxisAlignment.START),
+                column_with_alignment(ft.MainAxisAlignment.CENTER),
+                column_with_alignment(ft.MainAxisAlignment.END),
+                column_with_alignment(ft.MainAxisAlignment.SPACE_BETWEEN),
+                column_with_alignment(ft.MainAxisAlignment.SPACE_AROUND),
+                column_with_alignment(ft.MainAxisAlignment.SPACE_EVENLY),
             ],
             spacing=30,
-            alignment="start",
+            alignment=ft.MainAxisAlignment.START,
         )
     )
 
@@ -202,7 +202,7 @@ def main(page: ft.Page):
         for i in range(1, count + 1):
             items.append(
                 ft.Container(
-                    content=ft.Text(value=i),
+                    content=ft.Text(value=str(i)),
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
@@ -211,13 +211,15 @@ def main(page: ft.Page):
             )
         return items
 
-    def column_with_horiz_alignment(align):
+    def column_with_horiz_alignment(align: ft.CrossAxisAlignment):
         return ft.Column(
             [
-                ft.Text(align, size=16),
+                ft.Text(str(align), size=16),
                 ft.Container(
                     content=ft.Column(
-                        items(3), alignment="start", horizontal_alignment=align
+                        items(3),
+                        alignment=ft.MainAxisAlignment.START,
+                        horizontal_alignment=align,
                     ),
                     bgcolor=ft.colors.AMBER_100,
                     width=100,
@@ -228,12 +230,12 @@ def main(page: ft.Page):
     page.add(
         ft.Row(
             [
-                column_with_horiz_alignment("start"),
-                column_with_horiz_alignment("center"),
-                column_with_horiz_alignment("end"),
+                column_with_horiz_alignment(ft.CrossAxisAlignment.START),
+                column_with_horiz_alignment(ft.CrossAxisAlignment.CENTER),
+                column_with_horiz_alignment(ft.CrossAxisAlignment.END),
             ],
             spacing=30,
-            alignment="start",
+            alignment=ft.MainAxisAlignment.START,
         )
     )
 
@@ -252,13 +254,26 @@ A list of Controls to display inside the Column.
 
 How the child Controls should be placed vertically.
 
-For example, `start`, the default, places the children at the top of a Column. Supported values: `start`, `end`, `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
+Property value is `MainAxisAlignment` enum with the following values:
+
+* `START` (default)
+* `END`
+* `CENTER`
+* `SPACE_BETWEEN`
+* `SPACE_AROUND`
+* `SPACE_EVENLY`
 
 ### `horizontal_alignment`
 
 How the child Controls should be placed horizontally.
 
-Default value is `start`. Supported values: `start`, `center`, `end`, `stretch`, `baseline`.
+Property value is `CrossAxisAlignment` enum with the following values:
+
+* `START` (default)
+* `CENTER`
+* `END`
+* `STRETCH`
+* `BASELINE`
 
 ### `tight`
 
@@ -278,13 +293,17 @@ Spacing between runs when `wrap=True`. Default value is 10.
 
 ### `scroll`
 
-Enables a vertical scrolling for the Column to prevent its content overflow. Supported values:
+Enables a vertical scrolling for the Column to prevent its content overflow.
 
-* `none` (default) - the Column is non-scrollable and its content could overflow.
-* `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `always` - scrolling is enabled and scroll bar is always shown.
-* `hidden` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional `ScrollMode` enum with `None` as default.
+
+Supported values:
+
+* `None` (default) - the Row is non-scrollable and its content could overflow.
+* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
+* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
+* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
+* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
 
 ### `auto_scroll`
 

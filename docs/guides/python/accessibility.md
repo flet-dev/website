@@ -54,8 +54,8 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
-    page.vertical_alignment = "center"
-    page.horizontal_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     def on_keyboard(e: ft.KeyboardEvent):
         print(e)
@@ -68,7 +68,7 @@ def main(page: ft.Page):
     txt_number = ft.Text("0", size=40)
 
     def button_click(e):
-        txt_number.value = int(txt_number.value) + 1
+        txt_number.value = str(int(txt_number.value) + 1)
         page.update()
 
     page.add(

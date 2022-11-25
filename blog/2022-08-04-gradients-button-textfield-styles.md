@@ -42,7 +42,7 @@ def main(page: ft.Page):
                     "0xfff39060",
                     "0xffffb56b",
                 ],
-                tile_mode="mirror",
+                tile_mode=ft.GradientTileMode.MIRROR,
                 rotation=math.pi / 3,
             ),
             width=150,
@@ -148,22 +148,22 @@ def main(page: ft.Page):
             "Styled button 1",
             style=ft.ButtonStyle(
                 color={
-                    "hovered": ft.colors.WHITE,
-                    "focused": ft.colors.BLUE,
-                    "": ft.colors.BLACK,
+                    ft.MaterialState.HOVERED: ft.colors.WHITE,
+                    ft.MaterialState.FOCUSED: ft.colors.BLUE,
+                    ft.MaterialState.DEFAULT: ft.colors.BLACK,
                 },
-                bgcolor={"focused": ft.colors.PINK_200, "": ft.colors.YELLOW},
-                padding={"hovered": 20},
+                bgcolor={ft.MaterialState.FOCUSED: ft.colors.PINK_200, "": ft.colors.YELLOW},
+                padding={ft.MaterialState.HOVERED: 20},
                 overlay_color=ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
                 animation_duration=500,
                 side={
-                    "": BorderSide(1, ft.colors.BLUE),
-                    "hovered": BorderSide(2, ft.colors.BLUE),
+                    ft.MaterialState.DEFAULT: BorderSide(1, ft.colors.BLUE),
+                    ft.MaterialState.HOVERED: BorderSide(2, ft.colors.BLUE),
                 },
                 shape={
-                    "hovered": RoundedRectangleBorder(radius=20),
-                    "": RoundedRectangleBorder(radius=2),
+                    ft.MaterialState.HOVERED: RoundedRectangleBorder(radius=20),
+                    ft.MaterialState.DEFAULT: RoundedRectangleBorder(radius=2),
                 },
             ),
         )
@@ -172,7 +172,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Empty string (`""`) state is a fallback style.
+`ft.MaterialState.DEFAULT` state is a fallback style.
 
 Button shape could also be changed with `ButtonStyle.shape` property:
 

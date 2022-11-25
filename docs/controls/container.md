@@ -64,8 +64,8 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "Containers - clickable and not"
-    page.horizontal_alignment = "center"
-    page.vertical_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     page.add(
         ft.Row(
@@ -115,7 +115,7 @@ def main(page: ft.Page):
                     on_click=lambda e: print("Clickable transparent with Ink clicked!"),
                 ),
             ],
-            alignment="center",
+            alignment=ft.MainAxisAlignment.CENTER,
         ),
     )
 
@@ -269,7 +269,7 @@ Container(
 * `end` - An instance of `Alignment` class. The offset at which stop 1.0 of the gradient is placed.
 * `colors` - The colors the gradient should obtain at each of the stops. If stops is non-null, this list must have the same length as stops. This list must have at least two colors in it (otherwise, it's not a gradient!).
 * `stops` - A list of values from 0.0 to 1.0 that denote fractions along the gradient. If non-null, this list must have the same length as `colors`. If the first value is not 0.0, then a stop with position 0.0 and a color equal to the first color in `colors` is implied. If the last value is not 1.0, then a stop with position 1.0 and a color equal to the last color in `colors` is implied.
-* `tile_mode` - How this gradient should tile the plane beyond in the region before `begin` and after `end`. Supported values: `clamp` (default), `decal`, `mirror`, `repeated`. More info [here](https://api.flutter.dev/flutter/dart-ui/TileMode.html).
+* `tile_mode` - How this gradient should tile the plane beyond in the region before `begin` and after `end`. The value is `GradientTileMode` enum with supported values: `CLAMP` (default), `DECAL`, `MIRROR`, `REPEATED`. More info [here](https://api.flutter.dev/flutter/dart-ui/TileMode.html).
 * `rotation` - rotation for the gradient, in [radians](https://en.wikipedia.org/wiki/Radian), around the center-point of its bounding box.
 
 More information:
@@ -355,7 +355,7 @@ Sets image opacity when blending with a background: value between `0.0` and `1.0
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details. 
+The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
 
 ### `animate`
 
@@ -400,12 +400,14 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Supported values:
+The content will be clipped (or not) according to this option.
 
-* `none` (default)
-* `antiAlias`
-* `antiAliasWithSaveLayer`
-* `hardEdge`
+Property value is `ClipBehavior` enum with supported values:
+
+* `NONE` (default)
+* `ANTI_ALIAS`
+* `ANTI_ALIAS_WITH_SAVE_LAYER`
+* `HARD_EDGE`
 
 ## Events
 
@@ -431,8 +433,8 @@ A simple usage example:
 import flet as ft
 
 def main(page: ft.Page):
-    page.horizontal_alignment = "center"
-    page.vertical_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     t = ft.Text()
 
@@ -454,7 +456,7 @@ def main(page: ft.Page):
                 ),
                 t,
             ],
-            horizontal_alignment="center",
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         ),
     )
 

@@ -32,7 +32,7 @@ def main(page):
     c3 = ft.Checkbox(label="Checked by default checkbox", value=True)
     c4 = ft.Checkbox(label="Disabled checkbox", disabled=True)
     c5 = ft.Checkbox(
-        label="Checkbox with rendered label_position='left'", label_position="left"
+        label="Checkbox with rendered label_position='left'", label_position=ft.LabelPosition.LEFT
     )
     b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(c1, c2, c3, c4, c5, b, t)
@@ -87,7 +87,7 @@ The clickable label to display on the right of a checkbox.
 
 ### `label_position`
 
-Set to `left` if `label` should be displayed on the left side of the checkbox; otherwise `right` (default).
+Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `autofocus`
 
@@ -101,15 +101,15 @@ The color to use for the check icon when this checkbox is checked.
 
 The color that fills the checkbox, in all Material states:
 
-* `hovered`
-* `focused`
-* `pressed`
-* `dragged`
-* `selected`
-* `scrolledUnder`
-* `disabled`
-* `error`
-* `""` (empty string) - fallback state, meaning "all other states".
+* `HOVERED`
+* `FOCUSED`
+* `PRESSED`
+* `DRAGGED`
+* `SELECTED`
+* `SCROLLEDUNDER`
+* `DISABLED`
+* `ERROR`
+* `DEFAULT` - fallback state, meaning "all other states".
 
 To configure checkbox fill color for all Material states set `fill_color` value to a literal, for example:
 
@@ -117,13 +117,13 @@ To configure checkbox fill color for all Material states set `fill_color` value 
 chk.fill_color=ft.colors.GREEN
 ```
 
-To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `hovered` and `focused` states and another color for all other states:
+To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
 
 ```python
 chk.fill_color={
-    "hovered": ft.colors.GREEN,
-    "focused": ft.colors.RED,
-    "": ft.colors.BLACK,
+    ft.MaterialState.HOVERED: ft.colors.GREEN,
+    ft.MaterialState.FOCUSED: ft.colors.RED,  
+    ft.MaterialState.DEFAULT: ft.colors.BLACK,
 }
 ```
 

@@ -40,7 +40,7 @@ def main(page: ft.Page):
             ft.TextButton("Yes", on_click=close_dlg),
             ft.TextButton("No", on_click=close_dlg),
         ],
-        actions_alignment="end",
+        actions_alignment=ft.MainAxisAlignment.END,
         on_dismiss=lambda e: print("Modal dialog dismissed!"),
     )
 
@@ -124,7 +124,7 @@ See [`Container.padding`](container#padding) for more information about padding 
 
 Defines the horizontal layout of the actions according to the same rules as for [`Row.alignment`](row#alignment).
 
-Supported values: `start`, `end` (default), `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
+Property value is `MainAxisAlignment` enum with `MainAxisAlignment.END` as default.
 
 ### `shape`
 

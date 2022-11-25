@@ -27,7 +27,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "GridView Example"
-    page.theme_mode = "dark"
+    page.theme_mode = ft.ThemeMode.DARK
     page.padding = 50
     page.update()
 
@@ -46,8 +46,8 @@ def main(page: ft.Page):
         images.controls.append(
             ft.Image(
                 src=f"https://picsum.photos/150/150?{i}",
-                fit="none",
-                repeat="noRepeat",
+                fit=ft.ImageFit.NONE,
+                repeat=ft.ImageRepeat.NO_REPEAT,
                 border_radius=ft.border_radius.all(10),
             )
         )

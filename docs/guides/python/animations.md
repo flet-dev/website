@@ -78,15 +78,15 @@ def main(page: ft.Page):
         bgcolor="blue",
         border_radius=5,
         rotate=ft.transform.Rotate(0, alignment=ft.alignment.center),
-        animate_rotation=ft.animation.Animation(duration=300, curve="bounceOut"),
+        animate_rotation=ft.animation.Animation(duration=300, ft.AnimationCurve.BOUNCE_OUT),
     )
 
     def animate(e):
         c.rotate.angle += pi / 2
         page.update()
 
-    page.vertical_alignment = "center"
-    page.horizontal_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.spacing = 30
     page.add(
         c,
@@ -104,7 +104,6 @@ Setting control's `animate_scale` to either `True`, number or an instance of `an
 
 ```python
 import flet as ft
-from flet.transform import Scale
 
 def main(page: ft.Page):
 
@@ -113,17 +112,16 @@ def main(page: ft.Page):
         height=100,
         bgcolor="blue",
         border_radius=5,
-        scale=Scale(scale=1),
-        animate_scale=ft.animation.Animation(600, "bounceOut"),
+        scale=ft.transform.Scale(scale=1),
+        animate_scale=ft.animation.Animation(600, ft.AnimationCurve.BOUNCE_OUT),
     )
 
     def animate(e):
-        # c1.rotate = 1
         c.scale = 2
         page.update()
 
-    page.vertical_alignment = "center"
-    page.horizontal_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.spacing = 30
     page.add(
         c,
@@ -224,7 +222,7 @@ def main(page: ft.Page):
         width=150,
         height=150,
         bgcolor="red",
-        animate=ft.animation.Animation(1000, "bounceOut"),
+        animate=ft.animation.Animation(1000, ft.AnimationCurve.BOUNCE_OUT),
     )
 
     def animate_container(e):
@@ -261,11 +259,11 @@ def main(page: ft.Page):
 
     sw = ft.AnimatedSwitcher(
         i,
-        transition="scale",
+        transition=ft.AnimatedSwitcherTransition.SCALE,
         duration=500,
         reverse_duration=500,
-        switch_in_curve="bounceOut",
-        switch_out_curve="bounceIn",
+        switch_in_curve=ft.AnimationCurve.BOUNCE_OUT,
+        switch_out_curve=ft.AnimationCurve.BOUNCE_IN,
     )
 
     page.add(

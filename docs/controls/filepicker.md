@@ -67,14 +67,16 @@ ft.app(target=main)
 
 ### `file_type`
 
-Allow to pick files of specific group:
+Allow to pick files of specific group.
 
-* `any` (default) - any file
-* `image`
-* `video`
-* `media` - `video` and `image`
-* `audio`
-* `custom` - only files with extensions from `allowed_extensions` list
+Property value is `FilePickerFileType` enum with the following values:
+
+* `ANY` (default) - any file
+* `IMAGE`
+* `VIDEO`
+* `MEDIA` - `VIDEO` and `IMAGE`
+* `AUDIO`
+* `CUSTOM` - only files with extensions from `allowed_extensions` list
 
 ### `allowed_extensions`
 

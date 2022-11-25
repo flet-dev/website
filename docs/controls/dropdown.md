@@ -177,7 +177,7 @@ The name of the icon to show before the input field and outside of the decoratio
 
 ### `border`
 
-Border around input: `outline` (default), `underline`, `none`.
+Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
 
 ### `content_padding`
 
@@ -316,6 +316,12 @@ Optional text `suffix` to place on the line after the input.
 ### `suffix_style`
 
 The style to use for `suffix_text`.
+
+### `alignment`
+
+Defines how the hint or the selected item is positioned within the dropdown.
+
+See [`Container.alignment`](/docs/controls/container#alignment) property for possible values.
 
 ## `Dropdown` methods
 

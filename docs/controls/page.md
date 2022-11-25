@@ -105,17 +105,34 @@ Operating system the application is running on:
 * `linux`
 * `windows`
 
-### `horizontal_alignment`
-
-How the child Controls should be placed horizontally.
-
-Default value is `start` which means on the left side of the Page. Supported values: `start`, `center`, `end`, `stretch`, `baseline`.
-
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-For example, `start`, the default, places the children at the top of a Page. Supported values: `start`, `end`, `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
+For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
+
+Property value is `MainAxisAlignment` enum with the following values:
+
+* `START` (default)
+* `END`
+* `CENTER`
+* `SPACE_BETWEEN`
+* `SPACE_AROUND`
+* `SPACE_EVENLY`
+
+### `horizontal_alignment`
+
+How the child Controls should be placed horizontally.
+
+Default value is `CrossAxisAlignment.START` which means on the left side of the Page.
+
+Property value is `CrossAxisAlignment` enum with the following values:
+
+* `START` (default)
+* `CENTER`
+* `END`
+* `STRETCH`
+* `BASELINE`
 
 ### `spacing`
 
@@ -146,13 +163,17 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 
 ### `scroll`
 
-Enables a vertical scrolling for the Page to prevent its content overflow. Supported values:
+Enables a vertical scrolling for the Page to prevent its content overflow.
 
-* `none` (default) - the Page is non-scrollable and its content could overflow.
-* `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `always` - scrolling is enabled and scroll bar is always shown.
-* `hidden` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional `ScrollMode` enum with `None` as default.
+
+Supported values:
+
+* `None` (default) - the Row is non-scrollable and its content could overflow.
+* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
+* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
+* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
+* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
 
 ### `auto_scroll`
 
@@ -160,7 +181,11 @@ Enables a vertical scrolling for the Page to prevent its content overflow. Suppo
 
 ### `theme_mode`
 
-A theme to use: `system` (default), `light` or `dark`.
+Page theme.
+
+Property value is an optional `ThemeMode` enum with `SYSTEM` as default.
+
+Supported values: `SYSTEM` (default), `LIGHT` or `DARK`.
 
 ### `theme`
 
@@ -182,7 +207,7 @@ page.update()
 * `color_scheme_seed` - a seed color to algorithmically derive the rest of theme colors from.
 * `font_family` - the base font for all UI elements.
 * `use_material3` - `True` (default) to use Material 3 design; otherwise Material 2.
-* `visual_density` - `standard` (default), `compact`, `comfortable`, `adaptivePlatformDensity`.
+* `visual_density` - `ThemeVisualDensity` enum: `STANDARD` (default), `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 * `page_transitions` - an instance of `PageTransitionsTheme` that allows customizing navigation page transitions for different platforms. See section [below](#navigation-transitions).
 
 :::note
@@ -193,13 +218,13 @@ Read this [note about system fonts](/docs/controls/text#using-system-fonts) if y
 
 `theme.page_transitions` allows customizing navigation page transitions for different platforms. The value is an instance of `PageTransitionsTheme` class with the following optional properties:
 
-* `android` (default value is `fadeUpwards`)
-* `ios` (default value is `cupertino`)
-* `macos` (default value is `zoom`)
-* `linux` (default value is `zoom`)
-* `windows` (default value is `zoom`)
+* `android` (default value is `FADE_UPWARDS`)
+* `ios` (default value is `CUPERTINO`)
+* `macos` (default value is `ZOOM`)
+* `linux` (default value is `ZOOM`)
+* `windows` (default value is `ZOOM`)
 
-Supported transitions: `fadeUpwards`, `openUpwards`, `zoom`, `cupertino`.
+Supported transitions is `PageTransitionTheme` enum: `FADE_UPWARDS`, `OPEN_UPWARDS`, `ZOOM`, `CUPERTINO`.
 
 An simple example:
 
@@ -703,7 +728,7 @@ def main(page: ft.Page):
             ft.ElevatedButton("Yes", on_click=yes_click),
             ft.OutlinedButton("No", on_click=no_click),
         ],
-        actions_alignment="end",
+        actions_alignment=ft.MainAxisAlignment.END,
     )
 
     page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))

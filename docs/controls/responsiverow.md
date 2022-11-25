@@ -128,13 +128,28 @@ The numner of virtual columns to layout children. Default is 12.
 
 How the child Controls should be placed horizontally.
 
-For example, `start`, the default, places the children on the left of a Row. Supported values: `start`, `end`, `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
+For example, `MainAxisAlignment.START`, the default, places the children on the left of a Row.
+
+Property value is `MainAxisAlignment` enum with the following values:
+
+* `START` (default)
+* `END`
+* `CENTER`
+* `SPACE_BETWEEN`
+* `SPACE_AROUND`
+* `SPACE_EVENLY`
 
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-Default value is `start`. Supported values: `start`, `center`, `end`, `stretch`, `baseline`.
+Property value is `CrossAxisAlignment` enum with the following values:
+
+* `START` (default)
+* `CENTER`
+* `END`
+* `STRETCH`
+* `BASELINE`
 
 ### `spacing`
 

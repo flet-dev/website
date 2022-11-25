@@ -33,7 +33,7 @@ def main(page):
     c2 = ft.Switch(label="Checked switch", value=True)
     c3 = ft.Switch(label="Disabled switch", disabled=True)
     c4 = ft.Switch(
-        label="Switch with rendered label_position='left'", label_position="left"
+        label="Switch with rendered label_position='left'", label_position=ft.LabelPosition.LEFT
     )
     b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(c1, c2, c3, c4, b, t)
@@ -54,15 +54,20 @@ ft.app(target=main, view=ft.WEB_BROWSER)
 import flet as ft
 
 def main(page: ft.Page):
+    def theme_changed(e):
+        page.theme_mode = (
+            ft.ThemeMode.DARK
+            if page.theme_mode == ft.ThemeMode.LIGHT
+            else ft.ThemeMode.LIGHT
+        )
+        c.label = (
+            "Light theme" if page.theme_mode == ft.ThemeMode.LIGHT else "Dark theme"
+        )
+        page.update()
 
-  def theme_changed(e):
-    page.theme_mode = "dark" if page.theme_mode == "light" else "light"
-    c.label = "Light theme" if page.theme_mode == "light" else "Dark theme"
-    page.update()
-
-  page.theme_mode = "light"
-  c = ft.Switch(label="Light theme", on_change=theme_changed)
-  page.add(c)
+    page.theme_mode = ft.ThemeMode.LIGHT
+    c = ft.Switch(label="Light theme", on_change=theme_changed)
+    page.add(c)
 
 ft.app(target=main)
 ```
@@ -83,7 +88,7 @@ The clickable label to display on the right of the Switch.
 
 ### `label_position`
 
-Set to `left` if `label` should be displayed on the left side of the Switch; otherwise `right` (default).
+Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `autofocus`
 
@@ -115,13 +120,13 @@ If `track_color` returns a non-null color in the default state, it will be used 
 
 The color of this Switch's thumb.
 
-Resolved in the following Material states:
+Resolved in the following `MaterialState` states:
 
-* `selected`
-* `hovered`
-* `focused`
-* `disabled`
-* `""` (empty string) - fallback state, meaning "all other states".
+* `SELECTED`
+* `HOVERED`
+* `FOCUSED`
+* `DISABLED`
+* `DEFAULT` - fallback state, meaning "all other states".
 
 To configure thumb color for all Material states set `thumb_color` value to a literal, for example:
 
@@ -129,13 +134,13 @@ To configure thumb color for all Material states set `thumb_color` value to a li
 sw.thumb_color=colors.GREEN
 ```
 
-To configure thumb color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `hovered` and `focused` states and another color for all other states:
+To configure thumb color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
 
 ```python
 sw.thumb_color={
-    "hovered": colors.GREEN,
-    "focused": colors.RED,
-    "": colors.BLACK,
+    ft.MaterialState.HOVERED: colors.GREEN,
+    ft.MaterialState.FOCUSED: colors.RED,
+    ft.MaterialState.DEFAULT: colors.BLACK,
 }
 ```
 
@@ -143,13 +148,13 @@ sw.thumb_color={
 
 The color of this Switch's track.
 
-Resolved in the following states:
+Resolved in the following `MaterialState` states:
 
-* `selected`
-* `hovered`
-* `focused`
-* `disabled`
-* `""` (empty string) - fallback state, meaning "all other states".
+* `SELECTED`
+* `HOVERED`
+* `FOCUSED`
+* `DISABLED`
+* `DEFAULT` - fallback state, meaning "all other states".
 
 ## Events
 

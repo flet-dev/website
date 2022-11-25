@@ -41,7 +41,7 @@ def main(page: ft.Page):
                     "0xfff39060",
                     "0xffffb56b",
                 ],
-                tile_mode="mirror",
+                tile_mode=ft.GradientTileMode.MIRROR,
                 rotation=math.pi / 3,
             ),
         )
@@ -111,6 +111,15 @@ The style to use for the message of the tooltip.
 ### `text_align`
 
 How the message of the tooltip is aligned horizontally.
+
+Property value is `TextAlign` enum with the following values:
+
+* `LEFT` (default)
+* `RIGHT`
+* `CENTER`
+* `JUSTIFY`
+* `START`
+* `END`
 
 ### `prefer_below`
 

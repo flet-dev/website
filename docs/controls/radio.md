@@ -92,7 +92,7 @@ The clickable label to display on the right of a Radio.
 
 ### `label_position`
 
-Set to `left` if `label` should be displayed on the left side of the Radio; otherwise `right` (default).
+Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `autofocus`
 
@@ -100,17 +100,17 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `fill_color`
 
-The color that fills the radio, in all Material states:
+The color that fills the radio, in all `MaterialState` states:
 
-* `hovered`
-* `focused`
-* `pressed`
-* `dragged`
-* `selected`
-* `scrolledUnder`
-* `disabled`
-* `error`
-* `""` (empty string) - fallback state, meaning "all other states".
+* `HOVERED`
+* `FOCUSED`
+* `PRESSED`
+* `DRAGGED`
+* `SELECTED`
+* `SCROLLED_UNDER`
+* `DISABLED`
+* `ERROR`
+* `DEFAULT` - fallback state, meaning "all other states".
 
 To configure radio fill color for all Material states set `fill_color` value to a literal, for example:
 
@@ -118,13 +118,13 @@ To configure radio fill color for all Material states set `fill_color` value to 
 rd.fill_color=ft.colors.GREEN
 ```
 
-To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `hovered` and `focused` states and another color for all other states:
+To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
 
 ```python
 rd.fill_color={
-    "hovered": ft.colors.GREEN,
-    "focused": ft.colors.RED,
-    "": ft.colors.BLACK,
+    ft.MaterialState.HOVERED: ft.colors.GREEN,
+    ft.MaterialState.FOCUSED: ft.colors.RED,
+    ft.MaterialState.DEFAULT: ft.colors.BLACK,
 }
 ```
 

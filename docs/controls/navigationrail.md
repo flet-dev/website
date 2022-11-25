@@ -21,7 +21,7 @@ def main(page: ft.Page):
 
     rail = ft.NavigationRail(
         selected_index=0,
-        label_type="all",
+        label_type=ft.NavigationRailLabelType.ALL,
         # extended=True,
         min_width=100,
         min_extended_width=400,
@@ -50,7 +50,7 @@ def main(page: ft.Page):
             [
                 rail,
                 ft.VerticalDivider(width=1),
-                ft.Column([ ft.Text("Body!")], alignment="start", expand=True),
+                ft.Column([ ft.Text("Body!")], alignment=ft.MainAxisAlignment.START, expand=True),
             ],
             expand=True,
         )
@@ -93,7 +93,7 @@ Defines the layout and behavior of the labels for the default, unextended Naviga
 
 When a navigation rail is extended, the labels are always shown.
 
-Supported values: `none` (default), `all`, `selected`.
+Property value is `NavigationRailLabelType` enum with the following values: `NONE` (default), `ALL`, `SELECTED`.
 
 ### `bgcolor`
 

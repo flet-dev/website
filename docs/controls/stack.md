@@ -30,7 +30,7 @@ def main(page: ft.Page):
                 src=f"https://picsum.photos/300/300",
                 width=300,
                 height=300,
-                fit="contain",
+                fit=ft.ImageFit.CONTAIN,
             ),
             ft.Row(
                 [
@@ -42,7 +42,7 @@ def main(page: ft.Page):
                         opacity=0.5,
                     )
                 ],
-                alignment="center",
+                alignment=ft.MainAxisAlignment.CENTER,
             ),
         ],
         width=300,
@@ -102,8 +102,8 @@ import flet as ft
 
 def main(page: ft.Page):
 
-    page.horizontal_alignment = "center"
-    page.vertical_alignment = "center"
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
     page.add(
         ft.Container(
@@ -169,9 +169,11 @@ A list of Controls to display inside the Stack. The last control in the list is 
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Supported values:
+The content will be clipped (or not) according to this option.
 
-* `none`
-* `antiAlias`
-* `antiAliasWithSaveLayer`
-* `hardEdge` (default)
+Property value is `ClipBehavior` enum with supported values:
+
+* `NONE`
+* `ANTI_ALIAS`
+* `ANTI_ALIAS_WITH_SAVE_LAYER`
+* `HARD_EDGE` (default)
