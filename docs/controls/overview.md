@@ -139,3 +139,36 @@ ft.Image(
     rotate=Rotate(angle=0.25 * pi, alignment=ft.alignment.center_left)
 )
 ```
+
+### `offset`
+
+Applies a translation transformation before painting the control.
+
+The translation is expressed as a `transform.Offset` scaled to the control's size. For example, an `Offset` with a `x` of `0.25` will result in a horizontal translation of one quarter the width of the control.
+
+The following example displays container at `0, 0` top left corner of a stack as transform applies `-1 * 100, -1 * 100` (`offset * control_size`) horizontal and vertical translations to the control:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+
+    page.add(
+        ft.Stack(
+            [
+                ft.Container(
+                    bgcolor="red",
+                    width=100,
+                    height=100,
+                    left=100,
+                    top=100,
+                    offset=ft.transform.Offset(-1, -1),
+                )
+            ],
+            width=1000,
+            height=1000,
+        )
+    )
+
+ft.app(target=main)
+```
