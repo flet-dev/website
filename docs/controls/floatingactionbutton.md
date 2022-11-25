@@ -59,6 +59,10 @@ ft.app(target=main)
 
 ## Properties
 
+### `content`
+
+A Control representing custom button content.
+
 ### `text`
 
 The text displayed on a button.
@@ -79,9 +83,49 @@ The text displayed when hovering the mouse over the button.
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
-### `content`
+### `mini`
 
-A Control representing custom button content.
+Controls the size of this button.
+
+By default, floating action buttons are non-mini and have a height and width of 56.0 logical pixels. Mini floating action buttons have a height and width of 40.0 logical pixels with a layout width and height of 48.0 logical pixels.
+
+### `shape`
+
+The shape of the FAB's border.
+
+The value is an instance of one of the following implementations:
+  * `StadiumBorder`
+  * `RoundedRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `CircleBorder`
+  * `BeveledRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `CountinuosRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+
+An example of using `shape` property:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+
+    page.floating_action_button = ft.FloatingActionButton(
+        content=ft.Row(
+            [ft.Icon(ft.icons.ADD), ft.Text("Add")], alignment="center", spacing=5
+        ),
+        bgcolor=ft.colors.AMBER_300,
+        shape=ft.RoundedRectangleBorder(radius=5),
+        width=100,
+        mini=True,
+    )
+
+    page.add(ft.Text("Just a text!"))
+
+ft.app(target=main)
+```
+
+<img src="/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />
 
 ## Events
 
