@@ -8,6 +8,8 @@ A control that positions its children on top of each other.
 
 This control is useful if you want to overlap several children in a simple way, for example having some text and an image, overlaid with a gradient and a button attached to the bottom.
 
+Stack is also useful if you want to implement [implicit animations](/docs/guides/python/animations) that require knowing absolute position of a target value.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -51,7 +53,7 @@ def main(page: ft.Page):
 
     page.add(st)
 
-ft.app(target=main, view=ft.WEB_BROWSER)
+ft.app(target=main)
 ```
 
   </TabItem>
