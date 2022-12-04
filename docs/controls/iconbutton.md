@@ -84,6 +84,14 @@ ft.app(target=main)
 
 ## Properties
 
+### `autofocus`
+
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `content`
+
+A Control representing custom button content.
+
 ### `icon`
 
 Icon shown in the button.
@@ -141,14 +149,6 @@ See [ElevatedButton.style](elevatedbutton#style) for more information about this
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
-
-### `autofocus`
-
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
-
-### `content`
-
-A Control representing custom button content.
 
 ## Events
 

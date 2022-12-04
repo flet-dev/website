@@ -121,83 +121,9 @@ Throttling in milliseconds for `on_hover` event.
 
 ## Events
 
-### `on_tap`
+### `multi_tap_touches`
 
-A tap with a primary button has occurred.
-
-### `on_tap_down`
-
-A pointer that might cause a tap with a primary button has contacted the screen at a particular location.
-
-Event handler argument is an instance of `TapEvent` class with the following properties:
-
-* `local_x` - x component of the local position at which the pointer contacted the screen.
-* `local_y` - y component of the local position at which the pointer contacted the screen.
-* `global_x` - x component of the global position at which the pointer contacted the screen.
-* `global_y` - y component of the global position at which the pointer contacted the screen.
-* `kind` - The kind of the device that initiated the event.
-
-### `on_tap_up`
-
-A pointer that will trigger a tap with a primary button has stopped contacting the screen at a particular location.
-
-Event handler argument is an instance of `TapEvent` class.
-
-### `on_secondary_tap`
-
-A tap with a secondary button has occurred.
-
-### `on_secondary_tap_down`
-
-A pointer that might cause a tap with a secondary button has contacted the screen at a particular location.
-
-Event handler argument is an instance of `TapEvent` class.
-
-### `on_secondary_tap_up`
-
-A pointer that will trigger a tap with a secondary button has stopped contacting the screen at a particular location.
-
-Event handler argument is an instance of `TapEvent` class.
-
-### `on_long_press_start`
-
-Called when a long press gesture with a primary button has been recognized.
-
-Triggered when a pointer has remained in contact with the screen at the same location for a long period of time.
-
-Event handler argument is an instance of `LongPressStartEvent` class with the following properties:
-
-* `local_x` - x component of the local position at which the pointer contacted the screen.
-* `local_y` - y component of the local position at which the pointer contacted the screen.
-* `global_x` - x component of the global position at which the pointer contacted the screen.
-* `global_y` - y component of the global position at which the pointer contacted the screen.
-
-### `on_long_press_end`
-
-A pointer that has triggered a long-press with a primary button has stopped contacting the screen.
-
-Event handler argument is an instance of `LongPressEndEvent` class with the following properties:
-
-* `local_x` - x component of the local position at which the pointer contacted the screen.
-* `local_y` - y component of the local position at which the pointer contacted the screen.
-* `global_x` - x component of the global position at which the pointer contacted the screen.
-* `global_y` - y component of the global position at which the pointer contacted the screen.
-* `velocity_x` - x component of the pointer's velocity when it stopped contacting the screen.
-* `velocity_y` - y component of the pointer's velocity when it stopped contacting the screen.
-
-### `on_secondary_long_press_start`
-
-Called when a long press gesture with a secondary button has been recognized.
-
-Triggered when a pointer has remained in contact with the screen at the same location for a long period of time.
-
-Event handler argument is an instance of `LongPressStartEvent` class.
-
-### `on_secondary_long_press_end`
-
-A pointer that has triggered a long-press with a secondary button has stopped contacting the screen.
-
-Event handler argument is an instance of `LongPressEndEvent` class.
+The minimum number of pointers to trigger `on_multi_tap` event.
 
 ### `on_double_tap`
 
@@ -210,6 +136,28 @@ A pointer that might cause a double tap has contacted the screen at a particular
 Triggered immediately after the down event of the second tap.
 
 Event handler argument is an instance of `TapEvent` class.
+
+### `on_enter`
+
+Triggered when a mouse pointer has entered this control.
+
+Event handler argument is an instance of `HoverEvent` class.
+
+### `on_exit`
+
+Triggered when a mouse pointer has exited this control.
+
+Event handler argument is an instance of `HoverEvent` class.
+
+### `on_horizontal_drag_end`
+
+A pointer that was previously in contact with the screen with a primary button and moving horizontally is no longer in contact with the screen and was moving at a specific velocity when it stopped contacting the screen.
+
+Event handler argument is an instance of `DragEndEvent` class with the following properties:
+
+* `primary_velocity` - the velocity the pointer was moving along the primary axis when it stopped contacting the screen, in logical pixels per second.
+* `velocity_x` - x component of the pointer's velocity when it stopped contacting the screen.
+* `velocity_y` - y component of the pointer's velocity when it stopped contacting the screen.
 
 ### `on_horizontal_drag_start`
 
@@ -238,31 +186,49 @@ Event handler argument is an instance of `DragUpdateEvent` class with the follow
 * `primary_delta` - the amount the pointer has moved along the primary axis in the coordinate space of the event receiver since the previous update.
 * `timestamp` - recorded timestamp of the source pointer event that triggered the drag event.
 
-### `on_horizontal_drag_end`
+### `on_hover`
 
-A pointer that was previously in contact with the screen with a primary button and moving horizontally is no longer in contact with the screen and was moving at a specific velocity when it stopped contacting the screen.
+Triggered when a mouse pointer has entered this control.
 
-Event handler argument is an instance of `DragEndEvent` class with the following properties:
+Event handler argument is an instance of `HoverEvent` class with the following properties:
 
-* `primary_velocity` - the velocity the pointer was moving along the primary axis when it stopped contacting the screen, in logical pixels per second.
+* `local_x` - x component of the local position of the pointer.
+* `local_y` - y component of the local position of the pointer.
+* `global_x` - x component of the global position of the pointer.
+* `global_y` - y component of the global position of the pointer.
+* `delta_x` - x component of the distance in logical pixels that the pointer moved since the last hover event.
+* `delta_x` - y component of the distance in logical pixels that the pointer moved since the last hover event.
+* `timestamp` - event's timestamp.
+
+### `on_long_press_end`
+
+A pointer that has triggered a long-press with a primary button has stopped contacting the screen.
+
+Event handler argument is an instance of `LongPressEndEvent` class with the following properties:
+
+* `local_x` - x component of the local position at which the pointer contacted the screen.
+* `local_y` - y component of the local position at which the pointer contacted the screen.
+* `global_x` - x component of the global position at which the pointer contacted the screen.
+* `global_y` - y component of the global position at which the pointer contacted the screen.
 * `velocity_x` - x component of the pointer's velocity when it stopped contacting the screen.
 * `velocity_y` - y component of the pointer's velocity when it stopped contacting the screen.
 
-### `on_vertical_drag_start`
+### `on_long_press_start`
 
-A pointer has contacted the screen with a primary button and has begun to move vertically.
+Called when a long press gesture with a primary button has been recognized.
 
-Event handler argument is an instance of `DragStartEvent` class.
+Triggered when a pointer has remained in contact with the screen at the same location for a long period of time.
 
-### `on_vertical_drag_update`
+Event handler argument is an instance of `LongPressStartEvent` class with the following properties:
 
-A pointer that is in contact with the screen with a primary button and moving vertically has moved in the vertical direction.
+* `local_x` - x component of the local position at which the pointer contacted the screen.
+* `local_y` - y component of the local position at which the pointer contacted the screen.
+* `global_x` - x component of the global position at which the pointer contacted the screen.
+* `global_y` - y component of the global position at which the pointer contacted the screen.
 
-Event handler argument is an instance of `DragUpdateEvent` class.
+### `on_pan_end`
 
-### `on_vertical_drag_end`
-
-A pointer that was previously in contact with the screen with a primary button and moving vertically is no longer in contact with the screen and was moving at a specific velocity when it stopped contacting the screen.
+A pointer that was previously in contact with the screen with a primary button and moving is no longer in contact with the screen and was moving at a specific velocity when it stopped contacting the screen.
 
 Event handler argument is an instance of `DragEndEvent` class.
 
@@ -278,11 +244,13 @@ A pointer that is in contact with the screen with a primary button and moving ha
 
 Event handler argument is an instance of `DragUpdateEvent` class.
 
-### `on_pan_end`
+### `on_scale_end`
 
-A pointer that was previously in contact with the screen with a primary button and moving is no longer in contact with the screen and was moving at a specific velocity when it stopped contacting the screen.
+Event handler argument is an instance of `ScaleEndEvent` class with the following properties:
 
-Event handler argument is an instance of `DragEndEvent` class.
+* `pointer_count` - the number of pointers being tracked by the gesture recognizer.
+* `velocity_x` - x component of the velocity of the last pointer to be lifted off of the screen.
+* `velocity_y` - y component of the velocity of the last pointer to be lifted off of the screen.
 
 ### `on_scale_start`
 
@@ -311,39 +279,79 @@ Event handler argument is an instance of `ScaleUpdateEvent` class with the follo
 * `vertical_scale` - the scale implied by the average distance along the vertical axis between the pointers in contact with the screen.
 * `scale` - the scale implied by the average distance between the pointers in contact with the screen.
 
-### `on_scale_end`
+### `on_secondary_long_press_end`
 
-Event handler argument is an instance of `ScaleEndEvent` class with the following properties:
+A pointer that has triggered a long-press with a secondary button has stopped contacting the screen.
 
-* `pointer_count` - the number of pointers being tracked by the gesture recognizer.
-* `velocity_x` - x component of the velocity of the last pointer to be lifted off of the screen.
-* `velocity_y` - y component of the velocity of the last pointer to be lifted off of the screen.
+Event handler argument is an instance of `LongPressEndEvent` class.
 
-### `on_hover`
+### `on_secondary_long_press_start`
 
-Triggered when a mouse pointer has entered this control.
+Called when a long press gesture with a secondary button has been recognized.
 
-Event handler argument is an instance of `HoverEvent` class with the following properties:
+Triggered when a pointer has remained in contact with the screen at the same location for a long period of time.
 
-* `local_x` - x component of the local position of the pointer.
-* `local_y` - y component of the local position of the pointer.
-* `global_x` - x component of the global position of the pointer.
-* `global_y` - y component of the global position of the pointer.
-* `delta_x` - x component of the distance in logical pixels that the pointer moved since the last hover event.
-* `delta_x` - y component of the distance in logical pixels that the pointer moved since the last hover event.
-* `timestamp` - event's timestamp.
+Event handler argument is an instance of `LongPressStartEvent` class.
 
-### `on_enter`
+### `on_secondary_tap`
 
-Triggered when a mouse pointer has entered this control.
+A tap with a secondary button has occurred.
 
-Event handler argument is an instance of `HoverEvent` class.
+### `on_secondary_tap_down`
 
-### `on_exit`
+A pointer that might cause a tap with a secondary button has contacted the screen at a particular location.
 
-Triggered when a mouse pointer has exited this control.
+Event handler argument is an instance of `TapEvent` class.
 
-Event handler argument is an instance of `HoverEvent` class.
+### `on_secondary_tap_up`
+
+A pointer that will trigger a tap with a secondary button has stopped contacting the screen at a particular location.
+
+Event handler argument is an instance of `TapEvent` class.
+
+### `on_tap`
+
+A tap with a primary button has occurred.
+
+### `on_tap_down`
+
+A pointer that might cause a tap with a primary button has contacted the screen at a particular location.
+
+Event handler argument is an instance of `TapEvent` class with the following properties:
+
+* `local_x` - x component of the local position at which the pointer contacted the screen.
+* `local_y` - y component of the local position at which the pointer contacted the screen.
+* `global_x` - x component of the global position at which the pointer contacted the screen.
+* `global_y` - y component of the global position at which the pointer contacted the screen.
+* `kind` - The kind of the device that initiated the event.
+
+### `on_tap_up`
+
+A pointer that will trigger a tap with a primary button has stopped contacting the screen at a particular location.
+
+Event handler argument is an instance of `TapEvent` class.
+
+### `on_vertical_drag_end`
+
+A pointer that was previously in contact with the screen with a primary button and moving vertically is no longer in contact with the screen and was moving at a specific velocity when it stopped contacting the screen.
+
+Event handler argument is an instance of `DragEndEvent` class.
+
+### `on_vertical_drag_start`
+
+A pointer has contacted the screen with a primary button and has begun to move vertically.
+
+Event handler argument is an instance of `DragStartEvent` class.
+
+### `on_vertical_drag_update`
+
+A pointer that is in contact with the screen with a primary button and moving vertically has moved in the vertical direction.
+
+Event handler argument is an instance of `DragUpdateEvent` class.
+
+### `on_multi_long_press`
+
+Called when a long press gesture with multiple pointers has been recognized.
 
 ### `on_multi_tap`
 
@@ -352,14 +360,6 @@ Triggered when multiple pointers contacted the screen.
 Event handler argument is an instance of `MultiTapEvent` class with the following properties:
 
 * `correct_touches` - `True` a `multi_tap_touches` number of pointers touched the screen; otherwise `False`.
-
-### `multi_tap_touches`
-
-The minimum number of pointers to trigger `on_multi_tap` event.
-
-### `on_multi_long_press`
-
-Called when a long press gesture with multiple pointers has been recognized.
 
 ### `on_scroll`
 
