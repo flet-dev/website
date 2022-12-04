@@ -120,13 +120,28 @@ ft.app(target=main)
 
 ## Properties
 
-### `value`
+### `code_style`
 
-Markdown content to render.
+Code block text style. An instance of `TextStyle` class.
 
-### `extension_set`
+An example of configuring monospace font for Markdown code blocks:
 
-Property value is `MarkdownExtensionSet` enum with the following values: `NONE` (default), `COMMON_MARK`, `GITHUB_WEB`, `GITHUB_FLAVORED`.
+```python
+    page.fonts = {
+        "Roboto Mono": "RobotoMono-VariableFont_wght.ttf",
+    }
+
+    page.add(
+        Markdown(
+            table,
+            selectable=True,
+            extension_set="gitHubWeb",
+            code_theme="atom-one-dark",
+            code_style=TextStyle(font_family="Roboto Mono"),
+            on_tap_link=lambda e: page.launch_url(e.data),
+        )
+    )
+```
 
 ### `code_theme`
 
@@ -225,32 +240,17 @@ Supported themes:
 * `xt256`
 * `zenburn`
 
-### `code_style`
+### `extension_set`
 
-Code block text style. An instance of `TextStyle` class.
-
-An example of configuring monospace font for Markdown code blocks:
-
-```python
-    page.fonts = {
-        "Roboto Mono": "RobotoMono-VariableFont_wght.ttf",
-    }
-
-    page.add(
-        Markdown(
-            table,
-            selectable=True,
-            extension_set="gitHubWeb",
-            code_theme="atom-one-dark",
-            code_style=TextStyle(font_family="Roboto Mono"),
-            on_tap_link=lambda e: page.launch_url(e.data),
-        )
-    )
-```
+Property value is `MarkdownExtensionSet` enum with the following values: `NONE` (default), `COMMON_MARK`, `GITHUB_WEB`, `GITHUB_FLAVORED`.
 
 ### `selectable`
 
 Whether rendered text is selectable or not.
+
+### `value`
+
+Markdown content to render.
 
 ## Events
 
