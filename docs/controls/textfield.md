@@ -192,9 +192,134 @@ ft.app(target=main)
 
 ## Properties
 
-### `value`
+### `autofocus`
 
-Current value of the TextField.
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `bgcolor`
+
+TextField background color.
+
+### `border`
+
+Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
+
+### `border_color`
+
+Border color. Could be `transparent` to hide the border.
+
+### `border_radius`
+
+See [`Container.border_radius`] property docs for more information about border radius.
+
+### `border_width`
+
+The width of the border in virtual pixels. Default is 1. Set to 0 to completely remove border.
+
+### `can_reveal_password`
+
+Displays a toggle icon button that allows revealing the entered password.
+
+### `capitalization`
+
+Enables automatic on-the-fly capitalization of entered text.
+
+Property value is `TextCapitalization` enum with the following values:
+
+* `NONE` (default) - do not change entered text.
+* `CHARACTERS` - every entered symbol is capitalized.
+* `WORDS` - capitalize the first letter of every word.
+* `SENTENCES` - capitalize the first letter of every sentence.
+
+### `color`
+
+Text color.
+
+### `content_padding`
+
+The padding for the input decoration's container.
+
+See [`Container.padding`](container#padding) for more information about padding and possible values.
+
+### `counter_style`
+
+The style to use for `counter_text`.
+
+### `counter_text`
+
+Optional text to place below the line as a character count.
+
+If null or an empty string and counter isn't specified, then nothing will appear in the counter's location.
+
+### `cursor_color`
+
+The color of TextField cursor.
+
+### `cursor_height`
+
+Sets cursor height.
+
+### `cursor_radius`
+
+Sets cursor radius.
+
+### `cursor_width`
+
+Sets cursor width.
+
+### `error_style`
+
+The style to use for `error_text`.
+
+### `error_text`
+
+Text that appears below the input border.
+
+If non-null, the border's color animates to red and the `helper_text` is not shown.
+
+### `filled`
+
+If `True` the decoration's container is filled with theme fillColor.
+
+### `focused_bgcolor`
+
+Background color of TextField in focused state.
+
+### `focused_border_color`
+
+Border color in focused state.
+
+### `focused_border_width`
+
+Border width in focused state.
+
+### `focused_color`
+
+Text color when TextField is focused.
+
+### `helper_style`
+
+The style to use for `helper_text`.
+
+### `helper_text`
+
+Text that provides context about the input's value, such as how the value will be used.
+
+If non-null, the text is displayed below the input decorator, in the same location as `error_text`. If a non-null `error_text` value is specified then the helper text is not shown.
+
+### `hint_style`
+
+The style to use for `hint_text`.
+
+### `hint_text`
+
+Text that suggests what sort of input the field accepts.
+
+Displayed on top of the input when the it's empty and either (a) `label` is null or (b) the input has the focus.
+
+### `icon`
+
+The name of the icon to show before the input field and outside of the decoration's container.
 
 ### `keyboard_type`
 
@@ -212,63 +337,6 @@ The type of keyboard to use for editing the text. The property value is `Keyboar
 * `STREET_ADDRESS`
 * `NONE`
 
-### `multiline`
-
-`True` if TextField can contain multiple lines of text.
-
-### `min_lines`
-
-The minimum number of lines to occupy when the content spans fewer lines.
-
-This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
-
-Default is `1`.
-
-### `max_lines`
-
-The maximum number of lines to show at one time, wrapping if necessary.
-
-This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
-
-If this is `1` (the default), the text will not wrap, but will scroll horizontally instead.
-
-### `password`
-
-Whether to hide the text being edited. Default is `False`.
-
-### `can_reveal_password`
-
-Displays a toggle icon button that allows revealing the entered password.
-
-### `read_only`
-
-Whether the text can be changed.
-
-When this is set to `True`, the text cannot be modified by any shortcut or keyboard operation. The text is still selectable.
-
-Defaults to `False`.
-
-### `shift_enter`
-
-Changes the behavior of `Enter` button in `multiline` TextField to be chat-like, i.e. new line can be added with `Shift`+`Enter` and pressing just `Enter` fires `on_submit` event.
-
-### `text_align`
-
-How the text should be aligned horizontally.
-
-Property value is `TextAlign` enum with the following values:
-
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
-
-### `autofocus`
-
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
-
 ### `label`
 
 Optional text that describes the input field.
@@ -279,130 +347,33 @@ When the input field is empty and unfocused, the label is displayed on top of th
 
 The style to use for `label`.
 
-### `icon`
-
-The name of the icon to show before the input field and outside of the decoration's container.
-
-### `border`
-
-Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
-
-### `content_padding`
-
-The padding for the input decoration's container.
-
-See [`Container.padding`](container#padding) for more information about padding and possible values.
-
-### `filled`
-
-If `True` the decoration's container is filled with theme fillColor.
-
-### `text_size`
-
-Text size in virtual pixels.
-
-### `text_style`
-
-The style to use for the text being edited.
-
-### `color`
-
-Text color.
-
-### `bgcolor`
-
-TextField background color.
-
-### `border_radius`
-
-See [`Container.border_radius`] property docs for more information about border radius.
-
-### `border_width`
-
-The width of the border in virtual pixels. Default is 1. Set to 0 to commpletely remove border.
-
-### `border_color`
-
-Border color. Could be `transparent` to hide the border.
-
-### `focused_color`
-
-Text color when TextField is focused.
-
-### `focused_bgcolor`
-
-Background color of TextField in focused state.
-
-### `focused_border_width`
-
-Border width in focused state.
-
-### `focused_border_color`
-
-Border color in focused state.
-
-### `cursor_color`
-
-The color of TextField cursor.
-
-### `selected_color`
-
-The color of TextField selection.
-
 ### `max_length`
 
 Limits a maximum number of characters that can be entered into TextField.
 
-### `capitalization`
+### `max_lines`
 
-Enables automatic on-the-fly capitalization of entered text.
+The maximum number of lines to show at one time, wrapping if necessary.
 
-Property value is `TextCapitalization` enum with the following values:
+This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
 
-* `NONE` (default) - do not change entered text.
-* `CHARACTERS` - every entered symbol is capitalized.
-* `WORDS` - capitalize the first letter of every word.
-* `SENTENCES` - capitalize the first letter of every sentese.
+If this is `1` (the default), the text will not wrap, but will scroll horizontally instead.
 
-### `hint_text`
+### `min_lines`
 
-Text that suggests what sort of input the field accepts.
+The minimum number of lines to occupy when the content spans fewer lines.
 
-Displayed on top of the input when the it's empty and either (a) `label` is null or (b) the input has the focus.
+This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
 
-### `hint_style`
+Default is `1`.
 
-The style to use for `hint_text`.
+### `multiline`
 
-### `helper_text`
+`True` if TextField can contain multiple lines of text.
 
-Text that provides context about the input's value, such as how the value will be used.
+### `password`
 
-If non-null, the text is displayed below the input decorator, in the same location as `error_text`. If a non-null `error_text` value is specified then the helper text is not shown.
-
-### `helper_style`
-
-The style to use for `helper_text`.
-
-### `counter_text`
-
-Optional text to place below the line as a character count.
-
-If null or an empty string and counter isn't specified, then nothing will appear in the counter's location.
-
-### `counter_style`
-
-The style to use for `counter_text`.
-
-### `error_text`
-
-Text that appears below the input border.
-
-If non-null, the border's color animates to red and the `helper_text` is not shown.
-
-### `error_style`
-
-The style to use for `error_text`.
+Whether to hide the text being edited. Default is `False`.
 
 ### `prefix`
 
@@ -418,13 +389,29 @@ The `prefix` appears after the `prefix_icon`, if both are specified.
 
 An icon that appears before the `prefix` or `prefix_text` and before the editable part of the text field, within the decoration's container.
 
+### `prefix_style`
+
+The style to use for `prefix_text`.
+
 ### `prefix_text`
 
 Optional text `prefix` to place on the line before the input.
 
-### `prefix_style`
+### `read_only`
 
-The style to use for `prefix_text`.
+Whether the text can be changed.
+
+When this is set to `True`, the text cannot be modified by any shortcut or keyboard operation. The text is still selectable.
+
+Defaults to `False`.
+
+### `selected_color`
+
+The color of TextField selection.
+
+### `shift_enter`
+
+Changes the behavior of `Enter` button in `multiline` TextField to be chat-like, i.e. new line can be added with `Shift`+`Enter` and pressing just `Enter` fires `on_submit` event.
 
 ### `suffix`
 
@@ -440,25 +427,38 @@ The `suffix` appears before the `suffix_icon`, if both are specified.
 
 An icon that appears after the editable part of the text field and after the `suffix` or `suffix_text`, within the decoration's container.
 
-### `suffix_text`
-
-Optional text `suffix` to place on the line after the input.
-
 ### `suffix_style`
 
 The style to use for `suffix_text`.
 
-### `cursor_width`
+### `suffix_text`
 
-Sets cursor width.
+Optional text `suffix` to place on the line after the input.
 
-### `cursor_height`
+### `text_align`
 
-Sets cursor height.
+How the text should be aligned horizontally.
 
-### `cursor_radius`
+Property value is `TextAlign` enum with the following values:
 
-Sets cursor radius.
+* `LEFT` (default)
+* `RIGHT`
+* `CENTER`
+* `JUSTIFY`
+* `START`
+* `END`
+
+### `text_size`
+
+Text size in virtual pixels.
+
+### `text_style`
+
+The style to use for the text being edited.
+
+### `value`
+
+Current value of the TextField.
 
 ## Methods
 
@@ -468,18 +468,18 @@ Moves focus to a TextField.
 
 ## Events
 
+### `on_blur`
+
+Fires when the control has lost focus.
+
 ### `on_change`
 
 Fires when the typed input for the TextField has changed.
-
-### `on_submit`
-
-Fires when user presses ENTER while focus is on TextField.
 
 ### `on_focus`
 
 Fires when the control has received focus.
 
-### `on_blur`
+### `on_submit`
 
-Fires when the control has lost focus.
+Fires when user presses ENTER while focus is on TextField.
