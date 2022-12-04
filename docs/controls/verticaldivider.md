@@ -62,14 +62,14 @@ ft.app(target=main)
 
 ## Properties
 
-### `width`
+### `color`
 
-The divider's width. The divider itself is always drawn as a vertical line that is centered within the width specified by this value. If this is null, then this defaults to `16.0`.
+The color to use when painting the line.
 
 ### `thickness`
 
 The thickness of the line drawn within the divider. A divider with a thickness of `0.0` is always drawn as a line with a width of exactly one device pixel. If this is null, then this defaults to `0.0`.
 
-### `color`
+### `width`
 
-The color to use when painting the line.
+The divider's width. The divider itself is always drawn as a vertical line that is centered within the width specified by this value. If this is null, then this defaults to `16.0`.
