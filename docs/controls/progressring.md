@@ -52,22 +52,22 @@ ft.app(target=main)
 
 ## Properties
 
-### `value`
+### `bgcolor`
 
-The value of this progress indicator. A value of 0.0 means no progress and 1.0 means that progress is complete. The value will be clamped to be in the range 0.0-1.0. If null, this progress indicator is indeterminate, which means the indicator displays a predetermined animation that does not indicate how much actual progress is being made.
-
-### `stroke_width`
-
-The width of the line used to draw the circle.
+Color of the circular track being filled by the circular indicator.
 
 ### `color`
 
 The progress indicator's color.
 
-### `bgcolor`
+### `stroke_width`
 
-Color of the circular track being filled by the circular indicator.
+The width of the line used to draw the circle.
 
 ### `tooltip`
 
 The text displayed when hovering the mouse over the control.
+
+### `value`
+
+The value of this progress indicator. A value of 0.0 means no progress and 1.0 means that progress is complete. The value will be clamped to be in the range 0.0-1.0. If null, this progress indicator is indeterminate, which means the indicator displays a predetermined animation that does not indicate how much actual progress is being made.

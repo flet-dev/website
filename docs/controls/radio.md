@@ -82,18 +82,6 @@ Fires when the state of the RadioGroup is changed.
 
 ## `Radio` properties
 
-### `value`
-
-The value to set to containing `RadioGroup` when the radio is selected..
-
-### `label`
-
-The clickable label to display on the right of a Radio.
-
-### `label_position`
-
-Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
-
 ### `autofocus`
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
@@ -128,12 +116,24 @@ rd.fill_color={
 }
 ```
 
+### `label`
+
+The clickable label to display on the right of a Radio.
+
+### `label_position`
+
+Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
+
+### `value`
+
+The value to set to containing `RadioGroup` when the radio is selected.
+
 ## `Radio` events
-
-### `on_focus`
-
-Fires when the control has received focus.
 
 ### `on_blur`
 
 Fires when the control has lost focus.
+
+### `on_focus`
+
+Fires when the control has received focus.

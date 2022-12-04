@@ -116,14 +116,6 @@ ft.app(target=main)
 
 ## Properties
 
-### `controls`
-
-A list of Controls to display inside the ResponsiveRow.
-
-### `columns`
-
-The numner of virtual columns to layout children. Default is 12.
-
 ### `alignment`
 
 How the child Controls should be placed horizontally.
@@ -139,6 +131,22 @@ Property value is `MainAxisAlignment` enum with the following values:
 * `SPACE_AROUND`
 * `SPACE_EVENLY`
 
+### `columns`
+
+The number of virtual columns to layout children. Default is 12.
+
+### `controls`
+
+A list of Controls to display inside the ResponsiveRow.
+
+### `run_spacing`
+
+Spacing between runs when row content is wrapped on multiple lines. Default value is 10.
+
+### `spacing`
+
+Spacing between controls in a row. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
@@ -150,11 +158,3 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `END`
 * `STRETCH`
 * `BASELINE`
-
-### `spacing`
-
-Spacing between controls in a row. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
-
-### `run_spacing`
-
-Spacing between runs when row content is wrapped on multiple lines. Default value is 10.

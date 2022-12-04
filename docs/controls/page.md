@@ -13,6 +13,24 @@ import TabItem from '@theme/TabItem';
 
 ## Properties
 
+### `auto_scroll`
+
+`True` if scrollbar should automatically move its position to the end when children update.
+
+### `appbar`
+
+A [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
+
+### `banner`
+
+A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
+
+### `bgcolor`
+
+Background color of the Page.
+
+A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
+
 ### `controls`
 
 A list of Controls to display on the Page.
@@ -55,193 +73,17 @@ page.update()
 </TabItem>
 </Tabs>
 
-### `views`
-
-A list of [`View`](view) controls to build navigation history.
-
-The last view in the list is the one displayed on a page.
-
-The first view is a "root" view which cannot be poped.
-
-### `title`
-
-A title of browser or native OS window, for example:
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-page.title = "My awesome app"
-page.update()
-```
-
-</TabItem>
-</Tabs>
-
-### `route`
-
-Get or sets page's navigation route. See [Navigation and routing](/docs/guides/python/navigation-and-routing) section for 
-more information and examples.
-
-### `session_id`
-
-A unique ID of user's session. This property is read-only.
-
-### `pwa`
-
-`True` if the application is running as Progressive Web App (PWA). Read-only.
-
-### `web`
-
-`True` if the application is running in the web browser.
-
-### `platform`
-
-Operating system the application is running on:
-
-* `ios`
-* `android`
-* `macos`
-* `linux`
-* `windows`
-
-### `vertical_alignment`
-
-How the child Controls should be placed vertically.
-
-For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
-
-Property value is `MainAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
-
-### `horizontal_alignment`
-
-How the child Controls should be placed horizontally.
-
-Default value is `CrossAxisAlignment.START` which means on the left side of the Page.
-
-Property value is `CrossAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
-
-### `spacing`
-
-Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
-
-### `padding`
-
-A space between page contents and its edges. Default value is 10 pixels from each side. To set zero padding:
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-page.padding = 0
-page.update()
-```
-
-</TabItem>
-</Tabs>
-
-See [`Container.padding`](container#padding) for more information and possible values.
-
-### `bgcolor`
-
-Background color of the Page.
-
-A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
-
-### `scroll`
-
-Enables a vertical scrolling for the Page to prevent its content overflow.
-
-Property value is an optional `ScrollMode` enum with `None` as default.
-
-Supported values:
-
-* `None` (default) - the Row is non-scrollable and its content could overflow.
-* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
-* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
-
-### `auto_scroll`
-
-`True` if scrollbar should automatically move its position to the end when children update.
-
-### `theme_mode`
-
-Page theme.
-
-Property value is an optional `ThemeMode` enum with `SYSTEM` as default.
-
-Supported values: `SYSTEM` (default), `LIGHT` or `DARK`.
-
-### `theme`
-
-Set this property to an instance of `theme.Theme` to customize light theme. Currently, a theme can only be automatically generated from a "seed" color. For example, to generate light theme from a green color:
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-page.theme = theme.Theme(color_scheme_seed="green")
-page.update()
-```
-
-</TabItem>
-</Tabs>
-
-`Theme` class has the following properties:
-
-* `color_scheme_seed` - a seed color to algorithmically derive the rest of theme colors from.
-* `font_family` - the base font for all UI elements.
-* `use_material3` - `True` (default) to use Material 3 design; otherwise Material 2.
-* `visual_density` - `ThemeVisualDensity` enum: `STANDARD` (default), `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
-* `page_transitions` - an instance of `PageTransitionsTheme` that allows customizing navigation page transitions for different platforms. See section [below](#navigation-transitions).
-
-:::note
-Read this [note about system fonts](/docs/controls/text#using-system-fonts) if you like to use them in `font_family` of your theme.
-:::
-
-#### Navigation transitions
-
-`theme.page_transitions` allows customizing navigation page transitions for different platforms. The value is an instance of `PageTransitionsTheme` class with the following optional properties:
-
-* `android` (default value is `FADE_UPWARDS`)
-* `ios` (default value is `CUPERTINO`)
-* `macos` (default value is `ZOOM`)
-* `linux` (default value is `ZOOM`)
-* `windows` (default value is `ZOOM`)
-
-Supported transitions is `PageTransitionTheme` enum: `FADE_UPWARDS`, `OPEN_UPWARDS`, `ZOOM`, `CUPERTINO`.
-
-An simple example:
-
-```python
-theme = Theme()
-theme.page_transitions.android = "openUpwards"
-theme.page_transitions.ios = "cupertino"
-theme.page_transitions.macos = "fadeUpwards"
-theme.page_transitions.linux = "zoom"
-theme.page_transitions.windows = "zoom"
-page.theme = theme
-page.update()
-```
-
 ### `dark_theme`
 
 Set this property to an instance of `theme.Theme` to customize dark theme.
+
+### `dialog`
+
+An [`AlertDialog`](/docs/controls/alertdialog) control to display.
+
+### `floating_action_button`
+
+A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to display on top of Page content.
 
 ### `fonts`
 
@@ -299,216 +141,54 @@ However, if you need to use a variable font in your app you can create static "i
 To explore available font features (e.g. possible options for `wght`) use [**Wakamai Fondue**](https://wakamaifondue.com/beta/) online tool.
 :::
 
-### `rtl`
+### `height`
 
-`True` to set text direction to right-to-left. Default is `False`.
+A height of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
 
-### `show_semantics_debugger`
+### `horizontal_alignment`
 
-`True` turns on an overlay that shows the accessibility information reported by the framework.
+How the child Controls should be placed horizontally.
+
+Default value is `CrossAxisAlignment.START` which means on the left side of the Page.
+
+Property value is `CrossAxisAlignment` enum with the following values:
+
+* `START` (default)
+* `CENTER`
+* `END`
+* `STRETCH`
+* `BASELINE`
 
 ### `overlay`
 
 A list of `Control`s displayed as a stack on top of main page contents.
 
-### `splash`
+### `padding`
 
-A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
+A space between page contents and its edges. Default value is 10 pixels from each side. To set zero padding:
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
-from time import sleep
-import flet as ft
-
-def main(page: ft.Page):
-    def button_click(e):
-        page.splash = ft.ProgressBar()
-        btn.disabled = True
-        page.update()
-        sleep(3)
-        page.splash = None
-        btn.disabled = False
-        page.update()
-
-    btn = ft.ElevatedButton("Do some lengthy task!", on_click=button_click)
-    page.add(btn)
-
-ft.app(target=main)
+page.padding = 0
+page.update()
 ```
 
 </TabItem>
 </Tabs>
 
-### `appbar`
+See [`Container.padding`](container#padding) for more information and possible values.
 
-A [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
+### `platform`
 
-### `floating_action_button`
+Operating system the application is running on:
 
-A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to display on top of Page content.
-
-### `banner`
-
-A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
-
-### `dialog`
-
-An [`AlertDialog`](/docs/controls/alertdialog) control to display.
-
-### `width`
-
-A width of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
-
-### `height`
-
-A height of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
-
-### `window_bgcolor`
-
-🖥️ Desktop only. Sets background color of an application window.
-
-Use together with `page.bgcolor` to make a window transparent:
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.window_bgcolor = ft.colors.TRANSPARENT
-    page.bgcolor = ft.colors.TRANSPARENT
-    page.window_title_bar_hidden = True
-    page.window_frameless = True
-    page.window_left = 400
-    page.window_top = 200
-    page.add(ft.ElevatedButton("I'm a floating button!"))
-
-ft.app(target=main)
-```
-
-### `window_width`
-
-🖥️ Desktop only. Get or set the width of a native OS window containing Flet app.
-
-### `window_height`
-
-🖥️ Desktop only. Get or set the height of a native OS window containing Flet app.
-
-### `window_top`
-
-🖥️ Desktop only. Get or set a vertical position of a native OS window - a distance in virtual pixels from the top edge of the screen.
-
-### `window_left`
-
-🖥️ Desktop only. Get or set a horizontal position of a native OS window - a distance in virtual pixels from the left edge of the screen.
-
-### `window_max_width`
-
-🖥️ Desktop only. Get or set the maximum width of a native OS window containing Flet app.
-
-### `window_max_height`
-
-🖥️ Desktop only. Get or set the maximum height of a native OS window containing Flet app.
-
-### `window_min_width`
-
-🖥️ Desktop only. Get or set the minimum width of a native OS window containing Flet app.
-
-### `window_min_height`
-
-🖥️ Desktop only. Get or set the minimum height of a native OS window containing Flet app.
-
-### `window_opacity`
-
-🖥️ Desktop only. Sets the opacity of a native OS window. The value must be between `0.0` (fully transparent) and `1.0` (fully opaque).
-
-### `window_maximized`
-
-🖥️ Desktop only. `True` if a native OS window containing Flet app is maximized; otherwise `False`. Set this property to `True` to programmatically maximize the window and set it to `False` to unmaximize it.
-
-### `window_minimized`
-
-🖥️ Desktop only. `True` if a native OS window containing Flet app is minimized; otherwise `False`. Set this property to `True` to programmatically minimize the window and set it to `False` to restore it.
-
-### `window_minimizable`
-
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button. Default is `True`.
-
-### `window_maximizable`
-
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Maximize" button. Default is `True`.
-
-### `window_resizable`
-
-🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app. Default is `True`.
-
-### `window_movable`
-
-🖥️ Desktop only. macOS only. Set to `False` to prevent user from changing a position of a native OS window containing Flet app. Default is `True`.
-
-### `window_full_screen`
-
-🖥️ Desktop only. Set to `True` to switch app's native OS window to a fullscreen mode. Default is `False`.
-
-### `window_always_on_top`
-
-🖥️ Desktop only. Sets whether the window should show always on top of other windows. Default is `False`.
-
-### `window_prevent_close`
-
-🖥️ Desktop only. Set to `True` to intercept the native close signal. Could be used together with [`page.on_window_event (close)`](#on_window_event) event handler and [`page.window_destroy()`](#window_destroy) to implement app exit confirmation logic - see [`page.window_destroy()`](#window_destroy) for code example.
-
-### `window_focused`
-
-🖥️ Desktop only. Set to `True` to focus a native OS window with a Flet app.
-
-### `window_title_bar_hidden`
-
-🖥️ Desktop only. Set to `True` to hide window title bar. See [`WindowDragArea`](windowdragarea) control that allows moving
-an app window with hidden title bar.
-
-### `window_title_bar_buttons_hidden`
-
-🖥️ Desktop only. Set to `True` to hide window action buttons when a title bar is hidden. macOS only.
-
-### `window_frameless`
-
-🖥️ Desktop only. Set to `True` to make app window frameless.
-
-### `window_skip_task_bar`
-
-🖥️ Desktop only. Set to `True` to hide application from the Task Bar (Windows) or Dock (macOS).
-
-### `window_progress_bar`
-
-🖥️ Desktop only. The value from `0.0` to `1.0` to display a progress bar on Task Bar (Windows) or Dock (macOS) application button.
-
-### `window_visible`
-
-🖥️ Desktop only. Set to `True` to make application window visible. Used when the app is starting with a hidden window.
-
-The following program starts with a hidden window and makes it visible in 3 seconds:
-
-```python
-from time import sleep
-
-import flet as ft
-
-
-def main(page: ft.Page):
-
-    page.add(
-        ft.Text("Hello!")
-    )
-
-    sleep(3)
-    page.window_visible = True
-    page.update()  
-
-ft.app(target=main, view=ft.FLET_APP_HIDDEN)
-```
-
-Note `view=flet.FLET_APP_HIDDEN` which hides app window on start.
+* `ios`
+* `android`
+* `macos`
+* `linux`
+* `windows`
 
 ### `pubsub`
 
@@ -609,29 +289,347 @@ def main(page: ft.Page):
     page.on_close = client_exited
 ```
 
-## Methods
+### `pwa`
 
-### `go(route)`
+`True` if the application is running as Progressive Web App (PWA). Read-only.
 
-A helper method that updates [`page.route`](#route), calls [`page.on_route_change`](#on_route_change) event handler to update views and finally calls `page.update()`.
+### `route`
 
-### `set_clipboard(data)`
+Get or sets page's navigation route. See [Navigation and routing](/docs/guides/python/navigation-and-routing) section for 
+more information and examples.
 
-Set clipboard data on a client side (user's web browser or a desktop), for example:
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
+
+### `scroll`
+
+Enables a vertical scrolling for the Page to prevent its content overflow.
+
+Property value is an optional `ScrollMode` enum with `None` as default.
+
+Supported values:
+
+* `None` (default) - the Row is non-scrollable and its content could overflow.
+* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
+* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
+* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
+* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+
+### `session_id`
+
+A unique ID of user's session. This property is read-only.
+
+### `spacing`
+
+Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+
+### `splash`
+
+A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
-page.set_clipboard("This value comes from Flet app")
+from time import sleep
+import flet as ft
+
+def main(page: ft.Page):
+    def button_click(e):
+        page.splash = ft.ProgressBar()
+        btn.disabled = True
+        page.update()
+        sleep(3)
+        page.splash = None
+        btn.disabled = False
+        page.update()
+
+    btn = ft.ElevatedButton("Do some lengthy task!", on_click=button_click)
+    page.add(btn)
+
+ft.app(target=main)
+```
+
+</TabItem>
+</Tabs>
+### `show_semantics_debugger`
+
+`True` turns on an overlay that shows the accessibility information reported by the framework.
+
+### `theme`
+
+Set this property to an instance of `theme.Theme` to customize light theme. Currently, a theme can only be automatically generated from a "seed" color. For example, to generate light theme from a green color:
+
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+page.theme = theme.Theme(color_scheme_seed="green")
+page.update()
 ```
 
 </TabItem>
 </Tabs>
 
+`Theme` class has the following properties:
+
+* `color_scheme_seed` - a seed color to algorithmically derive the rest of theme colors from.
+* `font_family` - the base font for all UI elements.
+* `use_material3` - `True` (default) to use Material 3 design; otherwise Material 2.
+* `visual_density` - `ThemeVisualDensity` enum: `STANDARD` (default), `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+* `page_transitions` - an instance of `PageTransitionsTheme` that allows customizing navigation page transitions for different platforms. See section [below](#navigation-transitions).
+
+:::note
+Read this [note about system fonts](/docs/controls/text#using-system-fonts) if you like to use them in `font_family` of your theme.
+:::
+
+#### Navigation transitions
+
+`theme.page_transitions` allows customizing navigation page transitions for different platforms. The value is an instance of `PageTransitionsTheme` class with the following optional properties:
+
+* `android` (default value is `FADE_UPWARDS`)
+* `ios` (default value is `CUPERTINO`)
+* `macos` (default value is `ZOOM`)
+* `linux` (default value is `ZOOM`)
+* `windows` (default value is `ZOOM`)
+
+Supported transitions is `PageTransitionTheme` enum: `FADE_UPWARDS`, `OPEN_UPWARDS`, `ZOOM`, `CUPERTINO`.
+
+An simple example:
+
+```python
+theme = Theme()
+theme.page_transitions.android = "openUpwards"
+theme.page_transitions.ios = "cupertino"
+theme.page_transitions.macos = "fadeUpwards"
+theme.page_transitions.linux = "zoom"
+theme.page_transitions.windows = "zoom"
+page.theme = theme
+page.update()
+```
+
+### `theme_mode`
+
+Page theme.
+
+Property value is an optional `ThemeMode` enum with `SYSTEM` as default.
+
+Supported values: `SYSTEM` (default), `LIGHT` or `DARK`.
+
+### `title`
+
+A title of browser or native OS window, for example:
+
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+page.title = "My awesome app"
+page.update()
+```
+
+</TabItem>
+</Tabs>
+
+### `vertical_alignment`
+
+How the child Controls should be placed vertically.
+
+For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
+
+Property value is `MainAxisAlignment` enum with the following values:
+
+* `START` (default)
+* `END`
+* `CENTER`
+* `SPACE_BETWEEN`
+* `SPACE_AROUND`
+* `SPACE_EVENLY`
+
+### `views`
+
+A list of [`View`](view) controls to build navigation history.
+
+The last view in the list is the one displayed on a page.
+
+The first view is a "root" view which cannot be poped.
+
+### `web`
+
+`True` if the application is running in the web browser.
+
+### `width`
+
+A width of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+
+### `window_always_on_top`
+
+🖥️ Desktop only. Sets whether the window should show always on top of other windows. Default is `False`.
+
+### `window_bgcolor`
+
+🖥️ Desktop only. Sets background color of an application window.
+
+Use together with `page.bgcolor` to make a window transparent:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.window_bgcolor = ft.colors.TRANSPARENT
+    page.bgcolor = ft.colors.TRANSPARENT
+    page.window_title_bar_hidden = True
+    page.window_frameless = True
+    page.window_left = 400
+    page.window_top = 200
+    page.add(ft.ElevatedButton("I'm a floating button!"))
+
+ft.app(target=main)
+```
+
+### `window_focused`
+
+🖥️ Desktop only. Set to `True` to focus a native OS window with a Flet app.
+
+### `window_frameless`
+
+🖥️ Desktop only. Set to `True` to make app window frameless.
+
+### `window_full_screen`
+
+🖥️ Desktop only. Set to `True` to switch app's native OS window to a fullscreen mode. Default is `False`.
+
+### `window_height`
+
+🖥️ Desktop only. Get or set the height of a native OS window containing Flet app.
+
+### `window_left`
+
+🖥️ Desktop only. Get or set a horizontal position of a native OS window - a distance in virtual pixels from the left edge of the screen.
+
+### `window_maximizable`
+
+🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Maximize" button. Default is `True`.
+
+### `window_maximized`
+
+🖥️ Desktop only. `True` if a native OS window containing Flet app is maximized; otherwise `False`. Set this property to `True` to programmatically maximize the window and set it to `False` to unmaximize it.
+
+### `window_max_height`
+
+🖥️ Desktop only. Get or set the maximum height of a native OS window containing Flet app.
+
+### `window_max_width`
+
+🖥️ Desktop only. Get or set the maximum width of a native OS window containing Flet app.
+
+### `window_minimizable`
+
+🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button. Default is `True`.
+
+### `window_minimized`
+
+🖥️ Desktop only. `True` if a native OS window containing Flet app is minimized; otherwise `False`. Set this property to `True` to programmatically minimize the window and set it to `False` to restore it.
+
+### `window_min_height`
+
+🖥️ Desktop only. Get or set the minimum height of a native OS window containing Flet app.
+
+### `window_min_width`
+
+🖥️ Desktop only. Get or set the minimum width of a native OS window containing Flet app.
+
+### `window_movable`
+
+🖥️ Desktop only. macOS only. Set to `False` to prevent user from changing a position of a native OS window containing Flet app. Default is `True`.
+
+### `window_opacity`
+
+🖥️ Desktop only. Sets the opacity of a native OS window. The value must be between `0.0` (fully transparent) and `1.0` (fully opaque).
+
+### `window_resizable`
+
+🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app. Default is `True`.
+
+### `window_title_bar_hidden`
+
+🖥️ Desktop only. Set to `True` to hide window title bar. See [`WindowDragArea`](windowdragarea) control that allows moving
+an app window with hidden title bar.
+
+### `window_title_bar_buttons_hidden`
+
+🖥️ Desktop only. Set to `True` to hide window action buttons when a title bar is hidden. macOS only.
+
+### `window_top`
+
+🖥️ Desktop only. Get or set a vertical position of a native OS window - a distance in virtual pixels from the top edge of the screen.
+
+### `window_prevent_close`
+
+🖥️ Desktop only. Set to `True` to intercept the native close signal. Could be used together with [`page.on_window_event (close)`](#on_window_event) event handler and [`page.window_destroy()`](#window_destroy) to implement app exit confirmation logic - see [`page.window_destroy()`](#window_destroy) for code example.
+
+### `window_progress_bar`
+
+🖥️ Desktop only. The value from `0.0` to `1.0` to display a progress bar on Task Bar (Windows) or Dock (macOS) application button.
+
+### `window_skip_task_bar`
+
+🖥️ Desktop only. Set to `True` to hide application from the Task Bar (Windows) or Dock (macOS).
+
+### `window_visible`
+
+🖥️ Desktop only. Set to `True` to make application window visible. Used when the app is starting with a hidden window.
+
+The following program starts with a hidden window and makes it visible in 3 seconds:
+
+```python
+from time import sleep
+
+import flet as ft
+
+
+def main(page: ft.Page):
+
+    page.add(
+        ft.Text("Hello!")
+    )
+
+    sleep(3)
+    page.window_visible = True
+    page.update()  
+
+ft.app(target=main, view=ft.FLET_APP_HIDDEN)
+```
+
+Note `view=flet.FLET_APP_HIDDEN` which hides app window on start.
+
+### `window_width`
+
+🖥️ Desktop only. Get or set the width of a native OS window containing Flet app.
+
+## Methods
+
+### `can_launch_url(url)`
+
+Checks whether the specified URL can be handled by some app installed on the device.
+
+Returns `True` if it is possible to verify that there is a handler available. A `False` return value can indicate either that there is no handler available, or that the application does not have permission to check. For example:
+
+* On recent versions of Android and iOS, this will always return `False` unless the application has been configuration to allow querying the system for launch support.
+* On web, this will always return `False` except for a few specific schemes that are always assumed to be supported (such as http(s)), as web pages are never allowed to query installed applications.
+
+### `close_in_app_web_view()`
+
+📱 Mobile only. Closes in-app web view opened with `launch_url()`.
+
 ### `get_clipboard()`
 
 Get the last text value saved to a clipboard on a client side.
+
+### `go(route)`
+
+A helper method that updates [`page.route`](#route), calls [`page.on_route_change`](#on_route_change) event handler to update views and finally calls `page.update()`.
 
 ### `launch_url(url)`
 
@@ -643,21 +641,6 @@ Optional method arguments:
 * `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
 * `window_width` - optional, popup window width.
 * `window_height` - optional, popup window height.
-
-### `can_launch_url(url)`
-
-Checks whether the specified URL can be handled by some app installed on the device.
-
-Returns `True` if it is possible to verify that there is a handler available. A `False` return value can indicate either that there is no handler available, or that the application does not have permission to check. For example:
-
-* On recent versions of Android and iOS, this will always return `False` unless the application has been configuration to allow querying the system for launch support.
-* On web, this will always return `False` except for a few specific schemes that are always assumed to be supported (such as http(s)), as web pages are never allowed to query installed applications.
-
-### `show_snack_bar(snack_bar)`
-
-Displays SnackBar at the bottom of the page.
-
-`snack_bar` - A [`SnackBar`](/docs/controls/snackbar) control to display at the bottom of the Page.
 
 ### `page.get_upload_url(file_name, expires)`
 
@@ -678,13 +661,25 @@ To enable built-in upload storage provide `upload_dir` argument to `flet.app()` 
 ft.app(target=main, upload_dir="uploads")
 ```
 
-### `close_in_app_web_view()`
+### `set_clipboard(data)`
 
-📱 Mobile only. Closes in-app web view opened with `launch_url()`.
+Set clipboard data on a client side (user's web browser or a desktop), for example:
 
-### `window_to_front()`
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
 
-🖥️ Desktop only. Brings application window to a foreground.
+```python
+page.set_clipboard("This value comes from Flet app")
+```
+
+</TabItem>
+</Tabs>
+
+### `show_snack_bar(snack_bar)`
+
+Displays SnackBar at the bottom of the page.
+
+`snack_bar` - A [`SnackBar`](/docs/controls/snackbar) control to display at the bottom of the Page.
 
 ### `window_center()`
 
@@ -736,7 +731,43 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
+### `window_to_front()`
+
+🖥️ Desktop only. Brings application window to a foreground.
+
 ## Events
+
+### `on_close`
+
+Fires when a session has expired after configured amount of time (60 minutes by default).
+
+### `on_connect`
+
+Fires when a web user (re-)connects to a page session. It is not triggered when an app page is first opened, but is triggered when the page is refreshed, or Flet web client has re-connected after computer was unlocked. This event could be used to detect when a web user becomes "online".
+
+### `on_disconnect`
+
+Fires when a web user disconnects from a page session, i.e. closes browser tab/window.
+
+### `on_error`
+
+Fires when unhandled exception occurs.
+
+### `on_keyboard_event`
+
+Fires when a keyboard key is pressed. Event object `e` is an instance of `KeyboardEvent` class:
+
+```python
+@dataclass
+class ft.KeyboardEvent:
+    key: str
+    shift: bool
+    ctrl: bool
+    alt: bool
+    meta: bool
+```
+
+Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py).
 
 ### `on_resize`
 
@@ -754,6 +785,30 @@ page.on_resize = page_resize
 
 </TabItem>
 </Tabs>
+
+### `on_route_change`
+
+Fires when page route changes either programmatically, by editing application URL or using browser Back/Forward buttons.
+
+Event object `e` is an instance of `RouteChangeEvent` class:
+
+```python
+class RouteChangeEvent(ft.ControlEvent):
+    route: str     # a new page root
+```
+
+### `on_view_pop`
+
+Fires when the user clicks automatic "Back" button in [`AppBar`](/docs/controls/appbar) control.
+
+Event object `e` is an instance of `ViewPopEvent` class:
+
+```python
+class ViewPopEvent(ft.ControlEvent):
+    view: ft.View
+```
+
+where `view` is an instance of [`View`](/docs/controls/view) control that contains the AppBar.
 
 ### `on_window_event`
 
@@ -774,59 +829,3 @@ Fires when an application's native OS window changes its state: position, size, 
 * `moved` (macOS and Windows only)
 * `enterFullScreen`
 * `leaveFullScreen`
-
-### `on_keyboard_event`
-
-Fires when a keyboard key is pressed. Event object `e` is an instance of `KeyboardEvent` class:
-
-```python
-@dataclass
-class ft.KeyboardEvent:
-    key: str
-    shift: bool
-    ctrl: bool
-    alt: bool
-    meta: bool
-```
-
-Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py).
-
-### `on_route_change`
-
-Fires when page route changes either programmatically, by editing application URL or using browser Back/Forward buttons.
-
-Event object `e` is an instance of `RouteChangeEvent` class:
-
-```python
-class RouteChangeEvent(ControlEvent):
-    route: str     # a new page root
-```
-
-### `on_view_pop`
-
-Fires when the user clicks automatic "Back" button in [`AppBar`](/docs/controls/appbar) control.
-
-Event object `e` is an instance of `ViewPopEvent` class:
-
-```python
-class ViewPopEvent(ControlEvent):
-    view: View
-```
-
-where `view` is an instance of [`View`](/docs/controls/view) control that contains the AppBar.
-
-### `on_connect`
-
-Fires when a web user (re-)connects to a page session. It is not triggered when an app page is first opened, but is triggered when the page is refreshed, or Flet web client has re-connected after computer was unlocked. This event could be used to detect when a web user becomes "online".
-
-### `on_disconnect`
-
-Fires when a web user disconnects from a page session, i.e. closes browser tab/window.
-
-### `on_close`
-
-Fires when a session has expired after configured amount of time (60 minutes by default).
-
-### `on_error`
-
-Fires when unhandled exception occurs.
