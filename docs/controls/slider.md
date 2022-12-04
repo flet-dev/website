@@ -83,27 +83,15 @@ ft.app(target=main)
 
 ## Properties
 
-### `value`
+### `active_color`
 
-The currently selected value for this slider.
+The color to use for the portion of the slider track that is active.
 
-The slider's thumb is drawn at a position that corresponds to this value.
+The "active" side of the slider is the side between the thumb and the minimum value.
 
-### `min`
+### `autofocus`
 
-The minimum value the user can select.
-
-Defaults to `0.0`. Must be less than or equal to `max`.
-
-If the `max` is equal to the `min`, then the slider is disabled.
-
-### `max`
-
-The maximum value the user can select.
-
-Defaults to `1.0`. Must be greater than or equal to `min`.
-
-If the `max` is equal to the `min`, then the slider is disabled.
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
 ### `divisions`
 
@@ -112,6 +100,12 @@ The number of discrete divisions.
 Typically used with `label` to show the current discrete value.
 
 If not set, the slider is continuous.
+
+### `inactive_color`
+
+The color for the inactive portion of the slider track.
+
+The "inactive" side of the slider is the side between the thumb and the maximum value.
 
 ### `label`
 
@@ -123,44 +117,50 @@ It is used to display the value of a discrete slider, and it is displayed as par
 
 If not set, then the value indicator will not be displayed.
 
-### `autofocus`
+### `max`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+The maximum value the user can select.
 
-### `active_color`
+Defaults to `1.0`. Must be greater than or equal to `min`.
 
-The color to use for the portion of the slider track that is active.
+If the `max` is equal to the `min`, then the slider is disabled.
 
-The "active" side of the slider is the side between the thumb and the minimum value.
+### `min`
 
-### `inactive_color`
+The minimum value the user can select.
 
-The color for the inactive portion of the slider track.
+Defaults to `0.0`. Must be less than or equal to `max`.
 
-The "inactive" side of the slider is the side between the thumb and the maximum value.
+If the `max` is equal to the `min`, then the slider is disabled.
 
 ### `thumb_color`
 
 The color of the thumb.
 
+### `value`
+
+The currently selected value for this slider.
+
+The slider's thumb is drawn at a position that corresponds to this value.
+
 ## Events
+
+### `on_blur`
+
+Fires when the control has lost focus.
 
 ### `on_change`
 
 Fires when the state of the Slider is changed.
 
-### `on_change_start`
-
-Fires when the user starts selecting a new value for the slider.
-
 ### `on_change_end`
 
 Fires when the user is done selecting a new value for the slider.
 
+### `on_change_start`
+
+Fires when the user starts selecting a new value for the slider.
+
 ### `on_focus`
 
 Fires when the control has received focus.
-
-### `on_blur`
-
-Fires when the control has lost focus.

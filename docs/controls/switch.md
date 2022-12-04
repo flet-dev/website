@@ -78,22 +78,6 @@ ft.app(target=main)
 
 ## Properties
 
-### `value`
-
-Current value of the Switch.
-
-### `label`
-
-The clickable label to display on the right of the Switch.
-
-### `label_position`
-
-Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
-
-### `autofocus`
-
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
-
 ### `active_color`
 
 The color to use when this switch is on.
@@ -103,6 +87,10 @@ The color to use when this switch is on.
 The color to use on the track when this switch is on.
 
 If `track_color` returns a non-null color in the `selected` state, it will be used instead of this color.
+
+### `autofocus`
+
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
 ### `inactive_thumb_color`
 
@@ -115,6 +103,14 @@ If `thumb_color` returns a non-null color in the default state, it will be used 
 The color to use on the track when this switch is off.
 
 If `track_color` returns a non-null color in the default state, it will be used instead of this color.
+
+### `label`
+
+The clickable label to display on the right of the Switch.
+
+### `label_position`
+
+Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `thumb_color`
 
@@ -131,16 +127,16 @@ Resolved in the following `MaterialState` states:
 To configure thumb color for all Material states set `thumb_color` value to a literal, for example:
 
 ```python
-sw.thumb_color=colors.GREEN
+sw.thumb_color=ft.colors.GREEN
 ```
 
 To configure thumb color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
 
 ```python
 sw.thumb_color={
-    ft.MaterialState.HOVERED: colors.GREEN,
-    ft.MaterialState.FOCUSED: colors.RED,
-    ft.MaterialState.DEFAULT: colors.BLACK,
+    ft.MaterialState.HOVERED: ft.colors.GREEN,
+    ft.MaterialState.FOCUSED: ft.colors.RED,
+    ft.MaterialState.DEFAULT: ft.colors.BLACK,
 }
 ```
 
@@ -156,7 +152,15 @@ Resolved in the following `MaterialState` states:
 * `DISABLED`
 * `DEFAULT` - fallback state, meaning "all other states".
 
+### `value`
+
+Current value of the Switch.
+
 ## Events
+
+### `on_blur`
+
+Fires when the control has lost focus.
 
 ### `on_change`
 
@@ -165,7 +169,3 @@ Fires when the state of the Switch is changed.
 ### `on_focus`
 
 Fires when the control has received focus.
-
-### `on_blur`
-
-Fires when the control has lost focus.
