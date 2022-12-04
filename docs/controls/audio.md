@@ -114,14 +114,6 @@ ft.app(target=main)
 
 ## Properties
 
-### `src`
-
-Sets the URL to the audio file. It could be an asset URL, see [Image.src](/docs/controls/image#src) for more information about assets.
-
-### `src_base64`
-
-Sets the contents of audio file encoded in base-64 format.
-
 ### `autoplay`
 
 Starts playing audio as soon as audio control is added to a page.
@@ -129,12 +121,6 @@ Starts playing audio as soon as audio control is added to a page.
 :::note
 Autoplay works in desktop, mobile apps and Safari browser, but doesn't work in Chrome/Edge.
 :::
-
-### `volume`
-
-Sets the volume (amplitude).
-
-0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
 
 ### `balance`
 
@@ -145,6 +131,14 @@ Sets the stereo balance.
 :::note
 Setting balance is supported on Windows and Linux only.
 :::
+
+### `get_current_position()`
+
+Returns the current position in milliseconds.
+
+### `get_duration()`
+
+Returns the duration of audio in milliseconds.
 
 ### `playback_rate`
 
@@ -158,24 +152,32 @@ Sets the release mode. The following values are supported:
 * `ReleaseMode.LOOP` - Keeps buffered data and plays again after completion, creating a loop. Notice that calling stop method is not enough to release the resources when this mode is being used.
 * `ReleaseMode.STOP` - Stops audio playback but keep all resources intact. Use this if you intend to play again later.
 
+### `src`
+
+Sets the URL to the audio file. It could be an asset URL, see [Image.src](/docs/controls/image#src) for more information about assets.
+
+### `src_base64`
+
+Sets the contents of audio file encoded in base-64 format.
+
 ## Methods
-
-### `play()`
-
-Starts playing audio for the beginning.
 
 ### `pause()`
 
 Stops playing audio.
 
-### `resume()`
+### `play()`
 
-Resumes playing audio from the current position.
+Starts playing audio for the beginning.
 
 ### `release()`
 
 Stops playing and releases the resources associated with this audio control.
 The resources are going to be fetched or buffered again as soon as you call `resume()` or change the source.
+
+### `resume()`
+
+Resumes playing audio from the current position.
 
 ### `seek()`
 
@@ -185,25 +187,31 @@ Method arguments:
 
 * `position_milliseconds` - desired position in milliseconds.
 
-### `get_duration()`
+### `volume`
 
-Returns the duration of audio in milliseconds.
+Sets the volume (amplitude).
 
-### `get_current_position()`
-
-Returns the current position in milliseconds.
+0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
 
 ## Events
-
-### `on_loaded`
-
-Fires when an audio is loaded/buffered.
 
 ### `on_duration_changed`
 
 Fires as soon as audio duration is available (it might take a while to download or buffer it).
 
 Event's `e.data` contains audio duration in milliseconds.
+
+### `on_loaded`
+
+Fires when an audio is loaded/buffered.
+
+### `on_position_changed`
+
+Fires when audio position is changed. Will continuously update the position of the playback every 1 second if the status is playing. Can be used for a progress bar.
+
+### `on_seek_complete`
+
+Fires on seek completions. An event is going to be sent as soon as the audio seek is finished.
 
 ### `on_state_changed`
 
@@ -213,11 +221,3 @@ Fires when audio player state changes. Event's `e.data` contains one of the foll
 * `playing`
 * `paused`
 * `completed`
-
-### `on_position_changed`
-
-Fires when audio position is changed. Will continuously update the position of the playback every 1 second if the status is playing. Can be used for a progress bar.
-
-### `on_seek_complete`
-
-Fires on seek completions. An event is going to be sent as soon as the audio seek is finished.
