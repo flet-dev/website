@@ -68,27 +68,25 @@ ft.app(target=main)
 
 ## Properties
 
-### `open`
+### `actions`
 
-Set to `True` to display a dialog.
+The (optional) set of actions that are displayed at the bottom of the dialog.
 
-### `modal`
+Typically this is a list of [`TextButton`](textbutton) controls.
 
-Whether dialog can be dismissed by clicking the area outside of it.
+### `actions_alignment`
 
-### `title`
+Defines the horizontal layout of the actions according to the same rules as for [`Row.alignment`](row#alignment).
 
-The (optional) title of the dialog is displayed in a large font at the top of the dialog.
+Property value is `MainAxisAlignment` enum with `MainAxisAlignment.END` as default.
 
-Typically a [`Text`](text) control.
+### `actions_padding`
 
-### `title_padding`
+Padding around the set of actions at the bottom of the dialog.
 
-Padding around the title.
+Typically used to provide padding to the button bar between the button bar and the edges of the dialog.
 
-If there is no title, no padding will be provided. Otherwise, this padding is used.
-
-This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
+If are no actions, then no padding will be included. The padding around the button bar defaults to zero.
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
@@ -104,27 +102,13 @@ If there is no content, no padding will be provided. Otherwise, padding of 20 pi
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
-### `actions`
+### `modal`
 
-The (optional) set of actions that are displayed at the bottom of the dialog.
+Whether dialog can be dismissed by clicking the area outside of it.
 
-Typically this is a list of [`TextButton`](textbutton) controls.
+### `open`
 
-### `actions_padding`
-
-Padding around the set of actions at the bottom of the dialog.
-
-Typically used to provide padding to the button bar between the button bar and the edges of the dialog.
-
-If are no actions, then no padding will be included. The padding around the button bar defaults to zero.
-
-See [`Container.padding`](container#padding) for more information about padding and possible values.
-
-### `actions_alignment`
-
-Defines the horizontal layout of the actions according to the same rules as for [`Row.alignment`](row#alignment).
-
-Property value is `MainAxisAlignment` enum with `MainAxisAlignment.END` as default.
+Set to `True` to display a dialog.
 
 ### `shape`
 
@@ -141,6 +125,22 @@ The value is an instance of one of the following implementations:
     * `radius` - border radius, an instance of `BorderRadius` class or a number.
 
 The default shape is a `RoundedRectangleBorder` with a radius of 4.0.
+
+### `title`
+
+The (optional) title of the dialog is displayed in a large font at the top of the dialog.
+
+Typically a [`Text`](text) control.
+
+### `title_padding`
+
+Padding around the title.
+
+If there is no title, no padding will be provided. Otherwise, this padding is used.
+
+This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
+
+See [`Container.padding`](container#padding) for more information about padding and possible values.
 
 ## Events
 
