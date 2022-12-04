@@ -246,10 +246,6 @@ ft.app(target=main)
 
 ## Properties
 
-### `controls`
-
-A list of Controls to display inside the Column.
-
 ### `alignment`
 
 How the child Controls should be placed vertically.
@@ -263,6 +259,14 @@ Property value is `MainAxisAlignment` enum with the following values:
 * `SPACE_AROUND`
 * `SPACE_EVENLY`
 
+### `auto_scroll`
+
+`True` if scrollbar should automatically move its position to the end when children update.
+
+### `controls`
+
+A list of Controls to display inside the Column.
+
 ### `horizontal_alignment`
 
 How the child Controls should be placed horizontally.
@@ -274,22 +278,6 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `END`
 * `STRETCH`
 * `BASELINE`
-
-### `tight`
-
-Specifies how much space should be occupied vertically. Default is `False` - allocate all space to children.
-
-### `spacing`
-
-Spacing between controls in a Column. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
-
-### `wrap`
-
-When set to `True` the Column will put child controls into additional columns (runs) if they don't fit a single column.
-
-### `run_spacing`
-
-Spacing between runs when `wrap=True`. Default value is 10.
 
 ### `scroll`
 
@@ -305,9 +293,21 @@ Supported values:
 * `ALWAYS` - scrolling is enabled and scroll bar is always shown.
 * `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
 
-### `auto_scroll`
+### `spacing`
 
-`True` if scrollbar should automatically move its position to the end when children update.
+Spacing between controls in a Column. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+
+### `run_spacing`
+
+Spacing between runs when `wrap=True`. Default value is 10.
+
+### `tight`
+
+Specifies how much space should be occupied vertically. Default is `False` - allocate all space to children.
+
+### `wrap`
+
+When set to `True` the Column will put child controls into additional columns (runs) if they don't fit a single column.
 
 ## Expanding children
 
