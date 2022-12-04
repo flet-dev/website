@@ -38,19 +38,19 @@ ft.app(target=main)
 
 ## `NavigationBar` properties
 
+### `bgcolor`
+
+The color of the NavigationBar itself.
+
 ### `destinations`
 
 Defines the appearance of the button items that are arrayed within the navigation bar.
 
 The value must be a list of two or more `NavigationDestination` instances.
 
-### `selected_index`
+### `elevation`
 
-The index into `destinations` for the current selected `NavigationDestination` or `None` if no destination is selected.
-
-### `bgcolor`
-
-The color of the NavigationBar itself.
+The elevation of the NavigationBar itself.
 
 ### `label_behavior`
 
@@ -64,9 +64,9 @@ Property value is `NavigationBarLabelBehavior` enum with the following values:
 * `ALWAYS_HIDE` - Never shows any of the labels under the navigation bar destinations, regardless of selected vs unselected.
 * `ONLY_SHOW_SELECTED` - Only shows the labels of the selected navigation bar destination. When a destination is unselected, the label will be faded out, and the icon will be centered. When a destination is selected, the label will fade in and the label and icon will slide up so that they are both centered.
 
-### `elevation`
+### `selected_index`
 
-The elevation of the NavigationBar itself.
+The index into `destinations` for the current selected `NavigationDestination` or `None` if no destination is selected.
 
 ## `NavigationBar` events
 
@@ -88,6 +88,10 @@ If `selected_icon_content` is provided, this will only be displayed when the des
 
 To make the NavigationBar more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
 
+### `label`
+
+The text label that appears below the icon of this `NavigationDestination`.
+
 ### `selected_icon`
 
 The name of alternative icon displayed when this destination is selected.
@@ -97,7 +101,3 @@ The name of alternative icon displayed when this destination is selected.
 An alternative icon `Control` displayed when this destination is selected.
 
 If this icon is not provided, the NavigationBar will display `icon_content` in either state.
-
-### `label`
-
-The text label that appears below the icon of this `NavigationDestination`.
