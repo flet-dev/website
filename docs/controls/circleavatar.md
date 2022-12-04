@@ -29,7 +29,7 @@ def main(page):
         foreground_image_url="https://avatars.githubusercontent.com/u/5041459?s=88&v=4",
         content=ft.Text("FF"),
     )
-    # avatar with failing foregroung image and fallback text
+    # avatar with failing foreground image and fallback text
     a2 = ft.CircleAvatar(
         foreground_image_url="https://avatars.githubusercontent.com/u/_5041459?s=88&v=4",
         content=ft.Text("FF"),
@@ -70,10 +70,6 @@ ft.app(target=main)
 
 ## Properties
 
-### `foreground_image_url`
-
-The foreground image of the circle. Typically used as profile image. For fallback use `background_image_url`.
-
 ### `background_image_url`
 
 The background image of the circle. Changing the background image will cause the avatar to animate to the new image. Typically used as a fallback image for `foreground_image_url`. If the CircleAvatar is to have the user's initials, use `content` instead.
@@ -86,22 +82,26 @@ The color with which to fill the circle. Changing the background color will caus
 
 The default text color for text in the circle. Defaults to the primary text theme color if no `bgcolor` is specified.
 
-### `radius`
+### `content`
 
-The size of the avatar, expressed as the radius (half the diameter). If radius is specified, then neither minRadius nor maxRadius may be specified.
+Typically a `Text` control. If the CircleAvatar is to have an image, use `background_image_url` instead.
 
-### `min_radius`
+### `foreground_image_url`
 
-The minimum size of the avatar, expressed as the radius (half the diameter). If minRadius is specified, then radius must not also be specified. Defaults to zero.
+The foreground image of the circle. Typically used as profile image. For fallback use `background_image_url`.
 
 ### `max_radius`
 
 The maximum size of the avatar, expressed as the radius (half the diameter). If maxRadius is specified, then radius must not also be specified. Defaults to "infinity".
 
+### `min_radius`
+
+The minimum size of the avatar, expressed as the radius (half the diameter). If minRadius is specified, then radius must not also be specified. Defaults to zero.
+
+### `radius`
+
+The size of the avatar, expressed as the radius (half the diameter). If radius is specified, then neither minRadius nor maxRadius may be specified.
+
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
-
-### `content`
-
-Typically a `Text` control. If the CircleAvatar is to have an image, use `background_image_url` instead.

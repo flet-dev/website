@@ -59,12 +59,12 @@ The `Control` that should be displayed inside the card.
 
 This control can only have one child. To lay out multiple children, let this control's child be a control such as [`Row`](row), [`Column`](column), or [`Stack`](stack), which have a children property, and then provide the children to that control.
 
+### `elevation`
+
+Controls the size of the shadow below the card. Default value is `1.0`.
+
 ### `margin`
 
 The empty space that surrounds the card.
 
 See [`Container.margin`](container#margin) property for more information and possible values.
-
-### `elevation`
-
-Controls the size of the shadow below the card. Default value is `1.0`.
