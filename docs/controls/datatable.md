@@ -1,6 +1,6 @@
 ---
-title: Datatable
-sidebar_label: Datatable
+title: DataTable
+sidebar_label: DataTable
 slug: datatable
 ---
 
@@ -8,9 +8,53 @@ A Material Design data table.
 
 ## Examples
 
+### A simple DataTable
+
+<img src="/img/docs/controls/datatable/datatable-minimal.png" className="screenshot-50"/>
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.add(
+        ft.DataTable(
+            columns=[
+                ft.DataColumn(ft.Text("First name")),
+                ft.DataColumn(ft.Text("Last name")),
+                ft.DataColumn(ft.Text("Age"), numeric=True),
+            ],
+            rows=[
+                ft.DataRow(
+                    cells=[
+                        ft.DataCell(ft.Text("John")),
+                        ft.DataCell(ft.Text("Smith")),
+                        ft.DataCell(ft.Text("43")),
+                    ],
+                ),
+                ft.DataRow(
+                    cells=[
+                        ft.DataCell(ft.Text("Jack")),
+                        ft.DataCell(ft.Text("Brown")),
+                        ft.DataCell(ft.Text("19")),
+                    ],
+                ),
+                ft.DataRow(
+                    cells=[
+                        ft.DataCell(ft.Text("Alice")),
+                        ft.DataCell(ft.Text("Wong")),
+                        ft.DataCell(ft.Text("25")),
+                    ],
+                ),
+            ],
+        ),
+    )
+
+ft.app(target=main)
+```
+
 ### A styled DataTable
 
-<img src="/img/docs/controls/datatable/datatable.png" className="screenshot-70"/>
+<img src="/img/docs/controls/datatable/datatable-styled.png" className="screenshot-70"/>
 
 ```python
 import flet as ft
@@ -87,7 +131,7 @@ The horizontal margin between the contents of each data column.
 
 ### `columns`
 
-A list of [`DataColumn`](#datacolumn-properties) controls describing table columns.
+A list of [`DataColumn`](#datacolumn) controls describing table columns.
 
 ### `data_row_color`
 
@@ -145,7 +189,7 @@ When a checkbox is displayed, it is also the margin between the checkbox the con
 
 ### `rows`
 
-A list of [`DataRow`](#datarow-properties) controls defining table rows.
+A list of [`DataRow`](#datarow) controls defining table rows.
 
 ### `show_bottom_border`
 
@@ -193,26 +237,155 @@ If this is `None`, then the `DataRow.on_select_changed` callback of every row in
 
 To control whether a particular row is selectable or not, see `DataRow.on_select_changed`. This callback is only relevant if any row is selectable.
 
-## `DataColumn` properties
 
-### `prop1`
+
+
+## `DataColumn`
+
+Column configuration for a `DataTable`.
+
+One column configuration must be provided for each column to display in the table.
+
+### `label`
+
+The column heading.
+
+Typically, this will be a `Text` control. It could also be an `Icon` (typically using size 18), or a `Row` with an icon and some text.
+
+### `numeric`
+
+Whether this column represents numeric data or not.
+
+The contents of cells of columns containing numeric data are right-aligned.
+
+### `tooltip`
+
+The column heading's tooltip.
+
+This is a longer description of the column heading, for cases where the heading might have been abbreviated to keep the column width to a reasonable size.
 
 ## `DataColumn` events
 
-### `event1`
+### `on_sort`
 
-## `DataRow` properties
+Called when the user asks to sort the table using this column.
 
-### `prop1`
+If not set, the column will not be considered sortable.
+
+
+
+## `DataRow`
+
+Row configuration and cell data for a DataTable.
+
+One row configuration must be provided for each row to display in the table.
+
+The data for this row of the table is provided in the `cells` property of the `DataRow` object.
+
+### `cells`
+
+The data for this row - a list of [`DataCell`](#datacell) controls.
+
+There must be exactly as many cells as there are columns in the table.
+
+### `color`
+
+The color for the row.
+
+By default, the color is transparent unless selected. Selected rows has a grey translucent color.
+
+The effective color can depend on the `MaterialState` state, if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
+
+See [`Checkbox.fill_color`](/docs/controls/checkbox#fill_color) property for more information and examples.
+
+### `selected`
+
+Whether the row is selected.
+
+If `on_select_changed` is non-null for any row in the table, then a checkbox is shown at the start of each row. If the row is selected (`True`), the checkbox will be checked and the row will be highlighted.
+
+Otherwise, the checkbox, if present, will not be checked.
 
 ## `DataRow` events
 
-### `event1`
+### `on_long_press`
 
-## `DataCell` properties
+Called if the row is long-pressed.
 
-### `prop1`
+If a `DataCell` in the row has its `DataCell.on_tap`, `DataCell.on_double_tap`, `DataCell.on_long_press`, `DataCell.on_tap_cancel` or `DataCell.on_tap_down` callback defined, that callback behavior overrides the gesture behavior of the row for that particular cell.
+
+### `on_select_changed`
+
+Called when the user selects or unselects a selectable row.
+
+If this is not null, then the row is selectable. The current selection state of the row is given by selected.
+
+If any row is selectable, then the table's heading row will have a checkbox that can be checked to select all selectable rows (and which is checked if all the rows are selected), and each subsequent row will have a checkbox to toggle just that row.
+
+A row whose `on_select_changed` callback is null is ignored for the purposes of determining the state of the "all" checkbox, and its checkbox is disabled.
+
+If a `DataCell` in the row has its `DataCell.on_tap` callback defined, that callback behavior overrides the gesture behavior of the row for that particular cell.
+
+
+
+## `DataCell`
+
+The data for a cell of a `DataTable`.
+
+One list of DataCell objects must be provided for each `DataRow` in the `DataTable`.
+
+### `content`
+
+The data for the row.
+
+Typically a `Text` control or a `Dropdown` control.
+
+If the cell has no data, then a `Text` widget with placeholder text should be provided instead, and `placeholder` should be set to `True`.
+
+This control can only have one child. To lay out multiple children, let this control's child be a widget such as `Row`, `Column`, or `Stack`, which have `controls` property, and then provide the children to that widget.
+
+### `placeholder`
+
+Whether the child is actually a placeholder.
+
+If this is `True`, the default text style for the cell is changed to be appropriate for placeholder text.
+
+### `show_edit_icon`
+
+Whether to show an edit icon at the end of the cell.
+
+This does not make the cell actually editable; the caller must implement editing behavior if desired (initiated from the `on_tap` callback).
+
+If this is set, `on_tap` should also be set, otherwise tapping the icon will have no effect.
 
 ## `DataCell` events
 
-### `event1`
+### `on_double_tap`
+
+Called when the cell is double tapped.
+
+If non-null, tapping the cell will call this callback. If null (including `on_tap`, `on_long_press`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+
+### `on_long_press`
+
+Called if the cell is long-pressed.
+
+If non-null, tapping the cell will invoke this callback. If null (including `on_double_tap`, `on_tap`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+
+### `on_tap`
+
+Called if the cell is tapped.
+
+If non-null, tapping the cell will call this callback. If null (including `on_double_tap`, `on_long_press`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+
+### `on_tap_cancel`
+
+Called if the user cancels a tap was started on cell.
+
+If non-null, cancelling the tap gesture will invoke this callback. If null (including `on_tap`, `on_double_tap`, `on_long_press`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+
+### `on_tap_down`
+
+Called if the cell is tapped down.
+
+If non-null, tapping the cell will call this callback. If null (including `on_tap` `on_double_tap`, `on_long_press` and `on_tap_cancel`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
