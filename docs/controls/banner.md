@@ -54,19 +54,15 @@ ft.app(target=main)
 
 ## Properties
 
-### `open`
+### `actions`
 
-Set to `True` to display a banner.
+The set of actions that are displayed at the bottom or trailing side of the Banner.
 
-### `leading`
+Typically this is a list of [`TextButton`](textbutton) controls.
 
-The (optional) leading `Control` of the Banner.
+### `bgcolor`
 
-Typically an [`Icon`](icon) control.
-
-### `leading_padding`
-
-The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](container#padding) for more information about padding and possible values.
+The color of the surface of this Banner.
 
 ### `content`
 
@@ -82,12 +78,6 @@ If the actions are trailing the content, this defaults to `padding.only(left=16.
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
-### `actions`
-
-The set of actions that are displayed at the bottom or trailing side of the Banner.
-
-Typically this is a list of [`TextButton`](textbutton) controls.
-
 ### `force_actions_below`
 
 An override to force the actions to be below the content regardless of how many there are.
@@ -96,6 +86,16 @@ If this is `True`, the actions will be placed below the content. If this is `Fal
 
 Defaults to `False`.
 
-### `bgcolor`
+### `leading`
 
-The color of the surface of this Banner.
+The (optional) leading `Control` of the Banner.
+
+Typically an [`Icon`](icon) control.
+
+### `leading_padding`
+
+The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](container#padding) for more information about padding and possible values.
+
+### `open`
+
+Set to `True` to display a banner.

@@ -55,17 +55,17 @@ ft.app(target=main)
 
 ## `Tabs` properties
 
-### `tabs`
+### `animation_duration`
 
-A list of `Tab` controls.
+Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
 
 ### `selected_index`
 
 The index of currently selected tab.
 
-### `animation_duration`
+### `tabs`
 
-Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
+A list of `Tab` controls.
 
 ## `Tabs` events
 
@@ -75,18 +75,18 @@ Fires when `selected_index` changes.
 
 ## `Tab` properties
 
-### `text`
+### `content`
 
-Tab's display name.
+A `Control` to display below the Tab when it is selected.
 
 ### `icon`
 
 An icon to display on the left of Tab text.
 
-### `content`
-
-A `Control` to display below the Tab when it is selected.
-
 ### `tab_content`
 
 A `Control` representing custom tab content replacing `text` and `icon`.
+
+### `text`
+
+Tab's display name.

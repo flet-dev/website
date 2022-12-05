@@ -49,14 +49,6 @@ ft.app(target=main)
 
 ## Properties
 
-### `open`
-
-Set to `True` to display a SnackBar. This property is automatically set to `False` once SnackBar is shown.
-
-### `content`
-
-The primary content of the snack bar. Typically a [`Text`](text) control.
-
 ### `action`
 
 An optional action that the user can take based on the snack bar.
@@ -65,13 +57,21 @@ For example, the snack bar might let the user undo the operation that prompted t
 
 The action should not be "dismiss" or "cancel".
 
+### `action_color`
+
+The foreground color of action button.
+
 ### `bgcolor`
 
 SnackBar background color.
 
-### `action_color`
+### `content`
 
-The foreground color of action button.
+The primary content of the snack bar. Typically a [`Text`](text) control.
+
+### `open`
+
+Set to `True` to display a SnackBar. This property is automatically set to `False` once SnackBar is shown.
 
 ## Events
 

@@ -89,10 +89,6 @@ ft.app(target=main)
 
 ## Properties
 
-### `content`
-
-A child `Control` to apply a shader to.
-
 ### `blend_mode`
 
 The blend mode to use when applying the shader to the `content`.
@@ -134,10 +130,14 @@ Supported values:
 
 See [BlendMode](https://api.flutter.dev/flutter/dart-ui/BlendMode.html) from Flutter documentation for blend mode examples.
 
-### `shader`
-
-Use gradient as a shader. See [`Container.gradient`](container#gradient) property docs for more information about gradients.
-
 ### `border_radius`
 
 See [`Container.border_radius`](container#border_radius) property docs for more information about border radius.
+
+### `content`
+
+A child `Control` to apply a shader to.
+
+### `shader`
+
+Use gradient as a shader. See [`Container.gradient`](container#gradient) property docs for more information about gradients.

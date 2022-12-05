@@ -128,53 +128,6 @@ ft.app(target=main)
 
 <img src="/img/docs/controls/container/container-diagram.png" className="screenshot-50" />
 
-### `content`
-
-A child Control contained by the container.
-
-### `padding`
-
-Empty space to inscribe inside a container decoration (background, border). The child control is placed inside this padding.
-
-Padding is an instance of `padding.Padding` class with properties set padding for all sides of the rectangle: `left`, `top`, `right`, `bottom`. An instance of `padding.Padding` can be created via constructor with values for specific sides or created with helper methods:
-
-* `padding.all(value: float)`
-* `padding.symmetric(vertical, horizontal)`
-* `padding.only(left, top, right, bottom)`
-
-For example:
-
-```python
-
-container_1.padding = ft.padding.all(10)
-container_2.padding = 20 # same as ft.padding.all(20)
-container_3.padding = ft.padding.symmetric(horizontal=10)
-container_4.padding=padding.only(left=10)
-```
-
-<img src="/img/docs/controls/container/container-padding-diagram.png" className="screenshot-50" />
-
-### `margin`
-
-Empty space to surround the decoration and child control.
-
-Margin is an instance of `margin.Margin` class with properties set margins for all sides of the rectangle: `left`, `top`, `right`, `bottom`. An instance of `margin.Margin` can be created via constructor with values for specific sides or created with helper methods:
-
-* `margin.all(value)`
-* `margin.symmetric(vertical, horizontal)`
-* `margin.only(left, top, right, bottom)`
-
-For example:
-
-```python
-
-container_1.margin = margin.all(10)
-container_2.margin = 20 # same as margin.all(20)
-container_3.margin = margin.symmetric(vertical=10)
-container_3.margin = margin.only(left=10)
-```
-<img src="/img/docs/controls/container/container-margin-diagram.png" className="screenshot-50" />
-
 ### `alignment`
 
 Align the child control within the container.
@@ -193,11 +146,52 @@ container_3.alignment = alignment.Alignment(-0.5, -0.5)
 ```
 <img src="/img/docs/controls/container/containers-alignments.png" className="screenshot-50" />
 
+### `animate`
+
+Enables container "implicit" animation that gradually changes its values over a period of time.
+
+The value of `animate` property could be one of the following types:
+
+* `bool` - `True` to enable container animation with `linear` curve with `1000` milliseconds duration.
+* `int` - enable container animation with `linear` curve and specified number of milliseconds. 
+* `animation.Animation(duration: int, curve: str)` - enable container animation with specified duration and transition curve.
+
+For example:
+
+<img src="/img/docs/controls/container/animate-container.gif" className="screenshot-20" />
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+
+    c = ft.Container(
+        width=200,
+        height=200,
+        bgcolor="red",
+        animate=ft.animation.Animation(1000, "bounceOut"),
+    )
+
+    def animate_container(e):
+        c.width = 100 if c.width == 200 else 200
+        c.height = 100 if c.height == 200 else 200
+        c.bgcolor = "blue" if c.bgcolor == "red" else "red"
+        c.update()
+
+    page.add(c, ft.ElevatedButton("Animate container", on_click=animate_container))
+
+ft.app(target=main)
+```
+
 ### `bgcolor`
 
 Background color of the container.
 
 A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
+
+### `blend_mode`
+
+The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
 
 ### `border`
 
@@ -231,12 +225,20 @@ For example:
 container_1.border_radius= ft.border_radius.all(30)
 ```
 
-### `shape`
+### `clip_behavior`
 
-Sets the shape of the container. The value is `BoxShape` enum:
+The content will be clipped (or not) according to this option.
 
-* `RECTANGLE` (default)
-* `CIRCLE`
+Property value is `ClipBehavior` enum with supported values:
+
+* `NONE` (default)
+* `ANTI_ALIAS`
+* `ANTI_ALIAS_WITH_SAVE_LAYER`
+* `HARD_EDGE`
+
+### `content`
+
+A child Control contained by the container.
 
 ### `gradient`
 
@@ -333,18 +335,6 @@ More information:
 
 * [Sweep gradient](https://api.flutter.dev/flutter/painting/SweepGradient-class.html) in Flutter documentation.
 
-### `image_src`
-
-Sets an image as a container background. See [`Image.src`](image#src) for more details.
-
-### `image_src_base64`
-
-Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](image#src_base64) for more details.
-
-### `image_repeat`
-
-See [`Image.repeat`](image#repeat) for more details.
-
 ### `image_fit`
 
 See [`Image.fit`](image#fit) for more details.
@@ -353,61 +343,71 @@ See [`Image.fit`](image#fit) for more details.
 
 Sets image opacity when blending with a background: value between `0.0` and `1.0`.
 
-### `blend_mode`
+### `image_repeat`
 
-The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
+See [`Image.repeat`](image#repeat) for more details.
 
-### `animate`
+### `image_src`
 
-Enables container "implicit" animation that gradually changes its values over a period of time.
+Sets an image as a container background. See [`Image.src`](image#src) for more details.
 
-The value of `animate` property could be one of the following types:
+### `image_src_base64`
 
-* `bool` - `True` to enable container animation with `linear` curve with `1000` milliseconds duration.
-* `int` - enable container animation with `linear` curve and specified number of milliseconds. 
-* `animation.Animation(duration: int, curve: str)` - enable container animation with specified duration and transition curve.
-
-For example:
-
-<img src="/img/docs/controls/container/animate-container.gif" className="screenshot-20" />
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-
-    c = ft.Container(
-        width=200,
-        height=200,
-        bgcolor="red",
-        animate=ft.animation.Animation(1000, "bounceOut"),
-    )
-
-    def animate_container(e):
-        c.width = 100 if c.width == 200 else 200
-        c.height = 100 if c.height == 200 else 200
-        c.bgcolor = "blue" if c.bgcolor == "red" else "red"
-        c.update()
-
-    page.add(c, ft.ElevatedButton("Animate container", on_click=animate_container))
-
-ft.app(target=main)
-```
+Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](image#src_base64) for more details.
 
 ### `ink`
 
 `True` to produce ink ripples effect when user clicks the container. Default is `False`.
 
-### `clip_behavior`
+### `margin`
 
-The content will be clipped (or not) according to this option.
+Empty space to surround the decoration and child control.
 
-Property value is `ClipBehavior` enum with supported values:
+Margin is an instance of `margin.Margin` class with properties set margins for all sides of the rectangle: `left`, `top`, `right`, `bottom`. An instance of `margin.Margin` can be created via constructor with values for specific sides or created with helper methods:
 
-* `NONE` (default)
-* `ANTI_ALIAS`
-* `ANTI_ALIAS_WITH_SAVE_LAYER`
-* `HARD_EDGE`
+* `margin.all(value)`
+* `margin.symmetric(vertical, horizontal)`
+* `margin.only(left, top, right, bottom)`
+
+For example:
+
+```python
+
+container_1.margin = margin.all(10)
+container_2.margin = 20 # same as margin.all(20)
+container_3.margin = margin.symmetric(vertical=10)
+container_3.margin = margin.only(left=10)
+```
+<img src="/img/docs/controls/container/container-margin-diagram.png" className="screenshot-50" />
+
+### `padding`
+
+Empty space to inscribe inside a container decoration (background, border). The child control is placed inside this padding.
+
+Padding is an instance of `padding.Padding` class with properties set padding for all sides of the rectangle: `left`, `top`, `right`, `bottom`. An instance of `padding.Padding` can be created via constructor with values for specific sides or created with helper methods:
+
+* `padding.all(value: float)`
+* `padding.symmetric(vertical, horizontal)`
+* `padding.only(left, top, right, bottom)`
+
+For example:
+
+```python
+
+container_1.padding = ft.padding.all(10)
+container_2.padding = 20 # same as ft.padding.all(20)
+container_3.padding = ft.padding.symmetric(horizontal=10)
+container_4.padding=padding.only(left=10)
+```
+
+<img src="/img/docs/controls/container/container-padding-diagram.png" className="screenshot-50" />
+
+### `shape`
+
+Sets the shape of the container. The value is `BoxShape` enum:
+
+* `RECTANGLE` (default)
+* `CIRCLE`
 
 ## Events
 
@@ -463,10 +463,6 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-### `on_long_press`
-
-Fires when the container is long-pressed.
-
 ### `on_hover`
 
 Fires when a mouse pointer enters or exists the container area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
@@ -487,3 +483,7 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
+### `on_long_press`
+
+Fires when the container is long-pressed.

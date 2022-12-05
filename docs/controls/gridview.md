@@ -60,6 +60,10 @@ ft.app(target=main, view=ft.WEB_BROWSER)
 
 ## Properties
 
+### `child_aspect_ratio`
+
+The ratio of the cross-axis to the main-axis extent of each child.
+
 ### `controls`
 
 A list of `Control`s to display inside GridView.
@@ -68,26 +72,22 @@ A list of `Control`s to display inside GridView.
 
 `True` to layout GridView items horizontally.
 
-### `runs_count`
-
-The number of children in the cross axis.
-
 ### `max_extent`
-
-### `spacing`
-
-The number of logical pixels between each child along the main axis.
-
-### `run_spacing`
-
-The number of logical pixels between each child along the cross axis.
-
-### `child_aspect_ratio`
-
-The ratio of the cross-axis to the main-axis extent of each child.
 
 ### `padding`
 
 The amount of space by which to inset the children.
 
 See [`Container.padding`](container#padding) property for more information and possible values.
+
+### `run_spacing`
+
+The number of logical pixels between each child along the cross axis.
+
+### `runs_count`
+
+The number of children in the cross axis.
+
+### `spacing`
+
+The number of logical pixels between each child along the main axis.

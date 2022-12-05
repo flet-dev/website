@@ -38,9 +38,13 @@ ft.app(target=main)
 
 ## Properties
 
-### `text`
+### `autofocus`
 
-The text displayed on a button.
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `content`
+
+A Control representing custom button content.
 
 ### `icon`
 
@@ -54,17 +58,13 @@ Icon color.
 
 See [ElevatedButton.style](elevatedbutton#style) for more information about this property.
 
+### `text`
+
+The text displayed on a button.
+
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
-
-### `autofocus`
-
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
-
-### `content`
-
-A Control representing custom button content.
 
 ## Events
 
@@ -72,10 +72,10 @@ A Control representing custom button content.
 
 Fires when a user clicks the button.
 
-### `on_long_press`
-
-Fires when the button is long-pressed.
-
 ### `on_hover`
 
 Fires when a mouse pointer enters or exists the button response area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
+
+### `on_long_press`
+
+Fires when the button is long-pressed.

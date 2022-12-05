@@ -108,13 +108,13 @@ ft.app(target=main)
 
 ## Properties
 
-### `group`
-
-A group this draggable belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.
-
 ### `content`
 
 `Draggable` control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#contentwhendragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this control always displays `content`.
+
+### `content_feedback`
+
+The `Control` to show under the pointer when a drag is under way.
 
 ### `content_when_dragging`
 
@@ -122,6 +122,6 @@ The `Control` to display instead of `content` when one or more drags are under w
 
 If this is `None`, then this widget will always display `content` (and so the drag source representation will not change while a drag is under way).
 
-### `content_feedback`
+### `group`
 
-The `Control` to show under the pointer when a drag is under way.
+A group this draggable belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.

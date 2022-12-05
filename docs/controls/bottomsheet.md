@@ -51,16 +51,16 @@ ft.app(target=main)
 
 ## Properties
 
-### `open`
-
-Set to `True` to display a bottom sheet.
-
 ### `content`
 
 The content of the bottom sheet.
+
+### `open`
+
+Set to `True` to display a bottom sheet.
 
 ## Events
 
 ### `on_dismiss`
 
-Fires when bottom sheet is dimissed.
+Fires when bottom sheet is dismissed.

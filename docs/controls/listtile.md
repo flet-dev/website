@@ -88,6 +88,10 @@ ft.app(target=main)
 
 ## Properties
 
+### `autofocus`
+
+`True` if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
 ### `content_padding`
 
 The tile's internal padding. Insets a ListTile's contents: its `leading`, `title`, `subtitle`, and `trailing` controls.
@@ -96,23 +100,9 @@ If not set, `padding.symmetric(horizontal=16)` is used.
 
 See [`Container.padding`](container#padding) property for more information and possible values.
 
-### `leading`
+### `dense`
 
-A `Control` to display before the title.
-
-### `title`
-
-A `Control` to display as primary content of the list tile. Typically a [Text](text) control. This should not wrap. To enforce the single line limit, use [Text.max_lines](text#max_lines).
-
-### `subtitle`
-
-Additional content displayed below the title. Typically a [Text](text) widget.
-
-If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](text#max_lines) to enforce the number of lines.
-
-### `trailing`
-
-A `Control` to display after the title. Typically an [Icon](icon) control.
+Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
 
 ### `is_three_line`
 
@@ -124,17 +114,27 @@ If `False`, the list tile is treated as having one line if the subtitle is null 
 
 When using a Text control for title and subtitle, you can enforce line limits using [Text.max_lines](text#max_lines).
 
+### `leading`
+
+A `Control` to display before the title.
+
 ### `selected`
 
 If this tile is also enabled then icons and text are rendered with the same color. By default the selected color is the theme's primary color.
 
-### `dense`
+### `subtitle`
 
-Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
+Additional content displayed below the title. Typically a [Text](text) widget.
 
-### `autofocus`
+If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](text#max_lines) to enforce the number of lines.
 
-`True` if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+### `title`
+
+A `Control` to display as primary content of the list tile. Typically a [Text](text) control. This should not wrap. To enforce the single line limit, use [Text.max_lines](text#max_lines).
+
+### `trailing`
+
+A `Control` to display after the title. Typically an [Icon](icon) control.
 
 ## Events
 

@@ -71,24 +71,6 @@ ft.app(target=main)
 
 ## Properties
 
-### `value`
-
-Current value of the checkbox.
-
-### `tristate`
-
-If `True` the checkbox's value can be `True`, `False`, or `None` (`null`).
-
-Checkbox displays a dash when its value is null.
-
-### `label`
-
-The clickable label to display on the right of a checkbox.
-
-### `label_position`
-
-Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
-
 ### `autofocus`
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
@@ -127,7 +109,29 @@ chk.fill_color={
 }
 ```
 
+### `label`
+
+The clickable label to display on the right of a checkbox.
+
+### `label_position`
+
+Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
+
+### `tristate`
+
+If `True` the checkbox's value can be `True`, `False`, or `None` (`null`).
+
+Checkbox displays a dash when its value is null.
+
+### `value`
+
+Current value of the checkbox.
+
 ## Events
+
+### `on_blur`
+
+Fires when the control has lost focus.
 
 ### `on_change`
 
@@ -136,7 +140,3 @@ Fires when the state of the Checkbox is changed.
 ### `on_focus`
 
 Fires when the control has received focus.
-
-### `on_blur`
-
-Fires when the control has lost focus.

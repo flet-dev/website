@@ -55,6 +55,42 @@ ft.app(target=main)
 
 ## Properties
 
+### `border_radius`
+
+Clip image to have rounded corners. See [`Container.border_radius`](container#border_radius) for more information and examples.
+
+### `color`
+
+If set, this color is blended with each image pixel using `color_blend_mode`.
+
+### `color_blend_mode`
+
+Used to combine `color` with the image.
+
+The default is `BlendMode.COLOR`. In terms of the blend mode, color is the source and this image is the destination.
+
+See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
+
+### `fit`
+
+How to inscribe the image into the space allocated during layout.
+
+Property value is `ImageFit` enum with supported values: `NONE` (default), `CONTAIN`, `COVER`, `FILL`, `FIT_HEIGHT`, `FIT_WIDTH`, `SCALE_DOWN`.
+
+### `gapless_playback`
+
+Whether to continue showing the old image (`True`), or briefly show nothing (`False`), when the image provider changes. The default value is `False`.
+
+### `height`
+
+If set, require the image to have this height.
+
+If not set, the image will pick a size that best preserves its intrinsic aspect ratio.
+
+:::note
+It is strongly recommended that either both the width and the height be specified, or that the Image be placed in a context that sets tight layout constraints, so that the image does not change size as it loads. Consider using `fit` to adapt the image's rendering to fit the given width and height if the exact image dimensions are not known in advance.
+:::
+
 ### `src`
 
 Image URL. This could be an external URL, e.g. `https://picsum.photos/200/200` or internal URL to reference app assets, e.g. `/my-image.png`.
@@ -106,6 +142,20 @@ On Windows you can use PowerShell to encode string into Base64 format:
 [convert]::ToBase64String((Get-Content -path "your_file_path" -Encoding byte))
 ```
 
+### `repeat`
+
+How to paint any portions of the layout bounds not covered by the image.
+
+Property value is `ImageRepeat` enum with supported values: `NO_REPEAT` (default), `REPEAT`, `REPEAT_X`, `REPEAT_Y`.
+
+### `semantics_label`
+
+A semantics label for this image.
+
+### `tooltip`
+
+The text displayed when hovering a mouse over the Image.
+
 ### `width`
 
 If set, require the image to have this width.
@@ -115,53 +165,3 @@ If not set, the image will pick a size that best preserves its intrinsic aspect 
 :::note
 It is strongly recommended that either both the width and the height be specified, or that the Image be placed in a context that sets tight layout constraints, so that the image does not change size as it loads. Consider using `fit` to adapt the image's rendering to fit the given width and height if the exact image dimensions are not known in advance.
 :::
-
-### `height`
-
-If set, require the image to have this height.
-
-If not set, the image will pick a size that best preserves its intrinsic aspect ratio.
-
-:::note
-It is strongly recommended that either both the width and the height be specified, or that the Image be placed in a context that sets tight layout constraints, so that the image does not change size as it loads. Consider using `fit` to adapt the image's rendering to fit the given width and height if the exact image dimensions are not known in advance.
-:::
-
-### `repeat`
-
-How to paint any portions of the layout bounds not covered by the image.
-
-Property value is `ImageRepeat` enum with supported values: `NO_REPEAT` (default), `REPEAT`, `REPEAT_X`, `REPEAT_Y`.
-
-### `fit`
-
-How to inscribe the image into the space allocated during layout.
-
-Property value is `ImageFit` enum with supported values: `NONE` (default), `CONTAIN`, `COVER`, `FILL`, `FIT_HEIGHT`, `FIT_WIDTH`, `SCALE_DOWN`.
-
-### `border_radius`
-
-Clip image to have rounded corners. See [`Container.border_radius`](container#border_radius) for more information and examples.
-
-### `color`
-
-If set, this color is blended with each image pixel using `color_blend_mode`.
-
-### `color_blend_mode`
-
-Used to combine `color` with the image.
-
-The default is `BlendMode.COLOR`. In terms of the blend mode, color is the source and this image is the destination.
-
-See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
-
-### `gapless_playback`
-
-Whether to continue showing the old image (`True`), or briefly show nothing (`False`), when the image provider changes. The default value is `False`.
-
-### `tooltip`
-
-The text displayed when hovering a mouse over the Image.
-
-### `semantics_label`
-
-A semantics label for this image.

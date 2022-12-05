@@ -98,10 +98,6 @@ ft.app(target=main)
 
 Matplotlib figure to draw - an instance of `matplotlib.figure.Figure` class.
 
-### `original_size`
-
-`True` to display chart in original size. `False` (default) to display a chart that fits configured bounds.
-
 ### `isolated`
 
 Every time when a page or parent chart control are updated with `page.update()` or `Control.update()` methods respectively the chart is re-drawn by calling Matplotlib API. Frequent re-drawings of large charts could affect the performance of the entire Flet app.
@@ -129,3 +125,7 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
+### `original_size`
+
+`True` to display chart in original size. `False` (default) to display a chart that fits configured bounds.

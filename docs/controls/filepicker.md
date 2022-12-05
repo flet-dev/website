@@ -65,19 +65,6 @@ ft.app(target=main)
 
 ## Properties
 
-### `file_type`
-
-Allow to pick files of specific group.
-
-Property value is `FilePickerFileType` enum with the following values:
-
-* `ANY` (default) - any file
-* `IMAGE`
-* `VIDEO`
-* `MEDIA` - `VIDEO` and `IMAGE`
-* `AUDIO`
-* `CUSTOM` - only files with extensions from `allowed_extensions` list
-
 ### `allowed_extensions`
 
 Allow picking files with specified extensions only.
@@ -92,13 +79,26 @@ Allow selecting multiple files.
 
 Can be optionally set on desktop platforms to set the modal window title. It will be ignored on other platforms.
 
-### `initial_directory`
-
-Can be optionally set to an absolute path to specify where the dialog should open. Only supported on Linux, macOS, and Windows.
-
 ### `file_name`
 
 Works for "Save file" dialog only. Can be set to a non-empty string to provide a default file name.
+
+### `file_type`
+
+Allow to pick files of specific group.
+
+Property value is `FilePickerFileType` enum with the following values:
+
+* `ANY` (default) - any file
+* `IMAGE`
+* `VIDEO`
+* `MEDIA` - `VIDEO` and `IMAGE`
+* `AUDIO`
+* `CUSTOM` - only files with extensions from `allowed_extensions` list
+
+### `initial_directory`
+
+Can be optionally set to an absolute path to specify where the dialog should open. Only supported on Linux, macOS, and Windows.
 
 ### `result`
 
@@ -116,6 +116,15 @@ The value of this property is an instance of `FilePickerResultEvent` class:
 * `size` - file size in bytes.
 
 ## Methods
+
+### `get_directory_path()`
+
+Selects a directory and returns its absolute path.
+
+You could either set the following file picker properties or provide their values in the method call:
+
+* `dialog_title`
+* `initial_directory`
 
 ### `pick_files()`
 
@@ -144,15 +153,6 @@ You could either set the following file picker properties or provide their value
 * `initial_directory`
 * `file_type`
 * `allowed_extensions`
-
-### `get_directory_path()`
-
-Selects a directory and returns its absolute path.
-
-You could either set the following file picker properties or provide their values in the method call:
-
-* `dialog_title`
-* `initial_directory`
 
 ### `upload()`
 

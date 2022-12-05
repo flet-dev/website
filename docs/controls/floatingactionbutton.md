@@ -62,29 +62,21 @@ ft.app(target=main)
 
 ## Properties
 
-### `content`
+### `autofocus`
 
-A Control representing custom button content.
-
-### `text`
-
-The text displayed on a button.
-
-### `icon`
-
-Icon shown in the button.
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
 ### `bgcolor`
 
 Button background color.
 
-### `tooltip`
+### `content`
 
-The text displayed when hovering the mouse over the button.
+A Control representing custom button content.
 
-### `autofocus`
+### `icon`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+Icon shown in the button.
 
 ### `mini`
 
@@ -129,6 +121,14 @@ ft.app(target=main)
 ```
 
 <img src="/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />
+
+### `text`
+
+The text displayed on a button.
+
+### `tooltip`
+
+The text displayed when hovering the mouse over the button.
 
 ## Events
 

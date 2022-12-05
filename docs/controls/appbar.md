@@ -55,6 +55,36 @@ ft.app(target=main)
 
 ## Properties
 
+### `actions`
+
+A list of `Control`s to display in a row after the title control.
+
+Typically these controls are [`IconButtons`](iconbutton) representing common operations. For less common operations, consider using a [`PopupMenuButton`](popupmenubutton) as the last action.
+
+### `automatically_imply_leading`
+
+Controls whether we should try to imply the leading widget if null.
+
+If `True` and `leading` is null, automatically try to deduce what the leading widget should be. If `False` and `leading` is null, leading space is given to title. If leading widget is not null, this parameter has no effect.
+
+### `bgcolor`
+
+The fill color to use for an AppBar. Default color is defined by current theme.
+
+### `center_title`
+
+Whether the title should be centered. Default is `False`.
+
+### `color`
+
+The default color for Text and Icons within the app bar. Default color is defined by current theme.
+
+### `elevation`
+
+This property controls the size of the shadow below the app bar. Default value is 4.
+
+Note: This effect is only visible when using the Material 2 design (when `Theme.use_material3=False`).
+
 ### `leading`
 
 A `Control` to display before the toolbar's title.
@@ -69,36 +99,6 @@ Defines the width of leading control. By default, the value of `leading_width` i
 
 The primary `Control` displayed in the app bar. Typically a [`Text`](text) control that contains a description of the current contents of the app.
 
-### `center_title`
-
-Whether the title should be centered. Default is `False`.
-
-### `actions`
-
-A list of `Control`s to display in a row after the title control.
-
-Typically these controls are [`IconButtons`](iconbutton) representing common operations. For less common operations, consider using a [`PopupMenuButton`](popupmenubutton) as the last action.
-
 ### `toolbar_height`
 
 Defines the height of the toolbar component of an AppBar. By default, the value of `toolbar_height` is `56.0`.
-
-### `color`
-
-The default color for Text and Icons within the app bar. Default color is defined by current theme.
-
-### `bgcolor`
-
-The fill color to use for an AppBar. Default color is defined by current theme.
-
-### `elevation`
-
-This property controls the size of the shadow below the app bar. Default value is 4.
-
-Note: This effect is only visible when using the Material 2 design (when `Theme.use_material3=False`).
-
-### `automatically_imply_leading`
-
-Controls whether we should try to imply the leading widget if null.
-
-If `True` and `leading` is null, automatically try to deduce what the leading widget should be. If `False` and `leading` is null, leading space is given to title. If leading widget is not null, this parameter has no effect.
