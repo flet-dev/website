@@ -199,12 +199,14 @@ module.exports = {
             'controls/dragtarget',
             'controls/filepicker',
             'controls/gesturedetector',
+            'controls/transparentpointer',
             'controls/hapticfeedback',
             'controls/semantics',
             'controls/shadermask',
             'controls/shakedetector',
             'controls/tooltip',
             'controls/windowdragarea',
+            'controls/fletapp',
           ]
         },
       ]
