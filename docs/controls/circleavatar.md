@@ -20,8 +20,6 @@ If `foreground_image_url` fails then `background_image_url` is used. If `backgro
 
 ```python
 import flet as ft
-from flet.container import Container
-
 
 def main(page):
     # a "normal" avatar with background image
