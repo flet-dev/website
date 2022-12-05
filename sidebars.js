@@ -78,6 +78,7 @@ module.exports = {
             'controls/listtile',
             'controls/gridview',
             'controls/responsiverow',
+            'controls/datatable',
             'controls/tabs',
             'controls/card',
             'controls/divider',
@@ -198,12 +199,14 @@ module.exports = {
             'controls/dragtarget',
             'controls/filepicker',
             'controls/gesturedetector',
+            'controls/transparentpointer',
             'controls/hapticfeedback',
             'controls/semantics',
             'controls/shadermask',
             'controls/shakedetector',
             'controls/tooltip',
             'controls/windowdragarea',
+            'controls/fletapp',
           ]
         },
       ]
