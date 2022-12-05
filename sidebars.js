@@ -78,6 +78,7 @@ module.exports = {
             'controls/listtile',
             'controls/gridview',
             'controls/responsiverow',
+            'controls/datatable',
             'controls/tabs',
             'controls/card',
             'controls/divider',
