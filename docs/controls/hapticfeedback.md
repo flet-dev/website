@@ -35,13 +35,13 @@ ft.app(target=main)
 
 Provides a haptic feedback corresponding a collision impact with a heavy mass.
 
-### `medium_impact()`
-
-Provides a haptic feedback corresponding a collision impact with a medium mass.
-
 ### `light_impact()`
 
 Provides a haptic feedback corresponding a collision impact with a light mass.
+
+### `medium_impact()`
+
+Provides a haptic feedback corresponding a collision impact with a medium mass.
 
 ### `vibrate()`
 

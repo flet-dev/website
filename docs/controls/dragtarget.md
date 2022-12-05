@@ -106,19 +106,15 @@ ft.app(target=main)
 
 ## Properties
 
-### `group`
-
-A group this drag target belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.
-
 ### `content`
 
 The `Control` that is a visual representation of the drag target.
 
+### `group`
+
+A group this drag target belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.
+
 ## Events
-
-### `on_will_accept`
-
-Fires when draggable is dragged on top of a drag target. `data` field of event details contains `true` (String) if both `Draggable` and `DragTarget` has the same `group`; otherwise `false` (String).
 
 ### `on_accept`
 
@@ -133,3 +129,7 @@ Use `page.get_control(e.src_id)` to retrieve Control reference by its ID.
 ### `on_leave`
 
 Fires when a mouse pointer during ongoing drag event leaves the target.
+
+### `on_will_accept`
+
+Fires when draggable is dragged on top of a drag target. `data` field of event details contains `true` (String) if both `Draggable` and `DragTarget` has the same `group`; otherwise `false` (String).

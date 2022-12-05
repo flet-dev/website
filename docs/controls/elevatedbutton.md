@@ -140,17 +140,21 @@ ft.app(target=main)
 
 ## Properties
 
-### `text`
+### `autofocus`
 
-The text displayed on a button.
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `bgcolor`
+
+Button's background color.
 
 ### `color`
 
 Button's text color.
 
-### `bgcolor`
+### `content`
 
-Button's background color.
+A Control representing custom button content.
 
 ### `elevation`
 
@@ -309,27 +313,19 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
+### `text`
+
+The text displayed on a button.
+
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
-
-### `autofocus`
-
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
-
-### `content`
-
-A Control representing custom button content.
 
 ## Events
 
 ### `on_click`
 
 Fires when a user clicks the button.
-
-### `on_long_press`
-
-Fires when the button is long-pressed.
 
 ### `on_hover`
 
@@ -351,3 +347,7 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
+### `on_long_press`
+
+Fires when the button is long-pressed.

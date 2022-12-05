@@ -157,34 +157,13 @@ ft.app(target=main)
 
 ## Properties
 
-### `value`
+### `bgcolor`
 
-The text displayed.
+Text background color.
 
-### `semantics_label`
+### `color`
 
-An alternative semantics label for this text.
-
-If present, the semantics of this control will contain this value instead of the actual text.
-
-This is useful for replacing abbreviations or shorthands with the full text value:
-
-```python
-Text("$$", semantics_label="Double dollars")
-```
-
-### `text_align`
-
-Text horizontal align.
-
-Property value is `TextAlign` enum with the following values:
-
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+Text foreground color.
 
 ### `font_family`
 
@@ -229,37 +208,50 @@ Supported `web_renderer` values:
 * `html` - optimizing download size over performance on both desktop and mobile browsers.
 * `auto` - optimizing for download size on mobile browsers and optimizing for performance on desktop browsers.
 
-### `size`
-
-Text size in virtual pixels. Default is `14`.
-
-### `weight`
-
-Font weight.
-
-Property value is `FontWeight` enum with the following values:
-
-* `NORMAL` (default)
-* `BOLD`
-* `W_100`
-* `W_200`
-* `W_300`
-* `W_400`
-* `W_500`
-* `W_600`
-* `W_700`
-* `W_800`
-* `W_900`
-
 ### `italic`
 
 `True` to use italic typeface.
+
+### `max_lines`
+
+An optional maximum number of lines for the text to span, wrapping if necessary. If the text exceeds the given number of lines, it will be truncated according to `overflow`.
+
+If this is 1, text will not wrap. Otherwise, text will be wrapped at the edge of the box.
 
 ### `no_wrap`
 
 If `False` (default) the text should break at soft line breaks.
 
 If `True`, the glyphs in the text will be positioned as if there was unlimited horizontal space.
+
+### `overflow`
+
+Property value is `TextOverflow` enum with the following values:
+
+* `FADE` (default)
+* `ELLIPSIS`
+* `CLIP`
+* `VISIBLE`
+
+### `selectable`
+
+`True` if text should be selectable.
+
+### `semantics_label`
+
+An alternative semantics label for this text.
+
+If present, the semantics of this control will contain this value instead of the actual text.
+
+This is useful for replacing abbreviations or shorthands with the full text value:
+
+```python
+ft.Text("$$", semantics_label="Double dollars")
+```
+
+### `size`
+
+Text size in virtual pixels. Default is `14`.
 
 ### `style`
 
@@ -281,29 +273,37 @@ Property value is `TextThemeStyle` enum with one of the following values:
 * `BODY_MEDIUM`
 * `BODY_SMALL`
 
-### `max_lines`
+### `text_align`
 
-An optional maximum number of lines for the text to span, wrapping if necessary. If the text exceeds the given number of lines, it will be truncated according to `overflow`.
+Text horizontal align.
 
-If this is 1, text will not wrap. Otherwise, text will be wrapped at the edge of the box.
+Property value is `TextAlign` enum with the following values:
 
-### `overflow`
+* `LEFT` (default)
+* `RIGHT`
+* `CENTER`
+* `JUSTIFY`
+* `START`
+* `END`
 
-Property value is `TextOverflow` enum with the following values:
+### `value`
 
-* `FADE` (default)
-* `ELLIPSIS`
-* `CLIP`
-* `VISIBLE`
+The text displayed.
 
-### `selectable`
+### `weight`
 
-`True` if text should be selectable.
+Font weight.
 
-### `color`
+Property value is `FontWeight` enum with the following values:
 
-Text foreground color.
-
-### `bgcolor`
-
-Text background color.
+* `NORMAL` (default)
+* `BOLD`
+* `W_100`
+* `W_200`
+* `W_300`
+* `W_400`
+* `W_500`
+* `W_600`
+* `W_700`
+* `W_800`
+* `W_900`

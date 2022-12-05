@@ -113,7 +113,7 @@ def main(page: ft.Page):
     def route_change(route):
         page.views.clear()
         page.views.append(
-            View(
+            ft.View(
                 "/",
                 [
                     ft.AppBar(title=ft.Text("Flet app"), bgcolor=ft.colors.SURFACE_VARIANT),
@@ -123,7 +123,7 @@ def main(page: ft.Page):
         )
         if page.route == "/store":
             page.views.append(
-                View(
+                ft.View(
                     "/store",
                     [
                         ft.AppBar(title=ft.Text("Store"), bgcolor=ft.colors.SURFACE_VARIANT),

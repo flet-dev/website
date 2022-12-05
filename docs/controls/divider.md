@@ -58,6 +58,10 @@ ft.app(target=main)
 
 ## Properties
 
+### `color`
+
+The color to use when painting the line.
+
 ### `height`
 
 The divider's height extent. The divider itself is always drawn as a horizontal line that is centered within the height specified by this value. If this is null, then this defaults to `16.0`.
@@ -65,7 +69,3 @@ The divider's height extent. The divider itself is always drawn as a horizontal 
 ### `thickness`
 
 The thickness of the line drawn within the divider. A divider with a thickness of `0.0` is always drawn as a line with a height of exactly one device pixel. If this is null, then this defaults to `0.0`.
-
-### `color`
-
-The color to use when painting the line.

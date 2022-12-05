@@ -52,6 +52,18 @@ ft.app(target=main)
 
 ## Properties
 
+### `bgcolor`
+
+Background color of the tooltip.
+
+### `border`
+
+Border around the tooltip.
+
+### `border_radius`
+
+Tooltip's border radius.
+
 ### `content`
 
 The `Control` that should be displayed inside the tooltip.
@@ -66,13 +78,13 @@ When `True` (default) the tooltip should provide acoustic and/or haptic feedback
 
 For example, on Android a tap will produce a clicking sound and a long-press will produce a short vibration, when feedback is enabled.
 
+### `gradient`
+
+Background gradient of the tooltip
+
 ### `height`
 
 The height of the tooltip's content.
-
-### `vertical_offset`
-
-The vertical gap between the widget and the displayed tooltip.
 
 ### `margin`
 
@@ -84,29 +96,19 @@ The amount of space by which to inset the tooltip's content.
 
 On mobile, defaults to 16.0 logical pixels horizontally and 4.0 vertically. On desktop, defaults to 8.0 logical pixels horizontally and 4.0 vertically.
 
-### `bgcolor`
+### `prefer_below`
 
-Background color of the tooltip.
+Whether the tooltip defaults to being displayed below the control.
 
-### `gradient`
-
-Background gradient of the tooltip.
-
-### `border`
-
-Border around the tooltip.
-
-### `border_radius`
-
-Tooltip's border radius.
+Defaults to `True`. If there is insufficient space to display the tooltip in the preferred direction, the tooltip will be displayed in the opposite direction.
 
 ### `shape`
 
 The shape of the tooltip.
 
-### `text_style`
+### `show_duration`
 
-The style to use for the message of the tooltip.
+The length of time, in milliseconds, that the tooltip will be shown after a long press is released or a tap is released or mouse pointer exits the control.
 
 ### `text_align`
 
@@ -121,15 +123,13 @@ Property value is `TextAlign` enum with the following values:
 * `START`
 * `END`
 
-### `prefer_below`
+### `text_style`
 
-Whether the tooltip defaults to being displayed below the control.
+The style to use for the message of the tooltip.
 
-Defaults to `True`. If there is insufficient space to display the tooltip in the preferred direction, the tooltip will be displayed in the opposite direction.
+### `vertical_offset`
 
-### `show_duration`
-
-The length of time, in milliseconds, that the tooltip will be shown after a long press is released or a tap is released or mouse pointer exits the control.
+The vertical gap between the widget and the displayed tooltip.
 
 ### `wait_duration`
 

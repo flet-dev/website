@@ -54,21 +54,29 @@ ft.app(target=main)
 
 ## Properties
 
+### `auto_scroll`
+
+`True` if scrollbar should automatically move its position to the end when children update.
+
 ### `controls`
 
 A list of `Control`s to display inside ListView.
+
+### `divider_thickness`
+
+If greater than `0` then Divider is used as a spacing between ListView items.
+
+### `first_item_prototype`
+
+`True` if the dimensions of the first item should be used as a "prototype" for all other items, i.e. their height or width will be the same as the first item. Default is `False`.
 
 ### `horizontal`
 
 `True` to layout ListView items horizontally.
 
-### `spacing`
+### `item_extent`
 
-The height of Divider between ListView items. No spacing between items if not specified.
-
-### `divider_thickness`
-
-If greater than `0` then Divider is used as a spacing between ListView items.
+A fixed height or width (for `horizontal` ListView) of an item to optimize rendering.
 
 ### `padding`
 
@@ -76,14 +84,6 @@ The amount of space by which to inset the children.
 
 See [`Container.padding`](container#padding) property for more information and possible values.
 
-### `auto_scroll`
+### `spacing`
 
-`True` if scrollbar should automatically move its position to the end when children update.
-
-### `item_extent`
-
-A fixed height or width (for `horizontal` ListView) of an item to optimize rendering.
-
-### `first_item_prototype`
-
-`True` if the dimensions of the first item should be used as a "prototype" for all other items, i.e. their height or width will be the same as the first item. Default is `False`.
+The height of Divider between ListView items. No spacing between items if not specified.

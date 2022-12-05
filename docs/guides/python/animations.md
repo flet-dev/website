@@ -78,7 +78,7 @@ def main(page: ft.Page):
         bgcolor="blue",
         border_radius=5,
         rotate=ft.transform.Rotate(0, alignment=ft.alignment.center),
-        animate_rotation=ft.animation.Animation(duration=300, ft.AnimationCurve.BOUNCE_OUT),
+        animate_rotation=ft.animation.Animation(300, ft.AnimationCurve.BOUNCE_OUT),
     )
 
     def animate(e):
