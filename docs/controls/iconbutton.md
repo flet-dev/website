@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 An icon button is a round button with an icon in the middle that reacts to touches by filling with color (ink).
 
-Icon buttons are commonly used in the toolbars [link TBD], but they can be used in many other places as well.
+Icon buttons are commonly used in the toolbars, but they can be used in many other places as well.
 
 ## Examples
 
