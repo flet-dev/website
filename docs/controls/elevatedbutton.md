@@ -32,7 +32,7 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/basic-elevated-buttons.png" className="screenshot-40" />
+<img src="/img/docs/controls/elevated-button/basic-elevated-buttons.png" className="screenshot-20" />
 
 ### Elevated buttons with icons
 
@@ -60,7 +60,7 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" className="screenshot-50" />
+<img src="/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" className="screenshot-30" />
 
 ### Elevated button with `click` event
 
@@ -136,7 +136,7 @@ ft.app(target=main)
   
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-40" />
+<img src="/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-30" />
 
 ## Properties
 

@@ -9,6 +9,8 @@ import TabItem from '@theme/TabItem';
 
 A filled tonal button is an alternative middle ground between [FilledButton](filledbutton) and [OutlinedButton](outlinedbutton) buttons. They’re useful in contexts where a lower-priority button requires slightly more emphasis than an outline would give, such as "Next" in an onboarding flow. Tonal buttons use the secondary color mapping. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
 
+<img src="/img/docs/controls/filled-tonal-button/basic-filled-tonal-buttons.png" className="screenshot-20" />
+
 ## Examples
 
 ### Filled tonal button
@@ -21,7 +23,7 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    page.title = "Basic filled buttons"
+    page.title = "Basic filled tonal buttons"
     page.add(
         ft.FilledTonalButton(text="Filled tonal button"),
         ft.FilledTonalButton("Disabled button", disabled=True),
