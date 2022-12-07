@@ -47,32 +47,34 @@ Additionally, while Android allows loading of dynamically linked libraries iOS r
 
 So, Flet mobile architecture will look like this:
 
+<img src="/img/blog/mobile-update/flet-mobile-architecture-v2.svg" className="screenshot-40" />
 
+Python runtime will be statically or dynamically linked with Flutter client and called via FFI and named pipes.
 
-Let's see what 
+Running Python on mobile will have some limitations though with the most notable one is the requirement to use pure Python modules or modules with native code compiled specifically for mobile ARM64 architecture.
 
-There are other projects. Flutter is different.
+## Asyncio support
 
-Current state
+Asyncio is part of Python 3 and we see more and more libraries utilizing async/await programming model which is more effective for I/O-bound applications and UI logic.
 
-[DIAGRAM]
+Currently, Flet is running all control event handlers in new threads and it's also a pain to see `threading.sleep()` calls hogging thread just to do some UI animation. All that looks expensive.
 
+Using of async libraries from a sync code is [possible](https://github.com/flet-dev/flet/issues/128), but looks hacky and inefficient as it keeps CPU busy just to wait async method to finish.
 
-Next steps:
+Async/await model is a state machine switching between tasks in a single thread. By switching to async Flet will able to utilize streams for implementing socket server and pure async [WebSockets library](https://pypi.org/project/websockets/). It will be possible to use both sync and async event handlers in a Flet app without any compromises/hacks.
 
-0. Asyncio support
+Additionally, Flet async would be able to run entirely in the browser with [Pyodide](https://pyodide.org/) - Python distribution based on WebAssembly (WASM). Imagine, Flet web app that does not require a server to run a Python code!
 
-Async/Await
-Can run both async and sync code
+## The plan
 
-1. Lightweight Python UI host with TCP on Windows and Unix Sockets on Linux/macOS. Python program starts Flet Flutter app. Two processes - no more Fletd.
+We are going to develop the scope above in a few iterations:
 
-[DIAGRAM]
+1. Async support with async WebSockets library. Works with the same Fletd in Go.
+2. Fletd server in Python to use with desktop.
+3. Embedding Python with Fletd stub and user pgoram into iOS.
+4. Embedding Python into Android.
+5. Packaging mobile apps for iOS and Android.
 
-2. Flet Flutter client with embedded Python. Python communicates with Flutter host via TCP/Sockets. One process. Packaging would change on this stage.
+I'm calling for help of the community, especially with C/C++/native code part.
 
-[DIAGRAM]
-
-3. Flet Flutter client with embedded Python. Python communicates with Flutter host via native calls (FFI, ReceivePort). One process.
-
-[DIAGRAM]
+Hop to [Discord](https://discord.gg/dzWXP8SHG8) to discuss.
