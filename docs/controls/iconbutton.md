@@ -144,7 +144,7 @@ ft.app(target=main)
 
 ### `style`
 
-See [ElevatedButton.style](elevatedbutton#style) for more information about this property.
+See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
 
 ### `tooltip`
 
