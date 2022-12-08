@@ -1,3 +1,8 @@
+---
+title: Making a Trello clone with Python and Flet
+sidebar_label: Python - Trello clone
+slug: trello-clone
+---
 
 Lets make a clone of Trello in Python with the Flet framework and then deploy it to [fly.io](https://fly.io/)!
 
