@@ -1,7 +1,7 @@
 
 Lets make a clone of Trello in Python with the Flet framework and then deploy it to [fly.io](https://fly.io/)!
 
-![Here's what we'll build](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/anpq4rd7o8jnuk8d8g50.gif)
+![Here's what we'll build](/img/docs/trolli-tutorial/trolli-app.gif)
 The code for this tutorial can be found [here](https://github.com/OwenMcDonnell/flet-trello-clone) with self explanatory commits. Be sure to run `pip install -r requirements.txt` after cloning. And [here](https://flet-trolli.fly.dev/) is a live demo.
 
 ##Table of Contents:
@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
 In terms of layout we can consider the app to consist of a header (`appbar`) and below that a collapsible navigation panel, next to which is the active view consisting of either a board, settings, members or whatever else we may choose. Something like this...
 
-![rough mock up](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1uyandl2l8pq5f4gqjvf.png)
+![rough mock up](/img/docs/trolli-tutorial/mock-up.png)
 
 So the class for the app itself could look something like this... 
 
@@ -258,7 +258,7 @@ content=Column([
 If you save the file you should be able to see the change in your app window. 
 
 
-![basic app layout with a toggle-able navigation rail](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g8nb68g4gm0c3s0ahe6n.gif)
+![basic app layout with a toggle-able navigation rail](/img/docs/trolli-tutorial/basic-nav-rail-toggle.gif)
 
 
 Before we move on let's define our basic entities. We'll need a `Board` class, which will keep a list of lists, each of which will be a `BoardList` object (apologies for the unfortunate lexical collisions here - the colloquial use of 'list' derives from the nature of the app, whereas the technical use of 'list' derives from python's particular term for an array-like data structure), and each of which, in turn, will contain a list of `Item` objects. If that's confusing, take some time to look over the source code to clear things up. 
@@ -427,7 +427,7 @@ def sync_board_destinations(self):
 Now we can add new boards and they appear in our navigation rail. 
 Unfortunately clicking on the navigation rail doesn't actually navigate to anything. 
 
-![add a new board - good... navigate to that board - not so good...](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/szmx1x9xwf8a7j60zqsa.gif)
+![add a new board - good... navigate to that board - not so good...](/img/docs/trolli-tutorial/add-board-capability.gif)
 
 There are several ways we could achieve this such as having every view present in the `app_layout.py` module and then toggling visibility on/off of the relevant views depending on the navigation rail index. But that wouldn't help much in a browser context, nor in a mobile context with a back button. We'll need to consider routing. Flet provides a `TemplateRoute` utility class for url matching. 
 
@@ -494,7 +494,7 @@ command (_-d_ flag for hot reloading, and _-w_ flag for web) we can add some boa
 
 
 
-![navigating between boards with back button or url](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yr351866qv1cizbfu9gm.gif)
+![navigating between boards with back button or url](/img/docs/trolli-tutorial/navigation.gif)
 
 ### Changing Board Names <a name="changing-board-names"></a>
 Next, we should include the ability to change the name of a board. In contrast to the more "*proper*" title editing logic that was implemented in the `board_list.py` module I'm going to favor what some might consider a more "*hacky*" approach because I personally dislike overly ceremonial editing flows, particularly in such a low stakes, fluid sort of application. We'll make use of the `on_focus` and `on_blur` events in the bottom navigation rail destinations in the `sidebar.py` module. Here are the handlers we'll add.
@@ -623,7 +623,7 @@ def list_drag_leave(self, e):
  
 Note the manipulation of the opacity field acting as a visual indication that the dragged item will be accepted on the target. 
 
-![dragging and dropping a list](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mp3pf98dqfa3ne42v6nx.gif)
+![dragging and dropping a list](/img/docs/trolli-tutorial/drag-drop-list.gif)
 
 Now for the slightly more complex case of dragging items within a list (including potentially to another list on the same board). Now that we want a `board_list` to not only be a drag target for other lists, but also for items being dragged to it from a different list, we'll need to add another `DragTarget` wrapper to the list, but this time we'll assign the group name "items" so that it only responds to the dragging of items.
 
@@ -735,7 +735,7 @@ def add_item(self, item: str = None, chosen_control: Draggable = None swap_contr
 And with these changes, we should be able to drag lists around within the board and also drag items between different lists. 
 
 
-![we can drag lists and items between lists](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eo4bzcprlucd302sgitu.gif)
+![we can drag lists and items between lists](/img/docs/trolli-tutorial/drag-lists-and-items.gif)
 
 ## Handling Page Resizing <a name="handling-page-resizing"></a>
 The only final bit of logic we need to add is some page resizing to ensure that if more lists exist than can be displayed, there is a scroll bar to reach them. This logic will also have to take into account the state of the sidebar - extended or not. 
