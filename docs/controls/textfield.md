@@ -267,6 +267,10 @@ Sets cursor radius.
 
 Sets cursor width.
 
+### `dense`
+
+Whether the TextField is part of a dense form (ie, uses less vertical space).
+
 ### `error_style`
 
 The style to use for `error_text`.
