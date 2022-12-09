@@ -197,6 +197,10 @@ Optional text to place below the line as a character count.
 
 If null or an empty string and counter isn't specified, then nothing will appear in the counter's location.
 
+### `dense`
+
+Whether the TextField is part of a dense form (ie, uses less vertical space).
+
 ### `error_style`
 
 The style to use for `error_text`.
