@@ -476,11 +476,11 @@ Congratulations! You have created your first Python app with Flet, and it looks 
 
 Now it's time to share your app with the world!
 
-[Follow these instructions](/docs/guides/python/getting-started#deploying-a-web-app) to deploy you Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/guides/python/getting-started#deploying-a-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## Summary
 
-In this tutorial you have learned how to:
+In this tutorial, you have learnt how to:
 
 * Create a simple Flet app;
 * Work with Reusable UI components;
