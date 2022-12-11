@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 ### Draggable containers
 
-The following example demonstraits how a control can be freelly dragged inside a Stack.
+The following example demonstrates how a control can be freely dragged inside a Stack.
 
 The sample also shows that GestureDetector can have a child control (blue container) as well as be nested inside another control (yellow container) giving the same results.
 
