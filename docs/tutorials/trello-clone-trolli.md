@@ -272,7 +272,7 @@ For each of the entities, we'll add an application wide unique id with an `id_co
 ## Data Access Layer and Customization <a name="data-access-layer"></a>
 Now that we have a basic layout and entities defined, let's add a few customization parameters to the app itself. Lets also take some time to create a basic data access interface. You can see the boiler plate for the interface and the in-memory implementation in the `data_store.py` and `memory_store.py` files respectively. This will make it easier for us to swap in some persistent storage solution in a future tutorial.
 
-Here is the updated main function. We can leverage Python's built in module pattern which will result in a single instance even with multiple module imports, and instantiate the memory store within the `memory_store.py` module and then import that variable to each class that needs to access its methods. 
+Here is the updated main function. We need to instantiate the `InMemoryStore` class within the main method so that each user session (i.e. each new tab using the app), has it's own version of the store. We'll then need to pass that store to each of the components that will need access to it.
 
 We'll also add a new font in an *assets* directory, which is specified in the named argument to the app function.
 
