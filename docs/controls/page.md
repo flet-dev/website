@@ -353,6 +353,7 @@ ft.app(target=main)
 
 </TabItem>
 </Tabs>
+
 ### `show_semantics_debugger`
 
 `True` turns on an overlay that shows the accessibility information reported by the framework.
