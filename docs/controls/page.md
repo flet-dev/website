@@ -4,7 +4,7 @@ sidebar_label: Page
 slug: page
 ---
 
-Page is a container for [`View`](view) controls.
+Page is a container for [`View`](/docs/controls/view) controls.
 
 A page instance and the root view are automatically created when a new user session started.
 
@@ -449,7 +449,7 @@ Property value is `MainAxisAlignment` enum with the following values:
 
 ### `views`
 
-A list of [`View`](view) controls to build navigation history.
+A list of [`View`](/docs/controls/view) controls to build navigation history.
 
 The last view in the list is the one displayed on a page.
 
