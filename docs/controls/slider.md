@@ -19,17 +19,16 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Slider, Text
+import flet as ft
 
 def main(page):
     page.add(
-        Text("Default slider:"),
-        Slider(),
-        Text("Default disabled slider:"),
-        Slider(disabled=True))
+        ft.Text("Default slider:"),
+        ft.Slider(),
+        ft.Text("Default disabled slider:"),
+        ft.Slider(disabled=True))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -40,20 +39,21 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Slider, Text
+import flet as ft
 
 def main(page):
     page.add(
-        Text("Slider with value:"),
-        Slider(value=0.3),
-        Text("Slider with a custom range and label:"),
-        Slider(min=0, max=100, divisions=10, label="{value}%"))
+        ft.Text("Slider with value:"),
+        ft.Slider(value=0.3),
+        ft.Text("Slider with a custom range and label:"),
+        ft.Slider(min=0, max=100, divisions=10, label="{value}%"))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
+
+<img src="/img/docs/controls/slider/slider-with-custom-content.gif" className="screenshot-30"/>
 
 ### Slider with `on_change` event
 
@@ -61,8 +61,7 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Slider, Text
+import flet as ft
 
 def main(page):
 
@@ -70,39 +69,29 @@ def main(page):
         t.value = f"Slider changed to {e.control.value}"
         page.update()
 
-    t = Text()
+    t = ft.Text()
     page.add(
-        Text("Slider with 'on_change' event:"),
-        Slider(min=0, max=100, divisions=10, label="{value}%", on_change=slider_changed), t)
+        ft.Text("Slider with 'on_change' event:"),
+        ft.Slider(min=0, max=100, divisions=10, label="{value}%", on_change=slider_changed), t)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/slider/slider-with-change-event.gif" className="screenshot-30"/>
+
 ## Properties
 
-### `value`
+### `active_color`
 
-The currently selected value for this slider.
+The color to use for the portion of the slider track that is active.
 
-The slider's thumb is drawn at a position that corresponds to this value.
+The "active" side of the slider is the side between the thumb and the minimum value.
 
-### `min`
+### `autofocus`
 
-The minimum value the user can select.
-
-Defaults to `0.0`. Must be less than or equal to `max`.
-
-If the `max` is equal to the `min`, then the slider is disabled.
-
-### `max`
-
-The maximum value the user can select.
-
-Defaults to `1.0`. Must be greater than or equal to `min`.
-
-If the `max` is equal to the `min`, then the slider is disabled.
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
 ### `divisions`
 
@@ -111,6 +100,12 @@ The number of discrete divisions.
 Typically used with `label` to show the current discrete value.
 
 If not set, the slider is continuous.
+
+### `inactive_color`
+
+The color for the inactive portion of the slider track.
+
+The "inactive" side of the slider is the side between the thumb and the maximum value.
 
 ### `label`
 
@@ -122,20 +117,50 @@ It is used to display the value of a discrete slider, and it is displayed as par
 
 If not set, then the value indicator will not be displayed.
 
-### `autofocus`
+### `max`
 
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+The maximum value the user can select.
+
+Defaults to `1.0`. Must be greater than or equal to `min`.
+
+If the `max` is equal to the `min`, then the slider is disabled.
+
+### `min`
+
+The minimum value the user can select.
+
+Defaults to `0.0`. Must be less than or equal to `max`.
+
+If the `max` is equal to the `min`, then the slider is disabled.
+
+### `thumb_color`
+
+The color of the thumb.
+
+### `value`
+
+The currently selected value for this slider.
+
+The slider's thumb is drawn at a position that corresponds to this value.
 
 ## Events
+
+### `on_blur`
+
+Fires when the control has lost focus.
 
 ### `on_change`
 
 Fires when the state of the Slider is changed.
 
+### `on_change_end`
+
+Fires when the user is done selecting a new value for the slider.
+
+### `on_change_start`
+
+Fires when the user starts selecting a new value for the slider.
+
 ### `on_focus`
 
 Fires when the control has received focus.
-
-### `on_blur`
-
-Fires when the control has lost focus.

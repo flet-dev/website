@@ -6,7 +6,7 @@ module.exports = {
       label: 'Python Guide',
       items: [
         'guides/python/getting-started',
-        'guides/python/displaying-data',
+        //'guides/python/displaying-data',
         'guides/python/getting-user-input',
         'guides/python/keyboard-shortcuts',
         'guides/python/large-lists',
@@ -14,10 +14,15 @@ module.exports = {
         'guides/python/navigation-and-routing',
         'guides/python/file-picker-and-uploads',
         'guides/python/animations',
+        'guides/python/authentication',
+        'guides/python/client-storage',
+        'guides/python/session-storage',
+        'guides/python/encrypting-sensitive-data',
         'guides/python/pub-sub',
         'guides/python/user-controls',
         'guides/python/control-refs',
         'guides/python/accessibility',
+        'guides/python/mobile-support',
         'guides/python/hot-reload',
         'guides/python/packaging-desktop-app',
         {
@@ -72,6 +77,8 @@ module.exports = {
             'controls/listview',
             'controls/listtile',
             'controls/gridview',
+            'controls/responsiverow',
+            'controls/datatable',
             'controls/tabs',
             'controls/card',
             'controls/divider',
@@ -88,7 +95,7 @@ module.exports = {
           items: [
             'controls/appbar',
             'controls/navigationrail',
-            //'controls/navigationbar',
+            'controls/navigationbar',
           ]
         },
         {
@@ -119,11 +126,11 @@ module.exports = {
             'controls/elevatedbutton',
             'controls/filledbutton',
             'controls/filledtonalbutton',
-            'controls/outlinedbutton',
-            'controls/textbutton',
-            'controls/iconbutton',
             'controls/floatingactionbutton',
+            'controls/iconbutton',
+            'controls/outlinedbutton',
             'controls/popupmenubutton',
+            'controls/textbutton',
           ]
         },
         {
@@ -150,9 +157,22 @@ module.exports = {
             slug: 'controls/dialogs-alerts-panels'
           },
           items: [
-            'controls/banner',
-            'controls/snackbar',
             'controls/alertdialog',
+            'controls/banner',
+            'controls/bottomsheet',
+            'controls/snackbar',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Charts',
+          link: {
+            type: 'generated-index',
+            slug: 'controls/charts'
+          },
+          items: [
+            'controls/matplotlibchart',
+            'controls/plotlychart',
           ]
         },
         {
@@ -174,12 +194,19 @@ module.exports = {
             slug: 'controls/utility'
           },
           items: [
-            'controls/shadermask',
+            'controls/audio',
             'controls/draggable',
             'controls/dragtarget',
             'controls/filepicker',
+            'controls/gesturedetector',
+            'controls/transparentpointer',
+            'controls/hapticfeedback',
             'controls/semantics',
+            'controls/shadermask',
+            'controls/shakedetector',
+            'controls/tooltip',
             'controls/windowdragarea',
+            'controls/fletapp',
           ]
         },
       ]

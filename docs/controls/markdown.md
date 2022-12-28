@@ -17,8 +17,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ````python
-import flet
-from flet import Markdown, Page
+import flet as ft
 
 md1 = """
 # Markdown Example
@@ -87,47 +86,171 @@ Formatted Dart code looks really pretty too:
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
-      body: Markdown(data: markdownData),
+      body: ft.Markdown(data: markdownData),
     ),
   ));
 }
 ```
 """
 
-def main(page: Page):
+def main(page: ft.Page):
+    page.scroll = "auto"
     page.add(
-        Markdown(
+        ft.Markdown(
             md1,
             selectable=True,
-            extension_set="gitHubWeb",
+            extension_set=ft.MarkdownExtensionSet.GITHUB_WEB,
             on_tap_link=lambda e: page.launch_url(e.data),
-            expand=True,
-        ),
+        )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ````
 
   </TabItem>
 </Tabs>
 
-:::info
-As Markdown control is a scrollable control (with "infinite" height) it must have `expand` property set or be put inside a container with a fixed height.
-:::
+<img src="/img/docs/controls/markdown/custom-markdown.gif" className="screenshot-40"/>
+
+### Markdown with code syntax highlight
+
+[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/markdown/markdown-code-highlight.py)
+
+<img src="/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
 
 ## Properties
 
-### `value`
+### `code_style`
 
-Markdown content to render.
+Code block text style. An instance of `TextStyle` class.
+
+An example of configuring monospace font for Markdown code blocks:
+
+```python
+    page.fonts = {
+        "Roboto Mono": "RobotoMono-VariableFont_wght.ttf",
+    }
+
+    page.add(
+        Markdown(
+            table,
+            selectable=True,
+            extension_set="gitHubWeb",
+            code_theme="atom-one-dark",
+            code_style=TextStyle(font_family="Roboto Mono"),
+            on_tap_link=lambda e: page.launch_url(e.data),
+        )
+    )
+```
+
+### `code_theme`
+
+A syntax highlighting theme for code blocks.
+
+Supported themes:
+
+* `a11y-dark`
+* `a11y-light`
+* `agate`
+* `an-old-hope`
+* `androidstudio`
+* `arduino-light`
+* `arta`
+* `ascetic`
+* `atelier-cave-dark`
+* `atelier-cave-light`
+* `atelier-dune-dark`
+* `atelier-dune-light`
+* `atelier-estuary-dark`
+* `atelier-estuary-light`
+* `atelier-forest-dark`
+* `atelier-forest-light`
+* `atelier-heath-dark`
+* `atelier-heath-light`
+* `atelier-lakeside-dark`
+* `atelier-lakeside-light`
+* `atelier-plateau-dark`
+* `atelier-plateau-light`
+* `atelier-savanna-dark`
+* `atelier-savanna-light`
+* `atelier-seaside-dark`
+* `atelier-seaside-light`
+* `atelier-sulphurpool-dark`
+* `atelier-sulphurpool-light`
+* `atom-one-dark-reasonable`
+* `atom-one-dark`
+* `atom-one-light`
+* `brown-paper`
+* `codepen-embed`
+* `color-brewer`
+* `darcula`
+* `dark`
+* `default`
+* `docco`
+* `dracula`
+* `far`
+* `foundation`
+* `github-gist`
+* `github` (default)
+* `gml`
+* `googlecode`
+* `gradient-dark`
+* `grayscale`
+* `gruvbox-dark`
+* `gruvbox-light`
+* `hopscotch`
+* `hybrid`
+* `idea`
+* `ir-black`
+* `isbl-editor-dark`
+* `isbl-editor-light`
+* `kimbie.dark`
+* `kimbie.light`
+* `lightfair`
+* `magula`
+* `mono-blue`
+* `monokai-sublime`
+* `monokai`
+* `night-owl`
+* `nord`
+* `obsidian`
+* `ocean`
+* `paraiso-dark`
+* `paraiso-light`
+* `pojoaque`
+* `purebasic`
+* `qtcreator_dark`
+* `qtcreator_light`
+* `railscasts`
+* `rainbow`
+* `routeros`
+* `school-book`
+* `shades-of-purple`
+* `solarized-dark`
+* `solarized-light`
+* `sunburst`
+* `tomorrow-night-blue`
+* `tomorrow-night-bright`
+* `tomorrow-night-eighties`
+* `tomorrow-night`
+* `tomorrow`
+* `vs`
+* `vs2015`
+* `xcode`
+* `xt256`
+* `zenburn`
 
 ### `extension_set`
 
-Markdown extension set: `none` (default), `commonMark`, `gitHubWeb`, `gitHubFlavored`.
+Property value is `MarkdownExtensionSet` enum with the following values: `NONE` (default), `COMMON_MARK`, `GITHUB_WEB`, `GITHUB_FLAVORED`.
 
 ### `selectable`
 
 Whether rendered text is selectable or not.
+
+### `value`
+
+Markdown content to render.
 
 ## Events
 
@@ -138,15 +261,14 @@ Fires when a link within Markdown document is clicked/tapped. `data` property of
 The following example opens markdown URLs in a new window:
 
 ```python
-import flet
-from flet import Markdown, Page
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def open_url(e):
         page.launch_url(e.data)
 
     page.add(
-        Markdown(
+        ft.Markdown(
             "[inline-style](https://www.google.com)",
             extension_set="gitHubWeb",
             on_tap_link=open_url,
@@ -154,5 +276,5 @@ def main(page: Page):
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```

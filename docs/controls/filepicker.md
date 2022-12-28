@@ -17,27 +17,26 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (ElevatedButton, FilePicker, FilePickerResultEvent, Page, Row, Text, icons)
+import flet as ft
 
-def main(page: Page):
-    def pick_files_result(e: FilePickerResultEvent):
+def main(page: ft.Page):
+    def pick_files_result(e: ft.FilePickerResultEvent):
         selected_files.value = (
             ", ".join(map(lambda f: f.name, e.files)) if e.files else "Cancelled!"
         )
         selected_files.update()
 
-    pick_files_dialog = FilePicker(on_result=pick_files_result)
-    selected_files = Text()
+    pick_files_dialog = ft.FilePicker(on_result=pick_files_result)
+    selected_files = ft.Text()
 
     page.overlay.append(pick_files_dialog)
 
     page.add(
-        Row(
+        ft.Row(
             [
-                ElevatedButton(
+                ft.ElevatedButton(
                     "Pick files",
-                    icon=icons.UPLOAD_FILE,
+                    icon=ft.icons.UPLOAD_FILE,
                     on_click=lambda _: pick_files_dialog.pick_files(
                         allow_multiple=True
                     ),
@@ -47,7 +46,7 @@ def main(page: Page):
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -66,17 +65,6 @@ flet.app(target=main)
 
 ## Properties
 
-### `file_type`
-
-Allow to pick files of specific group:
-
-* `any` (default) - any file
-* `image`
-* `video`
-* `media` - `video` and `image`
-* `audio`
-* `custom` - only files with extensions from `allowed_extensions` list
-
 ### `allowed_extensions`
 
 Allow picking files with specified extensions only.
@@ -91,13 +79,26 @@ Allow selecting multiple files.
 
 Can be optionally set on desktop platforms to set the modal window title. It will be ignored on other platforms.
 
-### `initial_directory`
-
-Can be optionally set to an absolute path to specify where the dialog should open. Only supported on Linux, macOS, and Windows.
-
 ### `file_name`
 
 Works for "Save file" dialog only. Can be set to a non-empty string to provide a default file name.
+
+### `file_type`
+
+Allow to pick files of specific group.
+
+Property value is `FilePickerFileType` enum with the following values:
+
+* `ANY` (default) - any file
+* `IMAGE`
+* `VIDEO`
+* `MEDIA` - `VIDEO` and `IMAGE`
+* `AUDIO`
+* `CUSTOM` - only files with extensions from `allowed_extensions` list
+
+### `initial_directory`
+
+Can be optionally set to an absolute path to specify where the dialog should open. Only supported on Linux, macOS, and Windows.
 
 ### `result`
 
@@ -115,6 +116,15 @@ The value of this property is an instance of `FilePickerResultEvent` class:
 * `size` - file size in bytes.
 
 ## Methods
+
+### `get_directory_path()`
+
+Selects a directory and returns its absolute path.
+
+You could either set the following file picker properties or provide their values in the method call:
+
+* `dialog_title`
+* `initial_directory`
 
 ### `pick_files()`
 
@@ -143,15 +153,6 @@ You could either set the following file picker properties or provide their value
 * `initial_directory`
 * `file_type`
 * `allowed_extensions`
-
-### `get_directory_path()`
-
-Selects a directory and returns its absolute path.
-
-You could either set the following file picker properties or provide their values in the method call:
-
-* `dialog_title`
-* `initial_directory`
 
 ### `upload()`
 
@@ -183,7 +184,7 @@ Second argument is a URL time-to-live in seconds.
 To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
 
 ```python
-flet.app(target=main, upload_dir="uploads")
+ft.app(target=main, upload_dir="uploads")
 ```
 
 ## Events

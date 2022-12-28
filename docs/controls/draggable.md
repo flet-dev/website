@@ -17,14 +17,25 @@ import TabItem from '@theme/TabItem';
 
 ### Drag and drop colors
 
-<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif"className="screenshot-50" />
+<img src="/img/docs/controls/drag-and-drop/drag-and-drop-colors.gif" className="screenshot-50" />
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
 import flet
-from flet import Column, Container, Draggable, DragTarget, Page, Row, border, colors
+from flet import (
+    Column,
+    Container,
+    Draggable,
+    DragTarget,
+    DragTargetAcceptEvent,
+    Page,
+    Row,
+    border,
+    colors,
+)
+
 
 def main(page: Page):
     page.title = "Drag and Drop example"
@@ -35,8 +46,8 @@ def main(page: Page):
         )
         e.control.update()
 
-    def drag_accept(e):
-        src = page.get_control(e.data)
+    def drag_accept(e: DragTargetAcceptEvent):
+        src = page.get_control(e.src_id)
         e.control.content.bgcolor = src.content.bgcolor
         e.control.content.border = None
         e.control.update()
@@ -102,6 +113,7 @@ def main(page: Page):
         )
     )
 
+
 flet.app(target=main)
 ```
   </TabItem>
@@ -109,13 +121,13 @@ flet.app(target=main)
 
 ## Properties
 
-### `group`
-
-A group this draggable belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.
-
 ### `content`
 
 `Draggable` control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#contentwhendragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this control always displays `content`.
+
+### `content_feedback`
+
+The `Control` to show under the pointer when a drag is under way.
 
 ### `content_when_dragging`
 
@@ -123,6 +135,6 @@ The `Control` to display instead of `content` when one or more drags are under w
 
 If this is `None`, then this widget will always display `content` (and so the drag source representation will not change while a drag is under way).
 
-### `content_feedback`
+### `group`
 
-The `Control` to show under the pointer when a drag is under way.
+A group this draggable belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.

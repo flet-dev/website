@@ -22,7 +22,7 @@ Each `Control` provides a number of `animate_{something}` properties, described 
 
 `animate_*` properties could have one of the following values:
 
-* Instance of `animation.Animation` class - allows configuring the duration (in milliseconds) and the curve of the animation, for example `animate_rotation=animation.Animation(duration=300, curve="bounceOut")`. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values. Default is `linear`.
+* Instance of `animation.Animation` class - allows configuring the duration (in milliseconds) and the curve of the animation, for example `animate_rotation=ft.animation.Animation(duration=300, curve="bounceOut")`. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values. Default is `linear`.
 * `int` value - enables animation with specified duration in milliseconds and `linear` curve.
 * `bool` value - enables anumation with the duration of 1000 milliseconds and `linear` curve.
 
@@ -33,12 +33,11 @@ Setting control's `animate_opacity` to either `True`, number or an instance of `
 <img src="/img/docs/getting-started/animations/animate-opacity.gif" className="screenshot-20" />
 
 ```python
-import flet
-from flet import Container, ElevatedButton, Page
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    c = Container(
+    c = ft.Container(
         width=150,
         height=150,
         bgcolor="blue",
@@ -52,13 +51,13 @@ def main(page: Page):
 
     page.add(
         c,
-        ElevatedButton(
+        ft.ElevatedButton(
             "Animate opacity",
             on_click=animate_opacity,
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### Rotation animation
@@ -69,33 +68,32 @@ Setting control's `animate_rotation` to either `True`, number or an instance of 
 
 ```python
 from math import pi
-import flet
-from flet import Container, ElevatedButton, Page, alignment, animation, transform
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    c = Container(
+    c = ft.Container(
         width=100,
         height=70,
         bgcolor="blue",
         border_radius=5,
-        rotate=transform.Rotate(0, alignment=alignment.center),
-        animate_rotation=animation.Animation(duration=300, curve="bounceOut"),
+        rotate=ft.transform.Rotate(0, alignment=ft.alignment.center),
+        animate_rotation=ft.animation.Animation(300, ft.AnimationCurve.BOUNCE_OUT),
     )
 
     def animate(e):
         c.rotate.angle += pi / 2
         page.update()
 
-    page.vertical_alignment = "center"
-    page.horizontal_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.spacing = 30
     page.add(
         c,
-        ElevatedButton("Animate!", on_click=animate),
+        ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### Scale animation
@@ -105,35 +103,32 @@ Setting control's `animate_scale` to either `True`, number or an instance of `an
 <img src="/img/docs/getting-started/animations/animate-scale.gif" className="screenshot-20" />
 
 ```python
-import flet
-from flet import Container, ElevatedButton, Page, animation
-from flet.transform import Scale
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    c = Container(
+    c = ft.Container(
         width=100,
         height=100,
         bgcolor="blue",
         border_radius=5,
-        scale=Scale(scale=1),
-        animate_scale=animation.Animation(600, "bounceOut"),
+        scale=ft.transform.Scale(scale=1),
+        animate_scale=ft.animation.Animation(600, ft.AnimationCurve.BOUNCE_OUT),
     )
 
     def animate(e):
-        # c1.rotate = 1
         c.scale = 2
         page.update()
 
-    page.vertical_alignment = "center"
-    page.horizontal_alignment = "center"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.spacing = 30
     page.add(
         c,
-        ElevatedButton("Animate!", on_click=animate),
+        ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### Offset animation
@@ -147,30 +142,29 @@ Offset animation is used for various sliding effects:
 <img src="/img/docs/getting-started/animations/animate-offset.gif" className="screenshot-20" />
 
 ```python
-import flet
-from flet import Container, ElevatedButton, Page, animation, transform
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    c = Container(
+    c = ft.Container(
         width=150,
         height=150,
         bgcolor="blue",
         border_radius=10,
-        offset=transform.Offset(-2, 0),
-        animate_offset=animation.Animation(1000),
+        offset=ft.transform.Offset(-2, 0),
+        animate_offset=ft.animation.Animation(1000),
     )
 
     def animate(e):
-        c.offset = transform.Offset(0, 0)
+        c.offset = ft.transform.Offset(0, 0)
         c.update()
 
     page.add(
         c,
-        ElevatedButton("Reveal!", on_click=animate),
+        ft.ElevatedButton("Reveal!", on_click=animate),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### Position animation
@@ -182,18 +176,17 @@ Please note Control position works inside `Stack` control only.
 <img src="/img/docs/getting-started/animations/animate-position.gif" className="screenshot-30" />
 
 ```python
-import flet
-from flet import Container, ElevatedButton, Page, Stack
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    c1 = Container(width=50, height=50, bgcolor="red", animate_position=1000)
+    c1 = ft.Container(width=50, height=50, bgcolor="red", animate_position=1000)
 
-    c2 = Container(
+    c2 = ft.Container(
         width=50, height=50, bgcolor="green", top=60, left=0, animate_position=500
     )
 
-    c3 = Container(
+    c3 = ft.Container(
         width=50, height=50, bgcolor="blue", top=120, left=0, animate_position=1000
     )
 
@@ -207,11 +200,11 @@ def main(page: Page):
         page.update()
 
     page.add(
-        Stack([c1, c2, c3], height=250),
-        ElevatedButton("Animate!", on_click=animate_container),
+        ft.Stack([c1, c2, c3], height=250),
+        ft.ElevatedButton("Animate!", on_click=animate_container),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### Animated container
@@ -221,16 +214,15 @@ Setting [`Container.animate`](/docs/controls/container#animate) to either `True`
 <img src="/img/docs/getting-started/animations/animate-container.gif" className="screenshot-20" />
 
 ```python
-import flet
-from flet import Container, ElevatedButton, Page, animation
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    c = Container(
+    c = ft.Container(
         width=150,
         height=150,
         bgcolor="red",
-        animate=animation.Animation(1000, "bounceOut"),
+        animate=ft.animation.Animation(1000, ft.AnimationCurve.BOUNCE_OUT),
     )
 
     def animate_container(e):
@@ -239,9 +231,9 @@ def main(page: Page):
         c.bgcolor = "blue" if c.bgcolor == "red" else "red"
         c.update()
 
-    page.add(c, ElevatedButton("Animate container", on_click=animate_container))
+    page.add(c, ft.ElevatedButton("Animate container", on_click=animate_container))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 ### Animated content switcher
@@ -253,32 +245,56 @@ flet.app(target=main)
 ```python
 import time
 
-import flet
-from flet import AnimatedSwitcher, ElevatedButton, Image, Page
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    i = Image(src="https://picsum.photos/150/150", width=150, height=150)
+    i = ft.Image(src="https://picsum.photos/150/150", width=150, height=150)
 
     def animate(e):
-        sw.content = Image(
+        sw.content = ft.Image(
             src=f"https://picsum.photos/150/150?{time.time()}", width=150, height=150
         )
         page.update()
 
-    sw = AnimatedSwitcher(
+    sw = ft.AnimatedSwitcher(
         i,
-        transition="scale",
+        transition=ft.AnimatedSwitcherTransition.SCALE,
         duration=500,
         reverse_duration=500,
-        switch_in_curve="bounceOut",
-        switch_out_curve="bounceIn",
+        switch_in_curve=ft.AnimationCurve.BOUNCE_OUT,
+        switch_out_curve=ft.AnimationCurve.BOUNCE_IN,
     )
 
     page.add(
         sw,
-        ElevatedButton("Animate!", on_click=animate),
+        ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-flet.app(target=main)
+ft.app(target=main)
+```
+
+### Animation end callback
+
+All controls with `animate_*` properties have `on_animation_end` event handler which is called
+when animation complete and cab be used to chain multiple animations.
+
+Event's object `data` field contains the name of animation:
+
+* `opacity`
+* `rotation`
+* `scale`
+* `offset`
+* `position`
+* `container`
+
+For example:
+
+```python
+ c = ft.Container(
+        ft.Text("Animate me!"),
+        # ...
+        animate=ft.animation.Animation(1000, "bounceOut"),
+        on_animation_end=lambda e: print("Container animation end:", e.data)
+    )
 ```

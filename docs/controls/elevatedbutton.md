@@ -17,23 +17,22 @@ Elevated buttons are essentially filled tonal buttons with a shadow. To prevent 
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import ElevatedButton, Page
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Basic elevated buttons"
     page.add(
-        ElevatedButton(text="Elevated button"),
-        ElevatedButton("Disabled button", disabled=True),
+        ft.ElevatedButton(text="Elevated button"),
+        ft.ElevatedButton("Disabled button", disabled=True),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/basic-elevated-buttons.png" className="screenshot-40" />
+<img src="/img/docs/controls/elevated-button/basic-elevated-buttons.png" className="screenshot-20" />
 
 ### Elevated buttons with icons
 
@@ -41,28 +40,27 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import ElevatedButton, Icon, Page, Row
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Elevated buttons with icons"
     page.add(
-        ElevatedButton("Button with icon", icon="chair_outlined"),
-        ElevatedButton(
+        ft.ElevatedButton("Button with icon", icon="chair_outlined"),
+        ft.ElevatedButton(
             "Button with colorful icon",
             icon="park_rounded",
             icon_color="green400",
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" className="screenshot-50" />
+<img src="/img/docs/controls/elevated-button/elevated-buttons-with-icons.png" className="screenshot-30" />
 
 ### Elevated button with `click` event
 
@@ -70,10 +68,9 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import ElevatedButton, Page, Text
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Elevated button with 'click' event"
 
     def button_clicked(e):
@@ -81,12 +78,12 @@ def main(page: Page):
         t.value = f"Button clicked {b.data} time(s)"
         page.update()
 
-    b = ElevatedButton("Button with 'click' event", on_click=button_clicked, data=0)
-    t = Text()
+    b = ft.ElevatedButton("Button with 'click' event", on_click=button_clicked, data=0)
+    t = ft.Text()
 
     page.add(b, t)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
   </TabItem>
@@ -101,73 +98,63 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Column,
-    Container,
-    ElevatedButton,
-    Icon,
-    Page,
-    Row,
-    Text,
-    icons,
-    padding,
-)
+import flet as ft
 
-
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Elevated buttons with custom content"
     page.add(
-        ElevatedButton(
+        ft.ElevatedButton(
             width=150,
-            content=Row(
+            content=ft.Row(
                 [
-                    Icon(name=icons.FAVORITE, color="pink"),
-                    Icon(name=icons.AUDIOTRACK, color="green"),
-                    Icon(name=icons.BEACH_ACCESS, color="blue"),
+                    ft.Icon(name=ft.icons.FAVORITE, color="pink"),
+                    ft.Icon(name=ft.icons.AUDIOTRACK, color="green"),
+                    ft.Icon(name=ft.icons.BEACH_ACCESS, color="blue"),
                 ],
-                alignment="spaceAround",
+                alignment=ft.MainAxisAlignment.SPACE_AROUND,
             ),
         ),
-        ElevatedButton(
-            content=Container(
-                content=Column(
+        ft.ElevatedButton(
+            content=ft.Container(
+                content=ft.Column(
                     [
-                        Text(value="Compound button", size=20),
-                        Text(value="This is secondary text"),
+                        ft.Text(value="Compound button", size=20),
+                        ft.Text(value="This is secondary text"),
                     ],
-                    alignment="center",
+                    alignment=ft.MainAxisAlignment.CENTER,
                     spacing=5,
                 ),
-                padding=padding.all(10),
+                padding=ft.padding.all(10),
             ),
         ),
     )
 
-
-flet.app(target=main)
-
+ft.app(target=main)
 ```
 
   </TabItem>
   
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-40" />
+<img src="/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-30" />
 
 ## Properties
 
-### `text`
+### `autofocus`
 
-The text displayed on a button.
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `bgcolor`
+
+Button's background color.
 
 ### `color`
 
 Button's text color.
 
-### `bgcolor`
+### `content`
 
-Button's background color.
+A Control representing custom button content.
 
 ### `elevation`
 
@@ -187,34 +174,34 @@ The value is an instance of `ButtonStyle` class. `ButtonStyle` allows controling
 
 Each individual style attribute could be configured for all or particular "Material states" of a button, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
 
-The following material states are supported:
+The following `MaterialState` values are supported:
 
-* `hovered`
-* `focused`
-* `pressed`
-* `dragged`
-* `selected`
-* `scrolledUnder`
-* `disabled`
-* `error`
-* `""` (empty string) - fallback state, meaning "all other states".
+* `HOVERED`
+* `FOCUSED`
+* `PRESSED`
+* `DRAGGED`
+* `SELECTED`
+* `SCROLLEDUNDER`
+* `DISABLED`
+* `ERROR`
+* `DEFAULT` - fallback state, meaning "all other states".
 
 To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `color` property to a literal the value will be applied to all button states:
 
 ```python
 ButtonStyle(
-    color=colors.WHITE
+    color=ft.colors.WHITE
 )
 ```
 
-To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For example, to configure different background colors for `hovered` and `focused` states and another colors for all other states:
+To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For example, to configure different background colors for `HOVERED` and `FOCUSED` states and another colors for all other states:
 
 ```python
 ButtonStyle(
     color={
-        "hovered": colors.WHITE,
-        "focused": colors.BLUE,
-        "": colors.BLACK,
+        ft.MaterialState.HOVERED: ft.colors.WHITE,
+        ft.MaterialState.FOCUSED: ft.colors.BLUE,
+        ft.MaterialState.DEFAULT: ft.colors.BLACK,
     }
 )
 ```
@@ -224,40 +211,39 @@ Check the following example:
 <img src="/img/blog/gradients/styled-button.gif" className="screenshot-30" />
 
 ```python
-import flet
-from flet import ButtonStyle, ElevatedButton, Page, colors
+import flet as ft
 from flet.border import BorderSide
 from flet.buttons import RoundedRectangleBorder
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.add(
-        ElevatedButton(
+        ft.ElevatedButton(
             "Styled button 1",
-            style=ButtonStyle(
+            style=ft.ButtonStyle(
                 color={
-                    "hovered": colors.WHITE,
-                    "focused": colors.BLUE,
-                    "": colors.BLACK,
+                    ft.MaterialState.HOVERED: ft.colors.WHITE,
+                    ft.MaterialState.FOCUSED: ft.colors.BLUE,
+                    ft.MaterialState.DEFAULT: ft.colors.BLACK,
                 },
-                bgcolor={"focused": colors.PINK_200, "": colors.YELLOW},
-                padding={"hovered": 20},
-                overlay_color=colors.TRANSPARENT,
+                bgcolor={ft.MaterialState.FOCUSED: ft.colors.PINK_200, "": ft.colors.YELLOW},
+                padding={ft.MaterialState.HOVERED: 20},
+                overlay_color=ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
                 animation_duration=500,
                 side={
-                    "": BorderSide(1, colors.BLUE),
-                    "hovered": BorderSide(2, colors.BLUE),
+                    ft.MaterialState.DEFAULT: BorderSide(1, ft.colors.BLUE),
+                    ft.MaterialState.HOVERED: BorderSide(2, ft.colors.BLUE),
                 },
                 shape={
-                    "hovered": RoundedRectangleBorder(radius=20),
-                    "": RoundedRectangleBorder(radius=2),
+                    ft.MaterialState.HOVERED: RoundedRectangleBorder(radius=20),
+                    ft.MaterialState.DEFAULT: RoundedRectangleBorder(radius=2),
                 },
             ),
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 #### `ButtonStyle` class
@@ -288,64 +274,52 @@ This is an example demonstrating various button shapes:
 <img src="/img/blog/gradients/button-shapes.png" className="screenshot-20" />
 
 ```python
-import flet
-from flet import ButtonStyle, FilledButton, Page
-from flet.buttons import (
-    BeveledRectangleBorder,
-    CircleBorder,
-    CountinuosRectangleBorder,
-    RoundedRectangleBorder,
-    StadiumBorder,
-)
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.padding = 30
     page.spacing = 30
     page.add(
-        FilledButton(
+        ft.FilledButton(
             "Stadium",
-            style=ButtonStyle(
-                shape=StadiumBorder(),
+            style=ft.ButtonStyle(
+                shape=ft.StadiumBorder(),
             ),
         ),
-        FilledButton(
+        ft.FilledButton(
             "Rounded rectangle",
-            style=ButtonStyle(
-                shape=RoundedRectangleBorder(radius=10),
+            style=ft.ButtonStyle(
+                shape=ft.RoundedRectangleBorder(radius=10),
             ),
         ),
-        FilledButton(
+        ft.FilledButton(
             "Continuous rectangle",
-            style=ButtonStyle(
-                shape=CountinuosRectangleBorder(radius=30),
+            style=ft.ButtonStyle(
+                shape=ft.CountinuosRectangleBorder(radius=30),
             ),
         ),
-        FilledButton(
+        ft.FilledButton(
             "Beveled rectangle",
-            style=ButtonStyle(
-                shape=BeveledRectangleBorder(radius=10),
+            style=ft.ButtonStyle(
+                shape=ft.BeveledRectangleBorder(radius=10),
             ),
         ),
-        FilledButton(
+        ft.FilledButton(
             "Circle",
-            style=ButtonStyle(shape=CircleBorder(), padding=30),
+            style=ft.ButtonStyle(shape=ft.CircleBorder(), padding=30),
         ),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
+
+### `text`
+
+The text displayed on a button.
 
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
-
-### `autofocus`
-
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
-
-### `content`
-
-A Control representing custom button content.
 
 ## Events
 
@@ -353,28 +327,27 @@ A Control representing custom button content.
 
 Fires when a user clicks the button.
 
-### `on_long_press`
-
-Fires when the button is long-pressed.
-
 ### `on_hover`
 
 Fires when a mouse pointer enters or exists the button response area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
 
 ```python
-import flet
-from flet import ElevatedButton, Page
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def on_hover(e):
         e.control.bgcolor = "orange" if e.data == "true" else "yellow"
         e.control.update()
 
     page.add(
-        ElevatedButton(
+        ft.ElevatedButton(
             "I'm changing color on hover", bgcolor="yellow", on_hover=on_hover
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
+
+### `on_long_press`
+
+Fires when the button is long-pressed.

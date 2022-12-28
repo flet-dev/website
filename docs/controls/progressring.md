@@ -23,19 +23,18 @@ import TabItem from '@theme/TabItem';
 
 ```python
 from time import sleep
-import flet
-from flet import Column, Page, ProgressRing, Row, Text
+import flet as ft
 
-def main(page: Page):
-    pr = ProgressRing(width=16, height=16, stroke_width=2)
+def main(page: ft.Page):
+    pr = ft.ProgressRing(width=16, height=16, stroke_width = 2)
 
     page.add(
-        Text("Circular progress indicator", style="headlineSmall"),
-        Row([pr, Text("Wait for the completion...")]),
-        Text("Indeterminate cicrular progress", style="headlineSmall"),
-        Column(
-            [ProgressRing(), Text("I'm going to run for ages...")],
-            horizontal_alignment="center",
+        ft.Text("Circular progress indicator", style="headlineSmall"),
+        ft.Row([pr, ft.Text("Wait for the completion...")]),
+        ft.Text("Indeterminate cicrular progress", style="headlineSmall"),
+        ft.Column(
+            [ft.ProgressRing(), ft.Text("I'm going to run for ages...")],
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         ),
     )
 
@@ -44,30 +43,31 @@ def main(page: Page):
         sleep(0.1)
         page.update()
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/progress-ring/custom-progress-rings.gif" className="screenshot-30"/>
 
 ## Properties
-
-### `value`
-
-The value of this progress indicator. A value of 0.0 means no progress and 1.0 means that progress is complete. The value will be clamped to be in the range 0.0-1.0. If null, this progress indicator is indeterminate, which means the indicator displays a predetermined animation that does not indicate how much actual progress is being made.
-
-### `stroke_width`
-
-The width of the line used to draw the circle.
-
-### `color`
-
-The progress indicator's color.
 
 ### `bgcolor`
 
 Color of the circular track being filled by the circular indicator.
 
+### `color`
+
+The progress indicator's color.
+
+### `stroke_width`
+
+The width of the line used to draw the circle.
+
 ### `tooltip`
 
 The text displayed when hovering the mouse over the control.
+
+### `value`
+
+The value of this progress indicator. A value of 0.0 means no progress and 1.0 means that progress is complete. The value will be clamped to be in the range 0.0-1.0. If null, this progress indicator is indeterminate, which means the indicator displays a predetermined animation that does not indicate how much actual progress is being made.

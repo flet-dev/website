@@ -9,6 +9,8 @@ import TabItem from '@theme/TabItem';
 
 A filled tonal button is an alternative middle ground between [FilledButton](filledbutton) and [OutlinedButton](outlinedbutton) buttons. They’re useful in contexts where a lower-priority button requires slightly more emphasis than an outline would give, such as "Next" in an onboarding flow. Tonal buttons use the secondary color mapping. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
 
+<img src="/img/docs/controls/filled-tonal-button/basic-filled-tonal-buttons.png" className="screenshot-20" />
+
 ## Examples
 
 ### Filled tonal button
@@ -17,31 +19,32 @@ A filled tonal button is an alternative middle ground between [FilledButton](fil
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import FilledTonalButton, Page
+import flet as ft
 
 
-def main(page: Page):
-    page.title = "Basic filled buttons"
+def main(page: ft.Page):
+    page.title = "Basic filled tonal buttons"
     page.add(
-        FilledTonalButton(text="Filled tonal button"),
-        FilledTonalButton("Disabled button", disabled=True),
-        FilledTonalButton("Button with icon", icon="add"),
+        ft.FilledTonalButton(text="Filled tonal button"),
+        ft.FilledTonalButton("Disabled button", disabled=True),
+        ft.FilledTonalButton("Button with icon", icon="add"),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 
 </Tabs>
 
-<img src="/img/docs/controls/outlined-button/basic-outlined-buttons.png" width="40%" />
-
 ## Properties
 
-### `text`
+### `autofocus`
 
-The text displayed on a button.
+True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `content`
+
+A Control representing custom button content.
 
 ### `icon`
 
@@ -53,19 +56,15 @@ Icon color.
 
 ### `style`
 
-See [ElevatedButton.style](elevatedbutton#style) for more information about this property.
+See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+
+### `text`
+
+The text displayed on a button.
 
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
-
-### `autofocus`
-
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
-
-### `content`
-
-A Control representing custom button content.
 
 ## Events
 
@@ -73,10 +72,10 @@ A Control representing custom button content.
 
 Fires when a user clicks the button.
 
-### `on_long_press`
-
-Fires when the button is long-pressed.
-
 ### `on_hover`
 
 Fires when a mouse pointer enters or exists the button response area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
+
+### `on_long_press`
+
+Fires when the button is long-pressed.

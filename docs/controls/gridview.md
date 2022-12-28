@@ -23,16 +23,15 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Image, Page, GridView, border_radius
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "GridView Example"
-    page.theme_mode = "dark"
+    page.theme_mode = ft.ThemeMode.DARK
     page.padding = 50
     page.update()
 
-    images = GridView(
+    images = ft.GridView(
         expand=1,
         runs_count=5,
         max_extent=150,
@@ -45,21 +44,25 @@ def main(page: Page):
 
     for i in range(0, 60):
         images.controls.append(
-            Image(
+            ft.Image(
                 src=f"https://picsum.photos/150/150?{i}",
-                fit="none",
-                repeat="noRepeat",
-                border_radius=border_radius.all(10),
+                fit=ft.ImageFit.NONE,
+                repeat=ft.ImageRepeat.NO_REPEAT,
+                border_radius=ft.border_radius.all(10),
             )
         )
     page.update()
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
   </TabItem>
 </Tabs>
 
 ## Properties
+
+### `child_aspect_ratio`
+
+The ratio of the cross-axis to the main-axis extent of each child.
 
 ### `controls`
 
@@ -69,26 +72,22 @@ A list of `Control`s to display inside GridView.
 
 `True` to layout GridView items horizontally.
 
-### `runs_count`
-
-The number of children in the cross axis.
-
 ### `max_extent`
-
-### `spacing`
-
-The number of logical pixels between each child along the main axis.
-
-### `run_spacing`
-
-The number of logical pixels between each child along the cross axis.
-
-### `child_aspect_ratio`
-
-The ratio of the cross-axis to the main-axis extent of each child.
 
 ### `padding`
 
 The amount of space by which to inset the children.
 
 See [`Container.padding`](container#padding) property for more information and possible values.
+
+### `run_spacing`
+
+The number of logical pixels between each child along the cross axis.
+
+### `runs_count`
+
+The number of children in the cross axis.
+
+### `spacing`
+
+The number of logical pixels between each child along the main axis.

@@ -17,89 +17,80 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Card,
-    Column,
-    Container,
-    Icon,
-    Image,
-    ListTile,
-    PopupMenuButton,
-    PopupMenuItem,
-    Text,
-    icons,
-    padding,
-)
+import flet as ft
 
 def main(page):
     page.title = "ListTile Examples"
     page.add(
-        Card(
-            content=Container(
+        ft.Card(
+            content=ft.Container(
                 width=500,
-                content=Column(
+                content=ft.Column(
                     [
-                        ListTile(
-                            title=Text("One-line list tile"),
+                        ft.ListTile(
+                            title=ft.Text("One-line list tile"),
                         ),
-                        ListTile(title=Text("One-line dense list tile"), dense=True),
-                        ListTile(
-                            leading=Icon(icons.SETTINGS),
-                            title=Text("One-line selected list tile"),
+                        ft.ListTile(title=ft.Text("One-line dense list tile"), dense=True),
+                        ft.ListTile(
+                            leading=ft.Icon(ft.icons.SETTINGS),
+                            title=ft.Text("One-line selected list tile"),
                             selected=True,
                         ),
-                        ListTile(
-                            leading=Image(src="/icons/icon-192.png", fit="contain"),
-                            title=Text("One-line with leading control"),
+                        ft.ListTile(
+                            leading=ft.Image(src="/icons/icon-192.png", fit="contain"),
+                            title=ft.Text("One-line with leading control"),
                         ),
-                        ListTile(
-                            title=Text("One-line with trailing control"),
-                            trailing=PopupMenuButton(
-                                icon=icons.MORE_VERT,
+                        ft.ListTile(
+                            title=ft.Text("One-line with trailing control"),
+                            trailing=ft.PopupMenuButton(
+                                icon=ft.icons.MORE_VERT,
                                 items=[
-                                    PopupMenuItem(text="Item 1"),
-                                    PopupMenuItem(text="Item 2"),
+                                    ft.PopupMenuItem(text="Item 1"),
+                                    ft.PopupMenuItem(text="Item 2"),
                                 ],
                             ),
                         ),
-                        ListTile(
-                            leading=Icon(icons.ALBUM),
-                            title=Text("One-line with leading and trailing controls"),
-                            trailing=PopupMenuButton(
-                                icon=icons.MORE_VERT,
+                        ft.ListTile(
+                            leading=ft.Icon(ft.icons.ALBUM),
+                            title=ft.Text("One-line with leading and trailing controls"),
+                            trailing=ft.PopupMenuButton(
+                                icon=ft.icons.MORE_VERT,
                                 items=[
-                                    PopupMenuItem(text="Item 1"),
-                                    PopupMenuItem(text="Item 2"),
+                                    ft.PopupMenuItem(text="Item 1"),
+                                    ft.PopupMenuItem(text="Item 2"),
                                 ],
                             ),
                         ),
-                        ListTile(
-                            leading=Icon(icons.SNOOZE),
-                            title=Text("Two-line with leading and trailing controls"),
-                            subtitle=Text("Here is a second title."),
-                            trailing=PopupMenuButton(
-                                icon=icons.MORE_VERT,
+                        ft.ListTile(
+                            leading=ft.Icon(ft.icons.SNOOZE),
+                            title=ft.Text("Two-line with leading and trailing controls"),
+                            subtitle=ft.Text("Here is a second title."),
+                            trailing=ft.PopupMenuButton(
+                                icon=ft.icons.MORE_VERT,
                                 items=[
-                                    PopupMenuItem(text="Item 1"),
-                                    PopupMenuItem(text="Item 2"),
+                                    ft.PopupMenuItem(text="Item 1"),
+                                    ft.PopupMenuItem(text="Item 2"),
                                 ],
                             ),
                         ),
                     ],
                     spacing=0,
                 ),
-                padding=padding.symmetric(vertical=10),
+                padding=ft.padding.symmetric(vertical=10),
             )
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
 ## Properties
+
+### `autofocus`
+
+`True` if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
 ### `content_padding`
 
@@ -109,23 +100,9 @@ If not set, `padding.symmetric(horizontal=16)` is used.
 
 See [`Container.padding`](container#padding) property for more information and possible values.
 
-### `leading`
+### `dense`
 
-A `Control` to display before the title.
-
-### `title`
-
-A `Control` to display as primary content of the list tile. Typically a [Text](text) control. This should not wrap. To enforce the single line limit, use [Text.max_lines](text#max_lines).
-
-### `subtitle`
-
-Additional content displayed below the title. Typically a [Text](text) widget.
-
-If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](text#max_lines) to enforce the number of lines.
-
-### `trailing`
-
-A `Control` to display after the title. Typically an [Icon](icon) control.
+Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
 
 ### `is_three_line`
 
@@ -137,17 +114,27 @@ If `False`, the list tile is treated as having one line if the subtitle is null 
 
 When using a Text control for title and subtitle, you can enforce line limits using [Text.max_lines](text#max_lines).
 
+### `leading`
+
+A `Control` to display before the title.
+
 ### `selected`
 
 If this tile is also enabled then icons and text are rendered with the same color. By default the selected color is the theme's primary color.
 
-### `dense`
+### `subtitle`
 
-Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
+Additional content displayed below the title. Typically a [Text](text) widget.
 
-### `autofocus`
+If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](text#max_lines) to enforce the number of lines.
 
-`True` if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+### `title`
+
+A `Control` to display as primary content of the list tile. Typically a [Text](text) control. This should not wrap. To enforce the single line limit, use [Text.max_lines](text#max_lines).
+
+### `trailing`
+
+A `Control` to display after the title. Typically an [Icon](icon) control.
 
 ## Events
 

@@ -19,29 +19,28 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Container, Icon, Page, Tab, Tabs, Text, alignment, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    t = Tabs(
+    t = ft.Tabs(
         selected_index=1,
         animation_duration=300,
         tabs=[
-            Tab(
+            ft.Tab(
                 text="Tab 1",
-                content=Container(
-                    content=Text("This is Tab 1"), alignment=alignment.center
+                content=ft.Container(
+                    content=ft.Text("This is Tab 1"), alignment=ft.alignment.center
                 ),
             ),
-            Tab(
-                tab_content=Icon(icons.SEARCH),
-                content=Text("This is Tab 2"),
+            ft.Tab(
+                tab_content=ft.Icon(ft.icons.SEARCH),
+                content=ft.Text("This is Tab 2"),
             ),
-            Tab(
+            ft.Tab(
                 text="Tab 3",
-                icon=icons.SETTINGS,
-                content=Text("This is Tab 3"),
+                icon=ft.icons.SETTINGS,
+                content=ft.Text("This is Tab 3"),
             ),
         ],
         expand=1,
@@ -49,24 +48,24 @@ def main(page: Page):
 
     page.add(t)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
 ## `Tabs` properties
 
-### `tabs`
+### `animation_duration`
 
-A list of `Tab` controls.
+Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
 
 ### `selected_index`
 
 The index of currently selected tab.
 
-### `animation_duration`
+### `tabs`
 
-Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
+A list of `Tab` controls.
 
 ## `Tabs` events
 
@@ -76,18 +75,18 @@ Fires when `selected_index` changes.
 
 ## `Tab` properties
 
-### `text`
+### `content`
 
-Tab's display name.
+A `Control` to display below the Tab when it is selected.
 
 ### `icon`
 
 An icon to display on the left of Tab text.
 
-### `content`
-
-A `Control` to display below the Tab when it is selected.
-
 ### `tab_content`
 
 A `Control` representing custom tab content replacing `text` and `icon`.
+
+### `text`
+
+Tab's display name.

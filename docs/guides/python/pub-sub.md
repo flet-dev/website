@@ -19,15 +19,14 @@ A typical PubSub usage would be:
 This is an example of a simple chat application:
 
 ```python
-import flet
-from flet import Column, ElevatedButton, Page, Row, Text, TextField
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "Flet Chat"
 
     # subscribe to broadcast messages
     def on_message(msg):
-        messages.controls.append(Text(msg))
+        messages.controls.append(ft.Text(msg))
         page.update()
 
     page.pubsub.subscribe(on_message)
@@ -38,13 +37,13 @@ def main(page: Page):
         message.value = ""
         page.update()
 
-    messages = Column()
-    user = TextField(hint_text="Your name", width=150)
-    message = TextField(hint_text="Your message...", expand=True)  # fill all the space
-    send = ElevatedButton("Send", on_click=send_click)
-    page.add(messages, Row(controls=[user, message, send]))
+    messages = ft.Column()
+    user = ft.TextField(hint_text="Your name", width=150)
+    message = ft.TextField(hint_text="Your message...", expand=True)  # fill all the space
+    send = ft.ElevatedButton("Send", on_click=send_click)
+    page.add(messages, ft.Row(controls=[user, message, send]))
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 <img src="/img/docs/getting-started/chat-app-example.gif" className="screenshot-70" />

@@ -17,8 +17,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import ElevatedButton, SnackBar, Text
+import flet as ft
 
 class Data:
     def __init__(self) -> None:
@@ -28,33 +27,27 @@ d = Data()
 
 def main(page):
 
-    page.snack_bar = SnackBar(
-        content=Text("Hello, world!"),
+    page.snack_bar = ft.SnackBar(
+        content=ft.Text("Hello, world!"),
         action="Alright!",
     )
 
     def on_click(e):
-        page.snack_bar = SnackBar(Text(f"Hello {d.counter}"))
+        page.snack_bar = ft.SnackBar(ft.Text(f"Hello {d.counter}"))
         page.snack_bar.open = True
         d.counter += 1
         page.update()
 
-    page.add(ElevatedButton("Open SnackBar", on_click=on_click))
+    page.add(ft.ElevatedButton("Open SnackBar", on_click=on_click))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/snackbar/snackbar-with-custom-content.gif" className="screenshot-40"/>
+
 ## Properties
-
-### `open`
-
-Set to `True` to display a SnackBar. This property is automatically set to `False` once SnackBar is shown.
-
-### `content`
-
-The primary content of the snack bar. Typically a [`Text`](text) control.
 
 ### `action`
 
@@ -64,9 +57,21 @@ For example, the snack bar might let the user undo the operation that prompted t
 
 The action should not be "dismiss" or "cancel".
 
+### `action_color`
+
+The foreground color of action button.
+
 ### `bgcolor`
 
 SnackBar background color.
+
+### `content`
+
+The primary content of the snack bar. Typically a [`Text`](text) control.
+
+### `open`
+
+Set to `True` to display a SnackBar. This property is automatically set to `False` once SnackBar is shown.
 
 ## Events
 

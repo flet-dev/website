@@ -19,24 +19,23 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Banner, ElevatedButton, Icon, Text, TextButton, colors, icons
+import flet as ft
 
 def main(page):
     def close_banner(e):
         page.banner.open = False
         page.update()
 
-    page.banner = Banner(
-        bgcolor=colors.AMBER_100,
-        leading=Icon(icons.WARNING_AMBER_ROUNDED, color=colors.AMBER, size=40),
-        content=Text(
+    page.banner = ft.Banner(
+        bgcolor=ft.colors.AMBER_100,
+        leading=ft.Icon(ft.icons.WARNING_AMBER_ROUNDED, color=ft.colors.AMBER, size=40),
+        content=ft.Text(
             "Oops, there were some errors while trying to delete the file. What would you like me to do?"
         ),
         actions=[
-            TextButton("Retry", on_click=close_banner),
-            TextButton("Ignore", on_click=close_banner),
-            TextButton("Cancel", on_click=close_banner),
+            ft.TextButton("Retry", on_click=close_banner),
+            ft.TextButton("Ignore", on_click=close_banner),
+            ft.TextButton("Cancel", on_click=close_banner),
         ],
     )
 
@@ -44,28 +43,26 @@ def main(page):
         page.banner.open = True
         page.update()
 
-    page.add(ElevatedButton("Show Banner", on_click=show_banner_click))
+    page.add(ft.ElevatedButton("Show Banner", on_click=show_banner_click))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/banner/banner-with-custom-content.gif" className="screenshot-40"/>
+
 ## Properties
 
-### `open`
+### `actions`
 
-Set to `True` to display a banner.
+The set of actions that are displayed at the bottom or trailing side of the Banner.
 
-### `leading`
+Typically this is a list of [`TextButton`](textbutton) controls.
 
-The (optional) leading `Control` of the Banner.
+### `bgcolor`
 
-Typically an [`Icon`](icon) control.
-
-### `leading_padding`
-
-The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](container#padding) for more information about padding and possible values.
+The color of the surface of this Banner.
 
 ### `content`
 
@@ -81,12 +78,6 @@ If the actions are trailing the content, this defaults to `padding.only(left=16.
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
-### `actions`
-
-The set of actions that are displayed at the bottom or trailing side of the Banner.
-
-Typically this is a list of [`TextButton`](textbutton) controls.
-
 ### `force_actions_below`
 
 An override to force the actions to be below the content regardless of how many there are.
@@ -95,6 +86,16 @@ If this is `True`, the actions will be placed below the content. If this is `Fal
 
 Defaults to `False`.
 
-### `bgcolor`
+### `leading`
 
-The color of the surface of this Banner.
+The (optional) leading `Control` of the Banner.
+
+Typically an [`Icon`](icon) control.
+
+### `leading_padding`
+
+The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](container#padding) for more information about padding and possible values.
+
+### `open`
+
+Set to `True` to display a banner.

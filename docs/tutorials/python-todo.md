@@ -35,14 +35,13 @@ To start, let's create a simple hello-world app.
 
 Create `hello.py` with the following contents:
 
-```python title="hello.py"
-import flet
-from flet import Page, Text
+```python
+import flet as ft
 
-def main(page: Page):
-    page.add(Text(value="Hello, world!"))
+def main(page: ft.Page):
+    page.add(ft.Text(value="Hello, world!"))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 Run this app and you will see a new window with a greeting:
@@ -57,21 +56,20 @@ To start, we'll need a [TextField](/docs/controls/textfield) for entering a task
 
 Create `todo.py` with the following contents:
 
-```python title="todo.py"
-import flet
-from flet import Checkbox, FloatingActionButton, Page, TextField, icons
+```python
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def add_clicked(e):
-        page.add(Checkbox(label=new_task.value))
+        page.add(ft.Checkbox(label=new_task.value))
         new_task.value = ""
         page.update()
 
-    new_task = TextField(hint_text="Whats needs to be done?")
+    new_task = ft.TextField(hint_text="Whats needs to be done?")
 
-    page.add(new_task, FloatingActionButton(icon=icons.ADD, on_click=add_clicked))
+    page.add(new_task, ft.FloatingActionButton(icon=ft.icons.ADD, on_click=add_clicked))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 Run the app and you should see a page like this:
@@ -88,36 +86,35 @@ Now let's make the app look nice! We want the entire app to be at the top center
 
 Replace `todo.py` contents with the following:
 
-```python title="todo.py"
-import flet
-from flet import Checkbox, Column, FloatingActionButton, Page, Row, TextField, icons
+```python
+import flet as ft
 
 
-def main(page: Page):
+def main(page: ft.Page):
     def add_clicked(e):
-        tasks_view.controls.append(Checkbox(label=new_task.value))
+        tasks_view.controls.append(ft.Checkbox(label=new_task.value))
         new_task.value = ""
         view.update()
 
-    new_task = TextField(hint_text="Whats needs to be done?", expand=True)
-    tasks_view = Column()
-    view = Column(
+    new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
+    tasks_view = ft.Column()
+    view=ft.Column(
         width=600,
         controls=[
-            Row(
+            ft.Row(
                 controls=[
                     new_task,
-                    FloatingActionButton(icon=icons.ADD, on_click=add_clicked),
+                    ft.FloatingActionButton(icon=ft.icons.ADD, on_click=add_clicked),
                 ],
             ),
             tasks_view,
         ],
     )
 
-    page.horizontal_alignment = "center"
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.add(view)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 Run the app and you should see a page like this:
@@ -130,23 +127,22 @@ While we could continue writing our app in the `main` function, the best practic
 
 To make a reusable ToDo app component, we are going to encapsulate its state and presentation logic in a separate class: 
 
-```python title="todo.py"
-import flet
-from flet import Checkbox, Column, FloatingActionButton, Page, Row, TextField, UserControl, icons
+```python
+import flet as ft
 
-class TodoApp(UserControl):
+class TodoApp(ft.UserControl):
     def build(self):
-        self.new_task = TextField(hint_text="Whats needs to be done?", expand=True)
-        self.tasks = Column()
+        self.new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
+        self.tasks = ft.Column()
 
         # application's root control (i.e. "view") containing all other controls
-        return Column(
+        return ft.Column(
             width=600,
             controls=[
-                Row(
+                ft.Row(
                     controls=[
                         self.new_task,
-                        FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked),
+                        ft.FloatingActionButton(icon=ft.icons.ADD, on_click=self.add_clicked),
                     ],
                 ),
                 self.tasks,
@@ -154,14 +150,14 @@ class TodoApp(UserControl):
         )
 
     def add_clicked(self, e):
-        self.tasks.controls.append(Checkbox(label=self.new_task.value))
+        self.tasks.controls.append(ft.Checkbox(label=self.new_task.value))
         self.new_task.value = ""
         self.update()
 
 
-def main(page: Page):
+def main(page: ft.Page):
     page.title = "ToDo App"
-    page.horizontal_alignment = "center"
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.update()
 
     # create application instance
@@ -170,7 +166,7 @@ def main(page: Page):
     # add application's root control to the page
     page.add(todo)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 :::note
@@ -184,6 +180,7 @@ app2 = TodoApp()
 # add application's root control to the page
 page.add(app1, app2)
 ```
+
 :::
 
 ## View, edit and delete list items
@@ -201,30 +198,30 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 To encapsulate task item views and actions, we introduced a new `Task` class:
 
 ```python
-class Task(UserControl):
+class Task(ft.UserControl):
     def __init__(self, task_name):
         super().__init__()
         self.task_name = task_name
 
     def build(self):
-        self.display_task = Checkbox(value=False, label=self.task_name)
-        self.edit_name = TextField(expand=1)
+        self.display_task = ft.Checkbox(value=False, label=self.task_name)
+        self.edit_name = ft.TextField(expand=1)
 
-        self.display_view = Row(
-            alignment="spaceBetween",
-            vertical_alignment="center",
+        self.display_view = ft.Row(
+            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
             controls=[
                 self.display_task,
-                Row(
+                ft.Row(
                     spacing=0,
                     controls=[
-                        IconButton(
-                            icon=icons.CREATE_OUTLINED,
+                        ft.IconButton(
+                            icon=ft.icons.CREATE_OUTLINED,
                             tooltip="Edit To-Do",
                             on_click=self.edit_clicked,
                         ),
-                        IconButton(
-                            icons.DELETE_OUTLINE,
+                        ft.IconButton(
+                            ft.icons.DELETE_OUTLINE,
                             tooltip="Delete To-Do",
                             on_click=self.delete_clicked,
                         ),
@@ -233,21 +230,21 @@ class Task(UserControl):
             ],
         )
 
-        self.edit_view = Row(
+        self.edit_view = ft.Row(
             visible=False,
-            alignment="spaceBetween",
-            vertical_alignment="center",
+            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
             controls=[
                 self.edit_name,
-                IconButton(
-                    icon=icons.DONE_OUTLINE_OUTLINED,
-                    icon_color=colors.GREEN,
+                ft.IconButton(
+                    icon=ft.icons.DONE_OUTLINE_OUTLINED,
+                    icon_color=ft.colors.GREEN,
                     tooltip="Update To-Do",
                     on_click=self.save_clicked,
                 ),
             ],
         )
-        return Column(controls=[self.display_view, self.edit_view])
+        return ft.Column(controls=[self.display_view, self.edit_view])
 
     def edit_clicked(self, e):
         self.edit_name.value = self.display_task.label
@@ -264,11 +261,11 @@ class Task(UserControl):
 
 Additionally, we changed `TodoApp` class to create and hold `Task` instances when the "Add" button is clicked:
 
-```python {4,8,9}
-class TodoApp(UserControl):
+```python
+class TodoApp(ft.UserControl):
     def build(self):
-        self.new_task = TextField(hint_text="Whats needs to be done?", expand=True)
-        self.tasks = Column()
+        self.new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
+        self.tasks = ft.Column()
         # ...
 
     def add_clicked(self, e):
@@ -281,7 +278,7 @@ class TodoApp(UserControl):
 For "Delete" task operation, we implemented `task_delete()` method in `TodoApp` class which accepts task control instance as a parameter:
 
 ```python
-class TodoApp(UserControl):
+class TodoApp(ft.UserControl):
     # ...
     def task_delete(self, task):
         self.tasks.controls.remove(task)
@@ -290,13 +287,13 @@ class TodoApp(UserControl):
 
 Then, we passed a reference to `task_delete` method into Task constructor and called it on "Delete" button event handler:
 
-```python {2,5,10}
-class Task(UserControl):
+```python
+class Task(ft.UserControl):
     def __init__(self, task_name, task_delete):
         super().__init__()
         self.task_name = task_name
         self.task_delete = task_delete
-        
+
         # ...        
 
     def delete_clicked(self, e):
@@ -315,33 +312,32 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 
 `Tabs` control is used to display filter:
 
-```python {1,11-15,29}
-from flet import Tabs, Tab
+```python
 
 # ...
 
-class TodoApp(UserControl):
+class TodoApp(ft.UserControl):
     def __init__(self):
         self.tasks = []
-        self.new_task = TextField(hint_text="Whats needs to be done?", expand=True)
-        self.tasks = Column()
+        self.new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
+        self.tasks = ft.Column()
 
-        self.filter = Tabs(
+        self.filter = ft.Tabs(
             selected_index=0,
             on_change=self.tabs_changed,
-            tabs=[Tab(text="all"), Tab(text="active"), Tab(text="completed")],
+            tabs=[ft.Tab(text="all"), ft.Tab(text="active"), ft.Tab(text="completed")],
         )
 
-        self.view = Column(
+        self.view = ft.Column(
             width=600,
             controls=[
-                Row(
+                ft.Row(
                     controls=[
                         self.new_task,
-                        FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked),
+                        ft.FloatingActionButton(icon=ft.icons.ADD, on_click=self.add_clicked),
                     ],
                 ),
-                Column(
+                ft.Column(
                     spacing=25,
                     controls=[
                         self.filter,
@@ -357,7 +353,7 @@ To display different lists of tasks depending on their statuses, we could mainta
 In `TodoApp` class we overrided `update()` method which iterates through all the tasks and updates their `visible` property depending on the status of the task:
 
 ```python
-class TodoApp(UserControl):
+class TodoApp(ft.UserControl):
 
     # ...
 
@@ -375,14 +371,14 @@ class TodoApp(UserControl):
 Filtering should occur when we click on a tab or change a task status. `TodoApp.update()` method is called when Tabs selected value is changed or Task item checkbox is clicked:
 
 ```python
-class TodoApp(UserControl):
+class TodoApp(ft.UserControl):
 
     # ...
 
     def tabs_changed(self, e):
         self.update()
 
-class Task(UserControl):
+class Task(ft.UserControl):
     def __init__(self, task_name, task_status_change, task_delete):
         super().__init__()
         self.completed = False
@@ -391,7 +387,7 @@ class Task(UserControl):
         self.task_delete = task_delete
 
     def build(self):
-        self.display_task = Checkbox(
+        self.display_task = ft.Checkbox(
             value=False, label=self.task_name, on_change=self.status_changed
         )
         # ...
@@ -411,34 +407,34 @@ Our Todo app is almost complete now. As a final touch, we will add a footer (`Co
 
 Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py). Below we highlighted the changes we've done to implement the footer:
 
-```python {5,17-33,39-42,46,53-55}
+```python
 class TodoApp():
     def __init__(self):
         # ...
 
-        self.items_left = Text("0 items left")
+        self.items_left = ft.Text("0 items left")
 
-        self.view = Column(
+        self.view = ft.Column(
             width=600,
             controls=[
-                Row([Text(value="Todos", style="headlineMedium")], alignment="center"),
-                Row(
+                ft.Row([ ft.Text(value="Todos", style="headlineMedium")], alignment=ft.MainAxisAlignment.CENTER),
+                ft.Row(
                     controls=[
                         self.new_task,
-                        FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked),
+                        ft.FloatingActionButton(icon=ft.icons.ADD, on_click=self.add_clicked),
                     ],
                 ),
-                Column(
+                ft.Column(
                     spacing=25,
                     controls=[
                         self.filter,
                         self.tasks,
-                        Row(
-                            alignment="spaceBetween",
-                            vertical_alignment="center",
+                        ft.Row(
+                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                            vertical_alignment=ft.CrossAxisAlignment.CENTER,
                             controls=[
                                 self.items_left,
-                                OutlinedButton(
+                                ft.OutlinedButton(
                                     text="Clear completed", on_click=self.clear_clicked
                                 ),
                             ],
@@ -480,11 +476,11 @@ Congratulations! You have created your first Python app with Flet, and it looks 
 
 Now it's time to share your app with the world!
 
-[Follow these instructions](/docs/guides/python/getting-started#deploying-a-web-app) to deploy you Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/guides/python/getting-started#deploying-a-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## Summary
 
-In this tutorial you have learned how to:
+In this tutorial, you have learnt how to:
 
 * Create a simple Flet app;
 * Work with Reusable UI components;

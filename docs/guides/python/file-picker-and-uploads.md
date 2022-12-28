@@ -26,10 +26,9 @@ Where file picker really shines is a desktop! All three dialogs return full path
 It is recommended to add file picker to [`page.overlay.controls`](/docs/controls/page#overlay) collection, so it doesn't affect the layout of your app. Despite file picker has 0x0 size it is still considered as a control when put into `Row` or `Column`.
 
 ```python
-import flet
-from flet import FilePicker
+import flet as ft
 
-file_picker = FilePicker()
+file_picker = ft.FilePicker()
 page.overlay.append(file_picker)
 page.update()
 ```
@@ -43,7 +42,7 @@ To open file picker dialog call one of the three methods:
 Lambda works pretty nice for that:
 
 ```python
-ElevatedButton("Choose files...",
+ft.ElevatedButton("Choose files...",
     on_click=lambda _: file_picker.pick_files(allow_multiple=True))
 ```
 
@@ -53,14 +52,13 @@ When dialog is closed `FilePicker.on_result` event handler is called which event
 * `path` - "Save file" and "Get directory" dialogs, a full path to a file or directory or `None` if dialog was cancelled.
 
 ```python
-import flet
-from flet import FilePicker, FilePickerResultEvent
+import flet as ft
 
-def on_dialog_result(e: FilePickerResultEvent):
+def on_dialog_result(e: ft.FilePickerResultEvent):
     print("Selected files:", e.files)
     print("Selected file or directory:", e.path)
 
-file_picker = FilePicker(on_result=on_dialog_result)
+file_picker = ft.FilePicker(on_result=on_dialog_result)
 ```
 
 The last result is always available in `FilePicker.result` property.
@@ -77,8 +75,7 @@ When the files are selected by the user they are not automatically uploaded anyw
 To perform an actual upload you should call `FilePicker.upload()` method and pass the list of files that need to be uploaded along with their upload URLs and upload method (`PUT` or `POST`):
 
 ```python
-import flet
-from flet import FilePicker, FilePickerResultEvent, FilePickerUploadFile
+import flet as ft
 
 def upload_files(e):
     upload_list = []
@@ -92,7 +89,7 @@ def upload_files(e):
             )
         file_picker.upload(upload_list)
 
-ElevatedButton("Upload", on_click=upload_files)
+ft.ElevatedButton("Upload", on_click=upload_files)
 ```
 
 :::note
@@ -118,19 +115,19 @@ The same technique should work for [Wasabi](https://wasabi.com/), [Backblaze](ht
 To enable Flet saving uploaded files to a directory provide full or relative path to that directory in `flet.app()` call:
 
 ```python
-flet.app(target=main, upload_dir="uploads")
+ft.app(target=main, upload_dir="uploads")
 ```
 
 You can even put uploads inside "assets" directory, so uploaded files, e.g. pictures, docs or other media, can be accessed from a Flet client right away:
 
 ```python
-flet.app(target=main, assets_dir="assets", upload_dir="assets/uploads")
+ft.app(target=main, assets_dir="assets", upload_dir="assets/uploads")
 ```
 
 and somewhere in your app you can display uploaded picture with:
 
 ```python
-page.add(Image(src="/uploads/<some-uploaded-picture.png>"))
+page.add(ft.Image(src="/uploads/<some-uploaded-picture.png>"))
 ```
 
 ### Upload progress
