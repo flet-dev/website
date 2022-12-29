@@ -10,30 +10,17 @@ Lets make a clone of Trello in Python with the Flet framework and then deploy it
 
 The code for this tutorial can be found [here](https://github.com/flet-dev/examples/tree/main/python/apps/trolli) with self explanatory commits. Be sure to run `pip install -r requirements.txt` after cloning. And [here](https://flet-trolli.fly.dev/) is a live demo.
 
-## Table of Contents
 
-- [Why Flet? ](#why-flet-)
-- [Defining Entities and Layout ](#defining-entities-and-layout-)
-- [Data Access Layer and Customization ](#data-access-layer-and-customization-)
-- [Application Logic ](#application-logic-)
-  - [Creating Views ](#creating-views-)
-  - [Syncing Navigation Panel ](#syncing-navigation-panel-)
-  - [Routing ](#routing-)
-  - [Changing Board Names ](#changing-board-names-)
-- [Drag and Drop ](#drag-and-drop-)
-- [Handling Page Resizing ](#handling-page-resizing-)
-- [Deploying as Web App ](#deploying-as-web-app-)
-- [Summary ](#summary-)
+## Why Flet?
 
-
-## Why Flet? <a name="why-flet"></a>
 Most developers are undoubtedly familiar with the situation of either having developed a console app that turns out to have a wider audience than originally intended, or needing to develop an internal tool for non-developers but which is destined to have a small user base and/or a relatively brief shelf life. In situations like these it can often feel awkward to reach for an oversized tool such as electron, a feature rich framework like flutter (irony acknowledged!), or try to quickly get a handle on some other cross platform framework like .NET MAUI. What we would really like is to be able to throw a UI on our logic that looks generically decent, has acceptable performance, and ideally, takes less time to write than did the business logic, and preferably in the same language in which the rest of the logic was written - i.e. a language with which we are already proficient (currently the only released library is in Python but C#, Typescript, and Golang libraries are on the roadmap). This is exactly what the Flet platform aims to provide. 
 
 Flet takes a different approach to many new UI frameworks that is arguably more intuitive to the majority of experienced programmers. Diverging from the currently ubiquitous declarative approach and opting instead for an imperative model. 
 
 Having intimated that Flet is designed with simple GUIs in mind, lets nonetheless try to make something a tad more complicated than, for example, a simple dashboard with some filters, and shoot for something like a minimal version of Trello - and bestow upon it the totally-independently-arrived-at-name, _Trolli_.  For the purposes of this tutorial I'll assume the reader is familiar with the basic concept and setup of a Flet project (read [the tutorials](https://flet.dev/docs/tutorials) and the [docs](https://flet.dev/docs/guides/python/getting-started) if not), and instead focus more on aspects that are not part of the existing tutorials.
 
-## Defining Entities and Layout <a name="entities-layout"></a>
+## Defining Entities and Layout
+
 With the proximate goal of creating the MVP of our clone, let's start by defining the main entities (`boards`, `board_lists`, `items`), settle on an acceptable design and layout, and implement a sort of pseudo-repository pattern so that in future development we can move from in-memory data storage to persistent storage of some kind. 
 
 Here, in the `main.py` module we'll add this code and then continue to define the `TrelloApp` class. 
@@ -270,7 +257,8 @@ Before we move on let's define our basic entities. We'll need a `Board` class, w
 
 For each of the entities, we'll add an application wide unique id with an `id_counter = itertools.count()` statement at the top of each class and a call to `next(Board.id_counter)` at initialization. This way two lists or boards can have the same name but still represent distinct entities. 
 
-## Data Access Layer and Customization <a name="data-access-layer"></a>
+## Data Access Layer and Customization
+
 Now that we have a basic layout and entities defined, let's add a few customization parameters to the app itself. Lets also take some time to create a basic data access interface. You can see the boiler plate for the interface and the in-memory implementation in the `data_store.py` and `memory_store.py` files respectively. This will make it easier for us to swap in some persistent storage solution in a future tutorial.
 
 Here is the updated main function. We need to instantiate the `InMemoryStore` class within the main method so that each user session (i.e. each new tab using the app), has it's own version of the store. We'll then need to pass that store to each of the components that will need access to it.
@@ -297,10 +285,12 @@ if __name__ == "__main__":
     flet.app(target=main, assets_dir="../assets", view=flet.WEB_BROWSER)
 ```
 
-## Application Logic <a name="app-logic"></a>
+## Application Logic
+
 You can run the app now but apart from a nicer font for the name, it still does not have any functionality. Now it's time to fill out the application logic. Although this app might qualify as non-trivial, we won't bother to separate the code into distinct application and business layers. The separation of the data access and the rest of the logic will suffice for this non-architecturally focused tutorial, though further separation may be a sensible thing to consider. 
 
-### Creating Views <a name="creating-views"></a>
+### Creating Views
+
 First up, we will add views to correspond to the sidebar navigation destinations. We need a view to display all boards and a view to display a Members pane which, for now, will simply be a placeholder until a future tutorial. We'll add these views as controls to the `app_layout.py` module. 
 
 ```python
@@ -376,7 +366,8 @@ def hydrate_all_boards_view(self):
     self.sidebar.sync_board_destinations()
 ```
 
-### Syncing Navigation Panel <a name="sync-nav-panel"></a>
+### Syncing Navigation Panel
+
 Next up we need a visually distinct section of the navigation panel to display boards we've created. We'll add a second, `bottom_nav_rail` to the sidebar to represent when a particular board is the active view. This will necessitate a `sync_board_destinations` method in the sidebar component to be called whenever any change has been made to the list of current boards. 
 We'll now have a change handler for each of the top and bottom nav rails. 
 
@@ -436,7 +427,8 @@ Unfortunately clicking on the navigation rail doesn't actually navigate to anyth
 
 There are several ways we could achieve this such as having every view present in the `app_layout.py` module and then toggling visibility on/off of the relevant views depending on the navigation rail index. But that wouldn't help much in a browser context, nor in a mobile context with a back button. We'll need to consider routing. Flet provides a `TemplateRoute` utility class for url matching. 
 
-### Routing <a name="routing"></a>
+### Routing
+
 In the `main.py` module let's wire up a handler to the `page.on_route_change` event. 
 
 ```python
@@ -500,7 +492,8 @@ command (_-d_ flag for hot reloading, and _-w_ flag for web) we can add some boa
 
 <img src="/img/docs/trolli-tutorial/navigation.gif" className="screenshot-60" />
 
-### Changing Board Names <a name="changing-board-names"></a>
+### Changing Board Names
+
 Next, we should include the ability to change the name of a board. In contrast to the more "*proper*" title editing logic that was implemented in the `board_list.py` module I'm going to favor what some might consider a more "*hacky*" approach because I personally dislike overly ceremonial editing flows, particularly in such a low stakes, fluid sort of application. We'll make use of the `on_focus` and `on_blur` events in the bottom navigation rail destinations in the `sidebar.py` module. Here are the handlers we'll add.
 
 ```python
@@ -560,7 +553,8 @@ def login(self, e):
     self.page.update()
 ```
 
-## Drag and Drop <a name="drag-and-drop"></a>
+## Drag and Drop
+
 Next, we'll add crucial drag and drop functionality to lists themselves and items within lists. 
 
 We'll start with the simpler case of re-ordering lists within boards. In order to give some visual indication of the target to which we're dragging a list, we'll modify the `board_list` containers `border` property, darkening the color on the `list_will_drag_accept` event handler, and returning it to a lighter color in the `list_drag_accept` and `list_drag_leave` handlers.
@@ -741,7 +735,8 @@ And with these changes, we should be able to drag lists around within the board 
 
 <img src="/img/docs/trolli-tutorial/drag-lists-and-items.gif" className="screenshot-60" />
 
-## Handling Page Resizing <a name="handling-page-resizing"></a>
+## Handling Page Resizing
+
 The only final bit of logic we need to add is some page resizing to ensure that if more lists exist than can be displayed, there is a scroll bar to reach them. This logic will also have to take into account the state of the sidebar - extended or not. 
 
 We'll add a resize method to `board.py` module.
@@ -762,7 +757,7 @@ def page_resize(self, e=None):
     self.page.update()
 ```
 
-## Deploying as Web App <a name="deploying-web-app"></a>
+## Deploying as Web App
 
 When you run `flet main.py` the Flet web server a.k.a _Fletd_ is started in order to send updates to the Flutter based UI. The communication between both the server and the UI, and the server and your client code, happens in WebSockets. Therefore, you should make sure that wherever you deploy your app there is sufficient WebSockets support. For this tutorial, we'll deploy to [fly.io](https://fly.io/), which offers up to 3 VMs and 3GB storage on its free tier. If you are more accustomed to AWS services (or someone else is paying :smile:), you could consider adapting this deployment strategy to Fargate.
 
@@ -789,7 +784,7 @@ If the deployment is successful you should be able to visit the app by running
 fly apps open
 ```
 
-## Summary <a name="Summary"></a>
+## Summary
 
 Hopefully this walkthrough gives the reader some idea of how actual usable apps can be developed and deployed using the Flet framework. The flexibility, speed of development and developer experience make it a really compelling tool to reach for in many different use cases and there is an ever growing number of devs doing just that. 
 
