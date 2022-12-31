@@ -199,9 +199,9 @@ To configure style attribute for specific Material states set its value to a dic
 ```python
 ButtonStyle(
     color={
-        ft.MaterialState.HOVERED: ft.colors.WHITE,
-        ft.MaterialState.FOCUSED: ft.colors.BLUE,
-        ft.MaterialState.DEFAULT: ft.colors.BLACK,
+        ft.MaterialState.HOVERED.value: ft.colors.WHITE,
+        ft.MaterialState.FOCUSED.value: ft.colors.BLUE,
+        ft.MaterialState.DEFAULT.value: ft.colors.BLACK,
     }
 )
 ```
@@ -222,22 +222,22 @@ def main(page: ft.Page):
             "Styled button 1",
             style=ft.ButtonStyle(
                 color={
-                    ft.MaterialState.HOVERED: ft.colors.WHITE,
-                    ft.MaterialState.FOCUSED: ft.colors.BLUE,
-                    ft.MaterialState.DEFAULT: ft.colors.BLACK,
+                    ft.MaterialState.HOVERED.value: ft.colors.WHITE,
+                    ft.MaterialState.FOCUSED.value: ft.colors.BLUE,
+                    ft.MaterialState.DEFAULT.value: ft.colors.BLACK,
                 },
-                bgcolor={ft.MaterialState.FOCUSED: ft.colors.PINK_200, "": ft.colors.YELLOW},
-                padding={ft.MaterialState.HOVERED: 20},
+                bgcolor={ft.MaterialState.FOCUSED.value: ft.colors.PINK_200, "": ft.colors.YELLOW},
+                padding={ft.MaterialState.HOVERED.value: 20},
                 overlay_color=ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
                 animation_duration=500,
                 side={
-                    ft.MaterialState.DEFAULT: BorderSide(1, ft.colors.BLUE),
-                    ft.MaterialState.HOVERED: BorderSide(2, ft.colors.BLUE),
+                    ft.MaterialState.DEFAULT.value: BorderSide(1, ft.colors.BLUE),
+                    ft.MaterialState.HOVERED.value: BorderSide(2, ft.colors.BLUE),
                 },
                 shape={
-                    ft.MaterialState.HOVERED: RoundedRectangleBorder(radius=20),
-                    ft.MaterialState.DEFAULT: RoundedRectangleBorder(radius=2),
+                    ft.MaterialState.HOVERED.value: RoundedRectangleBorder(radius=20),
+                    ft.MaterialState.DEFAULT.value: RoundedRectangleBorder(radius=2),
                 },
             ),
         )
