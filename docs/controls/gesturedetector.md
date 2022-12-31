@@ -370,4 +370,4 @@ Event handler argument is an instance of `ScrollEvent` class with the following 
 * `global_x` - x component of the global position of the pointer.
 * `global_y` - y component of the global position of the pointer.
 * `scroll_delta_x` - x component of the the amount to scroll, in logical pixels.
-* `scroll_delta_x` - y component of the the amount to scroll, in logical pixels.
+* `scroll_delta_y` - y component of the the amount to scroll, in logical pixels.
