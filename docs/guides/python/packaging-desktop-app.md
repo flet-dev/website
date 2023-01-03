@@ -5,7 +5,7 @@ sidebar_label: Packaging desktop app
 
 Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
 
-[PyInstaller](https://pyinstaller.org/en/stable/index.html) is used to package Flet Python app and all its dependencies into a single package for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
+Flet wraps [PyInstaller](https://pyinstaller.org/en/stable/index.html) API to package Flet Python app and all its dependencies into a single package for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
 
 Start from installing PyInstaller:
 
@@ -16,48 +16,24 @@ pip install pyinstaller
 Navigate to the directory where your `.py` file is located and build your app with the following command:
 
 ```
-pyinstaller your_program.py
+flet pack your_program.py
 ```
 
-Your bundled Flet app should now be available in `dist/your_program` folder. Try running the program to see if it works.
+Your bundled Flet app should now be available in `dist` folder. Try running the program to see if it works.
 
 On macOS/Linux:
 
 ```
-./dist/your_program/your_program
+./dist/your_program
 ```
 
 on Windows:
 
 ```
-dist\your_program\your_program.exe
+dist\your_program.exe
 ```
 
-Now you can just zip the contents of `dist/your_program` folder and distribute to your users! They don't need Python or Flet installed to run your packaged program - what a great alternative to Electron!
-
-You'll notice though when you run a packaged program from macOS Finder or Windows Explorer a new console window is opened and then a window with app UI on top of it.
-
-You can hide that console window by rebuilding the package with `--noconsole` switch:
-
-```
-pyinstaller your_program.py --noconsole --noconfirm
-```
-
-## Bundling to one file
-
-Contents of `dist/your_program` directory is an app executable plus supporting resources: Python runtime, modules, libraries.
-
-You can package all these in a single executable by using `--onefile` switch:
-
-```
-pyinstaller your_program.py --noconsole --noconfirm --onefile
-```
-
-You'll get a larger executable in `dist` folder. That executable is a self-running archive with your program and runtime resources which gets unpacked into temp directory when run - that's why it takes longer to start "onefile" package.
-
-:::note
-For macOS you can distribute either `dist/your_program` or `dist/your_program.app` which is an application bundle.
-:::
+Now you can just zip the contents of `dist` folder and distribute to your users! They don't need Python or Flet installed to run your packaged program - what a great alternative to Electron!
 
 ## Customizing package icon
 
@@ -66,7 +42,7 @@ Default bundle app icon is diskette which might be confusing for younger develop
 You can replace the icon with your own by adding `--icon` argument:
 
 ```
-pyinstaller your_program.py --noconsole --noconfirm --onefile --icon <your-image.png>
+flet pack your_program.py --icon <your-image.png>
 ```
 
 PyInstaller will convert provided PNG to a platform specific format (`.ico` for Windows and `.icns` for macOS), but you need to install [Pillow](https://pillow.readthedocs.io/en/stable/) module for that:
@@ -80,18 +56,14 @@ pip install pillow
 Your Flet app can include [assets](/docs/controls/image#src). Provided app assets are in `assets` folder next to `your_program.py` they can be added to an application package with `--add-data` argument, on macOS/Linux:
 
 ```
-pyinstaller your_program.py --noconsole --noconfirm --onefile --add-data "assets:assets"
+flet pack your_program.py --add-data "assets:assets"
 ```
 
 On Windows `assets;assets` must be delimited with `;`:
 
 ```
-pyinstaller your_program.py --noconsole --noconfirm --onefile --add-data "assets;assets"
+flet pack your_program.py --add-data "assets;assets"
 ```
-
-:::note
-You can find here [all PyInstaller command-line options](https://pyinstaller.org/en/stable/usage.html)
-:::
 
 ## Using CI for multi-platform packaging
 
