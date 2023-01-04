@@ -91,9 +91,9 @@ What that [CI workflow](https://ci.appveyor.com/project/flet-dev/python-ci-examp
 
 * Clones the repository to a clean virtual machine.
 * Installs app dependencies using `pip`.
-* Runs `pyinstaller` to package Python app into "onefile" bundle for **Windows**, **macOS** and **Ubuntu**.
-* Zip/Tar packages and uploads them to ["Artifacts"](https://ci.appveyor.com/project/flet-dev/python-ci-example/build/job/g2j2lhstv04eyxcm/artifacts).
-* Uploads packages to [**GitHub releases**](https://github.com/flet-dev/python-ci-example/releases) when a new tag is pushed. Just push a new tag to make a release!
+* Runs `flet pack` to package Python app into a bundle for **Windows**, **macOS** and **Ubuntu**.
+* Zip/Tar app bundles and uploads them to ["Artifacts"](https://ci.appveyor.com/project/flet-dev/python-ci-example/build/job/g2j2lhstv04eyxcm/artifacts).
+* Uploads app bundles to [**GitHub releases**](https://github.com/flet-dev/python-ci-example/releases) when a new tag is pushed. Just push a new tag to make a release!
 
 :::noteGITHUB_TOKEN
 `GITHUB_TOKEN` in `appveyor.yml` is a GitHub Personal Access Token (PAT) used by AppVeyor to publish created packages to repository "Releases". You need to generate your own token and replace it in `appveyor.yml`. Login to your GitHub account and navigate to [Personal access token](https://github.com/settings/tokens) page. Click "Generate new token" and select "public_repo" or "repo" scope for public or private repository respectively. Copy generated token to a clipboard and return to AppVeyor Portal. Navigate to [Encrypt configuration data](https://ci.appveyor.com/tools/encrypt) page and paste token to "Value to encrypt" field, click "Encrypt" button. Put encrypted value under `GITHUB_TOKEN` in your `appveyor.yml`.
