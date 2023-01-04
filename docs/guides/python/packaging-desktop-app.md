@@ -21,10 +21,10 @@ flet pack your_program.py
 
 Your bundled Flet app should now be available in `dist` folder. Try running the program to see if it works.
 
-On macOS/Linux:
+On macOS:
 
 ```
-./dist/your_program
+open dist/your_program.app
 ```
 
 on Windows:
@@ -33,7 +33,19 @@ on Windows:
 dist\your_program.exe
 ```
 
+on Linux:
+
+```
+dist/your_program
+```
+
 Now you can just zip the contents of `dist` folder and distribute to your users! They don't need Python or Flet installed to run your packaged program - what a great alternative to Electron!
+
+By default, an executable/bundle has the same name as a Python script. You can change it with `--name` argument:
+
+```
+flet pack your_program.py --name bundle_name
+```
 
 ## Customizing package icon
 
@@ -64,6 +76,27 @@ On Windows `assets;assets` must be delimited with `;`:
 ```
 flet pack your_program.py --add-data "assets;assets"
 ```
+
+## Customizing macOS bundle
+
+macOS bundle details can be customized with the following `flet pack` macOS-specific arguments:
+
+* `--product-name` - display name of macOS bundle, shown in Dock, Activity Monitor, About dialog.
+* `--product-version` - bundle version shown in "About" dialog.
+* `--copyright` - copyright notice shown in "About" dialog.
+* `--bundle-id` unique bundle ID.
+
+<img src="/img/docs/getting-started/package-desktop/flet-app-bundle-about.png"className="screenshot-50" />
+
+## Customizing Windows executable metadata
+
+Windows executable "Details" properties dialog can be customized with the following `flet pack` arguments:
+
+* `--product-name` - "Product name" field.
+* `--product-version` - "Product version" field.
+* `--file-version` - "File version" field.
+* `--file-description` - "File description" field, also program display name in Task Manager.
+* `--copyright` - "Copyright" field.
 
 ## Using CI for multi-platform packaging
 
