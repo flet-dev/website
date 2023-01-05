@@ -30,5 +30,5 @@ By default, `flet` watches a single `script` file only. Use `--directory` flag t
 For example:
 
 ```
-flet main.py -d
+flet run main.py -d
 ```
