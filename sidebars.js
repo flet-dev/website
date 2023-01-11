@@ -35,6 +35,7 @@ module.exports = {
           items: [
             "guides/python/deploying-web-app/fly-io",
             "guides/python/deploying-web-app/replit",
+            "guides/python/deploying-web-app/self-hosting",
           ],
         },
       ],
