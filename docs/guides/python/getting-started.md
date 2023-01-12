@@ -127,7 +127,7 @@ page.add(t) # it's a shortcut for page.controls.append(t) and then page.update()
 for i in range(10):
     t.value = f"Step {i}"
     page.update()
-    sleep(1)
+    time.sleep(1)
 ```
 
 Some controls are "container" controls (like Page) which could contain other controls. For example, `Row` control allows arranging other controls in a row one-by-one:
