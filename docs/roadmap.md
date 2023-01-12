@@ -49,7 +49,6 @@ slug: roadmap
 ### Language support
 
 * Go
-* Rust
 
 ### Core functionality
 
