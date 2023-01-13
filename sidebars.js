@@ -53,6 +53,7 @@ module.exports = {
         "tutorials/python-todo",
         "tutorials/python-calculator",
         "tutorials/trello-clone",
+        "tutorials/solitaire",
       ],
     },
     {
