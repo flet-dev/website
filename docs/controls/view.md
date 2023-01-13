@@ -68,6 +68,7 @@ page.update()
 
   </TabItem>
 </Tabs>
+
 ### `route`
 
 View's route - not currently used by Flet framework, but can be used in a user program to update [`page.route`](/docs/controls/page#route) when a view poped.
