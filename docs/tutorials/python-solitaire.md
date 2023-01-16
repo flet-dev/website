@@ -207,7 +207,7 @@ def drop(e: ft.DragEndEvent):
     e.control.update()
 ```
 
-The full code for this step can be found here: [link to GitHub]
+The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step2.py).
 
 ### Step 3: Adding a second card
 
@@ -247,7 +247,7 @@ def start_drag(e: ft.DragStartEvent):
 Now the two cards can be dragged without issues:
 [gif]
 
-The full code for this step can be found here: [link to GitHub]
+The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step3.py).
 
 ### Step 4: Adding more slots
 
@@ -296,7 +296,7 @@ def drop(e: ft.DragEndEvent):
 As a result, the two cards can be dragged between the three slots:
 [gif]
 
-The full code for this step can be found here: [link to GitHub]
+The full code for this step can be found [here]:(https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step4.py).
 
 Congratulations on completing the proof of concept app for the Solitaire game! Now you can work with `GestureDetector` to move cards inside `Stack` and place them to certain `Containers`, which is a great part of the game to begin with.
 
@@ -460,7 +460,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-You can find the full source code for this step here [link]. It works exactly the same way as the proof of concept app, but re-written with the new classes to be ready for adding more complex functionality to it. 
+You can find the full source code for this step [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-classes). It works exactly the same way as the proof of concept app, but re-written with the new classes to be ready for adding more complex functionality to it. 
 
 ### Placing card with offset
 
@@ -559,7 +559,7 @@ def bounce_back(self):
     self.solitaire.update()
 ```
 
-The full source code of this step can be found [here]. Now we can drag and drop cards in fanned piles, which means we are ready for the real deal! 
+The full source code of this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-fanned-piles). Now we can drag and drop cards in fanned piles, which means we are ready for the real deal! 
 
 ## Solitaire setup
 
@@ -796,7 +796,7 @@ for slot in self.tableau:
 Let’s see how it looks now:
 [image]
 
-The full source code for this step can be found here [link].
+The full source code for this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-setup).
 
 Congratulations on completing the Solitaire game setup! You’ve created a full 52-card deck, bult layout with stock, waste, foundations and tableau piles, dealt the cards and revealed the top cards in tableau. Let’s move on to the next item on our todo list, which is Solitaire Rules.
 
@@ -1044,13 +1044,15 @@ def get_draggable_pile(self):
         return self.slot.pile[self.slot.pile.index(self):]
     return [self]
 ```
-All done! Let’s move on to the last step of the game itself - detecting the situation when you have won.
+All done! The full source code for this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-rules).
+
+Let’s move on to the last step of the game itself - detecting the situation when you have won.
 
 ## Winning the game
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Klondike_(solitaire)#Probability_of_winning), some suggest the chances of winning the game as being 1 in 30 games. 
 
-Knowing that the chances of winning are quite low, we should plan to show the user something exciting when that happens.
+Knowing that the chances of winning are quite low, we should plan on showing the user something exciting when that finally happens.
 
 First, let’s add a check for the winning condition to `Solitaire` class. If all four foundations contain total of 52 cards, then you have won:
 ```python
@@ -1105,10 +1107,12 @@ def winning_sequence(self):
             self.update()
     self.controls.append(ft.AlertDialog(title=ft.Text("Congratulations! You won!"), open=True))
 ```
-Due to the low odds, it took me a while before I could take this video, but here it is:
+As you can imagine, it took me a while before I could win the game and take this video, but here it is:
 [gif]
 
-Wow! We did it. This completes the scope of the Part 1 for the Solitaire game. In Part 2 we will be adding top menu with options to restart the game, view game rules and change game settings such as waste size, number of passes through the waste and card back image.
+Wow! We did it. You can find the full source code for the Part 1 of the Solitaire game [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-final-part1). 
+
+In Part 2 we will be adding top menu with options to restart the game, view game rules and change game settings such as waste size, number of passes through the waste and card back image.
 
 Now, as we have a decent desktop version of the game, let’s deploy it as a web app to share with your friends and colleagues.
 
