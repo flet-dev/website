@@ -9,7 +9,7 @@ In this tutorial we will show you step-by-step creation of a famous Klondike sol
 This tutorial is aimed at beginner/intermediate level Python developers who have basic knowledge of Python and object oriented programming.
 
 Here you can see the final result that you are going to achieve with Flet and this tutorial:
-[link to demo]
+https://solitaire-part1.fly.dev/#/
 [gif]
 
 We have broken down the game implementation into the following steps:
@@ -1118,4 +1118,9 @@ Now, as we have a decent desktop version of the game, let’s deploy it as a web
 
 ## Deploying the app
 
+Congratulations! You have created your Solitaire game app in Python with Flet, and it looks awesome!
+
+Now it's time to share your app with the world!
+
+[Follow these instructions](/docs/guides/python/deploying-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
 
