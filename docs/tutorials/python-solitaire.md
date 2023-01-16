@@ -563,7 +563,7 @@ The full source code of this step can be found [here]. Now we can drag and drop 
 
 ## Solitaire setup
 
-Let’s take a look at the [wikipedia article about Klondike (solitaire)](https://en.wikipedia.org/wiki/Klondike_(solitaire)):
+Let’s take a look at the [wikipedia article about Klondike (solitaire)](https://en.wikipedia.org/wiki/Klondike_(solitaire)#Rules):
 
 > Klondike is played with a standard 52-card deck.
 
@@ -624,7 +624,7 @@ ft.app(target=main, assets_dir="images")
 ```
 :::
 
-Finally, in solitaire.create_card_deck() we'll create lists of suites and ranks and then the 52-card deck:
+Finally, in `solitaire.create_card_deck()` we'll create lists of suites and ranks and then the 52-card deck:
 ```python
 def create_card_deck(self):
     suites = [
@@ -663,7 +663,7 @@ Klondike solitaire game layout should look like this:
 
 <img src="/img/docs/solitaire-tutorial/solitaire-layout.svg" className="screenshot" />
 
-Let’s create all those slots in solitaire.create_slots():
+Let’s create all those slots in `solitaire.create_slots()`:
 ```python
 def create_slots(self):
     
@@ -802,7 +802,315 @@ Congratulations on completing the Solitaire game setup! You’ve created a full 
 
 ## Solitaire rules
 
+If you run our current version of Solitaire, you’ll notice that we can do some crazy things with our cards:
+[gif]
+
+Let’s make lives harder for ourselves and implement some rules.
+
+### General rules
+
+Currently, we can move any card, but only face-up cards should be moved. Let’s add this check in `start_drag`, `drag` and `drop` methods of the card:
+```python
+def start_drag(self, e: ft.DragStartEvent):
+    if self.face_up:
+        self.move_on_top()
+        self.update()
+
+def drag(self, e: ft.DragUpdateEvent):
+    if self.face_up:
+        draggable_pile = self.get_draggable_pile()
+        for card in draggable_pile:
+            card.top = max(0, self.top + e.delta_y) + draggable_pile.index(card) * CARD_OFFSET
+            card.left = max(0, self.left + e.delta_x)
+            card.update()
+
+def drop(self, e: ft.DragEndEvent):
+    if self.face_up:
+        for slot in self.solitaire.tableau:
+            if (
+                abs(self.top - (slot.top + len(slot.pile) * CARD_OFFSET)) < DROP_PROXIMITY
+            and abs(self.left - slot.left) < DROP_PROXIMITY
+        ):
+                self.place(slot)
+                self.update()
+                return
+        
+        for slot in self.solitaire.foundations:
+            if (
+                    abs(self.top - slot.top) < DROP_PROXIMITY
+            and abs(self.left - slot.left) < DROP_PROXIMITY
+        ):
+                self.place(slot)
+                self.update()
+                return
+        
+    self.bounce_back()
+    self.update()
+```
+
+Now let’s specify `click` method for the `on_tap` event of the card to reveal the card if you click on a faced-down top card in a tableau pile:
+```python
+def click(self, e):
+    if self.slot in self.solitaire.tableau:
+        if not self.face_up and self == self.slot.get_top_card():
+            self.turn_face_up()
+            self.update()
+```
+
+Let's check how it works:
+[gif]
+
+### Foundations rules
+
+At the moment we can place fanned piles to foundations, which shouldn’t be allowed. Let’s check the draggable pile length to fix it:
+
+```python
+def drop(self, e: ft.DragEndEvent):
+    for slot in self.solitaire.tableau:
+        if (
+            abs(self.top - (slot.top + len(slot.pile) * CARD_OFFSET)) < DROP_PROXIMITY
+        and abs(self.left - slot.left) < DROP_PROXIMITY
+        ):
+            self.place(slot)
+            self.update()
+            return
+    
+    if len(self.get_draggable_pile()) == 1:
+        for slot in self.solitaire.foundations:
+            if (
+                abs(self.top - slot.top) < DROP_PROXIMITY
+        and abs(self.left - slot.left) < DROP_PROXIMITY
+        ):
+                self.place(slot)
+                self.update()
+                return
+        
+    self.bounce_back()
+    self.update()
+```
+
+Then, of course, not any card can be placed to a foundation. According to the rules, a foundation should start with an Ace and then the cards of the same suite can be placed on top of it to build a pile form Ace to King.
+
+Let’s add this rule to Solitaire class:
+```python
+def check_foundations_rules(self, card, slot):
+    top_card = slot.get_top_card()
+    if top_card is not None:
+        return (
+            card.suite.name == top_card.suite.name
+            and card.rank.value - top_card.rank.value == 1
+        )
+    else:
+        return card.rank.name == "Ace"
+```
+
+We’ll check this rule in `drop()` method before placing a card to a foundation slot:
+```python
+def drop(self, e: ft.DragEndEvent):
+    if self.face_up:
+        for slot in self.solitaire.tableau:
+            if (
+                abs(self.top - (slot.top + len(slot.pile) * CARD_OFFSET)) < DROP_PROXIMITY
+            and abs(self.left - slot.left) < DROP_PROXIMITY
+        ):
+                self.place(slot)
+                self.update()
+                return
+        
+        if len(self.get_draggable_pile()) == 1:
+            for slot in self.solitaire.foundations:
+                if (
+                    abs(self.top - slot.top) < DROP_PROXIMITY
+            and abs(self.left - slot.left) < DROP_PROXIMITY
+        ) and self.solitaire.check_foundations_rules(self, slot):
+                    self.place(slot)
+                    self.update()
+                    return
+        
+        self.bounce_back()
+        self.update()
+```
+
+As a final touch for foundations rules, let’s implement `doublclick` method for `on_double_tap` event of a card. It will be checking if the faced-up card fits into any of the foundations and place it there:
+```python
+   def doubleclick(self, e):
+       if self.face_up:
+           self.move_on_top()
+           for slot in self.solitaire.foundations:
+               if self.solitaire.check_foundations_rules(self, slot):
+                   self.place(slot)
+                   self.page.update()
+                   return
+```
+
+### Tableau rules
+
+Finally, let's implement the rules to build tableau piles down from King to Ace by alternating suite color. Additionally, only King can be placed to an empty tableau slot.
+
+Let’s add these rules for Solitaire class:
+```python
+def check_tableau_rules(self, card, slot):
+    top_card = slot.get_top_card()
+    if top_card is not None:
+        return (
+            card.suite.color != top_card.suite.color
+            and top_card.rank.value - card.rank.value == 1
+            and top_card.face_up
+        )
+    else:
+        return card.rank.name == "King"
+```
+Similarly to the foundations rules, we’ll check tableau rules before placing a card to a tableau pile:
+```python
+def drop(self, e: ft.DragEndEvent):
+    if self.face_up:
+        for slot in self.solitaire.tableau:
+            if (
+                abs(self.top - (slot.top + len(slot.pile) * CARD_OFFSET)) < DROP_PROXIMITY
+            and abs(self.left - slot.left) < DROP_PROXIMITY
+        ) and self.solitaire.check_tableau_rules(self, slot):
+                self.place(slot)
+                self.update()
+                return
+        
+        if len(self.get_draggable_pile()) == 1:
+            for slot in self.solitaire.foundations:
+                if (
+                    abs(self.top - slot.top) < DROP_PROXIMITY
+            and abs(self.left - slot.left) < DROP_PROXIMITY
+        ) and self.solitaire.check_foundations_rules(self, slot):
+                    self.place(slot)
+                    self.update()
+                    return
+        
+        self.bounce_back()
+        self.update()
+```
+
+### Stock and waste
+
+To properly play Solitaire game right now we are missing the remaining cards that are piled in the stock.
+
+Let’s update `click()` method of the card to go through the stock pile and place the cards to waste as we go:
+```python
+def click(self, e):
+    if self.slot in self.solitaire.tableau:
+        if not self.face_up and self == self.slot.get_top_card():
+            self.turn_face_up()
+            self.update()
+    elif self.slot == self.solitaire.stock:
+        self.move_on_top()
+        self.place(self.solitaire.waste)
+        self.turn_face_up()
+        self.solitaire.update()
+```
+
+That’s it! Now you can properly play solitaire, but it very difficult to win the game if you cannot pass though the waste again. Let’s implement `click()` for `on_click` event of the stock Slot to go thought the stock pile again:
+```python
+class Slot(ft.Container):
+   def __init__(self, solitaire, top, left, border):
+       super().__init__()
+       self.pile=[]
+       self.width=SLOT_WIDTH
+       self.height=SLOT_HEIGHT
+       self.left=left
+       self.top=top
+       self.on_click=self.click
+       self.solitaire=solitaire
+       self.border=border
+       self.border_radius = ft.border_radius.all(6)
+  
+   def click(self, e):
+       if self == self.solitaire.stock:
+           self.solitaire.restart_stock()
+```
+
+`restart_stock()` method in `Solitaire` class will place all cards from waste to stock again:
+```python
+def restart_stock(self):
+    while len(self.waste.pile) > 0:
+        card = self.waste.get_top_card()
+        card.turn_face_down()
+        card.move_on_top()
+        card.place(self.stock)   
+    self.update
+```
+
+For `card.place()` method to work properly with cards from Stock and Waste, we’ve added a condition to `card.get_draggable_pile()`, so that it returns the top card only and not the whole pile:
+```python
+def get_draggable_pile(self):
+    """returns list of cards that will be dragged together, starting with the current card"""
+    if self.slot is not None and self.slot != self.solitaire.stock and self.slot != self.solitaire.waste:
+        return self.slot.pile[self.slot.pile.index(self):]
+    return [self]
+```
+All done! Let’s move on to the last step of the game itself - detecting the situation when you have won.
+
 ## Winning the game
+
+According to [wikipedia](https://en.wikipedia.org/wiki/Klondike_(solitaire)#Probability_of_winning), some suggest the chances of winning the game as being 1 in 30 games. 
+
+Knowing that the chances of winning are quite low, we should plan to show the user something exciting when that happens.
+
+First, let’s add a check for the winning condition to `Solitaire` class. If all four foundations contain total of 52 cards, then you have won:
+```python
+def check_win(self):
+    cards_num = 0
+    for slot in self.foundations:
+        cards_num += len(slot.pile)
+    if cards_num == 52:
+        return True
+    return False
+```
+ 
+We’ll be checking if this condition is true each time a card is placed to a foundation:
+```python
+def place(self, slot):
+    """Place draggable pile to the slot"""
+    
+    draggable_pile = self.get_draggable_pile()
+
+    for card in draggable_pile:
+        if slot in self.solitaire.tableau:
+            card.top = slot.top + len(slot.pile) * CARD_OFFSET
+        else:
+            card.top = slot.top
+        card.left = slot.left
+
+        # remove card from it's original slot, if exists
+        if card.slot is not None:
+            card.slot.pile.remove(card)
+    
+        # change card's slot to a new slot
+        card.slot = slot
+
+        # add card to the new slot's pile
+        slot.pile.append(card)
+    
+    if self.solitaire.check_win():
+        self.solitaire.winning_sequence()
+    
+    self.solitaire.update()
+```
+
+Finally, if the winning condition is met, it will trigger a winning sequence involving [position animation](https://flet.dev/docs/guides/python/animations#position-animation):
+```python
+def winning_sequence(self):
+    for slot in self.foundations:   
+        for card in slot.pile:
+            card.animate_position=1000
+            card.move_on_top()
+            card.top = random.randint(0, SOLITAIRE_HEIGHT)
+            card.left = random.randint(0, SOLITAIRE_WIDTH)
+            self.update()
+    self.controls.append(ft.AlertDialog(title=ft.Text("Congratulations! You won!"), open=True))
+```
+Due to the low odds, it took me a while before I could take this video, but here it is:
+[gif]
+
+Wow! We did it. This completes the scope of the Part 1 for the Solitaire game. In Part 2 we will be adding top menu with options to restart the game, view game rules and change game settings such as waste size, number of passes through the waste and card back image.
+
+Now, as we have a decent desktop version of the game, let’s deploy it as a web app to share with your friends and colleagues.
 
 ## Deploying the app
 
