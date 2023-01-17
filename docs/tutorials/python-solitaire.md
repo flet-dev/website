@@ -10,17 +10,17 @@ This tutorial is aimed at beginner/intermediate level Python developers who have
 
 Here you can see the final result that you are going to achieve with Flet and this tutorial:
 https://solitaire-part1.fly.dev/#/
-[gif]
+<img src="/img/docs/solitaire-tutorial/part1_final.gif" className="screenshot-50" />
 
 We have broken down the game implementation into the following steps:
 
 * [Getting started with Flet](#getting-started-with-flet)
 * [Proof of concept app for draggable cards](#proof-of-concept-app-for-draggable-cards)
-[gif]
+<img src="/img/docs/solitaire-tutorial/drag_and_drop6.gif" className="screenshot-30" />
 * [Fanned card piles](#fanned-card-piles)
-[gif]
+<img src="/img/docs/solitaire-tutorial/fanned_piles3.gif" className="screenshot-30" />
 * [Solitaire setup](#solitaire-setup)
-[image]
+<img src="/img/docs/solitaire-tutorial/game_setup3.png" className="screenshot-30" />
 * [Solitaire rules](#solitaire-rules)
 * [Winning the game](#winning-the-game)
 * [Deploying the app](#deploying-the-app)
@@ -84,7 +84,7 @@ ft.app(target=main)
 ```
 
 Run the app to see the the card added to the stack:
-[img]
+<img src="/img/docs/solitaire-tutorial/drag_and_drop1.png" className="screenshot-30" />
 
 To be able to move the card, we'll create a `drag` method that will be called in `on_pan_update` event of GestureDetector which happens every `drag_interval` while the user drags the card with their mouse.
 
@@ -119,7 +119,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 Now you can see the card moving:
-[gif]
+<img src="/img/docs/solitaire-tutorial/drag_and_drop2.gif" className="screenshot-50" />
 
 :::note
 After any properties of a control are updated, an update() method of the control (or its parent control) should be called for the update to take effect.
@@ -128,9 +128,9 @@ After any properties of a control are updated, an update() method of the control
 ### Step 2: Drop the card in the slot or bounce it back
 
 The goal of this step is to be able to drop a card into a slot if it is close enough and bounce it back if it’s not.
-[gif]
+<img src="/img/docs/solitaire-tutorial/drag_and_drop3.gif" className="screenshot-50" />
 
-Let’s create a slot (Container), to which we’ll be dropping the card:
+Let’s create a `Container` control that will be a slot to which we’ll be dropping the card:
 ```python
 slot = ft.Container(
     width=70, height=100, left=200, top=0, border=ft.border.all(1)
@@ -229,7 +229,10 @@ Eventually, we’ll need 52 cards to play the game. For our proof of concept, le
    page.add(ft.Stack(controls=controls, width=1000, height=500))
 ```
 
-Now, if you run the app with the two cards, you will notice that when you move the cards around, the yellow card (card2) is moving as expected but the green the card (card1) is moving under the yellow card. It happens because card2 is added to the list of stack `controls` after card1. To fix this problem, we need to move the draggable card to the top of the list of controls on `on_pan_start` event:
+Now, if you run the app with the two cards, you will notice that when you move the cards around, the yellow card (card2) is moving as expected but the green the card (card1) is moving under the yellow card. 
+<img src="/img/docs/solitaire-tutorial/drag_and_drop4.gif" className="screenshot-50" />
+
+It happens because card2 is added to the list of stack `controls` after card1. To fix this problem, we need to move the draggable card to the top of the list of controls on `on_pan_start` event:
 
 ```python
 def move_on_top(card, controls):
@@ -245,7 +248,7 @@ def start_drag(e: ft.DragStartEvent):
 ```
 
 Now the two cards can be dragged without issues:
-[gif]
+<img src="/img/docs/solitaire-tutorial/drag_and_drop5.gif" className="screenshot-50" />
 
 The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step3.py).
 
@@ -294,9 +297,9 @@ def drop(e: ft.DragEndEvent):
 ```
 
 As a result, the two cards can be dragged between the three slots:
-[gif]
+<img src="/img/docs/solitaire-tutorial/drag_and_drop6.gif" className="screenshot-50" />
 
-The full code for this step can be found [here]:(https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step4.py).
+The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/solitaire/solitaire-drag-and-drop/step4.py).
 
 Congratulations on completing the proof of concept app for the Solitaire game! Now you can work with `GestureDetector` to move cards inside `Stack` and place them to certain `Containers`, which is a great part of the game to begin with.
 
@@ -304,11 +307,10 @@ Congratulations on completing the proof of concept app for the Solitaire game! N
 
 In the previous version of Solitaire we have accomplished the task of dropping a card to a slot in proximity or bounce it back. If there is already a card in that slot, the new card is placed on top of it, covering it completely.
 
-In the Solitaire game, if there is already a card in a tableau slot, you want to place the draggable card a bit lower, so that you can see the previous card too, and if there are two cards, even lower. Those are called “fanned piles”:
-[image]
+In the Solitaire game, if there is already a card in a tableau slot, you want to place the draggable card a bit lower, so that you can see the previous card too, and if there are two cards, even lower. Those are called “fanned piles”.
 
 Then, we want to be able to pick a card from the fanned pile that is not the top card of the pile and drag the card together with all the cards below it:
-[gif]
+<img src="/img/docs/solitaire-tutorial/fanned_piles3.gif" className="screenshot-50" />
 
 To be able to do that, it would be useful to have the information about the pile of cards in the slot from which the card is dragged, as well as in the slot to which it is being dropped. Let’s restructure our program and get it ready for the implementation of the fanned piles.
 
@@ -397,7 +399,7 @@ class Card(ft.GestureDetector):
 ```
 
 :::note
-Note: since each card has `slot` property now, we don’t need to remember start_left and start_top position of the draggable card in Solitaire class anymore, because we can just bounce it back to it’s slot.
+Note: since each card has `slot` property now, there is no need to remember `start_left` and `start_top` position of the draggable card in Solitaire class anymore, because we can just bounce it back to it’s slot.
 :::
 
 Let’s update `Solitaire` class to inherit from `Stack`, and move the creation of cards and slots there:
@@ -487,12 +489,12 @@ When updating card’s `top` and `left` position, `left` should remain the same,
     self.left = slot.left
 ```
 
-Now the cards are placed with offset:
-[gif]
+Now the cards are placed with offset which gives us the fanned pile look:
+<img src="/img/docs/solitaire-tutorial/fanned_piles1.png" className="screenshot-30" />
 
 ### Drag pile of cards
 If you try to drag the card from the bottom of the pile now, it will look like this:
-[gif]
+<img src="/img/docs/solitaire-tutorial/fanned_piles2.gif" className="screenshot-50" />
 
 To fix this problem, we need to update all the methods that work with the draggable card to work with the draggable pile instead.
 
@@ -572,6 +574,8 @@ The remaining cards form the stock and are placed facedown at the upper left of 
 
 > The four foundations (light rectangles in the upper right of the figure) are built up by suit from Ace (low in this game) to King, and the tableau piles can be built down by alternate colors.
 
+<img src="/img/docs/solitaire-tutorial/game_setup_wiki.png" className="screenshot-40" />
+
 We will now work on this setup step by step.
 
 ### Create card deck
@@ -628,10 +632,10 @@ Finally, in `solitaire.create_card_deck()` we'll create lists of suites and rank
 ```python
 def create_card_deck(self):
     suites = [
-        Suite("Hearts", "RED"),
-        Suite("Diamonds", "RED"),
-        Suite("Clubs", "BLACK"),
-        Suite("Spades", "BLACK"),
+        Suite("hearts", "RED"),
+        Suite("diamonds", "RED"),
+        Suite("clubs", "BLACK"),
+        Suite("spades", "BLACK"),
     ]
     ranks = [
         Rank("Ace", 1),
@@ -661,7 +665,7 @@ The card deck is ready to be dealed, and now we need to create the layout for it
 
 Klondike solitaire game layout should look like this:
 
-<img src="/img/docs/solitaire-tutorial/solitaire-layout.svg" className="screenshot" />
+<img src="/img/docs/solitaire-tutorial/solitaire-layout.svg" className="screenshot-80" />
 
 Let’s create all those slots in `solitaire.create_slots()`:
 ```python
@@ -727,9 +731,9 @@ def deal_cards(self):
     self.update()
 ```
 Let’s run the program and see where we are at now:
-[image]
+<img src="/img/docs/solitaire-tutorial/game_setup1.png" className="screenshot-40" />
 
-Cards in stock were placed in fanned pile in the same manner as to the tableau, but they should have been placed to a regular pile instead. To fix this problem, let’s add this condition to the `card.place()` method:
+Cards in stock were placed in a fanned pile in the same manner as to the tableau, but they should have been placed to a regular pile instead. To fix this problem, let’s add this condition to the `card.place()` method:
 ```python
 def place(self, slot):
     """Place draggable pile to the slot"""
@@ -740,7 +744,7 @@ def place(self, slot):
     self.left = slot.left
 ```
 Now cards are only placed in fanned piles to tableau:
-[image]
+<img src="/img/docs/solitaire-tutorial/game_setup2.png" className="screenshot-40" />
 
 If you try moving the cards around now, the program won’t work. The reason for this is that in the `card.drop()` method iterates through list of slots which we don’t have now. 
 
@@ -794,7 +798,7 @@ for slot in self.tableau:
 ```
 
 Let’s see how it looks now:
-[image]
+<img src="/img/docs/solitaire-tutorial/game_setup3.png" className="screenshot-50" />
 
 The full source code for this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-setup).
 
@@ -802,10 +806,10 @@ Congratulations on completing the Solitaire game setup! You’ve created a full 
 
 ## Solitaire rules
 
-If you run our current version of Solitaire, you’ll notice that we can do some crazy things with our cards:
-[gif]
+If you run your current version of Solitaire, you’ll notice that you can do some crazy things with your cards:
+<img src="/img/docs/solitaire-tutorial/game_rules1.gif" className="screenshot-50" />
 
-Let’s make lives harder for ourselves and implement some rules.
+Now it is time to implement some rules.
 
 ### General rules
 
@@ -858,7 +862,7 @@ def click(self, e):
 ```
 
 Let's check how it works:
-[gif]
+<img src="/img/docs/solitaire-tutorial/game_rules2.gif" className="screenshot-50" />
 
 ### Foundations rules
 
@@ -1108,7 +1112,7 @@ def winning_sequence(self):
     self.controls.append(ft.AlertDialog(title=ft.Text("Congratulations! You won!"), open=True))
 ```
 As you can imagine, it took me a while before I could win the game and take this video, but here it is:
-[gif]
+<img src="/img/docs/solitaire-tutorial/winning_the_game.gif" className="screenshot-50" />
 
 Wow! We did it. You can find the full source code for the Part 1 of the Solitaire game [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-final-part1). 
 
