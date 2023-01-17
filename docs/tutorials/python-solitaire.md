@@ -16,11 +16,8 @@ We have broken down the game implementation into the following steps:
 
 * [Getting started with Flet](#getting-started-with-flet)
 * [Proof of concept app for draggable cards](#proof-of-concept-app-for-draggable-cards)
-<img src="/img/docs/solitaire-tutorial/drag_and_drop6.gif" className="screenshot-30" />
 * [Fanned card piles](#fanned-card-piles)
-<img src="/img/docs/solitaire-tutorial/fanned_piles3.gif" className="screenshot-30" />
 * [Solitaire setup](#solitaire-setup)
-<img src="/img/docs/solitaire-tutorial/game_setup3.png" className="screenshot-30" />
 * [Solitaire rules](#solitaire-rules)
 * [Winning the game](#winning-the-game)
 * [Deploying the app](#deploying-the-app)
