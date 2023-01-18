@@ -487,7 +487,7 @@ When updating card’s `top` and `left` position, `left` should remain the same,
 ```
 
 Now the cards are placed with offset which gives us the fanned pile look:
-<img src="/img/docs/solitaire-tutorial/fanned_piles1.png" className="screenshot-30" />
+<img src="/img/docs/solitaire-tutorial/fanned_piles1.png" className="screenshot-50" />
 
 ### Drag pile of cards
 If you try to drag the card from the bottom of the pile now, it will look like this:
@@ -799,7 +799,7 @@ Let’s see how it looks now:
 
 The full source code for this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-setup).
 
-Congratulations on completing the Solitaire game setup! You’ve created a full 52-card deck, bult layout with stock, waste, foundations and tableau piles, dealt the cards and revealed the top cards in tableau. Let’s move on to the next item on our todo list, which is Solitaire Rules.
+Congratulations on completing the Solitaire game setup! You’ve created a full 52-card deck, built layout with stock, waste, foundations and tableau piles, dealt the cards and revealed the top cards in tableau. Let’s move on to the next item on our todo list, which is Solitaire Rules.
 
 ## Solitaire rules
 
