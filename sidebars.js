@@ -33,8 +33,8 @@ module.exports = {
             id: "guides/python/deploying-web-app/overview",
           },
           items: [
-            "guides/python/deploying-web-app/fly-io",
-            "guides/python/deploying-web-app/replit",
+            "guides/python/deploying-web-app/hosting-providers/fly-io",
+            "guides/python/deploying-web-app/hosting-providers/replit",
             "guides/python/deploying-web-app/self-hosting",
           ],
         },
