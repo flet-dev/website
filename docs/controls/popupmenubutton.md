@@ -16,41 +16,46 @@ An icon button which displays a menu when clicked.
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Icon, Page, PopupMenuButton, PopupMenuItem, Row, Text, icons
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def check_item_clicked(e):
         e.control.checked = not e.control.checked
         page.update()
 
-    pb = PopupMenuButton(
+    pb = ft.PopupMenuButton(
         items=[
-            PopupMenuItem(text="Item 1"),
-            PopupMenuItem(icon=icons.POWER_INPUT, text="Check power"),
-            PopupMenuItem(
-                content=Row(
+            ft.PopupMenuItem(text="Item 1"),
+            ft.PopupMenuItem(icon=ft.icons.POWER_INPUT, text="Check power"),
+            ft.PopupMenuItem(
+                content=ft.Row(
                     [
-                        Icon(icons.HOURGLASS_TOP_OUTLINED),
-                        Text("Item with a custom content"),
+                        ft.Icon(ft.icons.HOURGLASS_TOP_OUTLINED),
+                        ft.Text("Item with a custom content"),
                     ]
                 ),
                 on_click=lambda _: print("Button with a custom content clicked!"),
             ),
-            PopupMenuItem(),  # divider
-            PopupMenuItem(
+            ft.PopupMenuItem(),  # divider
+            ft.PopupMenuItem(
                 text="Checked item", checked=False, on_click=check_item_clicked
             ),
         ]
     )
     page.add(pb)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/popup-menu-button/popup-menu-button-with-custom-content.gif" className="screenshot-30"/>
+
 ## `PopupMenuButton` properties
+
+### `content`
+
+A `Control` that will be displayed instead of "more" icon.
 
 ### `icon`
 

@@ -21,21 +21,20 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Column, Container, Page, Slider, Text, alignment, border_radius, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def items(count):
         items = []
         for i in range(1, count + 1):
             items.append(
-                Container(
-                    content=Text(value=i),
-                    alignment=alignment.center,
+                ft.Container(
+                    content=ft.Text(value=str(i)),
+                    alignment=ft.alignment.center,
                     width=50,
                     height=50,
-                    bgcolor=colors.AMBER,
-                    border_radius=border_radius.all(5),
+                    bgcolor=ft.colors.AMBER,
+                    border_radius=ft.border_radius.all(5),
                 )
             )
         return items
@@ -44,7 +43,7 @@ def main(page: Page):
         col.spacing = int(e.control.value)
         col.update()
 
-    gap_slider = Slider(
+    gap_slider = ft.Slider(
         min=0,
         max=100,
         divisions=10,
@@ -54,11 +53,11 @@ def main(page: Page):
         on_change=spacing_slider_change,
     )
 
-    col = Column(spacing=0, controls=items(5))
+    col = ft.Column(spacing=0, controls=items(5))
 
-    page.add(Column([Text("Spacing between items"), gap_slider]), col)
+    page.add(ft.Column([ ft.Text("Spacing between items"), gap_slider]), col)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -71,33 +70,22 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Column,
-    Container,
-    Page,
-    Row,
-    Slider,
-    Text,
-    alignment,
-    border_radius,
-    colors,
-)
+import flet as ft
 
 HEIGHT = 400
 
-def main(page: Page):
+def main(page: ft.Page):
     def items(count):
         items = []
         for i in range(1, count + 1):
             items.append(
-                Container(
-                    content=Text(value=i),
-                    alignment=alignment.center,
+                ft.Container(
+                    content=ft.Text(value=str(i)),
+                    alignment=ft.alignment.center,
                     width=30,
                     height=30,
-                    bgcolor=colors.AMBER,
-                    border_radius=border_radius.all(5),
+                    bgcolor=ft.colors.AMBER,
+                    border_radius=ft.border_radius.all(5),
                 )
             )
         return items
@@ -106,7 +94,7 @@ def main(page: Page):
         col.height = float(e.control.value)
         col.update()
 
-    width_slider = Slider(
+    width_slider = ft.Slider(
         min=0,
         max=HEIGHT,
         divisions=20,
@@ -116,7 +104,7 @@ def main(page: Page):
         on_change=slider_change,
     )
 
-    col = Column(
+    col = ft.Column(
         wrap=True,
         spacing=10,
         run_spacing=10,
@@ -125,18 +113,18 @@ def main(page: Page):
     )
 
     page.add(
-        Column(
+        ft.Column(
             [
-                Text(
+                ft.Text(
                     "Change the column height to see how child items wrap onto multiple columns:"
                 ),
                 width_slider,
             ]
         ),
-        Container(content=col, bgcolor=colors.AMBER_100),
+        ft.Container(content=col, bgcolor=ft.colors.AMBER_100),
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -149,52 +137,51 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Column, Container, Page, Row, Text, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def items(count):
         items = []
         for i in range(1, count + 1):
             items.append(
-                Container(
-                    content=Text(value=i),
-                    alignment=alignment.center,
+                ft.Container(
+                    content=ft.Text(value=str(i)),
+                    alignment=ft.alignment.center,
                     width=50,
                     height=50,
-                    bgcolor=colors.AMBER_500,
+                    bgcolor=ft.colors.AMBER_500,
                 )
             )
         return items
 
-    def column_with_alignment(align):
-        return Column(
+    def column_with_alignment(align: ft.MainAxisAlignment):
+        return ft.Column(
             [
-                Text(align, size=16),
-                Container(
-                    content=Column(items(3), alignment=align),
-                    bgcolor=colors.AMBER_100,
+                ft.Text(str(align), size=10),
+                ft.Container(
+                    content=ft.Column(items(3), alignment=align),
+                    bgcolor=ft.colors.AMBER_100,
                     height=400,
                 ),
             ]
         )
 
     page.add(
-        Row(
+        ft.Row(
             [
-                column_with_alignment("start"),
-                column_with_alignment("center"),
-                column_with_alignment("end"),
-                column_with_alignment("spaceBetween"),
-                column_with_alignment("spaceAround"),
-                column_with_alignment("spaceEvenly"),
+                column_with_alignment(ft.MainAxisAlignment.START),
+                column_with_alignment(ft.MainAxisAlignment.CENTER),
+                column_with_alignment(ft.MainAxisAlignment.END),
+                column_with_alignment(ft.MainAxisAlignment.SPACE_BETWEEN),
+                column_with_alignment(ft.MainAxisAlignment.SPACE_AROUND),
+                column_with_alignment(ft.MainAxisAlignment.SPACE_EVENLY),
             ],
             spacing=30,
-            alignment="start",
+            alignment=ft.MainAxisAlignment.START,
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
@@ -207,120 +194,139 @@ flet.app(target=main)
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Column, Container, Page, Row, Text, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
     def items(count):
         items = []
         for i in range(1, count + 1):
             items.append(
-                Container(
-                    content=Text(value=i),
-                    alignment=alignment.center,
+                ft.Container(
+                    content=ft.Text(value=str(i)),
+                    alignment=ft.alignment.center,
                     width=50,
                     height=50,
-                    bgcolor=colors.AMBER_500,
+                    bgcolor=ft.colors.AMBER_500,
                 )
             )
         return items
 
-    def column_with_horiz_alignment(align):
-        return Column(
+    def column_with_horiz_alignment(align: ft.CrossAxisAlignment):
+        return ft.Column(
             [
-                Text(align, size=16),
-                Container(
-                    content=Column(
-                        items(3), alignment="start", horizontal_alignment=align
+                ft.Text(str(align), size=16),
+                ft.Container(
+                    content=ft.Column(
+                        items(3),
+                        alignment=ft.MainAxisAlignment.START,
+                        horizontal_alignment=align,
                     ),
-                    bgcolor=colors.AMBER_100,
+                    bgcolor=ft.colors.AMBER_100,
                     width=100,
                 ),
             ]
         )
 
     page.add(
-        Row(
+        ft.Row(
             [
-                column_with_horiz_alignment("start"),
-                column_with_horiz_alignment("center"),
-                column_with_horiz_alignment("end"),
+                column_with_horiz_alignment(ft.CrossAxisAlignment.START),
+                column_with_horiz_alignment(ft.CrossAxisAlignment.CENTER),
+                column_with_horiz_alignment(ft.CrossAxisAlignment.END),
             ],
             spacing=30,
-            alignment="start",
+            alignment=ft.MainAxisAlignment.START,
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
 ## Properties
 
-### `controls`
-
-A list of Controls to display inside the Column.
-
 ### `alignment`
 
 How the child Controls should be placed vertically.
 
-For example, `start`, the default, places the children at the top of a Column. Supported values: `start`, `end`, `center`, `spaceBetween`, `spaceAround`, `spaceEvenly`.
+Property value is `MainAxisAlignment` enum with the following values:
+
+* `START` (default)
+* `END`
+* `CENTER`
+* `SPACE_BETWEEN`
+* `SPACE_AROUND`
+* `SPACE_EVENLY`
+
+### `auto_scroll`
+
+`True` if scrollbar should automatically move its position to the end when children update.
+
+### `controls`
+
+A list of Controls to display inside the Column.
 
 ### `horizontal_alignment`
 
 How the child Controls should be placed horizontally.
 
-Default value is `start`. Supported values: `start`, `center`, `end`, `stretch`, `baseline`.
+Property value is `CrossAxisAlignment` enum with the following values:
 
-### `tight`
+* `START` (default)
+* `CENTER`
+* `END`
+* `STRETCH`
+* `BASELINE`
 
-Specifies how much space should be occupied vertically. Default is `False` - allocate all space to children.
+### `scroll`
+
+Enables a vertical scrolling for the Column to prevent its content overflow.
+
+Property value is an optional `ScrollMode` enum with `None` as default.
+
+Supported values:
+
+* `None` (default) - the Row is non-scrollable and its content could overflow.
+* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
+* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
+* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
+* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
 
 ### `spacing`
 
 Spacing between controls in a Column. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
 
-### `wrap`
-
-When set to `True` the Column will put child controls into additional columns (runs) if they don't fit a single column.
-
 ### `run_spacing`
 
 Spacing between runs when `wrap=True`. Default value is 10.
 
-### `scroll`
+### `tight`
 
-Enables a vertical scrolling for the Column to prevent its content overflow. Supported values:
+Specifies how much space should be occupied vertically. Default is `False` - allocate all space to children.
 
-* `none` (default) - the Column is non-scrollable and its content could overflow.
-* `auto` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `adaptive` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `always` - scrolling is enabled and scroll bar is always shown.
+### `wrap`
 
-### `auto_scroll`
-
-`True` if scrollbar should automatically move its position to the end when children update.
+When set to `True` the Column will put child controls into additional columns (runs) if they don't fit a single column.
 
 ## Expanding children
 
 When a child Control is placed into a Column you can "expand" it to fill the available space. Every Control has `expand` property that can have either a boolean value (`True` - expand control to fill all available space) or an integer - an "expand factor" specifying how to divide a free space with other expanded child controls. For example, this code creates a column with a Container taking all available space and a Text control at the bottom serving as a status bar:
 
 ```python
-r = Column([
-  Container(expand=True, content=Text("Here is search results")),
-  Text("Records found: 10")
+r = ft.Column([
+  ft.Container(expand=True, content=ft.Text("Here is search results")),
+  ft.Text("Records found: 10")
 ])
 ```
 
 The following example with numeric expand factors creates a Column with 3 containers in it and having heights of `20% (1/5)`, `60% (3/5)` and `20% (1/5)` respectively:
 
 ```python
-r = Column([
-  Container(expand=1, content=Text("Header")),
-  Container(expand=3, content=Text("Body")),
-  Container(expand=1, content=Text("Footer"))
+r = ft.Column([
+  ft.Container(expand=1, content=ft.Text("Header")),
+  ft.Container(expand=3, content=ft.Text("Body")),
+  ft.Container(expand=1, content=ft.Text("Footer"))
 ])
 ```
 

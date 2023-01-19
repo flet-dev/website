@@ -5,7 +5,7 @@ sidebar_label: Packaging desktop app
 
 Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
 
-[PyInstaller](https://pyinstaller.org/en/stable/index.html) is used to package Flet Python app and all its dependencies into a single package for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
+Flet wraps [PyInstaller](https://pyinstaller.org/en/stable/index.html) API to package Flet Python app and all its dependencies into a single package for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
 
 Start from installing PyInstaller:
 
@@ -16,48 +16,36 @@ pip install pyinstaller
 Navigate to the directory where your `.py` file is located and build your app with the following command:
 
 ```
-pyinstaller your_program.py
+flet pack your_program.py
 ```
 
-Your bundled Flet app should now be available in `dist/your_program` folder. Try running the program to see if it works.
+Your bundled Flet app should now be available in `dist` folder. Try running the program to see if it works.
 
-On macOS/Linux:
+On macOS:
 
 ```
-./dist/your_program/your_program
+open dist/your_program.app
 ```
 
 on Windows:
 
 ```
-dist\your_program\your_program.exe
+dist\your_program.exe
 ```
 
-Now you can just zip the contents of `dist/your_program` folder and distribute to your users! They don't need Python or Flet installed to run your packaged program - what a great alternative to Electron!
-
-You'll notice though when you run a packaged program from macOS Finder or Windows Explorer a new console window is opened and then a window with app UI on top of it.
-
-You can hide that console window by rebuilding the package with `--noconsole` switch:
+on Linux:
 
 ```
-pyinstaller your_program.py --noconsole --noconfirm
+dist/your_program
 ```
 
-## Bundling to one file
+Now you can just zip the contents of `dist` folder and distribute to your users! They don't need Python or Flet installed to run your packaged program - what a great alternative to Electron!
 
-Contents of `dist/your_program` directory is an app executable plus supporting resources: Python runtime, modules, libraries.
-
-You can package all these in a single executable by using `--onefile` switch:
+By default, an executable/bundle has the same name as a Python script. You can change it with `--name` argument:
 
 ```
-pyinstaller your_program.py --noconsole --noconfirm --onefile
+flet pack your_program.py --name bundle_name
 ```
-
-You'll get a larger executable in `dist` folder. That executable is a self-running archive with your program and runtime resources which gets unpacked into temp directory when run - that's why it takes longer to start "onefile" package.
-
-:::note
-For macOS you can distribute either `dist/your_program` or `dist/your_program.app` which is an application bundle.
-:::
 
 ## Customizing package icon
 
@@ -66,7 +54,7 @@ Default bundle app icon is diskette which might be confusing for younger develop
 You can replace the icon with your own by adding `--icon` argument:
 
 ```
-pyinstaller your_program.py --noconsole --noconfirm --onefile --icon <your-image.png>
+flet pack your_program.py --icon <your-image.png>
 ```
 
 PyInstaller will convert provided PNG to a platform specific format (`.ico` for Windows and `.icns` for macOS), but you need to install [Pillow](https://pillow.readthedocs.io/en/stable/) module for that:
@@ -80,18 +68,35 @@ pip install pillow
 Your Flet app can include [assets](/docs/controls/image#src). Provided app assets are in `assets` folder next to `your_program.py` they can be added to an application package with `--add-data` argument, on macOS/Linux:
 
 ```
-pyinstaller your_program.py --noconsole --noconfirm --onefile --add-data "assets:assets"
+flet pack your_program.py --add-data "assets:assets"
 ```
 
 On Windows `assets;assets` must be delimited with `;`:
 
 ```
-pyinstaller your_program.py --noconsole --noconfirm --onefile --add-data "assets;assets"
+flet pack your_program.py --add-data "assets;assets"
 ```
 
-:::note
-You can find here [all PyInstaller command-line options](https://pyinstaller.org/en/stable/usage.html)
-:::
+## Customizing macOS bundle
+
+macOS bundle details can be customized with the following `flet pack` macOS-specific arguments:
+
+* `--product-name` - display name of macOS bundle, shown in Dock, Activity Monitor, About dialog.
+* `--product-version` - bundle version shown in "About" dialog.
+* `--copyright` - copyright notice shown in "About" dialog.
+* `--bundle-id` unique bundle ID.
+
+<img src="/img/docs/getting-started/package-desktop/flet-app-bundle-about.png" className="screenshot-50" />
+
+## Customizing Windows executable metadata
+
+Windows executable "Details" properties dialog can be customized with the following `flet pack` arguments:
+
+* `--product-name` - "Product name" field.
+* `--product-version` - "Product version" field.
+* `--file-version` - "File version" field.
+* `--file-description` - "File description" field, also program display name in Task Manager.
+* `--copyright` - "Copyright" field.
 
 ## Using CI for multi-platform packaging
 
@@ -123,9 +128,9 @@ What that [CI workflow](https://ci.appveyor.com/project/flet-dev/python-ci-examp
 
 * Clones the repository to a clean virtual machine.
 * Installs app dependencies using `pip`.
-* Runs `pyinstaller` to package Python app into "onefile" bundle for **Windows**, **macOS** and **Ubuntu**.
-* Zip/Tar packages and uploads them to ["Artifacts"](https://ci.appveyor.com/project/flet-dev/python-ci-example/build/job/g2j2lhstv04eyxcm/artifacts).
-* Uploads packages to [**GitHub releases**](https://github.com/flet-dev/python-ci-example/releases) when a new tag is pushed. Just push a new tag to make a release!
+* Runs `flet pack` to package Python app into a bundle for **Windows**, **macOS** and **Ubuntu**.
+* Zip/Tar app bundles and uploads them to ["Artifacts"](https://ci.appveyor.com/project/flet-dev/python-ci-example/build/job/g2j2lhstv04eyxcm/artifacts).
+* Uploads app bundles to [**GitHub releases**](https://github.com/flet-dev/python-ci-example/releases) when a new tag is pushed. Just push a new tag to make a release!
 
 :::noteGITHUB_TOKEN
 `GITHUB_TOKEN` in `appveyor.yml` is a GitHub Personal Access Token (PAT) used by AppVeyor to publish created packages to repository "Releases". You need to generate your own token and replace it in `appveyor.yml`. Login to your GitHub account and navigate to [Personal access token](https://github.com/settings/tokens) page. Click "Generate new token" and select "public_repo" or "repo" scope for public or private repository respectively. Copy generated token to a clipboard and return to AppVeyor Portal. Navigate to [Encrypt configuration data](https://ci.appveyor.com/tools/encrypt) page and paste token to "Value to encrypt" field, click "Encrypt" button. Put encrypted value under `GITHUB_TOKEN` in your `appveyor.yml`.

@@ -3,30 +3,32 @@ title: Hot reload
 sidebar_label: Hot reload
 ---
 
-In this How-To we are going to show how to speed up the development of Flet Python apps with hot reload tool.
-
-Flet app consists of one or more `.py` files in app directory. It normally runs as any other Python app with `python your-app.py`. When any of `.py` files change, the application must be restarted. While you do a lot of small changes working to perfect your Flet UI, those constant restarts could become very annoying.
-
-[**watchexec**](https://github.com/watchexec/watchexec) is a simple, standalone tool that watches a path and runs a command whenever it detects modifications.
-
-To install on macOS:
+The installation of `flet` Python module also installs `flet` command tool (Flet CLI)
+that allows running web and desktop apps with hot reload.
 
 ```
-brew install watchexec
+usage: flet run [-h] [--port PORT] [--directory] [--recursive] [--hidden] [--web]
+                script
+
+Runs Flet app in Python with hot reload.
+
+positional arguments:
+  script                path to a Python script
+
+options:
+  -h, --help            show this help message and exit
+  -v, --verbose         -v for detailed output and -vv for more detailed
+  -p PORT, --port PORT  custom TCP port to run Flet app on
+  -d, --directory       watch script directory
+  -r, --recursive       watch script directory and all sub-directories recursively
+  -n, --hidden          application window is hidden on startup
+  -w, --web             open app in a web browser
 ```
 
-To install on Windows:
+By default, `flet` watches a single `script` file only. Use `--directory` flag to watch all files in script's directory. Use `--recursive` flag to watch script directory and all sub-directories recursively.
+
+For example:
 
 ```
-choco install watchexec
+flet run main.py -d
 ```
-
-[Other installation options](https://github.com/watchexec/watchexec#install)
-
-Now use the following command to call/restart `python your-app.py` when any Python file in the current directory (and all subdirectories) changes:
-
-```
-watchexec -r -e py -- python your-app.py
-```
-
-Once the app is restarted just hit refresh in your browser to reload it.

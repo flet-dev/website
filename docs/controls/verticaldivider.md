@@ -17,35 +17,34 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import Container, Page, Row, VerticalDivider, alignment, colors
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
     page.add(
-        Row(
+        ft.Row(
             [
-                Container(
-                    bgcolor=colors.ORANGE_300,
-                    alignment=alignment.center,
+                ft.Container(
+                    bgcolor=ft.colors.ORANGE_300,
+                    alignment=ft.alignment.center,
                     expand=True,
                 ),
-                VerticalDivider(),
-                Container(
-                    bgcolor=colors.BROWN_400,
-                    alignment=alignment.center,
+                 ft.VerticalDivider(),
+                ft.Container(
+                    bgcolor=ft.colors.BROWN_400,
+                    alignment=ft.alignment.center,
                     expand=True,
                 ),
-                VerticalDivider(width=1, color="white"),
-                Container(
-                    bgcolor=colors.BLUE_300,
-                    alignment=alignment.center,
+                 ft.VerticalDivider(width=1, color="white"),
+                ft.Container(
+                    bgcolor=ft.colors.BLUE_300,
+                    alignment=ft.alignment.center,
                     expand=True,
                 ),
-                VerticalDivider(width=9, thickness=3),
-                Container(
-                    bgcolor=colors.GREEN_300,
-                    alignment=alignment.center,
+                 ft.VerticalDivider(width=9, thickness=3),
+                ft.Container(
+                    bgcolor=ft.colors.GREEN_300,
+                    alignment=ft.alignment.center,
                     expand=True,
                 ),
             ],
@@ -54,21 +53,23 @@ def main(page: Page):
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/vertical-divider/vertical-divider.png" className="screenshot-40" />
+
 ## Properties
 
-### `width`
+### `color`
 
-The divider's width. The divider itself is always drawn as a vertical line that is centered within the width specified by this value. If this is null, then this defaults to `16.0`.
+The color to use when painting the line.
 
 ### `thickness`
 
 The thickness of the line drawn within the divider. A divider with a thickness of `0.0` is always drawn as a line with a width of exactly one device pixel. If this is null, then this defaults to `0.0`.
 
-### `color`
+### `width`
 
-The color to use when painting the line.
+The divider's width. The divider itself is always drawn as a vertical line that is centered within the width specified by this value. If this is null, then this defaults to `16.0`.

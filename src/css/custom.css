@@ -105,6 +105,7 @@ h6 {
 
 .screenshot,
 .screenshot-10,
+.screenshot-20,
 .screenshot-30,
 .screenshot-40,
 .screenshot-50,
@@ -122,6 +123,10 @@ h6 {
 
 .screenshot-10 {
   width: 10%;
+}
+
+.screenshot-20 {
+  width: 20%;
 }
 
 .screenshot-30 {
@@ -148,7 +153,13 @@ h6 {
   width: 100%;
 }
 
+.screenshot-rounded {
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 @media only screen and (max-width: 768px) {
+
   .screenshot,
   .screenshot-40,
   .screenshot-50,
@@ -156,6 +167,7 @@ h6 {
   .screenshot-70 {
     width: auto;
   }
+
   .screenshot-10 {
     width: 30%;
   }

@@ -15,75 +15,65 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import flet
-from flet import (
-    Column,
-    FloatingActionButton,
-    Icon,
-    NavigationRail,
-    NavigationRailDestination,
-    Page,
-    Row,
-    Text,
-    VerticalDivider,
-    icons,
-)
+import flet as ft
 
-def main(page: Page):
+def main(page: ft.Page):
 
-    rail = NavigationRail(
+    rail = ft.NavigationRail(
         selected_index=0,
-        label_type="all",
+        label_type=ft.NavigationRailLabelType.ALL,
         # extended=True,
         min_width=100,
         min_extended_width=400,
-        leading=FloatingActionButton(icon=icons.CREATE, text="Add"),
+        leading=ft.FloatingActionButton(icon=ft.icons.CREATE, text="Add"),
         group_alignment=-0.9,
         destinations=[
-            NavigationRailDestination(
-                icon=icons.FAVORITE_BORDER, selected_icon=icons.FAVORITE, label="First"
+            ft.NavigationRailDestination(
+                icon=ft.icons.FAVORITE_BORDER, selected_icon=ft.icons.FAVORITE, label="First"
             ),
-            NavigationRailDestination(
-                icon_content=Icon(icons.BOOKMARK_BORDER),
-                selected_icon_content=Icon(icons.BOOKMARK),
+            ft.NavigationRailDestination(
+                icon_content=ft.Icon(ft.icons.BOOKMARK_BORDER),
+                selected_icon_content=ft.Icon(ft.icons.BOOKMARK),
                 label="Second",
             ),
-            NavigationRailDestination(
-                icon=icons.SETTINGS_OUTLINED,
-                selected_icon_content=Icon(icons.SETTINGS),
-                label_content=Text("Settings"),
+            ft.NavigationRailDestination(
+                icon=ft.icons.SETTINGS_OUTLINED,
+                selected_icon_content=ft.Icon(ft.icons.SETTINGS),
+                label_content=ft.Text("Settings"),
             ),
         ],
         on_change=lambda e: print("Selected destination:", e.control.selected_index),
     )
 
     page.add(
-        Row(
+        ft.Row(
             [
                 rail,
-                VerticalDivider(width=1),
-                Column([Text("Body!")], alignment="start", expand=True),
+                ft.VerticalDivider(width=1),
+                ft.Column([ ft.Text("Body!")], alignment=ft.MainAxisAlignment.START, expand=True),
             ],
             expand=True,
         )
     )
 
-flet.app(target=main)
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
+<img src="/img/docs/controls/navigation-rail/custom-navrail.png" className="screenshot-50" />
+
 ## `NavigationRail` properties
+
+### `bgcolor`
+
+Sets the color of the Container that holds all of the NavigationRail's contents.
 
 ### `destinations`
 
 Defines the appearance of the button items that are arrayed within the navigation rail.
 
 The value must be a list of two or more `NavigationRailDestination` instances.
-
-### `selected_index`
-
-The index into `destinations` for the current selected `NavigationRailDestination` or `None` if no destination is selected.
 
 ### `extended`
 
@@ -97,50 +87,6 @@ If the rail is going to be in the extended state, then the `label_type` must be 
 
 The default value is `False`.
 
-### `label_type`
-
-Defines the layout and behavior of the labels for the default, unextended NavigationRail.
-
-When a navigation rail is extended, the labels are always shown.
-
-Supported values: `none` (default), `all`, `selected`.
-
-### `bgcolor`
-
-Sets the color of the Container that holds all of the NavigationRail's contents.
-
-### `leading`
-
-An optional leading control in the rail that is placed above the destinations.
-
-Its location is not affected by `group_alignment`.
-
-This is commonly a [`FloatingActionButton`](floatingactionbutton), but may also be a non-button, such as a logo.
-
-### `trailing`
-
-An optional trailing control in the rail that is placed below the destinations.
-
-It's location is affected by `group_alignment`.
-
-This is commonly a list of additional options or destinations that is usually only rendered when `extended` is `True`.
-
-### `min_width`
-
-The smallest possible width for the rail regardless of the destination's icon or label size.
-
-The default is `72`.
-
-This value also defines the min width and min height of the destinations.
-
-To make a compact rail, set this to `56` and use `label_type='none'`.
-
-### `min_extended_width`
-
-The final width when the animation is complete for setting `extended` to `True`.
-
-The default value is `256`.
-
 ### `group_alignment`
 
 The vertical alignment for the group of destinations within the rail.
@@ -152,6 +98,50 @@ The value must be between `-1.0` and `1.0`.
 If `group_alignment` is `-1.0`, then the items are aligned to the top. If `group_alignment` is `0.0`, then the items are aligned to the center. If `group_alignment` is `1.0`, then the items are aligned to the bottom.
 
 The default is `-1.0`.
+
+### `label_type`
+
+Defines the layout and behavior of the labels for the default, unextended NavigationRail.
+
+When a navigation rail is extended, the labels are always shown.
+
+Property value is `NavigationRailLabelType` enum with the following values: `NONE` (default), `ALL`, `SELECTED`.
+
+### `leading`
+
+An optional leading control in the rail that is placed above the destinations.
+
+Its location is not affected by `group_alignment`.
+
+This is commonly a [`FloatingActionButton`](floatingactionbutton), but may also be a non-button, such as a logo.
+
+### `min_extended_width`
+
+The final width when the animation is complete for setting `extended` to `True`.
+
+The default value is `256`.
+
+### `min_width`
+
+The smallest possible width for the rail regardless of the destination's icon or label size.
+
+The default is `72`.
+
+This value also defines the min width and min height of the destinations.
+
+To make a compact rail, set this to `56` and use `label_type='none'`.
+
+### `selected_index`
+
+The index into `destinations` for the current selected `NavigationRailDestination` or `None` if no destination is selected.
+
+### `trailing`
+
+An optional trailing control in the rail that is placed below the destinations.
+
+Its location is affected by `group_alignment`.
+
+This is commonly a list of additional options or destinations that is usually only rendered when `extended` is `True`.
 
 ## `NavigationRail` events
 
@@ -173,16 +163,6 @@ If `selected_icon_content` is provided, this will only be displayed when the des
 
 To make the NavigationRail more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
 
-### `selected_icon`
-
-The name of alternative icon displayed when this destination is selected.
-
-### `selected_icon_content`
-
-An alternative icon `Control` displayed when this destination is selected.
-
-If this icon is not provided, the NavigationRail will display `icon_content` in either state.
-
 ### `label`
 
 ### `label_content`
@@ -196,3 +176,13 @@ The label must be provided when used with the NavigationRail. When `label_type='
 The amount of space to inset the destination item.
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
+
+### `selected_icon`
+
+The name of alternative icon displayed when this destination is selected.
+
+### `selected_icon_content`
+
+An alternative icon `Control` displayed when this destination is selected.
+
+If this icon is not provided, the NavigationRail will display `icon_content` in either state.
