@@ -4,7 +4,7 @@ sidebar_label: Python - Solitaire game
 slug: python-solitaire
 ---
 
-In this tutorial we will show you step-by-step creation of a famous Klondike solitaire game in Python with Flet. As an inspiration, we looked at this online game: https://www.solitr.com/
+In this tutorial we will show you step-by-step creation of a famous Klondike solitaire game in Python with Flet. For an inspiration, we looked at this online game: https://www.solitr.com/
 
 This tutorial is aimed at beginner/intermediate level Python developers who have basic knowledge of Python and object oriented programming.
 
@@ -58,11 +58,11 @@ For the proof of concept, we will only be using three types of controls:
 * [GestureDetector](/docs/controls/gesturedetector) - the card that will be moved within the Stack
 * [Container](/docs/controls/container) - the slot where the card will be dropped. Also will be used as `content` for the GestureDetector.
 
-We have broken down this proof of concept app into four easy steps, so that after each step you have a complete short program to run and test.
+We have broken down the proof of concept app into four easy steps, so that after each step you have a complete short program to run and test.
 
 ###  Step 1: Drag the card around
 
-In this step we will create a Stack (future Solitaire game field) and a card (GestureDetector). The card will then be added to the list of the Stack `controls`. `Top` and `left` properties of the card are used for absolute positioning of the card in the Stack.
+In this step we will create a `Stack` (Solitaire game field) and a `GestureDetector` (Solitaire card). The card will then be added to the list of the Stack `controls`. `Top` and `left` properties of the GestureDetector are used for absolute positioning of the card in the Stack.
 
 ```python
 import flet as ft
@@ -81,11 +81,11 @@ ft.app(target=main)
 ```
 
 Run the app to see the the card added to the stack:
-<img src="/img/docs/solitaire-tutorial/drag_and_drop1.png" className="screenshot-30" />
+<img src="/img/docs/solitaire-tutorial/drag_and_drop1.png" className="screenshot-50" />
 
 To be able to move the card, we'll create a `drag` method that will be called in `on_pan_update` event of GestureDetector which happens every `drag_interval` while the user drags the card with their mouse.
 
-To show the card movement, we’ll be updating the card’s `top` and `left` properties in the drag method each time the `on_pan_update` event happens.
+To show the card's movement, we’ll be updating the card’s `top` and `left` properties in the `drag` method each time the `on_pan_update` event happens.
 
 Below is the simplest code for dragging GestureDetector in Stack:
 
@@ -115,11 +115,12 @@ def main(page: ft.Page):
  
 ft.app(target=main)
 ```
+
 Now you can see the card moving:
 <img src="/img/docs/solitaire-tutorial/drag_and_drop2.gif" className="screenshot-50" />
 
 :::note
-After any properties of a control are updated, an update() method of the control (or its parent control) should be called for the update to take effect.
+After any properties of a control are updated, an `update()` method of the control (or its parent control) should be called for the update to take effect.
 :::
 
 ### Step 2: Drop the card in the slot or bounce it back
@@ -127,7 +128,7 @@ After any properties of a control are updated, an update() method of the control
 The goal of this step is to be able to drop a card into a slot if it is close enough and bounce it back if it’s not.
 <img src="/img/docs/solitaire-tutorial/drag_and_drop3.gif" className="screenshot-50" />
 
-Let’s create a `Container` control that will be a slot to which we’ll be dropping the card:
+Let’s create a `Container` control that will represent a slot to which we’ll be dropping the card:
 ```python
 slot = ft.Container(
     width=70, height=100, left=200, top=0, border=ft.border.all(1)
@@ -166,9 +167,9 @@ def place(card, slot):
     page.update()
 ```
 
-Now, if the card is not close enough, we need to bounce it back to its original position, which we don’t know at the moment, since the card’s `top` and `left` properties were changed on `on_pan_update` event.
+Now, if the card is not close enough, we need to bounce it back to its original position. Unfortunately, we don’t know the original position coordinates, since the card’s `top` and `left` properties were changed on `on_pan_update` event.
 
-Let’s create a `Solitaire` class object to remember the original position of the card when `on_pan_start` event of the card is called:
+To solve this problem, let’s create a `Solitaire` class object to remember the original position of the card when `on_pan_start` event of the card is called:
 ```python
 class Solitaire:
    def __init__(self):
@@ -177,10 +178,10 @@ class Solitaire:
 
 solitaire = Solitaire()
 
-   def start_drag(e: ft.DragStartEvent):
-       solitaire.start_top = e.control.top
-       solitaire.start_left = e.control.left
-       e.control.update()
+def start_drag(e: ft.DragStartEvent):
+    solitaire.start_top = e.control.top
+    solitaire.start_left = e.control.left
+    e.control.update()
 ```
 
 Now let’s update `on_pan_end` event with the option to bounce card back:
@@ -268,7 +269,7 @@ slot2 = ft.Container(
 slots = [slot0, slot1, slot2]
 ```
 
-When creating new cards, we’ll will not specify their top and left position now, but instead, will place them to the `slot0`:
+When creating new cards, we’ll will not specify their `top` and `left` position now, but instead, will place them to the `slot0`:
 
 ```python
 # deal cards
@@ -302,9 +303,9 @@ Congratulations on completing the proof of concept app for the Solitaire game! N
 
 ## Fanned card piles
 
-In the previous version of Solitaire we have accomplished the task of dropping a card to a slot in proximity or bounce it back. If there is already a card in that slot, the new card is placed on top of it, covering it completely.
+In the proof of concept app you have accomplished the task of dropping a card to a slot in proximity or bounce it back. If there is already a card in that slot, the new card is placed on top of it, covering it completely.
 
-In the Solitaire game, if there is already a card in a tableau slot, you want to place the draggable card a bit lower, so that you can see the previous card too, and if there are two cards, even lower. Those are called “fanned piles”.
+In the actual Solitaire game, if there is already a card in a tableau slot, you want to place the draggable card a bit lower, so that you can see the previous card too, and if there are two cards, even lower. Those are called “fanned piles”.
 
 Then, we want to be able to pick a card from the fanned pile that is not the top card of the pile and drag the card together with all the cards below it:
 <img src="/img/docs/solitaire-tutorial/fanned_piles3.gif" className="screenshot-50" />
