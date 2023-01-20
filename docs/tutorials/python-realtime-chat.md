@@ -3,7 +3,7 @@ title: Creating realtime chat app in Python
 sidebar_label: Python - Realtime Chat app
 ---
 
-In this tutorial we are going to create from a trivial in-memory Chat app that will help you understand Flet framework basics. This app could be a good starting point to creating your own more complex and useful projects.
+In this tutorial we are going to create a trivial in-memory Chat app that will help you understand Flet framework basics. This app could be a good starting point to creating your own more complex and useful projects.
 
 In this tutorial you will learn how to:
 
@@ -130,7 +130,7 @@ Finally, we need to call `pubsub.send_all()` method when the user clicks on "Sen
     page.add(chat, ft.Row([new_message, ft.ElevatedButton("Send", on_click=send_click)]))   
 ```
 
-`pubsub.send_all()` will call the `on_message` and pass on the Message object down to it.
+`pubsub.send_all()` will call the `on_message()` and pass on the Message object down to it.
 
 Here is the full code for this step:
 
