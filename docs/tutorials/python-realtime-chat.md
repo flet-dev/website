@@ -7,9 +7,9 @@ In this tutorial we are going to create a trivial in-memory Chat app that will h
 
 In this tutorial you will learn how to:
 
-* Create your first Flet app
-* Add page controls and handle events
-* Broadcast messages using built-in PubSub library
+* [Create your first Flet app](#getting-started-with-flet)
+* [Add page controls and handle events](#adding-page-controls-and-handling-events)
+* [Broadcast messages using built-in PubSub library](#broadcasting-chat-messages)
 * Build page layout with reusable controls
 * Deploy the app as a web app
 * Deliver the app as a Progressive Web App (PWA)
