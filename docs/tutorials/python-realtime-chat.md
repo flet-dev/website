@@ -3,42 +3,18 @@ title: Creating realtime chat app in Python
 sidebar_label: Python - Realtime Chat app
 ---
 
-Flet is...
+In this tutorial we are going to create from a trivial in-memory Chat app that will help you understand Flet framework basics. This app could be a good starting point to creating your own more complex and useful projects.
 
-There are already two Flet tutorials for Python: ["classic" TodoMVC-like app](/docs/tutorials/python-todo) and [simple Calculator app](/docs/tutorials/python-calculator) - "beginner" tutorials demonstrating Flet essentials plus some packaging and deployment approaches.
+In this tutorial you will learn how to:
 
-This article is going to be different. It is an opening for a series of articles about building and delivering open-source commercial-grade application that could be self-hosted as a web app with desktop and mobile clients published to Microsoft Store, App Store and Google Play.
+* Create your first Flet app
+* Add page controls and handle events
+* Broadcast messages using built-in PubSub library
+* Build page layout with reusable controls
+* Deploy the app as a web app
+* Deliver the app as a Progressive Web App (PWA)
 
-As the title says it's going to be a chat app - an attempt to explore if it's possible, using Python with Flet framework, to create a real product similar to [Slack](https://slack.com), [Mattermost](https://mattermost.com), [Zulip](https://zulip.com) or [Rocket.chat](https://rocket.chat) - a collaboration tool that your team can rely on in their daily work.
-
-### Why chat?
-
-Because ["this is a story for collaboration!"](https://youtu.be/ohClxMmNLQQ?t=103) (you should play this game)! Look around - we use chats every day at work and home, on laptops and phones: WhatsApp, Facebook Messanger, Skype, Discord, Telegram, just to name a few! Every programmer dreams of writing a chat after learning about WebSockets and every WebSocket library comes with a chat example. Chat app would help us better demonstrate a realtime nature of Flet framework, where response-requests replaced with always-on "streams" of user events and UI updates.
-
-I've got a sneak peek into a few Chat examples for other frameworks ([one](https://dev.to/appwrite/building-a-realtime-chat-application-using-angular-and-appwrite-i3o), [two](https://github.com/denoland/showcase_chat)) and became disappointed. Is it really necessary for the app having such a basic functionality to be so complex? Does it have to use Firebase, Appwrite, Supabase or other begemoth framework for a backend? Why do you always need "frontend" and "backend"? Is it an established commonly-accepted architecture for the next decade? Can we make a trivial chat like in those examples, but with less code? Can we keep the architecture simple yet performant and maintainable? Yes, we can! With Flet, instead of developing JavaScript frontend with REST backend you are just writing a monolithic server-driven app using only Python and yet get multi-user Single-Page Application (SPA) with realtime, partial UI updates.
-
-### How Flet Chat is better?
-
-This is how "Flet Chat" will be different from competitors:
-
-1. User owns the data. App data will be stored in SQLite database which is portable and can be constantly [replicated on the background](https://github.com/benbjohnson/litestream) - free backups and easy migration between self-hosted and cloud versions.
-2. Extensibility with "apps". An extension "app" could mix some functionality into existing UI or introduce a completely new experience at a separate URL/route.
-3. Requires minimum resources to run, ideally, a single Docker container with shared CPU and 256 MB or memory.
-4. On par functionality across web, desktop and mobile clients - a single codebase drives the app on all platforms. Desktop and mobile clients should not be lagging behind web UI.
-5. On-demand delivery of white-labeled desktop and mobile clients to the customer's App/Play/Microsoft store accounts with a push of a button.
-6. Application source code that can be understood and maintained by an intermediate Python programmer. Contributions are welcome!
-
-### In this article
-
-In this article we are going to start from a really trivial in-memory Chat app, just to learn Flet basics:
-
-* Installing Flet module
-* Adding page controls and handling events
-* Using built-in PubSub library
-* Building page layout with reusable controls
-* Delivering the app as a Progressive Web App (PWA)
-
-The complete application will be looking like this:
+The complete application will look like this:
 
 <img src="/img/docs/chat-tutorial/chat.gif" className="screenshot-50" />
 
@@ -80,62 +56,111 @@ Run this app and you will see a new window with a greeting:
 
 ## Adding page controls and handling events
 
-```python
-import flet
-from flet import Column, ElevatedButton, Page, Row, Text, TextField
+To start, we want to be able to take user input (chat message) and show messages history on the screen. The layout for this step could look like this:
 
-def main(page: Page):
-    chat = Column()
-    new_message = TextField()
+<img src="/img/docs/chat-tutorial/chat-layout-1.svg" className="screenshot-70" />
+
+
+To implement this layout we will be using these Flet controls:
+* [Column](/docs/controls/column) - a container to display chat messages (Text controls) vertically.
+* [Text](/docs/controls/text) - chat message displayed in the chat Column.
+* [TextField](/docs/controls/textfield) - input control used for taking new message input from the user.
+* [ElevatedButton](/docs/controls/elevatedbutton) - "Send" button that will add new message to the chat Column.
+* [Row](/docs/controls/row) - a container to display TextField and ElevatedButton vertically.
+
+Create `chat.py` with the following contents:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    chat = ft.Column()
+    new_message = ft.TextField()
 
     def send_click(e):
-        chat.controls.append(Text(new_message.value))
+        chat.controls.append(ft.Text(new_message.value))
         new_message.value = ""
         page.update()
 
     page.add(
-        chat, Row(controls=[new_message, ElevatedButton("Send", on_click=send_click)])
+        chat, ft.Row(controls=[new_message, ft.ElevatedButton("Send", on_click=send_click)])
     )
 
-flet.app(target=main)
+ft.app("chat", target=main, view=ft.WEB_BROWSER)
 ```
 
+When user clicks on the "Send" button, it triggers `on_click` event which calls `send_click` method. `send_click` then adds new `Text` control to the list of Column `controls` and clears `new_message` TextField value.
+
+:::note
+After any properties of a control are updated, an `update()` method of the control (or its parent control) should be called for the update to take effect.
+:::
+
+Chat app now looks like this:
 <img src="/img/docs/chat-tutorial/chat-1.png" className="screenshot-40" />
 
 ## Broadcasting chat messages
 
-PubSub
+In previous step, we have created a simple web app that takes input from the user and displays chats messages on the screen. If you open this app in two web browser tabs, it will create two app sessions. Each session will have its own list of messages.
+
+To build a realtime chat app, you need to somehow pass the messages between chat app sessions. When a user sends a message, it should be broadcasted to all other app sessions and displayed on their pages.
+
+Flet provides a simple built-in [PubSub](/docs/guides/python/pub-sub) mechanism for asynchronous communication between page sessions.
+
+First, we need subscribe user to receive broadcast messages:
+```python
+    page.pubsub.subscribe(on_message)
+```
+
+`pubsub.subsribe()` method will add current app session to the list of subscribers. It accepts `handler` as an argument, that will later be called at the moment a publisher calls `pubsub.send_all()` method.
+
+In the `handler` we will be adding new message Text to the list of chat controls:
+```python
+    def on_message(message: Message):
+        chat.controls.append(ft.Text(f"{message.user}: {message.text}"))
+        page.update()
+```
+
+Finally, we need to call `pubsub.send_all()` method when the user clicks on "Send" button:
+```python
+    def send_click(e):
+        page.pubsub.send_all(Message(user=page.session_id, text=new_message.value))
+        new_message.value = ""
+        page.update()
+
+    page.add(chat, ft.Row([new_message, ft.ElevatedButton("Send", on_click=send_click)]))   
+```
+
+`pubsub.send_all()` will call the `on_message` and pass on the Message object down to it.
+
+Here is the full code for this step:
 
 ```python
-from dataclasses import dataclass
+import flet as ft
 
-import flet
-from flet import Column, ElevatedButton, Page, Row, Text, TextField
+class Message():
+    def __init__(self, user: str, text: str):
+        self.user = user
+        self.text = text
 
-@dataclass
-class Message:
-    user: str
-    text: str
+def main(page: ft.Page):
 
-def main(page: Page):
-
-    chat = Column()
-    new_message = TextField()
+    chat = ft.Column()
+    new_message = ft.TextField()
 
     def on_message(message: Message):
-        chat.controls.append(Text(f"{message.user}: {message.text}"))
+        chat.controls.append(ft.Text(f"{message.user}: {message.text}"))
         page.update()
 
     page.pubsub.subscribe(on_message)
 
     def send_click(e):
-        page.pubsub.send_all(Message(page.session_id, new_message.value))
+        page.pubsub.send_all(Message(user=page.session_id, text=new_message.value))
         new_message.value = ""
         page.update()
 
-    page.add(chat, Row([new_message, ElevatedButton("Send", on_click=send_click)]))
+    page.add(chat, ft.Row([new_message, ft.ElevatedButton("Send", on_click=send_click)]))
 
-flet.app(target=main, view=flet.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER)
 ```
 
 <img src="/img/docs/chat-tutorial/chat-2.gif" className="screenshot-100" />
@@ -357,3 +382,9 @@ The future articles we will cover things like:
 * Mobile apps
 
 ## Summary
+
+* Installing Flet module
+* Adding page controls and handling events
+* Using built-in PubSub library
+* Building page layout with reusable controls
+* Delivering the app as a Progressive Web App (PWA)
