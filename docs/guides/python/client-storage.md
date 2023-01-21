@@ -33,7 +33,7 @@ To distinguish one application settings from another it is recommended to use so
 :::
 
 :::caution
-It is responsibility of Flet app developer to encrypt sensitive data before sending it to a client storage, so it's not read/tempered by another app or an app user.
+It is responsibility of Flet app developer to encrypt sensitive data before sending it to a client storage, so it's not read/tampered by another app or an app user.
 :::
 
 Reading data:
