@@ -10,6 +10,7 @@ In this tutorial you will learn how to:
 * [Create your first Flet app](#getting-started-with-flet)
 * [Add page controls and handle events](#adding-page-controls-and-handling-events)
 * [Broadcast messages using built-in PubSub library](#broadcasting-chat-messages)
+* [Use AlertDialog control for accepting user name](#user-name-dialog)
 * Build page layout with reusable controls
 * Deploy the app as a web app
 * Deliver the app as a Progressive Web App (PWA)
@@ -167,65 +168,75 @@ ft.app(target=main, view=ft.WEB_BROWSER)
 
 ## User name dialog
 
+Instead of showing `session_id` for each message, let's make our chat app more user friendly and show user name instead. To capture user name, we will be using [AlertDialog](/docs/controls/alertdialog) control. Let's add it to the page:
+
 ```python
-from dataclasses import dataclass
+    user_name = ft.TextField(label="Enter your name")
 
-import flet
-from flet import AlertDialog, Column, ElevatedButton, Page, Row, Text, TextField, colors
-
-@dataclass
-class Message:
-    user: str
-    text: str
-
-def main(page: Page):
-
-    chat = Column()
-    new_message = TextField()
-
-    def on_message(message: Message):
-        if message.user != None:
-            chat.controls.append(Text(f"{message.user}: {message.text}"))
-        else:
-            chat.controls.append(
-                Text(message.text, italic=True, color=colors.BLACK45, size=12)
-            )
-        page.update()
-
-    page.pubsub.subscribe(on_message)
-
-    def send_click(e):
-        page.pubsub.send_all(Message(page.user, new_message.value))
-        new_message.value = ""
-        page.update()
-
-    user_name = TextField(label="Enter your name")
-
-    page.user = page.session_id
-
-    def join_click(e):
-        if not user_name.value:
-            user_name.error_text = "Name cannot be blank!"
-            user_name.update()
-        else:
-            page.user = user_name.value
-            page.dialog.open = False
-            page.pubsub.send_all(Message(None, f"{page.user} has joined the chat."))
-            page.update()
-
-    page.dialog = AlertDialog(
+    page.dialog = ft.AlertDialog(
         open=True,
         modal=True,
-        title=Text("Welcome!"),
-        content=Column([user_name], tight=True),
-        actions=[ElevatedButton(text="Join chat", on_click=join_click)],
+        title=ft.Text("Welcome!"),
+        content=ft.Column([user_name], tight=True),
+        actions=[ft.ElevatedButton(text="Join chat", on_click=join_click)],
         actions_alignment="end",
     )
-
-    page.add(chat, Row([new_message, ElevatedButton("Send", on_click=send_click)]))
-
-flet.app(target=main, view=flet.WEB_BROWSER)
 ```
+[Image]
+
+When the user clicks on "Join chat" button, it will call `join_click` method that should send a message to all subscribers informing them that the user has joined the chat. This message should look different from the regular chat message, for example, like this:
+[Image]
+
+Let's add `message_type` property to the `Message` class to differentiate between login and chat messages:
+
+```python
+class Message():
+    def __init__(self, user: str, text: str, message_type: str):
+        self.user = user
+        self.text = text
+        self.message_type = message_type
+```
+
+We will be checking `message_type` in `on_message` method:
+
+```python
+def on_message(message: Message):
+    if message.message_type == "chat_message":
+        chat.controls.append(ft.Text(f"{message.user}: {message.text}"))
+    elif message.message_type == "login_message":
+        chat.controls.append(
+            ft.Text(message.text, italic=True, color=ft.colors.BLACK45, size=12)
+        )
+    page.update()
+```
+
+Messages of "login_message" and "chat_message" types will now be sent on two events: when user joins the chat and when user sends a message. 
+
+Let's create `join_click` method:
+
+```python
+def join_click(e):
+    if not user_name.value:
+        user_name.error_text = "Name cannot be blank!"
+        user_name.update()
+    else:
+        page.session.set("user_name", user_name.value)
+        page.dialog.open = False
+        page.pubsub.send_all(Message(user=user_name.value, text=f"{user_name.value} has joined the chat.", message_type="login_message"))
+        page.update()
+```
+We used [page session storage](/docs/guides/python/session-storage) to store user_name for its future use in `send_click` method to send chat messages.
+
+Finally, let's update `send_click` method to use user_name that we previosly saved using `page.session`:
+
+```python
+def send_click(e):
+    page.pubsub.send_all(Message(user=page.session.get('user_name'), text=new_message.value, message_type="chat_message"))
+    new_message.value = ""
+    page.update()
+```
+
+The full code for this step can be found [here](link TBD).
 
 <img src="/img/docs/chat-tutorial/chat-3.gif" className="screenshot-100" />
 
