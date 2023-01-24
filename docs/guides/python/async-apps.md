@@ -86,9 +86,9 @@ ft.app(main)
 
 ## Threading
 
-Technically, nobody will stop you from using `threading` library in async app, but it would be a bad idea anyway. `asynio` versions of locks, queues and tasks, used by Flet API are not thread-safe and, for example, calling `await page.update_async()` from multiple threads will lead to unpredictable results.
+Technically, nobody will stop you from using `threading` library in async app, but it would be a bad idea anyway. `asynio` versions of locks, queues and tasks, used by Flet API are not thread-safe and, for example, calling `await page.update_async()` from multiple threads will lead to unpredictable results. Also, `threading` library is not supported by Pyodide if you decide to [deploy your app as a static website](/docs/guides/python/publishing-app-as-static-website).
 
-Use [`asyncio.create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task) to run some code on a background. For example, an async version of "countdown" control from [User controls](/docs/guides/python/user-controls) guide would be:
+To run something on a background use [`asyncio.create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task). For example, an async version of "countdown" control from [User controls](/docs/guides/python/user-controls) guide would be:
 
 ```python
 import asyncio
@@ -124,3 +124,4 @@ async def main(page: ft.Page):
 ft.app(target=main)
 ```
 
+<img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
