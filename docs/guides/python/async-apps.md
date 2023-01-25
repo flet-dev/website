@@ -5,9 +5,9 @@ sidebar_label: Async apps
 
 Flet app can be written as an async app and use `asyncio` and other Python async libraries. Calling coroutines is naturally supported in Flet, so you don't need to wrap them to run synchronously. 
 
-By default, Flet uses `threading` library to run user sessions and execute event handlers in separate threads, but that, sometimes, could be ineffective usage of CPU as it does nothing while waiting for a HTTP response or executing `sleep()`.
+By default, Flet uses `threading` library to run user sessions and execute event handlers in separate threads, but sometimes that could be an ineffective usage of CPU as it does nothing while waiting for a HTTP response or executing `sleep()`.
 
-Asyncio, on the other hand, allows implementing concurrency in a single thread by switching execution context between "coroutines". This is especially important for apps that are going to [published as a static websites](/docs/guides/python/publishing-app-as-static-website) using [Pyodide](https://pyodide.org/en/stable/). Pyodide is a Python runtime built as a WebAssembly (WASM) and running in the browser. At the time of writing it doesn't support [threading](https://github.com/pyodide/pyodide/issues/237) yet.
+Asyncio, on the other hand, allows implementing concurrency in a single thread by switching execution context between "coroutines". This is especially important for apps that are going to be [published as static websites](/docs/guides/python/publishing-app-as-static-website) using [Pyodide](https://pyodide.org/en/stable/). Pyodide is a Python runtime built as a WebAssembly (WASM) and running in the browser. At the time of writing it doesn't support [threading](https://github.com/pyodide/pyodide/issues/237) yet.
 
 ## Getting started with async
 
@@ -22,9 +22,9 @@ async def main(page: ft.Page):
 ft.app(main)
 ```
 
-You can use `await ft.app_async(main)` if Flet app is a part of a larger app and called from `async` code.
+You can use `await ft.app_async(main)` if Flet app is part of a larger app and called from `async` code.
 
-Notice the usage of `await page.add_async(...)` to add new controls to the page. In async app you cannot use `page.add()` or other sync page methods anymore - you must use their async counterparts ending with `_async` everywhere in the code:
+Notice the usage of `await page.add_async(...)` to add new controls to the page. In an async app you cannot use `page.add()` or other sync page methods anymore - you must use their async counterparts ending with `_async` everywhere in the code:
 
 * `page.add()` → `await page.add_async()`
 * `page.update()` → `await page.update_async()`
@@ -56,13 +56,13 @@ ft.ElevatedButton("Say hello!", on_click=button_click)
 
 ### Async lambdas
 
-There is no async lambdas in Python. It's perfectly fine to have a lambda event handler in async app for simple things:
+There are no async lambdas in Python. It's perfectly fine to have a lambda event handler in async app for simple things:
 
 ```python
 page.on_error = lambda e: print("Page error:", e.data)
 ```
 
-but you can't have an async lmbda, so an async event handler must be used.
+but you can't have an async lambda, so an async event handler must be used.
 
 ## Sleeping
 
@@ -86,9 +86,9 @@ ft.app(main)
 
 ## Threading
 
-Technically, nobody will stop you from using `threading` library in async app, but it would be a bad idea anyway. `asynio` versions of locks, queues and tasks, used by Flet API are not thread-safe and, for example, calling `await page.update_async()` from multiple threads will lead to unpredictable results. Also, `threading` library is not supported by Pyodide if you decide to [deploy your app as a static website](/docs/guides/python/publishing-app-as-static-website).
+Technically, nobody will stop you from using `threading` library in async app, but it would be a bad idea. `asyncio` versions of locks, queues and tasks, used by Flet API are not thread-safe and, for example, calling `await page.update_async()` from multiple threads will lead to unpredictable results. Also, `threading` library is not supported by Pyodide if you decide to [deploy your app as a static website](/docs/guides/python/publishing-app-as-static-website).
 
-To run something on a background use [`asyncio.create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task). For example, an async version of "countdown" control from [User controls](/docs/guides/python/user-controls) guide would be:
+To run something in the background use [`asyncio.create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task). For example, an async version of "countdown" control from [User controls](/docs/guides/python/user-controls) guide would be:
 
 ```python
 import asyncio
