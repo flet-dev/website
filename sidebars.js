@@ -26,7 +26,7 @@ module.exports = {
         "guides/python/mobile-support",
         "guides/python/hot-reload",
         "guides/python/packaging-desktop-app",
-        "guides/python/publishing-app-as-static-website",
+        "guides/python/publishing-static-website",
         {
           type: "category",
           label: "Deploying web app",
