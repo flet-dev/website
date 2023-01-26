@@ -11,9 +11,9 @@ In this tutorial you will learn how to:
 * [Add page controls and handle events](#adding-page-controls-and-handling-events)
 * [Broadcast messages using built-in PubSub library](#broadcasting-chat-messages)
 * [Use AlertDialog control for accepting user name](#user-name-dialog)
-* Build page layout with reusable controls
-* Deploy the app as a web app
-* Deliver the app as a Progressive Web App (PWA)
+* [Build page layout with reusable controls](#enhancing-user-interface)
+* [Deploy the app as a web app](#deploying-as-web-app)
+* [Deliver the app as a Progressive Web App (PWA)](#progressive-web-app-pwa)
 
 The complete application will look like this:
 
@@ -42,13 +42,12 @@ pip install flet --upgrade
 Create `hello.py` with the following contents:
 
 ```python title="hello.py"
-import flet
-from flet import Page, Text
+import flet as ft
 
-def main(page: Page):
-    page.add(Text(value="Hello, world!"))
+def main(page: ft.Page):
+    page.add(ft.Text(value="Hello, world!"))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 Run this app and you will see a new window with a greeting:
@@ -244,60 +243,77 @@ The full code for this step can be found [here](link TBD).
 
 ## Enhancing user interface
 
-Chat app that we have created in previous step already serves its purpose of exchanging messages between users with basic login functionality. 
+Chat app that we have created in the previous step already serves its purpose of exchanging messages between users with basic login functionality. 
 
-In this step we suggest adding some extra features to it that will improve user experience and make the app look more professional.
+Before moving on to [deploying your app](#deploying-as-web-app), we suggest adding some extra features to it that will improve user experience and make the app look more professional.
 
 ### Re-usable user controls
 
-To improve user experience, we would like to show messages in a different format, like this:
+You may want to show messages in a different format, like this:
 <img src="/img/docs/chat-tutorial/chat-layout-chatmessage.svg" className="screenshot-70" />
 
-Chat message now will a [Row](/docs/controls/row) consisting of [CircleAvatar](/docs/controls/circleavatar) with user name initials and [Column](/docs/controls/column) that contains two [Text](/docs/controls/text) controls: user name and message text.
+Chat message now will be a [Row](/docs/controls/row) containing [CircleAvatar](/docs/controls/circleavatar) with username initials and [Column](/docs/controls/column) that contains two [Text](/docs/controls/text) controls: user name and message text.
 
-User control (`UserControl`) allows building isolated re-usable components by combining existing Flet controls. User control behaves like a `Control`, could have methods and properties.
+We will need to show quite a few chat messages in a chat app, so it makes sense to create your own reusable control. Lets create a new `ChatMessage` class that will inherit from `Row`.
 
-:::info
-You can read more about User Controls in [Flet Guide for Python](https://flet.dev/docs/guides/python/user-controls).
-:::
+When creating an instance of `ChatMessage` class, we will pass a `Message` object as an argument and then `ChatMessage` will display itself based on `message.user_name` and `message.text`:
 
-In a chat app we are going to use user control for displaying a single chat message with user name and user avatar.
-
-When creating an instance of `ChatMessage` control we pass just a username and the message and then it's a control's "responsibility" to display a message based on those two parameters:
-
-```python {2}
-class ChatMessage(UserControl):
-    def __init__(self, username: str, text: str):
+```python
+class ChatMessage(ft.Row):
+    def __init__(self, message: Message):
         super().__init__()
-        self.username = username
-        self.text = text
-# ...
-```
+        self.vertical_alignment="start"
+        self.controls=[
+                ft.CircleAvatar(
+                    content=ft.Text(self.get_initials(message.user_name)),
+                    color=ft.colors.WHITE,
+                    bgcolor=self.get_avatar_color(message.user_name),
+                ),
+                ft.Column(
+                    [
+                        ft.Text(message.user_name, weight="bold"),
+                        ft.Text(message.text, selectable=True),
+                    ],
+                    tight=True,
+                    spacing=5,
+                ),
+            ]
 
-and later in `on_message` handler:
+    def get_initials(self, user_name: str):
+        return user_name[:1].capitalize()
 
-```python {3}
-    def on_message(message: Message):
-        if message.user != None:
-            m = ChatMessage(message.user, message.text)
-        # ...
+    def get_avatar_color(self, user_name: str):
+        colors_lookup = [
+            ft.colors.AMBER,
+            ft.colors.BLUE,
+            ft.colors.BROWN,
+            ft.colors.CYAN,
+            ft.colors.GREEN,
+            ft.colors.INDIGO,
+            ft.colors.LIME,
+            ft.colors.ORANGE,
+            ft.colors.PINK,
+            ft.colors.PURPLE,
+            ft.colors.RED,
+            ft.colors.TEAL,
+            ft.colors.YELLOW,
+        ]
+        print(hash(user_name))
+        return colors_lookup[hash(user_name) % len(colors_lookup)]
+
 ```
 
 `ChatMessage` control extracts initials and algorithmically derives avatar color from a username.
-Later, when we deside to improve control layout or its logic it won't affect the rest of the program - that's the power of encapsulation!
+Later, if you deside to improve control layout or its logic, it won't affect the rest of the program - that's the power of encapsulation!
 
 ### Laying out controls
 
+Now we can use our brand new `ChatMessage` to build a better layout for the chat app:
+
 <img src="/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
 
-```
-Page
-  Container expand=True
-    ListView expand=True
-  Row
-    TextField expand=True
-	IconButton
-```
+Other improvements suggested with the new layout are:
+* using `ListView`(/docs/controls/listview) instead of `Column`
 
 ### Keyboard support
 
