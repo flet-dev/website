@@ -307,7 +307,7 @@ Later, if you deside to improve control layout or its logic, it won't affect the
 
 ### Laying out controls
 
-Now we can use our brand new `ChatMessage` to build a better layout for the chat app:
+Now you can use your brand new `ChatMessage` to build a better layout for the chat app:
 
 <img src="/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
 
