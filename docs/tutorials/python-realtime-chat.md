@@ -11,7 +11,7 @@ In this tutorial you will learn how to:
 * [Add page controls and handle events](#adding-page-controls-and-handling-events)
 * [Broadcast messages using built-in PubSub library](#broadcasting-chat-messages)
 * [Use AlertDialog control for accepting user name](#user-name-dialog)
-* [Build page layout with reusable controls](#enhancing-user-interface)
+* [Enhance user interface with re-usable controls](#enhancing-user-interface)
 * [Deploy the app as a web app](#deploying-as-web-app)
 * [Deliver the app as a Progressive Web App (PWA)](#progressive-web-app-pwa)
 
@@ -66,7 +66,7 @@ To implement this layout we will be using these Flet controls:
 * [Text](/docs/controls/text) - chat message displayed in the chat Column.
 * [TextField](/docs/controls/textfield) - input control used for taking new message input from the user.
 * [ElevatedButton](/docs/controls/elevatedbutton) - "Send" button that will add new message to the chat Column.
-* [Row](/docs/controls/row) - a container to display TextField and ElevatedButton vertically.
+* [Row](/docs/controls/row) - a container to display TextField and ElevatedButton horizontally.
 
 Create `chat.py` with the following contents:
 
@@ -113,7 +113,7 @@ First, we need subscribe user to receive broadcast messages:
 
 `pubsub.subsribe()` method will add current app session to the list of subscribers. It accepts `handler` as an argument, that will later be called at the moment a publisher calls `pubsub.send_all()` method.
 
-In the `handler` we will be adding new message Text to the list of chat controls:
+In the `handler` we will be adding new message (`Text`) to the list of chat `controls`:
 ```python
     def on_message(message: Message):
         chat.controls.append(ft.Text(f"{message.user}: {message.text}"))
@@ -252,9 +252,9 @@ Before moving on to [deploying your app](#deploying-as-web-app), we suggest addi
 You may want to show messages in a different format, like this:
 <img src="/img/docs/chat-tutorial/chat-layout-chatmessage.svg" className="screenshot-70" />
 
-Chat message now will be a [Row](/docs/controls/row) containing [CircleAvatar](/docs/controls/circleavatar) with username initials and [Column](/docs/controls/column) that contains two [Text](/docs/controls/text) controls: user name and message text.
+Chat message will now be a [Row](/docs/controls/row) containing [CircleAvatar](/docs/controls/circleavatar) with username initials and [Column](/docs/controls/column) that contains two [Text](/docs/controls/text) controls: user name and message text.
 
-We will need to show quite a few chat messages in a chat app, so it makes sense to create your own reusable control. Lets create a new `ChatMessage` class that will inherit from `Row`.
+We will need to show quite a few chat messages in the chat app, so it makes sense to create your own reusable control. Lets create a new `ChatMessage` class that will inherit from `Row`.
 
 When creating an instance of `ChatMessage` class, we will pass a `Message` object as an argument and then `ChatMessage` will display itself based on `message.user_name` and `message.text`:
 
@@ -302,7 +302,6 @@ class ChatMessage(ft.Row):
         return colors_lookup[hash(user_name) % len(colors_lookup)]
 
 ```
-
 `ChatMessage` control extracts initials and algorithmically derives avatar color from a username.
 Later, if you deside to improve control layout or its logic, it won't affect the rest of the program - that's the power of encapsulation!
 
@@ -312,10 +311,24 @@ Now we can use our brand new `ChatMessage` to build a better layout for the chat
 
 <img src="/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
 
+Instances of `ChatMessage` will be created instead of plain `Text` chat messages in `on_message` method:
+
+```python
+    def on_message(message: Message):
+        if message.message_type == "chat_message":
+            m = ChatMessage(message)
+        elif message.message_type == "login_message":
+            m = ft.Text(message.text, italic=True, color=ft.colors.BLACK45, size=12)
+        chat.controls.append(m)
+        page.update()
+```
+
 Other improvements suggested with the new layout are:
+
 * [`ListView`](/docs/controls/listview) instead of `Column` for displaying messages, to be able to scroll through the messages later
 * `Container` for displaing border around `ListView`
 * [`IconButton`](/docs/controls/listview) instead of `ElevatedButton` to send messages
+* Use of [`expand`](/docs/controls#expand) property for controls to fill available space
 
 Here is how you can implement this layout:
 
@@ -363,11 +376,11 @@ Here is how you can implement this layout:
 
 The full code for this step can be found [here](link TBD).
 
-This is the final version of the chat app for the purpose of this tutorial. Below you can read more about enhancements that we made.
+This is the final version of the chat app for the purpose of this tutorial. Below you can read more about the enhancements that we have made.
 
 ### Keyboard support
 
-For user name and new message TextFields, we have set [`autofocus`](docs/controls/textfield#autofocus) property, so that they get initial focus. We also specified [`on_submit`](/docs/controls/textfield#on_submit) event for both TextFields to capture input when user presses ENTER on their keyboard. 
+From the first releases of Flet framework care about keyboard support. We started from managing controls focus and and submitting forms on Enter, which are crucial. Key bindings/shortcuts are coming in the future releases.
 
 #### Focusing input controls
 
@@ -376,7 +389,7 @@ All data entry controls have `autofocus` property which when set to `True` moves
 We set `autofocus=True` on a username TextField inside a dialog and then on a TextField for entering chat message to set initial focus on it when the dialog is closed.
 
 When a user click "Send" button or presses Enter to submit a chat message TextField loses focus.
-To programmatically set control focus we used [`TextField.focus()`](https://flet.dev/docs/controls/textfield#focus) method.
+To programmatically set control focus we used [`TextField.focus()`](/docs/controls/textfield#focus) method.
 
 #### Submitting forms on `Enter`
 
