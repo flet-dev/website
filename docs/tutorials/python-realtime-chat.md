@@ -313,11 +313,61 @@ Now we can use our brand new `ChatMessage` to build a better layout for the chat
 <img src="/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
 
 Other improvements suggested with the new layout are:
-* using `ListView`(/docs/controls/listview) instead of `Column`
+* [`ListView`](/docs/controls/listview) instead of `Column` for displaying messages, to be able to scroll through the messages later
+* `Container` for displaing border around `ListView`
+* [`IconButton`](/docs/controls/listview) instead of `ElevatedButton` to send messages
+
+Here is how you can implement this layout:
+
+```python
+    # Chat messages
+    chat = ft.ListView(
+        expand=True,
+        spacing=10,
+        auto_scroll=True,
+    )
+
+    # A new message entry form
+    new_message = ft.TextField(
+        hint_text="Write a message...",
+        autofocus=True,
+        shift_enter=True,
+        min_lines=1,
+        max_lines=5,
+        filled=True,
+        expand=True,
+        on_submit=send_message_click,
+    )
+
+    # Add everything to the page
+    page.add(
+        ft.Container(
+            content=chat,
+            border=ft.border.all(1, ft.colors.OUTLINE),
+            border_radius=5,
+            padding=10,
+            expand=True,
+        ),
+        ft.Row(
+            [
+                new_message,
+                ft.IconButton(
+                    icon=ft.icons.SEND_ROUNDED,
+                    tooltip="Send message",
+                    on_click=send_message_click,
+                ),
+            ]
+        ),
+    )
+```
+
+The full code for this step can be found [here](link TBD).
+
+This is the final version of the chat app for the purpose of this tutorial. Below you can read more about enhancements that we made.
 
 ### Keyboard support
 
-From the first releases of Flet framework we've trying to care about keyboard support. We started from managing controls focus and and submitting forms on Enter, which are crucial. Key bindings/shortcuts are coming in the future releases.
+For user name and new message TextFields, we have set [`autofocus`](docs/controls/textfield#autofocus) property, so that they get initial focus. We also specified [`on_submit`](/docs/controls/textfield#on_submit) event for both TextFields to capture input when user presses ENTER on their keyboard. 
 
 #### Focusing input controls
 
