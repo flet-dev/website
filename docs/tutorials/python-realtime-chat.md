@@ -244,7 +244,7 @@ The full code for this step can be found [here](link TBD).
 
 ### Laying out controls
 
-[diagram with page layout]
+<img src="/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
 
 ```
 Page
@@ -383,6 +383,7 @@ https://flet.dev/docs/guides/python/deploying-web-app
 
 The future articles we will cover things like:
 
+* Disconnect, reconnect, session timeout
 * Upload/download images
 * Authentication, avatars
 * Using database for the storage
