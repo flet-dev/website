@@ -168,7 +168,9 @@ ft.app(target=main, view=ft.WEB_BROWSER)
 
 ## User name dialog
 
-Instead of showing `session_id` for each message, let's make our chat app more user friendly and show user name instead. To capture user name, we will be using [AlertDialog](/docs/controls/alertdialog) control. Let's add it to the page:
+Chat app that we have created in previous step has basic functionality we need to exchange messages between user sessions. It is not very user-friendly though, since it's shows `session_id` that sent a message, which doesn't tell much about who you are communicating with. 
+
+Let's improve our app to show user name instead of `session_id` for each message. To capture user name, we will be using [AlertDialog](/docs/controls/alertdialog) control. Let's add it to the page:
 
 ```python
     user_name = ft.TextField(label="Enter your name")
@@ -242,20 +244,16 @@ The full code for this step can be found [here](link TBD).
 
 ## Enhancing user interface
 
-### Laying out controls
+Chat app that we have created in previous step already serves its purpose of exchanging messages between users with basic login functionality. 
 
-<img src="/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
-
-```
-Page
-  Container expand=True
-    ListView expand=True
-  Row
-    TextField expand=True
-	IconButton
-```
+In this step we suggest adding some extra features to it that will improve user experience and make the app look more professional.
 
 ### Re-usable user controls
+
+To improve user experience, we would like to show messages in a different format, like this:
+<img src="/img/docs/chat-tutorial/chat-layout-chatmessage.svg" className="screenshot-70" />
+
+Chat message now will a [Row](/docs/controls/row) consisting of [CircleAvatar](/docs/controls/circleavatar) with user name initials and [Column](/docs/controls/column) that contains two [Text](/docs/controls/text) controls: user name and message text.
 
 User control (`UserControl`) allows building isolated re-usable components by combining existing Flet controls. User control behaves like a `Control`, could have methods and properties.
 
@@ -287,6 +285,19 @@ and later in `on_message` handler:
 
 `ChatMessage` control extracts initials and algorithmically derives avatar color from a username.
 Later, when we deside to improve control layout or its logic it won't affect the rest of the program - that's the power of encapsulation!
+
+### Laying out controls
+
+<img src="/img/docs/chat-tutorial/chat-layout-2.svg" className="screenshot-70" />
+
+```
+Page
+  Container expand=True
+    ListView expand=True
+  Row
+    TextField expand=True
+	IconButton
+```
 
 ### Keyboard support
 
