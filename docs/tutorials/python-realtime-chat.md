@@ -183,7 +183,10 @@ Let's improve our app to show user name instead of `session_id` for each message
         actions_alignment="end",
     )
 ```
-[Image]
+
+A dialog will be immediately added to the page and will be opened on the start of the program, since we have set its `open` property to True.
+
+<img src="/img/docs/chat-tutorial/username-dialog.png" className="screenshot-40" />
 
 When the user clicks on "Join chat" button, it will call `join_click` method that should send a message to all subscribers informing them that the user has joined the chat. This message should look different from the regular chat message, for example, like this:
 [Image]
