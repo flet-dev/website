@@ -167,7 +167,7 @@ ft.app(target=main, view=ft.WEB_BROWSER)
 
 ## User name dialog
 
-Chat app that we have created in previous step has basic functionality we need to exchange messages between user sessions. It is not very user-friendly though, since it's shows `session_id` that sent a message, which doesn't tell much about who you are communicating with. 
+Chat app that we have created in previous step has basic functionality we need to exchange messages between user sessions. It is not very user-friendly though, since it shows `session_id` that sent a message, which doesn't tell much about who you are communicating with. 
 
 Let's improve our app to show user name instead of `session_id` for each message. To capture user name, we will be using [AlertDialog](/docs/controls/alertdialog) control. Let's add it to the page:
 
@@ -301,12 +301,11 @@ class ChatMessage(ft.Row):
             ft.colors.TEAL,
             ft.colors.YELLOW,
         ]
-        print(hash(user_name))
         return colors_lookup[hash(user_name) % len(colors_lookup)]
 
 ```
 `ChatMessage` control extracts initials and algorithmically derives avatar color from a username.
-Later, if you deside to improve control layout or its logic, it won't affect the rest of the program - that's the power of encapsulation!
+Later, if you decide to improve control layout or its logic, it won't affect the rest of the program - that's the power of encapsulation!
 
 ### Laying out controls
 
