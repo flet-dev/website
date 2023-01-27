@@ -12,6 +12,9 @@ A list of Pyodide compatible modules: https://pyodide.org/en/stable/usage/packag
 
 https://pyodide.org/en/stable/usage/wasm-constraints.html
 
+## Async or not async?
+
+TBD
 
 ## Publish app as a static website
 
