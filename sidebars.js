@@ -26,17 +26,29 @@ module.exports = {
         "guides/python/hot-reload",
         "guides/python/packaging-desktop-app",
         {
-          type: "category",
-          label: "Deploying web app",
+          type: 'category',
+          label: 'Deploying web app',
           link: {
-            type: "doc",
-            id: "guides/python/deploying-web-app/overview",
+            type: 'doc',
+            id: 'guides/python/deploying-web-app/overview'
           },
           items: [
-            "guides/python/deploying-web-app/hosting-providers/fly-io",
-            "guides/python/deploying-web-app/hosting-providers/replit",
-            "guides/python/deploying-web-app/self-hosting",
-          ],
+            'guides/python/deploying-web-app/customizing-web-app',
+            'guides/python/deploying-web-app/progressive-web-apps',
+            {
+              type: 'category',
+              label: 'Hosting providers',
+              link: {
+                type: 'doc',
+                id: 'guides/python/deploying-web-app/hosting-providers/overview'
+              },
+              items: [
+                'guides/python/deploying-web-app/hosting-providers/fly-io',
+                'guides/python/deploying-web-app/hosting-providers/replit',
+                'guides/python/deploying-web-app/hosting-providers/self-hosting'
+              ]
+            }
+          ]
         },
       ],
     },
