@@ -144,7 +144,7 @@ class Countdown(ft.UserControl):
         self.countdown = ft.Text()
         return self.countdown
 
-def main(page: Page):
+def main(page: ft.Page):
     page.add(Countdown(120), Countdown(60))
 
 ft.app(target=main)
