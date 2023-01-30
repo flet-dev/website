@@ -184,12 +184,15 @@ Let's improve our app to show user name instead of `session_id` for each message
     )
 ```
 
-A dialog will be immediately added to the page and will be opened on the start of the program, since we have set its `open` property to True.
+:::note
+A dialog will be opened on the start of the program since we have set its `open` property to `True`.
+:::
+
 
 <img src="/img/docs/chat-tutorial/username-dialog.png" className="screenshot-40" />
 
 When the user clicks on "Join chat" button, it will call `join_click` method that should send a message to all subscribers informing them that the user has joined the chat. This message should look different from the regular chat message, for example, like this:
-[Image]
+<img src="/img/docs/chat-tutorial/chat-4.png" className="screenshot-40" />
 
 Let's add `message_type` property to the `Message` class to differentiate between login and chat messages:
 
@@ -231,7 +234,11 @@ def join_click(e):
 ```
 We used [page session storage](/docs/guides/python/session-storage) to store user_name for its future use in `send_click` method to send chat messages.
 
-Finally, let's update `send_click` method to use user_name that we previosly saved using `page.session`:
+:::note
+User name dialog will close as soon as we set its `open` property to `False` and call `update()` method. 
+:::
+
+Finally, let's update `send_click` method to use `user_name` that we previosly saved using `page.session`:
 
 ```python
 def send_click(e):
@@ -382,15 +389,13 @@ This is the final version of the chat app for the purpose of this tutorial. Belo
 
 ### Keyboard support
 
-From the first releases of Flet framework care about keyboard support. We started from managing controls focus and and submitting forms on Enter, which are crucial. Key bindings/shortcuts are coming in the future releases.
-
 #### Focusing input controls
 
 All data entry controls have `autofocus` property which when set to `True` moves initial focus to the control. If there is more than one control on a page with `autofocus` set, then the first one added to the page will get focus.
 
 We set `autofocus=True` on a username TextField inside a dialog and then on a TextField for entering chat message to set initial focus on it when the dialog is closed.
 
-When a user click "Send" button or presses Enter to submit a chat message TextField loses focus.
+When a user click "Send" button or presses Enter to submit a chat message, TextField loses focus.
 To programmatically set control focus we used [`TextField.focus()`](/docs/controls/textfield#focus) method.
 
 #### Submitting forms on `Enter`
@@ -418,62 +423,15 @@ page.update()
 
 ## Deploying the app
 
-Deploy as a web app and deliver as Progressive Web App (PWA).
+Congratulations! You have created your Chat app in Python with Flet, and it looks awesome!
 
-### Customizing web app
+Now it's time to share your app with the world!
 
-Tell about "assets" directory.
-
-#### Favicon
-
-favicon - 32x32 png - when running in the browser
-
-#### Loading animation
-
-icon for loading animation: icons/icon-192.png
-
-https://docs.flutter.dev/development/platform-integration/web/initialization
-
-https://github.com/flutter/gallery/blob/master/web/index.html
-
-### Progressive web app (PWA)
-
-Browsers that support PWA:
-
-* Chrome on all platforms
-* Edge on all platforms
-* Firefox on Android
-* Safari on iOS and iPadOS
-
-Additional information about PWAs:
-
-* [Installing PWA in different browsers](https://www.pcmag.com/how-to/how-to-use-progressive-web-apps)
-* [PWA manifests](https://developer.mozilla.org/en-US/docs/Web/Manifest)
-* [General information about PWAs](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
-
-A note about webrenderer: /docs/controls/text/#using-system-fonts
-
-#### Customizing PWA manifest
-
-name
-short name
-description
-theme_color
-background
-
-#### Customizing PWA icons
-
-Windows - round
-
-iOS - touch in HTML: icons/apple-touch-icon-192.png
-
-### Deploying as web app
-
-https://flet.dev/docs/guides/python/deploying-web-app
+[Follow these instructions](/docs/guides/python/deploying-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## What's next
 
-The future articles we will cover things like:
+There are plenty of features we could implement to improve this chat app:
 
 * Disconnect, reconnect, session timeout
 * Upload/download images
@@ -485,6 +443,8 @@ The future articles we will cover things like:
 * Bots
 * Mobile apps
 
+Please let us know if you would like to contribute to the app/tutorial and share it with other Flet developers.
+
 ## Summary
 
 * Installing Flet module
@@ -492,3 +452,16 @@ The future articles we will cover things like:
 * Using built-in PubSub library
 * Building page layout with reusable controls
 * Delivering the app as a Progressive Web App (PWA)
+
+In this tutorial, you have learnt how to:
+
+* Create a simple Flet app;
+* Add page controls and handle events;
+* Use buuilt in PubSub library;
+* User AlertDialog for entering user name;
+* Build page layout with reusable controls;
+* Deploy your Flet app to the web;
+
+For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
+
+We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
