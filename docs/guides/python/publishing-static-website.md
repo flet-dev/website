@@ -12,6 +12,15 @@ A list of Pyodide compatible modules: https://pyodide.org/en/stable/usage/packag
 
 https://pyodide.org/en/stable/usage/wasm-constraints.html
 
+Comparing to server-side deployment: pros and cons.
+
+Latency.
+Costs - static hosting vs app hosting with WebSockets.
+Loading time.
+Compatibilty.
+Security (source code is on the server, client).
+Scalability (running everything on the client vs every session on the server).
+Speed (Pyodide is slower, but it's work in progress).
 
 ## Publish app as a static website
 
@@ -32,6 +41,8 @@ Open `http://localhost:8000` in your browser to check the published website.
 [More information](https://docs.python.org/3/library/http.server.html).
 
 ## Loading packages
+
+What are default packages?
 
 `requirements.txt`
 
