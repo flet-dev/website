@@ -167,7 +167,7 @@ ft.app(target=main, view=ft.WEB_BROWSER)
 
 ## User name dialog
 
-Chat app that we have created in previous step has basic functionality we need to exchange messages between user sessions. It is not very user-friendly though, since it shows `session_id` that sent a message, which doesn't tell much about who you are communicating with. 
+Chat app that you have created in the previous step has basic functionality needed to exchange messages between user sessions. It is not very user-friendly though, since it shows `session_id` that sent a message, which doesn't tell much about who you are communicating with. 
 
 Let's improve our app to show user name instead of `session_id` for each message. To capture user name, we will be using [AlertDialog](/docs/controls/alertdialog) control. Let's add it to the page:
 
@@ -253,7 +253,7 @@ The full code for this step can be found [here](link TBD).
 
 ## Enhancing user interface
 
-Chat app that we have created in the previous step already serves its purpose of exchanging messages between users with basic login functionality. 
+Chat app that you have created in the previous step already serves its purpose of exchanging messages between users with basic login functionality. 
 
 Before moving on to [deploying your app](#deploying-as-web-app), we suggest adding some extra features to it that will improve user experience and make the app look more professional.
 
@@ -446,12 +446,6 @@ There are plenty of features we could implement to improve this chat app:
 Please let us know if you would like to contribute to the app/tutorial and share it with other Flet developers.
 
 ## Summary
-
-* Installing Flet module
-* Adding page controls and handling events
-* Using built-in PubSub library
-* Building page layout with reusable controls
-* Delivering the app as a Progressive Web App (PWA)
 
 In this tutorial, you have learnt how to:
 
