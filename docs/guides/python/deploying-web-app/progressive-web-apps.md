@@ -37,9 +37,11 @@ Here are the links to the most common manifest items that you'd like to customiz
 
 ### Icons
 
-Windows - round
+Custom icons are placed in `icons` directory in the root of assets directory:
 
-iOS - touch in HTML: icons/apple-touch-icon-192.png
+* `icon-192.png`, `icon-512.png` - app icons displayed in Windows taskbar.
+* `icon-maskable-192.png`, `icon-maskable-512.png` - app icons displayed in Android.
+* `apple-touch-icon-192.png` - app icon displayed in iOS.
 
 ## PWA installation instructions
 
