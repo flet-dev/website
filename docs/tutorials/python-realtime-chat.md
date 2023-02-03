@@ -12,7 +12,7 @@ In this tutorial you will learn how to:
 * [Broadcast messages using built-in PubSub library](#broadcasting-chat-messages)
 * [Use AlertDialog control for accepting user name](#user-name-dialog)
 * [Enhance user interface with re-usable controls](#enhancing-user-interface)
-* [Deploy the app as a web app](#deploying-as-web-app)
+* [Deploy the app as a web app](#deploying-the-app)
 * [Deliver the app as a Progressive Web App (PWA)](#progressive-web-app-pwa)
 
 The complete application will look like this:
@@ -171,7 +171,7 @@ ft.app(target=main, view=ft.WEB_BROWSER)
 
 Chat app that you have created in the previous step has basic functionality needed to exchange messages between user sessions. It is not very user-friendly though, since it shows `session_id` that sent a message, which doesn't tell much about who you are communicating with. 
 
-Let's improve our app to show user name instead of `session_id` for each message. To capture user name, we will be using [AlertDialog](/docs/controls/alertdialog) control. Let's add it to the page:
+Let's improve our app to show user name instead of `session_id` for each message. To capture user name, we will be using [`AlertDialog`](/docs/controls/alertdialog) control. Let's add it to the page:
 
 ```python
     user_name = ft.TextField(label="Enter your name")
@@ -257,14 +257,14 @@ The full code for this step can be found [here](https://github.com/flet-dev/exam
 
 Chat app that you have created in the previous step already serves its purpose of exchanging messages between users with basic login functionality. 
 
-Before moving on to [deploying your app](#deploying-as-web-app), we suggest adding some extra features to it that will improve user experience and make the app look more professional.
+Before moving on to [deploying your app](#deploying-the-app), we suggest adding some extra features to it that will improve user experience and make the app look more professional.
 
 ### Re-usable user controls
 
 You may want to show messages in a different format, like this:
 <img src="/img/docs/chat-tutorial/chat-layout-chatmessage.svg" className="screenshot-70" />
 
-Chat message will now be a [Row](/docs/controls/row) containing [CircleAvatar](/docs/controls/circleavatar) with username initials and [Column](/docs/controls/column) that contains two [Text](/docs/controls/text) controls: user name and message text.
+Chat message will now be a `Row` containing [`CircleAvatar`](/docs/controls/circleavatar) with username initials and `Column` that contains two `Text` controls: user name and message text.
 
 We will need to show quite a few chat messages in the chat app, so it makes sense to create your own reusable control. Lets create a new `ChatMessage` class that will inherit from `Row`.
 
@@ -338,7 +338,7 @@ Other improvements suggested with the new layout are:
 
 * [`ListView`](/docs/controls/listview) instead of `Column` for displaying messages, to be able to scroll through the messages later
 * `Container` for displaing border around `ListView`
-* [`IconButton`](/docs/controls/listview) instead of `ElevatedButton` to send messages
+* [`IconButton`](/docs/controls/iconbutton) instead of `ElevatedButton` to send messages
 * Use of [`expand`](/docs/controls#expand) property for controls to fill available space
 
 Here is how you can implement this layout:
@@ -404,15 +404,15 @@ To programmatically set control focus we used [`TextField.focus()`](/docs/contro
 
 It's so tempting to submit forms with just pushing `Enter` button on the keyboard! Type your name in the dialog, hit `Enter`, type a new message, hit `Enter`, type another, hit `Enter` - no mouse involved at all! 🚀
 
-Flet has support for that by providing [`TextField.on_submit`](https://flet.dev/docs/controls/textfield#on_submit) event handler which fires when a user press `Enter` button while the focus is on the TextField.
+Flet has support for that by providing [`TextField.on_submit`](/docs/controls/textfield#on_submit) event handler which fires when a user press `Enter` button while the focus is on the TextField.
 
 #### Entering multiline messages
 
-What about multiline TextFields where `Enter` must advance a cursor to the next line? We've got that covered too! `TextField` control has [`shift_enter`](https://flet.dev/docs/controls/textfield#shift_enter) property which when set to `True` enables Discord-like behavior: to get to a new line user presses `Shift`+`Enter` while hitting just `Enter` submits a form.
+What about multiline TextFields where `Enter` must advance a cursor to the next line? We've got that covered too! `TextField` control has [`shift_enter`](/docs/controls/textfield#shift_enter) property which when set to `True` enables Discord-like behavior: to get to a new line user presses `Shift`+`Enter` while hitting just `Enter` submits a form.
 
 ### Animated scrolling to the last message
 
-Noticed a nice animation of scrolling to the last message in a chat window? It could be enabled by setting [`ListView.auto_scroll`](https://flet.dev/docs/controls/listview#auto_scroll) property to `True`. The top most `Page` class, being a scrollable container itself, also supports [`auto_scroll`](https://flet.dev/docs/controls/page#auto_scroll).
+Noticed a nice animation of scrolling to the last message in a chat window? It could be enabled by setting [`ListView.auto_scroll`](/docs/controls/listview#auto_scroll) property to `True`. The top most `Page` class, being a scrollable container itself, also supports [`auto_scroll`](/docs/controls/page#auto_scroll).
 
 ### Page title
 
@@ -429,7 +429,7 @@ Congratulations! You have created your Chat app in Python with Flet, and it look
 
 Now it's time to share your app with the world!
 
-[Follow these instructions](/docs/guides/python/deploying-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/guides/python/deploying-web-app/hosting-providers) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## What's next
 
