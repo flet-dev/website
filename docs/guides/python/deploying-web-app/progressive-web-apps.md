@@ -25,11 +25,15 @@ The information in this section is based on the following sources (check them ou
 
 ### Manifest
 
-name
-short name
-description
-theme_color
-background
+You can change PWA's name, description, colors and other information in `manifest.json` that must be put in the root of [assets directory](/docs/guides/python/deploying-web-app/customizing-web-app).
+
+Here are the links to the most common manifest items that you'd like to customize:
+
+* [`name`](https://developer.mozilla.org/en-US/docs/Web/Manifest/name) - the name of the web application as it is usually displayed to the user.
+* [`short_name`](https://developer.mozilla.org/en-US/docs/Web/Manifest/short_name) - the name of the web application displayed to the user if there is not enough space to display `name`.
+* [`description`](https://developer.mozilla.org/en-US/docs/Web/Manifest/description) - explains what the application does.
+* [`theme_color`](https://developer.mozilla.org/en-US/docs/Web/Manifest/theme_color) - defines the default theme color for the application.
+* [`background_color`](https://developer.mozilla.org/en-US/docs/Web/Manifest/background_color) - defines a placeholder background color for the application page to display before its stylesheet is loaded.
 
 ### Icons
 
