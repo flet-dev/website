@@ -21,6 +21,8 @@ The complete application will look like this:
 
 You can play with a live demo [here](https://flet-chat.fly.dev).
 
+The full code for the chat app can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat.py).
+
 ## Getting started with Flet
 
 It's a tradition to start with "Hello, world!" app!
@@ -100,13 +102,13 @@ Chat app now looks like this:
 
 ## Broadcasting chat messages
 
-In previous step, we have created a simple web app that takes input from the user and displays chats messages on the screen. If you open this app in two web browser tabs, it will create two app sessions. Each session will have its own list of messages.
+In the previous step we have created a simple web app that takes input from the user and displays chats messages on the screen. If you open this app in two web browser tabs, it will create two app sessions. Each session will have its own list of messages.
 
 To build a realtime chat app, you need to somehow pass the messages between chat app sessions. When a user sends a message, it should be broadcasted to all other app sessions and displayed on their pages.
 
 Flet provides a simple built-in [PubSub](/docs/guides/python/pub-sub) mechanism for asynchronous communication between page sessions.
 
-First, we need subscribe user to receive broadcast messages:
+First, we need subscribe the user to receive broadcast messages:
 ```python
     page.pubsub.subscribe(on_message)
 ```
@@ -120,7 +122,7 @@ In the `handler` we will be adding new message (`Text`) to the list of chat `con
         page.update()
 ```
 
-Finally, we need to call `pubsub.send_all()` method when the user clicks on "Send" button:
+Finally, you need to call `pubsub.send_all()` method when the user clicks on "Send" button:
 ```python
     def send_click(e):
         page.pubsub.send_all(Message(user=page.session_id, text=new_message.value))
@@ -191,7 +193,7 @@ A dialog will be opened on the start of the program since we have set its `open`
 
 <img src="/img/docs/chat-tutorial/username-dialog.png" className="screenshot-40" />
 
-When the user clicks on "Join chat" button, it will call `join_click` method that should send a message to all subscribers informing them that the user has joined the chat. This message should look different from the regular chat message, for example, like this:
+When the user clicks on "Join chat" button, it will call `join_click` method that should send a message to all subscribers, informing them that the user has joined the chat. This message should look different from the regular chat message, for example, like this:
 <img src="/img/docs/chat-tutorial/chat-4.png" className="screenshot-40" />
 
 Let's add `message_type` property to the `Message` class to differentiate between login and chat messages:
@@ -247,7 +249,7 @@ def send_click(e):
     page.update()
 ```
 
-The full code for this step can be found [here](link TBD).
+The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat_3.py).
 
 <img src="/img/docs/chat-tutorial/chat-3.gif" className="screenshot-100" />
 
@@ -383,7 +385,7 @@ Here is how you can implement this layout:
     )
 ```
 
-The full code for this step can be found [here](link TBD).
+The full code for this step can be found [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat.py).
 
 This is the final version of the chat app for the purpose of this tutorial. Below you can read more about the enhancements that we have made.
 
@@ -441,7 +443,7 @@ There are plenty of features we could implement to improve this chat app:
 * Full-text search
 * Emojis, markdown
 * Bots
-* Mobile apps
+* Mobile app
 
 Please let us know if you would like to contribute to the app/tutorial and share it with other Flet developers.
 
