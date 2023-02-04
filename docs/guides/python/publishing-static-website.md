@@ -24,33 +24,58 @@ Flet static cons:
 
 ## Async or not async?
 
-TBD
+Both [asyncio](/docs/guides/python/async-apps) and "regular" sync Flet apps can be published as a static website. In terms of concurrency, the website will have only one thread with a single user only - you. If your app has CPU-intensive logic it may affect UI responsivness no matter the app is async or not.
+
+However, if your app contains an I/O logic (like [fetch](https://pyodide.org/en/stable/usage/api/python-api/http.html) wrapper for Pyodide) which is async in browser by definition then your app must be async.
 
 ## Publish app as a static website
 
+Run the following command to publish Flet app to a standalone website:
+
 ```
-flet publish <path-to-your-app.py>
+flet publish <your-flet-app.py>
 ```
 
 A static website is published into `./dist` directory.
 
 ## Testing website
 
+You can test a published Flet app using Python's built-in [`http.server` module](https://docs.python.org/3/library/http.server.html):
+
 ```
 python -m http.server --directory dist
 ```
 
-Open `http://localhost:8000` in your browser to check the published website.
-
-[More information](https://docs.python.org/3/library/http.server.html).
+Open `http://localhost:8000` in your browser to check the published app.
 
 ## Loading packages
 
-What are default packages?
+You can load custom packages from PyPI during app start by listing them in `requirements.txt`. `requirements.txt` must be created in the same directory with `<your-flet-app.py>`.
 
-`requirements.txt`
+Each line of `requirements.txt` contains a package name followed by an optional version specifier.
+
+:::info
+
+To install custom packages Pyodide uses [micropip](https://pypi.org/project/micropip/) - a lightweight version of `pip` that works in a browser.
+
+You can use [Micropip API](https://micropip.pyodide.org/en/stable/project/api.html) directly in your Flet app:
+
+```python
+import sys
+
+if sys.platform == "emscripten": # check if run in Pyodide environment
+    import micropip
+    await micropip.install("regex")
+```
+:::
 
 ### Pre-release Python packages
+
+You can allow loading pre-release versions of PyPI packages, by adding `--pre` option to `flet publish` command:
+
+```
+flet publish <your-flet-app.py> --pre
+```
 
 ## Assets
 
