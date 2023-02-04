@@ -3,18 +3,11 @@ title: Publishing a static website with Pyodide
 sidebar_label: Publishing static website
 ---
 
-Publish as a standalone SPA.
+Flet app can be published as a standalone static website (SPA) and run entirely in the browser with [Pyodide](https://pyodide.org/en/stable/index.html).
 
-What is Pyodide?
-
-Limitations (pure Python modules or compiled against Pyodide)
-A list of Pyodide compatible modules: https://pyodide.org/en/stable/usage/packages-in-pyodide.html
-
-https://pyodide.org/en/stable/usage/wasm-constraints.html
+Pyodide is a port of CPython to WebAssembly (WASM) which is an emerging technology with [some limitations](https://pyodide.org/en/stable/usage/wasm-constraints.html). Pyodide comes with a big list of [built-in packages](https://pyodide.org/en/stable/usage/packages-in-pyodide.html). However, to use a Python package from PyPI it must be a pure Python package or provide a wheel with binaries [built for Emscripten](https://pyodide.org/en/stable/development/new-packages.html).
 
 ## Flet static vs server-side
-
-With Flet static deployment a WASM version of Python runtime along with a user code are loaded into the browser which has its pros and cons.
 
 Flet static pros:
 
