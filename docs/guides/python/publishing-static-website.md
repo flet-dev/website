@@ -12,15 +12,22 @@ A list of Pyodide compatible modules: https://pyodide.org/en/stable/usage/packag
 
 https://pyodide.org/en/stable/usage/wasm-constraints.html
 
-Comparing to server-side deployment: pros and cons.
+## Flet static vs server-side
 
-Latency.
-Costs - static hosting vs app hosting with WebSockets.
-Loading time.
-Compatibilty.
-Security (source code is on the server, client).
-Scalability (running everything on the client vs every session on the server).
-Speed (Pyodide is slower, but it's work in progress).
+With Flet static deployment a WASM version of Python runtime along with a user code are loaded into the browser which has its pros and cons.
+
+Flet static pros:
+
+* Zero latency between user-generated events (clicks, text field changes, drags) and page updates. There is no Fletd server, no WebSockets - Python program communicates with Flutter web client directly via JavaScript.
+* Cheap hosting - Flet static app does not require any code to run on the server and thus can be hosted anywhere: GitHub Pages, Cloudflare Pages, Vercel, a shared hosting or your own VPS.
+* Higher scalability - Flet static app runs entirely in the browser and if it doesn't use any server-side API it could be scaled to any number of users with just CDN.
+
+Flet static cons:
+
+* Slower loading time - it requires additional time to download Python engine (Pyodide), built-in and `flet-pyodide` packages, and a user program. Besides, initialization of Pyodide engine itself takes around 2-4 seconds which the team is [looking to improve](https://pyodide.org/en/stable/project/roadmap.html#roadmap) in the future.
+* Limited Python compatibility - not every program that works with native Python [can be run with Pyodide](https://pyodide.org/en/stable/usage/wasm-constraints.html).
+* Lower performance - Pyodide is currently 3x-5x slower than native Python, so Flet apps with heavy processing would be better deployed as a server-side.
+* Users can access program code as it's downloaded by a browser in the form of `tar.gz` archive.
 
 ## Async or not async?
 
