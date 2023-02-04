@@ -79,11 +79,28 @@ flet publish <your-flet-app.py> --pre
 
 ## Assets
 
-TBD
+If your app requires assets (images, fonts, etc.) you can copy them into website directory by using `--assets <directory>` option with `flet publish` command:
+
+```
+flet publish <your-flet-app.py> --assets assets
+```
 
 ## URL strategy
 
-...and relation to static hosting without fallback pages.
+Flet apps support two ways of configuring URL-based routing:
+
+* **Path** (default) - paths are read and written without a hash. For example, `fletapp.dev/path/to/view`.
+* **Hash** - paths are read and written to the [hash fragment](https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax). For example, `fletapp.dev/#/path/to/view`.
+
+If a hosting provider supports [Single-page application (SPA) rendering](https://developers.cloudflare.com/pages/platform/serving-pages/#single-page-application-spa-rendering) you can leave default "path" URL strategy as it gives pretty URLs.
+
+However, if a hosting provider (like GitHub Pages) doesn't support SPA mode then you need to publish your app with "hash" URL strategy.
+
+To specify "hash" URL strategy during static app publishing use `--route-url-strategy` option:
+
+```
+flet publish <your-flet-app.py> --route-url-strategy hash
+```
 
 ## Web renderer
 

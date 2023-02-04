@@ -177,13 +177,13 @@ You can read more about template syntax supported by `repath` library [here](htt
 
 Flet web apps support two ways of configuring URL-based routing:
 
-* **Hash** (default) - paths are read and written to the [hash fragment](https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax). For example, `fletapp.dev/#/path/to/view`.
-* **Path** - paths are read and written without a hash. For example, `fletapp.dev/path/to/view`.
+* **Path** (default) - paths are read and written without a hash. For example, `fletapp.dev/path/to/view`.
+* **Hash** - paths are read and written to the [hash fragment](https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax). For example, `fletapp.dev/#/path/to/view`.
 
 To change URL strategy use `route_url_strategy` paremeter of `flet.app()` method, for example:
 
 ```python
-ft.app(target=main, route_url_strategy="path")
+ft.app(target=main, route_url_strategy="hash")
 ```
 
-URL strategy for Flet Server can be configured with `FLET_ROUTE_URL_STRATEGY` environment variable which could be set to either `path` or `hash` (default).
+URL strategy for Flet Server can be configured with `FLET_ROUTE_URL_STRATEGY` environment variable which could be set to either `path` (default) or `hash`.
