@@ -7,7 +7,7 @@ Flet app can be written as an async app and use `asyncio` and other Python async
 
 By default, Flet uses `threading` library to run user sessions and execute event handlers in separate threads, but sometimes that could be an ineffective usage of CPU as it does nothing while waiting for a HTTP response or executing `sleep()`.
 
-Asyncio, on the other hand, allows implementing concurrency in a single thread by switching execution context between "coroutines". This is especially important for apps that are going to be [published as static websites](/docs/guides/python/publishing-app-as-static-website) using [Pyodide](https://pyodide.org/en/stable/). Pyodide is a Python runtime built as a WebAssembly (WASM) and running in the browser. At the time of writing it doesn't support [threading](https://github.com/pyodide/pyodide/issues/237) yet.
+Asyncio, on the other hand, allows implementing concurrency in a single thread by switching execution context between "coroutines". This is especially important for apps that are going to be [published as static websites](/docs/guides/python/publishing-static-website) using [Pyodide](https://pyodide.org/en/stable/). Pyodide is a Python runtime built as a WebAssembly (WASM) and running in the browser. At the time of writing it doesn't support [threading](https://github.com/pyodide/pyodide/issues/237) yet.
 
 ## Getting started with async
 
