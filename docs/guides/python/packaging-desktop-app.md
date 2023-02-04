@@ -106,6 +106,10 @@ If you don't have an access to Mac or PC you can bundle your app for all three p
 
 AppVeyor is free for open source projects hosted on GitHub, GitLab and Bitbucket. To use AppVeyor, push your app to a repository within one of those source-control providers.
 
+:::note
+AppVeyor is the company behind Flet.
+:::
+
 To get started with AppVeyor [sign up for a free account](https://ci.appveyor.com/signup).
 
 Click "New project" button, authorize AppVeyor to access your GitHub, GitLab or Bitbucket account, choose a repository with your program and create a new project.
