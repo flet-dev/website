@@ -38,6 +38,16 @@ flet publish <your-flet-app.py>
 
 A static website is published into `./dist` directory.
 
+Command optional arguments:
+
+* `--pre` - allow micropip to install pre-release Python packages.
+* `-a ASSETS_DIR`, `--assets ASSETS_DIR` - path to an assets directory.
+* `--app-title APP_TITLE` - application title.
+* `--app-description APP_DESCRIPTION` - application description.
+* `--base-url BASE_URL` - base URL for the app.
+* `--web-renderer {canvaskit,html}` - web renderer to use.
+* `--route-url-strategy {path,hash}` - URL routing strategy.
+
 ## Testing website
 
 You can test a published Flet app using Python's built-in [`http.server` module](https://docs.python.org/3/library/http.server.html):
@@ -85,6 +95,10 @@ If your app requires assets (images, fonts, etc.) you can copy them into website
 flet publish <your-flet-app.py> --assets assets
 ```
 
+:::caution
+If you have `assets` directory in your app's directory and don't specify `--assets` option then the contents of `assets` will be packaged along with a Python application rather than copied to `dist`.
+:::
+
 ## URL strategy
 
 Flet apps support two ways of configuring URL-based routing:
@@ -104,11 +118,23 @@ flet publish <your-flet-app.py> --route-url-strategy hash
 
 ## Web renderer
 
-TBD
+You can change default "canvaskit" web renderer ([more about renderers here](/docs/controls/text#using-system-fonts)) to "html" with `--web-renderer` option:
+
+```
+flet publish <your-flet-app.py> --web-renderer html
+```
 
 ## Hosting website in a sub-directory
 
-Base URL
+Multiple Flet apps can be hosted on a single domain - each app in it's own sub-directory.
+
+To make a published Flet app work in a sub-directory you have to publish it with `--base-url` option:
+
+```
+flet publish <your-flet-app.py> --base-url <sub-directory>
+```
+
+For example, if app's URL is `https://mywebsite.com/myapp` then it must be published with `--base-url myapp`.
 
 ## Deploying website
 
@@ -116,6 +142,13 @@ Deploy a static website to any free hosting such as GitHub Pages, Cloudflare Pag
 
 ## Troubleshooting
 
-Console tab of Developer Tools in browser
+When Flet app is running in a web browser all its `print()` statements are displayed in "Console" tab of Developer Tools in a browser. `print()` can be used as a simple debugging tool.
 
-How to enable debug mode?
+You can also use `logging` module and output messages to Console with different severity.
+
+To enable detailed Flet logging add this to your program:
+
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
+```
