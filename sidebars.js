@@ -22,9 +22,11 @@ module.exports = {
         "guides/python/user-controls",
         "guides/python/control-refs",
         "guides/python/accessibility",
+        "guides/python/async-apps",
         "guides/python/mobile-support",
         "guides/python/hot-reload",
         "guides/python/packaging-desktop-app",
+        "guides/python/publishing-static-website",
         {
           type: "category",
           label: "Deploying web app",

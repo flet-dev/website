@@ -63,6 +63,12 @@ Duration of animation in milliseconds of swtiching between tabs. Default is `50`
 
 The index of currently selected tab.
 
+### `scrollable`
+
+Whether this tab bar can be scrolled horizontally.
+
+If `scrollable` is `True`, then each tab is as wide as needed for its label and the entire Tabs controls is scrollable. Otherwise each tab gets an equal share of the available space.
+
 ### `tabs`
 
 A list of `Tab` controls.
