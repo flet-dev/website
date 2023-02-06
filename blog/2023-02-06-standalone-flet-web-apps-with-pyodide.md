@@ -151,6 +151,6 @@ Flet 0.4.0 brings the following exciting features:
 - Faster and more secure architecture with a built-in Fletd server.
 - Async apps support.
 
-Upgrade Flet module to the latest version (`pip install flet --upgrade`), give `flet pack` command a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+Upgrade Flet module to the latest version (`pip install flet --upgrade`), give `flet publish` command a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
 
 Hey, by the way, [Flet project](https://github.com/flet-dev/flet) has reached ⭐️ 4.2K stars ⭐️ (+1K in just one month) - keep going! 
