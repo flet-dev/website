@@ -96,7 +96,7 @@ h6 {
 } */
 
 .icon-button {
-  vertical-align:text-bottom;
+  vertical-align: text-bottom;
   background-color: #eee;
   border-radius: 2px;
   padding: 1px;
@@ -115,6 +115,8 @@ h6 {
   display: block;
   text-align: center;
   margin: auto auto var(--ifm-paragraph-margin-bottom);
+  height: inherit !important;
+  max-width: inherit !important;
 }
 
 .screenshot {

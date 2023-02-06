@@ -8,7 +8,7 @@ In this tutorial we will show you, step-by-step, how to create a Calculator app 
 
 <img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
 
-You can find the live demo [here](https://flet-calc.fly.dev/).
+You can find the live demo [here](https://flet-calc.pages.dev).
 
 In this tutorial, we will cover all of the basic concepts for creating a web app: building a page layout, adding controls, making reusable UI components, handling events, and deployment options.
 

@@ -9,7 +9,8 @@ In this tutorial we will show you step-by-step creation of a famous Klondike sol
 This tutorial is aimed at beginner/intermediate level Python developers who have basic knowledge of Python and object oriented programming.
 
 Here you can see the final result that you are going to achieve with Flet and this tutorial:
-https://solitaire-part1.fly.dev/#/
+https://flet-solitaire.pages.dev
+
 <img src="/img/docs/solitaire-tutorial/part1_final.gif" className="screenshot-50" />
 
 We have broken down the game implementation into the following steps:
