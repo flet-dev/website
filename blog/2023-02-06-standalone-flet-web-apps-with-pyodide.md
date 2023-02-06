@@ -74,7 +74,7 @@ Open `http://localhost:8000` in your browser to check the published app.
 
 <img src="/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
 
-Here is a few live Flet apps hosted at Cloudflare Pages:
+Here are a few live Flet apps hosted at Cloudflare Pages:
 
 export const ImageCard = ({title, href, imageUrl}) => (
     <div className="col col--4 margin-bottom--lg">
