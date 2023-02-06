@@ -153,4 +153,4 @@ Flet 0.4.0 brings the following exciting features:
 
 Upgrade Flet module to the latest version (`pip install flet --upgrade`), give `flet pack` command a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
 
-Hey, by the way, [Flet project](https://github.com/flet-dev/flet) has reached ⭐️ 4.2K stars ⭐️ (+1K in just in one month) - keep going! 
+Hey, by the way, [Flet project](https://github.com/flet-dev/flet) has reached ⭐️ 4.2K stars ⭐️ (+1K in just one month) - keep going! 
