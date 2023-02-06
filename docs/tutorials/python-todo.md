@@ -8,7 +8,7 @@ In this tutorial we will show you, step-by-step, how to create a ToDo web app in
 
 <img src="/img/docs/tutorial/todo-complete-demo-web.gif" className="screenshot-70" />
 
-You can see the live demo [here](https://flet-todo.fly.dev/).
+You can see the live demo [here](https://flet-todo.pages.dev).
 
 We chose a ToDo app for the tutorial, because it covers all of the basic concepts you would need to create any web app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and deployment options.
 

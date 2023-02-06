@@ -140,7 +140,7 @@ For example, if app's URL is `https://mywebsite.com/myapp` then it must be publi
 
 Deploy a static website to any free hosting such as GitHub Pages, Cloudflare Pages or Vercel!
 
-### Deploying to Cloudflare Pages
+### Cloudflare Pages
 
 Before we get to the deployment, you will need an account. Get one from [here](https://dash.cloudflare.com/sign-up/pages), or simply login if you already have one. After signing up, you will have to verify your email address by clicking the link you will receive in your email. Check the spams too, if you don’t get it in your inbox.
 
