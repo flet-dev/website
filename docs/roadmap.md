@@ -8,11 +8,11 @@ slug: roadmap
 
 ### Desktop
 
-* [New architecture for Flet desktop apps](/blog/flet-mobile-update#flet-new-desktop-architecture).
+* :white_check_mark: [New architecture for Flet desktop apps](/blog/flet-mobile-update#flet-new-desktop-architecture).
 
 ### Web
 
-* Standalone web apps with [Pyodide](https://pyodide.org/en/stable/) and Flet.
+* :white_check_mark: Standalone web apps with [Pyodide](https://pyodide.org/en/stable/) and Flet.
 * Hosting Flet app in FastAPI server.
 
 ### Mobile
@@ -22,8 +22,8 @@ slug: roadmap
 ### Developer experience
 
 * Sample apps:
-    * Chat
-    * Solitaire
+    * :white_check_mark: Chat
+    * :white_check_mark: Solitaire
 * Gallery
 
 ## April 2023
