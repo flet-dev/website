@@ -5,9 +5,11 @@ import clsx from 'clsx';
 
 export default function Card(props) {
 
-    return <a
+    return props.href ? <a
         href={props.href}
-        className={clsx('card padding--lg', styles.cardContainer)}>
+        className={clsx('card padding--md', styles.cardContainer)}>
         {props.children}
-    </a>
+    </a> : <div className={clsx('card padding--md', styles.cardContainer)}>
+        {props.children}
+    </div>
 };
