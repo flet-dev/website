@@ -453,7 +453,7 @@ In this tutorial, you have learnt how to:
 
 * Create a simple Flet app;
 * Add page controls and handle events;
-* Use buuilt in PubSub library;
+* Use built in PubSub library;
 * User AlertDialog for entering user name;
 * Build page layout with reusable controls;
 * Deploy your Flet app to the web;
