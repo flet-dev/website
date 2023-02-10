@@ -25,28 +25,28 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
       title="To-Do"
       imageUrl="todo.png"
       description="A classic To-Do app inspired by TodoMVC project."
-      liveUrl="https://flet-todo.pages.dev"
+      liveUrl="https://flet-gallery.pages.dev/todo/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py"
       />
     <GalleryCard
       title="Icons browser"
       imageUrl="icons-browser.png"
       description="Quickly search through icons collection to use in your app."
-      liveUrl="https://flet-icons-browser.pages.dev"
+      liveUrl="https://flet-gallery.pages.dev/icons-browser/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py"
       />
     <GalleryCard
       title="Calculator"
       imageUrl="calc.png"
       description="A simple calculator app."
-      liveUrl="https://flet-calc.pages.dev"
+      liveUrl="https://flet-gallery.pages.dev/calculator/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py"
       />
     <GalleryCard
       title="Solitaire"
       imageUrl="solitaire.png"
       description="Learn how to handle gestures and position controls on a page."
-      liveUrl="https://flet-solitaire.pages.dev"
+      liveUrl="https://flet-gallery.pages.dev/solitaire/"
       sourcesUrl="https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-final-part1"
       />
     <GalleryCard
@@ -60,7 +60,7 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
       title="Trolli"
       imageUrl="trolli.png"
       description="A clone of Trello."
-      liveUrl="https://flet-boards.pages.dev"
+      liveUrl="https://flet-gallery.pages.dev/trolli/"
       sourcesUrl="https://github.com/flet-dev/examples/tree/main/python/apps/trolli" 
       />
   </section>

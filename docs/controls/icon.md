@@ -9,7 +9,7 @@ Displays a Material icon.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[Icons browser](https://flet-icons-browser.pages.dev)
+[Icons browser](https://flet-gallery.pages.dev/icons-browser/)
 
 ## Examples
 
@@ -48,7 +48,7 @@ Icon color.
 
 ### `name`
 
-The name of the icon. You can search through the list of all available icons using open-source [Icons browser](https://flet-icons-browser.pages.dev) app [written in Flet](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py).
+The name of the icon. You can search through the list of all available icons using open-source [Icons browser](https://flet-gallery.pages.dev/icons-browser/) app [written in Flet](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py).
 
 ### `size`
 
