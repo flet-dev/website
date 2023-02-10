@@ -87,11 +87,11 @@ export const ImageCard = ({title, href, imageUrl}) => (
 
 <div className="margin-top--lg">
   <section className="row">
-    <ImageCard title="To-Do" href="https://flet-gallery.pages.dev/todo/" imageUrl="todo.png" />
-    <ImageCard title="Icons browser" href="https://flet-gallery.pages.dev/icons-browser/" imageUrl="icons-browser.png" />
-    <ImageCard title="Calc" href="https://flet-gallery.pages.dev/calculator/" imageUrl="calc.png" />
-    <ImageCard title="Solitaire" href="https://flet-gallery.pages.dev/solitaire/" imageUrl="solitaire.png" />
-    <ImageCard title="Trolli" href="https://flet-gallery.pages.dev/trolli/" imageUrl="trolli.png" />
+    <ImageCard title="To-Do" href="https://gallery.flet.dev/todo/" imageUrl="todo.png" />
+    <ImageCard title="Icons browser" href="https://gallery.flet.dev/icons-browser/" imageUrl="icons-browser.png" />
+    <ImageCard title="Calc" href="https://gallery.flet.dev/calculator/" imageUrl="calc.png" />
+    <ImageCard title="Solitaire" href="https://gallery.flet.dev/solitaire/" imageUrl="solitaire.png" />
+    <ImageCard title="Trolli" href="https://gallery.flet.dev/trolli/" imageUrl="trolli.png" />
   </section>
 </div>
 

@@ -25,28 +25,28 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
       title="To-Do"
       imageUrl="todo.png"
       description="A classic To-Do app inspired by TodoMVC project."
-      liveUrl="https://flet-gallery.pages.dev/todo/"
+      liveUrl="https://gallery.flet.dev/todo/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py"
       />
     <GalleryCard
       title="Icons browser"
       imageUrl="icons-browser.png"
       description="Quickly search through icons collection to use in your app."
-      liveUrl="https://flet-gallery.pages.dev/icons-browser/"
+      liveUrl="https://gallery.flet.dev/icons-browser/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py"
       />
     <GalleryCard
       title="Calculator"
       imageUrl="calc.png"
       description="A simple calculator app."
-      liveUrl="https://flet-gallery.pages.dev/calculator/"
+      liveUrl="https://gallery.flet.dev/calculator/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py"
       />
     <GalleryCard
       title="Solitaire"
       imageUrl="solitaire.png"
       description="Learn how to handle gestures and position controls on a page."
-      liveUrl="https://flet-gallery.pages.dev/solitaire/"
+      liveUrl="https://gallery.flet.dev/solitaire/"
       sourcesUrl="https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-final-part1"
       />
     <GalleryCard
@@ -60,42 +60,42 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
       title="Trolli"
       imageUrl="trolli.png"
       description="A clone of Trello."
-      liveUrl="https://flet-gallery.pages.dev/trolli/"
+      liveUrl="https://gallery.flet.dev/trolli/"
       sourcesUrl="https://github.com/flet-dev/examples/tree/main/python/apps/trolli" 
       />
     <GalleryCard
       title="Flet animation"
       imageUrl="flet-animation.png"
       description="Implicit animations in Flet."
-      liveUrl="https://flet-gallery.pages.dev/flet-animation/"
+      liveUrl="https://gallery.flet.dev/flet-animation/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/flet-animation/main.py" 
       />
     <GalleryCard
       title="Counter"
       imageUrl="counter.png"
       description="Counter with button click event handlers."
-      liveUrl="https://flet-gallery.pages.dev/counter/"
+      liveUrl="https://gallery.flet.dev/counter/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/counter/counter.py" 
       />
     <GalleryCard
       title="Routing"
       imageUrl="routing.gif"
       description="URL routing between views."
-      liveUrl="https://flet-gallery.pages.dev/simple-routing/"
+      liveUrl="https://gallery.flet.dev/simple-routing/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/routing-navigation/home-store.py" 
       />
     <GalleryCard
       title="Hello, world!"
       imageUrl="hello-world.png"
       description="All examples start with that!"
-      liveUrl="https://flet-gallery.pages.dev/hello-world/"
+      liveUrl="https://gallery.flet.dev/hello-world/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/hello-world/hello.py" 
       />
     <GalleryCard
       title="Greeter"
       imageUrl="greeter.png"
       description="Interactive form in Flet."
-      liveUrl="https://flet-gallery.pages.dev/greeter/"
+      liveUrl="https://gallery.flet.dev/greeter/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/greeter/greeter.py" 
       />
   </section>

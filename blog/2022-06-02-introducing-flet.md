@@ -26,7 +26,7 @@ Some examples:
 * [Greeter](https://github.com/flet-dev/examples/blob/main/python/apps/greeter/greeter.py)
 * [Counter](https://github.com/flet-dev/examples/blob/main/python/apps/counter/counter.py)
 * [To-Do](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py)
-* [Icons Browser](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py) ([Online Demo](https://flet-gallery.pages.dev/icons-browser/))
+* [Icons Browser](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py) ([Online Demo](https://gallery.flet.dev/icons-browser/))
 
 [Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
 
