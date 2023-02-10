@@ -225,6 +225,7 @@ module.exports = {
         },
       ],
     },
+    "gallery",
     "roadmap",
   ],
 };

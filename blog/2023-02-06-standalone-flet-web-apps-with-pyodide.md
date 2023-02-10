@@ -79,7 +79,7 @@ Here are a few live Flet apps hosted at Cloudflare Pages:
 export const ImageCard = ({title, href, imageUrl}) => (
     <div className="col col--4 margin-bottom--lg">
       <Card href={href}>
-        <img src={"/img/blog/pyodide/" + imageUrl} className="screenshot-100"/>
+        <img src={"/img/gallery/" + imageUrl} className="screenshot-100"/>
         <h2>{title}</h2>
       </Card>
     </div>
@@ -87,11 +87,11 @@ export const ImageCard = ({title, href, imageUrl}) => (
 
 <div className="margin-top--lg">
   <section className="row">
-    <ImageCard title="To-Do" href="https://flet-todo.pages.dev" imageUrl="todo-screenshot.png" />
-    <ImageCard title="Icons browser" href="https://flet-icons-browser.pages.dev" imageUrl="icons-browser-screenshot.png" />
-    <ImageCard title="Calc" href="https://flet-calc.pages.dev" imageUrl="calc-screenshot.png" />
-    <ImageCard title="Solitaire" href="https://flet-solitaire.pages.dev" imageUrl="solitaire-screenshot.png" />
-    <ImageCard title="Trolli" href="https://flet-boards.pages.dev" imageUrl="trolli-screenshot.png" />
+    <ImageCard title="To-Do" href="https://flet-gallery.pages.dev/todo/" imageUrl="todo.png" />
+    <ImageCard title="Icons browser" href="https://flet-gallery.pages.dev/icons-browser/" imageUrl="icons-browser.png" />
+    <ImageCard title="Calc" href="https://flet-gallery.pages.dev/calculator/" imageUrl="calc.png" />
+    <ImageCard title="Solitaire" href="https://flet-gallery.pages.dev/solitaire/" imageUrl="solitaire.png" />
+    <ImageCard title="Trolli" href="https://flet-gallery.pages.dev/trolli/" imageUrl="trolli.png" />
   </section>
 </div>
 

@@ -45,6 +45,12 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/gallery',
+          activeBasePath: 'gallery',
+          label: 'Gallery',
+          position: 'left',
+        },
+        {
           to: 'docs/roadmap',
           activeBasePath: 'roadmap',
           label: 'Roadmap',
