@@ -104,7 +104,7 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
       imageUrl="password_strength_check.png"
       description=" Check the strength of your password against several criteria."
       liveUrl="https://gallery.flet.dev/main/"
-      sourcesUrl="[https://github.com/flet-dev/examples/blob/main/python/apps/greeter/greeter.py](https://github.com/LineIndent/flet_password_check_app/blob/main/app.py)" 
+      sourcesUrl="[https://github.com/LineIndent/flet_password_check_app/blob/main/app.py)](https://github.com/LineIndent/flet_password_check_app/blob/main/app.py)" 
       />
   </section>
 </div>
