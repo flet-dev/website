@@ -1,6 +1,5 @@
 ---
 title: Roadmap
-sidebar_label: Roadmap
 slug: roadmap
 ---
 
