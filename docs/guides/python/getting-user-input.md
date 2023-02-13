@@ -100,7 +100,7 @@ def main(page):
         )
         page.update()
 
-    output_text　= ft.Text()
+    output_text = ft.Text()
     todo_check = ft.Checkbox(label="ToDo: Learn how to use ski", value=False, on_change=checkbox_changed)
     page.add(todo_check, output_text)
 
