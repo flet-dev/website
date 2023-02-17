@@ -12,7 +12,7 @@ Pyodide is a port of CPython to WebAssembly (WASM) which is an emerging technolo
 Flet static pros:
 
 * Zero latency between user-generated events (clicks, text field changes, drags) and page updates. There is no Fletd server, no WebSockets - Python program communicates with Flutter web client directly via JavaScript.
-* Cheap hosting - Flet static app does not require any code to run on the server and thus can be hosted anywhere: GitHub Pages, Cloudflare Pages, Vercel, a shared hosting or your own VPS.
+* Cheap hosting - Flet static app does not require any code to run on the server and thus can be hosted anywhere: GitHub Pages, Cloudflare Pages, Replit, Vercel, a shared hosting or your own VPS.
 * Higher scalability - Flet static app runs entirely in the browser and if it doesn't use any server-side API it could be scaled to any number of users with just CDN.
 
 Flet static cons:
