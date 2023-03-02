@@ -25,7 +25,7 @@ def main(page: ft.Page):
 
     page.add(
         ft.Text("Size 10", size=10),
-        ft.Text("Size 30, Italic", size=20, color="pink600", italic=True),
+        ft.Text("Size 30, Italic", size=30, color="pink600", italic=True),
         ft.Text(
             "Size 40, w100",
             size=40,
