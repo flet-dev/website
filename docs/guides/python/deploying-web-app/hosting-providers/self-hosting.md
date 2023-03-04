@@ -3,7 +3,6 @@ title: Self Hosting
 sidebar_label: Self Hosting
 slug: self-hosting
 ---
-
 Host a Flet app on your own server with NGINX.
 
 There are free and inexpensive cloud server tiers available at [AWS](https://aws.amazon.com/free/), [Oracle](https://www.oracle.com/cloud/free/), [Linode](https://www.linode.com/pricing/), and more.
@@ -14,7 +13,7 @@ There are free and inexpensive cloud server tiers available at [AWS](https://aws
 
 Create `requirements.txt` with a list of application dependencies. At minimum it should contain `flet` module:
 
-```txt title="requirements.txt"
+```txt
 flet>=0.2.4
 ```
 
@@ -26,7 +25,7 @@ Create a virtualenv and install requirements:
 
 ### Sample `main.py` Flet app
 
-```python title="main.py"
+```python
 import flet as ft
 import os
 
@@ -56,7 +55,7 @@ Automatically start the Flet server using a systemd service unit file `flet.serv
 
 Setup below assumes your flet app script is defined in `$HOME/flet-app/main.py`. Replace `User`, `Group`, `WorkingDirectory`, etc. as per your setup.
 
-```txt title="flet.service"
+```txt
 [Unit]
 Description=Flet Server
 After=network.target
@@ -99,12 +98,12 @@ In your `/etc/nginx/sites-available/*` config file, updating path and port as ne
         proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header   X-Forwarded-Proto $scheme;
     }
-    
+  
     location /ws {
         proxy_pass         http://127.0.0.1:8502/ws;
         proxy_http_version 1.1;
         proxy_set_header   Upgrade $http_upgrade;
-        proxy_set_header   Connection keep-alive;
+        proxy_set_header   Connection "upgrade";
         proxy_set_header   Host $host;
         proxy_cache_bypass $http_upgrade;
         proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
