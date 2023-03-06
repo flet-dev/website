@@ -416,6 +416,10 @@ Page theme.
 
 Property value is an optional `ThemeMode` enum with `SYSTEM` as default.
 
+```python
+page.theme_mode = "dark"
+```
+
 Supported values: `SYSTEM` (default), `LIGHT` or `DARK`.
 
 ### `title`
