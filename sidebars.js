@@ -190,7 +190,12 @@ module.exports = {
             type: "generated-index",
             slug: "controls/charts",
           },
-          items: ["controls/matplotlibchart", "controls/plotlychart"],
+          items: [
+            "controls/linechart",
+            "controls/barchart",
+            "controls/piechart",
+            "controls/matplotlibchart", "controls/plotlychart"
+          ],
         },
         {
           type: "category",
