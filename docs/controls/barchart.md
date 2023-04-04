@@ -211,11 +211,11 @@ A gap between bar groups.
 
 ### `animate`
 
-Controls chart implicit animation. See [`PieChart.animate`](piechart#animate) property for more information and possible values.
+Controls chart implicit animation. See [`LineChart.animate`](linechart#animate) property for more information and possible values.
 
 ### `interactive`
 
-Enable automatic tooltips when hovering chart bars.
+Enables automatic tooltips when hovering chart bars.
 
 ### `bgcolor`
 
@@ -273,6 +273,7 @@ Fires when a bar is hovered or clicked.
 
 Event data is an instance `ft.BarChartEvent` class with the following properties:
 
+* `type` event type such as `PointerHoverEvent`, `PointerExitEvent`, etc.
 * `bar_index` - bar's index or `-1` if chart is hovered or clicked outside of any bar.
 * `rod_index` - rod's index or `-1` if chart is hovered or clicked outside of any bar.
 * `stack_item_index` - stack item's index or `-1` if chart is hovered or clicked outside of any bar.

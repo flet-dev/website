@@ -232,15 +232,7 @@ ft.app(main)
 
 ### `animate`
 
-Controls chart implicit animation.
-
-The value of `animate` property could be one of the following types:
-
-* `bool` - `True` to enable chart animation with `linear` curve and `1000` milliseconds duration.
-* `int` - enables chart animation with `linear` curve and specified number of milliseconds.
-* `ft.Animation(duration: int, curve: str)` - enables chart animation with specified duration and transition curve.
-
-If `animate` is `None` then `linear` animation with `150` milliseconds duration is enabled by default.
+Controls chart implicit animation. See [`LineChart.animate`](linechart#animate) property for more information and possible values.
 
 ### `center_space_color`
 
@@ -271,6 +263,7 @@ Fires when a chart section is hovered or clicked.
 
 Event data is an instance `ft.PieChartEvent` class with the following properties:
 
+* `type` event type such as `PointerHoverEvent`, `PointerExitEvent`, etc.
 * `section_index` - section's index or `-1` if no section hovered.
 
 ## `PieChartSection` properties

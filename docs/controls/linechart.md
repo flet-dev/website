@@ -355,25 +355,158 @@ ft.app(main)
 
 ## `LineChart` properties
 
-### `prop1`
+### `data_series`
 
-Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
+A list of [`LineChartData`](#linechartdata-properties) controls drawn as separate lines on a chart.
 
-### `sections`
+### `animate`
 
-A list of `LineChartData` controls.
+Controls chart implicit animation.
+
+The value of `animate` property could be one of the following types:
+
+* `bool` - `True` to enable chart animation with `linear` curve and `1000` milliseconds duration.
+* `int` - enables chart animation with `linear` curve and specified number of milliseconds.
+* `ft.Animation(duration: int, curve: str)` - enables chart animation with specified duration and transition curve.
+
+If `animate` is `None` then `linear` animation with `150` milliseconds duration is enabled by default.
+
+### `interactive`
+
+Enables automatic tooltips and points highlighting when hovering over the chart.
+
+### `bgcolor`
+
+Background color of the chart.
+
+### `tooltip_bgcolor`
+
+Background color of tooltips.
+
+### `border`
+
+The border around the chart. The value is the instance of `ft.Border` class.
+
+### `point_line_start`
+
+The start of the vertical line drawn under the selected point. Default is chart's bottom edge.
+
+### `point_line_end`
+
+The end of the vertical line drawn at selected point position. Default is data point's `y` value.
+
+### `horizontal_grid_lines`
+
+Controls drawing of chart's horizontal lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+
+### `vertical_grid_lines`
+
+Controls drawing of chart's vertical lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+
+### `left_axis`
+
+Configures the appearance of the left axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+
+### `top_axis`
+
+Configures the appearance of the top axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+
+### `right_axis`
+
+Configures the appearance of the right axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+
+### `bottom_axis`
+
+Configures the appearance of the bottom axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.
+
+### `baseline_x`
+
+Baseline value for X axis. Default is `0`.
+
+### `min_x`
+
+Configures the minimum displayed value for X axis.
+
+### `max_x`
+
+Configures the maximum displayed value for X axis.
+
+### `baseline_y`
+
+Baseline value for Y axis. Default is `0`.
+
+### `min_y`
+
+Configures the minimum displayed value for Y axis.
+
+### `max_y`
+
+Configures the maximum displayed value for Y axis.
 
 ## `LineChart` events
 
 ### `on_chart_event`
 
-Fires when ...
+Fires when a chart line is hovered or clicked.
+
+Event data is an instance `ft.LineChartEvent` class with the following properties:
+
+* `type` event type such as `PointerHoverEvent`, `PointerExitEvent`, etc.
+* `bar_index` - line's index or `-1` if no line hovered.
+* `spot_index` - line point's index or `-1` if no point hovered.
 
 ## `LineChartData` properties
 
-### `x`
+### `data_points`
 
-TBD
+### `curved`
+
+### `color`
+
+### `gradient`
+
+### `stroke_width`
+
+### `stroke_cap_round`
+
+bool
+
+### `dash_pattern`
+
+### `shadow`
+
+BoxShadow
+
+### `above_line_bgcolor`
+### `above_line_gradient`
+
+### `above_line_cutoff_y`
+
+### `above_line`
+
+ChartPointLine
+
+### `below_line_bgcolor`
+
+### `below_line_gradient`
+
+### `below_line_cutoff_y`
+
+### `below_line`
+
+ChartPointLine
+
+### `selected_below_line`
+
+bool, ChartPointLine
+
+### `point`
+
+bool, ChartPointShape
+
+### `selected_point`
+
+bool, ChartPointShape
 
 ## `LineChartDataPoint` properties
 
@@ -381,14 +514,92 @@ TBD
 
 TBD
 
+### `y`
+
+### `selected`
+
+### `show_tooltip`
+
+### `tooltip`
+
+### `tooltip_style`
+
+TextStyle
+
+### `tooltip_align`
+
+TextAlign
+
+### `point`
+
+bool, ChartPointShape
+
+### `selected_point`
+
+bool, ChartPointShape
+
+### `show_above_line`
+### `show_below_line`
+### `selected_below_line`
+
+bool, ChartPointLine
+
+## `ChartGridLines` properties
+
+Configures the appearance of horizontal and vertical grid lines within the chart.
+
+### `interval`
+
+Interval between grid lines. Default is `1`.
+
+### `color`
+
+Color of a grid line.
+
+### `width`
+
+Width of a grid line. Default is `1`.
+
+### `dash_pattern`
+
+Defines dash effect of the line. The value is a circular list of dash offsets and lengths. For example, the list `[5, 10]` would result in dashes 5 pixels long followed by blank spaces 10 pixels long. By default, a solid line is drawn.
+
 ## `ChartAxis` properties
 
-### `x`
+Configures chart axis.
 
-TBD
+### `title`
+
+A `Control` to display as axis title.
+
+### `title_size`
+
+Width or height of title area.
+
+### `show_labels`
+
+`True` to display labels along the axis. If `labels` is empty then automatic labels are displayed. 
+
+### `labels`
+
+The list of [`ft.ChartAxisLabel`](#chartaxislabel-properties) objects to set custom axis labels for only specific values.
+
+### `labels_interval`
+
+The interval between automatic labels.
+
+### `labels_size`
+
+Width or height of labels area.
 
 ## `ChartAxisLabel` properties
 
-### `x`
+Configures a custom label for specific value.
 
-TBD
+### `value`
+
+A value to draw label for.
+
+### `label`
+
+A `Control` to draw as a label.
