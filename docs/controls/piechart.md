@@ -267,7 +267,7 @@ A list of `PieChartSection` controls drawn in a circle.
 
 ### `on_chart_event`
 
-Fires when a chrt section is hovered or clicked.
+Fires when a chart section is hovered or clicked.
 
 Event data is an instance `ft.PieChartEvent` class with the following properties:
 
