@@ -230,23 +230,90 @@ ft.app(main)
 
 ## `PieChart` properties
 
-### `prop1`
+### `animate`
 
-Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
+Controls chart implicit animation.
+
+The value of `animate` property could be one of the following types:
+
+* `bool` - `True` to enable chart animation with `linear` curve and `1000` milliseconds duration.
+* `int` - enables chart animation with `linear` curve and specified number of milliseconds.
+* `ft.Animation(duration: int, curve: str)` - enables chart animation with specified duration and transition curve.
+
+If `animate` is `None` then `linear` animation with `150` milliseconds duration is enabled by default.
+
+### `center_space_color`
+
+Free space color in the middle of a chart.
+
+### `center_space_radius`
+
+Free space radius in the middle of a chart.
+
+### `sections_space`
+
+A gap between `sections`.
+
+### `start_degree_offset`
+
+By default, `sections` are drawn from zero degree (right side of the circle) clockwise.
+You can change the starting point, by setting `start_degree_offset` (in degrees).
 
 ### `sections`
 
-A list of `PieChartSection` controls.
+A list of `PieChartSection` controls drawn in a circle.
 
 ## `PieChart` events
 
 ### `on_chart_event`
 
-Fires when ...
+Fires when a chrt section is hovered or clicked.
+
+Event data is an instance `ft.PieChartEvent` class with the following properties:
+
+* `section_index` - section's index or `-1` if no section hovered.
 
 ## `PieChartSection` properties
 
-### `x`
+### `value`
 
-TBD
+Determines how much the section should occupy. This depends on sum of all sections, each section should occupy (`value` / sumValues) * 360 degrees.
 
+### `radius`
+
+External radius of the section.
+
+### `color`
+
+Background color of the section.
+
+### `border_side`
+
+The border around section shape. The value is an instance of `ft.BorderSide` class.
+
+### `title`
+
+A title drawn at the center of the section. No title is drawn if `title` is empty.
+
+### `title_style`
+
+`ft.TextStyle` of the `title`.
+
+### `title_position`
+
+By default title is drawn in the middle of the section, but its position can be changed
+with `title_position` property which value must be between `0.0` and `1.0`:
+
+* `0.0` means near the center;
+* `1.0` means near the outside of the pie chart.
+
+### `badge`
+
+An optional `Control` drawn in the middle of a section.
+
+### `badge_position`
+
+By default the badge is drawn in the middle of the section, but its position can be changed with `badge_position` property which value must be between `0.0` and `1.0`:
+
+* `0.0` means near the center;
+* `1.0` means near the outside of the pie chart.
