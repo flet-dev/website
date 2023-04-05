@@ -201,6 +201,8 @@ ft.app(main)
 
 ## `BarChart` properties
 
+<img src="/img/docs/controls/charts/barchart-diagram.svg" className="screenshot-100"/>
+
 ### `bar_groups`
 
 The list of `ft.BarChartGroup` to draw.

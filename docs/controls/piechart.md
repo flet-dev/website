@@ -230,6 +230,8 @@ ft.app(main)
 
 ## `PieChart` properties
 
+<img src="/img/docs/controls/charts/piechart-diagram.svg" className="screenshot-40"/>
+
 ### `animate`
 
 Controls chart implicit animation. See [`LineChart.animate`](linechart#animate) property for more information and possible values.

@@ -355,6 +355,8 @@ ft.app(main)
 
 ## `LineChart` properties
 
+<img src="/img/docs/controls/charts/linechart-diagram.svg" className="screenshot-100"/>
+
 ### `data_series`
 
 A list of [`LineChartData`](#linechartdata-properties) controls drawn as separate lines on a chart.
