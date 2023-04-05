@@ -459,90 +459,133 @@ Event data is an instance `ft.LineChartEvent` class with the following propertie
 
 ### `data_points`
 
+A list of points (dots) of [`LineChartDataPoint`](#linechartdatapoint-properties) type representing a single chart line.
+
 ### `curved`
+
+Set to `True` to draw chart line as a curve. Default is `False`.
 
 ### `color`
 
+A color of chart line.
+
 ### `gradient`
+
+Gradient to draw line's background. See [`Container.gradient`](container#gradient) property for more information and possible values.
 
 ### `stroke_width`
 
+The width of a chart line.
+
 ### `stroke_cap_round`
 
-bool
+Set to `True` to draw rounded line caps. Default is `False`.
 
 ### `dash_pattern`
 
+Defines dash effect of the line. The value is a circular list of dash offsets and lengths. For example, the list `[5, 10]` would result in dashes 5 pixels long followed by blank spaces 10 pixels long. By default, a solid line is drawn.
+
 ### `shadow`
 
-BoxShadow
+Shadow to drop by a chart line. The value is the instance of `ft.Shadow` class.
 
 ### `above_line_bgcolor`
+
+Fill the area above chart line with the specified color.
+
 ### `above_line_gradient`
+
+Fill the area above chart line with the specified gradient.
 
 ### `above_line_cutoff_y`
 
+Cut off filled area above line chart at specific Y value.
+
 ### `above_line`
 
-ChartPointLine
+A vertical line drawn between a line point and the top edge of the chart. The value is an instance of [`ChartPointLine`](#chartpointline-properties) class.
 
 ### `below_line_bgcolor`
 
+Fill the area below chart line with the specified color.
+
 ### `below_line_gradient`
+
+Fill the area below chart line with the specified gradient.
 
 ### `below_line_cutoff_y`
 
+Cut off filled area below line chart at specific Y value.
+
 ### `below_line`
 
-ChartPointLine
+A vertical line drawn between a line point and the bottom edge of the chart. The value is an instance of [`ChartPointLine`](#chartpointline-properties) class.
 
 ### `selected_below_line`
 
-bool, ChartPointLine
+A vertical line drawn between selected line point and the bottom adge of the chart. The value is either `True` - draw a line with default style, `False` - do not draw a line under selected point, or an instance of [`ChartPointLine`](#chartpointline-properties) class to specify line style to draw.
 
 ### `point`
 
-bool, ChartPointShape
+Configures the appearance and shape of a line point (dot). The value of this property is either `True` - draw a point with default style, `False` - do not draw a line point, or one of the implementations of `ChartPointShape` class:
+
+* `ChartCirclePoint` - circle point
+* `ChartSquarePoint` - square point
+* `ChartCrossPoint` - cross point
 
 ### `selected_point`
 
-bool, ChartPointShape
+Configures the appearance and shape of a selected line point. See [`LineChartData.point`](#point) for supported property values.
 
 ## `LineChartDataPoint` properties
 
 ### `x`
 
-TBD
+The position of a point on `X` axis.
 
 ### `y`
 
+The position of a point on `Y` axis.
+
 ### `selected`
+
+Draw the point as selected when `LineChart.interactive` is set to False.
 
 ### `show_tooltip`
 
+`True` (default) if a tooltip should be shown on top of hovered data point.
+
 ### `tooltip`
+
+A custom tooltip value. Default is `y`.
 
 ### `tooltip_style`
 
-TextStyle
+A text style to display tooltip with. The value is the instance of `ft.TextStyle` class.
 
 ### `tooltip_align`
 
-TextAlign
+An align for the tooltip. The value is the instance of `ft.TextAlign` enum.
 
 ### `point`
 
-bool, ChartPointShape
+Configures the appearance and shape of a line point. See [`LineChartData.point`](#point) for supported property values.
 
 ### `selected_point`
 
-bool, ChartPointShape
+Configures the appearance and shape of a selected line point. See [`LineChartData.point`](#point) for supported property values.
 
 ### `show_above_line`
+
+`True` to display a line above data point. Default is `True`.
+
 ### `show_below_line`
+
+`True` to display a line below data point. Default is `True`.
+
 ### `selected_below_line`
 
-bool, ChartPointLine
+A vertical line drawn between selected line point and the bottom adge of the chart. The value is either `True` - draw a line with default style, `False` - do not draw a line under selected point, or an instance of [`ChartPointLine`](#chartpointline-properties) class to specify line style to draw.
 
 ## `ChartGridLines` properties
 
@@ -603,3 +646,17 @@ A value to draw label for.
 ### `label`
 
 A `Control` to draw as a label.
+
+## `ChartPointLine` properties
+
+### `color`
+
+Color of the line.
+
+### `width`
+
+Width of the line.
+
+### `dash_pattern`
+
+Dash pattern of the line.
