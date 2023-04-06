@@ -193,6 +193,53 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 
 The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
 
+### `blur`
+
+Applies Gaussian blur effect under the container.
+
+The value of this property could be one of the following:
+
+* **a number** - specifies the same value for horizontal and vertical sigmas, e.g. `10`.
+* **a tuple** - specifies separate values for horizontal and vertical sigmas, e.g. `(10, 1)`.
+* **an instance of `ft.Blur`** - allow specifying separate values for horizontal and vertical sigmas as well as `tile_mode` for the filter. `tile_mode` is the value of `ft.BlurTileMode` which defaults to `ft.BlurTileMode.CLAMP`.
+
+For example:
+
+```python
+ft.Stack(
+    [
+        ft.Container(
+            content=ft.Text("Hello"),
+            image_src="https://picsum.photos/100/100",
+            width=100,
+            height=100,
+        ),
+        ft.Container(
+            width=50,
+            height=50,
+            blur=10,
+            bgcolor="#44CCCC00",
+        ),
+        ft.Container(
+            width=50,
+            height=50,
+            left=10,
+            top=60,
+            blur=(0, 10),
+        ),
+        ft.Container(
+            top=10,
+            left=60,
+            blur=ft.Blur(10, 0, ft.BlurTileMode.MIRROR),
+            width=50,
+            height=50,
+            bgcolor="#44CCCCCC",
+            border=ft.border.all(2, ft.colors.BLACK),
+        ),
+    ]
+)
+```
+
 ### `border`
 
 A border to draw above the background color.
@@ -401,6 +448,35 @@ container_4.padding=padding.only(left=10)
 ```
 
 <img src="/img/docs/controls/container/container-padding-diagram.png" className="screenshot-50" />
+
+### `shadow`
+
+A list of shadows cast by the container.
+
+The value of this property is a single instance or a list of `ft.BoxShadow` class instances with the following properties:
+
+* `spread_radius` - The amount the box should be inflated prior to applying the blur. Default is `0.0.`.
+* `blur_radius` - The standard deviation of the Gaussian to convolve with the shadow's shape. Default is `0.0.`.
+* `color` - Color that the shadow will be drawn with.
+* `offset` - An instance of `ft.Offset` class - the displacement of the shadow from the casting element. Positive x/y offsets will shift the shadow to the right and down, while negative offsets shift the shadow to the left and up. The offsets are relative to the position of the element that is casting it. Default is `ft.Offset(0,0)`.
+* `blur_style` - The `ft.BlurStyle` to use for this shadow. Defaults to `ft.BlurStyle.NORMAL`.
+
+Example:
+
+```python
+ft.Container(
+    border_radius=10,
+    width=100,
+    height=100,
+    shadow=ft.BoxShadow(
+        spread_radius=1,
+        blur_radius=15,
+        color=ft.colors.BLUE_GREY_300,
+        offset=ft.Offset(0, 0),
+        blur_style=ft.ShadowBlurStyle.OUTER,
+    )
+)
+```
 
 ### `shape`
 

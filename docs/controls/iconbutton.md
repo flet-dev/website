@@ -150,8 +150,22 @@ See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more informa
 
 The text displayed when hovering the mouse over the button.
 
+## Methods
+
+### `focus()`
+
+Moves focus to a button.
+
 ## Events
+
+### `on_blur`
+
+Fires when the control has lost focus.
 
 ### `on_click`
 
 Fires when a user clicks the button.
+
+### `on_focus`
+
+Fires when the control has received focus.

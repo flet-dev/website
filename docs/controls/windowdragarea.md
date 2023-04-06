@@ -45,3 +45,7 @@ ft.app(target=main)
 ### `content`
 
 A control to use for dragging/maximizing/restoring app window.
+
+### `maximizable`
+
+Whether double-clicking on a window drag area causes window to maximize/restore. Default is `True`.

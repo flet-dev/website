@@ -53,6 +53,10 @@ ft.app(target=main)
 
 ## Properties
 
+### `color`
+
+The card's background color.
+
 ### `content`
 
 The `Control` that should be displayed inside the card.
@@ -68,3 +72,15 @@ Controls the size of the shadow below the card. Default value is `1.0`.
 The empty space that surrounds the card.
 
 See [`Container.margin`](container#margin) property for more information and possible values.
+
+### `shadow_color`
+
+The color to paint the shadow below the card.
+
+### `surface_tint_color`
+
+The color used as an overlay on `color` to indicate elevation.
+
+If this is `None`, no overlay will be applied. Otherwise this color will be composited on top of `color` with an opacity related to `elevation` and used to paint the background of the card.
+
+The default is `None`.
