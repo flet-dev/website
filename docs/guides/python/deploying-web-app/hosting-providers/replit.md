@@ -9,9 +9,18 @@ slug: replit
 To run your app on Replit:
 
 * [Sign up](https://replit.com/signup?from=landing) on Replit.
-* Click "New repl" button.
-* Select "Python" language from a list and provide repl name, e.g. `my-app`.
-* Click "Packages" tab and search for `flet` package; select its latest version.
-* Click "Secrets" tab and add `FLET_SERVER_PORT` variable with value `5000`.
-* Switch back to "Files" tab and copy-paste your app into `main.py`.
+* Click "New Repl" button.
+* Select "Python" template and name your repl, e.g. `my-app`.
+* On "Files" pane click <img src="/img/docs/getting-started/more-vert-icon.svg" className="icon-button" /> button and then "Show hidden files":
+
+  <img src="/img/docs/hosting-replit/replit-show-hidden-files.png" className="screenshot-30 screenshot-rounded"/>
+
+* Open `.replit` file on the left, scroll to `[packager.features]` section and set `guessImports` to `false`:
+
+  <img src="/img/docs/hosting-replit/replit-disable-guess-imports.png" className="screenshot-60 screenshot-rounded"/>
+
+* On "Tools" pane click "Packages" and search for `flet` package and click "Install" button.
+* Open `main.py` on "Files" pane and copy-paste your app.
 * Run the app. Enjoy.
+
+  <img src="/img/docs/hosting-replit/replit-running-app.png" className="screenshot-80 screenshot-rounded"/>
