@@ -21,6 +21,12 @@ To run your app on Replit:
 
 * On "Tools" pane click "Packages" and search for `flet` package and click "Install" button.
 * Open `main.py` on "Files" pane and copy-paste your app.
+* Modify call to `ft.app()` and include `view=ft.WEB_BROWSER` parameter:
+
+```python
+ft.app(main, view=ft.WEB_BROWSER)
+```
+
 * Run the app. Enjoy.
 
   <img src="/img/docs/hosting-replit/replit-running-app.png" className="screenshot-80 screenshot-rounded"/>
