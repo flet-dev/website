@@ -9,8 +9,7 @@ slug: replit
 To run your app on Replit:
 
 * [Sign up](https://replit.com/signup?from=landing) on Replit.
-* Click "New Repl" button.
-* Select "Python" template and name your repl, e.g. `my-app`.
+* Click "New Repl" button, select "Python" template and type the name of your repl, e.g. `my-flet-app`. Alternatively, go to [Flet template](https://replit.com/@fletdev/Flet) page and click **Use Template** button. Flet template has everything configured for you, so you can jump to `main.py` and update your program right away.
 * On "Files" pane click <img src="/img/docs/getting-started/more-vert-icon.svg" className="icon-button" /> button and then "Show hidden files":
 
   <img src="/img/docs/hosting-replit/replit-show-hidden-files.png" className="screenshot-30 screenshot-rounded"/>
