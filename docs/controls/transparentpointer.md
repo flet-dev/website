@@ -31,6 +31,7 @@ def main(page):
                 )),
             ],
             expand=True,
+        )
     )
 
 ft.app(target=main)
