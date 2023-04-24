@@ -395,17 +395,17 @@ Read this [note about system fonts](/docs/controls/text#using-system-fonts) if y
 * `linux` (default value is `ZOOM`)
 * `windows` (default value is `ZOOM`)
 
-Supported transitions is `PageTransitionTheme` enum: `FADE_UPWARDS`, `OPEN_UPWARDS`, `ZOOM`, `CUPERTINO`.
+Supported transitions is `ft.PageTransitionTheme` enum: `NONE` (zero delay transition without any animation), `FADE_UPWARDS`, `OPEN_UPWARDS`, `ZOOM`, `CUPERTINO`.
 
 An simple example:
 
 ```python
-theme = Theme()
-theme.page_transitions.android = "openUpwards"
-theme.page_transitions.ios = "cupertino"
-theme.page_transitions.macos = "fadeUpwards"
-theme.page_transitions.linux = "zoom"
-theme.page_transitions.windows = "zoom"
+theme = ft.Theme()
+theme.page_transitions.android = ft.PageTransitionTheme.OPEN_UPWARDS
+theme.page_transitions.ios = ft.PageTransitionTheme.CUPERTINO
+theme.page_transitions.macos = ft.PageTransitionTheme.FADE_UPWARDS
+theme.page_transitions.linux = ft.PageTransitionTheme.ZOOM
+theme.page_transitions.windows = ft.PageTransitionTheme.NONE
 page.theme = theme
 page.update()
 ```
