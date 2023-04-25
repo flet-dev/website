@@ -328,7 +328,7 @@ Event object `e` is an instance of `CanvasResizeEvent` class with the following 
 
 ## `Arc` shape properties
 
-Draw an arc scaled to fit inside the given rectangle.
+Draws an arc scaled to fit inside the given rectangle.
 
 It starts from `start_angle` radians around the oval up to `start_angle` + `sweep_angle` radians around the oval, with zero radians being the point on the right hand side of the oval that crosses the horizontal line that intersects the center of the rectangle and with positive angles going clockwise around the oval. If `use_center` is `True`, the arc is closed back to the center, forming a circle sector. Otherwise, the arc is not closed, forming a circle segment.
 
@@ -368,129 +368,173 @@ A style to draw an arc with. The value of this property is the instance of [`ft.
 
 ## `Circle` shape properties
 
+Draws a circle.
+
 ### `x`
 
+The x-axis coordinate of the circle's center point.
+
 ### `y`
+
+The y-axis coordinate of the circle's center point.
 
 ### `radius`
 
+Circle's radius.
+
 ### `paint`
+
+A style to draw a circle with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
 
 ## `Color` shape properties
 
+Paints the given `color` onto the canvas, applying the given `blend_mode`, with the given color being the source and the background being the destination.
+
 ### `color`
+
+Color to paint onto the canvas.
 
 ### `blend_mode`
 
+Blend mode to apply.
+
+See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
+
 ## `Fill` shape properties
 
+Fills the canvas with the given `Paint`.
+
+To fill the canvas with a solid color and blend mode, consider `Color` shape instead.
+
 ### `paint`
+
+A style to fill the canvas with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
 
 ## `Line` shape properties
 
+Draws a line between the given points using the given paint. The line is stroked, the value of the `Paint.style` is ignored.
+
 ### `x1`
+
+The x-axis coordinate of the line's starting point.
 
 ### `y1`
 
+The y-axis coordinate of the line's starting point.
+
 ### `x2`
+
+The x-axis coordinate of the line's end point.
 
 ### `y2`
 
+The y-axis coordinate of the line's end point.
+
 ### `paint`
+
+A style to draw a line with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
 
 ## `Oval` shape properties
 
+Draws an axis-aligned oval that fills the given axis-aligned rectangle with the given `Paint`. Whether the oval is filled or stroked (or both) is controlled by `Paint.style`.
+
 ### `x`
+
+The x-axis coordinate of the oval's top left point.
 
 ### `y`
 
+The y-axis coordinate of the oval's top left point.
+
 ### `width`
+
+Width of the rectangle containing the oval.
 
 ### `height`
 
+Height of the rectangle containing the oval.
+
 ### `paint`
+
+A style to draw an oval with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
 
 ## `Path` shape properties
 
+Draws the a path with given `elements` with the given `Paint`.
+
+Whether this shape is filled or stroked (or both) is controlled by `Paint.style`. If the path is filled, then sub-paths within it are implicitly closed (see `Path.Close`).
+
 ### `elements`
 
-#### `Path.MoveTo`
+The list of path elements:
 
-* `x`
-* `y`
+#### `Path.MoveTo(x, y)`
 
-#### `Path.LineTo`
+Starts a new sub-path at the given point (`x`,`y`).
 
-* `x`
-* `y`
+#### `Path.LineTo(x, y)`
 
-#### `Path.QuadraticTo`
+Adds a straight line segment from the current point to the given point (`x`,`y`).
 
-* `cp1x`
-* `cp1y`
-* `x`
-* `y`
-* `w`
+#### `Path.QuadraticTo(cp1x, cp2y, x, y, w)`
 
-#### `Path.CubicTo`
+Adds a bezier segment that curves from the current point to the given point (`x`,`y`), using the control points (`cp1x`,`cp1y`) and the weight `w`. If the weight is greater than 1, then the curve is a hyperbola; if the weight equals 1, it's a parabola; and if it is less than 1, it is an ellipse.
 
-* `cp1x`
-* `cp1y`
-* `cp2x`
-* `cp2y`
-* `x`
-* `y`
+#### `Path.CubicTo(cp1x, cp1y, cp2x, cp2y, x, y)`
 
-#### `Path.SubPath`
+Adds a cubic bezier segment that curves from the current point to the given point (`x`,`y`), using the control points (`cp1x`,`cp1y`) and (`cp2x`,`cp2y`).
 
-* `elements`
-* `x`
-* `y`
+#### `Path.SubPath(elements, x, y)`
 
-#### `Path.Arc`
+Adds the sub-path described by `elements` to the given point (`x`,`y`).
 
-* `x:`
-* `y`
-* `width`
-* `height`
-* `start_angle`
-* `sweep_angle`
+#### `Path.Arc(x, y, width, height, start_angle, sweep_angle)`
 
-#### `Path.ArcTo`
+Adds a new sub-path with one arc segment that consists of the arc that follows the edge of the oval bounded by the given rectangle with top left corner at `x` and `y` and dimensions `width` and `height`, from `start_angle` radians around the oval up to `start_angle` + `sweep_angle` radians around the oval, with zero radians being the point on the right hand side of the oval that crosses the horizontal line that intersects the center of the rectangle and with positive angles going clockwise around the oval.
 
-* `x`
-* `y`
-* `radius`
-* `rotation`
-* `large_arc`
-* `clockwise`
+#### `Path.ArcTo(x, y, radius, rotation, large_arc, clockwise)`
 
-#### `Path.Oval`
+Appends up to four conic curves weighted to describe an oval of `radius` and rotated by `rotation` (measured in degrees and clockwise).
 
-* `x`
-* `y`
-* `width`
-* `height`
+The first curve begins from the last point in the path and the last ends at `x` and `y`. The curves follow a path in a direction determined by `clockwise` (bool) and `large_arc` (bool) in such a way that the sweep angle is always less than 360 degrees.
 
-#### `Path.Rect`
+A simple line is appended if either either radii are zero or the last point in the path (`x`,`y`). The radii are scaled to fit the last path point if both are greater than zero but too small to describe an arc.
 
-* `x`
-* `y`
-* `width`
-* `height`
-* `border_radius`
+#### `Path.Oval(x, y, width, height)`
+
+Adds a new sub-path that consists of a curve that forms the ellipse that fills the given rectangle.
+
+#### `Path.Rect(x, y, width, height, border_radius)`
+
+Adds a rectangle as a new sub-path.
 
 #### `Path.Close`
 
+Closes the last sub-path, as if a straight line had been drawn from the current point to the first point of the sub-path.
+
 ### `paint`
+
+A style to draw a path with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
 
 ## `Points` shape properties
 
+Draws a sequence of points according to the given `point_mode`.
+
 ### `points`
+
+The list of `ft.Offset` describing points.
 
 ### `point_mode`
 
+Defines how a list of points is interpreted when drawing a set of points. The value is of type `ft.PointMode`:
+
+* `POINTS` - Draw each point separately. If the `Paint.stroke_cap` is `StrokeCap.ROUND`, then each point is drawn as a circle with the diameter of the `Paint.stroke_width`, filled as described by the `Paint` (ignoring `Paint.style`). Otherwise, each point is drawn as an axis-aligned square with sides of length `Paint.stroke_width`, filled as described by the `Paint` (ignoring `Paint.style`).`
+* `LINES` - Draw each sequence of two points as a line segment. If the number of points is odd, then the last point is ignored. The lines are stroked as described by the `Paint` (ignoring `Paint.style`).
+* `POLYGON` - Draw the entire sequence of point as one line. The lines are stroked as described by the `Paint` (ignoring `Paint.style`).
+
 ### `paint`
+
+A style to draw points with. The value of this property is the instance of [`ft.Paint`](#paint-properties).
 
 ## `Rect` shape properties
 
