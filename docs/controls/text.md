@@ -307,3 +307,59 @@ Property value is `FontWeight` enum with the following values:
 * `W_700`
 * `W_800`
 * `W_900`
+
+## `TextStyle` properties
+
+### `size`
+
+### `weight`
+
+FontWeight
+
+### `italic`
+
+### `decoration`
+
+TextDecoration
+
+### `decoration_color`
+
+### `decoration_thickness`
+
+### `decoration_style`
+
+TextDecorationStyle
+
+### `font_family`
+
+### `color`
+
+### `bgcolor`
+
+### `shadow`
+
+Union[None, BoxShadow, List[BoxShadow]]
+
+### `foreground`
+
+Paint
+
+## `TextSpan` properties
+
+### `text`
+
+### `style`
+
+### `spans`
+
+### `url`
+
+### `url_target`
+
+## `TextStyle` events
+
+### `on_click`
+
+### `on_enter`
+
+### `on_exit`

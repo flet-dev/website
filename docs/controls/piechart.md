@@ -292,7 +292,7 @@ A title drawn at the center of the section. No title is drawn if `title` is empt
 
 ### `title_style`
 
-`ft.TextStyle` of the `title`.
+The style to draw `title` with. The value is an instance of [`ft.TextStyle`](text#textstyle-properties)  `ft.TextStyle` class.
 
 ### `title_position`
 

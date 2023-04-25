@@ -147,7 +147,7 @@ The height of each row (excluding the row that contains column headings).
 
 ### `data_text_style`
 
-The text style for data rows. An instance of `ft.TextStyle` class.
+The text style for data rows. An instance of [`ft.TextStyle`](text#textstyle-properties) class.
 
 ### `divider_thickness`
 
@@ -175,7 +175,7 @@ The height of the heading row.
 
 ### `heading_text_style`
 
-The text style for the heading row. An instance of `ft.TextStyle` class.
+The text style for the heading row. An instance of [`ft.TextStyle`](text#textstyle-properties) class.
 
 ### `horizontal_lines`
 

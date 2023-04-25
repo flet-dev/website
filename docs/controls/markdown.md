@@ -122,7 +122,7 @@ ft.app(target=main)
 
 ### `code_style`
 
-Code block text style. An instance of `TextStyle` class.
+Code block text style. The value is an instance of [`ft.TextStyle`](text#textstyle-properties) class.
 
 An example of configuring monospace font for Markdown code blocks:
 

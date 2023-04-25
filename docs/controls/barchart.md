@@ -362,7 +362,7 @@ A custom tooltip value. Default is `to_y`.
 
 ### `tooltip_style`
 
-A text style to display tooltip with. The value is the instance of `ft.TextStyle` class.
+A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](text#textstyle-properties) class.
 
 ### `tooltip_align`
 
