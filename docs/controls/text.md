@@ -10,6 +10,8 @@ Text is a control for displaying text.
 
 ### Custom text styles
 
+<img src="/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
+
 ```python
 import flet as ft
 
@@ -65,9 +67,9 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
-
 ### Pre-defined theme text styles
+
+<img src="/img/docs/controls/text/predefined-text-styles.png" className="screenshot-40" />
 
 ```python
 import flet as ft
@@ -97,9 +99,9 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/img/docs/controls/text/predefined-text-styles.png" className="screenshot-40" />
-
 ### Font with variable weight
+
+<img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -135,9 +137,9 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
+### Rich text basics
 
-### Rich text
+<img src="/img/docs/controls/text/richtext.png" className="screenshot-70" />
 
 ```python
 import flet as ft
@@ -250,7 +252,82 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-<img src="/img/docs/controls/text/richtext.png" className="screenshot-70" />
+### Rich text with borders and stroke
+
+<img src="/img/docs/controls/text/richtext-borders-stroke.png" className="screenshot-50" />
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.add(
+        ft.Stack(
+            [
+                ft.Text(
+                    spans=[
+                        ft.TextSpan(
+                            "Greetings, planet!",
+                            ft.TextStyle(
+                                size=40,
+                                weight=ft.FontWeight.BOLD,
+                                foreground=ft.Paint(
+                                    color=ft.colors.BLUE_700,
+                                    stroke_width=6,
+                                    stroke_join=ft.StrokeJoin.ROUND,
+                                    style=ft.PaintingStyle.STROKE,
+                                ),
+                            ),
+                        ),
+                    ],
+                ),
+                ft.Text(
+                    spans=[
+                        ft.TextSpan(
+                            "Greetings, planet!",
+                            ft.TextStyle(
+                                size=40,
+                                weight=ft.FontWeight.BOLD,
+                                color=ft.colors.GREY_300,
+                            ),
+                        ),
+                    ],
+                ),
+            ]
+        )
+    )
+
+ft.app(main)
+```
+
+### Rich text with gradient
+
+<img src="/img/docs/controls/text/richtext-gradient.png" className="screenshot-50" />
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.add(
+        ft.Text(
+            spans=[
+                ft.TextSpan(
+                    "Greetings, planet!",
+                    ft.TextStyle(
+                        size=40,
+                        weight=ft.FontWeight.BOLD,
+                        foreground=ft.Paint(
+                            gradient=ft.PaintLinearGradient(
+                                (0, 20), (150, 20), [ft.colors.RED, ft.colors.YELLOW]
+                            )
+                        ),
+                    ),
+                ),
+            ],
+        )
+    )
+
+ft.app(main)
+```
 
 ## Properties
 
