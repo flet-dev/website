@@ -253,6 +253,10 @@ ft.Text("$$", semantics_label="Double dollars")
 
 Text size in virtual pixels. Default is `14`.
 
+### `spans`
+
+The list of [`ft.TextSpan`](#textspan-properties) objects to build a rich text paragraph.
+
 ### `style`
 
 Property value is `TextThemeStyle` enum with one of the following values:
@@ -310,56 +314,120 @@ Property value is `FontWeight` enum with the following values:
 
 ## `TextStyle` properties
 
+A style describing how to format and paint text.
+
 ### `size`
+
+The size of glyphs (in logical pixels) to use when painting the text. Default is 14.
 
 ### `weight`
 
-FontWeight
+Font weight - see [Text.weight](#weight) for possible values.
 
 ### `italic`
 
+`True` to use italic typeface.
+
 ### `decoration`
 
-TextDecoration
+The decorations to paint near the text (e.g., an underline).
+
+The value is the instance of `ft.TextDecoration` enum:
+
+* `NONE` (default) - Do not draw a decoration.
+* `UNDERLINE` - Draw a line underneath each line of text.
+* `OVERLINE` - Draw a line above each line of text.
+* `LINE_THROUGH` - Draw a line through each line of text.
+
+The enum is a flag, so multiple decorations can be combined together, for example:
+
+```python
+style = ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE | ft.TextDecoration.OVERLINE)
+```
 
 ### `decoration_color`
 
+The color in which to paint the text decorations.
+
 ### `decoration_thickness`
+
+The thickness of the decoration stroke as a multiplier of the thickness defined by the font.
 
 ### `decoration_style`
 
-TextDecorationStyle
+The style in which to paint the text decorations (e.g., dashed).
+
+The value is the instance of `ft.TextDecorationStyle` enum:
+
+* `SOLID` (default) - Draw a solid line.
+* `DOUBLE` - Draw two lines.
+* `DOTTED` - Draw a dotted line.
+* `DASHED` - Draw a dashed line.
+* `WAVY` - Draw a sinusoidal line.
 
 ### `font_family`
 
+See [`Text.font_family`](#font_family).
+
 ### `color`
+
+See [`Text.color`](#color).
 
 ### `bgcolor`
 
+See [`Text.bgcolor`](#bgcolor).
+
 ### `shadow`
 
-Union[None, BoxShadow, List[BoxShadow]]
+See [`Container.shadow`](container#shadow).
 
 ### `foreground`
 
-Paint
+The paint drawn as a foreground for the text.
+
+The value is of [`ft.Paint`](canvas#paint) class.
 
 ## `TextSpan` properties
 
+An span of text.
+
 ### `text`
+
+The text contained in this span.
+
+If both `text` and `spans` are defined, the `text` will precede the `spans`.
 
 ### `style`
 
+The [`TextStyle`](#textstyle-properties) to apply to this span.
+
 ### `spans`
+
+Additional spans to include as children.
+
+If both `text` and `spans` are defined, the `text` will precede the `spans`.
 
 ### `url`
 
+The URL to open when the span is clicked. If registered, `on_click` event is fired after redirect.
+
 ### `url_target`
 
-## `TextStyle` events
+Where to open URL in the web mode:
+
+* `_blank` (default) - new tab/window.
+* `_self` - the current tab/window.
+
+## `TextSpan` events
 
 ### `on_click`
 
+Fires when the span is clicked.
+
 ### `on_enter`
 
+Triggered when a mouse pointer has entered the span.
+
 ### `on_exit`
+
+Triggered when a mouse pointer has exited the span.

@@ -608,7 +608,7 @@ A text style to draw `text` and `spans` with. The value is the instance of [`ft.
 
 ### `spans`
 
-The list of [`ft.TextSpan`](text#textspan-properties) to build rich text paragraph.
+The list of [`ft.TextSpan`](text#textspan-properties) objects to build a rich text paragraph.
 
 ### `alignment`
 
