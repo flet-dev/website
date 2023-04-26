@@ -307,13 +307,13 @@ ft.app(main)
 
 ## `Canvas` properties
 
-### `shapes`
-
-The list of `Shape` objects (see below) to draw on the canvas.
-
 ### `resize_interval`
 
 Sampling interval in milliseconds for `on_resize` event. Default is `0` - call `on_resize` on every change.
+
+### `shapes`
+
+The list of `Shape` objects (see below) to draw on the canvas.
 
 ## `Canvas` events
 
@@ -640,9 +640,9 @@ Text rotation in radians. Text is rotated around the point determined by `alignm
 
 A description of the style to use when drawing a shape on the canvas.
 
-### `color`
+### `anti_alias`
 
-The color to use when stroking or filling a shape. Defaults to opaque black.
+Whether to apply anti-aliasing to lines and images drawn on the canvas. Defaults to `True`.
 
 ### `blend_mode`
 
@@ -666,9 +666,9 @@ Blur image when drawing it on a canvas.
 
 See [`Container.blur`](container#blur) for more information.
 
-### `anti_alias`
+### `color`
 
-Whether to apply anti-aliasing to lines and images drawn on the canvas. Defaults to `True`.
+The color to use when stroking or filling a shape. Defaults to opaque black.
 
 ### `gradient`
 

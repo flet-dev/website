@@ -413,17 +413,13 @@ Property value is `FontWeight` enum with the following values:
 
 A style describing how to format and paint text.
 
-### `size`
+### `bgcolor`
 
-The size of glyphs (in logical pixels) to use when painting the text. Default is 14.
+See [`Text.bgcolor`](#bgcolor).
 
-### `weight`
+### `color`
 
-Font weight - see [Text.weight](#weight) for possible values.
-
-### `italic`
-
-`True` to use italic typeface.
+See [`Text.color`](#color).
 
 ### `decoration`
 
@@ -446,10 +442,6 @@ style = ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE | ft.TextDecoration.
 
 The color in which to paint the text decorations.
 
-### `decoration_thickness`
-
-The thickness of the decoration stroke as a multiplier of the thickness defined by the font.
-
 ### `decoration_style`
 
 The style in which to paint the text decorations (e.g., dashed).
@@ -462,21 +454,13 @@ The value is the instance of `ft.TextDecorationStyle` enum:
 * `DASHED` - Draw a dashed line.
 * `WAVY` - Draw a sinusoidal line.
 
+### `decoration_thickness`
+
+The thickness of the decoration stroke as a multiplier of the thickness defined by the font.
+
 ### `font_family`
 
 See [`Text.font_family`](#font_family).
-
-### `color`
-
-See [`Text.color`](#color).
-
-### `bgcolor`
-
-See [`Text.bgcolor`](#bgcolor).
-
-### `shadow`
-
-See [`Container.shadow`](container#shadow).
 
 ### `foreground`
 
@@ -484,13 +468,29 @@ The paint drawn as a foreground for the text.
 
 The value is of [`ft.Paint`](canvas#paint) class.
 
+### `italic`
+
+`True` to use italic typeface.
+
+### `shadow`
+
+See [`Container.shadow`](container#shadow).
+
+### `size`
+
+The size of glyphs (in logical pixels) to use when painting the text. Default is 14.
+
+### `weight`
+
+Font weight - see [Text.weight](#weight) for possible values.
+
 ## `TextSpan` properties
 
 A span of text.
 
-### `text`
+### `spans`
 
-The text contained in this span.
+Additional spans to include as children.
 
 If both `text` and `spans` are defined, the `text` will precede the `spans`.
 
@@ -498,9 +498,9 @@ If both `text` and `spans` are defined, the `text` will precede the `spans`.
 
 The [`TextStyle`](#textstyle-properties) to apply to this span.
 
-### `spans`
+### `text`
 
-Additional spans to include as children.
+The text contained in this span.
 
 If both `text` and `spans` are defined, the `text` will precede the `spans`.
 
