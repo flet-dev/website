@@ -31,6 +31,14 @@ Background color of the Page.
 
 A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
 
+### `client_ip`
+
+🌎 Web only. IP address of the connected user.
+
+### `client_user_agent`
+
+🌎 Web only. Browser details of the connected user.
+
 ### `controls`
 
 A list of Controls to display on the Page.

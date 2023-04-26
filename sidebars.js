@@ -133,6 +133,7 @@ module.exports = {
             "controls/circleavatar",
             "controls/progressbar",
             "controls/progressring",
+            "controls/canvas",
           ],
         },
         {

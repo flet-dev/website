@@ -6,15 +6,11 @@ slug: text
 
 Text is a control for displaying text.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## Examples
 
 ### Custom text styles
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+<img src="/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
 
 ```python
 import flet as ft
@@ -70,15 +66,10 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
 
 ### Pre-defined theme text styles
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+<img src="/img/docs/controls/text/predefined-text-styles.png" className="screenshot-40" />
 
 ```python
 import flet as ft
@@ -107,15 +98,10 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/text/predefined-text-styles.png" className="screenshot-40" />
 
 ### Font with variable weight
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+<img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
 
 ```python
 import flet as ft
@@ -150,10 +136,198 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
-  </TabItem>
-</Tabs>
 
-<img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
+### Rich text basics
+
+<img src="/img/docs/controls/text/richtext.png" className="screenshot-70" />
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.add(
+        ft.Text("Plain text with default style"),
+        ft.Text(
+            "Some text",
+            size=30,
+            spans=[
+                ft.TextSpan(
+                    "here goes italic",
+                    ft.TextStyle(italic=True, size=20, color=ft.colors.GREEN),
+                    spans=[
+                        ft.TextSpan(
+                            "bold and italic",
+                            ft.TextStyle(weight=ft.FontWeight.BOLD),
+                        ),
+                        ft.TextSpan(
+                            "just italic",
+                            spans=[
+                                ft.TextSpan("smaller italic", ft.TextStyle(size=15))
+                            ],
+                        ),
+                    ],
+                )
+            ],
+        ),
+        ft.Text(
+            disabled=False,
+            spans=[
+                ft.TextSpan(
+                    "underlined and clickable",
+                    ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE),
+                    on_click=lambda e: print(f"Clicked span: {e.control.uid}"),
+                    on_enter=lambda e: print(f"Entered span: {e.control.uid}"),
+                    on_exit=lambda e: print(f"Exited span: {e.control.uid}"),
+                ),
+                ft.TextSpan(" "),
+                ft.TextSpan(
+                    "underlined red wavy",
+                    ft.TextStyle(
+                        decoration=ft.TextDecoration.UNDERLINE,
+                        decoration_color=ft.colors.RED,
+                        decoration_style=ft.TextDecorationStyle.WAVY,
+                    ),
+                    on_enter=lambda e: print(f"Entered span: {e.control.uid}"),
+                    on_exit=lambda e: print(f"Exited span: {e.control.uid}"),
+                ),
+                ft.TextSpan(" "),
+                ft.TextSpan(
+                    "overlined blue",
+                    ft.TextStyle(
+                        decoration=ft.TextDecoration.OVERLINE, decoration_color="blue"
+                    ),
+                ),
+                ft.TextSpan(" "),
+                ft.TextSpan(
+                    "overlined and underlined",
+                    ft.TextStyle(
+                        decoration=ft.TextDecoration.OVERLINE
+                        | ft.TextDecoration.UNDERLINE
+                    ),
+                ),
+                ft.TextSpan(" "),
+                ft.TextSpan(
+                    "line through thick",
+                    ft.TextStyle(
+                        decoration=ft.TextDecoration.LINE_THROUGH,
+                        decoration_thickness=3,
+                    ),
+                ),
+            ],
+        ),
+    )
+
+    def highlight_link(e):
+        e.control.style.color = ft.colors.BLUE
+        e.control.update()
+
+    def unhighlight_link(e):
+        e.control.style.color = None
+        e.control.update()
+
+    page.add(
+        ft.Text(
+            disabled=False,
+            spans=[
+                ft.TextSpan("AwesomeApp 1.0 "),
+                ft.TextSpan(
+                    "Visit our website",
+                    ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE),
+                    url="https://google.com",
+                    on_enter=highlight_link,
+                    on_exit=unhighlight_link,
+                ),
+                ft.TextSpan(" All rights reserved. "),
+                ft.TextSpan(
+                    "Documentation",
+                    ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE),
+                    url="https://google.com",
+                    on_enter=highlight_link,
+                    on_exit=unhighlight_link,
+                ),
+            ],
+        ),
+    )
+
+ft.app(main)
+```
+
+### Rich text with borders and stroke
+
+<img src="/img/docs/controls/text/richtext-borders-stroke.png" className="screenshot-50" />
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.add(
+        ft.Stack(
+            [
+                ft.Text(
+                    spans=[
+                        ft.TextSpan(
+                            "Greetings, planet!",
+                            ft.TextStyle(
+                                size=40,
+                                weight=ft.FontWeight.BOLD,
+                                foreground=ft.Paint(
+                                    color=ft.colors.BLUE_700,
+                                    stroke_width=6,
+                                    stroke_join=ft.StrokeJoin.ROUND,
+                                    style=ft.PaintingStyle.STROKE,
+                                ),
+                            ),
+                        ),
+                    ],
+                ),
+                ft.Text(
+                    spans=[
+                        ft.TextSpan(
+                            "Greetings, planet!",
+                            ft.TextStyle(
+                                size=40,
+                                weight=ft.FontWeight.BOLD,
+                                color=ft.colors.GREY_300,
+                            ),
+                        ),
+                    ],
+                ),
+            ]
+        )
+    )
+
+ft.app(main)
+```
+
+### Rich text with gradient
+
+<img src="/img/docs/controls/text/richtext-gradient.png" className="screenshot-50" />
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.add(
+        ft.Text(
+            spans=[
+                ft.TextSpan(
+                    "Greetings, planet!",
+                    ft.TextStyle(
+                        size=40,
+                        weight=ft.FontWeight.BOLD,
+                        foreground=ft.Paint(
+                            gradient=ft.PaintLinearGradient(
+                                (0, 20), (150, 20), [ft.colors.RED, ft.colors.YELLOW]
+                            )
+                        ),
+                    ),
+                ),
+            ],
+        )
+    )
+
+ft.app(main)
+```
 
 ## Properties
 
@@ -253,6 +427,10 @@ ft.Text("$$", semantics_label="Double dollars")
 
 Text size in virtual pixels. Default is `14`.
 
+### `spans`
+
+The list of [`ft.TextSpan`](#textspan-properties) objects to build a rich text paragraph.
+
 ### `style`
 
 Property value is `TextThemeStyle` enum with one of the following values:
@@ -307,3 +485,123 @@ Property value is `FontWeight` enum with the following values:
 * `W_700`
 * `W_800`
 * `W_900`
+
+## `TextStyle` properties
+
+A style describing how to format and paint text.
+
+### `bgcolor`
+
+See [`Text.bgcolor`](#bgcolor).
+
+### `color`
+
+See [`Text.color`](#color).
+
+### `decoration`
+
+The decorations to paint near the text (e.g., an underline).
+
+The value is the instance of `ft.TextDecoration` enum:
+
+* `NONE` (default) - Do not draw a decoration.
+* `UNDERLINE` - Draw a line underneath each line of text.
+* `OVERLINE` - Draw a line above each line of text.
+* `LINE_THROUGH` - Draw a line through each line of text.
+
+The enum is a flag, so multiple decorations can be combined together, for example:
+
+```python
+style = ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE | ft.TextDecoration.OVERLINE)
+```
+
+### `decoration_color`
+
+The color in which to paint the text decorations.
+
+### `decoration_style`
+
+The style in which to paint the text decorations (e.g., dashed).
+
+The value is the instance of `ft.TextDecorationStyle` enum:
+
+* `SOLID` (default) - Draw a solid line.
+* `DOUBLE` - Draw two lines.
+* `DOTTED` - Draw a dotted line.
+* `DASHED` - Draw a dashed line.
+* `WAVY` - Draw a sinusoidal line.
+
+### `decoration_thickness`
+
+The thickness of the decoration stroke as a multiplier of the thickness defined by the font.
+
+### `font_family`
+
+See [`Text.font_family`](#font_family).
+
+### `foreground`
+
+The paint drawn as a foreground for the text.
+
+The value is of [`ft.Paint`](canvas#paint) class.
+
+### `italic`
+
+`True` to use italic typeface.
+
+### `shadow`
+
+See [`Container.shadow`](container#shadow).
+
+### `size`
+
+The size of glyphs (in logical pixels) to use when painting the text. Default is 14.
+
+### `weight`
+
+Font weight - see [Text.weight](#weight) for possible values.
+
+## `TextSpan` properties
+
+A span of text.
+
+### `spans`
+
+Additional spans to include as children.
+
+If both `text` and `spans` are defined, the `text` will precede the `spans`.
+
+### `style`
+
+The [`TextStyle`](#textstyle-properties) to apply to this span.
+
+### `text`
+
+The text contained in this span.
+
+If both `text` and `spans` are defined, the `text` will precede the `spans`.
+
+### `url`
+
+The URL to open when the span is clicked. If registered, `on_click` event is fired after that.
+
+### `url_target`
+
+Where to open URL in the web mode:
+
+* `_blank` (default) - new tab/window.
+* `_self` - the current tab/window.
+
+## `TextSpan` events
+
+### `on_click`
+
+Fires when the span is clicked.
+
+### `on_enter`
+
+Triggered when a mouse pointer has entered the span.
+
+### `on_exit`
+
+Triggered when a mouse pointer has exited the span.

@@ -278,10 +278,12 @@ The content will be clipped (or not) according to this option.
 
 Property value is `ClipBehavior` enum with supported values:
 
-* `NONE` (default)
+* `NONE`
 * `ANTI_ALIAS`
 * `ANTI_ALIAS_WITH_SAVE_LAYER`
 * `HARD_EDGE`
+
+Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
 
 ### `content`
 
@@ -484,6 +486,17 @@ Sets the shape of the container. The value is `BoxShape` enum:
 
 * `RECTANGLE` (default)
 * `CIRCLE`
+
+### `url`
+
+The URL to open when the container is clicked. If registered, `on_click` event is fired after that.
+
+### `url_target`
+
+Where to open URL in the web mode:
+
+* `_blank` (default) - new tab/window.
+* `_self` - the current tab/window.
 
 ## Events
 

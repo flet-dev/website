@@ -321,6 +321,17 @@ The text displayed on a button.
 
 The text displayed when hovering the mouse over the button.
 
+### `url`
+
+The URL to open when the button is clicked. If registered, `on_click` event is fired after that.
+
+### `url_target`
+
+Where to open URL in the web mode:
+
+* `_blank` (default) - new tab/window.
+* `_self` - the current tab/window.
+
 ## Methods
 
 ### `focus()`
