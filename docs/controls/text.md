@@ -389,7 +389,7 @@ The value is of [`ft.Paint`](canvas#paint) class.
 
 ## `TextSpan` properties
 
-An span of text.
+A span of text.
 
 ### `text`
 
@@ -409,7 +409,7 @@ If both `text` and `spans` are defined, the `text` will precede the `spans`.
 
 ### `url`
 
-The URL to open when the span is clicked. If registered, `on_click` event is fired after redirect.
+The URL to open when the span is clicked. If registered, `on_click` event is fired after that.
 
 ### `url_target`
 

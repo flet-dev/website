@@ -120,6 +120,17 @@ ft.app(target=main)
 
 ## Properties
 
+### `auto_follow_links`
+
+Automatically open URLs in the document. Default is `False`. If registered, `on_tap_link` event is fired after that.
+
+### `auto_follow_links_target`
+
+Where to open URL in the web mode:
+
+* `_blank` (default) - new tab/window.
+* `_self` - the current tab/window.
+
 ### `code_style`
 
 Code block text style. The value is an instance of [`ft.TextStyle`](text#textstyle-properties) class.

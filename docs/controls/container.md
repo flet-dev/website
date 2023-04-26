@@ -487,6 +487,17 @@ Sets the shape of the container. The value is `BoxShape` enum:
 * `RECTANGLE` (default)
 * `CIRCLE`
 
+### `url`
+
+The URL to open when the container is clicked. If registered, `on_click` event is fired after that.
+
+### `url_target`
+
+Where to open URL in the web mode:
+
+* `_blank` (default) - new tab/window.
+* `_self` - the current tab/window.
+
 ## Events
 
 ### `on_click`

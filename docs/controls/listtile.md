@@ -136,6 +136,17 @@ A `Control` to display as primary content of the list tile. Typically a [Text](t
 
 A `Control` to display after the title. Typically an [Icon](icon) control.
 
+### `url`
+
+The URL to open when the list tile is clicked. If registered, `on_click` event is fired after that.
+
+### `url_target`
+
+Where to open URL in the web mode:
+
+* `_blank` (default) - new tab/window.
+* `_self` - the current tab/window.
+
 ## Events
 
 ### `on_click`
