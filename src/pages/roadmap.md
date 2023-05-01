@@ -3,6 +3,14 @@ title: Roadmap
 slug: roadmap
 ---
 
+## May-July 2023
+
+### Mobile
+
+* Flet Studio (in App Store and Google Play).
+* Server-driven modile apps for iOS and Android.
+* [Standalone mobile apps for iOS and Android](/blog/flet-mobile-update#flet-mobile-architecture).
+
 ## January-March 2023
 
 ### Desktop
@@ -12,29 +20,15 @@ slug: roadmap
 ### Web
 
 * :white_check_mark: Standalone web apps with [Pyodide](https://pyodide.org/en/stable/) and Flet.
-* Hosting Flet app in FastAPI server.
-
-### Mobile
-
-* [Standalone mobile apps for iOS and Android](/blog/flet-mobile-update#flet-mobile-architecture).
 
 ### Developer experience
 
 * Sample apps:
     * :white_check_mark: Chat
     * :white_check_mark: Solitaire
-* Gallery
+* :white_check_mark: Gallery
 
-## April 2023
-
-* [PyCon US 2023](https://us.pycon.org/2023/)
-
-## Year 2023
-
-### Mobile
-
-* Flet Studio (in App Store and Google Play.
-* Experimenting with isomorphic approach: the same Python code runs on a client and a server.
+## 2023
 
 ### Controls
 
@@ -56,38 +50,6 @@ slug: roadmap
   * Database-aware `DataTable`
 * Reactive approach for Flet apps.
 
-## September-December 2022
+## 2024
 
-### Mobile
-
-* :white_check_mark: Standalone mobile package for Flet app
-
-### Controls
-
-* :white_check_mark: DataTable
-* :white_check_mark: Charts
-* :white_check_mark: [Animations](/docs/guides/python/animations)
-
-## July-August 2022
-
-### Security
-
-* :white_check_mark: Authentication (OAuth): GitHub, Google, Azure (Microsoft Account).
-
-### Mobile
-
-* :white_check_mark: Flet widget for Flutter
-
-### Desktop
-
-* :white_check_mark: Windows and macOS "host" client with hot reload, so the app could be run as `flet main.py`
-
-### Controls
-
-* :white_check_mark: [Routing and navigation](/docs/guides/python/navigation-and-routing)
-* :white_check_mark: NavigationBar
-* :white_check_mark: Responsive layout
-
-### Core functionality
-
-* :white_check_mark: [PubSub](/docs/guides/python/pub-sub)
+* [PyCon US 2024](https://pycon.blogspot.com/2021/05/pycon-us-2024-and-2025-announcement.html)
