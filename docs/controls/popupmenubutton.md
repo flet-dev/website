@@ -10,6 +10,8 @@ An icon button which displays a menu when clicked.
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/buttons/popupmenubutton)
+
 ### PopupMenuButton
 
 <Tabs groupId="language">

@@ -11,6 +11,8 @@ Text buttons are used for the lowest priority actions, especially when presentin
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/buttons/textbutton)
+
 ### Basic text buttons
 
 <Tabs groupId="language">

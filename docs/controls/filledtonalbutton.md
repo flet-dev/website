@@ -13,6 +13,8 @@ A filled tonal button is an alternative middle ground between [FilledButton](fil
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/buttons/filledtonalbutton)
+
 ### Filled tonal button
 
 <Tabs groupId="language">

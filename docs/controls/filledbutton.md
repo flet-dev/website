@@ -13,6 +13,8 @@ Filled buttons have the most visual impact after the [FloatingActionButton](/doc
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/buttons/filledbutton)
+
 ### Filled button
 
 <Tabs groupId="language">

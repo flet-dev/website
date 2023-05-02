@@ -15,6 +15,8 @@ export const ImageCard = ({title, href, imageUrl}) => (
     </div>
 );
 
+[Live example](https://flet-controls-gallery.fly.dev/buttons)
+
 <div className="margin-top--lg">
   <section className="row">
     <ImageCard title="Elevated" href="/docs/controls/elevatedbutton" imageUrl="elevated-button.png" />

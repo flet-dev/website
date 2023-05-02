@@ -13,6 +13,8 @@ Icon buttons are commonly used in the toolbars, but they can be used in many oth
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/buttons/iconbutton)
+
 ### Icon buttons
 
 <Tabs groupId="language">

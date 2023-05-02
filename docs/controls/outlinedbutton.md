@@ -12,6 +12,8 @@ Outlined buttons pair well with filled buttons to indicate an alternative, secon
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/buttons/outlinedbutton)
+
 ### Basic outlined buttons
 
 <Tabs groupId="language">
