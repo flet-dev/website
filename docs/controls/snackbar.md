@@ -11,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/dialogs/snackbar)
+
 ### SnackBar with dynamic message
 
 <Tabs groupId="language">
