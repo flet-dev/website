@@ -8,6 +8,8 @@ A Material Design data table.
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/datatable)
+
 ### A simple DataTable
 
 <img src="/img/docs/controls/datatable/datatable-minimal.png" className="screenshot-50"/>

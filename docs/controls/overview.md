@@ -17,6 +17,8 @@ Page
      └─ ElevatedButton
 ```
 
+[Control gallery live demo](https://flet-controls-gallery.fly.dev/layout)
+
 ## Controls by categories
 
 ```mdx-code-block

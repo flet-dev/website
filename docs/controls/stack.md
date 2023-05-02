@@ -15,6 +15,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/stack)
+
 ### Transparent title over an image
 
 <img src="/img/docs/controls/stack/image-title.png" className="screenshot-50" />
