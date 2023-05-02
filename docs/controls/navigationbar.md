@@ -10,6 +10,8 @@ Navigation bars offer a persistent and convenient way to switch between primary 
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/navigation/navigationbar)
+
 ### A simple NavigationBar
 
 <img src="/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>

@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/displays/icon)
+
 ### Icons with different colors and sizes
 
 <Tabs groupId="language">

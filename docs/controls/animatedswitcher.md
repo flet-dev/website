@@ -11,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/animations/animated_switcher)
+
 ### Animated switching between two containers with scale effect
 
 <img src="/img/docs/controls/animated-switcher/animated-switcher.gif" className="screenshot-20" />

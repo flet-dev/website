@@ -15,6 +15,8 @@ If `foreground_image_url` fails then `background_image_url` is used. If `backgro
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/displays/circleavatar)
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 

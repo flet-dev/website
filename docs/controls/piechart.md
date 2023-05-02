@@ -8,6 +8,8 @@ Draws a pie chart.
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/charts/piechart)
+
 ### PieChart 1
 
 <img src="/img/docs/controls/charts/piechart-sample-1.gif" className="screenshot-30"/>

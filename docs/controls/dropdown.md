@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/input/dropdown)
+
 ### Basic dropdown
 
 <Tabs groupId="language">

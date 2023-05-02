@@ -11,6 +11,8 @@ Elevated buttons are essentially filled tonal buttons with a shadow. To prevent 
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/buttons/elevatedbutton)
+
 ### Basic elevated buttons
 
 <Tabs groupId="language">

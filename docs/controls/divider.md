@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/divider)
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 

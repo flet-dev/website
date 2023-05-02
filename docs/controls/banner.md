@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/dialogs/banner)
+
 ### Banner with leading icon and actions
 
 <Tabs groupId="language">

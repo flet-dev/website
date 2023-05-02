@@ -11,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/card)
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 

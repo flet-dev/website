@@ -10,6 +10,8 @@ A modal bottom sheet is an alternative to a menu or a dialog and prevents the us
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/dialogs/bottomsheet)
+
 ### Simple BottomSheet
 
 <img src="/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>

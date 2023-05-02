@@ -15,6 +15,10 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/utility/gesturedetector)
+
+[Solitare game tutorial](https://flet.dev/docs/tutorials/python-solitaire)
+
 ### Draggable containers
 
 The following example demonstrates how a control can be freely dragged inside a Stack.

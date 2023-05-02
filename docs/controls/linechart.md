@@ -8,6 +8,8 @@ Draws a line chart.
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/charts/linechart)
+
 ### LineChart 1
 
 <img src="/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>

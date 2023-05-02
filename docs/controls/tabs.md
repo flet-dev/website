@@ -11,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/tabs)
+
 ### Tabs
 
 <img src="/img/docs/controls/tabs/tabs-simple.gif" className="screenshot-60"/>

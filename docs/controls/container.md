@@ -11,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/container)
+
 ### Containers with different background color
 
 <img src="/img/docs/controls/container/containers-background-color.png" className="screenshot-50" />

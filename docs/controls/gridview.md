@@ -15,6 +15,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/gridview)
+
 ### Photo gallery
 
 <img src="/img/docs/controls/gridview/photo-gallery.png" className="screenshot-50"/>

@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/column)
+
 ### Column spacing
 
 <img src="/img/docs/controls/column/column-spacing.gif" className="screenshot-50"/>

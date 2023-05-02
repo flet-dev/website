@@ -12,6 +12,8 @@ Floating action button is usually set to `page.floating_action_button`, but can 
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/buttons/floatingactionbutton)
+
 ### Basic FAB
 
 <Tabs groupId="language">

@@ -8,6 +8,8 @@ Canvas is a control for drawing arbitrary graphics using a set of primitives or 
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/displays/canvas)
+
 ### Basic usage
 
 <img src="/img/docs/controls/canvas/canvas-face.png" className="screenshot-20"/>

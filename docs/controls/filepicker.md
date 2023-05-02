@@ -11,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/utility/filepicker)
+
 ### Pick multiple files
 
 <Tabs groupId="language">

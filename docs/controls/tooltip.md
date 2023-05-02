@@ -10,6 +10,8 @@ Tooltips provide text labels which help explain the function of a button or othe
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/utility/tooltip)
+
 ### Tooltip with a custom decoration
 
 <img src="/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
