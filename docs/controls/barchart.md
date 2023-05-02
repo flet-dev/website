@@ -8,6 +8,8 @@ Draws a bar chart.
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/charts/barchart)
+
 ### BarChart 1
 
 <img src="/img/docs/controls/charts/barchart-sample-1.png" className="screenshot-50"/>
