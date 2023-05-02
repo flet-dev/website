@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/utility/shadermask)
+
 ### Adding a pink glow around image edges
 
 <img src="/img/docs/controls/shader-mask/shader-mask-pink-glow.png" className="screenshot-20" />
