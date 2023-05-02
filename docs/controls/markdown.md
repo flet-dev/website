@@ -11,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/displays/markdown)
+
 ### Markdown with GitHubWeb extensions and clickable links
 
 <Tabs groupId="language">

@@ -8,6 +8,8 @@ Text is a control for displaying text.
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/displays/text)
+
 ### Custom text styles
 
 <img src="/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
