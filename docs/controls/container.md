@@ -261,12 +261,12 @@ container_1.border = ft.border.only(bottom=ft.border.BorderSide(1, "black"))
 
 ### `border_radius`
 
-If specified, the corners of the container are rounded by this radius. Border radius is an instance of `border_radius.BorderRadius` class with 4 properties: `topLeft`, `topRight`, `bottomLeft`, `bottomRight`. The object could be created with a constructor where all corner values set separately or with helper methods:
+If specified, the corners of the container are rounded by this radius. Border radius is an instance of `border_radius.BorderRadius` class with 4 properties: `top_left`, `top_right`, `bottom_left`, `bottom_right`. The object could be created with a constructor where all corner values set separately or with helper methods:
 
 * `border_radius.all(value)`
 * `border_radius.horizontal(left: float = 0, right: float = 0)`
 * `border_radius.vertical(top: float = 0, bottom: float = 0)`
-* `border_radius.only(topLeft, topRight, bottomLeft, bottomRight)`
+* `border_radius.only(top_left, top_right, bottom_left, bottom_right)`
 
 For example:
 
