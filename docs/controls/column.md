@@ -263,7 +263,7 @@ Property value is `MainAxisAlignment` enum with the following values:
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children update.
+`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to` method to work.
 
 ### `controls`
 
@@ -289,7 +289,7 @@ Property value is an optional `ScrollMode` enum with `None` as default.
 
 Supported values:
 
-* `None` (default) - the Row is non-scrollable and its content could overflow.
+* `None` (default) - the column is non-scrollable and its content could overflow.
 * `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
 * `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `ALWAYS` - scrolling is enabled and scroll bar is always shown.
@@ -310,6 +310,36 @@ Specifies how much space should be occupied vertically. Default is `False` - all
 ### `wrap`
 
 When set to `True` the Column will put child controls into additional columns (runs) if they don't fit a single column.
+
+## Methods
+
+#### `scroll_to(offset, delta, key, duration, curve)`
+
+Moves scroll position to either a specified `offset`, on a specified `delta` or a control with specified `key`.
+
+`offset` is an abosulte value between minimum and maximum extents of a scrollable control, for example:
+
+```python
+products.scroll_to(offset=100, duration=1)
+```
+
+`offset` could be a negative to scroll from the end of a scrollable. For example, to scroll to the very end:
+
+```python
+products.scroll_to(offset=-1, duration=1)
+```
+
+`delta` allows moving scroll relatively to the current position. Positive `delta` to scroll forward and negative `delta` to scroll backward. For example, to move scroll on 50 pixels forward:
+
+```python
+products.scroll_to(delta=50)
+```
+
+`duration` is scrolling animation duration in milliseconds. Defaults to 0 - no animation.
+
+`curve` configures animation curve. Defaults to `ft.AnimationCurve.EASE`.
+
+## Events
 
 ## Expanding children
 
