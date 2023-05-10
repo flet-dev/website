@@ -25,7 +25,8 @@ ft.Container(bgcolor=ft.colors.YELLOW)
 
 #### Theme colors
 
-There are 30 named Theme colors that are are generated based on the `Theme.seed_color` property of the `page.theme` (the default value is 'blue').
+There are 30 named Theme colors (`ColorScheme`) that are are generated based on the `Theme.seed_color` property of the `page.theme`. The default `seed_color` value is 'blue'.
+
 [code example]
 [Screen shot for default theme colors]
 
@@ -48,23 +49,32 @@ Palette colors can be used for setting individual controls color property or as 
 
 ## How the colors are defined for Flet controls
 
-Most Flet controls have default colors defined by Theme colors that can be overridden on different levels.
-### Root (Page) level
+Most Flet controls have default colors defined by the page ColorScheme that can be overridden on different levels.
 
-### Nearest ancestor (Container) level
+<img src="/img/docs/colors/colors_fallback.svg"className="screenshot-70" />
 
 ### Control level
 
-If the color is defined on the control level, it will override the property value set on a higher level. In the example below, one ElevatedButton property is not specified and displayed as a defaulr value (TBD) and the other ElevatedButton `bgcolor` property is set to a named color 'deep_purple_900':
+If the color is defined on the control level, it will be used. In the example below, one ElevatedButton property is not specified and displayed as a default value (TBD) and the other ElevatedButton `bgcolor` property is set to a named color 'deep_purple_900':
 
 [picture]
 [code example]
 
 Not every Flet control has a color property. For example, FilledButton always has a default 'Primary' color defined by the nearest ancestor Theme.
 
+### Control Theme level
 
-* Format for colors.
-* Colors list
+[example with Tabs]
+
+### Theme level
+
+Flet will check for the nearest ancestor that has a Theme defined, and will take color from the ColorScheme. In example below, a Checkbox is wrapped in a Container, for which there is a Theme defined, and the Checkbox color from its ColorScheme will be used: 
+
+[example with Container]
+
+
+If you don't define control color property, ControlTheme or Theme anywhere, the nearest ancestor will be the page and colors from the default page ColorScheme will be used.  
+
 * Link to an app
 
 `ft.colors.with_opacity` - works on a client
