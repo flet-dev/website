@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children update.
+`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
 ### `appbar`
 
@@ -166,6 +166,10 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `END`
 * `STRETCH`
 * `BASELINE`
+
+### `on_scroll_interval`
+
+Throttling in milliseconds for `on_scroll` event. Default is `10`.
 
 ### `overlay`
 
@@ -768,6 +772,12 @@ To enable built-in upload storage provide `upload_dir` argument to `flet.app()` 
 ft.app(target=main, upload_dir="uploads")
 ```
 
+### `scroll_to(offset, delta, key, duration, curve)`
+
+Moves scroll position to either absolute `offset`, relatively on `delta` or to the control with specified `key`.
+
+See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+
 ### `set_clipboard(data)`
 
 Set clipboard data on a client side (user's web browser or a desktop), for example:
@@ -903,6 +913,12 @@ Event object `e` is an instance of `RouteChangeEvent` class:
 class RouteChangeEvent(ft.ControlEvent):
     route: str     # a new page root
 ```
+
+### `on_scroll`
+
+Fires when page's scroll position is changed by a user.
+
+See [`Column.on_scroll`](column#on_scroll) for event details and examples.
 
 ### `on_view_pop`
 

@@ -62,6 +62,10 @@ ft.app(target=main, view=ft.WEB_BROWSER)
 
 ## Properties
 
+### `auto_scroll`
+
+`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
+
 ### `child_aspect_ratio`
 
 The ratio of the cross-axis to the main-axis extent of each child.
@@ -75,6 +79,12 @@ A list of `Control`s to display inside GridView.
 `True` to layout GridView items horizontally.
 
 ### `max_extent`
+
+The maximum width or height of the grid item.
+
+### `on_scroll_interval`
+
+Throttling in milliseconds for `on_scroll` event. Default is `10`.
 
 ### `padding`
 
@@ -93,3 +103,19 @@ The number of children in the cross axis.
 ### `spacing`
 
 The number of logical pixels between each child along the main axis.
+
+## Methods
+
+### `scroll_to(offset, delta, key, duration, curve)`
+
+Moves scroll position to either absolute `offset`, relatively on `delta` or to the control with specified `key`.
+
+See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+
+## Events
+
+### `on_scroll`
+
+Fires when scroll position is changed by a user.
+
+See [`Column.on_scroll`](column#on_scroll) for event details and examples.
