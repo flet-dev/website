@@ -5,7 +5,7 @@ sidebar_label: Colors
 
 ## Color value
 
-There are 2 ways to define color property value in Flet: Hex value and Named colors.
+There are 2 ways to define color property value in Flet: Hex value and named colors.
 
 ### Hex value
 
@@ -20,17 +20,18 @@ Hex value should be in format #AARRGGBB (0xAARRGGBB) or #RRGGBB (0xRRGGBB). In c
 Named colors are the Material Design Theme colors and Palettes colors. They can be set with a string value or using a flet.colors module.
 
 ```
-ft.Container(bgcolor=ft.colors.YELLOW)
+c1 = ft.Container(bgcolor=ft.colors.YELLOW)
+c2 = ft.Container(bgcolor='yellow')
 ```
 
 #### Theme colors
 
-There are 30 named Theme colors (`ColorScheme`) that are are generated based on the `Theme.seed_color` property of the `page.theme`. The default `seed_color` value is 'blue'.
+There are 30 named Theme colors in `theme.ColorScheme` that are are generated based on the `color_scheme_seed` property. The default seed color value is 'blue'.
 
 [code example]
 [Screen shot for default theme colors]
 
-Any of the 30 colors can be overriden, in which case they will have a absolute value that will not be dependent on seed_color.
+Any of the 30 colors can be overriden, in which case they will have an absolute value that will not be dependent on seed color.
 [code example]
 [Live Example]
 
@@ -38,9 +39,9 @@ Theme colors define default values for most Flet controls colors.
 
 #### Color palettes
 
-Originally created by Material Design in 2014, color palettes are comprised of colors designed to work together harmoniously. There are 21 color swatches (groups), that consist of different shades of a certain color, with a total of N colors. 
+Originally created by Material Design in 2014, color palettes are comprised of colors designed to work together harmoniously. There are 21 color swatches (groups), that consist of different shades of a certain color.
 
-There 16 color palettes that have 9 shades and 4 accent shades each, 3 palettes that have 9 shades each and also Black (N shades) and White (N shades) palettes for which shade is defined by their transparency.
+There are 16 color palettes that have 9 shades and 4 accent shades each, 3 palettes that have 9 shades each and also Black (N shades) and White (N shades) palettes for which shade is defined by their transparency. 
 [picture]
 
 Palette colors can be used for setting individual controls color property or as a seed color for generating Theme colors.
