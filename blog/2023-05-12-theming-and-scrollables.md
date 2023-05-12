@@ -219,11 +219,11 @@ See [`TabsTheme` class](/docs/controls/page#tabstheme-class) for more details.
 
 ### Flutter 3.10
 
-Flutter upgraded to 3.10 which [brings new features, performance and size optimizations](https://medium.com/flutter/whats-new-in-flutter-3-10-b21db2c38c73). As a result of that most of Flet dependencies were bumped too, so if you notice any issues with this release please let us know.
+This Flet release is based on Flutter 3.10 which [brings new features, performance and size optimizations](https://medium.com/flutter/whats-new-in-flutter-3-10-b21db2c38c73). As a result, most of Flet dependencies bumped their versions too, so if you notice any issues please let us know.
 
 ### Color emoji in web apps
 
-Color emoji support in web apps are back! In Flutter 3.7 color emoji were disabled in "CanvasKit" renderer (default in Flet) because of their size (8 MB!) and made as an opt-in in Flutter 3.10. You can enable color emoji in server-driven app with `use_color_emoji`:
+Color emoji support in web apps are back! In Flutter 3.7 color emoji were disabled in "CanvasKit" renderer (default in Flet) because of their font size (8 MB!) and returned back as an opt-in in Flutter 3.10. You can enable color emoji in server-driven app with `use_color_emoji` argument:
 
 ```python
 ft.app(main, use_color_emoji=True)
