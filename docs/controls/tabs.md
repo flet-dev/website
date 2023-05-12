@@ -61,6 +61,38 @@ ft.app(target=main)
 
 Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
 
+### `divider_color`
+
+The color of the divider.
+
+### `indicator_border_radius`
+
+The radius of the indicator's corners.
+
+### `indicator_border_side`
+
+The color and weight of the horizontal line drawn below the selected tab.
+
+### `indicator_color`
+
+The color of the line that appears below the selected tab.
+
+### `indicator_padding`
+
+Locates the selected tab's underline relative to the tab's boundary. The `indicator_tab_size` property can be used to define the tab indicator's bounds in terms of its (centered) tab widget with `False`, or the entire tab with `True`.
+
+### `indicator_tab_size`
+
+`True` for indicator to take entire tab.
+
+### `label_color`
+
+The color of selected tab labels.
+
+### `overlay_color`
+
+Defines the ink response focus, hover, and splash colors. If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
+
 ### `selected_index`
 
 The index of currently selected tab.
@@ -74,6 +106,10 @@ If `scrollable` is `True`, then each tab is as wide as needed for its label and 
 ### `tabs`
 
 A list of `Tab` controls.
+
+### `unselected_label_color`
+
+The color of unselected tab labels.
 
 ## `Tabs` events
 

@@ -160,6 +160,8 @@ h6 {
 .screenshot-50,
 .screenshot-60,
 .screenshot-70,
+.screenshot-80,
+.screenshot-90,
 .screenshot-100 {
   display: block;
   text-align: center;
@@ -196,6 +198,14 @@ h6 {
 
 .screenshot-70 {
   width: 70%;
+}
+
+.screenshot-80 {
+  width: 80%;
+}
+
+.screenshot-90 {
+  width: 90%;
 }
 
 .screenshot-100 {
