@@ -17,9 +17,21 @@ The release also introduces theming improvements:
 * [Scrollbar theming](#scrollbar-theme)
 * [Tabs theming](#tabs-theming)
 
+## Controlling scroll position
+
+Scrollable controls (`Page`, `View`, `Column`, `Row`, `ListView` and `GridView`) introduce `scroll_to()` method to change their scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
+
+Moving to a `key` is particularly exciting as it allows simulating the navigation between page bookmarks, kind of HTML hrefs with `#`:
+
+<img src="/img/docs/controls/column/column-scroll-to-key.gif"  className="screenshot-70" />
+
+Check the [source code](https://github.com/flet-dev/examples/blob/main/python/controls/column/column-scroll-to-key.py) of the example above.
+
+See [`Column.scroll_to`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for more details about controlling scroll position.
+
 ## Receiving scroll notifications
 
-All scrollable controls (`Page`, `View`, `Column`, `Row`, `ListView` and `GridView`) now provide `on_scroll` event handler which fires when a scroll position is changed. From event object properties you can determine whether scroll operation has started, finished, changed direction or scroll position went behind scrolling extent (overscroll). You can also get updates of the current scroll position as well as dimensions of the scroll area, for example:
+All scrollable controls now provide `on_scroll` event handler which fires when a scroll position is changed. From event object properties you can determine whether scroll operation has started, finished, changed direction or scroll position went behind scrolling extent (overscroll). You can also get updates of the current scroll position as well as dimensions of the scroll area, for example:
 
 ```python
 import flet as ft
@@ -51,18 +63,6 @@ See [`Column.on_scroll`](/docs/controls/column#on_scroll) for more details about
 
 Check [infinite scroll example](https://github.com/flet-dev/examples/blob/main/python/controls/column/column-infinite-list.py).
 
-## Controlling scroll position
-
-All scrollable controls have `scroll_to()` method to change scroll position to either absolute `offset`, relatively on `delta` or to the control with specified `key`.
-
-Moving to a `key` is particularly exciting as it allows simulate navigating between page bookmarks, kind of HTML hrefs with `#`:
-
-<img src="/img/docs/controls/column/column-scroll-to-key.gif"  className="screenshot-70" />
-
-Check [source code of the example](https://github.com/flet-dev/examples/blob/main/python/controls/column/column-scroll-to-key.py).
-
-See [`Column.scroll_to`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for more details about controlling scroll position.
-
 ## Color scheme customization
 
 Until today the only way to control color scheme for your application was specifying `color_scheme_seed` when creating a new `ft.Theme` object.
@@ -71,7 +71,7 @@ This release enables you to fine tune all 30 colors based on the [Material spec]
 
 <img src="/img/blog/theme-scrolling/material-theme-builder.png"  className="screenshot-70 screenshot-rounded" />
 
-You can even use [Material Theme Builder](https://m3.material.io/theme-builder#/dynamic) and use exported color palette in your app, for example:
+You can even use [Material Theme Builder](https://m3.material.io/theme-builder#/dynamic) and apply exported color palette to your app, for example:
 
 ```python
 page.theme = ft.Theme(
@@ -87,15 +87,13 @@ See [`ColorScheme` class](/docs/controls/page#colorscheme-class) for more detail
 
 ## Nested themes
 
-Another awesome feature added in this release is nested themes!
+Another awesome feature of this release is nested themes!
 
 You can have a part of your app to use a different theme or override some theme styles for specific controls.
 
-Remember `page` object having `theme` and `theme_mode` properties? Now `Container` has `theme` and `theme_mode` too!
+Remember `page` object having `theme` and `theme_mode` properties? Now `Container` has `theme` and `theme_mode` properties too!
 
-`Container.theme` accepts the same `ft.Theme` object as the page. Specifying `theme_mode` in the container means you don't want to inherit parent theme, but want a completely new, unique scheme for all controls inside the container. However, if the container does not have `theme_mode` property set then the styles from its `theme` property will override the ones from the parent, inherited theme:
-
-<img src="/img/blog/theme-scrolling/nested-themes.png"  className="screenshot-60" />
+`Container.theme` accepts the same `ft.Theme` object as a page. Specifying `theme_mode` in the container means you don't want to inherit parent theme, but want a completely new, unique scheme for all controls inside the container. However, if the container does not have `theme_mode` property set then the styles from its `theme` property will override the ones from the parent, inherited theme:
 
 ```python
 import flet as ft
@@ -138,9 +136,11 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
+<img src="/img/blog/theme-scrolling/nested-themes.png"  className="screenshot-60" />
+
 ## Scrollbar theme
 
-You can now customize the look and fill of scrollbars in your application (or a particular scroillbar with [nested themes](#nested-page-themes)).
+You can now customize the look and fill of scrollbars in your application (or a particular scroillbar with [nested themes](#nested-themes)).
 
 It could be done via [`page.theme.scrollbar_theme`](/docs/controls/page#scrollbartheme-class) property, for example:
 

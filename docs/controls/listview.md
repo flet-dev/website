@@ -98,7 +98,7 @@ The height of Divider between ListView items. No spacing between items if not sp
 
 ### `scroll_to(offset, delta, key, duration, curve)`
 
-Moves scroll position to either absolute `offset`, relatively on `delta` or to the control with specified `key`.
+Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
 
 See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
 

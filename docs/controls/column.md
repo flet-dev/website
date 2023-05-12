@@ -441,7 +441,7 @@ When set to `True` the Column will put child controls into additional columns (r
 
 ### `scroll_to(offset, delta, key, duration, curve)`
 
-Moves scroll position to either absolute `offset`, relatively on `delta` or to the control with specified `key`.
+Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
 
 `offset` is an abosulte value between minimum and maximum extents of a scrollable control, for example:
 
