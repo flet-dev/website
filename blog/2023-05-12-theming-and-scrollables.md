@@ -8,7 +8,7 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-Flet 0.7.1 enables developers to programmatically [control scroll position](#controlling-scroll-position) and subscribe to [scrolling notifications](#receiving-scroll-notifications) in `Page`, `View`, `Column`, `Row`, `ListView` and `GridView` controls.
+Flet 0.7.1 enables developers [changing scroll position](#controlling-scroll-position) and [receiving scroll notifications](#receiving-scroll-notifications) from `Page`, `View`, `Column`, `Row`, `ListView` and `GridView` controls.
 
 The release also introduces theming improvements:
 * [Color scheme customization](#color-scheme-customization)
@@ -53,9 +53,9 @@ Check [infinite scroll example](https://github.com/flet-dev/examples/blob/main/p
 
 ## Controlling scroll position
 
-All scrollable controls have `scroll_to()` method which allow programmatically moving scroll position to either absolute `offset`, relatively on `delta` or to the control with specified `key`.
+All scrollable controls have `scroll_to()` method to change scroll position to either absolute `offset`, relatively on `delta` or to the control with specified `key`.
 
-Moving to a `key` is particularly nice as it allows building pages with bookmarks, kind of HTML hrefs with `#`:
+Moving to a `key` is particularly exciting as it allows simulate navigating between page bookmarks, kind of HTML hrefs with `#`:
 
 <img src="/img/docs/controls/column/column-scroll-to-key.gif"  className="screenshot-70" />
 
