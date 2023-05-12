@@ -11,11 +11,11 @@ tags: [releases]
 Flet 0.7.1 enables developers to programmatically [control scroll position](#controlling-scroll-position) and subscribe to [scrolling notifications](#receiving-scroll-notifications) in `Page`, `View`, `Column`, `Row`, `ListView` and `GridView` controls.
 
 The release also introduces theming improvements:
-* [Material color scheme customization](#color-scheme-customization)
+* [Color scheme customization](#color-scheme-customization)
+* [Nested themes](#nested-themes)
 * [Text theming](#text-theming)
-* [Scrollbars theming](#scrollbar-theme)
-* [Tabs theming](#styling-tabs-control)
-* [Nested page themes](#nested-page-themes)
+* [Scrollbar theming](#scrollbar-theme)
+* [Tabs theming](#tabs-theming)
 
 ## Receiving scroll notifications
 
@@ -63,36 +63,6 @@ Check [source code of the example](https://github.com/flet-dev/examples/blob/mai
 
 See [`Column.scroll_to`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for more details about controlling scroll position.
 
-## Scrollbar theme
-
-You can now customize the look and fill of scrollbars in your application (or a particular scroillbar with [nested themes](#nested-page-themes)).
-
-It could be done via [`page.theme.scrollbar_theme`](/docs/controls/page#scrollbartheme-class) property, for example:
-
-```python
-page.theme = ft.Theme(
-    scrollbar_theme=ft.ScrollbarTheme(
-        track_color={
-            ft.MaterialState.HOVERED: ft.colors.AMBER,
-            ft.MaterialState.DEFAULT: ft.colors.TRANSPARENT,
-        },
-        track_visibility=True,
-        track_border_color=ft.colors.BLUE,
-        thumb_visibility=True,
-        thumb_color={
-            ft.MaterialState.HOVERED: ft.colors.RED,
-            ft.MaterialState.DEFAULT: ft.colors.GREY_300,
-        },
-        thickness=30,
-        radius=15,
-        main_axis_margin=5,
-        cross_axis_margin=10,
-    )
-)
-```
-
-<img src="/img/docs/controls/column/column-scroll-to.png"  className="screenshot-60" />
-
 ## Color scheme customization
 
 Until today the only way to control color scheme for your application was specifying `color_scheme_seed` when creating a new `ft.Theme` object.
@@ -115,54 +85,7 @@ page.theme = ft.Theme(
 
 See [`ColorScheme` class](/docs/controls/page#colorscheme-class) for more details.
 
-## Text theming
-
-Material 3 design defines [5 groups of text styles with 3 sizes in each group](/docs/controls/text#pre-defined-theme-text-styles): "Display", "Headline", "Title", "Label" and "Body" which are used across app controls. You can now customize each of those styles with `page.theme.text_theme`, for example:
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.theme = ft.Theme(
-        text_theme=ft.TextTheme(body_medium=ft.TextStyle(color=ft.colors.GREEN))
-    )
-
-    page.add(ft.Text("Hello, green world!"))
-
-ft.app(main)
-```
-
-<img src="/img/blog/theme-scrolling/text-theme.png"  className="screenshot-50" />
-
-Apparently, `Body Medium` is used by `Text` control as a default style.
-
-See [`TextTheme` class](/docs/controls/page#texttheme-class) for more details.
-
-## Styling `Tabs` control
-
-You can now control the look and feel of `Tabs` control. In this release `Tabs` adds a bunch of new properties and there is a new [`page.theme.tabs_theme`](/docs/controls/page#tabstheme-class) property to style all tabs in your app:
-
-```python
-page.theme = ft.Theme(
-    tabs_theme=ft.TabsTheme(
-        divider_color=ft.colors.BLUE,
-        indicator_color=ft.colors.RED,
-        indicator_tab_size=True,
-        label_color=ft.colors.GREEN,
-        unselected_label_color=ft.colors.AMBER,
-        overlay_color={
-            ft.MaterialState.FOCUSED: ft.colors.with_opacity(0.2, ft.colors.GREEN),
-            ft.MaterialState.DEFAULT: ft.colors.with_opacity(0.2, ft.colors.PINK),
-        },
-    )
-)
-```
-
-<img src="/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />
-
-See [`TabsTheme` class](/docs/controls/page#tabstheme-class) for more details.
-
-## Nested page themes
+## Nested themes
 
 Another awesome feature added in this release is nested themes!
 
@@ -200,7 +123,7 @@ def main(page: ft.Page):
             padding=20,
             width=300,
         ),
-        
+
         # Unique always DARK theme
         ft.Container(
             theme=ft.Theme(color_scheme_seed=ft.colors.INDIGO),
@@ -214,6 +137,83 @@ def main(page: ft.Page):
 
 ft.app(main)
 ```
+
+## Scrollbar theme
+
+You can now customize the look and fill of scrollbars in your application (or a particular scroillbar with [nested themes](#nested-page-themes)).
+
+It could be done via [`page.theme.scrollbar_theme`](/docs/controls/page#scrollbartheme-class) property, for example:
+
+```python
+page.theme = ft.Theme(
+    scrollbar_theme=ft.ScrollbarTheme(
+        track_color={
+            ft.MaterialState.HOVERED: ft.colors.AMBER,
+            ft.MaterialState.DEFAULT: ft.colors.TRANSPARENT,
+        },
+        track_visibility=True,
+        track_border_color=ft.colors.BLUE,
+        thumb_visibility=True,
+        thumb_color={
+            ft.MaterialState.HOVERED: ft.colors.RED,
+            ft.MaterialState.DEFAULT: ft.colors.GREY_300,
+        },
+        thickness=30,
+        radius=15,
+        main_axis_margin=5,
+        cross_axis_margin=10,
+    )
+)
+```
+
+<img src="/img/docs/controls/column/column-scroll-to.png"  className="screenshot-60" />
+
+## Text theming
+
+Material 3 design defines [5 groups of text styles with 3 sizes in each group](/docs/controls/text#pre-defined-theme-text-styles): "Display", "Headline", "Title", "Label" and "Body" which are used across Flet controls. You can now customize each of those styles with `page.theme.text_theme`, for example:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.theme = ft.Theme(
+        text_theme=ft.TextTheme(body_medium=ft.TextStyle(color=ft.colors.GREEN))
+    )
+
+    page.add(ft.Text("Hello, green world!"))
+
+ft.app(main)
+```
+
+<img src="/img/blog/theme-scrolling/text-theme.png"  className="screenshot-50" />
+
+Apparently, `Body Medium` is used by `Text` control as a default style.
+
+See [`TextTheme` class](/docs/controls/page#texttheme-class) for more details.
+
+## Tabs theming
+
+You can now control the look and feel of `Tabs` control. In this release `Tabs` adds a bunch of new properties and there is a new [`page.theme.tabs_theme`](/docs/controls/page#tabstheme-class) property to style all tabs in your app:
+
+```python
+page.theme = ft.Theme(
+    tabs_theme=ft.TabsTheme(
+        divider_color=ft.colors.BLUE,
+        indicator_color=ft.colors.RED,
+        indicator_tab_size=True,
+        label_color=ft.colors.GREEN,
+        unselected_label_color=ft.colors.AMBER,
+        overlay_color={
+            ft.MaterialState.FOCUSED: ft.colors.with_opacity(0.2, ft.colors.GREEN),
+            ft.MaterialState.DEFAULT: ft.colors.with_opacity(0.2, ft.colors.PINK),
+        },
+    )
+)
+```
+
+<img src="/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />
+
+See [`TabsTheme` class](/docs/controls/page#tabstheme-class) for more details.
 
 ## Other changes
 
