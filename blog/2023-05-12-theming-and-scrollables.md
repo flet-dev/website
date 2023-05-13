@@ -23,7 +23,7 @@ Scrollable controls (`Page`, `View`, `Column`, `Row`, `ListView` and `GridView`)
 
 Moving to a `key` is particularly exciting as it allows simulating the navigation between page bookmarks, kind of HTML hrefs with `#`:
 
-<img src="/img/docs/controls/column/column-scroll-to-key.gif"  className="screenshot-70" />
+<img src="/img/docs/controls/column/column-scroll-to-key.gif"  className="screenshot-70 screenshot-rounded" />
 
 Check the [source code](https://github.com/flet-dev/examples/blob/main/python/controls/column/column-scroll-to-key.py) of the example above.
 
