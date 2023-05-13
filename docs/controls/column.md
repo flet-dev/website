@@ -246,6 +246,128 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
+### Inifite scroll list
+
+The following example demonstrates adding of list items on-the-fly, as user scroll to the bottom, creating the illusion of inifinite list:
+
+```python
+import threading
+import flet as ft
+
+class State:
+    i = 0
+
+s = State()
+sem = threading.Semaphore()
+
+def main(page: ft.Page):
+    def on_scroll(e: ft.OnScrollEvent):
+        if e.pixels >= e.max_scroll_extent - 100:
+            if sem.acquire(blocking=False):
+                try:
+                    for i in range(0, 10):
+                        cl.controls.append(ft.Text(f"Text line {s.i}", key=str(s.i)))
+                        s.i += 1
+                    cl.update()
+                finally:
+                    sem.release()
+
+    cl = ft.Column(
+        spacing=10,
+        height=200,
+        width=200,
+        scroll=ft.ScrollMode.ALWAYS,
+        on_scroll_interval=0,
+        on_scroll=on_scroll,
+    )
+    for i in range(0, 50):
+        cl.controls.append(ft.Text(f"Text line {s.i}", key=str(s.i)))
+        s.i += 1
+
+    page.add(ft.Container(cl, border=ft.border.all(1)))
+
+ft.app(main)
+```
+
+### Scrolling column programmatically
+
+<img src="/img/docs/controls/column/column-scroll-to.png"  className="screenshot-50" />
+
+The following example demonstrates various `scroll_to()` options as well as defines a custom scrollbar theme:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.theme = ft.Theme(
+        scrollbar_theme=ft.ScrollbarTheme(
+            track_color={
+                ft.MaterialState.HOVERED: ft.colors.AMBER,
+                ft.MaterialState.DEFAULT: ft.colors.TRANSPARENT,
+            },
+            track_visibility=True,
+            track_border_color=ft.colors.BLUE,
+            thumb_visibility=True,
+            thumb_color={
+                ft.MaterialState.HOVERED: ft.colors.RED,
+                ft.MaterialState.DEFAULT: ft.colors.GREY_300,
+            },
+            thickness=30,
+            radius=15,
+            main_axis_margin=5,
+            cross_axis_margin=10,
+            # interactive=False,
+        )
+    )
+
+    cl = ft.Column(
+        spacing=10,
+        height=200,
+        width=float("inf"),
+        scroll=ft.ScrollMode.ALWAYS,
+    )
+    for i in range(0, 100):
+        cl.controls.append(ft.Text(f"Text line {i}", key=str(i)))
+
+    def scroll_to_offset(e):
+        cl.scroll_to(offset=100, duration=1000)
+
+    def scroll_to_start(e):
+        cl.scroll_to(offset=0, duration=1000)
+
+    def scroll_to_end(e):
+        cl.scroll_to(offset=-1, duration=2000, curve=ft.AnimationCurve.EASE_IN_OUT)
+
+    def scroll_to_key(e):
+        cl.scroll_to(key="20", duration=1000)
+
+    def scroll_to_delta(e):
+        cl.scroll_to(delta=40, duration=200)
+
+    def scroll_to_minus_delta(e):
+        cl.scroll_to(delta=-40, duration=200)
+
+    page.add(
+        ft.Container(cl, border=ft.border.all(1)),
+        ft.ElevatedButton("Scroll to offset 100", on_click=scroll_to_offset),
+        ft.Row(
+            [
+                ft.ElevatedButton("Scroll to start", on_click=scroll_to_start),
+                ft.ElevatedButton("Scroll to end", on_click=scroll_to_end),
+            ]
+        ),
+        ft.ElevatedButton("Scroll to key '20'", on_click=scroll_to_key),
+        ft.Row(
+            [
+                ft.ElevatedButton("Scroll -40", on_click=scroll_to_minus_delta),
+                ft.ElevatedButton("Scroll +40", on_click=scroll_to_delta),
+            ]
+        ),
+    )
+
+ft.app(main)
+```
+
 ## Properties
 
 ### `alignment`
@@ -263,7 +385,7 @@ Property value is `MainAxisAlignment` enum with the following values:
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children update.
+`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
 ### `controls`
 
@@ -281,6 +403,10 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `STRETCH`
 * `BASELINE`
 
+### `on_scroll_interval`
+
+Throttling in milliseconds for `on_scroll` event. Default is `10`.
+
 ### `scroll`
 
 Enables a vertical scrolling for the Column to prevent its content overflow.
@@ -289,7 +415,7 @@ Property value is an optional `ScrollMode` enum with `None` as default.
 
 Supported values:
 
-* `None` (default) - the Row is non-scrollable and its content could overflow.
+* `None` (default) - the column is non-scrollable and its content could overflow.
 * `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
 * `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `ALWAYS` - scrolling is enabled and scroll bar is always shown.
@@ -310,6 +436,87 @@ Specifies how much space should be occupied vertically. Default is `False` - all
 ### `wrap`
 
 When set to `True` the Column will put child controls into additional columns (runs) if they don't fit a single column.
+
+## Methods
+
+### `scroll_to(offset, delta, key, duration, curve)`
+
+Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
+
+`offset` is an abosulte value between minimum and maximum extents of a scrollable control, for example:
+
+```python
+products.scroll_to(offset=100, duration=1000)
+```
+
+`offset` could be a negative to scroll from the end of a scrollable. For example, to scroll to the very end:
+
+```python
+products.scroll_to(offset=-1, duration=1000)
+```
+
+`delta` allows moving scroll relatively to the current position. Use positive `delta` to scroll forward and negative `delta` to scroll backward. For example, to move scroll on 50 pixels forward:
+
+```python
+products.scroll_to(delta=50)
+```
+
+`key` allows moving scroll position to a control with specified `key`. Most of Flet controls have `key` property which is translated to Flutter as "global key". `key` must be unique for the entire page/view. For example:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    cl = ft.Column(
+        spacing=10,
+        height=200,
+        width=200,
+        scroll=ft.ScrollMode.ALWAYS,
+    )
+    for i in range(0, 50):
+        cl.controls.append(ft.Text(f"Text line {i}", key=str(i)))
+
+    def scroll_to_key(e):
+        cl.scroll_to(key="20", duration=1000)
+
+    page.add(
+        ft.Container(cl, border=ft.border.all(1)),
+        ft.ElevatedButton("Scroll to key '20'", on_click=scroll_to_key),
+    )
+
+ft.app(main)
+```
+
+:::note
+`scroll_to()` method won't work with `ListView` and `GridView` controls building their items dynamically.
+:::
+
+`duration` is scrolling animation duration in milliseconds. Defaults to 0 - no animation.
+
+`curve` configures animation curve. Defaults to `ft.AnimationCurve.EASE`.
+
+## Events
+
+### `on_scroll`
+
+Fires when scroll position is changed by a user.
+
+Event handler argument is an instance of `ft.OnScrollEvent` class with the following properties:
+
+* `event_type` (str) - type of the scroll event:
+  * `start` - control has started scrolling;
+  * `update` - control has changed its scroll position;
+  * `end` - control has stopped scrolling;
+  * `user` - user has changed the direction in which they are scrolling;
+  * `over` - control has not changed its scroll position because the change would have caused its scroll position to go outside its scroll bounds;
+* `pixels` (float) - The current scroll position, in logical pixels.
+* `min_scroll_extent` (float) - The minimum in-range value for `pixels`.
+* `max_scroll_extent` (float) - The maximum in-range value for `pixels`.
+* `viewport_dimension` (float) - The extent of the viewport.
+* `scroll_delta` (float) - The distance by which the scrollable was scrolled, in logical pixels. Set for `update` events only.
+* `direction` (str) - The direction in which the user is scrolling: `idle`, `forward`, `reverse`. Set for `user` events only.
+* `overscroll` (float) - The number of logical pixels that the scrollable avoided scrolling. Set for `over` events only.
+* `velocity` (float) - The velocity at which the ScrollPosition was changing when this overscroll happened. Set for `over` events only.
 
 ## Expanding children
 

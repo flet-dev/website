@@ -19,7 +19,7 @@ A [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children update.
+`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
 ### `bgcolor`
 
@@ -91,6 +91,10 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `STRETCH`
 * `BASELINE`
 
+### `on_scroll_interval`
+
+Throttling in milliseconds for `on_scroll` event. Default is `10`.
+
 ### `padding`
 
 A space between page contents and its edges. Default value is 10 pixels from each side. To set zero padding:
@@ -140,3 +144,19 @@ Property value is `MainAxisAlignment` enum with the following values:
 * `SPACE_BETWEEN`
 * `SPACE_AROUND`
 * `SPACE_EVENLY`
+
+## Methods
+
+### `scroll_to(offset, delta, key, duration, curve)`
+
+Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
+
+See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+
+## Events
+
+### `on_scroll`
+
+Fires when scroll position is changed by a user.
+
+See [`Column.on_scroll`](column#on_scroll) for event details and examples.

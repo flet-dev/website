@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children update.
+`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
 ### `appbar`
 
@@ -166,6 +166,10 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `END`
 * `STRETCH`
 * `BASELINE`
+
+### `on_scroll_interval`
+
+Throttling in milliseconds for `on_scroll` event. Default is `10`.
 
 ### `overlay`
 
@@ -384,6 +388,11 @@ page.update()
 `Theme` class has the following properties:
 
 * `color_scheme_seed` - a seed color to algorithmically derive the rest of theme colors from.
+* `color_scheme` - an instance of [`ft.ColorScheme`](#colorscheme-class) class that allows to customize Material colors scheme derived from `color_scheme_seed`.
+* `text_theme` - an instance of [`ft.TextTheme`](#texttheme-class) class to customize text styles that contrasts with the card and canvas colors.
+* `primary_text_theme` - an instance of [`ft.TextTheme`](#texttheme-class) class describing a text theme that contrasts with the primary color.
+* `scrollbar_theme` - an instance of [`ft.ScrollbarTheme`](#scrollbartheme-class) class customizing the appearance of scrollbars across the app.
+* `tabs_theme` - an instance of [`ft.TabsTheme`](#tabstheme-class) class customizing the appearance of `Tabs` control across the app.
 * `font_family` - the base font for all UI elements.
 * `use_material3` - `True` (default) to use Material 3 design; otherwise Material 2.
 * `visual_density` - `ThemeVisualDensity` enum: `STANDARD` (default), `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
@@ -392,6 +401,99 @@ page.update()
 :::note
 Read this [note about system fonts](/docs/controls/text#using-system-fonts) if you like to use them in `font_family` of your theme.
 :::
+
+#### `ColorScheme` class
+
+A set of 30 colors based on the [Material spec](https://m3.material.io/styles/color/the-color-system/color-roles) that can be used to configure the color properties of most components. Read more about `ColorScheme` in [Flutter docs](https://api.flutter.dev/flutter/material/ColorScheme-class.html).
+
+`ColorScheme` class has the following properties:
+
+* `primary` - The color displayed most frequently across your app’s screens and components.
+* `on_primary` - A color that's clearly legible when drawn on `primary`.
+* `primary_container` - A color used for elements needing less emphasis than `primary`.
+* `on_primary_container` - A color that's clearly legible when drawn on `primary_container`.
+* `secondary` - An accent color used for less prominent components in the UI, such as filter chips, while expanding the opportunity for color expression.
+* `on_secondary` - A color that's clearly legible when drawn on `secondary`.
+* `secondary_container` - A color used for elements needing less emphasis than `secondary`.
+* `on_secondary_container` - A color that's clearly legible when drawn on `secondary_container`.
+* `tertiary` - A color used as a contrasting accent that can balance `primary` and `secondary` colors or bring heightened attention to an element, such as an input field.
+* `on_tertiary` - A color that's clearly legible when drawn on `tertiary`.
+* `tertiary_container` - A color used for elements needing less emphasis than `tertiary`.
+* `on_tertiary_container` - A color that's clearly legible when drawn on `tertiary_container`.
+* `error` - The color to use for input validation errors, e.g. for `TextField.error_text`.
+* `on_error` - A color that's clearly legible when drawn on `error`.
+* `error_container` - A color used for error elements needing less emphasis than `error`.
+* `on_error_container` - A color that's clearly legible when drawn on `error_container`.
+* `background` - A color that typically appears behind scrollable content.
+* `on_background` - A color that's clearly legible when drawn on `background`.
+* `surface` - The background color for widgets like `Card`.
+* `on_surface` - A color that's clearly legible when drawn on `surface`.
+* `surface_variant` - A color variant of `surface` that can be used for differentiation against a component using `surface`.
+* `on_surface_variant` - A color that's clearly legible when drawn on `surface_variant`.
+* `outline` - A utility color that creates boundaries and emphasis to improve usability.
+* `outline_variant` - A utility color that creates boundaries for decorative elements when a 3:1 contrast isn’t required, such as for dividers or decorative elements.
+* `shadow` - A color use to paint the drop shadows of elevated components.
+* `scrim` - A color use to paint the scrim around of modal components.
+* `inverse_surface` - A surface color used for displaying the reverse of what’s seen in the surrounding UI, for example in a `SnackBar` to bring attention to an alert.
+* `on_inverse_surface` - A color that's clearly legible when drawn on `inverse_surface`.
+* `inverse_primary` - An accent color used for displaying a highlight color on `inverse_surface` backgrounds, like button text in a `SnackBar`.
+* `surface_tint` - A color used as an overlay on a surface color to indicate a component's elevation.
+
+#### `TextTheme` class
+
+Customizes text styles.
+
+`TextTheme` class has the following properties of `ft.TextStyle` type:
+
+* `body_large` - Largest of the body styles. Body styles are used for longer passages of text.
+* `body_medium` - Middle size of the body styles. Body styles are used for longer passages of text. The default text style for Material.
+* `body_small` - Smallest of the body styles.
+* `display_large` - Largest of the display styles. As the largest text on the screen, display styles are reserved for short, important text or numerals. They work best on large screens.
+* `display_medium` - Middle size of the display styles.
+* `display_small` - Smallest of the display styles.
+* `headline_large` - Largest of the headline styles. Headline styles are smaller than display styles. They're best-suited for short, high-emphasis text on smaller screens.
+* `headline_medium` - Middle size of the headline styles.
+* `headline_small` - Smallest of the headline styles.
+* `label_large` - Largest of the label styles. Label styles are smaller, utilitarian styles, used for areas of the UI such as text inside of components or very small supporting text in the content body, like captions. Used for text on `ElevatedButton`, `TextButton` and `OutlinedButton`.
+* `label_medium` - Middle size of the label styles.
+* `label_small` - Smallest of the label styles.
+* `title_large` - Largest of the title styles. Titles are smaller than headline styles and should be used for shorter, medium-emphasis text.
+* `title_medium` - Middle size of the title styles.
+* `title_small` - Smallest of the title styles.
+
+#### `ScrollbarTheme` class
+
+Customizes the colors, thickness, and shape of scrollbars across the app.
+
+`ScrollbarTheme` class has the following properties:
+
+* `thumb_visibility` - Indicates that the scrollbar thumb should be visible, even when a scroll is not underway. When `False`, the scrollbar will be shown during scrolling and will fade out otherwise. When `True`, the scrollbar will always be visible and never fade out. Property value could be either a single boolean value or a dictionary with `ft.MaterialState` as keys and boolean as values.
+* `thickness` - the thickness of the scrollbar in the cross axis of the scrollable. Property value could be either a single float value or a dictionary with `ft.MaterialState` as keys and float as values.
+* `track_visibility` - Indicates that the scrollbar track should be visible. When `True`, the scrollbar track will always be visible so long as the thumb is visible. If the scrollbar thumb is not visible, the track will not be visible either. Defaults to `False` when `None`. If this property is `None`, then `ScrollbarTheme.track_visibility` of `Theme.scrollbar_theme` is used. If that is also `None`, the default value is `False`. Property value could be either a single boolean value or a dictionary with `ft.MaterialState` as keys and boolean as values.
+* `radius` - The Radius of the scrollbar thumb's rounded rectangle corners.
+* `thumb_color` - Overrides the default Color of the Scrollbar thumb. The value is either a single color string or `ft.MaterialState` dictionary.
+* `track_color` - Overrides the default Color of the Scrollbar track. The value is either a single color string or `ft.MaterialState` dictionary.
+* `track_border_color` - Overrides the default Color of the Scrollbar track border. The value is either a single color string or `ft.MaterialState` dictionary.
+* `cross_axis_margin` - Distance from the scrollbar thumb to the nearest cross axis edge in logical pixels. The scrollbar track consumes this space. Must not be null and defaults to 0.
+* `main_axis_margin` - Distance from the scrollbar thumb's start and end to the edge of the viewport in logical pixels. It affects the amount of available paint area. The scrollbar track consumes this space. Mustn't be null and defaults to 0.
+* `min_thumb_length` - The preferred smallest size the scrollbar thumb can shrink to when the total scrollable extent is large, the current visible viewport is small, and the viewport is not overscrolled.
+* `interactive` - Whether the Scrollbar should be interactive and respond to dragging on the thumb, or tapping in the track area. When `False`, the scrollbar will not respond to gesture or hover events, and will allow to click through it. Defaults to `True` when `None`, unless on Android, which will default to `False` when `None`.
+
+#### `TabsTheme` class
+
+Customizes the appearance of `Tabs` control across the app.
+
+`TabsTheme` class has the following properties:
+
+* `divider_color` - The color of the divider.
+* `indicator_border_radius` - The radius of the indicator's corners.
+* `indicator_border_side` - The color and weight of the horizontal line drawn below the selected tab.
+* `indicator_padding` - Locates the selected tab's underline relative to the tab's boundary. The `indicator_tab_size` property can be used to define the tab indicator's bounds in terms of its (centered) tab widget with `False`, or the entire tab with `True`.
+* `indicator_color` - The color of the line that appears below the selected tab.
+* `indicator_tab_size` - `True` for indicator to take entire tab.
+* `label_color` - The color of selected tab labels.
+* `unselected_label_color` - The color of unselected tab labels.
+* `overlay_color` - Defines the ink response focus, hover, and splash colors. If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
 
 #### Navigation transitions
 
@@ -670,6 +772,12 @@ To enable built-in upload storage provide `upload_dir` argument to `flet.app()` 
 ft.app(target=main, upload_dir="uploads")
 ```
 
+### `scroll_to(offset, delta, key, duration, curve)`
+
+Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
+
+See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+
 ### `set_clipboard(data)`
 
 Set clipboard data on a client side (user's web browser or a desktop), for example:
@@ -805,6 +913,12 @@ Event object `e` is an instance of `RouteChangeEvent` class:
 class RouteChangeEvent(ft.ControlEvent):
     route: str     # a new page root
 ```
+
+### `on_scroll`
+
+Fires when page's scroll position is changed by a user.
+
+See [`Column.on_scroll`](column#on_scroll) for event details and examples.
 
 ### `on_view_pop`
 
