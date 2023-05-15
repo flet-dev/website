@@ -564,7 +564,7 @@ A list of [`View`](/docs/controls/view) controls to build navigation history.
 
 The last view in the list is the one displayed on a page.
 
-The first view is a "root" view which cannot be poped.
+The first view is a "root" view which cannot be popped.
 
 ### `web`
 
