@@ -9,7 +9,7 @@ There are 2 ways to define color property value in Flet: Hex value and named col
 
 ### Hex value
 
-Hex value should be in format #AARRGGBB (0xAARRGGBB) or #RRGGBB (0xRRGGBB). In case the AA is omitted, it is set to FF (transparent).
+Hex value should be in format #AARRGGBB (0xAARRGGBB) or #RRGGBB (0xRRGGBB). In case AA is omitted, it is set to FF (transparent).
 
 [Example code]
 
@@ -28,25 +28,38 @@ c2 = ft.Container(bgcolor='yellow')
 
 There are 30 named Theme colors in `theme.ColorScheme` that are are generated based on the `color_scheme_seed` property. The default seed color value is 'blue'.
 
-[code example]
-[Screen shot for default theme colors]
+```
+# example for generating page theme colors based on seed color
+page.theme = theme.Theme(color_scheme_seed="green")
+page.update()
+```
 
 Any of the 30 colors can be overriden, in which case they will have an absolute value that will not be dependent on seed color.
-[code example]
-[Live Example]
+```
+page.theme = ft.Theme(
+    color_scheme=ft.ColorScheme(
+        primary=ft.colors.GREEN,
+        primary_container=ft.colors.GREEN_200
+        # ...
+    ),
+)
+```
 
 Theme colors define default values for most Flet controls colors.
 
+[Live Example](https://flet-controls-gallery.fly.dev/colors/themecolors)
+
 #### Color palettes
 
-Originally created by Material Design in 2014, color palettes are comprised of colors designed to work together harmoniously. There are 21 color swatches (groups), that consist of different shades of a certain color.
+Originally created by Material Design in 2014, color palettes are comprised of colors designed to work together harmoniously. 
 
-There are 16 color palettes that have 9 shades and 4 accent shades each, 3 palettes that have 9 shades each and also Black (N shades) and White (N shades) palettes for which shade is defined by their transparency. 
-[picture]
+Color swatches (palettes) consist of different shades of a certain color. Most swatches have shades from 100 to 900 in increments of one hundred, plus the color 50. The smaller the number, the more pale the color. The greater the number, the darker the color. The accent swatches (e.g. redAccent) only have the values 100, 200, 400, and 700.
+
+In addition, a series of blacks and whites with common opacities are available. For example, black54 is a pure black with 54% opacity.
 
 Palette colors can be used for setting individual controls color property or as a seed color for generating Theme colors.
-[code example]
-[live example]
+
+[live example](https://flet-controls-gallery.fly.dev/colors/palettecolors)
 
 ## How the colors are defined for Flet controls
 
@@ -56,25 +69,29 @@ Most Flet controls have default colors defined by the page ColorScheme that can 
 
 ### Control level
 
-If the color is defined on the control level, it will be used. In the example below, one ElevatedButton property is not specified and displayed as a default value (TBD) and the other ElevatedButton `bgcolor` property is set to a named color 'deep_purple_900':
+If the color is defined on the control level, it will be used.
 
 [picture]
-[code example]
+```
+c = ft.Container(width=100, height=100, bgcolor = ft.colors.GREEN_200)
+```
 
-Not every Flet control has a color property. For example, FilledButton always has a default 'Primary' color defined by the nearest ancestor Theme.
+Not every Flet control has a color property that can be set on the control level. For example, FilledButton always has a default 'Primary' color defined by the nearest ancestor's Theme.
 
 ### Control Theme level
 
 [example with Tabs]
+[example with Text]
+[example with ScrollBar]
 
 ### Theme level
 
-Flet will check for the nearest ancestor that has a Theme defined, and will take color from the ColorScheme. In example below, a Checkbox is wrapped in a Container, for which there is a Theme defined, and the Checkbox color from its ColorScheme will be used: 
+Flet will check for the nearest ancestor that has a Theme defined, and will take color from the ColorScheme. In example below, a FilledButton is wrapped in a Container, for which there is a Theme defined, and primary color from Container ColorScheme will be used: 
 
 [example with Container]
 
 
-If you don't define control color property, ControlTheme or Theme anywhere, the nearest ancestor will be the page and colors from the default page ColorScheme will be used.  
+If control color property, ControlTheme or Theme is not specified, the nearest ancestor will be the page and the colors from the default page ColorScheme will be used.  
 
 * Link to an app
 
