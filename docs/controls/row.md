@@ -245,7 +245,7 @@ Property value is `MainAxisAlignment` enum with the following values:
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children update.
+`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
 ### `controls`
 
@@ -273,6 +273,10 @@ Supported values:
 
 Spacing between controls in a row. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
 
+### `on_scroll_interval`
+
+Throttling in milliseconds for `on_scroll` event. Default is `10`.
+
 ### `tight`
 
 Specifies how much space should be occupied horizontally. Default is `False` - allocate all space to children.
@@ -292,6 +296,28 @@ Property value is `CrossAxisAlignment` enum with the following values:
 ### `wrap`
 
 When set to `True` the Row will put child controls into additional rows (runs) if they don't fit a single row.
+
+### `on_scroll`
+
+Fires when row's scroll position is changed by a user.
+
+See [`Column.on_scroll`](column#on_scroll) for event details and examples.
+
+## Methods
+
+### `scroll_to(offset, delta, key, duration, curve)`
+
+Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
+
+See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+
+## Events
+
+### `on_scroll`
+
+Fires when scroll position is changed by a user.
+
+See [`Column.on_scroll`](column#on_scroll) for event details and examples.
 
 ## Expanding children
 

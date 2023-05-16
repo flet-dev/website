@@ -58,7 +58,7 @@ ft.app(target=main)
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children update.
+`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
 ### `controls`
 
@@ -80,6 +80,10 @@ If greater than `0` then Divider is used as a spacing between ListView items.
 
 A fixed height or width (for `horizontal` ListView) of an item to optimize rendering.
 
+### `on_scroll_interval`
+
+Throttling in milliseconds for `on_scroll` event. Default is `10`.
+
 ### `padding`
 
 The amount of space by which to inset the children.
@@ -89,3 +93,19 @@ See [`Container.padding`](container#padding) property for more information and p
 ### `spacing`
 
 The height of Divider between ListView items. No spacing between items if not specified.
+
+## Methods
+
+### `scroll_to(offset, delta, key, duration, curve)`
+
+Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
+
+See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+
+## Events
+
+### `on_scroll`
+
+Fires when scroll position is changed by a user.
+
+See [`Column.on_scroll`](column#on_scroll) for event details and examples.

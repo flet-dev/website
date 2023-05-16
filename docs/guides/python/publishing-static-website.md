@@ -124,6 +124,18 @@ You can change default "canvaskit" web renderer ([more about renderers here](/do
 flet publish <your-flet-app.py> --web-renderer html
 ```
 
+## Color emojis
+
+To reduce app size default "CanvasKit" renderer does not use colorful emojis, because the font file with color emojies weights around 8 MB.
+
+You can, however, opt-in for color emojis with `--use-color-emoji` flag:
+
+```
+flet publish <your-flet-app.py> --use-color-emoji
+```
+
+Alternatively, switch to `html` renderer which uses browser fonts.
+
 ## Hosting website in a sub-directory
 
 Multiple Flet apps can be hosted on a single domain - each app in it's own sub-directory.
