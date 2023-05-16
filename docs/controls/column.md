@@ -246,7 +246,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-### Inifite scroll list
+### Infinite scroll list
 
 The following example demonstrates adding of list items on-the-fly, as user scroll to the bottom, creating the illusion of inifinite list:
 
