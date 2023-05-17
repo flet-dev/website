@@ -112,7 +112,7 @@ If you need to change theme for a particular ScrollBar, Text or Tabs control, yo
 
 ### Theme level
 
-Flet will check for the nearest ancestor that has `theme` defined, and will take color from the `ColorScheme`. In the example below, the nearest anscestor for the `FilledButton` is `Container`, and the `primary` color that is used for the button will be taken from the Container's theme.
+Flet will check for the nearest ancestor that has `theme` defined, and will take color from the `ColorScheme`. In the example below, the nearest anscestor for the `FilledButton` is `Container`, and the `primary` color that is used for the button will be taken from the Container's `theme`.
 
 ```python
 import flet as ft
