@@ -9,15 +9,17 @@ There are 2 ways to define color property value in Flet: Hex value and named col
 
 ### Hex value
 
-Hex value should be in format #AARRGGBB (0xAARRGGBB) or #RRGGBB (0xRRGGBB). In case AA is omitted, it is set to FF (transparent).
+Hex value should be in format #AARRGGBB (0xAARRGGBB) or #RRGGBB (0xRRGGBB). In case AA ([opacity](/docs/guides/python/colors#color-opacity)) is omitted, it is set to FF (not transparent).
 
-[Example code]
+```python
+c1 = ft.Container(bgcolor='#ff0000')
+```
 
-[Live example]
+[Live example](https://flet-controls-gallery.fly.dev/colors/controlcolors)
 
 ### Named colors
 
-Named colors are the Material Design Theme colors and Palettes colors. They can be set with a string value or using a flet.colors module.
+Named colors are the Material Design [Theme colors](https://m3.material.io/styles/color/the-color-system/color-roles) and [colors palettes](https://m2.material.io/design/color/the-color-system.html#color-usage-and-palettes). They can be set with a string value or using flet.colors module.
 
 ```
 c1 = ft.Container(bgcolor=ft.colors.YELLOW)
@@ -26,15 +28,15 @@ c2 = ft.Container(bgcolor='yellow')
 
 #### Theme colors
 
-There are 30 named Theme colors in `theme.ColorScheme` that are are generated based on the `color_scheme_seed` property. The default seed color value is 'blue'.
+There are 30 named Theme colors in [`theme.ColorScheme`](/docs/controls/page#colorscheme-class) that are are generated based on the `color_scheme_seed` property. The default seed color value is 'blue'.
 
 ```
-# example for generating page theme colors based on seed color
-page.theme = theme.Theme(color_scheme_seed="green")
+# example for generating page theme colors based on the seed color
+page.theme = theme.Theme(color_scheme_seed='green')
 page.update()
 ```
 
-Any of the 30 colors can be overriden, in which case they will have an absolute value that will not be dependent on seed color.
+Any of the 30 colors can be overriden, in which case they will have an absolute value that will not be dependent on the seed color.
 ```
 page.theme = ft.Theme(
     color_scheme=ft.ColorScheme(
@@ -59,15 +61,36 @@ In addition, a series of blacks and whites with common opacities are available. 
 
 Palette colors can be used for setting individual controls color property or as a seed color for generating Theme colors.
 
-[live example](https://flet-controls-gallery.fly.dev/colors/palettecolors)
+[Live example](https://flet-controls-gallery.fly.dev/colors/colorspalettes)
 
-## How the colors are defined for Flet controls
+## Color opacity
 
-Most Flet controls have default colors defined by the page ColorScheme that can be overridden on different levels.
+You can specify opacity for any color (hex value or named) using `with_opacity` method. Opacity value should be between `0.0` (completely transparent) and `1.0` (not transparent).
+
+```python
+color = ft.colors.with_opacity(0.5, ft.colors.PRIMARY)
+color = ft.colors.with_opacity(0.5, '#ff6666')
+```
+
+Another way to specify opacity for string value:
+
+```python
+color = "surface,0.5"
+```
+
+For ##AARRGGBB hex value, you can specify AA channel with values between `00` and `FF`, for example:
+
+```python
+color = "7fff6666"
+``` 
+
+## Defining colors for Flet controls
+
+Most Flet controls have default colors defined by the `ColorScheme` that can be overridden on different levels.
 
 <img src="/img/docs/colors/colors_fallback.svg"className="screenshot-80" />
 
-[live example](https://flet-controls-gallery.fly.dev/colors/controlcolors)
+[Live example](https://flet-controls-gallery.fly.dev/colors/controlcolors)
 
 ### Control level
 
@@ -80,6 +103,8 @@ c = ft.Container(width=100, height=100, bgcolor = ft.colors.GREEN_200)
 Not every Flet control has a color property that can be set on the control level. For example, FilledButton always has a default 'Primary' color defined by the nearest ancestor's Theme.
 
 ### Control Theme level
+
+For `ScrollBar` (used in scrollable controls: `Page`, `View`, `Column`, `Row`, `ListView` and `GridView`), `Tabs` and `Text` controls, Flet will check if the [nearest anscestor](/blog#nested-themes) theme has `scrollbar_theme`, `tabs_theme` or `text_theme` specified.
 
 #### Scrollbar theme
 
@@ -157,19 +182,28 @@ page.theme = ft.Theme(
 See [`TabsTheme` class](/docs/controls/page#tabstheme-class) for more details.
 
 :::note
-If you need to change theme for a particular ScrollBar, Text or Tabs control, you can wrap this control in a container and customize `scrollbar_theme`, `text_theme` or `tabs_theme` for this container only.
+If you need to change theme for a particular ScrollBar, Text or Tabs control, you can wrap this control in a container and customize `scrollbar_theme`, `text_theme` or `tabs_theme` for this container theme.
 :::
-
 
 ### Theme level
 
-Flet will check for the nearest ancestor that has a Theme defined, and will take color from the ColorScheme. In example below, a FilledButton is wrapped in a Container, for which there is a Theme defined, and primary color from Container ColorScheme will be used: 
+Flet will check for the nearest ancestor that has `theme` defined, and will take color from the `ColorScheme`. In the example below, the nearest anscestor for the `FilledButton` is `Container`, and the Primary color that is used for the button will be taken from the Container's theme.
 
-[example with Container]
+```python
+import flet as ft
 
+def main(page: ft.Page):          
+    
+    container = ft.Container(
+        width=200,
+        height=200,
+        border=ft.border.all(1, ft.colors.BLACK),
+        content=ft.FilledButton("Primary color"),
+        theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.colors.YELLOW)))
+    
+    page.add(container)
+
+ft.app(target=main)   
+```
 
 If control color property, ControlTheme or Theme is not specified, the nearest ancestor will be the page and the colors from the default page ColorScheme will be used.  
-
-* Link to an app
-
-`ft.colors.with_opacity` - works on a client
