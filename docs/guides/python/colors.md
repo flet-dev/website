@@ -131,4 +131,4 @@ def main(page: ft.Page):
 ft.app(target=main)   
 ```
 
-If control's color property, control-specific Theme or nearest ancestor's `theme` is not specified, the nearest ancestor will be the page and the colors from the default page `ColorScheme` will be used.  
+If control's color property, control-specific theme or nearest ancestor's `theme` is not specified, the nearest ancestor will be the page and the colors from the default page `ColorScheme` will be used.  
