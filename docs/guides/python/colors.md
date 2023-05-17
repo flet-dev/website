@@ -5,11 +5,11 @@ sidebar_label: Colors
 
 ## Color value
 
-There are 2 ways to define color property value in Flet: Hex value and named colors.
+There are 2 ways to define color property value in Flet: hex value and named colors.
 
 ### Hex value
 
-Hex value should be in format #AARRGGBB (0xAARRGGBB) or #RRGGBB (0xRRGGBB). In case AA ([opacity](/docs/guides/python/colors#color-opacity)) is omitted, it is set to FF (not transparent).
+Hex value should be in format `#aarrggbb` (`0xaarrggbb`) or `#rrggbb` (`0xeeggbb`). In case `aa` ([opacity](/docs/guides/python/colors#color-opacity)) is omitted, it is set to FF (not transparent).
 
 ```python
 c1 = ft.Container(bgcolor='#ff0000')
@@ -36,7 +36,7 @@ page.theme = theme.Theme(color_scheme_seed='green')
 page.update()
 ```
 
-Any of the 30 colors can be overriden, in which case they will have an absolute value that will not be dependent on the seed color.
+Any of the 30 colors can be overridden, in which case they will have an absolute value that will not be dependent on the seed color.
 ```
 page.theme = ft.Theme(
     color_scheme=ft.ColorScheme(
@@ -47,7 +47,7 @@ page.theme = ft.Theme(
 )
 ```
 
-Theme colors define default values for most Flet controls colors.
+Theme colors define fallback colors for most of Flet controls.
 
 [Live Example](https://flet-controls-gallery.fly.dev/colors/themecolors)
 
@@ -55,9 +55,9 @@ Theme colors define default values for most Flet controls colors.
 
 Originally created by Material Design in 2014, color palettes are comprised of colors designed to work together harmoniously. 
 
-Color swatches (palettes) consist of different shades of a certain color. Most swatches have shades from 100 to 900 in increments of one hundred, plus the color 50. The smaller the number, the more pale the color. The greater the number, the darker the color. The accent swatches (e.g. redAccent) only have the values 100, 200, 400, and 700.
+Color swatches (palettes) consist of different shades of a certain color. Most swatches have shades from `100` to `900` in increments of one hundred, plus the color `50`. The smaller the number, the more pale the color. The greater the number, the darker the color. The accent swatches (e.g. `redAccent`) only have the values `100`, `200`, `400`, and `700`.
 
-In addition, a series of blacks and whites with common opacities are available. For example, black54 is a pure black with 54% opacity.
+In addition, a series of blacks and whites with common opacities are available. For example, `black54` is a pure black with 54% opacity.
 
 Palette colors can be used for setting individual controls color property or as a seed color for generating Theme colors.
 
@@ -78,10 +78,10 @@ Another way to specify opacity for string value:
 color = "surface,0.5"
 ```
 
-For ##AARRGGBB hex value, you can specify AA channel with values between `00` and `FF`, for example:
+For hex value, you can specify `aa` channel with values between `00` and `ff`, for example:
 
 ```python
-color = "7fff6666"
+color = "#7fff6666"
 ``` 
 
 ## Defining colors for Flet controls
@@ -96,25 +96,23 @@ Most Flet controls have default colors defined by the `ColorScheme` that can be 
 
 If the color is defined on the control level, it will be used.
 
-```
-c = ft.Container(width=100, height=100, bgcolor = ft.colors.GREEN_200)
+```python
+c = ft.Container(width=100, height=100, bgcolor=ft.colors.GREEN_200)
 ```
 
-Not every Flet control has a color property that can be set on the control level. For example, FilledButton always has a default 'Primary' color defined by the nearest ancestor's Theme.
+Not every Flet control has a color property that can be set on the control level. For example, `FilledButton` always has a default "primary" color defined by the nearest ancestor's `theme`.
 
 ### Control Theme level
 
 For `ScrollBar` (used in scrollable controls: `Page`, `View`, `Column`, `Row`, `ListView` and `GridView`), `Tabs` and `Text` controls, Flet will check if the [nearest anscestor](/blog/scrolling-controls-and-theming#nested-themes) theme has [ScrollBar Theme](/blog/scrolling-controls-and-theming#scrollbar-theme), [Tabs theme](/blog/scrolling-controls-and-theming#tabs-theming) or [Text theme](/blog/scrolling-controls-and-theming#text-theming) specified.
 
-
-
 :::note
-If you need to change theme for a particular ScrollBar, Text or Tabs control, you can wrap this control in a container and customize `scrollbar_theme`, `text_theme` or `tabs_theme` for this container theme.
+If you need to change theme for a particular ScrollBar, Text or Tabs control, you can wrap this control in a container and customize `scrollbar_theme`, `text_theme` or `tabs_theme` for this container `theme`.
 :::
 
 ### Theme level
 
-Flet will check for the nearest ancestor that has `theme` defined, and will take color from the `ColorScheme`. In the example below, the nearest anscestor for the `FilledButton` is `Container`, and the Primary color that is used for the button will be taken from the Container's theme.
+Flet will check for the nearest ancestor that has `theme` defined, and will take color from the `ColorScheme`. In the example below, the nearest anscestor for the `FilledButton` is `Container`, and the `primary` color that is used for the button will be taken from the Container's theme.
 
 ```python
 import flet as ft
@@ -133,4 +131,4 @@ def main(page: ft.Page):
 ft.app(target=main)   
 ```
 
-If control's color property, Control-specific Theme or nearest ancestor's Theme is not specified, the nearest ancestor will be the page and the colors from the default page ColorScheme will be used.  
+If control's color property, control-specific Theme or nearest ancestor's `theme` is not specified, the nearest ancestor will be the page and the colors from the default page `ColorScheme` will be used.  
