@@ -104,82 +104,9 @@ Not every Flet control has a color property that can be set on the control level
 
 ### Control Theme level
 
-For `ScrollBar` (used in scrollable controls: `Page`, `View`, `Column`, `Row`, `ListView` and `GridView`), `Tabs` and `Text` controls, Flet will check if the [nearest anscestor](/blog#nested-themes) theme has `scrollbar_theme`, `tabs_theme` or `text_theme` specified.
+For `ScrollBar` (used in scrollable controls: `Page`, `View`, `Column`, `Row`, `ListView` and `GridView`), `Tabs` and `Text` controls, Flet will check if the [nearest anscestor](/blog/scrolling-controls-and-theming#nested-themes) theme has [ScrollBar Theme](/blog/scrolling-controls-and-theming#scrollbar-theme), [Tabs theme](/blog/scrolling-controls-and-theming#tabs-theming) or [Text theme](/blog/scrolling-controls-and-theming#text-theming) specified.
 
-#### Scrollbar theme
 
-You can customize the look and fill of scrollbars in your application using [`page.theme.scrollbar_theme`](/docs/controls/page#scrollbartheme-class) property, for example:
-
-```python
-page.theme = ft.Theme(
-    scrollbar_theme=ft.ScrollbarTheme(
-        track_color={
-            ft.MaterialState.HOVERED: ft.colors.AMBER,
-            ft.MaterialState.DEFAULT: ft.colors.TRANSPARENT,
-        },
-        track_visibility=True,
-        track_border_color=ft.colors.BLUE,
-        thumb_visibility=True,
-        thumb_color={
-            ft.MaterialState.HOVERED: ft.colors.RED,
-            ft.MaterialState.DEFAULT: ft.colors.GREY_300,
-        },
-        thickness=30,
-        radius=15,
-        main_axis_margin=5,
-        cross_axis_margin=10,
-    )
-)
-```
-
-<img src="/img/docs/controls/column/column-scroll-to.png"  className="screenshot-60" />
-
-#### Text theming
-
-Material 3 design defines [5 groups of text styles with 3 sizes in each group](/docs/controls/text#pre-defined-theme-text-styles): "Display", "Headline", "Title", "Label" and "Body" which are used across Flet controls. You can customize each of those styles with `page.theme.text_theme`, for example:
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.theme = ft.Theme(
-        text_theme=ft.TextTheme(body_medium=ft.TextStyle(color=ft.colors.GREEN))
-    )
-
-    page.add(ft.Text("Hello, green world!"))
-
-ft.app(main)
-```
-
-<img src="/img/blog/theme-scrolling/text-theme.png"  className="screenshot-50" />
-
-Apparently, `Body Medium` is used by `Text` control as a default style.
-
-See [`TextTheme` class](/docs/controls/page#texttheme-class) for more details.
-
-#### Tabs theming
-
-You can control the look and feel of `Tabs` control using [`page.theme.tabs_theme`](/docs/controls/page#tabstheme-class) property to style all tabs in your app:
-
-```python
-page.theme = ft.Theme(
-    tabs_theme=ft.TabsTheme(
-        divider_color=ft.colors.BLUE,
-        indicator_color=ft.colors.RED,
-        indicator_tab_size=True,
-        label_color=ft.colors.GREEN,
-        unselected_label_color=ft.colors.AMBER,
-        overlay_color={
-            ft.MaterialState.FOCUSED: ft.colors.with_opacity(0.2, ft.colors.GREEN),
-            ft.MaterialState.DEFAULT: ft.colors.with_opacity(0.2, ft.colors.PINK),
-        },
-    )
-)
-```
-
-<img src="/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />
-
-See [`TabsTheme` class](/docs/controls/page#tabstheme-class) for more details.
 
 :::note
 If you need to change theme for a particular ScrollBar, Text or Tabs control, you can wrap this control in a container and customize `scrollbar_theme`, `text_theme` or `tabs_theme` for this container theme.
@@ -206,4 +133,4 @@ def main(page: ft.Page):
 ft.app(target=main)   
 ```
 
-If control color property, ControlTheme or Theme is not specified, the nearest ancestor will be the page and the colors from the default page ColorScheme will be used.  
+If control's color property, Control-specific Theme or nearest ancestor's Theme is not specified, the nearest ancestor will be the page and the colors from the default page ColorScheme will be used.  
