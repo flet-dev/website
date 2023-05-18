@@ -76,11 +76,11 @@ The background image of the circle. Changing the background image will cause the
 
 ### `bgcolor`
 
-The color with which to fill the circle. Changing the background color will cause the avatar to animate to the new color.
+The [color](/docs/guides/python/colors) with which to fill the circle. Changing the background color will cause the avatar to animate to the new color.
 
 ### `color`
 
-The default text color for text in the circle. Defaults to the primary text theme color if no `bgcolor` is specified.
+The default text [color](/docs/guides/python/colors) for text in the circle. Defaults to the primary text theme color if no `bgcolor` is specified.
 
 ### `content`
 

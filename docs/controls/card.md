@@ -57,7 +57,7 @@ ft.app(target=main)
 
 ### `color`
 
-The card's background color.
+The card's background [color](/docs/guides/python/colors).
 
 ### `content`
 
@@ -77,11 +77,11 @@ See [`Container.margin`](container#margin) property for more information and pos
 
 ### `shadow_color`
 
-The color to paint the shadow below the card.
+The [color](/docs/guides/python/colors) to paint the shadow below the card.
 
 ### `surface_tint_color`
 
-The color used as an overlay on `color` to indicate elevation.
+The [color](/docs/guides/python/colors) used as an overlay on `color` to indicate elevation.
 
 If this is `None`, no overlay will be applied. Otherwise this color will be composited on top of `color` with an opacity related to `elevation` and used to paint the background of the card.
 

@@ -70,7 +70,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-Button background color.
+Button background [color](/docs/guides/python/colors).
 
 ### `content`
 

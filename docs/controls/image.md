@@ -63,7 +63,7 @@ Clip image to have rounded corners. See [`Container.border_radius`](container#bo
 
 ### `color`
 
-If set, this color is blended with each image pixel using `color_blend_mode`.
+If set, this [color](/docs/guides/python/colors) is blended with each image pixel using `color_blend_mode`.
 
 ### `color_blend_mode`
 

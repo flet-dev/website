@@ -335,11 +335,11 @@ ft.app(main)
 
 ### `bgcolor`
 
-Text background color.
+Text background [color](/docs/guides/python/colors).
 
 ### `color`
 
-Text foreground color.
+Text foreground [color](/docs/guides/python/colors).
 
 ### `font_family`
 
@@ -519,7 +519,7 @@ style = ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE | ft.TextDecoration.
 
 ### `decoration_color`
 
-The color in which to paint the text decorations.
+The [color](/docs/guides/python/colors) in which to paint the text decorations.
 
 ### `decoration_style`
 

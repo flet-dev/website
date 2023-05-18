@@ -240,7 +240,7 @@ Controls chart implicit animation. See [`LineChart.animate`](linechart#animate) 
 
 ### `center_space_color`
 
-Free space color in the middle of a chart.
+Free space [color](/docs/guides/python/colors) in the middle of a chart.
 
 ### `center_space_radius`
 
@@ -282,7 +282,7 @@ External radius of the section.
 
 ### `color`
 
-Background color of the section.
+Background [color](/docs/guides/python/colors) of the section.
 
 ### `border_side`
 

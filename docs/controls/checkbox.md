@@ -79,11 +79,11 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `check_color`
 
-The color to use for the check icon when this checkbox is checked.
+The [color](/docs/guides/python/colors) to use for the check icon when this checkbox is checked.
 
 ### `fill_color`
 
-The color that fills the checkbox, in all Material states:
+The [color](/docs/guides/python/colors) that fills the checkbox, in all Material states:
 
 * `HOVERED`
 * `FOCUSED`

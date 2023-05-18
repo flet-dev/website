@@ -61,11 +61,11 @@ The action should not be "dismiss" or "cancel".
 
 ### `action_color`
 
-The foreground color of action button.
+The foreground [color](/docs/guides/python/colors) of action button.
 
 ### `bgcolor`
 
-SnackBar background color.
+SnackBar background [color](/docs/guides/python/colors).
 
 ### `content`
 

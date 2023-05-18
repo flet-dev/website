@@ -381,11 +381,11 @@ Enables automatic tooltips and points highlighting when hovering over the chart.
 
 ### `bgcolor`
 
-Background color of the chart.
+Background [color](/docs/guides/python/colors) of the chart.
 
 ### `tooltip_bgcolor`
 
-Background color of tooltips.
+Background [color](/docs/guides/python/colors) of tooltips.
 
 ### `border`
 
@@ -471,7 +471,7 @@ Set to `True` to draw chart line as a curve. Default is `False`.
 
 ### `color`
 
-A color of chart line.
+A [color](/docs/guides/python/colors) of chart line.
 
 ### `gradient`
 
@@ -495,7 +495,7 @@ Shadow to drop by a chart line. The value is the instance of `ft.Shadow` class.
 
 ### `above_line_bgcolor`
 
-Fill the area above chart line with the specified color.
+Fill the area above chart line with the specified [color](/docs/guides/python/colors).
 
 ### `above_line_gradient`
 
@@ -511,7 +511,7 @@ A vertical line drawn between a line point and the top edge of the chart. The va
 
 ### `below_line_bgcolor`
 
-Fill the area below chart line with the specified color.
+Fill the area below chart line with the specified [color](/docs/guides/python/colors).
 
 ### `below_line_gradient`
 
@@ -601,7 +601,7 @@ Interval between grid lines. Default is `1`.
 
 ### `color`
 
-Color of a grid line.
+[Color](/docs/guides/python/colors) of a grid line.
 
 ### `width`
 
@@ -655,7 +655,7 @@ A `Control` to draw as a label.
 
 ### `color`
 
-Color of the line.
+[Color](/docs/guides/python/colors) of the line.
 
 ### `width`
 

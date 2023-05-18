@@ -87,7 +87,7 @@ ft.app(target=main)
 
 ### `active_color`
 
-The color to use for the portion of the slider track that is active.
+The [color](/docs/guides/python/colors) to use for the portion of the slider track that is active.
 
 The "active" side of the slider is the side between the thumb and the minimum value.
 
@@ -105,7 +105,7 @@ If not set, the slider is continuous.
 
 ### `inactive_color`
 
-The color for the inactive portion of the slider track.
+The [color](/docs/guides/python/colors) for the inactive portion of the slider track.
 
 The "inactive" side of the slider is the side between the thumb and the maximum value.
 
@@ -137,7 +137,7 @@ If the `max` is equal to the `min`, then the slider is disabled.
 
 ### `thumb_color`
 
-The color of the thumb.
+The [color](/docs/guides/python/colors) of the thumb.
 
 ### `value`
 
