@@ -62,7 +62,7 @@ ft.app(target=main)
 
 ### `color`
 
-The color to use when painting the line.
+The [color](/docs/guides/python/colors) to use when painting the line.
 
 ### `height`
 
