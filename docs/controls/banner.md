@@ -64,7 +64,7 @@ Typically this is a list of [`TextButton`](textbutton) controls.
 
 ### `bgcolor`
 
-The color of the surface of this Banner.
+The [color](/docs/guides/python/colors) of the surface of this Banner.
 
 ### `content`
 
