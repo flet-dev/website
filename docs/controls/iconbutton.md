@@ -100,7 +100,7 @@ Icon shown in the button.
 
 ### `icon_color`
 
-Icon color.
+Icon [color](/docs/guides/python/colors).
 
 ### `icon_size`
 
@@ -116,7 +116,7 @@ Icon shown in the button in selected state.
 
 ### `selected_icon_color`
 
-Icon color for the selected state.
+Icon [color](/docs/guides/python/colors) for the selected state.
 
 En example of icon toggle button:
 
