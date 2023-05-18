@@ -71,7 +71,7 @@ If `True` and `leading` is null, automatically try to deduce what the leading wi
 
 ### `bgcolor`
 
-The fill color to use for an AppBar. Default color is defined by current theme.
+The fill [color](/docs/guides/python/colors) to use for an AppBar. Default color is defined by current theme.
 
 ### `center_title`
 
@@ -79,7 +79,7 @@ Whether the title should be centered. Default is `False`.
 
 ### `color`
 
-The default color for Text and Icons within the app bar. Default color is defined by current theme.
+The default [color](/docs/guides/python/colors) for Text and Icons within the app bar. Default color is defined by current theme.
 
 ### `elevation`
 

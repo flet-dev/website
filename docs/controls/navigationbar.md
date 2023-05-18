@@ -42,7 +42,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-The color of the NavigationBar itself.
+The [color](/docs/guides/python/colors) of the NavigationBar itself.
 
 ### `destinations`
 

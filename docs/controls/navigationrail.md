@@ -69,7 +69,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-Sets the color of the Container that holds all of the NavigationRail's contents.
+Sets the [color](/docs/guides/python/colors) of the Container that holds all of the NavigationRail's contents.
 
 ### `destinations`
 
