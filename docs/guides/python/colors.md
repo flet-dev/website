@@ -19,7 +19,7 @@ c1 = ft.Container(bgcolor='#ff0000')
 
 ### Named colors
 
-Named colors are the Material Design [Theme colors](https://m3.material.io/styles/color/the-color-system/color-roles) and [colors palettes](https://m2.material.io/design/color/the-color-system.html#color-usage-and-palettes). They can be set with a string value or using flet.colors module.
+Named colors are the Material Design [theme colors](https://m3.material.io/styles/color/the-color-system/color-roles) and [colors palettes](https://m2.material.io/design/color/the-color-system.html#color-usage-and-palettes). They can be set with a string value or using flet.colors module.
 
 ```
 c1 = ft.Container(bgcolor=ft.colors.YELLOW)
@@ -28,7 +28,7 @@ c2 = ft.Container(bgcolor='yellow')
 
 #### Theme colors
 
-There are 30 named Theme colors in [`theme.ColorScheme`](/docs/controls/page#colorscheme-class) that are are generated based on the `color_scheme_seed` property. The default seed color value is 'blue'.
+There are 30 named theme colors in [`theme.color_scheme`](/docs/controls/page#colorscheme-class) that are are generated based on the `color_scheme_seed` property. The default seed color value is "blue".
 
 ```
 # example for generating page theme colors based on the seed color
@@ -86,11 +86,11 @@ color = "#7fff6666"
 
 ## Defining colors for Flet controls
 
-Most Flet controls have default colors defined by the `ColorScheme` that can be overridden on different levels.
-
-<img src="/img/docs/colors/colors_fallback.svg"className="screenshot-80" />
+Most Flet controls have default colors defined by the `color_scheme` that can be overridden on different levels.
 
 [Live example](https://flet-controls-gallery.fly.dev/colors/controlcolors)
+
+<img src="/img/docs/colors/colors_fallback.svg"className="screenshot-80" />
 
 ### Control level
 
@@ -107,7 +107,7 @@ Not every Flet control has a color property that can be set on the control level
 For `ScrollBar` (used in scrollable controls: `Page`, `View`, `Column`, `Row`, `ListView` and `GridView`), `Tabs` and `Text` controls, Flet will check if the [nearest anscestor](/blog/scrolling-controls-and-theming#nested-themes) theme has [ScrollBar Theme](/blog/scrolling-controls-and-theming#scrollbar-theme), [Tabs theme](/blog/scrolling-controls-and-theming#tabs-theming) or [Text theme](/blog/scrolling-controls-and-theming#text-theming) specified.
 
 :::note
-If you need to change theme for a particular ScrollBar, Text or Tabs control, you can wrap this control in a container and customize `scrollbar_theme`, `text_theme` or `tabs_theme` for this container `theme`.
+If you need to change theme for a particular ScrollBar, Text or Tabs control, you can wrap this control in a Container and customize `scrollbar_theme`, `text_theme` or `tabs_theme` for this Container `theme`.
 :::
 
 ### Theme level
@@ -131,4 +131,4 @@ def main(page: ft.Page):
 ft.app(target=main)   
 ```
 
-If control's color property, control-specific theme or nearest ancestor's `theme` is not specified, the nearest ancestor will be the page and the colors from the default page `ColorScheme` will be used.  
+If control's color property, control-specific theme or nearest ancestor's theme is not specified, the nearest ancestor will be the page and the colors from the default page `color_scheme` will be used.  
