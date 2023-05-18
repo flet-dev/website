@@ -2,6 +2,7 @@
 title: Colors
 sidebar_label: Colors
 ---
+<img src="/img/docs/colors/color_palettes.png"className="screenshot-100" />
 
 ## Color value
 
@@ -28,6 +29,10 @@ c2 = ft.Container(bgcolor='yellow')
 
 #### Theme colors
 
+<img src="/img/docs/colors/theme_colors.png"className="screenshot-100" />
+
+[Live Example](https://flet-controls-gallery.fly.dev/colors/themecolors)
+
 There are 30 named theme colors in [`theme.color_scheme`](/docs/controls/page#colorscheme-class) that are are generated based on the `color_scheme_seed` property. The default seed color value is "blue".
 
 ```
@@ -49,9 +54,11 @@ page.theme = ft.Theme(
 
 Theme colors define fallback colors for most of Flet controls.
 
-[Live Example](https://flet-controls-gallery.fly.dev/colors/themecolors)
-
 #### Color palettes
+
+<img src="/img/docs/colors/color_palettes_2.png"className="screenshot-100" />
+
+[Live example](https://flet-controls-gallery.fly.dev/colors/colorspalettes)
 
 Originally created by Material Design in 2014, color palettes are comprised of colors designed to work together harmoniously. 
 
@@ -60,8 +67,6 @@ Color swatches (palettes) consist of different shades of a certain color. Most s
 In addition, a series of blacks and whites with common opacities are available. For example, `black54` is a pure black with 54% opacity.
 
 Palette colors can be used for setting individual controls color property or as a seed color for generating Theme colors.
-
-[Live example](https://flet-controls-gallery.fly.dev/colors/colorspalettes)
 
 ## Color opacity
 
