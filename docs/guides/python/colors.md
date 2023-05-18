@@ -52,6 +52,8 @@ page.theme = ft.Theme(
 )
 ```
 
+<img src="/img/docs/colors/theme_colors_green.png"className="screenshot-100" />
+
 Theme colors define fallback colors for most of Flet controls.
 
 #### Color palettes
