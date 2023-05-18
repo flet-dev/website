@@ -200,7 +200,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-TextField background color.
+TextField background [color](/docs/guides/python/colors).
 
 ### `border`
 
@@ -208,7 +208,7 @@ Border around input - `InputBorder` enum with one of the values: `OUTLINE` (defa
 
 ### `border_color`
 
-Border color. Could be `transparent` to hide the border.
+Border [color](/docs/guides/python/colors). Could be `transparent` to hide the border.
 
 ### `border_radius`
 
@@ -235,7 +235,7 @@ Property value is `TextCapitalization` enum with the following values:
 
 ### `color`
 
-Text color.
+Text [color](/docs/guides/python/colors).
 
 ### `content_padding`
 
@@ -255,7 +255,7 @@ If null or an empty string and counter isn't specified, then nothing will appear
 
 ### `cursor_color`
 
-The color of TextField cursor.
+The [color](/docs/guides/python/colors) of TextField cursor.
 
 ### `cursor_height`
 
@@ -289,11 +289,11 @@ If `True` the decoration's container is filled with theme fillColor.
 
 ### `focused_bgcolor`
 
-Background color of TextField in focused state.
+Background [color](/docs/guides/python/colors) of TextField in focused state.
 
 ### `focused_border_color`
 
-Border color in focused state.
+Border [color](/docs/guides/python/colors) in focused state.
 
 ### `focused_border_width`
 
@@ -301,7 +301,7 @@ Border width in focused state.
 
 ### `focused_color`
 
-Text color when TextField is focused.
+Text [color](/docs/guides/python/colors) when TextField is focused.
 
 ### `helper_style`
 
@@ -413,7 +413,7 @@ Defaults to `False`.
 
 ### `selected_color`
 
-The color of TextField selection.
+The [color](/docs/guides/python/colors) of TextField selection.
 
 ### `shift_enter`
 

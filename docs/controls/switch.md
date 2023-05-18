@@ -82,11 +82,11 @@ ft.app(target=main)
 
 ### `active_color`
 
-The color to use when this switch is on.
+The [color](/docs/guides/python/colors) to use when this switch is on.
 
 ### `active_track_color`
 
-The color to use on the track when this switch is on.
+The [color](/docs/guides/python/colors) to use on the track when this switch is on.
 
 If `track_color` returns a non-null color in the `selected` state, it will be used instead of this color.
 
@@ -96,13 +96,13 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `inactive_thumb_color`
 
-The color to use on the thumb when this switch is off.
+The [color](/docs/guides/python/colors) to use on the thumb when this switch is off.
 
 If `thumb_color` returns a non-null color in the default state, it will be used instead of this color.
 
 ### `inactive_track_color`
 
-The color to use on the track when this switch is off.
+The [color](/docs/guides/python/colors) to use on the track when this switch is off.
 
 If `track_color` returns a non-null color in the default state, it will be used instead of this color.
 
@@ -116,7 +116,7 @@ Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `thumb_color`
 
-The color of this Switch's thumb.
+The [color](/docs/guides/python/colors) of this Switch's thumb.
 
 Resolved in the following `MaterialState` states:
 
@@ -144,7 +144,7 @@ sw.thumb_color={
 
 ### `track_color`
 
-The color of this Switch's track.
+The [color](/docs/guides/python/colors) of this Switch's track.
 
 Resolved in the following `MaterialState` states:
 

@@ -90,7 +90,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `fill_color`
 
-The color that fills the radio, in all `MaterialState` states:
+The [color](/docs/guides/python/colors) that fills the radio, in all `MaterialState` states:
 
 * `HOVERED`
 * `FOCUSED`
