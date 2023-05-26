@@ -78,7 +78,7 @@ The app will be started in a native OS window - what a nice alternative to Elect
 Now, if you want to run the app as a web app, just replace the last line with:
 
 ```python
-ft.app(target=main, view=ft.WEB_BROWSER)
+ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
 run again and now you instantly get a web app:

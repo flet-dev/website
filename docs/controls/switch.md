@@ -40,7 +40,7 @@ def main(page):
     b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(c1, c2, c3, c4, b, t)
 
-ft.app(target=main, view=ft.WEB_BROWSER)
+ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
   </TabItem>
 </Tabs>

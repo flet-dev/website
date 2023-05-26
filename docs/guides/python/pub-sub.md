@@ -43,7 +43,7 @@ def main(page: ft.Page):
     send = ft.ElevatedButton("Send", on_click=send_click)
     page.add(messages, ft.Row(controls=[user, message, send]))
 
-ft.app(target=main, view=ft.WEB_BROWSER)
+ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
 <img src="/img/docs/getting-started/chat-app-example.gif" className="screenshot-70" />

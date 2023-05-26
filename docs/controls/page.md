@@ -710,10 +710,10 @@ def main(page: ft.Page):
     page.window_visible = True
     page.update()  
 
-ft.app(target=main, view=ft.FLET_APP_HIDDEN)
+ft.app(target=main, view=ft.AppView.FLET_APP_HIDDEN)
 ```
 
-Note `view=flet.FLET_APP_HIDDEN` which hides app window on start.
+Note `view=ft.AppView.FLET_APP_HIDDEN` which hides app window on start.
 
 ### `window_width`
 

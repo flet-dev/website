@@ -62,7 +62,7 @@ def main(page: ft.Page):
     page.on_login = on_login
     page.add(ft.ElevatedButton("Login with GitHub", on_click=login_click))
 
-ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
+ft.app(target=main, port=8550, view=ft.AppView.WEB_BROWSER)
 ```
 
 :::note
