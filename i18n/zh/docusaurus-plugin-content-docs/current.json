@@ -1,23 +1,66 @@
-
 {
   "version.label": {
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.docs.category.General": {
-    "message": "General",
-    "description": "The label for category General in sidebar docs"
+  "sidebar.docs.category.Python Guide": {
+    "message": "Python Guide",
+    "description": "The label for category Python Guide in sidebar docs"
   },
-  "sidebar.docs.category.Process and style guides": {
-    "message": "发布流程与文档写作指南",
-    "description": "The label for category Process and style guides in sidebar docs"
+  "sidebar.docs.category.Deploying web app": {
+    "message": "Deploying web app",
+    "description": "The label for category Deploying web app in sidebar docs"
   },
-  "sidebar.docs.category.Contribute to APISIX": {
-    "message": "贡献者指南",
-    "description": "The label for category Contribute to APISIX in sidebar docs"
+  "sidebar.docs.category.Hosting providers": {
+    "message": "Hosting providers",
+    "description": "The label for category Hosting providers in sidebar docs"
   },
-  "sidebar.docs.category.Community": {
-    "message": "社区指南",
-    "description": "The label for category Community in sidebar docs"
+  "sidebar.docs.category.Tutorials": {
+    "message": "Tutorials",
+    "description": "The label for category Tutorials in sidebar docs"
+  },
+  "sidebar.docs.category.Tutorials.link.generated-index.description": {
+    "message": "Flet apps can be created in multiple languages. Follow a getting-started guide below for your language.",
+    "description": "The generated-index page description for category Tutorials in sidebar docs"
+  },
+  "sidebar.docs.category.Controls": {
+    "message": "Controls",
+    "description": "The label for category Controls in sidebar docs"
+  },
+  "sidebar.docs.category.Layout": {
+    "message": "Layout",
+    "description": "The label for category Layout in sidebar docs"
+  },
+  "sidebar.docs.category.Navigation": {
+    "message": "Navigation",
+    "description": "The label for category Navigation in sidebar docs"
+  },
+  "sidebar.docs.category.Information Displays": {
+    "message": "Information Displays",
+    "description": "The label for category Information Displays in sidebar docs"
+  },
+  "sidebar.docs.category.Buttons": {
+    "message": "Buttons",
+    "description": "The label for category Buttons in sidebar docs"
+  },
+  "sidebar.docs.category.Input and Selections": {
+    "message": "Input and Selections",
+    "description": "The label for category Input and Selections in sidebar docs"
+  },
+  "sidebar.docs.category.Dialogs, Alerts and Panels": {
+    "message": "Dialogs, Alerts and Panels",
+    "description": "The label for category Dialogs, Alerts and Panels in sidebar docs"
+  },
+  "sidebar.docs.category.Charts": {
+    "message": "Charts",
+    "description": "The label for category Charts in sidebar docs"
+  },
+  "sidebar.docs.category.Animations": {
+    "message": "Animations",
+    "description": "The label for category Animations in sidebar docs"
+  },
+  "sidebar.docs.category.Utility": {
+    "message": "Utility",
+    "description": "The label for category Utility in sidebar docs"
   }
 }
