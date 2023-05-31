@@ -8,6 +8,9 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 
 https://docusaurus.io/docs/i18n/introduction
 
+###  Help us translate the Docusaurus based Flet website 
+
+https://github.com/facebook/docusaurus/issues/3526
 
 
 ### Installation
