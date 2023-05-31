@@ -2,6 +2,14 @@
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
+## multi languages translation 
+
+### docusaurus guide 
+
+https://docusaurus.io/docs/i18n/introduction
+
+
+
 ### Installation
 
 ```
