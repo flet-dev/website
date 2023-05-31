@@ -2,21 +2,6 @@
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
-## multi languages translation 
-
-### docusaurus guide 
-
-https://docusaurus.io/docs/i18n/introduction
-
-###  Help us translate the Docusaurus based Flet website 
-
-https://github.com/facebook/docusaurus/issues/3526
-
-### learn from apisix website
-
-https://github.com/apache/apisix-website/tree/master
-
-
 ### Installation
 
 ```
