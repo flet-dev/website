@@ -16,21 +16,12 @@ module.exports = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh'],
-    path: 'i18n',
     localeConfigs: {
       en: {
         label: 'English',
-        direction: 'ltr',
-        htmlLang: 'en-US',
-        calendar: 'gregory',
-        path: 'en',
       },
       zh: {
-        label: '中文',
-        direction: 'ltr',
-        htmlLang: 'zh-CN',
-        calendar: 'calendar',
-        path: 'zh',
+        label: '简体中文',
       },
     },
   },
