@@ -29,7 +29,7 @@ module.exports = {
         label: '中文',
         direction: 'ltr',
         htmlLang: 'zh-CN',
-        calendar: '汉语',
+        calendar: 'calendar',
         path: 'zh',
       },
     },
