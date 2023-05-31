@@ -12,6 +12,10 @@ https://docusaurus.io/docs/i18n/introduction
 
 https://github.com/facebook/docusaurus/issues/3526
 
+### learn from apisix website
+
+https://github.com/apache/apisix-website/tree/master
+
 
 ### Installation
 
