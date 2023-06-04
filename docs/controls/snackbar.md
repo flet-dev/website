@@ -73,7 +73,7 @@ The primary content of the snack bar. Typically a [`Text`](text) control.
 
 ### `duration`
 
-The number of *miliseconds* that the SnackBar stays open for. Defaults to 4000 ([4 seconds](https://api.flutter.dev/flutter/material/SnackBar/duration.html)) when not set.
+The number of *milliseconds* that the SnackBar stays open for. Defaults to 4000 ([4 seconds](https://api.flutter.dev/flutter/material/SnackBar/duration.html)) when not set.
 
 ### `open`
 
