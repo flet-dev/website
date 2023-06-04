@@ -71,6 +71,10 @@ SnackBar background [color](/docs/guides/python/colors).
 
 The primary content of the snack bar. Typically a [`Text`](text) control.
 
+### `duration`
+
+The number of *miliseconds* that the SnackBar stays open for. Defaults to 4000 ([4 seconds](https://api.flutter.dev/flutter/material/SnackBar/duration.html)) when not set.
+
 ### `open`
 
 Set to `True` to display a SnackBar. This property is automatically set to `False` once SnackBar is shown.
