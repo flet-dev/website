@@ -46,8 +46,8 @@ import flet as ft
 def main(page: ft.Page):
     page.add(ft.Text(f"Initial route: {page.route}"))
 
-    def route_change(route):
-        page.add(ft.Text(f"New route: {route}"))
+    def route_change(e: ft.RouteChangeEvent):
+        page.add(ft.Text(f"New route: {e.route}"))
 
     page.on_route_change = route_change
     page.update()
@@ -67,8 +67,8 @@ import flet as ft
 def main(page: ft.Page):
     page.add(ft.Text(f"Initial route: {page.route}"))
 
-    def route_change(route):
-        page.add(ft.Text(f"New route: {route}"))
+    def route_change(e: ft.RouteChangeEvent):
+        page.add(ft.Text(f"New route: {e.route}"))
 
     def go_store(e):
         page.route = "/store"
