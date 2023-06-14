@@ -5,6 +5,10 @@ hide_table_of_contents: true
 
 # Support
 
+## Documentation
+
+Browse [Flet docs](/docs).
+
 ## Discord
 
 Meet Flet community on [Flet Discord server](https://discord.gg/dzWXP8SHG8).
