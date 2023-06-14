@@ -47,7 +47,7 @@ def main(page: ft.Page):
     page.add(ft.Text(f"Initial route: {page.route}"))
 
     def route_change(route):
-        page.add(ft.Text(f"New route: {route}"))
+        page.add(ft.Text(f"New route: {page.route}"))
 
     page.on_route_change = route_change
     page.update()
@@ -68,7 +68,7 @@ def main(page: ft.Page):
     page.add(ft.Text(f"Initial route: {page.route}"))
 
     def route_change(route):
-        page.add(ft.Text(f"New route: {route}"))
+        page.add(ft.Text(f"New route: {page.route}"))
 
     def go_store(e):
         page.route = "/store"
