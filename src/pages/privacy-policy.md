@@ -6,131 +6,141 @@ hide_table_of_contents: true
 # Privacy Policy
 
 <article class="legal">
-    <p>The purpose of this Policy is to make visitors to this website aware of how AppVeyor Systems Inc. ("<strong>Flet</strong>") collects, uses, manages and discloses Personal Information.</p>
-    <p>This Policy explains generally Flet's Personal Information practices, but in all respects this Policy and the
-        application of our practices will be subject to and in accordance with the provisions of applicable privacy protection
-        laws.</p>
-    <ol>
-        <li>Interpretation
-            <ol>
-                <li>
-                    <strong>Definitions</strong>. Where used in this Policy, each of the following words and phrases shall have the
-                    meanings set out below:
-                    <ol>
-                        <li>"<strong>Personal Information</strong>" means information about an identifiable individual, and
-                            includes things such as gender, age, ethnicity and financial information, health information,
-                            consumer preference information, user profiles and identification numbers;</li>
-                        <li>"<strong>Privacy Officer</strong>" refers to the individual or individuals that are accountable
-                            for Flet's compliance with these principles, and to any policies adopted by Flet
-                            thereto;</li>
-                        <li>"<strong>Privacy Policy</strong>" or "<strong>Policy</strong>" is Flet's Policy set out herein which makes visitors to the
-                            Site aware of how Flet collects, uses, manages and discloses Personal Information;</li>
-                        <li>"<strong>Services</strong>" means the services Flet provides the User on the Site or which are available through the Site, including but not limited to the provision of developer tools for creating and hosting web applications including any support services and other business applications and online services that may be provided by Flet;</li>
-                        <li>"<strong>Site</strong>" means Flet's website located at <a href="https://flet.dev">flet.dev</a>, including all services, tools, forums and other content and information made
-                            available on the website;</li>
-                        <li>"<strong>User</strong>" or "
-                            <strong>you</strong>" means any individual, on their own behalf or on behalf of an entity whom
-                            they are authorized to represent which has registered with the Site and/or Services.</li>
-                    </ol>
-                </li>
-            </ol>
-        </li>
-        <li>Knowledge and Consent
-            <ol>
-                <li>By using the Site and/or our Services, you are consenting to the collection and use of information as described
-                    in this Policy. Flet may amend this Policy from time to time. If we make any substantial changes
-                    in the way we use your Personal Information we will notify you by posting an announcement on the Site.
-                    By continuing to use the Site and/or the Services after any such changes are posted, you are consenting
-                    to those changes.</li>
-            </ol>
-        </li>
-        <li>Collection of Information
-            <ol>
-                <li>Flet collects personal information in three ways.
-                    <ol>
-                        <li>First, our website uses cookies. These cookies are automatically placed on your computer or mobile device that uniquely identify your browser or device. We use cookies to personalize content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services. By using our website, you are consenting to our use of cookies.</li>
-                        <li>Second, we collect personal information that you provide to us through our Site. If you create an account with us, the personal information that you provide is used for the purposes set forth in Section 3.2, below. If, when you create an account, you use the option to sign up with you existing developer account, we may receive additional personal information about you depending on your settings with such developer account. If we receive information additional to your name and email address, you expressly consent to us receiving and processing that information for the purposes set forth in Section 3.2, below. If you also consent to receiving emails from us, either when you create an account or at any other time, we will use the personal information you provide for the purposes set forth in Section 3.3, below.</li>
-                        <li>Finally, if a user creates an account, that person is the “Account Owner.” The Account Owner may invite other users (each, an “Invited Users”) to the same account by entering the email address of the Invited User as indicated in our Services.  We use such email address solely for the purposes of delivering the invitation. No other personal information is collected about the Invited User unless the invitation is accepted and the Terms and Conditions of this Privacy Policy are consented to. We keep the email address of the Invited User until the earliest of one of the following: (i) the Owner deletes the invitation; (ii) the account for which the invitation is deleted; or (iii) the Invited User sends us a request to delete the invitation (such requests can be made in writing to <a href="mailto:hello@flet.dev">hello@flet.dev</a>.</li>
-                    </ol>
-                </li>
-                <li>We collect the names, emails addresses and IP addresses of all account Users. If you sign up for a paid account, we will also collect your billing information (name and address). We use encrypted technology to process your payment through our third party payment processor (Stripe), which means we never have access to your credit card details. Occasionally, we may request additional personal information for the specific purpose of providing Services that require that information. If you are the Owner of an account, then you can make a written request to have your account deleted by writing to <a href="mailto:hello@flet.dev">hello@flet.dev</a>. We will delete your account within 30 days, along with the personal information of any User associated with that account.  If you are not the account Owner, you can make a request to the Owner of the account to remove you from the account. You can also write us directly at <a href="mailto:hello@flet.dev">hello@flet.dev</a> to request removal. When you are removed, all of your personal information associated with that account is also deleted. Note that deleting your account or removing yourself from an account does not remove you from our mailing list, but you can unsubscribe from our mailing list at any time. We use the personal information provided through your account to administer our Services to you, as more specifically set forth below:
-                    <ol>
-                        <li>to administer and build your Flet account;</li>
-                        <li>to communicate with you for the purpose of informing you of changes or additions to our Services,
-                            or of the availability of any of our products or services;</li>
-                        <li>to communicate with you for the purpose of sending build/deployment notifications, newsletters, technical
-                            updates and other communications;</li>
-                        <li>to provide the Services to you, including when third-parties may be engaged in the provision of the
-                            Services;</li>
-                        <li>to notify you (on an opt-in basis) of new products and services offered by ourselves that we believe
-                            may be of interest to you;</li>
-                        <li>to provide you with system notifications;</li>
-                        <li>to gather information about how you are use our Site and Services and your preferences, and to customize
-                            our offers and Services to you;</li>
-                        <li>to enforce this Policy;</li>
-                        <li>to respond to claims that any content violates the rights of any third-parties;</li>
-                        <li>to respond to your request for customer service;</li>
-                        <li>to protect the rights, property or personal safety of Flet, its users and the public; or</li>
-                        <li>as required or authorized by law.</li>
-                    </ol>
-                    <p>You have the right to object to your information being processed as set forth in section 3.2(g), by sending your objection
-                        to <a href="mailto:privacy@flet.dev">privacy@flet.dev</a>. To the extent that any of your information is processed for direct marketing purpose, we
-                        will cease such processing after receiving your objection. For processing unrelated to direct marketing purposes,
-                        we will evaluate your objection and respond within 30 days. Please bear in mind that if you object, this may affect
-                        our ability to carry out tasks above for your benefit.</p>     
-                </li>
-                <li>If you consent to receiving emails from Flet that are unrelated to the Services provided through your account,
-                    we will store your name and email address, and send you emails through our email service provider, Mailgun. You
-                    may unsubscribe from our emails at any time by clicking the "Unsubscribe" link at the bottom of any
-                    of our emails, or by modifying your profile in your account. Mailgun maintains a list of all of our users who
-                    have unsubscribed from our emails. If you would like your name and email address deleted from this list, you
-                    can contact us at <a href="mailto:privacy@flet.dev">privacy@flet.dev</a> to make that request. For so long as you are a subscriber to our emails, we will use
-                    your name and email to for the purposes set forth below:
-                    <ol>
-                        <li>to communicate with you for the purpose of informing you of changes or additions to our services, or of the
-                            availability of any of our products or services;</li>
-                        <li>to communicate with you for the purpose of sending newsletters, technical
-                            updates and other communications;</li>
-                        <li>to notify you (on an opt-in basis) of new products and services offered by ourselves that we believe may
-                            be of interest to you;</li>
-                        <li>to provide you with system notifications;</li>
-                        <li>to enforce this Policy;</li>
-                        <li>as required or authorized by law.</li>
-                    </ol>
-                </li>
-                <li>Flet collects statistics information (the "<strong>Statistics</strong>") about pages, applications, sessions and technologies used for internal purposes. All Statistics
-                    are gathered in anonymous form without any relation to specific user or account. Flet reserves the right
-                    to share Statistics with any third-party or post publicly.</li>
-            </ol>       
-        </li>
-        <li>Use, Disclosure and Retention
-            <ol>
-                <li>Personal Information is not collected, used or disclosed by Flet for purposes other than those for which
-                    it was collected, except with your express consent or as required by law. Flet will only disclose
-                    Personal Information about you to unrelated third-parties after you have been informed in advance of
-                    the possibility of such use and disclosure, and have consented to such disclosure. Flet retains Personal
-                    Information for only as long as indicated in Section 3, above, or as required by law.</li>
-            </ol>
-        </li>
-        <li>Safeguards
-            <ol>
-                <li>Flet has developed procedures to safeguard your Personal Information. This includes protecting the access
-                    to, use, disclosure, retention and disposal of Personal Information. For more information, you can contact
-                    our Privacy Officer at <a href="mailto:privacy@flet.dev">privacy@flet.dev</a>.</li>
-            </ol>
-        </li>
-        <li>Links to Other Sites & Third-Party Content
-            <ol>
-                <li>When you leave the Site, the privacy statements of the third-parties will apply. Flet is not responsible
-                    for the privacy practices or the content of such web sites. Should you find a link from any other website
-                    in Site that you feel is inappropriate, do not hesitate to contact us immediately.</li>
-            </ol>
-        </li>
-        <li>More information
-            <ol>
-                <li>Should you have any further questions or concerns about the privacy of information you provide to Flet,
-                    please feel free to contact our Privacy Officer at <a href="mailto:privacy@flet.dev">privacy@flet.dev</a>.</li>
-            </ol>
-        </li>
-    </ol>
+<p>Last updated: June 14, 2023</p>
+<p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
+<h1>Interpretation and Definitions</h1>
+<h2>Interpretation</h2>
+<p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+<h2>Definitions</h2>
+<p>For the purposes of this Privacy Policy:</p>
+<ul>
+<li>
+<p><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</p>
+</li>
+<li>
+<p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
+</li>
+<li>
+<p><strong>Application</strong> refers to Flet, the software program provided by the Company.</p>
+</li>
+<li>
+<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Appveyor Systems Inc., 1012–1030 West Georgia Street, Vancouver, BC V6E 2Y3.</p>
+</li>
+<li>
+<p><strong>Country</strong> refers to: British Columbia,  Canada</p>
+</li>
+<li>
+<p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
+</li>
+<li>
+<p><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</p>
+</li>
+<li>
+<p><strong>Service</strong> refers to the Application.</p>
+</li>
+<li>
+<p><strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</p>
+</li>
+<li>
+<p><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</p>
+</li>
+<li>
+<p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
+</li>
+</ul>
+<h1>Collecting and Using Your Personal Data</h1>
+<h2>Types of Data Collected</h2>
+<h3>Personal Data</h3>
+<p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
+<ul>
+<li>Usage Data</li>
+</ul>
+<h3>Usage Data</h3>
+<p>Usage Data is collected automatically when using the Service.</p>
+<p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+<p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
+<p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
+<h2>Use of Your Personal Data</h2>
+<p>The Company may use Personal Data for the following purposes:</p>
+<ul>
+<li>
+<p><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.</p>
+</li>
+<li>
+<p><strong>To manage Your Account:</strong> to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</p>
+</li>
+<li>
+<p><strong>For the performance of a contract:</strong> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</p>
+</li>
+<li>
+<p><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
+</li>
+<li>
+<p><strong>To provide You</strong> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</p>
+</li>
+<li>
+<p><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</p>
+</li>
+<li>
+<p><strong>For business transfers:</strong> We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.</p>
+</li>
+<li>
+<p><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</p>
+</li>
+</ul>
+<p>We may share Your personal information in the following situations:</p>
+<ul>
+<li><strong>With Service Providers:</strong> We may share Your personal information with Service Providers to monitor and analyze the use of our Service,  to contact You.</li>
+<li><strong>For business transfers:</strong> We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</li>
+<li><strong>With Affiliates:</strong> We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.</li>
+<li><strong>With business partners:</strong> We may share Your information with Our business partners to offer You certain products, services or promotions.</li>
+<li><strong>With other users:</strong> when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.</li>
+<li><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with Your consent.</li>
+</ul>
+<h2>Retention of Your Personal Data</h2>
+<p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
+<p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
+<h2>Transfer of Your Personal Data</h2>
+<p>Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
+<p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
+<p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
+<h2>Delete Your Personal Data</h2>
+<p>You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.</p>
+<p>Our Service may give You the ability to delete certain information about You from within the Service.</p>
+<p>You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us.</p>
+<p>Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.</p>
+<h2>Disclosure of Your Personal Data</h2>
+<h3>Business Transactions</h3>
+<p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
+<h3>Law enforcement</h3>
+<p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
+<h3>Other legal requirements</h3>
+<p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
+<ul>
+<li>Comply with a legal obligation</li>
+<li>Protect and defend the rights or property of the Company</li>
+<li>Prevent or investigate possible wrongdoing in connection with the Service</li>
+<li>Protect the personal safety of Users of the Service or the public</li>
+<li>Protect against legal liability</li>
+</ul>
+<h2>Security of Your Personal Data</h2>
+<p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
+<h1>Children's Privacy</h1>
+<p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
+<p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
+<h1>Links to Other Websites</h1>
+<p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
+<p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+<h1>Changes to this Privacy Policy</h1>
+<p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
+<p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.</p>
+<p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+<h1>Contact Us</h1>
+<p>If you have any questions about this Privacy Policy, You can contact us:</p>
+<ul>
+<li>
+<p>By email: <a href="mailto:privacy@flet.dev">privacy@flet.dev</a></p>
+</li>
+</ul>
 </article>
