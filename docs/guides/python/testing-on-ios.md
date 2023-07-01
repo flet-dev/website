@@ -5,15 +5,15 @@ sidebar_label: Testing on iOS
 
 Start building awesome mobile apps in Python using just your computer and mobile phone!
 
-Install [Flet](#) app to your iOS device. You will be using this app to see how your Flet project is working on iPhone or iPad.
+Install [Flet](#) app (awaiting App Store approval) to your iOS device. You will be using this app to see how your Flet project is working on iPhone or iPad.
 
-To get started on your computer you need Python 3.7 or above installed.
+To get started on your computer you need Python 3.7 or greater installed.
 
 :::cautionImportant
 Your iOS device and computer must be connected to the same Wi-Fi or local network.
 :::
 
-It's recommended to start with creating a new virtual environment:
+It's recommended to start with the creation of a new virtual environment:
 
 ```
 python3 -m venv .venv
@@ -26,7 +26,7 @@ Next, install the latest `flet` package:
 pip install flet==0.8.0.dev1596
 ```
 
-Ensure that Flet has successfully installed and Flet CLI is in `PATH`:
+Ensure that Flet has successfully installed and Flet CLI is available in `PATH` by running:
 
 ```
 flet --version
@@ -39,7 +39,7 @@ flet create my-app
 cd my-app
 ```
 
-Run the following command to start Flet development server hosting your app:
+Run the following command to start Flet development server with your app:
 
 ```
 flet run --ios
