@@ -88,7 +88,7 @@ def main(page: ft.Page):
         chat, ft.Row(controls=[new_message, ft.ElevatedButton("Send", on_click=send_click)])
     )
 
-ft.app("chat", target=main, view=ft.AppView.WEB_BROWSER)
+ft.app(main, view=ft.AppView.WEB_BROWSER)
 ```
 
 When user clicks on the "Send" button, it triggers `on_click` event which calls `send_click` method. `send_click` then adds new `Text` control to the list of Column `controls` and clears `new_message` TextField value.
