@@ -373,7 +373,7 @@ You can explicitly set what renderer to use when running a Flet program:
 
 ```python
 # ...
-ft.app(target=main, view=ft.WEB_BROWSER, web_renderer="html")
+ft.app(target=main, view=ft.AppView.WEB_BROWSER, web_renderer=ft.WebRenderer.HTML)
 ```
 
 Now, when you run the same program you'll see "Consolas" font is used.

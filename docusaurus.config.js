@@ -122,6 +122,10 @@ module.exports = {
               label: 'GitHub',
               href: 'https://github.com/flet-dev/flet',
             },
+            {
+              label: 'Support',
+              href: 'support',
+            },
           ],
         },
         {

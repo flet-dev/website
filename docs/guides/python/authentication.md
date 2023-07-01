@@ -90,7 +90,7 @@ def main(page: ft.Page):
     page.on_login = on_login
     page.add(ft.ElevatedButton("Login with GitHub", on_click=login_click))
 
-ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
+ft.app(target=main, port=8550, view=ft.AppView.WEB_BROWSER)
 ```
 
 :::caution
@@ -213,7 +213,7 @@ def main(page: ft.Page):
     page.on_logout = on_logout
     page.add(login_button, logout_button)
 
-ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
+ft.app(target=main, port=8550, view=ft.AppView.WEB_BROWSER)
 ```
 
 ## Accessing user details
@@ -436,7 +436,7 @@ def main(page: ft.Page):
     page.on_login = on_login
     page.add(ft.ElevatedButton("Login with LinkedIn", on_click=login_click))
 
-ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
+ft.app(target=main, port=8550, view=ft.AppView.WEB_BROWSER)
 ```
 
 Mandatory provider settings:

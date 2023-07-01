@@ -710,10 +710,10 @@ def main(page: ft.Page):
     page.window_visible = True
     page.update()  
 
-ft.app(target=main, view=ft.FLET_APP_HIDDEN)
+ft.app(target=main, view=ft.AppView.FLET_APP_HIDDEN)
 ```
 
-Note `view=flet.FLET_APP_HIDDEN` which hides app window on start.
+Note `view=ft.AppView.FLET_APP_HIDDEN` which hides app window on start.
 
 ### `window_width`
 
@@ -748,7 +748,7 @@ Opens `url` in a new browser window.
 
 Optional method arguments:
 
-* `web_window_name` - window tab/name to open URL in: `_self` - the same tab, `_blank` - a new tab or `<your name>` - a named tab.
+* `web_window_name` - window tab/name to open URL in: `_self` - the same browser tab, `_blank` - a new browser tab (or in external application on mobile device) or `<your name>` - a named tab.
 * `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
 * `window_width` - optional, popup window width.
 * `window_height` - optional, popup window height.

@@ -88,7 +88,7 @@ def main(page):
         )
     )
 
-ft.app(target=main, view=ft.WEB_BROWSER)
+ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
   </TabItem>
