@@ -8,7 +8,7 @@ slug: roadmap
 ### Mobile
 
 * Flet Studio (in App Store and Google Play).
-* Server-driven modile apps for iOS and Android.
+* Server-driven mobile apps for iOS and Android.
 * [Standalone mobile apps for iOS and Android](/blog/flet-mobile-update#flet-mobile-architecture).
 
 ## January-March 2023
