@@ -5,7 +5,9 @@ sidebar_label: Testing on iOS
 
 Start building awesome mobile apps in Python using just your computer and mobile phone!
 
-Install [Flet](#) app (awaiting App Store approval) to your iOS device. You will be using this app to see how your Flet project is working on iPhone or iPad.
+Install [Flet](https://apps.apple.com/app/flet/id1624979699) app to your iOS device. You will be using this app to see how your Flet project is working on iPhone or iPad.
+
+<a href="https://apps.apple.com/app/flet/id1624979699" target="_blank"><img src="/img/docs/getting-started/testing-on-ios/qr-code.jpg" className="screenshot-30" /></a>
 
 To get started on your computer you need Python 3.7 or greater installed.
 
