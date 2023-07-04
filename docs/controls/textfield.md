@@ -411,7 +411,7 @@ When this is set to `True`, the text cannot be modified by any shortcut or keybo
 
 Defaults to `False`.
 
-### `selected_color`
+### `selection_color`
 
 The [color](/docs/guides/python/colors) of TextField selection.
 
