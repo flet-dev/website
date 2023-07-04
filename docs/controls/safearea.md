@@ -44,8 +44,6 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-<img src="/img/docs/controls/card/card.gif" className="screenshot-40" />
-
 ## Properties
 
 ### `bottom`

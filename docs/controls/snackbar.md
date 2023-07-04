@@ -63,21 +63,67 @@ The action should not be "dismiss" or "cancel".
 
 The foreground [color](/docs/guides/python/colors) of action button.
 
+### `behavior`
+
+This defines the behavior and location of the snack bar.
+
+Defines where a SnackBar should appear within a psge and how its location should be adjusted when the page also includes a `FloatingActionButton` or a `NavigationBar`.
+
+If this property is `None`, then the default is `SnackBarBehavior.FIXED`.
+
+If this value is `SnackBarBehavior.FLOATING`, the length of the bar is defined by either `width` or `margin`.
+
 ### `bgcolor`
 
 SnackBar background [color](/docs/guides/python/colors).
+
+### `close_icon_color`
+
+An optional color for the close icon, if `show_close_icon` is `True`.
 
 ### `content`
 
 The primary content of the snack bar. Typically a [`Text`](text) control.
 
+### `dismiss_direction`
+
+The direction in which the SnackBar can be dismissed.
+
+Cannot be `None`, defaults to `DismissDirection.DOWN`.
+
 ### `duration`
 
 The number of *milliseconds* that the SnackBar stays open for. Defaults to 4000 ([4 seconds](https://api.flutter.dev/flutter/material/SnackBar/duration.html)) when not set.
 
+### `elevation`
+
+The z-coordinate at which to place the snack bar. This controls the size of the shadow below the snack bar.
+
+### `margin`
+
+Empty space to surround the snack bar.
+
+This property is only used when `behavior` is `SnackBarBehavior.FLOATING`. It can not be used if `width` is specified.
+
 ### `open`
 
 Set to `True` to display a SnackBar. This property is automatically set to `False` once SnackBar is shown.
+
+### `padding`
+
+The amount of padding to apply to the snack bar's content and optional action.
+
+### `show_close_icon`
+
+Whether to include a "close" icon widget.
+
+Tapping the icon will close the snack bar.
+
+### `width`
+
+The width of the snack bar.
+
+If width is specified, the snack bar will be centered horizontally in the available space. This property is only used when `behavior` is `SnackBarBehavior.FLOATING`. It can not be used if `margin` is specified.
 
 ## Events
 
