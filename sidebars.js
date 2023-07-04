@@ -234,5 +234,19 @@ module.exports = {
         },
       ],
     },
+    {
+      type: "category",
+      label: "CLI",
+      link: {
+        type: "doc",
+        id: "cli/index",
+      },
+      items: [
+        "cli/create",
+        "cli/run",
+        "cli/pack",
+        "cli/publish",
+      ],
+    }
   ],
 };
