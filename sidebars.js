@@ -105,6 +105,7 @@ module.exports = {
             "controls/card",
             "controls/divider",
             "controls/verticaldivider",
+            "controls/safearea",
           ],
         },
         {
