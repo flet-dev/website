@@ -73,6 +73,10 @@ The default is `BlendMode.COLOR`. In terms of the blend mode, color is the sourc
 
 See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
 
+### `error_content`
+
+Fallback `Control` to display if the image cannot be loaded from the source.
+
 ### `fit`
 
 How to inscribe the image into the space allocated during layout.
