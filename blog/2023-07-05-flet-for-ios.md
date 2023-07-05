@@ -1,5 +1,5 @@
 ---
-slug: Flet for iOS
+slug: flet-for-ios
 title: Flet for iOS
 author: Feodor Fitsner
 author_title: Flet founder and developer
