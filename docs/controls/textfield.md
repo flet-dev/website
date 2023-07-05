@@ -194,6 +194,10 @@ ft.app(target=main)
 
 ## Properties
 
+### `autocorrect`
+
+Whether to enable autocorrection. Default is `True`.
+
 ### `autofocus`
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
@@ -272,6 +276,12 @@ Sets cursor width.
 ### `dense`
 
 Whether the TextField is part of a dense form (ie, uses less vertical space).
+
+### `enable_suggestions`
+
+Whether to show input suggestions as the user types.
+
+This flag only affects Android. On iOS, suggestions are tied directly to `autocorrect`, so that suggestions are only shown when `autocorrect` is `True`. On Android autocorrection and suggestion are controlled separately. Default is `True`.
 
 ### `error_style`
 
@@ -418,6 +428,18 @@ The [color](/docs/guides/python/colors) of TextField selection.
 ### `shift_enter`
 
 Changes the behavior of `Enter` button in `multiline` TextField to be chat-like, i.e. new line can be added with `Shift`+`Enter` and pressing just `Enter` fires `on_submit` event.
+
+### `smart_dashes_type`
+
+Whether to allow the platform to automatically format dashes.
+
+This flag only affects iOS versions 11 and above. As an example of what this does, two consecutive hyphen characters will be automatically replaced with one en dash, and three consecutive hyphens will become one em dash. Default is `True`.
+
+### `smart_quotes_type`
+
+Whether to allow the platform to automatically format quotes.
+
+This flag only affects iOS. As an example of what this does, a standard vertical double quote character will be automatically replaced by a left or right double quote depending on its position in a word. Default is `True`.
 
 ### `suffix`
 

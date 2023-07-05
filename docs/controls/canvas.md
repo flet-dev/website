@@ -776,6 +776,7 @@ cv.Path(
 * `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#paintlineargradient) for description of these properties.
 * `start_angle` - The angle in radians at which stop 0.0 of the gradient is placed. Defaults to 0.0.
 * `end_angle` - The angle in radians at which stop 1.0 of the gradient is placed. Defaults to math.pi * 2.
+* `rotation` - gradient rotation in radians.
 
 More information:
 

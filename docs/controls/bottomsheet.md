@@ -57,9 +57,25 @@ ft.app(target=main)
 
 The content of the bottom sheet.
 
+### `dismissible`
+
+Specifies whether the bottom sheet will be dismissed when user taps on the scrim.
+
+### `enable_drag`
+
+Specifies whether the bottom sheet can be dragged up and down and dismissed by swiping downwards.
+
 ### `open`
 
 Set to `True` to display a bottom sheet.
+
+### `show_drag_handle`
+
+Whether to display drag handle at the top of sheet or not.
+
+### `use_safe_area`
+
+Specifies whether the sheet will avoid system intrusions on the top, left, and right. Defaults to `False`.
 
 ## Events
 

@@ -730,6 +730,18 @@ Returns `True` if it is possible to verify that there is a handler available. A 
 * On recent versions of Android and iOS, this will always return `False` unless the application has been configuration to allow querying the system for launch support.
 * On web, this will always return `False` except for a few specific schemes that are always assumed to be supported (such as http(s)), as web pages are never allowed to query installed applications.
 
+### `close_banner()`
+
+Closes active banner.
+
+### `close_bottom_sheet()`
+
+Closes active bottom sheet.
+
+### `close_dialog()`
+
+Closes active dialog.
+
 ### `close_in_app_web_view()`
 
 📱 Mobile only. Closes in-app web view opened with `launch_url()`.
@@ -792,7 +804,19 @@ page.set_clipboard("This value comes from Flet app")
 </TabItem>
 </Tabs>
 
-### `show_snack_bar(snack_bar)`
+### `show_banner(banner: Banner)`
+
+Displays the banner at the top of the page.
+
+### `show_bottom_sheet(bottom_sheet: BottomSheet)`
+
+Displays bottom sheet at the bottom of the page.
+
+### `show_dialog(dialog: AlertDialog)`
+
+Displays dialog.
+
+### `show_snack_bar(snack_bar: SnackBar)`
 
 Displays SnackBar at the bottom of the page.
 

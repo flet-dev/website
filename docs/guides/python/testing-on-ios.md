@@ -25,7 +25,7 @@ source .venv/bin/activate
 Next, install the latest `flet` package:
 
 ```
-pip install flet==0.8.0.dev1596
+pip install flet --upgrade
 ```
 
 Ensure that Flet has successfully installed and Flet CLI is available in `PATH` by running:

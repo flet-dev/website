@@ -69,6 +69,12 @@ page.update()
   </TabItem>
 </Tabs>
 
+### `fullscreen_dialog`
+
+Whether this view is a full-screen dialog.
+
+In Material and Cupertino, being fullscreen has the effects of making the app bars have a close button instead of a back button. On iOS, dialogs transitions animate differently and are also not closeable with the back swipe gesture.
+
 ### `route`
 
 View's route - not currently used by Flet framework, but can be used in a user program to update [`page.route`](/docs/controls/page#route) when a view popped.
