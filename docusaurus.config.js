@@ -4,11 +4,11 @@ const TwitterSvg =
 module.exports = {
   title: 'Flet',
   tagline: 'Build internal web apps quickly in the language you already know.',
-  url: 'https://flet.dev',
+  url: 'https://alan3344.github.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'flet-dev', // Usually your GitHub org/user name.
-  projectName: 'flet', // Usually your repo name.
+  organizationName: 'flet-dev - https://alan3344.github.io/', // Usually your GitHub org/user name.
+  projectName: 'website', // Usually your repo name.
   customFields: {
     heroTitle: 'The fastest way to build Flutter apps in Python',
     heroSubTitle: 'Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.',
