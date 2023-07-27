@@ -36,7 +36,7 @@ To start, let's create a simple hello-world app.
 Create `hello.py` with the following contents:
 
 ```python
-import flet
+import flet as ft
 from flet import (
     Page,
     Text,
@@ -45,7 +45,7 @@ from flet import (
 def main(page: Page):
     page.add(Text(value="Hello, world!"))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 Run this app and you will see a new window with a greeting:
@@ -61,7 +61,7 @@ To start, we'll need a [TextField](/docs/controls/textfield) for entering a task
 Create `todo.py` with the following contents:
 
 ```python
-import flet
+import flet as ft
 from flet import (
     Checkbox,
     FloatingActionButton,
@@ -80,7 +80,7 @@ def main(page: Page):
 
     page.add(new_task, FloatingActionButton(icon=icons.ADD, on_click=add_clicked))
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 Run the app and you should see a page like this:
@@ -98,7 +98,8 @@ Now let's make the app look nice! We want the entire app to be at the top center
 Replace `todo.py` contents with the following:
 
 ```python
-import flet (
+import flet as ft
+from flet import (
     Checkbox,
     Column,
     FloatingActionButton,
@@ -133,7 +134,7 @@ def main(page: Page):
     page.horizontal_alignment = "center"
     page.add(view)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 Run the app and you should see a page like this:
@@ -147,7 +148,7 @@ While we could continue writing our app in the `main` function, the best practic
 To make a reusable ToDo app component, we are going to encapsulate its state and presentation logic in a separate class: 
 
 ```python
-import flet
+import flet as ft
 from flet import(
     Checkbox,
     Column,
@@ -169,7 +170,7 @@ class TodoApp(UserControl):
         return Column(
             width=600,
             controls=[
-                ft.Row(
+                Row(
                     controls=[
                         self.new_task,
                         FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked),
@@ -196,7 +197,7 @@ def main(page: Page):
     # add application's root control to the page
     page.add(todo)
 
-flet.app(target=main)
+ft.app(target=main)
 ```
 
 :::note
@@ -228,7 +229,7 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 To encapsulate task item views and actions, we introduced a new `Task` class:
 
 ```python
-import flet
+import flet as ft
 from flet import (
     Checkbox,
     Column,
@@ -254,15 +255,15 @@ class Task(UserControl):
         self.edit_name = TextField(expand=1)
 
         self.display_view = Row(
-            alignment="spaceBetween",
-            vertical_alignment="center",
+            alignment = "spaceBetween",
+            vertical_alignment = "center",
             controls=[
                 self.display_task,
                 Row(
                     spacing=0,
                     controls=[
                         IconButton(
-                            icon=ft.icons.CREATE_OUTLINED,
+                            icon=icons.CREATE_OUTLINED,
                             tooltip="Edit To-Do",
                             on_click=self.edit_clicked,
                         ),
@@ -278,12 +279,12 @@ class Task(UserControl):
 
         self.edit_view = Row(
             visible=False,
-            alignment="spaceBetween",
-            vertical_alignment="center",
+            alignment = "spaceBetween",
+            vertical_alignment = "center",
             controls=[
                 self.edit_name,
                 IconButton(
-                    icon=ft.icons.DONE_OUTLINE_OUTLINED,
+                    icon=icons.DONE_OUTLINE_OUTLINED,
                     icon_color=colors.GREEN,
                     tooltip="Update To-Do",
                     on_click=self.save_clicked,
@@ -324,7 +325,7 @@ class TodoApp(UserControl):
 For "Delete" task operation, we implemented `task_delete()` method in `TodoApp` class which accepts task control instance as a parameter:
 
 ```python
-class TodoApp(ft.UserControl):
+class TodoApp(UserControl):
     # ...
     def task_delete(self, task):
         self.tasks.controls.remove(task)
@@ -360,7 +361,7 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 
 ```python
 
-import flet
+import flet as ft
 from flet import (
     Checkbox,
     Column,
@@ -470,7 +471,7 @@ Our Todo app is almost complete now. As a final touch, we will add a footer (`Co
 Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py). Below we highlighted the changes we've done to implement the footer:
 
 ```python
-import flet
+import flet as ft
 from flet import (
     Checkbox,
     Column,
@@ -499,8 +500,8 @@ class TodoApp():
         return Column(
             width=600,
             controls=[
-                Row([ Text(value="Todos", style="headlineMedium")], alignment="center"),
-                ft.Row(
+                Row([ Text(value="Todos", style="headlineMedium")], alignment = "center"),
+                Row(
                     controls=[
                         self.new_task,
                         FloatingActionButton(icon=icons.ADD, on_click=self.add_clicked),
@@ -512,8 +513,8 @@ class TodoApp():
                         self.filter,
                         self.tasks,
                         Row(
-                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                            vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                            alignment = "spaceBetween",
+                            vertical_alignment = "center",
                             controls=[
                                 self.items_left,
                                 OutlinedButton(
