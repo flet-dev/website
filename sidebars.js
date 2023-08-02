@@ -6,7 +6,6 @@ module.exports = {
       label: "Python Guide",
       items: [
         "guides/python/getting-started",
-        "guides/python/testing-on-ios",
         //'guides/python/displaying-data',
         "guides/python/getting-user-input",
         "guides/python/keyboard-shortcuts",
@@ -26,6 +25,8 @@ module.exports = {
         "guides/python/accessibility",
         "guides/python/async-apps",
         //"guides/python/mobile-support",
+        "guides/python/testing-on-ios",
+        "guides/python/testing-on-android",
         "guides/python/hot-reload",
         "guides/python/packaging-desktop-app",
         "guides/python/publishing-static-website",
