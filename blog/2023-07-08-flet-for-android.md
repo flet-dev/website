@@ -32,7 +32,7 @@ Yes! At the moment Flet desktop apps are packaged with `flet pack` command and P
 
 ## Flet v0.9.0 release notes
 
-For testing on iOS you need to upgrade your Flet installation to v0.9.0.
+For testing on Android you need to upgrade your Flet installation to v0.9.0.
 
 There were [a few changes](https://github.com/flet-dev/flet/blob/main/CHANGELOG.md#090) mainly to support Android in Flet CLI. Let us know if you notice something unusual.
 
