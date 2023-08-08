@@ -10,7 +10,7 @@ Start building awesome mobile apps in Python using just your computer and mobile
 
 Install [Flet](https://play.google.com/store/apps/details?id=com.appveyor.flet) app to your Android device. You will be using this app to see how your Flet project is working on Android device.
 
-<a href='https://play.google.com/store/apps/details'><img alt='Get it on Google Play' src='/img/docs/getting-started/testing-on-android/google-play-badge.png' width='300'/></a>
+<a href='https://play.google.com/store/apps/details?id=com.appveyor.flet'><img alt='Get it on Google Play' src='/img/docs/getting-started/testing-on-android/google-play-badge.png' width='300'/></a>
 
 To get started on your computer you need Python 3.7 or greater installed.
 
