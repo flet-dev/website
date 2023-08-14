@@ -22,13 +22,6 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
 
 <div className="margin-top--lg">
   <section className="gallery-grid">
-    <!-- <GalleryCard
-      title="Controls gallery"
-      imageUrl="controls-gallery.png"
-      description="Interactive showcase app for Flet controls with code samples."
-      liveUrl="https://flet-controls-gallery.fly.dev/"
-      sourcesUrl="https://github.com/flet-dev/examples/tree/main/python/apps/controls-gallery"
-      /> -->
     <GalleryCard
       title="To-Do"
       imageUrl="todo.png"
