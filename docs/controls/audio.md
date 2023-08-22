@@ -103,7 +103,7 @@ def main(page: ft.Page):
         ),
         ft.ElevatedButton(
             "Get current position",
-            on_click=lambda _: print("Current position:", audio1.get_duration()),
+            on_click=lambda _: print("Current position:", audio1.get_current_position()),
         ),
     )
 
@@ -221,3 +221,4 @@ Fires when audio player state changes. Event's `e.data` contains one of the foll
 * `playing`
 * `paused`
 * `completed`
+* `disposed` 
