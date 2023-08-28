@@ -70,13 +70,17 @@ Copy "Client ID" and "Client secret" values to a safe place - you'll need them i
 import os
 
 import flet as ft
-from flet.auth.providers.github_oauth_provider import GitHubOAuthProvider
+from flet.auth.providers import GitHubOAuthProvider
+
+GITHUB_CLIENT_ID = os.getenv("GITHUB_CLIENT_ID")
+assert GITHUB_CLIENT_ID, "set GITHUB_CLIENT_ID environment variable"
+GITHUB_CLIENT_SECRET = os.getenv("GITHUB_CLIENT_SECRET")
+assert GITHUB_CLIENT_SECRET, "set GITHUB_CLIENT_SECRET environment variable"
 
 def main(page: ft.Page):
-
     provider = GitHubOAuthProvider(
-        client_id=os.getenv("GITHUB_CLIENT_ID"),
-        client_secret=os.getenv("GITHUB_CLIENT_SECRET"),
+        client_id=GITHUB_CLIENT_ID,
+        client_secret=GITHUB_CLIENT_SECRET,
         redirect_url="http://localhost:8550/api/oauth/redirect",
     )
 
@@ -84,13 +88,14 @@ def main(page: ft.Page):
         page.login(provider)
 
     def on_login(e):
+        print("Login error:", e.error)
         print("Access token:", page.auth.token.access_token)
         print("User ID:", page.auth.user.id)
 
     page.on_login = on_login
     page.add(ft.ElevatedButton("Login with GitHub", on_click=login_click))
 
-ft.app(target=main, port=8550, view=ft.AppView.WEB_BROWSER)
+ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
 ```
 
 :::caution
@@ -177,11 +182,11 @@ You can use this event handler to toggle signed in/out UI, for example:
 ```python
 import os
 
-import flet as ft
-from flet.auth.providers.github_oauth_provider import GitHubOAuthProvider
+import flet
+from flet import ElevatedButton, LoginEvent, Page
+from flet.auth.providers import GitHubOAuthProvider
 
-def main(page: ft.Page):
-
+def main(page: Page):
     provider = GitHubOAuthProvider(
         client_id=os.getenv("GITHUB_CLIENT_ID"),
         client_secret=os.getenv("GITHUB_CLIENT_SECRET"),
@@ -191,7 +196,7 @@ def main(page: ft.Page):
     def login_button_click(e):
         page.login(provider, scope=["public_repo"])
 
-    def on_login(e: ft.LoginEvent):
+    def on_login(e: LoginEvent):
         if not e.error:
             toggle_login_buttons()
 
@@ -206,14 +211,14 @@ def main(page: ft.Page):
         logout_button.visible = page.auth is not None
         page.update()
 
-    login_button = ft.ElevatedButton("Login with GitHub", on_click=login_button_click)
-    logout_button = ft.ElevatedButton("Logout", on_click=logout_button_click)
+    login_button = ElevatedButton("Login with GitHub", on_click=login_button_click)
+    logout_button = ElevatedButton("Logout", on_click=logout_button_click)
     toggle_login_buttons()
     page.on_login = on_login
     page.on_logout = on_logout
     page.add(login_button, logout_button)
 
-ft.app(target=main, port=8550, view=ft.AppView.WEB_BROWSER)
+flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
 ```
 
 ## Accessing user details
@@ -405,23 +410,23 @@ Following the instructions in [LinkedIn Authorization Code Flow guide](https://l
 to get all required parameters to configure LinkedIn OAuth provider to allow users of your Flet app to login
 with their LinkedIn accounts:
 
-```python {9-18}
+```python {9-16}
 import os
 
-import flet as ft
-from flet.auth.oauth_provider import OAuthProvider
+import flet
+from flet import ElevatedButton, Page
+from flet.auth import OAuthProvider
 
-def main(page: ft.Page):
-
+def main(page: Page):
     provider = OAuthProvider(
         client_id=os.getenv("LINKEDIN_CLIENT_ID"),
         client_secret=os.getenv("LINKEDIN_CLIENT_SECRET"),
         authorization_endpoint="https://www.linkedin.com/oauth/v2/authorization",
         token_endpoint="https://www.linkedin.com/oauth/v2/accessToken",
-        redirect_url="http://localhost:8550/api/oauth/redirect",
         user_endpoint="https://api.linkedin.com/v2/me",
         user_scopes=["r_liteprofile", "r_emailaddress"],
-        user_id_fn=lambda u: u["id"]
+        user_id_fn=lambda u: u["id"],
+        redirect_url="http://localhost:8550/api/oauth/redirect",
     )
 
     def login_click(e):
@@ -434,9 +439,9 @@ def main(page: ft.Page):
         print("Access token:", page.auth.token.access_token)
 
     page.on_login = on_login
-    page.add(ft.ElevatedButton("Login with LinkedIn", on_click=login_click))
+    page.add(ElevatedButton("Login with LinkedIn", on_click=login_click))
 
-ft.app(target=main, port=8550, view=ft.AppView.WEB_BROWSER)
+flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
 ```
 
 Mandatory provider settings:
