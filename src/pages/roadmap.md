@@ -3,13 +3,32 @@ title: Roadmap
 slug: roadmap
 ---
 
+## August-December 2023
+
+Stabilization phase and Flet 1.0 launch
+
+Hosting of web app production grade
+
+
+Flet app
+Fletd in Python
+Guide how to package, publish
+Template for packaging
+Controls!
+Packaing:
+- Windows
+- Linux
+- macOS
+
+Test suite
+
 ## May-July 2023
 
 ### Mobile
 
-* Flet Studio (in App Store and Google Play).
-* Server-driven modile apps for iOS and Android.
-* [Standalone mobile apps for iOS and Android](/blog/flet-mobile-update#flet-mobile-architecture).
+* :white_check_mark: "Flet" app for testing on mobile devices (in [App Store](/docs/guides/python/testing-on-ios) and [Google Play](/docs/guides/python/testing-on-android)).
+* :white_check_mark: Server-driven modile apps for iOS and Android ([`flet` Flutter package](https://pub.dev/packages/flet)).
+* :white_check_mark: Standalone mobile apps for iOS and Android ([`serious_python` Flutter package](https://pub.dev/packages/serious_python)).
 
 ## January-March 2023
 
@@ -41,7 +60,7 @@ slug: roadmap
 
 ### Language support
 
-* Go
+* ~~Go~~ we decided to have a strong focus on Python
 
 ### Core functionality
 
