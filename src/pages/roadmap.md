@@ -9,12 +9,25 @@ Stabilization phase and Flet 1.0 launch
 
 Hosting of web app production grade
 
+Optimization (pages with a lot of controls)
+
+Bugfixing
+
+Missing controls
+
+Revamped packaging for all platforms
+
+Documentation improvements
+
+
 
 Flet app
 Fletd in Python
 Guide how to package, publish
 Template for packaging
 Controls!
+- Adaptive controls (what is that?)
+- Responsive layouts (what is that?)
 Packaing:
 - Windows
 - Linux
