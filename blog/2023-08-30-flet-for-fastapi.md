@@ -12,7 +12,7 @@ We've just released Flet 0.10.0 with FastAPI support!
 
 <img src="/img/blog/fastapi/fastapi-logo-teal.png" className="screenshot-60" />
 
-FastAPI coupled with Uvicorn, Hypercorn, Gunicorn or other web server replaces built-in Flet web server (Fletd) to reliably run production Flet workloads.
+[FastAPI](https://fastapi.tiangolo.com/) coupled with Uvicorn, Hypercorn, Gunicorn or other web server replaces built-in Flet web server (Fletd) to reliably run production Flet workloads.
 
 On the other hand, seasoned FastAPI developers can use Flet to easily add interactive, real-time dashboards and admin UI to their existing or new FastAPI services.
 
