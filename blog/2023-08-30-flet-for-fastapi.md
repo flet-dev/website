@@ -63,5 +63,3 @@ Flet app must be [async](/docs/guides/python/async-apps) in order to work with F
 Check [the guide](/docs/guides/python/deploying-web-app/running-flet-with-fastapi) for complete information about Flet with FastAPI.
 
 Let us know what you think by joining [Flet Discord server](https://discord.gg/dzWXP8SHG8) or creating a new thread on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).
-
-Enjoy!
