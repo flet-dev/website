@@ -143,9 +143,13 @@ The effective background color can be made to depend on the `MaterialState` stat
 
 See [`Checkbox.fill_color`](/docs/controls/checkbox#fill_color) property for more information and examples.
 
-### `data_row_height`
+### `data_row_min_height`
 
-The height of each row (excluding the row that contains column headings).
+The minimum height of each row (excluding the row that contains column headings).
+
+### `data_row_max_height`
+
+The maximum height of each row (excluding the row that contains column headings).
 
 ### `data_text_style`
 

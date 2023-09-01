@@ -39,6 +39,7 @@ module.exports = {
           },
           items: [
             "guides/python/deploying-web-app/customizing-web-app",
+            "guides/python/deploying-web-app/running-flet-with-fastapi",
             "guides/python/deploying-web-app/progressive-web-apps",
             {
               type: "category",
