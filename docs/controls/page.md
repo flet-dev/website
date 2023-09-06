@@ -31,6 +31,9 @@ Background color of the Page.
 
 A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
 
+### `bottom_sheet`
+
+
 ### `client_ip`
 
 🌎 Web only. IP address of the connected user.
@@ -84,6 +87,12 @@ page.update()
 ### `dark_theme`
 
 Set this property to an instance of `theme.Theme` to customize dark theme.
+
+### `debug`
+
+
+### `design`
+
 
 ### `dialog`
 
@@ -167,6 +176,12 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `STRETCH`
 * `BASELINE`
 
+### `name`
+
+
+### `navigation_bar`
+
+
 ### `on_scroll_interval`
 
 Throttling in milliseconds for `on_scroll` event. Default is `10`.
@@ -201,6 +216,9 @@ Operating system the application is running on:
 * `macos`
 * `linux`
 * `windows`
+
+### `platform_brightness`
+
 
 ### `pubsub`
 
@@ -305,6 +323,9 @@ def main(page: ft.Page):
 
 `True` if the application is running as Progressive Web App (PWA). Read-only.
 
+### `query`
+
+
 ### `route`
 
 Get or sets page's navigation route. See [Navigation and routing](/docs/guides/python/navigation-and-routing) section for 
@@ -327,6 +348,9 @@ Supported values:
 * `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
 * `ALWAYS` - scrolling is enabled and scroll bar is always shown.
 * `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+
+### `session`
+
 
 ### `session_id`
 
@@ -543,6 +567,9 @@ page.update()
 </TabItem>
 </Tabs>
 
+### `url`
+
+
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
@@ -746,26 +773,20 @@ Closes active dialog.
 
 📱 Mobile only. Closes in-app web view opened with `launch_url()`.
 
+### `error(message)`
+
+
+### `fetch_page_details()`
+
+
 ### `get_clipboard()`
 
 Get the last text value saved to a clipboard on a client side.
 
-### `go(route)`
+### `get_control(id)`
 
-A helper method that updates [`page.route`](#route), calls [`page.on_route_change`](#on_route_change) event handler to update views and finally calls `page.update()`.
 
-### `launch_url(url)`
-
-Opens `url` in a new browser window.
-
-Optional method arguments:
-
-* `web_window_name` - window tab/name to open URL in: `_self` - the same browser tab, `_blank` - a new browser tab (or in external application on mobile device) or `<your name>` - a named tab.
-* `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
-* `window_width` - optional, popup window width.
-* `window_height` - optional, popup window height.
-
-### `page.get_upload_url(file_name, expires)`
+### `get_upload_url(file_name, expires)`
 
 Generates presigned upload URL for built-in upload storage:
 
@@ -783,6 +804,36 @@ To enable built-in upload storage provide `upload_dir` argument to `flet.app()` 
 ```python
 ft.app(target=main, upload_dir="uploads")
 ```
+
+### `go(route)`
+
+A helper method that updates [`page.route`](#route), calls [`page.on_route_change`](#on_route_change) event handler to update views and finally calls `page.update()`.
+
+### `insert(at, *controls)`
+
+
+### `launch_url(url)`
+
+Opens `url` in a new browser window.
+
+Optional method arguments:
+
+* `web_window_name` - window tab/name to open URL in: `_self` - the same browser tab, `_blank` - a new browser tab (or in external application on mobile device) or `<your name>` - a named tab.
+* `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
+* `window_width` - optional, popup window width.
+* `window_height` - optional, popup window height.
+
+### `login(provider, fetch_user, fetch_groups, scope, saved_token, on_open_authorization_url, complete_page_html, redirect_to_page, authorization)`
+
+
+### `logout()`
+
+
+### `remove(*controls)`
+
+
+### `remove_at(index)`
+
 
 ### `scroll_to(offset, delta, key, duration, curve)`
 
@@ -910,6 +961,15 @@ class ft.KeyboardEvent:
 
 Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py).
 
+### `on_login`
+
+
+### `on_logout`
+
+
+### `on_platform_brigthness_change`
+
+
 ### `on_resize`
 
 Fires when a browser or native OS window containing Flet app is resized by a user, for example:
@@ -942,7 +1002,10 @@ class RouteChangeEvent(ft.ControlEvent):
 
 Fires when page's scroll position is changed by a user.
 
-See [`Column.on_scroll`](column#on_scroll) for event details and examples.
+See [`Column.on_scroll`](docs/controls/column#on_scroll) for event details and examples.
+
+### `on_scroll_interval`
+
 
 ### `on_view_pop`
 
