@@ -7,33 +7,58 @@ slug: roadmap
 
 Stabilization phase and Flet 1.0 launch
 
-Hosting of web app production grade
+Speed optimization (pages with a lot of controls)
 
-Optimization (pages with a lot of controls)
+Memory optimization (FastAPI)
 
 Bugfixing
 
-Missing controls
+Adaptive controls (what is that?)
+
+Responsive layouts (what is that?)
+
+How to use 3rd-party Flutter packages
+
+How to use 3rd-party Python packages
 
 Revamped packaging for all platforms
 
 Documentation improvements
 
-
-
-Flet app
-Fletd in Python
-Guide how to package, publish
-Template for packaging
-Controls!
-- Adaptive controls (what is that?)
-- Responsive layouts (what is that?)
-Packaing:
-- Windows
-- Linux
-- macOS
-
 Test suite
+
+Website update: clearer message, features
+
+Flet CI
+
+New controls:
+* [NavigationDrawer](https://github.com/flet-dev/flet/issues/1089)
+* [Video](https://github.com/flet-dev/flet/issues/257)
+* [WebView](https://github.com/flet-dev/flet/issues/432)
+* [Autocomplete](https://github.com/flet-dev/flet/issues/791)
+* [ExpansionTile](https://github.com/flet-dev/flet/issues/1719) and [ExpansionPanel](https://github.com/flet-dev/flet/issues/1718)
+* [RangeSlider](https://github.com/flet-dev/flet/issues/1712)
+* [Context menu](https://github.com/flet-dev/flet/issues/1804)
+* [PlatformMenuBar](https://github.com/flet-dev/flet/issues/285) (and [#116](https://github.com/flet-dev/flet/issues/116))
+* [SegmentedButton](https://github.com/flet-dev/flet/issues/1639)
+* [Chips](https://github.com/flet-dev/flet/issues/1636)
+* [SearchAnchor](https://github.com/flet-dev/flet/issues/1637)
+* [SearchBar](https://github.com/flet-dev/flet/issues/1808)
+* [DatePicker](https://github.com/flet-dev/flet/issues/86)
+* [TimePicker](https://github.com/flet-dev/flet/issues/1809)
+
+Adaptive controls:
+* AlertDialog
+* Button
+* ContextMenu
+* NavigationBar
+* DatePicker
+* TimePicker
+* ListTile
+* Slider
+* Switch
+* TabBar
+* Checkbox
 
 ## May-July 2023
 
@@ -64,11 +89,6 @@ Test suite
 
 ### Controls
 
-* Community requested controls:
-  * NavigationDrawer
-  * Video
-  * WebView
-  * Autocomplete
 * Adaptive controls (controls that change their look depending on platform).
 
 ### Language support
