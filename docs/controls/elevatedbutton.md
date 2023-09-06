@@ -268,7 +268,7 @@ ft.app(target=main)
   * `CircleBorder`
   * `BeveledRectangleBorder`
     * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CountinuosRectangleBorder`
+  * `ContinuousRectangleBorder`
     * `radius` - border radius, an instance of `BorderRadius` class or a number.
 
 This is an example demonstrating various button shapes:
@@ -297,7 +297,7 @@ def main(page: ft.Page):
         ft.FilledButton(
             "Continuous rectangle",
             style=ft.ButtonStyle(
-                shape=ft.CountinuosRectangleBorder(radius=30),
+                shape=ft.ContinuousRectangleBorder(radius=30),
             ),
         ),
         ft.FilledButton(
