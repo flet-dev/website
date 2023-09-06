@@ -33,6 +33,7 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 
 ### `bottom_sheet`
 
+[`BottomSheet`](bottomsheet) control to display.
 
 ### `client_ip`
 
@@ -90,9 +91,11 @@ Set this property to an instance of `theme.Theme` to customize dark theme.
 
 ### `debug`
 
+`True` if Flutter client of Flet app is running in debug mode.
 
 ### `design`
 
+Reserved for future use.
 
 ### `dialog`
 
@@ -178,9 +181,11 @@ Property value is `CrossAxisAlignment` enum with the following values:
 
 ### `name`
 
+Page name as specified in `ft.app()` call. Page name is set when Flet app is running as web app. This is a portion of the URL after host name.
 
 ### `navigation_bar`
 
+[`NavigationBar`](navigationbar) control to display at the bottom of the page.
 
 ### `on_scroll_interval`
 
@@ -219,6 +224,7 @@ Operating system the application is running on:
 
 ### `platform_brightness`
 
+The current brightness mode of the host platform: `ft.ThemeMode.LIGHT` or `ft.ThemeMode.DARK`.
 
 ### `pubsub`
 
@@ -325,6 +331,7 @@ def main(page: ft.Page):
 
 ### `query`
 
+A part of app URL after `?`. The value is an instance of `QueryString` with helper methods for fetching query parameters.
 
 ### `route`
 
@@ -351,6 +358,7 @@ Supported values:
 
 ### `session`
 
+A simple KV storage for session data.
 
 ### `session_id`
 
@@ -569,6 +577,7 @@ page.update()
 
 ### `url`
 
+The complete web app's URL.
 
 ### `vertical_alignment`
 
@@ -811,6 +820,7 @@ A helper method that updates [`page.route`](#route), calls [`page.on_route_chang
 
 ### `insert(at, *controls)`
 
+Inserts controls at specific index of `page.controls` list.
 
 ### `launch_url(url)`
 
@@ -825,15 +835,19 @@ Optional method arguments:
 
 ### `login(provider, fetch_user, fetch_groups, scope, saved_token, on_open_authorization_url, complete_page_html, redirect_to_page, authorization)`
 
+Starts OAuth flow. See [Authentication](/docs/guides/python/authentication) guide for more information and examples.
 
 ### `logout()`
 
+Clears current authentication context. See [Authentication](/docs/guides/python/authentication#signing-out) guide for more information and examples.
 
 ### `remove(*controls)`
 
+Removes specific controls from `page.controls` list.
 
 ### `remove_at(index)`
 
+Remove controls from `page.controls` list at specific index.
 
 ### `scroll_to(offset, delta, key, duration, curve)`
 
@@ -963,12 +977,15 @@ Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/py
 
 ### `on_login`
 
+Fires upon successful or failed OAuth authorization flow. See [Authentication](/docs/guides/python/authentication#checking-authentication-results) guide for more information and examples.
 
 ### `on_logout`
 
+Fires after `page.logout()` call.
 
 ### `on_platform_brigthness_change`
 
+Fires when brightness of app host platform has changed.
 
 ### `on_resize`
 
@@ -1003,9 +1020,6 @@ class RouteChangeEvent(ft.ControlEvent):
 Fires when page's scroll position is changed by a user.
 
 See [`Column.on_scroll`](docs/controls/column#on_scroll) for event details and examples.
-
-### `on_scroll_interval`
-
 
 ### `on_view_pop`
 
