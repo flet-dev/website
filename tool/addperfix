@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+/**
+ * Problem refence: https://docusaurus.io/docs/next/static-assets#referencing-your-static-asset
+ *
+ * Solved: If it is a private deployment and you need to add a prefix after the domain name,
+ *  For example:
+ *  after packing:
+ *      https://google.com/img/play.png
+ *  In practical application:
+ *      https://google.com/user/img/play.png
+ *  Then this feature may be very useful to run the web application after packaging it,
+ *  Then you can make your website load the image resource file correctly.
+ *
+ * Packaged html/xml files:
+ * href="/img/favicon.ico" => href="/webiste/img/favicon.ico"
+ * src="/img/logo.svg" => src="/webiste/img/logo.svg"
+ */
+const fs = require('fs')
+const path = require('path')
+const procss = require('process')
+let htmls = []
+const fileTypes = [/\.html$/, /\.xml$/]
+const perfixRegex = /(?:src|href)=['"](\/img\/)/g
+const perfixName = procss.argv[2] ?? '/webiste'
+const buildPathDirname = path.join(path.dirname(__filename), '../build')
+
+function traverseDirectory(dir = buildPathDirname) {
+  fs.readdirSync(dir).forEach(el => {
+    const filePath = path.join(dir, el)
+    const stat = fs.statSync(filePath)
+    if (stat.isFile()) {
+      fileTypes.forEach(ft => {
+        if (ft.test(filePath)) {
+          htmls.push(filePath)
+        }
+      })
+    } else if (stat.isDirectory()) {
+      traverseDirectory(filePath)
+    }
+  })
+  return htmls
+}
+
+traverseDirectory()
+
+let modifyCount = 0
+htmls.forEach(html => {
+  let el = fs.readFileSync(html, 'utf8')
+  let content = el.replace(perfixRegex, (p1, p2) => {
+    return p1.replace(p2, perfixName + p2)
+  })
+  if (content !== el) {
+    fs.writeFileSync(html, content)
+    modifyCount++
+  }
+})
+
+console.log('>> \x1b[32m%s\x1b[0m', 'RewriteOk!')
+console.log('\x1b[33m%s\x1b[0m file has been modified', modifyCount)

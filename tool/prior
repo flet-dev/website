@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+// refence: https://docusaurus.io/docs/api/docusaurus-config#baseUrl
+const fs = require('fs')
+const path = require('path')
+const procss = require('process')
+const args = procss.argv
+const pwd = path.dirname(__filename)
+const configPath = path.join(pwd, '../docusaurus.config.js')
+
+// Package your app while developing
+let cdev = {
+  baseUrl: args[3] ?? '/',
+  favicon: null,
+}
+
+// Package your app when publishing
+let cpub = {
+  baseUrl: args[3] ?? '/website/',
+  favicon: null,
+}
+
+cdev.favicon = cdev.favicon ?? `${cdev.baseUrl}img/favicon.ico`
+cpub.favicon = cpub.favicon ?? `${cpub.baseUrl}img/favicon.ico`
+
+function setenv(flag) {
+  let config = fs.readFileSync(configPath, 'utf8')
+  function replKey(pattern, repl_dev, repl_pub) {
+    let ret = config.replace(pattern, (p1, p2) => {
+      if (flag === 'dev') {
+        return p1.replace(p2, repl_dev)
+      } else if (flag === 'pub') {
+        return p1.replace(p2, repl_pub)
+      } else {
+        return p1
+      }
+    })
+    return ret
+  }
+  const patterns = [/\s*baseUrl:\s['"](.+)['"],/, /\s*favicon:\s['"](.+)['"],/]
+  config = replKey(patterns[0], cdev.baseUrl, cpub.baseUrl)
+  config = replKey(patterns[1], cdev.favicon, cpub.favicon)
+  fs.writeFileSync(configPath, config)
+  if (/dev|pub/.test(flag)) {
+    console.log('Switch to flag:\x1b[33m%s\x1b[0m', flag)
+  } else {
+    console.log('No action performed!')
+  }
+}
+
+setenv(args[2], args[3])
