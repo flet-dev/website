@@ -97,7 +97,7 @@ The value is an instance of one of the following implementations:
   * `CircleBorder`
   * `BeveledRectangleBorder`
     * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CountinuosRectangleBorder`
+  * `ContinuousRectangleBorder`
     * `radius` - border radius, an instance of `BorderRadius` class or a number.
 
 An example of using `shape` property:

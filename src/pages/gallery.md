@@ -65,13 +65,6 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/tutorials/chat/chat.py" 
       />
     <GalleryCard
-      title="Trolli"
-      imageUrl="trolli.png"
-      description="A clone of Trello."
-      liveUrl="https://gallery.flet.dev/trolli/"
-      sourcesUrl="https://github.com/flet-dev/examples/tree/main/python/apps/trolli" 
-      />
-    <GalleryCard
       title="Flet animation"
       imageUrl="flet-animation.png"
       description="Implicit animations in Flet."

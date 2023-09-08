@@ -183,7 +183,7 @@ import flet as ft
 from flet.buttons import (
     BeveledRectangleBorder,
     CircleBorder,
-    CountinuosRectangleBorder,
+    ContinuousRectangleBorder,
     RoundedRectangleBorder,
     StadiumBorder,
 )
@@ -207,7 +207,7 @@ def main(page: ft.Page):
         ft.FilledButton(
             "Continuous rectangle",
             style=ft.ButtonStyle(
-                shape=ft.CountinuosRectangleBorder(radius=30),
+                shape=ft.ContinuousRectangleBorder(radius=30),
             ),
         ),
         ft.FilledButton(
