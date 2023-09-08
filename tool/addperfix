@@ -12,8 +12,8 @@
  *  Then you can make your website load the image resource file correctly.
  *
  * Packaged html/xml files:
- * href="/img/favicon.ico" => href="/webiste/img/favicon.ico"
- * src="/img/logo.svg" => src="/webiste/img/logo.svg"
+ * href="/img/favicon.ico" => href="/website/img/favicon.ico"
+ * src="/img/logo.svg" => src="/website/img/logo.svg"
  */
 const fs = require('fs')
 const path = require('path')
@@ -21,7 +21,7 @@ const procss = require('process')
 let htmls = []
 const fileTypes = [/\.html$/, /\.xml$/]
 const perfixRegex = /(?:src|href)=['"](\/img\/)/g
-const perfixName = procss.argv[2] ?? '/webiste'
+const perfixName = procss.argv[2] ?? '/website'
 const buildPathDirname = path.join(path.dirname(__filename), '../build')
 
 function traverseDirectory(dir = buildPathDirname) {
