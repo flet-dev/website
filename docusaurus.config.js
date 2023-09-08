@@ -158,6 +158,9 @@ module.exports = {
             'https://github.com/flet-dev/website/edit/main/',
         },
         blog: {
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+          postsPerPage: 5,
           showReadingTime: true,
           editUrl:
             'https://github.com/flet-dev/website/edit/main/',
