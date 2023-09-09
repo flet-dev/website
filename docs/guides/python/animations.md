@@ -24,7 +24,7 @@ Each `Control` provides a number of `animate_{something}` properties, described 
 
 * Instance of `animation.Animation` class - allows configuring the duration (in milliseconds) and the curve of the animation, for example `animate_rotation=ft.animation.Animation(duration=300, curve="bounceOut")`. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values. Default is `linear`.
 * `int` value - enables animation with specified duration in milliseconds and `linear` curve.
-* `bool` value - enables anumation with the duration of 1000 milliseconds and `linear` curve.
+* `bool` value - enables animation with the duration of 1000 milliseconds and `linear` curve.
 
 ### Opacity animation
 
