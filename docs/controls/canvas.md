@@ -352,7 +352,7 @@ Width of the rectangle containing the arc's oval.
 
 Height of the rectangle containing the arc's oval.
 
-### `start_agnle`
+### `start_angle`
 
 Starting angle in radians to draw arc from.
 
