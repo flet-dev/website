@@ -18,42 +18,54 @@
 const fs = require('fs')
 const path = require('path')
 const procss = require('process')
-let htmls = []
-const fileTypes = [/\.html$/, /\.xml$/]
-const perfixRegex = /(?:src|href)=['"](\/img\/)/g
+let modifyCount = 0
 const perfixName = procss.argv[2] ?? '/website'
 const buildPathDirname = path.join(path.dirname(__filename), '../build')
 
-function traverseDirectory(dir = buildPathDirname) {
-  fs.readdirSync(dir).forEach(el => {
-    const filePath = path.join(dir, el)
-    const stat = fs.statSync(filePath)
-    if (stat.isFile()) {
-      fileTypes.forEach(ft => {
-        if (ft.test(filePath)) {
-          htmls.push(filePath)
-        }
-      })
-    } else if (stat.isDirectory()) {
-      traverseDirectory(filePath)
-    }
-  })
-  return htmls
+const html = {
+  fileTypes: [/\.html$/, /\.xml$/],
+  perfixRegex: /(?:src|href)=['"](\/img\/)/g,
+}
+const js = {
+  fileTypes: [/\.js$/],
+  perfixRegex: /"img",\{src:"(\/img\/)/g,
 }
 
-traverseDirectory()
-
-let modifyCount = 0
-htmls.forEach(html => {
-  let el = fs.readFileSync(html, 'utf8')
-  let content = el.replace(perfixRegex, (p1, p2) => {
-    return p1.replace(p2, perfixName + p2)
-  })
-  if (content !== el) {
-    fs.writeFileSync(html, content)
-    modifyCount++
+function traverseDirectory(obj = html, dir = buildPathDirname) {
+  let files = []
+  function recursion(dir) {
+    fs.readdirSync(dir).forEach(el => {
+      const filePath = path.join(dir, el)
+      const stat = fs.statSync(filePath)
+      if (stat.isFile()) {
+        obj.fileTypes.forEach(ft => {
+          if (ft.test(filePath)) {
+            files.push(filePath)
+          }
+        })
+      } else if (stat.isDirectory()) {
+        recursion(filePath)
+      }
+    })
+    return files
   }
-})
+  return recursion(dir)
+}
 
+function modify(obj) {
+  traverseDirectory(obj).forEach(html => {
+    let el = fs.readFileSync(html, 'utf8')
+    let content = el.replace(obj.perfixRegex, (p1, p2) => {
+      return p1.replace(p2, perfixName + p2)
+    })
+    if (content !== el) {
+      fs.writeFileSync(html, content)
+      modifyCount++
+    }
+  })
+}
+
+modify(html)
+modify(js)
 console.log('>> \x1b[32m%s\x1b[0m', 'RewriteOk!')
 console.log('\x1b[33m%s\x1b[0m file has been modified', modifyCount)

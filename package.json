@@ -13,7 +13,7 @@
     "bpub": "tool/prior pub && yarn build",
     "perfix": "node tool/addperfix",
     "dev-all": "tool/prior dev && yarn build && yarn view",
-    "pub-all": "tool/prior pub && yarn build && yarn perfix && yarn view"
+    "pub-all": "tool/prior pub && yarn build && yarn perfix"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.0",
