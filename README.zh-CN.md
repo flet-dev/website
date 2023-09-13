@@ -27,7 +27,7 @@ $ yarn build
 ### 部署
 
 ```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+$ GIT_USER=<您的 GitHub 用户名> USE_SSH=true yarn deploy
 ```
 
-如果您使用 GitHub Pages 进行托管，此命令是构建网站并将其推送到`gh-pages`分支的便捷方法。
+如果您使用 GitHub Pages 进行托管，此命令是构建网站并将其推送到 `gh-pages` 分支的便捷方法。

@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# coding=utf-8
+# Powered by https://github.com/alan3344/website
+# Automatically create translation directory structure, files to be translated,
+# and `React Translate/translate()` tags for the project
+
+lang=$1
+override=$2
+color() {
+    echo "\033[0;$1m${@:2}\033[0m"
+}
+
+if [[ "$@" =~ "-h" ]] || [[ "$@" =~ "--help" ]]; then
+    echo Usage: "$(color 33 ./mkdir_lang) <$(color 32 language)> [$(color 31 --override)]"
+    echo "  $(color 32 language) \t$(color 33 Required)  The language name."
+    echo "  $(color 31 --override) \t$(color 33 Optional)  Override the existing files."
+    echo "  $(color 33 -h --help) \t$(color 33 Optional)  Show this help message."
+    echo
+    echo "$(color 33 Example): $(color 32 ./mkdir_lang) $(color 31 zh-CN)"
+    exit 0
+fi
+
+if [ -z "$lang" ]; then
+    echo "$(color 31 Error): $(color 33 language) is required."
+    echo "Try '$(color 32 ./mkdir_lang --help)' for more information."
+    exit 1
+fi
+
+if [ "$override" = "--override" ]; then
+    override="--override"
+else
+    override=""
+fi
+
+mkdir -p i18n/$lang/docusaurus-plugin-content-blog/
+mkdir -p i18n/$lang/docusaurus-plugin-content-docs/
+mkdir -p i18n/$lang/docusaurus-plugin-content-pages/
+mkdir -p i18n/$lang/docusaurus-theme-classic/
+npx docusaurus write-translations --locale $lang $override
+
+if [ "$override" = "--override" ]; then
+    override=""
+else
+    override="-n"
+fi
+
+cp -r $override blog/* i18n/$lang/docusaurus-plugin-content-blog/
+cp -r $override docs/* i18n/$lang/docusaurus-plugin-content-docs/
+cp -r $override src/pages/* i18n/$lang/docusaurus-plugin-content-pages/
+cp -r $override src/theme/* i18n/$lang/docusaurus-theme-classic/
