@@ -51,6 +51,8 @@ New controls:
 * [InAppPurchase](https://github.com/flet-dev/flet/issues/853)
 * [TreeView](https://github.com/flet-dev/flet/issues/961)
 * [DropdownMenu](https://github.com/flet-dev/flet/issues/1088)
+* [BottomAppBar](https://github.com/flet-dev/flet/issues/1643)
+* [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
 
 Adaptive controls:
 * AlertDialog
