@@ -135,6 +135,7 @@ module.exports = {
             "controls/icon",
             "controls/image",
             "controls/markdown",
+            "controls/mobilewebviewer",
             "controls/circleavatar",
             "controls/progressbar",
             "controls/progressring",
