@@ -1,13 +1,13 @@
 ---
-title: MobileWebViewer
-sidebar_label: MobileWebViewer
-slug: mobilewebviewer
+title: WebView
+sidebar_label: WebView
+slug: webview
 ---
 
 Easily load webpages while allowing user interaction.
 
 :::info
-The `MobileWebViewer` control is designed exclusively for iOS and Android platforms. To use a webview on desktop or in a browser, consider utilizing the `DesktopWebViewer` control.
+This control is supporting mobile only, a desktop and browser version is in the development.
 :::
 
 import Tabs from '@theme/Tabs';
@@ -19,7 +19,7 @@ A simple webview implementation using this class could be like:
 import flet, time
 
 def main (page:flet.Page):
-    wv = flet.MobileWebViewer("https://flet.dev", width=400, height=650)
+    wv = flet.WebView("https://flet.dev", width=400, height=650)
     page.add(wv)
 
 flet.app(target=main, view=flet.AppView.WEB_BROWSER, port=8550)
