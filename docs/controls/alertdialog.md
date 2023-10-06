@@ -144,6 +144,14 @@ This property defaults to providing 24 pixels on the top, left, and right of the
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
+### `inset_padding`
+
+Padding around the Dialog itself.
+
+The default values of this property are 40 pixels horizontally and 24 pixels vertically outside of the dialog box. (`padding.symmetric(vertical=40, horizontal=24)`)
+
+See [`Container.padding`](container#padding) for more information about padding and possible values.
+
 ## Events
 
 ### `on_dismiss`
