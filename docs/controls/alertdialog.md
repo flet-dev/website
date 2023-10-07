@@ -104,6 +104,14 @@ If there is no content, no padding will be provided. Otherwise, padding of 20 pi
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
+### `inset_padding`
+
+Padding around the Dialog itself.
+
+The default values of this property are 40 pixels horizontally and 24 pixels vertically outside of the dialog box. (`padding.symmetric(vertical=40, horizontal=24)`)
+
+See [`Container.padding`](container#padding) for more information about padding and possible values.
+
 ### `modal`
 
 Whether dialog can be dismissed by clicking the area outside of it.
@@ -141,14 +149,6 @@ Padding around the title.
 If there is no title, no padding will be provided. Otherwise, this padding is used.
 
 This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
-
-See [`Container.padding`](container#padding) for more information about padding and possible values.
-
-### `inset_padding`
-
-Padding around the Dialog itself.
-
-The default values of this property are 40 pixels horizontally and 24 pixels vertically outside of the dialog box. (`padding.symmetric(vertical=40, horizontal=24)`)
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
