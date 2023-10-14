@@ -86,7 +86,7 @@ Click **Allow** and you should see your Flet app running.
 
 Try updating `main.py` (for example, replace a greeting of `Text` control) - the app will be instantly refreshed on your iOS device.
 
-You can try mode complex Flet example from [Introduction](/docs/#flet-app-example).
+You can try more complex Flet example from [Introduction](/docs/#flet-app-example).
 
 To return to "Home" tab either:
 - Long-press anywhere on the screen with 3 fingers or

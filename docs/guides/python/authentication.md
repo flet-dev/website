@@ -145,7 +145,7 @@ page.login(
 * `fetch_user` (bool) - whether to fetch user details into `page.auth.user`. Default is `True`.
 * `fetch_groups` (bool) - whether to fetch user groups into `page.auth.user.groups`. Default is `False`.
 * `scope` - a list of scopes to request.
-* `saved_token` - a JSON snapshot of `page.auth.token` to restore authorization from. Token can be serialized with `page.auth.token.to_json()`, enscrypted and saved in [`page.client_storage`](/docs/guides/python/client-storage). See below.
+* `saved_token` - a JSON snapshot of `page.auth.token` to restore authorization from. Token can be serialized with `page.auth.token.to_json()`, encrypted and saved in [`page.client_storage`](/docs/guides/python/client-storage). See below.
 * `on_open_authorization_url` - a callback to open a browser with authorization URL. See below.
 * `complete_page_html` - a custom HTML contents of "You've been successfully authenticated. Close this page now" page.
 * `redirect_to_page` (bool) - used with Flet web app only when authorization page is opened in the same browser tab.
@@ -158,7 +158,7 @@ The result of `page.login()` call is an instance of `Authorization` class with t
 
 A reference to the last authorization is saved in `page.auth` property.
 
-If you app allows authorizations with multiple OAuth providers you can save authorizations in a session,
+If your app allows authorizations with multiple OAuth providers you can save authorizations in a session,
 for example:
 
 ```python
