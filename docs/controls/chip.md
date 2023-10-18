@@ -23,24 +23,37 @@ import TabItem from '@theme/TabItem';
 ```python
 import flet as ft
 
-def main(page):
-    def button_clicked(e):
-        t.value = (
-            f"Switch values are:  {c1.value}, {c2.value}, {c3.value}, {c4.value}."
-        )
+
+def main(page: ft.Page):
+    def save_to_favorites_clicked(e):
+        e.control.label.value = "Saved to favorites"
+        e.control.leading = ft.Icon(ft.icons.FAVORITE_OUTLINED)
+        e.control.disabled = True
         page.update()
 
-    t = ft.Text()
-    c1 = ft.Switch(label="Unchecked switch", value=False)
-    c2 = ft.Switch(label="Checked switch", value=True)
-    c3 = ft.Switch(label="Disabled switch", disabled=True)
-    c4 = ft.Switch(
-        label="Switch with rendered label_position='left'", label_position=ft.LabelPosition.LEFT
-    )
-    b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
-    page.add(c1, c2, c3, c4, b, t)
+    def open_google_maps(e):
+        page.launch_url("https://maps.google.com")
+        page.update()
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+    save_to_favourites = ft.Chip(
+        label=ft.Text("Save to favourites"),
+        leading=ft.Icon(ft.icons.FAVORITE_BORDER_OUTLINED),
+        bgcolor=ft.colors.GREEN_200,
+        disabled_color=ft.colors.GREEN_100,
+        autofocus=True,
+        on_click=save_to_favorites_clicked,
+    )
+
+    open_in_maps = ft.Chip(
+        label=ft.Text("9 min walk"),
+        leading=ft.Icon(ft.icons.MAP_SHARP),
+        bgcolor=ft.colors.GREEN_200,
+        on_click=open_google_maps,
+    )
+
+    page.add(ft.Row([save_to_favourites, open_in_maps]))
+
+ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
