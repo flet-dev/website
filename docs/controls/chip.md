@@ -196,9 +196,49 @@ A `Control` to display to the left of the chip's `label`.
 
 Typically the leading control is an [`Icon`](icon) or a [`CircleAvatar`](circleavatar).
 
+### `padding`
+
+The padding between the `label` and the outside shape.
+
+By default, this is 4 logical pixels on all sides.
+
+See [`Container.padding`](container#padding) for more information about padding and possible values.
+
 ### `selected`
 
 If `on_select` event is specified, `selected` property is used to determine wheather the chip is selected or not. Defaults to `False`.
+
+### `selected_color`
+
+The [color](/docs/guides/python/colors) used for the chip's background when it is selected.
+
+### `selected_shadow_color`
+
+The [color](/docs/guides/python/colors) used for the chip's background when the elevation is greater than 0 and the chip is selected.
+
+### `shadow_color`
+
+The [color](/docs/guides/python/colors) used for the chip's background when the elevation is greater than 0 and the chip is not selected.
+
+### `shape`
+
+The shape of the border around the chip.
+
+The value is an instance of one of the following implementations:
+  * `StadiumBorder`
+  * `RoundedRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `CircleBorder`
+  * `BeveledRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `ContinuousRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+
+The default shape is a `StadiumBorder`.
+
+### `show_checkmark`
+
+If `on_select` event is specified and chip is selected, `show_checkmark` is used to determine wheather or not to show a checkmark. Defaults to `True`.
 
 ## Events
 
@@ -208,7 +248,7 @@ Fires when the control has lost focus.
 
 ### `on_click`
 
-Fires when the user clicks on the Chip. Cannot be specified together with `on_select` event.
+Fires when the user clicks on the chip. Cannot be specified together with `on_select` event.
 
 ### `on_delete`
 
@@ -220,7 +260,7 @@ Fires when the control has received focus.
 
 ### `on_select`
 
-Fires when the user clicks on the Chip. Changes `selected` property to the opposite value. Cannot be specified together with `on_click` event.
+Fires when the user clicks on the chip. Changes `selected` property to the opposite value. Cannot be specified together with `on_click` event.
 
 
 
