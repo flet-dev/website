@@ -17,6 +17,10 @@ import TabItem from '@theme/TabItem';
 
 ### Assist chips
 
+Assist chips are chips with `leading` icon and `on_click` event specified. They represent smart or automated actions that appear dynamically and contextually in a UI.
+
+An alternative to assist chips are buttons, which should appear persistently and consistently.
+
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
@@ -58,40 +62,11 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/switch/basic-switch.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/chip/assist-chips.png" className="screenshot-40"/>
 
 ### Filter chips
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    def theme_changed(e):
-        page.theme_mode = (
-            ft.ThemeMode.DARK
-            if page.theme_mode == ft.ThemeMode.LIGHT
-            else ft.ThemeMode.LIGHT
-        )
-        c.label = (
-            "Light theme" if page.theme_mode == ft.ThemeMode.LIGHT else "Dark theme"
-        )
-        page.update()
-
-    page.theme_mode = ft.ThemeMode.LIGHT
-    c = ft.Switch(label="Light theme", on_change=theme_changed)
-    page.add(c)
-
-ft.app(target=main)
-```
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/switch/switch-with-change-event.gif" className="screenshot-30"/>
-
-### Input chips
+Filter chips are chips with `on_select` event specified. They use tags or descriptive words provided in the `label` to filter content. They can be a good alternative to switches or checkboxes.
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -100,58 +75,33 @@ ft.app(target=main)
 import flet as ft
 
 def main(page: ft.Page):
-    def theme_changed(e):
-        page.theme_mode = (
-            ft.ThemeMode.DARK
-            if page.theme_mode == ft.ThemeMode.LIGHT
-            else ft.ThemeMode.LIGHT
-        )
-        c.label = (
-            "Light theme" if page.theme_mode == ft.ThemeMode.LIGHT else "Dark theme"
-        )
+    def amenity_selected(e):
         page.update()
 
-    page.theme_mode = ft.ThemeMode.LIGHT
-    c = ft.Switch(label="Light theme", on_change=theme_changed)
-    page.add(c)
+    title = ft.Row([ft.Icon(ft.icons.HOTEL_CLASS), ft.Text("Amenities")])
+    amenities = ["Washer / Dryer", "Ramp access", "Dogs OK", "Cats OK", "Smoke-free"]
+    amenity_chips = []
+
+    for amenity in amenities:
+        amenity_chips.append(
+            ft.Chip(
+                label=ft.Text(amenity),
+                bgcolor=ft.colors.GREEN_200,
+                disabled_color=ft.colors.GREEN_100,
+                autofocus=True,
+                on_select=amenity_selected,
+            )
+        )
+
+    page.add(title, ft.Row(amenity_chips))
 
 ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/switch/switch-with-change-event.gif" className="screenshot-30"/>
+<img src="/img/docs/controls/chip/filter-chips.png" className="screenshot-60"/>
 
-### Suggestion chips
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    def theme_changed(e):
-        page.theme_mode = (
-            ft.ThemeMode.DARK
-            if page.theme_mode == ft.ThemeMode.LIGHT
-            else ft.ThemeMode.LIGHT
-        )
-        c.label = (
-            "Light theme" if page.theme_mode == ft.ThemeMode.LIGHT else "Dark theme"
-        )
-        page.update()
-
-    page.theme_mode = ft.ThemeMode.LIGHT
-    c = ft.Switch(label="Light theme", on_change=theme_changed)
-    page.add(c)
-
-ft.app(target=main)
-```
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/switch/switch-with-change-event.gif" className="screenshot-30"/>
 
 ## Properties
 
