@@ -4,7 +4,7 @@ sidebar_label: Controls reference
 slug: /controls
 ---
 
-Flet UI is built of controls. Controls are organized into hierarchy, or a tree, where each control has a parent (except [Page](controls/page)) and container controls like [Column](controls/column), [Dropdown](controls/dropdown) can contain child controls, for example:
+Flet UI is built of controls. Controls are organized into hierarchy, or a tree, where each control has a parent (except [Page](/docs/controls/page)) and container controls like [Column](/docs/controls/column), [Dropdown](/docs/controls/dropdown) can contain child controls, for example:
 
 ```
 Page
@@ -34,7 +34,7 @@ Flet controls have the following properties:
 
 ### `bottom`
 
-Effective inside [`Stack`](controls/stack) only. The distance that the child's bottom edge is inset from the bottom of the stack.
+Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's bottom edge is inset from the bottom of the stack.
 
 ### `data`
 
@@ -59,9 +59,9 @@ page.add(c)
 
 ### `expand`
 
-When a child Control is placed into a [`Column`](controls/column) or [`Row`](controls/row) you can "expand" it to fill the available space. `expand` property could be a boolean value (`True` - expand control to fill all available space) or an integer - an "expand factor" specifying how to divide a free space with other expanded child controls.
+When a child Control is placed into a [`Column`](/docs/controls/column) or [`Row`](/docs/controls/row) you can "expand" it to fill the available space. `expand` property could be a boolean value (`True` - expand control to fill all available space) or an integer - an "expand factor" specifying how to divide a free space with other expanded child controls.
 
-For more information and examples about `expand` property see "Expanding children" sections in [`Column`](controls/column#expanding-children) or [`Row`](controls/row#expanding-children).
+For more information and examples about `expand` property see "Expanding children" sections in [`Column`](/docs/controls/column#expanding-children) or [`Row`](/docs/controls/row#expanding-children).
 
 ### `height`
 
@@ -69,15 +69,15 @@ Imposed Control height in virtual pixels.
 
 ### `left`
 
-Effective inside [`Stack`](controls/stack) only. The distance that the child's left edge is inset from the left of the stack.
+Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's left edge is inset from the left of the stack.
 
 ### `right`
 
-Effective inside [`Stack`](controls/stack) only. The distance that the child's right edge is inset from the right of the stack.
+Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's right edge is inset from the right of the stack.
 
 ### `top`
 
-Effective inside [`Stack`](controls/stack) only. The distance that the child's top edge is inset from the top of the stack.
+Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's top edge is inset from the top of the stack.
 
 ### `visible`
 
