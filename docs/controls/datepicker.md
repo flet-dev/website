@@ -153,6 +153,10 @@ Name of the icon displayed in the corner of the dialog when `DatePickerEntryMode
 
 Name of the icon displayed in the corner of the dialog when `DatePickerEntryMode` is `DatePickerEntryMode.CALENDAR`. Clicking on icon changes the `DatePickerEntryMode` to `DatePickerEntryMode.INPUT`. If null, `ft.icons.EDIT_OUTLINED` is used.
 
+### `value`
+
+The selected date that the picker should display. The default value is equal to `current_date`.
+
 ## Methods
 
 ### `pick_date()`
