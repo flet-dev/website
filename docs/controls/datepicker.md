@@ -6,7 +6,9 @@ slug: datepicker
 
 A Material-style date picker dialog.
 
-It is added to [`page.overlay`](page#overlay) and called using its `pick_date()` method.
+It is added to [`page.overlay`](page#overlay) and called using its [`pick_date()`](datepicker#pick_date) method.
+
+Depending on the [`date_picker_entry_mode`](datepicker#date_picker_entry_mode), it will show either a Calendar or an Input (TextField) for picking a date.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -69,57 +71,59 @@ The text that is displayed on the confirm button. The default value is "OK".
 
 The date representing today. It will be highlighted in the day grid.
 
-### `content`
+### `error_format_text`
 
-The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](column) that contains the dialog's [`Text`](text) message.
+The error message displayed below the TextField if the entered date is not in the correct format. The default value is "Invalid format."
 
-### `content_padding`
+### `error_invalid_text`
 
-Padding around the content.
+The error message displayed below the TextField if the date is earlier than `first_date` or later than `last_date`. The default value is "Out of range."
 
-If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
+### `field_hint_text`
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+The hint text displayed in the TextField.
 
-### `modal`
+The default value is the date format string that depends on your locale. For example, 'mm/dd/yyyy' for en_US.
 
-Whether dialog can be dismissed by clicking the area outside of it.
+### `field_label_text`
 
-### `open`
+The label text displayed in the TextField. The default value is "Enter Date".
 
-Set to `True` to display a dialog.
+### `first_date`
 
-### `shape`
+The earliest allowable date that the user can select. The dafault value is January 1, 1900.
 
-The shape of the dialog's border.
+### `help_text`
 
-The value is an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+The text that is displayed at the top of the header.
 
-The default shape is a `RoundedRectangleBorder` with a radius of 4.0.
+This is used to indicate to the user what they are selecting a date for. The default value is "Select date".
 
-### `title`
+### `date_picker_mode`
 
-The (optional) title of the dialog is displayed in a large font at the top of the dialog.
+Initial display of a calendar date picker.
 
-Typically a [`Text`](text) control.
+Property value is `DatePickerMode` enum with the following values:
 
-### `title_padding`
+* `DAY` (default)
+* `YEAR`
 
-Padding around the title.
+In `DAY` mode, a monthly calendar is displayed. In `YEAR` mode, a grid of available years is displayed.
 
-If there is no title, no padding will be provided. Otherwise, this padding is used.
+### `date_picker_entry_mode`
 
-This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
+The initial mode of date entry method for the date picker dialog.
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+Property value is `DatePickerEntryMode` enum with the following values:
+
+* `CALENDAR` (default)
+* `INPUT`
+* `CALENDAR_ONLY`
+* `INPUT_ONLY`
+
+In `CALENDAR` mode, a calendar grid is displayed and the user taps the day they wish to select. In `INPUT` mode a `TextField` is displayed and the user types in the date they wish to select.
+
+`CALENDAR_ONLY` and `INPUT_ONLY` are variants of the above that don't allow the user to change to the mode.
 
 ## Methods
 
