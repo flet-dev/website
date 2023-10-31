@@ -91,7 +91,7 @@ The label text displayed in the TextField. The default value is "Enter Date".
 
 ### `first_date`
 
-The earliest allowable date that the user can select. The dafault value is January 1, 1900.
+The earliest allowable date that the user can select. The default value is January 1, 1900.
 
 ### `help_text`
 
@@ -124,6 +124,34 @@ Property value is `DatePickerEntryMode` enum with the following values:
 In `CALENDAR` mode, a calendar grid is displayed and the user taps the day they wish to select. In `INPUT` mode a `TextField` is displayed and the user types in the date they wish to select.
 
 `CALENDAR_ONLY` and `INPUT_ONLY` are variants of the above that don't allow the user to change to the mode.
+
+### `keyboard_type`
+
+The type of keyboard to use for editing the text. The property value is `KeyboardType` enum with the following values:
+
+* `TEXT` 
+* `MULTILINE`
+* `NUMBER`
+* `PHONE`
+* `DATETIME` (default)
+* `EMAIL`
+* `URL`
+* `VISIBLE_PASSWORD`
+* `NAME`
+* `STREET_ADDRESS`
+* `NONE`
+
+### `last_date`
+
+The latest allowable date that the user can select. The default value is January 1, 2050.
+
+### `switch_to_calendar_icon`
+
+Name of the icon displayed in the corner of the dialog when `DatePickerEntryMode` is `DatePickerEntryMode.INPUT`. Clicking on icon changes the `DatePickerEntryMode` to `DatePickerEntryMode.CALENDAR`. If null, `ft.icons.CALENDAR_TODAY` is used.
+
+### `switch_to_input_icon`
+
+Name of the icon displayed in the corner of the dialog when `DatePickerEntryMode` is `DatePickerEntryMode.CALENDAR`. Clicking on icon changes the `DatePickerEntryMode` to `DatePickerEntryMode.INPUT`. If null, `ft.icons.EDIT_OUTLINED` is used.
 
 ## Methods
 
