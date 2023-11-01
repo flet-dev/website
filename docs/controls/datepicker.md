@@ -71,6 +71,33 @@ The text that is displayed on the confirm button. The default value is "OK".
 
 The date representing today. It will be highlighted in the day grid.
 
+
+### `date_picker_mode`
+
+Initial display of a calendar date picker.
+
+Property value is `DatePickerMode` enum with the following values:
+
+* `DAY` (default)
+* `YEAR`
+
+In `DAY` mode, a monthly calendar is displayed. In `YEAR` mode, a grid of available years is displayed.
+
+### `date_picker_entry_mode`
+
+The initial mode of date entry method for the date picker dialog.
+
+Property value is `DatePickerEntryMode` enum with the following values:
+
+* `CALENDAR` (default)
+* `INPUT`
+* `CALENDAR_ONLY`
+* `INPUT_ONLY`
+
+In `CALENDAR` mode, a calendar grid is displayed and the user taps the day they wish to select. In `INPUT` mode a `TextField` is displayed and the user types in the date they wish to select.
+
+`CALENDAR_ONLY` and `INPUT_ONLY` are variants of the above that don't allow the user to change to the mode.
+
 ### `error_format_text`
 
 The error message displayed below the TextField if the entered date is not in the correct format. The default value is "Invalid format."
@@ -98,32 +125,6 @@ The earliest allowable date that the user can select. The default value is Janua
 The text that is displayed at the top of the header.
 
 This is used to indicate to the user what they are selecting a date for. The default value is "Select date".
-
-### `date_picker_mode`
-
-Initial display of a calendar date picker.
-
-Property value is `DatePickerMode` enum with the following values:
-
-* `DAY` (default)
-* `YEAR`
-
-In `DAY` mode, a monthly calendar is displayed. In `YEAR` mode, a grid of available years is displayed.
-
-### `date_picker_entry_mode`
-
-The initial mode of date entry method for the date picker dialog.
-
-Property value is `DatePickerEntryMode` enum with the following values:
-
-* `CALENDAR` (default)
-* `INPUT`
-* `CALENDAR_ONLY`
-* `INPUT_ONLY`
-
-In `CALENDAR` mode, a calendar grid is displayed and the user taps the day they wish to select. In `INPUT` mode a `TextField` is displayed and the user types in the date they wish to select.
-
-`CALENDAR_ONLY` and `INPUT_ONLY` are variants of the above that don't allow the user to change to the mode.
 
 ### `keyboard_type`
 
