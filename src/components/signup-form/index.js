@@ -21,21 +21,24 @@ export default function SignupForm() {
         console.log(`hCaptcha Error: ${err}`);
     };
 
-    useEffect(async () => {
+    useEffect(() => {
         if (token) {
-            var data = {
-                email: email,
-                captchaToken: token
-            };
+            const asyncFn = async () => {
+                var data = {
+                    email: email,
+                    captchaToken: token
+                };
 
-            // send message
-            const response = await fetch("/api/email-signup", {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data),
-            });
-            const results = await response.json();
-            console.log(`Results:`, results);
+                // send message
+                const response = await fetch("/api/email-signup", {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+                const results = await response.json();
+                console.log(`Results:`, results);
+            };
+            asyncFn();
         }
     }, [token, email]);
 

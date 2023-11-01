@@ -75,7 +75,7 @@ We are going to crunch the scope above in a few iterations:
 4. Embedding Python into Android.
 5. Packaging mobile apps for iOS and Android.
 
-:::cautionHELP WANTED
+:::caution HELP WANTED
 🙏 I'm looking for a help from the community with developing C/C++/native code integration part between Flutter and Python on iOS and Android. It could be either free help or a paid job - let me know if you are interested!
 :::
 

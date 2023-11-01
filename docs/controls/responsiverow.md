@@ -30,7 +30,7 @@ If `ResponsiveRow`'s child doesn't have `col` property specified it spans the ma
 
 | Breakpoint | Dimension |
 |---|---|
-| xs | <576px |
+| xs | \<576px |
 | sm | ≥576px |
 | md | ≥768px |
 | lg | ≥992px |
