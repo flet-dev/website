@@ -113,7 +113,7 @@ The "inactive" side of the slider is the side between the thumb and the maximum 
 
 Format with `{value}`.
 
-A label to show above the slider when the slider is active. The value of `label` must contain `{value}` which will be replaced with a current slider value.
+A label to show above the slider when the slider is active. The value of `label` may contain `{value}` which will be replaced with a current slider value.
 
 It is used to display the value of a discrete slider, and it is displayed as part of the value indicator shape.
 
