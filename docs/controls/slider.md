@@ -135,6 +135,10 @@ Defaults to `0.0`. Must be less than or equal to `max`.
 
 If the `max` is equal to the `min`, then the slider is disabled.
 
+### `round`
+
+The number of decimals displayed on the `label` containing `value`. The default is 0 (displays value rounded to the nearest integer).
+
 ### `thumb_color`
 
 The [color](/docs/guides/python/colors) of the thumb.
