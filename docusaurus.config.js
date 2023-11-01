@@ -74,7 +74,7 @@ module.exports = {
     prism: {
       theme: themes.github,
       darkTheme: themes.dracula,
-      additionalLanguages: ['python', 'yaml'],
+      additionalLanguages: ['python', 'yaml', 'toml', 'bash'],
     },
     footer: {
       style: 'light',
