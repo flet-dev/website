@@ -156,4 +156,4 @@ See [`Container.padding`](container#padding) for more information about padding 
 
 ### `on_dismiss`
 
-Fires when dialog is dimissed.
+Fires when dialog is dismissed.
