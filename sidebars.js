@@ -173,6 +173,7 @@ module.exports = {
             "controls/slider",
             "controls/switch",
             "controls/textfield",
+            "controls/chip",
           ],
         },
         {

@@ -32,7 +32,7 @@ We are going to provide a project template for bootstrap Flutter app and a guide
 
 Later this year we'll create a CI pipeline to fully automate the process.
 
-Check [`serious_python`'s readme](https://github.com/flet-dev/serious-python#usage) for instructions on how create a Flutter bootstrap and package your Python app to run within it. Use [flet_example](https://github.com/flet-dev/serious-python/tree/main/example/flet_example) project as a starting point.
+Check [`serious_python`'s readme](https://github.com/flet-dev/serious-python#usage) for instructions on how create a Flutter bootstrap and package your Python app to run within it. Use [flet_example](https://github.com/flet-dev/serious-python/tree/main/src/serious_python/example/flet_example) project as a starting point.
 
 ## Flet v0.8.0 release notes
 
