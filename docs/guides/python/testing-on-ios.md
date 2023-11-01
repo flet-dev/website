@@ -12,9 +12,9 @@ Install [Flet](https://apps.apple.com/app/flet/id1624979699) app to your iOS dev
 
 <a href="https://apps.apple.com/app/flet/id1624979699" target="_blank"><img src="/img/docs/getting-started/testing-on-ios/qr-code.jpg" className="screenshot-30" /></a>
 
-To get started on your computer you need Python 3.7 or greater installed.
+To get started on your computer you need Python 3.8 or greater installed.
 
-:::cautionImportant
+:::caution Important
 Your iOS device and computer must be connected to the same Wi-Fi or local network.
 :::
 
@@ -94,7 +94,7 @@ To return to "Home" tab either:
 
 You can also "manually" add a new project by clicking **"+"** button and typing its URL.
 
-:::infoQuick test
+:::info Quick test
 There is "Counter" Flet project hosted on the internet that you can add to Flet app to make sure everything works:
 
 ```

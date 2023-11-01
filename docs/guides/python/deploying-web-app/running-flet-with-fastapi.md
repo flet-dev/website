@@ -18,7 +18,7 @@ pip install flet-fastapi
 
 ## Example app
 
-:::cautionImportant
+:::caution Important
 
 Flet app (and its dependent libraries) must be async to be able to run within FastAPI.
 [Check this article](/docs/guides/python/async-apps) to learn how to write async Flet apps

@@ -27,13 +27,13 @@ The full code for the chat app can be found [here](https://github.com/flet-dev/e
 
 It's a tradition to start with "Hello, world!" app!
 
-Flet requires Python 3.7 or above. To create a Flet app in Python, you need to install `flet` module first:
+Flet requires Python 3.8 or above. To create a Flet app in Python, you need to install `flet` module first:
 
 ```bash
 pip install flet
 ```
 
-:::noteUpgrading Flet
+:::note Upgrading Flet
 To upgrade `flet` module run:
 
 ```bash

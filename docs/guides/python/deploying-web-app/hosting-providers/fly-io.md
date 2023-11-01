@@ -92,12 +92,18 @@ Fly.io deploys every app as a Docker container, but a great thing about Fly is t
 
 Next, switch command line to a folder with your app and run the following command to create and initialize a new Fly app:
 
-    flyctl apps create --name <your-app-name>
+```
+flyctl apps create --name <your-app-name>
+```
 
 Deploy the app by running:
 
-    flyctl deploy
+```
+flyctl deploy
+```
 
 That's it! Open your app in the browser by running:
 
-    flyctl apps open
+```
+flyctl apps open
+```

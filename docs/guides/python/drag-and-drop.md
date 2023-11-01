@@ -60,7 +60,7 @@ ft.app(target=main)
 
 So, it's developer's responsibility to determine what happens with "source" (draggable) and "destination" (drag target) controls when `on_accept` event occurs.
 
-:::noteTry something
+:::note Try something
 Change DragTarget's group property to `number1` and note `on_accept` is not called any more when you drop "1" on the target.
 :::
 
