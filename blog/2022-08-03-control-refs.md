@@ -12,7 +12,7 @@ Flet controls are objects and to access their properties we need to keep referen
 
 Consider the following example:
 
-```python {6-8,18,19,21}
+```python {6-7,18,19,21}
 import flet as ft
 
 def main(page):
@@ -84,7 +84,7 @@ All Flet controls have `ref` property.
 
 We could re-write our program to use references:
 
-```python {7-9,21-24}
+```python {7-8,21-23}
 import flet as ft
 
 
