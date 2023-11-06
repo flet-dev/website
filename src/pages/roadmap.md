@@ -40,7 +40,7 @@ New controls:
 * [SelectionArea](https://github.com/flet-dev/flet/issues/1554)
 * [Camera](https://github.com/flet-dev/flet/issues/1281)
 * [AudioRecorder](https://github.com/flet-dev/flet/issues/419)
-* [Badge](https://github.com/flet-dev/flet/issues/1264)
+* :white_check_mark:[Badge](https://github.com/flet-dev/flet/issues/1264)
 * [Rive](https://github.com/flet-dev/flet/issues/89)
 * [Lottie](https://github.com/flet-dev/flet/issues/88)
 * [Location](https://github.com/flet-dev/flet/issues/66)

@@ -133,6 +133,7 @@ module.exports = {
           items: [
             "controls/text",
             "controls/icon",
+            "controls/badge",
             "controls/image",
             "controls/markdown",
             "controls/circleavatar",
