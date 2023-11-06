@@ -67,7 +67,7 @@ The foreground [color](/docs/guides/python/colors) of action button.
 
 This defines the behavior and location of the snack bar.
 
-Defines where a SnackBar should appear within a psge and how its location should be adjusted when the page also includes a `FloatingActionButton` or a `NavigationBar`.
+Defines where a SnackBar should appear within a page and how its location should be adjusted when the page also includes a `FloatingActionButton` or a `NavigationBar`.
 
 If this property is `None`, then the default is `SnackBarBehavior.FIXED`.
 
