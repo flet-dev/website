@@ -58,7 +58,30 @@ ft.app(main)
 <img src="/img/docs/controls/navigation-drawer/navigation-drawer-end.gif" className="screenshot-40"/>
 
 ```python
-TBD
+import flet as ft
+
+
+def main(page: ft.Page):
+    def end_drawer_dismissed(e):
+        print("End drawer dismissed!")
+
+    end_drawer = ft.NavigationDrawer(
+        on_dismiss=end_drawer_dismissed,
+        controls=[
+            ft.NavigationDrawerDestination(
+                icon=ft.icons.ADD_TO_HOME_SCREEN_SHARP, label="Item 1"
+            ),
+            ft.NavigationDrawerDestination(icon=ft.icons.ADD_COMMENT, label="Item 2"),
+        ],
+    )
+
+    def show_end_drawer(e):
+        page.show_end_drawer(end_drawer)
+
+    page.add(ft.ElevatedButton("Show end drawer", on_click=show_end_drawer))
+
+
+ft.app(main)
 ```
 
 ## `NavigationDrawer` properties
