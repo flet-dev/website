@@ -4,50 +4,61 @@ sidebar_label: WebView
 slug: webview
 ---
 
-Easily load webpages while allowing user interaction.
+Easily load web pages while allowing user interaction.
 
 :::info
-This control is supporting mobile only, a desktop and browser version is in the development.
+This control supports iOS and Android only; a desktop and browser versions are in the development.
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## Examples
-A simple webview implementation using this class could be like:
-```python
-import flet, time
 
-def main (page:flet.Page):
-    wv = flet.WebView("https://flet.dev", width=400, height=650)
+A simple webview implementation using this class could be like:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    wv = ft.WebView(
+        "https://flet.dev",
+        expand=True,
+        on_page_started=lambda _: print("Page started"),
+        on_page_ended=lambda _: print("Page ended"),
+        on_web_resource_error=lambda e: print("Page error:", e.data),
+    )
     page.add(wv)
 
-flet.app(target=main, view=flet.AppView.WEB_BROWSER, port=8550)
+ft.app(main)
 ```
 
 
 ## Properties
-### `url`
-Start the webview by loading the `url` value.
-
-### `width` & `height`
-The width and height of the webview.
-
-### `javascript_enabled`
-Enable or disable the javascript execution of the page. Note that disabling the javascript execution of the page may result unexpected webpage behaviour.
-
-### `prevent_link`
-Specify a link to prevent it from downloading.
 
 ### `bgcolor`
-Set the background color of the webview.
+
+Set the background color of the WebView.
+
+### `javascript_enabled`
+
+Enable or disable the JavaScript execution on the page. Note, that disabling the JavaScript execution on the page may result to unexpected web page behaviour.
+
+### `prevent_link`
+
+Specify a prefix for links to prevent navigating or downloading.
+
+### `url`
+
+Start the WebView by loading the `url` value.
 
 ## Events
-### `on_page_started`
-Fires soon as the first loading process of the webpage is started.
 
 ### `on_page_ended`
-Fires when all the webpage loading processes are ended.
+
+Fires when all the web page loading processes are ended.
 
 ### `on_web_resource_error`
-Fires when there is error with loading a webpage resource.
+
+Fires when there is error with loading a web page resource.
+
+### `on_page_started`
+
+Fires soon as the first loading process of the web page is started.
