@@ -121,6 +121,7 @@ module.exports = {
             "controls/appbar",
             "controls/navigationrail",
             "controls/navigationbar",
+            "controls/navigationdrawer",
           ],
         },
         {
