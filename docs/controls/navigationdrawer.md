@@ -14,7 +14,7 @@ Navigation Drawer is a panel that slides in horizontally from the left or right 
 
 ### NavigationDrawer sliding from the left edge of a page
 
-<img src="/img/docs/controls/navigation-drawer/navigation-drawer-start.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/navigationdrawer/navigation-drawer-start.gif" className="screenshot-60"/>
 
 ```python
 import flet as ft
@@ -26,19 +26,19 @@ def main(page: ft.Page):
             ft.Container(height=12),
             ft.NavigationDrawerDestination(
                 label="Item 1",
-                icon=ft.icons.ABC,
-                selected_icon_content=ft.Icon(ft.icons.ACCESS_ALARM),
+                icon=ft.icons.DOOR_BACK_DOOR_OUTLINED,
+                selected_icon_content=ft.Icon(ft.icons.DOOR_BACK_DOOR),
             ),
             ft.Divider(thickness=2),
             ft.NavigationDrawerDestination(
-                icon_content=ft.Icon(ft.icons.MAIL),
+                icon_content=ft.Icon(ft.icons.MAIL_OUTLINED),
                 label="Item 2",
-                selected_icon=ft.icons.PHISHING,
+                selected_icon=ft.icons.MAIL,
             ),
             ft.NavigationDrawerDestination(
-                icon_content=ft.Icon(ft.icons.PHONE),
+                icon_content=ft.Icon(ft.icons.PHONE_OUTLINED),
                 label="Item 3",
-                selected_icon=ft.icons.PHISHING,
+                selected_icon=ft.icons.PHONE,
             ),
         ],
     )
@@ -55,7 +55,7 @@ ft.app(main)
 
 ### NavigationDrawer sliding from the right edge of a page
 
-<img src="/img/docs/controls/navigation-drawer/navigation-drawer-end.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/navigationdrawer/navigation-drawer-end.gif" className="screenshot-60"/>
 
 ```python
 import flet as ft
