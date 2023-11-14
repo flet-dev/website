@@ -113,7 +113,7 @@ The "inactive" side of the slider is the side between the thumb and the maximum 
 
 Format with `{value}`.
 
-A label to show above the slider when the slider is active. The value of `label` must contain `{value}` which will be replaced with a current slider value.
+A label to show above the slider when the slider is active. The value of `label` may contain `{value}` which will be replaced with a current slider value.
 
 It is used to display the value of a discrete slider, and it is displayed as part of the value indicator shape.
 
@@ -134,6 +134,10 @@ The minimum value the user can select.
 Defaults to `0.0`. Must be less than or equal to `max`.
 
 If the `max` is equal to the `min`, then the slider is disabled.
+
+### `round`
+
+The number of decimals displayed on the `label` containing `value`. The default is 0 (displays value rounded to the nearest integer).
 
 ### `thumb_color`
 

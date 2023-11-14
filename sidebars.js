@@ -172,6 +172,7 @@ module.exports = {
             "controls/dropdown",
             "controls/radio",
             "controls/slider",
+            "controls/rangeslider",
             "controls/switch",
             "controls/textfield",
             "controls/chip",
