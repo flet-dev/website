@@ -121,6 +121,7 @@ module.exports = {
             "controls/appbar",
             "controls/navigationrail",
             "controls/navigationbar",
+            "controls/navigationdrawer",
           ],
         },
         {
@@ -133,6 +134,7 @@ module.exports = {
           items: [
             "controls/text",
             "controls/icon",
+            "controls/badge",
             "controls/image",
             "controls/markdown",
             "controls/webview",

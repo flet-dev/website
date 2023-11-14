@@ -54,6 +54,14 @@ The value must be a list of two or more `NavigationDestination` instances.
 
 The elevation of the NavigationBar itself.
 
+### `indicator_color`
+
+The [color](/docs/guides/python/colors) of the selected destination indicator.
+
+### `indicator_shape`
+
+The shape of the selected destination indicator. See [button style example](elevatedbutton#style) for possible values.
+
 ### `label_behavior`
 
 Defines how the destinations' labels will be laid out and when they'll be displayed.
@@ -69,6 +77,14 @@ Property value is `NavigationBarLabelBehavior` enum with the following values:
 ### `selected_index`
 
 The index into `destinations` for the current selected `NavigationDestination` or `None` if no destination is selected.
+
+### `shadow_color`
+
+The [color](/docs/guides/python/colors) used for the drop shadow to indicate `elevation`.
+
+### `surface_tint_color`
+
+The surface tint of the Material that holds the NavigationDrawer's contents.
 
 ## `NavigationBar` events
 

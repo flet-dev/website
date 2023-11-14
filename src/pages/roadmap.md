@@ -23,8 +23,8 @@ The goal: stabilization and Flet 1.0 launch.
 
 New controls:
 * [Video](https://github.com/flet-dev/flet/issues/257)
-* [WebView](https://github.com/flet-dev/flet/issues/432)
-* [NavigationDrawer](https://github.com/flet-dev/flet/issues/1089)
+* :white_check_mark: [WebView](https://github.com/flet-dev/flet/issues/432)
+* :white_check_mark: [NavigationDrawer](https://github.com/flet-dev/flet/issues/1089)
 * [Autocomplete](https://github.com/flet-dev/flet/issues/791)
 * [AutofillGroup](https://github.com/flet-dev/flet/issues/848)
 * [ExpansionTile](https://github.com/flet-dev/flet/issues/1719) and [ExpansionPanel](https://github.com/flet-dev/flet/issues/1718)
@@ -40,7 +40,7 @@ New controls:
 * [SelectionArea](https://github.com/flet-dev/flet/issues/1554)
 * [Camera](https://github.com/flet-dev/flet/issues/1281)
 * [AudioRecorder](https://github.com/flet-dev/flet/issues/419)
-* [Badge](https://github.com/flet-dev/flet/issues/1264)
+* :white_check_mark:[Badge](https://github.com/flet-dev/flet/issues/1264)
 * [Rive](https://github.com/flet-dev/flet/issues/89)
 * [Lottie](https://github.com/flet-dev/flet/issues/88)
 * [Location](https://github.com/flet-dev/flet/issues/66)

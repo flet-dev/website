@@ -101,6 +101,14 @@ Reserved for future use.
 
 An [`AlertDialog`](/docs/controls/alertdialog) control to display.
 
+### `drawer`
+
+A [`NavigationDrawer`](/docs/controls/navigationdrawer) control to display as a panel sliding from the start edge of the page.
+
+### `end_drawer`
+
+A [`NavigationDrawer`](/docs/controls/navigationdrawer) control to display as a panel sliding from the end edge of the page.
+
 ### `floating_action_button`
 
 A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to display on top of Page content.
@@ -778,6 +786,14 @@ Closes active bottom sheet.
 
 Closes active dialog.
 
+### `close_drawer()`
+
+Closes active drawer.
+
+### `close_end_drawer()`
+
+Closes active end drawer.
+
 ### `close_in_app_web_view()`
 
 📱 Mobile only. Closes in-app web view opened with `launch_url()`.
@@ -880,6 +896,14 @@ Displays bottom sheet at the bottom of the page.
 ### `show_dialog(dialog: AlertDialog)`
 
 Displays dialog.
+
+### `show_drawer(drawer: NavigationDialog)`
+
+Displays [`drawer`](page#drawer).
+
+### `show_end_drawer(drawer: NavigationDialog)`
+
+Displays [`end_drawer`](page#end_drawer).
 
 ### `show_snack_bar(snack_bar: SnackBar)`
 
