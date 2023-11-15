@@ -99,5 +99,12 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
       liveUrl="https://gallery.flet.dev/greeter/"
       sourcesUrl="https://github.com/flet-dev/examples/blob/main/python/apps/greeter/greeter.py" 
       />
+    <GalleryCard
+      title="Emoji Enigma"
+      imageUrl="emoji-enigma.png"
+      description="Guess 20 words using the emote icons as clues"
+      liveUrl="https://ee.lshss.app/"
+      sourcesUrl="https://github.com/vihutuo/emoji_riddles" 
+      />
   </section>
 </div>
