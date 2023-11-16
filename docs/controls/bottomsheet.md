@@ -65,6 +65,14 @@ Specifies whether the bottom sheet will be dismissed when user taps on the scrim
 
 Specifies whether the bottom sheet can be dragged up and down and dismissed by swiping downwards.
 
+### `is_scroll_controlled`
+
+Specifies if the bottom sheet contains scrollable content, such as ListView or GridView. Default is `False`.
+
+### `maintain_bottom_view_insets_padding`
+
+Adds a padding at the bottom to avoid obstructing bottom sheet content with on-screen keyboard or other system elements.
+
 ### `open`
 
 Set to `True` to display a bottom sheet.
