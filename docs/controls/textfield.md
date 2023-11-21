@@ -216,7 +216,7 @@ Border [color](/docs/guides/python/colors). Could be `transparent` to hide the b
 
 ### `border_radius`
 
-See [`Container.border_radius`] property docs for more information about border radius.
+See [`Container.border_radius`](/docs/controls/container#border_radius) property docs for more information about border radius.
 
 ### `border_width`
 
@@ -336,6 +336,30 @@ Displayed on top of the input when the it's empty and either (a) `label` is null
 ### `icon`
 
 The name of the icon to show before the input field and outside of the decoration's container.
+
+### `input_filter`
+Provides as-you-type filtering/validation in your `TextField`. It prevents the insertion of characters matching (or not matching) a particular pattern(`regex_string`), by replacing the characters with the given `replacement_string`.
+When this parameter changes, the new filter will not be applied until the next time the user inserts or deletes text. 
+Note that, similar to the `on_change` callback, the input filters are not applied when the text is changed programmatically.
+
+`input_filter` is an instance of the `InputFilter` class, which takes 3 parameters: 
+- `regex_string`: a regular expression pattern for the filter
+- `allow`: a boolean value indicating whether to allow or deny/block the matched patterns - default is `True`
+- `replacement_string`: string used to replace banned/denied patterns - default is an empty string.
+
+The following helper classes are equally available:
+- `NumbersOnlyInputFilter()` - only allow numbers
+- `TextOnlyInputFilter()` - only allow text characters
+
+Usage Example:
+
+```python
+ft.TextField(
+    label="Only numbers are allowed :)",
+    input_filter=ft.InputFilter(allow=True, regex_string=r"[0-9]", replacement_string=""),
+    # input_filter=ft.NumbersOnlyInputFilter()
+)
+```
 
 ### `keyboard_type`
 
