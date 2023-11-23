@@ -8,7 +8,7 @@ A Material-style time picker dialog.
 
 It is added to [`page.overlay`](page#overlay) and called using its [`pick_time()`](timepicker#pick_time) method.
 
-Depending on the [`time_picker_entry_mode`](timepicker#pick_time), it will show either a Dial or an Input (hour and minute text fields) for picking a time.
+Depending on the [`time_picker_entry_mode`](timepicker#time_picker_entry_mode), it will show either a Dial or an Input (hour and minute text fields) for picking a time.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -27,35 +27,38 @@ import datetime
 import flet as ft
 
 def main(page: ft.Page):
-    def change_date(e):
-        print(f"Date picker changed, value is {date_picker.value}")
+    def change_time(e):
+        print(f"Time picker changed, value (minute) is {time_picker.value.minute}")
 
-    def date_picker_dismissed(e):
-        print(f"Date picker dismissed, value is {date_picker.value}")
+    def dismissed(e):
+        print(f"Time picker dismissed, value is {time_picker.value}")
 
-    date_picker = ft.DatePicker(
-        on_change=change_date,
-        on_dismiss=date_picker_dismissed,
-        first_date=datetime.datetime(2023, 10, 1),
-        last_date=datetime.datetime(2024, 10, 1),
+    time_picker = ft.TimePicker(
+        confirm_text="Confirm",
+        error_invalid_text="Time out of range",
+        help_text="Pick your time slot",
+        on_change=change_time,
+        on_dismiss=dismissed,
     )
 
-    page.overlay.append(date_picker)
+    page.overlay.append(time_picker)
 
     date_button = ft.ElevatedButton(
-        "Pick date",
-        icon=ft.icons.CALENDAR_MONTH,
-        on_click=lambda _: date_picker.pick_date(),
+        "Pick time",
+        icon=ft.icons.TIME_TO_LEAVE,
+        on_click=lambda _: time_picker.pick_time(),
     )
 
     page.add(date_button)
 
+
 ft.app(target=main)
+
 ```
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/datepicker/basic-datepicker.png" className="screenshot-50" />
+<img src="/img/docs/controls/timepicker/time-picker.png" className="screenshot-50" />
 
 ## Properties
 
@@ -67,109 +70,63 @@ The text that is displayed on the cancel button. The default value is "Cancel".
 
 The text that is displayed on the confirm button. The default value is "OK".
 
-### `current_date`
-
-The date representing today. It will be highlighted in the day grid.
-
-
-### `date_picker_mode`
-
-Initial display of a calendar date picker.
-
-Property value is `DatePickerMode` enum with the following values:
-
-* `DAY` (default)
-* `YEAR`
-
-In `DAY` mode, a monthly calendar is displayed. In `YEAR` mode, a grid of available years is displayed.
-
-### `date_picker_entry_mode`
-
-The initial mode of date entry method for the date picker dialog.
-
-Property value is `DatePickerEntryMode` enum with the following values:
-
-* `CALENDAR` (default)
-* `INPUT`
-* `CALENDAR_ONLY`
-* `INPUT_ONLY`
-
-In `CALENDAR` mode, a calendar grid is displayed and the user taps the day they wish to select. In `INPUT` mode a `TextField` is displayed and the user types in the date they wish to select.
-
-`CALENDAR_ONLY` and `INPUT_ONLY` are variants of the above that don't allow the user to change to the mode.
-
-### `error_format_text`
-
-The error message displayed below the TextField if the entered date is not in the correct format. The default value is "Invalid format."
-
 ### `error_invalid_text`
 
-The error message displayed below the TextField if the date is earlier than `first_date` or later than `last_date`. The default value is "Out of range."
+The error message displayed below the input text field if the input is not a valid hour/minute. The default value is "Enter a valid time".
 
-### `field_hint_text`
+### `hour_label_text`
 
-The hint text displayed in the TextField.
+The text that is displayed below the hour input text field.
 
-The default value is the date format string that depends on your locale. For example, 'mm/dd/yyyy' for en_US.
-
-### `field_label_text`
-
-The label text displayed in the TextField. The default value is "Enter Date".
-
-### `first_date`
-
-The earliest allowable date that the user can select. The default value is January 1, 1900.
+The default value is "Hour".
 
 ### `help_text`
 
 The text that is displayed at the top of the header.
 
-This is used to indicate to the user what they are selecting a date for. The default value is "Select date".
+This is used to indicate to the user what they are selecting a time for. The default value is "Enter time".
 
-### `keyboard_type`
+### `minute_label_text`
 
-The type of keyboard to use for editing the text. The property value is `KeyboardType` enum with the following values:
+The text that is displayed below the minute input text field.
 
-* `TEXT` 
-* `MULTILINE`
-* `NUMBER`
-* `PHONE`
-* `DATETIME` (default)
-* `EMAIL`
-* `URL`
-* `VISIBLE_PASSWORD`
-* `NAME`
-* `STREET_ADDRESS`
-* `NONE`
+The default value is "Minute".
 
-### `last_date`
+### `time_picker_entry_mode`
 
-The latest allowable date that the user can select. The default value is January 1, 2050.
+The initial mode of time entry method for the time picker dialog.
 
-### `switch_to_calendar_icon`
+Property value is `TimePickerEntryMode` enum with the following values:
 
-Name of the icon displayed in the corner of the dialog when `DatePickerEntryMode` is `DatePickerEntryMode.INPUT`. Clicking on icon changes the `DatePickerEntryMode` to `DatePickerEntryMode.CALENDAR`. If null, `ft.icons.CALENDAR_TODAY` is used.
+* `DIAL` (default)
+* `INPUT`
+* `DIAL_ONLY`
+* `INPUT_ONLY`
 
-### `switch_to_input_icon`
+In `DIAL` mode, user picks time from a clock dial.
+Can switch to input by activating a mode button in the dialog. 
 
-Name of the icon displayed in the corner of the dialog when `DatePickerEntryMode` is `DatePickerEntryMode.CALENDAR`. Clicking on icon changes the `DatePickerEntryMode` to `DatePickerEntryMode.INPUT`. If null, `ft.icons.EDIT_OUTLINED` is used.
+In `INPUT` mode, user can input the time by typing it into text fields.
+Can switch to dial by activating a mode button in the dialog.
+
+`DIAL_ONLY` and `INPUT_ONLY` are variants of the above that don't allow the user to change to the mode.
 
 ### `value`
 
-The selected date that the picker should display. The default value is equal to `current_date`.
+The selected time that the picker should display. The default value is equal to the current time.
 
 ## Methods
 
-### `pick_date()`
+### `pick_time()`
 
-Opens a date picker dialog.
+Opens a time picker dialog.
 
 ## Events
 
 ### `on_change`
 
-Fires when user clicks confirm button. `value` property is updated with selected date. 
+Fires when user clicks confirm button. `value` property is updated with selected time. 
 
 ### `on_dismiss`
 
-Fires when dialog is dismissed by clicking on the cancel button or outside of date picker dialog.
+Fires when dialog is dismissed by clicking on the cancel button or outside of time picker dialog.
