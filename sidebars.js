@@ -192,7 +192,8 @@ module.exports = {
             "controls/banner",
             "controls/bottomsheet",
             "controls/snackbar",
-            "controls/datepicker"
+            "controls/datepicker",
+            "controls/timepicker"
           ],
         },
         {
