@@ -69,6 +69,14 @@ page.update()
   </TabItem>
 </Tabs>
 
+### `drawer`
+
+A [`NavigationDrawer`](/docs/controls/navigationdrawer) control to display as a panel sliding from the start edge of the view.
+
+### `end_drawer`
+
+A [`NavigationDrawer`](/docs/controls/navigationdrawer) control to display as a panel sliding from the end edge of the view.
+
 ### `fullscreen_dialog`
 
 Whether this view is a full-screen dialog.
