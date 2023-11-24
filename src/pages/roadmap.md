@@ -47,7 +47,7 @@ New controls:
 * [Location](https://github.com/flet-dev/flet/issues/66)
 * [Map](https://github.com/flet-dev/flet/issues/1193)
 * [Google Mobile Ads](https://github.com/flet-dev/flet/issues/286)
-* [Dismissable](https://github.com/flet-dev/flet/issues/482)
+* :white_check_mark: [Dismissible](https://github.com/flet-dev/flet/issues/482)
 * [InAppPurchase](https://github.com/flet-dev/flet/issues/853)
 * [TreeView](https://github.com/flet-dev/flet/issues/961)
 * [DropdownMenu](https://github.com/flet-dev/flet/issues/1088)

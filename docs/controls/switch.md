@@ -132,13 +132,40 @@ To configure thumb color for all Material states set `thumb_color` value to a li
 sw.thumb_color=ft.colors.GREEN
 ```
 
-To configure thumb color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
+To configure thumb's color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
 
 ```python
 sw.thumb_color={
     ft.MaterialState.HOVERED: ft.colors.GREEN,
     ft.MaterialState.FOCUSED: ft.colors.RED,
     ft.MaterialState.DEFAULT: ft.colors.BLACK,
+}
+```
+
+### `thumb_icon`
+
+The icon of this Switch's thumb.
+
+Resolved in the following `MaterialState` states:
+
+* `SELECTED`
+* `HOVERED`
+* `FOCUSED`
+* `DISABLED`
+* `DEFAULT` - fallback state, meaning "all other states".
+
+To configure thumb color for all Material states set `thumb_icon` value to a literal, for example:
+
+```python
+sw.thumb_icon=ft.icons.CHECK
+```
+
+To configure thumb's icon for specific Material states set its value to a dictionary where the key is state name. For example, to configure different icons for `SELECTED` and `DISABLED` states and another icon for all other states:
+
+```python
+sw.thumb_icon={
+    ft.MaterialState.SELECTED: ft.icons.CHECK,
+    ft.MaterialState.DISABLED: ft.icons.CLOSE,
 }
 ```
 
