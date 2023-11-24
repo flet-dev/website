@@ -6,7 +6,7 @@ slug: navigationdrawer
 
 Material Design Navigation Drawer component.
 
-Navigation Drawer is a panel that slides in horizontally from the left or right edge of a page to show primary destinations in an app. To add NavigationDrawer to the page, use [`page.drawer`](page#drawer) and [`page.end_drawer`](page#end_drawer) properties. To display the drawer, set its `open` property to `True`.
+Navigation Drawer is a panel that slides in horizontally from the left or right edge of a page to show primary destinations in an app. To add NavigationDrawer to the page, use [`page.drawer`](page#drawer) and [`page.end_drawer`](page#end_drawer) properties. Similarly, the NavigationDrawer can be added to a [`View`](view#drawer). To display the drawer, set its `open` property to `True`.
 
 ## Examples
 
@@ -134,7 +134,7 @@ Fires when selected destination changed.
 
 ### `on_dismiss`
 
-Fires when NavigationDrawer is dismissed by clicking outside of the panel or programmatically.
+Fires when NavigationDrawer is dismissed by clicking outside of the panel or [programmatically](page#close_drawer).
 
 ## `NavigationDrawerDestination` properties
 
