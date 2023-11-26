@@ -100,6 +100,7 @@ module.exports = {
             "controls/stack",
             "controls/listview",
             "controls/listtile",
+            "controls/dismissible",
             "controls/gridview",
             "controls/responsiverow",
             "controls/datatable",
