@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/layout/card)
+[Live example](https://flet-controls-gallery.fly.dev/buttons/segmentedbutton)
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>

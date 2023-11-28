@@ -98,6 +98,7 @@ module.exports = {
           "controls/datatable",
           "controls/dismissible",
           "controls/divider",
+          "controls/expansiontile",
           "controls/gridview",
           "controls/listtile",
           "controls/listview",
