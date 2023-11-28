@@ -27,7 +27,7 @@ New controls:
 * :white_check_mark: [NavigationDrawer](https://github.com/flet-dev/flet/issues/1089)
 * [Autocomplete](https://github.com/flet-dev/flet/issues/791)
 * [AutofillGroup](https://github.com/flet-dev/flet/issues/848)
-* [ExpansionTile](https://github.com/flet-dev/flet/issues/1719)
+* :white_check_mark: [ExpansionTile](https://github.com/flet-dev/flet/issues/1719)
 * [ExpansionPanelList](https://github.com/flet-dev/flet/issues/1718)
 * :white_check_mark: [RangeSlider](https://github.com/flet-dev/flet/issues/1712)
 * [Context menu](https://github.com/flet-dev/flet/issues/1804)
