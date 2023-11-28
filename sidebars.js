@@ -161,6 +161,7 @@ module.exports = {
             "controls/iconbutton",
             "controls/outlinedbutton",
             "controls/popupmenubutton",
+            "controls/segmentedbutton",
             "controls/textbutton",
           ],
         },
