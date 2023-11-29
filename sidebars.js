@@ -240,6 +240,7 @@ module.exports = {
             "controls/shakedetector",
             "controls/tooltip",
             "controls/windowdragarea",
+            "controls/selectionarea",
             "controls/fletapp",
           ],
         },
