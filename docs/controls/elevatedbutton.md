@@ -172,7 +172,7 @@ Icon [color](/docs/guides/python/colors).
 
 ### `style`
 
-The value is an instance of `ButtonStyle` class. `ButtonStyle` allows controling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
+The value is an instance of `ButtonStyle` class. `ButtonStyle` allows controlling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
 
 Each individual style attribute could be configured for all or particular "Material states" of a button, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
 
