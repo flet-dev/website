@@ -39,7 +39,7 @@ New controls:
 * [SearchBar](https://github.com/flet-dev/flet/issues/1808)
 * :white_check_mark: [DatePicker](/docs/controls/datepicker)
 * :white_check_mark: [TimePicker](/docs/controls/timepicker)
-* [SelectionArea](https://github.com/flet-dev/flet/issues/1554)
+* :white_check_mark: [SelectionArea](https://github.com/flet-dev/flet/issues/1554)
 * [Camera](https://github.com/flet-dev/flet/issues/1281)
 * [AudioRecorder](https://github.com/flet-dev/flet/issues/419)
 * :white_check_mark: [Badge](https://github.com/flet-dev/flet/issues/1264)
