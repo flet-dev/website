@@ -157,4 +157,8 @@ Where to open URL in the web mode:
 
 ### `on_click`
 
-Fires when the tile expands or collapses.
+Fires when a user clicks or taps the list tile.
+
+### `on_long_press`
+
+Fires when the user long-presses on this list tile.
