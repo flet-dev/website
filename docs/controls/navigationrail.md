@@ -89,6 +89,10 @@ If the rail is going to be in the extended state, then the `label_type` must be 
 
 The default value is `False`.
 
+### `elevation`
+
+Controls the size of the shadow below the NavigationRail. Default value is `0.0`.
+
 ### `group_alignment`
 
 The vertical alignment for the group of destinations within the rail.
@@ -100,6 +104,26 @@ The value must be between `-1.0` and `1.0`.
 If `group_alignment` is `-1.0`, then the items are aligned to the top. If `group_alignment` is `0.0`, then the items are aligned to the center. If `group_alignment` is `1.0`, then the items are aligned to the bottom.
 
 The default is `-1.0`.
+
+### `indicator_color`
+
+The [color](/docs/guides/python/colors) of the navigation rail's indicator.
+
+### `indicator_shape`
+
+The shape of the navigation rail's indicator.
+
+The value is an instance of one of the following implementations:
+  * `StadiumBorder`
+  * `RoundedRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `CircleBorder`
+  * `BeveledRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `ContinuousRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+
+The default shape is a `StadiumBorder`.
 
 ### `label_type`
 
