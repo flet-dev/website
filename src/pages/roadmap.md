@@ -56,7 +56,7 @@ New controls:
 * [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
 
 Adaptive controls:
-* AlertDialog
+* [AlertDialog](https://github.com/flet-dev/flet/issues/2203)
 * Button
 * ContextMenu
 * NavigationBar
@@ -64,8 +64,8 @@ Adaptive controls:
 * TimePicker
 * ListTile
 * [Slider](https://github.com/flet-dev/flet/issues/2174)
-* [Switch](https://api.flutter.dev/flutter/cupertino/CupertinoSwitch-class.html)
-* Radio
+* [Switch](https://github.com/flet-dev/flet/issues/2202)
+* [Radio](https://github.com/flet-dev/flet/issues/2201)
 * TabBar
 * :white_check_mark: [Checkbox](https://github.com/flet-dev/flet/issues/2157)
 
