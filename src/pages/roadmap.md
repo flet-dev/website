@@ -63,10 +63,11 @@ Adaptive controls:
 * DatePicker
 * TimePicker
 * ListTile
-* Slider
-* Switch
+* [Slider](https://github.com/flet-dev/flet/issues/2174)
+* [Switch](https://api.flutter.dev/flutter/cupertino/CupertinoSwitch-class.html)
+* Radio
 * TabBar
-* Checkbox
+* :white_check_mark: [Checkbox](https://github.com/flet-dev/flet/issues/2157)
 
 ## May 2024
 
