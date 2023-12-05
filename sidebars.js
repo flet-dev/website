@@ -176,6 +176,7 @@ module.exports = {
           items: [
             "controls/checkbox",
             "controls/chip",
+            "controls/cupertinocheckbox",
             "controls/dropdown",
             "controls/radio",
             "controls/rangeslider",
