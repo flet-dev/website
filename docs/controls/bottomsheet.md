@@ -53,6 +53,10 @@ ft.app(target=main)
 
 ## Properties
 
+### `bgcolor`
+
+The BottomSheet's background [color](/docs/guides/python/colors).
+
 ### `content`
 
 The content of the bottom sheet.
@@ -64,6 +68,10 @@ Specifies whether the bottom sheet will be dismissed when user taps on the scrim
 ### `enable_drag`
 
 Specifies whether the bottom sheet can be dragged up and down and dismissed by swiping downwards.
+
+### `elevation`
+
+Controls the size of the shadow below the BottomSheet. Default value is `0.0`.
 
 ### `is_scroll_controlled`
 
