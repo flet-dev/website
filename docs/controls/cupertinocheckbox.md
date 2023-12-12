@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/input/cupertinocheckbox)
+[Live example](https://flet-controls-gallery.fly.dev/input/checkbox)
 
 ### CupertinoCheckbox and adaptive CheckBox example
 
