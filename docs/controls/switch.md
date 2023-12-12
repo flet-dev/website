@@ -90,9 +90,21 @@ The [color](/docs/guides/python/colors) to use on the track when this switch is 
 
 If `track_color` returns a non-null color in the `selected` state, it will be used instead of this color.
 
+### `adaptive`
+
+If the value is `True`, an adaptive Switch is created based on whether the target platform is iOS/macOS.
+
+On iOS and macOS, a `CupertinoSwitch` is created, which has matching functionality and presentation as `Switch`, and the graphics as expected on iOS. On other platforms, a Material Switch is created.
+
+The default value is `False`. See the example of usage [here](/docs/controls/cupertinoswitch#cupertinoswitch-and-adaptive-switch).
+
 ### `autofocus`
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `focus_color`
+
+The [color](/docs/guides/python/colors) to use for the focus highlight for keyboard interactions.
 
 ### `inactive_thumb_color`
 
