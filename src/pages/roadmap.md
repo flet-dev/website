@@ -56,17 +56,18 @@ New controls:
 * [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
 
 Adaptive controls:
-* AlertDialog
+* [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
 * Button
 * ContextMenu
 * NavigationBar
 * DatePicker
 * TimePicker
 * ListTile
-* Slider
-* Switch
+* [Slider -> CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
+* :white_check_mark: [Switch -> CupertinoSwitch](https://github.com/flet-dev/flet/issues/2202)
+* [Radio -> CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
 * TabBar
-* Checkbox
+* :white_check_mark: [Checkbox -> CupertinoCheckbox](https://github.com/flet-dev/flet/issues/2157)
 
 ## May 2024
 
