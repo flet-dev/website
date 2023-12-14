@@ -94,7 +94,7 @@ Defines whether the radio displays in a checkbox style or the default radio styl
 
 The value to set to containing `RadioGroup` when the radio is selected.
 
-## `Radio` events
+## `CupertinoRadio` events
 
 ### `on_blur`
 
