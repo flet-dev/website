@@ -74,8 +74,6 @@ The "active" side of the slider is the side between the thumb and the minimum va
 
 The number of discrete divisions.
 
-Typically used with `label` to show the current discrete value.
-
 If not set, the slider is continuous.
 
 ### `max`
