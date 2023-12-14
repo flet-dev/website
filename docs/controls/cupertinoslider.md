@@ -15,14 +15,13 @@ import TabItem from '@theme/TabItem';
 
 [Live example](https://flet-controls-gallery.fly.dev/input/cupertinoslider)
 
-### Slider with `on_change`, `on_change_start` and `on_change_end` events
+### CupertinoSlider with `on_change`, `on_change_start` and `on_change_end` events
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
 import flet as ft
-
 
 def main(page):
     page.horizontal_alignment = page.vertical_alignment = "center"
