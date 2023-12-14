@@ -178,6 +178,7 @@ module.exports = {
             "controls/checkbox",
             "controls/chip",
             "controls/cupertinocheckbox",
+            "controls/cupertinoslider",
             "controls/dropdown",
             "controls/radio",
             "controls/rangeslider",
