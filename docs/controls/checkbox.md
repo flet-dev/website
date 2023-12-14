@@ -77,7 +77,7 @@ ft.app(target=main)
 
 If the value is `True`, an adaptive Checkbox is created based on whether the target platform is iOS/macOS.
 
-On iOS and macOS, a `CupertinoCheckbox` is created, which has matching functionality and presentation as `Checkbox`, and the graphics as expected on iOS. On other platforms, a Material Checkbox is created.
+On iOS and macOS, a [`CupertinoCheckbox`](/docs/controls/cupertinocheckbox) is created, which has matching functionality and presentation as `Checkbox`, and the graphics as expected on iOS. On other platforms, a Material Checkbox is created.
 
 The default value is `False`. See the example of usage [here](/docs/controls/cupertinocheckbox#cupertinocheckbox-and-adaptive-checkbox-example).
 

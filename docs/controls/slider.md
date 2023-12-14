@@ -95,7 +95,7 @@ The "active" side of the slider is the side between the thumb and the minimum va
 
 If the value is `True`, an adaptive Slider is created based on whether the target platform is iOS or macOS.
 
-On iOS and macOS, a `CupertinoSlider`, which has matching functionality and presentation as `Slider`, and are the graphics expected on iOS. On other platforms, this creates a Material Slider.
+On iOS and macOS, a [`CupertinoSlider`](/docs/controls/cupertinoslider), which has matching functionality and presentation as `Slider`, and are the graphics expected on iOS. On other platforms, this creates a Material Slider.
 
 The default value is `False`.
 
