@@ -65,7 +65,7 @@ Adaptive controls:
 * ListTile
 * [Slider -> CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
 * :white_check_mark: [Switch -> CupertinoSwitch](https://github.com/flet-dev/flet/issues/2202)
-* [Radio -> CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
+* :white_check_mark: [Radio -> CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
 * TabBar
 * :white_check_mark: [Checkbox -> CupertinoCheckbox](https://github.com/flet-dev/flet/issues/2157)
 
