@@ -35,8 +35,8 @@ New controls:
 * [MenuBar](https://github.com/flet-dev/flet/issues/1087)
 * :white_check_mark: [SegmentedButton](https://github.com/flet-dev/flet/issues/1639)
 * :white_check_mark: [Chip](/docs/controls/chip)
-* [SearchAnchor](https://github.com/flet-dev/flet/issues/1637)
-* [SearchBar](https://github.com/flet-dev/flet/issues/1808)
+* :white_check_mark: [SearchAnchor](https://github.com/flet-dev/flet/issues/1637)
+* :white_check_mark: [SearchBar](https://github.com/flet-dev/flet/issues/1808) and 
 * :white_check_mark: [DatePicker](/docs/controls/datepicker)
 * :white_check_mark: [TimePicker](/docs/controls/timepicker)
 * :white_check_mark: [SelectionArea](https://github.com/flet-dev/flet/issues/1554)
