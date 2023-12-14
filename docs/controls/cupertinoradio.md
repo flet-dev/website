@@ -72,7 +72,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `fill_color`
 
-The [color](/docs/guides/python/colors) that fills the radio. To configure radio fill color, set `fill_color` value to a literal, for example:
+The [color](/docs/guides/python/colors) that fills the radio.
 
 ### `inactive_color`
 
