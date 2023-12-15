@@ -70,7 +70,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/searchbar/searchbar-basic.gif" className="screenshot-50"/>
+<img src="/img/docs/controls/search-bar/searchbar-basic.gif" className="screenshot-50"/>
 
 ## Properties
 
