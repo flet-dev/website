@@ -40,6 +40,14 @@ ft.app(target=main)
 
 ## `NavigationBar` properties
 
+### `adaptive`
+
+If the value is `True`, an adaptive `NavigationBar` is created based on whether the target platform is iOS/macOS.
+
+On iOS and macOS, a `CupertinoNavigationBar` is created, which has matching functionality and presentation as `NavigationBar`, and the graphics as expected on iOS. On other platforms, a Material `NavigationBar` is created.
+
+The default value is `False`.
+
 ### `bgcolor`
 
 The [color](/docs/guides/python/colors) of the NavigationBar itself.
