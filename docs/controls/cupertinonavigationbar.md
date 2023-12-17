@@ -55,26 +55,13 @@ The [color](/docs/guides/python/colors) of the CupertinoNavigationBar itself.
 
 ### `border`
 
-A border to draw above the background color.
-
-Each side of the container border is described by an instance of `border.BorderSide` class with two properties: `width` (number) and `color` (string). The value of `border` property is an instance of `border.Border` class describing all 4 sides of the rectangle. Helper methods available to set border styles:
-
-* `border.all(width, color)`
-* `border.symmetric(vertical: BorderSide, horizontal: BorderSide)`
-* `border.only(left: BorderSide, top: BorderSide, right: BorderSide, bottom: BorderSide)`.
-
-For example:
-
-```python
-container_1.border = ft.border.all(10, ft.colors.PINK_600)
-container_1.border = ft.border.only(bottom=ft.border.BorderSide(1, "black"))
-```
+Defines the border of this navigation bar. See [`Container.border`](container#border) for information on its possible values.
 
 ### `destinations`
 
 Defines the appearance of the button items that are arrayed within the navigation bar.
 
-The value must be a list of two or more `NavigationDestination` instances.
+The value must be a list of two or more [`NavigationDestination`](navigationbar#navigationdestination-properties) instances.
 
 ### `icon_size`
 
