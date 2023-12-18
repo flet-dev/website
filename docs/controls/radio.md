@@ -84,6 +84,18 @@ Fires when the state of the RadioGroup is changed.
 
 ## `Radio` properties
 
+### `active_color`
+
+The [color](/docs/guides/python/colors) used to fill this radio when it is selected.
+
+### `adaptive`
+
+If the value is `True`, an adaptive Radio is created based on whether the target platform is iOS/macOS.
+
+On iOS and macOS, a [`CupertinoRadio`](/docs/controls/cupertinoradio) is created, which has matching functionality and presentation as `Radio`, and the graphics as expected on iOS. On other platforms, a Material Radio is created.
+
+The default value is `False`.
+
 ### `autofocus`
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
