@@ -123,6 +123,7 @@ module.exports = {
           items: [
             "controls/appbar",
             "controls/bottomappbar",
+            "controls/cupertinonavigationbar",
             "controls/navigationbar",
             "controls/navigationdrawer",
             "controls/navigationrail",

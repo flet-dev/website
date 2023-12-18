@@ -59,7 +59,7 @@ Adaptive controls:
 * [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
 * Button
 * ContextMenu
-* NavigationBar
+* :white_check_mark: [NavigationBar -> CupertinoNavigationBar](https://github.com/flet-dev/flet/issues/2242)
 * DatePicker
 * TimePicker
 * ListTile
