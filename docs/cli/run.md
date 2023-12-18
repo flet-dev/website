@@ -4,7 +4,7 @@ sidebar_label: run
 ---
 
 ```
-usage: flet run [-h] [-v] [-p PORT] [--name APP_NAME] [-m] [-d] [-r] [-n] [-w] [--ios] [-a ASSETS_DIR] [script]
+usage: flet run [-h] [-v] [-p PORT] [--name APP_NAME] [-m] [-d] [-r] [-n] [-w] [--ios] [--android] [-a ASSETS_DIR] [script]
 
 Run Flet app.
 
@@ -22,6 +22,7 @@ options:
   -n, --hidden          application window is hidden on startup
   -w, --web             open app in a web browser
   --ios                 open app on iOS device
+  --android             open app on android device
   -a ASSETS_DIR, --assets ASSETS_DIR
                         path to assets directory
 ```
