@@ -25,9 +25,7 @@ import flet as ft
 
 def main(page: ft.Page):
     def handle_change(e: ft.ControlEvent):
-        index = int(e.data)
-        panel.controls[index].is_expanded = not panel.controls[index].is_expanded
-        page.update()
+        print(f"change on panel with index {e.data}")
 
     def handle_delete(e: ft.ControlEvent):
         panel.controls.remove(e.control.data)

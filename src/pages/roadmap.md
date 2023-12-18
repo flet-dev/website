@@ -63,7 +63,7 @@ Adaptive controls:
 * DatePicker
 * TimePicker
 * ListTile
-* [Slider -> CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
+* :white_check_mark: [Slider -> CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
 * :white_check_mark: [Switch -> CupertinoSwitch](https://github.com/flet-dev/flet/issues/2202)
 * :white_check_mark: [Radio -> CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
 * TabBar

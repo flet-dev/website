@@ -179,6 +179,7 @@ module.exports = {
             "controls/chip",
             "controls/cupertinocheckbox",
             "controls/cupertinoradio",
+            "controls/cupertinoslider",
             "controls/cupertinoswitch",
             "controls/dropdown",
             "controls/radio",
