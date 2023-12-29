@@ -47,8 +47,8 @@ ft.app(target=main)
 
 Controls whether we should try to imply the leading control if None.
 
-If `True` and `leading` is null, automatically try to deduce what the leading widget should be. If `False` and `leading`
-is None, leading space is given to title. If leading widget is not None, this parameter has no effect.
+If `True` and `leading` is null, automatically try to deduce what the leading widget should be. 
+If `False` and `leading` is None, leading space is given to title. If leading widget is not None, this parameter has no effect.
 
 ### `automatically_imply_middle`
 
@@ -69,12 +69,9 @@ The border of the app bar. Renders by default a single pixel bottom border side.
 
 This property controls the size of the shadow below the app bar. Default value is 4.
 
-Note: This effect is only visible when using the Material 2 design (when `Theme.use_material3=False`).
-
 ### `leading`
 
-A `Control` to display at the start of this app bar. Typically the leading control is an [`Icon`](icon) or
-an [`IconButton`](iconbutton).
+A `Control` to display at the start of this app bar. Typically the leading control is an [`Icon`](icon) or an [`IconButton`](iconbutton).
 
 If `None` and `automatically_imply_leading` is `True`, an appropriate button will be automatically created.
 
@@ -89,7 +86,6 @@ Defines the padding for the contents of the app bar.
 If None, the app bar will adopt the following defaults:
 
 - vertically, contents will be sized to the same height as the app bar itself minus the status bar.
-- horizontally, padding will be `16` pixels according to iOS specifications unless the leading widget is an
-  automatically inserted back button, in which case the padding will be `0`.
+- horizontally, padding will be `16` pixels according to iOS specifications unless the leading widget is an automatically inserted back button, in which case the padding will be `0`.
 
 Vertical padding won't change the height of the app bar.

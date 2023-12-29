@@ -6,8 +6,7 @@ slug: menubar
 
 A menu bar that manages cascading child menus.
 
-It could be placed anywhere but typically resides above the main body of the application and defines a menu system for
-invoking callbacks in response to user selection of a menu item.
+It could be placed anywhere but typically resides above the main body of the application and defines a menu system for invoking callbacks in response to user selection of a menu item.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -21,7 +20,6 @@ import TabItem from '@theme/TabItem';
 
 ```python
 import flet as ft
-
 
 def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
@@ -130,8 +128,7 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. See [Container.clip_behavior](/docs/controls/container#clipbehavior)
-for possible values.
+Whether to clip the content of this control or not. See [Container.clip_behavior](/docs/controls/container#clipbehavior) for possible values.
 
 Defaults to `ClipBehavior.NONE`.
 
@@ -144,9 +141,7 @@ The list of menu items that are the top level children of the `MenuBar`.
 The value is an instance of `MenuStyle` class. `MenuStyle` allows controlling the menu's visual aspects, such as shape,
 background and shadow colors, content padding, border width and radius.
 
-Each individual style attribute could be configured for all or particular "Material states" of a menu, such as "
-hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a
-hovered state and configure fallback values for all other states.
+Each individual style attribute could be configured for all or particular "Material states" of a menu, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
 
 The following `MaterialState` values are supported:
 
@@ -160,8 +155,7 @@ The following `MaterialState` values are supported:
 * `ERROR`
 * `DEFAULT` - fallback state, meaning "all other states".
 
-To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you
-set `bgcolor` property to a literal the value will be applied to all menu states:
+To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `bgcolor` property to a literal the value will be applied to all menu states:
 
 ```python
 ft.MenuStyle(
@@ -169,9 +163,7 @@ ft.MenuStyle(
 )
 ```
 
-To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For
-example, to configure different background colors for `HOVERED` and `FOCUSED` states and another colors for all other
-states:
+To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For example, to configure different background colors for `HOVERED` and `FOCUSED` states and another colors for all other states:
 
 ```python
 ft.MenuStyle(
