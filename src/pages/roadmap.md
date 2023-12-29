@@ -32,7 +32,7 @@ New controls:
 * :white_check_mark: [RangeSlider](https://github.com/flet-dev/flet/issues/1712)
 * [Context menu](https://github.com/flet-dev/flet/issues/1804)
 * [PlatformMenuBar](https://github.com/flet-dev/flet/issues/285) (and [#116](https://github.com/flet-dev/flet/issues/116))
-* [MenuBar](https://github.com/flet-dev/flet/issues/1087)
+* :white_check_mark: [MenuBar](https://github.com/flet-dev/flet/issues/1087)
 * :white_check_mark: [SegmentedButton](https://github.com/flet-dev/flet/issues/1639)
 * :white_check_mark: [Chip](/docs/controls/chip)
 * :white_check_mark: [SearchAnchor](https://github.com/flet-dev/flet/issues/1637)
