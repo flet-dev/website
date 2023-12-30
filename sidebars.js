@@ -28,6 +28,7 @@ module.exports = {
         "guides/python/testing-on-ios",
         "guides/python/testing-on-android",
         "guides/python/hot-reload",
+        "guides/python/packaging-app-for-distribution",
         "guides/python/packaging-desktop-app",
         "guides/python/publishing-static-website",
         {
