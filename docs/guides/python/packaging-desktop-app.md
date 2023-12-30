@@ -3,6 +3,16 @@ title: Packaging desktop app
 sidebar_label: Packaging desktop app
 ---
 
+:::danger A better way to package is here
+
+You can now use `flet build` command to package your Flet app into executable or install bundle for
+macOS, Windows and Linux.
+
+`flet build` does not longer rely on PyInstaller like `flet pack` does, but uses Flutter SDK to produce a fast, offline, fully customizable (your own icons, about dialog and metadata) executable for Windows, Linux and macOS with Python runtime embedded into executable and running in-process.
+
+[Follow this guide for desktop packaging](packaging-app-for-distribution)
+:::
+
 Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
 
 Flet wraps [PyInstaller](https://pyinstaller.org/en/stable/index.html) API to package Flet Python app and all its dependencies into a single package for Windows, macOS and Linux. To create Windows package, PyInstaller must be run on Windows; to build Linux app, it must be run on Linux; and to build macOS app - on macOS.
