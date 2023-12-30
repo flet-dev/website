@@ -7,7 +7,7 @@ sidebar_label: Packaging app for distribution
 
 Flet CLI provides `flet build` command that allows packaging Flet app into a standalone executable or install package for distribution.
 
-`flet build` command supercedes both [`flet pack`](packaging-desktop-app) (packaging into desktop app) and [`flet publish`](publishing-static-website) (packaging into a static website) commands and allows converting your Flet app into Android or iOS bundle, desktop app and a static website.
+`flet build` command supersedes both [`flet pack`](packaging-desktop-app) (packaging into desktop app) and [`flet publish`](publishing-static-website) (packaging into a static website) commands and allows converting your Flet app into Android or iOS bundle, desktop app and a static website.
 
 For building desktop apps `flet build` does not longer rely on PyInstaller like `flet pack` does, but uses Flutter SDK to produce a fast, offline, fully customizable (your own icons, about dialog and metadata) executable for Windows, Linux and macOS with Python runtime embedded into executable and running in-process.
 
