@@ -35,7 +35,7 @@ For building desktop apps `flet build` does not longer rely on PyInstaller like 
 
 Static websites built with `flet build`, compared to `flet publish`, have faster load time as all Python dependencies are now packaged into a single archive instead of being pulled in runtime with `micropip`. `flet build web` also detects native Python [packages built into Pyodide](https://pyodide.org/en/stable/usage/packages-in-pyodide.html), such as `bcrypt`, `html5lib`, `numpy` and many others, and installs them from Pyodide package registry.
 
-Check [this guide](/docs/guides/python/packaging-app-for-distribution) for complete information about `flet build` command.
+Check [Packaging app for distribution](/docs/guides/python/packaging-app-for-distribution) guide for complete information about `flet build` command.
 
 Let us know what you think by joining [Flet Discord server](https://discord.gg/dzWXP8SHG8) or creating a new thread on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).
 
