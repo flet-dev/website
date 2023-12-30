@@ -360,3 +360,19 @@ We might ask for a detailed log if you need support.
 If you need to add native Python packages to your iOS and Android apps please [follow this guide](https://pub.dev/packages/serious_python#adding-custom-python-libraries).
 
 In the future releases this process will be automated similar to Pyodide registry.
+
+## Troubleshooting
+
+### Enable symlinks on Windows
+
+While running `flet build` on Windows you may get the following error:
+
+```
+Building with plugins requires symlink support.
+
+Please enable Developer Mode in your system settings. Run
+  start ms-settings:developers
+to open settings.
+```
+
+Please [follow this SO answer](https://stackoverflow.com/a/70994092/1435891) for the instructions on how to enable developer mode in Windows 11.
