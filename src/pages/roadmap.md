@@ -7,7 +7,7 @@ slug: roadmap
 
 The goal: stabilization and Flet 1.0 launch.
 
-* Unified packaging for all platforms: Windows, Linux, macOS, web, iOS and Android - based on `serious_python` and Flutter SDK.
+* :white_check_mark: Unified packaging for all platforms: Windows, Linux, macOS, web, iOS and Android - based on `serious_python` and Flutter SDK.
 * Speed optimizations (pages with a lot of controls, large updates).
 * Adaptive UI - adaptive controls that change their look depending on the platform the app runs.
 * Responsive UI - layouts that adapt to a device screen size.
