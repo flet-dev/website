@@ -25,6 +25,42 @@ On Linux we recommend installing Flutter SDK with [Method 2: Manual installation
 
 Pay attention to Flutter's own requirements for every platform, such as XCode and Cocopods on macOS, Visual Studio 2022 on Windows or additional tools and libraries on Linux.
 
+### Linux requirements
+
+#### GStreamer
+
+Building Flet apps on Linux requires [GStreamer](https://gstreamer.freedesktop.org/) libraries installed.
+
+To install minimal set of GStreamer libs on Ubuntu/Debian run the following commands:
+
+```
+apt install libgtk-3-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+```
+
+To install full set of GStreamer libs:
+
+```
+apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
+```
+
+See [this guide](https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c) for installing on other Linux distributives.
+
+### Windows requirements
+
+#### Enable Developer Mode
+
+While running `flet build` on Windows you may get the following error:
+
+```
+Building with plugins requires symlink support.
+
+Please enable Developer Mode in your system settings. Run
+  start ms-settings:developers
+to open settings.
+```
+
+[Follow this SO answer](https://stackoverflow.com/a/70994092/1435891) for the instructions on how to enable developer mode in Windows 11.
+
 ### Build platform matrix
 
 The following matrix shows which OS you should run `flet build` command on in order to build a package for specific platform:
@@ -48,6 +84,17 @@ requirements.txt
 
 `main.py` is the entry point of your Flet application with `ft.app(main)` at the end. A different entry point could be specified with `--module-name` argument.
 
+:::warning Check for `__main__`
+The program won't start on Android if you have the following check:
+
+```python
+if __name__ == "__main__":
+    ft.app(main)
+```
+
+Remove it for now please.
+:::
+
 `assets` is an optional directory that contains application assets (images, sound, text and other files required by your app) as well as images used for package icons and splash screens.
 
 If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) is provided it will be used as a source image to generate all icons and splash screens for all platforms. See section below for more information about icons and splashes.
@@ -61,6 +108,10 @@ flet create myapp
 ```
 
 where `myapp` is a target directory.
+
+:::warning pyproject.toml
+Reading dependencies from `pyproject.toml` is not yet supported ([issue](https://github.com/flet-dev/serious-python/issues/52)), please use `requirements.txt` instead.
+:::
 
 ## How it works
 
@@ -350,29 +401,13 @@ To pass an option with a value:
 flet build ipa --flutter-build-args=--export-method --flutter-build-args=development
 ```
 
-## Verbose logging
-
-`--verbose` or `-vv` option allows to see the output of all commands during `flet build` run.
-We might ask for a detailed log if you need support.
-
 ## Native Python packages for Android and iOS
 
 If you need to add native Python packages to your iOS and Android apps please [follow this guide](https://pub.dev/packages/serious_python#adding-custom-python-libraries).
 
 In the future releases this process will be automated similar to Pyodide registry.
 
-## Troubleshooting
+## Verbose logging
 
-### Enable symlinks on Windows
-
-While running `flet build` on Windows you may get the following error:
-
-```
-Building with plugins requires symlink support.
-
-Please enable Developer Mode in your system settings. Run
-  start ms-settings:developers
-to open settings.
-```
-
-Please [follow this SO answer](https://stackoverflow.com/a/70994092/1435891) for the instructions on how to enable developer mode in Windows 11.
+`--verbose` or `-vv` option allows to see the output of all commands during `flet build` run.
+We might ask for a detailed log if you need support.
