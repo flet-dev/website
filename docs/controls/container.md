@@ -193,7 +193,7 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
+The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask.md#blend_mode) for more details.
 
 ### `blur`
 
