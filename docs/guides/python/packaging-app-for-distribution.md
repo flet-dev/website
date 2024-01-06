@@ -19,7 +19,7 @@ Static websites built with `flet build`, compared to `flet publish`, have faster
 
 Flutter SDK 3.16 or above must be installed and the path to both `flutter` and `dart` commands must be added to `PATH` environment variable.
 
-On maOS we recommend installing Flutter SDK with ["Download and install" approach](https://docs.flutter.dev/get-started/install/macos/desktop?tab=download).
+On macOS we recommend installing Flutter SDK with ["Download and install" approach](https://docs.flutter.dev/get-started/install/macos/desktop?tab=download).
 
 On Linux we recommend installing Flutter SDK with [Method 2: Manual installation](https://docs.flutter.dev/get-started/install/linux#method-2-manual-installation) (do not install Flutter with `snap`).
 
