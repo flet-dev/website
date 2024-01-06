@@ -302,7 +302,7 @@ By default, generated Android app will be showing a splash screen with an image 
 Build an iOS archive bundle and IPA for distribution (macOS host only).
 
 :::warning Work in progress
-Creating of an iOS package, suitable for running on a divice or publishing to AppStore is, in general, a complex process with a lot of moving parts. Let us know if it worked or didn't work for your particular case and there are some changes required into Flutter project template. 
+Creating of an iOS package, suitable for running on a device or publishing to AppStore is, in general, a complex process with a lot of moving parts. Let us know if it worked or didn't work for your particular case and there are some changes required into Flutter project template. 
 :::
 
 To successfully generate IPA you should provide correct values for the following arguments:
@@ -331,7 +331,7 @@ Build a Windows desktop application.
 
 ## Icons
 
-You can cusomize app icons for all platforms (excluding Linux) with images in `assets` directory of your Flet app.
+You can customize app icons for all platforms (excluding Linux) with images in `assets` directory of your Flet app.
 
 If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) is provided it will be used as a source image to generate all icons.
 
@@ -343,7 +343,7 @@ If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) i
 
 ## Splash screens
 
-You can cusomize splash screens for iOS, Android and web applications with images in `assets` directory of your Flet app.
+You can customize splash screens for iOS, Android and web applications with images in `assets` directory of your Flet app.
 
 If only `splash.png` or `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) is provided it will be used as a source image to generate all splash screen.
 
