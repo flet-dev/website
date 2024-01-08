@@ -113,6 +113,36 @@ where `myapp` is a target directory.
 Reading dependencies from `pyproject.toml` is not yet supported ([issue](https://github.com/flet-dev/serious-python/issues/52)), please use `requirements.txt` instead.
 :::
 
+### SSL fix for iOS and Android
+
+If your Flet app makes HTTPS calls you may receive the following error on iOS and Android:
+
+```
+[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+```
+
+Add the following code to `main.py` of your Flet app to "fix" SSL issue on both iOS and Android:
+
+```python
+import certifi
+import os
+
+os.environ["REQUESTS_CA_BUNDLE"] = certifi.where()
+os.environ["SSL_CERT_FILE"] = certifi.where()
+
+if os.getenv("FLET_PLATFORM") == "android":
+    import ssl
+
+    def create_default_context(
+        purpose=ssl.Purpose.SERVER_AUTH, *, cafile=None, capath=None, cadata=None
+    ):
+        return ssl.create_default_context(
+            purpose=purpose, cafile=certifi.where(), capath=capath, cadata=cadata
+        )
+
+    ssl._create_default_https_context = create_default_context
+```
+
 ## How it works
 
 `flet build <target_platform>` command could be run from the root of Flet app directory:
