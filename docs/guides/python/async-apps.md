@@ -125,3 +125,34 @@ ft.app(target=main)
 ```
 
 <img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
+
+If you happen to have some complicated page routing setup as introduced in the
+[navigation and routing](./navigation-and-routing) guide,
+you can change the `page.update` call to `page.update_async`
+in your `on_router_change` handler and it will *just* work as expected.
+For instance, try running the following code in the browser
+and see what happens by changing the `seconds` part in the URL:
+
+```python
+# everything else is the same as the above Countdown example
+
+async def main(page: ft.Page):
+    async def on_router_change(e):
+        troute = ft.TemplateRoute(e.route)
+        if troute.match("/countdown/:seconds"):
+            seconds = int(troute.seconds)
+            page.views.pop()
+            page.views.append(
+                ft.View(
+                    f"/countdown/{seconds}",
+                    [Countdown(seconds)],
+                )
+            )
+        await page.update_async()
+
+    page.on_route_change = on_router_change
+    await page.go_async("/countdown/15")
+
+
+ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+```
