@@ -148,6 +148,11 @@ async def main(page: ft.Page):
                     [Countdown(seconds)],
                 )
             )
+        # `page.add_async` is equivalent to
+        # `page.controls.append` + `page.update_async`
+        # so we don'tr really need a separate
+        # `page.views.append_async` or `View.add_async` method,
+        # just calling `page.update_async` at the end is enough.
         await page.update_async()
 
     page.on_route_change = on_router_change
