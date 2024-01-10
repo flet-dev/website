@@ -101,6 +101,10 @@ If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) i
 
 `requirements.txt` is a standard pip file that contains the list of Python requirements for your Flet app. If this file is not provided only `flet` dependency will be installed during packaging.
 
+:::warning No pip freeze
+https://github.com/flet-dev/flet/issues/2309#issuecomment-1882033129
+:::
+
 The easiest way to start with that structure is to use `flet create` command:
 
 ```
