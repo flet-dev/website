@@ -56,9 +56,10 @@ New controls:
 * :white_check_mark: [BottomAppBar](https://github.com/flet-dev/flet/issues/1643)
 * [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
 
-Adaptive controls:
-* [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
-* Button
+Adaptive and Cupertino controls:
+* :white_check_mark: [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
+* [CupertinoButton](https://github.com/flet-dev/flet/issues/2377)
+* [CupertinoTextField](https://github.com/flet-dev/flet/issues/2376)
 * ContextMenu
 * :white_check_mark: [NavigationBar -> CupertinoNavigationBar](https://github.com/flet-dev/flet/issues/2242)
 * DatePicker
