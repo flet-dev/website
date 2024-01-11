@@ -101,8 +101,14 @@ If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) i
 
 `requirements.txt` is a standard pip file that contains the list of Python requirements for your Flet app. If this file is not provided only `flet` dependency will be installed during packaging.
 
-:::warning No pip freeze
-https://github.com/flet-dev/flet/issues/2309#issuecomment-1882033129
+:::caution No pip freeze
+
+Do not use `pip freeze > requirements.txt` command to create `requirements.txt` for the app that
+will be runnin on mobile. As you run `pip freeze` command on a desktop `requirements.txt` will have
+dependencies that are not intended to work on a mobile device, such as `watchdog`.
+
+Hand-pick `requirements.txt` to have only direct dependencies required by your app, plus `flet`. 
+
 :::
 
 The easiest way to start with that structure is to use `flet create` command:
