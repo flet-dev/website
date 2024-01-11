@@ -4,9 +4,15 @@ sidebar_label: CupertinoAlertDialog
 slug: cupertinoalertdialog
 ---
 
-A material design alert dialog.
+An iOS-style alert dialog.
 
 An alert dialog informs the user about situations that require acknowledgement. An alert dialog has an optional title and an optional list of actions. The title is displayed above the content and the actions are displayed below the content.
+
+This dialog styles its title and content (typically a message) to match the standard iOS title and message dialog text style. These default styles can be overridden by explicitly defining `text_style` property.
+
+To display action buttons that look like standard iOS dialog buttons, provide [`CupertinoDialogActions`](/docs/controls/cupertinodialogaction) for the actions given to this dialog.
+
+<img src="/img/docs/controls/cupertinodialogaction/cupertinoalertdialog.png" className="screenshot-50" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,58 +21,80 @@ import TabItem from '@theme/TabItem';
 
 [Live example](https://flet-controls-gallery.fly.dev/dialogs/cupertinoalertdialog)
 
-### Basic and modal dialogs
+### CupertinoAlertDialog and adaptive AlertDialog example
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
+import logging
+
 import flet as ft
 
+logging.basicConfig(level=logging.DEBUG)
+
+
 def main(page: ft.Page):
-    page.title = "AlertDialog examples"
-
-    dlg = ft.AlertDialog(
-        title=ft.Text("Hello, you!"), on_dismiss=lambda e: print("Dialog dismissed!")
-    )
-
-    def close_dlg(e):
-        dlg_modal.open = False
-        page.update()
-
-    dlg_modal = ft.AlertDialog(
-        modal=True,
-        title=ft.Text("Please confirm"),
-        content=ft.Text("Do you really want to delete all those files?"),
+    cupertino_alert_dialog = ft.CupertinoAlertDialog(
+        title=ft.Text("Cupertino Alert Dialog"),
+        content=ft.Text("Do you want to delete this file?"),
         actions=[
-            ft.TextButton("Yes", on_click=close_dlg),
-            ft.TextButton("No", on_click=close_dlg),
+            ft.CupertinoDialogAction(
+                "OK",
+                is_destructive_action=True,
+            ),
+            ft.CupertinoDialogAction(text="Cancel"),
         ],
-        actions_alignment=ft.MainAxisAlignment.END,
-        on_dismiss=lambda e: print("Modal dialog dismissed!"),
     )
 
-    def open_dlg(e):
-        page.dialog = dlg
-        dlg.open = True
+    alert_dialog = ft.AlertDialog(
+        title=ft.Text("Material Alert Dialog"),
+        content=ft.Text("body"),
+        actions=[ft.TextButton("OK"), ft.TextButton("Cancel")],
+    )
+
+    actions = []
+    if page.platform in ["ios", "macos"]:
+        actions = [
+            ft.CupertinoDialogAction("OK"),
+            ft.CupertinoDialogAction("Cancel"),
+        ]
+    else:
+        actions = [ft.TextButton("OK"), ft.TextButton("Cancel")]
+
+    adaptive_alert_dialog = ft.AlertDialog(
+        adaptive=True,
+        title=ft.Text("Adaptive Alert Dialog"),
+        content=ft.Text("body"),
+        actions=actions,
+    )
+
+    def open_cupertino_dialog(e):
+        page.dialog = cupertino_alert_dialog
+        cupertino_alert_dialog.open = True
         page.update()
 
-    def open_dlg_modal(e):
-        page.dialog = dlg_modal
-        dlg_modal.open = True
+    def open_material_dialog(e):
+        page.dialog = alert_dialog
+        alert_dialog.open = True
+        page.update()
+
+    def open_adaptive_dialog(e):
+        page.dialog = adaptive_alert_dialog
+        adaptive_alert_dialog.open = True
         page.update()
 
     page.add(
-        ft.ElevatedButton("Open dialog", on_click=open_dlg),
-        ft.ElevatedButton("Open modal dialog", on_click=open_dlg_modal),
+        ft.OutlinedButton("Open Cupertino Dialog", on_click=open_cupertino_dialog),
+        ft.OutlinedButton("Open Material Dialog", on_click=open_material_dialog),
+        ft.OutlinedButton("Open Adaptive Dialog", on_click=open_adaptive_dialog),
     )
+
 
 ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/alertdialog/alertdialog-with-custom-content.gif" className="screenshot-50" />
 
 ## Properties
 
@@ -74,83 +102,25 @@ ft.app(target=main)
 
 The (optional) set of actions that are displayed at the bottom of the dialog.
 
-Typically this is a list of [`TextButton`](textbutton) controls.
-
-### `actions_alignment`
-
-Defines the horizontal layout of the actions according to the same rules as for [`Row.alignment`](row#alignment).
-
-Property value is `MainAxisAlignment` enum with `MainAxisAlignment.END` as default.
-
-### `actions_padding`
-
-Padding around the set of actions at the bottom of the dialog.
-
-Typically used to provide padding to the button bar between the button bar and the edges of the dialog.
-
-If are no actions, then no padding will be included. The padding around the button bar defaults to zero.
-
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+Typically this is a list of [`CupertinoDialogAction`](cupertinodialogaction) controls.
 
 ### `content`
 
 The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](column) that contains the dialog's [`Text`](text) message.
 
-### `content_padding`
-
-Padding around the content.
-
-If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
-
-See [`Container.padding`](container#padding) for more information about padding and possible values.
-
-### `inset_padding`
-
-Padding around the Dialog itself.
-
-The default values of this property are 40 pixels horizontally and 24 pixels vertically outside of the dialog box. (`padding.symmetric(vertical=40, horizontal=24)`)
-
-See [`Container.padding`](container#padding) for more information about padding and possible values.
-
 ### `modal`
 
-Whether dialog can be dismissed by clicking the area outside of it.
+If set to True, dialog cannot be dismissed by clicking the area outside of it. The default value is False.
 
 ### `open`
 
 Set to `True` to display a dialog.
-
-### `shape`
-
-The shape of the dialog's border.
-
-The value is an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-
-The default shape is a `RoundedRectangleBorder` with a radius of 4.0.
 
 ### `title`
 
 The (optional) title of the dialog is displayed in a large font at the top of the dialog.
 
 Typically a [`Text`](text) control.
-
-### `title_padding`
-
-Padding around the title.
-
-If there is no title, no padding will be provided. Otherwise, this padding is used.
-
-This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
-
-See [`Container.padding`](container#padding) for more information about padding and possible values.
 
 ## Events
 

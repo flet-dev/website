@@ -9,13 +9,11 @@ import TabItem from '@theme/TabItem';
 
 A button typically used in a [CupertinoAlertDialog](/docs/controls/cupertinoalertdialog).
 
-<img src="/img/docs/controls/filled-button/basic-filled-buttons.png" className="screenshot-20" />
-
 ## Examples
 
 [Live example](https://flet-controls-gallery.fly.dev/buttons/cupertinoalertdialog)
 
-### Filled button
+### CupertinoAlertDialog example
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -25,12 +23,31 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    page.title = "Basic filled buttons"
-    page.add(
-        ft.FilledButton(text="Filled button"),
-        ft.FilledButton("Disabled button", disabled=True),
-        ft.FilledButton("Button with icon", icon="add"),
+    def dialog_dismissed(e):
+        print("Dismissed!")
+
+    cupertino_alert_dialog = ft.CupertinoAlertDialog(
+        title=ft.Text("Cupertino Alert Dialog"),
+        content=ft.Text("Do you want to delete this file?"),
+        on_dismiss=dialog_dismissed,
+        actions=[
+            ft.CupertinoDialogAction(
+                "OK",
+                is_destructive_action=True,
+            ),
+            ft.CupertinoDialogAction(text="Cancel"),
+        ],
     )
+
+    def open_cupertino_dialog(e):
+        page.dialog = cupertino_alert_dialog
+        cupertino_alert_dialog.open = True
+        page.update()
+
+    page.add(
+        ft.OutlinedButton("Open Cupertino Dialog", on_click=open_cupertino_dialog),
+    )
+
 
 ft.app(target=main)
 ```
@@ -38,57 +55,32 @@ ft.app(target=main)
 
 </Tabs>
 
+<img src="/img/docs/controls/cupertinodialogaction/cupertinoalertdialog.png" className="screenshot-50" />
+
 ## Properties
-
-### `autofocus`
-
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
 ### `content`
 
 A Control representing custom button content.
 
-### `icon`
+### `is_default_action`
 
-Icon shown in the button.
+If set to True, the button will have bold text. More than one action can have this property set to True in CupertinoAlertDialog. The default value is False.
 
-### `icon_color`
+### `is_destructive_action`
 
-Icon [color](/docs/guides/python/colors).
-
-### `style`
-
-See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+If set to True, the button's text color will be red. Use it for actions that destroy objects, such as an delete that deletes an email etc. The default value is False.
 
 ### `text`
 
 The text displayed on a button.
 
-### `tooltip`
+### `text_style`
 
-The text displayed when hovering the mouse over the button.
-
-### `url`
-
-The URL to open when the button is clicked. If registered, `on_click` event is fired after that.
-
-### `url_target`
-
-Where to open URL in the web mode:
-
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+The text style to use for text on the button. See [`text_style` properties](text#textstyle-properties) for possible values.
 
 ## Events
 
 ### `on_click`
 
 Fires when a user clicks the button.
-
-### `on_hover`
-
-Fires when a mouse pointer enters or exists the button response area. `data` property of event object contains `true` (string) when cursor enters and `false` when it exits.
-
-### `on_long_press`
-
-Fires when the button is long-pressed.

@@ -92,6 +92,14 @@ If are no actions, then no padding will be included. The padding around the butt
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
+### `adaptive`
+
+If the value is `True`, an adaptive AlertDialog is created based on whether the target platform is iOS/macOS.
+
+On iOS and macOS, a [`CupertinoAlertDialog`](/docs/controls/cupertinoalertdialog) is created, which has matching functionality and presentation as `AlertDialog`, and the graphics as expected on iOS. On other platforms, a Material AlertDialog is created.
+
+The default value is `False`. See the example of usage [here](/docs/controls/cupertinoalertdialog#cupertinoalertdialog-and-adaptive-alertdialog-example).
+
 ### `content`
 
 The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](column) that contains the dialog's [`Text`](text) message.
