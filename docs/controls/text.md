@@ -435,6 +435,23 @@ The list of [`ft.TextSpan`](#textspan-properties) objects to build a rich text p
 
 ### `style`
 
+The text's style. An instance of type [`TextStyle`](#textstyle-properties).
+
+### `text_align`
+
+Text horizontal align.
+
+Property value is `TextAlign` enum with the following values:
+
+* `LEFT` (default)
+* `RIGHT`
+* `CENTER`
+* `JUSTIFY`
+* `START`
+* `END`
+
+### `theme_style`
+
 Property value is `TextThemeStyle` enum with one of the following values:
 
 * `DISPLAY_LARGE`
@@ -452,19 +469,6 @@ Property value is `TextThemeStyle` enum with one of the following values:
 * `BODY_LARGE`
 * `BODY_MEDIUM`
 * `BODY_SMALL`
-
-### `text_align`
-
-Text horizontal align.
-
-Property value is `TextAlign` enum with the following values:
-
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
 
 ### `value`
 
