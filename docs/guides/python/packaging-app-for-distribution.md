@@ -80,20 +80,10 @@ The following matrix shows which OS you should run `flet build` command on in or
     icon.png
 main.py
 requirements.txt
+pyproject.toml
 ```
 
 `main.py` is the entry point of your Flet application with `ft.app(main)` at the end. A different entry point could be specified with `--module-name` argument.
-
-:::warning Check for `__main__`
-The program won't start on Android if you have the following check:
-
-```python
-if __name__ == "__main__":
-    ft.app(main)
-```
-
-Remove it for now please.
-:::
 
 `assets` is an optional directory that contains application assets (images, sound, text and other files required by your app) as well as images used for package icons and splash screens.
 
@@ -111,6 +101,9 @@ Hand-pick `requirements.txt` to have only direct dependencies required by your a
 
 :::
 
+`pyproject.toml` can also be used by `flet build` command to get the list project dependencies.
+However, if both `requirements.txt` and `pyproject.toml` exist then `pyproject.toml` will be ignored.
+
 The easiest way to start with that structure is to use `flet create` command:
 
 ```
@@ -122,36 +115,6 @@ where `myapp` is a target directory.
 :::warning pyproject.toml
 Reading dependencies from `pyproject.toml` is not yet supported ([issue](https://github.com/flet-dev/serious-python/issues/52)), please use `requirements.txt` instead.
 :::
-
-### SSL fix for iOS and Android
-
-If your Flet app makes HTTPS calls you may receive the following error on iOS and Android:
-
-```
-[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
-```
-
-Add the following code to `main.py` of your Flet app to "fix" SSL issue on both iOS and Android:
-
-```python
-import certifi
-import os
-
-os.environ["REQUESTS_CA_BUNDLE"] = certifi.where()
-os.environ["SSL_CERT_FILE"] = certifi.where()
-
-if os.getenv("FLET_PLATFORM") == "android":
-    import ssl
-
-    def create_default_context(
-        purpose=ssl.Purpose.SERVER_AUTH, *, cafile=None, capath=None, cadata=None
-    ):
-        return ssl.create_default_context(
-            purpose=purpose, cafile=certifi.where(), capath=capath, cadata=cadata
-        )
-
-    ssl._create_default_https_context = create_default_context
-```
 
 ## How it works
 
@@ -366,8 +329,6 @@ Build a Linux desktop application.
 ## `flet build windows`
 
 Build a Windows desktop application.
-
-`--windows-tcp-port` option specifies TCP communication port between Flutter UI and Python code. By default, port 63777 is used.
 
 ## Icons
 
