@@ -521,6 +521,14 @@ Configures the appearance and shape of a line point (dot). The value of this pro
 * `ChartSquarePoint` - square point
 * `ChartCrossPoint` - cross point
 
+### `prevent_curve_over_shooting`
+
+Whether to prevent overshooting when draw curve line on linear sequence spots. Defaults to `False`.
+
+### `prevent_curve_over_shooting_threshold`
+
+Threshold for applying prevent overshooting algorithm. Defaults to `10.0`.
+
 ### `shadow`
 
 Shadow to drop by a chart line. The value is the instance of `ft.Shadow` class.
