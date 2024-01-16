@@ -90,6 +90,10 @@ The amount of space by which to inset the children.
 
 See [`Container.padding`](container#padding) property for more information and possible values.
 
+### `reverse`
+
+Defines whether the scroll view scrolls in the reading direction. Defaults to `False`.
+
 ### `spacing`
 
 The height of Divider between ListView items. No spacing between items if not specified.
