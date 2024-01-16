@@ -160,6 +160,7 @@ module.exports = {
             id: "controls/buttons",
           },
           items: [
+            "controls/cupertinodialogaction",
             "controls/elevatedbutton",
             "controls/filledbutton",
             "controls/filledtonalbutton",
@@ -207,6 +208,7 @@ module.exports = {
             "controls/alertdialog",
             "controls/banner",
             "controls/bottomsheet",
+            "controls/cupertinoalertdialog",
             "controls/datepicker",
             "controls/snackbar",
             "controls/timepicker"
