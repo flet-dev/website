@@ -150,6 +150,27 @@ When you run `flet build <target_platform>` command it:
 * Runs `flutter build <target_platform>` command to produce an executable or an install package.
 * Copies build results to `build/<target_platform>` directory.
 
+### Logging
+
+All Flet app output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `out.log` file. Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:
+
+```python
+with open("out.log", "r") as f:
+    log = f.read()
+```
+
+`AlertDialog` or any other control can be used to display the value of `log` variable.
+
+When the program is terminated by calling `sys.exit()` with exit code `100` (magic code)
+the entire log will be displayed in a scrollable window.
+
+```python
+import sys
+sys.exit(100)
+```
+
+Calling `sys.exit()` with any other exit code will terminate (close) the app without displaying a log.
+
 ## `flet build web`
 
 Publishes Flet Python app as a static website (SPA) that runs entirely in the browser with [Pyodide](https://pyodide.org/en/stable/index.html) and does not require any code running on the server side.
