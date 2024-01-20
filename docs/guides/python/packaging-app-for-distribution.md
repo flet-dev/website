@@ -403,9 +403,9 @@ You can customize that template to suit your specific needs and then use it with
 
 `--template` option can be used to provide the URL to the repository or path to a directory with your own template. Use `gh:` prefix for GitHub repos, e.g. `gh:{my-org}/{my-repo}` or provide a full path to a Git repository, e.g. `https://github.com/{my-org}/{my-repo}.git`.
 
-For Git repositories you can checkout specific branch/tag/commit with `--template_ref` option.
+For Git repositories you can checkout specific branch/tag/commit with `--template-ref` option.
 
-`--template_dir` option specifies a relative path to a cookiecutter template in a repository.
+`--template-dir` option specifies a relative path to a cookiecutter template in a repository.
 
 ## Extra args to `flutter build` command
 
