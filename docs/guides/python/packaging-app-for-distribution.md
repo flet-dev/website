@@ -423,11 +423,149 @@ To pass an option with a value:
 flet build ipa --flutter-build-args=--export-method --flutter-build-args=development
 ```
 
-## Native Python packages for Android and iOS
+## Native Python packages
 
-If you need to add native Python packages to your iOS and Android apps please [follow this guide](https://pub.dev/packages/serious_python#adding-custom-python-libraries).
+Native Python packages (vs "pure" Python packages written in Python only) are packages that partially written in C, Rust or other languages producing native code. Example packages are `numpy`, `cryptography`, `lxml`, `pydantic`.
 
-In the future releases this process will be automated similar to Pyodide registry.
+When packaging Flet app for iOS and Android with `flet build` command such packages cannot be installed from PyPI, because there are no wheels (`.whl`) for Android and iOS platforms.
+
+Therefore, you have to compile native packages for Android and/or iOS on your computer before running `flet build` command.
+
+:::warning Work in progress
+
+We are actively working on automating the process described below - it's #1 item in our backlog.
+
+:::
+
+### Android
+
+Flet uses [Kivy for Android](https://github.com/kivy/python-for-android) to build Python and native Python packages for Android.
+
+To build your own Python distributive with custom native packages and use it with `flet build` command you need to use `p4a` tool provided by Kivy for Android.
+
+`p4a` command-line tool can be run on macOS and Linux (WSL on Windows).
+
+To get Android SDK install Android Studio.
+
+On macOS Android SDK will be located at `$HOME/Library/Android/sdk`.
+
+Install Temurin8 to get JRE 1.8 required by `sdkmanager` tool:
+
+```bash
+brew install --cask temurin8
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home
+```
+
+Set the following environment variables:
+
+```bash
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export NDK_VERSION=25.2.9519653
+export SDK_VERSION=android-33
+```
+
+Add path to `sdkmanager` to `PATH`:
+
+```bash
+export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
+```
+
+Install Android SDK and NDK from https://developer.android.com/ndk/downloads/ or with Android SDK Manager:
+
+```bash
+echo "y" | sdkmanager --install "ndk;$NDK_VERSION" --channel=3
+echo "y" | sdkmanager --install "platforms;$SDK_VERSION"
+```
+
+Create new Python virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install `p4a` from Flet's fork - it has pinned Python 3.11.6 which is compatible with the rest of the code produced by `flet build`:
+
+```
+pip3 install git+https://github.com/flet-dev/python-for-android.git@3.11.6
+```
+
+Install `cython`:
+
+```
+pip install --upgrade cython
+```
+
+Run `p4a` with `--requirements` including your custom Python libraries separated with comma, like `numpy` in the following example:
+
+```
+p4a create --requirements numpy --arch arm64-v8a --arch armeabi-v7a --arch x86_64 --sdk-dir $ANDROID_SDK_ROOT --ndk-dir $ANDROID_SDK_ROOT/ndk/$NDK_VERSION --dist-name mydist
+```
+
+*Choose No to "Do you want automatically install prerequisite JDK? [y/N]".*
+
+**NOTE:** The library you want to build with `p4a` command should have a recipe in [this folder](https://github.com/kivy/python-for-android/tree/develop/pythonforandroid/recipes). You can [submit a request](https://github.com/kivy/python-for-android/issues) to make a recipe for the library you need or create your own recipe and submit a PR.
+
+When `p4a` command completes a Python distributive with your custom libraries will be located at:
+
+```
+$HOME/.python-for-android/dists/mydist
+```
+
+In the terminal where you run `flet build apk` command to build your Flet Android app run the following command to store distributive full path in `SERIOUS_PYTHON_P4A_DIST` environment variable:
+
+```bash
+export SERIOUS_PYTHON_P4A_DIST=$HOME/.python-for-android/dists/mydist
+```
+
+Build your app by running `flet build apk` command to build `.apk`.
+
+You app's bundle now includes custom Python libraries.
+
+### iOS
+
+Flet uses [Kivy for iOS](https://github.com/kivy/kivy-ios) to build Python and native Python packages for iOS.
+
+To build your own Python distributive with custom native packages and use it with `flet build` command you need to use `toolchain` tool provided by Kivy for iOS.
+
+`toolchain` command-line tool can be run on macOS only.
+
+Start with creating a new Python virtual environment and installing `kivy-ios` package from Flet's fork as described [here](https://github.com/flet-dev/python-for-ios?tab=readme-ov-file#installation--requirements):
+
+```
+pip install git+https://github.com/flet-dev/python-for-ios.git
+```
+
+Run `toolchain` command with the list of packages you need to build, for example to build `numpy`:
+
+```
+toolchain build numpy
+```
+
+**NOTE:** The library you want to build with `toolchain` command should have a recipe in [this folder](https://github.com/kivy/kivy-ios/tree/master/kivy_ios/recipes). You can [submit a request](https://github.com/kivy/kivy-ios/issues) to make a recipe for the library you need or create your own recipe and submit a PR.
+
+You can also install package that don't require compilation with `pip`:
+
+```
+toolchain pip install flask
+```
+
+This case you don't need to include that package into `requirements.txt` of your Flet app.
+
+When `toolchain` command is finished you should have everything you need in `dist` directory.
+
+Get the full path to `dist` directory by running `realpath dist` command.
+
+In the terminal where you run `flet build ipa` command to build your Flet iOS app run the following command to
+store `dist` full path in `SERIOUS_PYTHON_IOS_DIST` environment variable:
+
+```bash
+export SERIOUS_PYTHON_IOS_DIST="<full-path-to-dist-directory>"
+```
+
+Build your app by running `flet build ipa` command.
+
+You app's bundle now includes custom Python libraries.
 
 ## Verbose logging
 
