@@ -86,7 +86,7 @@ def main(page: ft.Page):
         ft.Text("Display Small", style=ft.TextThemeStyle.DISPLAY_SMALL),
         ft.Text("Headline Large", style=ft.TextThemeStyle.HEADLINE_LARGE),
         ft.Text("Headline Medium", style=ft.TextThemeStyle.HEADLINE_MEDIUM),
-        ft.Text("Headline Small", style=ft.TextThemeStyle.HEADLINE_MEDIUM),
+        ft.Text("Headline Small", style=ft.TextThemeStyle.HEADLINE_SMALL),
         ft.Text("Title Large", style=ft.TextThemeStyle.TITLE_LARGE),
         ft.Text("Title Medium", style=ft.TextThemeStyle.TITLE_MEDIUM),
         ft.Text("Title Small", style=ft.TextThemeStyle.TITLE_SMALL),
