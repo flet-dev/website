@@ -405,7 +405,7 @@ You can customize that template to suit your specific needs and then use it with
 
 For Git repositories you can checkout specific branch/tag/commit with `--template-ref` option.
 
-`--template-dir` option specifies a relative path to a cookiecutter template in a repository given by `--template` option. When `--template` option is not used, this option specifies path relative to the `<<user-directory>>/.cookiecutters/flet-build-template`.
+`--template-dir` option specifies a relative path to a cookiecutter template in a repository given by `--template` option. When `--template` option is not used, this option specifies path relative to the `<user-directory>/.cookiecutters/flet-build-template`.
 
 ## Extra args to `flutter build` command
 
