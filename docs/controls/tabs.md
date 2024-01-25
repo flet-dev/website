@@ -103,6 +103,18 @@ Whether this tab bar can be scrolled horizontally.
 
 If `scrollable` is `True`, then each tab is as wide as needed for its label and the entire Tabs controls is scrollable. Otherwise each tab gets an equal share of the available space.
 
+### `tab_alignment`
+
+Specifies the horizontal alignment of the tabs within the Tabs control.
+
+Property value is `TabAlignment` enum with the following values:
+
+* `NONE` 
+* `START` (default, if `scrollable` is `True`)
+* `START_OFFSET`
+* `FILL` (default, if `scrollable` is `False`)
+* `CENTER`
+
 ### `tabs`
 
 A list of `Tab` controls.

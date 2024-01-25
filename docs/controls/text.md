@@ -47,18 +47,18 @@ def main(page: ft.Page):
             italic=True,
         ),
         ft.Text("Size 70, w900, selectable", size=70, weight=ft.FontWeight.W_900, selectable=True),
-        ft.Text("Limit long text to 1 line with ellipsis", style=ft.TextThemeStyle.HEADLINE_SMALL),
+        ft.Text("Limit long text to 1 line with ellipsis", theme_style=ft.TextThemeStyle.HEADLINE_SMALL),
         ft.Text(
             "Proin rutrum, purus sit amet elementum volutpat, nunc lacus vulputate orci, cursus ultrices neque dui quis purus. Ut ultricies purus nec nibh bibendum, eget vestibulum metus varius. Duis convallis maximus justo, eu rutrum libero maximus id. Donec ullamcorper arcu in sapien molestie, non pellentesque tellus pellentesque. Nulla nec tristique ex. Maecenas euismod nisl enim, a convallis arcu laoreet at. Ut at tortor finibus, rutrum massa sit amet, pulvinar velit. Phasellus diam lorem, viverra vitae leo vitae, consequat suscipit lorem.",
             max_lines=1,
             overflow="ellipsis",
         ),
-        ft.Text("Limit long text to 2 lines and fading", style=ft.TextThemeStyle.HEADLINE_SMALL),
+        ft.Text("Limit long text to 2 lines and fading", theme_style=ft.TextThemeStyle.HEADLINE_SMALL),
         ft.Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Nam varius at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
             max_lines=2,
         ),
-        ft.Text("Limit the width and height of long text", style=ft.TextThemeStyle.HEADLINE_SMALL),
+        ft.Text("Limit the width and height of long text", theme_style=ft.TextThemeStyle.HEADLINE_SMALL),
         ft.Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Nam varius at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
             width=700,
@@ -81,21 +81,21 @@ def main(page: ft.Page):
     page.scroll = "adaptive"
 
     page.add(
-        ft.Text("Display Large", style=ft.TextThemeStyle.DISPLAY_LARGE),
-        ft.Text("Display Medium", style=ft.TextThemeStyle.DISPLAY_MEDIUM),
-        ft.Text("Display Small", style=ft.TextThemeStyle.DISPLAY_SMALL),
-        ft.Text("Headline Large", style=ft.TextThemeStyle.HEADLINE_LARGE),
-        ft.Text("Headline Medium", style=ft.TextThemeStyle.HEADLINE_MEDIUM),
-        ft.Text("Headline Small", style=ft.TextThemeStyle.HEADLINE_MEDIUM),
-        ft.Text("Title Large", style=ft.TextThemeStyle.TITLE_LARGE),
-        ft.Text("Title Medium", style=ft.TextThemeStyle.TITLE_MEDIUM),
-        ft.Text("Title Small", style=ft.TextThemeStyle.TITLE_SMALL),
-        ft.Text("Label Large", style=ft.TextThemeStyle.LABEL_LARGE),
-        ft.Text("Label Medium", style=ft.TextThemeStyle.LABEL_MEDIUM),
-        ft.Text("Label Small", style=ft.TextThemeStyle.LABEL_SMALL),
-        ft.Text("Body Large", style=ft.TextThemeStyle.BODY_LARGE),
-        ft.Text("Body Medium", style=ft.TextThemeStyle.BODY_MEDIUM),
-        ft.Text("Body Small", style=ft.TextThemeStyle.BODY_SMALL),
+        ft.Text("Display Large", theme_style=ft.TextThemeStyle.DISPLAY_LARGE),
+        ft.Text("Display Medium", theme_style=ft.TextThemeStyle.DISPLAY_MEDIUM),
+        ft.Text("Display Small", theme_style=ft.TextThemeStyle.DISPLAY_SMALL),
+        ft.Text("Headline Large", theme_style=ft.TextThemeStyle.HEADLINE_LARGE),
+        ft.Text("Headline Medium", theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM),
+        ft.Text("Headline Small", theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM),
+        ft.Text("Title Large", theme_style=ft.TextThemeStyle.TITLE_LARGE),
+        ft.Text("Title Medium", theme_style=ft.TextThemeStyle.TITLE_MEDIUM),
+        ft.Text("Title Small", theme_style=ft.TextThemeStyle.TITLE_SMALL),
+        ft.Text("Label Large", theme_style=ft.TextThemeStyle.LABEL_LARGE),
+        ft.Text("Label Medium", theme_style=ft.TextThemeStyle.LABEL_MEDIUM),
+        ft.Text("Label Small", theme_style=ft.TextThemeStyle.LABEL_SMALL),
+        ft.Text("Body Large", theme_style=ft.TextThemeStyle.BODY_LARGE),
+        ft.Text("Body Medium", theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+        ft.Text("Body Small", theme_style=ft.TextThemeStyle.BODY_SMALL),
     )
 
 ft.app(target=main)
@@ -435,6 +435,23 @@ The list of [`ft.TextSpan`](#textspan-properties) objects to build a rich text p
 
 ### `style`
 
+The text's style. An instance of type [`TextStyle`](#textstyle-properties).
+
+### `text_align`
+
+Text horizontal align.
+
+Property value is `TextAlign` enum with the following values:
+
+* `LEFT` (default)
+* `RIGHT`
+* `CENTER`
+* `JUSTIFY`
+* `START`
+* `END`
+
+### `theme_style`
+
 Property value is `TextThemeStyle` enum with one of the following values:
 
 * `DISPLAY_LARGE`
@@ -452,19 +469,6 @@ Property value is `TextThemeStyle` enum with one of the following values:
 * `BODY_LARGE`
 * `BODY_MEDIUM`
 * `BODY_SMALL`
-
-### `text_align`
-
-Text horizontal align.
-
-Property value is `TextAlign` enum with the following values:
-
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
 
 ### `value`
 

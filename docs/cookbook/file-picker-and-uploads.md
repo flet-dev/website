@@ -21,6 +21,15 @@ When running Flet app in a browser only "Pick files" option is available and it'
 
 Where file picker really shines is a desktop! All three dialogs return full paths to selected files and directories - great assistance to your users!
 
+:::info
+In Linux, the FilePicker control depends on [Zenity](https://help.gnome.org/users/zenity/stable/)  when running Flet as an app. This is not a requirement when running Flet in a browser.
+
+To install Zenity on Ubuntu/Debian run the following commands:
+```bash
+sudo apt-get install zenity
+```
+:::
+
 ## Using file picker in your app
 
 It is recommended to add file picker to [`page.overlay.controls`](/docs/controls/page#overlay) collection, so it doesn't affect the layout of your app. Despite file picker has 0x0 size it is still considered as a control when put into `Row` or `Column`.

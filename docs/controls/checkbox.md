@@ -73,6 +73,14 @@ ft.app(target=main)
 
 ## Properties
 
+### `adaptive`
+
+If the value is `True`, an adaptive Checkbox is created based on whether the target platform is iOS/macOS.
+
+On iOS and macOS, a [`CupertinoCheckbox`](/docs/controls/cupertinocheckbox) is created, which has matching functionality and presentation as `Checkbox`, and the graphics as expected on iOS. On other platforms, a Material Checkbox is created.
+
+The default value is `False`. See the example of usage [here](/docs/controls/cupertinocheckbox#cupertinocheckbox-and-adaptive-checkbox-example).
+
 ### `autofocus`
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.

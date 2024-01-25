@@ -3,71 +3,54 @@ title: Roadmap
 slug: roadmap
 ---
 
-## September 2023 - January 2024
+# Roadmap
 
-The goal: stabilization and Flet 1.0 launch.
+## January - May 2024
 
-* Unified packaging for all platforms: Windows, Linux, macOS, web, iOS and Android - based on `serious_python` and Flutter SDK.
-* Speed optimizations (pages with a lot of controls, large updates).
-* Adaptive UI - adaptive controls that change their look depending on the platform the app runs.
-* Responsive UI - layouts that adapt to a device screen size.
-* Localization.
-* Extensibility:
-  * How to integrate 3rd-party Flutter packages to your apps.
-  * How to use 3rd-party Python packages in iOS and Android apps.
-* Documentation improvements.
-* Bugfixing.
-* Test suite.
-* Website updates: clearer message, Flet features.
+The goal: Flet 1.0 launch.
+
+* :white_check_mark: Packaging for all platforms with [`flet build` command](/docs/guides/python/packaging-app-for-distribution): Windows, Linux, macOS, web, iOS and Android.
+  * :construction: `flet build` bugfixing and polishing.
+  * Automatic installation of pre-built "native" (non-pure such as `pandas`, `numpy`) Python dependencies for iOS and Android (custom registry similar to Pyodide).
+  * Integrating 3rd-party Flutter packages to user apps.
+* :construction: Documentation improvements.
+  * Adaptive UI - adaptive controls that change their look depending on the platform the app runs.
+  * Responsive UI - layouts that adapt to a device screen size.
+  * Update tutorials.
 * Flet Packaging and Deployment Service aka Flet CI.
+* Website update.
+* [PyCon US 2024](https://pycon.blogspot.com/2021/05/pycon-us-2024-and-2025-announcement.html)
 
 New controls:
-* [Video](https://github.com/flet-dev/flet/issues/257)
-* :white_check_mark: [WebView](https://github.com/flet-dev/flet/issues/432)
-* :white_check_mark: [NavigationDrawer](https://github.com/flet-dev/flet/issues/1089)
+
+* [AudioRecorder](https://github.com/flet-dev/flet/issues/419)
 * [Autocomplete](https://github.com/flet-dev/flet/issues/791)
 * [AutofillGroup](https://github.com/flet-dev/flet/issues/848)
-* :white_check_mark: [ExpansionTile](https://github.com/flet-dev/flet/issues/1719)
-* [ExpansionPanelList](https://github.com/flet-dev/flet/issues/1718)
-* :white_check_mark: [RangeSlider](https://github.com/flet-dev/flet/issues/1712)
-* [Context menu](https://github.com/flet-dev/flet/issues/1804)
-* [PlatformMenuBar](https://github.com/flet-dev/flet/issues/285) (and [#116](https://github.com/flet-dev/flet/issues/116))
-* [MenuBar](https://github.com/flet-dev/flet/issues/1087)
-* :white_check_mark: [SegmentedButton](https://github.com/flet-dev/flet/issues/1639)
-* :white_check_mark: [Chip](/docs/controls/chip)
-* [SearchAnchor](https://github.com/flet-dev/flet/issues/1637)
-* [SearchBar](https://github.com/flet-dev/flet/issues/1808)
-* :white_check_mark: [DatePicker](/docs/controls/datepicker)
-* :white_check_mark: [TimePicker](/docs/controls/timepicker)
-* :white_check_mark: [SelectionArea](https://github.com/flet-dev/flet/issues/1554)
 * [Camera](https://github.com/flet-dev/flet/issues/1281)
-* [AudioRecorder](https://github.com/flet-dev/flet/issues/419)
-* :white_check_mark: [Badge](https://github.com/flet-dev/flet/issues/1264)
-* [Rive](https://github.com/flet-dev/flet/issues/89)
-* [Lottie](https://github.com/flet-dev/flet/issues/88)
-* [Location](https://github.com/flet-dev/flet/issues/66)
-* [Map](https://github.com/flet-dev/flet/issues/1193)
-* [Google Mobile Ads](https://github.com/flet-dev/flet/issues/286)
-* :white_check_mark: [Dismissible](https://github.com/flet-dev/flet/issues/482)
-* [InAppPurchase](https://github.com/flet-dev/flet/issues/853)
-* [TreeView](https://github.com/flet-dev/flet/issues/961)
+* [Context menu](https://github.com/flet-dev/flet/issues/1804)
 * [DropdownMenu](https://github.com/flet-dev/flet/issues/1088)
-* :white_check_mark: [BottomAppBar](https://github.com/flet-dev/flet/issues/1643)
+* [Google Mobile Ads](https://github.com/flet-dev/flet/issues/286)
+* [InAppPurchase](https://github.com/flet-dev/flet/issues/853)
+* [Location](https://github.com/flet-dev/flet/issues/66)
+* [Lottie](https://github.com/flet-dev/flet/issues/88)
+* [Map](https://github.com/flet-dev/flet/issues/1193)
+* [PlatformMenuBar](https://github.com/flet-dev/flet/issues/285) (and [#116](https://github.com/flet-dev/flet/issues/116))
+* [Rive](https://github.com/flet-dev/flet/issues/89)
 * [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
+* [TreeView](https://github.com/flet-dev/flet/issues/961)
+* [Video](https://github.com/flet-dev/flet/issues/257)
 
-Adaptive controls:
-* AlertDialog
-* Button
+Adaptive and Cupertino controls:
+* :white_check_mark: [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
+* [CupertinoButton](https://github.com/flet-dev/flet/issues/2377)
+* [CupertinoTextField](https://github.com/flet-dev/flet/issues/2376)
 * ContextMenu
-* NavigationBar
+* :white_check_mark: [NavigationBar -> CupertinoNavigationBar](https://github.com/flet-dev/flet/issues/2242)
 * DatePicker
 * TimePicker
 * ListTile
-* Slider
-* Switch
+* :white_check_mark: [Slider -> CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
+* :white_check_mark: [Switch -> CupertinoSwitch](https://github.com/flet-dev/flet/issues/2202)
+* :white_check_mark: [Radio -> CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
 * TabBar
-* Checkbox
-
-## May 2024
-
-* [PyCon US 2024](https://pycon.blogspot.com/2021/05/pycon-us-2024-and-2025-announcement.html)
+* :white_check_mark: [Checkbox -> CupertinoCheckbox](https://github.com/flet-dev/flet/issues/2157)

@@ -9,6 +9,15 @@ A control that allows you to use the native file explorer to pick single or mult
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::info
+In Linux, the FilePicker control depends on [Zenity](https://help.gnome.org/users/zenity/stable/)  when running Flet as an app. This is not a requirement when running Flet in a browser.
+
+To install Zenity on Ubuntu/Debian run the following commands:
+```bash
+sudo apt-get install zenity
+```
+:::
+
 ## Examples
 
 [Live example](https://flet-controls-gallery.fly.dev/utility/filepicker)

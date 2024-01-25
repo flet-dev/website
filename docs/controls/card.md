@@ -79,6 +79,22 @@ See [`Container.margin`](container#margin) property for more information and pos
 
 The [color](/docs/reference/colors) to paint the shadow below the card.
 
+### `shape`
+
+The shape of the card.
+
+The value is an instance of one of the following implementations:
+  * `StadiumBorder`
+  * `RoundedRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `CircleBorder`
+  * `BeveledRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+  * `ContinuousRectangleBorder`
+    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+
+The default shape is a `RoundedRectangleBorder` with `radius=4.0`.
+
 ### `surface_tint_color`
 
 The [color](/docs/reference/colors) used as an overlay on `color` to indicate elevation.
