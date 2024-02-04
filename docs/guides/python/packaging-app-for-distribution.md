@@ -152,7 +152,7 @@ When you run `flet build <target_platform>` command it:
 
 ### Logging
 
-All Flet app output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `out.log` file. Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:
+All Flet apps output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `out.log` file. Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:
 
 ```python
 with open("out.log", "r") as f:
