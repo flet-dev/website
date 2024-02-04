@@ -47,11 +47,14 @@ page.on_resize = page_resize
 However, if a handler calls async logic it must be async too:
 
 ```python
-async def button_click(e):
-    page.controls.append(ft.Text("Hello!"))
-    await page.update_async()
+async def main(page: ft.Page):
+    async def button_click(e):
+        await page.add_async(ft.Text("Hello!"))
 
-ft.ElevatedButton("Say hello!", on_click=button_click)
+    await page.add_async(ft.ElevatedButton("Say hello!", on_click=button_click))
+
+
+ft.app(main)
 ```
 
 ### Async lambdas
