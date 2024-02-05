@@ -247,13 +247,52 @@ See [`Container.padding`](container#padding) for more information and possible v
 
 ### `platform`
 
-Operating system the application is running on:
+Operating system the application is running on.
 
-* `ios`
-* `android`
-* `macos`
-* `linux`
-* `windows`
+Property value is `PagePlatform` enum with the following values:
+
+* `IOS`
+* `ANDROID`
+* `MACOS`
+* `WINDOWS`
+* `LINUX`
+
+This property can be used to create adaptive UI with different controls depending on the operating system:
+```python
+def main(page: ft.Page):
+    if page.platform == ft.PagePlatform.MACOS:
+        page.add(ft.CupertinoDialogAction("Cupertino Button"))
+    else:
+        page.add(ft.TextButton("Material Button"))
+```
+
+You can also set this property for testing purposes:
+```python
+import flet as ft
+
+
+def main(page):
+    def set_android(e):
+        page.platform = ft.PagePlatform.ANDROID
+        page.update()
+        print("New platform:", page.platform)
+
+    def set_ios(e):
+        page.platform = "ios"
+        page.update()
+        print("New platform:", page.platform)
+
+    page.add(
+        ft.Switch(label="Switch A", adaptive=True),
+        ft.ElevatedButton("Set Android", on_click=set_android),
+        ft.ElevatedButton("Set iOS", on_click=set_ios),
+    )
+
+    print("Default platform:", page.platform)
+
+
+ft.app(target=main)
+```
 
 ### `platform_brightness`
 
