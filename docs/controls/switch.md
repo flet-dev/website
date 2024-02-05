@@ -104,7 +104,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `focus_color`
 
-The [color](/docs/guides/python/colors) to use for the focus highlight for keyboard interactions.
+The [color](/docs/reference/colors) to use for the focus highlight for keyboard interactions.
 
 ### `inactive_thumb_color`
 

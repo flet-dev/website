@@ -381,7 +381,7 @@ Baseline value for Y axis. Default is `0`.
 
 ### `bgcolor`
 
-Background [color](/docs/guides/python/colors) of the chart.
+Background [color](/docs/reference/colors) of the chart.
 
 ### `border`
 
@@ -437,7 +437,7 @@ Configures the appearance of the right axis, its title and labels. The value is 
 
 ### `tooltip_bgcolor`
 
-Background [color](/docs/guides/python/colors) of tooltips.
+Background [color](/docs/reference/colors) of tooltips.
 
 ### `top_axis`
 
@@ -467,7 +467,7 @@ A vertical line drawn between a line point and the top edge of the chart. The va
 
 ### `above_line_bgcolor`
 
-Fill the area above chart line with the specified [color](/docs/guides/python/colors).
+Fill the area above chart line with the specified [color](/docs/reference/colors).
 
 ### `above_line_cutoff_y`
 
@@ -483,7 +483,7 @@ A vertical line drawn between a line point and the bottom edge of the chart. The
 
 ### `below_line_bgcolor`
 
-Fill the area below chart line with the specified [color](/docs/guides/python/colors).
+Fill the area below chart line with the specified [color](/docs/reference/colors).
 
 ### `below_line_cutoff_y`
 
@@ -495,7 +495,7 @@ Fill the area below chart line with the specified gradient.
 
 ### `color`
 
-A [color](/docs/guides/python/colors) of chart line.
+A [color](/docs/reference/colors) of chart line.
 
 ### `curved`
 
@@ -605,7 +605,7 @@ Configures the appearance of horizontal and vertical grid lines within the chart
 
 ### `color`
 
-[Color](/docs/guides/python/colors) of a grid line.
+[Color](/docs/reference/colors) of a grid line.
 
 ### `dash_pattern`
 
@@ -663,7 +663,7 @@ A value to draw label for.
 
 ### `color`
 
-[Color](/docs/guides/python/colors) of the line.
+[Color](/docs/reference/colors) of the line.
 
 ### `dash_pattern`
 

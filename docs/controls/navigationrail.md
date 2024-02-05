@@ -107,7 +107,7 @@ The default is `-1.0`.
 
 ### `indicator_color`
 
-The [color](/docs/guides/python/colors) of the navigation rail's indicator.
+The [color](/docs/reference/colors) of the navigation rail's indicator.
 
 ### `indicator_shape`
 

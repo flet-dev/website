@@ -83,7 +83,7 @@ A list of `ExpansionPanel`s to display inside `ExpansionPanelList`.
 
 ### `divider_color`
 
-The [color](/docs/guides/python/colors) of the divider when `ExpansionPanel.expanded` is `False`.
+The [color](/docs/reference/colors) of the divider when `ExpansionPanel.expanded` is `False`.
 
 ### `elevation`
 
@@ -97,7 +97,7 @@ See [`Container.padding`](container#padding) for more information and possible v
 
 ### `expanded_icon_color`
 
-The [color](/docs/guides/python/colors) of the icon. Defaults to `colors.BLACK_54` in light theme mode and `colors.WHITE_60` in dark theme mode.
+The [color](/docs/reference/colors) of the icon. Defaults to `colors.BLACK_54` in light theme mode and `colors.WHITE_60` in dark theme mode.
 
 ### `spacing`
 
@@ -113,7 +113,7 @@ Fires when an `ExpansionPanel` is expanded or collapsed. The event's data (`e.da
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) of the panel.
+The background [color](/docs/reference/colors) of the panel.
 
 ### `content`
 

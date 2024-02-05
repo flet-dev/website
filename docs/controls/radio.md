@@ -86,7 +86,7 @@ Fires when the state of the RadioGroup is changed.
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) used to fill this radio when it is selected.
+The [color](/docs/reference/colors) used to fill this radio when it is selected.
 
 ### `adaptive`
 

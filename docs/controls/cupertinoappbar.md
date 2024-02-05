@@ -59,7 +59,7 @@ is not None, this parameter has no effect.
 
 ### `bgcolor`
 
-The fill [color](/docs/guides/python/colors) to use for an AppBar. Default color is defined by current theme.
+The fill [color](/docs/reference/colors) to use for an AppBar. Default color is defined by current theme.
 
 ### `border`
 

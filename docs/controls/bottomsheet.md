@@ -55,7 +55,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-The BottomSheet's background [color](/docs/guides/python/colors).
+The BottomSheet's background [color](/docs/reference/colors).
 
 ### `content`
 
