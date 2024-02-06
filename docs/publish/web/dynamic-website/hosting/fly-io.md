@@ -1,7 +1,6 @@
 ---
 title: Fly.io
 sidebar_label: Fly.io
-slug: fly-io
 ---
 
 [Fly.io](https://fly.io) has robust WebSocket support and can deploy your app to a [data center](https://fly.io/docs/reference/regions/) that is close to your users. They have very attractive pricing with a [generous free tier](https://fly.io/docs/about/pricing/#free-allowances) which allows you to host up to 3 applications for free.

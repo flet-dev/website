@@ -9,7 +9,7 @@ You can now use `flet build web` command to package your Flet app into a static 
 
 Static websites built with `flet build web`, compared to `flet publish`, have faster load time as all Python dependencies are now packaged into a single archive instead of being pulled in runtime with `micropip`. `flet build web` also detects native Python [packages built into Pyodide](https://pyodide.org/en/stable/usage/packages-in-pyodide.html), such as `bcrypt`, `html5lib`, `numpy` and many others, and installs them from Pyodide package registry.
 
-[Follow this guide for web packaging](packaging-app-for-distribution#flet-build-web)
+[Follow this guide for web packaging](/docs/publish/packaging-app-for-distribution#flet-build-web)
 :::
 
 Flet app can be published as a standalone static website (SPA) and run entirely in the browser with [Pyodide](https://pyodide.org/en/stable/index.html).

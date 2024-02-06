@@ -4,12 +4,13 @@ module.exports = {
     "install",
     {
       type: "category",
-      label: "Create Flet app",
-      link: {
-        type: "doc",
-        id: "create/create-flet-app",
-      },
+      label: "Creating Flet app",
+      // link: {
+      //   type: "doc",
+      //   id: "create/create-flet-app",
+      // },
       items: [
+        "create/create-flet-app",
         'create/running-app',
         'create/flet-app-structure',
         'create/flet-controls',
@@ -22,40 +23,71 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Publish Flet app",
-      // link: {
-      //   type: "doc",
-      //   id: "publish/overview",
-      // },
+      label: "Publishing Flet app",
+      link: {
+        type: "doc",
+        id: "publish/overview",
+      },
       items: [
-        "publish/packaging-desktop-app",
-        "publish/publishing-static-website",
+        "publish/android",
+        "publish/ios",
+        "publish/macos",
+        "publish/linux",
+        "publish/windows",
         {
           type: "category",
-          label: "Deploying web app",
+          label: "Web",
           link: {
             type: "doc",
-            id: "publish/deploying-web-app/overview",
+            id: "publish/web/index",
           },
           items: [
-            "publish/deploying-web-app/customizing-web-app",
-            "publish/deploying-web-app/running-flet-with-fastapi",
-            "publish/deploying-web-app/progressive-web-apps",
             {
               type: "category",
-              label: "Hosting providers",
+              label: "Static website",
               link: {
                 type: "doc",
-                id: "publish/deploying-web-app/hosting-providers/overview",
+                id: "publish/web/static-website/index",
               },
               items: [
-                "publish/deploying-web-app/hosting-providers/fly-io",
-                "publish/deploying-web-app/hosting-providers/replit",
-                "publish/deploying-web-app/hosting-providers/self-hosting",
+                {
+                  type: "category",
+                  label: "Hosting",
+                  link: {
+                    type: "generated-index",
+                    slug: "publish/web/static-website/hosting",
+                  },
+                  items: [
+                    "publish/web/static-website/hosting/cloudflare",
+                  ],
+                }
               ],
             },
+            {
+              type: "category",
+              label: "Dynamic website",
+              link: {
+                type: "doc",
+                id: "publish/web/dynamic-website/index",
+              },
+              items: [
+                {
+                  type: "category",
+                  label: "Hosting",
+                  link: {
+                    type: "generated-index",
+                    slug: "publish/web/dynamic-website/hosting",
+                  },
+                  items: [
+                    "publish/web/dynamic-website/hosting/fly-io",
+                    "publish/web/dynamic-website/hosting/replit",
+                    "publish/web/dynamic-website/hosting/self-hosting",
+                  ],
+                }
+              ],
+            }
           ],
-        },
+        }
       ],
     },
     {
@@ -262,6 +294,10 @@ module.exports = {
         "cookbook/control-refs",
         "cookbook/accessibility",
         "cookbook/logging",
+        "cookbook/packaging-app-for-distribution",
+        "cookbook/packaging-desktop-app",
+        "cookbook/publishing-static-website",
+        "publish/deploying-web-app/running-flet-with-fastapi",
       ],
     },
     {

@@ -1,22 +1,22 @@
-/docs/cookbook/colors /docs/reference/colors
-/docs/reference/colors /docs/reference/colors
-/docs/cookbook/getting-started /docs
+/docs/guides/python/colors /docs/reference/colors
+/docs/guides/python/getting-started /docs
 
-/docs/cookbook/deploying-web-app /docs/publish/deploying-web-app
-/docs/cookbook/deploying-web-app/running-flet-with-fastapi /docs/publish/deploying-web-app/running-flet-with-fastapi
-/docs/cookbook/deploying-web-app/customizing-web-app /docs/publish/deploying-web-app/customizing-web-app
-/docs/cookbook/deploying-web-app/hosting-providers /docs/publish/deploying-web-app/hosting-providers
-/docs/cookbook/deploying-web-app/fly-io /docs/publish/deploying-web-app/fly-io
-/docs/cookbook/deploying-web-app/replit /docs/publish/deploying-web-app/replit
+/docs/guides/python/deploying-web-app /docs/publish/deploying-web-app
+/docs/guides/python/deploying-web-app/running-flet-with-fastapi /docs/publish/deploying-web-app/running-flet-with-fastapi
+/docs/guides/python/deploying-web-app/customizing-web-app /docs/publish/deploying-web-app/customizing-web-app
+/docs/guides/python/deploying-web-app/hosting-providers /docs/publish/deploying-web-app/hosting-providers
+/docs/guides/python/deploying-web-app/fly-io /docs/publish/deploying-web-app/fly-io
+/docs/guides/python/deploying-web-app/replit /docs/publish/deploying-web-app/replit
+/docs/guides/python/packaging-app-for-distribution /docs/publish/packaging-app-for-distribution
 
-/docs/cookbook/async-apps /docs/create/async-apps
-/docs/cookbook/testing-on-android /docs/create/testing-on-android
-/docs/cookbook/testing-on-ios /docs/create/testing-on-ios
-/docs/cookbook/publishing-static-website /docs/publish/publishing-static-website
-/docs/cookbook/hot-reload /docs/reference/cli/run
-/docs/cookbook/packaging-desktop-app /docs/publish/packaging-desktop-app
-/docs/cookbook/navigation-and-routing /docs/create/navigation-and-routing
-/docs/cookbook/user-controls /docs/create/user-controls
+/docs/guides/python/async-apps /docs/create/async-apps
+/docs/guides/python/testing-on-android /docs/run/testing-on-android
+/docs/guides/python/testing-on-ios /docs/run/testing-on-ios
+/docs/guides/python/publishing-static-website /docs/publish/publishing-static-website
+/docs/guides/python/hot-reload /docs/reference/cli/run
+/docs/guides/python/packaging-desktop-app /docs/publish/packaging-desktop-app
+/docs/guides/python/navigation-and-routing /docs/create/navigation-and-routing
+/docs/guides/python/user-controls /docs/create/user-controls
 
 /docs/cli/* /docs/reference/cli/:splat
 /docs/guides/python/* /docs/cookbook/:splat

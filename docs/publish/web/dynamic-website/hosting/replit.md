@@ -1,7 +1,6 @@
 ---
 title: Replit
 sidebar_label: Replit
-slug: replit
 ---
 
 [Replit](https://replit.com/) is an online IDE and hosting platform for web apps written in any language. Their free tier allows running any number of apps with some performance limitations.

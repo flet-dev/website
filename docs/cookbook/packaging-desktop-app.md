@@ -10,7 +10,7 @@ macOS, Windows and Linux.
 
 `flet build` does not longer rely on PyInstaller like `flet pack` does, but uses Flutter SDK to produce a fast, offline, fully customizable (your own icons, about dialog and metadata) executable for Windows, Linux and macOS with Python runtime embedded into executable and running in-process.
 
-[Follow this guide for desktop packaging](packaging-app-for-distribution)
+[Follow this guide for desktop packaging](/docs/publish/packaging-app-for-distribution)
 :::
 
 Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.

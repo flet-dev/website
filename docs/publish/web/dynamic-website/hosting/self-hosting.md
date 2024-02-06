@@ -1,7 +1,6 @@
 ---
 title: Self Hosting
 sidebar_label: Self Hosting
-slug: self-hosting
 ---
 Host a Flet app on your own server with NGINX.
 

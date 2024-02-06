@@ -1,5 +1,5 @@
 ---
-title: Create Flet app
+title: Create a new Flet app
 ---
 
 To create a new "minimal" Flet app run the following command:
