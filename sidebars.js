@@ -26,7 +26,7 @@ module.exports = {
       label: "Publishing Flet app",
       link: {
         type: "doc",
-        id: "publish/overview",
+        id: "publish/index",
       },
       items: [
         "publish/android",
@@ -88,6 +88,18 @@ module.exports = {
             }
           ],
         }
+      ],
+    },
+    {
+      type: "category",
+      label: "Extending Flet",
+      // link: {
+      //   type: "doc",
+      //   id: "create/create-flet-app",
+      // },
+      items: [
+        "extend/creating-controls-in-python",
+        "extend/integrating-existing-flutter-packages"
       ],
     },
     {
