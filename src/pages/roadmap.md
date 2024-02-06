@@ -21,9 +21,9 @@ The goal: Flet 1.0 launch.
 * Website update.
 * [PyCon US 2024](https://pycon.blogspot.com/2021/05/pycon-us-2024-and-2025-announcement.html)
 
-New controls:
+**New controls:**
 
-* [AudioRecorder](https://github.com/flet-dev/flet/issues/419)
+* :white_check_mark: [AudioRecorder](https://github.com/flet-dev/flet/issues/419)
 * [Autocomplete](https://github.com/flet-dev/flet/issues/791)
 * [AutofillGroup](https://github.com/flet-dev/flet/issues/848)
 * [Camera](https://github.com/flet-dev/flet/issues/1281)
@@ -40,17 +40,18 @@ New controls:
 * [TreeView](https://github.com/flet-dev/flet/issues/961)
 * [Video](https://github.com/flet-dev/flet/issues/257)
 
-Adaptive and Cupertino controls:
+**Adaptive and Cupertino controls:**
+
 * :white_check_mark: [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
-* [CupertinoButton](https://github.com/flet-dev/flet/issues/2377)
+* :white_check_mark: [CupertinoButton](https://github.com/flet-dev/flet/issues/2377)
 * :white_check_mark: [TextField -> CupertinoTextField](https://github.com/flet-dev/flet/issues/2376)
 * ContextMenu
 * :white_check_mark: [NavigationBar -> CupertinoNavigationBar](https://github.com/flet-dev/flet/issues/2242)
 * DatePicker
 * TimePicker
-* ListTile
+* :white_check_mark: [ListTile -> CupertinoListTile](https://github.com/flet-dev/flet/issues/2487)
 * :white_check_mark: [Slider -> CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
 * :white_check_mark: [Switch -> CupertinoSwitch](https://github.com/flet-dev/flet/issues/2202)
 * :white_check_mark: [Radio -> CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
-* :white_check_mark: AppBar -> CupertinoAppBar
+* :white_check_mark: [AppBar -> CupertinoAppBar](https://github.com/flet-dev/flet/issues/2278)
 * :white_check_mark: [Checkbox -> CupertinoCheckbox](https://github.com/flet-dev/flet/issues/2157)

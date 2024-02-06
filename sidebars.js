@@ -248,6 +248,7 @@ module.exports = {
           },
           items: [
             "controls/audio",
+            "controls/audiorecorder",
             "controls/draggable",
             "controls/dragtarget",
             "controls/filepicker",
