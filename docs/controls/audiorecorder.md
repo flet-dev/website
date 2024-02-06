@@ -27,9 +27,9 @@ import TabItem from '@theme/TabItem';
 import flet as ft
 
 async def main(page: ft.Page):
-    page.theme_mode = "light"
-    page.window_always_on_top = True
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    page.appbar = ft.AppBar(title=ft.Text("Audio Recorder"), center_title=True)
+
     path = "test-audio-file.wav"
 
     async def handle_start_recording(e):
@@ -66,47 +66,24 @@ async def main(page: ft.Page):
         for i in list(ft.AudioEncoder):
             print(f"{i}: {await audio_rec.is_supported_encoder_async(i)}")
 
-    page.appbar = ft.AppBar(
-        title=ft.Text("Audio Recorder"),
-        adaptive=True,
-        bgcolor=ft.colors.PRIMARY_CONTAINER,
-    )
+    async def handle_state_change(e):
+        print(f"State Changed: {e.data}")
 
     audio_rec = ft.AudioRecorder(
-        audio_encoding=ft.AudioEncoder.WAV,
+        audio_encoder=ft.AudioEncoder.WAV,
+        on_state_changed=handle_state_change,
     )
     page.overlay.append(audio_rec)
     await page.update_async()
 
     await page.add_async(
-        ft.ElevatedButton(
-            "Start Audio Recorder",
-            on_click=handle_start_recording,
-        ),
-        ft.ElevatedButton(
-            "Stop Audio Recorder",
-            on_click=handle_stop_recording,
-        ),
-        ft.ElevatedButton(
-            "List Devices",
-            on_click=handle_list_devices,
-        ),
-        ft.ElevatedButton(
-            "Pause Recording",
-            on_click=handle_pause,
-        ),
-        ft.ElevatedButton(
-            "Resume Recording",
-            on_click=handle_resume,
-        ),
-        ft.ElevatedButton(
-            "Test AudioEncodings",
-            on_click=handle_audio_encoding_test,
-        ),
-        ft.ElevatedButton(
-            "Has Permission",
-            on_click=handle_has_permission,
-        ),
+        ft.ElevatedButton("Start Audio Recorder", on_click=handle_start_recording),
+        ft.ElevatedButton("Stop Audio Recorder", on_click=handle_stop_recording),
+        ft.ElevatedButton("List Devices", on_click=handle_list_devices),
+        ft.ElevatedButton("Pause Recording", on_click=handle_pause),
+        ft.ElevatedButton("Resume Recording", on_click=handle_resume),
+        ft.ElevatedButton("Test AudioEncodings", on_click=handle_audio_encoding_test),
+        ft.ElevatedButton("Has Permission", on_click=handle_has_permission),
     )
 
 
@@ -203,3 +180,12 @@ Starts new recording session on the specified `output_path`. On platforms other 
 
 Stops recording session and release internal recorder resource. It returns a string which is the location of the recorded file. On web, it returns the blob which could be opened using [`page.lauch_url()`](/docs/controls/page#launch_urlurl). On other platforms, it returns the path to the file which is the `output_path` parameter passed to `start_recording()` method.
 
+## Events
+
+### `on_state_changed`
+
+Fires when audio recorder's state changes. Event's `e.data` contains one of the following states:
+
+* `stopped`
+* `recording`
+* `paused`
