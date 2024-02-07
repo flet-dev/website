@@ -95,7 +95,7 @@ ft.app(target=main)
 ## Properties
 
 :::note
-Not all properties are supported on all platforms. Please check this [Platform feature parity matrix](https://pub.dev/packages/record#platform-feature-parity-matrix) for more information on which properties are supported on which platforms.
+Not all properties are supported on all platforms. Please check this [platform-feature parity matrix](https://pub.dev/packages/record#platform-feature-parity-matrix) for more information on which properties are supported on which platforms.
 :::
 
 ### `audio_encoding`

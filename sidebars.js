@@ -261,6 +261,7 @@ module.exports = {
             "controls/shakedetector",
             "controls/tooltip",
             "controls/transparentpointer",
+            "controls/video",
             "controls/windowdragarea",
           ],
         },

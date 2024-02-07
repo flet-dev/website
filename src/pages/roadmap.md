@@ -38,7 +38,7 @@ The goal: Flet 1.0 launch.
 * [Rive](https://github.com/flet-dev/flet/issues/89)
 * [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
 * [TreeView](https://github.com/flet-dev/flet/issues/961)
-* [Video](https://github.com/flet-dev/flet/issues/257)
+* :white_check_mark: [Video](https://github.com/flet-dev/flet/issues/257)
 
 **Adaptive and Cupertino controls:**
 
