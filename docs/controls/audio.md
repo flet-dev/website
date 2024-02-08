@@ -132,14 +132,6 @@ Sets the stereo balance.
 Setting balance is supported on Windows and Linux only.
 :::
 
-### `get_current_position()`
-
-Returns the current position in milliseconds.
-
-### `get_duration()`
-
-Returns the duration of audio in milliseconds.
-
 ### `playback_rate`
 
 Sets the playback rate. iOS and macOS have limits between 0.5 and 2x Android SDK version should be 23 or higher.
@@ -167,6 +159,14 @@ Sets the volume (amplitude).
 0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
 
 ## Methods
+
+### `get_current_position()`
+
+Returns the current position in milliseconds.
+
+### `get_duration()`
+
+Returns the duration of audio in milliseconds.
 
 ### `pause()`
 
