@@ -160,6 +160,12 @@ Sets the URL to the audio file. It could be an asset URL, see [Image.src](/docs/
 
 Sets the contents of audio file encoded in base-64 format.
 
+### `volume`
+
+Sets the volume (amplitude).
+
+0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
+
 ## Methods
 
 ### `pause()`
@@ -186,12 +192,6 @@ Moves the cursor to the desired position.
 Method arguments:
 
 * `position_milliseconds` - desired position in milliseconds.
-
-### `volume`
-
-Sets the volume (amplitude).
-
-0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
 
 ## Events
 
