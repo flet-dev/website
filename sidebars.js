@@ -160,6 +160,7 @@ module.exports = {
             id: "controls/buttons",
           },
           items: [
+            "controls/cupertinobutton",
             "controls/cupertinodialogaction",
             "controls/elevatedbutton",
             "controls/filledbutton",

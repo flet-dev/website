@@ -231,7 +231,7 @@ Defines the playback rate of the video player. Defaults to `1.0`.
 
 ### `playlist`
 
-The video playlist consisting of `VideoMedia` objects. This property is read-only. To modify the playlist, use the `playlist_add(media)` and `playlist_remove(media_index)` methods.
+The video playlist consisting of `VideoMedia` objects. This property is read-only but could be set when . To modify the playlist, use the `playlist_add(media)` and `playlist_remove(media_index)` methods.
 
 ### `playlist_mode`
 
@@ -269,13 +269,13 @@ Starts playing the video.
 
 Cycles between play and pause states of the video player. (Plays if paused, pauses if playing)
 
-### `playlist_remove(media_index)`
-
-Removes the `VideoMedia` at the specified index(`media_index`) from the `playlist`.
-
 ### `playlist_add(media)`
 
 Appends/Adds the given `media` (of type `VideoMedia`) to the `playlist`.
+
+### `playlist_remove(media_index)`
+
+Removes the `VideoMedia` at the specified index(`media_index`) from the `playlist`.
 
 ### `previous()`
 

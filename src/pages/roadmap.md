@@ -43,7 +43,7 @@ The goal: Flet 1.0 launch.
 **Adaptive and Cupertino controls:**
 
 * :white_check_mark: [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
-* :white_check_mark: [CupertinoButton](https://github.com/flet-dev/flet/issues/2377)
+* :white_check_mark: [ElevatedButton -> CupertinoButton](https://github.com/flet-dev/flet/issues/2377)
 * :white_check_mark: [TextField -> CupertinoTextField](https://github.com/flet-dev/flet/issues/2376)
 * ContextMenu
 * :white_check_mark: [NavigationBar -> CupertinoNavigationBar](https://github.com/flet-dev/flet/issues/2242)
