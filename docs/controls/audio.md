@@ -148,6 +148,10 @@ Sets the release mode. The following values are supported:
 
 Sets the URL to the audio file. It could be an asset URL, see [Image.src](/docs/controls/image#src) for more information about assets.
 
+:::note
+[Here](https://github.com/bluefireteam/audioplayers/blob/main/troubleshooting.md#supported-formats--encodings) is a list of supported audio formats.
+:::
+
 ### `src_base64`
 
 Sets the contents of audio file encoded in base-64 format.
