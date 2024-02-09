@@ -112,16 +112,6 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-## Supported Formats
-You can check a list of supported formats below:
-
-- [Android](https://developer.android.com/guide/topics/media/media-formats.html)
-- [iOS](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/MultimediaPG/UsingAudio/UsingAudio.html#//apple_ref/doc/uid/TP40009767-CH2-SW33)
-- [macOS](https://developer.apple.com/library/archive/documentation/MusicAudio/Conceptual/CoreAudioOverview/SupportedAudioFormatsMacOSX/SupportedAudioFormatsMacOSX.html#//apple_ref/doc/uid/TP40003577-CH7-SW1)
-- Web: audio formats supported by the browser you are using ([more details](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs))
-- [Windows](https://learn.microsoft.com/en-us/windows/win32/medfound/supported-media-formats-in-media-foundation)
-- Linux: List of defined [audio types](https://gstreamer.freedesktop.org/documentation/plugin-development/advanced/media-types.html?gi-language=c#table-of-audio-types) and their according [Plugins](https://gstreamer.freedesktop.org/documentation/plugins_doc.html?gi-language=c)
-
 ## Properties
 
 ### `autoplay`
@@ -157,6 +147,10 @@ Sets the release mode. The following values are supported:
 ### `src`
 
 Sets the URL to the audio file. It could be an asset URL, see [Image.src](/docs/controls/image#src) for more information about assets.
+
+:::note
+[Here](https://github.com/bluefireteam/audioplayers/blob/main/troubleshooting.md#supported-formats--encodings) is a list of supported audio formats.
+:::
 
 ### `src_base64`
 
