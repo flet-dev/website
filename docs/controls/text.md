@@ -409,6 +409,10 @@ Property value is `TextOverflow` enum with the following values:
 * `CLIP`
 * `VISIBLE`
 
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
+
 ### `selectable`
 
 `True` if text should be selectable.

@@ -407,6 +407,14 @@ Property value is `CrossAxisAlignment` enum with the following values:
 
 Throttling in milliseconds for `on_scroll` event. Default is `10`.
 
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
+
+### `run_spacing`
+
+Spacing between runs when `wrap=True`. Default value is 10.
+
 ### `scroll`
 
 Enables a vertical scrolling for the Column to prevent its content overflow.
@@ -424,10 +432,6 @@ Supported values:
 ### `spacing`
 
 Spacing between controls in a Column. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
-
-### `run_spacing`
-
-Spacing between runs when `wrap=True`. Default value is 10.
 
 ### `tight`
 

@@ -104,17 +104,9 @@ ft.app(target=main)
 
 ## Properties
 
-### `autofocus`
-
-True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
-
 ### `bgcolor`
 
 Button's background [color](/docs/guides/python/colors).
-
-### `color`
-
-Button's text [color](/docs/guides/python/colors).
 
 ### `disabled_color`
 

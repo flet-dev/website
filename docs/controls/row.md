@@ -251,6 +251,10 @@ Property value is `MainAxisAlignment` enum with the following values:
 
 A list of Controls to display inside the Row.
 
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
+
 ### `run_spacing`
 
 Spacing between runs when `wrap=True`. Default value is 10.
