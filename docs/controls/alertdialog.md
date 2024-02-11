@@ -100,6 +100,10 @@ On iOS and macOS, a [`CupertinoAlertDialog`](/docs/controls/cupertinoalertdialog
 
 The default value is `False`. See the example of usage [here](/docs/controls/cupertinoalertdialog#cupertinoalertdialog-and-adaptive-alertdialog-example).
 
+### `bgcolor`
+
+The background [color](/docs/guides/python/colors) of the dialog's surface.
+
 ### `content`
 
 The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](column) that contains the dialog's [`Text`](text) message.
@@ -111,6 +115,14 @@ Padding around the content.
 If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
+
+### `elevation`
+
+Defines the elevation (z-coordinate) at which the dialog should appear.
+
+### `icon`
+
+A control that is displayed at the top of the dialog. Typically a [`Icon`](icon) control.
 
 ### `inset_padding`
 
