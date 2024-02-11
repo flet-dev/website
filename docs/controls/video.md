@@ -4,11 +4,11 @@ sidebar_label: Video
 slug: video
 ---
 
-
+Video playing control.
 Based on the [media_kit](https://pub.dev/packages/media_kit) Dart/Flutter package.
 
 :::note
-On Linux, encoding is provided by [fmedia](https://stsaz.github.io/fmedia/) which must be installed separately.
+On Linux, the [libmpv](https://mpv.io/) package must be installed. On Ubuntu/Debian you can install it with `sudo apt install libmpv-dev mpv`.
 :::
 
 import Tabs from '@theme/Tabs';
