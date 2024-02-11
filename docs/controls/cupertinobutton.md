@@ -13,50 +13,7 @@ An iOS-style button.
 
 [Live example](https://flet-controls-gallery.fly.dev/buttons/cupertinobutton)
 
-### Basic elevated buttons
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-
-```
-  </TabItem>
-
-</Tabs>
-
-<img src="/img/docs/controls/cupertino-button/cupertino-buttons.png" className="screenshot-20" />
-
-### Elevated buttons with icons
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-
-```
-  </TabItem>
-
-</Tabs>
-
-<img src="/img/docs/controls/cupertino-button/cupertino-buttons-with-icons.png" className="screenshot-30" />
-
-### Elevated button with `click` event
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-
-```
-
-  </TabItem>
-
-</Tabs>
-
-<img src="/img/docs/controls/cupertino-button/cupertino-button-with-click-event.gif" className="screenshot-50" />
-
-### Elevated button with custom content 
+### Basic Example
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -65,42 +22,41 @@ An iOS-style button.
 import flet as ft
 
 def main(page: ft.Page):
-    page.title = "Elevated buttons with custom content"
     page.add(
+        ft.CupertinoButton(
+            content=ft.Text("Normal CupertinoButton", color=ft.cupertino_colors.DESTRUCTIVE_RED),
+            opacity_on_click=0.3,
+            on_click=lambda e: print("Normal CupertinoButton clicked!"),
+        ),
+        ft.CupertinoButton(
+            content=ft.Text("Filled CupertinoButton", color=ft.colors.YELLOW),
+            filled=True,
+            alignment=ft.alignment.top_left,
+            border_radius=ft.border_radius.all(15),
+            opacity_on_click=0.5,
+            on_click=lambda e: print("Filled CupertinoButton clicked!"),
+        ),
         ft.ElevatedButton(
-            width=150,
+            adaptive=True,  # a CupertinoButton will be rendered when running on apple-platform
+            bgcolor=ft.cupertino_colors.SYSTEM_TEAL,
             content=ft.Row(
                 [
                     ft.Icon(name=ft.icons.FAVORITE, color="pink"),
-                    ft.Icon(name=ft.icons.AUDIOTRACK, color="green"),
-                    ft.Icon(name=ft.icons.BEACH_ACCESS, color="blue"),
+                    ft.Text("ElevatedButton+adaptive"),
                 ],
-                alignment=ft.MainAxisAlignment.SPACE_AROUND,
-            ),
-        ),
-        ft.ElevatedButton(
-            content=ft.Container(
-                content=ft.Column(
-                    [
-                        ft.Text(value="Compound button", size=20),
-                        ft.Text(value="This is secondary text"),
-                    ],
-                    alignment=ft.MainAxisAlignment.CENTER,
-                    spacing=5,
-                ),
-                padding=ft.padding.all(10),
+                tight=True,
             ),
         ),
     )
 
+
 ft.app(target=main)
 ```
-
   </TabItem>
-  
+
 </Tabs>
 
-<img src="/img/docs/controls/elevated-button/elevated-buttons-with-custom-content.png" className="screenshot-30" />
+<img src="/img/docs/controls/cupertino-button/basic-cupertino-buttons.png" className="screenshot-20" />
 
 ## Properties
 
