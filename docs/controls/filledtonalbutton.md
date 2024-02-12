@@ -44,7 +44,7 @@ ft.app(target=main)
 
 If the value is `True`, an adaptive Button is created based on whether the target platform is iOS/macOS.
 
-On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinobutton) is created, which has matching functionality and presentation this button. On other platforms, a Material `FilledTonalButton` is created.
+On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinobutton) is created, which matches the functionality and presentation of this button. On other platforms, a Material `FilledTonalButton` is created.
 
 The default value is `False`.
 
