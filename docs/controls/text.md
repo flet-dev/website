@@ -551,9 +551,18 @@ The paint drawn as a foreground for the text.
 
 The value is of [`ft.Paint`](canvas#paint) class.
 
+### `height`
+
+The height of this text span, as a multiple of the font size.
+See complete explanation [here](https://api.flutter.dev/flutter/painting/TextStyle/height.html)
+
 ### `italic`
 
 `True` to use italic typeface.
+
+### `letter_spacing`
+
+The amount of space (in logical pixels) to add between each letter. A negative value can be used to bring the letters closer.
 
 ### `shadow`
 
@@ -566,27 +575,6 @@ The size of glyphs (in logical pixels) to use when painting the text. Default is
 ### `weight`
 
 Font weight - see [Text.weight](#weight) for possible values.
-
-### `letter_spacing`
-
-The amount of space (in logical pixels) to add between each letter. A negative value can be used to bring the letters closer.
-Example:
-
-```python
-Text('Example', style=TextStyle('letter_spacing=2'))
-```
-
-### `height`
-
-The height of this text span, as a multiple of the font size.
-See complete explanation [here](https://api.flutter.dev/flutter/painting/TextStyle/height.html)
-
-Example:
-
-```python
-Text('Example', style=TextStyle('height=2'))
-
-```
 
 ## `TextSpan` properties
 
