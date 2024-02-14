@@ -544,3 +544,7 @@ r = ft.Column([
 ```
 
 In general, the resulting height of a child in percents is calculated as `expand / sum(all expands) * 100%`.
+
+If `expand_loose` is `True`, the child control of a [`Column`](/docs/controls/column) or a [`Row`](/docs/controls/row) 
+
+If you need to give the child Control of the Column the flexibility to expand to fill the available space vertically but not require it to fill the available space, set its `expand_loose` property to `True`.
