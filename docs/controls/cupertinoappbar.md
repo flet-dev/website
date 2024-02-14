@@ -89,3 +89,7 @@ If None, the app bar will adopt the following defaults:
 - horizontally, padding will be `16` pixels according to iOS specifications unless the leading widget is an automatically inserted back button, in which case the padding will be `0`.
 
 Vertical padding won't change the height of the app bar.
+
+### `trailing`
+
+A `Control` to display after the `middle` control. Typically an [Icon](icon) control.
