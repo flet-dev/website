@@ -152,7 +152,7 @@ When you run `flet build <target_platform>` command it:
 
 ### Logging
 
-All Flet app output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `out.log` file. Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:
+All Flet apps output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `out.log` file. Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:
 
 ```python
 with open("out.log", "r") as f:
@@ -405,7 +405,7 @@ You can customize that template to suit your specific needs and then use it with
 
 For Git repositories you can checkout specific branch/tag/commit with `--template-ref` option.
 
-`--template-dir` option specifies a relative path to a cookiecutter template in a repository.
+`--template-dir` option specifies a relative path to a cookiecutter template in a repository given by `--template` option. When `--template` option is not used, this option specifies path relative to the `<user-directory>/.cookiecutters/flet-build-template`.
 
 ## Extra args to `flutter build` command
 
