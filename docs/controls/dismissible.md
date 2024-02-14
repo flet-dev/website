@@ -107,16 +107,17 @@ Specifies the end offset along the main axis once the card has been dismissed.
 
 If non-zero value is given then widget moves in cross direction depending on whether it is positive or negative.
 
-### `direction`
+### `dismiss_direction`
 
 The direction in which the control can be dismissed. Specified using the `DismissDirection` enum:
 
+- `DismissDirection.NONE`
+- `DismissDirection.VERTICAL`
+- `DismissDirection.HORIZONTAL`
+- `DismissDirection.END_TO_START`
+- `DismissDirection.START_TO_END`
 - `DismissDirection.UP`
 - `DismissDirection.DOWN`
-- `DismissDirection.LEFT`
-- `DismissDirection.RIGHT`
-- `DismissDirection.START_TO_END`
-- `DismissDirection.END_TO_START`
 
 ### `dismiss_thresholds`
 

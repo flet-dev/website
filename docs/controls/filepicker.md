@@ -165,6 +165,34 @@ You could either set the following file picker properties or provide their value
 * `file_type`
 * `allowed_extensions`
 
+:::info
+To save a file from the web, you don't need to use the FilePicker object.
+
+You can instead provides an API endpoint `/download/:filename` that returns the file content, and then
+use [`page.launch_url`](/docs/controls/page#launch_urlurl) to open the url, which will trigger the browser's save file dialog.
+
+Take [FastAPI](/docs/guides/python/deploying-web-app/running-flet-with-fastapi) as an example, you can use the following code to implement the endpoint:
+
+```python
+from fastapi import FastAPI, Response
+from fastapi.responses import FileResponse
+
+app = flet_fastapi.app(main)
+
+@app.get("/download/{filename}")
+def download(filename: str):
+    path = prepare_file(filename)
+    return FileResponse(path)
+```
+
+and then use `page.launch_url("/download/myfile.txt")` to open the url, for instance, when a button is clicked.
+
+```python
+ft.ElevatedButton("Download myfile", on_click=lambda _: page.launch_url("/download/myfile.txt"))
+```
+
+:::
+
 ### `upload()`
 
 Uploads selected files to specified upload URLs.

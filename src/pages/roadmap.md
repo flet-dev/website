@@ -42,16 +42,17 @@ The goal: Flet 1.0 launch.
 
 **Adaptive and Cupertino controls:**
 
+* :white_check_mark: [Pagelet](https://github.com/flet-dev/flet/issues/2431)
 * :white_check_mark: [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
 * :white_check_mark: [ElevatedButton -> CupertinoButton](https://github.com/flet-dev/flet/issues/2377)
 * :white_check_mark: [TextField -> CupertinoTextField](https://github.com/flet-dev/flet/issues/2376)
-* ContextMenu
 * :white_check_mark: [NavigationBar -> CupertinoNavigationBar](https://github.com/flet-dev/flet/issues/2242)
-* DatePicker
-* TimePicker
 * :white_check_mark: [ListTile -> CupertinoListTile](https://github.com/flet-dev/flet/issues/2487)
 * :white_check_mark: [Slider -> CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
 * :white_check_mark: [Switch -> CupertinoSwitch](https://github.com/flet-dev/flet/issues/2202)
 * :white_check_mark: [Radio -> CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
 * :white_check_mark: [AppBar -> CupertinoAppBar](https://github.com/flet-dev/flet/issues/2278)
 * :white_check_mark: [Checkbox -> CupertinoCheckbox](https://github.com/flet-dev/flet/issues/2157)
+* ContextMenu
+* DatePicker
+* TimePicker

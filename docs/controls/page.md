@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ### `appbar`
 
-A [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
+An [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
 
 ### `banner`
 
@@ -30,6 +30,10 @@ A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
 Background color of the Page.
 
 A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
+
+### `bottom_appbar`
+
+[`BottomAppBar`](bottomappbar) control to display at the bottom of the Page. If both [`bottom_appbar`](page#bottom_appbar) and [`navigation_bar`](page#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
 ### `bottom_sheet`
 
@@ -218,7 +222,7 @@ Page name as specified in `ft.app()` call. Page name is set when Flet app is run
 
 ### `navigation_bar`
 
-[`NavigationBar`](navigationbar) control to display at the bottom of the page.
+[`NavigationBar`](navigationbar) control to display at the bottom of the page. If both [`bottom_appbar`](page#bottom_appbar) and [`navigation_bar`](page#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
 ### `on_scroll_interval`
 
