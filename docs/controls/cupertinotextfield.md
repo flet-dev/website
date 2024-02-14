@@ -1,10 +1,10 @@
 ---
-title: TextField
-sidebar_label: TextField
-slug: textfield
+title: CupertinoTextField
+sidebar_label: CupertinoTextField
+slug: cupertinotextfield
 ---
 
-A material design text field.
+An iOS-style text field.
 
 A text field lets the user enter text, either with hardware keyboard or with an onscreen keyboard.
 
@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/input/textfield)
+[Live example](https://flet-controls-gallery.fly.dev/input/cupertinotextfield)
 
 ### Basic TextFields
 
@@ -24,18 +24,19 @@ import TabItem from '@theme/TabItem';
 import flet as ft
 
 def main(page: ft.Page):
-    def button_clicked(e):
-        t.value = f"Textboxes values are:  '{tb1.value}', '{tb2.value}', '{tb3.value}', '{tb4.value}', '{tb5.value}'."
-        page.update()
+    page.window_always_on_top = True
+    page.theme_mode = ft.ThemeMode.LIGHT
 
-    t = ft.Text()
-    tb1 = ft.TextField(label="Standard")
-    tb2 = ft.TextField(label="Disabled", disabled=True, value="First name")
-    tb3 = ft.TextField(label="Read-only", read_only=True, value="Last name")
-    tb4 = ft.TextField(label="With placeholder", hint_text="Please enter text here")
-    tb5 = ft.TextField(label="With an icon", icon=ft.icons.EMOJI_EMOTIONS)
-    b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
-    page.add(tb1, tb2, tb3, tb4, tb5, b, t)
+    page.add(
+        ft.CupertinoTextField(
+            bgcolor=ft.colors.BLUE_100,
+            shadow=ft.BoxShadow(color=ft.colors.RED_400, blur_radius=5, spread_radius=5),
+            on_change=lambda e: print("CupertinoTextField change = ", e.control.value),
+            placeholder_text="Enter text here",
+            suffix=ft.Icon(ft.icons.EDIT),
+            suffix_visibility_mode=ft.VisibilityMode.EDITING,
+        ),
+    )
 
 ft.app(target=main)
 ```
@@ -43,88 +44,6 @@ ft.app(target=main)
 </Tabs>
 
 <img src="/img/docs/controls/textfield/basic-textfield.gif" className="screenshot-40"/>
-
-### TextField with `on_change` event
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    def textbox_changed(e):
-        t.value = e.control.value
-        page.update()
-
-    t = ft.Text()
-    tb = ft.TextField(
-        label="Textbox with 'change' event:",
-        on_change=textbox_changed,
-    )
-
-    page.add(tb, t)
-
-ft.app(target=main)
-```
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/textfield/textfield-with-change-event.gif" className="screenshot-40"/>
-
-### Password with reveal button
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(
-        ft.TextField(
-            label="Password with reveal button", password=True, can_reveal_password=True
-        )
-    )
-
-ft.app(target=main)
-```
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/textfield/textfield-with-password.gif" className="screenshot-40"/>
-
-### Multiline TextFields
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(
-        ft.TextField(label="standard", multiline=True),
-        ft.TextField(
-            label="disabled",
-            multiline=True,
-            disabled=True,
-            value="line1\nline2\nline3\nline4\nline5",
-        ),
-        ft.TextField(
-            label="Auto adjusted height with max lines",
-            multiline=True,
-            min_lines=1,
-            max_lines=3,
-        ),
-    )
-
-ft.app(target=main)
-```
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/textfield/textfield-with-multiline.gif" className="screenshot-40"/>
 
 ### Underlined and borderless TextFields
 
@@ -159,48 +78,7 @@ ft.app(target=main)
 
 <img src="/img/docs/controls/textfield/textfield-with-underline-and-borderless.gif" className="screenshot-40"/>
 
-### TextFields with prefixes and suffixes
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(
-        ft.TextField(label="With prefix", prefix_text="https://"),
-        ft.TextField(label="With suffix", suffix_text=".com"),
-        ft.TextField(
-            label="With prefix and suffix", prefix_text="https://", suffix_text=".com"
-        ),
-        ft.TextField(
-            label="My favorite color",
-            icon=ft.icons.FORMAT_SIZE,
-            hint_text="Type your favorite color",
-            helper_text="You can type only one color",
-            counter_text="0 symbols typed",
-            prefix_icon=ft.icons.COLOR_LENS,
-            suffix_text="...is your color",
-        ),
-    )
-
-ft.app(target=main)
-```
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/textfield/textfield-with-prefix-and-suffix.gif" className="screenshot-40"/>
-
 ## Properties
-
-### `adaptive`
-
-If the value is `True`, an adaptive TextField is created based on whether the target platform is iOS/macOS.
-
-On iOS and macOS, a [`CupertinoTextField`](/docs/controls/cupertinotextfield) is created, which has matching functionality and presentation as `TextField`, and the graphics as expected on iOS. On other platforms, a Material TextField is created.
-
-The default value is `False`.
 
 ### `autocorrect`
 
@@ -213,6 +91,10 @@ True if the control will be selected as the initial focus. If there is more than
 ### `bgcolor`
 
 TextField background [color](/docs/guides/python/colors).
+
+### `blend_mode`
+
+The blend mode applied to the `color` or `gradient` background. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
 
 ### `border`
 
@@ -229,10 +111,6 @@ See [`Container.border_radius`](/docs/controls/container#border_radius) property
 ### `border_width`
 
 The width of the border in virtual pixels. Default is 1. Set to 0 to completely remove border.
-
-### `can_reveal_password`
-
-Displays a toggle icon button that allows revealing the entered password.
 
 ### `capitalization`
 
@@ -293,7 +171,7 @@ This flag only affects Android. On iOS, suggestions are tied directly to `autoco
 
 ### `error_style`
 
-The style to use for `error_text`.
+The style to use for `error_text`.  
 
 ### `error_text`
 
@@ -320,6 +198,10 @@ Border width in focused state.
 ### `focused_color`
 
 Text [color](/docs/guides/python/colors) when TextField is focused.
+
+### `gradient`
+
+Configures gradient background. See [`Container.gradient`](/docs/controls/container#gradient) for more information about gradient and possible values.
 
 ### `helper_style`
 
@@ -423,6 +305,14 @@ Default is `1`.
 
 Whether to hide the text being edited. Default is `False`.
 
+### `placeholder_text`
+
+A lighter colored placeholder hint that appears on the first line of the text field when the text entry is empty. Defaults to an empty string.
+
+### `placeholder_style`
+
+The style to use for `placeholder_text`.
+
 ### `prefix`
 
 Optional `Control` to place on the line before the input.
@@ -433,17 +323,16 @@ Only one of `prefix` and `prefix_text` can be specified.
 
 The `prefix` appears after the `prefix_icon`, if both are specified.
 
-### `prefix_icon`
+### `prefix_mode`
 
-An icon that appears before the `prefix` or `prefix_text` and before the editable part of the text field, within the decoration's container.
+Defines the visibility of the `prefix` control based on the state of text entry. Has no effect if `prefix` is not specified.
 
-### `prefix_style`
+The property value is `VisibilityMode` enum with the following values:
 
-The style to use for `prefix_text`.
-
-### `prefix_text`
-
-Optional text `prefix` to place on the line before the input.
+* `ALWAYS` (default) - `prefix` is always visible regardless of the text entry state
+* `NEVER` - `prefix` is never visible regardless of the text entry state
+* `EDITING` - `prefix` is visible only when the text entry is in editing mode
+* `NOT_EDITING` - `prefix` is visible only when the current text entry is empty
 
 ### `read_only`
 
@@ -460,6 +349,10 @@ Defaults to `False`.
 ### `selection_color`
 
 The [color](/docs/guides/python/colors) of TextField selection.
+
+### `shadow`
+
+A list of shadows behind the text field.
 
 ### `shift_enter`
 
@@ -491,17 +384,16 @@ Only one of `suffix` and `suffix_text` can be specified.
 
 The `suffix` appears before the `suffix_icon`, if both are specified.
 
-### `suffix_icon`
+### `suffix_mode`
 
-An icon that appears after the editable part of the text field and after the `suffix` or `suffix_text`, within the decoration's container.
+Defines the visibility of the `suffix` control based on the state of text entry. Has no effect if `suffix` is not specified.
 
-### `suffix_style`
+The property value is `VisibilityMode` enum with the following values:
 
-The style to use for `suffix_text`.
-
-### `suffix_text`
-
-Optional text `suffix` to place on the line after the input.
+* `ALWAYS` (default) - `suffix` is always visible regardless of the text entry state
+* `NEVER` - `suffix` is never visible regardless of the text entry state
+* `EDITING` - `suffix` is visible only when the text entry is in editing mode
+* `NOT_EDITING` - `suffix` is visible only when the current text entry is empty
 
 ### `text_align`
 
@@ -520,10 +412,6 @@ Property value is `TextAlign` enum with the following values:
 
 Text size in virtual pixels.
 
-### `text_style`
-
-The style to use for the text being edited.
-
 ### `text_vertical_align`
 
 Defines how the text should be aligned vertically. It's value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of type `VerticalAlignment` enum with the following values:
@@ -531,6 +419,10 @@ Defines how the text should be aligned vertically. It's value can either be a nu
 * `START` - aligns the text vertically at the topmost location of the text field
 * `CENTER` (default) - aligns the text vertically in the center of the text field
 * `END` - aligns the text vertically at the bottommost location of the text field
+
+### `text_style`
+
+The style to use for the text being edited.
 
 ### `value`
 

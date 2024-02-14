@@ -162,6 +162,7 @@ module.exports = {
             id: "controls/buttons",
           },
           items: [
+            "controls/cupertinobutton",
             "controls/cupertinodialogaction",
             "controls/elevatedbutton",
             "controls/filledbutton",
@@ -190,6 +191,7 @@ module.exports = {
             "controls/cupertinoradio",
             "controls/cupertinoslider",
             "controls/cupertinoswitch",
+            "controls/cupertinotextfield",
             "controls/dropdown",
             "controls/radio",
             "controls/rangeslider",
@@ -249,6 +251,7 @@ module.exports = {
           },
           items: [
             "controls/audio",
+            "controls/audiorecorder",
             "controls/draggable",
             "controls/dragtarget",
             "controls/filepicker",
@@ -261,6 +264,7 @@ module.exports = {
             "controls/shakedetector",
             "controls/tooltip",
             "controls/transparentpointer",
+            "controls/video",
             "controls/windowdragarea",
           ],
         },

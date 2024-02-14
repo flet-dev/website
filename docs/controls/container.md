@@ -453,6 +453,10 @@ container_4.padding=padding.only(left=10)
 
 <img src="/img/docs/controls/container/container-padding-diagram.png" className="screenshot-50" />
 
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
+
 ### `shadow`
 
 A list of shadows cast by the container.
