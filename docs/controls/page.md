@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ### `appbar`
 
-A [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
+An [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
 
 ### `banner`
 
@@ -30,6 +30,10 @@ A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
 Background color of the Page.
 
 A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
+
+### `bottom_appbar`
+
+[`BottomAppBar`](bottomappbar) control to display at the bottom of the Page. If both [`bottom_appbar`](page#bottom_appbar) and [`navigation_bar`](page#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
 ### `bottom_sheet`
 
@@ -218,7 +222,7 @@ Page name as specified in `ft.app()` call. Page name is set when Flet app is run
 
 ### `navigation_bar`
 
-[`NavigationBar`](navigationbar) control to display at the bottom of the page.
+[`NavigationBar`](navigationbar) control to display at the bottom of the page. If both [`bottom_appbar`](page#bottom_appbar) and [`navigation_bar`](page#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
 ### `on_scroll_interval`
 
@@ -247,13 +251,52 @@ See [`Container.padding`](container#padding) for more information and possible v
 
 ### `platform`
 
-Operating system the application is running on:
+Operating system the application is running on.
 
-* `ios`
-* `android`
-* `macos`
-* `linux`
-* `windows`
+Property value is `PagePlatform` enum with the following values:
+
+* `IOS`
+* `ANDROID`
+* `MACOS`
+* `WINDOWS`
+* `LINUX`
+
+This property can be used to create adaptive UI with different controls depending on the operating system:
+```python
+def main(page: ft.Page):
+    if page.platform == ft.PagePlatform.MACOS:
+        page.add(ft.CupertinoDialogAction("Cupertino Button"))
+    else:
+        page.add(ft.TextButton("Material Button"))
+```
+
+You can also set this property for testing purposes:
+```python
+import flet as ft
+
+
+def main(page):
+    def set_android(e):
+        page.platform = ft.PagePlatform.ANDROID
+        page.update()
+        print("New platform:", page.platform)
+
+    def set_ios(e):
+        page.platform = "ios"
+        page.update()
+        print("New platform:", page.platform)
+
+    page.add(
+        ft.Switch(label="Switch A", adaptive=True),
+        ft.ElevatedButton("Set Android", on_click=set_android),
+        ft.ElevatedButton("Set iOS", on_click=set_ios),
+    )
+
+    print("Default platform:", page.platform)
+
+
+ft.app(target=main)
+```
 
 ### `platform_brightness`
 

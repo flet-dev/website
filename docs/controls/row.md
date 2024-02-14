@@ -251,6 +251,10 @@ Property value is `MainAxisAlignment` enum with the following values:
 
 A list of Controls to display inside the Row.
 
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
+
 ### `run_spacing`
 
 Spacing between runs when `wrap=True`. Default value is 10.
@@ -341,3 +345,5 @@ r = ft.Row([
 ```
 
 In general, the resulting width of a child in percents is calculated as `expand / sum(all expands) * 100%`.
+
+If you need to give the child Control of the Row the flexibility to expand to fill the available space horizontally but not require it to fill the available space, set its `expand_loose` property to `True`.
