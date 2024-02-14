@@ -48,7 +48,7 @@ Adaptive and Cupertino controls:
 * :white_check_mark: [NavigationBar -> CupertinoNavigationBar](https://github.com/flet-dev/flet/issues/2242)
 * DatePicker
 * TimePicker
-* ListTile
+* :white_check_mark: [ListTile -> CupertinoListTile](https://github.com/flet-dev/flet/issues/2477)
 * :white_check_mark: [Slider -> CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
 * :white_check_mark: [Switch -> CupertinoSwitch](https://github.com/flet-dev/flet/issues/2202)
 * :white_check_mark: [Radio -> CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)

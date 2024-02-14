@@ -96,6 +96,7 @@ module.exports = {
             "controls/card",
             "controls/column",
             "controls/container",
+            "controls/cupertinolisttile",
             "controls/datatable",
             "controls/dismissible",
             "controls/divider",
