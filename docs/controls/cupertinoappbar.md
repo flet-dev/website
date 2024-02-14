@@ -92,4 +92,4 @@ Vertical padding won't change the height of the app bar.
 
 ### `trailing`
 
-A `Control` to display after the `middle` control. Typically an [Icon](icon) control.
+A Control to place at the end of the app bar. Normally additional actions taken on the page such as a search or edit function.

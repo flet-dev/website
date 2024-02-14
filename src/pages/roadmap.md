@@ -39,6 +39,8 @@ New controls:
 * [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
 * [TreeView](https://github.com/flet-dev/flet/issues/961)
 * [Video](https://github.com/flet-dev/flet/issues/257)
+* :white_check_mark: [Pagelet](https://github.com/flet-dev/flet/issues/2431)
+
 
 Adaptive and Cupertino controls:
 * :white_check_mark: [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
