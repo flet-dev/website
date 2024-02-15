@@ -21,7 +21,7 @@ The goal: Flet 1.0 launch.
 * Website update.
 * [PyCon US 2024](https://pycon.blogspot.com/2021/05/pycon-us-2024-and-2025-announcement.html)
 
-**New controls:**
+### New controls
 
 * :white_check_mark: [AudioRecorder](https://github.com/flet-dev/flet/issues/419)
 * [Autocomplete](https://github.com/flet-dev/flet/issues/791)
@@ -40,19 +40,19 @@ The goal: Flet 1.0 launch.
 * [TreeView](https://github.com/flet-dev/flet/issues/961)
 * :white_check_mark: [Video](https://github.com/flet-dev/flet/issues/257)
 
-**Adaptive and Cupertino controls:**
+### Adaptive and Cupertino controls
 
 * :white_check_mark: [Pagelet](https://github.com/flet-dev/flet/issues/2431)
-* :white_check_mark: [AlertDialog -> CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
-* :white_check_mark: [ElevatedButton -> CupertinoButton](https://github.com/flet-dev/flet/issues/2377)
-* :white_check_mark: [TextField -> CupertinoTextField](https://github.com/flet-dev/flet/issues/2376)
-* :white_check_mark: [NavigationBar -> CupertinoNavigationBar](https://github.com/flet-dev/flet/issues/2242)
-* :white_check_mark: [ListTile -> CupertinoListTile](https://github.com/flet-dev/flet/issues/2487)
-* :white_check_mark: [Slider -> CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
-* :white_check_mark: [Switch -> CupertinoSwitch](https://github.com/flet-dev/flet/issues/2202)
-* :white_check_mark: [Radio -> CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
-* :white_check_mark: [AppBar -> CupertinoAppBar](https://github.com/flet-dev/flet/issues/2278)
-* :white_check_mark: [Checkbox -> CupertinoCheckbox](https://github.com/flet-dev/flet/issues/2157)
+* :white_check_mark: [AlertDialog → CupertinoAlertDialog](https://github.com/flet-dev/flet/issues/2203)
+* :white_check_mark: [ElevatedButton → CupertinoButton](https://github.com/flet-dev/flet/issues/2377)
+* :white_check_mark: [TextField → CupertinoTextField](https://github.com/flet-dev/flet/issues/2376)
+* :white_check_mark: [NavigationBar → CupertinoNavigationBar](https://github.com/flet-dev/flet/issues/2242)
+* :white_check_mark: [ListTile → CupertinoListTile](https://github.com/flet-dev/flet/issues/2487)
+* :white_check_mark: [Slider → CupertinoSlider](https://github.com/flet-dev/flet/issues/2174)
+* :white_check_mark: [Switch → CupertinoSwitch](https://github.com/flet-dev/flet/issues/2202)
+* :white_check_mark: [Radio → CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
+* :white_check_mark: [AppBar → CupertinoAppBar](https://github.com/flet-dev/flet/issues/2278)
+* :white_check_mark: [Checkbox → CupertinoCheckbox](https://github.com/flet-dev/flet/issues/2157)
 * ContextMenu
 * DatePicker
 * TimePicker
