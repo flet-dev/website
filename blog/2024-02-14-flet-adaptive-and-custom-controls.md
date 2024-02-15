@@ -8,7 +8,7 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-🥰 Happy Valentine Day everyone! 🥰
+🥰 Happy Valentine's Day lovely people! 🥰
 
 We just released Flet 0.20.0 with the focus on:
 
@@ -16,16 +16,24 @@ We just released Flet 0.20.0 with the focus on:
 2) Extending Flet apps with 3rd-party Flutter packages.
 3) New controls: [`Video`](/docs/controls/video) (yay!), [`AudioRecorder`](/docs/controls/audiorecorder) and a bunch of `Cupertino`-like controls. Flet now includes 97 built-in controls!
 
+:::warning
+Flet 0.20.0 includes a new [`Video`](/docs/controls/video) control. While macOS and Windows already include all required media libraries to test Flet apps on Linux, the [libmpv](https://mpv.io/) package must be installed. On Ubuntu/Debian in can be installed with:
+
+```
+sudo apt install libmpv-dev mpv
+```
+:::
+
 ## Adaptive UI
 
-Adaptive controls allow writing apps with a single code base, but which look and behave differently depending on the platform they are running on.
+Adaptive controls allow writing apps with a single code base which look and behave differently depending on the platform they are running on.
 
 To the date Flet provides [11 adaptive controls](/roadmap#adaptive-and-cupertino-controls). To make control adaptive you should set its `adaptive` property to `True`.
 
 In Flet 0.20.0 we introduce `adaptive` property to all container-alike controls.
 Setting `adaptive=True` on a container propagates this property to all child adaptive controls.
 
-Page adds `design` property which enables granular control over controls design language and could have on the following values: `ft.PageDesign.ADAPTIVE`, `ft.PageDesign.MATERIAL` or `ft.PageDesign.CUPERTINO`.
+Page adds `design` property which enables granular control over controls design language and can have the following values: `ft.PageDesign.ADAPTIVE`, `ft.PageDesign.MATERIAL` or `ft.PageDesign.CUPERTINO`.
 
 By setting just `page.design = ft.PageDesign.ADAPTIVE` you can make you app looking awesome on both iOS and Android devices:
 
@@ -42,9 +50,9 @@ By setting just `page.design = ft.PageDesign.ADAPTIVE` you can make you app look
 
 ## Integrating existing Flutter packages
 
-Today Flet offers almost 100 controls, but, as you can imagine, not every Flutter library/widget could be added to core Flet library and Flet team couldn't do that alone in the acceptable timeframe.
+Today Flet offers almost 100 controls, but, as you can imagine, not every Flutter library/widget could be added to the core Flet library and Flet team couldn't do that alone in the acceptable timeframe.
 
-At the same time we do not want to put early adopters, who chose Flet to build their next commercial or corporate app, into situation where their progress depends on Flet team availability and desire to implement a Flutter control they need.
+At the same time we do not want to put early adopters, who chose Flet to build their next commercial or corporate app, into a situation where their progress depends on Flet team availability and desire to implement a Flutter control they need.
 
 In Flet 0.20.0 we re-factored Flutter core packages and identified the API that can be used by 3rd-party developers to add their own Flet controls written in Dart.
 
@@ -64,6 +72,16 @@ On Python side you create a new class inherited from `Control` (non-visual or ov
 See [`Video`](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/video.py#L44) class implementation in Python.
 
 To integrate a custom Flutter package while building your Flet app with `flet build` command you can list extra packages with either `--include-packages` option or in `pubspec.yaml` file put into root of your Flet app.
+
+## `Video` control
+
+`Video` control is implemented in a separate Flutter package.
+
+To build your Flet app with `Video` control add `--include-packages flet_video` to your `flet build` command, for example:
+
+```
+flet build apk --include-packages flet_video
+```
 
 Flet 0.20.0 is a relatively ["large" release](https://github.com/flet-dev/flet/blob/main/CHANGELOG.md#0200) and could break some things.
 
