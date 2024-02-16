@@ -132,14 +132,6 @@ Sets the stereo balance.
 Setting balance is supported on Windows and Linux only.
 :::
 
-### `get_current_position()`
-
-Returns the current position in milliseconds.
-
-### `get_duration()`
-
-Returns the duration of audio in milliseconds.
-
 ### `playback_rate`
 
 Sets the playback rate. iOS and macOS have limits between 0.5 and 2x Android SDK version should be 23 or higher.
@@ -156,11 +148,29 @@ Sets the release mode. The following values are supported:
 
 Sets the URL to the audio file. It could be an asset URL, see [Image.src](/docs/controls/image#src) for more information about assets.
 
+:::note
+[Here](https://github.com/bluefireteam/audioplayers/blob/main/troubleshooting.md#supported-formats--encodings) is a list of supported audio formats.
+:::
+
 ### `src_base64`
 
 Sets the contents of audio file encoded in base-64 format.
 
+### `volume`
+
+Sets the volume (amplitude).
+
+0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
+
 ## Methods
+
+### `get_current_position()`
+
+Returns the current position in milliseconds.
+
+### `get_duration()`
+
+Returns the duration of audio in milliseconds.
 
 ### `pause()`
 
@@ -186,12 +196,6 @@ Moves the cursor to the desired position.
 Method arguments:
 
 * `position_milliseconds` - desired position in milliseconds.
-
-### `volume`
-
-Sets the volume (amplitude).
-
-0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
 
 ## Events
 

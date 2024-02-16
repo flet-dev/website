@@ -214,11 +214,11 @@ Below is `on_click` event handler that will reset the Text value when "AC" butto
 
 ```python
 def button_clicked(self, e):
-    if e.data == "AC":
+    if e.control.data == "AC":
         self.result.value = "0"
 ```
 
-With similar approach, specify `on_click` event and `data` property for each button and add expected action to the `button_clicked` event handler depending on `e.data` value. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py).
+With similar approach, specify `on_click` event and `data` property for each button and add expected action to the `button_clicked` event handler depending on `e.control.data` value. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py).
 
 Run the app and see it in the action:
 <img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />

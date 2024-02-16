@@ -364,8 +364,8 @@ There is one limitation though - system fonts cannot be used in a Flet web app w
 
 Flet web app can render its UI with one of these renderers:
 
-* **HTML renderer** - uses a combination of HTML elements, CSS, Canvas elements, and SVG elements. This renderer has a smaller download size.
-* **CanvasKit renderer** - this renderer is fully consistent with Flutter mobile and desktop, has faster performance with higher widget density, but adds about 2MB in download size.
+- **HTML renderer** - uses a combination of HTML elements, CSS, Canvas elements, and SVG elements. This renderer has a smaller download size.
+- **CanvasKit renderer** - this renderer is fully consistent with Flutter mobile and desktop, has faster performance with higher widget density, but adds about 2MB in download size.
 
 By default, Flet uses `CanvasKit` renderer for both desktop and mobile browsers.
 
@@ -380,9 +380,9 @@ Now, when you run the same program you'll see "Consolas" font is used.
 
 Supported `web_renderer` values:
 
-* `canvaskit` (default) - prioritizing performance and pixel-perfect consistency on both desktop and mobile browsers.
-* `html` - optimizing download size over performance on both desktop and mobile browsers.
-* `auto` - optimizing for download size on mobile browsers and optimizing for performance on desktop browsers.
+- `canvaskit` (default) - prioritizing performance and pixel-perfect consistency on both desktop and mobile browsers.
+- `html` - optimizing download size over performance on both desktop and mobile browsers.
+- `auto` - optimizing for download size on mobile browsers and optimizing for performance on desktop browsers.
 
 ### `italic`
 
@@ -404,10 +404,14 @@ If `True`, the glyphs in the text will be positioned as if there was unlimited h
 
 Property value is `TextOverflow` enum with the following values:
 
-* `FADE` (default)
-* `ELLIPSIS`
-* `CLIP`
-* `VISIBLE`
+- `FADE` (default)
+- `ELLIPSIS`
+- `CLIP`
+- `VISIBLE`
+
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
 
 ### `selectable`
 
@@ -443,32 +447,32 @@ Text horizontal align.
 
 Property value is `TextAlign` enum with the following values:
 
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+- `LEFT` (default)
+- `RIGHT`
+- `CENTER`
+- `JUSTIFY`
+- `START`
+- `END`
 
 ### `theme_style`
 
 Property value is `TextThemeStyle` enum with one of the following values:
 
-* `DISPLAY_LARGE`
-* `DISPLAY_MEDIUM`
-* `DISPLAY_SMALL`
-* `HEADLINE_LARGE`
-* `HEADLINE_MEDIUM`
-* `HEADLINE_SMALL`
-* `TITLE_LARGE`
-* `TITLE_MEDIUM`
-* `TITLE_SMALL`
-* `LABEL_LARGE`
-* `LABEL_MEDIUM`
-* `LABEL_SMALL`
-* `BODY_LARGE`
-* `BODY_MEDIUM`
-* `BODY_SMALL`
+- `DISPLAY_LARGE`
+- `DISPLAY_MEDIUM`
+- `DISPLAY_SMALL`
+- `HEADLINE_LARGE`
+- `HEADLINE_MEDIUM`
+- `HEADLINE_SMALL`
+- `TITLE_LARGE`
+- `TITLE_MEDIUM`
+- `TITLE_SMALL`
+- `LABEL_LARGE`
+- `LABEL_MEDIUM`
+- `LABEL_SMALL`
+- `BODY_LARGE`
+- `BODY_MEDIUM`
+- `BODY_SMALL`
 
 ### `value`
 
@@ -480,17 +484,17 @@ Font weight.
 
 Property value is `FontWeight` enum with the following values:
 
-* `NORMAL` (default)
-* `BOLD`
-* `W_100`
-* `W_200`
-* `W_300`
-* `W_400`
-* `W_500`
-* `W_600`
-* `W_700`
-* `W_800`
-* `W_900`
+- `NORMAL` (default)
+- `BOLD`
+- `W_100`
+- `W_200`
+- `W_300`
+- `W_400`
+- `W_500`
+- `W_600`
+- `W_700`
+- `W_800`
+- `W_900`
 
 ## `TextStyle` properties
 
@@ -510,10 +514,10 @@ The decorations to paint near the text (e.g., an underline).
 
 The value is the instance of `ft.TextDecoration` enum:
 
-* `NONE` (default) - Do not draw a decoration.
-* `UNDERLINE` - Draw a line underneath each line of text.
-* `OVERLINE` - Draw a line above each line of text.
-* `LINE_THROUGH` - Draw a line through each line of text.
+- `NONE` (default) - Do not draw a decoration.
+- `UNDERLINE` - Draw a line underneath each line of text.
+- `OVERLINE` - Draw a line above each line of text.
+- `LINE_THROUGH` - Draw a line through each line of text.
 
 The enum is a flag, so multiple decorations can be combined together, for example:
 
@@ -531,11 +535,11 @@ The style in which to paint the text decorations (e.g., dashed).
 
 The value is the instance of `ft.TextDecorationStyle` enum:
 
-* `SOLID` (default) - Draw a solid line.
-* `DOUBLE` - Draw two lines.
-* `DOTTED` - Draw a dotted line.
-* `DASHED` - Draw a dashed line.
-* `WAVY` - Draw a sinusoidal line.
+- `SOLID` (default) - Draw a solid line.
+- `DOUBLE` - Draw two lines.
+- `DOTTED` - Draw a dotted line.
+- `DASHED` - Draw a dashed line.
+- `WAVY` - Draw a sinusoidal line.
 
 ### `decoration_thickness`
 
@@ -551,9 +555,18 @@ The paint drawn as a foreground for the text.
 
 The value is of [`ft.Paint`](canvas#paint) class.
 
+### `height`
+
+The height of this text span, as a multiple of the font size.
+See complete explanation [here](https://api.flutter.dev/flutter/painting/TextStyle/height.html)
+
 ### `italic`
 
 `True` to use italic typeface.
+
+### `letter_spacing`
+
+The amount of space (in logical pixels) to add between each letter. A negative value can be used to bring the letters closer.
 
 ### `shadow`
 
@@ -595,8 +608,8 @@ The URL to open when the span is clicked. If registered, `on_click` event is fir
 
 Where to open URL in the web mode:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+- `_blank` (default) - new tab/window.
+- `_self` - the current tab/window.
 
 ## `TextSpan` events
 

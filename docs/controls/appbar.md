@@ -63,6 +63,16 @@ A list of `Control`s to display in a row after the title control.
 
 Typically these controls are [`IconButtons`](iconbutton) representing common operations. For less common operations, consider using a [`PopupMenuButton`](popupmenubutton) as the last action.
 
+**Note** that, if `AppBar.adaptive=True` and the app is opened on an iOS or macOS device, only the first element of this list will be used. This is because the `CupertinoAppBar`(which will be used on those two platforms) only accepts one - trailing - action control.
+
+### `adaptive`
+
+If the value is `True`, an adaptive AppBar is created based on whether the target platform is iOS/macOS.
+
+On iOS and macOS, a [`CupertinoAppBar`](/docs/controls/cupertinoappbar) is created, which has matching functionality and presentation as `AppBar`, and the graphics as expected on iOS. On other platforms, a Material AppBar is created.
+
+The default value is `False`.
+
 ### `automatically_imply_leading`
 
 Controls whether we should try to imply the leading widget if null.
@@ -100,6 +110,8 @@ Defines the width of leading control. By default, the value of `leading_width` i
 ### `title`
 
 The primary `Control` displayed in the app bar. Typically a [`Text`](text) control that contains a description of the current contents of the app.
+
+**Note** that, if `AppBar.adaptive=True` and the app is opened on an iOS or macOS device, this control will be automatically centered.
 
 ### `toolbar_height`
 
