@@ -90,9 +90,27 @@ ft.app(target=main)
 
 ## Properties
 
+### `adaptive`
+
+If the value is `True`, an adaptive ListTile is created based on whether the target platform is iOS/macOS.
+
+On iOS and macOS, a [`CupertinoListTile`](/docs/controls/cupertinolisttile) is created, which has matching functionality and presentation as `ListTile`, and the graphics as expected on iOS. On other platforms, a Material ListTile is created.
+
+If a `CupertinoListTile` is created, the following parameters are ignored: `autofocus`, `dense`, `is_three_line`, `selected` and `on_long_press` event.
+
+The default value is `False`.
+
 ### `autofocus`
 
 `True` if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `bgcolor`
+
+The list tile's background [color](/docs/guides/python/colors).
+
+### `bgcolor_activated`
+
+The list tile's splash [color](/docs/guides/python/colors) after the tile was tapped.
 
 ### `content_padding`
 

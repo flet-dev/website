@@ -407,6 +407,14 @@ Property value is `CrossAxisAlignment` enum with the following values:
 
 Throttling in milliseconds for `on_scroll` event. Default is `10`.
 
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
+
+### `run_spacing`
+
+Spacing between runs when `wrap=True`. Default value is 10.
+
 ### `scroll`
 
 Enables a vertical scrolling for the Column to prevent its content overflow.
@@ -424,10 +432,6 @@ Supported values:
 ### `spacing`
 
 Spacing between controls in a Column. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
-
-### `run_spacing`
-
-Spacing between runs when `wrap=True`. Default value is 10.
 
 ### `tight`
 
@@ -540,3 +544,7 @@ r = ft.Column([
 ```
 
 In general, the resulting height of a child in percents is calculated as `expand / sum(all expands) * 100%`.
+
+If `expand_loose` is `True`, the child control of a [`Column`](/docs/controls/column) or a [`Row`](/docs/controls/row) 
+
+If you need to give the child Control of the Column the flexibility to expand to fill the available space vertically but not require it to fill the available space, set its `expand_loose` property to `True`.

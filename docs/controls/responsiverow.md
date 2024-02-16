@@ -133,11 +133,15 @@ Property value is `MainAxisAlignment` enum with the following values:
 
 ### `columns`
 
-The number of virtual columns to layout children. Default is 12.
+The number of virtual columns to layout children. Default is `12`.
 
 ### `controls`
 
 A list of Controls to display inside the ResponsiveRow.
+
+### `rtl`
+
+`True` to set text direction to right-to-left. Default is `False`.
 
 ### `run_spacing`
 
