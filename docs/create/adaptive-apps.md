@@ -75,43 +75,96 @@ By setting just `page.adaptive = True` you can make you app looking awesome on b
   </div>  
 </div>
 
-## Material and iOS controls
+## Material, iOS and adaptive controls
 
 Most of Flet controls are based on [Material design](https://m3.material.io/). 
 
 There is also a number of iOS-style controls in Flet that are called Cupertino controls. 
 
-Cupertino controls usually have a matching Material control that has `adaptive` property. If `adaptive` is `True`, a different control will be created depending on the platform.
+Cupertino controls usually have a matching Material control that has `adaptive` property which by default is `False`. When using a Material control with `adaptive` property set to `True`, a different control will be created depending on the platform, for example:
+```
+ft.Checkbox(adaptive=True, value=True, label="Adaptive Checkbox")
+```
 
-Flet checks the value of [`page.platform`](docs/controls/page#platform) property and if it is `ft.PagePlatform.IOS` or `ft.PagePlatform.MACOS`, Cupertino control will be created; in all other cases Material control will be created. 
+Flet checks the value of [`page.platform`](/docs/controls/page#platform) property and if it is `ft.PagePlatform.IOS` or `ft.PagePlatform.MACOS`, Cupertino control will be created; in all other cases Material control will be created. 
 
 Below is the list of adaptive Material controls and their matching Cupertino controls:
 
 <div className="row">
   <div className="col col--6" style={{textAlign: 'center'}}>
-    <h3>Checkbox</h3>
-    <img src="/img/docs/adaptive-apps/Checkbox.png" className="screenshot-60" />
+    <a href="/docs/controls/alertdialog">AlertDialog</a>
+    <img src="/img/docs/adaptive-apps/alertdialog.png" className="screenshot-60" />
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
-    <h3>CupertinoCheckbox</h3>
-    <img src="/img/docs/adaptive-apps/CupertinoCheckbox.png" className="screenshot-60" style={{ width: '57%'}} />
+    <a href="/docs/controls/cupertinoalertdialog">CupertinoAlertDialog</a>
+    <img src="/img/docs/adaptive-apps/cupertinoalertdialog.png" className="screenshot-60" style={{ width: '57%'}} />
   </div>  
 </div>
-```
-ft.Checkbox(adaptive=True, value=True, label="Adaptive Checkbox")
-```
+
 <div className="row">
   <div className="col col--6" style={{textAlign: 'center'}}>
-    <h3>Slider</h3>
-    <img src="/img/docs/adaptive-apps/Checkbox.png" className="screenshot-60" />
+    <a href="/docs/controls/appbar">AppBar</a>
+    <img src="/img/docs/adaptive-apps/appbar.png" className="screenshot-60" />
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
-    <h3>CupertinoSlider</h3>
-    <img src="/img/docs/adaptive-apps/CupertinoCheckbox.png" className="screenshot-60" style={{ width: '57%'}} />
+    <a href="/docs/controls/cupertinoappbar">CupertinoAppBar</a>
+    <img src="/img/docs/adaptive-apps/cupertinoappbar.png" className="screenshot-60" style={{ width: '57%'}} />
   </div>  
 </div>
-```
-ft.Slider(adaptive=True, value=True, label="Adaptive Slider")
-```
+
+<div className="row">
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/checkbox">Checkbox</a>
+    <img src="/img/docs/adaptive-apps/checkbox.png" className="screenshot-60" />
+  </div>
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/cupertinocheckbox">CupertinoCheckbox</a>
+    <img src="/img/docs/adaptive-apps/cupertinocheckbox.png" className="screenshot-60" style={{ width: '57%'}} />
+  </div>  
+</div>
+
+<div className="row">
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/slider">Slider</a>
+    <img src="/img/docs/adaptive-apps/slider.png" className="screenshot-60" />
+  </div>
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/cupertinoslider">CupertinoSlider</a>
+    <img src="/img/docs/adaptive-apps/cupertinoslider.png" className="screenshot-60" style={{ width: '57%'}} />
+  </div>  
+</div>
+
+<div className="row">
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/switch">Switch</a>
+    <img src="/img/docs/adaptive-apps/switch.png" className="screenshot-60" />
+  </div>
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/cupertinoswitch">CupertinoSwitch</a>
+    <img src="/img/docs/adaptive-apps/cupertinoswitch.png" className="screenshot-60" style={{ width: '57%'}} />
+  </div>  
+</div>
+
+<div className="row">
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/filledbutton">FilledButton</a>
+    <img src="/img/docs/adaptive-apps/filledbutton.png" className="screenshot-30" />
+  </div>
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/cupertinobutton">CupertinoButton</a>
+    <img src="/img/docs/adaptive-apps/cupertinobutton-filled.png" className="screenshot-30" style={{ width: '37%'}} />
+  </div>  
+</div>
+
+<div className="row">
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/elevatedbutton">ElevatedButton</a>
+    <img src="/img/docs/adaptive-apps/elevatedbutton.png" className="screenshot-30" />
+  </div>
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/cupertinobutton">CupertinoButton</a>
+    <img src="/img/docs/adaptive-apps/cupertinobutton-elevated.png" className="screenshot-30" style={{ width: '37%'}} />
+  </div>  
+</div>
 
 
