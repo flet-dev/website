@@ -103,12 +103,12 @@ Below is the list of adaptive Material controls and their matching Cupertino con
 
 <div className="row">
   <div className="col col--6" style={{textAlign: 'center'}}>
-    <a href="/docs/controls/buttons">Button</a>, 
-    when placed in Dialog actions
+    <a href="/docs/controls/buttons">Any button in Dialog actions</a>
+        <img src="/img/docs/adaptive-apps/dialogactions.png" className="screenshot-30" />
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
       <a href="/docs/controls/cupertinodialogaction">CupertinoDialogAction</a>
-    <img src="/img/docs/adaptive-apps/cupertinobutton.png" className="screenshot-30" style={{ width: '17%'}} />
+    <img src="/img/docs/adaptive-apps/cupertinodialogactions.png" className="screenshot-40" />
   </div>  
 </div>
 
@@ -120,7 +120,29 @@ Below is the list of adaptive Material controls and their matching Cupertino con
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
     <a href="/docs/controls/cupertinoappbar">CupertinoAppBar</a>
-    <img src="/img/docs/adaptive-apps/cupertinoappbar.png" className="screenshot-60" style={{ width: '57%'}} />
+    <img src="/img/docs/adaptive-apps/cupertinoappbar.png" className="screenshot-60" />
+  </div>  
+</div>
+
+<div className="row">
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/navigationbar">NavigationBar</a>
+    <img src="/img/docs/adaptive-apps/navigationbar.png" className="screenshot-60" />
+  </div>
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/cupertinonavigationbar">CupertinoNavigationBar</a>
+    <img src="/img/docs/adaptive-apps/cupertinonavigationbar.png" className="screenshot-60" />
+  </div>  
+</div>
+
+<div className="row">
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/listtile">ListTile</a>
+    <img src="/img/docs/adaptive-apps/listtile.png" className="screenshot-70" />
+  </div>
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/cupertinolisttile">CupertinoListTile</a>
+    <img src="/img/docs/adaptive-apps/cupertinolisttile.png" className="screenshot-70" />
   </div>  
 </div>
 
@@ -157,47 +179,38 @@ Below is the list of adaptive Material controls and their matching Cupertino con
   </div>  
 </div>
 
-<div className="row">
-  <div className="col col--6" style={{textAlign: 'center'}}>
-    <a href="/docs/controls/listtile">ListTile</a>
-    <img src="/img/docs/adaptive-apps/listtile.png" className="screenshot-10" />
-  </div>
-  <div className="col col--6" style={{textAlign: 'center'}}>
-    <a href="/docs/controls/cupertinolisttile">CupertinoListTile</a>
-    <img src="/img/docs/adaptive-apps/cupertinolisttile.png" className="screenshot-10" />
-  </div>  
-</div>
+
 
 <div className="row">
   <div className="col col--6" style={{textAlign: 'center'}}>
     <a href="/docs/controls/filledbutton">FilledButton</a>
-    <img src="/img/docs/adaptive-apps/filledbutton.png" className="screenshot-30" />
+    <img src="/img/docs/adaptive-apps/filledbutton.png" className="screenshot-20" />
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
     <a href="/docs/controls/cupertinobutton">CupertinoFilledButton</a>
-    <img src="/img/docs/adaptive-apps/cupertinofilledbutton.png" className="screenshot-30" style={{ width: '37%'}} />
+    <img src="/img/docs/adaptive-apps/cupertinofilledbutton.png" className="screenshot-30" />
   </div>  
 </div>
 
 <div className="row">
   <div className="col col--6" style={{textAlign: 'center'}}>
     <a href="/docs/controls/filledtonalbutton">FilledTonalButton</a>
-    <img src="/img/docs/adaptive-apps/filledtonalbutton.png" className="screenshot-30" />
+    <img src="/img/docs/adaptive-apps/filledtonalbutton.png" className="screenshot-20" />
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
     <a href="/docs/controls/cupertinobutton">CupertinoButton</a>
-    <img src="/img/docs/adaptive-apps/cupertinobutton-filledtonal.png" className="screenshot-30" style={{ width: '37%'}} />
+    <img src="/img/docs/adaptive-apps/cupertinobutton-filledtonal.png" className="screenshot-30" />
   </div>  
 </div>
 
 <div className="row">
   <div className="col col--6" style={{textAlign: 'center'}}>
     <a href="/docs/controls/elevatedbutton">ElevatedButton</a>
-    <img src="/img/docs/adaptive-apps/elevatedbutton.png" className="screenshot-30" />
+    <img src="/img/docs/adaptive-apps/elevatedbutton.png" className="screenshot-20" />
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
     <a href="/docs/controls/cupertinobutton">CupertinoButton</a>
-    <img src="/img/docs/adaptive-apps/cupertinobutton.png" className="screenshot-30" style={{ width: '17%'}} />
+    <img src="/img/docs/adaptive-apps/cupertinobutton.png" className="screenshot-20" />
   </div>  
 </div>
 
@@ -208,7 +221,7 @@ Below is the list of adaptive Material controls and their matching Cupertino con
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
       <a href="/docs/controls/cupertinobutton">CupertinoButton</a>
-    <img src="/img/docs/adaptive-apps/cupertinobutton.png" className="screenshot-30" style={{ width: '17%'}} />
+    <img src="/img/docs/adaptive-apps/cupertinobutton.png" className="screenshot-20" />
   </div>  
 </div>
 
@@ -219,7 +232,7 @@ Below is the list of adaptive Material controls and their matching Cupertino con
   </div>
   <div className="col col--6" style={{textAlign: 'center'}}>
       <a href="/docs/controls/cupertinobutton">CupertinoButton</a>
-    <img src="/img/docs/adaptive-apps/cupertinobutton.png" className="screenshot-30" style={{ width: '17%'}} />
+    <img src="/img/docs/adaptive-apps/cupertinobutton.png" className="screenshot-20" />
   </div>  
 </div>
 
