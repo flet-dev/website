@@ -14,6 +14,7 @@ module.exports = {
         'create/running-app',
         'create/flet-app-structure',
         'create/flet-controls',
+        'create/adaptive-apps',
         'create/navigation-and-routing',
         'create/user-controls',
         "create/testing-on-ios",
