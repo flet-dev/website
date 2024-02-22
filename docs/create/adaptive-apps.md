@@ -75,18 +75,22 @@ By setting just `page.adaptive = True` you can make you app looking awesome on b
   </div>  
 </div>
 
-## Material, iOS and adaptive controls
+## Material and Cupertino controls
 
 Most of Flet controls are based on [Material design](https://m3.material.io/). 
 
 There is also a number of iOS-style controls in Flet that are called Cupertino controls. 
 
-Cupertino controls usually have a matching Material control that has `adaptive` property which by default is `False`. When using a Material control with `adaptive` property set to `True`, a different control will be created depending on the platform, for example:
-```
+Cupertino controls usually have a matching Material control that has [`adaptive`](/docs/controls#adaptive) property which by default is `False`. When using a Material control with `adaptive` property set to `True`, a different control will be created depending on the platform, for example:
+```python
 ft.Checkbox(adaptive=True, value=True, label="Adaptive Checkbox")
 ```
 
 Flet checks the value of [`page.platform`](/docs/controls/page#platform) property and if it is `ft.PagePlatform.IOS` or `ft.PagePlatform.MACOS`, Cupertino control will be created; in all other cases Material control will be created. 
+
+:::note
+[`adaptive`](/docs/controls#adaptive) property can be set for an individual control or a container control such as `Row`, `Column` or any other control that has `content` or `controls` property. If container control is adaptive, all its child controls will be adaptive, unless `adaptive` property is explicitely set to `False` for a child control.
+:::
 
 Below is the list of adaptive Material controls and their matching Cupertino controls:
 
@@ -225,6 +229,17 @@ Below is the list of adaptive Material controls and their matching Cupertino con
 
 <div className="row">
   <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/iconbutton">IconButton</a>
+    <img src="/img/docs/adaptive-apps/icon-button.png" className="screenshot-10" />
+  </div>
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <a href="/docs/controls/cupertinobutton">CupertinoButton</a>
+    <img src="/img/docs/adaptive-apps/icon-button-cupertino.png" className="screenshot-10" />
+  </div>  
+</div>
+
+<div className="row">
+  <div className="col col--6" style={{textAlign: 'center'}}>
     <a href="/docs/controls/elevatedbutton">ElevatedButton</a>
     <img src="/img/docs/adaptive-apps/elevatedbutton.png" className="screenshot-20" />
   </div>
@@ -251,6 +266,83 @@ Below is the list of adaptive Material controls and their matching Cupertino con
   <div className="col col--6" style={{textAlign: 'center'}}>
   </div>  
 </div>
+
+## Custom adaptive controls
+
+While Flet offers a number of [controls](#material-and-cupertino-controls) that will be adapted to a platform automatically using their [`adaptive`](/docs/controls#adaptive) property, there will be cases when you need more specific adaptive UI presentation, for example, using different icon, background color, padding etc. depending on the platform.
+
+With Flet, you can create your own reusable custom controls in Python that will inherit from a Flet control and implement specific properties you need. In the example below, we are creating a new `AdaptiveNavigationDestination` control that will be displaying different icon on iOS and Android:
+
+```python
+class AdaptiveNavigationDestination(ft.NavigationDestination):
+    def __init__(self, ios_icon, android_icon, label):
+        super().__init__()
+        self._ios_icon = ios_icon
+        self._android_icon = android_icon
+        self.label = label
+
+    def before_update(self):
+        self.icon = (
+            self._ios_icon
+            if self.page.platform == ft.PagePlatform.IOS
+            or self.page.platform == ft.PagePlatform.MACOS
+            else self._android_icon
+        )
+```
+
+We will use `AdaptiveNavigationDestination` in `NavigationBar`:
+
+```python
+import flet as ft
+from adaptive_navigation_destination import AdaptiveNavigationDestination
+
+def main(page):
+
+    page.adaptive = True
+
+    page.navigation_bar = ft.NavigationBar(
+        selected_index=2,
+        destinations=[
+            AdaptiveNavigationDestination(
+                ios_icon=ft.cupertino_icons.PERSON_3_FILL,
+                android_icon=ft.icons.PERSON,
+                label="Contacts",
+            ),
+            AdaptiveNavigationDestination(
+                ios_icon=ft.cupertino_icons.CHAT_BUBBLE_2,
+                android_icon=ft.icons.CHAT,
+                label="Chats",
+            ),
+            AdaptiveNavigationDestination(
+                ios_icon=ft.cupertino_icons.SETTINGS,
+                android_icon=ft.icons.SETTINGS,
+                label="Settings",
+            ),
+        ],
+    )
+
+    page.update()
+
+
+ft.app(target=main)
+```
+Now the NavigationBar and icons within it will look like different on Android and iOS:
+
+<div className="row">
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <h3>iOS</h3>
+    <img src="/img/docs/adaptive-apps/navigation-bar-custom-ios.png" className="screenshot-100" />
+  </div>
+  <div className="col col--6" style={{textAlign: 'center'}}>
+    <h3>Android</h3>
+    <img src="/img/docs/adaptive-apps/navigation-bar-custom-android.png" className="screenshot-100"/>
+  </div>  
+</div>
+
+:::note
+You may utilise reusable controls approach to adapt your app not only depending on the [`platform`](/docs/controls/page#platform) but also use [`page.web`](/docs/controls/page#web) property to have different UI depending on wether the app is running in a browser or not, or even combine `platform` and `web` properties to have specific UI for your MACOS or Windows desktop apps.
+:::
+
 
 
 
