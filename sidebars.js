@@ -164,6 +164,7 @@ module.exports = {
           items: [
             "controls/cupertinobutton",
             "controls/cupertinodialogaction",
+            "controls/cupertinofilledbutton",
             "controls/elevatedbutton",
             "controls/filledbutton",
             "controls/filledtonalbutton",

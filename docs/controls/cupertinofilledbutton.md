@@ -1,17 +1,17 @@
 ---
-title: CupertinoButton
-sidebar_label: CupertinoButton
-slug: cupertinobutton
+title: CupertinoFilledButton
+sidebar_label: CupertinoFilledButton
+slug: cupertinofilledbutton
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-An iOS-style button.
+An iOS-style button with filled with background color.
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/buttons/cupertinobutton)
+[Live example](https://flet-controls-gallery.fly.dev/buttons/cupertinofilledbutton)
 
 ### Basic Example
 
@@ -23,32 +23,12 @@ import flet as ft
 
 def main(page: ft.Page):
     page.add(
-        ft.CupertinoButton(
-            content=ft.Text("Normal CupertinoButton", color=ft.cupertino_colors.DESTRUCTIVE_RED),
+        ft.CupertinoFilledButton(
+            content=ft.Text("CupertinoFilled"),
             opacity_on_click=0.3,
-            on_click=lambda e: print("Normal CupertinoButton clicked!"),
-        ),
-        ft.CupertinoButton(
-            content=ft.Text("Filled CupertinoButton", color=ft.colors.YELLOW),
-            bgcolor=ft.colors.PRIMARY,
-            alignment=ft.alignment.top_left,
-            border_radius=ft.border_radius.all(15),
-            opacity_on_click=0.5,
-            on_click=lambda e: print("Filled CupertinoButton clicked!"),
-        ),
-        ft.ElevatedButton(
-            adaptive=True,  # a CupertinoButton will be rendered when running on apple-platform
-            bgcolor=ft.cupertino_colors.SYSTEM_TEAL,
-            content=ft.Row(
-                [
-                    ft.Icon(name=ft.icons.FAVORITE, color="pink"),
-                    ft.Text("ElevatedButton+adaptive"),
-                ],
-                tight=True,
-            ),
+            on_click=lambda e: print("CupertinoFilledButton clicked!"),
         ),
     )
-
 
 ft.app(target=main)
 ```
@@ -56,17 +36,9 @@ ft.app(target=main)
 
 </Tabs>
 
-<img src="/img/docs/controls/cupertino-button/basic-cupertino-buttons.png" className="screenshot-20" />
+<img src="/img/docs/controls/cupertino-filled-button/cupertino-filled-button.png" className="screenshot-20" />
 
 ## Properties
-
-### `bgcolor`
-
-Button's background [color](/docs/guides/python/colors).
-
-### `color`
-
-Button's text [color](/docs/guides/python/colors).
 
 ### `disabled_color`
 
