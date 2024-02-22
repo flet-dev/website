@@ -195,7 +195,7 @@ Defaults to `FilterQuality.LOW`.
 
 ### `fill_color`
 
-Defines the [color](/docs/guides/python/colors) used to fill the video background.
+Defines the [color](/docs/reference/colors) used to fill the video background.
 
 ### `muted`
 

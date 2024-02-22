@@ -62,11 +62,11 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-Button's background [color](/docs/guides/python/colors).
+Button's background [color](/docs/reference/colors).
 
 ### `disabled_color`
 
-The background [color](/docs/guides/python/colors) of the button when it is disabled.
+The background [color](/docs/reference/colors) of the button when it is disabled.
 
 ### `content`
 
@@ -86,7 +86,7 @@ Icon shown in the button.
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+Icon [color](/docs/reference/colors).
 
 ### `min_size`
 

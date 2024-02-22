@@ -106,11 +106,11 @@ The default value is `False`.
 
 ### `bgcolor`
 
-The list tile's background [color](/docs/guides/python/colors).
+The list tile's background [color](/docs/reference/colors).
 
 ### `bgcolor_activated`
 
-The list tile's splash [color](/docs/guides/python/colors) after the tile was tapped.
+The list tile's splash [color](/docs/reference/colors) after the tile was tapped.
 
 ### `content_padding`
 

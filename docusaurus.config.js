@@ -114,7 +114,7 @@ module.exports = {
           items: [
             {
               label: 'Blog',
-              to: 'blog',
+              to: '/blog',
             },
             {
               label: 'GitHub',
@@ -122,7 +122,7 @@ module.exports = {
             },
             {
               label: 'Support',
-              href: 'support',
+              href: '/support',
             },
           ],
         },

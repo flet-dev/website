@@ -102,7 +102,7 @@ The default value is `False`. See the example of usage [here](/docs/controls/cup
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) of the dialog's surface.
+The background [color](/docs/reference/colors) of the dialog's surface.
 
 ### `content`
 
