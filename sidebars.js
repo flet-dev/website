@@ -76,8 +76,8 @@ module.exports = {
                   type: "category",
                   label: "Hosting",
                   link: {
-                    type: "generated-index",
-                    slug: "publish/web/dynamic-website/hosting",
+                    type: "doc",
+                    id: "publish/web/dynamic-website/hosting/overview",
                   },
                   items: [
                     "publish/web/dynamic-website/hosting/fly-io",

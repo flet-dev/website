@@ -63,11 +63,11 @@ A `Control` to display on the right of the list tile, before `trailing`. Similar
 
 ### `bgcolor`
 
-The list tile's background [color](/docs/guides/python/colors).
+The list tile's background [color](/docs/reference/colors).
 
 ### `bgcolor_activated`
 
-The list tile's background [color](/docs/guides/python/colors) after the tile was tapped.
+The list tile's background [color](/docs/reference/colors) after the tile was tapped.
 
 ### `leading`
 

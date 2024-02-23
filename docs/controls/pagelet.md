@@ -82,7 +82,7 @@ An [`AppBar`](/docs/controls/appbar) control to display at the top of the Pagele
 
 ### `bgcolor`
 
-Background [color](/docs/guides/python/colors) of the Pagelet.
+Background [color](/docs/reference/colors) of the Pagelet.
 
 ### `bottom_appbar`
 
