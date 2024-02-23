@@ -281,7 +281,8 @@ class AdaptiveNavigationDestination(ft.NavigationDestination):
         self._android_icon = android_icon
         self.label = label
 
-    def before_update(self):
+    def build(self):
+        # we can check for platform in build method because self.page is known
         self.icon = (
             self._ios_icon
             if self.page.platform == ft.PagePlatform.IOS
