@@ -159,6 +159,24 @@ When you run `flet build <target_platform>` command it:
 * Runs `flutter build <target_platform>` command to produce an executable or an install package.
 * Copies build results to `build/<target_platform>` directory.
 
+### Including optional controls
+
+If your app uses the following controls their packages must be added to a build command:
+
+* [`Audio`](/docs/controls/audio) control implemented in `flet_audio` package.
+* [`AudioRecorder`](/docs/controls/audiorecorder) control implemented in `flet_audio_recorder` package.
+* [`Video`](/docs/controls/video) control implemented in `flet_video` package.
+* [`WebView`](/docs/controls/webview) control implemented in `flet_webview` package.
+
+Use `--include-packages <package_1> <package_2> ...` option to add Flutter packages with optional
+Flet controls.
+
+For example, to build your Flet app with `Video` control add `--include-packages flet_video` to your `flet build` command:
+
+```
+flet build apk --include-packages flet_video
+```
+
 ### Logging
 
 All Flet apps output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `out.log` file. Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:

@@ -13,6 +13,14 @@ On Linux, encoding is provided by [fmedia](https://stsaz.github.io/fmedia/) whic
 
 AudioRecorder control is non-visual and should be added to `page.overlay` list.
 
+:::info Packaging
+To build your Flet app that uses `AudioRecorder` control add `--include-packages flet_audio_recorder` to `flet build` command, for example:
+
+```
+flet build apk --include-packages flet_audio_recorder
+```
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
