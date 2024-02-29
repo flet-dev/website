@@ -23,7 +23,7 @@ page.client_storage.set("number.setting", 12345)
 page.client_storage.set("bool_setting", True)
 
 # lists
-page.client_storage.set("favorite_colors", ["read", "green", "blue"])
+page.client_storage.set("favorite_colors", ["red", "green", "blue"])
 ```
 
 :::note
@@ -43,7 +43,7 @@ Reading data:
 value = page.client_storage.get("key")
 
 colors = page.client_storage.get("favorite_colors")
-# colors = ["read", "green", "blue"]
+# colors = ["red", "green", "blue"]
 ```
 
 Check if a key exists:
