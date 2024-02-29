@@ -7,8 +7,16 @@ slug: video
 Video playing control.
 Based on the [media_kit](https://pub.dev/packages/media_kit) Dart/Flutter package.
 
-:::note
+:::note Prerequisites
 On Linux, the [libmpv](https://mpv.io/) package must be installed. On Ubuntu/Debian you can install it with `sudo apt install libmpv-dev mpv`.
+:::
+
+:::info Packaging
+To build your Flet app that uses `Video` control add `--include-packages flet_video` to `flet build` command, for example:
+
+```
+flet build apk --include-packages flet_video
+```
 :::
 
 import Tabs from '@theme/Tabs';
