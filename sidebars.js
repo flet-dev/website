@@ -248,7 +248,10 @@ module.exports = {
             type: "generated-index",
             slug: "controls/animations",
           },
-          items: ["controls/animatedswitcher"],
+          items: [
+            "controls/animatedswitcher"
+            "controls/lottie"
+          ],
         },
         {
           type: "category",
