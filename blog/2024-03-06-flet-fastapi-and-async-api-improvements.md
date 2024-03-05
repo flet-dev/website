@@ -111,6 +111,22 @@ Page.on_app_lifecycle_state_change
 `detach`
 `restart`
 
+```python
+import flet as ft
+
+
+def main(page: ft.Page):
+
+    def app_lifecycle_change(e: ft.AppLifecycleStateChangeEvent):
+        print("App lifecycle state:", e.state)
+
+    page.on_app_lifecycle_state_change = app_lifecycle_change
+    page.add(ft.Text("Hello World"))
+
+
+ft.app(target=main)
+```
+
 ## `Page.media` details
 
 TBD
