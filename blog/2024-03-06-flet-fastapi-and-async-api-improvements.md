@@ -97,32 +97,37 @@ ft.app(main)
 
 ## Accessibility improvements
 
-More Semantics properties and SemanticsService control (#2731).
+Complete implementation of [Semantics](/docs/controls/semantics) control and new [SemanticsService](/docs/controls/semanticsservice) control.
 
 ## App lifecycle change event
 
-Page.on_app_lifecycle_state_change
+There is a new `Page.on_app_lifecycle_state_change` event that allows listening for changes in the application lifecycle.
 
-`show`
-`resume`
-`hide`
-`inactive`
-`pause`
-`detach`
-`restart`
+For example, you can now update UI with the latest information when the app becomes active (brought to the front). That works on iOS, Android, all desktop platforms and web!
+
+The following app lifecycle transitions are recognized:
+
+* `SHOW`
+* `RESUME`
+* `HIDE`
+* `INACTIVE`
+* `PAUSE`
+* `DETACH`
+* `RESTART`
+
+Here's a small example of how this event can be used: 
 
 ```python
 import flet as ft
 
-
 def main(page: ft.Page):
 
     def app_lifecycle_change(e: ft.AppLifecycleStateChangeEvent):
-        print("App lifecycle state:", e.state)
+        if e.state == ft.AppLifecycleState.RESUME:
+          print("Update UI with fresh data!")
 
     page.on_app_lifecycle_state_change = app_lifecycle_change
     page.add(ft.Text("Hello World"))
-
 
 ft.app(target=main)
 ```
