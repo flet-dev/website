@@ -145,6 +145,7 @@ module.exports = {
             "controls/badge",
             "controls/canvas",
             "controls/circleavatar",
+            "controls/cupertinoactivityindicator",
             "controls/icon",
             "controls/image",
             "controls/markdown",
@@ -280,10 +281,11 @@ module.exports = {
         id: "cli/index",
       },
       items: [
+        "cli/build",
         "cli/create",
-        "cli/run",
-        "cli/publish",
         "cli/pack",
+        "cli/publish",
+        "cli/run",
       ],
     }
   ],
