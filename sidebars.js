@@ -166,6 +166,8 @@ module.exports = {
             "controls/cupertinobutton",
             "controls/cupertinocontextmenuaction",
             "controls/cupertinodialogaction",
+            "controls/cupertinosegmentedbutton",
+            "controls/cupertinoslidingsegmentedbutton",
             "controls/elevatedbutton",
             "controls/filledbutton",
             "controls/filledtonalbutton",
@@ -281,7 +283,7 @@ module.exports = {
         id: "cli/index",
       },
       items: [
-        "cli/build",
+        // "cli/build",
         "cli/create",
         "cli/pack",
         "cli/publish",
