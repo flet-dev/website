@@ -86,18 +86,22 @@ ft.app(main)
 
 ## New Cupertino controls
 
+```
 * [CupertinoActivityIndicator](/docs/controls/cupertinoactivityindicator)
 * [CupertinoActionSheet](/docs/controls/cupertinoactionsheet)
-* [CupertinoSlidingSegmentedButton](/docs/controls/CupertinoSlidingSegmentedButton)
+* [CupertinoSlidingSegmentedButton](/docs/controls/cupertinoslidingsegmentedbutton)
 * [CupertinoSegmentedButton](/docs/controls/cupertinosegmentedbutton)
 * [CupertinoTimerPicker](/docs/controls/cupertinotimerpicker)
 * [CupertinoPicker](/docs/controls/cupertinopicker)
 * [CupertinoDatePicker](/docs/controls/cupertinodatepicker)
 * [CupertinoContextMenu](/docs/controls/cupertinocontextmenu)
+```
 
 ## Accessibility improvements
 
+```
 Complete implementation of [Semantics](/docs/controls/semantics) control and new [SemanticsService](/docs/controls/semanticsservice) control.
+```
 
 ## App lifecycle change event
 
