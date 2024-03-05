@@ -122,6 +122,10 @@ If `track_color` returns a non-null color in the default state, it will be used 
 
 The clickable label to display on the right of the Switch.
 
+### `label_style`
+
+The label's style. An instance of type [`TextStyle`](#textstyle-properties).
+
 ### `label_position`
 
 Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
