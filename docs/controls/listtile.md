@@ -124,6 +124,10 @@ See [`Container.padding`](container#padding) property for more information and p
 
 Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
 
+### `hover_color`
+
+The tile's [color](/docs/guides/python/colors) when hovered.
+
 ### `is_three_line`
 
 Whether this list tile is intended to display three lines of text.
