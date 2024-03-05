@@ -126,4 +126,4 @@ Typically a [`Text`](text) control.
 
 ### `on_dismiss`
 
-Fires when dialog is dismissed.
+Fires when the dialog is dismissed.
