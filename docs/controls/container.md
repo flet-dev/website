@@ -408,6 +408,10 @@ Sets an image encoded as Base-64 string as a container background. See [`Image.s
 
 `True` to produce ink ripples effect when user clicks the container. Default is `False`.
 
+### `ink_color`
+
+The splash [color](/docs/guides/python/colors) of the ink response.
+
 ### `margin`
 
 Empty space to surround the decoration and child control.
