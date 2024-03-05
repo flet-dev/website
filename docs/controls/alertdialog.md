@@ -134,7 +134,7 @@ See [`Container.padding`](container#padding) for more information about padding 
 
 ### `modal`
 
-Whether dialog can be dismissed by clicking the area outside of it.
+Whether dialog can be dismissed/closed by clicking the area outside of it.
 
 ### `open`
 

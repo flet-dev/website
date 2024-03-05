@@ -217,6 +217,7 @@ module.exports = {
             "controls/banner",
             "controls/bottomsheet",
             "controls/cupertinoalertdialog",
+            "controls/cupertinobottomsheet",
             "controls/cupertinocontextmenu",
             "controls/datepicker",
             "controls/snackbar",
