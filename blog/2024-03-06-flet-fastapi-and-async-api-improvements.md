@@ -10,9 +10,9 @@ tags: [releases]
 
 Flet makes writing dynamic, real-time web apps a real fun!
 
-Flet 0.21.0 further improves web apps development experience as well as using asyncio APIs in your Flet apps.
+Flet 0.21 further improves web apps development experience as well as using asyncio APIs in your Flet apps.
 
-Here's what's new in Flet 0.21.0:
+Here's what's new in Flet 0.21:
 
 ## FastAPI with Uvicorn replaces built-in web server
 
@@ -21,9 +21,9 @@ and called "Fletd". It's being started on the background when you run your app w
 Fletd was part of Flet Python wheel contributing a few megabytes to its size.
 Additionally, Python app was using WebSockets to talk to Fletd web server which was adding sometimes noticable overhead.
 
-Then, in [Flet 0.10.0](http://localhost:3000/blog/flet-for-fastapi) we have added FastAPI support to build "serious" web apps using AsyncIO API.
+Then, in [Flet 0.10.0](/blog/flet-for-fastapi) we have added FastAPI support to build "serious" web apps using AsyncIO API.
 
-Now, in Flet 0.21.0 built-in web server has been completely removed and replaced with FastAPI and Uvicorn. Fletd is not a part of Flet distribution anymore.
+Now, in Flet 0.21 built-in web server has been completely removed and replaced with FastAPI and Uvicorn. Fletd is not a part of Flet distribution anymore.
 
 Using FastAPI means there is no more communication overhead as web server is a part of Flet app.
 Also, you don't need to do any additional steps to host your app in production with FastAPI -
@@ -91,7 +91,7 @@ Every aspect of web app hosting can be controlled with environment variables:
 
 Flet is now async-first framework which means you don't have to decide whether your app is entirely sync or async, but you can mix both sync and async methods in the same app.
 
-For example, in Flet 0.21.0 you can write an app like this:
+For example, in Flet 0.21 you can write an app like this:
 
 ```python
 import flet as ft
@@ -238,10 +238,6 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-## `Page.media` details
-
-TBD
-
-Flet 0.21.0 release has some breaking changes. Upgrade to it, test your apps and let us know how it worked for you. Join [Flet Discord server](https://discord.gg/dzWXP8SHG8) or create a new thread on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).
+Flet 0.21 release has some breaking changes. Upgrade to it, test your apps and let us know how it worked for you. Join [Flet Discord server](https://discord.gg/dzWXP8SHG8) or create a new thread on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).
 
 Enjoy!
