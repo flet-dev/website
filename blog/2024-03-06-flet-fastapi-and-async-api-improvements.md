@@ -188,18 +188,18 @@ def build():
 
 This Flet release adds more Cupertino controls to make your apps shine on iOS:
 
-* [CupertinoActivityIndicator](/docs/controls/cupertinoactivityindicator)
-* [CupertinoActionSheet](/docs/controls/cupertinoactionsheet)
-* [CupertinoSlidingSegmentedButton](/docs/controls/cupertinoslidingsegmentedbutton)
-* [CupertinoSegmentedButton](/docs/controls/cupertinosegmentedbutton)
-* [CupertinoTimerPicker](/docs/controls/cupertinotimerpicker)
-* [CupertinoPicker](/docs/controls/cupertinopicker)
-* [CupertinoDatePicker](/docs/controls/cupertinodatepicker)
-* [CupertinoContextMenu](/docs/controls/cupertinocontextmenu)
+* `CupertinoActivityIndicator`
+* `CupertinoActionSheet`
+* `CupertinoSlidingSegmentedButton`
+* `CupertinoSegmentedButton`
+* `CupertinoTimerPicker`
+* `CupertinoPicker`
+* `CupertinoDatePicker`
+* `CupertinoContextMenu`
 
 ## Accessibility improvements
 
-Now Flet has complete implementation of [Semantics](/docs/controls/semantics) control and new [SemanticsService](/docs/controls/semanticsservice) control.
+Now Flet has complete implementation of `Semantics` control and new `SemanticsService` control.
 
 ## App lifecycle change event
 
