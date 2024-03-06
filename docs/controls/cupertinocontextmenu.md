@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/navigation/cupertinocontextmenu)
+[Live example](https://flet-controls-gallery.fly.dev/dialogs/cupertinocontextmenu)
 
 ### Basic Example
 
@@ -64,7 +64,7 @@ ft.app(target=main)
 
 ### `actions`
 
-A list of actions buttons to be shown in the menu. These actions are typically [`CupertinoContextMenuAction`](cupertinocontextmenuaction)s. This list must have at least one action.
+A list of action buttons to be shown in the menu. These actions are typically [`CupertinoContextMenuAction`](cupertinocontextmenuaction)s. This list must have at least one action.
 
 ### `content`
 

@@ -140,6 +140,12 @@ Whether dialog can be dismissed/closed by clicking the area outside of it.
 
 Set to `True` to display a dialog.
 
+### `semantics_label`
+
+The semantic label of the dialog used by accessibility frameworks to announce screen transitions when the dialog is opened and closed.
+
+In iOS, if this label is not provided, a semantic label will be inferred from the `title` if it is not null.
+
 ### `shape`
 
 The shape of the dialog's border.

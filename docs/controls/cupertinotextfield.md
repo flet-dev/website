@@ -123,6 +123,10 @@ Property value is `TextCapitalization` enum with the following values:
 * `WORDS` - capitalize the first letter of every word.
 * `SENTENCES` - capitalize the first letter of every sentence.
 
+### `clear_button_semantics_label`
+
+The semantic label for the clear button used by screen readers. This will be used by screen reading software to identify the clear button widget. Defaults to "Clear".
+
 ### `color`
 
 Text [color](/docs/guides/python/colors).
