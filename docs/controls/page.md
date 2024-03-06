@@ -216,6 +216,22 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `STRETCH`
 * `BASELINE`
 
+### `media`
+
+Provides details about app media (screen, window). See [MediaQueryData](https://api.flutter.dev/flutter/widgets/MediaQueryData-class.html) in Flutter docs for more info.
+
+The value of this property is an instance of `PageMediaData` class with the following fields:
+
+* `padding` (of `Padding` type) - The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
+* `view_padding` (of `Padding` type) - The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
+* `view_insets` (of `Padding` type) - The parts of the display that are completely obscured by system UI, typically by the device's keyboard.
+
+:::note
+In the most cases you should be fine by wrapping your content into [`SafeArea`](/docs/controls/safearea) control.
+:::
+
+🎬 [Watch this video](https://www.youtube.com/watch?v=ceCo8U0XHqw) explaining `padding`, `view_padding` and `view_insets`.
+
 ### `name`
 
 Page name as specified in `ft.app()` call. Page name is set when Flet app is running as web app. This is a portion of the URL after host name.
@@ -1139,6 +1155,10 @@ Fires upon successful or failed OAuth authorization flow. See [Authentication](/
 ### `on_logout`
 
 Fires after `page.logout()` call.
+
+### `on_media_change`
+
+Fires when `page.media` has changed. Event object is an instance of `PageMediaData` class described in [`page.media` section](#media).
 
 ### `on_platform_brigthness_change`
 
