@@ -220,6 +220,7 @@ module.exports = {
             "controls/cupertinobottomsheet",
             "controls/cupertinocontextmenu",
             "controls/cupertinodatepicker",
+            "controls/cupertinopicker",
             "controls/cupertinotimerpicker",
             "controls/datepicker",
             "controls/snackbar",
