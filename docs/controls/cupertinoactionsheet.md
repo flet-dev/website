@@ -1,17 +1,17 @@
 ---
-title: CupertinoActionSheetAction
-sidebar_label: CupertinoActionSheetAction
-slug: cupertinoactionsheetaction
+title: CupertinoActionSheet
+sidebar_label: CupertinoActionSheet
+slug: cupertinoactionsheet
 ---
 
-An action button typically used in [`CupertinoActionSheet`](cupertinoactionsheet).
+An iOS-style action sheet.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/navigation/cupertinoactionsheet)
+[Live example](https://flet-controls-gallery.fly.dev/dialogs/cupertinoactionsheet)
 
 ### Basic Example
 
@@ -20,7 +20,6 @@ import TabItem from '@theme/TabItem';
 
 ```python
 import flet as ft
-
 
 def main(page):
     page.window_always_on_top = True
@@ -62,7 +61,6 @@ def main(page):
         )
     )
 
-
 ft.app(main)
 ```
 
@@ -73,25 +71,18 @@ ft.app(main)
 
 ## Properties
 
-### `content`
+### `actions`
 
-The child control to be shown in this action button. In case both `text` and `content` are provided, then `content` will
-be used.
+A list of action buttons to be shown in the sheet. These actions are typically [`CupertinoActionSheetAction`](cupertinoactionsheetaction)s. This list must have at least one action.
 
-### `is_default_action`
+### `cancel`
 
-Whether this action should receive the style of an emphasized, default action.
+An optional control to be shown below the actions but grouped separately from them. Typically a [`CupertinoActionSheetAction`](cupertinoactionsheetaction) button.
 
-### `is_destructive_action`
+### `message`
 
-Whether this action should receive the style of a destructive action.
+A control containing a descriptive message that provides more details about the reason for the alert. Typically a `Text` control.
 
-### `text`
+### `title`
 
-The text to be shown in the button. In case both `text` and `content` are provided, then `content` will be used.
-
-## Events
-
-### `on_click`
-
-Fires when this action button is clicked.
+A control containing the title of the action sheet. Typically a `Text` control.
