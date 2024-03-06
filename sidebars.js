@@ -294,7 +294,7 @@ module.exports = {
         id: "cli/index",
       },
       items: [
-        // "cli/build",
+        "cli/build",
         "cli/create",
         "cli/pack",
         "cli/publish",
