@@ -22,10 +22,8 @@ import TabItem from '@theme/TabItem';
 import flet as ft
 
 def main(page):
-    page.window_always_on_top = True
     page.theme_mode = ft.ThemeMode.LIGHT
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
     action_sheet = ft.CupertinoActionSheet(
         title=ft.Text("Title"),
@@ -54,7 +52,7 @@ def main(page):
 
     page.add(
         ft.OutlinedButton(
-            "Open Bottom Sheet containing CupertinoActionSheet",
+            "Open CupertinoBottomSheet containing CupertinoActionSheet",
             on_click=lambda e: page.show_bottom_sheet(
                 ft.CupertinoBottomSheet(action_sheet)
             ),
@@ -67,7 +65,7 @@ ft.app(main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/cupertino-action-sheet/basic-cupertino-action-sheet.png" className="screenshot-40"/>
+<img src="/img/docs/controls/cupertino-action-sheet/basic-cupertino-action-sheet.gif" className="screenshot-40"/>
 
 ## Properties
 

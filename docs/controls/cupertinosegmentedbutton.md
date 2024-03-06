@@ -49,7 +49,7 @@ ft.app(main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/cupertino-segmented-button/basic-cupertino-segmented-button.png" className="screenshot-40"/>
+<img src="/img/docs/controls/cupertino-segmented-button/basic-cupertino-segmented-button.gif" className="screenshot-40"/>
 
 ## Properties
 

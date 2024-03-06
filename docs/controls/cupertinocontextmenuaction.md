@@ -1,7 +1,7 @@
 ---
 title: CupertinoContextMenuAction
 sidebar_label: CupertinoContextMenuAction
-slug: cupertinomenuaction
+slug: cupertinocontextmenuaction
 ---
 
 An action button typically used in [`CupertinoContextMenu`](cupertinocontextmenu).
@@ -57,7 +57,7 @@ ft.app(target=main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/cupertino-context-menu/basic-cupertino-context-menu.png" className="screenshot-40"/>
+<img src="/img/docs/controls/cupertino-context-menu/basic-cupertino-context-menu.gif" className="screenshot-40"/>
 
 ## Properties
 
