@@ -89,33 +89,58 @@ Every aspect of web app hosting can be controlled with environment variables:
 
 ## Async-first framework
 
-TBD. Mix sync and async. What's run in threads, what's in tasks. When to use async.
+Flet is now async-first framework which means you don't have to decide whether your app is entirely sync or async, but you can mix both sync and async methods in the same app.
 
-Most `_async` methods gone. (link to deprecated methods)
+For example, in Flet 0.21.0 you can write an app like this:
 
-Use `update()`, `add()`.
+```python
+import flet as ft
+import time
+import asyncio
+
+def main(page: ft.Page):
+
+    def handler(e):
+      time.sleep(3)
+      page.add(ft.Text("Handler clicked"))
+
+    async def handler_async(e):
+      await asyncio.sleep(3)
+      page.add(ft.Text("Async handler clicked"))
+
+    page.add(
+        ft.ElevatedButton("Call handler", on_click=handler),
+        ft.ElevatedButton("Call async handler", on_click=handler_async)
+    )
+
+ft.app(main)
+```
+
+In the example above a click on one button is handled by a "blocking" handler while a click
+on second button calls asynchronous handler. The first handler is run in a `threading.Thread` while second handler is run in `asyncio.Task`.
+
+Also, notice in `async def` handler you are not required to use `await page.add_async()` anymore, but a regular `page.add()` works just fine.
+
+:::info API changes
+Most of `Page.<method>_async()` and `Control.<method>_async()` methods have been deprecated and their `Page.<method>()` and `Control.<method>()` counterparts should be used instead.
+
+The only exception here is methods returning results, like those ones in `Audio` control: you still have to use async methods in async event handlers.
+::: 
 
 ## Custom controls API normalized
 
-`UserControl` is deprecated
+In this Flet release we also re-visited API for writing custom controls in Python.
 
-Control._before_build_command() replaced with Control.before_update()
+As a result `UserControl` class has been deprecated. You just inherit from a specific control with layout that works for your needs.
 
-Control.build()
-
-Use Control.did_mount() and Control.will_unmount() instead. Control.did_mount_async() and Control.will_unmount_async() are not called anymore.
-
-Control._is_isolated() replaced with Control.is_isolated().
-
-`page.run_thread()`, `page.run_task()` and `page.executor` and `page.loop`.
+For example, `Countdown` custom control is just a `Text` and could be implemented as following:
 
 ```python
 import asyncio
 
 import flet as ft
 
-
-class Countdown(ft.UserControl):
+class Countdown(ft.Text):
     def __init__(self, seconds):
         super().__init__()
         self.seconds = seconds
@@ -130,24 +155,38 @@ class Countdown(ft.UserControl):
     async def update_timer(self):
         while self.seconds and self.running:
             mins, secs = divmod(self.seconds, 60)
-            self.countdown.value = "{:02d}:{:02d}".format(mins, secs)
+            self.value = "{:02d}:{:02d}".format(mins, secs)
             self.update()
             await asyncio.sleep(1)
             self.seconds -= 1
 
-    def build(self):
-        self.countdown = ft.Text()
-        return self.countdown
-
-
 def main(page: ft.Page):
     page.add(Countdown(120), Countdown(60))
-
 
 ft.app(main)
 ```
 
+Notice the usage of `self.page.run_task(self.update_timer)` to start a new task.
+There is also `self.page.run_thread()` method that must be used by control developer to start a new background job in a thread.
+
+If you want to spawn your own tasks or threads Flet provides the current event loop and thread executor via `Page.loop` and `Page.executor` properties respectively. 
+
+:::info API changes
+`Control._before_build_command()` replaced with `Control.before_update()`
+
+`Control.build()` should not return any control now, but must update inherited control properties, for example:
+
+```python
+def build():
+    self.controls.append(ft.Text("Something"))
+```
+
+`Control.did_mount_async()` and `Control.will_unmount_async()` are deprecated. Use `Control.did_mount()` and `Control.will_unmount()` instead.
+:::
+
 ## New Cupertino controls
+
+This Flet release adds more Cupertino controls to make your apps shine on iOS:
 
 ```
 * [CupertinoActivityIndicator](/docs/controls/cupertinoactivityindicator)
@@ -163,14 +202,14 @@ ft.app(main)
 ## Accessibility improvements
 
 ```
-Complete implementation of [Semantics](/docs/controls/semantics) control and new [SemanticsService](/docs/controls/semanticsservice) control.
+Now Flet has complete implementation of [Semantics](/docs/controls/semantics) control and new [SemanticsService](/docs/controls/semanticsservice) control.
 ```
 
 ## App lifecycle change event
 
 There is a new `Page.on_app_lifecycle_state_change` event that allows listening for changes in the application lifecycle.
 
-For example, you can now update UI with the latest information when the app becomes active (brought to the front). That works on iOS, Android, all desktop platforms and web!
+For example, you can now update UI with the latest information when the app becomes active (brought to the front). This event works on iOS, Android, all desktop platforms and web!
 
 The following app lifecycle transitions are recognized:
 
@@ -203,6 +242,6 @@ ft.app(target=main)
 
 TBD
 
-Flet 0.21.0 has breaking changes. Upgrade to Flet 0.21.0, test your apps and let us know what you think by joining [Flet Discord server](https://discord.gg/dzWXP8SHG8) or creating a new thread on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).
+Flet 0.21.0 release has some breaking changes. Upgrade to it, test your apps and let us know how it worked for you. Join [Flet Discord server](https://discord.gg/dzWXP8SHG8) or create a new thread on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).
 
 Enjoy!
