@@ -32,7 +32,7 @@ def main(page):
             actions=[
                 ft.CupertinoContextMenuAction(
                     text="Action 1",
-                    default=True,
+                    is_default_action=True,
                     trailing_icon=ft.icons.CHECK,
                     on_click=lambda e: print("Action 1"),
                 ),
@@ -43,14 +43,13 @@ def main(page):
                 ),
                 ft.CupertinoContextMenuAction(
                     text="Action 3",
-                    destructive=True,
+                    is_destructive_action=True,
                     trailing_icon=ft.icons.CANCEL,
                     on_click=lambda e: print("Action 3"),
                 ),
             ],
         )
     )
-
 
 ft.app(target=main)
 ```
@@ -67,11 +66,11 @@ ft.app(target=main)
 
 The child control to be shown in this action button. In case both `text` and `content` are provided, then `content` will be used.
 
-### `default`
+### `is_default_action`
 
 Whether this action should receive the style of an emphasized, default action.
 
-### `destructive`
+### `is_destructive_action`
 
 Whether this action should receive the style of a destructive action.
 

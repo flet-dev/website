@@ -163,6 +163,7 @@ module.exports = {
             id: "controls/buttons",
           },
           items: [
+            "controls/cupertinoactionsheetaction",
             "controls/cupertinobutton",
             "controls/cupertinocontextmenuaction",
             "controls/cupertinodialogaction",
@@ -216,6 +217,7 @@ module.exports = {
             "controls/alertdialog",
             "controls/banner",
             "controls/bottomsheet",
+            "controls/cupertinoactionsheet",
             "controls/cupertinoalertdialog",
             "controls/cupertinobottomsheet",
             "controls/cupertinocontextmenu",
@@ -250,7 +252,7 @@ module.exports = {
             slug: "controls/animations",
           },
           items: [
-            "controls/animatedswitcher"
+            "controls/animatedswitcher",
             "controls/lottie"
           ],
         },
