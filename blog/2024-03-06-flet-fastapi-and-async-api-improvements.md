@@ -188,7 +188,6 @@ def build():
 
 This Flet release adds more Cupertino controls to make your apps shine on iOS:
 
-```
 * [CupertinoActivityIndicator](/docs/controls/cupertinoactivityindicator)
 * [CupertinoActionSheet](/docs/controls/cupertinoactionsheet)
 * [CupertinoSlidingSegmentedButton](/docs/controls/cupertinoslidingsegmentedbutton)
@@ -197,13 +196,10 @@ This Flet release adds more Cupertino controls to make your apps shine on iOS:
 * [CupertinoPicker](/docs/controls/cupertinopicker)
 * [CupertinoDatePicker](/docs/controls/cupertinodatepicker)
 * [CupertinoContextMenu](/docs/controls/cupertinocontextmenu)
-```
 
 ## Accessibility improvements
 
-```
 Now Flet has complete implementation of [Semantics](/docs/controls/semantics) control and new [SemanticsService](/docs/controls/semanticsservice) control.
-```
 
 ## App lifecycle change event
 
@@ -220,6 +216,10 @@ The following app lifecycle transitions are recognized:
 * `PAUSE`
 * `DETACH`
 * `RESTART`
+
+:::note
+Read more about each [lifecycle state](/docs/controls/page#on_app_lifecycle_state_change).
+:::
 
 Here's a small example of how this event can be used: 
 
