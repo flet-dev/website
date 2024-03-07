@@ -167,6 +167,7 @@ module.exports = {
             "controls/cupertinobutton",
             "controls/cupertinocontextmenuaction",
             "controls/cupertinodialogaction",
+            "controls/cupertinofilledbutton",
             "controls/cupertinosegmentedbutton",
             "controls/cupertinoslidingsegmentedbutton",
             "controls/elevatedbutton",

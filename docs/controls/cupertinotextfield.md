@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 [Live example](https://flet-controls-gallery.fly.dev/input/cupertinotextfield)
 
-### Basic TextFields
+### Basic textfields
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -24,59 +24,27 @@ import TabItem from '@theme/TabItem';
 import flet as ft
 
 def main(page: ft.Page):
-    page.window_always_on_top = True
-    page.theme_mode = ft.ThemeMode.LIGHT
 
     page.add(
+        ft.TextField(
+            label="Material",
+        ),
         ft.CupertinoTextField(
-            bgcolor=ft.colors.BLUE_100,
-            shadow=ft.BoxShadow(color=ft.colors.RED_400, blur_radius=5, spread_radius=5),
-            on_change=lambda e: print("CupertinoTextField change = ", e.control.value),
-            placeholder_text="Enter text here",
-            suffix=ft.Icon(ft.icons.EDIT),
-            suffix_visibility_mode=ft.VisibilityMode.EDITING,
+            placeholder_text="Placeholder",
+        ),
+        ft.TextField(
+            adaptive=True,
+            label="Adaptive",
         ),
     )
+
 
 ft.app(target=main)
 ```
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/textfield/basic-textfield.gif" className="screenshot-40"/>
-
-### Underlined and borderless TextFields
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(
-        ft.TextField(label="Underlined", border="underline", hint_text="Enter text here"),
-        ft.TextField(
-            label="Underlined filled",
-            border=ft.InputBorder.UNDERLINE,
-            filled=True,
-            hint_text="Enter text here",
-        ),
-        ft.TextField(label="Borderless", border="none", hint_text="Enter text here"),
-        ft.TextField(
-            label="Borderless filled",
-            border=ft.InputBorder.NONE,
-            filled=True,
-            hint_text="Enter text here",
-        ),
-    )
-
-ft.app(target=main)
-```
-  </TabItem>
-</Tabs>
-
-<img src="/img/docs/controls/textfield/textfield-with-underline-and-borderless.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/cupertinotextfield/basic-cupertino-textfield.png" className="screenshot-40"/>
 
 ## Properties
 
@@ -98,19 +66,19 @@ The blend mode applied to the `color` or `gradient` background. See [`ShaderMask
 
 ### `border`
 
-Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
+A border to draw around input.
 
-### `border_color`
-
-Border [color](/docs/guides/python/colors). Could be `transparent` to hide the border.
+See [`Container.border`](/docs/controls/container#border) property docs for more information about border.
 
 ### `border_radius`
 
 See [`Container.border_radius`](/docs/controls/container#border_radius) property docs for more information about border radius.
 
-### `border_width`
+### `can_reveal_password`
 
-The width of the border in virtual pixels. Default is 1. Set to 0 to completely remove border.
+Displays a toggle icon button that allows revealing the entered password. Is shown if both `password` and `can_reveal_password` are `True`.
+
+The icon is displayed in the same location as `suffix` and in case both `can_reveal_password`/`password` and `suffix` are provided, then the `suffix` is not shown.
 
 ### `capitalization`
 
@@ -136,16 +104,6 @@ Text [color](/docs/guides/python/colors).
 The padding for the input decoration's container.
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
-
-### `counter_style`
-
-The style to use for `counter_text`.
-
-### `counter_text`
-
-Optional text to place below the line as a character count.
-
-If null or an empty string and counter isn't specified, then nothing will appear in the counter's location.
 
 ### `cursor_color`
 
@@ -173,16 +131,6 @@ Whether to show input suggestions as the user types.
 
 This flag only affects Android. On iOS, suggestions are tied directly to `autocorrect`, so that suggestions are only shown when `autocorrect` is `True`. On Android autocorrection and suggestion are controlled separately. Default is `True`.
 
-### `error_style`
-
-The style to use for `error_text`.  
-
-### `error_text`
-
-Text that appears below the input border.
-
-If non-null, the border's color animates to red and the `helper_text` is not shown.
-
 ### `filled`
 
 If `True` the decoration's container is filled with theme fillColor.
@@ -207,29 +155,6 @@ Text [color](/docs/guides/python/colors) when TextField is focused.
 
 Configures gradient background. See [`Container.gradient`](/docs/controls/container#gradient) for more information about gradient and possible values.
 
-### `helper_style`
-
-The style to use for `helper_text`.
-
-### `helper_text`
-
-Text that provides context about the input's value, such as how the value will be used.
-
-If non-null, the text is displayed below the input decorator, in the same location as `error_text`. If a non-null `error_text` value is specified then the helper text is not shown.
-
-### `hint_style`
-
-The style to use for `hint_text`.
-
-### `hint_text`
-
-Text that suggests what sort of input the field accepts.
-
-Displayed on top of the input when the it's empty and either (a) `label` is null or (b) the input has the focus.
-
-### `icon`
-
-The name of the icon to show before the input field and outside of the decoration's container.
 
 ### `input_filter`
 Provides as-you-type filtering/validation in your `TextField`. It prevents the insertion of characters matching (or not matching) a particular pattern(`regex_string`), by replacing the characters with the given `replacement_string`.
@@ -248,10 +173,9 @@ The following helper classes are equally available:
 Usage Example:
 
 ```python
-ft.TextField(
-    label="Only numbers are allowed :)",
+ft.CupertinoTextField(
+    placeholder_text="Only numbers are allowed :)",
     input_filter=ft.InputFilter(allow=True, regex_string=r"[0-9]", replacement_string=""),
-    # input_filter=ft.NumbersOnlyInputFilter()
 )
 ```
 
@@ -270,16 +194,6 @@ The type of keyboard to use for editing the text. The property value is `Keyboar
 * `NAME`
 * `STREET_ADDRESS`
 * `NONE`
-
-### `label`
-
-Optional text that describes the input field.
-
-When the input field is empty and unfocused, the label is displayed on top of the input field (i.e., at the same location on the screen where text may be entered in the input field). When the input field receives focus (or if the field is non-empty) the label moves above, either vertically adjacent to, or to the center of the input field.
-
-### `label_style`
-
-The style to use for `label`.
 
 ### `max_length`
 
@@ -320,12 +234,6 @@ The style to use for `placeholder_text`.
 ### `prefix`
 
 Optional `Control` to place on the line before the input.
-
-This can be used, for example, to add some padding to text that would otherwise be specified using `prefix_text`, or to add a custom control in front of the input. The control's baseline is lined up with the input baseline.
-
-Only one of `prefix` and `prefix_text` can be specified.
-
-The `prefix` appears after the `prefix_icon`, if both are specified.
 
 ### `prefix_mode`
 
@@ -381,12 +289,6 @@ This flag only affects iOS. As an example of what this does, a standard vertical
 ### `suffix`
 
 Optional `Control` to place on the line after the input.
-
-This can be used, for example, to add some padding to the text that would otherwise be specified using `suffix_text`, or to add a custom control after the input. The control's baseline is lined up with the input baseline.
-
-Only one of `suffix` and `suffix_text` can be specified.
-
-The `suffix` appears before the `suffix_icon`, if both are specified.
 
 ### `suffix_mode`
 
