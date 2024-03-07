@@ -341,7 +341,7 @@ Now the NavigationBar and icons within it will look like different on Android an
 </div>
 
 :::note
-You may utilise reusable controls approach to adapt your app not only depending on the [`platform`](/docs/controls/page#platform) but also use [`page.web`](/docs/controls/page#web) property to have different UI depending on wether the app is running in a browser or not, or even combine `platform` and `web` properties to have specific UI for your MACOS or Windows desktop apps.
+You may utilise [reusable controls approach](custom-controls) to adapt your app not only depending on the [`platform`](/docs/controls/page#platform) but also use [`page.web`](/docs/controls/page#web) property to have different UI depending on wether the app is running in a browser or not, or even combine `platform` and `web` properties to have specific UI for your MACOS or Windows desktop apps.
 :::
 
 
