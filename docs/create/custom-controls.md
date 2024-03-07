@@ -19,12 +19,7 @@ class MyButton(ft.OutlinedButton)
         super().__init__()
         self.bgcolor = ft.colors.ORANGE_300
         self.color = ft.colors.GREEN_800
-        self.text = text
-        self.on_click = self.button_clicked
-    
-    def button_clicked(self, e):
-        page.add(ft.Text(f"Button {self.text} clicked"))
-    
+        self.text = text     
 ```
 Your control has a constructor to customize properties and events and pass custom data. Note that you must call `super().__init__()` in your own constructor to have access to the properties and methods of the Flet control from which you inherit.
 
@@ -42,6 +37,36 @@ ft.app(target=main)
 
 ```
 <img src="/img/docs/custom-controls/styled-controls.png" className="screenshot-20" />
+
+### Handling events
+
+Similar to properties, you can pass event handlers as parameters into your custom control class constructor:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    class MyButton(ft.ElevatedButton):
+        def __init__(self, text, on_click):
+            super().__init__()
+            self.bgcolor = ft.colors.ORANGE_300
+            self.color = ft.colors.GREEN_800
+            self.text = text
+            self.on_click = on_click
+
+    def ok_clicked(e):
+        print("OK clicked")
+    
+    def cancel_clicked(e):
+        print("Cancel clicked")
+
+    page.add(
+        MyButton(text="OK", on_click=ok_clicked),
+        MyButton(text="Cancel", on_click=cancel_clicked),
+    )
+
+ft.app(target=main)
+```
 
 ## Composite controls
 
@@ -117,7 +142,7 @@ Override `did_mount()` method if you need to implement logic that needs to be ex
 
 `will_unmount()` method is called before the control is removed from the page.
 
-Override `will_unmount()` method to do execute clean-up code.
+Override `will_unmount()` method to execute clean-up code.
 
 ### `before_update()`
 
@@ -131,7 +156,7 @@ Custom control has `is_isolated` property which by default is `False`.
 
 If you set `is_isolated` to `True`, your control will be isolated from outside layout, i.e. when `update()` method is called for the parent control, the control itself will be updated but any changes to the controls' children are not included into the update digest. Isolated controls should call `self.update()` to push its changes to a Flet page.
 
-As a best practice, any custom control that calls `self.update()` inside its class methods should be isolated to avoid ???.
+As a best practice, any custom control that calls `self.update()` inside its class methods should be isolated.
 
 In the above examples, simple styled `MyButton` doesn't need to be isolated, but the `Task` should be:
 
