@@ -111,7 +111,7 @@ Hook up to `build()` method if you need to implement logic that cannot be execut
 
 `did_mount()` method is called after the control is added to the page and assigned transient `uid`.
 
-Hook up to `did_mount()` method if you need to implement logic that requires control to already be added to the page, for example [Weather widget](https://github.com/flet-dev/examples/tree/main/python/community/weather_widget) which calls Open Weather API every minute to update itself.
+Hook up to `did_mount()` method if you need to implement logic that requires control to already be added to the page, for example [Weather widget](https://github.com/flet-dev/examples/tree/main/python/community/weather_widget) which calls Open Weather API every minute to update itself with the new weather conditions.
 
 ### `will_unmount()` 
 
