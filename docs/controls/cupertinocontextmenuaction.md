@@ -61,7 +61,6 @@ ft.app(target=main)
 
 ## Properties
 
-
 ### `content`
 
 The child control to be shown in this action button. In case both `text` and `content` are provided, then `content` will be used.
