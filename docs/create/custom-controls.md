@@ -103,21 +103,21 @@ Custom controls provide life-cycle "hook" methods that you may need to use for d
 
 ### `build()`
 
-`build()` method is called when the control is being created and assigned its `page`. 
+`build()` method is called when the control is being created and assigned its `self.page`. 
 
-Hook up to `build()` method if you need to implement logic that cannot be executed in control's constructor because it requires access to the `page`. For example, choose the right icon depending on `page.platform` for your [adaptive app](adaptive-apps#custom-adaptive-controls). 
+Override `build()` method if you need to implement logic that cannot be executed in control's constructor because it requires access to the `self.page`. For example, choose the right icon depending on `self.page.platform` for your [adaptive app](adaptive-apps#custom-adaptive-controls). 
 
 ### `did_mount()` 
 
 `did_mount()` method is called after the control is added to the page and assigned transient `uid`.
 
-Hook up to `did_mount()` method if you need to implement logic that requires control to already be added to the page, for example [Weather widget](https://github.com/flet-dev/examples/tree/main/python/community/weather_widget) which calls Open Weather API every minute to update itself with the new weather conditions.
+Override `did_mount()` method if you need to implement logic that requires control to already be added to the page, for example [Weather widget](https://github.com/flet-dev/examples/tree/main/python/community/weather_widget) which calls Open Weather API every minute to update itself with the new weather conditions.
 
 ### `will_unmount()` 
 
 `will_unmount()` method is called before the control is removed from the page.
 
-Hook up to `will_unmount()` method to do execute clean-up code.
+Override `will_unmount()` method to do execute clean-up code.
 
 ### `before_update()`
 
