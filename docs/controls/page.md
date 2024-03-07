@@ -91,7 +91,7 @@ page.update()
 
 ### `dark_theme`
 
-Set this property to an instance of `theme.Theme` to customize dark theme.
+Set this property to an instance of `Theme` to customize dark theme.
 
 ### `debug`
 
@@ -521,6 +521,23 @@ page.update()
 * `use_material3` - `True` (default) to use Material 3 design; otherwise Material 2.
 * `visual_density` - `ThemeVisualDensity` enum: `STANDARD` (default), `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 * `page_transitions` - an instance of `PageTransitionsTheme` that allows customizing navigation page transitions for different platforms. See section [below](#navigation-transitions).
+* `system_overlay_style` - an instance of `SystemOverlayStyle` that allows customizing the appearance of system overlays
+  like the status bar and system navigation bar.
+
+`SystemOverlayStyle` class has the following properties:
+
+* `system_navigation_bar_color` - the color of the system navigation bar.
+* `system_navigation_bar_divider_color` - the color of the divider between the system navigation bar and the app
+  content.
+* `enforce_system_navigation_bar_contrast` - indicates whether the system should enforce contrast for the status bar
+  when setting a transparent status bar.
+* `enforce_system_status_bar_contrast` - indicates whether the system should enforce contrast for the navigation bar
+  when setting a transparent navigation bar.
+* `system_navigation_bar_icon_brightness` - the `Brightness` of the system navigation bar icons.
+  Either `Brightness.DARK` or `Brightness.LIGHT`.
+* `status_bar_brightness` - the `Brightness` of the status bar. Either `Brightness.DARK` or `Brightness.LIGHT`.
+* `status_bar_icon_brightness` - the `Brightness` of the status bar icons. Either `Brightness.DARK`
+  or `Brightness.LIGHT`.
 
 :::note
 Read this [note about system fonts](/docs/controls/text#using-system-fonts) if you like to use them in `font_family` of your theme.

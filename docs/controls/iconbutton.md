@@ -102,6 +102,10 @@ True if the control will be selected as the initial focus. If there is more than
 
 A Control representing custom button content.
 
+### `highlight_color`
+
+The button's [color](/docs/guides/python/colors) when the button is pressed. The highlight fades in quickly as the button is held down.
+
 ### `icon`
 
 Icon shown in the button.

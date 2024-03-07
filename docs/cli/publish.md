@@ -3,9 +3,11 @@ title: publish
 sidebar_label: publish
 ---
 
+This command is used to publish a Flet application as a standalone static web app using Pyodide. You can find it's guide [here](/docs/guides/python/publishing-static-website).
+
 ```
-usage: flet publish [-h] [-v] [--pre] [-a ASSETS_DIR] [--distpath DISTPATH] [--app-name APP_NAME] [--app-short-name APP_SHORT_NAME] [--app-description APP_DESCRIPTION]
-                    [--base-url BASE_URL] [--web-renderer {canvaskit,html}] [--use-color-emoji] [--route-url-strategy {path,hash}]
+usage: flet publish [-h] [-v] [--pre] [-a ASSETS_DIR] [--distpath DISTPATH] [--app-name APP_NAME] [--app-short-name APP_SHORT_NAME] [--app-description APP_DESCRIPTION] [--base-url BASE_URL]
+                    [--web-renderer {canvaskit,html}] [--use-color-emoji] [--route-url-strategy {path,hash}]
                     script
 
 Publish Flet app as a standalone web app.

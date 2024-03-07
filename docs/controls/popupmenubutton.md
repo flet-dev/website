@@ -67,6 +67,10 @@ If provided an icon to draw on the button.
 
 A collection of `PopupMenuItem` controls to display in a dropdown menu.
 
+### `menu_position`
+
+Defines position of the popup menu relative to the button. Value can either be `PopupMenuPosition.OVER` (default) or `PopupMenuPosition.UNDER`.
+
 ## `PopupMenuButton` events
 
 ### `on_cancelled`

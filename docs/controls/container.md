@@ -187,9 +187,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-Background color of the container.
-
-A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
+Defines the background [color](/docs/guides/python/colors) of the container.
 
 ### `blend_mode`
 
@@ -409,6 +407,10 @@ Sets an image encoded as Base-64 string as a container background. See [`Image.s
 ### `ink`
 
 `True` to produce ink ripples effect when user clicks the container. Default is `False`.
+
+### `ink_color`
+
+The splash [color](/docs/guides/python/colors) of the ink response.
 
 ### `margin`
 
