@@ -65,7 +65,7 @@ ft.app(main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/cupertino-action-sheet/basic-cupertino-action-sheet.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/cupertino-action-sheet/basic-cupertino-action-sheet.png" className="screenshot-40"/>
 
 ## Properties
 

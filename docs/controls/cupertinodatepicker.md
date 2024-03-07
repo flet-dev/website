@@ -15,18 +15,41 @@ import TabItem from '@theme/TabItem';
 
 [Live example](https://flet-controls-gallery.fly.dev/dialogs/cupertinodatepicker)
 
-### Basic date picker
+### Basic Example
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
 ```python
+import flet as ft
 
+def main(page):
+    page.theme_mode = ft.ThemeMode.LIGHT
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    page.add(
+        ft.OutlinedButton(
+            "Show CupertinoDatePicker",
+            on_click=lambda e: page.show_bottom_sheet(
+                ft.CupertinoBottomSheet(
+                    ft.CupertinoDatePicker(
+                        on_change=lambda e: print(e.data),
+                        date_picker_mode=ft.CupertinoDatePickerMode.DATE_AND_TIME
+                    ),
+                    height=216,
+                    bgcolor=ft.cupertino_colors.SYSTEM_BACKGROUND,
+                    padding=ft.padding.only(top=6),
+                )
+            ),
+        )
+    )
+
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/cupertino-datepicker/basic-cupertino-datepicker.png" className="screenshot-50" />
+<img src="/img/docs/controls/cupertino-date-picker/basic-cupertino-date-picker.png" className="screenshot-50" />
 
 ## Properties
 

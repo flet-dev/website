@@ -38,14 +38,13 @@ def main(page):
         ),
     )
 
-
 ft.app(main)
 ```
 
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/cupertino-sliding-segmented-button/basic-cupertino-sliding-segmented-button.png" className="screenshot-40"/>
+<img src="/img/docs/controls/cupertino-sliding-segmented-button/basic-cupertino-sliding-segmented-button.gif" className="screenshot-40"/>
 
 ## Properties
 
