@@ -111,7 +111,7 @@ Override `build()` method if you need to implement logic that cannot be executed
 
 `did_mount()` method is called after the control is added to the page and assigned transient `uid`.
 
-Override `did_mount()` method if you need to implement logic that requires control to already be added to the page, for example [Weather widget](https://github.com/flet-dev/examples/tree/main/python/community/weather_widget) which calls Open Weather API every minute to update itself with the new weather conditions.
+Override `did_mount()` method if you need to implement logic that needs to be executed after the control was added to the page, for example [Weather widget](https://github.com/flet-dev/examples/tree/main/python/community/weather_widget) which calls Open Weather API every minute to update itself with the new weather conditions.
 
 ### `will_unmount()` 
 
