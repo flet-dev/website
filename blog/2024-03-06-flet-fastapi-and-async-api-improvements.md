@@ -61,7 +61,7 @@ def main(page: ft.Page):
 app = ft.app(main, export_asgi_app=True)
 ```
 
-and then run with Hypercorn as (provided the):
+and then run with Hypercorn as:
 
 ```
 hypercorn main:app --bind 0.0.0.0:8000
