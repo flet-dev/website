@@ -3,7 +3,7 @@ title: Custom controls
 sidebar_label: Custom controls
 ---
 
-While Flet provides 100+ built-in controls that can be used on their own, the real beauty of programming with Flet is that all those controls can be utilized for creating your own reusable UI components.
+While Flet provides 100+ built-in controls that can be used on their own, the real beauty of programming with Flet is that all those controls can be utilized for creating your own reusable UI components using Python object-oriented programming concepts.
 
 You can create custom controls in Python by styling and/or combining existing Flet controls.
 
