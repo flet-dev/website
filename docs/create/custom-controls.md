@@ -11,7 +11,7 @@ You can create custom controls in Python by styling and/or combining existing Fl
 
 The most simple custom control you can create is a styled control, for example, a button of a certain color and behaviour that will be used multiple times throughout your app.
 
-To create a styled control, you need to create a new class in Python that inherits from the Flet control you are going to customize:
+To create a styled control, you need to create a new class in Python that inherits from the Flet control you are going to customize, `OutlinedButton` in this case:
 
 ```python
 class MyButton(ft.OutlinedButton)
@@ -45,7 +45,7 @@ ft.app(target=main)
 
 ## Composite controls
 
-Composite custom controls inherit from container controls such as `Column`, `Row`, `Stack` etc. to combine multiple Flet controls. The example below is a `Task` control that can be used in a To-Do app:
+Composite custom controls inherit from container controls such as `Column`, `Row`, `Stack` or even `View` to combine multiple Flet controls. The example below is a `Task` control that can be used in a To-Do app:
 
 ```python
 import flet as ft
@@ -74,7 +74,7 @@ def main(page: ft.Page):
             self.save_button.visible = True
             self.text_view.visible = False
             self.text_edit.visible = True
-            page.update()
+            self.update()
 
         def save(self, e):
             self.edit_button.visible = True
@@ -82,7 +82,7 @@ def main(page: ft.Page):
             self.text_view.visible = True
             self.text_edit.visible = False
             self.text_view.value = self.text_edit.value
-            page.update()
+            self.update()
 
     page.add(
         Task(text="Do laundry"),
@@ -101,173 +101,43 @@ You can find more examples of composite custom controls in [community examples](
 
 Custom controls provide life-cycle "hook" methods that you may need to use for different use cases in your app.
 
-### `build`
+### `build()`
 
-`build` method is called when the control is being created and assigned its `page`. 
+`build()` method is called when the control is being created and assigned its `page`. 
 
-Use `build` method to implement logic that cannot be executed in control's constructor since it requires access to the `page`. For example, choose the right icon depending on `page.platform` for your [adaptive app](adaptive-apps#custom-adaptive-controls). 
+Hook up to `build()` method if you need to implement logic that cannot be executed in control's constructor because it requires access to the `page`. For example, choose the right icon depending on `page.platform` for your [adaptive app](adaptive-apps#custom-adaptive-controls). 
 
-### `before_update`
+### `did_mount()` 
 
-`before_update` method is called every time when the control is being updated.
+`did_mount()` method is called after the control is added to the page and assigned transient `uid`.
 
+Hook up to `did_mount()` method if you need to implement logic that requires control to already be added to the page, for example [Weather widget](https://github.com/flet-dev/examples/tree/main/python/community/weather_widget) which calls Open Weather API every minute to update itself.
 
+### `will_unmount()` 
 
-* `did_mount()` - called after the `UserControl` added to a page and assigned transient `id`.
+`will_unmount()` method is called before the control is removed from the page.
 
-* `will_unmount()` - called before the `UserControl` is removed from a page.
+Hook up to `will_unmount()` method to do execute clean-up code.
+
+### `before_update()`
+
+`before_update()` method is called every time when the control is being updated.
+
+Make sure not to call `update()` method within `before_update()`.
 
 ## Isolated controls
 
-## Components and widgets
+Custom control has `is_isolated` property which by default is `False`. 
 
---------
+If you set `is_isolated` to `True`, your control will be isolated from outside layout, i.e. when `update()` method is called for the parent control, the control itself will be updated but any changes to the controls' children are not included into the update digest. Isolated controls should call `self.update()` to push its changes to a Flet page.
 
-User control (`UserControl`) allows building isolated re-usable components by combining existing Flet controls. User control behaves like a `Control`, could have methods and properties.
+As a best practice, any custom control that calls `self.update()` inside its class methods should be isolated to avoid ???.
 
-Below is a minimal example of user control:
-
-```python
-import flet as ft
-
-class GreeterControl(ft.UserControl):
-    def build(self):
-        return ft.Text("Hello!")
-
-def main(page):
-    page.add(GreeterControl())
-
-ft.app(target=main)
-```
-
-UserControl must implement `build()` method that is called to build control's UI and should returns a single `Control` instance or a `List` of controls. `UserControl` is inherited from [`Stack`](/docs/controls/stack), so multiple children will be arranged on top of each other. If you need to arrange control's UI differently use [`Row`](/docs/controls/row), [`Column`](/docs/controls/column) or other [layout controls](/docs/controls/layout), for example:
+In the above examples, simple styled `MyButton` doesn't need to be isolated, but the `Task` should be:
 
 ```python
-class GreeterControl(ft.UserControl):
-    def build(self):
-        return ft.Column([
-            ft.TextField(label="Your name"),
-            ft.ElevatedButton("Login")
-        ])
-```
-
-UserControl is isolated from outside layout, i.e. when `update()` method is called for the parent control any changes inside the UserControl are not included into the update digest. UserControl should call `self.update()` to push its changes to a Flet page, for example:
-
-```python
-import flet as ft
-
-class Counter(ft.UserControl):
-    def add_click(self, e):
-        self.counter += 1
-        self.text.value = str(self.counter)
-        self.update()
-
-    def build(self):
-        self.counter = 0
-        self.text = ft.Text(str(self.counter))
-        return ft.Row([self.text, ft.ElevatedButton("Add", on_click=self.add_click)])
-
-def main(page):
-    page.add(Counter(), Counter())
-
-ft.app(target=main)
-```
-
-<img src="/img/docs/getting-started/user-control-counter.gif" className="screenshot-40" />
-
-You could either declare event handlers (e.g. `def add_click(self, e)`) and control references (e.g. `self.text`) as class members or implement all UserControl's logic inside `build()` method using local variables and inner functions. For example, the code above could be rewritten as:
-
-```python
-class Counter(ft.UserControl):
-    def build(self):
-
-        self.counter = 0
-        text = ft.Text(str(self.counter))
-
-        def add_click(e):
-            self.counter += 1
-            text.value = str(self.counter)
-            self.update()
-
-        return ft.Row([text, ft.ElevatedButton("Add", on_click=add_click)])
-```
-
-:::note
-`counter` cannot be declared as a local variable as it won't be visible inside `add_click` method, so it must be declared as a class field `self.counter`.
-:::
-
-User control can have a constructor to pass custom data, for example:
-
-```python
-import flet as ft
-
-class Counter(ft.UserControl):
-    def __init__(self, initial_count):
-        super().__init__()
-        self.counter = initial_count
-
-    def build(self):
-        text = ft.Text(str(self.counter))
-        def add_click(e):
-            self.counter += 1
-            text.value = str(self.counter)
-            self.update()
-
-        return ft.Row([text, ft.ElevatedButton("Add", on_click=add_click)])
-
-# then use the control
-def main(page):
-    page.add(
-        Counter(100),
-        Counter(200))
-
-ft.app(target=main)
-```
-
-:::note
-`super().__init__()` must be always called in your own constructor.
-:::
-
-User control provides life-cycle "hook" methods:
-
-* `did_mount()` - called after the `UserControl` added to a page and assigned transient `id`.
-* `will_unmount()` - called before the `UserControl` is removed from a page.
-
-Using those methods we could implement a simple "countdown" control:
-
-```python
-import flet as ft
-import time, threading
-
-class Countdown(ft.UserControl):
-    def __init__(self, seconds):
-        super().__init__()
-        self.seconds = seconds
-
-    def did_mount(self):
-        self.running = True
-        self.th = threading.Thread(target=self.update_timer, args=(), daemon=True)
-        self.th.start()
-
-    def will_unmount(self):
-        self.running = False
-
-    def update_timer(self):
-        while self.seconds and self.running:
-            mins, secs = divmod(self.seconds, 60)
-            self.countdown.value = "{:02d}:{:02d}".format(mins, secs)
-            self.update()
-            time.sleep(1)
-            self.seconds -= 1
-
-    def build(self):
-        self.countdown = ft.Text()
-        return self.countdown
-
-def main(page: ft.Page):
-    page.add(Countdown(120), Countdown(60))
-
-ft.app(target=main)
-```
-
-<img src="/img/docs/getting-started/user-control-countdown.gif" className="screenshot-40" />
+    class Task(ft.Row):
+        def __init__(self, text):
+            super().__init__()
+            self.isolated = True
+``` 
