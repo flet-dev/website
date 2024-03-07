@@ -20,7 +20,7 @@ module.exports = {
         "guides/python/session-storage",
         "guides/python/encrypting-sensitive-data",
         "guides/python/pub-sub",
-        "guides/python/user-controls",
+        //"guides/python/user-controls",
         "guides/python/control-refs",
         "guides/python/accessibility",
         "guides/python/async-apps",
