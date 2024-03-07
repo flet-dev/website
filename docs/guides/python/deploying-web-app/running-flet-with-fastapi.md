@@ -8,14 +8,6 @@ Flet for FastAPI replaces built-in Flet web server (Fletd) when deploying your F
 
 Existing FastAPI developers can use Flet to easily add interactive, real-time dashboards to their FastAPI apps.
 
-## Installation
-
-To install `flet-fastapi` run the following command:
-
-```
-pip install flet-fastapi
-```
-
 ## Example app
 
 :::caution Important
@@ -30,7 +22,7 @@ Create `counter.py` with the following content:
 
 ```python
 import flet as ft
-import flet_fastapi
+import flet.fastapi as flet_fastapi
 
 async def main(page: ft.Page):
     counter = ft.Text("0", size=50, data=0)
@@ -101,7 +93,7 @@ Open the browser and navigate to http://127.0.0.1:8000 to see the app running.
 
 ```python
 import flet as ft
-import flet_fastapi
+import flet.fastapi as flet_fastapi
 
 
 async def root_main(page: ft.Page):
@@ -129,7 +121,7 @@ Run the app with `uvicorn` and visit http://127.0.0.1:8000 and then http://127.0
 from contextlib import asynccontextmanager
 
 import flet as ft
-import flet_fastapi
+import flet.fastapi as flet_fastapi
 from fastapi import FastAPI
 
 @asynccontextmanager
@@ -159,7 +151,7 @@ When adding Flet app to the existing FastAPI app you need to call `flet_fastapi.
 A FastAPI app to serve static Flet app files (index.html, manifest.json, Flutter JS app, etc.) and user assets.
 
 ```python
-from flet_fastapi import FastAPI, FletStaticFiles
+from flet.fastapi import FastAPI, FletStaticFiles
 
 app = FastAPI()
 
@@ -184,7 +176,7 @@ Parameters of `FletStaticFiles` constructor:
 Handles WebSocket connections from Flet client app running in the browser. WebSocket channel is used to send events from a browser to a Flet backend code and receive page real-time incremential updates.
 
 ```python
-from flet_fastapi import FletApp
+from flet.fastapi import FletApp
 
 async def main(page: ft.Page):
     await page.add_async(ft.Text("Hello, Flet!"))
@@ -205,7 +197,7 @@ async def flet_app(websocket: WebSocket):
 Handles file uploads by [FilePicker](/docs/controls/filepicker) control. This endpoint is optional - if your app doesn't use [FilePicker](/docs/controls/filepicker) then it's not needed.
 
 ```python
-from flet_fastapi import FletUpload
+from flet.fastapi import FletUpload
 
 @app.put("/upload")
 async def flet_uploads(request: Request):
@@ -214,10 +206,11 @@ async def flet_uploads(request: Request):
 
 ### OAuth callback handler
 
-Handles OAuth flow callback requests. If your app does't use [authentication](/docs/guides/python/authentication) then this endpoint is not needed.
+Handles OAuth flow callback requests. If your app doesn't use [authentication](/docs/guides/python/authentication) then
+this endpoint is not needed.
 
 ```python
-from flet_fastapi import FletOAuth
+from flet.fastapi import FletOAuth
 
 @app.get("/oauth_callback")
 async def flet_oauth(request: Request):
