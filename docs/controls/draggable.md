@@ -140,3 +140,13 @@ If this is `None`, then this widget will always display `content` (and so the dr
 ### `group`
 
 A group this draggable belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.
+
+## `Events`
+
+### `on_drag_end`
+
+Fires when this draggable is dropped.
+
+### `on_drag_start`
+
+Fires when this draggable starts being dragged.
