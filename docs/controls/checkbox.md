@@ -133,8 +133,7 @@ The [color](/docs/guides/python/colors) to use when this checkbox is hovered.
 
 ### `is_error`
 
-Whether this checkbox wants to show an error state. When `True` this checkbox will have a different default container
-color and check color. Defaults to `False`.
+Whether this checkbox wants to show an error state. When `True` this checkbox will have a different default container color and check color. Defaults to `False`.
 
 ### `label`
 
@@ -146,19 +145,15 @@ The label's style. An instance of type [`TextStyle`](#textstyle-properties).
 
 ### `label_position`
 
-Defines on which side of the checkbox the `label` should be shown. Property value is `LabelPosition`
-enum: `LabelPosition.LEFT` or `LabelPosition.RIGHT`(default).
+Defines on which side of the checkbox the `label` should be shown. Property value is `LabelPosition` enum: `LabelPosition.LEFT` or `LabelPosition.RIGHT`(default).
 
 ### `overlay_color`
 
-The [color](/docs/guides/python/colors) of the checkbox's overlay in various material states. The
-following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`. Usage
-example [here](elevatedbutton#style).
+The [color](/docs/guides/python/colors) of the checkbox's overlay in various material states. The following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`. Usage example [here](elevatedbutton#style).
 
 ### `semantics_label`
 
-The semantic label for the checkbox that is not shown in the UI, but will be announced by screen readers in
-accessibility modes (e.g TalkBack/VoiceOver).
+The semantic label for the checkbox that is not shown in the UI, but will be announced by screen readers in accessibility modes (e.g TalkBack/VoiceOver).
 
 ### `shape`
 

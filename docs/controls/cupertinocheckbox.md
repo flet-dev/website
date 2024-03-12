@@ -67,8 +67,7 @@ The clickable label to display on the right of a checkbox.
 
 ### `label_position`
 
-Defines on which side of the checkbox the `label` should be shown. Property value is `LabelPosition`
-enum: `LabelPosition.LEFT` or `LabelPosition.RIGHT`(default).
+Defines on which side of the checkbox the `label` should be shown. Property value is `LabelPosition` enum: `LabelPosition.LEFT` or `LabelPosition.RIGHT`(default).
 
 ### `tristate`
 

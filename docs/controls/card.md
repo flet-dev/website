@@ -57,8 +57,7 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option.
-See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
 
 Default value is `ClipBehavior.NONE`.
 
@@ -78,8 +77,7 @@ Controls the size of the shadow below the card. Default value is `1.0`.
 
 ### `is_semantic_container`
 
-Set to `True` (default) if this card represents a single semantic container, or to `False` if it instead represents a
-collection of individual semantic nodes (different types of content).
+Set to `True` (default) if this card represents a single semantic container, or to `False` if it instead represents a collection of individual semantic nodes (different types of content).
 
 ### `margin`
 
@@ -109,8 +107,7 @@ The default shape is a `RoundedRectangleBorder` with `radius=4.0`.
 
 ### `show_border_on_foreground`
 
-Set to `True` (default) if the shape of the border should be painted in front of the `content`, or to `False` if it
-should instead be painted behind.
+Set to `True` (default) if the shape of the border should be painted in front of the `content`, or to `False` if it should instead be painted behind.
 
 ### `surface_tint_color`
 

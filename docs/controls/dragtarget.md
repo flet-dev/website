@@ -114,15 +114,13 @@ The `Control` that is a visual representation of the drag target.
 
 ### `group`
 
-The group this target belongs to. Note that for this target to accept an incoming drop from a [`Draggable`](draggable),
-they must both be in thesame group.
+The group this target belongs to. Note that for this target to accept an incoming drop from a [`Draggable`](draggable), they must both be in thesame group.
 
 ## Events
 
 ### `on_accept`
 
-Fires when the user does drop an acceptable(same `group`) draggable on this target. Event handler argument is an
-instance of `DragTargetEvent` class with the following fields:
+Fires when the user does drop an acceptable(same `group`) draggable on this target. Event handler argument is an instance of `DragTargetEvent` class with the following fields:
 
 * `src_id` - unique control ID of draggable.
 * `x` - x component of the global position when the specific pointer event occurred on the draggable.
@@ -140,5 +138,4 @@ Fires when a draggable moves within this target. Event handler argument is also 
 
 ### `on_will_accept`
 
-Fires when a draggable is dragged on this target. `data` field of event details contains `true` (String) if both the
-draggable and this target are in the same `group`; otherwise `false` (String).
+Fires when a draggable is dragged on this target. `data` field of event details contains `true` (String) if both the draggable and this target are in the same `group`; otherwise `false` (String).
