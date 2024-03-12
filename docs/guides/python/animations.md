@@ -277,7 +277,7 @@ ft.app(target=main)
 ### Animation end callback
 
 All controls with `animate_*` properties have `on_animation_end` event handler which is called
-when animation complete and cab be used to chain multiple animations.
+when animation complete and can be used to chain multiple animations.
 
 Event's object `data` field contains the name of animation:
 
