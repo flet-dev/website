@@ -105,3 +105,10 @@ The size of the avatar, expressed as the radius (half the diameter). If radius i
 ### `tooltip`
 
 The text displayed when hovering the mouse over the button.
+
+## Events
+
+### `on_image_error`
+
+Fires when an error occurs while loading the `background_image_url` or `foreground_image_url`. The event data (`e.data`)
+is a string whose value is either `"background"` or `"foreground"` indicating the error's origin.
