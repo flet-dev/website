@@ -55,13 +55,41 @@ ft.app(target=main)
 
 ## `PopupMenuButton` properties
 
+### `bgcolor`
+
+The menu's background color.
+
+### `clip_behavior`
+
+The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Default value is `ClipBehavior.NONE`.
+
 ### `content`
 
 A `Control` that will be displayed instead of "more" icon.
 
+### `elevation`
+
+The menu's elevation when opened. Defaults to `8`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this to `True` produce a click sound and a long-press will produce a short vibration. 
+
+Defaults to `True`.
+
 ### `icon`
 
-If provided an icon to draw on the button.
+If provided, an icon to draw on the button.
+
+### `icon_color`
+
+The `icon`'s color.
+
+### `icon_size`
+
+The `icon`'s size.
 
 ### `items`
 
@@ -71,11 +99,25 @@ A collection of `PopupMenuItem` controls to display in a dropdown menu.
 
 Defines position of the popup menu relative to the button. Value can either be `PopupMenuPosition.OVER` (default) or `PopupMenuPosition.UNDER`.
 
+### `padding`
+
+A collection of `PopupMenuItem` controls to display in a dropdown menu.
+
+### `shape`
+
+The menu's shape. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+
+The default shape is a `CircleBorder` with a radius of `2.0`.
+
 ## `PopupMenuButton` events
 
 ### `on_cancelled`
 
 Called when the user dismisses the popup menu without selecting an item.
+
+### `on_opened`
+
+Called when the popup menu is shown.
 
 ## `PopupMenuItem` properties
 
