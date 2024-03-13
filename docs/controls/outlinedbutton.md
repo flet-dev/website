@@ -159,6 +159,12 @@ The default value is `False`.
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Defaults to `ClipBehavior.NONE`.
+
 ### `content`
 
 A Control representing custom button content.
@@ -170,6 +176,10 @@ Icon shown in the button.
 ### `icon_color`
 
 Icon [color](/docs/guides/python/colors).
+
+### `is_semantic_button`
+
+Whether this subtree represents a button. If `None` (default), the screen reader will not announce "button" when this is focused.
 
 ### `style`
 
