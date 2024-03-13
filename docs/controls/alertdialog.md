@@ -76,6 +76,10 @@ The (optional) set of actions that are displayed at the bottom of the dialog.
 
 Typically this is a list of [`TextButton`](textbutton) controls.
 
+### `action_button_padding`
+
+The padding that surrounds each button in `actions`.
+
 ### `actions_alignment`
 
 Defines the horizontal layout of the actions according to the same rules as for [`Row.alignment`](row#alignment).
@@ -104,6 +108,12 @@ The default value is `False`. See the example of usage [here](/docs/controls/cup
 
 The background [color](/docs/guides/python/colors) of the dialog's surface.
 
+### `clip_behavior`
+
+Controls how the contents of the dialog are clipped (or not) to the given `shape`. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Defaults to `ClipBehavior.NONE`.
+
 ### `content`
 
 The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](column) that contains the dialog's [`Text`](text) message.
@@ -123,6 +133,10 @@ Defines the elevation (z-coordinate) at which the dialog should appear.
 ### `icon`
 
 A control that is displayed at the top of the dialog. Typically a [`Icon`](icon) control.
+
+### `icon_padding`
+
+Padding around the `icon`.
 
 ### `inset_padding`
 
@@ -146,11 +160,19 @@ The semantic label of the dialog used by accessibility frameworks to announce sc
 
 In iOS, if this label is not provided, a semantic label will be inferred from the `title` if it is not null.
 
+### `shadow_color`
+
+The [color](/docs/guides/python/colors) used to paint a drop shadow under the dialog, which reflects the dialog's elevation.
+
 ### `shape`
 
 The shape of the dialog's border. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
 
 The default shape is a `RoundedRectangleBorder` with a radius of `4.0`.
+
+### `surface_tint_color`
+
+The [color](/docs/guides/python/colors) used as a surface tint overlay on the dialog's background color, which reflects the dialog's elevation.
 
 ### `title`
 
