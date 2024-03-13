@@ -107,14 +107,9 @@ See [`Container.padding`](container#padding) for more information and possible v
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option.
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
 
-Property value is `ClipBehavior` enum with supported values:
-
-* `NONE` (default)
-* `ANTI_ALIAS`
-* `ANTI_ALIAS_WITH_SAVE_LAYER`
-* `HARD_EDGE`
+Defaults to `ClipBehavior.NONE`.
 
 ### `collapsed_bgcolor`
 
