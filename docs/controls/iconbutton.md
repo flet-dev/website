@@ -94,6 +94,12 @@ On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinobutton) is creat
 
 The default value is `False`.
 
+### `alignment`
+
+Defines how the icon is positioned within the IconButton. Defaults to `alignment.center`.
+
+See [`Container.alignment`](container#alignment) for more information and possible values.
+
 ### `autofocus`
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
@@ -102,9 +108,23 @@ True if the control will be selected as the initial focus. If there is more than
 
 A Control representing custom button content.
 
+### `disabled_color`
+
+The [color](/docs/guides/python/colors) to use for the icon inside the button when disabled.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this to `True` produce a click sound and a long-press will produce a short vibration. 
+
+Defaults to `True`.
+
 ### `highlight_color`
 
 The button's [color](/docs/guides/python/colors) when the button is pressed. The highlight fades in quickly as the button is held down.
+
+### `hover_color`
+
+The button's [color](/docs/guides/python/colors) when hovered. 
 
 ### `icon`
 
@@ -117,6 +137,12 @@ Icon [color](/docs/guides/python/colors).
 ### `icon_size`
 
 Icon size in virtual pixels.
+
+### `padding`
+
+Defines the padding around this button. The entire padded icon will react to input gestures.
+
+Default value is `padding.all(8)`. See [`Container.padding`](container#padding) for more information and possible values.
 
 ### `selected`
 
