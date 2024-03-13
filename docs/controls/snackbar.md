@@ -77,6 +77,12 @@ If this value is `SnackBarBehavior.FLOATING`, the length of the bar is defined b
 
 SnackBar background [color](/docs/guides/python/colors).
 
+### `clip_behavior`
+
+The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Default value is `ClipBehavior.HARD_EDGE`.
+
 ### `close_icon_color`
 
 An optional color for the close icon, if `show_close_icon` is `True`.
@@ -113,6 +119,10 @@ Set to `True` to display a SnackBar. This property is automatically set to `Fals
 
 The amount of padding to apply to the snack bar's content and optional action.
 
+### `shape`
+
+The shape of the snack bar's. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+
 ### `show_close_icon`
 
 Whether to include a "close" icon widget.
@@ -130,3 +140,7 @@ If width is specified, the snack bar will be centered horizontally in the availa
 ### `on_action`
 
 Fires when action button is clicked.
+
+### `on_visible`
+
+Fires the first time that the snackbar is visible within the page.
