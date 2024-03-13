@@ -124,6 +124,16 @@ See [`Container.padding`](container#padding) property for more information and p
 
 Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
 
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this to `True` produce a click sound and a long-press will produce a short vibration. 
+
+Defaults to `True`.
+
+### `horizontal_spacing`
+
+The horizontal gap between the `title` and the `leading`/`trailing` controls. Defaults to `16`.
+
 ### `hover_color`
 
 The tile's [color](/docs/guides/python/colors) when hovered.
@@ -142,15 +152,42 @@ When using a Text control for title and subtitle, you can enforce line limits us
 
 A `Control` to display before the title.
 
+### `min_leading_width`
+
+The minimum width allocated for the `leading` control. Defaults to `40`.
+
+### `min_vertical_padding`
+
+The minimum padding on the top and bottom of the `title` and `subtitle` controls. Defaults to `4`.
+
 ### `selected`
 
 If this tile is also enabled then icons and text are rendered with the same color. By default the selected color is the theme's primary color.
+
+### `selected_color`
+
+Defines the [color](/docs/guides/python/colors) used for icons and text when `selected=True`.
+
+### `selected_tile_color`
+
+Defines the background [color](/docs/guides/python/colors) of ListTile when `selected=True`.
 
 ### `subtitle`
 
 Additional content displayed below the title. Typically a [Text](text) widget.
 
 If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](text#max_lines) to enforce the number of lines.
+
+### `splash_color`
+
+The tile's splash [color](/docs/guides/python/colors).
+
+### `style`
+
+Defines the font used for the title. Value is `ListTileStyle` enum, which has two possible values: 
+
+* `LIST`(default) - uses a title font that's appropriate for a ListTile in a list
+* `DRAWER`: uses a title font that's appropriate for a ListTile that appears in a `Drawer`.
 
 ### `title`
 
