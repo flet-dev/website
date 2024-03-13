@@ -104,6 +104,10 @@ The number of logical pixels between each child along the cross axis.
 
 The number of children in the cross axis.
 
+### `semantic_child_count`
+
+The number of children that will contribute semantic information.
+
 ### `spacing`
 
 The number of logical pixels between each child along the main axis.
