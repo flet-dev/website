@@ -77,6 +77,16 @@ See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode val
 
 Fallback `Control` to display if the image cannot be loaded from the source.
 
+### `exclude_from_semantics`
+
+Whether to exclude this image from semantics.
+
+### `filter_quality`
+
+The rendering quality of the image. Value is of type `FilterQuality` enum and can be one of the following: `NONE`, `LOW`, `MEDIUM` or `HIGH`. Defaults to `FilterQuality.MEDIUM`. More details on each [here](https://api.flutter.dev/flutter/dart-ui/FilterQuality.html).
+
+When building for the web using the `html` WebRenderer, filter quality has no effect - all images are rendered using the respective browser's default setting.
+
 ### `fit`
 
 How to inscribe the image into the space allocated during layout.
@@ -96,6 +106,10 @@ If not set, the image will pick a size that best preserves its intrinsic aspect 
 :::note
 It is strongly recommended that either both the width and the height be specified, or that the Image be placed in a context that sets tight layout constraints, so that the image does not change size as it loads. Consider using `fit` to adapt the image's rendering to fit the given width and height if the exact image dimensions are not known in advance.
 :::
+
+### `semantics_label`
+
+A semantic description of the image. Used to provide a description of the image to TalkBack on Android, and VoiceOver on iOS.
 
 ### `src`
 
