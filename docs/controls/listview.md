@@ -94,6 +94,10 @@ See [`Container.padding`](container#padding) property for more information and p
 
 Defines whether the scroll view scrolls in the reading direction. Defaults to `False`.
 
+### `semantic_child_count`
+
+The number of children that will contribute semantic information.
+
 ### `spacing`
 
 The height of Divider between ListView items. No spacing between items if not specified.
