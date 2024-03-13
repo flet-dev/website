@@ -40,5 +40,9 @@ ft.app(main)
 
 A child Control contained by the SelectionArea. If you need to have multiple selectable controls, use `Row`, `Column`, or `Stack`, which have a `controls` property, and then provide multiple controls to that control.
 
+## Events
 
+### `on_change`
+
+Fires when the selected content changes.
 
