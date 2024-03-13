@@ -65,6 +65,16 @@ Duration of animation in milliseconds of swtiching between tabs. Default is `50`
 
 The [color](/docs/guides/python/colors) of the divider.
 
+### `divider_height`
+
+The height of the divider. Defaults to `1.0`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this to `True` produce a click sound and a long-press will produce a short vibration. 
+
+Defaults to `True`.
+
 ### `indicator_border_radius`
 
 The radius of the indicator's corners.
@@ -75,7 +85,7 @@ The [color](/docs/guides/python/colors) and weight of the horizontal line drawn 
 
 ### `indicator_color`
 
-The [color](/docs/guides/python/colors) of the line that appears below the selected tab.
+The [color](/docs/guides/python/colors) of the indicator(line that appears below the selected tab).
 
 ### `indicator_padding`
 
@@ -84,6 +94,10 @@ Locates the selected tab's underline relative to the tab's boundary. The `indica
 ### `indicator_tab_size`
 
 `True` for indicator to take entire tab.
+
+### `indicator_thickness`
+
+The thickness of the indicator. Value must be greater than zero. It defaults to `3.0` when `secondary=False`, else `3.0`.
 
 ### `label_color`
 
