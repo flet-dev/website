@@ -72,9 +72,49 @@ True if the control will be selected as the initial focus. If there is more than
 
 Button background [color](/docs/guides/python/colors).
 
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Defaults to `ClipBehavior.NONE`.
+
 ### `content`
 
 A Control representing custom button content.
+
+### `disabled_elevation`
+
+The button's elevation when disabled. Defaults to the same value as `elevation`.
+
+### `elevation`
+
+The button's elevation. Defaults to `6`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this to `True` will produce a click sound and a long-press will produce a short vibration.
+
+Defaults to `True`.
+
+### `focus_color`
+
+The [color](/docs/guides/python/colors) to use for filling the button when the button has input focus.
+
+### `focus_elevation`
+
+The button's elevation when it has input focus. Defaults to `8`.
+
+### `foreground_color`
+
+The default foreground [color](/docs/guides/python/colors) for icons and text within the button.
+
+### `highlight_elevation`
+
+The button's elevation when being touched. Defaults to `12`.
+
+### `hover_elevation`
+
+The button's elevation when it is enabled and being hovered. Defaults to `8`.
 
 ### `icon`
 
@@ -123,6 +163,10 @@ ft.app(target=main)
 ```
 
 <img src="/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />
+
+### `splash_color`
+
+The [color](/docs/guides/python/colors) of the ripple shown when this button is pressed/clicked.
 
 ### `text`
 
