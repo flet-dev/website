@@ -158,6 +158,12 @@ True if the control will be selected as the initial focus. If there is more than
 
 Button's background [color](/docs/guides/python/colors).
 
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Defaults to `ClipBehavior.NONE`.
+
 ### `color`
 
 Button's text [color](/docs/guides/python/colors).
@@ -177,6 +183,10 @@ Icon shown in the button.
 ### `icon_color`
 
 Icon [color](/docs/guides/python/colors).
+
+### `is_semantic_button`
+
+Whether this subtree represents a button. If `None` (default), the screen reader will not announce "button" when this is focused.
 
 ### `style`
 
