@@ -117,6 +117,15 @@ The [color](/docs/guides/python/colors) for the inactive portion of the slider t
 
 The "inactive" side of the slider is the side between the thumb and the maximum value.
 
+### `interaction`
+
+The allowed way for the user to interact with this slider. Value is a `SliderInteraction` enum, which has the following possible values:
+
+* `TAP_AND_SLIDE`(default) - allows interaction by tapping or sliding anywhere on the track
+* `TAP_ONLY` - allows interaction only by tapping anywhere on the track
+* `SLIDE_ONLY` - allows interaction only by sliding anywhere on the track
+* `SLIDE_THUMB` - allows interaction only by sliding the thumb.
+
 ### `label`
 
 Format with `{value}`.
@@ -142,6 +151,10 @@ The minimum value the user can select.
 Defaults to `0.0`. Must be less than or equal to `max`.
 
 If the `max` is equal to the `min`, then the slider is disabled.
+
+### `overlay_color`
+
+Defines the highlight [color](/docs/guides/python/colors) that's typically used to indicate that the range slider thumb is hovered or dragged. See [Radio.fill_color](radio#fill_color) for usage examples.
 
 ### `round`
 
