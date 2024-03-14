@@ -178,10 +178,6 @@ Additional content displayed below the title. Typically a [Text](text) widget.
 
 If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](text#max_lines) to enforce the number of lines.
 
-### `splash_color`
-
-The tile's splash [color](/docs/guides/python/colors).
-
 ### `style`
 
 Defines the font used for the title. Value is `ListTileStyle` enum, which has two possible values: 
