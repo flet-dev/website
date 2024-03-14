@@ -60,6 +60,13 @@ ft.app(target=main)
 
 `True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
+### `clip_behavior`
+
+The `content` will be clipped (or not) according to this option.
+See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Default value is `ClipBehavior.HARD_EDGE`.
+
 ### `controls`
 
 A list of `Control`s to display inside ListView.

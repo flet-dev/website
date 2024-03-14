@@ -70,6 +70,13 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 The ratio of the cross-axis to the main-axis extent of each child.
 
+### `clip_behavior`
+
+The `content` will be clipped (or not) according to this option.
+See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Default value is `ClipBehavior.HARD_EDGE`.
+
 ### `controls`
 
 A list of `Control`s to display inside GridView.
