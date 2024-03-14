@@ -118,6 +118,10 @@ Whether detected gestures should provide acoustic and/or haptic feedback. On And
 
 Defaults to `True`.
 
+### `focus_color`
+
+The button's [color](/docs/guides/python/colors) when in focus.
+
 ### `highlight_color`
 
 The button's [color](/docs/guides/python/colors) when the button is pressed. The highlight fades in quickly as the button is held down.
