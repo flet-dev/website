@@ -107,6 +107,13 @@ The [color](/docs/guides/python/colors) of selected tab labels.
 
 Defines the ink response focus, hover, and splash [colors](/docs/guides/python/colors). If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
 
+### `secondary`
+
+Whether to create a secondary/nested tab bar. Secondary tabs are used within a content area to further separate related
+content and establish hierarchy.
+
+Defaults to `False`.
+
 ### `selected_index`
 
 The index of currently selected tab.
