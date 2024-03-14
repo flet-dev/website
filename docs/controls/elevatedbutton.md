@@ -184,10 +184,6 @@ Icon shown in the button.
 
 Icon [color](/docs/guides/python/colors).
 
-### `is_semantic_button`
-
-Whether this subtree represents a button. If `None` (default), the screen reader will not announce "button" when this is focused.
-
 ### `style`
 
 The value is an instance of `ButtonStyle` class. `ButtonStyle` allows controlling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.

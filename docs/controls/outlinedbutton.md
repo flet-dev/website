@@ -177,10 +177,6 @@ Icon shown in the button.
 
 Icon [color](/docs/guides/python/colors).
 
-### `is_semantic_button`
-
-Whether this subtree represents a button. If `None` (default), the screen reader will not announce "button" when this is focused.
-
 ### `style`
 
 See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
