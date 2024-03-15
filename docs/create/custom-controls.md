@@ -29,7 +29,6 @@ Now you can use your brand-new control in your app:
 import flet as ft
 
 def main(page: ft.Page):
-    class MyButton(ft.ElevatedButton):...
 
     page.add(MyButton(text="OK"), MyButton(text="Cancel"))
 
@@ -45,14 +44,15 @@ Similar to properties, you can pass event handlers as parameters into your custo
 ```python
 import flet as ft
 
+class MyButton(ft.ElevatedButton):
+    def __init__(self, text, on_click):
+        super().__init__()
+        self.bgcolor = ft.colors.ORANGE_300
+        self.color = ft.colors.GREEN_800
+        self.text = text
+        self.on_click = on_click
+
 def main(page: ft.Page):
-    class MyButton(ft.ElevatedButton):
-        def __init__(self, text, on_click):
-            super().__init__()
-            self.bgcolor = ft.colors.ORANGE_300
-            self.color = ft.colors.GREEN_800
-            self.text = text
-            self.on_click = on_click
 
     def ok_clicked(e):
         print("OK clicked")
@@ -74,40 +74,39 @@ Composite custom controls inherit from container controls such as `Column`, `Row
 
 ```python
 import flet as ft
+class Task(ft.Row):
+    def __init__(self, text):
+        super().__init__()
+        self.text_view = ft.Text(text)
+        self.text_edit = ft.TextField(text, visible=False)
+        self.edit_button = ft.IconButton(icon=ft.icons.EDIT, on_click=self.edit)
+        self.save_button = ft.IconButton(
+            visible=False, icon=ft.icons.SAVE, on_click=self.save
+        )
+        self.controls = [
+            ft.Checkbox(),
+            self.text_view,
+            self.text_edit,
+            self.edit_button,
+            self.save_button,
+        ]
 
+    def edit(self, e):
+        self.edit_button.visible = False
+        self.save_button.visible = True
+        self.text_view.visible = False
+        self.text_edit.visible = True
+        self.update()
+
+    def save(self, e):
+        self.edit_button.visible = True
+        self.save_button.visible = False
+        self.text_view.visible = True
+        self.text_edit.visible = False
+        self.text_view.value = self.text_edit.value
+        self.update()
 
 def main(page: ft.Page):
-    class Task(ft.Row):
-        def __init__(self, text):
-            super().__init__()
-            self.text_view = ft.Text(text)
-            self.text_edit = ft.TextField(text, visible=False)
-            self.edit_button = ft.IconButton(icon=ft.icons.EDIT, on_click=self.edit)
-            self.save_button = ft.IconButton(
-                visible=False, icon=ft.icons.SAVE, on_click=self.save
-            )
-            self.controls = [
-                ft.Checkbox(),
-                self.text_view,
-                self.text_edit,
-                self.edit_button,
-                self.save_button,
-            ]
-
-        def edit(self, e):
-            self.edit_button.visible = False
-            self.save_button.visible = True
-            self.text_view.visible = False
-            self.text_edit.visible = True
-            self.update()
-
-        def save(self, e):
-            self.edit_button.visible = True
-            self.save_button.visible = False
-            self.text_view.visible = True
-            self.text_edit.visible = False
-            self.text_view.value = self.text_edit.value
-            self.update()
 
     page.add(
         Task(text="Do laundry"),
@@ -161,8 +160,8 @@ As a best practice, any custom control that calls `self.update()` inside its cla
 In the above examples, simple styled `MyButton` doesn't need to be isolated, but the `Task` should be:
 
 ```python
-    class Task(ft.Row):
-        def __init__(self, text):
-            super().__init__()
-            self.isolated = True
+class Task(ft.Row):
+    def __init__(self, text):
+        super().__init__()
+        self.isolated = True
 ``` 
