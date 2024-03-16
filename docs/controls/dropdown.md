@@ -203,6 +203,17 @@ If null or an empty string and counter isn't specified, then nothing will appear
 
 Whether the TextField is part of a dense form (ie, uses less vertical space).
 
+### `elevation`
+
+The dropdown's elevation. Defaults to `8`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this
+to `True` produce a click sound and a long-press will produce a short vibration.
+
+Defaults to `True`.
+
 ### `error_style`
 
 The style to use for `error_text`.
@@ -243,6 +254,10 @@ Text that provides context about the input's value, such as how the value will b
 
 If non-null, the text is displayed below the input decorator, in the same location as `error_text`. If a non-null `error_text` value is specified then the helper text is not shown.
 
+### `hint_content`
+
+A placeholder control for the dropdown's value that is displayed when `value` is `None`.
+
 ### `hint_style`
 
 The style to use for `hint_text`.
@@ -259,6 +274,26 @@ The name of the icon to show before the input field and outside of the decoratio
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
+### `icon_content`
+
+The control to use for the drop-down button's icon. Defaults to an `Icon(ft.icons.ARROW_DROP_DOWN)`.
+
+### `icon_enabled_color`
+
+The color of any `Icon` descendant of `icon_content` if this button is enabled.
+
+### `icon_disabled_color`
+
+The color of any `Icon` descendant of `icon_content` if this button is disabled.
+
+### `icon_size`
+
+The size of the icon button which wraps `icon_content`. Defaults to `24.0`.
+
+### `item_height`
+
+The height of the items/options in the dropdown.
+
 ### `label`
 
 Optional text that describes the input field.
@@ -269,9 +304,17 @@ When the input field is empty and unfocused, the label is displayed on top of th
 
 The style to use for `label`.
 
+### `max_menu_height`
+
+The maximum height of the menu.
+
 ### `options`
 
 A list of `Option` controls representing items in the dropdown.
+
+### `padding`
+
+The padding around the visible portion of the dropdown.
 
 ### `prefix`
 
