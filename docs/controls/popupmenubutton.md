@@ -57,7 +57,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-The menu's background color.
+The menu's background [color](/docs/guides/python/colors).
 
 ### `clip_behavior`
 
@@ -85,7 +85,7 @@ If provided, an icon to draw on the button.
 
 ### `icon_color`
 
-The `icon`'s color.
+The `icon`'s [color](/docs/guides/python/colors).
 
 ### `icon_size`
 
@@ -101,21 +101,33 @@ Defines position of the popup menu relative to the button. Value can either be `
 
 ### `padding`
 
-A collection of `PopupMenuItem` controls to display in a dropdown menu.
+A collection of `PopupMenuItem` controls to display in a dropdown menu. Defaults to `padding.all(8.0)`.
+
+### `shadow_color`
+
+The [color](/docs/guides/python/colors) used to paint the shadow below the menu.
 
 ### `shape`
 
 The menu's shape. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
 
-The default shape is a `CircleBorder` with a radius of `2.0`.
+The default shape is a `CircleBorder` with a radius of `10.0`.
+
+### `splash_radius`
+
+The splash radius.
+
+### `surface_tint_color`
+
+The [color](/docs/guides/python/colors) used as an overlay on color to indicate elevation.
 
 ## `PopupMenuButton` events
 
-### `on_cancelled`
+### `on_cancel`
 
-Called when the user dismisses the popup menu without selecting an item.
+Called when the user dismisses/cancels the popup menu without selecting an item.
 
-### `on_opened`
+### `on_open`
 
 Called when the popup menu is shown.
 
