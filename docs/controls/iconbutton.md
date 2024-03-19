@@ -186,6 +186,14 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
+### `splash_color`
+
+The primary [color](/docs/guides/python/colors) of the button when the button is in the down (pressed) state.
+
+### `splash_radius`
+
+The splash radius. Honoured only when in Material 2.
+
 ### `style`
 
 See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
