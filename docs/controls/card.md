@@ -106,3 +106,11 @@ The [color](/docs/guides/python/colors) used as an overlay on `color` to indicat
 If this is `None`, no overlay will be applied. Otherwise this color will be composited on top of `color` with an opacity related to `elevation` and used to paint the background of the card.
 
 The default is `None`.
+
+### `variant`
+
+Defines the card variant to be used. Value is of `CardVariant` enum:
+
+* `DEFAULT` - the default variant
+* `FILLED` - the filled variant
+* `OUTLINED` - the outlined variant
