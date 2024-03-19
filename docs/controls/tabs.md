@@ -99,6 +99,13 @@ Locates the selected tab's underline relative to the tab's boundary. The `indica
 
 The thickness of the indicator. Value must be greater than zero. It defaults to `3.0` when `secondary=False`, else `3.0`.
 
+### `is_secondary`
+
+Whether to create a secondary/nested tab bar. Secondary tabs are used within a content area to further separate related
+content and establish hierarchy.
+
+Defaults to `False`.
+
 ### `label_color`
 
 The [color](/docs/guides/python/colors) of selected tab labels.
@@ -106,13 +113,6 @@ The [color](/docs/guides/python/colors) of selected tab labels.
 ### `overlay_color`
 
 Defines the ink response focus, hover, and splash [colors](/docs/guides/python/colors). If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
-
-### `secondary`
-
-Whether to create a secondary/nested tab bar. Secondary tabs are used within a content area to further separate related
-content and establish hierarchy.
-
-Defaults to `False`.
 
 ### `selected_index`
 
