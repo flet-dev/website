@@ -168,7 +168,7 @@ The value to set to containing `RadioGroup` when the radio is selected.
 
 ### `visual_density`
 
-Defines how compact the radio's layout will be.
+Defines how compact the radio's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 
 ## `Radio` events
 
