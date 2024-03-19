@@ -552,10 +552,10 @@ The URL to open when the container is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode:
+Where to open URL in the web mode. Value is of `URL_TARGET` enum:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+* `BLANK` (default) - new tab/window.
+* `SELF` - the current tab/window.
 
 ## Events
 
