@@ -143,9 +143,9 @@ A group this draggable belongs to. For [DragTarget](dragtarget) to accept incomi
 
 ## `Events`
 
-### `on_drag_end`
+### `on_drag_complete`
 
-Fires when this draggable is dropped.
+Fires when this draggable is dropped and accepted by a DragTarget.
 
 ### `on_drag_start`
 
