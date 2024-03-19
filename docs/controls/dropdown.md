@@ -153,7 +153,7 @@ ft.app(target=main)
 
 ### `alignment`
 
-Defines how the hint or the selected item is positioned within the dropdown.
+Defines how the `hint` or the selected item is positioned within this dropdown.
 
 See [`Container.alignment`](/docs/controls/container#alignment) property for possible values.
 
@@ -292,7 +292,7 @@ The size of the icon button which wraps `icon_content`. Defaults to `24.0`.
 
 ### `item_height`
 
-The height of the items/options in the dropdown.
+The height of the items/options in the dropdown menu.
 
 ### `label`
 
@@ -306,15 +306,15 @@ The style to use for `label`.
 
 ### `max_menu_height`
 
-The maximum height of the menu.
+The maximum height of the dropdown menu.
 
 ### `options`
 
-A list of `Option` controls representing items in the dropdown.
+A list of `Option` controls representing items in this dropdown.
 
 ### `padding`
 
-The padding around the visible portion of the dropdown.
+The padding around the visible portion of this dropdown.
 
 ### `prefix`
 
@@ -366,7 +366,7 @@ Text size in virtual pixels.
 
 ### `text_style`
 
-The text style to use for text in the dropdown button and the dropdown menu that appears when you tap the button.
+The text style to use for text in this dropdown button and the dropdown menu that appears when you tap the button.
 
 ### `value`
 
@@ -376,7 +376,7 @@ The text style to use for text in the dropdown button and the dropdown menu that
 
 ### `focus()`
 
-Moves focus to a Dropdown.
+Moves focus to this dropdown.
 
 ## `Dropdown` events
 
@@ -386,13 +386,23 @@ Fires when the control has lost focus.
 
 ### `on_change`
 
-Fires when the selected item of the Dropdown has changed.
+Fires when the selected item of this dropdown has changed.
+
+### `on_click`
+
+Fires when this dropdown is clicked.
 
 ### `on_focus`
 
 Fires when the control has received focus.
 
 ## `Option` properties
+
+### `alignment`
+
+Defines the alignment of this option in it's container. See [Container.alignment](container#alignment) for possible values. 
+
+Defaults to `alignment.center_left`.
 
 ### `key`
 
@@ -401,3 +411,9 @@ Option's key. `text` value will be used instead if `key` is not specified.
 ### `text`
 
 Option's display text. `key` value will be used instead if `text` is not specified.
+
+## `Option` Events
+
+### `on_click`
+
+Fires when this option is clicked.
