@@ -53,7 +53,7 @@ ft.app(target=main)
 
 <img src="/img/docs/controls/popup-menu-button/popup-menu-button-with-custom-content.gif" className="screenshot-30"/>
 
-## `PopupMenuButton` properties
+## `PopupMenuButton` Properties
 
 ### `bgcolor`
 
@@ -123,7 +123,13 @@ The splash radius.
 
 The [color](/docs/guides/python/colors) used as an overlay on color to indicate elevation.
 
-## `PopupMenuButton` events
+## `PopupMenuButton` Events
+
+### ~~`on_cancelled`~~
+
+Called when the user dismisses/cancels the popup menu without selecting an item.
+
+*Deprecated (renamed) since version 0.22.0 and will be removed in version 1.0. Use `on_cancel` instead.*
 
 ### `on_cancel`
 
@@ -133,7 +139,7 @@ Called when the user dismisses/cancels the popup menu without selecting an item.
 
 Called when the popup menu is shown.
 
-## `PopupMenuItem` properties
+## `PopupMenuItem` Properties
 
 ### `check`
 
@@ -161,7 +167,7 @@ Defaults to `padding.symmetric(horizontal=12)`. See [`Container.padding`](contai
 
 The text label of this menu item.
 
-## `PopupMenuItem` events
+## `PopupMenuItem` Events
 
 ### `on_click`
 
