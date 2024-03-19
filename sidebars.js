@@ -10,6 +10,7 @@ module.exports = {
         "guides/python/getting-user-input",
         "guides/python/keyboard-shortcuts",
         "guides/python/colors",
+        "guides/python/theming",
         "guides/python/large-lists",
         "guides/python/drag-and-drop",
         "guides/python/navigation-and-routing",
