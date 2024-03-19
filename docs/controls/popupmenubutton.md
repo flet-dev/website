@@ -103,6 +103,8 @@ Defines position of the popup menu relative to the button. Value can either be `
 
 A collection of `PopupMenuItem` controls to display in a dropdown menu. Defaults to `padding.all(8.0)`.
 
+See [`Container.padding`](container#padding) for possible values.
+
 ### `shadow_color`
 
 The [color](/docs/guides/python/colors) used to paint the shadow below the menu.
@@ -137,20 +139,30 @@ Called when the popup menu is shown.
 
 If set to `True` or `False` a menu item draws a checkmark.
 
+### `content`
+
+A `Control` representing custom content of this menu item. If specified, then both `icon` and `text` properties are ignored.
+
+### `height`
+
+The minimum height of this menu item. Defaults to `40`.
+
 ### `icon`
 
-An icon to draw before menu item text label.
+An icon to draw before the text label of this menu item.
+
+### `padding`
+
+The padding of this menu item. Note that the `height` value of this menu item may influence the applied padding. For example, If a `height` greater than the height of the sum of the padding and a `content` is provided, then the padding's effect will not be visible.
+
+Defaults to `padding.symmetric(horizontal=12)`. See [`Container.padding`](container#padding) for possible values.
 
 ### `text`
 
-Menu item text label.
-
-### `content`
-
-A `Control` representing menu item's custom content. If specified both `icon` and `text` properties are ignored.
+The text label of this menu item.
 
 ## `PopupMenuItem` events
 
 ### `on_click`
 
-Called when a user clicks a popup menu item.
+Called when a user clicks a this menu item.
