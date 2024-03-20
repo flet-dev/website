@@ -70,9 +70,15 @@ ft.app(target=main)
 
 ## Properties
 
-### `background_image_url`
+### `background_image_src`
 
-The background image of the circle. Changing the background image will cause the avatar to animate to the new image. Typically used as a fallback image for `foreground_image_url`. If the CircleAvatar is to have the user's initials, use `content` instead.
+The source (local asset file or URL) of the background image in the circle. Changing the background image will cause the avatar to animate to the new image. Typically used as a fallback image for `foreground_image_src`. If the CircleAvatar is to have the user's initials, use `content` instead.
+
+### ~~`background_image_url`~~
+
+The source (local asset file or URL) of the background image in the circle. Changing the background image will cause the avatar to animate to the new image. Typically used as a fallback image for `foreground_image_url`. If the CircleAvatar is to have the user's initials, use `content` instead.
+
+*Deprecated (renamed) since version 0.22.0 and will be removed in version 1.0. Use `background_image_src` instead.*
 
 ### `bgcolor`
 
@@ -86,9 +92,15 @@ The default text [color](/docs/guides/python/colors) for text in the circle. Def
 
 Typically a `Text` control. If the CircleAvatar is to have an image, use `background_image_url` instead.
 
-### `foreground_image_url`
+### `foreground_image_src`
 
-The foreground image of the circle. Typically used as profile image. For fallback use `background_image_url`.
+The source (local asset file or URL) of the foreground image in the circle. Typically used as profile image. For fallback use `background_image_src`.
+
+### ~~`foreground_image_url`~~
+
+The source (local asset file or URL) of the foreground image in the circle. Typically used as profile image. For fallback use `background_image_url`.
+
+*Deprecated (renamed) since version 0.22.0 and will be removed in version 1.0. Use `foreground_image_src` instead.*
 
 ### `max_radius`
 
