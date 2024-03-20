@@ -111,6 +111,6 @@ The default is `None`.
 
 Defines the card variant to be used. Value is of `CardVariant` enum:
 
-* `DEFAULT` - the default variant
+* `ELEVATED` - the default variant
 * `FILLED` - the filled variant
 * `OUTLINED` - the outlined variant
