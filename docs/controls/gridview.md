@@ -66,6 +66,16 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 `True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
+### `cache_extent`
+
+Items that fall in the cache area (area before or after the visible area that are about to become visible when the user
+scrolls) are laid out even though they are not (yet) visible on screen.
+The cacheExtent describes how many pixels the cache area extends before the leading edge and after the trailing edge of
+the viewport.
+
+The total extent, which the viewport will try to cover with `controls`, is `cache_extent` before the leading edge +
+extent of the main axis + `cache_extent` after the trailing edge.
+
 ### `child_aspect_ratio`
 
 The ratio of the cross-axis to the main-axis extent of each child.
