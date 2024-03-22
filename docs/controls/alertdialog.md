@@ -110,7 +110,8 @@ The background [color](/docs/guides/python/colors) of the dialog's surface.
 
 ### `clip_behavior`
 
-Controls how the contents of the dialog are clipped (or not) to the given `shape`. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+Controls how the contents of the dialog are clipped (or not) to the given `shape`.
+See [`Container.clip_behavior`](container#clip_behavior) for possible values.
 
 Defaults to `ClipBehavior.NONE`.
 
