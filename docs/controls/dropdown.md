@@ -163,7 +163,9 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-Dropdown background [color](/docs/guides/python/colors).
+The background [color](/docs/guides/python/colors) of both the dropdown button and it's menu.
+
+To set a different background color for the dropdown button, use `fill_color` or `focused_bgcolor` properties.
 
 ### `border`
 
@@ -226,11 +228,18 @@ If non-null, the border's color animates to red and the `helper_text` is not sho
 
 ### `filled`
 
-If `True` the decoration's container is filled with theme fillColor.
+If `True` the decoration's container is filled with theme `fill_color`.
+
+If `filled=None`(default), then it is implicitly set to `True` when at least one of the following is
+not `None`: `fill_color`, `focused_bgcolor` and `bgcolor`.
+
+### `fill_color`
+
+Background [color](/docs/guides/python/colors) of the dropdown button. Will not be visible if `filled=False`.
 
 ### `focused_bgcolor`
 
-Background [color](/docs/guides/python/colors) of dropdown in focused state.
+Background [color](/docs/guides/python/colors) of dropdown in focused state. Will not be visible if `filled=False`.
 
 ### `focused_border_color`
 
