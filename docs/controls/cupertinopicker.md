@@ -63,7 +63,6 @@ def main(page):
                         ft.CupertinoBottomSheet(
                             picker,
                             height=216,
-                            bgcolor=ft.cupertino_colors.SYSTEM_BACKGROUND,
                             padding=ft.padding.only(top=6),
                         )
                     ),
