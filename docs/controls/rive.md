@@ -70,10 +70,3 @@ The source of your rive animation. Can either be a URL or a local asset file.
 ### `use_artboard_size`
 
 Whether to use the inherent size of the artboard, i.e. the absolute size defined by the artboard, or size the widget based on the available constraints only (sized by parent). Defaults to `False`.
-
-
-## Events
-
-### `on_init`
-
-Fires when the provided animation has been initialized.
