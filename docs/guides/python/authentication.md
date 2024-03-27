@@ -54,7 +54,7 @@ To integrate Flet authentication with GitHub a new [GitHub OAuth app](https://gi
 **Authorization callback URL** should be in the format:
 
 ```
-{application-url}/api/oauth/redirect
+{application-url}/oauth_callback
 ```
 
 <img src="/img/docs/getting-started/authentication/github-new-oauth-app.png" className="screenshot-40" />
@@ -81,7 +81,7 @@ def main(page: ft.Page):
     provider = GitHubOAuthProvider(
         client_id=GITHUB_CLIENT_ID,
         client_secret=GITHUB_CLIENT_SECRET,
-        redirect_url="http://localhost:8550/api/oauth/redirect",
+        redirect_url="http://localhost:8550/oauth_callback",
     )
 
     def login_click(e):
@@ -120,7 +120,7 @@ Run the program and click "Login with GitHub" button. GitHub authorize app page 
 
 ### Redirect URL
 
-We used `http://localhost:8550/api/oauth/redirect` as a redirect URL while registering GitHub OAuth app.
+We used `http://localhost:8550/oauth_callback` as a redirect URL while registering GitHub OAuth app.
 Notice it has a fixed port `8550`. To run your Flet app on a fixed port use `port` argument in `flet.app` call:
 
 ```python
@@ -190,7 +190,7 @@ def main(page: Page):
     provider = GitHubOAuthProvider(
         client_id=os.getenv("GITHUB_CLIENT_ID"),
         client_secret=os.getenv("GITHUB_CLIENT_SECRET"),
-        redirect_url="http://localhost:8550/api/oauth/redirect",
+        redirect_url="http://localhost:8550/oauth_callback",
     )
 
     def login_button_click(e):
@@ -355,7 +355,7 @@ def logout_button_click(e):
 
 By default, OAuth authorization flow is happening in either new browser window/tab (desktop app), browser popup window (web) or in-app web view (mobile).
 
-Upon completion of authorization flow a user is redirected to Flet's OAuth callback page (`/api/oauth/redirect`) which tries to close a browser window/tab with JavaScript and provides user with instructions to close the window manually if JavaScript close didn't work.
+Upon completion of authorization flow a user is redirected to Flet's OAuth callback page (`/oauth_callback`) which tries to close a browser window/tab with JavaScript and provides user with instructions to close the window manually if JavaScript close didn't work.
 
 This section is applicable to Flet desktop and web apps only as in-app web view in mobile apps can be closed by Flet without relying on JavaScript.
 
@@ -426,7 +426,7 @@ def main(page: Page):
         user_endpoint="https://api.linkedin.com/v2/me",
         user_scopes=["r_liteprofile", "r_emailaddress"],
         user_id_fn=lambda u: u["id"],
-        redirect_url="http://localhost:8550/api/oauth/redirect",
+        redirect_url="http://localhost:8550/oauth_callback",
     )
 
     def login_click(e):
