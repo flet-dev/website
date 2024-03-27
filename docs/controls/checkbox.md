@@ -73,6 +73,10 @@ ft.app(target=main)
 
 ## Properties
 
+### `active_color`
+
+The [color](/docs/guides/python/colors) to use when this checkbox is checked.
+
 ### `adaptive`
 
 If the value is `True`, an adaptive Checkbox is created based on whether the target platform is iOS/macOS.
@@ -84,6 +88,10 @@ The default value is `False`. See the example of usage [here](/docs/controls/cup
 ### `autofocus`
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
+
+### `border`
+
+The color and width of the checkbox's border to be rendered when the checkbox's value is `False`.
 
 ### `check_color`
 
@@ -119,6 +127,14 @@ chk.fill_color={
 }
 ```
 
+### `hover_color`
+
+The [color](/docs/guides/python/colors) to use when this checkbox is hovered.
+
+### `is_error`
+
+Whether this checkbox wants to show an error state. When `True` this checkbox will have a different default container color and check color. Defaults to `False`.
+
 ### `label`
 
 The clickable label to display on the right of a checkbox.
@@ -129,7 +145,25 @@ The label's style. An instance of type [`TextStyle`](#textstyle-properties).
 
 ### `label_position`
 
-Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
+Defines on which side of the checkbox the `label` should be shown. Property value is `LabelPosition` enum: `LabelPosition.LEFT` or `LabelPosition.RIGHT`(default).
+
+### `overlay_color`
+
+The [color](/docs/guides/python/colors) of the checkbox's overlay in various material states. The following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`. Usage example [here](elevatedbutton#style).
+
+### `semantics_label`
+
+The semantic label for the checkbox that is not shown in the UI, but will be announced by screen readers in accessibility modes (e.g TalkBack/VoiceOver).
+
+### `shape`
+
+The shape of the checkbox. More information on possible values [here](alertdialog#shape).
+
+Defaults to `RoundedRectangleBorder(radius=2)`
+
+### `splash_radius`
+
+The radius of the circular Material ink response (ripple) in logical pixels. Default's to `20.0`.
 
 ### `tristate`
 
@@ -139,7 +173,7 @@ Checkbox displays a dash when its value is null.
 
 ### `value`
 
-Current value of the checkbox.
+Current value of the checkbox. Either `True` or `False` (default).
 
 ## Events
 

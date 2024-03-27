@@ -48,6 +48,10 @@ On iOS and macOS, a `CupertinoNavigationBar` is created, which has matching func
 
 The default value is `False`.
 
+### `animation_duration`
+
+The transition time for each destination as it goes between selected and unselected.
+
 ### `bgcolor`
 
 The [color](/docs/guides/python/colors) of the NavigationBar itself.

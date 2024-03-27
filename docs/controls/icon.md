@@ -58,7 +58,7 @@ The semantics label for this icon. It is not shown to the in the UI, but is anno
 
 ### `size`
 
-Icon size. Default is 24.
+The icon's size. Default is `24`.
 
 ### `tooltip`
 

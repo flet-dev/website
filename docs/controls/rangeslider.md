@@ -71,19 +71,13 @@ import flet as ft
 
 def main(page: ft.Page):
     def slider_change_start(e):
-        print(
-            f"Slider change start, values are {e.control.start_value}, {e.control.end_value}"
-        )
+        print(f"on_change_start: {e.control.start_value}, {e.control.end_value}")
 
     def slider_is_changing(e):
-        print(
-            f"Slider is changing, values are {e.control.start_value}, {e.control.end_value}"
-        )
+        print(f"on_change: {e.control.start_value}, {e.control.end_value}")
 
     def slider_change_end(e):
-        print(
-            f"Slider change end, values are {e.control.start_value}, {e.control.end_value}"
-        )
+        print(f"on_change_end: {e.control.start_value}, {e.control.end_value}")
 
     range_slider = ft.RangeSlider(
         min=0,
@@ -146,8 +140,6 @@ The "inactive" segments of the slider are the span of tracks between the min and
 
 ### `label`
 
-Format with `{value}`.
-
 A label to show above the slider thumbs when the slider is active. The value of `label` may contain `{value}` which will be replaced with a current slider `start_value` and `end_value`.
 
 If not set, then the labels will not be displayed.
@@ -170,7 +162,7 @@ If the `max` is equal to the `min`, then the slider is disabled.
 
 ### `overlay_color`
 
-The hightlight [color](/docs/guides/python/colors) around the thumbs used to indicate that the range slider thumbs are hovered or dragged.
+The highlight [color](/docs/guides/python/colors) that's typically used to indicate that the range slider thumb is hovered or dragged. See [Radio.fill_color](radio#fill_color) for usage examples.
 
 ### `round`
 

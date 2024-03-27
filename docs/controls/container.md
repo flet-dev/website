@@ -283,7 +283,7 @@ Property value is `ClipBehavior` enum with supported values:
 * `ANTI_ALIAS_WITH_SAVE_LAYER`
 * `HARD_EDGE`
 
-Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
+Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`. More information on each of the values [here](https://api.flutter.dev/flutter/dart-ui/Clip.html).
 
 ### `content`
 
@@ -552,10 +552,10 @@ The URL to open when the container is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode:
+Where to open URL in the web mode. Value is of `UrlTarget` enum:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+* `BLANK` (default) - new tab/window.
+* `SELF` - the current tab/window.
 
 ## Events
 

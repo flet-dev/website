@@ -212,7 +212,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-TextField background [color](/docs/guides/python/colors).
+TextField background [color](/docs/guides/python/colors). Will not be visible if `filled=False`.
 
 ### `border`
 
@@ -305,11 +305,18 @@ If non-null, the border's color animates to red and the `helper_text` is not sho
 
 ### `filled`
 
-If `True` the decoration's container is filled with theme fillColor.
+If `True` the decoration's container is filled with theme `fill_color`.
+
+If `filled=None`(default), then it is implicitly set to `True` when at least one of the following is
+not `None`: `fill_color`, `focused_bgcolor`, `hover_color` and `bgcolor`.
+
+### `fill_color`
+
+Background [color](/docs/guides/python/colors) of TextField. Will not be visible if `filled=False`.
 
 ### `focused_bgcolor`
 
-Background [color](/docs/guides/python/colors) of TextField in focused state.
+Background [color](/docs/guides/python/colors) of TextField in focused state. Will not be visible if `filled=False`.
 
 ### `focused_border_color`
 
@@ -342,6 +349,10 @@ The style to use for `hint_text`.
 Text that suggests what sort of input the field accepts.
 
 Displayed on top of the input when the it's empty and either (a) `label` is null or (b) the input has the focus.
+
+### `hover_color`
+
+Background [color](/docs/guides/python/colors) of TextField when hovered. Will not be visible if `filled=False`.
 
 ### `icon`
 

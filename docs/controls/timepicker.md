@@ -92,6 +92,10 @@ The text that is displayed below the minute input text field.
 
 The default value is "Minute".
 
+### `orientation`
+
+The orientation of the dialog when displayed. Value is of type `Orientation` enum which has the following possible values: `PORTRAIT` and `LANDSCAPE`.
+
 ### `time_picker_entry_mode`
 
 The initial mode of time entry method for the time picker dialog.

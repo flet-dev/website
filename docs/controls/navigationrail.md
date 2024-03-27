@@ -77,6 +77,10 @@ Defines the appearance of the button items that are arrayed within the navigatio
 
 The value must be a list of two or more `NavigationRailDestination` instances.
 
+### `elevation`
+
+Controls the size of the shadow below the NavigationRail. Default value is `0.0`.
+
 ### `extended`
 
 Indicates that the NavigationRail should be in the extended state.
@@ -88,10 +92,6 @@ The rail will implicitly animate between the extended and normal state.
 If the rail is going to be in the extended state, then the `label_type` must be set to `none`.
 
 The default value is `False`.
-
-### `elevation`
-
-Controls the size of the shadow below the NavigationRail. Default value is `0.0`.
 
 ### `group_alignment`
 
@@ -111,17 +111,7 @@ The [color](/docs/guides/python/colors) of the navigation rail's indicator.
 
 ### `indicator_shape`
 
-The shape of the navigation rail's indicator.
-
-The value is an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+The shape of the navigation rail's indicator. More information on possible values [here](alertdialog#shape).
 
 The default shape is a `StadiumBorder`.
 
