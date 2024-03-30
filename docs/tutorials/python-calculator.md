@@ -223,17 +223,12 @@ With similar approach, specify `on_click` event and `data` property for each but
 Run the app and see it in the action:
 <img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
 
-## Packaging as a desktop app
+## Packaging your app for distribution
 
 Congratulations! You have created your Calculator app with Flet, and it looks awesome! Now it's time to share your app with the world!
 
-Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
-
-[Follow these instructions](/docs/guides/python/getting-started#packaging-a-desktop-app) to package your Calculator app into an executable.
-
-## Deploying a web app
-
-[Follow these instructions](/docs/guides/python/getting-started#deploying-a-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
+Follow [this guide](/docs/guides/python/packaging-app-for-distribution) to package your Calculator app for any
+platform (web, mobile, desktop).
 
 ## Summary
 
