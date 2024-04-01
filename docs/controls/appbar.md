@@ -89,7 +89,8 @@ Whether the title should be centered. Default is `False`.
 
 ### `color`
 
-The default [color](/docs/guides/python/colors) for Text and Icons within the app bar. Default color is defined by current theme.
+The default [color](/docs/guides/python/colors) for `Text` and `Icon` controls within the app bar. Default color is
+defined by current theme.
 
 ### `elevation`
 

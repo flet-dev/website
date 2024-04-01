@@ -561,29 +561,55 @@ Customizes the appearance of `AppBar` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `AppBar.bgcolor` in all descendant `AppBar` controls.
+
 #### `center_title`
+
+Overrides the default value of `AppBar.center_title` in all descendant `AppBar` controls.
 
 #### `color`
 
+Overrides the default value of `AppBar.color` in all descendant `AppBar` controls.
+
 #### `elevation`
 
-#### `foreground_color`
+Overrides the default value of `AppBar.elevation` in all descendant `AppBar` controls.
+
+#### `color`
+
+Overrides the default value of `AppBar.color` in all descendant `AppBar` controls.
 
 #### `scroll_elevation`
 
+Overrides the default value of `AppBar.scroll_elevation` in all descendant `AppBar` controls.
+
 #### `shadow_color`
+
+Overrides the default value of `AppBar.shadow_color` in all descendant `AppBar` controls.
 
 #### `shape`
 
+Overrides the default value of `AppBar.shape` in all descendant `AppBar` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `AppBar.surface_tint_color` in all descendant `AppBar` controls.
 
 #### `title_spacing`
 
+Overrides the default value of `AppBar.title_spacing` in all descendant `AppBar` controls.
+
 #### `title_text_style`
+
+Overrides the default value of `AppBar.title_text_style` in all descendant `AppBar` controls.
 
 #### `toolbar_height`
 
+Overrides the default value of `AppBar.toolbar_height` in all descendant `AppBar` controls.
+
 #### `toolbar_text_style`
+
+Overrides the default value of `AppBar.toolbar_text_style` in all descendant `AppBar` controls.
 
 ### `BadgeTheme` class
 
@@ -593,19 +619,35 @@ Customizes the appearance of `Badge` across the app.
 
 #### `alignment`
 
+Overrides the default value of `Badge.alignment` in all descendant `Badge` controls.
+
 #### `bgcolor`
+
+Overrides the default value of `Badge.bgcolor` in all descendant `Badge` controls.
 
 #### `large_size`
 
+Overrides the default value of `Badge.large_size` in all descendant `Badge` controls.
+
 #### `offset`
+
+Overrides the default value of `Badge.offset` in all descendant `Badge` controls.
 
 #### `padding`
 
+Overrides the default value of `Badge.padding` in all descendant `Badge` controls.
+
 #### `small_size`
+
+Overrides the default value of `Badge.small_size` in all descendant `Badge` controls.
 
 #### `text_color`
 
+Overrides the default value of `Badge.text_color` in all descendant `Badge` controls.
+
 #### `text_style`
+
+Overrides the default value of `Badge.text_style` in all descendant `Badge` controls.
 
 ### `BannerTheme` class
 
@@ -615,19 +657,35 @@ Customizes the appearance of `Banner` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `Banner.bgcolor` in all descendant `Banner` controls.
+
 #### `content_text_style`
+
+Overrides the default value of `Banner.content_text_style` in all descendant `Banner` controls.
 
 #### `divider_color`
 
+Overrides the default value of `Banner.divider_color` in all descendant `Banner` controls.
+
 #### `elevation`
+
+Overrides the default value of `Banner.elevation` in all descendant `Banner` controls.
 
 #### `leading_padding`
 
+Overrides the default value of `Banner.leading_padding` in all descendant `Banner` controls.
+
 #### `padding`
+
+Overrides the default value of `Banner.padding` in all descendant `Banner` controls.
 
 #### `shadow_color`
 
+Overrides the default value of `Banner.shadow_color` in all descendant `Banner` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `Banner.surface_tint_color` in all descendant `Banner` controls.
 
 ### `BottomAppBarTheme` class
 
@@ -637,15 +695,27 @@ Customizes the appearance of `BottomAppBar` across the app.
 
 #### `color`
 
+Overrides the default value of `BottomAppBar.color` in all descendant `BottomAppBar` controls.
+
 #### `elevation`
+
+Overrides the default value of `BottomAppBar.elevation` in all descendant `BottomAppBar` controls.
 
 #### `height`
 
+Overrides the default value of `BottomAppBar.height` in all descendant `BottomAppBar` controls.
+
 #### `padding`
+
+Overrides the default value of `BottomAppBar.padding` in all descendant `BottomAppBar` controls.
 
 #### `shadow_color`
 
+Overrides the default value of `BottomAppBar.shadow_color` in all descendant `BottomAppBar` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `BottomAppBar.surface_tint_color` in all descendant `BottomAppBar` controls.
 
 ### `BottomNavigationBarTheme` class
 
@@ -655,21 +725,45 @@ Customizes the appearance of `BottomNavigationBar` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `BottomNavigationBar.bgcolor` in all descendant `BottomNavigationBar` controls.
+
 #### `elevation`
+
+Overrides the default value of `BottomNavigationBar.elevation` in all descendant `BottomNavigationBar` controls.
 
 #### `enable_feedback`
 
+Overrides the default value of `BottomNavigationBar.enable_feedback` in all descendant `BottomNavigationBar` controls.
+
 #### `show_unselected_labels`
+
+Overrides the default value of `BottomNavigationBar.show_unselected_labels` in all descendant `BottomNavigationBar`
+controls.
 
 #### `selected_item_color`
 
+Overrides the default value of `BottomNavigationBar.selected_item_color` in all descendant `BottomNavigationBar`
+controls.
+
 #### `selected_label_text_style`
+
+Overrides the default value of `BottomNavigationBar.selected_label_text_style` in all descendant `BottomNavigationBar`
+controls.
 
 #### `show_selected_labels`
 
+Overrides the default value of `BottomNavigationBar.show_selected_labels` in all descendant `BottomNavigationBar`
+controls.
+
 #### `unselected_item_color`
 
+Overrides the default value of `BottomNavigationBar.unselected_item_color` in all descendant `BottomNavigationBar`
+controls.
+
 #### `unselected_label_text_style`
+
+Overrides the default value of `BottomNavigationBar.unselected_label_text_style` in all descendant `BottomNavigationBar`
+controls.
 
 ### `BottomSheetTheme` class
 
@@ -679,23 +773,43 @@ Customizes the appearance of `BottomSheet` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `BottomSheet.bgcolor` in all descendant `BottomSheet` controls.
+
 #### `clip_behavior`
+
+Overrides the default value of `BottomSheet.clip_behavior` in all descendant `BottomSheet` controls.
 
 #### `drag_handle_color`
 
+Overrides the default value of `BottomSheet.drag_handle_color` in all descendant `BottomSheet` controls.
+
 #### `elevation`
+
+Overrides the default value of `BottomSheet.elevation` in all descendant `BottomSheet` controls.
 
 #### `modal_bgcolor`
 
+Overrides the default value of `BottomSheet.modal_bgcolor` in all descendant `BottomSheet` controls.
+
 #### `modal_elevation`
+
+Overrides the default value of `BottomSheet.modal_elevation` in all descendant `BottomSheet` controls.
 
 #### `shadow_color`
 
+Overrides the default value of `BottomSheet.shadow_color` in all descendant `BottomSheet` controls.
+
 #### `shape`
+
+Overrides the default value of `BottomSheet.shape` in all descendant `BottomSheet` controls.
 
 #### `show_drag_handle`
 
+Overrides the default value of `BottomSheet.show_drag_handle` in all descendant `BottomSheet` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `BottomSheet.surface_tint_color` in all descendant `BottomSheet` controls.
 
 ### `CardTheme` class
 
@@ -705,17 +819,31 @@ Customizes the appearance of `Card` across the app.
 
 #### `clip_behavior`
 
+Overrides the default value of `Card.clip_behavior` in all descendant `Card` controls.
+
 #### `color`
+
+Overrides the default value of `Card.color` in all descendant `Card` controls.
 
 #### `elevation`
 
+Overrides the default value of `Card.elevation` in all descendant `Card` controls.
+
 #### `margin`
+
+Overrides the default value of `Card.margin` in all descendant `Card` controls.
 
 #### `shadow_color`
 
+Overrides the default value of `Card.shadow_color` in all descendant `Card` controls.
+
 #### `shape`
 
+Overrides the default value of `Card.shape` in all descendant `Card` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `Card.surface_tint_color` in all descendant `Card` controls.
 
 ### `CheckboxTheme` class
 
@@ -725,19 +853,35 @@ Customizes the appearance of `Checkbox` across the app.
 
 #### `border_side`
 
+Overrides the default value of `Checkbox.border_side` in all descendant `Checkbox` controls.
+
 #### `check_color`
+
+Overrides the default value of `Checkbox.check_color` in all descendant `Checkbox` controls.
 
 #### `fill_color`
 
+Overrides the default value of `Checkbox.fill_color` in all descendant `Checkbox` controls.
+
 #### `mouse_cursor`
+
+Overrides the default value of `Checkbox.mouse_cursor` in all descendant `Checkbox` controls.
 
 #### `overlay_color`
 
+Overrides the default value of `Checkbox.overlay_color` in all descendant `Checkbox` controls.
+
 #### `shape`
+
+Overrides the default value of `Checkbox.shape` in all descendant `Checkbox` controls.
 
 #### `splash_radius`
 
+Overrides the default value of `Checkbox.splash_radius` in all descendant `Checkbox` controls.
+
 #### `visual_density`
+
+Overrides the default value of `Checkbox.visual_density` in all descendant `Checkbox` controls.
 
 ### `ChipTheme` class
 
@@ -747,41 +891,79 @@ Customizes the appearance of `Chip` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `Chip.bgcolor` in all descendant `Chip` controls.
+
 #### `border_side`
+
+Overrides the default value of `Chip.border_side` in all descendant `Chip` controls.
 
 #### `brightness`
 
+Overrides the default value of `Chip.brightness` in all descendant `Chip` controls.
+
 #### `checkmark_color`
+
+Overrides the default value of `Chip.checkmark_color` in all descendant `Chip` controls.
 
 #### `click_elevation`
 
+Overrides the default value of `Chip.click_elevation` in all descendant `Chip` controls.
+
 #### `delete_icon_color`
+
+Overrides the default value of `Chip.delete_icon_color` in all descendant `Chip` controls.
 
 #### `disabled_color`
 
+Overrides the default value of `Chip.disabled_color` in all descendant `Chip` controls.
+
 #### `elevation`
+
+Overrides the default value of `Chip.elevation` in all descendant `Chip` controls.
 
 #### `label_padding`
 
+Overrides the default value of `Chip.label_padding` in all descendant `Chip` controls.
+
 #### `label_text_style`
+
+Overrides the default value of `Chip.label_text_style` in all descendant `Chip` controls.
 
 #### `padding`
 
+Overrides the default value of `Chip.padding` in all descendant `Chip` controls.
+
 #### `secondary_label_text_style`
+
+Overrides the default value of `Chip.secondary_label_text_style` in all descendant `Chip` controls.
 
 #### `secondary_selected_color`
 
+Overrides the default value of `Chip.secondary_selected_color` in all descendant `Chip` controls.
+
 #### `selected_color`
+
+Overrides the default value of `Chip.selected_color` in all descendant `Chip` controls.
 
 #### `selected_shadow_color`
 
+Overrides the default value of `Chip.selected_shadow_color` in all descendant `Chip` controls.
+
 #### `shadow_color`
+
+Overrides the default value of `Chip.shadow_color` in all descendant `Chip` controls.
 
 #### `shape`
 
+Overrides the default value of `Chip.shape` in all descendant `Chip` controls.
+
 #### `show_checkmark`
 
+Overrides the default value of `Chip.show_checkmark` in all descendant `Chip` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `Chip.surface_tint_color` in all descendant `Chip` controls.
 
 ### `DatePickerTheme` class
 
@@ -791,71 +973,141 @@ Customizes the appearance of `DatePicker` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `DatePicker.bgcolor` in all descendant `DatePicker` controls.
+
 #### `cancel_button_style`
+
+Overrides the default value of `DatePicker.cancel_button_style` in all descendant `DatePicker` controls.
 
 #### `confirm_button_style`
 
+Overrides the default value of `DatePicker.confirm_button_style` in all descendant `DatePicker` controls.
+
 #### `day_bgcolor`
+
+Overrides the default value of `DatePicker.day_bgcolor` in all descendant `DatePicker` controls.
 
 #### `day_foreground_color`
 
+Overrides the default value of `DatePicker.day_foreground_color` in all descendant `DatePicker` controls.
+
 #### `day_overlay_color`
+
+Overrides the default value of `DatePicker.day_overlay_color` in all descendant `DatePicker` controls.
 
 #### `day_text_style`
 
+Overrides the default value of `DatePicker.day_text_style` in all descendant `DatePicker` controls.
+
 #### `divider_color`
+
+Overrides the default value of `DatePicker.divider_color` in all descendant `DatePicker` controls.
 
 #### `elevation`
 
+Overrides the default value of `DatePicker.elevation` in all descendant `DatePicker` controls.
+
 #### `header_bgcolor`
+
+Overrides the default value of `DatePicker.header_bgcolor` in all descendant `DatePicker` controls.
 
 #### `header_foreground_color`
 
+Overrides the default value of `DatePicker.header_foreground_color` in all descendant `DatePicker` controls.
+
 #### `header_headline_text_style`
+
+Overrides the default value of `DatePicker.header_headline_text_style` in all descendant `DatePicker` controls.
 
 #### `header_help_text_style`
 
+Overrides the default value of `DatePicker.header_help_text_style` in all descendant `DatePicker` controls.
+
 #### `range_picker_bgcolor`
+
+Overrides the default value of `DatePicker.range_picker_bgcolor` in all descendant `DatePicker` controls.
 
 #### `range_picker_elevation`
 
+Overrides the default value of `DatePicker.range_picker_elevation` in all descendant `DatePicker` controls.
+
 #### `range_picker_header_bgcolor`
+
+Overrides the default value of `DatePicker.range_picker_header_bgcolor` in all descendant `DatePicker` controls.
 
 #### `range_picker_header_foreground_color`
 
+Overrides the default value of `DatePicker.range_picker_header_foreground_color` in all descendant `DatePicker`
+controls.
+
 #### `range_picker_header_headline_text_style`
+
+Overrides the default value of `DatePicker.range_picker_header_headline_text_style` in all descendant `DatePicker`
+controls.
 
 #### `range_picker_header_help_text_style`
 
+Overrides the default value of `DatePicker.range_picker_header_help_text_style` in all descendant `DatePicker` controls.
+
 #### `range_picker_shape`
+
+Overrides the default value of `DatePicker.range_picker_shape` in all descendant `DatePicker` controls.
 
 #### `range_picker_surface_tint_color`
 
+Overrides the default value of `DatePicker.range_picker_surface_tint_color` in all descendant `DatePicker` controls.
+
 #### `range_selection_bgcolor`
+
+Overrides the default value of `DatePicker.range_selection_bgcolor` in all descendant `DatePicker` controls.
 
 #### `range_selection_overlay_color`
 
+Overrides the default value of `DatePicker.range_selection_overlay_color` in all descendant `DatePicker` controls.
+
 #### `shadow_color`
+
+Overrides the default value of `DatePicker.shadow_color` in all descendant `DatePicker` controls.
 
 #### `shape`
 
+Overrides the default value of `DatePicker.shape` in all descendant `DatePicker` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `DatePicker.surface_tint_color` in all descendant `DatePicker` controls.
 
 #### `today_bgcolor`
 
+Overrides the default value of `DatePicker.today_bgcolor` in all descendant `DatePicker` controls.
+
 #### `today_border_side`
+
+Overrides the default value of `DatePicker.today_border_side` in all descendant `DatePicker` controls.
 
 #### `today_foreground_color`
 
+Overrides the default value of `DatePicker.today_foreground_color` in all descendant `DatePicker` controls.
+
 #### `weekday_text_style`
+
+Overrides the default value of `DatePicker.weekday_text_style` in all descendant `DatePicker` controls.
 
 #### `year_bgcolor`
 
+Overrides the default value of `DatePicker.year_bgcolor` in all descendant `DatePicker` controls.
+
 #### `year_foreground_color`
+
+Overrides the default value of `DatePicker.year_foreground_color` in all descendant `DatePicker` controls.
 
 #### `year_overlay_color`
 
+Overrides the default value of `DatePicker.year_overlay_color` in all descendant `DatePicker` controls.
+
 #### `year_text_style`
+
+Overrides the default value of `DatePicker.year_text_style` in all descendant `DatePicker` controls.
 
 ### `DialogTheme` class
 
@@ -865,23 +1117,43 @@ Customizes the appearance of `Dialog` across the app.
 
 #### `actions_padding`
 
+Overrides the default value of `Dialog.actions_padding` in all descendant `Dialog` controls.
+
 #### `alignment`
+
+Overrides the default value of `Dialog.alignment` in all descendant `Dialog` controls.
 
 #### `bgcolor`
 
+Overrides the default value of `Dialog.bgcolor` in all descendant `Dialog` controls.
+
 #### `content_text_style`
+
+Overrides the default value of `Dialog.content_text_style` in all descendant `Dialog` controls.
 
 #### `elevation`
 
+Overrides the default value of `Dialog.elevation` in all descendant `Dialog` controls.
+
 #### `icon_color`
+
+Overrides the default value of `Dialog.icon_color` in all descendant `Dialog` controls.
 
 #### `shadow_color`
 
+Overrides the default value of `Dialog.shadow_color` in all descendant `Dialog` controls.
+
 #### `shape`
+
+Overrides the default value of `Dialog.shape` in all descendant `Dialog` controls.
 
 #### `surface_tint_color`
 
+Overrides the default value of `Dialog.surface_tint_color` in all descendant `Dialog` controls.
+
 #### `title_text_style`
+
+Overrides the default value of `Dialog.title_text_style` in all descendant `Dialog` controls.
 
 ### `DividerTheme` class
 
@@ -891,13 +1163,23 @@ Customizes the appearance of `Divider` across the app.
 
 #### `color`
 
+Overrides the default value of `Divider.color` in all descendant `Divider` controls.
+
 #### `leading_indent`
+
+Overrides the default value of `Divider.leading_indent` in all descendant `Divider` controls.
 
 #### `space`
 
+Overrides the default value of `Divider.space` in all descendant `Divider` controls.
+
 #### `thickness`
 
+Overrides the default value of `Divider.thickness` in all descendant `Divider` controls.
+
 #### `trailing_indent`
+
+Overrides the default value of `Divider.trailing_indent` in all descendant `Divider` controls.
 
 ### `ExpansionTileTheme` class
 
@@ -907,13 +1189,23 @@ Customizes the appearance of `ExpansionTile` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `ExpansionTile.bgcolor` in all descendant `ExpansionTile` controls.
+
 #### `collapsed_bgcolor`
+
+Overrides the default value of `ExpansionTile.collapsed_bgcolor` in all descendant `ExpansionTile` controls.
 
 #### `collapsed_icon_color`
 
+Overrides the default value of `ExpansionTile.collapsed_icon_color` in all descendant `ExpansionTile` controls.
+
 #### `icon_color`
 
+Overrides the default value of `ExpansionTile.icon_color` in all descendant `ExpansionTile` controls.
+
 #### `text_color`
+
+Overrides the default value of `ExpansionTile.text_color` in all descendant `ExpansionTile` controls.
 
 ### `ListTileTheme` class
 
@@ -923,37 +1215,71 @@ Customizes the appearance of `ListTile` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `ListTile.bgcolor` in all descendant `ListTile` controls.
+
 #### `content_padding`
+
+Overrides the default value of `ListTile.content_padding` in all descendant `ListTile` controls.
 
 #### `dense`
 
+Overrides the default value of `ListTile.dense` in all descendant `ListTile` controls.
+
 #### `enable_feedback`
+
+Overrides the default value of `ListTile.enable_feedback` in all descendant `ListTile` controls.
 
 #### `horizontal_spacing`
 
+Overrides the default value of `ListTile.horizontal_spacing` in all descendant `ListTile` controls.
+
 #### `icon_color`
+
+Overrides the default value of `ListTile.icon_color` in all descendant `ListTile` controls.
 
 #### `is_three_line`
 
+Overrides the default value of `ListTile.is_three_line` in all descendant `ListTile` controls.
+
 #### `leading_and_trailing_text_style`
+
+Overrides the default value of `ListTile.leading_and_trailing_text_style` in all descendant `ListTile` controls.
 
 #### `min_leading_width`
 
+Overrides the default value of `ListTile.min_leading_width` in all descendant `ListTile` controls.
+
 #### `min_vertical_padding`
+
+Overrides the default value of `ListTile.min_vertical_padding` in all descendant `ListTile` controls.
 
 #### `selected_tile_color`
 
+Overrides the default value of `ListTile.selected_tile_color` in all descendant `ListTile` controls.
+
 #### `selected_color`
+
+Overrides the default value of `ListTile.selected_color` in all descendant `ListTile` controls.
 
 #### `shape`
 
+Overrides the default value of `ListTile.shape` in all descendant `ListTile` controls.
+
 #### `subtitle_text_style`
+
+Overrides the default value of `ListTile.subtitle_text_style` in all descendant `ListTile` controls.
 
 #### `text_color`
 
+Overrides the default value of `ListTile.text_color` in all descendant `ListTile` controls.
+
 #### `title_text_style`
 
+Overrides the default value of `ListTile.title_text_style` in all descendant `ListTile` controls.
+
 #### `visual_density`
+
+Overrides the default value of `ListTile.visual_density` in all descendant `ListTile` controls.
 
 ### `NavigationBarTheme` class
 
@@ -963,23 +1289,43 @@ Customizes the appearance of `NavigationBar` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `NavigationBar.bgcolor` in all descendant `NavigationBar` controls.
+
 #### `elevation`
+
+Overrides the default value of `NavigationBar.elevation` in all descendant `NavigationBar` controls.
 
 #### `height`
 
+Overrides the default value of `NavigationBar.height` in all descendant `NavigationBar` controls.
+
 #### `indicator_color`
+
+Overrides the default value of `NavigationBar.indicator_color` in all descendant `NavigationBar` controls.
 
 #### `indicator_shape`
 
+Overrides the default value of `NavigationBar.indicator_shape` in all descendant `NavigationBar` controls.
+
 #### `label_behavior`
+
+Overrides the default value of `NavigationBar.label_behavior` in all descendant `NavigationBar` controls.
 
 #### `label_text_style`
 
+Overrides the default value of `NavigationBar.label_text_style` in all descendant `NavigationBar` controls.
+
 #### `overlay_color`
+
+Overrides the default value of `NavigationBar.overlay_color` in all descendant `NavigationBar` controls.
 
 #### `shadow_color`
 
+Overrides the default value of `NavigationBar.shadow_color` in all descendant `NavigationBar` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `NavigationBar.surface_tint_color` in all descendant `NavigationBar` controls.
 
 ### `NavigationDrawerTheme` class
 
@@ -989,19 +1335,35 @@ Customizes the appearance of `NavigationDrawer` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `NavigationDrawer.bgcolor` in all descendant `NavigationDrawer` controls.
+
 #### `elevation`
+
+Overrides the default value of `NavigationDrawer.elevation` in all descendant `NavigationDrawer` controls.
 
 #### `indicator_color`
 
+Overrides the default value of `NavigationDrawer.indicator_color` in all descendant `NavigationDrawer` controls.
+
 #### `indicator_shape`
+
+Overrides the default value of `NavigationDrawer.indicator_shape` in all descendant `NavigationDrawer` controls.
 
 #### `label_text_style`
 
+Overrides the default value of `NavigationDrawer.label_text_style` in all descendant `NavigationDrawer` controls.
+
 #### `shadow_color`
+
+Overrides the default value of `NavigationDrawer.shadow_color` in all descendant `NavigationDrawer` controls.
 
 #### `surface_tint_color`
 
+Overrides the default value of `NavigationDrawer.surface_tint_color` in all descendant `NavigationDrawer` controls.
+
 #### `tile_height`
+
+Overrides the default value of `NavigationDrawer.tile_height` in all descendant `NavigationDrawer` controls.
 
 ### `NavigationRailTheme` class
 
@@ -1011,25 +1373,47 @@ Customizes the appearance of `NavigationRail` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `NavigationRail.bgcolor` in all descendant `NavigationRail` controls.
+
 #### `elevation`
+
+Overrides the default value of `NavigationRail.elevation` in all descendant `NavigationRail` controls.
 
 #### `group_alignment`
 
+Overrides the default value of `NavigationRail.group_alignment` in all descendant `NavigationRail` controls.
+
 #### `indicator_color`
+
+Overrides the default value of `NavigationRail.indicator_color` in all descendant `NavigationRail` controls.
 
 #### `indicator_shape`
 
+Overrides the default value of `NavigationRail.indicator_shape` in all descendant `NavigationRail` controls.
+
 #### `label_type`
+
+Overrides the default value of `NavigationRail.label_type` in all descendant `NavigationRail` controls.
 
 #### `min_extended_width`
 
+Overrides the default value of `NavigationRail.min_extended_width` in all descendant `NavigationRail` controls.
+
 #### `min_width`
+
+Overrides the default value of `NavigationRail.min_width` in all descendant `NavigationRail` controls.
 
 #### `selected_label_text_style`
 
+Overrides the default value of `NavigationRail.selected_label_text_style` in all descendant `NavigationRail` controls.
+
 #### `unselected_label_text_style`
 
+Overrides the default value of `NavigationRail.unselected_label_text_style` in all descendant `NavigationRail` controls.
+
 #### `use_indicator`
+
+Overrides the default value of `NavigationRail.use_indicator` in all descendant `NavigationRail` controls.
 
 ### `PopupMenuTheme` class
 
@@ -1039,27 +1423,51 @@ Customizes the appearance of `PopupMenu` across the app.
 
 #### `color`
 
+Overrides the default value of `PopupMenu.color` in all descendant `PopupMenu` controls.
+
 #### `elevation`
+
+Overrides the default value of `PopupMenu.elevation` in all descendant `PopupMenu` controls.
 
 #### `enable_feedback`
 
+Overrides the default value of `PopupMenu.enable_feedback` in all descendant `PopupMenu` controls.
+
 #### `icon_color`
+
+Overrides the default value of `PopupMenu.icon_color` in all descendant `PopupMenu` controls.
 
 #### `icon_size`
 
+Overrides the default value of `PopupMenu.icon_size` in all descendant `PopupMenu` controls.
+
 #### `label_text_style`
+
+Overrides the default value of `PopupMenu.label_text_style` in all descendant `PopupMenu` controls.
 
 #### `menu_position`
 
+Overrides the default value of `PopupMenu.menu_position` in all descendant `PopupMenu` controls.
+
 #### `mouse_cursor`
+
+Overrides the default value of `PopupMenu.mouse_cursor` in all descendant `PopupMenu` controls.
 
 #### `shadow_color`
 
+Overrides the default value of `PopupMenu.shadow_color` in all descendant `PopupMenu` controls.
+
 #### `shape`
+
+Overrides the default value of `PopupMenu.shape` in all descendant `PopupMenu` controls.
 
 #### `surface_tint_color`
 
+Overrides the default value of `PopupMenu.surface_tint_color` in all descendant `PopupMenu` controls.
+
 #### `text_style`
+
+Overrides the default value of `PopupMenu.text_style` in all descendant `PopupMenu` controls.
 
 ### `ProgressIndicatorTheme` class
 
@@ -1069,13 +1477,23 @@ Customizes the appearance of `ProgressIndicator` across the app.
 
 #### `circular_track_color`
 
+Overrides the default value of `ProgressIndicator.circular_track_color` in all descendant `ProgressIndicator` controls.
+
 #### `color`
+
+Overrides the default value of `ProgressIndicator.color` in all descendant `ProgressIndicator` controls.
 
 #### `linear_min_height`
 
+Overrides the default value of `ProgressIndicator.linear_min_height` in all descendant `ProgressIndicator` controls.
+
 #### `linear_track_color`
 
+Overrides the default value of `ProgressIndicator.linear_track_color` in all descendant `ProgressIndicator` controls.
+
 #### `refresh_bgcolor`
+
+TBA
 
 ### `RadioTheme` class
 
@@ -1085,63 +1503,111 @@ Customizes the appearance of `Radio` across the app.
 
 #### `fill_color`
 
+Overrides the default value of `Radio.fill_color` in all descendant `Radio` controls.
+
 #### `height`
+
+Overrides the default value of `Radio.height` in all descendant `Radio` controls.
 
 #### `mouse_cursor`
 
+Overrides the default value of `Radio.mouse_cursor` in all descendant `Radio` controls.
+
 #### `overlay_color`
+
+Overrides the default value of `Radio.overlay_color` in all descendant `Radio` controls.
 
 #### `splash_radius`
 
+Overrides the default value of `Radio.splash_radius` in all descendant `Radio` controls.
+
 #### `visual_density`
+
+Overrides the default value of `Radio.visual_density` in all descendant `Radio` controls.
 
 ### `SearchBarTheme` class
 
-Customizes the appearance of `SearchBar` across the app.
+Customizes the appearance of `SearchBar` (in 'bar' mode) across the app.
 
 `SearchBarTheme` class has the following properties:
 
 #### `bgcolor`
 
+Overrides the default value of `SearchBar.bar_bgcolor` in all descendant `SearchBar` controls.
+
 #### `elevation`
+
+Overrides the default value of `SearchBar.bar_elevation` in all descendant `SearchBar` controls.
 
 #### `hint_style`
 
+Overrides the default value of `SearchBar.hint_style` in all descendant `SearchBar` controls.
+
 #### `overlay_color`
+
+Overrides the default value of `SearchBar.overlay_color` in all descendant `SearchBar` controls.
 
 #### `shadow_color`
 
+Overrides the default value of `SearchBar.shadow_color` in all descendant `SearchBar` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `SearchBar.surface_tint_color` in all descendant `SearchBar` controls.
 
 #### `text_capitalization`
 
+Overrides the default value of `SearchBar.text_capitalization` in all descendant `SearchBar` controls.
+
 #### `text_style`
+
+Overrides the default value of `SearchBar.text_style` in all descendant `SearchBar` controls.
 
 #### `padding`
 
+Overrides the default value of `SearchBar.padding` in all descendant `SearchBar` controls.
+
 #### `shape`
+
+Overrides the default value of `SearchBar.shape` in all descendant `SearchBar` controls.
 
 ### `SearchViewTheme` class
 
-Customizes the appearance of `SearchView` across the app.
+Customizes the appearance of `SearchView` (in 'view' mode) across the app.
 
 `SearchViewTheme` class has the following properties:
 
 #### `bgcolor`
 
+Overrides the default value of `SearchBar.view_bgcolor` in all descendant `SearchBar` controls.
+
 #### `border_side`
+
+Overrides the default value of `SearchBar.border_side` in all descendant `SearchBar` controls.
 
 #### `divider_color`
 
+Overrides the default value of `SearchBar.divider_color` in all descendant `SearchBar` controls.
+
 #### `elevation`
+
+Overrides the default value of `SearchBar.view_elevation` in all descendant `SearchBar` controls.
 
 #### `header_hint_text_style`
 
+Overrides the default value of `SearchBar.header_hint_text_style` in all descendant `SearchBar` controls.
+
 #### `header_text_style`
+
+Overrides the default value of `SearchBar.header_text_style` in all descendant `SearchBar` controls.
 
 #### `shape`
 
+Overrides the default value of `SearchBar.shape` in all descendant `SearchBar` controls.
+
 #### `surface_tint_color`
+
+Overrides the default value of `SearchBar.surface_tint_color` in all descendant `SearchBar` controls.
 
 ### `SegmentedButtonTheme` class
 
@@ -1151,6 +1617,8 @@ Customizes the appearance of `SegmentedButton` across the app.
 
 #### `style`
 
+Overrides the default value of `SegmentedButton.style` in all descendant `SegmentedButton` controls.
+
 ### `SliderTheme` class
 
 Customizes the appearance of `Slider` across the app.
@@ -1159,17 +1627,31 @@ Customizes the appearance of `Slider` across the app.
 
 #### `active_track_color`
 
+Overrides the default value of `Slider.active_track_color` in all descendant `Slider` controls.
+
 #### `disabled_thumb_color`
+
+Overrides the default value of `Slider.disabled_thumb_color` in all descendant `Slider` controls.
 
 #### `inactive_track_color`
 
+Overrides the default value of `Slider.inactive_track_color` in all descendant `Slider` controls.
+
 #### `overlay_color`
+
+Overrides the default value of `Slider.overlay_color` in all descendant `Slider` controls.
 
 #### `thumb_color`
 
+Overrides the default value of `Slider.thumb_color` in all descendant `Slider` controls.
+
 #### `value_indicator_color`
 
+Overrides the default value of `Slider.value_indicator_color` in all descendant `Slider` controls.
+
 #### `value_indicator_text_style`
+
+Overrides the default value of `Slider.value_indicator_text_style` in all descendant `Slider` controls.
 
 ### `SnackBarTheme` class
 
@@ -1179,35 +1661,67 @@ Customizes the appearance of `SnackBar` across the app.
 
 #### `action_bgcolor`
 
+Overrides the default value of `SnackBar.action_bgcolor` in all descendant `SnackBar` controls.
+
 #### `action_overflow_threshold`
+
+Overrides the default value of `SnackBar.action_overflow_threshold` in all descendant `SnackBar` controls.
 
 #### `action_text_color`
 
+Overrides the default value of `SnackBar.action_text_color` in all descendant `SnackBar` controls.
+
 #### `alignment`
+
+Overrides the default value of `SnackBar.alignment` in all descendant `SnackBar` controls.
 
 #### `behavior`
 
+Overrides the default value of `SnackBar.behavior` in all descendant `SnackBar` controls.
+
 #### `bgcolor`
+
+Overrides the default value of `SnackBar.bgcolor` in all descendant `SnackBar` controls.
 
 #### `close_icon_color`
 
+Overrides the default value of `SnackBar.close_icon_color` in all descendant `SnackBar` controls.
+
 #### `content_text_style`
+
+Overrides the default value of `SnackBar.content_text_style` in all descendant `SnackBar` controls.
 
 #### `disabled_action_bgcolor`
 
+Overrides the default value of `SnackBar.disabled_action_bgcolor` in all descendant `SnackBar` controls.
+
 #### `disabled_action_text_color`
+
+Overrides the default value of `SnackBar.disabled_action_text_color` in all descendant `SnackBar` controls.
 
 #### `elevation`
 
+Overrides the default value of `SnackBar.elevation` in all descendant `SnackBar` controls.
+
 #### `dismiss_direction`
+
+Overrides the default value of `SnackBar.dismiss_direction` in all descendant `SnackBar` controls.
 
 #### `inset_padding`
 
+Overrides the default value of `SnackBar.inset_padding` in all descendant `SnackBar` controls.
+
 #### `shape`
+
+Overrides the default value of `SnackBar.shape` in all descendant `SnackBar` controls.
 
 #### `show_close_icon`
 
+Overrides the default value of `SnackBar.show_close_icon` in all descendant `SnackBar` controls.
+
 #### `width`
+
+Overrides the default value of `SnackBar.width` in all descendant `SnackBar` controls.
 
 ### `SwitchTheme` class
 
@@ -1217,19 +1731,35 @@ Customizes the appearance of `Switch` across the app.
 
 #### `mouse_cursor`
 
+Overrides the default value of `Switch.mouse_cursor` in all descendant `Switch` controls.
+
 #### `overlay_color`
+
+Overrides the default value of `Switch.overlay_color` in all descendant `Switch` controls.
 
 #### `splash_radius`
 
+Overrides the default value of `Switch.splash_radius` in all descendant `Switch` controls.
+
 #### `thumb_color`
+
+Overrides the default value of `Switch.thumb_color` in all descendant `Switch` controls.
 
 #### `thumb_icon`
 
+Overrides the default value of `Switch.thumb_icon` in all descendant `Switch` controls.
+
 #### `track_color`
+
+Overrides the default value of `Switch.track_color` in all descendant `Switch` controls.
 
 #### `track_outline_color`
 
+Overrides the default value of `Switch.track_outline_color` in all descendant `Switch` controls.
+
 #### `track_outline_width`
+
+Overrides the default value of `Switch.track_outline_width` in all descendant `Switch` controls.
 
 ### `TimePickerTheme` class
 
@@ -1239,47 +1769,91 @@ Customizes the appearance of `TimePicker` across the app.
 
 #### `bgcolor`
 
+Overrides the default value of `TimePicker.bgcolor` in all descendant `TimePicker` controls.
+
 #### `cancel_button_style`
+
+Overrides the default value of `TimePicker.cancel_button_style` in all descendant `TimePicker` controls.
 
 #### `confirm_button_style`
 
+Overrides the default value of `TimePicker.confirm_button_style` in all descendant `TimePicker` controls.
+
 #### `day_period_border_side`
+
+Overrides the default value of `TimePicker.day_period_border_side` in all descendant `TimePicker` controls.
 
 #### `day_period_button_style`
 
+Overrides the default value of `TimePicker.day_period_button_style` in all descendant `TimePicker` controls.
+
 #### `day_period_color`
+
+Overrides the default value of `TimePicker.day_period_color` in all descendant `TimePicker` controls.
 
 #### `day_period_shape`
 
+Overrides the default value of `TimePicker.day_period_shape` in all descendant `TimePicker` controls.
+
 #### `day_period_text_color`
+
+Overrides the default value of `TimePicker.day_period_text_color` in all descendant `TimePicker` controls.
 
 #### `day_period_text_style`
 
+Overrides the default value of `TimePicker.day_period_text_style` in all descendant `TimePicker` controls.
+
 #### `dial_bgcolor`
+
+Overrides the default value of `TimePicker.dial_bgcolor` in all descendant `TimePicker` controls.
 
 #### `dial_hand_color`
 
+Overrides the default value of `TimePicker.dial_hand_color` in all descendant `TimePicker` controls.
+
 #### `dial_text_color`
+
+Overrides the default value of `TimePicker.dial_text_color` in all descendant `TimePicker` controls.
 
 #### `dial_text_style`
 
+Overrides the default value of `TimePicker.dial_text_style` in all descendant `TimePicker` controls.
+
 #### `elevation`
+
+Overrides the default value of `TimePicker.elevation` in all descendant `TimePicker` controls.
 
 #### `entry_mode_icon_color`
 
+Overrides the default value of `TimePicker.entry_mode_icon_color` in all descendant `TimePicker` controls.
+
 #### `help_text_style`
+
+Overrides the default value of `TimePicker.help_text_style` in all descendant `TimePicker` controls.
 
 #### `hour_minute_color`
 
+Overrides the default value of `TimePicker.hour_minute_color` in all descendant `TimePicker` controls.
+
 #### `hour_minute_text_color`
+
+Overrides the default value of `TimePicker.hour_minute_text_color` in all descendant `TimePicker` controls.
 
 #### `hour_minute_text_style`
 
+Overrides the default value of `TimePicker.hour_minute_text_style` in all descendant `TimePicker` controls.
+
 #### `hour_minute_shape`
+
+Overrides the default value of `TimePicker.hour_minute_shape` in all descendant `TimePicker` controls.
 
 #### `padding`
 
+Overrides the default value of `TimePicker.padding` in all descendant `TimePicker` controls.
+
 #### `shape`
+
+Overrides the default value of `TimePicker.shape` in all descendant `TimePicker` controls.
 
 ### `TooltipTheme` class
 
@@ -1289,11 +1863,19 @@ Customizes the appearance of `Tooltip` across the app.
 
 #### `enable_feedback`
 
+Overrides the default value of `Tooltip.enable_feedback` in all descendant `Tooltip` controls.
+
 #### `exclude_from_semantics`
+
+Overrides the default value of `Tooltip.exclude_from_semantics` in all descendant `Tooltip` controls.
 
 #### `height`
 
+Overrides the default value of `Tooltip.height` in all descendant `Tooltip` controls.
+
 #### `text_style`
+
+Overrides the default value of `Tooltip.text_style` in all descendant `Tooltip` controls.
 
 
 
