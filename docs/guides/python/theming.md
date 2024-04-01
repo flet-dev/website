@@ -3,9 +3,10 @@ title: Theming
 sidebar_label: Theming
 ---
 
-Defines the configuration of the overall visual Theme.
+Defines the configuration of the visual Theme.
 
-The MaterialApp theme property can be used to configure the appearance of the entire app.
+- `page.theme` or `page.dark_theme` properties can be used to configure the appearance of the entire app in light and
+  dark theme modes respectively.
 
 :::note
 Read this [note about system fonts](/docs/controls/text#using-system-fonts) if you like to use them in `font_family` of your theme.
@@ -73,6 +74,133 @@ An instance of [`PageTransitionsTheme`](#pagetransitionstheme-class)
 
 An instance of [`SystemOverlayStyle`](#systemoverlaystyle-class)
 
+#### `appbar_theme`
+
+An instance of [`AppBarTheme`](#appbartheme-class).
+
+#### `badge_theme`
+
+An instance of [`BadgeTheme`](#badgetheme-class).
+
+#### `banner_theme`
+
+An instance of [`BannerTheme`](#bannertheme-class).
+
+#### `bottom_appbar_theme`
+
+An instance of [`BottomAppBarTheme`](#bottomappbartheme-class).
+
+#### `bottom_navigation_bar_theme`
+
+An instance of [`BottomNavigationBarTheme`](#bottomnavigationbartheme-class).
+
+#### `bottom_sheet_theme`
+
+An instance of [`BottomSheetTheme`](#bottomsheettheme-class).
+
+#### `card_theme`
+
+An instance of [`CardTheme`](#cardtheme-class).
+
+#### `checkbox_theme`
+
+An instance of [`CheckboxTheme`](#checkboxtheme-class).
+
+#### `chip_theme`
+
+An instance of [`ChipTheme`](#chiptheme-class).
+
+#### `date_picker_theme`
+
+An instance of [`DatePickerTheme`](#datepickertheme-class).
+
+#### `dialog_theme`
+
+An instance of [`DialogTheme`](#dialogtheme-class).
+
+#### `divider_theme`
+
+An instance of [`DividerTheme`](#dividertheme-class).
+
+#### `expansion_tile_theme`
+
+An instance of [`ExpansionTileTheme`](#expansiontiletheme-class).
+
+#### `list_tile_theme`
+
+An instance of [`ListTileTheme`](#listtiletheme-class).
+
+#### `navigation_bar_theme`
+
+An instance of [`NavigationBarTheme`](#navigationbartheme-class).
+
+#### `navigation_drawer_theme`
+
+An instance of [`NavigationDrawerTheme`](#navigationdrawertheme-class).
+
+#### `navigation_rail_theme`
+
+An instance of [`NavigationRailTheme`](#navigationrailtheme-class).
+
+#### `popup_menu_theme`
+
+An instance of [`PopupMenuTheme`](#popupmenutheme-class).
+
+#### `primary_color`
+
+XX
+
+#### `primary_color_dark`
+
+XX
+
+#### `primary_color_light`
+
+XX
+
+#### `primary_swatch`
+
+XX
+
+#### `progress_indicator_theme`
+
+An instance of [`ProgressIndicatorTheme`](#progressindicatortheme-class).
+
+#### `radio_theme`
+
+An instance of [`RadioTheme`](#radiotheme-class).
+
+#### `search_bar_theme`
+
+An instance of [`SearchBarTheme`](#searchbartheme-class).
+
+#### `search_view_theme`
+
+An instance of [`SearchViewTheme`](#searchviewtheme-class).
+
+#### `segmented_button_theme`
+
+An instance of [`SegmentedButtonTheme`](#segmentedbuttontheme-class).
+
+#### `slider_theme`
+
+An instance of [`SliderTheme`](#slidertheme-class).
+
+#### `snackbar_theme`
+
+An instance of [`SnackBarTheme`](#snackbartheme-class).
+
+#### `switch_theme`
+
+An instance of [`SwitchTheme`](#switchtheme-class).
+
+#### `time_picker_theme`
+
+An instance of [`TimePickerTheme`](#timepickertheme-class).
+
+#### `tooltip_theme`
+
+An instance of [`TooltipTheme`](#tooltiptheme-class).
 
 ### `ColorScheme` class
 
@@ -354,9 +482,7 @@ Defines the ink response focus, hover, and splash colors. If specified, it is re
 
 ### `PageTransitionTheme` class
 
-Allows customizing navigation page transitions for different platforms. The value is an instance of `PageTransitionsTheme` class with the following optional properties:
-
-
+Allows customizing navigation page transitions for different platforms.
 Supported transitions is `ft.PageTransitionTheme` enum: `NONE` (zero delay transition without any animation), `FADE_UPWARDS`, `OPEN_UPWARDS`, `ZOOM` and `CUPERTINO`.
 
 Example:
@@ -371,7 +497,6 @@ theme.page_transitions.windows = ft.PageTransitionTheme.NONE
 page.theme = theme
 page.update()
 ```
-
 
 #### `android`
 
@@ -427,3 +552,748 @@ The `Brightness` of the status bar. Either `Brightness.DARK` or `Brightness.LIGH
 #### `status_bar_icon_brightness`
 
 The `Brightness` of the status bar icons. Either `Brightness.DARK` or `Brightness.LIGHT`.
+
+### `AppBarTheme` class
+
+Customizes the appearance of `AppBar` across the app.
+
+`AppBarTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `center_title`
+
+#### `color`
+
+#### `elevation`
+
+#### `foreground_color`
+
+#### `scroll_elevation`
+
+#### `shadow_color`
+
+#### `shape`
+
+#### `surface_tint_color`
+
+#### `title_spacing`
+
+#### `title_text_style`
+
+#### `toolbar_height`
+
+#### `toolbar_text_style`
+
+### `BadgeTheme` class
+
+Customizes the appearance of `Badge` across the app.
+
+`BadgeTheme` class has the following properties:
+
+#### `alignment`
+
+#### `bgcolor`
+
+#### `large_size`
+
+#### `offset`
+
+#### `padding`
+
+#### `small_size`
+
+#### `text_color`
+
+#### `text_style`
+
+### `BannerTheme` class
+
+Customizes the appearance of `Banner` across the app.
+
+`BannerTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `content_text_style`
+
+#### `divider_color`
+
+#### `elevation`
+
+#### `leading_padding`
+
+#### `padding`
+
+#### `shadow_color`
+
+#### `surface_tint_color`
+
+### `BottomAppBarTheme` class
+
+Customizes the appearance of `BottomAppBar` across the app.
+
+`BottomAppBarTheme` class has the following properties:
+
+#### `color`
+
+#### `elevation`
+
+#### `height`
+
+#### `padding`
+
+#### `shadow_color`
+
+#### `surface_tint_color`
+
+### `BottomNavigationBarTheme` class
+
+Customizes the appearance of `BottomNavigationBar` across the app.
+
+`BottomNavigationBarTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `elevation`
+
+#### `enable_feedback`
+
+#### `show_unselected_labels`
+
+#### `selected_item_color`
+
+#### `selected_label_text_style`
+
+#### `show_selected_labels`
+
+#### `unselected_item_color`
+
+#### `unselected_label_text_style`
+
+### `BottomSheetTheme` class
+
+Customizes the appearance of `BottomSheet` across the app.
+
+`BottomSheetTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `clip_behavior`
+
+#### `drag_handle_color`
+
+#### `elevation`
+
+#### `modal_bgcolor`
+
+#### `modal_elevation`
+
+#### `shadow_color`
+
+#### `shape`
+
+#### `show_drag_handle`
+
+#### `surface_tint_color`
+
+### `CardTheme` class
+
+Customizes the appearance of `Card` across the app.
+
+`CardTheme` class has the following properties:
+
+#### `clip_behavior`
+
+#### `color`
+
+#### `elevation`
+
+#### `margin`
+
+#### `shadow_color`
+
+#### `shape`
+
+#### `surface_tint_color`
+
+### `CheckboxTheme` class
+
+Customizes the appearance of `Checkbox` across the app.
+
+`CheckboxTheme` class has the following properties:
+
+#### `border_side`
+
+#### `check_color`
+
+#### `fill_color`
+
+#### `mouse_cursor`
+
+#### `overlay_color`
+
+#### `shape`
+
+#### `splash_radius`
+
+#### `visual_density`
+
+### `ChipTheme` class
+
+Customizes the appearance of `Chip` across the app.
+
+`ChipTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `border_side`
+
+#### `brightness`
+
+#### `checkmark_color`
+
+#### `click_elevation`
+
+#### `delete_icon_color`
+
+#### `disabled_color`
+
+#### `elevation`
+
+#### `label_padding`
+
+#### `label_text_style`
+
+#### `padding`
+
+#### `secondary_label_text_style`
+
+#### `secondary_selected_color`
+
+#### `selected_color`
+
+#### `selected_shadow_color`
+
+#### `shadow_color`
+
+#### `shape`
+
+#### `show_checkmark`
+
+#### `surface_tint_color`
+
+### `DatePickerTheme` class
+
+Customizes the appearance of `DatePicker` across the app.
+
+`DatePickerTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `cancel_button_style`
+
+#### `confirm_button_style`
+
+#### `day_bgcolor`
+
+#### `day_foreground_color`
+
+#### `day_overlay_color`
+
+#### `day_text_style`
+
+#### `divider_color`
+
+#### `elevation`
+
+#### `header_bgcolor`
+
+#### `header_foreground_color`
+
+#### `header_headline_text_style`
+
+#### `header_help_text_style`
+
+#### `range_picker_bgcolor`
+
+#### `range_picker_elevation`
+
+#### `range_picker_header_bgcolor`
+
+#### `range_picker_header_foreground_color`
+
+#### `range_picker_header_headline_text_style`
+
+#### `range_picker_header_help_text_style`
+
+#### `range_picker_shape`
+
+#### `range_picker_surface_tint_color`
+
+#### `range_selection_bgcolor`
+
+#### `range_selection_overlay_color`
+
+#### `shadow_color`
+
+#### `shape`
+
+#### `surface_tint_color`
+
+#### `today_bgcolor`
+
+#### `today_border_side`
+
+#### `today_foreground_color`
+
+#### `weekday_text_style`
+
+#### `year_bgcolor`
+
+#### `year_foreground_color`
+
+#### `year_overlay_color`
+
+#### `year_text_style`
+
+### `DialogTheme` class
+
+Customizes the appearance of `Dialog` across the app.
+
+`DialogTheme` class has the following properties:
+
+#### `actions_padding`
+
+#### `alignment`
+
+#### `bgcolor`
+
+#### `content_text_style`
+
+#### `elevation`
+
+#### `icon_color`
+
+#### `shadow_color`
+
+#### `shape`
+
+#### `surface_tint_color`
+
+#### `title_text_style`
+
+### `DividerTheme` class
+
+Customizes the appearance of `Divider` across the app.
+
+`DividerTheme` class has the following properties:
+
+#### `color`
+
+#### `leading_indent`
+
+#### `space`
+
+#### `thickness`
+
+#### `trailing_indent`
+
+### `ExpansionTileTheme` class
+
+Customizes the appearance of `ExpansionTile` across the app.
+
+`ExpansionTileTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `collapsed_bgcolor`
+
+#### `collapsed_icon_color`
+
+#### `icon_color`
+
+#### `text_color`
+
+### `ListTileTheme` class
+
+Customizes the appearance of `ListTile` across the app.
+
+`ListTileTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `content_padding`
+
+#### `dense`
+
+#### `enable_feedback`
+
+#### `horizontal_spacing`
+
+#### `icon_color`
+
+#### `is_three_line`
+
+#### `leading_and_trailing_text_style`
+
+#### `min_leading_width`
+
+#### `min_vertical_padding`
+
+#### `selected_tile_color`
+
+#### `selected_color`
+
+#### `shape`
+
+#### `subtitle_text_style`
+
+#### `text_color`
+
+#### `title_text_style`
+
+#### `visual_density`
+
+### `NavigationBarTheme` class
+
+Customizes the appearance of `NavigationBar` across the app.
+
+`NavigationBarTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `elevation`
+
+#### `height`
+
+#### `indicator_color`
+
+#### `indicator_shape`
+
+#### `label_behavior`
+
+#### `label_text_style`
+
+#### `overlay_color`
+
+#### `shadow_color`
+
+#### `surface_tint_color`
+
+### `NavigationDrawerTheme` class
+
+Customizes the appearance of `NavigationDrawer` across the app.
+
+`NavigationDrawerTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `elevation`
+
+#### `indicator_color`
+
+#### `indicator_shape`
+
+#### `label_text_style`
+
+#### `shadow_color`
+
+#### `surface_tint_color`
+
+#### `tile_height`
+
+### `NavigationRailTheme` class
+
+Customizes the appearance of `NavigationRail` across the app.
+
+`NavigationRailTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `elevation`
+
+#### `group_alignment`
+
+#### `indicator_color`
+
+#### `indicator_shape`
+
+#### `label_type`
+
+#### `min_extended_width`
+
+#### `min_width`
+
+#### `selected_label_text_style`
+
+#### `unselected_label_text_style`
+
+#### `use_indicator`
+
+### `PopupMenuTheme` class
+
+Customizes the appearance of `PopupMenu` across the app.
+
+`PopupMenuTheme` class has the following properties:
+
+#### `color`
+
+#### `elevation`
+
+#### `enable_feedback`
+
+#### `icon_color`
+
+#### `icon_size`
+
+#### `label_text_style`
+
+#### `menu_position`
+
+#### `mouse_cursor`
+
+#### `shadow_color`
+
+#### `shape`
+
+#### `surface_tint_color`
+
+#### `text_style`
+
+### `ProgressIndicatorTheme` class
+
+Customizes the appearance of `ProgressIndicator` across the app.
+
+`ProgressIndicatorTheme` class has the following properties:
+
+#### `circular_track_color`
+
+#### `color`
+
+#### `linear_min_height`
+
+#### `linear_track_color`
+
+#### `refresh_bgcolor`
+
+### `RadioTheme` class
+
+Customizes the appearance of `Radio` across the app.
+
+`RadioTheme` class has the following properties:
+
+#### `fill_color`
+
+#### `height`
+
+#### `mouse_cursor`
+
+#### `overlay_color`
+
+#### `splash_radius`
+
+#### `visual_density`
+
+### `SearchBarTheme` class
+
+Customizes the appearance of `SearchBar` across the app.
+
+`SearchBarTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `elevation`
+
+#### `hint_style`
+
+#### `overlay_color`
+
+#### `shadow_color`
+
+#### `surface_tint_color`
+
+#### `text_capitalization`
+
+#### `text_style`
+
+#### `padding`
+
+#### `shape`
+
+### `SearchViewTheme` class
+
+Customizes the appearance of `SearchView` across the app.
+
+`SearchViewTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `border_side`
+
+#### `divider_color`
+
+#### `elevation`
+
+#### `header_hint_text_style`
+
+#### `header_text_style`
+
+#### `shape`
+
+#### `surface_tint_color`
+
+### `SegmentedButtonTheme` class
+
+Customizes the appearance of `SegmentedButton` across the app.
+
+`SegmentedButtonTheme` class has the following properties:
+
+#### `style`
+
+### `SliderTheme` class
+
+Customizes the appearance of `Slider` across the app.
+
+`SliderTheme` class has the following properties:
+
+#### `active_track_color`
+
+#### `disabled_thumb_color`
+
+#### `inactive_track_color`
+
+#### `overlay_color`
+
+#### `thumb_color`
+
+#### `value_indicator_color`
+
+#### `value_indicator_text_style`
+
+### `SnackBarTheme` class
+
+Customizes the appearance of `SnackBar` across the app.
+
+`SnackBarTheme` class has the following properties:
+
+#### `action_bgcolor`
+
+#### `action_overflow_threshold`
+
+#### `action_text_color`
+
+#### `alignment`
+
+#### `behavior`
+
+#### `bgcolor`
+
+#### `close_icon_color`
+
+#### `content_text_style`
+
+#### `disabled_action_bgcolor`
+
+#### `disabled_action_text_color`
+
+#### `elevation`
+
+#### `dismiss_direction`
+
+#### `inset_padding`
+
+#### `shape`
+
+#### `show_close_icon`
+
+#### `width`
+
+### `SwitchTheme` class
+
+Customizes the appearance of `Switch` across the app.
+
+`SwitchTheme` class has the following properties:
+
+#### `mouse_cursor`
+
+#### `overlay_color`
+
+#### `splash_radius`
+
+#### `thumb_color`
+
+#### `thumb_icon`
+
+#### `track_color`
+
+#### `track_outline_color`
+
+#### `track_outline_width`
+
+### `TimePickerTheme` class
+
+Customizes the appearance of `TimePicker` across the app.
+
+`TimePickerTheme` class has the following properties:
+
+#### `bgcolor`
+
+#### `cancel_button_style`
+
+#### `confirm_button_style`
+
+#### `day_period_border_side`
+
+#### `day_period_button_style`
+
+#### `day_period_color`
+
+#### `day_period_shape`
+
+#### `day_period_text_color`
+
+#### `day_period_text_style`
+
+#### `dial_bgcolor`
+
+#### `dial_hand_color`
+
+#### `dial_text_color`
+
+#### `dial_text_style`
+
+#### `elevation`
+
+#### `entry_mode_icon_color`
+
+#### `help_text_style`
+
+#### `hour_minute_color`
+
+#### `hour_minute_text_color`
+
+#### `hour_minute_text_style`
+
+#### `hour_minute_shape`
+
+#### `padding`
+
+#### `shape`
+
+### `TooltipTheme` class
+
+Customizes the appearance of `Tooltip` across the app.
+
+`TooltipTheme` class has the following properties:
+
+#### `enable_feedback`
+
+#### `exclude_from_semantics`
+
+#### `height`
+
+#### `text_style`
+
+
+
