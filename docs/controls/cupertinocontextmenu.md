@@ -21,6 +21,7 @@ import TabItem from '@theme/TabItem';
 ```python
 import flet as ft
 
+
 def main(page):
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -32,7 +33,7 @@ def main(page):
             actions=[
                 ft.CupertinoContextMenuAction(
                     text="Action 1",
-                    default=True,
+                    is_default_action=True,
                     trailing_icon=ft.icons.CHECK,
                     on_click=lambda e: print("Action 1"),
                 ),
@@ -43,13 +44,14 @@ def main(page):
                 ),
                 ft.CupertinoContextMenuAction(
                     text="Action 3",
-                    destructive=True,
+                    is_destructive_action=True,
                     trailing_icon=ft.icons.CANCEL,
                     on_click=lambda e: print("Action 3"),
                 ),
             ],
         )
     )
+
 
 ft.app(target=main)
 ```

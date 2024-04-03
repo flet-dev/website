@@ -14,6 +14,8 @@ When a `minimum` padding is specified, the greater of the `minimum` padding or t
 
 ## Example
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/safearea)
+
 ```python
 import flet as ft
 
