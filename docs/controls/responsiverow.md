@@ -50,6 +50,8 @@ ft.ResponsiveRow([
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/layout/responsiverow)
+
 ### ResponsiveRow
 
 <img src="/img/docs/controls/responsive-row/responsive-layout.gif" className="screenshot-100"/>

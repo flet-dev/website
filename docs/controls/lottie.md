@@ -11,8 +11,6 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/utility/lottie)
-
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
 
@@ -34,8 +32,6 @@ ft.app(target=main)
 
   </TabItem>
 </Tabs>
-
-<img src="/img/docs/controls/lottie/basic-lottie.gif" className="screenshot-40" />
 
 ## Properties
 

@@ -11,7 +11,7 @@ A button typically used in a [CupertinoAlertDialog](/docs/controls/cupertinoaler
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/buttons/cupertinoalertdialog)
+[Live example](https://flet-controls-gallery.fly.dev/buttons/cupertinodialogaction)
 
 ### CupertinoAlertDialog example
 
