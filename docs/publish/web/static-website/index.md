@@ -1,8 +1,10 @@
 ---
-title: Static website
+title: Publish app to a static website
 sidebar_label: Static website
 slug: /publish/web/static-website
 ---
+
+## Introduction
 
 Flet CLI provides `flet build web` and `flet publish` commands that allow publishing Flet app into a standalone static website (SPA) that runs entirely in the browser with [Pyodide](https://pyodide.org/en/stable/index.html) and does not require any code running on the server side.
 
@@ -13,6 +15,11 @@ Native Python packages (vs "pure" Python packages written in Python only) are pa
 
 Pyodide comes with a big list of [built-in packages](https://pyodide.org/en/stable/usage/packages-in-pyodide.html). However, to use a Python package from PyPI it must be a pure Python package or provide a wheel with binaries [built for Emscripten](https://pyodide.org/en/stable/development/new-packages.html).
 :::
+
+### Async and threading
+
+Flet app that published to a static website could use both sync and async event handlers and methods.
+Pyodide is a WebAssembly application which does not support threading. The entire Flet is running in a single thread and all sync and async control event handlers are running in the same thread. If your app has CPU-bound logic (e.g. calculating Fibonacci 😀) or "sleeps" to make UI prettier it may "hang" UI. Consider moving that logic to a server and calling it via web API. Using `asyncio.sleep` in async methods is OK though.
 
 ## `flet build web`
 

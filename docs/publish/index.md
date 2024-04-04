@@ -11,7 +11,7 @@ Flet CLI provides `flet build` command that allows packaging Flet app into a sta
 
 The following matrix shows which OS you should run `flet build` command on in order to build a package for specific platform:
 
-| Build on / Target platform |   apk/aab   |   ipa   |   macos    |   linux    |   windows    |    web    |
+| Run on / `flet build` |   `apk/aab`   |   `ipa`   |   `macos`    |   `linux`    |   `windows`    |    `web`    |
 | :----------------: | :-----: | :---------: | :--------: | :--------: | :----------: | :--------: |
 | macOS              |   ✅    |       ✅     |      ✅    |           |              |     ✅     |
 | Windows            |   ✅     |            |            |  ✅ (WSL)  |      ✅      |     ✅     |
