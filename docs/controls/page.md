@@ -216,6 +216,22 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `STRETCH`
 * `BASELINE`
 
+### `locale_configuration`
+
+A locale configuration for the app. Value is an instance of `LocaleConfiguration` class which has the following
+properties:
+
+* `supported_locales` - a list of `Locale`s that the app plans to support. If the provided value is `None` or list is
+  empty, this property internally defaults to `[Locale("en", "US")]` (American English locale) by default.
+* `current_locale` - the current `Locale` of the app. If the provided locale is not present in `supported_locales`, then
+  this property will be set to `supported_locales[0]` (the first item of the list).
+
+`Locale` class has the following properties:
+
+* `language_code` - the language code of the locale.
+* `country_code` - the country code of the locale.
+* `script_code` - the script code of the locale.
+
 ### `media`
 
 Provides details about app media (screen, window). See [MediaQueryData](https://api.flutter.dev/flutter/widgets/MediaQueryData-class.html) in Flutter docs for more info.
