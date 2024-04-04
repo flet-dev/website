@@ -19,5 +19,5 @@ Difference between static website and dynamic website.
 * Programming efforts (access database directly vs API + auth)
 * Responsivness (latency)
 * Scalability (async/sync, websockets, etc.)
-* Hosting
+* Hosting (websockets)
 * Code protection

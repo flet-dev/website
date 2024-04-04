@@ -1,5 +1,5 @@
 ---
-title: Publish Flet app
+title: Publishing Flet app to multiple platforms
 slug: /publish
 ---
 
@@ -29,7 +29,7 @@ On Linux we recommend installing Flutter SDK with [Method 2: Manual installation
 
 Pay attention to Flutter's own requirements for every platform, such as XCode and Cocopods on macOS, Visual Studio 2022 on Windows or additional tools and libraries on Linux.
 
-### Project structure
+## Project structure
 
 `flet build` command assumes the following Flet project structure.
 
@@ -108,7 +108,99 @@ When you run `flet build <target_platform>` command it:
 * Runs `flutter build <target_platform>` command to produce an executable or an install package.
 * Copies build results to `build/<target_platform>` directory.
 
-### Logging
+## Including optional controls
+
+If your app uses the following controls their packages must be added to a build command:
+
+* [`Audio`](/docs/controls/audio) control implemented in `flet_audio` package.
+* [`AudioRecorder`](/docs/controls/audiorecorder) control implemented in `flet_audio_recorder` package.
+* [`Lottie`](/docs/controls/lottie) control implemented in `flet_lottie` package.
+* [`Rive`](/docs/controls/rive) control implemented in `flet_rive` package.
+* [`Video`](/docs/controls/video) control implemented in `flet_video` package.
+* [`WebView`](/docs/controls/webview) control implemented in `flet_webview` package.
+
+Use `--include-packages <package_1> <package_2> ...` option to add Flutter packages with optional
+Flet controls.
+
+For example, to build your Flet app with `Video` and `Audio` controls add `--include-packages flet_video flet_audio` to your `flet build` command:
+
+```
+flet build apk --include-packages flet_video flet_audio
+```
+
+## Icons
+
+You can customize app icons for all platforms (excluding Linux) with images in `assets` directory of your Flet app.
+
+If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) is provided it will be used as a source image to generate all icons.
+
+* **iOS** - `icon_ios.png` (or any supported image format). Recommended minimum image size is 1024 px. Image should not be transparent (have alpha channel). Defaults to `icon.png` with alpha-channel automatically removed.
+* **Android** - `icon_android.png` (or any supported image format). Recommended minimum image size is 192 px. Defaults to `icon.png`.
+* **Web** - `icon_web.png` (or any supported image format). Recommended minimum image size is 512 px. Defaults to `icon.png`.
+* **Windows** - `icon_windows.png` (or any supported image format). ICO will be produced of 256 px size. Defaults to `icon.png`. If `icon_windows.ico` file is provided it will be just copied to `windows/runner/resources/app_icon.ico` unmodified.
+* **macOS** - `icon_macos.png` (or any supported image format). Recommended minimum image size is 1024 px. Defaults to `icon.png`.
+
+## Splash screen
+
+You can customize splash screens for iOS, Android and web applications with images in `assets` directory of your Flet app.
+
+If only `splash.png` or `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) is provided it will be used as a source image to generate all splash screen.
+
+* **iOS (light)** - `splash_ios.png` (or any supported image format). Defaults to `splash.png` and then `icon.png`.
+* **iOS (dark)** - `splash_dark_ios.png` (or any supported image format). Defaults to light iOS splash, then to `splash_dark.png`, then to `splash.png` and then `icon.png`.
+* **Android (light)** - `splash_android.png` (or any supported image format). Defaults to `splash.png` and then `icon.png`.
+* **Android (dark)** - `splash_dark_android.png` (or any supported image format).  Defaults to light Android splash, then to `splash_dark.png`, then to `splash.png` and then `icon.png`.
+* **Web (light)** - `splash_web.png` (or any supported image format). Defaults to `splash.png` and then `icon.png`.
+* **Web (dark)** - `splash_dark_web.png` (or any supported image format). Defaults to light web splash, then `splash_dark.png`, then to `splash.png` and then `icon.png`.
+
+`--splash-color` option specifies background color for a splash screen in light mode. Default is `#ffffff`.
+
+`--splash-dark-color` option specifies background color for a splash screen in dark mode. Default is `#333333`.
+
+## Flet app entry point
+
+By default, `flet build` command assumes `main.py` as the entry point of your Flet application, i.e. the file with `ft.app(main)` at the end. A different entry point could be specified with `--module-name` argument.
+
+## Versioning
+
+You can provide a version information for built executable or package with `--build-number` and `--build-version` arguments. This is the information that is used to destinguish one build/release from another in App Store and Google Play and is shown to the user in about dialogs.
+
+`--build-number` - an integer number (default is `1`), an identifier used as an internal version number.
+Each build must have a unique identifier to differentiate it from previous builds.
+It is used to determine whether one build is more recent than another, with higher numbers indicating
+more recent build.
+
+`--build-version` - a "x.y.z" string (default is `1.0.0`) used as the version number shown to users. For each new version of your app, you will provide a version number to differentiate it from previous versions.
+
+## Customizing packaging template
+
+To create a temporary Flutter project `flet build` uses [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) template stored in https://github.com/flet-dev/flet-build-template repository.
+
+You can customize that template to suit your specific needs and then use it with `flet build`.
+
+`--template` option can be used to provide the URL to the repository or path to a directory with your own template. Use `gh:` prefix for GitHub repos, e.g. `gh:{my-org}/{my-repo}` or provide a full path to a Git repository, e.g. `https://github.com/{my-org}/{my-repo}.git`.
+
+For Git repositories you can checkout specific branch/tag/commit with `--template-ref` option.
+
+`--template-dir` option specifies a relative path to a cookiecutter template in a repository given by `--template` option. When `--template` option is not used, this option specifies path relative to the `<user-directory>/.cookiecutters/flet-build-template`.
+
+## Extra args to `flutter build` command
+
+`--flutter-build-args` option allows passing extra arguments to `flutter build` command called during the build process. The option can be used multiple times.
+
+For example, if you want to add `--no-tree-shake-icons` option:
+
+```
+flet build macos --flutter-build-args=--no-tree-shake-icons
+```
+
+To pass an option with a value:
+
+```
+flet build ipa --flutter-build-args=--export-method --flutter-build-args=development
+```
+
+## Logging
 
 All Flet apps output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `out.log` file. Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:
 
