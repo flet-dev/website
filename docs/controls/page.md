@@ -966,6 +966,14 @@ Removes specific controls from `page.controls` list.
 
 Remove controls from `page.controls` list at specific index.
 
+### `run_task(handler, *args, **kwargs)`
+
+Run `handler` coroutine as a new Task in the event loop associated with the current page.
+
+### `run_thread(handler, *args)`
+
+Run `handler` function as a new Thread in the executor associated with the current page.
+
 ### `scroll_to(offset, delta, key, duration, curve)`
 
 Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
