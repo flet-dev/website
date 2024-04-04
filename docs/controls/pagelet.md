@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/input/pagelet)
+[Live example](https://flet-controls-gallery.fly.dev/layout/pagelet)
 
 ### Pagelet example
 

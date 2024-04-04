@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[//]: # ([Live example]&#40;https://flet-controls-gallery.fly.dev/controls/dismissible&#41;)
+[Live example](https://flet-controls-gallery.fly.dev/layout/dismissible)
 
 ### Dismissible ListView Tiles
 

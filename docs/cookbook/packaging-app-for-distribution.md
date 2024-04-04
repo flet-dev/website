@@ -52,8 +52,17 @@ Please enable Developer Mode in your system settings. Run
   start ms-settings:developers
 to open settings.
 ```
+[Follow this SO answer](https://stackoverflow.com/a/70994092/1435891) for the instructions on how to enable developer mode in Windows 11.  
 
-[Follow this SO answer](https://stackoverflow.com/a/70994092/1435891) for the instructions on how to enable developer mode in Windows 11.
+#### Visual Studio
+
+```
+Unable to find suitable Visual Studio toolchain. Please run `flutter
+doctor` for more details.
+```
+
+[Follow this medium article](https://medium.com/@teamcode20233/a-guide-to-install-desktop-development-with-c-workload-542bb92cfe90) for the instructions on downloading & installing correct Visual Studio components for desktop development.
+
 
 ### Build platform matrix
 
@@ -143,6 +152,24 @@ When you run `flet build <target_platform>` command it:
 * Packages Python app using `package` command of [`serious_python`](https://pub.dev/packages/serious_python) package. All python files in the current directory and sub-directories recursively will be compiled to `.pyc` files. All files, except `build` directory will be added to a package asset.
 * Runs `flutter build <target_platform>` command to produce an executable or an install package.
 * Copies build results to `build/<target_platform>` directory.
+
+### Including optional controls
+
+If your app uses the following controls their packages must be added to a build command:
+
+* [`Audio`](/docs/controls/audio) control implemented in `flet_audio` package.
+* [`AudioRecorder`](/docs/controls/audiorecorder) control implemented in `flet_audio_recorder` package.
+* [`Video`](/docs/controls/video) control implemented in `flet_video` package.
+* [`WebView`](/docs/controls/webview) control implemented in `flet_webview` package.
+
+Use `--include-packages <package_1> <package_2> ...` option to add Flutter packages with optional
+Flet controls.
+
+For example, to build your Flet app with `Video` control add `--include-packages flet_video` to your `flet build` command:
+
+```
+flet build apk --include-packages flet_video
+```
 
 ### Logging
 

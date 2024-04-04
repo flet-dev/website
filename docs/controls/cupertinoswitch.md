@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/input/switch)
+[Live example](https://flet-controls-gallery.fly.dev/input/cupertinoswitch)
 
 ### CupertinoSwitch and adaptive Switch
 

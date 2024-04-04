@@ -7,8 +7,16 @@ slug: video
 Video playing control.
 Based on the [media_kit](https://pub.dev/packages/media_kit) Dart/Flutter package.
 
-:::note
+:::note Prerequisites
 On Linux, the [libmpv](https://mpv.io/) package must be installed. On Ubuntu/Debian you can install it with `sudo apt install libmpv-dev mpv`.
+:::
+
+:::info Packaging
+To build your Flet app that uses `Video` control add `--include-packages flet_video` to `flet build` command, for example:
+
+```
+flet build apk --include-packages flet_video
+```
 :::
 
 import Tabs from '@theme/Tabs';
@@ -205,9 +213,27 @@ Defines whether the video player should be started in muted state. Defaults to `
 
 Whether to resume the video when application enters foreground mode. Has effect only if `pause_upon_entering_background_mode` is also set to `True`.
 
+### `show_controls`
+
+Whether to show the video player controls. Defaults to `True`.
+
 ### `shuffle_playlist`
 
 Defines whether the playlist should be shuffled. Defaults to `False`.
+
+### `subtitle_configuration`
+
+Defines the subtitle configuration for the video player. Value is of type `VideoSubtitleConfiguration` which has the
+following properties:
+
+* `src` - the source of the subtitles (URL or local asset file)
+* `title` - the title of the subtitles
+* `language` - the language of the subtitles
+* `text_style` - the style of the subtitle text
+* `text_scale_factor` - the scale factor of the subtitles
+* `text_align` - the alignment of the subtitles
+* `padding` - the padding of the subtitles
+* `visible` - whether or not the subtitles should be visible.
 
 ### `title`
 
@@ -248,6 +274,23 @@ Whether to acquire wake lock while playing the video. When `True`, device's disp
 Defaults to `False`.
 
 ## Methods
+
+### `get_current_position()`
+
+Returns the current position of the video player in milliseconds.
+
+### `get_duration()`
+
+Returns the duration of the currently playing `VideoMedia` in the `playlist` in milliseconds.
+
+### `is_completed()`
+
+Returns `True` if the video player has reached the end of the currently playing `VideoMedia` in the `playlist`, `False`
+otherwise.
+
+### `is_playing()`
+
+Returns `True` if the video player is currently playing, `False` otherwise.
 
 ### `jump_to(media_index)`
 
@@ -295,6 +338,10 @@ Stops recording session and release internal recorder resource. It returns a str
 ### `on_enter_fullscreen`
 
 Fires when the video enters fullscreen
+
+### `on_error`
+
+Fires when an error occurs.
 
 ### `on_exit_fullscreen`
 

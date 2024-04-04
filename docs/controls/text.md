@@ -421,7 +421,7 @@ Property value is `TextOverflow` enum with the following values:
 
 An alternative semantics label for this text.
 
-If present, the semantics of this control will contain this value instead of the actual text.
+If present, the semantics of this control will contain this value instead of the actual text. This will overwrite any of the `TextSpan.semantics_label`s.
 
 This is useful for replacing abbreviations or shorthands with the full text value:
 
@@ -583,6 +583,18 @@ Font weight - see [Text.weight](#weight) for possible values.
 ## `TextSpan` properties
 
 A span of text.
+
+### `semantics_label`
+
+An alternative semantics label for this text.
+
+If present, the semantics of this control will contain this value instead of the actual text.
+
+This is useful for replacing abbreviations or shorthands with the full text value:
+
+```python
+ft.Text("$$", semantics_label="Double dollars")
+```
 
 ### `spans`
 

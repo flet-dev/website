@@ -232,7 +232,9 @@ The width of the border in virtual pixels. Default is 1. Set to 0 to completely 
 
 ### `can_reveal_password`
 
-Displays a toggle icon button that allows revealing the entered password.
+Displays a toggle icon button that allows revealing the entered password. Is shown if both `password` and `can_reveal_password` are `True`.
+
+The icon is displayed in the same location as `suffix` and in case both `can_reveal_password`/`password` and `suffix` are provided, then the `suffix` is not shown.
 
 ### `capitalization`
 

@@ -123,6 +123,10 @@ chk.fill_color={
 
 The clickable label to display on the right of a checkbox.
 
+### `label_style`
+
+The label's style. An instance of type [`TextStyle`](#textstyle-properties).
+
 ### `label_position`
 
 Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.

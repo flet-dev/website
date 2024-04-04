@@ -9,10 +9,20 @@ Based on [audioplayers](https://pub.dev/packages/audioplayers) Flutter widget.
 
 Audio control is non-visual and should be added to `page.overlay` list.
 
+:::info Packaging
+To build your Flet app that uses `Audio` control add `--include-packages flet_audio` to `flet build` command, for example:
+
+```
+flet build apk --include-packages flet_audio
+```
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Examples
+
+[Live example](https://flet-controls-gallery.fly.dev/utility/audio)
 
 ### Autoplay audio
 

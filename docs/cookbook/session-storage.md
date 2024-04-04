@@ -16,7 +16,7 @@ page.session.set("number.setting", 12345)
 page.session.set("bool_setting", True)
 
 # lists
-page.session.set("favorite_colors", ["read", "green", "blue"])
+page.session.set("favorite_colors", ["red", "green", "blue"])
 ```
 
 :::caution
@@ -30,7 +30,7 @@ Reading data:
 value = page.session.get("key")
 
 colors = page.session.get("favorite_colors")
-# colors = ["read", "green", "blue"]
+# colors = ["red", "green", "blue"]
 ```
 
 Check if a key exists:

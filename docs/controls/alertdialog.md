@@ -134,11 +134,17 @@ See [`Container.padding`](container#padding) for more information about padding 
 
 ### `modal`
 
-Whether dialog can be dismissed by clicking the area outside of it.
+Whether dialog can be dismissed/closed by clicking the area outside of it.
 
 ### `open`
 
 Set to `True` to display a dialog.
+
+### `semantics_label`
+
+The semantic label of the dialog used by accessibility frameworks to announce screen transitions when the dialog is opened and closed.
+
+In iOS, if this label is not provided, a semantic label will be inferred from the `title` if it is not null.
 
 ### `shape`
 
