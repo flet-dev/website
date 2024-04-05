@@ -1,7 +1,6 @@
 module.exports = {
   docs: [
     "introduction",
-    "install",
     {
       type: "category",
       label: "Creating Flet app",

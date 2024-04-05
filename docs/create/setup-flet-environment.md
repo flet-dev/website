@@ -2,18 +2,22 @@
 title: Setup Flet environment
 ---
 
-Before you can create your first Flet app you need to setup your development environment which requires Python 3.8 or above and Flet. 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-:::note
-If installing Flet on Linux, there are additional [prerequisites](/docs/publish/linux#prerequisites).
-:::
+Before you can create your first Flet app you need to setup your development environment which requires Python 3.8 or above and `flet` package.
 
 We recommend installing Flet in a virtual environment which can be done in a number of different ways.
 
+## Prerequisites
 
+### Linux
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+If installing Flet on Linux, there are additional [prerequisites](/docs/publish/linux#prerequisites).
+
+### WSL
+
+Flet apps can be run on WSL 2 (Windows Subsystem for Linux 2). If you are getting `cannot open display` error [following this guide](https://github.com/microsoft/wslg/wiki/Diagnosing-%22cannot-open-display%22-type-issues-with-WSLg) for troubleshooting.
 
 ## Python venv module
 
