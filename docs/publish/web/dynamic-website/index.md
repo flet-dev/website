@@ -12,27 +12,79 @@ It uses [Uvicorn](https://www.uvicorn.org/) web server, by default, to run the a
 
 ### Sync and async handlers
 
-TBD
+In Flet web app you can mix both sync and async methods in the same app.
+
+For example, you can write an app like this:
+
+```python
+import flet as ft
+import time
+import asyncio
+
+def main(page: ft.Page):
+
+    def handler(e):
+      time.sleep(3)
+      page.add(ft.Text("Handler clicked"))
+
+    async def handler_async(e):
+      await asyncio.sleep(3)
+      page.add(ft.Text("Async handler clicked"))
+
+    page.add(
+        ft.ElevatedButton("Call handler", on_click=handler),
+        ft.ElevatedButton("Call async handler", on_click=handler_async)
+    )
+
+ft.app(main)
+```
+
+In the example a click on one button is handled by a "blocking" handler while a click
+on second button calls asynchronous handler. The first handler is run in a `threading.Thread` while second handler is run as `asyncio.Task`.
+
+In web apps, using threads is one of the considerations for app scalability as threads is a finite resource. Usually, a thread pool is used and it could become a bottleneck with a growing numner of users.
+
+Anyway, if your app is mostly doing I/O (database, web API) and/or you are able to use async-ready libraries we recommend implementing async handlers.
+
+Check [FastAPI's article about async/await](https://fastapi.tiangolo.com/async/) to better understand the differences between concurrency and parallelism.
 
 ## Running the app locally
+
+Use `--web` (`-w`) option to start a Flet app as a web app:
 
 ```
 flet run --web app.py
 ```
 
+A new browser window/tab will be opened and the app will be using a random TCP port.
+
+To run on a fixed port use `--port` (`-p`) option:
+
+```
+flet run --web --port 8000 app.py
+```
+
 ## Running the app in production
 
-### Uvicorn
-
-It's built-in.
+You can run your program with `python` command directly:
 
 ```
 python app.py
 ```
 
-Headless Linux environment is detected.
+[Uvicorn](https://www.uvicorn.org/) web server is used by default to host the web app.
 
-Or `FLET_FORCE_WEB_SERVER=true`.
+If Flet detects the app is running in headless Linux environment (such as Docker container
+or EC2 VM):
+1. Port `8000` will be used to run the app.
+2. A new browser window with an app won't be opened.
+
+If, for some reason, Flet is unable to detect headless environment you can force that behavior
+by defining the following environment variable:
+
+```
+FLET_FORCE_WEB_SERVER=true
+```
 
 ### ASGI web server
 
@@ -79,14 +131,21 @@ gunicorn --bind 0.0.0.0:8000 -k uvicorn.workers.UvicornWorker counter:app
 
 ## Assets
 
-When you open Flet app in the browser its `index.html`, Flutter engine, favicon, images and other web app resources are served by Flet Server (aka "Flet daemon" or `fletd`). These resources are bundled with `flet` Python package. However, there are situations when you need to modify the contents of certain files to customize appearance of your app or its behavior, for example:
+When you open Flet app in the browser its `index.html`, Flutter engine, favicon, images and
+other web app resources are served by a web server.
+These resources are bundled with `flet` Python package.
+However, there are situations when you need to modify the contents of certain files to customize
+appearance of your app or its behavior, for example:
 
 * Favicon.
 * App loading animation.
 * `manifest.json` with PWA details.
-* `index.html` which includes app description and touch icon.
 
-You can specify `assets_dir` in `flet.app()` call to set the location of assets that should be available to the application. `assets_dir` could be a relative to your `main.py` directory or an absolute path. For example, consider the following program structure:
+You can specify `assets_dir` in `flet.app()` call to set the location of assets that should be available to the application.
+`assets_dir` should be a relative to your `main.py` directory or an absolute path.
+Default value for `assets_dir` argument is `assets`.
+
+For example, consider the following program structure:
 
 ```
 /assets
@@ -96,29 +155,26 @@ main.py
 
 You can access your images in the application as following:
 
-```python {4,8}
+```python
 import flet as ft
 
 def main(page: ft.Page):
     page.add(ft.Image(src=f"/images/my-image.png"))
 
-ft.app(
-    target=main,
-    assets_dir="assets"
-)
+ft.app(main, assets_dir="assets")
 ```
 
 ### Customizing web app
 
 #### Favicon
 
-To override favicon with your own put `favicon.png` file into the root of assets directory. It should be a PNG image with the size of at least 32x32 pixels.
+To override favicon with your own put `favicon.png` file into the root of assets directory.
+It should be a PNG image with the size of at least 32x32 pixels.
 
 #### Loading animation
 
-To override Flet animation image put `icons/loading-animation.png` image with your own app logo into the the root of assets directory.
-
-If you like to completely customize Flutter app initialization logic you can modify [Flet's original `index.html`](https://github.com/flet-dev/flet/blob/main/client/web/index.html) following the [instructions in Flutter documentation](https://docs.flutter.dev/development/platform-integration/web/initialization). A customized `index.html` must be placed in the root of assets directory.
+To override Flet animation image put `icons/loading-animation.png` image with your own app logo
+into the the root of assets directory.
 
 #### PWA
 
@@ -142,7 +198,8 @@ The information in this section is based on the following sources (check them ou
 
 ##### Manifest
 
-You can change PWA's name, description, colors and other information in `manifest.json` that must be put in the root of [assets directory](/docs/guides/python/deploying-web-app/customizing-web-app).
+You can change PWA's name, description, colors and other information in `manifest.json` that must be put
+in the root of `assets` directory.
 
 Here are the links to the most common manifest items that you'd like to customize:
 
@@ -154,7 +211,7 @@ Here are the links to the most common manifest items that you'd like to customiz
 
 ##### Icons
 
-Custom icons are placed in `icons` directory in the root of assets directory:
+Custom icons should be placed in `assets/icons` directory:
 
 * `icon-192.png`, `icon-512.png` - app icons displayed in Windows taskbar.
 * `icon-maskable-192.png`, `icon-maskable-512.png` - app icons displayed in Android.
@@ -162,7 +219,7 @@ Custom icons are placed in `icons` directory in the root of assets directory:
 
 ## Environment variables
 
-Every aspect of web app hosting can be controlled with environment variables:
+Every aspect of web app hosting can be additionally controlled with environment variables:
 
 * `FLET_FORCE_WEB_SERVER` - `true` to force running app as a web app. Automatically set on headless Linux hosts.
 * `FLET_SERVER_PORT` - TCP port to run app on. `8000` if the program is running on a Linux server or `FLET_FORCE_WEB_SERVER` is set; otherwise random port.
@@ -181,9 +238,12 @@ Every aspect of web app hosting can be controlled with environment variables:
 * `FLET_UPLOAD_HANDLER_ENDPOINT` - custom path for upload handler. Default is `/upload`.
 * `FLET_OAUTH_CALLBACK_HANDLER_ENDPOINT` - custom path for OAuth handler. Default is `/oauth_callback`.
 
-## How it works
+## Advanced FastAPI scenarios
 
-`flet_fastapi.app()` configures a single Flet app at the root of FastAPI app with `main()` sessions handler and the following endpoints:
+### Flet FastAPI app
+
+`flet.fastapi.app()` function creates a new FastAPI application to handle sessions with `session_handler`
+and mounts the following endpoints in the root of the app:
 
 `/ws` (WS) - WebSocket handler for the Flet app. It calls `main()` function when a new WebSocket connection established and a new app session created.
 
@@ -193,10 +253,9 @@ Every aspect of web app hosting can be controlled with environment variables:
 
 `/` (GET) - Flet app static files with SPA catch-all handler.
 
-`flet_fastapi.app()` parameters:
+`flet.fastapi.app()` parameters:
 
-* `fastapi_app` (FastAPI) - FastAPI application instance.
-* `session_handler` (Coroutine) - application entry point - an async method called for newly connected user. Handler coroutine must have 1 parameter: `page` - `Page` instance.
+* `session_handler` (function or coroutine) - application entry point - a method called for newly connected user. Handler must have 1 parameter: `page` - `Page` instance.
 * `assets_dir` (str, optional) - an absolute path to app's assets directory.
 * `app_name` (str, optional) - PWA application name.
 * `app_short_name` (str, optional) - PWA application short name.
@@ -210,7 +269,7 @@ Every aspect of web app hosting can be controlled with environment variables:
 * `session_timeout_seconds` (int, optional)- session lifetime, in seconds, after user disconnected.
 * `oauth_state_timeout_seconds` (int, optional) - OAuth state lifetime, in seconds, which is a maximum allowed time between starting OAuth flow and redirecting to OAuth callback URL.
 
-## Hosting multiple Flet apps under the same domain
+### Hosting multiple Flet apps under the same domain
 
 ```python
 import flet as ft
@@ -234,9 +293,13 @@ app.mount("/", flet_fastapi.app(root_main))
 
 Sub-apps must be mapped before the root Flet app as it configures catch-all `index.html` for SPA.
 
-Run the app with `uvicorn` and visit http://127.0.0.1:8000 and then http://127.0.0.1:8000/sub-app/ to see both Flet apps running. Notice the trailing slash in `/sub-app/` URL - without the slash the request will be routed to a root app.
+Run the app with `uvicorn` and visit http://127.0.0.1:8000 and then http://127.0.0.1:8000/sub-app/ to see both Flet apps running.
 
-## Adding Flet to the existing FastAPI app
+:::warning
+Notice the trailing slash in `/sub-app/` URL - without the slash the request will be routed to a root app.
+:::
+
+### Adding Flet to the existing FastAPI app
 
 ```python
 from contextlib import asynccontextmanager
@@ -265,9 +328,9 @@ When adding Flet app to the existing FastAPI app you need to call `flet_fastapi.
 
 `app_manager.shutdown()` method removes any temporary files created by a Flet app.
 
-## Configuring individual Flet endpoints
+### Configuring individual Flet endpoints
 
-### Static files
+#### Static files
 
 A FastAPI app to serve static Flet app files (index.html, manifest.json, Flutter JS app, etc.) and user assets.
 
@@ -292,7 +355,7 @@ Parameters of `FletStaticFiles` constructor:
 * `route_url_strategy` (str) - routing URL strategy: `path` (default) or `hash`.
 * `websocket_endpoint_path` (str, optional) - absolute URL of Flet app WebSocket handler. Default is `{app_mount_path}/ws`.
 
-### WebSocket handler
+#### WebSocket handler
 
 Handles WebSocket connections from Flet client app running in the browser. WebSocket channel is used to send events from a browser to a Flet backend code and receive page real-time incremential updates.
 
@@ -313,7 +376,7 @@ async def flet_app(websocket: WebSocket):
 * `upload_endpoint_path` (str, optional) - absolute URL of upload endpoint, e.g. `/upload`.
 * `secret_key` (str, optional) - secret key to sign upload requests.
 
-### Uploads handler
+#### Uploads handler
 
 Handles file uploads by [FilePicker](/docs/controls/filepicker) control. This endpoint is optional - if your app doesn't use [FilePicker](/docs/controls/filepicker) then it's not needed.
 
@@ -325,7 +388,7 @@ async def flet_uploads(request: Request):
     await FletUpload("/Users/feodor/Downloads/123").handle(request)
 ```
 
-### OAuth callback handler
+#### OAuth callback handler
 
 Handles OAuth flow callback requests. If your app doesn't use [authentication](/docs/guides/python/authentication) then
 this endpoint is not needed.
@@ -337,54 +400,3 @@ from flet.fastapi import FletOAuth
 async def flet_oauth(request: Request):
     return await FletOAuth().handle(request)
 ```
-
-## Async-first framework
-
-Flet is now async-first framework which means you don't have to decide whether your app is entirely sync or async, but you can mix both sync and async methods in the same app.
-
-For example, in Flet 0.21.0 you can write an app like this:
-
-```python
-import flet as ft
-import time
-import asyncio
-
-def main(page: ft.Page):
-
-    def handler(e):
-      time.sleep(3)
-      page.add(ft.Text("Handler clicked"))
-
-    async def handler_async(e):
-      await asyncio.sleep(3)
-      page.add(ft.Text("Async handler clicked"))
-
-    page.add(
-        ft.ElevatedButton("Call handler", on_click=handler),
-        ft.ElevatedButton("Call async handler", on_click=handler_async)
-    )
-
-ft.app(main)
-```
-
-In the example above a click on one button is handled by a "blocking" handler while a click
-on second button calls asynchronous handler. The first handler is run in a `threading.Thread` while second handler is run in `asyncio.Task`.
-
-Also, notice in `async def` handler you are not required to use `await page.add_async()` anymore, but a regular `page.add()` works just fine.
-
-:::info API changes
-Most of `Page.<method>_async()` and `Control.<method>_async()` methods have been deprecated and their `Page.<method>()` and `Control.<method>()` counterparts should be used instead.
-
-The only exception here is methods returning results, like those ones in `Audio` control: you still have to use async methods in async event handlers.
-::: 
-
-* Built-in Flet web server
-  * async
-  * sync (threads)
-
-Env variables?
-
-
-* FastAPI
-  * async
-  * multiple apps
