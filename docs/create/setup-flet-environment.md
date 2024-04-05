@@ -2,9 +2,15 @@
 title: Setup Flet environment
 ---
 
-Before you can create your first Flet app you need to setup your development environment which requires Python 3.8 or above and Flet.
+Before you can create your first Flet app you need to setup your development environment which requires Python 3.8 or above and Flet. 
+
+:::note
+If installing Flet on Linux, there are additional [prerequisites](/docs/publish/linux#prerequisites).
+:::
 
 We recommend installing Flet in a virtual environment which can be done in a number of different ways.
+
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -25,11 +31,22 @@ You can create virtual environment by running the following commands in your ter
 
   </TabItem>
 
+  <TabItem value="linux" label="Linux" default>
+
+    ```
+    mkdir first-flet-app
+    cd first-flet-app
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+  </TabItem>
+
   <TabItem value="windows" label="Windows">
     ```
     md first-flet-app
     cd first-flet-app
-    py -m venv .venv
+    python -m venv .venv
     .venv\Scripts\activate
     ```
 
@@ -37,13 +54,13 @@ You can create virtual environment by running the following commands in your ter
 
 </Tabs>
 
-Once you activated virtual environment, you'll see that you prompt now shows (.venv) prefix.
+Once you activated virtual environment, you'll see that you prompt now shows `(.venv)` prefix.
 
-Now you can install the latest version of Flet in `.venv`:
+Now you can install the latest version of Flet in `.venv` virtual environment:
 ```
 pip install flet
 ```
-To check what version of Flet was installed
+To check what version of Flet was installed:
 ```
 flet --version
 ```
@@ -75,15 +92,14 @@ Now you can add Flet dependency to your project:
 cd first-flet-app
 poetry add flet
 ```
+To check what version of Flet was installed:
+```
+poetry run flet --version
+```
 
 Now you are ready to [create your first Flet app](create-flet-app). 
 
 :::note
 When running Flet app using Poetry, you'll need to use `poetry run` before each command!
 :::
-
-
-## PyCharm
-
-If you prefer to create your Flet app in PyCharm, you will not need to create a virtual environment there since PyCharm will do it for you. Just create a new project and move on to [creating your first Flet app](create-flet-app)!
 
