@@ -10,6 +10,7 @@ module.exports = {
       //   id: "create/create-flet-app",
       // },
       items: [
+        "create/setup-flet-environment",
         "create/create-flet-app",
         'create/running-app',
         'create/flet-app-structure',
