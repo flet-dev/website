@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/navigation/cupertinoactionsheet)
+[Live example](https://flet-controls-gallery.fly.dev/buttons/cupertinoactionsheetaction)
 
 ### Basic Example
 

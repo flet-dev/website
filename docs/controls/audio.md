@@ -22,6 +22,8 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
+[Live example](https://flet-controls-gallery.fly.dev/utility/audio)
+
 ### Autoplay audio
 
 <Tabs groupId="language">
