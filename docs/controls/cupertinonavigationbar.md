@@ -1,7 +1,6 @@
 ---
 title: CupertinoNavigationBar
 sidebar_label: CupertinoNavigationBar
-slug: cupertinonavigationbar
 ---
 
 An iOS-styled bottom navigation tab bar.

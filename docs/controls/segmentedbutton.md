@@ -1,7 +1,6 @@
 ---
 title: SegmentedButton
 sidebar_label: SegmentedButton
-slug: segmentedbutton
 ---
 
 A Material button that allows the user to select from limited set of options and are typically used in cases where there are only 2-5 options.
@@ -65,7 +64,7 @@ ft.app(target=main)
 
 ## `SegmentedButton` Properties
 
-### `empty_selection_allowed`
+### `allow_empty_selection`
 
 A boolean value that indicates if having no selected segments is allowed. 
 
@@ -73,7 +72,7 @@ If `True`, then it is acceptable for none of the segments to be selected and als
 
 If `False` (the default), there must be at least one segment selected. If the user taps on the only selected segment it will not be deselected, and `on_change` will not be called.
 
-### `multi_selection_enabled`
+### `allow_multiple_selection`
 
 A boolean value that indicates if multiple segments can be selected at one time.
 

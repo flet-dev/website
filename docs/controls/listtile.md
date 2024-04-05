@@ -1,7 +1,6 @@
 ---
 title: ListTile
 sidebar_label: ListTile
-slug: listtile
 ---
 
 A single fixed-height row that typically contains some text as well as a leading or trailing icon.
@@ -123,6 +122,10 @@ See [`Container.padding`](container#padding) property for more information and p
 ### `dense`
 
 Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
+
+### `hover_color`
+
+The tile's [color](/docs/reference/colors) when hovered.
 
 ### `is_three_line`
 

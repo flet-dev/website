@@ -1,13 +1,20 @@
 ---
 title: WebView
 sidebar_label: WebView
-slug: webview
 ---
 
 Easily load web pages while allowing user interaction.
 
-:::info
+:::info Work in progress
 This control supports iOS and Android only; a desktop and browser versions are in the development.
+:::
+
+:::info Packaging
+To build your Flet app that uses `WebView` control add `--include-packages flet_webview` to `flet build` command, for example:
+
+```
+flet build apk --include-packages flet_webview
+```
 :::
 
 ## Examples

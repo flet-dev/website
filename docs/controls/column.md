@@ -1,7 +1,6 @@
 ---
 title: Column
 sidebar_label: Column
-slug: column
 ---
 
 A control that displays its children in a vertical array.

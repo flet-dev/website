@@ -1,7 +1,6 @@
 ---
 title: PopupMenuButton
 sidebar_label: PopupMenuButton
-slug: popupmenubutton
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -66,6 +65,10 @@ If provided an icon to draw on the button.
 ### `items`
 
 A collection of `PopupMenuItem` controls to display in a dropdown menu.
+
+### `menu_position`
+
+Defines position of the popup menu relative to the button. Value can either be `PopupMenuPosition.OVER` (default) or `PopupMenuPosition.UNDER`.
 
 ## `PopupMenuButton` events
 

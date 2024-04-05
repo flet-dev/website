@@ -1,7 +1,6 @@
 ---
 title: FilePicker
 sidebar_label: FilePicker
-slug: filepicker
 ---
 
 A control that allows you to use the native file explorer to pick single or multiple files, with extensions filtering support and upload.
@@ -171,7 +170,7 @@ To save a file from the web, you don't need to use the FilePicker object.
 You can instead provides an API endpoint `/download/:filename` that returns the file content, and then
 use [`page.launch_url`](/docs/controls/page#launch_urlurl) to open the url, which will trigger the browser's save file dialog.
 
-Take [FastAPI](/docs/guides/python/deploying-web-app/running-flet-with-fastapi) as an example, you can use the following code to implement the endpoint:
+Take [FastAPI](/docs/publish/web/dynamic-website#advanced-fastapi-scenarios) as an example, you can use the following code to implement the endpoint:
 
 ```python
 from fastapi import FastAPI, Response

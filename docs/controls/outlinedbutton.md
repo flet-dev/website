@@ -1,7 +1,6 @@
 ---
 title: OutlinedButton
 sidebar_label: OutlinedButton
-slug: outlinedbutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -146,6 +145,14 @@ ft.app(target=main)
 
 
 ## Properties
+
+### `adaptive`
+
+If the value is `True`, an adaptive button is created based on whether the target platform is iOS/macOS.
+
+On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinobutton) is created, which matches the functionality and presentation of this button. On other platforms, a Material `ElevatedButton` is created.
+
+The default value is `False`.
 
 ### `autofocus`
 

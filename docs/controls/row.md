@@ -1,7 +1,6 @@
 ---
 title: Row
 sidebar_label: Row
-slug: row
 ---
 
 A control that displays its children in a horizontal array.

@@ -1,7 +1,6 @@
 ---
 title: Icon
 sidebar_label: Icon
-slug: icon
 ---
 
 Displays a Material icon.
@@ -51,6 +50,10 @@ Icon [color](/docs/reference/colors).
 ### `name`
 
 The name of the icon. You can search through the list of all available icons using open-source [Icons browser](https://gallery.flet.dev/icons-browser/) app [written in Flet](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py).
+
+### `semantics_label`
+
+The semantics label for this icon. It is not shown to the in the UI, but is announced in accessibility modes (e.g TalkBack/VoiceOver).
 
 ### `size`
 

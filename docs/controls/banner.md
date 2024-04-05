@@ -1,7 +1,6 @@
 ---
 title: Banner
 sidebar_label: Banner
-slug: banner
 ---
 
 A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). A user action is required for it to be dismissed.

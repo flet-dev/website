@@ -1,7 +1,6 @@
 ---
 title: RangeSlider
 sidebar_label: RangeSlider
-slug: rangeslider
 ---
 
 A Material Design range slider. Used to select a range from a range of values.

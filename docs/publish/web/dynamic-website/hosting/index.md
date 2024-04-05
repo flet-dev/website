@@ -1,5 +1,6 @@
 ---
 title: Hosting Flet web apps
+slug: /publish/web/dynamic-website/hosting
 ---
 
 Flet apps use WebSockets for real-time partial updates of their UI and sending events back to your program.

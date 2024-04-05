@@ -1,7 +1,6 @@
 ---
 title: PieChart
 sidebar_label: PieChart
-slug: piechart
 ---
 
 Draws a pie chart.

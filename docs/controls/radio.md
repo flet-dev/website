@@ -1,7 +1,6 @@
 ---
 title: Radio
 sidebar_label: Radio
-slug: radio
 ---
 
 Radio buttons let people select a single option from two or more choices.
@@ -133,6 +132,10 @@ rd.fill_color={
 ### `label`
 
 The clickable label to display on the right of a Radio.
+
+### `label_style`
+
+The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
 
 ### `label_position`
 

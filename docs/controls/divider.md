@@ -1,7 +1,6 @@
 ---
 title: Divider
 sidebar_label: Divider
-slug: divider
 ---
 
 A thin horizontal line, with padding on either side.

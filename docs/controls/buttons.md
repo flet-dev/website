@@ -1,7 +1,6 @@
 ---
 title: Buttons
 sidebar_label: Buttons
-slug: buttons
 ---
 
 import Card from '@site/src/components/card';
@@ -20,6 +19,7 @@ export const ImageCard = ({title, href, imageUrl}) => (
 <div className="margin-top--lg">
   <section className="row">
     <ImageCard title="Cupertino" href="/docs/controls/cupertinobutton" imageUrl="cupertino-button.png" />
+    <ImageCard title="CupertinoFilled" href="/docs/controls/cupertinofilledbutton" imageUrl="cupertino-filled-button.png" />
     <ImageCard title="Elevated" href="/docs/controls/elevatedbutton" imageUrl="elevated-button.png" />
     <ImageCard title="Filled" href="/docs/controls/filledbutton" imageUrl="filled-button.png" />
     <ImageCard title="Filled Tonal" href="/docs/controls/filledtonalbutton" imageUrl="filled-tonal-button.png" />

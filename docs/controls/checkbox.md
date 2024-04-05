@@ -1,7 +1,6 @@
 ---
 title: Checkbox
 sidebar_label: Checkbox
-slug: checkbox
 ---
 
 Checkbox allows to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).
@@ -122,6 +121,10 @@ chk.fill_color={
 ### `label`
 
 The clickable label to display on the right of a checkbox.
+
+### `label_style`
+
+The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
 
 ### `label_position`
 

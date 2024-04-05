@@ -1,7 +1,6 @@
 ---
 title: FloatingActionButton
 sidebar_label: FloatingActionButton
-slug: floatingactionbutton
 ---
 
 import Tabs from '@theme/Tabs';

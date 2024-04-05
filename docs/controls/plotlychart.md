@@ -1,7 +1,6 @@
 ---
 title: PlotlyChart
 sidebar_label: PlotlyChart
-slug: plotlychart
 ---
 
 Displays [Plotly](https://plotly.com/python/) chart.

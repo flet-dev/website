@@ -1,7 +1,6 @@
 ---
 title: FilledButton
 sidebar_label: FilledButton
-slug: filledbutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -44,7 +43,7 @@ ft.app(target=main)
 
 If the value is `True`, an adaptive Button is created based on whether the target platform is iOS/macOS.
 
-On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinobutton) is created, which matches the functionality and presentation of this button. On other platforms, a Material `FilledButton` is created.
+On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinofilledbutton) is created, which matches the functionality and presentation of this button. On other platforms, a Material `FilledButton` is created.
 
 The default value is `False`.
 

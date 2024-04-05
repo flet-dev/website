@@ -1,7 +1,6 @@
 ---
 title: ResponsiveRow
 sidebar_label: ResponsiveRow
-slug: responsiverow
 ---
 
 import Tabs from '@theme/Tabs';
@@ -49,6 +48,8 @@ ft.ResponsiveRow([
 ```
 
 ## Examples
+
+[Live example](https://flet-controls-gallery.fly.dev/layout/responsiverow)
 
 ### ResponsiveRow
 

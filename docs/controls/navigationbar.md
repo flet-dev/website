@@ -1,7 +1,6 @@
 ---
 title: NavigationBar
 sidebar_label: NavigationBar
-slug: navigationbar
 ---
 
 Material 3 Navigation Bar component.

@@ -1,7 +1,6 @@
 ---
 title: LineChart
 sidebar_label: LineChart
-slug: linechart
 ---
 
 Draws a line chart.
@@ -397,7 +396,7 @@ A list of [`LineChartData`](#linechartdata-properties) controls drawn as separat
 
 ### `horizontal_grid_lines`
 
-Controls drawing of chart's horizontal lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+Controls drawing of chart's horizontal lines. The value is the instance of [`ChartGridLines`](#chartgridlines-properties) class.
 
 ### `interactive`
 
@@ -445,7 +444,7 @@ Configures the appearance of the top axis, its title and labels. The value is th
 
 ### `vertical_grid_lines`
 
-Controls drawing of chart's vertical lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+Controls drawing of chart's vertical lines. The value is the instance of [`ChartGridLines`](#chartgridlines-properties) class.
 
 ## `LineChart` events
 

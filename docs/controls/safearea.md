@@ -1,7 +1,6 @@
 ---
 title: SafeArea
 sidebar_label: SafeArea
-slug: safearea
 ---
 
 A control that insets its `content` by sufficient padding to avoid intrusions by the operating system.
@@ -13,6 +12,8 @@ It will also indent the `content` by the amount necessary to avoid The Notch on 
 When a `minimum` padding is specified, the greater of the `minimum` padding or the safe area padding will be applied.
 
 ## Example
+
+[Live example](https://flet-controls-gallery.fly.dev/layout/safearea)
 
 ```python
 import flet as ft

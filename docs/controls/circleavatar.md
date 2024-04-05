@@ -1,7 +1,6 @@
 ---
 title: CircleAvatar
 sidebar_label: CircleAvatar
-slug: circleavatar
 ---
 
 A circle that represents a user.

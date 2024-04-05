@@ -1,7 +1,6 @@
 ---
 title: CupertinoAppBar
 sidebar_label: CupertinoAppBar
-slug: cupertinoappbar
 ---
 
 An iOS-styled application bar.

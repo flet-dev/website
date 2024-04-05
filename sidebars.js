@@ -79,7 +79,7 @@ module.exports = {
                   label: "Hosting",
                   link: {
                     type: "doc",
-                    id: "publish/web/dynamic-website/hosting/overview",
+                    id: "publish/web/dynamic-website/hosting/index",
                   },
                   items: [
                     "publish/web/dynamic-website/hosting/fly-io",
@@ -173,6 +173,7 @@ module.exports = {
             "controls/badge",
             "controls/canvas",
             "controls/circleavatar",
+            "controls/cupertinoactivityindicator",
             "controls/icon",
             "controls/image",
             "controls/markdown",
@@ -190,8 +191,13 @@ module.exports = {
             id: "controls/buttons",
           },
           items: [
+            "controls/cupertinoactionsheetaction",
             "controls/cupertinobutton",
+            "controls/cupertinocontextmenuaction",
             "controls/cupertinodialogaction",
+            "controls/cupertinofilledbutton",
+            "controls/cupertinosegmentedbutton",
+            "controls/cupertinoslidingsegmentedbutton",
             "controls/elevatedbutton",
             "controls/filledbutton",
             "controls/filledtonalbutton",
@@ -240,7 +246,13 @@ module.exports = {
             "controls/alertdialog",
             "controls/banner",
             "controls/bottomsheet",
+            "controls/cupertinoactionsheet",
             "controls/cupertinoalertdialog",
+            "controls/cupertinobottomsheet",
+            "controls/cupertinocontextmenu",
+            "controls/cupertinodatepicker",
+            "controls/cupertinopicker",
+            "controls/cupertinotimerpicker",
             "controls/datepicker",
             "controls/snackbar",
             "controls/timepicker"
@@ -268,7 +280,11 @@ module.exports = {
             type: "generated-index",
             slug: "controls/animations",
           },
-          items: ["controls/animatedswitcher"],
+          items: [
+            "controls/animatedswitcher",
+            "controls/lottie",
+            "controls/rive"
+          ],
         },
         {
           type: "category",
@@ -286,8 +302,10 @@ module.exports = {
             "controls/fletapp",
             "controls/gesturedetector",
             "controls/hapticfeedback",
+            "controls/mergesemantics",
             "controls/selectionarea",
             "controls/semantics",
+            "controls/semanticsservice",
             "controls/shadermask",
             "controls/shakedetector",
             "controls/tooltip",
@@ -315,10 +333,7 @@ module.exports = {
         "cookbook/control-refs",
         "cookbook/accessibility",
         "cookbook/logging",
-        "cookbook/packaging-app-for-distribution",
-        "cookbook/packaging-desktop-app",
-        "cookbook/publishing-static-website",
-        "publish/deploying-web-app/running-flet-with-fastapi",
+        //"cookbook/packaging-desktop-app",
       ],
     },
     {
@@ -353,6 +368,7 @@ module.exports = {
           items: [
             "reference/cli/create",
             "reference/cli/run",
+            "reference/cli/build",
             "reference/cli/pack",
             "reference/cli/publish",
           ],

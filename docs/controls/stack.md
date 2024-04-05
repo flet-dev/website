@@ -1,7 +1,6 @@
 ---
 title: Stack
 sidebar_label: Stack
-slug: stack
 ---
 
 A control that positions its children on top of each other.

@@ -1,7 +1,6 @@
 ---
 title: Card
 sidebar_label: Card
-slug: card
 ---
 
 A material design card: a panel with slightly rounded corners and an elevation shadow.

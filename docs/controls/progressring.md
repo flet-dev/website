@@ -1,7 +1,6 @@
 ---
 title: ProgressRing
 sidebar_label: ProgressRing
-slug: progressring
 ---
 
 A material design circular progress indicator, which spins to indicate that the application is busy.

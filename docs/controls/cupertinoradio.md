@@ -1,7 +1,6 @@
 ---
 title: CupertinoRadio
 sidebar_label: CupertinoRadio
-slug: cupertinoradio
 ---
 
 A macOS style radio button. Radio buttons let people select a single option from two or more choices.

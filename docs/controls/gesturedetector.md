@@ -1,7 +1,6 @@
 ---
 title: GestureDetector
 sidebar_label: GestureDetector
-slug: gesturedetector
 ---
 
 A control that detects gestures.

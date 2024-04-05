@@ -1,7 +1,6 @@
 ---
 title: SelectionArea
 sidebar_label: SelectionArea
-slug: selectionarea
 ---
 
 Flet controls are not selectable by default. `SelectionArea` is used to enable selection for its `content`.
@@ -10,8 +9,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Examples
-
-[Live example](https://flet-controls-gallery.fly.dev/utility/selectionarea)
 
 ### Selectable Text controls
 

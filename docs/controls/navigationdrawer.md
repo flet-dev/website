@@ -1,7 +1,6 @@
 ---
 title: NavigationDrawer
 sidebar_label: NavigationDrawer
-slug: navigationdrawer
 ---
 
 Material Design Navigation Drawer component.

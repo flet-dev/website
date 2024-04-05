@@ -1,7 +1,6 @@
 ---
 title: SnackBar
 sidebar_label: SnackBar
-slug: snackbar
 ---
 
 A lightweight message with an optional action which briefly displays at the bottom of the screen.

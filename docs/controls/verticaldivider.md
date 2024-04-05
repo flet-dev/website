@@ -1,7 +1,6 @@
 ---
 title: VerticalDivider
 sidebar_label: VerticalDivider
-slug: verticaldivider
 ---
 
 A thin vertical line, with padding on either side.

@@ -1,7 +1,6 @@
 ---
 title: CupertinoButton
 sidebar_label: CupertinoButton
-slug: cupertinobutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -30,7 +29,7 @@ def main(page: ft.Page):
         ),
         ft.CupertinoButton(
             content=ft.Text("Filled CupertinoButton", color=ft.colors.YELLOW),
-            filled=True,
+            bgcolor=ft.colors.PRIMARY,
             alignment=ft.alignment.top_left,
             border_radius=ft.border_radius.all(15),
             opacity_on_click=0.5,
@@ -64,6 +63,10 @@ ft.app(target=main)
 
 Button's background [color](/docs/reference/colors).
 
+### `color`
+
+Button's text [color](/docs/reference/colors).
+
 ### `disabled_color`
 
 The background [color](/docs/reference/colors) of the button when it is disabled.
@@ -71,14 +74,6 @@ The background [color](/docs/reference/colors) of the button when it is disabled
 ### `content`
 
 A Control representing custom button content.
-
-### `elevation`
-
-Button's elevation.
-
-### `filled`
-
-Whether the button has a filled background or not. Defaults to `False`.
 
 ### `icon`
 

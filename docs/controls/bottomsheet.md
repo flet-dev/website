@@ -1,7 +1,6 @@
 ---
 title: BottomSheet
 sidebar_label: BottomSheet
-slug: bottomsheet
 ---
 
 Shows a modal Material Design bottom sheet.

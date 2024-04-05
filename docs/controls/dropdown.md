@@ -1,7 +1,6 @@
 ---
 title: Dropdown
 sidebar_label: Dropdown
-slug: dropdown
 ---
 
 A material design button for selecting from a list of items.

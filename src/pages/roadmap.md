@@ -9,7 +9,7 @@ slug: roadmap
 
 The goal: Flet 1.0 launch.
 
-* :white_check_mark: Packaging for all platforms with [`flet build` command](/docs/guides/python/packaging-app-for-distribution): Windows, Linux, macOS, web, iOS and Android.
+* :white_check_mark: Packaging for all platforms with [`flet build` command](/docs/publish): Windows, Linux, macOS, web, iOS and Android.
   * :construction: `flet build` bugfixing and polishing.
   * Automatic installation of pre-built "native" (non-pure such as `pandas`, `numpy`) Python dependencies for iOS and Android (custom registry similar to Pyodide).
   * Integrating 3rd-party Flutter packages to user apps.
@@ -23,7 +23,7 @@ The goal: Flet 1.0 launch.
 
 ### New controls
 
-* :white_check_mark: [AudioRecorder](https://github.com/flet-dev/flet/issues/419)
+* :white_check_mark: [AudioRecorder](https://flet.dev/docs/controls/audiorecorder)
 * [Autocomplete](https://github.com/flet-dev/flet/issues/791)
 * [AutofillGroup](https://github.com/flet-dev/flet/issues/848)
 * [Camera](https://github.com/flet-dev/flet/issues/1281)
@@ -32,13 +32,13 @@ The goal: Flet 1.0 launch.
 * [Google Mobile Ads](https://github.com/flet-dev/flet/issues/286)
 * [InAppPurchase](https://github.com/flet-dev/flet/issues/853)
 * [Location](https://github.com/flet-dev/flet/issues/66)
-* [Lottie](https://github.com/flet-dev/flet/issues/88)
+* :white_check_mark: [Lottie](https://flet.dev/docs/controls/lottie)
 * [Map](https://github.com/flet-dev/flet/issues/1193)
 * [PlatformMenuBar](https://github.com/flet-dev/flet/issues/285) (and [#116](https://github.com/flet-dev/flet/issues/116))
 * [Rive](https://github.com/flet-dev/flet/issues/89)
 * [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
 * [TreeView](https://github.com/flet-dev/flet/issues/961)
-* :white_check_mark: [Video](https://github.com/flet-dev/flet/issues/257)
+* :white_check_mark: [Video](https://flet.dev/docs/controls/video)
 
 ### Adaptive and Cupertino controls
 
@@ -53,6 +53,12 @@ The goal: Flet 1.0 launch.
 * :white_check_mark: [Radio → CupertinoRadio](https://github.com/flet-dev/flet/issues/2201)
 * :white_check_mark: [AppBar → CupertinoAppBar](https://github.com/flet-dev/flet/issues/2278)
 * :white_check_mark: [Checkbox → CupertinoCheckbox](https://github.com/flet-dev/flet/issues/2157)
-* ContextMenu
-* DatePicker
-* TimePicker
+* :white_check_mark: [CupertinoContextMenu](https://github.com/flet-dev/flet/issues/2744)
+* :white_check_mark: [DatePicker → CupertinoDatePicker](https://github.com/flet-dev/flet/issues/2744)
+* :white_check_mark: [TimePicker → CupertinoTimePicker](https://github.com/flet-dev/flet/issues/2744)
+* :white_check_mark: [CupertinoActivityIndicator](https://github.com/flet-dev/flet/issues/2744)
+* :white_check_mark: [CupertinoActionSheet](https://github.com/flet-dev/flet/issues/2744)
+* :white_check_mark: [CupertinoActionSheetAction](https://github.com/flet-dev/flet/issues/2744)
+* :white_check_mark: [CupertinoBottomSheet](https://github.com/flet-dev/flet/issues/2744)
+* :white_check_mark: [CupertinoSegmentedControl](https://github.com/flet-dev/flet/issues/2744)
+* :white_check_mark: [CupertinoSlidingSegmentedControl](https://github.com/flet-dev/flet/issues/2744)
