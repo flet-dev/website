@@ -1,7 +1,6 @@
 ---
 title: Video
 sidebar_label: Video
-slug: video
 ---
 
 Video playing control.

@@ -1,7 +1,6 @@
 ---
 title: Tooltip
 sidebar_label: Tooltip
-slug: tooltip
 ---
 
 A Material Design tooltip.

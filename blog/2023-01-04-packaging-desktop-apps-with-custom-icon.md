@@ -24,6 +24,6 @@ Bundle name, version and copyright can be changed too:
 
 <img src="/img/docs/getting-started/package-desktop/flet-app-bundle-about-clean.png" className="screenshot-50" />
 
-Find all available options for packaging desktop apps in the [updated guide](/docs/publish/packaging-desktop-app).
+Find all available options for packaging desktop apps in the [updated guide](/docs/publish).
 
 Upgrade Flet module to the latest version (`pip install flet --upgrade`), give `flet pack` command a try and [let us know](https://discord.gg/dzWXP8SHG8) what you think!

@@ -1,7 +1,6 @@
 ---
 title: CupertinoAlertDialog
 sidebar_label: CupertinoAlertDialog
-slug: cupertinoalertdialog
 ---
 
 An iOS-style alert dialog.

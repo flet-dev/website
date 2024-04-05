@@ -1,7 +1,6 @@
 ---
 title: TransparentPointer
 sidebar_label: TransparentPointer
-slug: transparentpointer
 ---
 
 TransparentPointer is the solution to ["How to pass through all gestures between two widgets in Stack"](https://stackoverflow.com/questions/65269190/pass-trough-all-gestures-between-two-widgets-in-stack) problem.

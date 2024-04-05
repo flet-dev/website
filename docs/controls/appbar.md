@@ -1,7 +1,6 @@
 ---
 title: AppBar
 sidebar_label: AppBar
-slug: appbar
 ---
 
 A material design app bar.

@@ -1,7 +1,6 @@
 ---
 title: ExpansionPanelList
 sidebar_label: ExpansionPanelList
-slug: expansionpanel
 ---
 
 A material expansion panel list that lays out its children and animates expansions.

@@ -1,7 +1,6 @@
 ---
 title: Icon
 sidebar_label: Icon
-slug: icon
 ---
 
 Displays a Material icon.

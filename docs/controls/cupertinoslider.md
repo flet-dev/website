@@ -1,7 +1,6 @@
 ---
 title: CupertinoSlider
 sidebar_label: CupertinoSlider
-slug: cupertinoslider
 ---
 
 An macOS style slider. It provides a visual indication of adjustable content, as well as the current setting in the total range of content.

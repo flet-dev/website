@@ -1,7 +1,6 @@
 ---
 title: MenuBar
 sidebar_label: MenuBar
-slug: menubar
 ---
 
 A menu bar that manages cascading child menus.
@@ -128,7 +127,7 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. See [Container.clip_behavior](/docs/controls/container#clipbehavior) for possible values.
+Whether to clip the content of this control or not. See [Container.clip_behavior](/docs/controls/container#clip_behavior) for possible values.
 
 Defaults to `ClipBehavior.NONE`.
 

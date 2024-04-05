@@ -3,7 +3,7 @@ title: build
 sidebar_label: build
 ---
 
-This command is used to package a Flet application for distribution. You can find it's guide [here](/docs/guides/python/packaging-app-for-distribution).
+This command is used to package a Flet application for distribution. You can find it's guide [here](/docs/publish).
 
 ```
 usage: flet build [-h] [-v] [-o OUTPUT_DIR] [--project PROJECT_NAME] [--description DESCRIPTION] [--product PRODUCT_NAME] [--org ORG_NAME] [--company COMPANY_NAME] [--copyright COPYRIGHT]

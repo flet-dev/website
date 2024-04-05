@@ -1,7 +1,6 @@
 ---
 title: DataTable
 sidebar_label: DataTable
-slug: datatable
 ---
 
 A Material Design data table.

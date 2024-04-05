@@ -1,7 +1,6 @@
 ---
 title: Chip
 sidebar_label: Chip
-slug: chip
 ---
 
 Chips are compact elements that represent an attribute, text, entity, or action.

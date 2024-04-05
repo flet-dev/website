@@ -1,7 +1,6 @@
 ---
 title: Image
 sidebar_label: Image
-slug: image
 ---
 
 An image is a graphic representation of something (e.g photo or illustration).

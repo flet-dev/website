@@ -1,7 +1,6 @@
 ---
 title: Slider
 sidebar_label: Slider
-slug: slider
 ---
 
 A slider provides a visual indication of adjustable content, as well as the current setting in the total range of content.

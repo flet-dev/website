@@ -1,7 +1,6 @@
 ---
 title: FilledButton
 sidebar_label: FilledButton
-slug: filledbutton
 ---
 
 import Tabs from '@theme/Tabs';

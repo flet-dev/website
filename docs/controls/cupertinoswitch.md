@@ -1,7 +1,6 @@
 ---
 title: CupertinoSwitch
 sidebar_label: CupertinoSwitch
-slug: cupertinoswitch
 ---
 
 An iOS-style switch.

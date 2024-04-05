@@ -1,7 +1,6 @@
 ---
 title: CupertinoCheckbox
 sidebar_label: CupertinoCheckbox
-slug: cupertinocheckbox
 ---
 
 A macOS style checkbox. Checkbox allows to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).

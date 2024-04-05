@@ -1,7 +1,6 @@
 ---
 title: Badge
 sidebar_label: Badge
-slug: badge
 ---
 
 A Material Design "badge".
@@ -10,7 +9,7 @@ Badges are used to show notifications, counts, or status information about its [
 
 The information is shown as [`text`](badge#text) on a badge's label. If the `text` is not provided, the badge is shown as a filled circle of [`small_size`](badge#small_size) diameter.
 
-If `text` is provided, the label is a StadiumBorder shaped badge with height equal to [`large_size`](badge#large-size).
+If `text` is provided, the label is a StadiumBorder shaped badge with height equal to [`large_size`](#large_size).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -101,7 +100,7 @@ The padding added to the badge's label.
 
 This value is only used if `text` is provided. Defaults to 4 pixels on the left and right.
 
-See Container's [`padding`](container/#padding) for possible values.
+See Container's [`padding`](container#padding) for possible values.
 
 ### `small_size`
 
@@ -115,7 +114,7 @@ The text shown on badge's label, typically 1 to 4 characters.
 
 If the text is not provided, the badge is shown as a filled circle of [`small_size`](badge#small_size) diameter. 
 
-If `text` is provided, the label is a StadiumBorder shaped badge with height equal to [`large_size`](badge#large-size).
+If `text` is provided, the label is a StadiumBorder shaped badge with height equal to [`large_size`](#large_size).
 
 ### `text_color`
 

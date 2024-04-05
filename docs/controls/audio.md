@@ -1,7 +1,6 @@
 ---
 title: Audio
 sidebar_label: Audio
-slug: audio
 ---
 
 A control to simultaneously play multiple audio files. Works on macOS, Linux, Windows, iOS, Android and web.

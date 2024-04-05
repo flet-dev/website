@@ -1,7 +1,6 @@
 ---
 title: ProgressBar
 sidebar_label: ProgressBar
-slug: progressbar
 ---
 
 A material design linear progress indicator, also known as a progress bar.

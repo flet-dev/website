@@ -1,7 +1,6 @@
 ---
 title: AlertDialog
 sidebar_label: AlertDialog
-slug: alertdialog
 ---
 
 A material design alert dialog.

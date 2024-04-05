@@ -1,7 +1,6 @@
 ---
 title: TextField
 sidebar_label: TextField
-slug: textfield
 ---
 
 A material design text field.

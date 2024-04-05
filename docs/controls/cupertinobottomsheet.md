@@ -1,7 +1,6 @@
 ---
 title: CupertinoBottomSheet
 sidebar_label: CupertinoBottomSheet
-slug: cupertinobottomsheet
 ---
 
 An iOS-style bottom sheet.
@@ -71,7 +70,7 @@ ft.app(main)
 
 ### `bgcolor`
 
-The BottomSheet's background [color](/docs/guides/python/colors).
+The BottomSheet's background [color](/docs/reference/colors).
 
 ### `content`
 

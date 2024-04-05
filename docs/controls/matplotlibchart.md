@@ -1,7 +1,6 @@
 ---
 title: MatplotlibChart
 sidebar_label: MatplotlibChart
-slug: matplotlibchart
 ---
 
 Displays [Matplotlib](https://matplotlib.org/) chart.

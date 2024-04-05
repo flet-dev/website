@@ -1,7 +1,6 @@
 ---
 title: FletApp
 sidebar_label: FletApp
-slug: fletapp
 ---
 
 Renders another Flet app in the current app, similar to HTML IFrame, but for Flet.

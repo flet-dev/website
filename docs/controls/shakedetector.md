@@ -1,7 +1,6 @@
 ---
 title: ShakeDetector
 sidebar_label: ShakeDetector
-slug: shakedetector
 ---
 
 Detects phone shakes.

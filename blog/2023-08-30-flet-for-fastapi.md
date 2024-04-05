@@ -53,13 +53,13 @@ Flet app must be [async](/docs/create/async-apps) in order to work with FastAPI 
 
 ## Features and benefits
 
-* [Multiple Flet apps on a single domain](/docs/publish/deploying-web-app/running-flet-with-fastapi#hosting-multiple-flet-apps-under-the-same-domain) - mapped to the root and/or sub-paths.
-* Simple [one-line mappings](/docs/publish/deploying-web-app/running-flet-with-fastapi#how-it-works) or [individual endpoint configurations](/docs/publish/deploying-web-app/running-flet-with-fastapi#configuring-individual-flet-endpoints).
+* [Multiple Flet apps on a single domain](/docs/publish/web/dynamic-website#hosting-multiple-flet-apps-under-the-same-domain) - mapped to the root and/or sub-paths.
+* Simple [one-line mappings](/docs/publish/web/dynamic-website#flet-fastapi-app) or [individual endpoint configurations](/docs/publish/web/dynamic-website#configuring-individual-flet-endpoints).
 * Light-weight async wrapper around FastAPI WebSocket connection for greater concurrency.
 * Serves Flet static files with user assets and app meta-information customization.
 * Uploads handler for `FilePicker` control.
 * OAuth callback handler for authentication flows.
 
-Check [the guide](/docs/publish/deploying-web-app/running-flet-with-fastapi) for complete information about Flet with FastAPI.
+Check [the guide](/docs/publish/web/dynamic-website) for complete information about Flet with FastAPI.
 
 Let us know what you think by joining [Flet Discord server](https://discord.gg/dzWXP8SHG8) or creating a new thread on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).

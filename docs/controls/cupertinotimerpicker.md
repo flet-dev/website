@@ -1,7 +1,6 @@
 ---
 title: CupertinoTimerPicker
 sidebar_label: CupertinoTimerPicker
-slug: cupertinotimerpicker
 ---
 
 A countdown timer picker in iOS style.
@@ -79,7 +78,7 @@ Defines how the timer picker should be positioned within its parent. Defaults to
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) of the timer picker.
+The background [color](/docs/reference/colors) of the timer picker.
 
 ### `mode`
 

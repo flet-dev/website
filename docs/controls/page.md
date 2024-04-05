@@ -1,7 +1,6 @@
 ---
 title: Page
 sidebar_label: Page
-slug: page
 ---
 
 Page is a container for [`View`](/docs/controls/view) controls.
@@ -1221,7 +1220,7 @@ class RouteChangeEvent(ft.ControlEvent):
 
 Fires when page's scroll position is changed by a user.
 
-See [`Column.on_scroll`](docs/controls/column#on_scroll) for event details and examples.
+See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
 
 ### `on_view_pop`
 

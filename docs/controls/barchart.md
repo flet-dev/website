@@ -1,7 +1,6 @@
 ---
 title: BarChart
 sidebar_label: BarChart
-slug: barchart
 ---
 
 Draws a bar chart.
@@ -235,11 +234,11 @@ The border around the chart. The value is the instance of `ft.Border` class.
 
 ### `horizontal_grid_lines`
 
-Controls drawing of chart's horizontal lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+Controls drawing of chart's horizontal lines. The value is the instance of [`ChartGridLines`](#chartgridlines-properties) class.
 
 ### `vertical_grid_lines`
 
-Controls drawing of chart's vertical lines. The value is the instance of [`ChartGridLines`](#chartgridlines) class.
+Controls drawing of chart's vertical lines. The value is the instance of [`ChartGridLines`](#chartgridlines-properties) class.
 
 ### `left_axis`
 

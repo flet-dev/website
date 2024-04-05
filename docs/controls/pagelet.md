@@ -1,7 +1,6 @@
 ---
 title: Pagelet
 sidebar_label: Pagelet
-slug: pagelet
 ---
 
 Pagelet implements the basic Material Design visual layout structure.

@@ -1,7 +1,6 @@
 ---
 title: OutlinedButton
 sidebar_label: OutlinedButton
-slug: outlinedbutton
 ---
 
 import Tabs from '@theme/Tabs';

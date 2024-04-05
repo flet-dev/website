@@ -78,7 +78,7 @@ module.exports = {
                   label: "Hosting",
                   link: {
                     type: "doc",
-                    id: "publish/web/dynamic-website/hosting/overview",
+                    id: "publish/web/dynamic-website/hosting/index",
                   },
                   items: [
                     "publish/web/dynamic-website/hosting/fly-io",
@@ -281,7 +281,8 @@ module.exports = {
           },
           items: [
             "controls/animatedswitcher",
-            "controls/lottie"
+            "controls/lottie",
+            "controls/rive"
           ],
         },
         {
@@ -331,10 +332,7 @@ module.exports = {
         "cookbook/control-refs",
         "cookbook/accessibility",
         "cookbook/logging",
-        "cookbook/packaging-app-for-distribution",
-        "cookbook/packaging-desktop-app",
-        "cookbook/publishing-static-website",
-        "publish/deploying-web-app/running-flet-with-fastapi",
+        //"cookbook/packaging-desktop-app",
       ],
     },
     {

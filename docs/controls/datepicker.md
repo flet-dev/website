@@ -1,7 +1,6 @@
 ---
 title: DatePicker
 sidebar_label: DatePicker
-slug: datepicker
 ---
 
 A Material-style date picker dialog.

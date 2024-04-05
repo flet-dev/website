@@ -1,7 +1,6 @@
 ---
 title: Switch
 sidebar_label: Switch
-slug: switch
 ---
 
 A toggle represents a physical switch that allows someone to choose between two mutually exclusive options.
@@ -124,7 +123,7 @@ The clickable label to display on the right of the Switch.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](#textstyle-properties).
+The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
 
 ### `label_position`
 

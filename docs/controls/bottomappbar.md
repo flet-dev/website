@@ -1,7 +1,6 @@
 ---
 title: BottomAppBar
 sidebar_label: BottomAppBar
-slug: bottomappbar
 ---
 
 A material design bottom app bar.

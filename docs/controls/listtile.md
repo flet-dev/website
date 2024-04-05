@@ -1,7 +1,6 @@
 ---
 title: ListTile
 sidebar_label: ListTile
-slug: listtile
 ---
 
 A single fixed-height row that typically contains some text as well as a leading or trailing icon.
@@ -126,7 +125,7 @@ Whether this list tile is part of a vertically dense list. Dense list tiles defa
 
 ### `hover_color`
 
-The tile's [color](/docs/guides/python/colors) when hovered.
+The tile's [color](/docs/reference/colors) when hovered.
 
 ### `is_three_line`
 

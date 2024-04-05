@@ -1,7 +1,6 @@
 ---
 title: TextButton
 sidebar_label: TextButton
-slug: textbutton
 ---
 
 import Tabs from '@theme/Tabs';

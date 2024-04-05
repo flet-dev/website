@@ -182,7 +182,7 @@ Progressive Web Apps, or PWAs, offer a way to turn app-like websites into websit
 
 Check [PWAs Turn Websites Into Apps: Here's How](https://www.pcmag.com/how-to/how-to-use-progressive-web-apps) for the PWA introduction.
 
-Browsers that support PWA ([installation instructions](#pwa-installation-instructions)):
+Browsers that support PWA ([installation instructions](#pwa)):
 
 * **Chrome** on all platforms
 * **Edge** on all platforms
@@ -390,7 +390,7 @@ async def flet_uploads(request: Request):
 
 #### OAuth callback handler
 
-Handles OAuth flow callback requests. If your app doesn't use [authentication](/docs/guides/python/authentication) then
+Handles OAuth flow callback requests. If your app doesn't use [authentication](/docs/cookbook/authentication) then
 this endpoint is not needed.
 
 ```python

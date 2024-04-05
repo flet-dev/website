@@ -1,7 +1,6 @@
 ---
 title: CupertinoButton
 sidebar_label: CupertinoButton
-slug: cupertinobutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -66,7 +65,7 @@ Button's background [color](/docs/reference/colors).
 
 ### `color`
 
-Button's text [color](/docs/guides/python/colors).
+Button's text [color](/docs/reference/colors).
 
 ### `disabled_color`
 

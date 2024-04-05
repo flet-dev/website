@@ -1,7 +1,6 @@
 ---
 title: WebView
 sidebar_label: WebView
-slug: webview
 ---
 
 Easily load web pages while allowing user interaction.

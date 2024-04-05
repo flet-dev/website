@@ -13,7 +13,6 @@ In this tutorial you will learn how to:
 * [Use AlertDialog control for accepting user name](#user-name-dialog)
 * [Enhance user interface with re-usable controls](#enhancing-user-interface)
 * [Deploy the app as a web app](#deploying-the-app)
-* [Deliver the app as a Progressive Web App (PWA)](#progressive-web-app-pwa)
 
 The complete application will look like this:
 
@@ -429,7 +428,7 @@ Congratulations! You have created your Chat app in Python with Flet, and it look
 
 Now it's time to share your app with the world!
 
-[Follow these instructions](/docs/publish/deploying-web-app/hosting-providers) to deploy your Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/publish/web/dynamic-website/hosting) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## What's next
 

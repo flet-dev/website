@@ -1,7 +1,6 @@
 ---
 title: Text
 sidebar_label: Text
-slug: text
 ---
 
 Text is a control for displaying text.

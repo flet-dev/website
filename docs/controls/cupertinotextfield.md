@@ -1,7 +1,6 @@
 ---
 title: CupertinoTextField
 sidebar_label: CupertinoTextField
-slug: cupertinotextfield
 ---
 
 An iOS-style text field.
