@@ -479,6 +479,7 @@ On macOS Android SDK will be located at `$HOME/Library/Android/sdk`.
 Install Temurin8 to get JRE 1.8 required by `sdkmanager` tool:
 
 ```bash
+brew tap homebrew/cask-versions
 brew install --cask temurin8
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home
 ```
