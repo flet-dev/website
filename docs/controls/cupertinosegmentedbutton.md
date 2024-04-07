@@ -57,6 +57,13 @@ ft.app(main)
 
 The [color](/docs/guides/python/colors) of the button's border.
 
+### `click_color`
+
+The [color](/docs/guides/python/colors) used to fill the background of this control when temporarily interacting with
+through a long press or drag.
+
+Defaults to the `selected_color` at 20% opacity.
+
 ### `controls`
 
 A list of `Control`s to display as segments inside the CupertinoSegmentedButton.
