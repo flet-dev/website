@@ -106,6 +106,10 @@ True if the control will be selected as the initial focus. If there is more than
 
 The [color](/docs/guides/python/colors) to use for the focus highlight for keyboard interactions.
 
+### `hover_color`
+
+The [color](/docs/guides/python/colors) to be used when it is being hovered over by the mouse pointer.
+
 ### `inactive_thumb_color`
 
 The [color](/docs/guides/python/colors) to use on the thumb when this switch is off.
@@ -130,72 +134,49 @@ The label's style. An instance of type [`TextStyle`](#textstyle-properties).
 
 Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+
+### `overlay_color`
+
+The [color](/docs/guides/python/colors) for the switch's Material in various material states. The
+following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED`, `FOCUSED` and `DEFAULT` (fallback).
+
+See [`Radio.fill_color`](radio#fill_color) for usage example.
+
+### `splash_radius`
+
+The radius of the splash effect when the switch is pressed.
+
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of this Switch's thumb.
+The [color](/docs/guides/python/colors) of this switch's thumb in various material states. The following `MaterialState`
+values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
-Resolved in the following `MaterialState` states:
-
-* `SELECTED`
-* `HOVERED`
-* `FOCUSED`
-* `DISABLED`
-* `DEFAULT` - fallback state, meaning "all other states".
-
-To configure thumb color for all Material states set `thumb_color` value to a literal, for example:
-
-```python
-sw.thumb_color=ft.colors.GREEN
-```
-
-To configure thumb's color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
-
-```python
-sw.thumb_color={
-    ft.MaterialState.HOVERED: ft.colors.GREEN,
-    ft.MaterialState.FOCUSED: ft.colors.RED,
-    ft.MaterialState.DEFAULT: ft.colors.BLACK,
-}
-```
+See [`Radio.fill_color`](radio#fill_color) for usage example.
 
 ### `thumb_icon`
 
-The icon of this Switch's thumb.
+The icon of this Switch's thumb in various material states. The following `MaterialState` values are
+supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
-Resolved in the following `MaterialState` states:
-
-* `SELECTED`
-* `HOVERED`
-* `FOCUSED`
-* `DISABLED`
-* `DEFAULT` - fallback state, meaning "all other states".
-
-To configure thumb color for all Material states set `thumb_icon` value to a literal, for example:
-
-```python
-sw.thumb_icon=ft.icons.CHECK
-```
-
-To configure thumb's icon for specific Material states set its value to a dictionary where the key is state name. For example, to configure different icons for `SELECTED` and `DISABLED` states and another icon for all other states:
-
-```python
-sw.thumb_icon={
-    ft.MaterialState.SELECTED: ft.icons.CHECK,
-    ft.MaterialState.DISABLED: ft.icons.CLOSE,
-}
-```
+See [`Radio.fill_color`](radio#fill_color) for usage example.
 
 ### `track_color`
 
-The [color](/docs/guides/python/colors) of this Switch's track.
+The [color](/docs/guides/python/colors) of this switch's track in various material states. The following `MaterialState`
+values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
-Resolved in the following `MaterialState` states:
+See [`Radio.fill_color`](radio#fill_color) for usage example.
 
-* `SELECTED`
-* `HOVERED`
-* `FOCUSED`
-* `DISABLED`
-* `DEFAULT` - fallback state, meaning "all other states".
+### `track_outline_color`
+
+The outline [color](/docs/guides/python/colors) of this switch's track in various material states. The
+following `MaterialState` values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
+
+See [`Radio.fill_color`](radio#fill_color) for usage example.
 
 ### `value`
 
