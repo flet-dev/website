@@ -132,7 +132,13 @@ Defines the width of leading control. By default, the value of `leading_width` i
 
 ### `shadow_color`
 
-The color of the shadow below the app bar.
+The [color](/docs/guides/python/colors) of the shadow below the app bar.
+
+A shadow is only visible and displayed if the `elevation` is greater than zero.
+
+### `shape`
+
+The shape of the app bar's Material as well as its shadow.
 
 ### `surface_tint_color`
 
@@ -152,6 +158,20 @@ The spacing around `title` on the horizontal axis. It is applied even if there a
 
 If you want `title` to take all the space available, set this value to `0.0`.
 
+### `title_text_style`
+
+The style to be used for the `Text` controls in the `title`. Value is an instance of
+type [`TextStyle`](text#textstyle-properties).
+
 ### `toolbar_height`
 
 Defines the height of the toolbar component of an AppBar. By default, the value of `toolbar_height` is `56.0`.
+
+### `toolbar_opacity`
+
+The opacity of the toolbar. Value ranges from `0.0` (transparent) to `1.0` (fully opaque) which is the default.
+
+### `toolbar_text_style`
+
+The style to be used for the `Text` controls in the app bar's `leading` and `actions` (but not `title`). Value is an
+instance of type [`TextStyle`](text#textstyle-properties).
