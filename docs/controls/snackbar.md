@@ -63,6 +63,16 @@ The action should not be "dismiss" or "cancel".
 
 The foreground [color](/docs/guides/python/colors) of action button.
 
+### `action_overflow_threshold`
+
+The percentage (between `0.0` and `1.0`) threshold for `action`'s width before it overflows to a new line. Defaults
+to `0.25`.
+
+If the width of the snackbar's `content` is greater than this percentage of the width of the snackbar minus the width of
+its `action`, then the `action` will appear below the `content`.
+
+At a value of `0.0`, the `action` will not overflow to a new line.
+
 ### `behavior`
 
 This defines the behavior and location of the snack bar.
