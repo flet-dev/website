@@ -332,7 +332,7 @@ Border radius of a bar rod. Default is `4`.
 
 ### `border_side`
 
-Border to draw around rod. The value is the instance of `ft.BorderSide` class.
+Border to draw around rod. The value is the instance of `BorderSide` class.
 
 ### `bg_from_y`
 
