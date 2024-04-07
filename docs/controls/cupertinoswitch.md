@@ -86,6 +86,16 @@ The clickable label to display on the right of the switch.
 
 Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
+### `off_label_color`
+
+The [color](/docs/guides/python/colors) to use for the accessibility label when the switch is off.
+
+### `on_label_color`
+
+The [color](/docs/guides/python/colors) to use for the accessibility label when the switch is on.
+
+Defaults to `ft.cupertino_colors.WHITE`.
+
 ### `thumb_color`
 
 The [color](/docs/guides/python/colors) of the switch's thumb.
