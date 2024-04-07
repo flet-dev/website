@@ -75,11 +75,12 @@ A `Control` to display before the `title`.
 
 ### `leading_size`
 
-The `leading_size` is used to constrain the width and height of `leading` control. The default value is `28.0`.
+The `leading_size` is used to constrain the width and height of `leading` control. Defaults to `30.0` if `notched=True`,
+else `28.0`.
 
 ### `leading_to_title`
 
-The horizontal space between `leading` and `title`. The default value is `16.0`.
+The horizontal space between `leading` and `title`. Defaults to `12.0` if `notched=True`, else `16.0`.
 
 ### `notched`
 
