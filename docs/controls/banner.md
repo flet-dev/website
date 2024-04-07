@@ -80,6 +80,19 @@ If the actions are trailing the content, this defaults to `padding.only(left=16.
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
+### `content_text_style`
+
+The style to be used for the `Text` controls in the `content`. Value is an instance of
+type [`TextStyle`](text#textstyle-properties).
+
+### `divider_color`
+
+The [color](/docs/guides/python/colors) of the divider.
+
+### `elevation`
+
+The elevation of the banner.
+
 ### `force_actions_below`
 
 An override to force the actions to be below the content regardless of how many there are.
@@ -98,6 +111,25 @@ Typically an [`Icon`](icon) control.
 
 The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](container#padding) for more information about padding and possible values.
 
+### `margin`
+
+The amount of space surrounding the banner. See [`Container.margin`](container#margin) for more information and possible
+values.
+
 ### `open`
 
 Set to `True` to display a banner.
+
+### `shadow_color`
+
+The [color](/docs/guides/python/colors) of the shadow below the banner.
+
+### `surface_tint_color`
+
+The [color](/docs/guides/python/colors) used as an overlay on `bgcolor` to indicate elevation.
+
+## Events
+
+### `on_visible`
+
+Fires when the banner is shown or made visible for the first time.
