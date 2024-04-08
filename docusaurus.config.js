@@ -29,7 +29,7 @@ module.exports = {
     },
     announcementBar: {
       id: 'announcementBar-2', // Increment on change
-      content: `⭐️ If you like Flet, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a> and join the discussion on <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/dzWXP8SHG8" >Discord</a>`,
+      content: `⭐️ If you like Flet, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a> and join the discussion on <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/dzWXP8SHG8" >Discord</a>.`,
     },
     navbar: {
       hideOnScroll: true,
