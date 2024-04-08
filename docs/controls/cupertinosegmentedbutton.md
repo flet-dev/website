@@ -1,7 +1,6 @@
 ---
 title: CupertinoSegmentedButton
 sidebar_label: CupertinoSegmentedButton
-slug: cupertinosegmentedbutton
 ---
 
 An iOS-style segmented button.
@@ -55,7 +54,7 @@ ft.app(main)
 
 ### `border_color`
 
-The [color](/docs/guides/python/colors) of the button's border.
+The [color](/docs/reference/colors) of the button's border.
 
 ### `controls`
 
@@ -67,7 +66,7 @@ The button's padding. See [`Container.padding`](container#padding) for more deta
 
 ### `selected_color`
 
-The [color](/docs/guides/python/colors) of the button when it is selected.
+The [color](/docs/reference/colors) of the button when it is selected.
 
 ### `selected_index`
 
@@ -83,7 +82,7 @@ An optional icon to display at the right of the `text` or `content` control.
 
 ### `unselected_color`
 
-The [color](/docs/guides/python/colors) of the button when it is not selected.
+The [color](/docs/reference/colors) of the button when it is not selected.
 
 
 ## Events

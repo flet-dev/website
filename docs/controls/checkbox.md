@@ -1,7 +1,6 @@
 ---
 title: Checkbox
 sidebar_label: Checkbox
-slug: checkbox
 ---
 
 Checkbox allows to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).
@@ -87,11 +86,11 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `check_color`
 
-The [color](/docs/guides/python/colors) to use for the check icon when this checkbox is checked.
+The [color](/docs/reference/colors) to use for the check icon when this checkbox is checked.
 
 ### `fill_color`
 
-The [color](/docs/guides/python/colors) that fills the checkbox, in all Material states:
+The [color](/docs/reference/colors) that fills the checkbox, in all Material states:
 
 * `HOVERED`
 * `FOCUSED`
@@ -125,7 +124,7 @@ The clickable label to display on the right of a checkbox.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](#textstyle-properties).
+The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
 
 ### `label_position`
 

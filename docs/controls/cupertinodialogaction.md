@@ -1,7 +1,6 @@
 ---
 title: CupertinoDialogAction
 sidebar_label: CupertinoDialogAction
-slug: cupertinodialogaction
 ---
 
 import Tabs from '@theme/Tabs';

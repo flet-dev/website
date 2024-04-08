@@ -1,7 +1,6 @@
 ---
 title: DataTable
 sidebar_label: DataTable
-slug: datatable
 ---
 
 A Material Design data table.
@@ -109,7 +108,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) for the table.
+The background [color](/docs/reference/colors) for the table.
 
 ### `border`
 
@@ -137,7 +136,7 @@ A list of [`DataColumn`](#datacolumn) controls describing table columns.
 
 ### `data_row_color`
 
-The background [color](/docs/guides/python/colors) for the data rows.
+The background [color](/docs/reference/colors) for the data rows.
 
 The effective background color can be made to depend on the `MaterialState` state, i.e. if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent background color.
 
@@ -169,7 +168,7 @@ See [`Container.gradient`](/docs/controls/container#gradient) property for more 
 
 ### `heading_row_color`
 
-The background [color](/docs/guides/python/colors) for the heading row.
+The background [color](/docs/reference/colors) for the heading row.
 
 The effective background color can be made to depend on the `MaterialState` state, i.e. if the row is pressed, hovered, focused when sorted. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
 
@@ -185,7 +184,7 @@ The text style for the heading row. An instance of [`ft.TextStyle`](text#textsty
 
 ### `horizontal_lines`
 
-Set the [color](/docs/guides/python/colors) and width of horizontal lines between rows. An instance of `ft.BorderSide` class.
+Set the [color](/docs/reference/colors) and width of horizontal lines between rows. An instance of `ft.BorderSide` class.
 
 ### `horizontal_margin`
 
@@ -231,7 +230,7 @@ When this is `None`, it implies that the table's sort order does not correspond 
 
 ### `vertical_lines`
 
-Set the [color](/docs/guides/python/colors) and width of vertical lines between columns. An instance of `ft.BorderSide` class.
+Set the [color](/docs/reference/colors) and width of vertical lines between columns. An instance of `ft.BorderSide` class.
 
 ## `DataTable` events
 
@@ -296,7 +295,7 @@ There must be exactly as many cells as there are columns in the table.
 
 ### `color`
 
-The [color](/docs/guides/python/colors) for the row.
+The [color](/docs/reference/colors) for the row.
 
 By default, the color is transparent unless selected. Selected rows has a grey translucent color.
 

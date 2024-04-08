@@ -1,7 +1,6 @@
 ---
 title: Card
 sidebar_label: Card
-slug: card
 ---
 
 A material design card: a panel with slightly rounded corners and an elevation shadow.
@@ -57,7 +56,7 @@ ft.app(target=main)
 
 ### `color`
 
-The card's background [color](/docs/guides/python/colors).
+The card's background [color](/docs/reference/colors).
 
 ### `content`
 
@@ -77,7 +76,7 @@ See [`Container.margin`](container#margin) property for more information and pos
 
 ### `shadow_color`
 
-The [color](/docs/guides/python/colors) to paint the shadow below the card.
+The [color](/docs/reference/colors) to paint the shadow below the card.
 
 ### `shape`
 
@@ -97,7 +96,7 @@ The default shape is a `RoundedRectangleBorder` with `radius=4.0`.
 
 ### `surface_tint_color`
 
-The [color](/docs/guides/python/colors) used as an overlay on `color` to indicate elevation.
+The [color](/docs/reference/colors) used as an overlay on `color` to indicate elevation.
 
 If this is `None`, no overlay will be applied. Otherwise this color will be composited on top of `color` with an opacity related to `elevation` and used to paint the background of the card.
 

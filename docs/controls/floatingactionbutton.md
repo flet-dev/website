@@ -1,7 +1,6 @@
 ---
 title: FloatingActionButton
 sidebar_label: FloatingActionButton
-slug: floatingactionbutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -70,7 +69,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-Button background [color](/docs/guides/python/colors).
+Button background [color](/docs/reference/colors).
 
 ### `content`
 

@@ -1,7 +1,6 @@
 ---
 title: PopupMenuButton
 sidebar_label: PopupMenuButton
-slug: popupmenubutton
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

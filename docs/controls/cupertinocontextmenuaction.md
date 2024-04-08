@@ -1,7 +1,6 @@
 ---
 title: CupertinoContextMenuAction
 sidebar_label: CupertinoContextMenuAction
-slug: cupertinocontextmenuaction
 ---
 
 An action button typically used in [`CupertinoContextMenu`](cupertinocontextmenu).

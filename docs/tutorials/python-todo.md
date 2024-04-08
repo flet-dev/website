@@ -1,6 +1,6 @@
 ---
 title: Create To-Do app in Python with Flet
-sidebar_label: Python - To-Do app
+sidebar_label: To-Do app
 slug: python-todo
 ---
 
@@ -476,7 +476,7 @@ Congratulations! You have created your first Python app with Flet, and it looks 
 
 Now it's time to share your app with the world!
 
-[Follow these instructions](/docs/guides/python/deploying-web-app) to deploy your Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/publish/web) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## Summary
 
@@ -490,4 +490,4 @@ In this tutorial, you have learnt how to:
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
 
-We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
+We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8).

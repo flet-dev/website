@@ -61,4 +61,4 @@ We are going to provide a guide, sample apps and CI pipeline to integrate Flet w
 
 This is the current plan.
 
-In the meantime, [give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+In the meantime, [give Flet a try](/docs) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!

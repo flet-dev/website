@@ -1,7 +1,6 @@
 ---
 title: CupertinoTextField
 sidebar_label: CupertinoTextField
-slug: cupertinotextfield
 ---
 
 An iOS-style text field.
@@ -58,7 +57,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-TextField background [color](/docs/guides/python/colors).
+TextField background [color](/docs/reference/colors).
 
 ### `blend_mode`
 
@@ -69,6 +68,10 @@ The blend mode applied to the `color` or `gradient` background. See [`ShaderMask
 A border to draw around input.
 
 See [`Container.border`](/docs/controls/container#border) property docs for more information about border.
+
+### `border_color`
+
+Border [color](/docs/reference/colors). Could be `transparent` to hide the border.
 
 ### `border_radius`
 
@@ -97,7 +100,7 @@ The semantic label for the clear button used by screen readers. This will be use
 
 ### `color`
 
-Text [color](/docs/guides/python/colors).
+Text [color](/docs/reference/colors).
 
 ### `content_padding`
 
@@ -107,7 +110,7 @@ See [`Container.padding`](container#padding) for more information about padding 
 
 ### `cursor_color`
 
-The [color](/docs/guides/python/colors) of TextField cursor.
+The [color](/docs/reference/colors) of TextField cursor.
 
 ### `cursor_height`
 
@@ -137,11 +140,11 @@ If `True` the decoration's container is filled with theme fillColor.
 
 ### `focused_bgcolor`
 
-Background [color](/docs/guides/python/colors) of TextField in focused state.
+Background [color](/docs/reference/colors) of TextField in focused state.
 
 ### `focused_border_color`
 
-Border [color](/docs/guides/python/colors) in focused state.
+Border [color](/docs/reference/colors) in focused state.
 
 ### `focused_border_width`
 
@@ -149,7 +152,7 @@ Border width in focused state.
 
 ### `focused_color`
 
-Text [color](/docs/guides/python/colors) when TextField is focused.
+Text [color](/docs/reference/colors) when TextField is focused.
 
 ### `gradient`
 
@@ -260,7 +263,7 @@ Defaults to `False`.
 
 ### `selection_color`
 
-The [color](/docs/guides/python/colors) of TextField selection.
+The [color](/docs/reference/colors) of TextField selection.
 
 ### `shadow`
 

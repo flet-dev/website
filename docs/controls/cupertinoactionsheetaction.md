@@ -1,7 +1,6 @@
 ---
 title: CupertinoActionSheetAction
 sidebar_label: CupertinoActionSheetAction
-slug: cupertinoactionsheetaction
 ---
 
 An action button typically used in [`CupertinoActionSheet`](cupertinoactionsheet).

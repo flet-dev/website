@@ -1,7 +1,6 @@
 ---
 title: SubmenuButton
 sidebar_label: SubmenuButton
-slug: submenubutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -116,7 +115,7 @@ The offset of the menu relative to the alignment origin determined by `MenuStyle
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. See [`Container.clip_behavior`](/docs/controls/container#clipbehavior) for possible values.
+Whether to clip the content of this control or not. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
 
 Defaults to `ClipBehavior.HARD_EDGE`.
 

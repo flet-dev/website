@@ -1,7 +1,6 @@
 ---
 title: ExpansionTile
 sidebar_label: ExpansionTile
-slug: expansiontile
 ---
 
 A single-line ListTile with an expansion arrow icon that expands or collapses the tile to reveal or hide its children.
@@ -93,7 +92,7 @@ Property value is `TileAffinity` enum with supported values:
 
 ### `bgcolor`
 
-The  [color](/docs/guides/python/colors) to display behind the sublist when expanded.
+The  [color](/docs/reference/colors) to display behind the sublist when expanded.
 
 ### `controls`
 
@@ -118,11 +117,11 @@ Property value is `ClipBehavior` enum with supported values:
 
 ### `collapsed_bgcolor`
 
-Defines the background [color](/docs/guides/python/colors) of tile when the sublist is collapsed.
+Defines the background [color](/docs/reference/colors) of tile when the sublist is collapsed.
 
 ### `collapsed_icon_color`
 
-The icon [color](/docs/guides/python/colors) of tile's expansion arrow icon when the sublist is collapsed.
+The icon [color](/docs/reference/colors) of tile's expansion arrow icon when the sublist is collapsed.
 
 ### `collapsed_shape`
 
@@ -139,7 +138,7 @@ The tile's border shape when the sublist is collapsed. The value is an instance 
 
 ### `collapsed_text_color`
 
-The [color](/docs/guides/python/colors) of the tile's titles when the sublist is collapsed.
+The [color](/docs/reference/colors) of the tile's titles when the sublist is collapsed.
 
 ### `expanded_alignment`
 
@@ -162,7 +161,7 @@ Property value is `CrossAxisAlignment` enum with the following values:
 
 ### `icon_color`
 
-The icon [color](/docs/guides/python/colors) of tile's expansion arrow icon when the sublist is expanded.
+The icon [color](/docs/reference/colors) of tile's expansion arrow icon when the sublist is expanded.
 
 ### `initially_expanded`
 
@@ -195,7 +194,7 @@ Additional content displayed below the title. Typically a [Text](text) widget.
 
 ### `text_color`
 
-The [color](/docs/guides/python/colors) of the tile's titles when the sublist is expanded.
+The [color](/docs/reference/colors) of the tile's titles when the sublist is expanded.
 
 ### `tile_padding`
 

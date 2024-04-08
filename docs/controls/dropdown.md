@@ -1,7 +1,6 @@
 ---
 title: Dropdown
 sidebar_label: Dropdown
-slug: dropdown
 ---
 
 A material design button for selecting from a list of items.
@@ -163,7 +162,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-Dropdown background [color](/docs/guides/python/colors).
+Dropdown background [color](/docs/reference/colors).
 
 ### `border`
 
@@ -171,7 +170,7 @@ Border around input - `InputBorder` enum with one of the values: `OUTLINE` (defa
 
 ### `border_color`
 
-Border [color](/docs/guides/python/colors). Could be `transparent` to hide the border.
+Border [color](/docs/reference/colors). Could be `transparent` to hide the border.
 
 ### `border_radius`
 
@@ -183,7 +182,7 @@ The width of the border in virtual pixels. Default is 1. Set to 0 to completely 
 
 ### `color`
 
-Text [color](/docs/guides/python/colors).
+Text [color](/docs/reference/colors).
 
 ### `content_padding`
 
@@ -219,11 +218,11 @@ If `True` the decoration's container is filled with theme fillColor.
 
 ### `focused_bgcolor`
 
-Background [color](/docs/guides/python/colors) of dropdown in focused state.
+Background [color](/docs/reference/colors) of dropdown in focused state.
 
 ### `focused_border_color`
 
-Border [color](/docs/guides/python/colors) in focused state.
+Border [color](/docs/reference/colors) in focused state.
 
 ### `focused_border_width`
 
@@ -231,7 +230,7 @@ Border width in focused state.
 
 ### `focused_color`
 
-Text [color](/docs/guides/python/colors) when Dropdown is focused.
+Text [color](/docs/reference/colors) when Dropdown is focused.
 
 ### `helper_style`
 

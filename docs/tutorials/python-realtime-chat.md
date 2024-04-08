@@ -1,6 +1,6 @@
 ---
 title: Creating realtime chat app in Python
-sidebar_label: Python - Realtime Chat app
+sidebar_label: Realtime Chat app
 ---
 
 In this tutorial we are going to create a trivial in-memory Chat app that will help you understand Flet framework basics. This app could be a good starting point to creating your own more complex and useful projects.
@@ -13,7 +13,6 @@ In this tutorial you will learn how to:
 * [Use AlertDialog control for accepting user name](#user-name-dialog)
 * [Enhance user interface with re-usable controls](#enhancing-user-interface)
 * [Deploy the app as a web app](#deploying-the-app)
-* [Deliver the app as a Progressive Web App (PWA)](#progressive-web-app-pwa)
 
 The complete application will look like this:
 
@@ -106,7 +105,7 @@ In the previous step we have created a simple web app that takes input from the 
 
 To build a realtime chat app, you need to somehow pass the messages between chat app sessions. When a user sends a message, it should be broadcasted to all other app sessions and displayed on their pages.
 
-Flet provides a simple built-in [PubSub](/docs/guides/python/pub-sub) mechanism for asynchronous communication between page sessions.
+Flet provides a simple built-in [PubSub](/docs/cookbook/pub-sub) mechanism for asynchronous communication between page sessions.
 
 First, we need subscribe the user to receive broadcast messages:
 ```python
@@ -234,7 +233,7 @@ def join_click(e):
         page.pubsub.send_all(Message(user=user_name.value, text=f"{user_name.value} has joined the chat.", message_type="login_message"))
         page.update()
 ```
-We used [page session storage](/docs/guides/python/session-storage) to store user_name for its future use in `send_click` method to send chat messages.
+We used [page session storage](/docs/cookbook/session-storage) to store user_name for its future use in `send_click` method to send chat messages.
 
 :::note
 User name dialog will close as soon as we set its `open` property to `False` and call `update()` method. 
@@ -429,7 +428,7 @@ Congratulations! You have created your Chat app in Python with Flet, and it look
 
 Now it's time to share your app with the world!
 
-[Follow these instructions](/docs/guides/python/deploying-web-app/hosting-providers) to deploy your Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/publish/web/dynamic-website/hosting) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## What's next
 
@@ -460,4 +459,4 @@ In this tutorial, you have learnt how to:
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
 
-We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
+We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8).

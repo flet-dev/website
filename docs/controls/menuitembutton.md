@@ -1,7 +1,6 @@
 ---
 title: MenuItemButton
 sidebar_label: MenuItemButton
-slug: menuitembutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -96,7 +95,7 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. See [Container.clip_behavior](/docs/controls/container#clipbehavior)
+Whether to clip the content of this control or not. See [Container.clip_behavior](/docs/controls/container#clip_behavior)
 for possible values.
 
 Defaults to `ClipBehavior.NONE`.

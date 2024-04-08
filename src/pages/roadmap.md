@@ -9,7 +9,7 @@ slug: roadmap
 
 The goal: Flet 1.0 launch.
 
-* :white_check_mark: Packaging for all platforms with [`flet build` command](/docs/guides/python/packaging-app-for-distribution): Windows, Linux, macOS, web, iOS and Android.
+* :white_check_mark: Packaging for all platforms with [`flet build` command](/docs/publish): Windows, Linux, macOS, web, iOS and Android.
   * :construction: `flet build` bugfixing and polishing.
   * Automatic installation of pre-built "native" (non-pure such as `pandas`, `numpy`) Python dependencies for iOS and Android (custom registry similar to Pyodide).
   * Integrating 3rd-party Flutter packages to user apps.

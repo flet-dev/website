@@ -1,7 +1,6 @@
 ---
 title: Page
 sidebar_label: Page
-slug: page
 ---
 
 Page is a container for [`View`](/docs/controls/view) controls.
@@ -427,7 +426,7 @@ A part of app URL after `?`. The value is an instance of `QueryString` with help
 
 ### `route`
 
-Get or sets page's navigation route. See [Navigation and routing](/docs/guides/python/navigation-and-routing) section for 
+Get or sets page's navigation route. See [Navigation and routing](/docs/getting-started/navigation-and-routing) section for 
 more information and examples.
 
 ### `rtl`
@@ -952,11 +951,11 @@ Optional method arguments:
 
 ### `login(provider, fetch_user, fetch_groups, scope, saved_token, on_open_authorization_url, complete_page_html, redirect_to_page, authorization)`
 
-Starts OAuth flow. See [Authentication](/docs/guides/python/authentication) guide for more information and examples.
+Starts OAuth flow. See [Authentication](/docs/cookbook/authentication) guide for more information and examples.
 
 ### `logout()`
 
-Clears current authentication context. See [Authentication](/docs/guides/python/authentication#signing-out) guide for more information and examples.
+Clears current authentication context. See [Authentication](/docs/cookbook/authentication#signing-out) guide for more information and examples.
 
 ### `remove(*controls)`
 
@@ -1175,7 +1174,7 @@ Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/py
 
 ### `on_login`
 
-Fires upon successful or failed OAuth authorization flow. See [Authentication](/docs/guides/python/authentication#checking-authentication-results) guide for more information and examples.
+Fires upon successful or failed OAuth authorization flow. See [Authentication](/docs/cookbook/authentication#checking-authentication-results) guide for more information and examples.
 
 ### `on_logout`
 
@@ -1221,7 +1220,7 @@ class RouteChangeEvent(ft.ControlEvent):
 
 Fires when page's scroll position is changed by a user.
 
-See [`Column.on_scroll`](docs/controls/column#on_scroll) for event details and examples.
+See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
 
 ### `on_view_pop`
 

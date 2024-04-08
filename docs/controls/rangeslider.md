@@ -1,7 +1,6 @@
 ---
 title: RangeSlider
 sidebar_label: RangeSlider
-slug: rangeslider
 ---
 
 A Material Design range slider. Used to select a range from a range of values.
@@ -120,7 +119,7 @@ ft.app(target=main)
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use for the portion of the slider track that is active.
+The [color](/docs/reference/colors) to use for the portion of the slider track that is active.
 
 The "active" segment of the range slider is the span between the thumbs.
 
@@ -140,7 +139,7 @@ The slider's right thumb is drawn at a position that corresponds to this value.
 
 ### `inactive_color`
 
-The [color](/docs/guides/python/colors) for the inactive portions of the slider track.
+The [color](/docs/reference/colors) for the inactive portions of the slider track.
 
 The "inactive" segments of the slider are the span of tracks between the min and the start thumb, and the end thumb and the max.
 
@@ -170,7 +169,7 @@ If the `max` is equal to the `min`, then the slider is disabled.
 
 ### `overlay_color`
 
-The hightlight [color](/docs/guides/python/colors) around the thumbs used to indicate that the range slider thumbs are hovered or dragged.
+The hightlight [color](/docs/reference/colors) around the thumbs used to indicate that the range slider thumbs are hovered or dragged.
 
 ### `round`
 

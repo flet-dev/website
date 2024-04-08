@@ -1,7 +1,6 @@
 ---
 title: CupertinoRadio
 sidebar_label: CupertinoRadio
-slug: cupertinoradio
 ---
 
 A macOS style radio button. Radio buttons let people select a single option from two or more choices.
@@ -64,7 +63,7 @@ Fires when the state of the RadioGroup is changed.
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) used to fill this radio when it is selected.
+The [color](/docs/reference/colors) used to fill this radio when it is selected.
 
 ### `autofocus`
 
@@ -72,11 +71,11 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `fill_color`
 
-The [color](/docs/guides/python/colors) that fills the radio.
+The [color](/docs/reference/colors) that fills the radio.
 
 ### `inactive_color`
 
-The [color](/docs/guides/python/colors) used to fill this radio when it is not selected. Default value is white.
+The [color](/docs/reference/colors) used to fill this radio when it is not selected. Default value is white.
 
 ### `label`
 

@@ -1,7 +1,6 @@
 ---
 title: CupertinoDatePicker
 sidebar_label: CupertinoDatePicker
-slug: cupertinodatepicker
 ---
 
 An iOS-style date and time picker dialog.
@@ -55,7 +54,7 @@ ft.app(main)
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) of the date picker.
+The background [color](/docs/reference/colors) of the date picker.
 
 ### `current_date`
 

@@ -1,7 +1,6 @@
 ---
 title: Tabs
 sidebar_label: Tabs
-slug: tabs
 ---
 
 The Tabs control is used for navigating frequently accessed, distinct content categories. Tabs allow for navigation between two or more content views and relies on text headers to articulate the different sections of content.
@@ -63,7 +62,7 @@ Duration of animation in milliseconds of swtiching between tabs. Default is `50`
 
 ### `divider_color`
 
-The [color](/docs/guides/python/colors) of the divider.
+The [color](/docs/reference/colors) of the divider.
 
 ### `indicator_border_radius`
 
@@ -71,11 +70,11 @@ The radius of the indicator's corners.
 
 ### `indicator_border_side`
 
-The [color](/docs/guides/python/colors) and weight of the horizontal line drawn below the selected tab.
+The [color](/docs/reference/colors) and weight of the horizontal line drawn below the selected tab.
 
 ### `indicator_color`
 
-The [color](/docs/guides/python/colors) of the line that appears below the selected tab.
+The [color](/docs/reference/colors) of the line that appears below the selected tab.
 
 ### `indicator_padding`
 
@@ -87,11 +86,11 @@ Locates the selected tab's underline relative to the tab's boundary. The `indica
 
 ### `label_color`
 
-The [color](/docs/guides/python/colors) of selected tab labels.
+The [color](/docs/reference/colors) of selected tab labels.
 
 ### `overlay_color`
 
-Defines the ink response focus, hover, and splash [colors](/docs/guides/python/colors). If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
+Defines the ink response focus, hover, and splash [colors](/docs/reference/colors). If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
 
 ### `selected_index`
 
@@ -121,7 +120,7 @@ A list of `Tab` controls.
 
 ### `unselected_label_color`
 
-The [color](/docs/guides/python/colors) of unselected tab labels.
+The [color](/docs/reference/colors) of unselected tab labels.
 
 ## `Tabs` events
 

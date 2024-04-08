@@ -1,7 +1,6 @@
 ---
 title: Lottie
 sidebar_label: Lottie
-slug: lotie
 ---
 
 Displays an animation from a Lottie file (URL or local file).

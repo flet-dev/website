@@ -1,7 +1,6 @@
 ---
 title: SemanticsService
 sidebar_label: SemanticsService
-slug: semanticsservice
 ---
 
 Allows access to the platform's accessibility services.

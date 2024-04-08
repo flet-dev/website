@@ -1,7 +1,6 @@
 ---
 title: PieChart
 sidebar_label: PieChart
-slug: piechart
 ---
 
 Draws a pie chart.
@@ -240,7 +239,7 @@ Controls chart implicit animation. See [`LineChart.animate`](linechart#animate) 
 
 ### `center_space_color`
 
-Free space [color](/docs/guides/python/colors) in the middle of a chart.
+Free space [color](/docs/reference/colors) in the middle of a chart.
 
 ### `center_space_radius`
 
@@ -282,7 +281,7 @@ External radius of the section.
 
 ### `color`
 
-Background [color](/docs/guides/python/colors) of the section.
+Background [color](/docs/reference/colors) of the section.
 
 ### `border_side`
 

@@ -1,7 +1,6 @@
 ---
 title: CupertinoSwitch
 sidebar_label: CupertinoSwitch
-slug: cupertinoswitch
 ---
 
 An iOS-style switch.
@@ -68,7 +67,7 @@ ft.app(target=main)
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use for the track when the switch is on.
+The [color](/docs/reference/colors) to use for the track when the switch is on.
 
 ### `autofocus`
 
@@ -76,7 +75,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `focus_color`
 
-The [color](/docs/guides/python/colors) to use for the focus highlight for keyboard interactions.
+The [color](/docs/reference/colors) to use for the focus highlight for keyboard interactions.
 
 ### `label`
 
@@ -88,11 +87,11 @@ Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of the switch's thumb.
+The [color](/docs/reference/colors) of the switch's thumb.
 
 ### `track_color`
 
-The [color](/docs/guides/python/colors) to use for the track when the switch is off.
+The [color](/docs/reference/colors) to use for the track when the switch is off.
 
 ### `value`
 

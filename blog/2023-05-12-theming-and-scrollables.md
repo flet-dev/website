@@ -229,7 +229,7 @@ Color emoji support in web apps are back! In Flutter 3.7 color emoji were disabl
 ft.app(main, use_color_emoji=True)
 ```
 
-and [use `--use-color-emoji` switch](/docs/guides/python/publishing-static-website#color-emojis) when publishing app as a static side.
+and [use `--use-color-emoji` switch](/docs/publish/web/static-website#color-emojis) when publishing app as a static side.
 
 That's all for today!
 

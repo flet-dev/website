@@ -1,7 +1,6 @@
 ---
 title: HapticFeedback
 sidebar_label: HapticFeedback
-slug: hapticfeedback
 ---
 
 Allows access to the haptic feedback interface on the device.

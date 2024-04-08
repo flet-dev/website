@@ -1,7 +1,6 @@
 ---
 title: ResponsiveRow
 sidebar_label: ResponsiveRow
-slug: responsiverow
 ---
 
 import Tabs from '@theme/Tabs';

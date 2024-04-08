@@ -1,7 +1,6 @@
 ---
 title: NavigationRail
 sidebar_label: NavigationRail
-slug: navigationrail
 ---
 
 A material widget that is meant to be displayed at the left or right of an app to navigate between a small number of views, typically between three and five.
@@ -69,7 +68,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-Sets the [color](/docs/guides/python/colors) of the Container that holds all of the NavigationRail's contents.
+Sets the [color](/docs/reference/colors) of the Container that holds all of the NavigationRail's contents.
 
 ### `destinations`
 
@@ -107,7 +106,7 @@ The default is `-1.0`.
 
 ### `indicator_color`
 
-The [color](/docs/guides/python/colors) of the navigation rail's indicator.
+The [color](/docs/reference/colors) of the navigation rail's indicator.
 
 ### `indicator_shape`
 

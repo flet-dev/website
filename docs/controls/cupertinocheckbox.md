@@ -1,7 +1,6 @@
 ---
 title: CupertinoCheckbox
 sidebar_label: CupertinoCheckbox
-slug: cupertinocheckbox
 ---
 
 A macOS style checkbox. Checkbox allows to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).
@@ -47,19 +46,19 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `check_color`
 
-The [color](/docs/guides/python/colors) to use for the check icon when this checkbox is checked.
+The [color](/docs/reference/colors) to use for the check icon when this checkbox is checked.
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) used to fill checkbox when it is checked.
+The [color](/docs/reference/colors) used to fill checkbox when it is checked.
 
 ### `inactive_color`
 
-The [color](/docs/guides/python/colors) used for checkbox's border when the checkbox is inactive.
+The [color](/docs/reference/colors) used for checkbox's border when the checkbox is inactive.
 
 ### `focus_color`
 
-The [color](/docs/guides/python/colors) used for the checkbox's border shadow when it has the input focus.
+The [color](/docs/reference/colors) used for the checkbox's border shadow when it has the input focus.
 
 ### `label`
 

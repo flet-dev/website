@@ -1,7 +1,6 @@
 ---
 title: Icon
 sidebar_label: Icon
-slug: icon
 ---
 
 Displays a Material icon.
@@ -46,7 +45,7 @@ ft.app(target=main)
 
 ### `color`
 
-Icon [color](/docs/guides/python/colors).
+Icon [color](/docs/reference/colors).
 
 ### `name`
 

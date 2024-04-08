@@ -1,7 +1,6 @@
 ---
 title: BottomSheet
 sidebar_label: BottomSheet
-slug: bottomsheet
 ---
 
 Shows a modal Material Design bottom sheet.
@@ -55,7 +54,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-The BottomSheet's background [color](/docs/guides/python/colors).
+The BottomSheet's background [color](/docs/reference/colors).
 
 ### `content`
 
