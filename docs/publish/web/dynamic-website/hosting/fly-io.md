@@ -7,7 +7,7 @@ sidebar_label: Fly.io
 
 To get started with Fly install [flyctl](https://fly.io/docs/getting-started/installing-flyctl/) and then authenticate:
 
-    flyctl auth login
+    fly auth login
 
 To deploy the app with `flyctl` you have to add the following 3 files into the folder with your Python app.
 
@@ -19,7 +19,7 @@ flet
 
 Create `fly.toml` describing Fly application:
 
-```toml title="fly.toml" {1,8}
+```toml title="fly.toml"
 app = "<your-app-name>"
 
 kill_signal = "SIGINT"
@@ -27,44 +27,28 @@ kill_timeout = 5
 processes = []
 
 [env]
-  FLET_SERVER_PORT = "8080"
-  FLET_FORCE_WEB_VIEW = "true"
+  FLET_SESSION_TIMEOUT = "60"
 
-[experimental]
-  allowed_public_ports = []
-  auto_rollback = true
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
 
-[[services]]
-  http_checks = []
-  internal_port = 8080
-  processes = ["app"]
-  protocol = "tcp"
-  script_checks = []
-
-  [services.concurrency]
-    hard_limit = 25
-    soft_limit = 20
+  [http_service.concurrency]
     type = "connections"
-
-  [[services.ports]]
-    force_https = true
-    handlers = ["http"]
-    port = 80
-
-  [[services.ports]]
-    handlers = ["tls", "http"]
-    port = 443
-
-  [[services.tcp_checks]]
-    grace_period = "1s"
-    interval = "15s"
-    restart_limit = 0
-    timeout = "2s"
+    soft_limit = 200
+    hard_limit = 250
 ```
 
 Replace `<your-app-name>` with desired application name which will be also used in application URL, such as `https://<your-app-name>.fly.dev`.
 
-Note we are setting the value of `FLET_SERVER_PORT` environment variable to `8080` which is an internal TCP port Flet web app is going to run on.
+By default, Flet web app will be running on port `8000`, but you can change that by setting up `FLET_SERVER_PORT` environment variable.
+
+`FLET_SESSION_TIMEOUT` is a user session lifetime, in seconds.
+
+[Complete list of environment variables](/docs/publish/web/dynamic-website#environment-variables) supported by a web app.
 
 Create `Dockerfile` containing the commands to build your application container:
 
@@ -78,9 +62,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 8000
 
-CMD ["python", "./main.py"]
+CMD ["python", "main.py"]
 ```
 
 `main.py` is a file with your Python program.
@@ -92,17 +76,17 @@ Fly.io deploys every app as a Docker container, but a great thing about Fly is t
 Next, switch command line to a folder with your app and run the following command to create and initialize a new Fly app:
 
 ```
-flyctl apps create --name <your-app-name>
+fly apps create --name <your-app-name>
 ```
 
 Deploy the app by running:
 
 ```
-flyctl deploy
+fly deploy
 ```
 
 That's it! Open your app in the browser by running:
 
 ```
-flyctl apps open
+fly apps open
 ```
