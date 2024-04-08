@@ -60,6 +60,11 @@ ft.app(target=main)
 
 Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
 
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior)
+for possible values.
+
 ### `divider_color`
 
 The [color](/docs/reference/colors) of the divider.
@@ -108,6 +113,11 @@ Defaults to `False`.
 ### `label_color`
 
 The [color](/docs/reference/colors) of selected tab labels.
+
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
 
 ### `overlay_color`
 
