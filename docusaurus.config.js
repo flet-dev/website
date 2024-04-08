@@ -29,7 +29,7 @@ module.exports = {
     },
     announcementBar: {
       id: 'announcementBar-2', // Increment on change
-      content: `⭐️ If you like Flet, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/fletdev" >Twitter</a> ${TwitterSvg}`,
+      content: `⭐️ If you like Flet, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a> and join the discussion on <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/dzWXP8SHG8" >Discord</a>`,
     },
     navbar: {
       hideOnScroll: true,
@@ -98,10 +98,6 @@ module.exports = {
             {
               label: 'Discord',
               href: 'https://discord.gg/dzWXP8SHG8',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/fletdev',
             },
             {
               label: 'Stack Overflow',

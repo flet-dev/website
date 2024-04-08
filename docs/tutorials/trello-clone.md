@@ -786,6 +786,4 @@ fly apps open
 
 ## Summary
 
-Hopefully this walkthrough gives the reader some idea of how actual usable apps can be developed and deployed using the Flet framework. The flexibility, speed of development and developer experience make it a really compelling tool to reach for in many different use cases and there is an ever growing number of devs doing just that. 
-
-You can follow releases and new features on [Twitter](https://twitter.com/fletdev) or get involved in the discussions on [Discord](https://discord.gg/dzWXP8SHG8).
+Hopefully this walkthrough gives the reader some idea of how actual usable apps can be developed and deployed using the Flet framework. The flexibility, speed of development and developer experience make it a really compelling tool to reach for in many different use cases and there is an ever growing number of devs doing just that.
