@@ -93,7 +93,7 @@ page.update()
 
 Customizes the theme of the application when in dark theme mode.
 
-Value is an instance of the `Theme()` class - more information in the [theming](guides/python/theming) guide.
+Value is an instance of the `Theme()` class - more information in the [theming](/docs/guides/python/theming) guide.
 
 ### `debug`
 
