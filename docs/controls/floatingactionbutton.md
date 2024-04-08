@@ -97,7 +97,7 @@ Defaults to `True`.
 
 ### `focus_color`
 
-The [color](/docs/guides/python/colors) to use for filling the button when the button has input focus.
+The [color](/docs/reference/colors) to use for filling the button when the button has input focus.
 
 ### `focus_elevation`
 
@@ -105,7 +105,7 @@ The button's elevation when it has input focus. Defaults to `8`.
 
 ### `foreground_color`
 
-The default foreground [color](/docs/guides/python/colors) for icons and text within the button.
+The default foreground [color](/docs/reference/colors) for icons and text within the button.
 
 ### `highlight_elevation`
 
@@ -165,7 +165,7 @@ ft.app(target=main)
 
 ### `splash_color`
 
-The [color](/docs/guides/python/colors) of the ripple shown when this button is pressed/clicked.
+The [color](/docs/reference/colors) of the ripple shown when this button is pressed/clicked.
 
 ### `text`
 

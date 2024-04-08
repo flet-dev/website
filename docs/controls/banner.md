@@ -86,7 +86,7 @@ type [`TextStyle`](text#textstyle-properties).
 
 ### `divider_color`
 
-The [color](/docs/guides/python/colors) of the divider.
+The [color](/docs/reference/colors) of the divider.
 
 ### `elevation`
 
@@ -121,11 +121,11 @@ Set to `True` to display a banner.
 
 ### `shadow_color`
 
-The [color](/docs/guides/python/colors) of the shadow below the banner.
+The [color](/docs/reference/colors) of the shadow below the banner.
 
 ### `surface_tint_color`
 
-The [color](/docs/guides/python/colors) used as an overlay on `bgcolor` to indicate elevation.
+The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate elevation.
 
 ## Events
 

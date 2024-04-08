@@ -109,7 +109,7 @@ A Control representing custom button content.
 
 ### `disabled_color`
 
-The [color](/docs/guides/python/colors) to use for the icon inside the button when disabled.
+The [color](/docs/reference/colors) to use for the icon inside the button when disabled.
 
 ### `enable_feedback`
 
@@ -119,7 +119,7 @@ Defaults to `True`.
 
 ### `focus_color`
 
-The button's [color](/docs/guides/python/colors) when in focus.
+The button's [color](/docs/reference/colors) when in focus.
 
 ### `highlight_color`
 
@@ -127,7 +127,7 @@ The button's [color](/docs/reference/colors) when the button is pressed. The hig
 
 ### `hover_color`
 
-The button's [color](/docs/guides/python/colors) when hovered. 
+The button's [color](/docs/reference/colors) when hovered.
 
 ### `icon`
 
@@ -187,7 +187,7 @@ ft.app(target=main)
 
 ### `splash_color`
 
-The primary [color](/docs/guides/python/colors) of the button when the button is in the down (pressed) state.
+The primary [color](/docs/reference/colors) of the button when the button is in the down (pressed) state.
 
 ### `splash_radius`
 

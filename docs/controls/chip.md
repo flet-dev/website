@@ -133,7 +133,7 @@ Defaults to `ClipBehavior.NONE`.
 
 ### `color`
 
-The [color](/docs/guides/python/colors) that fills the chip in various material states .
+The [color](/docs/reference/colors) that fills the chip in various material states .
 See [`Radio.fill_color`](radio#fill_color) for possible values.
 
 ### `delete_icon_tooltip`
@@ -224,7 +224,7 @@ If `on_select` event is specified and chip is selected, `show_checkmark` is used
 
 ### `surface_tint_color`
 
-The [color](/docs/guides/python/colors) used as an overlay on `bgcolor` to indicate elevation.
+The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate elevation.
 
 ### `visual_density`
 

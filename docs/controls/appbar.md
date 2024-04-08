@@ -131,7 +131,7 @@ Defines the width of leading control. By default, the value of `leading_width` i
 
 ### `shadow_color`
 
-The [color](/docs/guides/python/colors) of the shadow below the app bar.
+The [color](/docs/reference/colors) of the shadow below the app bar.
 
 A shadow is only visible and displayed if the `elevation` is greater than zero.
 

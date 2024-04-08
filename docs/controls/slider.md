@@ -153,7 +153,8 @@ If the `max` is equal to the `min`, then the slider is disabled.
 
 ### `overlay_color`
 
-Defines the highlight [color](/docs/guides/python/colors) that's typically used to indicate that the range slider thumb is hovered or dragged. See [Radio.fill_color](radio#fill_color) for usage examples.
+Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is
+hovered or dragged. See [Radio.fill_color](radio#fill_color) for usage examples.
 
 ### `round`
 

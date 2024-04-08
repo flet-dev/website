@@ -87,11 +87,11 @@ Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `off_label_color`
 
-The [color](/docs/guides/python/colors) to use for the accessibility label when the switch is off.
+The [color](/docs/reference/colors) to use for the accessibility label when the switch is off.
 
 ### `on_label_color`
 
-The [color](/docs/guides/python/colors) to use for the accessibility label when the switch is on.
+The [color](/docs/reference/colors) to use for the accessibility label when the switch is on.
 
 Defaults to `ft.cupertino_colors.WHITE`.
 

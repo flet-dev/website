@@ -165,11 +165,11 @@ If this tile is also enabled then icons and text are rendered with the same colo
 
 ### `selected_color`
 
-Defines the [color](/docs/guides/python/colors) used for icons and text when `selected=True`.
+Defines the [color](/docs/reference/colors) used for icons and text when `selected=True`.
 
 ### `selected_tile_color`
 
-Defines the background [color](/docs/guides/python/colors) of ListTile when `selected=True`.
+Defines the background [color](/docs/reference/colors) of ListTile when `selected=True`.
 
 ### `subtitle`
 

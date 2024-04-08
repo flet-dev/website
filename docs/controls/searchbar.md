@@ -75,7 +75,8 @@ ft.app(target=main)
 
 ### `bar_bgcolor`
 
-Defines the background [color](/docs/guides/python/colors) of the search bar. See [Radio.fill_color](radio#fill_color) for usage examples.
+Defines the background [color](/docs/reference/colors) of the search bar. See [Radio.fill_color](radio#fill_color) for
+usage examples.
 
 ### `bar_hint_text`
 

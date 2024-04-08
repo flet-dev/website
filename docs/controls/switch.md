@@ -107,7 +107,7 @@ The [color](/docs/reference/colors) to use for the focus highlight for keyboard 
 
 ### `hover_color`
 
-The [color](/docs/guides/python/colors) to be used when it is being hovered over by the mouse pointer.
+The [color](/docs/reference/colors) to be used when it is being hovered over by the mouse pointer.
 
 ### `inactive_thumb_color`
 
@@ -140,7 +140,7 @@ See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
 
 ### `overlay_color`
 
-The [color](/docs/guides/python/colors) for the switch's Material in various material states. The
+The [color](/docs/reference/colors) for the switch's Material in various material states. The
 following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED`, `FOCUSED` and `DEFAULT` (fallback).
 
 See [`Radio.fill_color`](radio#fill_color) for usage example.
@@ -172,7 +172,7 @@ See [`Radio.fill_color`](radio#fill_color) for usage example.
 
 ### `track_outline_color`
 
-The outline [color](/docs/guides/python/colors) of this switch's track in various material states. The
+The outline [color](/docs/reference/colors) of this switch's track in various material states. The
 following `MaterialState` values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 See [`Radio.fill_color`](radio#fill_color) for usage example.

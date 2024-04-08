@@ -128,7 +128,7 @@ See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
 
 ### `overlay_color`
 
-The [color](/docs/guides/python/colors) of the checkbox's overlay in various material states. The
+The [color](/docs/reference/colors) of the checkbox's overlay in various material states. The
 following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`.
 
 See usage example [here](elevatedbutton#style).

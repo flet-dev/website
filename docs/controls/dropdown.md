@@ -162,7 +162,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) of both the dropdown button and it's menu.
+The background [color](/docs/reference/colors) of both the dropdown button and it's menu.
 
 To set a different background color for the dropdown button, use `fill_color` or `focused_bgcolor` properties.
 
@@ -234,11 +234,11 @@ not `None`: `fill_color`, `focused_bgcolor` and `bgcolor`.
 
 ### `fill_color`
 
-Background [color](/docs/guides/python/colors) of the dropdown button. Will not be visible if `filled=False`.
+Background [color](/docs/reference/colors) of the dropdown button. Will not be visible if `filled=False`.
 
 ### `focused_bgcolor`
 
-Background [color](/docs/guides/python/colors) of dropdown in focused state. Will not be visible if `filled=False`.
+Background [color](/docs/reference/colors) of dropdown in focused state. Will not be visible if `filled=False`.
 
 ### `focused_border_color`
 

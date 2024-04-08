@@ -75,7 +75,7 @@ The [color](/docs/reference/colors) that fills the radio.
 
 ### `focus_color`
 
-The [color](/docs/guides/python/colors) for the radio's border when it has the input focus.
+The [color](/docs/reference/colors) for the radio's border when it has the input focus.
 
 ### `inactive_color`
 

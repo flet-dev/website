@@ -151,7 +151,8 @@ Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
 ### `overlay_color`
 
-The overlay [color](/docs/guides/python/colors) of this radio, for each `MaterialState` state. See `fill_color` for usage example.
+The overlay [color](/docs/reference/colors) of this radio, for each `MaterialState` state. See `fill_color` for usage
+example.
 
 ### `splash_radius`
 

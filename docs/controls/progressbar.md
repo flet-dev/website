@@ -71,7 +71,7 @@ Defaults to `border_radius.all(0)` - rectangular shape.
 
 ### `color`
 
-The progress indicator's [color](/docs/guides/python/colors).
+The progress indicator's [color](/docs/reference/colors).
 
 ### `semantics_label`
 

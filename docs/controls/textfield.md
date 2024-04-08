@@ -211,7 +211,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-TextField background [color](/docs/guides/python/colors). Will not be visible if `filled=False`.
+TextField background [color](/docs/reference/colors). Will not be visible if `filled=False`.
 
 ### `border`
 
@@ -311,11 +311,11 @@ not `None`: `fill_color`, `focused_bgcolor`, `hover_color` and `bgcolor`.
 
 ### `fill_color`
 
-Background [color](/docs/guides/python/colors) of TextField. Will not be visible if `filled=False`.
+Background [color](/docs/reference/colors) of TextField. Will not be visible if `filled=False`.
 
 ### `focused_bgcolor`
 
-Background [color](/docs/guides/python/colors) of TextField in focused state. Will not be visible if `filled=False`.
+Background [color](/docs/reference/colors) of TextField in focused state. Will not be visible if `filled=False`.
 
 ### `focused_border_color`
 
@@ -351,7 +351,7 @@ Displayed on top of the input when the it's empty and either (a) `label` is null
 
 ### `hover_color`
 
-Background [color](/docs/guides/python/colors) of TextField when hovered. Will not be visible if `filled=False`.
+Background [color](/docs/reference/colors) of TextField when hovered. Will not be visible if `filled=False`.
 
 ### `icon`
 

@@ -162,7 +162,7 @@ In iOS, if this label is not provided, a semantic label will be inferred from th
 
 ### `shadow_color`
 
-The [color](/docs/guides/python/colors) used to paint a drop shadow under the dialog, which reflects the dialog's elevation.
+The [color](/docs/reference/colors) used to paint a drop shadow under the dialog, which reflects the dialog's elevation.
 
 ### `shape`
 
@@ -172,7 +172,8 @@ The default shape is a `RoundedRectangleBorder` with a radius of `4.0`.
 
 ### `surface_tint_color`
 
-The [color](/docs/guides/python/colors) used as a surface tint overlay on the dialog's background color, which reflects the dialog's elevation.
+The [color](/docs/reference/colors) used as a surface tint overlay on the dialog's background color, which reflects the
+dialog's elevation.
 
 ### `title`
 

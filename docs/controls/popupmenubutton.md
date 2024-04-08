@@ -56,7 +56,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-The menu's background [color](/docs/guides/python/colors).
+The menu's background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
@@ -84,7 +84,7 @@ If provided, an icon to draw on the button.
 
 ### `icon_color`
 
-The `icon`'s [color](/docs/guides/python/colors).
+The `icon`'s [color](/docs/reference/colors).
 
 ### `icon_size`
 
@@ -106,7 +106,7 @@ See [`Container.padding`](container#padding) for possible values.
 
 ### `shadow_color`
 
-The [color](/docs/guides/python/colors) used to paint the shadow below the menu.
+The [color](/docs/reference/colors) used to paint the shadow below the menu.
 
 ### `shape`
 
@@ -120,7 +120,7 @@ The splash radius.
 
 ### `surface_tint_color`
 
-The [color](/docs/guides/python/colors) used as an overlay on color to indicate elevation.
+The [color](/docs/reference/colors) used as an overlay on color to indicate elevation.
 
 ## `PopupMenuButton` Events
 
