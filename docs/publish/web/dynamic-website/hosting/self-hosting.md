@@ -13,50 +13,48 @@ There are free and inexpensive cloud server tiers available at [AWS](https://aws
 Create `requirements.txt` with a list of application dependencies. At minimum it should contain `flet` module:
 
 ```txt
-flet>=0.2.4
+flet
 ```
 
 Create a virtualenv and install requirements:
 
-    python -m venv .venv
-    source .venv/bin/activate
-    pip install -r requirements.txt
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-### Sample `main.py` Flet app
+### Sample Flet app
 
 ```python
 import flet as ft
-import os
-
-
-# set Flet path to an empty string to serve at the root URL (e.g., https://lizards.ai/)
-# or a folder/path to serve beneath the root (e.g., https://lizards.ai/ui/path
-DEFAULT_FLET_PATH = ''  # or 'ui/path'
-DEFAULT_FLET_PORT = 8502
-
 
 def main(page: ft.Page):
-    page.title = "You Enjoy Mychatbot"
-    page.add(ft.Text("Reba put a stopper in the bottom of the tub"))
-
+    page.title = "My Flet app"
+    page.add(ft.Text("Hello, world!"))
 
 if __name__ == "__main__":
-    flet_path = os.getenv("FLET_PATH", DEFAULT_FLET_PATH)
-    flet_port = int(os.getenv("FLET_PORT", DEFAULT_FLET_PORT))
-    ft.app(name=flet_path, target=main, view=None, port=flet_port)
+    ft.app(main)
 ```
 
-## Automatically Start Flet Server
+Flet app will be served from the root URL, but you can configure `FLET_WEB_APP_PATH` environment variable
+to serve beneath the root e.g. `/apps/myapp`.
 
-### Create systemd unit file
+By default, Flet web app will be running on port `8000`, but you can change that by setting up `FLET_SERVER_PORT` environment variable.
 
-Automatically start the Flet server using a systemd service unit file `flet.service`.
+[Complete list of environment variables](/docs/publish/web/dynamic-website#environment-variables) supported by a web app.
 
-Setup below assumes your flet app script is defined in `$HOME/flet-app/main.py`. Replace `User`, `Group`, `WorkingDirectory`, etc. as per your setup.
+## Automatically start Flet app
 
-```txt
+### Create `systemd` unit file
+
+Automatically start the Flet app using a `systemd` service unit file `flet.service`.
+
+Setup below assumes your Flet app script is defined in `$HOME/flet-app/main.py`. Replace `User`, `Group`, `WorkingDirectory`, etc. as per your setup.
+
+```ini
 [Unit]
-Description=Flet Server
+Description=Flet App
 After=network.target
 
 [Service]
@@ -70,7 +68,7 @@ ExecStart=/home/ubuntu/flet-app/.venv/bin/python /home/ubuntu/flet-app/main.py
 WantedBy=multi-user.target
 ```
 
-### Enable the Flet server
+### Enable Flet app service
 
 ```
 cd /etc/systemd/system
@@ -88,7 +86,7 @@ In your `/etc/nginx/sites-available/*` config file, updating path and port as ne
 
 ```txt
     location / {
-        proxy_pass         http://127.0.0.1:8502/;
+        proxy_pass         http://127.0.0.1:8000/;
         proxy_http_version 1.1;
         proxy_set_header   Upgrade $http_upgrade;
         proxy_set_header   Connection keep-alive;
@@ -99,7 +97,7 @@ In your `/etc/nginx/sites-available/*` config file, updating path and port as ne
     }
   
     location /ws {
-        proxy_pass         http://127.0.0.1:8502/ws;
+        proxy_pass         http://127.0.0.1:8000/ws;
         proxy_http_version 1.1;
         proxy_set_header   Upgrade $http_upgrade;
         proxy_set_header   Connection "upgrade";
