@@ -48,7 +48,7 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-To run the app install `flet` module ([create a new Flet environment](/docs/create/setup-flet-environment)):
+To run the app install `flet` module ([create a new Flet environment](/docs/getting-started)):
 
 ```bash
 pip install flet

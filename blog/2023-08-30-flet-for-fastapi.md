@@ -48,7 +48,7 @@ uvicorn hello:app
 Open the browser and navigate to http://127.0.0.1:8000 to see the app running.
 
 :::note
-Flet app must be [async](/docs/create/async-apps) in order to work with FastAPI WebSocket handler.
+Flet app must be [async](/docs/getting-started/async-apps) in order to work with FastAPI WebSocket handler.
 :::
 
 ## Features and benefits

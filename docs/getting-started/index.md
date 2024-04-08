@@ -1,5 +1,5 @@
 ---
-title: Setup Flet environment
+title: Getting started
 ---
 
 import Tabs from '@theme/Tabs';

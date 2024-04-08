@@ -91,7 +91,7 @@ ft.app(main)
 
 Technically, nobody will stop you from using `threading` library in async app, but it would be a bad idea. `asyncio` versions of locks, queues and tasks, used by Flet API are not thread-safe and, for example, calling `await page.update_async()` from multiple threads will lead to unpredictable results. Also, `threading` library is not supported by Pyodide if you decide to [deploy your app as a static website](/docs/publish/web/static-website).
 
-To run something in the background use [`asyncio.create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task). For example, an async version of "countdown" control from [Custom controls](/docs/create/custom-controls) guide would be:
+To run something in the background use [`asyncio.create_task()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task). For example, an async version of "countdown" control from [Custom controls](/docs/getting-started/custom-controls) guide would be:
 
 ```python
 import asyncio

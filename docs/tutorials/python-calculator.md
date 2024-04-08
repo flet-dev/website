@@ -179,7 +179,7 @@ Even if you can't think of such uses right now, we still recommend creating all 
 
 To make a reusable Calc app component, we are going to encapsulate its state and presentation logic in a separate `CalculatorApp` class. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc4.py).
 
-Read more about [creating user controls](/docs/create/custom-controls).
+Read more about [creating user controls](/docs/getting-started/custom-controls).
 
 :::note Try something
 Try adding two `CalculatorApp` components to the page:

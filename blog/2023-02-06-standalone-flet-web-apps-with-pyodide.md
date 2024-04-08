@@ -141,7 +141,7 @@ async def main(page: ft.Page):
 ft.app(main)
 ```
 
-[Read the guide](/docs/create/async-apps) for more information about writing async Flet apps.
+[Read the guide](/docs/getting-started/async-apps) for more information about writing async Flet apps.
 
 ## Conclusion
 

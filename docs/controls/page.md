@@ -426,7 +426,7 @@ A part of app URL after `?`. The value is an instance of `QueryString` with help
 
 ### `route`
 
-Get or sets page's navigation route. See [Navigation and routing](/docs/create/navigation-and-routing) section for 
+Get or sets page's navigation route. See [Navigation and routing](/docs/getting-started/navigation-and-routing) section for 
 more information and examples.
 
 ### `rtl`
