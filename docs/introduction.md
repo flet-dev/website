@@ -54,7 +54,7 @@ To run the app install `flet` module ([create a new Flet environment](/docs/gett
 pip install flet
 ```
 
-and run the program:
+and [run the program](/docs/getting-started/running-app):
 
 ```bash
 flet run counter.py

@@ -47,4 +47,6 @@ Or, to create Flet app from counter template in your current directory, run this
 flet create --template counter .
 ```
 
+You can find more information about `flet create` command [here](/docs/reference/cli/create).
+
 Now you let's see Flet in action by [running the app](running-app)!

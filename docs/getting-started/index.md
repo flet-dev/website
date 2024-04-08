@@ -58,7 +58,7 @@ You can create virtual environment by running the following commands in your ter
 
 </Tabs>
 
-Once you activated virtual environment, you'll see that you prompt now shows `(.venv)` prefix.
+Once you activated virtual environment, you'll see that your prompt now shows `(.venv)` prefix.
 
 Now you can install the latest version of Flet in `.venv` virtual environment:
 ```
@@ -104,6 +104,6 @@ poetry run flet --version
 Now you are ready to [create your first Flet app](create-flet-app). 
 
 :::note
-When running Flet app using Poetry, you'll need to use `poetry run` before each command!
+When [creating](create-flet-app) and [running](running-app) Flet app using Poetry, you'll need to use `poetry run` before each command!
 :::
 
