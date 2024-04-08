@@ -1,6 +1,6 @@
 ---
 title: Making a Trello clone with Python and Flet
-sidebar_label: Python - Trello clone
+sidebar_label: Trello clone
 slug: trello-clone
 ---
 
@@ -17,7 +17,7 @@ Most developers are undoubtedly familiar with the situation of either having dev
 
 Flet takes a different approach to many new UI frameworks that is arguably more intuitive to the majority of experienced programmers. Diverging from the currently ubiquitous declarative approach and opting instead for an imperative model. 
 
-Having intimated that Flet is designed with simple GUIs in mind, lets nonetheless try to make something a tad more complicated than, for example, a simple dashboard with some filters, and shoot for something like a minimal version of Trello - and bestow upon it the totally-independently-arrived-at-name, _Trolli_.  For the purposes of this tutorial I'll assume the reader is familiar with the basic concept and setup of a Flet project (read [the tutorials](https://flet.dev/docs/tutorials) and the [docs](https://flet.dev/docs/guides/python/getting-started) if not), and instead focus more on aspects that are not part of the existing tutorials.
+Having intimated that Flet is designed with simple GUIs in mind, lets nonetheless try to make something a tad more complicated than, for example, a simple dashboard with some filters, and shoot for something like a minimal version of Trello - and bestow upon it the totally-independently-arrived-at-name, _Trolli_.  For the purposes of this tutorial I'll assume the reader is familiar with the basic concept and setup of a Flet project (read [the tutorials](https://flet.dev/docs/tutorials) and the [docs](https://flet.dev/docs) if not), and instead focus more on aspects that are not part of the existing tutorials.
 
 ## Defining Entities and Layout
 
@@ -786,6 +786,4 @@ fly apps open
 
 ## Summary
 
-Hopefully this walkthrough gives the reader some idea of how actual usable apps can be developed and deployed using the Flet framework. The flexibility, speed of development and developer experience make it a really compelling tool to reach for in many different use cases and there is an ever growing number of devs doing just that. 
-
-You can follow releases and new features on [Twitter](https://twitter.com/fletdev) or get involved in the discussions on [Discord](https://discord.gg/dzWXP8SHG8).
+Hopefully this walkthrough gives the reader some idea of how actual usable apps can be developed and deployed using the Flet framework. The flexibility, speed of development and developer experience make it a really compelling tool to reach for in many different use cases and there is an ever growing number of devs doing just that.

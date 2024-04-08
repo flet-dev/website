@@ -1,7 +1,6 @@
 ---
 title: IconButton
 sidebar_label: IconButton
-slug: iconbutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -124,7 +123,7 @@ The button's [color](/docs/guides/python/colors) when in focus.
 
 ### `highlight_color`
 
-The button's [color](/docs/guides/python/colors) when the button is pressed. The highlight fades in quickly as the button is held down.
+The button's [color](/docs/reference/colors) when the button is pressed. The highlight fades in quickly as the button is held down.
 
 ### `hover_color`
 
@@ -136,7 +135,7 @@ Icon shown in the button.
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+Icon [color](/docs/reference/colors).
 
 ### `icon_size`
 
@@ -158,7 +157,7 @@ Icon shown in the button in selected state.
 
 ### `selected_icon_color`
 
-Icon [color](/docs/guides/python/colors) for the selected state.
+Icon [color](/docs/reference/colors) for the selected state.
 
 En example of icon toggle button:
 

@@ -1,7 +1,6 @@
 ---
 title: SnackBar
 sidebar_label: SnackBar
-slug: snackbar
 ---
 
 A lightweight message with an optional action which briefly displays at the bottom of the screen.
@@ -61,7 +60,7 @@ The action should not be "dismiss" or "cancel".
 
 ### `action_color`
 
-The foreground [color](/docs/guides/python/colors) of action button.
+The foreground [color](/docs/reference/colors) of action button.
 
 ### `action_overflow_threshold`
 
@@ -85,7 +84,7 @@ If this value is `SnackBarBehavior.FLOATING`, the length of the bar is defined b
 
 ### `bgcolor`
 
-SnackBar background [color](/docs/guides/python/colors).
+SnackBar background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 

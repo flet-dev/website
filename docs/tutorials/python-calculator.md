@@ -1,6 +1,6 @@
 ---
 title: Create Calculator app in Python with Flet
-sidebar_label: Python - Calculator app
+sidebar_label: Calculator app
 slug: python-calculator
 ---
 
@@ -179,7 +179,7 @@ Even if you can't think of such uses right now, we still recommend creating all 
 
 To make a reusable Calc app component, we are going to encapsulate its state and presentation logic in a separate `CalculatorApp` class. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc4.py).
 
-Read more about [creating user controls](/docs/guides/python/getting-started#user-controls).
+Read more about [creating user controls](/docs/getting-started/custom-controls).
 
 :::note Try something
 Try adding two `CalculatorApp` components to the page:
@@ -227,8 +227,13 @@ Run the app and see it in the action:
 
 Congratulations! You have created your Calculator app with Flet, and it looks awesome! Now it's time to share your app with the world!
 
-Follow [this guide](/docs/guides/python/packaging-app-for-distribution) to package your Calculator app for any
-platform (web, mobile, desktop).
+Flet Python app and all its dependencies can be packaged into an executable and user can run it on their computer without installing a Python interpreter or any modules.
+
+[Follow these instructions](/docs/publish) to package your Calculator app into a desktop executable or mobile app bundle.
+
+## Deploying a web app
+
+[Follow these instructions](/docs/publish/web) to deploy your Flet app as a web app to Fly.io or Replit.
 
 ## Summary
 
@@ -243,4 +248,4 @@ In this tutorial you have learned how to:
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
 
-We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8), follow on [Twitter](https://twitter.com/fletdev).
+We would love to hear your feedback! Please drop us an [email](mailto:hello@flet.dev), join the discussion on [Discord](https://discord.gg/dzWXP8SHG8).

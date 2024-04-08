@@ -1,7 +1,6 @@
 ---
 title: Dropdown
 sidebar_label: Dropdown
-slug: dropdown
 ---
 
 A material design button for selecting from a list of items.
@@ -173,7 +172,7 @@ Border around input - `InputBorder` enum with one of the values: `OUTLINE` (defa
 
 ### `border_color`
 
-Border [color](/docs/guides/python/colors). Could be `transparent` to hide the border.
+Border [color](/docs/reference/colors). Could be `transparent` to hide the border.
 
 ### `border_radius`
 
@@ -185,7 +184,7 @@ The width of the border in virtual pixels. Default is 1. Set to 0 to completely 
 
 ### `color`
 
-Text [color](/docs/guides/python/colors).
+Text [color](/docs/reference/colors).
 
 ### `content_padding`
 
@@ -243,7 +242,7 @@ Background [color](/docs/guides/python/colors) of dropdown in focused state. Wil
 
 ### `focused_border_color`
 
-Border [color](/docs/guides/python/colors) in focused state.
+Border [color](/docs/reference/colors) in focused state.
 
 ### `focused_border_width`
 
@@ -251,7 +250,7 @@ Border width in focused state.
 
 ### `focused_color`
 
-Text [color](/docs/guides/python/colors) when Dropdown is focused.
+Text [color](/docs/reference/colors) when Dropdown is focused.
 
 ### `helper_style`
 

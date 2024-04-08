@@ -1,7 +1,6 @@
 ---
 title: Banner
 sidebar_label: Banner
-slug: banner
 ---
 
 A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). A user action is required for it to be dismissed.
@@ -64,7 +63,7 @@ Typically this is a list of [`TextButton`](textbutton) controls.
 
 ### `bgcolor`
 
-The [color](/docs/guides/python/colors) of the surface of this Banner.
+The [color](/docs/reference/colors) of the surface of this Banner.
 
 ### `content`
 

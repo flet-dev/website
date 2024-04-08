@@ -1,7 +1,6 @@
 ---
 title: Divider
 sidebar_label: Divider
-slug: divider
 ---
 
 A thin horizontal line, with padding on either side.
@@ -62,7 +61,7 @@ ft.app(target=main)
 
 ### `color`
 
-The [color](/docs/guides/python/colors) to use when painting the line.
+The [color](/docs/reference/colors) to use when painting the line.
 
 ### `height`
 

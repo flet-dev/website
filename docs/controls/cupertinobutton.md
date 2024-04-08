@@ -1,7 +1,6 @@
 ---
 title: CupertinoButton
 sidebar_label: CupertinoButton
-slug: cupertinobutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -62,15 +61,15 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-Button's background [color](/docs/guides/python/colors).
+Button's background [color](/docs/reference/colors).
 
 ### `color`
 
-Button's text [color](/docs/guides/python/colors).
+Button's text [color](/docs/reference/colors).
 
 ### `disabled_color`
 
-The background [color](/docs/guides/python/colors) of the button when it is disabled.
+The background [color](/docs/reference/colors) of the button when it is disabled.
 
 ### `content`
 
@@ -82,7 +81,7 @@ Icon shown in the button.
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+Icon [color](/docs/reference/colors).
 
 ### `min_size`
 

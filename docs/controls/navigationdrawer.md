@@ -1,7 +1,6 @@
 ---
 title: NavigationDrawer
 sidebar_label: NavigationDrawer
-slug: navigationdrawer
 ---
 
 Material Design Navigation Drawer component.
@@ -88,7 +87,7 @@ ft.app(main)
 
 ### `bgcolor`
 
-The [color](/docs/guides/python/colors) of the NavigationDrawer itself.
+The [color](/docs/reference/colors) of the NavigationDrawer itself.
 
 ### `controls`
 
@@ -102,7 +101,7 @@ The elevation of the NavigationDrawer itself.
 
 ### `indicator_color`
 
-The [color](/docs/guides/python/colors) of the selected destination indicator.
+The [color](/docs/reference/colors) of the selected destination indicator.
 
 ### `indicator_shape`
 
@@ -116,7 +115,7 @@ A valid selected_index is an integer between 0 and number of destinations - 1. F
 
 ### `shadow_color`
 
-The [color](/docs/guides/python/colors) used for the drop shadow to indicate `elevation`.
+The [color](/docs/reference/colors) used for the drop shadow to indicate `elevation`.
 
 ### `surface_tint_color`
 

@@ -1,7 +1,6 @@
 ---
 title: Switch
 sidebar_label: Switch
-slug: switch
 ---
 
 A toggle represents a physical switch that allows someone to choose between two mutually exclusive options.
@@ -82,11 +81,11 @@ ft.app(target=main)
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use when this switch is on.
+The [color](/docs/reference/colors) to use when this switch is on.
 
 ### `active_track_color`
 
-The [color](/docs/guides/python/colors) to use on the track when this switch is on.
+The [color](/docs/reference/colors) to use on the track when this switch is on.
 
 If `track_color` returns a non-null color in the `selected` state, it will be used instead of this color.
 
@@ -104,7 +103,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `focus_color`
 
-The [color](/docs/guides/python/colors) to use for the focus highlight for keyboard interactions.
+The [color](/docs/reference/colors) to use for the focus highlight for keyboard interactions.
 
 ### `hover_color`
 
@@ -112,13 +111,13 @@ The [color](/docs/guides/python/colors) to be used when it is being hovered over
 
 ### `inactive_thumb_color`
 
-The [color](/docs/guides/python/colors) to use on the thumb when this switch is off.
+The [color](/docs/reference/colors) to use on the thumb when this switch is off.
 
 If `thumb_color` returns a non-null color in the default state, it will be used instead of this color.
 
 ### `inactive_track_color`
 
-The [color](/docs/guides/python/colors) to use on the track when this switch is off.
+The [color](/docs/reference/colors) to use on the track when this switch is off.
 
 If `track_color` returns a non-null color in the default state, it will be used instead of this color.
 
@@ -128,7 +127,7 @@ The clickable label to display on the right of the Switch.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](#textstyle-properties).
+The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
 
 ### `label_position`
 
@@ -152,7 +151,7 @@ The radius of the splash effect when the switch is pressed.
 
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of this switch's thumb in various material states. The following `MaterialState`
+The [color](/docs/reference/colors) of this switch's thumb in various material states. The following `MaterialState`
 values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 See [`Radio.fill_color`](radio#fill_color) for usage example.
@@ -166,7 +165,7 @@ See [`Radio.fill_color`](radio#fill_color) for usage example.
 
 ### `track_color`
 
-The [color](/docs/guides/python/colors) of this switch's track in various material states. The following `MaterialState`
+The [color](/docs/reference/colors) of this switch's track in various material states. The following `MaterialState`
 values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 See [`Radio.fill_color`](radio#fill_color) for usage example.

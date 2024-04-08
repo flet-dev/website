@@ -1,14 +1,13 @@
 ---
 title: Video
 sidebar_label: Video
-slug: video
 ---
 
 Video playing control.
 Based on the [media_kit](https://pub.dev/packages/media_kit) Dart/Flutter package.
 
 :::note Prerequisites
-On Linux, the [libmpv](https://mpv.io/) package must be installed. On Ubuntu/Debian you can install it with `sudo apt install libmpv-dev mpv`.
+On Linux, the [libmpv](https://mpv.io/) package must be installed. See [this section](/docs/publish/linux#prerequisites) for more information.
 :::
 
 :::info Packaging
@@ -203,7 +202,7 @@ Defaults to `FilterQuality.LOW`.
 
 ### `fill_color`
 
-Defines the [color](/docs/guides/python/colors) used to fill the video background.
+Defines the [color](/docs/reference/colors) used to fill the video background.
 
 ### `muted`
 

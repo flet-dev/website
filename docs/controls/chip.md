@@ -1,7 +1,6 @@
 ---
 title: Chip
 sidebar_label: Chip
-slug: chip
 ---
 
 Chips are compact elements that represent an attribute, text, entity, or action.
@@ -111,7 +110,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-[Color](/docs/guides/python/colors) to be used for the unselected, enabled chip's background.
+[Color](/docs/reference/colors) to be used for the unselected, enabled chip's background.
 
 ### `border_side`
 
@@ -119,7 +118,7 @@ Defines the color and weight of the chip's outline. Value is the instance of `Bo
 
 ### `check_color`
 
-[Color](/docs/guides/python/colors) of the chip's check mark when a check mark is visible.
+[Color](/docs/reference/colors) of the chip's check mark when a check mark is visible.
 
 ### `click_elevation`
 
@@ -147,11 +146,11 @@ A `Control` to display to the right of the chip's `label` in case `on_delete` ev
 
 ### `delete_icon_color`
 
-[Color](/docs/guides/python/colors) of the `delete_icon`.
+[Color](/docs/reference/colors) of the `delete_icon`.
 
 ### `disabled_color`
 
-The [color](/docs/guides/python/colors) used for the chip's background if it is disabled.
+The [color](/docs/reference/colors) used for the chip's background if it is disabled.
 
 ### `elevation`
 
@@ -193,15 +192,15 @@ If `on_select` event is specified, `selected` property is used to determine whea
 
 ### `selected_color`
 
-The [color](/docs/guides/python/colors) used for the chip's background when it is selected.
+The [color](/docs/reference/colors) used for the chip's background when it is selected.
 
 ### `selected_shadow_color`
 
-The [color](/docs/guides/python/colors) used for the chip's background when the elevation is greater than 0 and the chip is selected.
+The [color](/docs/reference/colors) used for the chip's background when the elevation is greater than 0 and the chip is selected.
 
 ### `shadow_color`
 
-The [color](/docs/guides/python/colors) used for the chip's background when the elevation is greater than 0 and the chip is not selected.
+The [color](/docs/reference/colors) used for the chip's background when the elevation is greater than 0 and the chip is not selected.
 
 ### `shape`
 

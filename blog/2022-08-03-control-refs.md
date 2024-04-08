@@ -117,4 +117,4 @@ Now we can clearly see in `page.add()` the structure of the page and all the con
 
 Yes, the logic becomes a little bit more verbose as you need to add `.current.` to access ref's control, but it's a matter of personal preference :)
 
-[Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+[Give Flet a try](/docs) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!

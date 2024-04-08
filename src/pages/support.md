@@ -21,10 +21,6 @@ Submit an issue or feature request at [Flet project issues](https://github.com/f
 
 Start a new discussion at [Flet project discussions](https://github.com/flet-dev/flet/discussions).
 
-## Twitter
-
-Follow us on [@fletdev](https://twitter.com/fletdev).
-
 ## StackOverflow
 
 Ask your question or search for solution on [StackOverflow](https://stackoverflow.com/questions/tagged/flet).

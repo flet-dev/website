@@ -74,7 +74,7 @@ $ export GITHUB_CLIENT_SECRET="<client_secret>"
 ```
 :::
 
-[Read Authentication guide for more information and examples](/docs/guides/python/authentication).
+[Read Authentication guide for more information and examples](/docs/cookbook/authentication).
 
 ## Client storage
 
@@ -92,7 +92,7 @@ Reading data:
 value = page.client_storage.get("key")
 ```
 
-[Read Client storage guide for more information and examples](/docs/guides/python/client-storage).
+[Read Client storage guide for more information and examples](/docs/cookbook/client-storage).
 
 ## Session storage
 
@@ -110,7 +110,7 @@ Reading data:
 value = page.session.get("key")
 ```
 
-[Read Session storage guide for more information and examples](/docs/guides/python/session-storage)
+[Read Session storage guide for more information and examples](/docs/cookbook/session-storage)
 
 ## Encryption API
 
@@ -134,7 +134,7 @@ plain_text = decrypt(encrypted_data, secret_key)
 print(plain_text)
 ```
 
-[Continue reading for more information and examples](/docs/guides/python/encrypting-sensitive-data).
+[Continue reading for more information and examples](/docs/cookbook/encrypting-sensitive-data).
 
 ## Other improvements
 
@@ -143,7 +143,7 @@ print(plain_text)
   * [`Image.color_blend_mode`](/docs/controls/image#color_blend_mode)
   * [`Image.semantics_label`](/docs/controls/image#semantics_label)
   * [`Image.gapless_playback`](/docs/controls/image#gapless_playback)
-* [`on_animation_end` callback](/docs/guides/python/animations#animation-end-callback) to chain animations.
+* [`on_animation_end` callback](/docs/cookbook/animations#animation-end-callback) to chain animations.
 * [`Container.clip_behavior` property](/docs/controls/container#clip_behavior).
 * [`page.window_bgcolor`](/docs/controls/page#window_bgcolor) to make cool transparent app window:
 

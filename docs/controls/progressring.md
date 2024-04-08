@@ -1,7 +1,6 @@
 ---
 title: ProgressRing
 sidebar_label: ProgressRing
-slug: progressring
 ---
 
 A material design circular progress indicator, which spins to indicate that the application is busy.
@@ -56,11 +55,11 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-[Color](/docs/guides/python/colors) of the circular track being filled by the circular indicator.
+[Color](/docs/reference/colors) of the circular track being filled by the circular indicator.
 
 ### `color`
 
-The progress indicator's [color](/docs/guides/python/colors).
+The progress indicator's [color](/docs/reference/colors).
 
 ### `semantics_label`
 

@@ -1,7 +1,6 @@
 ---
 title: SearchBar
 sidebar_label: SearchBar
-slug: searchbar
 ---
 
 A Material Design search bar. It visually looks like a `TextField` with the difference that, tapping on it opens a search view.
@@ -88,7 +87,7 @@ A `Control` to display before the text input field when the search view is close
 
 ### `bar_overlay_color`
 
-Defines the highlight [color](/docs/guides/python/colors) that's typically used to indicate that the search bar is focused, hovered, or pressed. See [Radio.fill_color](radio#fill_color) for usage examples.
+Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is focused, hovered, or pressed. See [Radio.fill_color](radio#fill_color) for usage examples.
 
 ### `bar_trailing`
 
@@ -126,7 +125,7 @@ The text in the search bar.
 
 ### `view_bgcolor`
 
-Defines the background [color](/docs/guides/python/colors) of the search view.
+Defines the background [color](/docs/reference/colors) of the search view.
 
 ### `view_elevation`
 

@@ -1,7 +1,6 @@
 ---
 title: SelectionArea
 sidebar_label: SelectionArea
-slug: selectionarea
 ---
 
 Flet controls are not selectable by default. `SelectionArea` is used to enable selection for its `content`.

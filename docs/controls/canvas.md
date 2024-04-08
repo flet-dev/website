@@ -1,7 +1,6 @@
 ---
 title: Canvas
 sidebar_label: Canvas
-slug: canvas
 ---
 
 Canvas is a control for drawing arbitrary graphics using a set of primitives or "shapes" such as line, arc, path and text.
@@ -394,7 +393,7 @@ Paints the given `color` onto the canvas, applying the given `blend_mode`, with 
 
 ### `color`
 
-[Color](/docs/guides/python/colors) to paint onto the canvas.
+[Color](/docs/reference/colors) to paint onto the canvas.
 
 ### `blend_mode`
 
@@ -578,7 +577,7 @@ The list of `Path.PathElement` objects describing the path.
 
 ### `color`
 
-Shadow [color](/docs/guides/python/colors).
+Shadow [color](/docs/reference/colors).
 
 ### `elevation`
 
@@ -670,7 +669,7 @@ See [`Container.blur`](container#blur) for more information.
 
 ### `color`
 
-The [color](/docs/guides/python/colors) to use when stroking or filling a shape. Defaults to opaque black.
+The [color](/docs/reference/colors) to use when stroking or filling a shape. Defaults to opaque black.
 
 ### `gradient`
 

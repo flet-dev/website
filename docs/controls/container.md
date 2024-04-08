@@ -1,7 +1,6 @@
 ---
 title: Container
 sidebar_label: Container
-slug: container
 ---
 
 Container allows to decorate a control with background color and border and position it with padding, margin and alignment. 
@@ -187,7 +186,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-Defines the background [color](/docs/guides/python/colors) of the container.
+Defines the background [color](/docs/reference/colors) of the container.
 
 ### `blend_mode`
 
@@ -410,7 +409,7 @@ Sets an image encoded as Base-64 string as a container background. See [`Image.s
 
 ### `ink_color`
 
-The splash [color](/docs/guides/python/colors) of the ink response.
+The splash [color](/docs/reference/colors) of the ink response.
 
 ### `margin`
 

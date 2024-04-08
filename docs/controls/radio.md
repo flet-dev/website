@@ -1,7 +1,6 @@
 ---
 title: Radio
 sidebar_label: Radio
-slug: radio
 ---
 
 Radio buttons let people select a single option from two or more choices.
@@ -86,7 +85,7 @@ Fires when the state of the RadioGroup is changed.
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) used to fill this radio when it is selected.
+The [color](/docs/reference/colors) used to fill this radio when it is selected.
 
 ### `adaptive`
 
@@ -102,7 +101,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `fill_color`
 
-The [color](/docs/guides/python/colors) that fills the radio, in all `MaterialState` states:
+The [color](/docs/reference/colors) that fills the radio, in all `MaterialState` states:
 
 * `HOVERED`
 * `FOCUSED`

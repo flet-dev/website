@@ -116,7 +116,7 @@ ft.app(target=main)
 
 ## Other new controls
 
-This release adds new visual and non-visual controls requested by Flet community and also required to build UI of the upcoming [Flet Studio](/docs/guides/python/mobile-support#flet-studio-for-ios-and-android).
+This release adds new visual and non-visual controls requested by Flet community and also required to build UI of the upcoming [Flet Studio](/docs/cookbook/mobile-support#flet-studio-for-ios-and-android).
 
 ### BottomSheet
 

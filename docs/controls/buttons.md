@@ -1,7 +1,6 @@
 ---
 title: Buttons
 sidebar_label: Buttons
-slug: buttons
 ---
 
 import Card from '@site/src/components/card';

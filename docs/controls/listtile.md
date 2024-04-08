@@ -1,7 +1,6 @@
 ---
 title: ListTile
 sidebar_label: ListTile
-slug: listtile
 ---
 
 A single fixed-height row that typically contains some text as well as a leading or trailing icon.
@@ -106,11 +105,11 @@ The default value is `False`.
 
 ### `bgcolor`
 
-The list tile's background [color](/docs/guides/python/colors).
+The list tile's background [color](/docs/reference/colors).
 
 ### `bgcolor_activated`
 
-The list tile's splash [color](/docs/guides/python/colors) after the tile was tapped.
+The list tile's splash [color](/docs/reference/colors) after the tile was tapped.
 
 ### `content_padding`
 
@@ -136,7 +135,7 @@ The horizontal gap between the `title` and the `leading`/`trailing` controls. De
 
 ### `hover_color`
 
-The tile's [color](/docs/guides/python/colors) when hovered.
+The tile's [color](/docs/reference/colors) when hovered.
 
 ### `is_three_line`
 

@@ -1,7 +1,6 @@
 ---
 title: AudioRecorder
 sidebar_label: AudioRecorder
-slug: audiorecorder
 ---
 
 Audio recorder from microphone to a given file path. Works on macOS, Linux, Windows, iOS, Android and web.

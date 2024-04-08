@@ -1,7 +1,6 @@
 ---
 title: CircleAvatar
 sidebar_label: CircleAvatar
-slug: circleavatar
 ---
 
 A circle that represents a user.
@@ -82,11 +81,11 @@ The source (local asset file or URL) of the background image in the circle. Chan
 
 ### `bgcolor`
 
-The [color](/docs/guides/python/colors) with which to fill the circle. Changing the background color will cause the avatar to animate to the new color.
+The [color](/docs/reference/colors) with which to fill the circle. Changing the background color will cause the avatar to animate to the new color.
 
 ### `color`
 
-The default text [color](/docs/guides/python/colors) for text in the circle. Defaults to the primary text theme color if no `bgcolor` is specified.
+The default text [color](/docs/reference/colors) for text in the circle. Defaults to the primary text theme color if no `bgcolor` is specified.
 
 ### `content`
 

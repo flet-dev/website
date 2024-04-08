@@ -1,7 +1,6 @@
 ---
 title: View
 sidebar_label: View
-slug: view
 ---
 
 View is the top most container for all other controls.

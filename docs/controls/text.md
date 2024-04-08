@@ -1,7 +1,6 @@
 ---
 title: Text
 sidebar_label: Text
-slug: text
 ---
 
 Text is a control for displaying text.
@@ -335,11 +334,11 @@ ft.app(main)
 
 ### `bgcolor`
 
-Text background [color](/docs/guides/python/colors).
+Text background [color](/docs/reference/colors).
 
 ### `color`
 
-Text foreground [color](/docs/guides/python/colors).
+Text foreground [color](/docs/reference/colors).
 
 ### `font_family`
 
@@ -527,7 +526,7 @@ style = ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE | ft.TextDecoration.
 
 ### `decoration_color`
 
-The [color](/docs/guides/python/colors) in which to paint the text decorations.
+The [color](/docs/reference/colors) in which to paint the text decorations.
 
 ### `decoration_style`
 

@@ -1,7 +1,6 @@
 ---
 title: GridView
 sidebar_label: GridView
-slug: gridview
 ---
 
 A scrollable, 2D array of controls.

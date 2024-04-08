@@ -1,7 +1,6 @@
 ---
 title: ProgressBar
 sidebar_label: ProgressBar
-slug: progressbar
 ---
 
 A material design linear progress indicator, also known as a progress bar.
@@ -68,7 +67,7 @@ Defaults to `border_radius.all(0)` - rectangular shape.
 
 ### `bgcolor`
 
-[Color](/docs/guides/python/colors) of the track being filled by the linear indicator.
+[Color](/docs/reference/colors) of the track being filled by the linear indicator.
 
 ### `color`
 

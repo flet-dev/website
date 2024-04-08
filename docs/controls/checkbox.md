@@ -1,7 +1,6 @@
 ---
 title: Checkbox
 sidebar_label: Checkbox
-slug: checkbox
 ---
 
 Checkbox allows to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).
@@ -75,7 +74,7 @@ ft.app(target=main)
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use when this checkbox is checked.
+The [color](/docs/reference/colors) to use when this checkbox is checked.
 
 ### `adaptive`
 
@@ -95,16 +94,16 @@ The color and width of the checkbox's border to be rendered when the checkbox's 
 
 ### `check_color`
 
-The [color](/docs/guides/python/colors) to use for the check icon when this checkbox is checked.
+The [color](/docs/reference/colors) to use for the check icon when this checkbox is checked.
 
 ### `fill_color`
 
-The [color](/docs/guides/python/colors) that fills the checkbox in various material states.
+The [color](/docs/reference/colors) that fills the checkbox in various material states.
 See [`Radio.fill_color`](radio#fill_color) for usage example.
 
 ### `hover_color`
 
-The [color](/docs/guides/python/colors) to use when this checkbox is hovered.
+The [color](/docs/reference/colors) to use when this checkbox is hovered.
 
 ### `is_error`
 
@@ -116,7 +115,7 @@ The clickable label to display on the right of a checkbox.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](#textstyle-properties).
+The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
 
 ### `label_position`
 
@@ -156,14 +155,7 @@ Checkbox displays a dash when its value is null.
 
 ### `value`
 
-Current value of the checkbox. Either `True` or `False` (default).
-
-### `visual_density`
-
-Defines how compact the control's layout will be.
-
-Property value is `ThemeVisualDensity` enum with the following possible
-values: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+Current value of the checkbox.
 
 ## Events
 

@@ -1,7 +1,6 @@
 ---
 title: CupertinoSlider
 sidebar_label: CupertinoSlider
-slug: cupertinoslider
 ---
 
 An macOS style slider. It provides a visual indication of adjustable content, as well as the current setting in the total range of content.
@@ -65,7 +64,7 @@ ft.app(target=main)
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use for the portion of the slider track that is active.
+The [color](/docs/reference/colors) to use for the portion of the slider track that is active.
 
 The "active" side of the slider is the side between the thumb and the minimum value.
 
@@ -93,7 +92,7 @@ If the `max` is equal to the `min`, then the slider is disabled.
 
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of the thumb.
+The [color](/docs/reference/colors) of the thumb.
 
 ### `value`
 

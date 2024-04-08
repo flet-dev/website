@@ -1,7 +1,6 @@
 ---
 title: Slider
 sidebar_label: Slider
-slug: slider
 ---
 
 A slider provides a visual indication of adjustable content, as well as the current setting in the total range of content.
@@ -87,7 +86,7 @@ ft.app(target=main)
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use for the portion of the slider track that is active.
+The [color](/docs/reference/colors) to use for the portion of the slider track that is active.
 
 The "active" side of the slider is the side between the thumb and the minimum value.
 
@@ -113,7 +112,7 @@ If not set, the slider is continuous.
 
 ### `inactive_color`
 
-The [color](/docs/guides/python/colors) for the inactive portion of the slider track.
+The [color](/docs/reference/colors) for the inactive portion of the slider track.
 
 The "inactive" side of the slider is the side between the thumb and the maximum value.
 
@@ -162,7 +161,7 @@ The number of decimals displayed on the `label` containing `value`. The default 
 
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of the thumb.
+The [color](/docs/reference/colors) of the thumb.
 
 ### `value`
 

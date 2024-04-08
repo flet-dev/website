@@ -1,7 +1,6 @@
 ---
 title: TimePicker
 sidebar_label: TimePicker
-slug: timepicker
 ---
 
 A Material-style time picker dialog.

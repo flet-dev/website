@@ -1,10 +1,9 @@
 ---
 title: Rive
 sidebar_label: Rive
-slug: rive
 ---
 
-Used to display [Rive](https://rive.app/) animations.
+Displays an animation from a [Rive](https://rive.app/) file (URL or local file).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -21,7 +20,6 @@ import TabItem from '@theme/TabItem';
 ```python
 import flet as ft
 
-
 def main(page):
     page.add(
         ft.Rive(
@@ -31,7 +29,6 @@ def main(page):
             height=200,
         )
     )
-
 
 ft.app(target=main)
 ```

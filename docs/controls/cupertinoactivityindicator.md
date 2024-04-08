@@ -1,7 +1,6 @@
 ---
 title: CupertinoActivityIndicator
 sidebar_label: CupertinoActivityIndicator
-slug: cupertinoactivityindicator
 ---
 
 An iOS-style activity indicator that spins clockwise.
@@ -48,7 +47,7 @@ Whether the activity indicator is running its animation.
 
 ### `color`
 
-Defines the [color](/docs/guides/python/colors) of the activity indicator.
+Defines the [color](/docs/reference/colors) of the activity indicator.
 
 ### `radius`
 

@@ -1,7 +1,6 @@
 ---
 title: ListView
 sidebar_label: ListView
-slug: listview
 ---
 
 A scrollable list of controls arranged linearly.

@@ -1,7 +1,6 @@
 ---
 title: Markdown
 sidebar_label: Markdown
-slug: markdown
 ---
 
 Control for rendering text in markdown format.

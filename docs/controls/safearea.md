@@ -1,7 +1,6 @@
 ---
 title: SafeArea
 sidebar_label: SafeArea
-slug: safearea
 ---
 
 A control that insets its `content` by sufficient padding to avoid intrusions by the operating system.

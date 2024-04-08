@@ -1,7 +1,6 @@
 ---
 title: Dismissible
 sidebar_label: Dismissible
-slug: dismissible
 ---
 
 A control that can be dismissed by dragging in the indicated `dismiss_direction`. 
