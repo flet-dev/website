@@ -62,7 +62,7 @@ flet run --web --port 8000 app.py
 
 ## Hot reload
 
-By default, Flet will watch the script file that was run and reload the app it whenever the file is changed and saved, but will not watch for changes in other files.
+By default, Flet will watch the script file that was run and reload the app whenever the file is changed and saved, but will not watch for changes in other files.
 
 To watch all the files in the same directory, use the following command:
 

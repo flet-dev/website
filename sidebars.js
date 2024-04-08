@@ -11,7 +11,6 @@ module.exports = {
       items: [
         "getting-started/create-flet-app",
         'getting-started/running-app',
-        'getting-started/flet-app-structure',
         'getting-started/flet-controls',
         'getting-started/custom-controls',
         'getting-started/adaptive-apps',
