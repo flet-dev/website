@@ -137,6 +137,10 @@ The horizontal gap between the `title` and the `leading`/`trailing` controls. De
 
 The tile's [color](/docs/reference/colors) when hovered.
 
+### `icon_color`
+
+Defines the default [color](/docs/reference/colors) for the `Icon`s present in `leading` and `trailing`.
+
 ### `is_three_line`
 
 Whether this list tile is intended to display three lines of text.
@@ -151,6 +155,10 @@ When using a Text control for title and subtitle, you can enforce line limits us
 
 A `Control` to display before the title.
 
+### `leading_and_trailing_text_style`
+
+The [TextStyle](text#textstyle-properties)] for the `leading` and `trailing` controls.
+
 ### `min_leading_width`
 
 The minimum width allocated for the `leading` control. Defaults to `40`.
@@ -158,6 +166,11 @@ The minimum width allocated for the `leading` control. Defaults to `40`.
 ### `min_vertical_padding`
 
 The minimum padding on the top and bottom of the `title` and `subtitle` controls. Defaults to `4`.
+
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
 
 ### `selected`
 
@@ -171,11 +184,19 @@ Defines the [color](/docs/reference/colors) used for icons and text when `select
 
 Defines the background [color](/docs/reference/colors) of ListTile when `selected=True`.
 
+### `shape`
+
+The tile's shape. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+
 ### `subtitle`
 
 Additional content displayed below the title. Typically a [Text](text) widget.
 
 If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](text#max_lines) to enforce the number of lines.
+
+### `subtitle_text_style`
+
+The [TextStyle](text#textstyle-properties) for the `subtitle` control.
 
 ### `style`
 
@@ -184,9 +205,27 @@ Defines the font used for the title. Value is `ListTileStyle` enum, which has tw
 * `LIST`(default) - uses a title font that's appropriate for a ListTile in a list
 * `DRAWER`: uses a title font that's appropriate for a ListTile that appears in a `Drawer`.
 
+### `text_color`
+
+The [color](/docs/reference/colors) used for text. Defines the [color](/docs/reference/colors) of `Text` controls found in `title`, `subtitle`, `leading`, and `trailing`.
+
 ### `title`
 
 A `Control` to display as primary content of the list tile. Typically a [Text](text) control. This should not wrap. To enforce the single line limit, use [Text.max_lines](text#max_lines).
+
+### `title_alignment`
+
+Defines how `leading` and `trailing` are vertically aligned relative to the titles (`title` and `subtitle`). Value is `ListTileAlignment` enum, which has three possible values:
+
+* `TOP` - the tops of the `leading` and `trailing` controls are placed `min_vertical_padding` below the top of `title`
+* `CENTER` - centers the `leading` and `trailing` controls relative to the titles
+* `BOTTOM` - the bottoms of the `leading` and `trailing` controls are placed `min_vertical_padding` above the bottom of `title`
+* `THREE_LINE` (default in Material3) - the top of the `leading` and `trailing` controls are placed `min_vertical_padding` below the top of the `title` if `is_three_line=True`, otherwise they're centered relative to the titles
+* `TITLE_HEIGHT` (default in Material2) - the tops of the `leading` and `trailing` controls are placed `16` units below the top of the `title` if the titles' overall height is greater than `72`, otherwise they're centered relative to the titles.
+
+### `title_text_style`
+
+The [TextStyle](text#textstyle-properties) for the `title` control.
 
 ### `toggle_inputs`
 
@@ -203,6 +242,10 @@ The URL to open when the list tile is clicked. If registered, `on_click` event i
 ### `url_target`
 
 Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
+
+### `visual_density`
+
+Defines how compact the control's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 
 ## Events
 
