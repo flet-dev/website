@@ -379,6 +379,7 @@ module.exports = {
             "reference/types/animationcurve",
             "reference/types/crossaxisalignment",
             "reference/types/mainaxisalignment",
+            "reference/types/marginvalue",
             "reference/types/onscrollevent",
             "reference/types/scrollmode",
           ],

@@ -70,9 +70,7 @@ Controls the size of the shadow below the card. Default value is `1.0`.
 
 ### `margin`
 
-The empty space that surrounds the card.
-
-See [`Container.margin`](container#margin) property for more information and possible values.
+The empty space that surrounds the card. Property value is a [`MarginValue`](/docs/reference/types/marginvalue).
 
 ### `shadow_color`
 
