@@ -381,6 +381,7 @@ module.exports = {
             "reference/types/mainaxisalignment",
             "reference/types/marginvalue",
             "reference/types/onscrollevent",
+            "reference/types/outlinedborder",
             "reference/types/scrollmode",
           ],
         }
