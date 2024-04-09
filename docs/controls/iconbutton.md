@@ -141,6 +141,11 @@ Icon [color](/docs/reference/colors).
 
 Icon size in virtual pixels.
 
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+
 ### `padding`
 
 Defines the padding around this button. The entire padded icon will react to input gestures.
@@ -208,6 +213,10 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 ### `url_target`
 
 Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
+
+### `visual_density`
+
+Defines how compact the control's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 
 ## Methods
 
