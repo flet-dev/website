@@ -178,7 +178,7 @@ Defines the background [color](/docs/reference/colors) of the container.
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
+The blend mode applied to the `color` or `gradient` background of the container. Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODULATE` as default.
 
 ### `blur`
 

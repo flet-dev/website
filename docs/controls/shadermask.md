@@ -94,42 +94,7 @@ ft.app(target=main)
 
 The blend mode to use when applying the shader to the `content`.
 
-Property value is `BlendMode` enum with `MODULATE` as default.
-
-Supported values:
-
-* `CLEAR`
-* `COLOR`
-* `COLOR_BURN`
-* `COLOR_DODGE`
-* `DARKEN`
-* `DIFFERENCE`
-* `DST`
-* `DST_A_TOP`
-* `DST_IN`
-* `DST_OUT`
-* `DST_OVER`
-* `EXCLUSION`
-* `HARD_LIGHT`
-* `HUE`
-* `LIGHTEN`
-* `LUMINOSITY`
-* `MODULATE` (default)
-* `MULTIPLY`
-* `OVERLAY`
-* `PLUS`
-* `SATURATION`
-* `SCREEN`
-* `SOFT_LIGHT`
-* `SRC`
-* `SRC_A_TOP`
-* `SRC_IN`
-* `SRC_OUT`
-* `SRC_OVER`
-* `VALUES`
-* `XOR`
-
-See [BlendMode](https://api.flutter.dev/flutter/dart-ui/BlendMode.html) from Flutter documentation for blend mode examples.
+Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODULATE` as default.
 
 ### `border_radius`
 

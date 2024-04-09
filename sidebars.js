@@ -378,6 +378,7 @@ module.exports = {
           items: [
             "reference/types/alignment",
             "reference/types/animationcurve",
+            "reference/types/blendmode",
             "reference/types/crossaxisalignment",
             "reference/types/mainaxisalignment",
             "reference/types/marginvalue",
