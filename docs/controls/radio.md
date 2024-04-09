@@ -149,6 +149,11 @@ The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
 
 Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+
 ### `overlay_color`
 
 The overlay [color](/docs/reference/colors) of this radio, for each `MaterialState` state. See `fill_color` for usage
