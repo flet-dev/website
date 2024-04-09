@@ -5,14 +5,14 @@ const { themes } = require('prism-react-renderer');
 
 module.exports = {
   title: 'Flet',
-  tagline: 'Build internal web apps quickly in the language you already know.',
+  tagline: 'Build multi-platform apps in Python powered by Flutter.',
   url: 'https://flet.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'flet-dev', // Usually your GitHub org/user name.
   projectName: 'flet', // Usually your repo name.
   customFields: {
-    heroTitle: 'The fastest way to build Flutter apps in Python',
+    heroTitle: 'Build multi-platform apps in Python powered by Flutter',
     heroSubTitle: 'Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.',
   },
   themeConfig: {
