@@ -156,6 +156,11 @@ The minimum height of this menu item. Defaults to `40`.
 
 An icon to draw before the text label of this menu item.
 
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+
 ### `padding`
 
 The padding of this menu item. Note that the `height` value of this menu item may influence the applied padding. For example, If a `height` greater than the height of the sum of the padding and a `content` is provided, then the padding's effect will not be visible.
