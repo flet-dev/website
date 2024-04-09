@@ -376,6 +376,7 @@ module.exports = {
             id: "reference/types/index",
           },
           items: [
+            "reference/types/alignment",
             "reference/types/animationcurve",
             "reference/types/crossaxisalignment",
             "reference/types/mainaxisalignment",
