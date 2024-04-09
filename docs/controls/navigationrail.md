@@ -150,6 +150,12 @@ To make a compact rail, set this to `56` and use `label_type='none'`.
 
 The index into `destinations` for the current selected `NavigationRailDestination` or `None` if no destination is selected.
 
+### `selected_label_text_style`
+
+The [`TextStyle`](text#textstyle-properties) of a destination's label when it is selected.
+
+When a destination is not selected, `unselected_label_text_style` will instead be used.
+
 ### `trailing`
 
 An optional trailing control in the rail that is placed below the destinations.
@@ -157,6 +163,12 @@ An optional trailing control in the rail that is placed below the destinations.
 Its location is affected by `group_alignment`.
 
 This is commonly a list of additional options or destinations that is usually only rendered when `extended` is `True`.
+
+### `unselected_label_text_style`
+
+The [`TextStyle`](text#textstyle-properties) of a destination's label when it is not selected.
+
+When a destination is selected, `selected_label_text_style` will instead be used.
 
 ## `NavigationRail` events
 
@@ -178,13 +190,23 @@ If `selected_icon_content` is provided, this will only be displayed when the des
 
 To make the NavigationRail more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
 
+### `indicator_color`
+
+The [color](/docs/reference/colors) of the `indicator_shape` when this destination is selected.
+
+### `indicator_shape`
+
+The shape of the selection indicator. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+
 ### `label`
+
+A string representing the destination's label. Will be displayed only if `label_content` is not provided.
 
 ### `label_content`
 
-The label `Control` for the destination.
+The label `Control` for the destination. If this is provided, then `label` will be ignored.
 
-The label must be provided when used with the NavigationRail. When `label_type='none'`, the label is still used for semantics, and may still be used if `extended` is `True`.
+The label must be provided when used with the `NavigationRail`. When `NavigationRail.label_type=NavigationRailLabelType.NONE`, the label is still used for semantics, and may still be used if `NavigationRail.extended=True`.
 
 ### `padding`
 
