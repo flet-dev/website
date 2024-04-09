@@ -105,6 +105,10 @@ Fires when selected destination changed.
 
 ## `NavigationDestination` properties
 
+### `bgcolor`
+
+The [color](/docs/reference/colors) of this destination.
+
 ### `icon`
 
 The name of the icon of the destination.
