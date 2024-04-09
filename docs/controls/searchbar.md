@@ -73,6 +73,12 @@ ft.app(target=main)
 
 ## Properties
 
+### `autofocus`
+
+Whether the text field should focus itself if nothing else is already focused.
+
+Defaults to `False`.
+
 ### `bar_bgcolor`
 
 Defines the background [color](/docs/reference/colors) of the search bar. See [Radio.fill_color](radio#fill_color) for
@@ -119,6 +125,10 @@ Defines the style of `view_hint_text`.
 ### `header_text_style`
 
 Defines the style of the text being edited on the search view.
+
+### `keyboard_type`
+
+The type of action button to use for the keyboard. See [TextField.keyboard_type](textfield#keyboard_type) for possible values.
 
 ### `value`
 
