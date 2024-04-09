@@ -373,14 +373,7 @@ ft.app(main)
 
 How the child Controls should be placed vertically.
 
-Property value is `MainAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
+Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum.
 
 ### `auto_scroll`
 
@@ -394,13 +387,7 @@ A list of Controls to display inside the Column.
 
 How the child Controls should be placed horizontally.
 
-Property value is `CrossAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum.
 
 ### `on_scroll_interval`
 
@@ -418,15 +405,7 @@ Spacing between runs when `wrap=True`. Default value is 10.
 
 Enables a vertical scrolling for the Column to prevent its content overflow.
 
-Property value is an optional `ScrollMode` enum with `None` as default.
-
-Supported values:
-
-* `None` (default) - the column is non-scrollable and its content could overflow.
-* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
-* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
 
 ### `spacing`
 

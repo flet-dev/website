@@ -367,6 +367,19 @@ module.exports = {
             "reference/cli/pack",
             "reference/cli/publish",
           ],
+        },
+        {
+          type: "category",
+          label: "Types",
+          link: {
+            type: "doc",
+            id: "reference/types/index",
+          },
+          items: [
+            "reference/types/crossaxisalignment",
+            "reference/types/mainaxisalignment",
+            "reference/types/scrollmode",
+          ],
         }
       ],
     }
