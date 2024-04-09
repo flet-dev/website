@@ -376,8 +376,10 @@ module.exports = {
             id: "reference/types/index",
           },
           items: [
+            "reference/types/animationcurve",
             "reference/types/crossaxisalignment",
             "reference/types/mainaxisalignment",
+            "reference/types/onscrollevent",
             "reference/types/scrollmode",
           ],
         }
