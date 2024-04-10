@@ -198,12 +198,7 @@ If specified, the corners of the container are rounded by this radius. Border ra
 
 The content will be clipped (or not) according to this option.
 
-Property value is `ClipBehavior` enum with supported values:
-
-* `NONE`
-* `ANTI_ALIAS`
-* `ANTI_ALIAS_WITH_SAVE_LAYER`
-* `HARD_EDGE`
+Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
 Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
 
@@ -215,40 +210,9 @@ A child Control contained by the container.
 
 Configures gradient background. The value must be an instance of one of the following classes:
 
-* `LinearGradient`
+* [`LinearGradient`](/docs/reference/types/lineargradient)
 * `RadialGradient`
 * `SweepGradient`
-
-#### `LinearGradient`
-
-<img src="/img/docs/controls/container/linear-gradient.png" className="screenshot-20" />
-
-```python
-Container(
-    gradient=ft.LinearGradient(
-        begin=ft.alignment.top_center,
-        end=ft.alignment.bottom_center,
-       colors=[ft.colors.BLUE, ft.colors.YELLOW],
-    ),
-    width=150,
-    height=150,
-    border_radius=5,
-)
-```
-
-`LinearGradient` class has the following properties:
-
-* `begin` - An instance of `Alignment` class. The offset at which stop 0.0 of the gradient is placed.
-* `end` - An instance of `Alignment` class. The offset at which stop 1.0 of the gradient is placed.
-* `colors` - The colors the gradient should obtain at each of the stops. If stops is non-null, this list must have the same length as stops. This list must have at least two colors in it (otherwise, it's not a gradient!).
-* `stops` - A list of values from 0.0 to 1.0 that denote fractions along the gradient. If non-null, this list must have the same length as `colors`. If the first value is not 0.0, then a stop with position 0.0 and a color equal to the first color in `colors` is implied. If the last value is not 1.0, then a stop with position 1.0 and a color equal to the last color in `colors` is implied.
-* `tile_mode` - How this gradient should tile the plane beyond in the region before `begin` and after `end`. The value is `GradientTileMode` enum with supported values: `CLAMP` (default), `DECAL`, `MIRROR`, `REPEATED`. More info [here](https://api.flutter.dev/flutter/dart-ui/TileMode.html).
-* `rotation` - rotation for the gradient, in [radians](https://en.wikipedia.org/wiki/Radian), around the center-point of its bounding box.
-
-More information:
-
-* [Linear gradient](https://api.flutter.dev/flutter/painting/LinearGradient-class.html) in Flutter documentation.
-* [Radian measuring unit](https://en.wikipedia.org/wiki/Radian) on Wikipedia.
 
 #### `RadialGradient`
 
