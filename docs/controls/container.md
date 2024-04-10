@@ -270,30 +270,7 @@ Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) cla
 
 A list of shadows cast by the container.
 
-The value of this property is a single instance or a list of `ft.BoxShadow` class instances with the following properties:
-
-* `spread_radius` - The amount the box should be inflated prior to applying the blur. Default is `0.0.`.
-* `blur_radius` - The standard deviation of the Gaussian to convolve with the shadow's shape. Default is `0.0.`.
-* `color` - Color that the shadow will be drawn with.
-* `offset` - An instance of `ft.Offset` class - the displacement of the shadow from the casting element. Positive x/y offsets will shift the shadow to the right and down, while negative offsets shift the shadow to the left and up. The offsets are relative to the position of the element that is casting it. Default is `ft.Offset(0,0)`.
-* `blur_style` - The `ft.BlurStyle` to use for this shadow. Defaults to `ft.BlurStyle.NORMAL`.
-
-Example:
-
-```python
-ft.Container(
-    border_radius=10,
-    width=100,
-    height=100,
-    shadow=ft.BoxShadow(
-        spread_radius=1,
-        blur_radius=15,
-        color=ft.colors.BLUE_GREY_300,
-        offset=ft.Offset(0, 0),
-        blur_style=ft.ShadowBlurStyle.OUTER,
-    )
-)
-```
+The value of this property is a single instance or a list of [`BoxShadow`](/docs/reference/types/boxshadow) class instances.
 
 ### `shape`
 
@@ -304,7 +281,9 @@ Sets the shape of the container. The value is `BoxShape` enum:
 
 ### `theme_mode`
 
-Setting `theme_mode` (`ft.ThemeMode`) "resets" parent theme and creates a new, unique scheme for all controls inside the container. Otherwise the styles defined in container's `theme` property override corresponding styles from the parent, inherited theme.
+The value is [`ThemeMode`](/docs/reference/types/thememode) enum. Default is `SYSTEM`.
+
+Setting `theme_mode` "resets" parent theme and creates a new, unique scheme for all controls inside the container. Otherwise the styles defined in container's `theme` property override corresponding styles from the parent, inherited theme.
 
 ### `theme`
 

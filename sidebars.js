@@ -382,6 +382,7 @@ module.exports = {
             "reference/types/blur",
             "reference/types/border",
             "reference/types/borderradius",
+            "reference/types/boxshadow",
             "reference/types/clipbehavior",
             "reference/types/crossaxisalignment",
             "reference/types/imagefit",
@@ -394,7 +395,9 @@ module.exports = {
             "reference/types/padding",
             "reference/types/radialgradient",
             "reference/types/scrollmode",
+            "reference/types/shadowblurstyle",
             "reference/types/sweepgradient",
+            "reference/types/thememode",
           ],
         }
       ],
