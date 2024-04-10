@@ -72,7 +72,7 @@ Controls the size of the shadow below the card. Default value is `1.0`.
 
 The empty space that surrounds the card.
 
-The optional value of `margin` property could be one of the following types:
+The value of `margin` property could be one of the following types:
 
 * `int`
 * `float`

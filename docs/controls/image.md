@@ -80,7 +80,7 @@ Fallback `Control` to display if the image cannot be loaded from the source.
 
 How to inscribe the image into the space allocated during layout.
 
-Property value is `ImageFit` enum with supported values: `NONE` (default), `CONTAIN`, `COVER`, `FILL`, `FIT_HEIGHT`, `FIT_WIDTH`, `SCALE_DOWN`.
+The value is [`ImageFit`](/docs/reference/types/imagefit) enum. Default is `NONE`.
 
 ### `gapless_playback`
 

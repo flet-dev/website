@@ -384,6 +384,7 @@ module.exports = {
             "reference/types/borderradius",
             "reference/types/clipbehavior",
             "reference/types/crossaxisalignment",
+            "reference/types/imagefit",
             "reference/types/lineargradient",
             "reference/types/mainaxisalignment",
             "reference/types/margin",
@@ -391,6 +392,7 @@ module.exports = {
             "reference/types/outlinedborder",
             "reference/types/radialgradient",
             "reference/types/scrollmode",
+            "reference/types/sweepgradient",
           ],
         }
       ],

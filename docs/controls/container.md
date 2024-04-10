@@ -212,40 +212,13 @@ Configures gradient background. The value must be an instance of one of the foll
 
 * [`LinearGradient`](/docs/reference/types/lineargradient)
 * [`RadialGradient`](/docs/reference/types/radialgradient)
-* `SweepGradient`
-
-#### `SweepGradient`
-
-<img src="/img/docs/controls/container/sweep-gradient.png" className="screenshot-20" />
-
-```python
-Container(
-    gradient=SweepGradient(
-        center=ft.alignment.center,
-        start_angle=0.0,
-        end_angle=math.pi * 2,
-       colors=[ft.colors.YELLOW, ft.colors.BLUE],
-    ),
-    width=150,
-    height=150,
-    border_radius=5,
-)
-```
-
-`SweepGradient` class has the following properties:
-
-* `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#lineargradient) for description of these properties.
-* `center` - The center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For example, an alignment of (0.0, 0.0) will place the sweep gradient in the center of the box.
-* `start_angle` - The angle in radians at which stop 0.0 of the gradient is placed. Defaults to 0.0.
-* `end_angle` - The angle in radians at which stop 1.0 of the gradient is placed. Defaults to math.pi * 2.
-
-More information:
-
-* [Sweep gradient](https://api.flutter.dev/flutter/painting/SweepGradient-class.html) in Flutter documentation.
+* [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `image_fit`
 
-See [`Image.fit`](image#fit) for more details.
+How to inscribe the image into the space allocated during layout. 
+
+The value is [`ImageFit`](/docs/reference/types/imagefit) enum. Default is `NONE`.
 
 ### `image_opacity`
 
@@ -275,7 +248,7 @@ The splash [color](/docs/reference/colors) of the ink response.
 
 Empty space to surround the decoration and child control.
 
-The optional value of `margin` property could be one of the following types:
+The value of `margin` property could be one of the following types:
 
 * `int`
 * `float`
