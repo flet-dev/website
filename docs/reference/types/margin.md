@@ -1,15 +1,9 @@
 ---
-title: MarginValue
-sidebar_label: MarginValue
+title: Margin
+sidebar_label: Margin
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-`MarginValue` type can be one of the following:
-* `None`
-* `int`
-* `float`
-*  `margin.Margin` class
 
 `margin.Margin` class has the properties to set margins for all sides of the rectangle: 
 * `left`

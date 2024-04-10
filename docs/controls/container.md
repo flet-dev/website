@@ -336,7 +336,13 @@ The splash [color](/docs/reference/colors) of the ink response.
 
 ### `margin`
 
-Empty space to surround the decoration and child control. Property value is a [`MarginValue`](/docs/reference/types/marginvalue).
+Empty space to surround the decoration and child control.
+
+The optional value of `margin` property could be one of the following types:
+
+* `int`
+* `float`
+* [`margin.Margin`](/docs/reference/types/margin)
 
 ### `padding`
 

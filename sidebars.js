@@ -384,7 +384,7 @@ module.exports = {
             "reference/types/borderradius",
             "reference/types/crossaxisalignment",
             "reference/types/mainaxisalignment",
-            "reference/types/marginvalue",
+            "reference/types/margin",
             "reference/types/onscrollevent",
             "reference/types/outlinedborder",
             "reference/types/scrollmode",
