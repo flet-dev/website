@@ -287,7 +287,9 @@ Setting `theme_mode` "resets" parent theme and creates a new, unique scheme for 
 
 ### `theme`
 
-Allows setting a nested `ft.Theme` for all controls inside the container and down the tree, for example:
+The value is an instance of [`Theme`](/docs/cookbook/theming) class.
+
+Allows setting a nested `theme` for all controls inside the container and down the tree, for example:
 
 ```python
 import flet as ft
