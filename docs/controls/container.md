@@ -226,7 +226,9 @@ Sets image opacity when blending with a background: value between `0.0` and `1.0
 
 ### `image_repeat`
 
-See [`Image.repeat`](image#repeat) for more details.
+How to paint any portions of the layout bounds not covered by the image.
+
+The value is [`ImageRepeat`](/docs/reference/types/imagerepeat) enum. Default is `NO_REPEAT`.
 
 ### `image_src`
 

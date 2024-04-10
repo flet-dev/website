@@ -385,6 +385,7 @@ module.exports = {
             "reference/types/clipbehavior",
             "reference/types/crossaxisalignment",
             "reference/types/imagefit",
+            "reference/types/imagerepeat",
             "reference/types/lineargradient",
             "reference/types/mainaxisalignment",
             "reference/types/margin",

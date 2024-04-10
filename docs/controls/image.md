@@ -151,7 +151,7 @@ On Windows you can use PowerShell to encode string into Base64 format:
 
 How to paint any portions of the layout bounds not covered by the image.
 
-Property value is `ImageRepeat` enum with supported values: `NO_REPEAT` (default), `REPEAT`, `REPEAT_X`, `REPEAT_Y`.
+The value is [`ImageRepeat`](/docs/reference/types/imagerepeat) enum. Default is `NO_REPEAT`.
 
 ### `semantics_label`
 
