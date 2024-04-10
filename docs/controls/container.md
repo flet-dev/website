@@ -12,47 +12,6 @@ import TabItem from '@theme/TabItem';
 
 [Live example](https://flet-controls-gallery.fly.dev/layout/container)
 
-### Containers with different background color
-
-<img src="/img/docs/controls/container/containers-background-color.png" className="screenshot-50" />
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-
-def main(page: ft.Page):
-    page.title = "Containers with background color"
-
-    c1 = ft.Container(
-        content=ft.ElevatedButton("Elevated Button in Container"),
-        bgcolor=ft.colors.YELLOW,
-        padding=5,
-    )
-
-    c2 = ft.Container(
-        content=ft.ElevatedButton(
-            "Elevated Button with opacity=0.5 in Container", opacity=0.5
-        ),
-        bgcolor=ft.colors.YELLOW,
-        padding=5,
-    )
-
-    c3 = ft.Container(
-        content=ft.OutlinedButton("Outlined Button in Container"),
-        bgcolor=ft.colors.YELLOW,
-        padding=5,
-    )
-    page.add(c1, c2, c3)
-
-
-ft.app(target=main)
-```
-  </TabItem>
-</Tabs>
-
 ### Clickable container
 
 <img src="/img/docs/controls/container/clickable-container.gif" className="screenshot-50" />
@@ -143,7 +102,7 @@ The value of `animate` property could be one of the following types:
 
 * `bool` - `True` to enable container animation with `linear` curve with `1000` milliseconds duration.
 * `int` - enable container animation with `linear` curve and specified number of milliseconds. 
-* `animation.Animation(duration: int, curve: str)` - enable container animation with specified duration and transition curve.
+* `animation.Animation(duration: int, curve: AnimationCurve` - enable container animation with specified duration and transition [curve](/docs/reference/types/animationcurve).
 
 For example:
 
@@ -158,7 +117,7 @@ def main(page: ft.Page):
         width=200,
         height=200,
         bgcolor="red",
-        animate=ft.animation.Animation(1000, "bounceOut"),
+        animate=ft.animation.Animation(1000, ft.AnimationCurve.BOUNCE_OUT),
     )
 
     def animate_container(e):
@@ -188,7 +147,7 @@ The value of this property could be one of the following:
 
 * **a number** - specifies the same value for horizontal and vertical sigmas, e.g. `10`.
 * **a tuple** - specifies separate values for horizontal and vertical sigmas, e.g. `(10, 1)`.
-* **an instance of `ft.Blur`** - allow specifying separate values for horizontal and vertical sigmas as well as `tile_mode` for the filter. `tile_mode` is the value of `ft.BlurTileMode` which defaults to `ft.BlurTileMode.CLAMP`.
+* **an instance of [`Blur`](/docs/reference/types/blur)**
 
 For example:
 
@@ -229,35 +188,11 @@ ft.Stack(
 
 ### `border`
 
-A border to draw above the background color.
-
-Each side of the container border is described by an instance of `border.BorderSide` class with two properties: `width` (number) and `color` (string). The value of `border` property is an instance of `border.Border` class describing all 4 sides of the rectangle. Helper methods available to set border styles:
-
-* `border.all(width, color)`
-* `border.symmetric(vertical: BorderSide, horizontal: BorderSide)`
-* `border.only(left: BorderSide, top: BorderSide, right: BorderSide, bottom: BorderSide)`.
-
-For example:
-
-```python
-container_1.border = ft.border.all(10, ft.colors.PINK_600)
-container_1.border = ft.border.only(bottom=ft.border.BorderSide(1, "black"))
-```
+A border to draw above the background color. The value is an instance of [`border.Border`](/docs/reference/types/border) class.
 
 ### `border_radius`
 
-If specified, the corners of the container are rounded by this radius. Border radius is an instance of `border_radius.BorderRadius` class with 4 properties: `top_left`, `top_right`, `bottom_left`, `bottom_right`. The object could be created with a constructor where all corner values set separately or with helper methods:
-
-* `border_radius.all(value)`
-* `border_radius.horizontal(left: float = 0, right: float = 0)`
-* `border_radius.vertical(top: float = 0, bottom: float = 0)`
-* `border_radius.only(top_left, top_right, bottom_left, bottom_right)`
-
-For example:
-
-```python
-container_1.border_radius= ft.border_radius.all(30)
-```
+If specified, the corners of the container are rounded by this radius. Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `clip_behavior`
 
