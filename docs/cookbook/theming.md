@@ -527,11 +527,11 @@ It has the following properties:
 
 #### `system_navigation_bar_color`
 
-The [color](/docs/guides/python/colors) of the system navigation bar.
+The [color](/docs/reference/colors) of the system navigation bar.
 
 #### `system_navigation_bar_divider_color`
 
-The [color](/docs/guides/python/colors) of the divider between the system navigation bar and the app content.
+The [color](/docs/reference/colors) of the divider between the system navigation bar and the app content.
 
 #### `enforce_system_navigation_bar_contrast`
 

@@ -92,7 +92,7 @@ page.update()
 
 Customizes the theme of the application when in dark theme mode.
 
-Value is an instance of the `Theme()` class - more information in the [theming](/docs/guides/python/theming) guide.
+Value is an instance of the `Theme()` class - more information in the [theming](/docs/cookbook/theming) guide.
 
 ### `debug`
 
@@ -515,7 +515,7 @@ ft.app(target=main)
 
 Customizes the theme of the application when in light theme mode. Currently, a theme can only be automatically generated from a "seed" color. For example, to generate light theme from a green color.
 
-Value is an instance of the `Theme()` class - more information in the [theming](/docs/guides/python/theming) guide.
+Value is an instance of the `Theme()` class - more information in the [theming](/docs/cookbook/theming) guide.
 
 ### `theme_mode`
 

@@ -93,7 +93,7 @@ for possible values.
 
 ### `color`
 
-The default [color](/docs/guides/python/colors) for `Text` and `Icon` controls within the app bar. Default color is defined by current theme.
+The default [color](/docs/reference/colors) for `Text` and `Icon` controls within the app bar. Default color is defined by current theme.
 
 ### `elevation`
 
