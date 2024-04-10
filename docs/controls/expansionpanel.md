@@ -126,7 +126,7 @@ If `True`, tapping on the panel's `header` will expand or collapse it. Defaults 
 
 ### `expanded`
 
-A boolean that defines the state of the `ExpansionPanel`: whether expanded or collapsed. Defaults to `False`.
+Whether expanded(`True`) or collapsed(`False`). Defaults to `False`.
 
 ### `header`
 

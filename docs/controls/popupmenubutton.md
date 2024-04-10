@@ -52,15 +52,43 @@ ft.app(target=main)
 
 <img src="/img/docs/controls/popup-menu-button/popup-menu-button-with-custom-content.gif" className="screenshot-30"/>
 
-## `PopupMenuButton` properties
+## `PopupMenuButton` Properties
+
+### `bgcolor`
+
+The menu's background [color](/docs/reference/colors).
+
+### `clip_behavior`
+
+The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Default value is `ClipBehavior.NONE`.
 
 ### `content`
 
 A `Control` that will be displayed instead of "more" icon.
 
+### `elevation`
+
+The menu's elevation when opened. Defaults to `8`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this to `True` produce a click sound and a long-press will produce a short vibration. 
+
+Defaults to `True`.
+
 ### `icon`
 
-If provided an icon to draw on the button.
+If provided, an icon to draw on the button.
+
+### `icon_color`
+
+The `icon`'s [color](/docs/reference/colors).
+
+### `icon_size`
+
+The `icon`'s size.
 
 ### `items`
 
@@ -70,32 +98,81 @@ A collection of `PopupMenuItem` controls to display in a dropdown menu.
 
 Defines position of the popup menu relative to the button. Value can either be `PopupMenuPosition.OVER` (default) or `PopupMenuPosition.UNDER`.
 
-## `PopupMenuButton` events
+### `padding`
 
-### `on_cancelled`
+A collection of `PopupMenuItem` controls to display in a dropdown menu. Defaults to `padding.all(8.0)`.
 
-Called when the user dismisses the popup menu without selecting an item.
+See [`Container.padding`](container#padding) for possible values.
 
-## `PopupMenuItem` properties
+### `shadow_color`
+
+The [color](/docs/reference/colors) used to paint the shadow below the menu.
+
+### `shape`
+
+The menu's shape. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+
+The default shape is a `CircleBorder` with a radius of `10.0`.
+
+### `splash_radius`
+
+The splash radius.
+
+### `surface_tint_color`
+
+The [color](/docs/reference/colors) used as an overlay on color to indicate elevation.
+
+## `PopupMenuButton` Events
+
+### ~~`on_cancelled`~~
+
+Called when the user dismisses/cancels the popup menu without selecting an item.
+
+*Deprecated (renamed) since version 0.22.0 and will be removed in version 1.0. Use `on_cancel` instead.*
+
+### `on_cancel`
+
+Called when the user dismisses/cancels the popup menu without selecting an item.
+
+### `on_open`
+
+Called when the popup menu is shown.
+
+## `PopupMenuItem` Properties
 
 ### `check`
 
 If set to `True` or `False` a menu item draws a checkmark.
 
+### `content`
+
+A `Control` representing custom content of this menu item. If specified, then both `icon` and `text` properties are ignored.
+
+### `height`
+
+The minimum height of this menu item. Defaults to `40`.
+
 ### `icon`
 
-An icon to draw before menu item text label.
+An icon to draw before the text label of this menu item.
+
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+
+### `padding`
+
+The padding of this menu item. Note that the `height` value of this menu item may influence the applied padding. For example, If a `height` greater than the height of the sum of the padding and a `content` is provided, then the padding's effect will not be visible.
+
+Defaults to `padding.symmetric(horizontal=12)`. See [`Container.padding`](container#padding) for possible values.
 
 ### `text`
 
-Menu item text label.
+The text label of this menu item.
 
-### `content`
-
-A `Control` representing menu item's custom content. If specified both `icon` and `text` properties are ignored.
-
-## `PopupMenuItem` events
+## `PopupMenuItem` Events
 
 ### `on_click`
 
-Called when a user clicks a popup menu item.
+Called when a user clicks a this menu item.

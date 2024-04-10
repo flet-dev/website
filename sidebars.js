@@ -298,6 +298,7 @@ module.exports = {
             "controls/gesturedetector",
             "controls/hapticfeedback",
             "controls/mergesemantics",
+            "controls/rive",
             "controls/selectionarea",
             "controls/semantics",
             "controls/semanticsservice",
@@ -315,6 +316,7 @@ module.exports = {
       type: "category",
       label: "Cookbook",
       items: [
+        "cookbook/theming",
         "cookbook/keyboard-shortcuts",
         "cookbook/large-lists",
         "cookbook/drag-and-drop",

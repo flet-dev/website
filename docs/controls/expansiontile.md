@@ -106,14 +106,9 @@ See [`Container.padding`](container#padding) for more information and possible v
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option.
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
 
-Property value is `ClipBehavior` enum with supported values:
-
-* `NONE` (default)
-* `ANTI_ALIAS`
-* `ANTI_ALIAS_WITH_SAVE_LAYER`
-* `HARD_EDGE`
+Defaults to `ClipBehavior.NONE`.
 
 ### `collapsed_bgcolor`
 
@@ -140,12 +135,25 @@ The tile's border shape when the sublist is collapsed. The value is an instance 
 
 The [color](/docs/reference/colors) of the tile's titles when the sublist is collapsed.
 
+### `dense`
+
+Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
+
+It is not recommended to set this property to `True` when in Material3.
+
+Defaults to `False`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. For example, on Android a tap will produce a clicking sound and a long-press will produce a short vibration, when feedback is enabled.
+
+Defaults to `True`.
+
 ### `expanded_alignment`
 
 Defines the alignment of children, which are arranged in a column when the tile is expanded.
 
 See [`Container.alignment`](container#alignment) property for more information and possible values.
-
 
 ### `expanded_cross_axis_alignment`
 
@@ -209,6 +217,10 @@ A `Control` to display as primary content of the tile. Typically a [Text](text) 
 ### `trailing`
 
 A `Control` to display after the title. Typically an [Icon](icon) control.
+
+### `visual_density`
+
+Defines how compact the control's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 
 ## Events
 

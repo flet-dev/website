@@ -60,9 +60,24 @@ ft.app(target=main)
 
 Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
 
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior)
+for possible values.
+
 ### `divider_color`
 
 The [color](/docs/reference/colors) of the divider.
+
+### `divider_height`
+
+The height of the divider. Defaults to `1.0`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this to `True` produce a click sound and a long-press will produce a short vibration. 
+
+Defaults to `True`.
 
 ### `indicator_border_radius`
 
@@ -74,7 +89,7 @@ The [color](/docs/reference/colors) and weight of the horizontal line drawn belo
 
 ### `indicator_color`
 
-The [color](/docs/reference/colors) of the line that appears below the selected tab.
+The [color](/docs/reference/colors) of the indicator(line that appears below the selected tab).
 
 ### `indicator_padding`
 
@@ -84,9 +99,25 @@ Locates the selected tab's underline relative to the tab's boundary. The `indica
 
 `True` for indicator to take entire tab.
 
+### `indicator_thickness`
+
+The thickness of the indicator. Value must be greater than zero. It defaults to `3.0` when `secondary=False`, else `3.0`.
+
+### `is_secondary`
+
+Whether to create a secondary/nested tab bar. Secondary tabs are used within a content area to further separate related
+content and establish hierarchy.
+
+Defaults to `False`.
+
 ### `label_color`
 
 The [color](/docs/reference/colors) of selected tab labels.
+
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
 
 ### `overlay_color`
 

@@ -200,7 +200,7 @@ The content will be clipped (or not) according to this option.
 
 Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
+Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`. More information on each of the values [here](https://api.flutter.dev/flutter/dart-ui/Clip.html).
 
 ### `content`
 
@@ -338,10 +338,13 @@ The URL to open when the container is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode:
+Where to open URL in the web mode. Value is of `UrlTarget` enum:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+* `BLANK` (default) - opens in a new tab/window
+* `SELF` - opens in the current tab/window
+* `PARENT` - opens in the parent frame. Behaves as `SELF` if there is no parent.
+* `TOP` - opens in the full body of the window
+[//]: # (* `UNFENCED_TOP`)
 
 ## Events
 

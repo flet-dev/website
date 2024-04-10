@@ -126,6 +126,11 @@ See [`Container.border`](/docs/controls/container#border) property for more info
 
 Horizontal margin around the checkbox, if it is displayed.
 
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior)
+for possible values.
+
 ### `column_spacing`
 
 The horizontal margin between the contents of each data column.

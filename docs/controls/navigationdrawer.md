@@ -137,6 +137,10 @@ Fires when NavigationDrawer is dismissed by clicking outside of the panel or [pr
 
 ## `NavigationDrawerDestination` properties
 
+### `bgcolor`
+
+The [color](/docs/reference/colors) of this destination.
+
 ### `icon`
 
 The name of the icon of the destination.

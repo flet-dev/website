@@ -91,6 +91,10 @@ The text that is displayed below the minute input text field.
 
 The default value is "Minute".
 
+### `orientation`
+
+The orientation of the dialog when displayed. Value is of type `Orientation` enum which has the following possible values: `PORTRAIT` and `LANDSCAPE`.
+
 ### `time_picker_entry_mode`
 
 The initial mode of time entry method for the time picker dialog.
@@ -124,8 +128,12 @@ Opens a time picker dialog.
 
 ### `on_change`
 
-Fires when user clicks confirm button. `value` property is updated with selected time. 
+Fires when user clicks confirm button. `value` property is updated with selected time. `e.data` also contains the selected time.
 
 ### `on_dismiss`
 
 Fires when dialog is dismissed by clicking on the cancel button or outside of time picker dialog.
+
+### `on_entry_mode_change`
+
+Fires when the `time_picker_entry_mode` is changed. The event handler (`e`) is of type `TimePickerEntryModeChangeEvent` and the new entry mode could be gotten from `e.entry_mode` (value of type `TimePickerEntryMode` enum).

@@ -83,7 +83,7 @@ page.theme = ft.Theme(
 )
 ```
 
-See [`ColorScheme` class](/docs/controls/page#colorscheme-class) for more details.
+See [`ColorScheme` class](/docs/cookbook/theming#colorscheme-class) for more details.
 
 ## Nested themes
 
@@ -142,7 +142,7 @@ ft.app(main)
 
 You can now customize the look and fill of scrollbars in your application (or a particular scroillbar with [nested themes](#nested-themes)).
 
-It could be done via [`page.theme.scrollbar_theme`](/docs/controls/page#scrollbartheme-class) property, for example:
+It could be done via [`page.theme.scrollbar_theme`](/docs/cookbook/theming#scrollbartheme-class) property, for example:
 
 ```python
 page.theme = ft.Theme(
@@ -189,11 +189,11 @@ ft.app(main)
 
 Apparently, `Body Medium` is used by `Text` control as a default style.
 
-See [`TextTheme` class](/docs/controls/page#texttheme-class) for more details.
+See [`TextTheme` class](/docs/cookbook/theming#texttheme-class) for more details.
 
 ## Tabs theming
 
-You can now control the look and feel of `Tabs` control. In this release `Tabs` adds a bunch of new properties and there is a new [`page.theme.tabs_theme`](/docs/controls/page#tabstheme-class) property to style all tabs in your app:
+You can now control the look and feel of `Tabs` control. In this release `Tabs` adds a bunch of new properties and there is a new [`page.theme.tabs_theme`](/docs/cookbook/theming#tabstheme-class) property to style all tabs in your app:
 
 ```python
 page.theme = ft.Theme(
@@ -213,7 +213,7 @@ page.theme = ft.Theme(
 
 <img src="/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />
 
-See [`TabsTheme` class](/docs/controls/page#tabstheme-class) for more details.
+See [`TabsTheme` class](/docs/cookbook/theming#tabstheme-class) for more details.
 
 ## Other changes
 

@@ -223,7 +223,7 @@ With similar approach, specify `on_click` event and `data` property for each but
 Run the app and see it in the action:
 <img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
 
-## Packaging as a desktop app
+## Packaging your app for distribution
 
 Congratulations! You have created your Calculator app with Flet, and it looks awesome! Now it's time to share your app with the world!
 

@@ -73,6 +73,10 @@ True if the control will be selected as the initial focus. If there is more than
 
 The [color](/docs/reference/colors) that fills the radio.
 
+### `focus_color`
+
+The [color](/docs/reference/colors) for the radio's border when it has the input focus.
+
 ### `inactive_color`
 
 The [color](/docs/reference/colors) used to fill this radio when it is not selected. Default value is white.
@@ -84,6 +88,13 @@ The clickable label to display on the right of a Radio.
 ### `label_position`
 
 Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
+
+### `toggleable`
+
+Set to `True` if this radio button is allowed to be returned to an indeterminate state by selecting it again when
+selected.
+
+Defaults to `False`.
 
 ### `use_checkmark_style`
 
