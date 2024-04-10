@@ -211,35 +211,8 @@ A child Control contained by the container.
 Configures gradient background. The value must be an instance of one of the following classes:
 
 * [`LinearGradient`](/docs/reference/types/lineargradient)
-* `RadialGradient`
+* [`RadialGradient`](/docs/reference/types/radialgradient)
 * `SweepGradient`
-
-#### `RadialGradient`
-
-<img src="/img/docs/controls/container/radial-gradient.png" className="screenshot-20" />
-
-```python
-Container(
-    gradient=ft.RadialGradient(
-       colors=[ft.colors.YELLOW, ft.colors.BLUE],
-    ),
-    width=150,
-    height=150,
-    border_radius=5,
-)
-```
-
-`RadialGradient` class has the following properties:
-
-* `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#lineargradient) for description of these properties.
-* `center` - An instance of `Alignment` class. The center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For example, an alignment of (0.0, 0.0) will place the radial gradient in the center of the box.
-* `radius` - The radius of the gradient, as a fraction of the shortest side of the paint box. For example, if a radial gradient is painted on a box that is 100.0 pixels wide and 200.0 pixels tall, then a radius of 1.0 will place the 1.0 stop at 100.0 pixels from the `center`.
-* `focal` - The focal point of the gradient. If specified, the gradient will appear to be focused along the vector from `center` to focal.
-* `focal_radius` - The radius of the focal point of gradient, as a fraction of the shortest side of the paint box. For example, if a radial gradient is painted on a box that is 100.0 pixels wide and 200.0 pixels tall, then a radius of 1.0 will place the 1.0 stop at 100.0 pixels from the focal point.
-
-More information:
-
-* [Radial gradient](https://api.flutter.dev/flutter/painting/RadialGradient-class.html) in Flutter documentation.
 
 #### `SweepGradient`
 

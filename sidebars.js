@@ -389,6 +389,7 @@ module.exports = {
             "reference/types/margin",
             "reference/types/onscrollevent",
             "reference/types/outlinedborder",
+            "reference/types/radialgradient",
             "reference/types/scrollmode",
           ],
         }
