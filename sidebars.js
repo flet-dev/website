@@ -316,6 +316,7 @@ module.exports = {
       type: "category",
       label: "Cookbook",
       items: [
+        "cookbook/theming",
         "cookbook/keyboard-shortcuts",
         "cookbook/large-lists",
         "cookbook/drag-and-drop",
