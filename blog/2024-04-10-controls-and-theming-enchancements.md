@@ -1,6 +1,6 @@
 ---
-slug: flet-v-0-22-0-announcement
-title: Flet v0.22.0 Announcement
+slug: controls-and-theming-enchancements
+title: Controls and theming enchancements
 author: Henri Ndonko
 author_title: Flet Contributor and Maintainer
 author_url: https://github.com/ndonkoHenri
