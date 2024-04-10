@@ -127,19 +127,9 @@ This is used to indicate to the user what they are selecting a date for. The def
 
 ### `keyboard_type`
 
-The type of keyboard to use for editing the text. The property value is `KeyboardType` enum with the following values:
+The type of keyboard to use for editing the text. See [`KeyboardType`](textfield#keyboard_type) for possible values.
 
-* `TEXT` 
-* `MULTILINE`
-* `NUMBER`
-* `PHONE`
-* `DATETIME` (default)
-* `EMAIL`
-* `URL`
-* `VISIBLE_PASSWORD`
-* `NAME`
-* `STREET_ADDRESS`
-* `NONE`
+Defaults to `KeyboardType.DATETIME`.
 
 ### `last_date`
 
@@ -167,8 +157,12 @@ Opens a date picker dialog.
 
 ### `on_change`
 
-Fires when user clicks confirm button. `value` property is updated with selected date. 
+Fires when user clicks confirm button. `value` property is updated with selected date. `e.data` also contains the selected date.
 
 ### `on_dismiss`
 
 Fires when dialog is dismissed by clicking on the cancel button or outside of date picker dialog.
+
+### `on_entry_mode_change`
+
+Fires when the `date_picker_entry_mode` is changed. The event handler (`e`) is of type `DatePickerEntryModeChangeEvent` and the new entry mode could be gotten from `e.entry_mode` (value of type `DatePickerEntryMode` enum).

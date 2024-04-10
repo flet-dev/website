@@ -298,6 +298,7 @@ module.exports = {
             "controls/gesturedetector",
             "controls/hapticfeedback",
             "controls/mergesemantics",
+            "controls/rive",
             "controls/selectionarea",
             "controls/semantics",
             "controls/semanticsservice",

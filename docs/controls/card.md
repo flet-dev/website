@@ -54,6 +54,12 @@ ft.app(target=main)
 
 ## Properties
 
+### `clip_behavior`
+
+The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Default value is `ClipBehavior.NONE`.
+
 ### `color`
 
 The card's background [color](/docs/reference/colors).
@@ -68,6 +74,10 @@ This control can only have one child. To lay out multiple children, let this con
 
 Controls the size of the shadow below the card. Default value is `1.0`.
 
+### `is_semantic_container`
+
+Set to `True` (default) if this card represents a single semantic container, or to `False` if it instead represents a collection of individual semantic nodes (different types of content).
+
 ### `margin`
 
 The empty space that surrounds the card.
@@ -80,19 +90,13 @@ The [color](/docs/reference/colors) to paint the shadow below the card.
 
 ### `shape`
 
-The shape of the card.
-
-The value is an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+The shape of the card. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
 
 The default shape is a `RoundedRectangleBorder` with `radius=4.0`.
+
+### `show_border_on_foreground`
+
+Set to `True` (default) if the shape of the border should be painted in front of the `content`, or to `False` if it should instead be painted behind.
 
 ### `surface_tint_color`
 
@@ -101,3 +105,11 @@ The [color](/docs/reference/colors) used as an overlay on `color` to indicate el
 If this is `None`, no overlay will be applied. Otherwise this color will be composited on top of `color` with an opacity related to `elevation` and used to paint the background of the card.
 
 The default is `None`.
+
+### `variant`
+
+Defines the card variant to be used. Value is of `CardVariant` enum:
+
+* `ELEVATED` - the default variant
+* `FILLED` - the filled variant
+* `OUTLINED` - the outlined variant

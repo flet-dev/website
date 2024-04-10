@@ -129,6 +129,14 @@ rd.fill_color={
 }
 ```
 
+### `focus_color`
+
+The color of this radio when it has the input focus.
+
+### `hover_color`
+
+The color of this radio when it is hovered.
+
 ### `label`
 
 The clickable label to display on the right of a Radio.
@@ -141,9 +149,31 @@ The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
 
 Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+
+### `overlay_color`
+
+The overlay [color](/docs/reference/colors) of this radio, for each `MaterialState` state. See `fill_color` for usage
+example.
+
+### `splash_radius`
+
+The splash radius of the circular Material ink response.
+
+### `toggleable`
+
+Set to `True` if this radio button is allowed to be returned to an indeterminate state by selecting it again when selected.
+
 ### `value`
 
 The value to set to containing `RadioGroup` when the radio is selected.
+
+### `visual_density`
+
+Defines how compact the radio's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 
 ## `Radio` events
 

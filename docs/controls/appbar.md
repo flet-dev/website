@@ -86,15 +86,38 @@ The fill [color](/docs/reference/colors) to use for an AppBar. Default color is 
 
 Whether the title should be centered. Default is `False`.
 
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior)
+for possible values.
+
 ### `color`
 
 The default [color](/docs/reference/colors) for Text and Icons within the app bar. Default color is defined by current theme.
 
 ### `elevation`
 
-This property controls the size of the shadow below the app bar. Default value is 4.
+The app bar's elevation. Defaults to `4`.
 
 Note: This effect is only visible when using the Material 2 design (when `Theme.use_material3=False`).
+
+### `elevation_on_scroll`
+
+The elevation to be used if this app bar has something scrolled underneath it.
+
+### `exclude_header_semantics`
+
+Whether the `title` should be wrapped with header [`Semantics`](semantics). Default value is `False`.
+
+### `force_material_transparency`
+
+Forces the app bar to be transparent (instead of Material's default type).
+
+This will also remove the visual display of `bgcolor` and `elevation`, and affect other characteristics of this app bar.
+
+### `is_secondary`
+
+Whether this app bar is not being displayed at the top of the screen. Default value is `False`.
 
 ### `leading`
 
@@ -106,12 +129,48 @@ Typically the leading control is an [`Icon`](icon) or an [`IconButton`](iconbutt
 
 Defines the width of leading control. By default, the value of `leading_width` is `56.0`.
 
+### `shadow_color`
+
+The [color](/docs/reference/colors) of the shadow below the app bar.
+
+A shadow is only visible and displayed if the `elevation` is greater than zero.
+
+### `shape`
+
+The shape of the app bar's Material as well as its shadow.
+
+### `surface_tint_color`
+
+The color of the surface tint overlay applied to the app bar's `bgcolor` to indicate elevation.
+
+By default, no overlay will be applied.
+
 ### `title`
 
 The primary `Control` displayed in the app bar. Typically a [`Text`](text) control that contains a description of the current contents of the app.
 
 **Note** that, if `AppBar.adaptive=True` and the app is opened on an iOS or macOS device, this control will be automatically centered.
 
+### `title_spacing`
+
+The spacing around `title` on the horizontal axis. It is applied even if there are no `leading` or `actions` controls.
+
+If you want `title` to take all the space available, set this value to `0.0`.
+
+### `title_text_style`
+
+The style to be used for the `Text` controls in the `title`. Value is an instance of
+type [`TextStyle`](text#textstyle-properties).
+
 ### `toolbar_height`
 
 Defines the height of the toolbar component of an AppBar. By default, the value of `toolbar_height` is `56.0`.
+
+### `toolbar_opacity`
+
+The opacity of the toolbar. Value ranges from `0.0` (transparent) to `1.0` (fully opaque) which is the default.
+
+### `toolbar_text_style`
+
+The style to be used for the `Text` controls in the app bar's `leading` and `actions` (but not `title`). Value is an
+instance of type [`TextStyle`](text#textstyle-properties).

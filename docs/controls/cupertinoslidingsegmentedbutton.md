@@ -59,10 +59,6 @@ A list of `Control`s to display as segments inside the CupertinoSegmentedButton.
 
 The button's padding. See [`Container.padding`](container#padding) for more details.
 
-### `selected_color`
-
-The [color](/docs/reference/colors) of the button when it is selected.
-
 ### `selected_index`
 
 The index (starting from 0) of the selected segment in the `controls` list. 
