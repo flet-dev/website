@@ -1,7 +1,6 @@
 ---
 title: ExpansionTile
 sidebar_label: ExpansionTile
-slug: expansiontile
 ---
 
 A single-line ListTile with an expansion arrow icon that expands or collapses the tile to reveal or hide its children.
@@ -93,7 +92,7 @@ Property value is `TileAffinity` enum with supported values:
 
 ### `bgcolor`
 
-The  [color](/docs/guides/python/colors) to display behind the sublist when expanded.
+The  [color](/docs/reference/colors) to display behind the sublist when expanded.
 
 ### `controls`
 
@@ -107,22 +106,17 @@ See [`Container.padding`](container#padding) for more information and possible v
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option.
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
 
-Property value is `ClipBehavior` enum with supported values:
-
-* `NONE` (default)
-* `ANTI_ALIAS`
-* `ANTI_ALIAS_WITH_SAVE_LAYER`
-* `HARD_EDGE`
+Defaults to `ClipBehavior.NONE`.
 
 ### `collapsed_bgcolor`
 
-Defines the background [color](/docs/guides/python/colors) of tile when the sublist is collapsed.
+Defines the background [color](/docs/reference/colors) of tile when the sublist is collapsed.
 
 ### `collapsed_icon_color`
 
-The icon [color](/docs/guides/python/colors) of tile's expansion arrow icon when the sublist is collapsed.
+The icon [color](/docs/reference/colors) of tile's expansion arrow icon when the sublist is collapsed.
 
 ### `collapsed_shape`
 
@@ -139,14 +133,27 @@ The tile's border shape when the sublist is collapsed. The value is an instance 
 
 ### `collapsed_text_color`
 
-The [color](/docs/guides/python/colors) of the tile's titles when the sublist is collapsed.
+The [color](/docs/reference/colors) of the tile's titles when the sublist is collapsed.
+
+### `dense`
+
+Whether this list tile is part of a vertically dense list. Dense list tiles default to a smaller height.
+
+It is not recommended to set this property to `True` when in Material3.
+
+Defaults to `False`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. For example, on Android a tap will produce a clicking sound and a long-press will produce a short vibration, when feedback is enabled.
+
+Defaults to `True`.
 
 ### `expanded_alignment`
 
 Defines the alignment of children, which are arranged in a column when the tile is expanded.
 
 See [`Container.alignment`](container#alignment) property for more information and possible values.
-
 
 ### `expanded_cross_axis_alignment`
 
@@ -162,7 +169,7 @@ Property value is `CrossAxisAlignment` enum with the following values:
 
 ### `icon_color`
 
-The icon [color](/docs/guides/python/colors) of tile's expansion arrow icon when the sublist is expanded.
+The icon [color](/docs/reference/colors) of tile's expansion arrow icon when the sublist is expanded.
 
 ### `initially_expanded`
 
@@ -195,7 +202,7 @@ Additional content displayed below the title. Typically a [Text](text) widget.
 
 ### `text_color`
 
-The [color](/docs/guides/python/colors) of the tile's titles when the sublist is expanded.
+The [color](/docs/reference/colors) of the tile's titles when the sublist is expanded.
 
 ### `tile_padding`
 
@@ -210,6 +217,10 @@ A `Control` to display as primary content of the tile. Typically a [Text](text) 
 ### `trailing`
 
 A `Control` to display after the title. Typically an [Icon](icon) control.
+
+### `visual_density`
+
+Defines how compact the control's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 
 ## Events
 

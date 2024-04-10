@@ -1,7 +1,6 @@
 ---
 title: CupertinoNavigationBar
 sidebar_label: CupertinoNavigationBar
-slug: cupertinonavigationbar
 ---
 
 An iOS-styled bottom navigation tab bar.
@@ -47,11 +46,11 @@ ft.app(target=main)
 
 ### `active_color`
 
-The foreground [color](/docs/guides/python/colors) of the icon and title of the selected destination.
+The foreground [color](/docs/reference/colors) of the icon and title of the selected destination.
 
 ### `bgcolor`
 
-The [color](/docs/guides/python/colors) of the CupertinoNavigationBar itself.
+The [color](/docs/reference/colors) of the CupertinoNavigationBar itself.
 
 ### `border`
 
@@ -69,7 +68,7 @@ The size of all destination icons. Defaults to `30`.
 
 ### `inactive_color`
 
-The foreground [color](/docs/guides/python/colors) of the icon and title of the unselected destinations.
+The foreground [color](/docs/reference/colors) of the icon and title of the unselected destinations.
 
 ### `selected_index`
 

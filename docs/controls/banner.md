@@ -1,7 +1,6 @@
 ---
 title: Banner
 sidebar_label: Banner
-slug: banner
 ---
 
 A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). A user action is required for it to be dismissed.
@@ -64,7 +63,7 @@ Typically this is a list of [`TextButton`](textbutton) controls.
 
 ### `bgcolor`
 
-The [color](/docs/guides/python/colors) of the surface of this Banner.
+The [color](/docs/reference/colors) of the surface of this Banner.
 
 ### `content`
 
@@ -79,6 +78,19 @@ If the actions are below the content, this defaults to `padding.only(left=16.0, 
 If the actions are trailing the content, this defaults to `padding.only(left=16.0, top=2.0)`.
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
+
+### `content_text_style`
+
+The style to be used for the `Text` controls in the `content`. Value is an instance of
+type [`TextStyle`](text#textstyle-properties).
+
+### `divider_color`
+
+The [color](/docs/reference/colors) of the divider.
+
+### `elevation`
+
+The elevation of the banner.
 
 ### `force_actions_below`
 
@@ -98,6 +110,25 @@ Typically an [`Icon`](icon) control.
 
 The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](container#padding) for more information about padding and possible values.
 
+### `margin`
+
+The amount of space surrounding the banner. See [`Container.margin`](container#margin) for more information and possible
+values.
+
 ### `open`
 
 Set to `True` to display a banner.
+
+### `shadow_color`
+
+The [color](/docs/reference/colors) of the shadow below the banner.
+
+### `surface_tint_color`
+
+The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate elevation.
+
+## Events
+
+### `on_visible`
+
+Fires when the banner is shown or made visible for the first time.

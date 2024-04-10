@@ -1,7 +1,6 @@
 ---
 title: Chip
 sidebar_label: Chip
-slug: chip
 ---
 
 Chips are compact elements that represent an attribute, text, entity, or action.
@@ -111,11 +110,31 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-[Color](/docs/guides/python/colors) to be used for the unselected, enabled chip's background.
+[Color](/docs/reference/colors) to be used for the unselected, enabled chip's background.
+
+### `border_side`
+
+Defines the color and weight of the chip's outline. Value is the instance of `BorderSide` class.
 
 ### `check_color`
 
-[Color](/docs/guides/python/colors) of the chip's check mark when a check mark is visible.
+[Color](/docs/reference/colors) of the chip's check mark when a check mark is visible.
+
+### `click_elevation`
+
+A non-negative value which defines the elevation of the chip when clicked/pressed. Defaults to `8.0`.
+
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum.
+See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Defaults to `ClipBehavior.NONE`.
+
+### `color`
+
+The [color](/docs/reference/colors) that fills the chip in various material states .
+See [`Radio.fill_color`](radio#fill_color) for possible values.
 
 ### `delete_icon_tooltip`
 
@@ -127,15 +146,15 @@ A `Control` to display to the right of the chip's `label` in case `on_delete` ev
 
 ### `delete_icon_color`
 
-[Color](/docs/guides/python/colors) of the `delete_icon`.
+[Color](/docs/reference/colors) of the `delete_icon`.
 
 ### `disabled_color`
 
-The [color](/docs/guides/python/colors) used for the chip's background if it is disabled.
+The [color](/docs/reference/colors) used for the chip's background if it is disabled.
 
 ### `elevation`
 
-Specify elevation to change the size of the shadow below the chip. Defaults to 0. The value is always non-negative.
+A non-negative value which defines the size of the shadow below the chip. Defaults to `0`.
 
 ### `label`
 
@@ -173,15 +192,15 @@ If `on_select` event is specified, `selected` property is used to determine whea
 
 ### `selected_color`
 
-The [color](/docs/guides/python/colors) used for the chip's background when it is selected.
+The [color](/docs/reference/colors) used for the chip's background when it is selected.
 
 ### `selected_shadow_color`
 
-The [color](/docs/guides/python/colors) used for the chip's background when the elevation is greater than 0 and the chip is selected.
+The [color](/docs/reference/colors) used for the chip's background when the elevation is greater than 0 and the chip is selected.
 
 ### `shadow_color`
 
-The [color](/docs/guides/python/colors) used for the chip's background when the elevation is greater than 0 and the chip is not selected.
+The [color](/docs/reference/colors) used for the chip's background when the elevation is greater than 0 and the chip is not selected.
 
 ### `shape`
 
@@ -202,6 +221,17 @@ The default shape is a `StadiumBorder`.
 ### `show_checkmark`
 
 If `on_select` event is specified and chip is selected, `show_checkmark` is used to determine wheather or not to show a checkmark. Defaults to `True`.
+
+### `surface_tint_color`
+
+The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate elevation.
+
+### `visual_density`
+
+Defines how compact the control's layout will be.
+
+Property value is `ThemeVisualDensity` enum with the following possible
+values: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 
 ## Events
 

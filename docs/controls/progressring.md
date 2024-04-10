@@ -1,7 +1,6 @@
 ---
 title: ProgressRing
 sidebar_label: ProgressRing
-slug: progressring
 ---
 
 A material design circular progress indicator, which spins to indicate that the application is busy.
@@ -56,11 +55,33 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-[Color](/docs/guides/python/colors) of the circular track being filled by the circular indicator.
+[Color](/docs/reference/colors) of the circular track being filled by the circular indicator.
 
 ### `color`
 
-The progress indicator's [color](/docs/guides/python/colors).
+The progress indicator's [color](/docs/reference/colors).
+
+### `semantics_label`
+
+The `Semantics.label` for this progress indicator.
+
+### `semantics_value`
+
+The `Semantics.value` for this progress indicator.
+
+### `stroke_align`
+
+The relative position of the stroke. Value typically ranges be `-1.0` (inside stroke) and `1.0` (outside stroke).
+
+Defaults to `0` - centered.
+
+### `stroke_cap`
+
+The progress indicator's line ending. Value is `StrokeCap` enum, which has the following possible values:
+
+* `BUTT` - begin and end contours with a flat edge and no extension
+* `ROUND` - begin and end contours with a semi-circle extension
+* `SQUARE` - begin and end contours with a half square extension.
 
 ### `stroke_width`
 

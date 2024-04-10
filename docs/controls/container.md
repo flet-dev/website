@@ -1,7 +1,6 @@
 ---
 title: Container
 sidebar_label: Container
-slug: container
 ---
 
 Container allows to decorate a control with background color and border and position it with padding, margin and alignment. 
@@ -187,7 +186,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-Defines the background [color](/docs/guides/python/colors) of the container.
+Defines the background [color](/docs/reference/colors) of the container.
 
 ### `blend_mode`
 
@@ -283,7 +282,7 @@ Property value is `ClipBehavior` enum with supported values:
 * `ANTI_ALIAS_WITH_SAVE_LAYER`
 * `HARD_EDGE`
 
-Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
+Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`. More information on each of the values [here](https://api.flutter.dev/flutter/dart-ui/Clip.html).
 
 ### `content`
 
@@ -410,7 +409,7 @@ Sets an image encoded as Base-64 string as a container background. See [`Image.s
 
 ### `ink_color`
 
-The splash [color](/docs/guides/python/colors) of the ink response.
+The splash [color](/docs/reference/colors) of the ink response.
 
 ### `margin`
 
@@ -552,10 +551,13 @@ The URL to open when the container is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode:
+Where to open URL in the web mode. Value is of `UrlTarget` enum:
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+* `BLANK` (default) - opens in a new tab/window
+* `SELF` - opens in the current tab/window
+* `PARENT` - opens in the parent frame. Behaves as `SELF` if there is no parent.
+* `TOP` - opens in the full body of the window
+[//]: # (* `UNFENCED_TOP`)
 
 ## Events
 

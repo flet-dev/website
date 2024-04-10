@@ -1,7 +1,6 @@
 ---
 title: Dropdown
 sidebar_label: Dropdown
-slug: dropdown
 ---
 
 A material design button for selecting from a list of items.
@@ -153,7 +152,7 @@ ft.app(target=main)
 
 ### `alignment`
 
-Defines how the hint or the selected item is positioned within the dropdown.
+Defines how the `hint` or the selected item is positioned within this dropdown.
 
 See [`Container.alignment`](/docs/controls/container#alignment) property for possible values.
 
@@ -163,7 +162,9 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-Dropdown background [color](/docs/guides/python/colors).
+The background [color](/docs/reference/colors) of both the dropdown button and it's menu.
+
+To set a different background color for the dropdown button, use `fill_color` or `focused_bgcolor` properties.
 
 ### `border`
 
@@ -171,7 +172,7 @@ Border around input - `InputBorder` enum with one of the values: `OUTLINE` (defa
 
 ### `border_color`
 
-Border [color](/docs/guides/python/colors). Could be `transparent` to hide the border.
+Border [color](/docs/reference/colors). Could be `transparent` to hide the border.
 
 ### `border_radius`
 
@@ -183,7 +184,7 @@ The width of the border in virtual pixels. Default is 1. Set to 0 to completely 
 
 ### `color`
 
-Text [color](/docs/guides/python/colors).
+Text [color](/docs/reference/colors).
 
 ### `content_padding`
 
@@ -203,6 +204,17 @@ If null or an empty string and counter isn't specified, then nothing will appear
 
 Whether the TextField is part of a dense form (ie, uses less vertical space).
 
+### `elevation`
+
+The dropdown's elevation. Defaults to `8`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this
+to `True` produce a click sound and a long-press will produce a short vibration.
+
+Defaults to `True`.
+
 ### `error_style`
 
 The style to use for `error_text`.
@@ -215,15 +227,22 @@ If non-null, the border's color animates to red and the `helper_text` is not sho
 
 ### `filled`
 
-If `True` the decoration's container is filled with theme fillColor.
+If `True` the decoration's container is filled with theme `fill_color`.
+
+If `filled=None`(default), then it is implicitly set to `True` when at least one of the following is
+not `None`: `fill_color`, `focused_bgcolor` and `bgcolor`.
+
+### `fill_color`
+
+Background [color](/docs/reference/colors) of the dropdown button. Will not be visible if `filled=False`.
 
 ### `focused_bgcolor`
 
-Background [color](/docs/guides/python/colors) of dropdown in focused state.
+Background [color](/docs/reference/colors) of dropdown in focused state. Will not be visible if `filled=False`.
 
 ### `focused_border_color`
 
-Border [color](/docs/guides/python/colors) in focused state.
+Border [color](/docs/reference/colors) in focused state.
 
 ### `focused_border_width`
 
@@ -231,7 +250,7 @@ Border width in focused state.
 
 ### `focused_color`
 
-Text [color](/docs/guides/python/colors) when Dropdown is focused.
+Text [color](/docs/reference/colors) when Dropdown is focused.
 
 ### `helper_style`
 
@@ -242,6 +261,10 @@ The style to use for `helper_text`.
 Text that provides context about the input's value, such as how the value will be used.
 
 If non-null, the text is displayed below the input decorator, in the same location as `error_text`. If a non-null `error_text` value is specified then the helper text is not shown.
+
+### `hint_content`
+
+A placeholder control for the dropdown's value that is displayed when `value` is `None`.
 
 ### `hint_style`
 
@@ -259,6 +282,26 @@ The name of the icon to show before the input field and outside of the decoratio
 
 See [`Container.padding`](container#padding) for more information about padding and possible values.
 
+### `icon_content`
+
+The control to use for the drop-down button's icon. Defaults to an `Icon(ft.icons.ARROW_DROP_DOWN)`.
+
+### `icon_enabled_color`
+
+The color of any `Icon` descendant of `icon_content` if this button is enabled.
+
+### `icon_disabled_color`
+
+The color of any `Icon` descendant of `icon_content` if this button is disabled.
+
+### `icon_size`
+
+The size of the icon button which wraps `icon_content`. Defaults to `24.0`.
+
+### `item_height`
+
+The height of the items/options in the dropdown menu.
+
 ### `label`
 
 Optional text that describes the input field.
@@ -269,9 +312,17 @@ When the input field is empty and unfocused, the label is displayed on top of th
 
 The style to use for `label`.
 
+### `max_menu_height`
+
+The maximum height of the dropdown menu.
+
 ### `options`
 
-A list of `Option` controls representing items in the dropdown.
+A list of `Option` controls representing items in this dropdown.
+
+### `padding`
+
+The padding around the visible portion of this dropdown.
 
 ### `prefix`
 
@@ -323,7 +374,7 @@ Text size in virtual pixels.
 
 ### `text_style`
 
-The text style to use for text in the dropdown button and the dropdown menu that appears when you tap the button.
+The text style to use for text in this dropdown button and the dropdown menu that appears when you tap the button.
 
 ### `value`
 
@@ -333,7 +384,7 @@ The text style to use for text in the dropdown button and the dropdown menu that
 
 ### `focus()`
 
-Moves focus to a Dropdown.
+Moves focus to this dropdown.
 
 ## `Dropdown` events
 
@@ -343,13 +394,23 @@ Fires when the control has lost focus.
 
 ### `on_change`
 
-Fires when the selected item of the Dropdown has changed.
+Fires when the selected item of this dropdown has changed.
+
+### `on_click`
+
+Fires when this dropdown is clicked.
 
 ### `on_focus`
 
 Fires when the control has received focus.
 
 ## `Option` properties
+
+### `alignment`
+
+Defines the alignment of this option in it's container. See [Container.alignment](container#alignment) for possible values. 
+
+Defaults to `alignment.center_left`.
 
 ### `key`
 
@@ -358,3 +419,9 @@ Option's key. `text` value will be used instead if `key` is not specified.
 ### `text`
 
 Option's display text. `key` value will be used instead if `text` is not specified.
+
+## `Option` Events
+
+### `on_click`
+
+Fires when this option is clicked.

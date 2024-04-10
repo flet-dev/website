@@ -1,7 +1,6 @@
 ---
 title: CupertinoSwitch
 sidebar_label: CupertinoSwitch
-slug: cupertinoswitch
 ---
 
 An iOS-style switch.
@@ -17,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/input/switch)
+[Live example](https://flet-controls-gallery.fly.dev/input/cupertinoswitch)
 
 ### CupertinoSwitch and adaptive Switch
 
@@ -68,7 +67,7 @@ ft.app(target=main)
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use for the track when the switch is on.
+The [color](/docs/reference/colors) to use for the track when the switch is on.
 
 ### `autofocus`
 
@@ -76,7 +75,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `focus_color`
 
-The [color](/docs/guides/python/colors) to use for the focus highlight for keyboard interactions.
+The [color](/docs/reference/colors) to use for the focus highlight for keyboard interactions.
 
 ### `label`
 
@@ -86,13 +85,23 @@ The clickable label to display on the right of the switch.
 
 Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 
+### `off_label_color`
+
+The [color](/docs/reference/colors) to use for the accessibility label when the switch is off.
+
+### `on_label_color`
+
+The [color](/docs/reference/colors) to use for the accessibility label when the switch is on.
+
+Defaults to `ft.cupertino_colors.WHITE`.
+
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of the switch's thumb.
+The [color](/docs/reference/colors) of the switch's thumb.
 
 ### `track_color`
 
-The [color](/docs/guides/python/colors) to use for the track when the switch is off.
+The [color](/docs/reference/colors) to use for the track when the switch is off.
 
 ### `value`
 

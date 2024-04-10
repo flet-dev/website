@@ -1,7 +1,6 @@
 ---
 title: CupertinoActionSheetAction
 sidebar_label: CupertinoActionSheetAction
-slug: cupertinoactionsheetaction
 ---
 
 An action button typically used in [`CupertinoActionSheet`](cupertinoactionsheet).
@@ -11,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/navigation/cupertinoactionsheet)
+[Live example](https://flet-controls-gallery.fly.dev/buttons/cupertinoactionsheetaction)
 
 ### Basic Example
 

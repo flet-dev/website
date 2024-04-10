@@ -1,0 +1,24 @@
+/docs/guides/python/getting-started /docs/getting-started
+
+/docs/guides/python/navigation-and-routing /docs/getting-started/navigation-and-routing
+/docs/guides/python/user-controls /docs/getting-started/custom-controls
+/docs/guides/python/async-apps /docs/getting-started/async-apps
+/docs/guides/python/testing-on-android /docs/getting-started/testing-on-android
+/docs/guides/python/testing-on-ios /docs/getting-started/testing-on-ios
+
+/docs/guides/python/hot-reload /docs/reference/cli/run
+
+/docs/guides/python/packaging-app-for-distribution /docs/publish
+/docs/guides/python/publishing-static-website /docs/publish/web/static-website
+/docs/guides/python/deploying-web-app /docs/publish/web
+/docs/guides/python/deploying-web-app/customizing-web-app /docs/publish/web/dynamic-website
+/docs/guides/python/deploying-web-app/running-flet-with-fastapi /docs/publish/web/dynamic-website
+/docs/guides/python/deploying-web-app/progressive-web-apps /docs/publish/web/dynamic-website
+/docs/guides/python/deploying-web-app/hosting-providers /docs/publish/web/dynamic-website/hosting
+/docs/guides/python/deploying-web-app/fly-io /docs/publish/web/dynamic-website/hosting/fly-io
+/docs/guides/python/deploying-web-app/replit /docs/publish/web/dynamic-website/hosting/replit
+/docs/guides/python/deploying-web-app/self-hosting /docs/publish/web/dynamic-website/hosting/self-hosting
+
+/docs/guides/python/colors /docs/reference/colors
+/docs/cli/* /docs/reference/cli/:splat
+/docs/guides/python/* /docs/cookbook/:splat

@@ -3,79 +3,101 @@ module.exports = {
     "introduction",
     {
       type: "category",
-      label: "Python Guide",
+      label: "Getting started",
+      link: {
+        type: "doc",
+        id: "getting-started/index",
+      },
       items: [
-        "guides/python/getting-started",
-        //'guides/python/displaying-data',
-        "guides/python/getting-user-input",
-        "guides/python/keyboard-shortcuts",
-        "guides/python/colors",
-        "guides/python/theming",
-        "guides/python/large-lists",
-        "guides/python/drag-and-drop",
-        "guides/python/navigation-and-routing",
-        "guides/python/file-picker-and-uploads",
-        "guides/python/animations",
-        "guides/python/authentication",
-        "guides/python/client-storage",
-        "guides/python/session-storage",
-        "guides/python/encrypting-sensitive-data",
-        "guides/python/pub-sub",
-        //"guides/python/user-controls",
-        "guides/python/control-refs",
-        "guides/python/accessibility",
-        "guides/python/async-apps",
-        //"guides/python/mobile-support",
-        "guides/python/testing-on-ios",
-        "guides/python/testing-on-android",
-        "guides/python/hot-reload",
-        "guides/python/packaging-app-for-distribution",
-        "guides/python/packaging-desktop-app",
-        "guides/python/publishing-static-website",
-        {
-          type: "category",
-          label: "Deploying web app",
-          link: {
-            type: "doc",
-            id: "guides/python/deploying-web-app/overview",
-          },
-          items: [
-            "guides/python/deploying-web-app/customizing-web-app",
-            "guides/python/deploying-web-app/running-flet-with-fastapi",
-            "guides/python/deploying-web-app/progressive-web-apps",
-            {
-              type: "category",
-              label: "Hosting providers",
-              link: {
-                type: "doc",
-                id: "guides/python/deploying-web-app/hosting-providers/overview",
-              },
-              items: [
-                "guides/python/deploying-web-app/hosting-providers/fly-io",
-                "guides/python/deploying-web-app/hosting-providers/replit",
-                "guides/python/deploying-web-app/hosting-providers/self-hosting",
-              ],
-            },
-          ],
-        },
-        "guides/python/logging",
+        "getting-started/create-flet-app",
+        'getting-started/running-app',
+        'getting-started/flet-controls',
+        'getting-started/custom-controls',
+        'getting-started/adaptive-apps',
+        'getting-started/navigation-and-routing',
+        "getting-started/testing-on-ios",
+        "getting-started/testing-on-android",
+        'getting-started/async-apps',
       ],
     },
     {
       type: "category",
-      label: "Tutorials",
+      label: "Publishing Flet app",
       link: {
-        type: "generated-index",
-        description:
-          "Flet apps can be created in multiple languages. Follow a getting-started guide below for your language.",
-        slug: "/tutorials",
+        type: "doc",
+        id: "publish/index",
       },
       items: [
-        "tutorials/python-todo",
-        "tutorials/python-calculator",
-        "tutorials/trello-clone",
-        "tutorials/python-solitaire",
-        "tutorials/python-realtime-chat",
+        "publish/android",
+        "publish/ios",
+        "publish/macos",
+        "publish/linux",
+        "publish/windows",
+        {
+          type: "category",
+          label: "Web",
+          link: {
+            type: "doc",
+            id: "publish/web/index",
+          },
+          items: [
+            {
+              type: "category",
+              label: "Static website",
+              link: {
+                type: "doc",
+                id: "publish/web/static-website/index",
+              },
+              items: [
+                {
+                  type: "category",
+                  label: "Hosting",
+                  link: {
+                    type: "generated-index",
+                    slug: "publish/web/static-website/hosting",
+                  },
+                  items: [
+                    "publish/web/static-website/hosting/cloudflare",
+                  ],
+                }
+              ],
+            },
+            {
+              type: "category",
+              label: "Dynamic website",
+              link: {
+                type: "doc",
+                id: "publish/web/dynamic-website/index",
+              },
+              items: [
+                {
+                  type: "category",
+                  label: "Hosting",
+                  link: {
+                    type: "doc",
+                    id: "publish/web/dynamic-website/hosting/index",
+                  },
+                  items: [
+                    "publish/web/dynamic-website/hosting/fly-io",
+                    "publish/web/dynamic-website/hosting/replit",
+                    "publish/web/dynamic-website/hosting/self-hosting",
+                  ],
+                }
+              ],
+            }
+          ],
+        }
+      ],
+    },
+    {
+      type: "category",
+      label: "Extending Flet",
+      // link: {
+      //   type: "doc",
+      //   id: "create/create-flet-app",
+      // },
+      items: [
+        "extend/integrating-existing-flutter-packages"
       ],
     },
     {
@@ -255,7 +277,8 @@ module.exports = {
           },
           items: [
             "controls/animatedswitcher",
-            "controls/lottie"
+            "controls/lottie",
+            "controls/rive"
           ],
         },
         {
@@ -275,6 +298,7 @@ module.exports = {
             "controls/gesturedetector",
             "controls/hapticfeedback",
             "controls/mergesemantics",
+            "controls/rive",
             "controls/selectionarea",
             "controls/semantics",
             "controls/semanticsservice",
@@ -290,17 +314,61 @@ module.exports = {
     },
     {
       type: "category",
-      label: "CLI",
+      label: "Cookbook",
+      items: [
+        "cookbook/keyboard-shortcuts",
+        "cookbook/large-lists",
+        "cookbook/drag-and-drop",
+        "cookbook/file-picker-and-uploads",
+        "cookbook/animations",
+        "cookbook/authentication",
+        "cookbook/client-storage",
+        "cookbook/session-storage",
+        "cookbook/encrypting-sensitive-data",
+        "cookbook/pub-sub",
+        "cookbook/control-refs",
+        "cookbook/accessibility",
+        "cookbook/logging",
+        //"cookbook/packaging-desktop-app",
+      ],
+    },
+    {
+      type: "category",
+      label: "Tutorials",
       link: {
-        type: "doc",
-        id: "cli/index",
+        type: "generated-index",
+        description:
+          "Some of the awesome Flet tutorials to get your started:",
+        slug: "/tutorials",
       },
       items: [
-        "cli/build",
-        "cli/create",
-        "cli/pack",
-        "cli/publish",
-        "cli/run",
+        "tutorials/python-todo",
+        "tutorials/python-calculator",
+        "tutorials/trello-clone",
+        "tutorials/python-solitaire",
+        "tutorials/python-realtime-chat",
+      ],
+    },
+    {
+      type: "category",
+      label: "Reference",
+      items: [
+        "reference/colors",
+        {
+          type: "category",
+          label: "CLI",
+          link: {
+            type: "doc",
+            id: "reference/cli/index",
+          },
+          items: [
+            "reference/cli/create",
+            "reference/cli/run",
+            "reference/cli/build",
+            "reference/cli/pack",
+            "reference/cli/publish",
+          ],
+        }
       ],
     }
   ],

@@ -1,14 +1,13 @@
 ---
 title: Draggable
 sidebar_label: Draggable
-slug: draggable
 ---
 
 A control that can be dragged from to a [DragTarget](dragtarget).
 
 When a draggable control recognizes the start of a drag gesture, it displays a [`content_feedback`](#content_feedback) control that tracks the user's finger across the screen. If the user lifts their finger while on top of a [DragTarget](dragtarget), that target is given the opportunity to complete drag-and-drop flow.
 
-This control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#contentwhendragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this widget always displays `content`.
+This control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#content_when_dragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this widget always displays `content`.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -125,7 +124,7 @@ flet.app(target=main)
 
 ### `content`
 
-`Draggable` control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#contentwhendragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this control always displays `content`.
+`Draggable` control displays [`content`](#content) when zero drags are under way. If [`content_when_dragging`](#content_when_dragging) is non-null, this control instead displays `content_when_dragging` when one or more drags are underway. Otherwise, this control always displays `content`.
 
 ### `content_feedback`
 
@@ -140,3 +139,13 @@ If this is `None`, then this widget will always display `content` (and so the dr
 ### `group`
 
 A group this draggable belongs to. For [DragTarget](dragtarget) to accept incoming drag both `Draggable` and `DragTarget` must be in the same `group`.
+
+## `Events`
+
+### `on_drag_complete`
+
+Fires when this draggable is dropped and accepted by a DragTarget.
+
+### `on_drag_start`
+
+Fires when this draggable starts being dragged.

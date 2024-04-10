@@ -1,7 +1,6 @@
 ---
 title: CupertinoContextMenuAction
 sidebar_label: CupertinoContextMenuAction
-slug: cupertinocontextmenuaction
 ---
 
 An action button typically used in [`CupertinoContextMenu`](cupertinocontextmenu).
@@ -11,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/navigation/cupertinocontextmenu)
+[Live example](https://flet-controls-gallery.fly.dev/dialogs/cupertinocontextmenu)
 
 ### Basic Example
 

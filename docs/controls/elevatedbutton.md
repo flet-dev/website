@@ -1,7 +1,6 @@
 ---
 title: ElevatedButton
 sidebar_label: ElevatedButton
-slug: elevatedbutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -156,11 +155,17 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-Button's background [color](/docs/guides/python/colors).
+Button's background [color](/docs/reference/colors).
+
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Defaults to `ClipBehavior.NONE`.
 
 ### `color`
 
-Button's text [color](/docs/guides/python/colors).
+Button's text [color](/docs/reference/colors).
 
 ### `content`
 
@@ -176,7 +181,7 @@ Icon shown in the button.
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+Icon [color](/docs/reference/colors).
 
 ### `style`
 
@@ -335,10 +340,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode:
-
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
 
 ## Methods
 

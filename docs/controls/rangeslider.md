@@ -1,7 +1,6 @@
 ---
 title: RangeSlider
 sidebar_label: RangeSlider
-slug: rangeslider
 ---
 
 A Material Design range slider. Used to select a range from a range of values.
@@ -71,19 +70,13 @@ import flet as ft
 
 def main(page: ft.Page):
     def slider_change_start(e):
-        print(
-            f"Slider change start, values are {e.control.start_value}, {e.control.end_value}"
-        )
+        print(f"on_change_start: {e.control.start_value}, {e.control.end_value}")
 
     def slider_is_changing(e):
-        print(
-            f"Slider is changing, values are {e.control.start_value}, {e.control.end_value}"
-        )
+        print(f"on_change: {e.control.start_value}, {e.control.end_value}")
 
     def slider_change_end(e):
-        print(
-            f"Slider change end, values are {e.control.start_value}, {e.control.end_value}"
-        )
+        print(f"on_change_end: {e.control.start_value}, {e.control.end_value}")
 
     range_slider = ft.RangeSlider(
         min=0,
@@ -120,7 +113,7 @@ ft.app(target=main)
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use for the portion of the slider track that is active.
+The [color](/docs/reference/colors) to use for the portion of the slider track that is active.
 
 The "active" segment of the range slider is the span between the thumbs.
 
@@ -140,13 +133,11 @@ The slider's right thumb is drawn at a position that corresponds to this value.
 
 ### `inactive_color`
 
-The [color](/docs/guides/python/colors) for the inactive portions of the slider track.
+The [color](/docs/reference/colors) for the inactive portions of the slider track.
 
 The "inactive" segments of the slider are the span of tracks between the min and the start thumb, and the end thumb and the max.
 
 ### `label`
-
-Format with `{value}`.
 
 A label to show above the slider thumbs when the slider is active. The value of `label` may contain `{value}` which will be replaced with a current slider `start_value` and `end_value`.
 
@@ -170,7 +161,7 @@ If the `max` is equal to the `min`, then the slider is disabled.
 
 ### `overlay_color`
 
-The hightlight [color](/docs/guides/python/colors) around the thumbs used to indicate that the range slider thumbs are hovered or dragged.
+The highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is hovered or dragged. See [Radio.fill_color](radio#fill_color) for usage examples.
 
 ### `round`
 

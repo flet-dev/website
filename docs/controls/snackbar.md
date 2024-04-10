@@ -1,7 +1,6 @@
 ---
 title: SnackBar
 sidebar_label: SnackBar
-slug: snackbar
 ---
 
 A lightweight message with an optional action which briefly displays at the bottom of the screen.
@@ -61,7 +60,17 @@ The action should not be "dismiss" or "cancel".
 
 ### `action_color`
 
-The foreground [color](/docs/guides/python/colors) of action button.
+The foreground [color](/docs/reference/colors) of action button.
+
+### `action_overflow_threshold`
+
+The percentage (between `0.0` and `1.0`) threshold for `action`'s width before it overflows to a new line. Defaults
+to `0.25`.
+
+If the width of the snackbar's `content` is greater than this percentage of the width of the snackbar minus the width of
+its `action`, then the `action` will appear below the `content`.
+
+At a value of `0.0`, the `action` will not overflow to a new line.
 
 ### `behavior`
 
@@ -75,7 +84,13 @@ If this value is `SnackBarBehavior.FLOATING`, the length of the bar is defined b
 
 ### `bgcolor`
 
-SnackBar background [color](/docs/guides/python/colors).
+SnackBar background [color](/docs/reference/colors).
+
+### `clip_behavior`
+
+The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Default value is `ClipBehavior.HARD_EDGE`.
 
 ### `close_icon_color`
 
@@ -113,6 +128,10 @@ Set to `True` to display a SnackBar. This property is automatically set to `Fals
 
 The amount of padding to apply to the snack bar's content and optional action.
 
+### `shape`
+
+The shape of the snack bar's. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+
 ### `show_close_icon`
 
 Whether to include a "close" icon widget.
@@ -130,3 +149,7 @@ If width is specified, the snack bar will be centered horizontally in the availa
 ### `on_action`
 
 Fires when action button is clicked.
+
+### `on_visible`
+
+Fires the first time that the snackbar is visible within the page.

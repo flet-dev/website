@@ -1,7 +1,6 @@
 ---
 title: IconButton
 sidebar_label: IconButton
-slug: iconbutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -94,6 +93,12 @@ On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinobutton) is creat
 
 The default value is `False`.
 
+### `alignment`
+
+Defines how the icon is positioned within the IconButton. Defaults to `alignment.center`.
+
+See [`Container.alignment`](container#alignment) for more information and possible values.
+
 ### `autofocus`
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
@@ -102,9 +107,27 @@ True if the control will be selected as the initial focus. If there is more than
 
 A Control representing custom button content.
 
+### `disabled_color`
+
+The [color](/docs/reference/colors) to use for the icon inside the button when disabled.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this to `True` produce a click sound and a long-press will produce a short vibration. 
+
+Defaults to `True`.
+
+### `focus_color`
+
+The button's [color](/docs/reference/colors) when in focus.
+
 ### `highlight_color`
 
-The button's [color](/docs/guides/python/colors) when the button is pressed. The highlight fades in quickly as the button is held down.
+The button's [color](/docs/reference/colors) when the button is pressed. The highlight fades in quickly as the button is held down.
+
+### `hover_color`
+
+The button's [color](/docs/reference/colors) when hovered.
 
 ### `icon`
 
@@ -112,11 +135,22 @@ Icon shown in the button.
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+Icon [color](/docs/reference/colors).
 
 ### `icon_size`
 
 Icon size in virtual pixels.
+
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+
+### `padding`
+
+Defines the padding around this button. The entire padded icon will react to input gestures.
+
+Default value is `padding.all(8)`. See [`Container.padding`](container#padding) for more information and possible values.
 
 ### `selected`
 
@@ -128,7 +162,7 @@ Icon shown in the button in selected state.
 
 ### `selected_icon_color`
 
-Icon [color](/docs/guides/python/colors) for the selected state.
+Icon [color](/docs/reference/colors) for the selected state.
 
 En example of icon toggle button:
 
@@ -156,6 +190,14 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
+### `splash_color`
+
+The primary [color](/docs/reference/colors) of the button when the button is in the down (pressed) state.
+
+### `splash_radius`
+
+The splash radius. Honoured only when in Material 2.
+
 ### `style`
 
 See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
@@ -170,10 +212,11 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode:
+Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+### `visual_density`
+
+Defines how compact the control's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
 
 ## Methods
 

@@ -1,7 +1,6 @@
 ---
 title: AlertDialog
 sidebar_label: AlertDialog
-slug: alertdialog
 ---
 
 A material design alert dialog.
@@ -76,6 +75,10 @@ The (optional) set of actions that are displayed at the bottom of the dialog.
 
 Typically this is a list of [`TextButton`](textbutton) controls.
 
+### `action_button_padding`
+
+The padding that surrounds each button in `actions`.
+
 ### `actions_alignment`
 
 Defines the horizontal layout of the actions according to the same rules as for [`Row.alignment`](row#alignment).
@@ -102,7 +105,14 @@ The default value is `False`. See the example of usage [here](/docs/controls/cup
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) of the dialog's surface.
+The background [color](/docs/reference/colors) of the dialog's surface.
+
+### `clip_behavior`
+
+Controls how the contents of the dialog are clipped (or not) to the given `shape`.
+See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Defaults to `ClipBehavior.NONE`.
 
 ### `content`
 
@@ -123,6 +133,10 @@ Defines the elevation (z-coordinate) at which the dialog should appear.
 ### `icon`
 
 A control that is displayed at the top of the dialog. Typically a [`Icon`](icon) control.
+
+### `icon_padding`
+
+Padding around the `icon`.
 
 ### `inset_padding`
 
@@ -146,21 +160,20 @@ The semantic label of the dialog used by accessibility frameworks to announce sc
 
 In iOS, if this label is not provided, a semantic label will be inferred from the `title` if it is not null.
 
+### `shadow_color`
+
+The [color](/docs/reference/colors) used to paint a drop shadow under the dialog, which reflects the dialog's elevation.
+
 ### `shape`
 
-The shape of the dialog's border.
+The shape of the dialog's border. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
 
-The value is an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+The default shape is a `RoundedRectangleBorder` with a radius of `4.0`.
 
-The default shape is a `RoundedRectangleBorder` with a radius of 4.0.
+### `surface_tint_color`
+
+The [color](/docs/reference/colors) used as a surface tint overlay on the dialog's background color, which reflects the
+dialog's elevation.
 
 ### `title`
 

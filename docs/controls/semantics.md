@@ -1,7 +1,6 @@
 ---
 title: Semantics
 sidebar_label: Semantics
-slug: semantics
 ---
 
 A control that annotates the control tree with a description of the meaning of the widgets.

@@ -1,7 +1,6 @@
 ---
 title: CupertinoActionSheet
 sidebar_label: CupertinoActionSheet
-slug: cupertinoactionsheet
 ---
 
 An iOS-style action sheet.

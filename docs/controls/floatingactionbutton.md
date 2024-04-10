@@ -1,7 +1,6 @@
 ---
 title: FloatingActionButton
 sidebar_label: FloatingActionButton
-slug: floatingactionbutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -70,11 +69,51 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-Button background [color](/docs/guides/python/colors).
+Button background [color](/docs/reference/colors).
+
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+
+Defaults to `ClipBehavior.NONE`.
 
 ### `content`
 
 A Control representing custom button content.
+
+### `disabled_elevation`
+
+The button's elevation when disabled. Defaults to the same value as `elevation`.
+
+### `elevation`
+
+The button's elevation. Defaults to `6`.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback. On Android, for example, setting this to `True` will produce a click sound and a long-press will produce a short vibration.
+
+Defaults to `True`.
+
+### `focus_color`
+
+The [color](/docs/reference/colors) to use for filling the button when the button has input focus.
+
+### `focus_elevation`
+
+The button's elevation when it has input focus. Defaults to `8`.
+
+### `foreground_color`
+
+The default foreground [color](/docs/reference/colors) for icons and text within the button.
+
+### `highlight_elevation`
+
+The button's elevation when being touched. Defaults to `12`.
+
+### `hover_elevation`
+
+The button's elevation when it is enabled and being hovered. Defaults to `8`.
 
 ### `icon`
 
@@ -85,6 +124,11 @@ Icon shown in the button.
 Controls the size of this button.
 
 By default, floating action buttons are non-mini and have a height and width of 56.0 logical pixels. Mini floating action buttons have a height and width of 40.0 logical pixels with a layout width and height of 48.0 logical pixels.
+
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
 
 ### `shape`
 
@@ -124,6 +168,10 @@ ft.app(target=main)
 
 <img src="/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />
 
+### `splash_color`
+
+The [color](/docs/reference/colors) of the ripple shown when this button is pressed/clicked.
+
 ### `text`
 
 The text displayed on a button.
@@ -138,10 +186,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode:
-
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
 
 ## Events
 

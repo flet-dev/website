@@ -1,7 +1,6 @@
 ---
 title: SearchBar
 sidebar_label: SearchBar
-slug: searchbar
 ---
 
 A Material Design search bar. It visually looks like a `TextField` with the difference that, tapping on it opens a search view.
@@ -74,9 +73,16 @@ ft.app(target=main)
 
 ## Properties
 
+### `autofocus`
+
+Whether the text field should focus itself if nothing else is already focused.
+
+Defaults to `False`.
+
 ### `bar_bgcolor`
 
-Defines the background [color](/docs/guides/python/colors) of the search bar.
+Defines the background [color](/docs/reference/colors) of the search bar. See [Radio.fill_color](radio#fill_color) for
+usage examples.
 
 ### `bar_hint_text`
 
@@ -88,9 +94,7 @@ A `Control` to display before the text input field when the search view is close
 
 ### `bar_overlay_color`
 
-Defines the highlight [color](/docs/guides/python/colors) that's typically used to indicate that the search bar is focused, hovered, or pressed.
-
-To configure this property for specific `MaterialState`s set its value to a dictionary where the key is the state name and the value is a corresponding literal. On the other hand, to configure this property for _all_ `MaterialState`s set its value to a corresponding literal (e.g. `bar_overlay_color=ft.colors.BLUE`). 
+Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is focused, hovered, or pressed. See [Radio.fill_color](radio#fill_color) for usage examples.
 
 ### `bar_trailing`
 
@@ -122,13 +126,17 @@ Defines the style of `view_hint_text`.
 
 Defines the style of the text being edited on the search view.
 
+### `keyboard_type`
+
+The type of action button to use for the keyboard. See [TextField.keyboard_type](textfield#keyboard_type) for possible values.
+
 ### `value`
 
 The text in the search bar.
 
 ### `view_bgcolor`
 
-Defines the background [color](/docs/guides/python/colors) of the search view.
+Defines the background [color](/docs/reference/colors) of the search view.
 
 ### `view_elevation`
 

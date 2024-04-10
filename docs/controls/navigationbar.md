@@ -1,7 +1,6 @@
 ---
 title: NavigationBar
 sidebar_label: NavigationBar
-slug: navigationbar
 ---
 
 Material 3 Navigation Bar component.
@@ -48,9 +47,13 @@ On iOS and macOS, a `CupertinoNavigationBar` is created, which has matching func
 
 The default value is `False`.
 
+### `animation_duration`
+
+The transition time for each destination as it goes between selected and unselected.
+
 ### `bgcolor`
 
-The [color](/docs/guides/python/colors) of the NavigationBar itself.
+The [color](/docs/reference/colors) of the NavigationBar itself.
 
 ### `destinations`
 
@@ -64,7 +67,7 @@ The elevation of the NavigationBar itself.
 
 ### `indicator_color`
 
-The [color](/docs/guides/python/colors) of the selected destination indicator.
+The [color](/docs/reference/colors) of the selected destination indicator.
 
 ### `indicator_shape`
 
@@ -82,13 +85,19 @@ Property value is `NavigationBarLabelBehavior` enum with the following values:
 * `ALWAYS_HIDE` - Never shows any of the labels under the navigation bar destinations, regardless of selected vs unselected.
 * `ONLY_SHOW_SELECTED` - Only shows the labels of the selected navigation bar destination. When a destination is unselected, the label will be faded out, and the icon will be centered. When a destination is selected, the label will fade in and the label and icon will slide up so that they are both centered.
 
+### `overlay_color`
+
+The highlight [color](/docs/reference/colors) that's typically used to indicate that the `NavigationDestination` is focused, hovered, or pressed.
+
+See [`Radio.fill_color`](radio#fill_color) for usage example.
+
 ### `selected_index`
 
 The index into `destinations` for the current selected `NavigationDestination` or `None` if no destination is selected.
 
 ### `shadow_color`
 
-The [color](/docs/guides/python/colors) used for the drop shadow to indicate `elevation`.
+The [color](/docs/reference/colors) used for the drop shadow to indicate `elevation`.
 
 ### `surface_tint_color`
 
@@ -101,6 +110,10 @@ The surface tint of the Material that holds the NavigationDrawer's contents.
 Fires when selected destination changed.
 
 ## `NavigationDestination` properties
+
+### `bgcolor`
+
+The [color](/docs/reference/colors) of this destination.
 
 ### `icon`
 

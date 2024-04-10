@@ -1,7 +1,6 @@
 ---
 title: CupertinoSlidingSegmentedButton
 sidebar_label: CupertinoSlidingSegmentedButton
-slug: cupertinoslidingsegmentedbutton
 ---
 
 An iOS-13 style segmented control.
@@ -50,7 +49,7 @@ ft.app(main)
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) of the button.
+The background [color](/docs/reference/colors) of the button.
 
 ### `controls`
 
@@ -60,17 +59,13 @@ A list of `Control`s to display as segments inside the CupertinoSegmentedButton.
 
 The button's padding. See [`Container.padding`](container#padding) for more details.
 
-### `selected_color`
-
-The [color](/docs/guides/python/colors) of the button when it is selected.
-
 ### `selected_index`
 
 The index (starting from 0) of the selected segment in the `controls` list. 
 
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of the button when it is not selected.
+The [color](/docs/reference/colors) of the button when it is not selected.
 
 
 ## Events

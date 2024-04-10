@@ -1,7 +1,6 @@
 ---
 title: Page
 sidebar_label: Page
-slug: page
 ---
 
 Page is a container for [`View`](/docs/controls/view) controls.
@@ -218,6 +217,22 @@ Property value is `CrossAxisAlignment` enum with the following values:
 * `STRETCH`
 * `BASELINE`
 
+### `locale_configuration`
+
+A locale configuration for the app. Value is an instance of `LocaleConfiguration` class which has the following
+properties:
+
+* `supported_locales` - a list of `Locale`s that the app plans to support. If the provided value is `None` or list is
+  empty, this property internally defaults to `[Locale("en", "US")]` (American English locale) by default.
+* `current_locale` - the current `Locale` of the app. If the provided locale is not present in `supported_locales`, then
+  this property will be set to `supported_locales[0]` (the first item of the list).
+
+`Locale` class has the following properties:
+
+* `language_code` - the language code of the locale.
+* `country_code` - the country code of the locale.
+* `script_code` - the script code of the locale.
+
 ### `media`
 
 Provides details about app media (screen, window). See [MediaQueryData](https://api.flutter.dev/flutter/widgets/MediaQueryData-class.html) in Flutter docs for more info.
@@ -429,7 +444,7 @@ A part of app URL after `?`. The value is an instance of `QueryString` with help
 
 ### `route`
 
-Get or sets page's navigation route. See [Navigation and routing](/docs/guides/python/navigation-and-routing) section for 
+Get or sets page's navigation route. See [Navigation and routing](/docs/getting-started/navigation-and-routing) section for 
 more information and examples.
 
 ### `rtl`
@@ -793,11 +808,11 @@ Optional method arguments:
 
 ### `login(provider, fetch_user, fetch_groups, scope, saved_token, on_open_authorization_url, complete_page_html, redirect_to_page, authorization)`
 
-Starts OAuth flow. See [Authentication](/docs/guides/python/authentication) guide for more information and examples.
+Starts OAuth flow. See [Authentication](/docs/cookbook/authentication) guide for more information and examples.
 
 ### `logout()`
 
-Clears current authentication context. See [Authentication](/docs/guides/python/authentication#signing-out) guide for more information and examples.
+Clears current authentication context. See [Authentication](/docs/cookbook/authentication#signing-out) guide for more information and examples.
 
 ### `remove(*controls)`
 
@@ -806,6 +821,14 @@ Removes specific controls from `page.controls` list.
 ### `remove_at(index)`
 
 Remove controls from `page.controls` list at specific index.
+
+### `run_task(handler, *args, **kwargs)`
+
+Run `handler` coroutine as a new Task in the event loop associated with the current page.
+
+### `run_thread(handler, *args)`
+
+Run `handler` function as a new Thread in the executor associated with the current page.
 
 ### `scroll_to(offset, delta, key, duration, curve)`
 
@@ -1008,7 +1031,7 @@ Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/py
 
 ### `on_login`
 
-Fires upon successful or failed OAuth authorization flow. See [Authentication](/docs/guides/python/authentication#checking-authentication-results) guide for more information and examples.
+Fires upon successful or failed OAuth authorization flow. See [Authentication](/docs/cookbook/authentication#checking-authentication-results) guide for more information and examples.
 
 ### `on_logout`
 
@@ -1054,7 +1077,7 @@ class RouteChangeEvent(ft.ControlEvent):
 
 Fires when page's scroll position is changed by a user.
 
-See [`Column.on_scroll`](docs/controls/column#on_scroll) for event details and examples.
+See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
 
 ### `on_view_pop`
 

@@ -5,14 +5,14 @@ const { themes } = require('prism-react-renderer');
 
 module.exports = {
   title: 'Flet',
-  tagline: 'Build internal web apps quickly in the language you already know.',
+  tagline: 'Build multi-platform apps in Python powered by Flutter.',
   url: 'https://flet.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'flet-dev', // Usually your GitHub org/user name.
   projectName: 'flet', // Usually your repo name.
   customFields: {
-    heroTitle: 'The fastest way to build Flutter apps in Python',
+    heroTitle: 'Build multi-platform apps in Python powered by Flutter',
     heroSubTitle: 'Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.',
   },
   themeConfig: {
@@ -29,7 +29,7 @@ module.exports = {
     },
     announcementBar: {
       id: 'announcementBar-2', // Increment on change
-      content: `⭐️ If you like Flet, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/fletdev" >Twitter</a> ${TwitterSvg}`,
+      content: `⭐️ If you like Flet, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/flet-dev/flet">GitHub</a> and join the discussion on <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/dzWXP8SHG8" >Discord</a>.`,
     },
     navbar: {
       hideOnScroll: true,
@@ -87,10 +87,6 @@ module.exports = {
               to: 'docs',
             },
             {
-              label: 'Python guide',
-              to: 'docs/guides/python/getting-started',
-            },
-            {
               label: 'Controls reference',
               to: 'docs/controls',
             }
@@ -104,10 +100,6 @@ module.exports = {
               href: 'https://discord.gg/dzWXP8SHG8',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/fletdev',
-            },
-            {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/flet',
             },
@@ -118,7 +110,7 @@ module.exports = {
           items: [
             {
               label: 'Blog',
-              to: 'blog',
+              to: '/blog',
             },
             {
               label: 'GitHub',
@@ -126,7 +118,7 @@ module.exports = {
             },
             {
               label: 'Support',
-              href: 'support',
+              href: '/support',
             },
           ],
         },
@@ -182,8 +174,8 @@ module.exports = {
   //       redirects: [
   //         // /docs/oldDoc -> /docs/newDoc
   //         {
-  //           to: '/docs/guides/python/getting-started',
-  //           from: '/docs/guides/python/getting-started',
+  //           to: '/docs',
+  //           from: '/docs',
   //         },
   //         // Redirect from multiple old paths to the new path
   //         // {

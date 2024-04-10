@@ -1,7 +1,6 @@
 ---
 title: CupertinoPicker
 sidebar_label: CupertinoPicker
-slug: cupertinopicker
 ---
 
 An iOS-styled picker.
@@ -63,7 +62,6 @@ def main(page):
                         ft.CupertinoBottomSheet(
                             picker,
                             height=216,
-                            bgcolor=ft.cupertino_colors.SYSTEM_BACKGROUND,
                             padding=ft.padding.only(top=6),
                         )
                     ),
@@ -88,7 +86,7 @@ Defines how the timer picker should be positioned within its parent. Defaults to
 
 ### `bgcolor`
 
-The background [color](/docs/guides/python/colors) of the timer picker.
+The background [color](/docs/reference/colors) of the timer picker.
 
 ### `controls`
 

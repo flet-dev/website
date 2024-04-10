@@ -1,7 +1,6 @@
 ---
 title: ProgressBar
 sidebar_label: ProgressBar
-slug: progressbar
 ---
 
 A material design linear progress indicator, also known as a progress bar.
@@ -60,13 +59,27 @@ The value of this progress indicator. A value of 0.0 means no progress and 1.0 m
 
 The minimum height of the line used to draw the linear indicator. Default is 4.
 
-### `color`
+### `border_radius`
 
-The progress indicator's [color](/docs/guides/python/colors).
+The border radius of both the indicator and the track. See [`Container.border_radius`](container#border_radius) for possible values.
+
+Defaults to `border_radius.all(0)` - rectangular shape.
 
 ### `bgcolor`
 
-[Color](/docs/guides/python/colors) of the track being filled by the linear indicator.
+[Color](/docs/reference/colors) of the track being filled by the linear indicator.
+
+### `color`
+
+The progress indicator's [color](/docs/reference/colors).
+
+### `semantics_label`
+
+The `Semantics.label` for this progress indicator.
+
+### `semantics_value`
+
+The `Semantics.value` for this progress indicator.
 
 ### `tooltip`
 

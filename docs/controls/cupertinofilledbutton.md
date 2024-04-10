@@ -1,7 +1,6 @@
 ---
 title: CupertinoFilledButton
 sidebar_label: CupertinoFilledButton
-slug: cupertinofilledbutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -42,7 +41,7 @@ ft.app(target=main)
 
 ### `disabled_color`
 
-The background [color](/docs/guides/python/colors) of the button when it is disabled.
+The background [color](/docs/reference/colors) of the button when it is disabled.
 
 ### `content`
 
@@ -54,7 +53,7 @@ Icon shown in the button.
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+Icon [color](/docs/reference/colors).
 
 ### `min_size`
 
@@ -82,10 +81,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode:
-
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
 
 ## Events
 

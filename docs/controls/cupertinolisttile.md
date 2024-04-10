@@ -1,7 +1,6 @@
 ---
 title: CupertinoListTile
 sidebar_label: CupertinoListTile
-slug: cupertinolisttile
 ---
 
 An iOS-style list tile. The CupertinoListTile is a Cupertino equivalent of Material [ListTile](listtile).
@@ -63,11 +62,11 @@ A `Control` to display on the right of the list tile, before `trailing`. Similar
 
 ### `bgcolor`
 
-The list tile's background [color](/docs/guides/python/colors).
+The list tile's background [color](/docs/reference/colors).
 
 ### `bgcolor_activated`
 
-The list tile's background [color](/docs/guides/python/colors) after the tile was tapped.
+The list tile's background [color](/docs/reference/colors) after the tile was tapped.
 
 ### `leading`
 
@@ -75,11 +74,12 @@ A `Control` to display before the `title`.
 
 ### `leading_size`
 
-The `leading_size` is used to constrain the width and height of `leading` control. The default value is `28.0`.
+The `leading_size` is used to constrain the width and height of `leading` control. Defaults to `30.0` if `notched=True`,
+else `28.0`.
 
 ### `leading_to_title`
 
-The horizontal space between `leading` and `title`. The default value is `16.0`.
+The horizontal space between `leading` and `title`. Defaults to `12.0` if `notched=True`, else `16.0`.
 
 ### `notched`
 
@@ -113,10 +113,7 @@ The URL to open when the list tile is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode:
-
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
 
 ## Events
 

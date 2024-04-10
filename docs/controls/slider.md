@@ -1,7 +1,6 @@
 ---
 title: Slider
 sidebar_label: Slider
-slug: slider
 ---
 
 A slider provides a visual indication of adjustable content, as well as the current setting in the total range of content.
@@ -87,7 +86,7 @@ ft.app(target=main)
 
 ### `active_color`
 
-The [color](/docs/guides/python/colors) to use for the portion of the slider track that is active.
+The [color](/docs/reference/colors) to use for the portion of the slider track that is active.
 
 The "active" side of the slider is the side between the thumb and the minimum value.
 
@@ -113,9 +112,18 @@ If not set, the slider is continuous.
 
 ### `inactive_color`
 
-The [color](/docs/guides/python/colors) for the inactive portion of the slider track.
+The [color](/docs/reference/colors) for the inactive portion of the slider track.
 
 The "inactive" side of the slider is the side between the thumb and the maximum value.
+
+### `interaction`
+
+The allowed way for the user to interact with this slider. Value is a `SliderInteraction` enum, which has the following possible values:
+
+* `TAP_AND_SLIDE`(default) - allows interaction by tapping or sliding anywhere on the track
+* `TAP_ONLY` - allows interaction only by tapping anywhere on the track
+* `SLIDE_ONLY` - allows interaction only by sliding anywhere on the track
+* `SLIDE_THUMB` - allows interaction only by sliding the thumb.
 
 ### `label`
 
@@ -143,13 +151,35 @@ Defaults to `0.0`. Must be less than or equal to `max`.
 
 If the `max` is equal to the `min`, then the slider is disabled.
 
+### `mouse_cursor`
+
+The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+
+### `overlay_color`
+
+Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is
+hovered or dragged. See [Radio.fill_color](radio#fill_color) for usage examples.
+
 ### `round`
 
 The number of decimals displayed on the `label` containing `value`. The default is 0 (displays value rounded to the nearest integer).
 
+### `secondary_active_color`
+
+The [color](/docs/reference/colors) to use for the portion of the slider track between the thumb and the `secondary_track_value`.
+
+### `secondary_track_value`
+
+The secondary track value for this slider.
+
+If not null, a secondary track using `secondary_active_color` is drawn between the thumb and this value, over the inactive track. If less than `value`, then the secondary track is not shown.
+
+It can be ideal for media scenarios such as showing the buffering progress while the `value` shows the play progress.
+
 ### `thumb_color`
 
-The [color](/docs/guides/python/colors) of the thumb.
+The [color](/docs/reference/colors) of the thumb.
 
 ### `value`
 

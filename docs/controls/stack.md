@@ -1,14 +1,13 @@
 ---
 title: Stack
 sidebar_label: Stack
-slug: stack
 ---
 
 A control that positions its children on top of each other.
 
 This control is useful if you want to overlap several children in a simple way, for example having some text and an image, overlaid with a gradient and a button attached to the bottom.
 
-Stack is also useful if you want to implement [implicit animations](/docs/guides/python/animations) that require knowing absolute position of a target value.
+Stack is also useful if you want to implement [implicit animations](/docs/cookbook/animations) that require knowing absolute position of a target value.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -167,6 +166,10 @@ ft.app(target=main)
 
 ## Properties
 
+### `alignment`
+
+The alignment of the non-positioned (those that do not specify an alignment - ex neither top nor bottom - in a particular axis and partially-positioned `controls`.
+
 ### `clip_behavior`
 
 The content will be clipped (or not) according to this option.
@@ -181,3 +184,11 @@ Property value is `ClipBehavior` enum with supported values:
 ### `controls`
 
 A list of Controls to display inside the Stack. The last control in the list is displayed on top.
+
+### `fit`
+
+How to size the non-positioned `controls`. Value is of type `StackFit` enum which has the following possible values: 
+
+* `EXPAND` - The constraints passed to the stack from its parent are tightened to the biggest size allowed. For example, if the stack has loose constraints with a width in the range 10 to 100 and a height in the range 0 to 600, then the non-positioned `controls` of the stack would all be sized as 100 pixels wide and 600 high.
+* `PASS_THROUGH` - The constraints passed to the stack from its parent are passed unmodified to the non-positioned `controls`. For example, if an expanded Stack is a child of a Row, the horizontal constraints will be tight and the vertical constraints will be loose.
+* `LOOSE` (default) - The constraints passed to the stack from its parent are loosened. For example, if the stack has constraints that force it to 350x600, then this would allow the non-positioned `controls` of the stack to have any width from 0 to 350 and any height from 0 to 600.

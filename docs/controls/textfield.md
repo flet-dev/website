@@ -1,7 +1,6 @@
 ---
 title: TextField
 sidebar_label: TextField
-slug: textfield
 ---
 
 A material design text field.
@@ -212,7 +211,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-TextField background [color](/docs/guides/python/colors).
+TextField background [color](/docs/reference/colors). Will not be visible if `filled=False`.
 
 ### `border`
 
@@ -220,7 +219,7 @@ Border around input - `InputBorder` enum with one of the values: `OUTLINE` (defa
 
 ### `border_color`
 
-Border [color](/docs/guides/python/colors). Could be `transparent` to hide the border.
+Border [color](/docs/reference/colors). Could be `transparent` to hide the border.
 
 ### `border_radius`
 
@@ -249,7 +248,7 @@ Property value is `TextCapitalization` enum with the following values:
 
 ### `color`
 
-Text [color](/docs/guides/python/colors).
+Text [color](/docs/reference/colors).
 
 ### `content_padding`
 
@@ -269,7 +268,7 @@ If null or an empty string and counter isn't specified, then nothing will appear
 
 ### `cursor_color`
 
-The [color](/docs/guides/python/colors) of TextField cursor.
+The [color](/docs/reference/colors) of TextField cursor.
 
 ### `cursor_height`
 
@@ -305,15 +304,22 @@ If non-null, the border's color animates to red and the `helper_text` is not sho
 
 ### `filled`
 
-If `True` the decoration's container is filled with theme fillColor.
+If `True` the decoration's container is filled with theme `fill_color`.
+
+If `filled=None`(default), then it is implicitly set to `True` when at least one of the following is
+not `None`: `fill_color`, `focused_bgcolor`, `hover_color` and `bgcolor`.
+
+### `fill_color`
+
+Background [color](/docs/reference/colors) of TextField. Will not be visible if `filled=False`.
 
 ### `focused_bgcolor`
 
-Background [color](/docs/guides/python/colors) of TextField in focused state.
+Background [color](/docs/reference/colors) of TextField in focused state. Will not be visible if `filled=False`.
 
 ### `focused_border_color`
 
-Border [color](/docs/guides/python/colors) in focused state.
+Border [color](/docs/reference/colors) in focused state.
 
 ### `focused_border_width`
 
@@ -321,7 +327,7 @@ Border width in focused state.
 
 ### `focused_color`
 
-Text [color](/docs/guides/python/colors) when TextField is focused.
+Text [color](/docs/reference/colors) when TextField is focused.
 
 ### `helper_style`
 
@@ -342,6 +348,10 @@ The style to use for `hint_text`.
 Text that suggests what sort of input the field accepts.
 
 Displayed on top of the input when the it's empty and either (a) `label` is null or (b) the input has the focus.
+
+### `hover_color`
+
+Background [color](/docs/reference/colors) of TextField when hovered. Will not be visible if `filled=False`.
 
 ### `icon`
 
@@ -461,7 +471,7 @@ Defaults to `False`.
 
 ### `selection_color`
 
-The [color](/docs/guides/python/colors) of TextField selection.
+The [color](/docs/reference/colors) of TextField selection.
 
 ### `shift_enter`
 

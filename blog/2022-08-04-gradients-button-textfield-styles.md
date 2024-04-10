@@ -322,4 +322,4 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-[Give Flet a try](/docs/guides/python/getting-started) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+[Give Flet a try](/docs) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!

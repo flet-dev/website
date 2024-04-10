@@ -1,7 +1,6 @@
 ---
 title: Pagelet
 sidebar_label: Pagelet
-slug: pagelet
 ---
 
 Pagelet implements the basic Material Design visual layout structure.
@@ -13,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/input/pagelet)
+[Live example](https://flet-controls-gallery.fly.dev/layout/pagelet)
 
 ### Pagelet example
 
@@ -82,7 +81,7 @@ An [`AppBar`](/docs/controls/appbar) control to display at the top of the Pagele
 
 ### `bgcolor`
 
-Background [color](/docs/guides/python/colors) of the Pagelet.
+Background [color](/docs/reference/colors) of the Pagelet.
 
 ### `bottom_appbar`
 

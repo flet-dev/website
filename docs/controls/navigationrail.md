@@ -1,7 +1,6 @@
 ---
 title: NavigationRail
 sidebar_label: NavigationRail
-slug: navigationrail
 ---
 
 A material widget that is meant to be displayed at the left or right of an app to navigate between a small number of views, typically between three and five.
@@ -69,13 +68,17 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-Sets the [color](/docs/guides/python/colors) of the Container that holds all of the NavigationRail's contents.
+Sets the [color](/docs/reference/colors) of the Container that holds all of the NavigationRail's contents.
 
 ### `destinations`
 
 Defines the appearance of the button items that are arrayed within the navigation rail.
 
 The value must be a list of two or more `NavigationRailDestination` instances.
+
+### `elevation`
+
+Controls the size of the shadow below the NavigationRail. Default value is `0.0`.
 
 ### `extended`
 
@@ -88,10 +91,6 @@ The rail will implicitly animate between the extended and normal state.
 If the rail is going to be in the extended state, then the `label_type` must be set to `none`.
 
 The default value is `False`.
-
-### `elevation`
-
-Controls the size of the shadow below the NavigationRail. Default value is `0.0`.
 
 ### `group_alignment`
 
@@ -107,21 +106,11 @@ The default is `-1.0`.
 
 ### `indicator_color`
 
-The [color](/docs/guides/python/colors) of the navigation rail's indicator.
+The [color](/docs/reference/colors) of the navigation rail's indicator.
 
 ### `indicator_shape`
 
-The shape of the navigation rail's indicator.
-
-The value is an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+The shape of the navigation rail's indicator. More information on possible values [here](alertdialog#shape).
 
 The default shape is a `StadiumBorder`.
 
@@ -161,6 +150,12 @@ To make a compact rail, set this to `56` and use `label_type='none'`.
 
 The index into `destinations` for the current selected `NavigationRailDestination` or `None` if no destination is selected.
 
+### `selected_label_text_style`
+
+The [`TextStyle`](text#textstyle-properties) of a destination's label when it is selected.
+
+When a destination is not selected, `unselected_label_text_style` will instead be used.
+
 ### `trailing`
 
 An optional trailing control in the rail that is placed below the destinations.
@@ -168,6 +163,12 @@ An optional trailing control in the rail that is placed below the destinations.
 Its location is affected by `group_alignment`.
 
 This is commonly a list of additional options or destinations that is usually only rendered when `extended` is `True`.
+
+### `unselected_label_text_style`
+
+The [`TextStyle`](text#textstyle-properties) of a destination's label when it is not selected.
+
+When a destination is selected, `selected_label_text_style` will instead be used.
 
 ## `NavigationRail` events
 
@@ -189,13 +190,23 @@ If `selected_icon_content` is provided, this will only be displayed when the des
 
 To make the NavigationRail more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
 
+### `indicator_color`
+
+The [color](/docs/reference/colors) of the `indicator_shape` when this destination is selected.
+
+### `indicator_shape`
+
+The shape of the selection indicator. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+
 ### `label`
+
+A string representing the destination's label. Will be displayed only if `label_content` is not provided.
 
 ### `label_content`
 
-The label `Control` for the destination.
+The label `Control` for the destination. If this is provided, then `label` will be ignored.
 
-The label must be provided when used with the NavigationRail. When `label_type='none'`, the label is still used for semantics, and may still be used if `extended` is `True`.
+The label must be provided when used with the `NavigationRail`. When `NavigationRail.label_type=NavigationRailLabelType.NONE`, the label is still used for semantics, and may still be used if `NavigationRail.extended=True`.
 
 ### `padding`
 

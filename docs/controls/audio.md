@@ -1,7 +1,6 @@
 ---
 title: Audio
 sidebar_label: Audio
-slug: audio
 ---
 
 A control to simultaneously play multiple audio files. Works on macOS, Linux, Windows, iOS, Android and web.
@@ -21,6 +20,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Examples
+
+[Live example](https://flet-controls-gallery.fly.dev/utility/audio)
 
 ### Autoplay audio
 

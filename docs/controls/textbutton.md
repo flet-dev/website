@@ -1,7 +1,6 @@
 ---
 title: TextButton
 sidebar_label: TextButton
-slug: textbutton
 ---
 
 import Tabs from '@theme/Tabs';
@@ -167,7 +166,7 @@ Icon shown in the button.
 
 ### `icon_color`
 
-Icon [color](/docs/guides/python/colors).
+Icon [color](/docs/reference/colors).
 
 ### `style`
 
@@ -187,10 +186,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode:
-
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
 
 ## Methods
 
