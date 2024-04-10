@@ -1,6 +1,6 @@
 ---
-slug: controls-and-theming-enchancements
-title: Controls and theming enchancements
+slug: controls-and-theming-enhancements
+title: Controls and theming enhancements
 author: Henri Ndonko
 author_title: Flet Contributor and Maintainer
 author_url: https://github.com/ndonkoHenri
