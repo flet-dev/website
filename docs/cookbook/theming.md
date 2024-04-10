@@ -480,7 +480,7 @@ The color of unselected tab labels.
 
 Defines the ink response focus, hover, and splash colors. If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
 
-### `PageTransitionTheme` class
+### `PageTransitionsTheme` class
 
 Allows customizing navigation page transitions for different platforms.
 Supported transitions is `ft.PageTransitionTheme` enum: `NONE` (zero delay transition without any animation), `FADE_UPWARDS`, `OPEN_UPWARDS`, `ZOOM` and `CUPERTINO`.

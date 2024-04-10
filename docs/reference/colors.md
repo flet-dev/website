@@ -33,7 +33,7 @@ c2 = ft.Container(bgcolor='yellow')
 
 [Live Example](https://flet-controls-gallery.fly.dev/colors/themecolors)
 
-There are 30 named theme colors in [`Theme.color_scheme`](/docs/controls/page#colorscheme-class) that are are generated based on the `color_scheme_seed` property. The default seed color value is "blue".
+There are 30 named theme colors in [`Theme.color_scheme`](/docs/cookbook/theming#colorscheme-class) that are are generated based on the `color_scheme_seed` property. The default seed color value is "blue".
 
 ```
 # example for generating page theme colors based on the seed color
