@@ -260,23 +260,7 @@ The value of `margin` property could be one of the following types:
 
 Empty space to inscribe inside a container decoration (background, border). The child control is placed inside this padding.
 
-Padding is an instance of `padding.Padding` class with properties set padding for all sides of the rectangle: `left`, `top`, `right`, `bottom`. An instance of `padding.Padding` can be created via constructor with values for specific sides or created with helper methods:
-
-* `padding.all(value: float)`
-* `padding.symmetric(vertical, horizontal)`
-* `padding.only(left, top, right, bottom)`
-
-For example:
-
-```python
-
-container_1.padding = ft.padding.all(10)
-container_2.padding = 20 # same as ft.padding.all(20)
-container_3.padding = ft.padding.symmetric(horizontal=10)
-container_4.padding=padding.only(left=10)
-```
-
-<img src="/img/docs/controls/container/container-padding-diagram.png" className="screenshot-50" />
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `rtl`
 
