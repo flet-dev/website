@@ -216,7 +216,7 @@ Where to open URL in the web mode. See [Container.url_target](/docs/controls/con
 
 ### `visual_density`
 
-Defines how compact the control's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+Defines how compact the control's layout will be. Value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
 
 ## Methods
 

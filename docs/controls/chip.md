@@ -230,8 +230,7 @@ The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate 
 
 Defines how compact the control's layout will be.
 
-Property value is `ThemeVisualDensity` enum with the following possible
-values: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+Value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
 
 ## Events
 
