@@ -6,7 +6,7 @@ sidebar_label: GridView
 A scrollable, 2D array of controls.
 
 :::info
-GridView is very effective for large lists (thousands of items). Prefer it over wrapping [`Column`](column) or [`Row`](row) for smooth scrolling. See [Flet Icons Browser](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py) for GridView usage example.
+GridView is very effective for large lists (thousands of items). Prefer it over wrapping [`Column`](/docs/controls/column) or [`Row`](/docs/controls/row) for smooth scrolling. See [Flet Icons Browser](https://github.com/flet-dev/examples/blob/main/python/apps/icons-browser/main.py) for GridView usage example.
 :::
 
 import Tabs from '@theme/Tabs';
@@ -82,7 +82,7 @@ The ratio of the cross-axis to the main-axis extent of each child.
 ### `clip_behavior`
 
 The `content` will be clipped (or not) according to this option.
-See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
 
 Default value is `ClipBehavior.HARD_EDGE`.
 
@@ -106,7 +106,7 @@ Throttling in milliseconds for `on_scroll` event. Default is `10`.
 
 The amount of space by which to inset the children.
 
-See [`Container.padding`](container#padding) property for more information and possible values.
+See [`Container.padding`](/docs/controls/container#padding) property for more information and possible values.
 
 ### `reverse`
 
@@ -134,7 +134,7 @@ The number of logical pixels between each child along the main axis.
 
 Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
 
-See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
 
 ## Events
 
@@ -142,4 +142,4 @@ See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for 
 
 Fires when scroll position is changed by a user.
 
-See [`Column.on_scroll`](column#on_scroll) for event details and examples.
+See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.

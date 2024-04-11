@@ -190,7 +190,7 @@ Defines the background [color](/docs/reference/colors) of the container.
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
+The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for more details.
 
 ### `blur`
 
@@ -385,7 +385,7 @@ More information:
 
 ### `image_fit`
 
-See [`Image.fit`](image#fit) for more details.
+See [`Image.fit`](/docs/controls/image#fit) for more details.
 
 ### `image_opacity`
 
@@ -393,15 +393,15 @@ Sets image opacity when blending with a background: value between `0.0` and `1.0
 
 ### `image_repeat`
 
-See [`Image.repeat`](image#repeat) for more details.
+See [`Image.repeat`](/docs/controls/image#repeat) for more details.
 
 ### `image_src`
 
-Sets an image as a container background. See [`Image.src`](image#src) for more details.
+Sets an image as a container background. See [`Image.src`](/docs/controls/image#src) for more details.
 
 ### `image_src_base64`
 
-Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](image#src_base64) for more details.
+Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](/docs/controls/image#src_base64) for more details.
 
 ### `ink`
 

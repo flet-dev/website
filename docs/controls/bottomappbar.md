@@ -96,7 +96,7 @@ Will not be visible if the `shape` is not `None`.
 
 ### `padding`
 
-Empty space to inscribe inside a container decoration (background, border). See [`Container.padding`](container#padding) property for more information and possible values.
+Empty space to inscribe inside a container decoration (background, border). See [`Container.padding`](/docs/controls/container#padding) property for more information and possible values.
 
 Defaults to `padding.symmetric(vertical=12.0, horizontal=16.0)`.
 

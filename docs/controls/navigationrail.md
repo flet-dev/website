@@ -110,7 +110,7 @@ The [color](/docs/reference/colors) of the navigation rail's indicator.
 
 ### `indicator_shape`
 
-The shape of the navigation rail's indicator. More information on possible values [here](alertdialog#shape).
+The shape of the navigation rail's indicator. More information on possible values [here](/docs/controls/alertdialog#shape).
 
 The default shape is a `StadiumBorder`.
 
@@ -128,7 +128,7 @@ An optional leading control in the rail that is placed above the destinations.
 
 Its location is not affected by `group_alignment`.
 
-This is commonly a [`FloatingActionButton`](floatingactionbutton), but may also be a non-button, such as a logo.
+This is commonly a [`FloatingActionButton`](/docs/controls/floatingactionbutton), but may also be a non-button, such as a logo.
 
 ### `min_extended_width`
 
@@ -152,7 +152,7 @@ The index into `destinations` for the current selected `NavigationRailDestinatio
 
 ### `selected_label_text_style`
 
-The [`TextStyle`](text#textstyle-properties) of a destination's label when it is selected.
+The [`TextStyle`](/docs/controls/text#textstyle-properties) of a destination's label when it is selected.
 
 When a destination is not selected, `unselected_label_text_style` will instead be used.
 
@@ -166,7 +166,7 @@ This is commonly a list of additional options or destinations that is usually on
 
 ### `unselected_label_text_style`
 
-The [`TextStyle`](text#textstyle-properties) of a destination's label when it is not selected.
+The [`TextStyle`](/docs/controls/text#textstyle-properties) of a destination's label when it is not selected.
 
 When a destination is selected, `selected_label_text_style` will instead be used.
 
@@ -184,7 +184,7 @@ The name of the icon of the destination.
 
 ### `icon_content`
 
-The icon `Control` of the destination. Typically the icon is an [`Icon`](icon) control. Used instead of `icon` property.
+The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
 
 If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
 
@@ -196,7 +196,7 @@ The [color](/docs/reference/colors) of the `indicator_shape` when this destinati
 
 ### `indicator_shape`
 
-The shape of the selection indicator. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+The shape of the selection indicator. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
 
 ### `label`
 
@@ -212,7 +212,7 @@ The label must be provided when used with the `NavigationRail`. When `Navigation
 
 The amount of space to inset the destination item.
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
 
 ### `selected_icon`
 

@@ -127,14 +127,14 @@ A non-negative value which defines the elevation of the chip when clicked/presse
 ### `clip_behavior`
 
 The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum.
-See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
 
 Defaults to `ClipBehavior.NONE`.
 
 ### `color`
 
 The [color](/docs/reference/colors) that fills the chip in various material states .
-See [`Radio.fill_color`](radio#fill_color) for possible values.
+See [`Radio.fill_color`](/docs/controls/radio#fill_color) for possible values.
 
 ### `delete_icon_tooltip`
 
@@ -142,7 +142,7 @@ The text to be used for the chip's `delete_icon` tooltip. If not provided or pro
 
 ### `delete_icon`
 
-A `Control` to display to the right of the chip's `label` in case `on_delete` event is specified. Defaults to an [Icon](icon) set to use `ft.icons.CANCEL`.
+A `Control` to display to the right of the chip's `label` in case `on_delete` event is specified. Defaults to an [Icon](/docs/controls/icon) set to use `ft.icons.CANCEL`.
 
 ### `delete_icon_color`
 
@@ -158,7 +158,7 @@ A non-negative value which defines the size of the shadow below the chip. Defaul
 
 ### `label`
 
-A `Control` that represents primary content of the chip, typically a [Text](text). Label is a required property.
+A `Control` that represents primary content of the chip, typically a [Text](/docs/controls/text). Label is a required property.
 
 ### `label_padding`
 
@@ -166,17 +166,17 @@ Padding around the `label`.
 
 By default, this is 4 logical pixels at the beginning and the end of the label, and zero on top and bottom.
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
 
 ### `label_style`
 
-The style to be applied to the chip's `label`. See [`Text.textstyle`](text#textstyle-properties) for more information about `TextStyle` and possible values.
+The style to be applied to the chip's `label`. See [`Text.textstyle`](/docs/controls/text#textstyle-properties) for more information about `TextStyle` and possible values.
 
 ### `leading`
 
 A `Control` to display to the left of the chip's `label`.
 
-Typically the leading control is an [`Icon`](icon) or a [`CircleAvatar`](circleavatar).
+Typically the leading control is an [`Icon`](/docs/controls/icon) or a [`CircleAvatar`](/docs/controls/circleavatar).
 
 ### `padding`
 
@@ -184,7 +184,7 @@ The padding between the `label` and the outside shape.
 
 By default, this is 4 logical pixels on all sides.
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
 
 ### `selected`
 

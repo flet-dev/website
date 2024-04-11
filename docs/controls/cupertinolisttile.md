@@ -3,9 +3,9 @@ title: CupertinoListTile
 sidebar_label: CupertinoListTile
 ---
 
-An iOS-style list tile. The CupertinoListTile is a Cupertino equivalent of Material [ListTile](listtile).
+An iOS-style list tile. The CupertinoListTile is a Cupertino equivalent of Material [ListTile](/docs/controls/listtile).
 
-It comes in two forms, an old-fashioned edge-to-edge variant known from iOS Settings app and in a new, "Inset Grouped" form, known from either iOS Notes or Reminders app. The first form is created if `notched` property is `False` (default value) and the second form is created is [`notched`](cupertinolisttile#notched) is `True`.
+It comes in two forms, an old-fashioned edge-to-edge variant known from iOS Settings app and in a new, "Inset Grouped" form, known from either iOS Notes or Reminders app. The first form is created if `notched` property is `False` (default value) and the second form is created is [`notched`](/docs/controls/cupertinolisttile#notched) is `True`.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -58,7 +58,7 @@ ft.app(target=main)
 
 ### `additional_info`
 
-A `Control` to display on the right of the list tile, before `trailing`. Similar to `subtitle`, an `additional_info` is used to display additional information. Usually a [Text](text) control.
+A `Control` to display on the right of the list tile, before `trailing`. Similar to `subtitle`, an `additional_info` is used to display additional information. Usually a [Text](/docs/controls/text) control.
 
 ### `bgcolor`
 
@@ -89,15 +89,15 @@ If `True`, list tile will be created in an "Inset Grouped" form, known from eith
 
 The tile's internal padding. Insets a CupertinoListTile's contents: its `leading`, `title`, `subtitle`, `additional_info` and `trailing` controls.
 
-See [`Container.padding`](container#padding) property for more information and possible values.
+See [`Container.padding`](/docs/controls/container#padding) property for more information and possible values.
 
 ### `subtitle`
 
-Additional content displayed below the title. Typically a [Text](text) control.
+Additional content displayed below the title. Typically a [Text](/docs/controls/text) control.
 
 ### `title`
 
-A `Control` to display as primary content of the list tile. Typically a [Text](text) control.
+A `Control` to display as primary content of the list tile. Typically a [Text](/docs/controls/text) control.
 
 ### `toggle_inputs`
 
@@ -105,7 +105,7 @@ Whether clicking on a list tile should toggle the state of `Radio`, `Checkbox` o
 
 ### `trailing`
 
-A `Control` to display after the title. Typically an [Icon](icon) control.
+A `Control` to display after the title. Typically an [Icon](/docs/controls/icon) control.
 
 ### `url`
 
@@ -113,7 +113,7 @@ The URL to open when the list tile is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
+Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
 
 ## Events
 

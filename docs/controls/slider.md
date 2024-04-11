@@ -154,12 +154,12 @@ If the `max` is equal to the `min`, then the slider is disabled.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
 
 ### `overlay_color`
 
 Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is
-hovered or dragged. See [Radio.fill_color](radio#fill_color) for usage examples.
+hovered or dragged. See [Radio.fill_color](/docs/controls/radio#fill_color) for usage examples.
 
 ### `round`
 

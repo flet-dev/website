@@ -5,7 +5,7 @@ sidebar_label: View
 
 View is the top most container for all other controls.
 
-A root view is automatically created when a new user session started. From layout perspective the View represents a [Column](column) control, so it has a similar behavior and shares same properties.
+A root view is automatically created when a new user session started. From layout perspective the View represents a [Column](/docs/controls/column) control, so it has a similar behavior and shares same properties.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -123,7 +123,7 @@ page.update()
   </TabItem>
 </Tabs>
 
-See [`Container.padding`](container#padding) for more information and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
 
 ### `scroll`
 
@@ -164,7 +164,7 @@ Property value is `MainAxisAlignment` enum with the following values:
 
 Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
 
-See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
 
 ## Events
 
@@ -172,4 +172,4 @@ See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for 
 
 Fires when scroll position is changed by a user.
 
-See [`Column.on_scroll`](column#on_scroll) for event details and examples.
+See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.

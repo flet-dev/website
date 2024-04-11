@@ -32,11 +32,11 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 
 ### `bottom_appbar`
 
-[`BottomAppBar`](bottomappbar) control to display at the bottom of the Page. If both [`bottom_appbar`](#bottom_appbar) and [`navigation_bar`](#navigation_bar) properties are provided, `NavigationBar` will be displayed.
+[`BottomAppBar`](/docs/controls/bottomappbar) control to display at the bottom of the Page. If both [`bottom_appbar`](#bottom_appbar) and [`navigation_bar`](#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
 ### `bottom_sheet`
 
-[`BottomSheet`](bottomsheet) control to display.
+[`BottomSheet`](/docs/controls/bottomsheet) control to display.
 
 ### `client_ip`
 
@@ -255,7 +255,7 @@ Page name as specified in `ft.app()` call. Page name is set when Flet app is run
 
 ### `navigation_bar`
 
-[`NavigationBar`](navigationbar) control to display at the bottom of the page. If both [`bottom_appbar`](#bottom_appbar) and [`navigation_bar`](#navigation_bar) properties are provided, `NavigationBar` will be displayed.
+[`NavigationBar`](/docs/controls/navigationbar) control to display at the bottom of the page. If both [`bottom_appbar`](#bottom_appbar) and [`navigation_bar`](#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
 ### `on_scroll_interval`
 
@@ -280,7 +280,7 @@ page.update()
 </TabItem>
 </Tabs>
 
-See [`Container.padding`](container#padding) for more information and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
 
 ### `platform`
 
@@ -666,7 +666,7 @@ ft.app(target=main)
 
 ### `window_title_bar_hidden`
 
-🖥️ Desktop only. Set to `True` to hide window title bar. See [`WindowDragArea`](windowdragarea) control that allows moving
+🖥️ Desktop only. Set to `True` to hide window title bar. See [`WindowDragArea`](/docs/controls/windowdragarea) control that allows moving
 an app window with hidden title bar.
 
 ### `window_title_bar_buttons_hidden`
@@ -834,7 +834,7 @@ Run `handler` function as a new Thread in the executor associated with the curre
 
 Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
 
-See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
 
 ### `set_clipboard(data)`
 

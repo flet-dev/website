@@ -6,7 +6,7 @@ sidebar_label: FilledTonalButton
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A filled tonal button is an alternative middle ground between [FilledButton](filledbutton) and [OutlinedButton](outlinedbutton) buttons. They’re useful in contexts where a lower-priority button requires slightly more emphasis than an outline would give, such as "Next" in an onboarding flow. Tonal buttons use the secondary color mapping. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
+A filled tonal button is an alternative middle ground between [FilledButton](/docs/controls/filledbutton) and [OutlinedButton](/docs/controls/outlinedbutton) buttons. They’re useful in contexts where a lower-priority button requires slightly more emphasis than an outline would give, such as "Next" in an onboarding flow. Tonal buttons use the secondary color mapping. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
 
 <img src="/img/docs/controls/filled-tonal-button/basic-filled-tonal-buttons.png" className="screenshot-20" />
 
@@ -81,7 +81,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
+Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
 
 ## Events
 

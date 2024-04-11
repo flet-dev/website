@@ -5,9 +5,9 @@ sidebar_label: Badge
 
 A Material Design "badge".
 
-Badges are used to show notifications, counts, or status information about its [child](badge#content), typically an icon that is a part of a NavigationBar or a NavigationRail destination or a button's icon.
+Badges are used to show notifications, counts, or status information about its [child](/docs/controls/badge#content), typically an icon that is a part of a NavigationBar or a NavigationRail destination or a button's icon.
 
-The information is shown as [`text`](badge#text) on a badge's label. If the `text` is not provided, the badge is shown as a filled circle of [`small_size`](badge#small_size) diameter.
+The information is shown as [`text`](/docs/controls/badge#text) on a badge's label. If the `text` is not provided, the badge is shown as a filled circle of [`small_size`](/docs/controls/badge#small_size) diameter.
 
 If `text` is provided, the label is a StadiumBorder shaped badge with height equal to [`large_size`](#large_size).
 
@@ -59,7 +59,7 @@ ft.app(target=main)
 
 Aligns the label relative to the content of the badge. 
 
-The alignment positions the label in similar way content of a container is positioned using its [`alignment`](container#alignment), except that, the badge alignment is resolved as if the label was a [`large_size`](badge#large_size) square and `offset` is added to the result.
+The alignment positions the label in similar way content of a container is positioned using its [`alignment`](/docs/controls/container#alignment), except that, the badge alignment is resolved as if the label was a [`large_size`](/docs/controls/badge#large_size) square and `offset` is added to the result.
 
 This value is only used if `text` property is provided.
 
@@ -74,7 +74,7 @@ Background [color](/docs/reference/colors) of the label.
 
 ### `content`
 
-A child Control contained by the badge, typically an icon that's part of a [`NavigationBar`](navigationbar) or a [`NavigationRail`](navigationrail) destination.
+A child Control contained by the badge, typically an icon that's part of a [`NavigationBar`](/docs/controls/navigationbar) or a [`NavigationRail`](/docs/controls/navigationrail) destination.
 
 ### `label_visible`
 
@@ -100,7 +100,7 @@ The padding added to the badge's label.
 
 This value is only used if `text` is provided. Defaults to 4 pixels on the left and right.
 
-See Container's [`padding`](container#padding) for possible values.
+See Container's [`padding`](/docs/controls/container#padding) for possible values.
 
 ### `small_size`
 
@@ -112,7 +112,7 @@ Default value is 6.
 
 The text shown on badge's label, typically 1 to 4 characters.
 
-If the text is not provided, the badge is shown as a filled circle of [`small_size`](badge#small_size) diameter. 
+If the text is not provided, the badge is shown as a filled circle of [`small_size`](/docs/controls/badge#small_size) diameter. 
 
 If `text` is provided, the label is a StadiumBorder shaped badge with height equal to [`large_size`](#large_size).
 
@@ -122,7 +122,7 @@ If `text` is provided, the label is a StadiumBorder shaped badge with height equ
 
 ### `text_style`
 
-The text style to use for text in the label. See [`text_style` properties](text#textstyle-properties) for possible values.
+The text style to use for text in the label. See [`text_style` properties](/docs/controls/text#textstyle-properties) for possible values.
 
 
 

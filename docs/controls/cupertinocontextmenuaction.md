@@ -3,7 +3,7 @@ title: CupertinoContextMenuAction
 sidebar_label: CupertinoContextMenuAction
 ---
 
-An action button typically used in [`CupertinoContextMenu`](cupertinocontextmenu).
+An action button typically used in [`CupertinoContextMenu`](/docs/controls/cupertinocontextmenu).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

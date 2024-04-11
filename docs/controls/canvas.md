@@ -399,7 +399,7 @@ Paints the given `color` onto the canvas, applying the given `blend_mode`, with 
 
 Blend mode to apply.
 
-See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
+See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for possible blend mode values.
 
 ## `Fill` shape properties
 
@@ -605,11 +605,11 @@ The text to draw.
 
 ### `style`
 
-A text style to draw `text` and `spans` with. The value is the instance of [`ft.TextStyle`](text#textstyle-properties) class.
+A text style to draw `text` and `spans` with. The value is the instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
 
 ### `spans`
 
-The list of [`ft.TextSpan`](text#textspan-properties) objects to build a rich text paragraph.
+The list of [`ft.TextSpan`](/docs/controls/text#textspan-properties) objects to build a rich text paragraph.
 
 ### `alignment`
 
@@ -619,7 +619,7 @@ The value is of type `ft.Alignment`. Default value is `ft.alignment.top_left`.
 
 ### `text_align`
 
-Text horizontal align. See [`Text.text_align`](text#text_align) property for supported values.
+Text horizontal align. See [`Text.text_align`](/docs/controls/text#text_align) property for supported values.
 
 ### `max_lines`
 
@@ -655,7 +655,7 @@ A blend mode to apply when a shape is drawn or a layer is composited.
 
 Defaults to `BlendMode.SRC_OVER`.
 
-See [`ShaderMask.blend_mode`](shadermask#blend_mode) for possible blend mode values.
+See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for possible blend mode values.
 
 ### `blur_image`
 
@@ -665,7 +665,7 @@ The property is not yet implemented and reserved for future use.
 
 Blur image when drawing it on a canvas.
 
-See [`Container.blur`](container#blur) for more information.
+See [`Container.blur`](/docs/controls/container#blur) for more information.
 
 ### `color`
 

@@ -254,7 +254,7 @@ Text [color](/docs/reference/colors).
 
 The padding for the input decoration's container.
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
 
 ### `counter_style`
 

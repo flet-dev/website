@@ -81,7 +81,7 @@ Defaults to `False`.
 
 ### `bar_bgcolor`
 
-Defines the background [color](/docs/reference/colors) of the search bar. See [Radio.fill_color](radio#fill_color) for
+Defines the background [color](/docs/reference/colors) of the search bar. See [Radio.fill_color](/docs/controls/radio#fill_color) for
 usage examples.
 
 ### `bar_hint_text`
@@ -94,7 +94,7 @@ A `Control` to display before the text input field when the search view is close
 
 ### `bar_overlay_color`
 
-Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is focused, hovered, or pressed. See [Radio.fill_color](radio#fill_color) for usage examples.
+Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is focused, hovered, or pressed. See [Radio.fill_color](/docs/controls/radio#fill_color) for usage examples.
 
 ### `bar_trailing`
 
@@ -104,7 +104,7 @@ These controls can represent additional modes of searching (e.g voice search), a
 
 ### `capitalization`
 
-Enables automatic on-the-fly capitalization of entered text. See [TextField.capitalization](textfield#capitalization) for possible values.
+Enables automatic on-the-fly capitalization of entered text. See [TextField.capitalization](/docs/controls/textfield#capitalization) for possible values.
 
 ### `controls`
 
@@ -128,7 +128,7 @@ Defines the style of the text being edited on the search view.
 
 ### `keyboard_type`
 
-The type of action button to use for the keyboard. See [TextField.keyboard_type](textfield#keyboard_type) for possible values.
+The type of action button to use for the keyboard. See [TextField.keyboard_type](/docs/controls/textfield#keyboard_type) for possible values.
 
 ### `value`
 
@@ -154,7 +154,7 @@ Defaults to a back button which closes/pops the search view.
 
 ### `view_shape`
 
-Defines the shape of the search view. See [Container.shape](container#shape) for possible values.
+Defines the shape of the search view. See [Container.shape](/docs/controls/container#shape) for possible values.
 
 ### `view_side`
 

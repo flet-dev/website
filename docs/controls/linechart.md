@@ -510,7 +510,7 @@ A list of points (dots) of [`LineChartDataPoint`](#linechartdatapoint-properties
 
 ### `gradient`
 
-Gradient to draw line's background. See [`Container.gradient`](container#gradient) property for more information and possible values.
+Gradient to draw line's background. See [`Container.gradient`](/docs/controls/container#gradient) property for more information and possible values.
 
 ### `point`
 
@@ -588,7 +588,7 @@ An align for the tooltip. The value is the instance of `ft.TextAlign` enum.
 
 ### `tooltip_style`
 
-A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](text#textstyle-properties) class.
+A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
 
 ### `x`
 

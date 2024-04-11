@@ -5,9 +5,9 @@ sidebar_label: DatePicker
 
 A Material-style date picker dialog.
 
-It is added to [`page.overlay`](page#overlay) and called using its [`pick_date()`](datepicker#pick_date) method.
+It is added to [`page.overlay`](/docs/controls/page#overlay) and called using its [`pick_date()`](/docs/controls/datepicker#pick_date) method.
 
-Depending on the [`date_picker_entry_mode`](datepicker#date_picker_entry_mode), it will show either a Calendar or an Input (TextField) for picking a date.
+Depending on the [`date_picker_entry_mode`](/docs/controls/datepicker#date_picker_entry_mode), it will show either a Calendar or an Input (TextField) for picking a date.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -127,7 +127,7 @@ This is used to indicate to the user what they are selecting a date for. The def
 
 ### `keyboard_type`
 
-The type of keyboard to use for editing the text. See [`KeyboardType`](textfield#keyboard_type) for possible values.
+The type of keyboard to use for editing the text. See [`KeyboardType`](/docs/controls/textfield#keyboard_type) for possible values.
 
 Defaults to `KeyboardType.DATETIME`.
 

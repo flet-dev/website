@@ -69,7 +69,7 @@ A list of `Control`s to display as segments inside the CupertinoSegmentedButton.
 
 ### `padding`
 
-The button's padding. See [`Container.padding`](container#padding) for more details.
+The button's padding. See [`Container.padding`](/docs/controls/container#padding) for more details.
 
 ### `selected_color`
 
