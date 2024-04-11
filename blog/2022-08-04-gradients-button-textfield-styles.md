@@ -54,7 +54,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Check [`Container.gradient`](/docs/controls/container#lineargradient) docs for more information about `LinearGradient` properties.
+Check [`LinearGradient`](/docs/reference/types/lineargradient) docs for more information about `LinearGradient` properties.
 
 ### Radial gradient
 
@@ -86,7 +86,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Check [`Container.gradient`](/docs/controls/container#radialgradient) docs for more information about `RadialGradient` properties.
+Check [`RadialGradient`](/docs/reference/types/radialgradient) docs for more information about `RadialGradient` properties.
 
 ### Sweep gradient
 
@@ -123,7 +123,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-Check [`Container.gradient`](/docs/controls/container#sweepgradient) docs for more information about `SweepGradient` properties.
+Check [`SweepGradient`](/docs/reference/types/sweepgradient) docs for more information about `SweepGradient` properties.
 
 ## Buttons styling
 
