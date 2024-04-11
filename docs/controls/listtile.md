@@ -115,9 +115,7 @@ The list tile's splash [color](/docs/reference/colors) after the tile was tapped
 
 The tile's internal padding. Insets a ListTile's contents: its `leading`, `title`, `subtitle`, and `trailing` controls.
 
-If not set, `padding.symmetric(horizontal=16)` is used.
-
-See [`Container.padding`](/docs/controls/container#padding) property for more information and possible values.
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class. If not set, `padding.symmetric(horizontal=16)` is used.
 
 ### `dense`
 
@@ -157,7 +155,7 @@ A `Control` to display before the title.
 
 ### `leading_and_trailing_text_style`
 
-The [TextStyle](/docs/controls/text#textstyle-properties)] for the `leading` and `trailing` controls.
+The [TextStyle](/docs/reference/types/textstyle) for the `leading` and `trailing` controls.
 
 ### `min_leading_width`
 
@@ -170,7 +168,7 @@ The minimum padding on the top and bottom of the `title` and `subtitle` controls
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
+The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `selected`
 
