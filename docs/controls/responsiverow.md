@@ -121,16 +121,7 @@ ft.app(target=main)
 
 How the child Controls should be placed horizontally.
 
-For example, `MainAxisAlignment.START`, the default, places the children on the left of a Row.
-
-Property value is `MainAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
+Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum. Default is `START`.
 
 ### `columns`
 
@@ -156,10 +147,4 @@ Spacing between controls in a row. Default value is 10 virtual pixels. Spacing i
 
 How the child Controls should be placed vertically.
 
-Property value is `CrossAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
