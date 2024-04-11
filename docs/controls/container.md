@@ -200,7 +200,7 @@ The content will be clipped (or not) according to this option.
 
 Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`. More information on each of the values [here](https://api.flutter.dev/flutter/dart-ui/Clip.html).
+Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
 
 ### `content`
 

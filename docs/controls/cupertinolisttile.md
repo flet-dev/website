@@ -89,7 +89,7 @@ If `True`, list tile will be created in an "Inset Grouped" form, known from eith
 
 The tile's internal padding. Insets a CupertinoListTile's contents: its `leading`, `title`, `subtitle`, `additional_info` and `trailing` controls.
 
-See [`Container.padding`](container#padding) property for more information and possible values.
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `subtitle`
 
@@ -113,7 +113,7 @@ The URL to open when the list tile is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
+Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
 
 ## Events
 

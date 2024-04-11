@@ -11,3 +11,5 @@ import TabItem from '@theme/TabItem';
 * `ANTI_ALIAS`
 * `ANTI_ALIAS_WITH_SAVE_LAYER`
 * `HARD_EDGE`
+
+More information on each of the values [here](https://api.flutter.dev/flutter/dart-ui/Clip.html).
