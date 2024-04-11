@@ -387,6 +387,7 @@ module.exports = {
             "reference/types/boxshadow",
             "reference/types/clipbehavior",
             "reference/types/crossaxisalignment",
+            "reference/types/floatingactionbuttonlocation",
             "reference/types/imagefit",
             "reference/types/imagerepeat",
             "reference/types/lineargradient",

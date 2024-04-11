@@ -111,26 +111,7 @@ A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to displ
 
 Defines a position for the `FloatingActionButton`.
 
-Property value is `FloatingActionButtonLocation` enum with the following values (diagrams [here](https://api.flutter.dev/flutter/material/FloatingActionButtonLocation-class.html)):
-
-* `CENTER_DOCKED`
-* `CENTER_FLOAT`
-* `CENTER_TOP`
-* `END_CONTAINED`
-* `END_DOCKED`
-* `END_FLOAT` (default)
-* `END_TOP`
-* `MINI_CENTER_DOCKED`
-* `MINI_CENTER_FLOAT`
-* `MINI_CENTER_TOP`
-* `MINI_END_DOCKED`
-* `MINI_END_FLOAT`
-* `MINI_END_TOP`
-* `MINI_START_DOCKED`
-* `MINI_START_FLOAT`
-* `MINI_START_TOP`
-* `START_DOCKED`
-* `START_FLOAT`
+Property value is [`FloatingActionButtonLocation`](/docs/reference/types/floatingactionbuttonlocation) enum. Default is `END_FLOAT`.
 
 ### `navigation_bar`
 
