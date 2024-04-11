@@ -143,7 +143,7 @@ The clickable label to display on the right of a Radio.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
+The label's style. An instance of type [`TextStyle`](/docs/controls/text#textstyle-properties).
 
 ### `label_position`
 
@@ -152,7 +152,7 @@ Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
 
 ### `overlay_color`
 

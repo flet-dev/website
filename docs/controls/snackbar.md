@@ -88,7 +88,7 @@ SnackBar background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
 
 Default value is `ClipBehavior.HARD_EDGE`.
 
@@ -98,7 +98,7 @@ An optional color for the close icon, if `show_close_icon` is `True`.
 
 ### `content`
 
-The primary content of the snack bar. Typically a [`Text`](text) control.
+The primary content of the snack bar. Typically a [`Text`](/docs/controls/text) control.
 
 ### `dismiss_direction`
 
@@ -130,7 +130,7 @@ The amount of padding to apply to the snack bar's content and optional action.
 
 ### `shape`
 
-The shape of the snack bar's. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+The shape of the snack bar's. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
 
 ### `show_close_icon`
 

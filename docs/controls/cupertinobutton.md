@@ -109,7 +109,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
+Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
 
 ## Events
 

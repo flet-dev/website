@@ -3,7 +3,7 @@ title: CupertinoActionSheetAction
 sidebar_label: CupertinoActionSheetAction
 ---
 
-An action button typically used in [`CupertinoActionSheet`](cupertinoactionsheet).
+An action button typically used in [`CupertinoActionSheet`](/docs/controls/cupertinoactionsheet).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

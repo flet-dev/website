@@ -117,7 +117,7 @@ The tile's internal padding. Insets a ListTile's contents: its `leading`, `title
 
 If not set, `padding.symmetric(horizontal=16)` is used.
 
-See [`Container.padding`](container#padding) property for more information and possible values.
+See [`Container.padding`](/docs/controls/container#padding) property for more information and possible values.
 
 ### `dense`
 
@@ -149,7 +149,7 @@ If `True`, then subtitle must be non-null (since it is expected to give the seco
 
 If `False`, the list tile is treated as having one line if the subtitle is null and treated as having two lines if the subtitle is non-null.
 
-When using a Text control for title and subtitle, you can enforce line limits using [Text.max_lines](text#max_lines).
+When using a Text control for title and subtitle, you can enforce line limits using [Text.max_lines](/docs/controls/text#max_lines).
 
 ### `leading`
 
@@ -157,7 +157,7 @@ A `Control` to display before the title.
 
 ### `leading_and_trailing_text_style`
 
-The [TextStyle](text#textstyle-properties)] for the `leading` and `trailing` controls.
+The [TextStyle](/docs/controls/text#textstyle-properties)] for the `leading` and `trailing` controls.
 
 ### `min_leading_width`
 
@@ -170,7 +170,7 @@ The minimum padding on the top and bottom of the `title` and `subtitle` controls
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
 
 ### `selected`
 
@@ -186,17 +186,17 @@ Defines the background [color](/docs/reference/colors) of ListTile when `selecte
 
 ### `shape`
 
-The tile's shape. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+The tile's shape. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
 
 ### `subtitle`
 
-Additional content displayed below the title. Typically a [Text](text) widget.
+Additional content displayed below the title. Typically a [Text](/docs/controls/text) widget.
 
-If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](text#max_lines) to enforce the number of lines.
+If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](/docs/controls/text#max_lines) to enforce the number of lines.
 
 ### `subtitle_text_style`
 
-The [TextStyle](text#textstyle-properties) for the `subtitle` control.
+The [TextStyle](/docs/controls/text#textstyle-properties) for the `subtitle` control.
 
 ### `style`
 
@@ -211,7 +211,7 @@ The [color](/docs/reference/colors) used for text. Defines the [color](/docs/ref
 
 ### `title`
 
-A `Control` to display as primary content of the list tile. Typically a [Text](text) control. This should not wrap. To enforce the single line limit, use [Text.max_lines](text#max_lines).
+A `Control` to display as primary content of the list tile. Typically a [Text](/docs/controls/text) control. This should not wrap. To enforce the single line limit, use [Text.max_lines](/docs/controls/text#max_lines).
 
 ### `title_alignment`
 
@@ -225,7 +225,7 @@ Defines how `leading` and `trailing` are vertically aligned relative to the titl
 
 ### `title_text_style`
 
-The [TextStyle](text#textstyle-properties) for the `title` control.
+The [TextStyle](/docs/controls/text#textstyle-properties) for the `title` control.
 
 ### `toggle_inputs`
 
@@ -233,7 +233,7 @@ Whether clicking on a list tile should toggle the state of `Radio`, `Checkbox` o
 
 ### `trailing`
 
-A `Control` to display after the title. Typically an [Icon](icon) control.
+A `Control` to display after the title. Typically an [Icon](/docs/controls/icon) control.
 
 ### `url`
 
@@ -241,7 +241,7 @@ The URL to open when the list tile is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
+Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
 
 ### `visual_density`
 

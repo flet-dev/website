@@ -54,13 +54,13 @@ The [color](/docs/reference/colors) of the CupertinoNavigationBar itself.
 
 ### `border`
 
-Defines the border of this navigation bar. See [`Container.border`](container#border) for information on its possible values.
+Defines the border of this navigation bar. See [`Container.border`](/docs/controls/container#border) for information on its possible values.
 
 ### `destinations`
 
 Defines the appearance of the button items that are arrayed within the navigation bar.
 
-The value must be a list of two or more [`NavigationDestination`](navigationbar#navigationdestination-properties) instances.
+The value must be a list of two or more [`NavigationDestination`](/docs/controls/navigationbar#navigationdestination-properties) instances.
 
 ### `icon_size`
 

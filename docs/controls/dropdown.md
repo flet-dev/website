@@ -280,7 +280,7 @@ Displayed on top of the input when it's empty and either (a) `label` is null or 
 
 The name of the icon to show before the input field and outside of the decoration's container.
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
 
 ### `icon_content`
 
@@ -408,7 +408,7 @@ Fires when the control has received focus.
 
 ### `alignment`
 
-Defines the alignment of this option in it's container. See [Container.alignment](container#alignment) for possible values. 
+Defines the alignment of this option in it's container. See [Container.alignment](/docs/controls/container#alignment) for possible values. 
 
 Defaults to `alignment.center_left`.
 

@@ -70,7 +70,7 @@ This property controls the size of the shadow below the app bar. Default value i
 
 ### `leading`
 
-A `Control` to display at the start of this app bar. Typically the leading control is an [`Icon`](icon) or an [`IconButton`](iconbutton).
+A `Control` to display at the start of this app bar. Typically the leading control is an [`Icon`](/docs/controls/icon) or an [`IconButton`](/docs/controls/iconbutton).
 
 If `None` and `automatically_imply_leading` is `True`, an appropriate button will be automatically created.
 

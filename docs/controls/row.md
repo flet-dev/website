@@ -304,7 +304,7 @@ When set to `True` the Row will put child controls into additional rows (runs) i
 
 Fires when row's scroll position is changed by a user.
 
-See [`Column.on_scroll`](column#on_scroll) for event details and examples.
+See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
 
 ## Methods
 
@@ -312,7 +312,7 @@ See [`Column.on_scroll`](column#on_scroll) for event details and examples.
 
 Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
 
-See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
 
 ## Events
 
@@ -320,7 +320,7 @@ See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for 
 
 Fires when scroll position is changed by a user.
 
-See [`Column.on_scroll`](column#on_scroll) for event details and examples.
+See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
 
 ## Expanding children
 

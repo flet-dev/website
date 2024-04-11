@@ -64,7 +64,7 @@ ft.app(target=main)
 
 ### `actions`
 
-A list of action buttons to be shown in the menu. These actions are typically [`CupertinoContextMenuAction`](cupertinocontextmenuaction)s. This list must have at least one action.
+A list of action buttons to be shown in the menu. These actions are typically [`CupertinoContextMenuAction`](/docs/controls/cupertinocontextmenuaction)s. This list must have at least one action.
 
 ### `content`
 

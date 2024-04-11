@@ -60,7 +60,7 @@ The menu's background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
 
 Default value is `ClipBehavior.NONE`.
 
@@ -102,7 +102,7 @@ Defines position of the popup menu relative to the button. Value can either be `
 
 A collection of `PopupMenuItem` controls to display in a dropdown menu. Defaults to `padding.all(8.0)`.
 
-See [`Container.padding`](container#padding) for possible values.
+See [`Container.padding`](/docs/controls/container#padding) for possible values.
 
 ### `shadow_color`
 
@@ -110,7 +110,7 @@ The [color](/docs/reference/colors) used to paint the shadow below the menu.
 
 ### `shape`
 
-The menu's shape. See [`FloatingActionButton.shape`](floatingactionbutton#shape) for possible values.
+The menu's shape. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
 
 The default shape is a `CircleBorder` with a radius of `10.0`.
 
@@ -159,13 +159,13 @@ An icon to draw before the text label of this menu item.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
 
 ### `padding`
 
 The padding of this menu item. Note that the `height` value of this menu item may influence the applied padding. For example, If a `height` greater than the height of the sum of the padding and a `content` is provided, then the padding's effect will not be visible.
 
-Defaults to `padding.symmetric(horizontal=12)`. See [`Container.padding`](container#padding) for possible values.
+Defaults to `padding.symmetric(horizontal=12)`. See [`Container.padding`](/docs/controls/container#padding) for possible values.
 
 ### `text`
 

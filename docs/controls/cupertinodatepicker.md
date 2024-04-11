@@ -5,7 +5,7 @@ sidebar_label: CupertinoDatePicker
 
 An iOS-style date and time picker dialog.
 
-See [`date_picker_mode`](cupertinodatepicker#date_picker_mode) property for details on the available modes.
+See [`date_picker_mode`](/docs/controls/cupertinodatepicker#date_picker_mode) property for details on the available modes.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

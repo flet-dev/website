@@ -552,7 +552,7 @@ See [`Text.font_family`](#font_family).
 
 The paint drawn as a foreground for the text.
 
-The value is of [`ft.Paint`](canvas#paint) class.
+The value is of [`ft.Paint`](/docs/controls/canvas#paint) class.
 
 ### `height`
 
@@ -569,7 +569,7 @@ The amount of space (in logical pixels) to add between each letter. A negative v
 
 ### `shadow`
 
-See [`Container.shadow`](container#shadow).
+See [`Container.shadow`](/docs/controls/container#shadow).
 
 ### `size`
 
@@ -617,7 +617,7 @@ The URL to open when the span is clicked. If registered, `on_click` event is fir
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
+Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
 
 ## `TextSpan` events
 

@@ -5,9 +5,9 @@ sidebar_label: TimePicker
 
 A Material-style time picker dialog.
 
-It is added to [`page.overlay`](page#overlay) and called using its [`pick_time()`](timepicker#pick_time) method.
+It is added to [`page.overlay`](/docs/controls/page#overlay) and called using its [`pick_time()`](/docs/controls/timepicker#pick_time) method.
 
-Depending on the [`time_picker_entry_mode`](timepicker#time_picker_entry_mode), it will show either a Dial or an Input (hour and minute text fields) for picking a time.
+Depending on the [`time_picker_entry_mode`](/docs/controls/timepicker#time_picker_entry_mode), it will show either a Dial or an Input (hour and minute text fields) for picking a time.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

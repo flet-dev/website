@@ -8,7 +8,7 @@ A scrollable list of controls arranged linearly.
 ListView is the most commonly used scrolling control. It displays its children one after another in the scroll direction. In the cross axis, the children are required to fill the ListView.
 
 :::info
-ListView is very effective for large lists (thousands of items). Prefer it over [`Column`](column) or [`Row`](row) for smooth scrolling.
+ListView is very effective for large lists (thousands of items). Prefer it over [`Column`](/docs/controls/column) or [`Row`](/docs/controls/row) for smooth scrolling.
 :::
 
 import Tabs from '@theme/Tabs';
@@ -72,7 +72,7 @@ extent of the main axis + `cache_extent` after the trailing edge.
 ### `clip_behavior`
 
 The `content` will be clipped (or not) according to this option.
-See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
 
 Default value is `ClipBehavior.HARD_EDGE`.
 
@@ -104,7 +104,7 @@ Throttling in milliseconds for `on_scroll` event. Default is `10`.
 
 The amount of space by which to inset the children.
 
-See [`Container.padding`](container#padding) property for more information and possible values.
+See [`Container.padding`](/docs/controls/container#padding) property for more information and possible values.
 
 ### `reverse`
 
@@ -124,7 +124,7 @@ The height of Divider between ListView items. No spacing between items if not sp
 
 Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
 
-See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
+See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
 
 ## Events
 
@@ -132,4 +132,4 @@ See [`Column.scroll_to()`](column#scroll_tooffset-delta-key-duration-curve) for 
 
 Fires when scroll position is changed by a user.
 
-See [`Column.on_scroll`](column#on_scroll) for event details and examples.
+See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.

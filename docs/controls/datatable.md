@@ -128,7 +128,7 @@ Horizontal margin around the checkbox, if it is displayed.
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior)
+The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior)
 for possible values.
 
 ### `column_spacing`
@@ -157,7 +157,7 @@ The maximum height of each row (excluding the row that contains column headings)
 
 ### `data_text_style`
 
-The text style for data rows. An instance of [`ft.TextStyle`](text#textstyle-properties) class.
+The text style for data rows. An instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
 
 ### `divider_thickness`
 
@@ -185,7 +185,7 @@ The height of the heading row.
 
 ### `heading_text_style`
 
-The text style for the heading row. An instance of [`ft.TextStyle`](text#textstyle-properties) class.
+The text style for the heading row. An instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
 
 ### `horizontal_lines`
 
