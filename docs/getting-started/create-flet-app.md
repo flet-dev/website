@@ -49,4 +49,4 @@ flet create --template counter .
 
 You can find more information about `flet create` command [here](/docs/reference/cli/create).
 
-Now you let's see Flet in action by [running the app](running-app)!
+Now let's see Flet in action by [running the app](running-app)!

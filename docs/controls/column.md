@@ -373,14 +373,7 @@ ft.app(main)
 
 How the child Controls should be placed vertically.
 
-Property value is `MainAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
+Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum.
 
 ### `auto_scroll`
 
@@ -394,13 +387,7 @@ A list of Controls to display inside the Column.
 
 How the child Controls should be placed horizontally.
 
-Property value is `CrossAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum.
 
 ### `on_scroll_interval`
 
@@ -418,15 +405,7 @@ Spacing between runs when `wrap=True`. Default value is 10.
 
 Enables a vertical scrolling for the Column to prevent its content overflow.
 
-Property value is an optional `ScrollMode` enum with `None` as default.
-
-Supported values:
-
-* `None` (default) - the column is non-scrollable and its content could overflow.
-* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
-* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
 
 ### `spacing`
 
@@ -496,7 +475,7 @@ ft.app(main)
 
 `duration` is scrolling animation duration in milliseconds. Defaults to 0 - no animation.
 
-`curve` configures animation curve. Defaults to `ft.AnimationCurve.EASE`.
+`curve` configures animation curve. Property value is [`AnimationCurve`](/docs/reference/types/animationcurve) enum. Defaults to `ft.AnimationCurve.EASE`.
 
 ## Events
 
@@ -504,22 +483,7 @@ ft.app(main)
 
 Fires when scroll position is changed by a user.
 
-Event handler argument is an instance of `ft.OnScrollEvent` class with the following properties:
-
-* `event_type` (str) - type of the scroll event:
-  * `start` - control has started scrolling;
-  * `update` - control has changed its scroll position;
-  * `end` - control has stopped scrolling;
-  * `user` - user has changed the direction in which they are scrolling;
-  * `over` - control has not changed its scroll position because the change would have caused its scroll position to go outside its scroll bounds;
-* `pixels` (float) - The current scroll position, in logical pixels.
-* `min_scroll_extent` (float) - The minimum in-range value for `pixels`.
-* `max_scroll_extent` (float) - The maximum in-range value for `pixels`.
-* `viewport_dimension` (float) - The extent of the viewport.
-* `scroll_delta` (float) - The distance by which the scrollable was scrolled, in logical pixels. Set for `update` events only.
-* `direction` (str) - The direction in which the user is scrolling: `idle`, `forward`, `reverse`. Set for `user` events only.
-* `overscroll` (float) - The number of logical pixels that the scrollable avoided scrolling. Set for `over` events only.
-* `velocity` (float) - The velocity at which the ScrollPosition was changing when this overscroll happened. Set for `over` events only.
+Event handler argument is an instance of [`OnScrollEvent`](/docs/reference/types/onscrollevent) class.
 
 ## Expanding children
 
@@ -543,7 +507,5 @@ r = ft.Column([
 ```
 
 In general, the resulting height of a child in percents is calculated as `expand / sum(all expands) * 100%`.
-
-If `expand_loose` is `True`, the child control of a [`Column`](/docs/controls/column) or a [`Row`](/docs/controls/row) 
 
 If you need to give the child Control of the Column the flexibility to expand to fill the available space vertically but not require it to fill the available space, set its `expand_loose` property to `True`.

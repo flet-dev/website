@@ -82,7 +82,11 @@ Set to `True` (default) if this card represents a single semantic container, or 
 
 The empty space that surrounds the card.
 
-See [`Container.margin`](/docs/controls/container#margin) property for more information and possible values.
+The value of `margin` property could be one of the following types:
+
+* `int`
+* `float`
+* [`margin.Margin`](/docs/reference/types/margin)
 
 ### `shadow_color`
 
@@ -90,7 +94,9 @@ The [color](/docs/reference/colors) to paint the shadow below the card.
 
 ### `shape`
 
-The shape of the card. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
+The shape of the card.
+
+The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 The default shape is a `RoundedRectangleBorder` with `radius=4.0`.
 

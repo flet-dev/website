@@ -92,7 +92,7 @@ When building for the web using the `html` WebRenderer, filter quality has no ef
 
 How to inscribe the image into the space allocated during layout.
 
-Property value is `ImageFit` enum with supported values: `NONE` (default), `CONTAIN`, `COVER`, `FILL`, `FIT_HEIGHT`, `FIT_WIDTH`, `SCALE_DOWN`.
+The value is [`ImageFit`](/docs/reference/types/imagefit) enum. Default is `NONE`.
 
 ### `gapless_playback`
 
@@ -167,7 +167,7 @@ On Windows you can use PowerShell to encode string into Base64 format:
 
 How to paint any portions of the layout bounds not covered by the image.
 
-Property value is `ImageRepeat` enum with supported values: `NO_REPEAT` (default), `REPEAT`, `REPEAT_X`, `REPEAT_Y`.
+The value is [`ImageRepeat`](/docs/reference/types/imagerepeat) enum. Default is `NO_REPEAT`.
 
 ### `semantics_label`
 

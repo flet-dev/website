@@ -12,47 +12,6 @@ import TabItem from '@theme/TabItem';
 
 [Live example](https://flet-controls-gallery.fly.dev/layout/container)
 
-### Containers with different background color
-
-<img src="/img/docs/controls/container/containers-background-color.png" className="screenshot-50" />
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-
-def main(page: ft.Page):
-    page.title = "Containers with background color"
-
-    c1 = ft.Container(
-        content=ft.ElevatedButton("Elevated Button in Container"),
-        bgcolor=ft.colors.YELLOW,
-        padding=5,
-    )
-
-    c2 = ft.Container(
-        content=ft.ElevatedButton(
-            "Elevated Button with opacity=0.5 in Container", opacity=0.5
-        ),
-        bgcolor=ft.colors.YELLOW,
-        padding=5,
-    )
-
-    c3 = ft.Container(
-        content=ft.OutlinedButton("Outlined Button in Container"),
-        bgcolor=ft.colors.YELLOW,
-        padding=5,
-    )
-    page.add(c1, c2, c3)
-
-
-ft.app(target=main)
-```
-  </TabItem>
-</Tabs>
-
 ### Clickable container
 
 <img src="/img/docs/controls/container/clickable-container.gif" className="screenshot-50" />
@@ -133,19 +92,7 @@ ft.app(target=main)
 
 Align the child control within the container.
 
-Alignment is an instance of `alignment.Alignment` class object with `x` and `y` properties representing the distance from the center of a rectangle. `x=0`, `y=0` represents the center of the rectangle. `x=-1`, `y=-1` represents the top left of the rectangle, `x=1.0`, `y=1.0` represents the bottom right of the rectangle. There are pre-defined alignment constants in `flet.alignment` module: `top_left`, `top_center`, `top_right`, `center_left`, `center`, `center_right`, `bottom_left`, `bottom_center`, `bottom_right`.
-
-<img src="/img/docs/controls/container/container-alignments-diagram.png" className="screenshot-40" />
-
-For example:
-
-```python
-
-container_1.alignment = alignment.center
-container_2.alignment = alignment.top_left
-container_3.alignment = alignment.Alignment(-0.5, -0.5)
-```
-<img src="/img/docs/controls/container/containers-alignments.png" className="screenshot-50" />
+Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
 
 ### `animate`
 
@@ -155,7 +102,7 @@ The value of `animate` property could be one of the following types:
 
 * `bool` - `True` to enable container animation with `linear` curve with `1000` milliseconds duration.
 * `int` - enable container animation with `linear` curve and specified number of milliseconds. 
-* `animation.Animation(duration: int, curve: str)` - enable container animation with specified duration and transition curve.
+* `animation.Animation(duration: int, curve: AnimationCurve` - enable container animation with specified duration and transition [curve](/docs/reference/types/animationcurve).
 
 For example:
 
@@ -170,7 +117,7 @@ def main(page: ft.Page):
         width=200,
         height=200,
         bgcolor="red",
-        animate=ft.animation.Animation(1000, "bounceOut"),
+        animate=ft.animation.Animation(1000, ft.AnimationCurve.BOUNCE_OUT),
     )
 
     def animate_container(e):
@@ -190,7 +137,7 @@ Defines the background [color](/docs/reference/colors) of the container.
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background of the container. See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for more details.
+The blend mode applied to the `color` or `gradient` background of the container. Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODULATE` as default.
 
 ### `blur`
 
@@ -200,7 +147,7 @@ The value of this property could be one of the following:
 
 * **a number** - specifies the same value for horizontal and vertical sigmas, e.g. `10`.
 * **a tuple** - specifies separate values for horizontal and vertical sigmas, e.g. `(10, 1)`.
-* **an instance of `ft.Blur`** - allow specifying separate values for horizontal and vertical sigmas as well as `tile_mode` for the filter. `tile_mode` is the value of `ft.BlurTileMode` which defaults to `ft.BlurTileMode.CLAMP`.
+* **an instance of [`Blur`](/docs/reference/types/blur)**
 
 For example:
 
@@ -241,48 +188,19 @@ ft.Stack(
 
 ### `border`
 
-A border to draw above the background color.
-
-Each side of the container border is described by an instance of `border.BorderSide` class with two properties: `width` (number) and `color` (string). The value of `border` property is an instance of `border.Border` class describing all 4 sides of the rectangle. Helper methods available to set border styles:
-
-* `border.all(width, color)`
-* `border.symmetric(vertical: BorderSide, horizontal: BorderSide)`
-* `border.only(left: BorderSide, top: BorderSide, right: BorderSide, bottom: BorderSide)`.
-
-For example:
-
-```python
-container_1.border = ft.border.all(10, ft.colors.PINK_600)
-container_1.border = ft.border.only(bottom=ft.border.BorderSide(1, "black"))
-```
+A border to draw above the background color. The value is an instance of [`border.Border`](/docs/reference/types/border) class.
 
 ### `border_radius`
 
-If specified, the corners of the container are rounded by this radius. Border radius is an instance of `border_radius.BorderRadius` class with 4 properties: `top_left`, `top_right`, `bottom_left`, `bottom_right`. The object could be created with a constructor where all corner values set separately or with helper methods:
-
-* `border_radius.all(value)`
-* `border_radius.horizontal(left: float = 0, right: float = 0)`
-* `border_radius.vertical(top: float = 0, bottom: float = 0)`
-* `border_radius.only(top_left, top_right, bottom_left, bottom_right)`
-
-For example:
-
-```python
-container_1.border_radius= ft.border_radius.all(30)
-```
+If specified, the corners of the container are rounded by this radius. Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `clip_behavior`
 
 The content will be clipped (or not) according to this option.
 
-Property value is `ClipBehavior` enum with supported values:
+Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-* `NONE`
-* `ANTI_ALIAS`
-* `ANTI_ALIAS_WITH_SAVE_LAYER`
-* `HARD_EDGE`
-
-Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`. More information on each of the values [here](https://api.flutter.dev/flutter/dart-ui/Clip.html).
+Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
 
 ### `content`
 
@@ -292,100 +210,15 @@ A child Control contained by the container.
 
 Configures gradient background. The value must be an instance of one of the following classes:
 
-* `LinearGradient`
-* `RadialGradient`
-* `SweepGradient`
-
-#### `LinearGradient`
-
-<img src="/img/docs/controls/container/linear-gradient.png" className="screenshot-20" />
-
-```python
-Container(
-    gradient=ft.LinearGradient(
-        begin=ft.alignment.top_center,
-        end=ft.alignment.bottom_center,
-       colors=[ft.colors.BLUE, ft.colors.YELLOW],
-    ),
-    width=150,
-    height=150,
-    border_radius=5,
-)
-```
-
-`LinearGradient` class has the following properties:
-
-* `begin` - An instance of `Alignment` class. The offset at which stop 0.0 of the gradient is placed.
-* `end` - An instance of `Alignment` class. The offset at which stop 1.0 of the gradient is placed.
-* `colors` - The colors the gradient should obtain at each of the stops. If stops is non-null, this list must have the same length as stops. This list must have at least two colors in it (otherwise, it's not a gradient!).
-* `stops` - A list of values from 0.0 to 1.0 that denote fractions along the gradient. If non-null, this list must have the same length as `colors`. If the first value is not 0.0, then a stop with position 0.0 and a color equal to the first color in `colors` is implied. If the last value is not 1.0, then a stop with position 1.0 and a color equal to the last color in `colors` is implied.
-* `tile_mode` - How this gradient should tile the plane beyond in the region before `begin` and after `end`. The value is `GradientTileMode` enum with supported values: `CLAMP` (default), `DECAL`, `MIRROR`, `REPEATED`. More info [here](https://api.flutter.dev/flutter/dart-ui/TileMode.html).
-* `rotation` - rotation for the gradient, in [radians](https://en.wikipedia.org/wiki/Radian), around the center-point of its bounding box.
-
-More information:
-
-* [Linear gradient](https://api.flutter.dev/flutter/painting/LinearGradient-class.html) in Flutter documentation.
-* [Radian measuring unit](https://en.wikipedia.org/wiki/Radian) on Wikipedia.
-
-#### `RadialGradient`
-
-<img src="/img/docs/controls/container/radial-gradient.png" className="screenshot-20" />
-
-```python
-Container(
-    gradient=ft.RadialGradient(
-       colors=[ft.colors.YELLOW, ft.colors.BLUE],
-    ),
-    width=150,
-    height=150,
-    border_radius=5,
-)
-```
-
-`RadialGradient` class has the following properties:
-
-* `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#lineargradient) for description of these properties.
-* `center` - An instance of `Alignment` class. The center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For example, an alignment of (0.0, 0.0) will place the radial gradient in the center of the box.
-* `radius` - The radius of the gradient, as a fraction of the shortest side of the paint box. For example, if a radial gradient is painted on a box that is 100.0 pixels wide and 200.0 pixels tall, then a radius of 1.0 will place the 1.0 stop at 100.0 pixels from the `center`.
-* `focal` - The focal point of the gradient. If specified, the gradient will appear to be focused along the vector from `center` to focal.
-* `focal_radius` - The radius of the focal point of gradient, as a fraction of the shortest side of the paint box. For example, if a radial gradient is painted on a box that is 100.0 pixels wide and 200.0 pixels tall, then a radius of 1.0 will place the 1.0 stop at 100.0 pixels from the focal point.
-
-More information:
-
-* [Radial gradient](https://api.flutter.dev/flutter/painting/RadialGradient-class.html) in Flutter documentation.
-
-#### `SweepGradient`
-
-<img src="/img/docs/controls/container/sweep-gradient.png" className="screenshot-20" />
-
-```python
-Container(
-    gradient=SweepGradient(
-        center=ft.alignment.center,
-        start_angle=0.0,
-        end_angle=math.pi * 2,
-       colors=[ft.colors.YELLOW, ft.colors.BLUE],
-    ),
-    width=150,
-    height=150,
-    border_radius=5,
-)
-```
-
-`SweepGradient` class has the following properties:
-
-* `colors`, `stops`, `tile_mode`, `rotation` - see [Linear gradient](#lineargradient) for description of these properties.
-* `center` - The center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For example, an alignment of (0.0, 0.0) will place the sweep gradient in the center of the box.
-* `start_angle` - The angle in radians at which stop 0.0 of the gradient is placed. Defaults to 0.0.
-* `end_angle` - The angle in radians at which stop 1.0 of the gradient is placed. Defaults to math.pi * 2.
-
-More information:
-
-* [Sweep gradient](https://api.flutter.dev/flutter/painting/SweepGradient-class.html) in Flutter documentation.
+* [`LinearGradient`](/docs/reference/types/lineargradient)
+* [`RadialGradient`](/docs/reference/types/radialgradient)
+* [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `image_fit`
 
-See [`Image.fit`](/docs/controls/image#fit) for more details.
+How to inscribe the image into the space allocated during layout. 
+
+The value is [`ImageFit`](/docs/reference/types/imagefit) enum. Default is `NONE`.
 
 ### `image_opacity`
 
@@ -393,7 +226,9 @@ Sets image opacity when blending with a background: value between `0.0` and `1.0
 
 ### `image_repeat`
 
-See [`Image.repeat`](/docs/controls/image#repeat) for more details.
+How to paint any portions of the layout bounds not covered by the image.
+
+The value is [`ImageRepeat`](/docs/reference/types/imagerepeat) enum. Default is `NO_REPEAT`.
 
 ### `image_src`
 
@@ -415,44 +250,17 @@ The splash [color](/docs/reference/colors) of the ink response.
 
 Empty space to surround the decoration and child control.
 
-Margin is an instance of `margin.Margin` class with properties set margins for all sides of the rectangle: `left`, `top`, `right`, `bottom`. An instance of `margin.Margin` can be created via constructor with values for specific sides or created with helper methods:
+The value of `margin` property could be one of the following types:
 
-* `margin.all(value)`
-* `margin.symmetric(vertical, horizontal)`
-* `margin.only(left, top, right, bottom)`
-
-For example:
-
-```python
-
-container_1.margin = margin.all(10)
-container_2.margin = 20 # same as margin.all(20)
-container_3.margin = margin.symmetric(vertical=10)
-container_4.margin = margin.only(left=10)
-```
-<img src="/img/docs/controls/container/container-margin-diagram.png" className="screenshot-50" />
+* `int`
+* `float`
+* [`margin.Margin`](/docs/reference/types/margin)
 
 ### `padding`
 
 Empty space to inscribe inside a container decoration (background, border). The child control is placed inside this padding.
 
-Padding is an instance of `padding.Padding` class with properties set padding for all sides of the rectangle: `left`, `top`, `right`, `bottom`. An instance of `padding.Padding` can be created via constructor with values for specific sides or created with helper methods:
-
-* `padding.all(value: float)`
-* `padding.symmetric(vertical, horizontal)`
-* `padding.only(left, top, right, bottom)`
-
-For example:
-
-```python
-
-container_1.padding = ft.padding.all(10)
-container_2.padding = 20 # same as ft.padding.all(20)
-container_3.padding = ft.padding.symmetric(horizontal=10)
-container_4.padding=padding.only(left=10)
-```
-
-<img src="/img/docs/controls/container/container-padding-diagram.png" className="screenshot-50" />
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `rtl`
 
@@ -462,30 +270,7 @@ container_4.padding=padding.only(left=10)
 
 A list of shadows cast by the container.
 
-The value of this property is a single instance or a list of `ft.BoxShadow` class instances with the following properties:
-
-* `spread_radius` - The amount the box should be inflated prior to applying the blur. Default is `0.0.`.
-* `blur_radius` - The standard deviation of the Gaussian to convolve with the shadow's shape. Default is `0.0.`.
-* `color` - Color that the shadow will be drawn with.
-* `offset` - An instance of `ft.Offset` class - the displacement of the shadow from the casting element. Positive x/y offsets will shift the shadow to the right and down, while negative offsets shift the shadow to the left and up. The offsets are relative to the position of the element that is casting it. Default is `ft.Offset(0,0)`.
-* `blur_style` - The `ft.BlurStyle` to use for this shadow. Defaults to `ft.BlurStyle.NORMAL`.
-
-Example:
-
-```python
-ft.Container(
-    border_radius=10,
-    width=100,
-    height=100,
-    shadow=ft.BoxShadow(
-        spread_radius=1,
-        blur_radius=15,
-        color=ft.colors.BLUE_GREY_300,
-        offset=ft.Offset(0, 0),
-        blur_style=ft.ShadowBlurStyle.OUTER,
-    )
-)
-```
+The value of this property is a single instance or a list of [`BoxShadow`](/docs/reference/types/boxshadow) class instances.
 
 ### `shape`
 
@@ -496,11 +281,15 @@ Sets the shape of the container. The value is `BoxShape` enum:
 
 ### `theme_mode`
 
-Setting `theme_mode` (`ft.ThemeMode`) "resets" parent theme and creates a new, unique scheme for all controls inside the container. Otherwise the styles defined in container's `theme` property override corresponding styles from the parent, inherited theme.
+The value is [`ThemeMode`](/docs/reference/types/thememode) enum. Default is `SYSTEM`.
+
+Setting `theme_mode` "resets" parent theme and creates a new, unique scheme for all controls inside the container. Otherwise the styles defined in container's `theme` property override corresponding styles from the parent, inherited theme.
 
 ### `theme`
 
-Allows setting a nested `ft.Theme` for all controls inside the container and down the tree, for example:
+The value is an instance of [`Theme`](/docs/cookbook/theming) class.
+
+Allows setting a nested `theme` for all controls inside the container and down the tree, for example:
 
 ```python
 import flet as ft
@@ -551,13 +340,7 @@ The URL to open when the container is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode. Value is of `UrlTarget` enum:
-
-* `BLANK` (default) - opens in a new tab/window
-* `SELF` - opens in the current tab/window
-* `PARENT` - opens in the parent frame. Behaves as `SELF` if there is no parent.
-* `TOP` - opens in the full body of the window
-[//]: # (* `UNFENCED_TOP`)
+Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
 
 ## Events
 

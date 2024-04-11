@@ -112,15 +112,15 @@ The background [color](/docs/reference/colors) for the table.
 
 ### `border`
 
-The border around the table. An instance of `ft.Border` class.
+The border around the table. 
 
-See [`Container.border`](/docs/controls/container#border) property for more information and examples.
+The value is an instance of [`border.Border`](/docs/reference/types/border) class.
 
 ### `border_radius`
 
 Border corners.
 
-See [`Container.border`](/docs/controls/container#border) property for more information and examples.
+Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `checkbox_horizontal_margin`
 
@@ -128,8 +128,11 @@ Horizontal margin around the checkbox, if it is displayed.
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior)
-for possible values.
+The content will be clipped (or not) according to this option. 
+
+Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+
+Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
 
 ### `column_spacing`
 
