@@ -67,12 +67,7 @@ The fill [color](/docs/reference/colors) to use for the BottomAppBar. Default co
 
 The content will be clipped (or not) according to this option.
 
-Property value is `ClipBehavior` enum with supported values:
-
-* `NONE`
-* `ANTI_ALIAS`
-* `ANTI_ALIAS_WITH_SAVE_LAYER`
-* `HARD_EDGE`
+Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
 Default is `NONE`.
 
@@ -96,7 +91,7 @@ Will not be visible if the `shape` is not `None`.
 
 ### `padding`
 
-Empty space to inscribe inside a container decoration (background, border). See [`Container.padding`](/docs/controls/container#padding) property for more information and possible values.
+Empty space to inscribe inside a container decoration (background, border). Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 Defaults to `padding.symmetric(vertical=12.0, horizontal=16.0)`.
 
