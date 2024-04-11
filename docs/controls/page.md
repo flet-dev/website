@@ -207,15 +207,7 @@ A height of a web page or content area of a native OS window containing Flet app
 
 How the child Controls should be placed horizontally.
 
-Default value is `CrossAxisAlignment.START` which means on the left side of the Page.
-
-Property value is `CrossAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
 
 ### `locale_configuration`
 
@@ -239,9 +231,9 @@ Provides details about app media (screen, window). See [MediaQueryData](https://
 
 The value of this property is an instance of `PageMediaData` class with the following fields:
 
-* `padding` (of `Padding` type) - The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
-* `view_padding` (of `Padding` type) - The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
-* `view_insets` (of `Padding` type) - The parts of the display that are completely obscured by system UI, typically by the device's keyboard.
+* `padding` (of [`Padding`](/docs/reference/types/padding) type) - The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
+* `view_padding` (of [`Padding`](/docs/reference/types/padding) type) - The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
+* `view_insets` (of [`Padding`](/docs/reference/types/padding) type) - The parts of the display that are completely obscured by system UI, typically by the device's keyboard.
 
 :::note
 In the most cases you should be fine by wrapping your content into [`SafeArea`](/docs/controls/safearea) control.
@@ -280,7 +272,7 @@ page.update()
 </TabItem>
 </Tabs>
 
-See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `platform`
 
@@ -333,7 +325,7 @@ ft.app(target=main)
 
 ### `platform_brightness`
 
-The current brightness mode of the host platform: `ft.ThemeMode.LIGHT` or `ft.ThemeMode.DARK`.
+The current brightness mode of the host platform: `ft.Brightness.LIGHT` or `ft.Brightness.DARK`. Read-only.
 
 ### `pubsub`
 
@@ -455,15 +447,7 @@ more information and examples.
 
 Enables a vertical scrolling for the Page to prevent its content overflow.
 
-Property value is an optional `ScrollMode` enum with `None` as default.
-
-Supported values:
-
-* `None` (default) - the Row is non-scrollable and its content could overflow.
-* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
-* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
 
 ### `session`
 
@@ -521,9 +505,7 @@ Value is an instance of the `Theme()` class - more information in the [theming](
 
 Page theme.
 
-Property value is an optional `ThemeMode` enum with `SYSTEM` as default.
-
-Supported values: `SYSTEM` (default), `LIGHT` or `DARK`.
+The value is [`ThemeMode`](/docs/reference/types/thememode) enum. Default is `SYSTEM`.
 
 ### `title`
 
@@ -548,16 +530,9 @@ The complete web app's URL.
 
 How the child Controls should be placed vertically.
 
+Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum.
+
 For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
-
-Property value is `MainAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
 
 ### `views`
 
@@ -1077,7 +1052,7 @@ class RouteChangeEvent(ft.ControlEvent):
 
 Fires when page's scroll position is changed by a user.
 
-See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
+Event handler argument is an instance of [`OnScrollEvent`](/docs/reference/types/onscrollevent) class.
 
 ### `on_view_pop`
 

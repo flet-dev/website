@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 `MainAxisAlignment` enum has the following values:
 
-* `START` (default)
+* `START`
 * `END`
 * `CENTER`
 * `SPACE_BETWEEN`
