@@ -402,6 +402,7 @@ module.exports = {
             "reference/types/sweepgradient",
             "reference/types/textstyle",
             "reference/types/thememode",
+            "reference/types/themevisualdensity",
             "reference/types/urltarget",
           ],
         }
