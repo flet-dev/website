@@ -5,7 +5,7 @@ sidebar_label: NavigationDrawer
 
 Material Design Navigation Drawer component.
 
-Navigation Drawer is a panel that slides in horizontally from the left or right edge of a page to show primary destinations in an app. To add NavigationDrawer to the page, use [`page.drawer`](page#drawer) and [`page.end_drawer`](page#end_drawer) properties. Similarly, the NavigationDrawer can be added to a [`View`](view#drawer). To display the drawer, set its `open` property to `True`.
+Navigation Drawer is a panel that slides in horizontally from the left or right edge of a page to show primary destinations in an app. To add NavigationDrawer to the page, use [`page.drawer`](/docs/controls/page#drawer) and [`page.end_drawer`](/docs/controls/page#end_drawer) properties. Similarly, the NavigationDrawer can be added to a [`View`](/docs/controls/view#drawer). To display the drawer, set its `open` property to `True`.
 
 ## Examples
 
@@ -105,7 +105,7 @@ The [color](/docs/reference/colors) of the selected destination indicator.
 
 ### `indicator_shape`
 
-The shape of the selected destination indicator. See [button style example](elevatedbutton#style) for possible values.
+The shape of the selected destination indicator. See [button style example](/docs/controls/elevatedbutton#style) for possible values.
 
 ### `selected_index`
 
@@ -133,7 +133,7 @@ Fires when selected destination changed.
 
 ### `on_dismiss`
 
-Fires when NavigationDrawer is dismissed by clicking outside of the panel or [programmatically](page#close_drawer).
+Fires when NavigationDrawer is dismissed by clicking outside of the panel or [programmatically](/docs/controls/page#close_drawer).
 
 ## `NavigationDrawerDestination` properties
 
@@ -147,7 +147,7 @@ The name of the icon of the destination.
 
 ### `icon_content`
 
-The icon `Control` of the destination. Typically the icon is an [`Icon`](icon) control. Used instead of `icon` property.
+The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
 
 If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
 

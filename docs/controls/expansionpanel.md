@@ -92,7 +92,7 @@ Defines the elevation of the children controls (`ExpansionPanel`s), while it is 
 
 Defines the padding around the header when expanded. Default value is `padding.symmetric(vertical=16.0)`.
 
-See [`Container.padding`](container#padding) for more information and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
 
 ### `expanded_icon_color`
 

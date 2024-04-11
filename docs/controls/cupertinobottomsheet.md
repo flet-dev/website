@@ -90,7 +90,7 @@ Set to `True` to display a bottom sheet.
 
 ### `padding`
 
-The sheet's padding. See [`Container.padding`](container#padding) for more details.
+The sheet's padding. See [`Container.padding`](/docs/controls/container#padding) for more details.
 
 ## Events
 

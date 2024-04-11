@@ -235,7 +235,7 @@ ft.app(main)
 
 ### `animate`
 
-Controls chart implicit animation. See [`LineChart.animate`](linechart#animate) property for more information and possible values.
+Controls chart implicit animation. See [`LineChart.animate`](/docs/controls/linechart#animate) property for more information and possible values.
 
 ### `center_space_color`
 
@@ -293,7 +293,7 @@ A title drawn at the center of the section. No title is drawn if `title` is empt
 
 ### `title_style`
 
-The style to draw `title` with. The value is an instance of [`ft.TextStyle`](text#textstyle-properties)  `ft.TextStyle` class.
+The style to draw `title` with. The value is an instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties)  `ft.TextStyle` class.
 
 ### `title_position`
 

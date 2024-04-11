@@ -101,11 +101,11 @@ ft.app(target=main)
 
 The (optional) set of actions that are displayed at the bottom of the dialog.
 
-Typically this is a list of [`CupertinoDialogAction`](cupertinodialogaction) controls.
+Typically this is a list of [`CupertinoDialogAction`](/docs/controls/cupertinodialogaction) controls.
 
 ### `content`
 
-The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](column) that contains the dialog's [`Text`](text) message.
+The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](/docs/controls/column) that contains the dialog's [`Text`](/docs/controls/text) message.
 
 ### `modal`
 
@@ -119,7 +119,7 @@ Set to `True` to display a dialog.
 
 The (optional) title of the dialog is displayed in a large font at the top of the dialog.
 
-Typically a [`Text`](text) control.
+Typically a [`Text`](/docs/controls/text) control.
 
 ## Events
 

@@ -127,7 +127,7 @@ The clickable label to display on the right of the Switch.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
+The label's style. An instance of type [`TextStyle`](/docs/controls/text#textstyle-properties).
 
 ### `label_position`
 
@@ -136,14 +136,14 @@ Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
 
 ### `overlay_color`
 
 The [color](/docs/reference/colors) for the switch's Material in various material states. The
 following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED`, `FOCUSED` and `DEFAULT` (fallback).
 
-See [`Radio.fill_color`](radio#fill_color) for usage example.
+See [`Radio.fill_color`](/docs/controls/radio#fill_color) for usage example.
 
 ### `splash_radius`
 
@@ -154,28 +154,28 @@ The radius of the splash effect when the switch is pressed.
 The [color](/docs/reference/colors) of this switch's thumb in various material states. The following `MaterialState`
 values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
-See [`Radio.fill_color`](radio#fill_color) for usage example.
+See [`Radio.fill_color`](/docs/controls/radio#fill_color) for usage example.
 
 ### `thumb_icon`
 
 The icon of this Switch's thumb in various material states. The following `MaterialState` values are
 supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
-See [`Radio.fill_color`](radio#fill_color) for usage example.
+See [`Radio.fill_color`](/docs/controls/radio#fill_color) for usage example.
 
 ### `track_color`
 
 The [color](/docs/reference/colors) of this switch's track in various material states. The following `MaterialState`
 values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
-See [`Radio.fill_color`](radio#fill_color) for usage example.
+See [`Radio.fill_color`](/docs/controls/radio#fill_color) for usage example.
 
 ### `track_outline_color`
 
 The outline [color](/docs/reference/colors) of this switch's track in various material states. The
 following `MaterialState` values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
-See [`Radio.fill_color`](radio#fill_color) for usage example.
+See [`Radio.fill_color`](/docs/controls/radio#fill_color) for usage example.
 
 ### `value`
 

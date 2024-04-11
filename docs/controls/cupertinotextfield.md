@@ -61,7 +61,7 @@ TextField background [color](/docs/reference/colors).
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background. See [`ShaderMask.blend_mode`](shadermask#blend_mode) for more details.
+The blend mode applied to the `color` or `gradient` background. See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for more details.
 
 ### `border`
 
@@ -106,7 +106,7 @@ Text [color](/docs/reference/colors).
 
 The padding for the input decoration's container.
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
 
 ### `cursor_color`
 

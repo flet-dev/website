@@ -70,11 +70,11 @@ ft.app(main)
 
 ### `actions`
 
-A list of action buttons to be shown in the sheet. These actions are typically [`CupertinoActionSheetAction`](cupertinoactionsheetaction)s. This list must have at least one action.
+A list of action buttons to be shown in the sheet. These actions are typically [`CupertinoActionSheetAction`](/docs/controls/cupertinoactionsheetaction)s. This list must have at least one action.
 
 ### `cancel`
 
-An optional control to be shown below the actions but grouped separately from them. Typically a [`CupertinoActionSheetAction`](cupertinoactionsheetaction) button.
+An optional control to be shown below the actions but grouped separately from them. Typically a [`CupertinoActionSheetAction`](/docs/controls/cupertinoactionsheetaction) button.
 
 ### `message`
 

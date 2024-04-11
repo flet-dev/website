@@ -178,7 +178,7 @@ ft.app(target=main)
 
 ### `alignment`
 
-Defines the Alignment of the viewport. See [`Container.alignment`](container#alignment) for more details.
+Defines the Alignment of the viewport. See [`Container.alignment`](/docs/controls/container#alignment) for more details.
 
 Defaults to `Alignment.center`.
 
@@ -192,7 +192,7 @@ Whether the video should start playing automatically.
 
 ### `fit`
 
-See [`Image.fit`](image#fit) for more details.
+See [`Image.fit`](/docs/controls/image#fit) for more details.
 
 ### `filter_quality`
 

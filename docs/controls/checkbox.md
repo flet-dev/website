@@ -99,7 +99,7 @@ The [color](/docs/reference/colors) to use for the check icon when this checkbox
 ### `fill_color`
 
 The [color](/docs/reference/colors) that fills the checkbox in various material states.
-See [`Radio.fill_color`](radio#fill_color) for usage example.
+See [`Radio.fill_color`](/docs/controls/radio#fill_color) for usage example.
 
 ### `hover_color`
 
@@ -115,7 +115,7 @@ The clickable label to display on the right of a checkbox.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](text#textstyle-properties).
+The label's style. An instance of type [`TextStyle`](/docs/controls/text#textstyle-properties).
 
 ### `label_position`
 
@@ -124,14 +124,14 @@ Defines on which side of the checkbox the `label` should be shown. Property valu
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
 
 ### `overlay_color`
 
 The [color](/docs/reference/colors) of the checkbox's overlay in various material states. The
 following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`.
 
-See usage example [here](elevatedbutton#style).
+See usage example [here](/docs/controls/elevatedbutton#style).
 
 ### `semantics_label`
 
@@ -139,7 +139,7 @@ The semantic label for the checkbox that is not shown in the UI, but will be ann
 
 ### `shape`
 
-The shape of the checkbox. More information on possible values [here](alertdialog#shape).
+The shape of the checkbox. More information on possible values [here](/docs/controls/alertdialog#shape).
 
 Defaults to `RoundedRectangleBorder(radius=2)`
 

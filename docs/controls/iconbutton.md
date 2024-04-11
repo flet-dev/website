@@ -97,7 +97,7 @@ The default value is `False`.
 
 Defines how the icon is positioned within the IconButton. Defaults to `alignment.center`.
 
-See [`Container.alignment`](container#alignment) for more information and possible values.
+See [`Container.alignment`](/docs/controls/container#alignment) for more information and possible values.
 
 ### `autofocus`
 
@@ -144,13 +144,13 @@ Icon size in virtual pixels.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](gesturedetector#mouse_cursor) for possible values.
+See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
 
 ### `padding`
 
 Defines the padding around this button. The entire padded icon will react to input gestures.
 
-Default value is `padding.all(8)`. See [`Container.padding`](container#padding) for more information and possible values.
+Default value is `padding.all(8)`. See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
 
 ### `selected`
 
@@ -212,7 +212,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](container#url_target) for possible values.
+Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
 
 ### `visual_density`
 

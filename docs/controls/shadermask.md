@@ -98,7 +98,7 @@ Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODU
 
 ### `border_radius`
 
-See [`Container.border_radius`](container#border_radius) property docs for more information about border radius.
+See [`Container.border_radius`](/docs/controls/container#border_radius) property docs for more information about border radius.
 
 ### `content`
 
@@ -106,4 +106,4 @@ A child `Control` to apply a shader to.
 
 ### `shader`
 
-Use gradient as a shader. See [`Container.gradient`](container#gradient) property docs for more information about gradients.
+Use gradient as a shader. See [`Container.gradient`](/docs/controls/container#gradient) property docs for more information about gradients.

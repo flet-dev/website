@@ -56,7 +56,7 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
 
 Default value is `ClipBehavior.NONE`.
 
@@ -68,7 +68,7 @@ The card's background [color](/docs/reference/colors).
 
 The `Control` that should be displayed inside the card.
 
-This control can only have one child. To lay out multiple children, let this control's child be a control such as [`Row`](row), [`Column`](column), or [`Stack`](stack), which have a children property, and then provide the children to that control.
+This control can only have one child. To lay out multiple children, let this control's child be a control such as [`Row`](/docs/controls/row), [`Column`](/docs/controls/column), or [`Stack`](/docs/controls/stack), which have a children property, and then provide the children to that control.
 
 ### `elevation`
 

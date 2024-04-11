@@ -59,7 +59,7 @@ ft.app(target=main)
 
 The set of actions that are displayed at the bottom or trailing side of the Banner.
 
-Typically this is a list of [`TextButton`](textbutton) controls.
+Typically this is a list of [`TextButton`](/docs/controls/textbutton) controls.
 
 ### `bgcolor`
 
@@ -67,7 +67,7 @@ The [color](/docs/reference/colors) of the surface of this Banner.
 
 ### `content`
 
-The content of the Banner. Typically a [`Text`](text) control.
+The content of the Banner. Typically a [`Text`](/docs/controls/text) control.
 
 ### `content_padding`
 
@@ -77,12 +77,12 @@ If the actions are below the content, this defaults to `padding.only(left=16.0, 
 
 If the actions are trailing the content, this defaults to `padding.only(left=16.0, top=2.0)`.
 
-See [`Container.padding`](container#padding) for more information about padding and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
 
 ### `content_text_style`
 
 The style to be used for the `Text` controls in the `content`. Value is an instance of
-type [`TextStyle`](text#textstyle-properties).
+type [`TextStyle`](/docs/controls/text#textstyle-properties).
 
 ### `divider_color`
 
@@ -104,15 +104,15 @@ Defaults to `False`.
 
 The (optional) leading `Control` of the Banner.
 
-Typically an [`Icon`](icon) control.
+Typically an [`Icon`](/docs/controls/icon) control.
 
 ### `leading_padding`
 
-The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](container#padding) for more information about padding and possible values.
+The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
 
 ### `margin`
 
-The amount of space surrounding the banner. See [`Container.margin`](container#margin) for more information and possible
+The amount of space surrounding the banner. See [`Container.margin`](/docs/controls/container#margin) for more information and possible
 values.
 
 ### `open`

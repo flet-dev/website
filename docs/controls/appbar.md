@@ -60,7 +60,7 @@ ft.app(target=main)
 
 A list of `Control`s to display in a row after the title control.
 
-Typically these controls are [`IconButtons`](iconbutton) representing common operations. For less common operations, consider using a [`PopupMenuButton`](popupmenubutton) as the last action.
+Typically these controls are [`IconButtons`](/docs/controls/iconbutton) representing common operations. For less common operations, consider using a [`PopupMenuButton`](/docs/controls/popupmenubutton) as the last action.
 
 **Note** that, if `AppBar.adaptive=True` and the app is opened on an iOS or macOS device, only the first element of this list will be used. This is because the `CupertinoAppBar`(which will be used on those two platforms) only accepts one - trailing - action control.
 
@@ -88,7 +88,7 @@ Whether the title should be centered. Default is `False`.
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](container#clip_behavior)
+The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior)
 for possible values.
 
 ### `color`
@@ -107,7 +107,7 @@ The elevation to be used if this app bar has something scrolled underneath it.
 
 ### `exclude_header_semantics`
 
-Whether the `title` should be wrapped with header [`Semantics`](semantics). Default value is `False`.
+Whether the `title` should be wrapped with header [`Semantics`](/docs/controls/semantics). Default value is `False`.
 
 ### `force_material_transparency`
 
@@ -123,7 +123,7 @@ Whether this app bar is not being displayed at the top of the screen. Default va
 
 A `Control` to display before the toolbar's title.
 
-Typically the leading control is an [`Icon`](icon) or an [`IconButton`](iconbutton).
+Typically the leading control is an [`Icon`](/docs/controls/icon) or an [`IconButton`](/docs/controls/iconbutton).
 
 ### `leading_width`
 
@@ -147,7 +147,7 @@ By default, no overlay will be applied.
 
 ### `title`
 
-The primary `Control` displayed in the app bar. Typically a [`Text`](text) control that contains a description of the current contents of the app.
+The primary `Control` displayed in the app bar. Typically a [`Text`](/docs/controls/text) control that contains a description of the current contents of the app.
 
 **Note** that, if `AppBar.adaptive=True` and the app is opened on an iOS or macOS device, this control will be automatically centered.
 
@@ -160,7 +160,7 @@ If you want `title` to take all the space available, set this value to `0.0`.
 ### `title_text_style`
 
 The style to be used for the `Text` controls in the `title`. Value is an instance of
-type [`TextStyle`](text#textstyle-properties).
+type [`TextStyle`](/docs/controls/text#textstyle-properties).
 
 ### `toolbar_height`
 
@@ -173,4 +173,4 @@ The opacity of the toolbar. Value ranges from `0.0` (transparent) to `1.0` (full
 ### `toolbar_text_style`
 
 The style to be used for the `Text` controls in the app bar's `leading` and `actions` (but not `title`). Value is an
-instance of type [`TextStyle`](text#textstyle-properties).
+instance of type [`TextStyle`](/docs/controls/text#textstyle-properties).

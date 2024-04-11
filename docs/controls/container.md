@@ -232,11 +232,11 @@ The value is [`ImageRepeat`](/docs/reference/types/imagerepeat) enum. Default is
 
 ### `image_src`
 
-Sets an image as a container background. See [`Image.src`](image#src) for more details.
+Sets an image as a container background. See [`Image.src`](/docs/controls/image#src) for more details.
 
 ### `image_src_base64`
 
-Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](image#src_base64) for more details.
+Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](/docs/controls/image#src_base64) for more details.
 
 ### `ink`
 

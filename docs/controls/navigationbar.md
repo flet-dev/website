@@ -71,7 +71,7 @@ The [color](/docs/reference/colors) of the selected destination indicator.
 
 ### `indicator_shape`
 
-The shape of the selected destination indicator. See [button style example](elevatedbutton#style) for possible values.
+The shape of the selected destination indicator. See [button style example](/docs/controls/elevatedbutton#style) for possible values.
 
 ### `label_behavior`
 
@@ -89,7 +89,7 @@ Property value is `NavigationBarLabelBehavior` enum with the following values:
 
 The highlight [color](/docs/reference/colors) that's typically used to indicate that the `NavigationDestination` is focused, hovered, or pressed.
 
-See [`Radio.fill_color`](radio#fill_color) for usage example.
+See [`Radio.fill_color`](/docs/controls/radio#fill_color) for usage example.
 
 ### `selected_index`
 
@@ -121,7 +121,7 @@ The name of the icon of the destination.
 
 ### `icon_content`
 
-The icon `Control` of the destination. Typically the icon is an [`Icon`](icon) control. Used instead of `icon` property.
+The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
 
 If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
 

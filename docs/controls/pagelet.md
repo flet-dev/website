@@ -85,7 +85,7 @@ Background [color](/docs/reference/colors) of the Pagelet.
 
 ### `bottom_appbar`
 
-[`BottomAppBar`](bottomappbar) control to display at the bottom of the Pagelet. If both [`bottom_appbar`](pagelet#bottom_appbar) and [`navigation_bar`](pagelet#navigation_bar) properties are provided, `NavigationBar` will be displayed.
+[`BottomAppBar`](/docs/controls/bottomappbar) control to display at the bottom of the Pagelet. If both [`bottom_appbar`](/docs/controls/pagelet#bottom_appbar) and [`navigation_bar`](/docs/controls/pagelet#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
 ### `bottom_sheet`
 
@@ -134,7 +134,7 @@ Property value is `FloatingActionButtonLocation` enum with the following values 
 
 ### `navigation_bar`
 
-[`NavigationBar`](navigationbar) control to display at the bottom of the page. If both [`bottom_appbar`](pagelet#bottom_appbar) and [`navigation_bar`](pagelet#navigation_bar) properties are provided, `NavigationBar` will be displayed.
+[`NavigationBar`](/docs/controls/navigationbar) control to display at the bottom of the page. If both [`bottom_appbar`](/docs/controls/pagelet#bottom_appbar) and [`navigation_bar`](/docs/controls/pagelet#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
 ## Methods
 
@@ -148,9 +148,9 @@ Closes active end drawer.
 
 ### `show_drawer(drawer: NavigationDialog)`
 
-Displays [`drawer`](pagelet#drawer).
+Displays [`drawer`](/docs/controls/pagelet#drawer).
 
 ### `show_end_drawer(drawer: NavigationDialog)`
 
-Displays [`end_drawer`](pagelet#end_drawer).
+Displays [`end_drawer`](/docs/controls/pagelet#end_drawer).
 

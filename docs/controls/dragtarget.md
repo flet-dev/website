@@ -3,7 +3,7 @@ title: DragTarget
 sidebar_label: DragTarget
 ---
 
-A control that completes drag operation when a [Draggable](draggable) widget is dropped.
+A control that completes drag operation when a [Draggable](/docs/controls/draggable) widget is dropped.
 
 When a draggable is dragged on top of a drag target, the drag target is asked whether it will accept the data the draggable is carrying. The drag target will accept incoming drag if it belongs to the same `group` as draggable. If the user does drop the draggable on top of the drag target (and the drag target has indicated that it will accept the draggable's data), then the drag target is asked to accept the draggable's data.
 
@@ -113,7 +113,7 @@ The `Control` that is a visual representation of the drag target.
 
 ### `group`
 
-The group this target belongs to. Note that for this target to accept an incoming drop from a [`Draggable`](draggable), they must both be in thesame group.
+The group this target belongs to. Note that for this target to accept an incoming drop from a [`Draggable`](/docs/controls/draggable), they must both be in thesame group.
 
 ## Events
 

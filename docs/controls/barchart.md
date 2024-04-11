@@ -214,7 +214,7 @@ A gap between bar groups.
 
 ### `animate`
 
-Controls chart implicit animation. See [`LineChart.animate`](linechart#animate) property for more information and possible values.
+Controls chart implicit animation. See [`LineChart.animate`](/docs/controls/linechart#animate) property for more information and possible values.
 
 ### `interactive`
 
@@ -323,7 +323,7 @@ Rod [color](/docs/reference/colors). Default is `cyan`.
 
 ### `gradient`
 
-Gradient to draw rod's background. See [`Container.gradient`](container#gradient) property for more information and possible values.
+Gradient to draw rod's background. See [`Container.gradient`](/docs/controls/container#gradient) property for more information and possible values.
 
 ### `border_radius`
 
@@ -363,7 +363,7 @@ A custom tooltip value. Default is `to_y`.
 
 ### `tooltip_style`
 
-A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](text#textstyle-properties) class.
+A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
 
 ### `tooltip_align`
 

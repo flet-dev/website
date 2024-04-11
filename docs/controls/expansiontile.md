@@ -102,11 +102,11 @@ The controls to be displayed when the tile expands. Typically `ListTile` control
 
 Defines the padding around the `controls`.
 
-See [`Container.padding`](container#padding) for more information and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](container#clip_behavior) for possible values.
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
 
 Defaults to `ClipBehavior.NONE`.
 
@@ -153,7 +153,7 @@ Defaults to `True`.
 
 Defines the alignment of children, which are arranged in a column when the tile is expanded.
 
-See [`Container.alignment`](container#alignment) property for more information and possible values.
+See [`Container.alignment`](/docs/controls/container#alignment) property for more information and possible values.
 
 ### `expanded_cross_axis_alignment`
 
@@ -198,7 +198,7 @@ The tile's border shape when the sublist is expanded. The value is an instance o
 
 ### `subtitle`
 
-Additional content displayed below the title. Typically a [Text](text) widget.
+Additional content displayed below the title. Typically a [Text](/docs/controls/text) widget.
 
 ### `text_color`
 
@@ -208,15 +208,15 @@ The [color](/docs/reference/colors) of the tile's titles when the sublist is exp
 
 Defines the tile's padding. Default value is `padding.symmetric(horizontal=16.0)`.
 
-See [`Container.padding`](container#padding) for more information and possible values.
+See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
 
 ### `title`
 
-A `Control` to display as primary content of the tile. Typically a [Text](text) control.
+A `Control` to display as primary content of the tile. Typically a [Text](/docs/controls/text) control.
 
 ### `trailing`
 
-A `Control` to display after the title. Typically an [Icon](icon) control.
+A `Control` to display after the title. Typically an [Icon](/docs/controls/icon) control.
 
 ### `visual_density`
 
