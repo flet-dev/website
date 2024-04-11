@@ -82,6 +82,8 @@ A `Control` to display in the middle of this app bar. Typically a title or a seg
 
 Defines the padding for the contents of the app bar.
 
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+
 If None, the app bar will adopt the following defaults:
 
 - vertically, contents will be sized to the same height as the app bar itself minus the status bar.

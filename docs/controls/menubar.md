@@ -127,9 +127,9 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. See [Container.clip_behavior](/docs/controls/container#clip_behavior) for possible values.
+Whether to clip the content of this control or not. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `ClipBehavior.NONE`.
+Defaults to `NONE`.
 
 ### `controls`
 
@@ -140,21 +140,9 @@ The list of menu items that are the top level children of the `MenuBar`.
 The value is an instance of `MenuStyle` class. `MenuStyle` allows controlling the menu's visual aspects, such as shape,
 background and shadow colors, content padding, border width and radius.
 
-Each individual style attribute could be configured for all or particular "Material states" of a menu, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
+Each individual style attribute could be configured for all or particular [Material states](/docs/reference/types/materialstate) of a menu, such as `HOVERED`, `FOCUSED`, `DISABLED` and others. For example, you can configure a different shape, background color for a `HOVERED` state and configure fallback values for all other states.
 
-The following `MaterialState` values are supported:
-
-* `HOVERED`
-* `FOCUSED`
-* `PRESSED`
-* `DRAGGED`
-* `SELECTED`
-* `SCROLLEDUNDER`
-* `DISABLED`
-* `ERROR`
-* `DEFAULT` - fallback state, meaning "all other states".
-
-To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `bgcolor` property to a literal the value will be applied to all menu states:
+To configure style attribute for all [Material states](/docs/reference/types/materialstate), set its value to a literal (or class instance). For example, if you set `bgcolor` property to a literal the value will be applied to all menu states:
 
 ```python
 ft.MenuStyle(
