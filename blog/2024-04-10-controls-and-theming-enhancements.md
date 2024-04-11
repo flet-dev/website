@@ -98,14 +98,15 @@ Below is the complete list:
 
 If you however feel that something lacks and should be added, don't hesitate to let us know.
 
-Check out the article I wrote concerning Page.locale_configuration [here](https://ndonkohenri.medium.com).
+Check out the article I wrote
+concerning `Page.locale_configuration` [here](https://ndonkohenri.medium.com/app-localization-in-flet-5b523e83ca89).
 
 ### Theme Enhancements
 
 The Theme class which is used for application theming in light and dark mode has equally been further enhanced.
 Lots of new themes were introduced - [PR #2955](https://github.com/flet-dev/flet/pull/2955).
 
-See the Theming Guide here.
+See the Theming Guide [here](https://flet.dev/docs/cookbook/theming/).
 
 ## Rive Animations
 
@@ -120,7 +121,7 @@ The animation's source (`Rive.src`) can either be a local asset file or a URL - 
 As requested in [#952](https://github.com/flet-dev/flet/issues/952), the ability to access the parent of any control has
 been added: `Control.parent`.
 
-Read more on it [here](https://ndonkohenri.medium.com/).
+Read more on it [here](https://ndonkohenri.medium.com/access-any-controls-parent-flet-98e2c60dfab8).
 
 ## Bug Fixes
 
@@ -128,7 +129,7 @@ The below issues were successfully fixed:
 
 - [#2560](https://github.com/flet-dev/flet/issues/2560) - Dropdown.bgcolor was not visually respected
 - [#2740](https://github.com/flet-dev/flet/issues/2740) - CircleAvatar not working with local asset images
-    - [#2781](https://github.com/flet-dev/flet/issues/2781) - 'FletSocketServer' Error raised on Linux
+- [#2781](https://github.com/flet-dev/flet/issues/2781) - 'FletSocketServer' Error raised on Linux
 - [#2826](https://github.com/flet-dev/flet/issues/2826) - PopupMenuItem.data not respected
 - [#2839](https://github.com/flet-dev/flet/issues/2839) - ExpansionTile.initially_expanded had no visual effect
 - [#2867](https://github.com/flet-dev/flet/issues/2867) - PopupMenuButton had an always-visible tooltip of "Show menu"
