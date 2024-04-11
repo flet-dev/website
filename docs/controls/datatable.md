@@ -158,7 +158,7 @@ The maximum height of each row (excluding the row that contains column headings)
 
 ### `data_text_style`
 
-The text style for data rows. An instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
+The text style for data rows. An instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `divider_thickness`
 
@@ -170,7 +170,11 @@ Must be greater than or equal to zero. This value defaults to 1.0.
 
 The background gradient for the table.
 
-See [`Container.gradient`](/docs/controls/container#gradient) property for more information and examples.
+The value must be an instance of one of the following classes:
+
+* [`LinearGradient`](/docs/reference/types/lineargradient)
+* [`RadialGradient`](/docs/reference/types/radialgradient)
+* [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `heading_row_color`
 
@@ -184,7 +188,7 @@ The height of the heading row.
 
 ### `heading_text_style`
 
-The text style for the heading row. An instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
+The text style for the heading row. An instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `horizontal_lines`
 
@@ -303,9 +307,7 @@ The [color](/docs/reference/colors) for the row.
 
 By default, the color is transparent unless selected. Selected rows has a grey translucent color.
 
-The effective color can depend on the `MaterialState` state, if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
-
-See [`Checkbox.fill_color`](/docs/controls/checkbox#fill_color) property for more information and examples.
+The effective color can depend on the [`MaterialState`](/docs/reference/types/materialstate) state, if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
 
 ### `selected`
 
