@@ -88,8 +88,7 @@ Whether the title should be centered. Default is `False`.
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior)
-for possible values.
+The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
 ### `color`
 
@@ -160,7 +159,7 @@ If you want `title` to take all the space available, set this value to `0.0`.
 ### `title_text_style`
 
 The style to be used for the `Text` controls in the `title`. Value is an instance of
-type [`TextStyle`](/docs/controls/text#textstyle-properties).
+type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `toolbar_height`
 
@@ -173,4 +172,4 @@ The opacity of the toolbar. Value ranges from `0.0` (transparent) to `1.0` (full
 ### `toolbar_text_style`
 
 The style to be used for the `Text` controls in the app bar's `leading` and `actions` (but not `title`). Value is an
-instance of type [`TextStyle`](/docs/controls/text#textstyle-properties).
+instance of type [`TextStyle`](/docs/reference/types/textstyle).
