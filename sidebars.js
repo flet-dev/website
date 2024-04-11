@@ -392,6 +392,7 @@ module.exports = {
             "reference/types/lineargradient",
             "reference/types/mainaxisalignment",
             "reference/types/margin",
+            "reference/types/materialstate",
             "reference/types/onscrollevent",
             "reference/types/outlinedborder",
             "reference/types/padding",

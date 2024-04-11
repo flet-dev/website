@@ -101,33 +101,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `fill_color`
 
-The [color](/docs/reference/colors) that fills the radio, in all `MaterialState` states:
-
-* `HOVERED`
-* `FOCUSED`
-* `PRESSED`
-* `DRAGGED`
-* `SELECTED`
-* `SCROLLED_UNDER`
-* `DISABLED`
-* `ERROR`
-* `DEFAULT` - fallback state, meaning "all other states".
-
-To configure radio fill color for all Material states set `fill_color` value to a literal, for example:
-
-```python
-rd.fill_color=ft.colors.GREEN
-```
-
-To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
-
-```python
-rd.fill_color={
-    ft.MaterialState.HOVERED: ft.colors.GREEN,
-    ft.MaterialState.FOCUSED: ft.colors.RED,
-    ft.MaterialState.DEFAULT: ft.colors.BLACK,
-}
-```
+The [color](/docs/reference/colors) that fills the radio, in all [`MaterialState`](/docs/reference/types/materialstate) states.
 
 ### `focus_color`
 

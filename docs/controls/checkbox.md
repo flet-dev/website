@@ -98,8 +98,7 @@ The [color](/docs/reference/colors) to use for the check icon when this checkbox
 
 ### `fill_color`
 
-The [color](/docs/reference/colors) that fills the checkbox in various material states.
-See [`Radio.fill_color`](/docs/controls/radio#fill_color) for usage example.
+The [color](/docs/reference/colors) that fills the checkbox in various [`MaterialState`](/docs/reference/types/materialstate) states.
 
 ### `hover_color`
 
@@ -128,7 +127,7 @@ See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible va
 
 ### `overlay_color`
 
-The [color](/docs/reference/colors) of the checkbox's overlay in various material states. The
+The [color](/docs/reference/colors) of the checkbox's overlay in various [`MaterialState`](/docs/reference/types/materialstate) states. The
 following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`.
 
 See usage example [here](/docs/controls/elevatedbutton#style).
