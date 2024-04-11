@@ -400,6 +400,7 @@ module.exports = {
             "reference/types/shadowblurstyle",
             "reference/types/sweepgradient",
             "reference/types/thememode",
+            "reference/types/urltarget",
           ],
         }
       ],

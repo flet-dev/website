@@ -340,13 +340,7 @@ The URL to open when the container is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode. Value is of `UrlTarget` enum:
-
-* `BLANK` (default) - opens in a new tab/window
-* `SELF` - opens in the current tab/window
-* `PARENT` - opens in the parent frame. Behaves as `SELF` if there is no parent.
-* `TOP` - opens in the full body of the window
-[//]: # (* `UNFENCED_TOP`)
+Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
 
 ## Events
 
