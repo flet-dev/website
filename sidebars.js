@@ -389,6 +389,7 @@ module.exports = {
             "reference/types/clipbehavior",
             "reference/types/crossaxisalignment",
             "reference/types/floatingactionbuttonlocation",
+            "reference/types/fontweight",
             "reference/types/imagefit",
             "reference/types/imagerepeat",
             "reference/types/lineargradient",

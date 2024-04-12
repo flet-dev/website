@@ -87,4 +87,4 @@ The size of glyphs (in logical pixels) to use when painting the text. Default is
 
 ### `weight`
 
-Font weight - see [Text.weight](/docs/controls/text#weight) for possible values.
+Property value is [`FontWeight`](/docs/reference/types/fontweight) enum. Default is `NORMAL`.

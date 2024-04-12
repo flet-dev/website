@@ -474,17 +474,5 @@ The text displayed.
 
 Font weight.
 
-Property value is `FontWeight` enum with the following values:
-
-- `NORMAL` (default)
-- `BOLD`
-- `W_100`
-- `W_200`
-- `W_300`
-- `W_400`
-- `W_500`
-- `W_600`
-- `W_700`
-- `W_800`
-- `W_900`
+Property value is [`FontWeight`](/docs/reference/types/fontweight) enum. Default is `NORMAL`.
 
