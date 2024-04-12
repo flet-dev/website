@@ -62,7 +62,7 @@ See [`Text.font_family`](/docs/controls/text#font_family).
 
 The paint drawn as a foreground for the text.
 
-The value is of [`ft.Paint`](/docs/controls/canvas#paint) class.
+The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
 
 ### `height`
 

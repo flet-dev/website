@@ -399,6 +399,7 @@ module.exports = {
             "reference/types/onscrollevent",
             "reference/types/outlinedborder",
             "reference/types/padding",
+            "reference/types/paint",
             "reference/types/radialgradient",
             "reference/types/scrollmode",
             "reference/types/shadowblurstyle",
