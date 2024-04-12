@@ -404,6 +404,8 @@ module.exports = {
             "reference/types/scrollmode",
             "reference/types/shadowblurstyle",
             "reference/types/sweepgradient",
+            "reference/types/textalign",
+            "reference/types/textspan",
             "reference/types/textstyle",
             "reference/types/thememode",
             "reference/types/themevisualdensity",

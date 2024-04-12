@@ -15,21 +15,13 @@ Whether to apply anti-aliasing to lines and images drawn on the canvas. Defaults
 
 ### `blend_mode`
 
-:::note
-The property is not yet implemented and reserved for future use.
-:::
-
 A blend mode to apply when a shape is drawn or a layer is composited.
 
 Defaults to `BlendMode.SRC_OVER`.
 
-See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for possible blend mode values.
+Property value is [`BlendMode`](/docs/reference/types/blendmode).
 
 ### `blur_image`
-
-:::note
-The property is not yet implemented and reserved for future use.
-:::
 
 Blur image when drawing it on a canvas.
 

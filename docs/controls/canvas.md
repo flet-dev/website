@@ -399,7 +399,7 @@ Paints the given `color` onto the canvas, applying the given `blend_mode`, with 
 
 Blend mode to apply.
 
-See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for possible blend mode values.
+Property value is [`BlendMode`](/docs/reference/types/blendmode) enum.
 
 ## `Fill` shape properties
 
@@ -605,21 +605,21 @@ The text to draw.
 
 ### `style`
 
-A text style to draw `text` and `spans` with. The value is the instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
+A text style to draw `text` and `spans` with. The value is the instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `spans`
 
-The list of [`ft.TextSpan`](/docs/controls/text#textspan-properties) objects to build a rich text paragraph.
+The list of [`TextSpan`](/docs/reference/types/textspan) objects to build a rich text paragraph.
 
 ### `alignment`
 
 A point within a text rectangle to determine its position and rotation center.
 
-The value is of type `ft.Alignment`. Default value is `ft.alignment.top_left`.
+The value is of type [`Alignment`](/docs/reference/types/alignment). Default value is `ft.alignment.top_left`.
 
 ### `text_align`
 
-Text horizontal align. See [`Text.text_align`](/docs/controls/text#text_align) property for supported values.
+Text horizontal align. Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Default is `LEFT`.
 
 ### `max_lines`
 

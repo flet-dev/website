@@ -434,7 +434,7 @@ Text size in virtual pixels. Default is `14`.
 
 ### `spans`
 
-The list of [`ft.TextSpan`](#textspan-properties) objects to build a rich text paragraph.
+The list of [`TextSpan`](/docs/reference/types/textspan) objects to build a rich text paragraph.
 
 ### `style`
 
@@ -444,14 +444,7 @@ The text's style. An instance of type [`TextStyle`](/docs/reference/types/textst
 
 Text horizontal align.
 
-Property value is `TextAlign` enum with the following values:
-
-- `LEFT` (default)
-- `RIGHT`
-- `CENTER`
-- `JUSTIFY`
-- `START`
-- `END`
+Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Default is `LEFT`.
 
 ### `theme_style`
 
@@ -495,56 +488,3 @@ Property value is `FontWeight` enum with the following values:
 - `W_800`
 - `W_900`
 
-## `TextSpan` properties
-
-A span of text.
-
-### `semantics_label`
-
-An alternative semantics label for this text.
-
-If present, the semantics of this control will contain this value instead of the actual text.
-
-This is useful for replacing abbreviations or shorthands with the full text value:
-
-```python
-ft.Text("$$", semantics_label="Double dollars")
-```
-
-### `spans`
-
-Additional spans to include as children.
-
-If both `text` and `spans` are defined, the `text` will precede the `spans`.
-
-### `style`
-
-The [`TextStyle`](#textstyle-properties) to apply to this span.
-
-### `text`
-
-The text contained in this span.
-
-If both `text` and `spans` are defined, the `text` will precede the `spans`.
-
-### `url`
-
-The URL to open when the span is clicked. If registered, `on_click` event is fired after that.
-
-### `url_target`
-
-Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
-
-## `TextSpan` events
-
-### `on_click`
-
-Fires when the span is clicked.
-
-### `on_enter`
-
-Triggered when a mouse pointer has entered the span.
-
-### `on_exit`
-
-Triggered when a mouse pointer has exited the span.
