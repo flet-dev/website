@@ -260,7 +260,7 @@ The value of `margin` property could be one of the following types:
 
 Empty space to inscribe inside a container decoration (background, border). The child control is placed inside this padding.
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `rtl`
 
