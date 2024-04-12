@@ -134,7 +134,7 @@ Where to open URL in the web mode:
 
 ### `code_style`
 
-Code block text style. The value is an instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
+Code block text style. The value is an instance of [`TextStyle`](/docs/reference/types/textstyle) class.
 
 An example of configuring monospace font for Markdown code blocks:
 
