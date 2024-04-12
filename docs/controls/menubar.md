@@ -171,15 +171,7 @@ ft.MenuStyle(
 * `elevation` - The elevation of the menu's Material.
 * `padding` - The padding between the menu's boundary and its child.
 * `shadow_color` - The shadow color of the menu's Material.
-* `shape` - The shape of the menu's underlying Material, an instance of one of the following implementations:
-    * `StadiumBorder`
-    * `RoundedRectangleBorder`
-        * `radius` - border radius, an instance of `BorderRadius` class or a number.
-    * `CircleBorder`
-    * `BeveledRectangleBorder`
-        * `radius` - border radius, an instance of `BorderRadius` class or a number.
-    * `ContinuousRectangleBorder`
-        * `radius` - border radius, an instance of `BorderRadius` class or a number.
-* `side` - An instance of `BorderSide` class, the color and weight of the menu's outline.
+* `shape` - The shape of the menu's underlying Material, an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+* `side` - An instance of [`BorderSide`](/docs/reference/types/borderside) class, the color and weight of the menu's outline.
 * `surface_tint_color` - The surface tint color of the menu's Material.
 

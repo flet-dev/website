@@ -384,6 +384,7 @@ module.exports = {
             "reference/types/blur",
             "reference/types/border",
             "reference/types/borderradius",
+            "reference/types/borderside",
             "reference/types/boxshadow",
             "reference/types/clipbehavior",
             "reference/types/crossaxisalignment",
