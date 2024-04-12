@@ -58,7 +58,7 @@ ft.app(target=main)
 
 ### `border_radius`
 
-Clip image to have rounded corners. See [`Container.border_radius`](/docs/controls/container#border_radius) for more information and examples.
+Clip image to have rounded corners. Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `color`
 
@@ -66,11 +66,9 @@ If set, this [color](/docs/reference/colors) is blended with each image pixel us
 
 ### `color_blend_mode`
 
-Used to combine `color` with the image.
+Used to combine `color` with the image. Property value is [`BlendMode`](/docs/reference/types/blendmode) enum.
 
 The default is `BlendMode.COLOR`. In terms of the blend mode, color is the source and this image is the destination.
-
-See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for possible blend mode values.
 
 ### `error_content`
 
