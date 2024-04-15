@@ -162,7 +162,7 @@ A `Control` that represents primary content of the chip, typically a [Text](/doc
 
 Padding around the `label`.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 By default, this is 4 logical pixels at the beginning and the end of the label, and zero on top and bottom.
 
@@ -180,7 +180,7 @@ Typically the leading control is an [`Icon`](/docs/controls/icon) or a [`CircleA
 
 The padding between the `label` and the outside shape.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 By default, this is 4 logical pixels on all sides.
 

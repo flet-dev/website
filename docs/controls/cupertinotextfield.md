@@ -103,7 +103,7 @@ Text [color](/docs/reference/colors).
 
 The padding for the input decoration's container.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `cursor_color`
 

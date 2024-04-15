@@ -280,7 +280,7 @@ Displayed on top of the input when it's empty and either (a) `label` is null or 
 
 The name of the icon to show before the input field and outside of the decoration's container.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `icon_content`
 

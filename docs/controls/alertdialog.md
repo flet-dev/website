@@ -93,7 +93,7 @@ Typically used to provide padding to the button bar between the button bar and t
 
 If are no actions, then no padding will be included. The padding around the button bar defaults to zero.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `adaptive`
 
