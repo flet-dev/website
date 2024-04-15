@@ -198,7 +198,7 @@ A `Control` to display after the title. Typically an [Icon](/docs/controls/icon)
 
 ### `visual_density`
 
-Defines how compact the control's layout will be. Value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
+Defines how compact the control's layout will be. The value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
 
 ## Events
 
