@@ -81,8 +81,7 @@ Defaults to `False`.
 
 ### `bar_bgcolor`
 
-Defines the background [color](/docs/reference/colors) of the search bar. See [Radio.fill_color](/docs/controls/radio#fill_color) for
-usage examples.
+Defines the background [color](/docs/reference/colors) of the search bar in all or specific [`MaterialState`](/docs/reference/types/materialstate) states.
 
 ### `bar_hint_text`
 
@@ -94,7 +93,7 @@ A `Control` to display before the text input field when the search view is close
 
 ### `bar_overlay_color`
 
-Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is focused, hovered, or pressed. See [Radio.fill_color](/docs/controls/radio#fill_color) for usage examples.
+Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is in `FOCUSED`, `HOVERED`, or `PRESSED` [`MaterialState`](/docs/reference/types/materialstate) states.
 
 ### `bar_trailing`
 
@@ -104,7 +103,11 @@ These controls can represent additional modes of searching (e.g voice search), a
 
 ### `capitalization`
 
-Enables automatic on-the-fly capitalization of entered text. See [TextField.capitalization](/docs/controls/textfield#capitalization) for possible values.
+Enables automatic on-the-fly capitalization of entered text. 
+
+Property value is [`TextCapitalization`](/docs/reference/types/textcapitalization) enum.
+
+Default is `NONE`.
 
 ### `controls`
 
@@ -120,15 +123,19 @@ Defines whether the search view grows to fill the entire screen when the search 
 
 ### `header_hint_style`
 
-Defines the style of `view_hint_text`.
+Defines the [TextStyle](/docs/reference/types/textstyle) of `view_hint_text`.
 
 ### `header_text_style`
 
-Defines the style of the text being edited on the search view.
+Defines the [TextStyle](/docs/reference/types/textstyle) of the text being edited on the search view.
 
 ### `keyboard_type`
 
-The type of action button to use for the keyboard. See [TextField.keyboard_type](/docs/controls/textfield#keyboard_type) for possible values.
+The type of action button to use for the keyboard. 
+
+The property value is [`KeyboardType`](/docs/reference/types/keyboardtype) enum.
+
+The default is `TEXT`.
 
 ### `value`
 
@@ -154,11 +161,13 @@ Defaults to a back button which closes/pops the search view.
 
 ### `view_shape`
 
-Defines the shape of the search view. See [Container.shape](/docs/controls/container#shape) for possible values.
+Defines the shape of the search view. The value is [`BoxShape`](/docs/reference/types/boxshape) enum.
+
+The default value is `RECTANGLE`.
 
 ### `view_side`
 
-Defines the color and weight of the search view's outline.
+Defines the color and weight of the search view's outline. The value is [`BorderSide`](/docs/reference/types/borderside) enum.
 
 ### `view_surface_tint_color`
 

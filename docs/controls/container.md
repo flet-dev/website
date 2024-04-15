@@ -274,10 +274,9 @@ The value of this property is a single instance or a list of [`BoxShadow`](/docs
 
 ### `shape`
 
-Sets the shape of the container. The value is `BoxShape` enum:
+Sets the shape of the container. The value is [`BoxShape`](/docs/reference/types/boxshape) enum.
 
-* `RECTANGLE` (default)
-* `CIRCLE`
+The default value is `RECTANGLE`.
 
 ### `theme_mode`
 
