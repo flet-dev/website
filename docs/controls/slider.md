@@ -154,16 +154,15 @@ If the `max` is equal to the `min`, then the slider is disabled.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
+The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
-Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is
-hovered or dragged. See [Radio.fill_color](/docs/controls/radio#fill_color) for usage examples.
+The highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is in `HOVERED` or `DRAGGED` [`MaterialState`](/docs/reference/types/materialstate)s.
 
 ### `round`
 
-The number of decimals displayed on the `label` containing `value`. The default is 0 (displays value rounded to the nearest integer).
+The number of decimals displayed on the `label` containing `value`. The default is `0` (displays value rounded to the nearest integer).
 
 ### `secondary_active_color`
 
