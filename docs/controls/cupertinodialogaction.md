@@ -76,7 +76,7 @@ The text displayed on a button.
 
 ### `text_style`
 
-The text style to use for text on the button. See [`text_style` properties](/docs/controls/text#textstyle-properties) for possible values.
+The text style to use for text on the button. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ## Events
 
