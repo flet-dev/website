@@ -83,7 +83,7 @@ The clickable label to display on the right of the switch.
 
 ### `label_position`
 
-Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
+Property value is [`LabelPosition`](/docs/reference/types/labelposition) enum. The default value is `RIGHT`.
 
 ### `off_label_color`
 
