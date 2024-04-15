@@ -115,9 +115,9 @@ The offset of the menu relative to the alignment origin determined by `MenuStyle
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+Whether to clip the content of this control or not. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `ClipBehavior.HARD_EDGE`.
+Defaults to `HARD_EDGE`.
 
 ### `content`
 
@@ -141,13 +141,13 @@ An optional control to display before the `content`. Typically an [`Icon`](/docs
 
 Customizes this menu's appearance.
 
-See [`MenuStyle`](/docs/controls/menubar#menustyle-class) for more information about this property.
+The value is an instance of [`MenuStyle`](/docs/reference/types/menustyle) class.
 
 ### `style`
 
 Customizes this button's appearance.
 
-See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class. 
 
 ### `trailing`
 

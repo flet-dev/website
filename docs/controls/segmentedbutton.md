@@ -106,7 +106,7 @@ If `False`, then the `selected_icon` is not used and will not be displayed on `s
 
 ### `style`
 
-Customizes this button's appearance. See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+Customizes this button's appearance. The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class. 
 
 ## Events
 

@@ -397,6 +397,7 @@ module.exports = {
             "reference/types/mainaxisalignment",
             "reference/types/margin",
             "reference/types/materialstate",
+            "reference/types/menustyle",
             "reference/types/mousecursor",
             "reference/types/onscrollevent",
             "reference/types/outlinedborder",
