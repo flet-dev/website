@@ -138,7 +138,7 @@ The semantic label for the checkbox that is not shown in the UI, but will be ann
 
 The shape of the checkbox. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
-Defaults to `RoundedRectangleBorder(radius=2)`
+Defaults to `RoundedRectangleBorder(radius=2)`.
 
 ### `splash_radius`
 
