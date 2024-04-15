@@ -160,9 +160,9 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `ClipBehavior.NONE`.
+Defaults to `NONE`.
 
 ### `content`
 
@@ -178,7 +178,7 @@ Icon [color](/docs/reference/colors).
 
 ### `style`
 
-See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class. 
 
 ### `text`
 
@@ -194,7 +194,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
+Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
 
 ## Methods
 
