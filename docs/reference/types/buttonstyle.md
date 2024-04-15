@@ -5,7 +5,9 @@ sidebar_label: ButtonStyle
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
- `ButtonStyle` class has the following properties:
+`ButtonStyle` allows controlling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
+
+`ButtonStyle` class has the following properties:
 
 * `color` - The color for the button's Text and Icon control descendants.
 * `bgcolor` - The button's background fill color.
@@ -18,9 +20,31 @@ import TabItem from '@theme/TabItem';
 * `side` - An instance of [`BorderSide`](/docs/reference/types/borderside) class, the color and weight of the button's outline.
 * `shape` - The shape of the button's underlying Material. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
-### Example of usage
+### Color for all and specific Material states examples
 
-This is an example demonstrating various button shapes:
+Each individual style attribute could be configured for all or particular [`MaterialState`](/docs/reference/types/materialstate) of a button, such as `HOVERED`, `FOCUSED`, `DISABLED` and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
+
+To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `color` property to a literal the value will be applied to all button states:
+
+```python
+ButtonStyle(
+    color=ft.colors.WHITE
+)
+```
+
+To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For example, to configure different background colors for `HOVERED` and `FOCUSED` states and another colors for all other states:
+
+```python
+ButtonStyle(
+    color={
+        ft.MaterialState.HOVERED: ft.colors.WHITE,
+        ft.MaterialState.FOCUSED: ft.colors.BLUE,
+        ft.MaterialState.DEFAULT: ft.colors.BLACK,
+    }
+)
+```
+
+### Various button shapes example
 
 <img src="/img/blog/gradients/button-shapes.png" className="screenshot-20" />
 
@@ -63,3 +87,44 @@ def main(page: ft.Page):
 
 ft.app(target=main)
 ```
+
+### Styled button example
+
+Check the following example:
+
+<img src="/img/blog/gradients/styled-button.gif" className="screenshot-30" />
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+
+    page.add(
+        ft.ElevatedButton(
+            "Styled button 1",
+            style=ft.ButtonStyle(
+                color={
+                    ft.MaterialState.HOVERED: ft.colors.WHITE,
+                    ft.MaterialState.FOCUSED: ft.colors.BLUE,
+                    ft.MaterialState.DEFAULT: ft.colors.BLACK,
+                },
+                bgcolor={ft.MaterialState.FOCUSED: ft.colors.PINK_200, "": ft.colors.YELLOW},
+                padding={ft.MaterialState.HOVERED: 20},
+                overlay_color=ft.colors.TRANSPARENT,
+                elevation={"pressed": 0, "": 1},
+                animation_duration=500,
+                side={
+                    ft.MaterialState.DEFAULT: ft.BorderSide(1, ft.colors.BLUE),
+                    ft.MaterialState.HOVERED: ft.BorderSide(2, ft.colors.BLUE),
+                },
+                shape={
+                    ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=20),
+                    ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=2),
+                },
+            ),
+        )
+    )
+
+ft.app(target=main)
+```
+
