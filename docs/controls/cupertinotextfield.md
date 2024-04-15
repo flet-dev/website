@@ -213,12 +213,9 @@ Optional `Control` to place on the line before the input.
 
 Defines the visibility of the `prefix` control based on the state of text entry. Has no effect if `prefix` is not specified.
 
-The property value is `VisibilityMode` enum with the following values:
+The property value is [`VisibilityMode`](/docs/reference/types/visibilitymode) enum.
 
-* `ALWAYS` (default) - `prefix` is always visible regardless of the text entry state
-* `NEVER` - `prefix` is never visible regardless of the text entry state
-* `EDITING` - `prefix` is visible only when the text entry is in editing mode
-* `NOT_EDITING` - `prefix` is visible only when the current text entry is empty
+The default is `ALWAYS`.
 
 ### `read_only`
 
@@ -268,25 +265,17 @@ Optional `Control` to place on the line after the input.
 
 Defines the visibility of the `suffix` control based on the state of text entry. Has no effect if `suffix` is not specified.
 
-The property value is `VisibilityMode` enum with the following values:
+The property value is [`VisibilityMode`](/docs/reference/types/visibilitymode) enum.
 
-* `ALWAYS` (default) - `suffix` is always visible regardless of the text entry state
-* `NEVER` - `suffix` is never visible regardless of the text entry state
-* `EDITING` - `suffix` is visible only when the text entry is in editing mode
-* `NOT_EDITING` - `suffix` is visible only when the current text entry is empty
+The default is `ALWAYS`.
 
 ### `text_align`
 
 How the text should be aligned horizontally.
 
-Property value is `TextAlign` enum with the following values:
+Property value is [`TextAlign`](/docs/reference/types/textalign) enum.
 
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+The default is `LEFT`.
 
 ### `text_size`
 
@@ -302,7 +291,7 @@ Defines how the text should be aligned vertically. It's value can either be a nu
 
 ### `text_style`
 
-The style to use for the text being edited.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for the text being edited.
 
 ### `value`
 
