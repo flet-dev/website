@@ -417,6 +417,7 @@ module.exports = {
             "reference/types/thememode",
             "reference/types/themevisualdensity",
             "reference/types/urltarget",
+            "reference/types/verticalalignment",
             "reference/types/visibilitymode",
           ],
         }
