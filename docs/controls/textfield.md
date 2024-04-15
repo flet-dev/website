@@ -215,7 +215,7 @@ TextField background [color](/docs/reference/colors). Will not be visible if `fi
 
 ### `border`
 
-Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
+Border around input. The value is [`InputBorder`](/docs/reference/types/inputborder) enum. The default is `OUTLINE`.
 
 ### `border_color`
 

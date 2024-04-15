@@ -393,6 +393,7 @@ module.exports = {
             "reference/types/fontweight",
             "reference/types/imagefit",
             "reference/types/imagerepeat",
+            "reference/types/inputborder",
             "reference/types/inputfilter",
             "reference/types/keyboardtype",
             "reference/types/labelposition",
