@@ -409,6 +409,7 @@ module.exports = {
             "reference/types/shadowblurstyle",
             "reference/types/sweepgradient",
             "reference/types/textalign",
+            "reference/types/textcapitalization",
             "reference/types/textspan",
             "reference/types/textstyle",
             "reference/types/thememode",

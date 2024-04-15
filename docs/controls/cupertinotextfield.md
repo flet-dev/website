@@ -61,13 +61,13 @@ TextField background [color](/docs/reference/colors).
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background. See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for more details.
+The blend mode applied to the `color` or `gradient` background. Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODULATE` as default.
 
 ### `border`
 
 A border to draw around input.
 
-See [`Container.border`](/docs/controls/container#border) property docs for more information about border.
+The value is an instance of [`border.Border`](/docs/reference/types/border) class.
 
 ### `border_color`
 
@@ -75,7 +75,7 @@ Border [color](/docs/reference/colors). Could be `transparent` to hide the borde
 
 ### `border_radius`
 
-See [`Container.border_radius`](/docs/controls/container#border_radius) property docs for more information about border radius.
+Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `can_reveal_password`
 
@@ -87,12 +87,9 @@ The icon is displayed in the same location as `suffix` and in case both `can_rev
 
 Enables automatic on-the-fly capitalization of entered text.
 
-Property value is `TextCapitalization` enum with the following values:
+Property value is [`TextCapitalization`](/docs/reference/types/textcapitalization) enum.
 
-* `NONE` (default) - do not change entered text.
-* `CHARACTERS` - every entered symbol is capitalized.
-* `WORDS` - capitalize the first letter of every word.
-* `SENTENCES` - capitalize the first letter of every sentence.
+Default is `NONE`.
 
 ### `clear_button_semantics_label`
 
@@ -106,7 +103,7 @@ Text [color](/docs/reference/colors).
 
 The padding for the input decoration's container.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `cursor_color`
 
@@ -156,8 +153,11 @@ Text [color](/docs/reference/colors) when TextField is focused.
 
 ### `gradient`
 
-Configures gradient background. See [`Container.gradient`](/docs/controls/container#gradient) for more information about gradient and possible values.
+Configures gradient background. The value must be an instance of one of the following classes:
 
+* [`LinearGradient`](/docs/reference/types/lineargradient)
+* [`RadialGradient`](/docs/reference/types/radialgradient)
+* [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `input_filter`
 Provides as-you-type filtering/validation in your `TextField`. It prevents the insertion of characters matching (or not matching) a particular pattern(`regex_string`), by replacing the characters with the given `replacement_string`.
