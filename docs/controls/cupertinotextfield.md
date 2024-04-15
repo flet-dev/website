@@ -160,47 +160,18 @@ Configures gradient background. The value must be an instance of one of the foll
 * [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `input_filter`
-Provides as-you-type filtering/validation in your `TextField`. It prevents the insertion of characters matching (or not matching) a particular pattern(`regex_string`), by replacing the characters with the given `replacement_string`.
-When this parameter changes, the new filter will not be applied until the next time the user inserts or deletes text. 
-Note that, similar to the `on_change` callback, the input filters are not applied when the text is changed programmatically.
-
-`input_filter` is an instance of the `InputFilter` class, which takes 3 parameters: 
-- `regex_string`: a regular expression pattern for the filter
-- `allow`: a boolean value indicating whether to allow or deny/block the matched patterns - default is `True`
-- `replacement_string`: string used to replace banned/denied patterns - default is an empty string.
-
-The following helper classes are equally available:
-- `NumbersOnlyInputFilter()` - only allow numbers
-- `TextOnlyInputFilter()` - only allow text characters
-
-Usage Example:
-
-```python
-ft.CupertinoTextField(
-    placeholder_text="Only numbers are allowed :)",
-    input_filter=ft.InputFilter(allow=True, regex_string=r"[0-9]", replacement_string=""),
-)
-```
+Provides as-you-type filtering/validation in your `TextField`. 
+The value is an instance of the [`InputFilter`](/docs/reference/types/inputfilter) class.
 
 ### `keyboard_type`
 
-The type of keyboard to use for editing the text. The property value is `KeyboardType` enum with the following values:
+The type of keyboard to use for editing the text. The property value is [`KeyboardType`](/docs/reference/types/keyboardtype) enum.
 
-* `TEXT` (default)
-* `MULTILINE`
-* `NUMBER`
-* `PHONE`
-* `DATETIME`
-* `EMAIL`
-* `URL`
-* `VISIBLE_PASSWORD`
-* `NAME`
-* `STREET_ADDRESS`
-* `NONE`
+The default is `TEXT`.
 
 ### `max_length`
 
-Limits a maximum number of characters that can be entered into TextField.
+Limits a maximum number of characters that can be entered into CupertinoTextField.
 
 ### `max_lines`
 
@@ -232,7 +203,7 @@ A lighter colored placeholder hint that appears on the first line of the text fi
 
 ### `placeholder_style`
 
-The style to use for `placeholder_text`.
+The [TextStyle](/docs/reference/types/textstyle) to use for `placeholder_text`.
 
 ### `prefix`
 
