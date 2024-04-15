@@ -95,10 +95,9 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. See [Container.clip_behavior](/docs/controls/container#clip_behavior)
-for possible values.
+Whether to clip the content of this control or not. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `ClipBehavior.NONE`.
+Defaults to `NONE`.
 
 ### `close_on_click`
 
@@ -126,7 +125,7 @@ An optional control to display before the `content`. Typically an [`Icon`](/docs
 
 Customizes this button's appearance.
 
-See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class.
 
 ### `trailing`
 
