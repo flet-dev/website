@@ -61,7 +61,7 @@ The minimum height of the line used to draw the linear indicator. Default is 4.
 
 ### `border_radius`
 
-The border radius of both the indicator and the track. See [`Container.border_radius`](/docs/controls/container#border_radius) for possible values.
+The border radius of both the indicator and the track. Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 Defaults to `border_radius.all(0)` - rectangular shape.
 
