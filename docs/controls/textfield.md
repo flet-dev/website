@@ -223,11 +223,11 @@ Border [color](/docs/reference/colors). Could be `transparent` to hide the borde
 
 ### `border_radius`
 
-See [`Container.border_radius`](/docs/controls/container#border_radius) property docs for more information about border radius.
+Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `border_width`
 
-The width of the border in virtual pixels. Default is 1. Set to 0 to completely remove border.
+The width of the border in virtual pixels. Default is `1`. Set to `0` to completely remove border.
 
 ### `can_reveal_password`
 
@@ -239,12 +239,9 @@ The icon is displayed in the same location as `suffix` and in case both `can_rev
 
 Enables automatic on-the-fly capitalization of entered text.
 
-Property value is `TextCapitalization` enum with the following values:
+Property value is [`TextCapitalization`](/docs/reference/types/textcapitalization) enum.
 
-* `NONE` (default) - do not change entered text.
-* `CHARACTERS` - every entered symbol is capitalized.
-* `WORDS` - capitalize the first letter of every word.
-* `SENTENCES` - capitalize the first letter of every sentence.
+Default is `NONE`.
 
 ### `color`
 
@@ -254,11 +251,11 @@ Text [color](/docs/reference/colors).
 
 The padding for the input decoration's container.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `counter_style`
 
-The style to use for `counter_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `counter_text`.
 
 ### `counter_text`
 
@@ -294,7 +291,7 @@ This flag only affects Android. On iOS, suggestions are tied directly to `autoco
 
 ### `error_style`
 
-The style to use for `error_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `error_text`.
 
 ### `error_text`
 
@@ -331,7 +328,7 @@ Text [color](/docs/reference/colors) when TextField is focused.
 
 ### `helper_style`
 
-The style to use for `helper_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `helper_text`.
 
 ### `helper_text`
 
@@ -341,7 +338,7 @@ If non-null, the text is displayed below the input decorator, in the same locati
 
 ### `hint_style`
 
-The style to use for `hint_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `hint_text`.
 
 ### `hint_text`
 
@@ -376,7 +373,7 @@ When the input field is empty and unfocused, the label is displayed on top of th
 
 ### `label_style`
 
-The style to use for `label`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `label`.
 
 ### `max_length`
 
@@ -422,7 +419,7 @@ An icon that appears before the `prefix` or `prefix_text` and before the editabl
 
 ### `prefix_style`
 
-The style to use for `prefix_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `prefix_text`.
 
 ### `prefix_text`
 
@@ -480,7 +477,7 @@ An icon that appears after the editable part of the text field and after the `su
 
 ### `suffix_style`
 
-The style to use for `suffix_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `suffix_text`.
 
 ### `suffix_text`
 
@@ -490,14 +487,7 @@ Optional text `suffix` to place on the line after the input.
 
 How the text should be aligned horizontally.
 
-Property value is `TextAlign` enum with the following values:
-
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Default is `LEFT`.
 
 ### `text_size`
 
@@ -505,7 +495,7 @@ Text size in virtual pixels.
 
 ### `text_style`
 
-The style to use for the text being edited.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for the text being edited.
 
 ### `text_vertical_align`
 
