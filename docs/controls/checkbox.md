@@ -118,7 +118,7 @@ The label's style. An instance of type [`TextStyle`](/docs/reference/types/texts
 
 ### `label_position`
 
-Defines on which side of the checkbox the `label` should be shown. Property value is `LabelPosition` enum: `LabelPosition.LEFT` or `LabelPosition.RIGHT`(default).
+Defines on which side of the checkbox the `label` should be shown. Property value is [`LabelPosition`](/docs/reference/types/labelposition) enum. The default value is `RIGHT`.
 
 ### `mouse_cursor`
 

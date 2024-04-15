@@ -393,6 +393,7 @@ module.exports = {
             "reference/types/fontweight",
             "reference/types/imagefit",
             "reference/types/imagerepeat",
+            "reference/types/labelposition",
             "reference/types/lineargradient",
             "reference/types/mainaxisalignment",
             "reference/types/margin",
