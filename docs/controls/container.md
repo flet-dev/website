@@ -250,17 +250,13 @@ The splash [color](/docs/reference/colors) of the ink response.
 
 Empty space to surround the decoration and child control.
 
-The value of `margin` property could be one of the following types:
-
-* `int`
-* `float`
-* [`margin.Margin`](/docs/reference/types/margin)
+The value is an instance of [`margin.Margin`](/docs/reference/types/margin) class or a number.
 
 ### `padding`
 
 Empty space to inscribe inside a container decoration (background, border). The child control is placed inside this padding.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `rtl`
 

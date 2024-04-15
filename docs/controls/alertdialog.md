@@ -124,7 +124,7 @@ Padding around the content.
 
 If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `elevation`
 
@@ -142,7 +142,7 @@ Padding around the `icon`.
 
 Padding around the Dialog itself.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 The default values of this property are 40 pixels horizontally and 24 pixels vertically outside of the dialog box. (`padding.symmetric(vertical=40, horizontal=24)`)
 
@@ -187,7 +187,7 @@ Padding around the title.
 
 If there is no title, no padding will be provided. Otherwise, this padding is used.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
 
