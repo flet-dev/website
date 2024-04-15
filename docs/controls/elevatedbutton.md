@@ -159,9 +159,9 @@ Button's background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `ClipBehavior.NONE`.
+Defaults to `NONE`.
 
 ### `color`
 
@@ -185,21 +185,9 @@ Icon [color](/docs/reference/colors).
 
 ### `style`
 
-The value is an instance of `ButtonStyle` class. `ButtonStyle` allows controlling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
+The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class. `ButtonStyle` allows controlling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
 
-Each individual style attribute could be configured for all or particular "Material states" of a button, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
-
-The following `MaterialState` values are supported:
-
-* `HOVERED`
-* `FOCUSED`
-* `PRESSED`
-* `DRAGGED`
-* `SELECTED`
-* `SCROLLEDUNDER`
-* `DISABLED`
-* `ERROR`
-* `DEFAULT` - fallback state, meaning "all other states".
+Each individual style attribute could be configured for all or particular [`MaterialState`](/docs/reference/types/materialstate) of a button, such as `HOVERED`, `FOCUSED`, `DISABLED` and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
 
 To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `color` property to a literal the value will be applied to all button states:
 
@@ -259,73 +247,6 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-#### `ButtonStyle` class
-
- `ButtonStyle` class has the following properties:
-
-* `color` - The color for the button's Text and Icon control descendants.
-* `bgcolor` - The button's background fill color.
-* `overlay_color` - The highlight color that's typically used to indicate that the button is focused, hovered, or pressed.
-* `shadow_color` - The shadow color of the button's Material.
-* `surface_tint_color` - The surface tint color of the button's Material.
-* `elevation` - The elevation of the button's Material.
-* `animation_duration` - Defines the duration in milliseconds of animated changes for shape and elevation.
-* `padding` - The padding between the button's boundary and its child.
-* `side` - An instance of `BorderSide` class, the color and weight of the button's outline.
-* `shape` - The shape of the button's underlying Material, an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-
-This is an example demonstrating various button shapes:
-
-<img src="/img/blog/gradients/button-shapes.png" className="screenshot-20" />
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.padding = 30
-    page.spacing = 30
-    page.add(
-        ft.FilledButton(
-            "Stadium",
-            style=ft.ButtonStyle(
-                shape=ft.StadiumBorder(),
-            ),
-        ),
-        ft.FilledButton(
-            "Rounded rectangle",
-            style=ft.ButtonStyle(
-                shape=ft.RoundedRectangleBorder(radius=10),
-            ),
-        ),
-        ft.FilledButton(
-            "Continuous rectangle",
-            style=ft.ButtonStyle(
-                shape=ft.ContinuousRectangleBorder(radius=30),
-            ),
-        ),
-        ft.FilledButton(
-            "Beveled rectangle",
-            style=ft.ButtonStyle(
-                shape=ft.BeveledRectangleBorder(radius=10),
-            ),
-        ),
-        ft.FilledButton(
-            "Circle",
-            style=ft.ButtonStyle(shape=ft.CircleBorder(), padding=30),
-        ),
-    )
-
-ft.app(target=main)
-```
-
 ### `text`
 
 The text displayed on a button.
@@ -340,7 +261,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
+Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
 
 ## Methods
 

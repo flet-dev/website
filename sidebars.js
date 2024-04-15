@@ -386,6 +386,7 @@ module.exports = {
             "reference/types/borderradius",
             "reference/types/borderside",
             "reference/types/boxshadow",
+            "reference/types/buttonstyle",
             "reference/types/clipbehavior",
             "reference/types/crossaxisalignment",
             "reference/types/floatingactionbuttonlocation",
