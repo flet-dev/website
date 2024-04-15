@@ -114,7 +114,7 @@ The clickable label to display on the right of a checkbox.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](/docs/controls/text#textstyle-properties).
+The label's style. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `label_position`
 
@@ -123,14 +123,12 @@ Defines on which side of the checkbox the `label` should be shown. Property valu
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
+The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
 The [color](/docs/reference/colors) of the checkbox's overlay in various [`MaterialState`](/docs/reference/types/materialstate) states. The
 following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`.
-
-See usage example [here](/docs/controls/elevatedbutton#style).
 
 ### `semantics_label`
 
@@ -138,7 +136,7 @@ The semantic label for the checkbox that is not shown in the UI, but will be ann
 
 ### `shape`
 
-The shape of the checkbox. More information on possible values [here](/docs/controls/alertdialog#shape).
+The shape of the checkbox. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 Defaults to `RoundedRectangleBorder(radius=2)`
 
