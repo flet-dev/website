@@ -159,7 +159,7 @@ Button's background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
 Defaults to `NONE`.
 

@@ -73,9 +73,9 @@ Button background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `ClipBehavior.NONE`.
+Defaults to `NONE`.
 
 ### `content`
 
@@ -128,7 +128,7 @@ By default, floating action buttons are non-mini and have a height and width of 
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
+The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `shape`
 
@@ -154,7 +154,7 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
+Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
 
 ## Events
 
