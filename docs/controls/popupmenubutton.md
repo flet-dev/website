@@ -60,9 +60,9 @@ The menu's background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The `content` will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Default value is `ClipBehavior.NONE`.
+Default value is `NONE`.
 
 ### `content`
 
@@ -99,10 +99,10 @@ A collection of `PopupMenuItem` controls to display in a dropdown menu.
 Defines position of the popup menu relative to the button. Value can either be `PopupMenuPosition.OVER` (default) or `PopupMenuPosition.UNDER`.
 
 ### `padding`
+ 
+Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
-A collection of `PopupMenuItem` controls to display in a dropdown menu. Defaults to `padding.all(8.0)`.
-
-See [`Container.padding`](/docs/controls/container#padding) for possible values.
+Defaults to `padding.all(8.0)`.
 
 ### `shadow_color`
 
@@ -110,7 +110,7 @@ The [color](/docs/reference/colors) used to paint the shadow below the menu.
 
 ### `shape`
 
-The menu's shape. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
+The menu's shape. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 The default shape is a `CircleBorder` with a radius of `10.0`.
 
@@ -159,13 +159,15 @@ An icon to draw before the text label of this menu item.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
+The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `padding`
 
 The padding of this menu item. Note that the `height` value of this menu item may influence the applied padding. For example, If a `height` greater than the height of the sum of the padding and a `content` is provided, then the padding's effect will not be visible.
 
-Defaults to `padding.symmetric(horizontal=12)`. See [`Container.padding`](/docs/controls/container#padding) for possible values.
+Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+
+Defaults to `padding.symmetric(horizontal=12)`.
 
 ### `text`
 
