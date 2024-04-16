@@ -59,11 +59,11 @@ Background [color](/docs/reference/colors) of the tooltip.
 
 ### `border`
 
-Border around the tooltip.
+[Border](/docs/reference/types/border) around the tooltip.
 
 ### `border_radius`
 
-Tooltip's border radius.
+Tooltip's [`border radius`](/docs/reference/types/borderradius).
 
 ### `content`
 
@@ -81,7 +81,11 @@ For example, on Android a tap will produce a clicking sound and a long-press wil
 
 ### `gradient`
 
-Background gradient of the tooltip
+Background gradient of the tooltip. The value must be an instance of one of the following classes:
+
+* [`LinearGradient`](/docs/reference/types/lineargradient)
+* [`RadialGradient`](/docs/reference/types/radialgradient)
+* [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `height`
 
@@ -89,11 +93,13 @@ The height of the tooltip's content.
 
 ### `margin`
 
-The empty space that surrounds the tooltip.
+The empty space that surrounds the tooltip. The value is an instance of [`margin.Margin`](/docs/reference/types/margin) class or a number.
 
 ### `padding`
 
 The amount of space by which to inset the tooltip's content.
+
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 On mobile, defaults to 16.0 logical pixels horizontally and 4.0 vertically. On desktop, defaults to 8.0 logical pixels horizontally and 4.0 vertically.
 
@@ -105,7 +111,7 @@ Defaults to `True`. If there is insufficient space to display the tooltip in the
 
 ### `shape`
 
-The shape of the tooltip.
+The shape of the tooltip. The value is [`BoxShape`](/docs/reference/types/boxshape) enum.
 
 ### `show_duration`
 
@@ -115,18 +121,11 @@ The length of time, in milliseconds, that the tooltip will be shown after a long
 
 How the message of the tooltip is aligned horizontally.
 
-Property value is `TextAlign` enum with the following values:
-
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Defaults to `LEFT`.
 
 ### `text_style`
 
-The style to use for the message of the tooltip.
+The [TextStyle](/docs/reference/types/textstyle) to use for the message of the tooltip.
 
 ### `vertical_offset`
 
