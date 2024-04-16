@@ -73,7 +73,11 @@ ft.app(target=main)
 
 ### `alignment`
 
-Defines how the timer picker should be positioned within its parent. Defaults to `ft.alignment.center`.
+Defines how the timer picker should be positioned within its parent. 
+
+Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class. 
+
+Defaults to `ft.alignment.center`.
 
 ### `bgcolor`
 
