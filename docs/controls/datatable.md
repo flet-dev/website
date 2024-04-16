@@ -192,7 +192,7 @@ The text style for the heading row. An instance of [`ft.TextStyle`](/docs/refere
 
 ### `horizontal_lines`
 
-Set the [color](/docs/reference/colors) and width of horizontal lines between rows. An instance of `ft.BorderSide` class.
+Set the [color](/docs/reference/colors) and width of horizontal lines between rows. An instance of [`BorderSide`](/docs/reference/types/borderside) class.
 
 ### `horizontal_margin`
 

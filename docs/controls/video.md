@@ -178,9 +178,9 @@ ft.app(target=main)
 
 ### `alignment`
 
-Defines the Alignment of the viewport. See [`Container.alignment`](/docs/controls/container#alignment) for more details.
+Defines the Alignment of the viewport. Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
 
-Defaults to `Alignment.center`.
+Defaults to `alignment.center`.
 
 ### `aspect_ratio`
 
@@ -192,13 +192,11 @@ Whether the video should start playing automatically.
 
 ### `fit`
 
-See [`Image.fit`](/docs/controls/image#fit) for more details.
+The value is [`ImageFit`](/docs/reference/types/imagefit) enum. Default is `NONE`.
 
 ### `filter_quality`
 
-Filter quality of the texture used to render the video output. Value is of type `FilterQuality` enum and can be one of the following: `NONE`, `LOW`, `MEDIUM` or `HIGH`. More details on each [here](https://api.flutter.dev/flutter/dart-ui/FilterQuality.html).
-
-Defaults to `FilterQuality.LOW`.
+Filter quality of the texture used to render the video output. Value is of type [`FilterQuality`](/docs/reference/types/filterquality) enum. Defaults to `LOW`.
 
 ### `fill_color`
 

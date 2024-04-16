@@ -80,11 +80,7 @@ Whether to exclude this image from semantics. Defaults to `False`.
 
 ### `filter_quality`
 
-The rendering quality of the image. Value is of type `FilterQuality` enum and can be one of the
-following: `NONE`, `LOW` (default), `MEDIUM` or `HIGH`. More details on
-each [here](https://api.flutter.dev/flutter/dart-ui/FilterQuality.html).
-
-When building for the web using the `html` WebRenderer, filter quality has no effect - all images are rendered using the respective browser's default setting.
+The rendering quality of the image. Value is of type [`FilterQuality`](/docs/reference/types/filterquality) enum. Defaults to `LOW`.
 
 ### `fit`
 

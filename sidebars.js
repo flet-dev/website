@@ -391,6 +391,7 @@ module.exports = {
             "reference/types/buttonstyle",
             "reference/types/clipbehavior",
             "reference/types/crossaxisalignment",
+            "reference/types/filterquality",
             "reference/types/floatingactionbuttonlocation",
             "reference/types/fontweight",
             "reference/types/imagefit",

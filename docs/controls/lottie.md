@@ -44,9 +44,7 @@ Whether the animation should be loaded in the background.
 
 ### `filter_quality`
 
-The quality of the image layer. Value is of type `FilterQuality` enum and can be one of the
-following: `NONE`, `LOW`, `MEDIUM` or `HIGH`. More details on
-each [here](https://api.flutter.dev/flutter/dart-ui/FilterQuality.html).
+The quality of the image layer. Value is of type [`FilterQuality`](/docs/reference/types/filterquality) enum. Defaults to `LOW`.
 
 ### `fit`
 
