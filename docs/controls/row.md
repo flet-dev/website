@@ -231,16 +231,7 @@ ft.app(target=main)
 
 How the child Controls should be placed horizontally.
 
-For example, `MainAxisAlignment.START`, the default, places the children on the left of a Row.
-
-Property value is `MainAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
+Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum. Default is `START`.
 
 ### `auto_scroll`
 
@@ -262,15 +253,7 @@ Spacing between runs when `wrap=True`. Default value is 10.
 
 Enables horizontal scrolling for the Row to prevent its content overflow.
 
-Property value is an optional `ScrollMode` enum with `None` as default.
-
-Supported values:
-
-* `None` (default) - the Row is non-scrollable and its content could overflow.
-* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
-* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
 
 ### `spacing`
 
@@ -288,23 +271,11 @@ Specifies how much space should be occupied horizontally. Default is `False` - a
 
 How the child Controls should be placed vertically.
 
-Property value is `CrossAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
 
 ### `wrap`
 
 When set to `True` the Row will put child controls into additional rows (runs) if they don't fit a single row.
-
-### `on_scroll`
-
-Fires when row's scroll position is changed by a user.
-
-See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
 
 ## Methods
 
@@ -320,7 +291,7 @@ See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-durat
 
 Fires when scroll position is changed by a user.
 
-See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
+Event handler argument is an instance of [`OnScrollEvent`](/docs/reference/types/onscrollevent) class.
 
 ## Expanding children
 

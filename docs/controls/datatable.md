@@ -146,9 +146,7 @@ A list of [`DataColumn`](#datacolumn) controls describing table columns.
 
 The background [color](/docs/reference/colors) for the data rows.
 
-The effective background color can be made to depend on the `MaterialState` state, i.e. if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent background color.
-
-See [`Checkbox.fill_color`](/docs/controls/checkbox#fill_color) property for more information and examples.
+The effective background color can be made to depend on the [`MaterialState`](/docs/reference/types/materialstate) state, i.e. if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent background color.
 
 ### `data_row_min_height`
 
@@ -160,7 +158,7 @@ The maximum height of each row (excluding the row that contains column headings)
 
 ### `data_text_style`
 
-The text style for data rows. An instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
+The text style for data rows. An instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `divider_thickness`
 
@@ -172,15 +170,17 @@ Must be greater than or equal to zero. This value defaults to 1.0.
 
 The background gradient for the table.
 
-See [`Container.gradient`](/docs/controls/container#gradient) property for more information and examples.
+The value must be an instance of one of the following classes:
+
+* [`LinearGradient`](/docs/reference/types/lineargradient)
+* [`RadialGradient`](/docs/reference/types/radialgradient)
+* [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `heading_row_color`
 
 The background [color](/docs/reference/colors) for the heading row.
 
-The effective background color can be made to depend on the `MaterialState` state, i.e. if the row is pressed, hovered, focused when sorted. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
-
-See [`Checkbox.fill_color`](/docs/controls/checkbox#fill_color) property for more information and examples.
+The effective background color can be made to depend on the [`MaterialState`](/docs/reference/types/materialstate) state, i.e. if the row is pressed, hovered, focused when sorted. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
 
 ### `heading_row_height`
 
@@ -188,11 +188,11 @@ The height of the heading row.
 
 ### `heading_text_style`
 
-The text style for the heading row. An instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
+The text style for the heading row. An instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `horizontal_lines`
 
-Set the [color](/docs/reference/colors) and width of horizontal lines between rows. An instance of `ft.BorderSide` class.
+Set the [color](/docs/reference/colors) and width of horizontal lines between rows. An instance of [`BorderSide`](/docs/reference/types/borderside) class.
 
 ### `horizontal_margin`
 
@@ -307,9 +307,7 @@ The [color](/docs/reference/colors) for the row.
 
 By default, the color is transparent unless selected. Selected rows has a grey translucent color.
 
-The effective color can depend on the `MaterialState` state, if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
-
-See [`Checkbox.fill_color`](/docs/controls/checkbox#fill_color) property for more information and examples.
+The effective color can depend on the [`MaterialState`](/docs/reference/types/materialstate) state, if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
 
 ### `selected`
 

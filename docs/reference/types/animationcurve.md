@@ -5,6 +5,8 @@ sidebar_label: AnimationCurve
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for examples.
+
 `AnimationCurve` enum has the following values:
 
 * `BOUNCE_IN`

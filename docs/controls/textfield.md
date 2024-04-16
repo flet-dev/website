@@ -215,7 +215,7 @@ TextField background [color](/docs/reference/colors). Will not be visible if `fi
 
 ### `border`
 
-Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
+Border around input. The value is [`InputBorder`](/docs/reference/types/inputborder) enum. The default is `OUTLINE`.
 
 ### `border_color`
 
@@ -223,11 +223,11 @@ Border [color](/docs/reference/colors). Could be `transparent` to hide the borde
 
 ### `border_radius`
 
-See [`Container.border_radius`](/docs/controls/container#border_radius) property docs for more information about border radius.
+Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `border_width`
 
-The width of the border in virtual pixels. Default is 1. Set to 0 to completely remove border.
+The width of the border in virtual pixels. Default is `1`. Set to `0` to completely remove border.
 
 ### `can_reveal_password`
 
@@ -239,12 +239,9 @@ The icon is displayed in the same location as `suffix` and in case both `can_rev
 
 Enables automatic on-the-fly capitalization of entered text.
 
-Property value is `TextCapitalization` enum with the following values:
+Property value is [`TextCapitalization`](/docs/reference/types/textcapitalization) enum.
 
-* `NONE` (default) - do not change entered text.
-* `CHARACTERS` - every entered symbol is capitalized.
-* `WORDS` - capitalize the first letter of every word.
-* `SENTENCES` - capitalize the first letter of every sentence.
+Default is `NONE`.
 
 ### `color`
 
@@ -254,11 +251,11 @@ Text [color](/docs/reference/colors).
 
 The padding for the input decoration's container.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `counter_style`
 
-The style to use for `counter_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `counter_text`.
 
 ### `counter_text`
 
@@ -294,7 +291,7 @@ This flag only affects Android. On iOS, suggestions are tied directly to `autoco
 
 ### `error_style`
 
-The style to use for `error_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `error_text`.
 
 ### `error_text`
 
@@ -331,7 +328,7 @@ Text [color](/docs/reference/colors) when TextField is focused.
 
 ### `helper_style`
 
-The style to use for `helper_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `helper_text`.
 
 ### `helper_text`
 
@@ -341,7 +338,7 @@ If non-null, the text is displayed below the input decorator, in the same locati
 
 ### `hint_style`
 
-The style to use for `hint_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `hint_text`.
 
 ### `hint_text`
 
@@ -358,44 +355,15 @@ Background [color](/docs/reference/colors) of TextField when hovered. Will not b
 The name of the icon to show before the input field and outside of the decoration's container.
 
 ### `input_filter`
-Provides as-you-type filtering/validation in your `TextField`. It prevents the insertion of characters matching (or not matching) a particular pattern(`regex_string`), by replacing the characters with the given `replacement_string`.
-When this parameter changes, the new filter will not be applied until the next time the user inserts or deletes text. 
-Note that, similar to the `on_change` callback, the input filters are not applied when the text is changed programmatically.
 
-`input_filter` is an instance of the `InputFilter` class, which takes 3 parameters: 
-- `regex_string`: a regular expression pattern for the filter
-- `allow`: a boolean value indicating whether to allow or deny/block the matched patterns - default is `True`
-- `replacement_string`: string used to replace banned/denied patterns - default is an empty string.
-
-The following helper classes are equally available:
-- `NumbersOnlyInputFilter()` - only allow numbers
-- `TextOnlyInputFilter()` - only allow text characters
-
-Usage Example:
-
-```python
-ft.TextField(
-    label="Only numbers are allowed :)",
-    input_filter=ft.InputFilter(allow=True, regex_string=r"[0-9]", replacement_string=""),
-    # input_filter=ft.NumbersOnlyInputFilter()
-)
-```
+Provides as-you-type filtering/validation in your `TextField`. 
+The value is an instance of the [`InputFilter`](/docs/reference/types/inputfilter) class.
 
 ### `keyboard_type`
 
-The type of keyboard to use for editing the text. The property value is `KeyboardType` enum with the following values:
+The type of keyboard to use for editing the text. The property value is [`KeyboardType`](/docs/reference/types/keyboardtype) enum.
 
-* `TEXT` (default)
-* `MULTILINE`
-* `NUMBER`
-* `PHONE`
-* `DATETIME`
-* `EMAIL`
-* `URL`
-* `VISIBLE_PASSWORD`
-* `NAME`
-* `STREET_ADDRESS`
-* `NONE`
+The default is `TEXT`.
 
 ### `label`
 
@@ -405,7 +373,7 @@ When the input field is empty and unfocused, the label is displayed on top of th
 
 ### `label_style`
 
-The style to use for `label`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `label`.
 
 ### `max_length`
 
@@ -451,7 +419,7 @@ An icon that appears before the `prefix` or `prefix_text` and before the editabl
 
 ### `prefix_style`
 
-The style to use for `prefix_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `prefix_text`.
 
 ### `prefix_text`
 
@@ -509,7 +477,7 @@ An icon that appears after the editable part of the text field and after the `su
 
 ### `suffix_style`
 
-The style to use for `suffix_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `suffix_text`.
 
 ### `suffix_text`
 
@@ -519,14 +487,7 @@ Optional text `suffix` to place on the line after the input.
 
 How the text should be aligned horizontally.
 
-Property value is `TextAlign` enum with the following values:
-
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Default is `LEFT`.
 
 ### `text_size`
 
@@ -534,15 +495,13 @@ Text size in virtual pixels.
 
 ### `text_style`
 
-The style to use for the text being edited.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for the text being edited.
 
 ### `text_vertical_align`
 
-Defines how the text should be aligned vertically. It's value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of type `VerticalAlignment` enum with the following values:
+Defines how the text should be aligned vertically. It's value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of type [`VerticalAlignment`](/docs/reference/types/verticalalignment) enum.
 
-* `START` - aligns the text vertically at the topmost location of the text field
-* `CENTER` (default) - aligns the text vertically in the center of the text field
-* `END` - aligns the text vertically at the bottommost location of the text field
+The default is `CENTER`. 
 
 ### `value`
 

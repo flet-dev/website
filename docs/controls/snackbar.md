@@ -78,9 +78,14 @@ This defines the behavior and location of the snack bar.
 
 Defines where a SnackBar should appear within a page and how its location should be adjusted when the page also includes a `FloatingActionButton` or a `NavigationBar`.
 
-If this property is `None`, then the default is `SnackBarBehavior.FIXED`.
+Property value is `SnackBarBehavior` enum with the following values:
 
-If this value is `SnackBarBehavior.FLOATING`, the length of the bar is defined by either `width` or `margin`.
+* `FIXED`
+* `FLOATING`
+
+If this property is `None`, then the default is `FIXED`.
+
+If this value is `FLOATING`, the length of the bar is defined by either `width` or `margin`.
 
 ### `bgcolor`
 
@@ -88,9 +93,9 @@ SnackBar background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The `content` will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Default value is `ClipBehavior.HARD_EDGE`.
+Default value is `HARD_EDGE`.
 
 ### `close_icon_color`
 
@@ -104,7 +109,16 @@ The primary content of the snack bar. Typically a [`Text`](/docs/controls/text) 
 
 The direction in which the SnackBar can be dismissed.
 
-Cannot be `None`, defaults to `DismissDirection.DOWN`.
+Property value is `DismissDirection` enum with the following values:
+
+* `NONE`
+* `VERTICAL`
+* `HORIZONTAL`
+* `END_TO_START`
+* `UP`
+* `DOWN`
+
+Cannot be `None`, defaults to `DOWN`.
 
 ### `duration`
 
@@ -128,9 +142,13 @@ Set to `True` to display a SnackBar. This property is automatically set to `Fals
 
 The amount of padding to apply to the snack bar's content and optional action.
 
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+
 ### `shape`
 
-The shape of the snack bar's. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
+The shape of the snack bar's. 
+
+The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 ### `show_close_icon`
 

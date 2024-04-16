@@ -434,24 +434,17 @@ Text size in virtual pixels. Default is `14`.
 
 ### `spans`
 
-The list of [`ft.TextSpan`](#textspan-properties) objects to build a rich text paragraph.
+The list of [`TextSpan`](/docs/reference/types/textspan) objects to build a rich text paragraph.
 
 ### `style`
 
-The text's style. An instance of type [`TextStyle`](#textstyle-properties).
+The text's style. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `text_align`
 
 Text horizontal align.
 
-Property value is `TextAlign` enum with the following values:
-
-- `LEFT` (default)
-- `RIGHT`
-- `CENTER`
-- `JUSTIFY`
-- `START`
-- `END`
+Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Default is `LEFT`.
 
 ### `theme_style`
 
@@ -481,154 +474,5 @@ The text displayed.
 
 Font weight.
 
-Property value is `FontWeight` enum with the following values:
+Property value is [`FontWeight`](/docs/reference/types/fontweight) enum. Default is `NORMAL`.
 
-- `NORMAL` (default)
-- `BOLD`
-- `W_100`
-- `W_200`
-- `W_300`
-- `W_400`
-- `W_500`
-- `W_600`
-- `W_700`
-- `W_800`
-- `W_900`
-
-## `TextStyle` properties
-
-A style describing how to format and paint text.
-
-### `bgcolor`
-
-See [`Text.bgcolor`](#bgcolor).
-
-### `color`
-
-See [`Text.color`](#color).
-
-### `decoration`
-
-The decorations to paint near the text (e.g., an underline).
-
-The value is the instance of `ft.TextDecoration` enum:
-
-- `NONE` (default) - Do not draw a decoration.
-- `UNDERLINE` - Draw a line underneath each line of text.
-- `OVERLINE` - Draw a line above each line of text.
-- `LINE_THROUGH` - Draw a line through each line of text.
-
-The enum is a flag, so multiple decorations can be combined together, for example:
-
-```python
-style = ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE | ft.TextDecoration.OVERLINE)
-```
-
-### `decoration_color`
-
-The [color](/docs/reference/colors) in which to paint the text decorations.
-
-### `decoration_style`
-
-The style in which to paint the text decorations (e.g., dashed).
-
-The value is the instance of `ft.TextDecorationStyle` enum:
-
-- `SOLID` (default) - Draw a solid line.
-- `DOUBLE` - Draw two lines.
-- `DOTTED` - Draw a dotted line.
-- `DASHED` - Draw a dashed line.
-- `WAVY` - Draw a sinusoidal line.
-
-### `decoration_thickness`
-
-The thickness of the decoration stroke as a multiplier of the thickness defined by the font.
-
-### `font_family`
-
-See [`Text.font_family`](#font_family).
-
-### `foreground`
-
-The paint drawn as a foreground for the text.
-
-The value is of [`ft.Paint`](/docs/controls/canvas#paint) class.
-
-### `height`
-
-The height of this text span, as a multiple of the font size.
-See complete explanation [here](https://api.flutter.dev/flutter/painting/TextStyle/height.html)
-
-### `italic`
-
-`True` to use italic typeface.
-
-### `letter_spacing`
-
-The amount of space (in logical pixels) to add between each letter. A negative value can be used to bring the letters closer.
-
-### `shadow`
-
-See [`Container.shadow`](/docs/controls/container#shadow).
-
-### `size`
-
-The size of glyphs (in logical pixels) to use when painting the text. Default is 14.
-
-### `weight`
-
-Font weight - see [Text.weight](#weight) for possible values.
-
-## `TextSpan` properties
-
-A span of text.
-
-### `semantics_label`
-
-An alternative semantics label for this text.
-
-If present, the semantics of this control will contain this value instead of the actual text.
-
-This is useful for replacing abbreviations or shorthands with the full text value:
-
-```python
-ft.Text("$$", semantics_label="Double dollars")
-```
-
-### `spans`
-
-Additional spans to include as children.
-
-If both `text` and `spans` are defined, the `text` will precede the `spans`.
-
-### `style`
-
-The [`TextStyle`](#textstyle-properties) to apply to this span.
-
-### `text`
-
-The text contained in this span.
-
-If both `text` and `spans` are defined, the `text` will precede the `spans`.
-
-### `url`
-
-The URL to open when the span is clicked. If registered, `on_click` event is fired after that.
-
-### `url_target`
-
-Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
-
-## `TextSpan` events
-
-### `on_click`
-
-Fires when the span is clicked.
-
-### `on_enter`
-
-Triggered when a mouse pointer has entered the span.
-
-### `on_exit`
-
-Triggered when a mouse pointer has exited the span.

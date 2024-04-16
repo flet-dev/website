@@ -105,7 +105,7 @@ The [color](/docs/reference/colors) of the selected destination indicator.
 
 ### `indicator_shape`
 
-The shape of the selected destination indicator. See [button style example](/docs/controls/elevatedbutton#style) for possible values.
+The shape of the selected destination indicator. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 ### `selected_index`
 

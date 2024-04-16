@@ -154,7 +154,7 @@ ft.app(target=main)
 
 Defines how the `hint` or the selected item is positioned within this dropdown.
 
-See [`Container.alignment`](/docs/controls/container#alignment) property for possible values.
+Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
 
 ### `autofocus`
 
@@ -168,7 +168,7 @@ To set a different background color for the dropdown button, use `fill_color` or
 
 ### `border`
 
-Border around input - `InputBorder` enum with one of the values: `OUTLINE` (default), `UNDERLINE`, `NONE`.
+Border around input. The value is [`InputBorder`](/docs/reference/types/inputborder) enum. The default is `OUTLINE`.
 
 ### `border_color`
 
@@ -176,11 +176,11 @@ Border [color](/docs/reference/colors). Could be `transparent` to hide the borde
 
 ### `border_radius`
 
-See [`Container.border_radius`] property docs for more information about border radius.
+Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `border_width`
 
-The width of the border in virtual pixels. Default is 1. Set to 0 to completely remove border.
+The width of the border in virtual pixels. Default is `1`. Set to `0` to completely remove border.
 
 ### `color`
 
@@ -188,11 +188,11 @@ Text [color](/docs/reference/colors).
 
 ### `content_padding`
 
-The padding for the input decoration's container.
+The [padding](/docs/reference/types/padding) for the input decoration's container.
 
 ### `counter_style`
 
-The style to use for `counter_text`.
+The [TextStyle](/docs/reference/types/textstyle) to use for `counter_text`.
 
 ### `counter_text`
 
@@ -217,7 +217,7 @@ Defaults to `True`.
 
 ### `error_style`
 
-The style to use for `error_text`.
+The [TextStyle](/docs/reference/types/textstyle) to use for `error_text`.
 
 ### `error_text`
 
@@ -254,7 +254,7 @@ Text [color](/docs/reference/colors) when Dropdown is focused.
 
 ### `helper_style`
 
-The style to use for `helper_text`.
+The [TextStyle](/docs/reference/types/textstyle) to use for `helper_text`.
 
 ### `helper_text`
 
@@ -268,7 +268,7 @@ A placeholder control for the dropdown's value that is displayed when `value` is
 
 ### `hint_style`
 
-The style to use for `hint_text`.
+The [TextStyle](/docs/reference/types/textstyle) to use for `hint_text`.
 
 ### `hint_text`
 
@@ -280,7 +280,7 @@ Displayed on top of the input when it's empty and either (a) `label` is null or 
 
 The name of the icon to show before the input field and outside of the decoration's container.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `icon_content`
 
@@ -310,7 +310,7 @@ When the input field is empty and unfocused, the label is displayed on top of th
 
 ### `label_style`
 
-The style to use for `label`.
+The [TextStyle](/docs/reference/types/textstyle) to use for `label`.
 
 ### `max_menu_height`
 
@@ -322,7 +322,7 @@ A list of `Option` controls representing items in this dropdown.
 
 ### `padding`
 
-The padding around the visible portion of this dropdown.
+The [padding](/docs/reference/types/padding) around the visible portion of this dropdown.
 
 ### `prefix`
 
@@ -340,7 +340,7 @@ An icon that appears before the `prefix` or `prefix_text` and before the editabl
 
 ### `prefix_style`
 
-The style to use for `prefix_text`.
+The [TextStyle](/docs/reference/types/textstyle) to use for `prefix_text`.
 
 ### `prefix_text`
 
@@ -362,7 +362,7 @@ An icon that appears after the editable part of the text field and after the `su
 
 ### `suffix_style`
 
-The style to use for `suffix_text`.
+The [TextStyle](/docs/reference/types/textstyle) to use for `suffix_text`.
 
 ### `suffix_text`
 
@@ -374,7 +374,7 @@ Text size in virtual pixels.
 
 ### `text_style`
 
-The text style to use for text in this dropdown button and the dropdown menu that appears when you tap the button.
+The [TextStyle](/docs/reference/types/textstyle) to use for text in this dropdown button and the dropdown menu that appears when you tap the button.
 
 ### `value`
 
@@ -408,7 +408,7 @@ Fires when the control has received focus.
 
 ### `alignment`
 
-Defines the alignment of this option in it's container. See [Container.alignment](/docs/controls/container#alignment) for possible values. 
+Defines the alignment of this option in it's container. Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class. 
 
 Defaults to `alignment.center_left`.
 

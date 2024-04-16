@@ -114,7 +114,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `border_side`
 
-Defines the color and weight of the chip's outline. Value is the instance of `BorderSide` class.
+Defines the color and weight of the chip's outline. Value is the instance of [`BorderSide`](/docs/reference/types/borderside) class.
 
 ### `check_color`
 
@@ -126,15 +126,13 @@ A non-negative value which defines the elevation of the chip when clicked/presse
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum.
-See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `ClipBehavior.NONE`.
+Defaults to `NONE`.
 
 ### `color`
 
-The [color](/docs/reference/colors) that fills the chip in various material states .
-See [`Radio.fill_color`](/docs/controls/radio#fill_color) for possible values.
+The [color](/docs/reference/colors) that fills the chip in various [`MaterialState`](/docs/reference/types/materialstate)s.
 
 ### `delete_icon_tooltip`
 
@@ -164,13 +162,13 @@ A `Control` that represents primary content of the chip, typically a [Text](/doc
 
 Padding around the `label`.
 
-By default, this is 4 logical pixels at the beginning and the end of the label, and zero on top and bottom.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+By default, this is 4 logical pixels at the beginning and the end of the label, and zero on top and bottom.
 
 ### `label_style`
 
-The style to be applied to the chip's `label`. See [`Text.textstyle`](/docs/controls/text#textstyle-properties) for more information about `TextStyle` and possible values.
+The style to be applied to the chip's `label`. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `leading`
 
@@ -182,9 +180,9 @@ Typically the leading control is an [`Icon`](/docs/controls/icon) or a [`CircleA
 
 The padding between the `label` and the outside shape.
 
-By default, this is 4 logical pixels on all sides.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+By default, this is 4 logical pixels on all sides.
 
 ### `selected`
 
@@ -206,15 +204,7 @@ The [color](/docs/reference/colors) used for the chip's background when the elev
 
 The shape of the border around the chip.
 
-The value is an instance of one of the following implementations:
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 The default shape is a `StadiumBorder`.
 
@@ -230,8 +220,7 @@ The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate 
 
 Defines how compact the control's layout will be.
 
-Property value is `ThemeVisualDensity` enum with the following possible
-values: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+The value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
 
 ## Events
 

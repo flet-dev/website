@@ -127,9 +127,9 @@ This is used to indicate to the user what they are selecting a date for. The def
 
 ### `keyboard_type`
 
-The type of keyboard to use for editing the text. See [`KeyboardType`](/docs/controls/textfield#keyboard_type) for possible values.
+The type of keyboard to use for editing the text. The property value is [`KeyboardType`](/docs/reference/types/keyboardtype) enum.
 
-Defaults to `KeyboardType.DATETIME`.
+Defaults to `DATETIME`.
 
 ### `last_date`
 

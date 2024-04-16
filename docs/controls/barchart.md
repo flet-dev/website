@@ -214,7 +214,9 @@ A gap between bar groups.
 
 ### `animate`
 
-Controls chart implicit animation. See [`LineChart.animate`](/docs/controls/linechart#animate) property for more information and possible values.
+Controls chart implicit animation. 
+
+The value is of [`AnimationValue`](/docs/reference/types/animationvalue) type.
 
 ### `interactive`
 
@@ -230,7 +232,9 @@ Background [color](/docs/reference/colors) of tooltips.
 
 ### `border`
 
-The border around the chart. The value is the instance of `ft.Border` class.
+The border around the chart. 
+
+The value is an instance of [`border.Border`](/docs/reference/types/border) class.
 
 ### `horizontal_grid_lines`
 
@@ -323,7 +327,11 @@ Rod [color](/docs/reference/colors). Default is `cyan`.
 
 ### `gradient`
 
-Gradient to draw rod's background. See [`Container.gradient`](/docs/controls/container#gradient) property for more information and possible values.
+Gradient to draw rod's background. The value must be an instance of one of the following classes:
+
+* [`LinearGradient`](/docs/reference/types/lineargradient)
+* [`RadialGradient`](/docs/reference/types/radialgradient)
+* [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `border_radius`
 
@@ -331,7 +339,7 @@ Border radius of a bar rod. Default is `4`.
 
 ### `border_side`
 
-Border to draw around rod. The value is the instance of `BorderSide` class.
+Border to draw around rod. The value is the instance of [`BorderSide`](/docs/reference/types/borderside) class.
 
 ### `bg_from_y`
 
@@ -363,11 +371,11 @@ A custom tooltip value. Default is `to_y`.
 
 ### `tooltip_style`
 
-A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
+A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `tooltip_align`
 
-An align for the tooltip. The value is the instance of `ft.TextAlign` enum.
+An align for the tooltip. The value is the instance of [`TextAlign`](/docs/reference/types/textalign) enum.
 
 ## `BarChartRodStackItem` properties
 
@@ -385,7 +393,7 @@ A [color](/docs/reference/colors) of stack item.
 
 ### `border_side`
 
-A border around stack item. The value is the instance of `ft.BorderSide` class.
+A border around stack item. The value is the instance of [`BorderSide`](/docs/reference/types/borderside) class.
 
 ## `ChartGridLines` properties
 

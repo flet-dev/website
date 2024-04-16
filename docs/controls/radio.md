@@ -101,33 +101,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `fill_color`
 
-The [color](/docs/reference/colors) that fills the radio, in all `MaterialState` states:
-
-* `HOVERED`
-* `FOCUSED`
-* `PRESSED`
-* `DRAGGED`
-* `SELECTED`
-* `SCROLLED_UNDER`
-* `DISABLED`
-* `ERROR`
-* `DEFAULT` - fallback state, meaning "all other states".
-
-To configure radio fill color for all Material states set `fill_color` value to a literal, for example:
-
-```python
-rd.fill_color=ft.colors.GREEN
-```
-
-To configure fill color for specific Material states set its value to a dictionary where the key is state name. For example, to configure different fill colors for `HOVERED` and `FOCUSED` states and another color for all other states:
-
-```python
-rd.fill_color={
-    ft.MaterialState.HOVERED: ft.colors.GREEN,
-    ft.MaterialState.FOCUSED: ft.colors.RED,
-    ft.MaterialState.DEFAULT: ft.colors.BLACK,
-}
-```
+The [color](/docs/reference/colors) that fills the radio, in all or specific [`MaterialState`](/docs/reference/types/materialstate) states.
 
 ### `focus_color`
 
@@ -143,21 +117,20 @@ The clickable label to display on the right of a Radio.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](/docs/controls/text#textstyle-properties).
+The label's style. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `label_position`
 
-Property value is `LabelPosition` enum with `LabelPosition.RIGHT` as default.
+Property value is [`LabelPosition`](/docs/reference/types/labelposition) enum. The default value is `RIGHT`.
 
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
+The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
-The overlay [color](/docs/reference/colors) of this radio, for each `MaterialState` state. See `fill_color` for usage
-example.
+The overlay [color](/docs/reference/colors) of this radio in all or specific [`MaterialState`](/docs/reference/types/materialstate) states.
 
 ### `splash_radius`
 
@@ -173,7 +146,7 @@ The value to set to containing `RadioGroup` when the radio is selected.
 
 ### `visual_density`
 
-Defines how compact the radio's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+Defines how compact the radio's layout will be. The value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
 
 ## `Radio` events
 

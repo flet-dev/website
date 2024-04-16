@@ -81,10 +81,11 @@ The ratio of the cross-axis to the main-axis extent of each child.
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option.
-See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The content will be clipped (or not) according to this option.
 
-Default value is `ClipBehavior.HARD_EDGE`.
+Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+
+Default value is `HARD_EDGE`.
 
 ### `controls`
 
@@ -106,7 +107,7 @@ Throttling in milliseconds for `on_scroll` event. Default is `10`.
 
 The amount of space by which to inset the children.
 
-See [`Container.padding`](/docs/controls/container#padding) property for more information and possible values.
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `reverse`
 
@@ -142,4 +143,4 @@ See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-durat
 
 Fires when scroll position is changed by a user.
 
-See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
+Event handler argument is an instance of [`OnScrollEvent`](/docs/reference/types/onscrollevent) class.

@@ -102,11 +102,13 @@ The controls to be displayed when the tile expands. Typically `ListTile` control
 
 Defines the padding around the `controls`.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
+Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is `ClipBehavior` enum. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The content will be clipped (or not) according to this option.
+
+Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
 Defaults to `ClipBehavior.NONE`.
 
@@ -120,16 +122,7 @@ The icon [color](/docs/reference/colors) of tile's expansion arrow icon when the
 
 ### `collapsed_shape`
 
-The tile's border shape when the sublist is collapsed. The value is an instance of type `OutlinedBorder` from which the below inherit:
-
-* `StadiumBorder`
-* `RoundedRectangleBorder`
-  * `radius` - border radius, an instance of `BorderRadius` class or a number.
-* `CircleBorder`
-* `BeveledRectangleBorder`
-  * `radius` - border radius, an instance of `BorderRadius` class or a number.
-* `ContinuousRectangleBorder`
-  * `radius` - border radius, an instance of `BorderRadius` class or a number.
+The tile's border shape when the sublist is collapsed. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 ### `collapsed_text_color`
 
@@ -153,19 +146,13 @@ Defaults to `True`.
 
 Defines the alignment of children, which are arranged in a column when the tile is expanded.
 
-See [`Container.alignment`](/docs/controls/container#alignment) property for more information and possible values.
+Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
 
 ### `expanded_cross_axis_alignment`
 
 Defines the alignment of each child control within `controls` when the tile is expanded.
 
-Property value is `CrossAxisAlignment` enum with the following values:
-
-* `START` 
-* `CENTER` (default)
-* `END`
-* `STRETCH`
-* `BASELINE`
+Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `CENTER`.
 
 ### `icon_color`
 
@@ -185,16 +172,7 @@ A boolean value which defines whether the state of the `controls` is maintained 
 
 ### `shape`
 
-The tile's border shape when the sublist is expanded. The value is an instance of type `OutlinedBorder` from which the below inherit:
-
-* `StadiumBorder`
-* `RoundedRectangleBorder`
-  * `radius` - border radius, an instance of `BorderRadius` class or a number.
-* `CircleBorder`
-* `BeveledRectangleBorder`
-  * `radius` - border radius, an instance of `BorderRadius` class or a number.
-* `ContinuousRectangleBorder`
-  * `radius` - border radius, an instance of `BorderRadius` class or a number.
+The tile's border shape when the sublist is expanded. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 ### `subtitle`
 
@@ -208,7 +186,7 @@ The [color](/docs/reference/colors) of the tile's titles when the sublist is exp
 
 Defines the tile's padding. Default value is `padding.symmetric(horizontal=16.0)`.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
+Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `title`
 
@@ -220,7 +198,7 @@ A `Control` to display after the title. Typically an [Icon](/docs/controls/icon)
 
 ### `visual_density`
 
-Defines how compact the control's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+Defines how compact the control's layout will be. The value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
 
 ## Events
 

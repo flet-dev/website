@@ -73,16 +73,16 @@ The content of the Banner. Typically a [`Text`](/docs/controls/text) control.
 
 The amount of space by which to inset the content.
 
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+
 If the actions are below the content, this defaults to `padding.only(left=16.0, top=24.0, right=16.0, bottom=4.0)`.
 
 If the actions are trailing the content, this defaults to `padding.only(left=16.0, top=2.0)`.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
-
 ### `content_text_style`
 
 The style to be used for the `Text` controls in the `content`. Value is an instance of
-type [`TextStyle`](/docs/controls/text#textstyle-properties).
+type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `divider_color`
 
@@ -108,12 +108,17 @@ Typically an [`Icon`](/docs/controls/icon) control.
 
 ### `leading_padding`
 
-The amount of space by which to inset the leading control. This defaults to 16 virtual pixels. See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The amount of space by which to inset the leading control. 
+
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+
+Defaults to 16 virtual pixels.
 
 ### `margin`
 
-The amount of space surrounding the banner. See [`Container.margin`](/docs/controls/container#margin) for more information and possible
-values.
+The amount of space surrounding the banner. 
+
+The value is an instance of [`margin.Margin`](/docs/reference/types/margin) class or a number.
 
 ### `open`
 

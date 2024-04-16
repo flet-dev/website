@@ -57,9 +57,9 @@ ft.app(target=main)
 
 ### `alignment`
 
-Aligns the label relative to the content of the badge. 
+Aligns the label relative to the content of the badge. The value is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
 
-The alignment positions the label in similar way content of a container is positioned using its [`alignment`](/docs/controls/container#alignment), except that, the badge alignment is resolved as if the label was a [`large_size`](/docs/controls/badge#large_size) square and `offset` is added to the result.
+The alignment positions the label in similar way content of a container is positioned using its [`alignment`](/docs/controls/container#alignment), except that the badge alignment is resolved as if the label was a [`large_size`](/docs/controls/badge#large_size) square and `offset` is added to the result.
 
 This value is only used if `text` property is provided.
 
@@ -100,7 +100,7 @@ The padding added to the badge's label.
 
 This value is only used if `text` is provided. Defaults to 4 pixels on the left and right.
 
-See Container's [`padding`](/docs/controls/container#padding) for possible values.
+Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `small_size`
 
@@ -122,7 +122,7 @@ If `text` is provided, the label is a StadiumBorder shaped badge with height equ
 
 ### `text_style`
 
-The text style to use for text in the label. See [`text_style` properties](/docs/controls/text#textstyle-properties) for possible values.
+The text style to use for text in the label. The value is an instance if [`TextStyle`](/docs/reference/types/textstyle) class.
 
 
 

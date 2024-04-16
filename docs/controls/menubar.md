@@ -127,9 +127,9 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. See [Container.clip_behavior](/docs/controls/container#clip_behavior) for possible values.
+Whether to clip the content of this control or not. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `ClipBehavior.NONE`.
+Defaults to `NONE`.
 
 ### `controls`
 
@@ -137,61 +137,4 @@ The list of menu items that are the top level children of the `MenuBar`.
 
 ### `style`
 
-The value is an instance of `MenuStyle` class. `MenuStyle` allows controlling the menu's visual aspects, such as shape,
-background and shadow colors, content padding, border width and radius.
-
-Each individual style attribute could be configured for all or particular "Material states" of a menu, such as "hovered", "focused", "disabled" and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
-
-The following `MaterialState` values are supported:
-
-* `HOVERED`
-* `FOCUSED`
-* `PRESSED`
-* `DRAGGED`
-* `SELECTED`
-* `SCROLLEDUNDER`
-* `DISABLED`
-* `ERROR`
-* `DEFAULT` - fallback state, meaning "all other states".
-
-To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `bgcolor` property to a literal the value will be applied to all menu states:
-
-```python
-ft.MenuStyle(
-    bgcolor=ft.colors.RED
-)
-```
-
-To configure style attribute for specific Material states set its value to a dictionary where the key is state name. For example, to configure different background colors for `HOVERED` and `FOCUSED` states and another colors for all other states:
-
-```python
-ft.MenuStyle(
-    bgcolor={
-        ft.MaterialState.HOVERED: ft.colors.WHITE,
-        ft.MaterialState.FOCUSED: ft.colors.BLUE,
-        ft.MaterialState.DEFAULT: ft.colors.BLACK,
-    }
-)
-```
-
-#### `MenuStyle` class
-
-`MenuStyle` class has the following properties:
-
-* `alignment` - Defines the desired alignment of the submenu when opened relative to the button that opens it.
-* `bgcolor` - The menu's background fill color.
-* `elevation` - The elevation of the menu's Material.
-* `padding` - The padding between the menu's boundary and its child.
-* `shadow_color` - The shadow color of the menu's Material.
-* `shape` - The shape of the menu's underlying Material, an instance of one of the following implementations:
-    * `StadiumBorder`
-    * `RoundedRectangleBorder`
-        * `radius` - border radius, an instance of `BorderRadius` class or a number.
-    * `CircleBorder`
-    * `BeveledRectangleBorder`
-        * `radius` - border radius, an instance of `BorderRadius` class or a number.
-    * `ContinuousRectangleBorder`
-        * `radius` - border radius, an instance of `BorderRadius` class or a number.
-* `side` - An instance of `BorderSide` class, the color and weight of the menu's outline.
-* `surface_tint_color` - The surface tint color of the menu's Material.
-
+The value is an instance of [`MenuStyle`](/docs/reference/types/menustyle) class. 

@@ -81,9 +81,9 @@ The padding that surrounds each button in `actions`.
 
 ### `actions_alignment`
 
-Defines the horizontal layout of the actions according to the same rules as for [`Row.alignment`](/docs/controls/row#alignment).
+Defines the horizontal layout of the actions.
 
-Property value is `MainAxisAlignment` enum with `MainAxisAlignment.END` as default.
+Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum. Default is `END`.
 
 ### `actions_padding`
 
@@ -93,7 +93,7 @@ Typically used to provide padding to the button bar between the button bar and t
 
 If are no actions, then no padding will be included. The padding around the button bar defaults to zero.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `adaptive`
 
@@ -110,9 +110,9 @@ The background [color](/docs/reference/colors) of the dialog's surface.
 ### `clip_behavior`
 
 Controls how the contents of the dialog are clipped (or not) to the given `shape`.
-See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `ClipBehavior.NONE`.
+Defaults to `NONE`.
 
 ### `content`
 
@@ -124,7 +124,7 @@ Padding around the content.
 
 If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `elevation`
 
@@ -142,9 +142,9 @@ Padding around the `icon`.
 
 Padding around the Dialog itself.
 
-The default values of this property are 40 pixels horizontally and 24 pixels vertically outside of the dialog box. (`padding.symmetric(vertical=40, horizontal=24)`)
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The default values of this property are 40 pixels horizontally and 24 pixels vertically outside of the dialog box. (`padding.symmetric(vertical=40, horizontal=24)`)
 
 ### `modal`
 
@@ -166,7 +166,7 @@ The [color](/docs/reference/colors) used to paint a drop shadow under the dialog
 
 ### `shape`
 
-The shape of the dialog's border. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
+The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 The default shape is a `RoundedRectangleBorder` with a radius of `4.0`.
 
@@ -187,9 +187,9 @@ Padding around the title.
 
 If there is no title, no padding will be provided. Otherwise, this padding is used.
 
-This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
 
 ## Events
 

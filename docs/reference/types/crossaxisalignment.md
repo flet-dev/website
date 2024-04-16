@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 `CrossAxisAlignment` enum has the following values:
 
-* `START` (default)
+* `START`
 * `CENTER`
 * `END`
 * `STRETCH`

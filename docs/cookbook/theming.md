@@ -64,7 +64,7 @@ True` (default) to use Material 3 design; otherwise Material 2.
 
 #### `visual_density` 
 
-ThemeVisualDensity enum: `STANDARD` (default), `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+Value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum. Default is `STANDARD`.
 
 #### `page_transitions`
 

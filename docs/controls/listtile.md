@@ -115,9 +115,7 @@ The list tile's splash [color](/docs/reference/colors) after the tile was tapped
 
 The tile's internal padding. Insets a ListTile's contents: its `leading`, `title`, `subtitle`, and `trailing` controls.
 
-If not set, `padding.symmetric(horizontal=16)` is used.
-
-See [`Container.padding`](/docs/controls/container#padding) property for more information and possible values.
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class. If not set, `padding.symmetric(horizontal=16)` is used.
 
 ### `dense`
 
@@ -157,7 +155,7 @@ A `Control` to display before the title.
 
 ### `leading_and_trailing_text_style`
 
-The [TextStyle](/docs/controls/text#textstyle-properties)] for the `leading` and `trailing` controls.
+The [`TextStyle`](/docs/reference/types/textstyle) for the `leading` and `trailing` controls.
 
 ### `min_leading_width`
 
@@ -170,7 +168,7 @@ The minimum padding on the top and bottom of the `title` and `subtitle` controls
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
+The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `selected`
 
@@ -186,7 +184,7 @@ Defines the background [color](/docs/reference/colors) of ListTile when `selecte
 
 ### `shape`
 
-The tile's shape. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
+The tile's shape. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 ### `subtitle`
 
@@ -196,7 +194,7 @@ If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True
 
 ### `subtitle_text_style`
 
-The [TextStyle](/docs/controls/text#textstyle-properties) for the `subtitle` control.
+The [`TextStyle`](/docs/reference/types/textstyle) for the `subtitle` control.
 
 ### `style`
 
@@ -207,7 +205,7 @@ Defines the font used for the title. Value is `ListTileStyle` enum, which has tw
 
 ### `text_color`
 
-The [color](/docs/reference/colors) used for text. Defines the [color](/docs/reference/colors) of `Text` controls found in `title`, `subtitle`, `leading`, and `trailing`.
+The [color](/docs/reference/colors) used for text. Defines the color of `Text` controls found in `title`, `subtitle`, `leading`, and `trailing`.
 
 ### `title`
 
@@ -225,7 +223,7 @@ Defines how `leading` and `trailing` are vertically aligned relative to the titl
 
 ### `title_text_style`
 
-The [TextStyle](/docs/controls/text#textstyle-properties) for the `title` control.
+The [`TextStyle`](/docs/reference/types/textstyle) for the `title` control.
 
 ### `toggle_inputs`
 
@@ -241,11 +239,11 @@ The URL to open when the list tile is clicked. If registered, `on_click` event i
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
+Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
 
 ### `visual_density`
 
-Defines how compact the control's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+Defines how compact the control's layout will be. Value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
 
 ## Events
 

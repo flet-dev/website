@@ -161,7 +161,7 @@ If the `max` is equal to the `min`, then the slider is disabled.
 
 ### `overlay_color`
 
-The highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is hovered or dragged. See [Radio.fill_color](/docs/controls/radio#fill_color) for usage examples.
+The highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is in `HOVERED` or `DRAGGED` [`MaterialState`](/docs/reference/types/materialstate)s.
 
 ### `round`
 

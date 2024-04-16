@@ -5,7 +5,7 @@ sidebar_label: Padding
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-`padding.Padding` class has the followting properties to set padding for all sides of the rectangle:: 
+`padding.Padding` class has the following properties to set padding for all sides of the rectangle:: 
 * `left`
 * `top`
 * `right`

@@ -61,13 +61,13 @@ TextField background [color](/docs/reference/colors).
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background. See [`ShaderMask.blend_mode`](/docs/controls/shadermask#blend_mode) for more details.
+The blend mode applied to the `color` or `gradient` background. Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODULATE` as default.
 
 ### `border`
 
 A border to draw around input.
 
-See [`Container.border`](/docs/controls/container#border) property docs for more information about border.
+The value is an instance of [`border.Border`](/docs/reference/types/border) class.
 
 ### `border_color`
 
@@ -75,7 +75,7 @@ Border [color](/docs/reference/colors). Could be `transparent` to hide the borde
 
 ### `border_radius`
 
-See [`Container.border_radius`](/docs/controls/container#border_radius) property docs for more information about border radius.
+Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `can_reveal_password`
 
@@ -87,12 +87,9 @@ The icon is displayed in the same location as `suffix` and in case both `can_rev
 
 Enables automatic on-the-fly capitalization of entered text.
 
-Property value is `TextCapitalization` enum with the following values:
+Property value is [`TextCapitalization`](/docs/reference/types/textcapitalization) enum.
 
-* `NONE` (default) - do not change entered text.
-* `CHARACTERS` - every entered symbol is capitalized.
-* `WORDS` - capitalize the first letter of every word.
-* `SENTENCES` - capitalize the first letter of every sentence.
+Default is `NONE`.
 
 ### `clear_button_semantics_label`
 
@@ -106,7 +103,7 @@ Text [color](/docs/reference/colors).
 
 The padding for the input decoration's container.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
 ### `cursor_color`
 
@@ -156,51 +153,25 @@ Text [color](/docs/reference/colors) when TextField is focused.
 
 ### `gradient`
 
-Configures gradient background. See [`Container.gradient`](/docs/controls/container#gradient) for more information about gradient and possible values.
+Configures gradient background. The value must be an instance of one of the following classes:
 
+* [`LinearGradient`](/docs/reference/types/lineargradient)
+* [`RadialGradient`](/docs/reference/types/radialgradient)
+* [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `input_filter`
-Provides as-you-type filtering/validation in your `TextField`. It prevents the insertion of characters matching (or not matching) a particular pattern(`regex_string`), by replacing the characters with the given `replacement_string`.
-When this parameter changes, the new filter will not be applied until the next time the user inserts or deletes text. 
-Note that, similar to the `on_change` callback, the input filters are not applied when the text is changed programmatically.
-
-`input_filter` is an instance of the `InputFilter` class, which takes 3 parameters: 
-- `regex_string`: a regular expression pattern for the filter
-- `allow`: a boolean value indicating whether to allow or deny/block the matched patterns - default is `True`
-- `replacement_string`: string used to replace banned/denied patterns - default is an empty string.
-
-The following helper classes are equally available:
-- `NumbersOnlyInputFilter()` - only allow numbers
-- `TextOnlyInputFilter()` - only allow text characters
-
-Usage Example:
-
-```python
-ft.CupertinoTextField(
-    placeholder_text="Only numbers are allowed :)",
-    input_filter=ft.InputFilter(allow=True, regex_string=r"[0-9]", replacement_string=""),
-)
-```
+Provides as-you-type filtering/validation in your `TextField`. 
+The value is an instance of the [`InputFilter`](/docs/reference/types/inputfilter) class.
 
 ### `keyboard_type`
 
-The type of keyboard to use for editing the text. The property value is `KeyboardType` enum with the following values:
+The type of keyboard to use for editing the text. The property value is [`KeyboardType`](/docs/reference/types/keyboardtype) enum.
 
-* `TEXT` (default)
-* `MULTILINE`
-* `NUMBER`
-* `PHONE`
-* `DATETIME`
-* `EMAIL`
-* `URL`
-* `VISIBLE_PASSWORD`
-* `NAME`
-* `STREET_ADDRESS`
-* `NONE`
+The default is `TEXT`.
 
 ### `max_length`
 
-Limits a maximum number of characters that can be entered into TextField.
+Limits a maximum number of characters that can be entered into CupertinoTextField.
 
 ### `max_lines`
 
@@ -232,7 +203,7 @@ A lighter colored placeholder hint that appears on the first line of the text fi
 
 ### `placeholder_style`
 
-The style to use for `placeholder_text`.
+The [TextStyle](/docs/reference/types/textstyle) to use for `placeholder_text`.
 
 ### `prefix`
 
@@ -242,12 +213,9 @@ Optional `Control` to place on the line before the input.
 
 Defines the visibility of the `prefix` control based on the state of text entry. Has no effect if `prefix` is not specified.
 
-The property value is `VisibilityMode` enum with the following values:
+The property value is [`VisibilityMode`](/docs/reference/types/visibilitymode) enum.
 
-* `ALWAYS` (default) - `prefix` is always visible regardless of the text entry state
-* `NEVER` - `prefix` is never visible regardless of the text entry state
-* `EDITING` - `prefix` is visible only when the text entry is in editing mode
-* `NOT_EDITING` - `prefix` is visible only when the current text entry is empty
+The default is `ALWAYS`.
 
 ### `read_only`
 
@@ -297,25 +265,17 @@ Optional `Control` to place on the line after the input.
 
 Defines the visibility of the `suffix` control based on the state of text entry. Has no effect if `suffix` is not specified.
 
-The property value is `VisibilityMode` enum with the following values:
+The property value is [`VisibilityMode`](/docs/reference/types/visibilitymode) enum.
 
-* `ALWAYS` (default) - `suffix` is always visible regardless of the text entry state
-* `NEVER` - `suffix` is never visible regardless of the text entry state
-* `EDITING` - `suffix` is visible only when the text entry is in editing mode
-* `NOT_EDITING` - `suffix` is visible only when the current text entry is empty
+The default is `ALWAYS`.
 
 ### `text_align`
 
 How the text should be aligned horizontally.
 
-Property value is `TextAlign` enum with the following values:
+Property value is [`TextAlign`](/docs/reference/types/textalign) enum.
 
-* `LEFT` (default)
-* `RIGHT`
-* `CENTER`
-* `JUSTIFY`
-* `START`
-* `END`
+The default is `LEFT`.
 
 ### `text_size`
 
@@ -323,15 +283,13 @@ Text size in virtual pixels.
 
 ### `text_vertical_align`
 
-Defines how the text should be aligned vertically. It's value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of type `VerticalAlignment` enum with the following values:
+Defines how the text should be aligned vertically. It's value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of type [`VerticalAlignment`](/docs/reference/types/verticalalignment) enum.
 
-* `START` - aligns the text vertically at the topmost location of the text field
-* `CENTER` (default) - aligns the text vertically in the center of the text field
-* `END` - aligns the text vertically at the bottommost location of the text field
+The default is `CENTER`. 
 
 ### `text_style`
 
-The style to use for the text being edited.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for the text being edited.
 
 ### `value`
 

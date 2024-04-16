@@ -95,9 +95,7 @@ The default value is `False`.
 
 ### `alignment`
 
-Defines how the icon is positioned within the IconButton. Defaults to `alignment.center`.
-
-See [`Container.alignment`](/docs/controls/container#alignment) for more information and possible values.
+Defines how the icon is positioned within the IconButton. Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class. Defaults to `alignment.center`.
 
 ### `autofocus`
 
@@ -144,13 +142,15 @@ Icon size in virtual pixels.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
+The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `padding`
 
 Defines the padding around this button. The entire padded icon will react to input gestures.
 
-Default value is `padding.all(8)`. See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
+Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class. 
+
+Default value is `padding.all(8)`.
 
 ### `selected`
 
@@ -164,7 +164,7 @@ Icon shown in the button in selected state.
 
 Icon [color](/docs/reference/colors) for the selected state.
 
-En example of icon toggle button:
+An example of icon toggle button:
 
 <img src="/img/blog/gradients/toggle-icon-button.gif" className="screenshot-10" />
 
@@ -200,7 +200,7 @@ The splash radius. Honoured only when in Material 2.
 
 ### `style`
 
-See [ElevatedButton.style](/docs/controls/elevatedbutton#style) for more information about this property.
+The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class.
 
 ### `tooltip`
 
@@ -212,11 +212,11 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode. See [Container.url_target](/docs/controls/container#url_target) for possible values.
+Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
 
 ### `visual_density`
 
-Defines how compact the control's layout will be. Value is of `ThemeVisualDensity` enum: `STANDARD`, `COMPACT`, `COMFORTABLE`, `ADAPTIVE_PLATFORM_DENSITY`.
+Defines how compact the control's layout will be. Value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
 
 ## Methods
 

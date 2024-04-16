@@ -71,7 +71,7 @@ The [color](/docs/reference/colors) of the selected destination indicator.
 
 ### `indicator_shape`
 
-The shape of the selected destination indicator. See [button style example](/docs/controls/elevatedbutton#style) for possible values.
+The shape of the selected destination indicator. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 ### `label_behavior`
 
@@ -87,9 +87,8 @@ Property value is `NavigationBarLabelBehavior` enum with the following values:
 
 ### `overlay_color`
 
-The highlight [color](/docs/reference/colors) that's typically used to indicate that the `NavigationDestination` is focused, hovered, or pressed.
-
-See [`Radio.fill_color`](/docs/controls/radio#fill_color) for usage example.
+The hightlight [color](/docs/reference/colors) of the `NavigationDestination` in various [`MaterialState`](/docs/reference/types/materialstate) states. The
+following [`MaterialState`](/docs/reference/types/materialstate) values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
 
 ### `selected_index`
 

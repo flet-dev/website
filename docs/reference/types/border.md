@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 * `bottom`
 * `left`
 
-Each side of the border is described by an instance of `border.BorderSide` class with two properties: `width` (number) and `color` (string). The value of `border` property is an instance of `border.Border` class describing all 4 sides of the rectangle. Helper methods available to set border styles:
+Each side of the border is described by an instance of [`border.BorderSide`](/docs/reference/types/borderside) class. The value of `border` property is an instance of `border.Border` class describing all 4 sides of the rectangle. Helper methods available to set border styles:
 
 * `border.all(width, color)`
 * `border.symmetric(vertical: BorderSide, horizontal: BorderSide)`

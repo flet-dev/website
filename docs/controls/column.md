@@ -387,7 +387,7 @@ A list of Controls to display inside the Column.
 
 How the child Controls should be placed horizontally.
 
-Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum.
+Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
 
 ### `on_scroll_interval`
 

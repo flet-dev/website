@@ -62,8 +62,7 @@ Duration of animation in milliseconds of swtiching between tabs. Default is `50`
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior)
-for possible values.
+The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
 ### `divider_color`
 
@@ -117,11 +116,12 @@ The [color](/docs/reference/colors) of selected tab labels.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-See [`MouseCursor`](/docs/controls/gesturedetector#mouse_cursor) for possible values.
+The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
-Defines the ink response focus, hover, and splash [colors](/docs/reference/colors). If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
+Defines the ink response focus, hover, and splash [colors](/docs/reference/colors) in various [`MaterialState`](/docs/reference/types/materialstate) states. 
+The following `MaterialState` values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
 
 ### `selected_index`
 

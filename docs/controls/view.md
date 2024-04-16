@@ -94,15 +94,7 @@ A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to displ
 
 How the child Controls should be placed horizontally.
 
-Default value is `CrossAxisAlignment.START` which means on the left side of the Page.
-
-Property value is `CrossAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
 
 ### `on_scroll_interval`
 
@@ -110,34 +102,15 @@ Throttling in milliseconds for `on_scroll` event. Default is `10`.
 
 ### `padding`
 
-A space between page contents and its edges. Default value is 10 pixels from each side. To set zero padding:
+A space between page contents and its edges. Default value is 10 pixels from each side.
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-page.padding = 0
-page.update()
-```
-
-  </TabItem>
-</Tabs>
-
-See [`Container.padding`](/docs/controls/container#padding) for more information and possible values.
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `scroll`
 
 Enables a vertical scrolling for the Page to prevent its content overflow.
 
-Property value is an optional `ScrollMode` enum with `None` as default.
-
-Supported values:
-
-* `None` (default) - the Row is non-scrollable and its content could overflow.
-* `AUTO` - scrolling is enabled and scroll bar is only shown when scrolling occurs.
-* `ADAPTIVE` - scrolling is enabled and scroll bar is always shown when running app as web or desktop.
-* `ALWAYS` - scrolling is enabled and scroll bar is always shown.
-* `HIDDEN` - scrolling is enabled, but scroll bar is always hidden.
+Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
 
 ### `spacing`
 
@@ -147,16 +120,7 @@ Vertical spacing between controls on the Page. Default value is 10 virtual pixel
 
 How the child Controls should be placed vertically.
 
-For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
-
-Property value is `MainAxisAlignment` enum with the following values:
-
-* `START` (default)
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
+Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum. Default is `START`.
 
 ## Methods
 
@@ -172,4 +136,4 @@ See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-durat
 
 Fires when scroll position is changed by a user.
 
-See [`Column.on_scroll`](/docs/controls/column#on_scroll) for event details and examples.
+Event handler argument is an instance of [`OnScrollEvent`](/docs/reference/types/onscrollevent) class.

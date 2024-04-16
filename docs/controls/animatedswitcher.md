@@ -73,12 +73,18 @@ The duration, in milliseconds, of the transition from the new `content` value to
 
 ### `switch_in_curve`
 
-The animation curve to use when transitioning in a new `content`. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values. Property value is `AnimationCurve` enum with `AnimationCurve.LINEAR` as default.
+The animation curve to use when transitioning in a new `content`. Property value is [`AnimationCurve`](/docs/reference/types/animationcurve) enum with `AnimationCurve.LINEAR` as default.
 
 ### `switch_out_curve`
 
-The animation curve to use when transitioning a previous `content` out. See [Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) in Flutter docs for possible values.  Property value is `AnimationCurve` enum with `AnimationCurve.LINEAR` as default.
+The animation curve to use when transitioning a previous `content` out. Property value is [`AnimationCurve`](/docs/reference/types/animationcurve) enum with `AnimationCurve.LINEAR` as default.
 
 ### `transition`
 
-An animation type to transition between new and old `content`. Property value is `AnimatedSwitcherTransition` enum with `AnimatedSwitcherTransition.FADE` as default.
+An animation type to transition between new and old `content`. Property value is `AnimatedSwitcherTransition` enum with the following values:
+
+* `FADE`
+* `ROTATION`
+* `CALE`
+
+Defaults to `FADE`.   

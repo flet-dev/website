@@ -174,12 +174,7 @@ The alignment of the non-positioned (those that do not specify an alignment - ex
 
 The content will be clipped (or not) according to this option.
 
-Property value is `ClipBehavior` enum with supported values:
-
-* `NONE`
-* `ANTI_ALIAS`
-* `ANTI_ALIAS_WITH_SAVE_LAYER`
-* `HARD_EDGE` (default)
+Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum. Default is `HARD_EDGE`.
 
 ### `controls`
 

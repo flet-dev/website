@@ -110,7 +110,7 @@ The [color](/docs/reference/colors) of the navigation rail's indicator.
 
 ### `indicator_shape`
 
-The shape of the navigation rail's indicator. More information on possible values [here](/docs/controls/alertdialog#shape).
+The shape of the navigation rail's indicator. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 The default shape is a `StadiumBorder`.
 
@@ -152,7 +152,7 @@ The index into `destinations` for the current selected `NavigationRailDestinatio
 
 ### `selected_label_text_style`
 
-The [`TextStyle`](/docs/controls/text#textstyle-properties) of a destination's label when it is selected.
+The [`TextStyle`](/docs/reference/types/textstyle) of a destination's label when it is selected.
 
 When a destination is not selected, `unselected_label_text_style` will instead be used.
 
@@ -166,7 +166,7 @@ This is commonly a list of additional options or destinations that is usually on
 
 ### `unselected_label_text_style`
 
-The [`TextStyle`](/docs/controls/text#textstyle-properties) of a destination's label when it is not selected.
+The [`TextStyle`](/docs/reference/types/textstyle) of a destination's label when it is not selected.
 
 When a destination is selected, `selected_label_text_style` will instead be used.
 
@@ -196,7 +196,7 @@ The [color](/docs/reference/colors) of the `indicator_shape` when this destinati
 
 ### `indicator_shape`
 
-The shape of the selection indicator. See [`FloatingActionButton.shape`](/docs/controls/floatingactionbutton#shape) for possible values.
+The shape of the selection indicator. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 ### `label`
 
@@ -212,7 +212,7 @@ The label must be provided when used with the `NavigationRail`. When `Navigation
 
 The amount of space to inset the destination item.
 
-See [`Container.padding`](/docs/controls/container#padding) for more information about padding and possible values.
+Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
 ### `selected_icon`
 
