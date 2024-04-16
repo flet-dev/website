@@ -235,7 +235,9 @@ ft.app(main)
 
 ### `animate`
 
-Controls chart implicit animation. See [`LineChart.animate`](/docs/controls/linechart#animate) property for more information and possible values.
+Controls chart implicit animation. 
+
+The value is of [`AnimationValue`](/docs/reference/types/animationvalue) type.
 
 ### `center_space_color`
 
@@ -285,7 +287,7 @@ Background [color](/docs/reference/colors) of the section.
 
 ### `border_side`
 
-The border around section shape. The value is an instance of `ft.BorderSide` class.
+The border around section shape. The value is an instance of [`BorderSide`](/docs/reference/types/borderside) class.
 
 ### `title`
 
@@ -293,7 +295,7 @@ A title drawn at the center of the section. No title is drawn if `title` is empt
 
 ### `title_style`
 
-The style to draw `title` with. The value is an instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties)  `ft.TextStyle` class.
+The style to draw `title` with. The value is an instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `title_position`
 
