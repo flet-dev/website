@@ -378,7 +378,7 @@ Background [color](/docs/reference/colors) of the chart.
 
 ### `border`
 
-The border around the chart. The value is the instance of `ft.Border` class.
+The border around the chart. The value is an instance of [`border.Border`](/docs/reference/types/border) class.
 
 ### `bottom_axis`
 
@@ -504,7 +504,11 @@ A list of points (dots) of [`LineChartDataPoint`](#linechartdatapoint-properties
 
 ### `gradient`
 
-Gradient to draw line's background. See [`Container.gradient`](/docs/controls/container#gradient) property for more information and possible values.
+Gradient to draw line's background. The value must be an instance of one of the following classes:
+
+* [`LinearGradient`](/docs/reference/types/lineargradient)
+* [`RadialGradient`](/docs/reference/types/radialgradient)
+* [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `point`
 
@@ -582,7 +586,7 @@ An align for the tooltip. The value is the instance of `ft.TextAlign` enum.
 
 ### `tooltip_style`
 
-A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](/docs/controls/text#textstyle-properties) class.
+A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `x`
 
