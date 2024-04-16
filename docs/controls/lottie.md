@@ -52,8 +52,7 @@ each [here](https://api.flutter.dev/flutter/dart-ui/FilterQuality.html).
 
 How to inscribe the Lottie composition into the space allocated during layout.
 
-Property value is `ImageFit` enum with supported
-values: `NONE`, `CONTAIN`, `COVER`, `FILL`, `FIT_HEIGHT`, `FIT_WIDTH`, `SCALE_DOWN`.
+Property value is [`ImageFit`](/docs/reference/types/imagefit) enum.
 
 ### `repeat`
 
@@ -75,8 +74,7 @@ information about assets.
 
 ### `src_base64`
 
-The base64 encoded string of the Lottie file. Either this or `src` must be provided. If both are provided, `src_base64`
-will be prioritized/used.
+The base64 encoded string of the Lottie file. Either this or `src` must be provided. If both are provided, `src_base64` will be prioritized/used.
 
 ## Events
 
