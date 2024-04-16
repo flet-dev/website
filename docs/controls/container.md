@@ -98,38 +98,8 @@ Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignm
 
 Enables container "implicit" animation that gradually changes its values over a period of time.
 
-The value of `animate` property could be one of the following types:
+The value is of [`AnimationValue`](/docs/reference/types/animationvalue) type.
 
-* `bool` - `True` to enable container animation with `linear` curve with `1000` milliseconds duration.
-* `int` - enable container animation with `linear` curve and specified number of milliseconds. 
-* `animation.Animation(duration: int, curve: AnimationCurve` - enable container animation with specified duration and transition [curve](/docs/reference/types/animationcurve).
-
-For example:
-
-<img src="/img/docs/controls/container/animate-container.gif" className="screenshot-20" />
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-
-    c = ft.Container(
-        width=200,
-        height=200,
-        bgcolor="red",
-        animate=ft.animation.Animation(1000, ft.AnimationCurve.BOUNCE_OUT),
-    )
-
-    def animate_container(e):
-        c.width = 100 if c.width == 200 else 200
-        c.height = 100 if c.height == 200 else 200
-        c.bgcolor = "blue" if c.bgcolor == "red" else "red"
-        c.update()
-
-    page.add(c, ft.ElevatedButton("Animate container", on_click=animate_container))
-
-ft.app(target=main)
-```
 
 ### `bgcolor`
 

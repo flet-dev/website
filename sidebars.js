@@ -380,6 +380,7 @@ module.exports = {
           items: [
             "reference/types/alignment",
             "reference/types/animationcurve",
+            "reference/types/animationvalue",
             "reference/types/blendmode",
             "reference/types/blur",
             "reference/types/border",

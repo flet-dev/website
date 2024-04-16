@@ -362,13 +362,7 @@ ft.app(main)
 
 Controls chart implicit animation.
 
-The value of `animate` property could be one of the following types:
-
-* `bool` - `True` to enable chart animation with `linear` curve and `1000` milliseconds duration.
-* `int` - enables chart animation with `linear` curve and specified number of milliseconds.
-* `ft.Animation(duration: int, curve: str)` - enables chart animation with specified duration and transition curve.
-
-If `animate` is `None` then `linear` animation with `150` milliseconds duration is enabled by default.
+The value is of [`AnimationValue`](/docs/reference/types/animationvalue) type.
 
 ### `baseline_x`
 
