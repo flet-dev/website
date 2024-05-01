@@ -61,18 +61,58 @@ Pure-Python packages can import or depend on non-pure packages and you should ke
 
 For example, `supabase` package, to access Supabase API, is a pure package which depends on `pydantic` package which is also pure Python package. In its turn `pydantic` package depends on `pydantic-core` which is a non-pure package written in Rust. Thus, to run your Flet app using Supabase API the packaging process should be able to find a pre-build wheel for your target platform. If PyPI doesn't have that wheel then it could be either Flet developers, building that wheel on their servers and hosting it somewhere, or you, building that wheel on your own machine.
 
+To see a dependency graph for a package you can use [`pipgrip`](https://pypi.org/project/pipgrip/).
+
+Run it with `--tree` option to get a tree view of dependencies:
+
+```
+$ pipgrip --tree fastapi
+
+fastapi (0.110.3)
+├── pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (2.7.1)
+│   ├── annotated-types>=0.4.0 (0.6.0)
+│   ├── pydantic-core==2.18.2 (2.18.2)
+│   │   └── typing-extensions!=4.7.0,>=4.6.0 (4.11.0)
+│   └── typing-extensions>=4.6.1 (4.11.0)
+├── starlette<0.38.0,>=0.37.2 (0.37.2)
+│   └── anyio<5,>=3.4.0 (4.3.0)
+│       ├── idna>=2.8 (3.7)
+│       └── sniffio>=1.1 (1.3.1)
+└── typing-extensions>=4.8.0 (4.11.0)
+```
+
 ## Current approach
 
-Kivy
+When you run `flet build apk` with the current Flet version it downloads Python runtime with standard library both pre-built for Android (or iOS if ran with `flet build ipa`).
+
+For non-pure packages, like `numpy`, Flet is asking you to build those packages by yourself using "Python for Android" (p4a) tool from Kivy and then provide a path to "p4a" distributive where those pre-build packages could be found.
+
+This is problem #1 - you are forced to struggle with a complicated process of installing "p4a" tool and compiling Python modules on your machine.
+
+Problem #2 - all packages from p4a's `dist` directory will be included into a final application bundle - it could contain non-relevant packages and other junk.
+
+Problem #3 - non-pure packages must be built *before* running `flet build` command. You have to analyze all dependencies of your app and separate what must be built with p4a.
+
+Problem #4 - p4a "recipes" to build packages could be either very old or missing. You hope that older version of the package works with your app, try authoring a "recipe" and hope it works or submit a request for new recipe in Kivy repository.
+
+When you're done with building non-pure packages using p4a, Flet requires you to specify only pure packages in `requirements.txt` which doesn't work if pure package directly or indirectly depends on non-pure (see [example above](#package-dependencies)) - this is problem #5. There is a [recent example](https://github.com/flet-dev/flet/issues/3114) of this problem: `flet build` replaces `flet` with `flet-embed` in `requirements.txt`, but it's unable to know if there is a 3rd-party package depending on `flet`, thus both `flet-embed` and non-suitable-for-mobile `flet` are installed. This is not a solution, but a hack!
 
 ## Packaging 2.0
 
-What we have now
+New tooling based `crossenv`.
 
-How it works now
+Pre-built modules with catalog and transparent mechanism of package requests.
 
-Drawbacks (flet package substitution, no pre-built packages - have to build yourself using p4a)
+Virtual pip index with fallback to PyPI.
+
+New packaging will be available in a few weeks.
+While we are implementing it please go to packages and request the package you need the most.
+
+TBD
 
 ## PyCon
 
+Flet team is going to [PyCon US 2024](https://us.pycon.org/2024/) happening on May 15 - May 23, 2024 in Pittsburgh, Pennsylvania.
+
 TBD
+
