@@ -99,20 +99,16 @@ When you're done with building non-pure packages using p4a, Flet requires you to
 
 ## Packaging 2.0
 
-New tooling based `crossenv`.
+In the next iteration of Flet's packaging implementation, we are going to move away from Kivy and replace it with [Mobile Forge](https://github.com/flet-dev/mobile-forge). Mobile Forge has been created by Beeware team based and their experience with Briefcase and Chaquopy. Mobile Forge is a clean-room implementation of a packaging tool for binary Python packages which is relies on [crossenv](https://github.com/benfogle/crossenv).
 
-Pre-built modules with catalog and transparent mechanism of package requests.
+The main promise of Mobile Forge with crossenv is that most existing non-pure Python packages will be able to compile for iOS and/or Android by simply adding a recipe with `meta.yaml` file only, without requiring any hacks or patches.
 
-Virtual pip index with fallback to PyPI.
+We are going to use Mobile Forge to pre-build the most popular non-pure Python packages for iOS and Android and host them in our own public repository. You will be able to use that tool to build and contribute other packages, non present in our repository.
 
-New packaging will be available in a few weeks.
-While we are implementing it please go to packages and request the package you need the most.
+We've created a new ["Packages" category in Flet discussions](https://github.com/flet-dev/flet/discussions/categories/packages) where you can post, vote and discuss requests for non-pure (native) Python packages that work with Flet (check [rules](https://github.com/flet-dev/flet/discussions/3139) before posting there). Flet's goal is to provide the most comprehensive catalog of pre-built Python packages and make the process of adding new packages as friendly and transparent as possible.
 
-TBD
+The new version of `flet build` will be using a custom-made virtual pip index that will be offering pip mobile packages first with fallback to PyPI for all other packages.
 
-## PyCon
+The new packaging will be available in a few weeks. While we are working we encourage you to visit [Packages](https://github.com/flet-dev/flet/discussions/categories/packages) and see if the package you need is there. Submitting a request or voting for existing package will help us to prioritize package "recipes".
 
-Flet team is going to [PyCon US 2024](https://us.pycon.org/2024/) happening on May 15 - May 23, 2024 in Pittsburgh, Pennsylvania.
-
-TBD
-
+Thank you!
