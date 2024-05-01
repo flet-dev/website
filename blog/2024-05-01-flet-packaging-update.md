@@ -83,6 +83,8 @@ fastapi (0.110.3)
 
 ## Current approach
 
+We released the first version of packaging [4 months ago](/blog/packaging-apps-for-distribution) and since then, we have realized that the initial approach has multple flaws and should be improved.
+
 When you run `flet build apk` with the current Flet version it downloads Python runtime with standard library both pre-built for Android (or iOS if ran with `flet build ipa`).
 
 For non-pure packages, like `numpy`, Flet is asking you to build those packages by yourself using "Python for Android" (p4a) tool from Kivy and then provide a path to "p4a" distributive where those pre-build packages could be found.
@@ -101,14 +103,14 @@ When you're done with building non-pure packages using p4a, Flet requires you to
 
 In the next iteration of Flet's packaging implementation, we are going to move away from Kivy and replace it with [Mobile Forge](https://github.com/flet-dev/mobile-forge). Mobile Forge has been created by Beeware team based and their experience with Briefcase and Chaquopy. Mobile Forge is a clean-room implementation of a packaging tool for binary Python packages which is relies on [crossenv](https://github.com/benfogle/crossenv).
 
-The main promise of Mobile Forge with crossenv is that most existing non-pure Python packages will be able to compile for iOS and/or Android by simply adding a recipe with `meta.yaml` file only, without requiring any hacks or patches.
+The main promise of Mobile Forge with `crossenv` is that most existing non-pure Python packages will be able to compile for iOS and/or Android by simply adding a recipe with `meta.yaml` file only, without requiring any hacks or patches.
 
 We are going to use Mobile Forge to pre-build the most popular non-pure Python packages for iOS and Android and host them in our own public repository. You will be able to use that tool to build and contribute other packages, non present in our repository.
 
 We've created a new ["Packages" category in Flet discussions](https://github.com/flet-dev/flet/discussions/categories/packages) where you can post, vote and discuss requests for non-pure (native) Python packages that work with Flet (check [rules](https://github.com/flet-dev/flet/discussions/3139) before posting there). Flet's goal is to provide the most comprehensive catalog of pre-built Python packages and make the process of adding new packages as friendly and transparent as possible.
 
-The new version of `flet build` will be using a custom-made virtual pip index that will be offering pip mobile packages first with fallback to PyPI for all other packages.
+The new version of `flet build will` use a custom-made virtual pip index. This index will analyze dependencies, detect non-pure packages, and offer to pip mobile packages. For all other packages, it will fall back to PyPI.
 
-The new packaging will be available in a few weeks. While we are working we encourage you to visit [Packages](https://github.com/flet-dev/flet/discussions/categories/packages) and see if the package you need is there. Submitting a request or voting for existing package will help us to prioritize package "recipes".
+The new packaging will be hopefully available in a few weeks. While we are working we encourage you to visit [Packages](https://github.com/flet-dev/flet/discussions/categories/packages) and see if the package you need is there. Submitting a request or voting for existing package will help us to prioritize package "recipes".
 
 Thank you!
