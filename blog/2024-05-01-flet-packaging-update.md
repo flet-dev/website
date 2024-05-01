@@ -11,21 +11,21 @@ tags: [releases]
 ## The problem
 
 When you package your Flet program in Python to run on a mobile device (or desktop) the resulting
-bundle (.apk, .ipa, .exe, .app) contains your Python program, Python interpreter and [Python Standard Libary](https://docs.python.org/3/library/index.html).
+bundle (.apk, .ipa, .exe, .app) contains your Python program, Python interpreter and [Python Standard Library](https://docs.python.org/3/library/index.html).
 
-If your program uses only Python standard libary then packaging process is relatively easy - Flet zips your code and combines Flutter app together with Python interpreter and standard library both compiled for the target platform: Android or iOS.
+If your program uses only Python standard library then packaging process is relatively easy - Flet zips your code and combines Flutter app together with Python interpreter and standard library both compiled for the target platform: Android or iOS.
 
-However, problems arise when your Flet program uses third-party packages, with thousands of them published on PyPI or Conda.
+However, problems may arise when your Flet program uses third-party packages, with thousands of them published on PyPI or Conda.
 
-There are two kinds of packages:
+There are two kinds of third-party packages:
 
 ### Pure-Python packages
 
-A "pure-Python" package is a package that only contains Python code, and doesn't include, say, C extensions or code in other languages. You only need a Python interpreter and the Python Standard Library to run a pure-Python package, and it doesn't matter what your OS or platform is.
+A "pure-Python" package is a package that only contains Python code, and doesn't include extensions written in C, C++, Rust or other languages. You only need a Python interpreter and the Python Standard Library to run a pure-Python package, and it doesn't matter what your OS or platform is.
 
 Examples of such packages: `httpx`, `click`, `rich`, `requests`.
 
-To verify if the package is pure find that package on [PyPI](https://pypi.org) and navigate to its "Download files" page. If under "Built distribution" section there is only one wheel ending with `-py3-none-any.whl` then *most probably* it's a pure Python package that will work "as is" on any device with Python.
+To verify if the package is pure, find that package on [PyPI](https://pypi.org) and navigate to its "Download files" page. If under "Built distribution" section there is only one wheel ending with `-py3-none-any.whl` then *most probably* it's a pure Python package that will work "as is" on any device with Python.
 
 <img src="/img/blog/packaging/pypi-pure-package.png" className="screenshot-80 screenshot-rounded" />
 
