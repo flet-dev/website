@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 Flet is a framework that allows building web, desktop and mobile applications in Python without prior experience in frontend development.
 
-You build a UI for your program with Flet [controls](/docs/controls) which which are based on [Flutter](https://flutter.dev) by Google. Flet does not just "wrap" Flutter widgets, but adds its own "opinion" by combining smaller widgets, hiding complexities, implementing UI best-practices, applying reasonable defaults - all to ensure your apps look cool and professional without extra efforts.
+You can build a UI for your program with Flet [controls](/docs/controls) which are based on [Flutter](https://flutter.dev) by Google. Flet goes beyond merely wrapping Flutter widgets. It adds its own touch by combining smaller widgets, simplifying complexities, implementing UI best practices, and applying sensible defaults. This ensures that your applications look stylish and polished without requiring additional design efforts on your part.
 
 ## Flet app example
 
