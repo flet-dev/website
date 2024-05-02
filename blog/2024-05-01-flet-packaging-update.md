@@ -109,7 +109,7 @@ We are going to use Mobile Forge to pre-build the most popular non-pure Python p
 
 We've created a new ["Packages" category in Flet discussions](https://github.com/flet-dev/flet/discussions/categories/packages) where you can post, vote and discuss requests for non-pure (native) Python packages that work with Flet (check [rules](https://github.com/flet-dev/flet/discussions/3139) before posting there). Flet's goal is to provide the most comprehensive catalog of pre-built Python packages and make the process of adding new packages as friendly and transparent as possible.
 
-The new version of `flet build will` use a custom-made virtual pip index. This index will analyze dependencies, detect non-pure packages, and offer to pip mobile packages. For all other packages, it will fall back to PyPI.
+The new version of `flet build` will use a custom-made virtual pip index. This index will analyze dependencies, detect non-pure packages, and offer to pip mobile packages. For all other packages, it will fall back to PyPI.
 
 The new packaging will be hopefully available in a few weeks. While we are working we encourage you to visit [Packages](https://github.com/flet-dev/flet/discussions/categories/packages) and see if the package you need is there. Submitting a request or voting for existing package will help us to prioritize package "recipes".
 
