@@ -19,7 +19,7 @@ Here's what's new in Flet 0.21.0:
 From very beginning of Flet life to serve web apps there was a built-in web server written in Go
 and called "Fletd". It's being started on the background when you run your app with `flet run --web`.
 Fletd was part of Flet Python wheel contributing a few megabytes to its size.
-Additionally, Python app was using WebSockets to talk to Fletd web server which was adding sometimes noticable overhead.
+Additionally, Python app was using WebSockets to talk to Fletd web server which was adding sometimes noticeable overhead.
 
 Then, in [Flet 0.10.0](/blog/flet-for-fastapi) we have added FastAPI support to build "serious" web apps using AsyncIO API.
 

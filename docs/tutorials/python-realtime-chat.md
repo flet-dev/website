@@ -11,7 +11,7 @@ In this tutorial you will learn how to:
 * [Add page controls and handle events](#adding-page-controls-and-handling-events)
 * [Broadcast messages using built-in PubSub library](#broadcasting-chat-messages)
 * [Use AlertDialog control for accepting user name](#user-name-dialog)
-* [Enhance user interface with re-usable controls](#enhancing-user-interface)
+* [Enhance user interface with reusable controls](#enhancing-user-interface)
 * [Deploy the app as a web app](#deploying-the-app)
 
 The complete application will look like this:
@@ -112,7 +112,7 @@ First, we need subscribe the user to receive broadcast messages:
     page.pubsub.subscribe(on_message)
 ```
 
-`pubsub.subsribe()` method will add current app session to the list of subscribers. It accepts `handler` as an argument, that will later be called at the moment a publisher calls `pubsub.send_all()` method.
+`pubsub.subscribe()` method will add current app session to the list of subscribers. It accepts `handler` as an argument, that will later be called at the moment a publisher calls `pubsub.send_all()` method.
 
 In the `handler` we will be adding new message (`Text`) to the list of chat `controls`:
 ```python
@@ -239,7 +239,7 @@ We used [page session storage](/docs/cookbook/session-storage) to store user_nam
 User name dialog will close as soon as we set its `open` property to `False` and call `update()` method. 
 :::
 
-Finally, let's update `send_click` method to use `user_name` that we previosly saved using `page.session`:
+Finally, let's update `send_click` method to use `user_name` that we previously saved using `page.session`:
 
 ```python
 def send_click(e):
@@ -258,7 +258,7 @@ Chat app that you have created in the previous step already serves its purpose o
 
 Before moving on to [deploying your app](#deploying-the-app), we suggest adding some extra features to it that will improve user experience and make the app look more professional.
 
-### Re-usable user controls
+### Reusable user controls
 
 You may want to show messages in a different format, like this:
 <img src="/img/docs/chat-tutorial/chat-layout-chatmessage.svg" className="screenshot-70" />
@@ -336,7 +336,7 @@ Instances of `ChatMessage` will be created instead of plain `Text` chat messages
 Other improvements suggested with the new layout are:
 
 * [`ListView`](/docs/controls/listview) instead of `Column` for displaying messages, to be able to scroll through the messages later
-* `Container` for displaing border around `ListView`
+* `Container` for displaying border around `ListView`
 * [`IconButton`](/docs/controls/iconbutton) instead of `ElevatedButton` to send messages
 * Use of [`expand`](/docs/controls#expand) property for controls to fill available space
 

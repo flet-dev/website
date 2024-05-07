@@ -58,7 +58,7 @@ ft.app(target=main)
 
 ### `animation_duration`
 
-Duration of animation in milliseconds of swtiching between tabs. Default is `50`.
+Duration of animation in milliseconds of switching between tabs. Default is `50`.
 
 ### `clip_behavior`
 

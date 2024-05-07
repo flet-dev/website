@@ -16,7 +16,7 @@ We just released [Flet 0.1.65](https://pypi.org/project/flet/0.1.65/) which is a
 
 `ResponsiveRow` allows aligning child controls to virtual columns. By default, a virtual grid has 12 columns, but that can be customized with `ResponsiveRow.columns` property.
 
-Similar to `expand` property every control now has `col` property which allows specifying how many columns a control should span. For examle, to make a layout consisting of two columns spanning 6 virtual columns each:
+Similar to `expand` property every control now has `col` property which allows specifying how many columns a control should span. For example, to make a layout consisting of two columns spanning 6 virtual columns each:
 
 ```python
 import flet as ft

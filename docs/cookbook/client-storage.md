@@ -27,7 +27,7 @@ page.client_storage.set("favorite_colors", ["red", "green", "blue"])
 ```
 
 :::note
-Each Flutter application using `shared_preferences` plugin has its own set of preferences. As the same Flet client (which is a Flutter app) is used to run UI for muliple Flet apps any values stored in one Flet application are visible/available to another Flet app running by the same user.
+Each Flutter application using `shared_preferences` plugin has its own set of preferences. As the same Flet client (which is a Flutter app) is used to run UI for multiple Flet apps any values stored in one Flet application are visible/available to another Flet app running by the same user.
 
 To distinguish one application settings from another it is recommended to use some unique prefix for all storage keys, for example `{company}.{product}.`. For example to store auth token in one app you could use `acme.one_app.auth_token` key and in another app use `acme.second_app.auth_token`.
 :::

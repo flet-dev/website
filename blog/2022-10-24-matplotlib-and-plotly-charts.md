@@ -40,7 +40,7 @@ Learn Python libraries by examples:
 * [Matplotlib gallery](https://matplotlib.org/stable/gallery/index.html)
 * [Plotly gallery](https://plotly.com/python/)
 
-In the future releases, we may add an interactive "toolbar" for Matplotlib charts by implementing a custom [backend](https://matplotlib.org/stable/users/explain/backends.html). Or maybe it's a great excersize for Flet users? 😉
+In the future releases, we may add an interactive "toolbar" for Matplotlib charts by implementing a custom [backend](https://matplotlib.org/stable/users/explain/backends.html). Or maybe it's a great exercise for Flet users? 😉
 
 Also, when it's time for Flet to support other languages we would need to re-visit charting to make it language-agnostic as the current charting implementation relies on Python libraries.
 

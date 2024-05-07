@@ -13,7 +13,7 @@ to Flet project whether it's spreading a word, submitting pull request, joining 
 
 With your fantastic support we achieved a lot in year 2023:
 
-* 70+ controls (special thanks to [@ndonkoHenri](https://github.com/ndonkoHenri) for his tremendous contibution).
+* 70+ controls (special thanks to [@ndonkoHenri](https://github.com/ndonkoHenri) for his tremendous contribution).
 * 7,700 stars on GitHub.
 * 2,150 users with community moderators (thank you guys!) on Discord.
 * Flet integration with Pyodide for pure client-side Python apps - no other frameworks provide a better UI for Pyodide!

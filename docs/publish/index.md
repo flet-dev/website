@@ -52,7 +52,7 @@ If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) i
 :::caution No pip freeze
 
 Do not use `pip freeze > requirements.txt` command to create `requirements.txt` for the app that
-will be runnin on mobile. As you run `pip freeze` command on a desktop `requirements.txt` will have
+will be running on mobile. As you run `pip freeze` command on a desktop `requirements.txt` will have
 dependencies that are not intended to work on a mobile device, such as `watchdog`.
 
 Hand-pick `requirements.txt` to have only direct dependencies required by your app, plus `flet`. 
@@ -163,7 +163,7 @@ By default, `flet build` command assumes `main.py` as the entry point of your Fl
 
 ## Versioning
 
-You can provide a version information for built executable or package with `--build-number` and `--build-version` arguments. This is the information that is used to destinguish one build/release from another in App Store and Google Play and is shown to the user in about dialogs.
+You can provide a version information for built executable or package with `--build-number` and `--build-version` arguments. This is the information that is used to distinguish one build/release from another in App Store and Google Play and is shown to the user in about dialogs.
 
 `--build-number` - an integer number (default is `1`), an identifier used as an internal version number.
 Each build must have a unique identifier to differentiate it from previous builds.

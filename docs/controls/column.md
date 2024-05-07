@@ -247,7 +247,7 @@ ft.app(target=main)
 
 ### Infinite scroll list
 
-The following example demonstrates adding of list items on-the-fly, as user scroll to the bottom, creating the illusion of inifinite list:
+The following example demonstrates adding of list items on-the-fly, as user scroll to the bottom, creating the illusion of infinite list:
 
 ```python
 import threading
@@ -425,7 +425,7 @@ When set to `True` the Column will put child controls into additional columns (r
 
 Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
 
-`offset` is an abosulte value between minimum and maximum extents of a scrollable control, for example:
+`offset` is an absolute value between minimum and maximum extents of a scrollable control, for example:
 
 ```python
 products.scroll_to(offset=100, duration=1000)
