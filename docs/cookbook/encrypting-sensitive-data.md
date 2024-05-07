@@ -12,7 +12,7 @@ Flet includes utility methods to encrypt and decrypt sensitive text data using s
 Encryption secret key (aka password, or passphrase) is an arbitrary password-like string configured by a user and used for encrypting and decrypting data. Crypto algorithm uses secret key to "derive" encryption key (32 bytes).
 
 :::danger
-Do not embed any secrets into the source code to avoid accidential exposure to the public!
+Do not embed any secrets into the source code to avoid accidental exposure to the public!
 :::
 
 You can provide a secret to your app via environment variable:

@@ -89,7 +89,7 @@ ft.Checkbox(adaptive=True, value=True, label="Adaptive Checkbox")
 Flet checks the value of [`page.platform`](/docs/controls/page#platform) property and if it is `ft.PagePlatform.IOS` or `ft.PagePlatform.MACOS`, Cupertino control will be created; in all other cases Material control will be created. 
 
 :::note
-[`adaptive`](/docs/controls#adaptive) property can be set for an individual control or a container control such as `Row`, `Column` or any other control that has `content` or `controls` property. If container control is adaptive, all its child controls will be adaptive, unless `adaptive` property is explicitely set to `False` for a child control.
+[`adaptive`](/docs/controls#adaptive) property can be set for an individual control or a container control such as `Row`, `Column` or any other control that has `content` or `controls` property. If container control is adaptive, all its child controls will be adaptive, unless `adaptive` property is explicitly set to `False` for a child control.
 :::
 
 Below is the list of adaptive Material controls and their matching Cupertino controls:

@@ -83,7 +83,7 @@ fastapi (0.110.3)
 
 ## Current approach
 
-We released the first version of packaging [4 months ago](/blog/packaging-apps-for-distribution) and since then, we have realized that the initial approach has multple flaws and should be improved.
+We released the first version of packaging [4 months ago](/blog/packaging-apps-for-distribution) and since then, we have realized that the initial approach has multiple flaws and should be improved.
 
 When you run `flet build apk` with the current Flet version it downloads Python runtime with standard library both pre-built for Android (or iOS if ran with `flet build ipa`).
 

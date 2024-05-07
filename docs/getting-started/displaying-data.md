@@ -5,7 +5,7 @@ sidebar_label: Displaying data
 
 ## Text
 
-`Text` control is used to output textual data. Its main properties are `value` and `size`, but it also has a number of formatting properties to control its appearence. For example:
+`Text` control is used to output textual data. Its main properties are `value` and `size`, but it also has a number of formatting properties to control its appearance. For example:
 
 ```python
 t = ft.Text(

@@ -42,7 +42,7 @@ ft.app(main)
 In the example a click on one button is handled by a "blocking" handler while a click
 on second button calls asynchronous handler. The first handler is run in a `threading.Thread` while second handler is run as `asyncio.Task`.
 
-In web apps, using threads is one of the considerations for app scalability as threads is a finite resource. Usually, a thread pool is used and it could become a bottleneck with a growing numner of users.
+In web apps, using threads is one of the considerations for app scalability as threads is a finite resource. Usually, a thread pool is used and it could become a bottleneck with a growing number of users.
 
 Anyway, if your app is mostly doing I/O (database, web API) and/or you are able to use async-ready libraries we recommend implementing async handlers.
 

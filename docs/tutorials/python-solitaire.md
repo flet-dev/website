@@ -658,7 +658,7 @@ def create_card_deck(self):
         for rank in ranks:
             self.cards.append(Card(solitaire=self, suite=suite, rank=rank))
 ```
-The card deck is ready to be dealed, and now we need to create the layout for it.
+The card deck is ready to be dealt, and now we need to create the layout for it.
 
 ### Create slots
 

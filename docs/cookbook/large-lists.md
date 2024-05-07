@@ -93,7 +93,7 @@ Try scrolling and resizing the browser window - everything works, but very laggy
 :::note
 At the start of the program we are setting the value of `FLET_WS_MAX_MESSAGE_SIZE` environment variable to `8000000` - this is the maximum size of WebSocket message in bytes that can be received by Flet Server rendering the page. Default size is 1 MB, but the size of JSON message describing 5,000 container controls would exceed 1 MB, so we are increasing allowed size to 8 MB.
 
-Squeezing large messages through WebSocket channel is, generally, not a good idea, so use [batched updates](#batch-updates) aproach to control channel load.
+Squeezing large messages through WebSocket channel is, generally, not a good idea, so use [batched updates](#batch-updates) approach to control channel load.
 :::
 
 GridView, similar to ListView, is very effective to render a lot of children. Let's implement the example above using GridView:

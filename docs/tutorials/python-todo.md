@@ -65,7 +65,7 @@ def main(page: ft.Page):
         new_task.value = ""
         page.update()
 
-    new_task = ft.TextField(hint_text="Whats needs to be done?")
+    new_task = ft.TextField(hint_text="What's needs to be done?")
 
     page.add(new_task, ft.FloatingActionButton(icon=ft.icons.ADD, on_click=add_clicked))
 
@@ -96,7 +96,7 @@ def main(page: ft.Page):
         new_task.value = ""
         view.update()
 
-    new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
+    new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
     tasks_view = ft.Column()
     view=ft.Column(
         width=600,
@@ -132,7 +132,7 @@ import flet as ft
 
 class TodoApp(ft.UserControl):
     def build(self):
-        self.new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
+        self.new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
         self.tasks = ft.Column()
 
         # application's root control (i.e. "view") containing all other controls
@@ -264,7 +264,7 @@ Additionally, we changed `TodoApp` class to create and hold `Task` instances whe
 ```python
 class TodoApp(ft.UserControl):
     def build(self):
-        self.new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
+        self.new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
         self.tasks = ft.Column()
         # ...
 
@@ -319,7 +319,7 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 class TodoApp(ft.UserControl):
     def __init__(self):
         self.tasks = []
-        self.new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
+        self.new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
         self.tasks = ft.Column()
 
         self.filter = ft.Tabs(

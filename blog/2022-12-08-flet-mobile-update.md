@@ -63,7 +63,7 @@ Using of async libraries from a sync code is [possible](https://github.com/flet-
 
 Async/await model is a state machine switching between tasks in a single thread. By going async Flet will able to utilize [streams](https://docs.python.org/3/library/asyncio-stream.html) for socket server and use async [WebSockets library](https://pypi.org/project/websockets/) library. It will be possible to use both sync and async event handlers in a single Flet app without any compromises or hacks.
 
-Even more exciting, async Flet will be able to run entirely in the browser within [Pyodide](https://pyodide.org/) - Python distribution based on WebAssembly (WASM). WebAssembly doesn't have multi-threading support yet, so running in a single thread is a must. Just imagine, Flet web app with a trully offline Flet PWA that does not require a web server to run a Python code!
+Even more exciting, async Flet will be able to run entirely in the browser within [Pyodide](https://pyodide.org/) - Python distribution based on WebAssembly (WASM). WebAssembly doesn't have multi-threading support yet, so running in a single thread is a must. Just imagine, Flet web app with a truly offline Flet PWA that does not require a web server to run a Python code!
 
 ## Development plan
 

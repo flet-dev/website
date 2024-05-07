@@ -100,7 +100,7 @@ ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
 
 :::caution
 Notice, we are fetching OAuth app client ID and client secret from an environment variables.
-Do not embed any secrets into source code to avoid accidential exposure to a public!
+Do not embed any secrets into source code to avoid accidental exposure to a public!
 :::
 
 Before running the app set the secret environment variables in a command line:
@@ -310,7 +310,7 @@ ejt = encrypt(jt, secret_key)
 
 :::caution
 Notice, we are fetching a secret key (aka passphrase, password, etc.) from an environment variable.
-Do not embed any secrets into source code to avoid accidential exposure to a public!
+Do not embed any secrets into source code to avoid accidental exposure to a public!
 :::
 
 Before running the app set the secret in a command line:
