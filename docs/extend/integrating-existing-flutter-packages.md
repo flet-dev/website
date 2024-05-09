@@ -15,9 +15,23 @@ Flet framework provides extensibility mechanism to build your Flet app with widg
 
 ### Prerequisites
 
-To integrate custom Flutter package into Flet you need to understand how to create Flutter apps and packages in Dart language and have Flutter development environment configured. See [Flutter Getting Started](https://docs.flutter.dev/get-started/install) for more information about Flutter and Dart.
+To integrate custom Flutter package into Flet you need to have basic understanding of how to create Flutter apps and packages in Dart language and have Flutter development environment configured. See [Flutter Getting Started](https://docs.flutter.dev/get-started/install) for more information about Flutter and Dart.
 
-### Examples
+### Implementation
+
+To implement your own Flet control based on a 3rd-party Flutter package, you will need to create:
+
+* Flutter package 
+* Python app
+
+#### Flutter Package
+
+#### Python app with the new control
+
+#### Build your app
+
+
+### Other Examples
 
 A few Flet controls are implemented as in external packages and could serve as a starting point for your own controls:
 
