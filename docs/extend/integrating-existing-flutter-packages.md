@@ -19,19 +19,72 @@ To integrate custom Flutter package into Flet you need to have basic understandi
 
 ### Implementation
 
-To implement your own Flet control based on a 3rd-party Flutter package, you will need to create:
+Flet extension consists of the following parts:
 
-* Flutter package 
-* Python app
+* [Flet Flutter package](https://docs.flutter.dev/packages-and-plugins/developing-packages).
 
-#### Flutter Package
+* Python class for the new Flet control.
 
-#### Python app with the new control
+* Connection between the two.
 
-#### Build your app
+For example, a basic [Flet extension](https://github.com/InesaFitsner/extend-flet-example) for [flutter_spinkit](https://pub.dev/packages/flutter_spinkit) package.
+
+#### Flet Flutter package
+
+Flet Flutter package has the following structure:
+
+```
+<package-name>/
+└── lib/
+    └──<package-name>.dart
+    └──src
+      └──create_control.dart
+      └──<control-name>.dart
+├── pubspec.yaml
+```
+
+* `pubspec.yaml`
+
+Specify dependencies to the external Flutter package(s) for which you are creating Flet extension.
+
+In the Flet Spinkit example, `pubspec.yaml` contains dependencies to `flutter_spinkit`:
+```yaml
+dependencies:
+  flutter_spinkit: ^5.2.1
+  flet: ^0.22.0
+  flutter:
+    sdk: flutter
+```
+
+* `<package-name>.dart`
+
+```dart
+library flet_spinkit;
+
+export "../src/create_control.dart" show createControl, ensureInitialized;
+```
+
+* `create_control.dart`
+
+* `<control-name>.dart`
+
+Here you will...
+
+#### Python class
 
 
-### Other Examples
+
+#### Connect Python and Flutter
+
+#### Debug
+
+#### Types of controls
+added to surface, added to overlay
+
+#### Types of properties
+
+
+### Examples
 
 A few Flet controls are implemented as in external packages and could serve as a starting point for your own controls:
 
