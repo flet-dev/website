@@ -35,16 +35,15 @@ In this example:
 
 - **Python control** is in the [`python/flet-spinkit-app/controls/spinkit.py`](https://github.com/InesaFitsner/extend-flet-example/blob/main/python/flet_spinkit_app/controls/spinkit.py)
 
-- **Connection** between them is specified in the  [`python/flet_spinkit_app/pubspec.yaml`](https://github.com/InesaFitsner/extend-flet-example/blob/main/python/flet_spinkit_app/pubspec.yaml). 
-
 Below we will describe contents of those in details.
 
 ### Flet Flutter package
 
 To create a new Flutter package, run the following command:
 ```
-
+flutter create --template=package <package-name>
 ```
+
 Flet Flutter package has the following structure:
 
 ```
@@ -62,7 +61,7 @@ Flet Flutter package has the following structure:
 
 Specify dependencies to the external Flutter package(s) for which you are creating Flet extension.
 
-In the Flet Spinkit example, `pubspec.yaml` contains dependencies to `flutter_spinkit`:
+In the Flet Spinkit example, `pubspec.yaml` contains dependency to `flutter_spinkit`:
 ```yaml
 dependencies:
   flutter_spinkit: ^5.2.1
@@ -81,18 +80,25 @@ export "../src/create_control.dart" show createControl, ensureInitialized;
 
 #### `create_control.dart`
 
-* `<control-name>.dart`
+#### `<control-name>.dart`
 
 Here you will...
 
 ### Python control
 
-#### Types of controls
+### Connection between Python and Flutter
+
+Once you have created Flet Flutter package, Flet Python control and the Python program that uses it, you can run your python program and see something like this:
+
+[image with red square]
+
+To be able to communicate to your Flutter package you need to create 
+
+### Flet control properties
+
 added to surface, added to overlay
 
-#### Types of properties
-
-### Connection between Python and Flutter
+### Custom properties
 
 ### Debug
 
@@ -106,15 +112,3 @@ A few Flet controls are implemented as in external packages and could serve as a
 * `Video` - [Python control](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/video.py), [Flutter package](https://github.com/flet-dev/flet/tree/main/packages/flet_video)
 * `Audio` - [Python control](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/audio.py), [Flutter package](https://github.com/flet-dev/flet/tree/main/packages/flet_audio)
 * `Rive` - [Python control](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/rive.py), [Flutter package](https://github.com/flet-dev/flet/tree/main/packages/flet_rive)
-
-## Python control
-
-TBD
-
-## Dart wrapper
-
-TBD
-
-## Building your app
-
-TBD
