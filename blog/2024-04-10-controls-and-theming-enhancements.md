@@ -64,7 +64,7 @@ Below is the complete list:
 - [`ListView`](https://flet.dev/docs/controls/listview): cache_extent, clip_behavior, semantic_child_count
 - [`NavigationBar`](https://flet.dev/docs/controls/navigationbar): animation_duration, overlay_color
 - [`NavigationDrawerDestination`](https://flet.dev/docs/controls/navigationdrawer): bgcolor
-- [`NavigationDestination`](https://flet.dev/docs/controls/navigationdestination): bgcolor
+- [`NavigationBarDestination`](https://flet.dev/docs/controls/navigationbardestination): bgcolor
 - [`NavigationRail`](https://flet.dev/docs/controls/navigationrail): selected_label_text_style,
   unselected_label_text_style
 - [`NavigationRailDestination`](https://flet.dev/docs/controls/navigationrail): indicator_color, indicator_shape

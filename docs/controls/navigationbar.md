@@ -23,9 +23,9 @@ def main(page: ft.Page):
     page.title = "NavigationBar Example"
     page.navigation_bar = ft.NavigationBar(
         destinations=[
-            ft.NavigationDestination(icon=ft.icons.EXPLORE, label="Explore"),
-            ft.NavigationDestination(icon=ft.icons.COMMUTE, label="Commute"),
-            ft.NavigationDestination(
+            ft.NavigationBarDestination(icon=ft.icons.EXPLORE, label="Explore"),
+            ft.NavigationBarDestination(icon=ft.icons.COMMUTE, label="Commute"),
+            ft.NavigationBarDestination(
                 icon=ft.icons.BOOKMARK_BORDER,
                 selected_icon=ft.icons.BOOKMARK,
                 label="Explore",
@@ -59,7 +59,7 @@ The [color](/docs/reference/colors) of the NavigationBar itself.
 
 Defines the appearance of the button items that are arrayed within the navigation bar.
 
-The value must be a list of two or more `NavigationDestination` instances.
+The value must be a list of two or more `NavigationBarDestination` instances.
 
 ### `elevation`
 
@@ -87,12 +87,12 @@ Property value is `NavigationBarLabelBehavior` enum with the following values:
 
 ### `overlay_color`
 
-The highlight [color](/docs/reference/colors) of the `NavigationDestination` in various [`MaterialState`](/docs/reference/types/materialstate) states. The
+The highlight [color](/docs/reference/colors) of the `NavigationBarDestination` in various [`MaterialState`](/docs/reference/types/materialstate) states. The
 following [`MaterialState`](/docs/reference/types/materialstate) values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
 
 ### `selected_index`
 
-The index into `destinations` for the current selected `NavigationDestination` or `None` if no destination is selected.
+The index into `destinations` for the current selected `NavigationBarDestination` or `None` if no destination is selected.
 
 ### `shadow_color`
 
@@ -108,7 +108,7 @@ The surface tint of the Material that holds the NavigationDrawer's contents.
 
 Fires when selected destination changed.
 
-## `NavigationDestination` properties
+## `NavigationBarDestination` properties
 
 ### `bgcolor`
 
@@ -128,7 +128,7 @@ To make the NavigationBar more accessible, consider choosing an icon with a stro
 
 ### `label`
 
-The text label that appears below the icon of this `NavigationDestination`.
+The text label that appears below the icon of this `NavigationBarDestination`.
 
 ### `selected_icon`
 
