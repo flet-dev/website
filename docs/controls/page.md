@@ -707,6 +707,10 @@ Closes active drawer.
 
 Closes active end drawer.
 
+### `close_snack_bar()`
+
+Closes active snack bar.
+
 ### `close_in_app_web_view()`
 
 📱 Mobile only. Closes in-app web view opened with `launch_url()`.
@@ -806,31 +810,46 @@ page.set_clipboard("This value comes from Flet app")
 </TabItem>
 </Tabs>
 
-### `show_banner(banner: Banner)`
+### `open_banner(banner: Optional[Banner])`
 
 Displays the banner at the top of the page.
 
-### `show_bottom_sheet(bottom_sheet: BottomSheet)`
+:::note
+You can use all open_...() methods without argument if you defined this property. If you didn't defined this property method will raise `Exception`.
+
+Example:
+```python
+page.drawer = ft.NavigationDrawer(
+    controls=[
+        ft.NavigationDrawerDestination(
+            icon=ft.icons.ADD_TO_HOME_SCREEN_SHARP, label="Item 1"
+        ),
+        ft.NavigationDrawerDestination(icon=ft.icons.ADD_COMMENT, label="Item 2")
+    ]
+)
+page.open_drawer()
+```
+:::
+
+### `open_bottom_sheet(bottom_sheet: Optional[BottomSheet])`
 
 Displays bottom sheet at the bottom of the page.
 
-### `show_dialog(dialog: AlertDialog)`
+### `open_dialog(dialog: Optional[AlertDialog])`
 
 Displays dialog.
 
-### `show_drawer(drawer: NavigationDialog)`
+### `open_drawer(drawer: Optional[NavigationDialog])`
 
 Displays [`drawer`](#drawer).
 
-### `show_end_drawer(drawer: NavigationDialog)`
+### `open_end_drawer(drawer: Optional[NavigationDialog])`
 
 Displays [`end_drawer`](#end_drawer).
 
-### `show_snack_bar(snack_bar: SnackBar)`
+### `open_snack_bar(snack_bar: Optional[SnackBar])`
 
-Displays SnackBar at the bottom of the page.
-
-`snack_bar` - A [`SnackBar`](/docs/controls/snackbar) control to display at the bottom of the Page.
+Displays [`snack_bar`](/docs/controls/snackbar) at the bottom of the page.
 
 ### `window_center()`
 
