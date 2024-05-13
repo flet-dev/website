@@ -317,7 +317,7 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 # ...
 
 class TodoApp(ft.UserControl):
-    def __init__(self):
+    def build(self):
         self.tasks = []
         self.new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
         self.tasks = ft.Column()
@@ -409,7 +409,7 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 
 ```python
 class TodoApp():
-    def __init__(self):
+    def build(self):
         # ...
 
         self.items_left = ft.Text("0 items left")
