@@ -253,7 +253,7 @@ and mounts the following endpoints in the root of the app:
 
 `/` (GET) - Flet app static files with SPA catch-all handler.
 
-`flet.fastapi.app()` parameters:
+`flet_fastapi.app()` parameters:
 
 * `session_handler` (function or coroutine) - application entry point - a method called for newly connected user. Handler must have 1 parameter: `page` - `Page` instance.
 * `assets_dir` (str, optional) - an absolute path to app's assets directory.
