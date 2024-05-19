@@ -200,6 +200,11 @@ To pass an option with a value:
 flet build ipa --flutter-build-args=--export-method --flutter-build-args=development
 ```
 
+## Verbose logging
+
+`--verbose` or `-vv` option allows to see the output of all commands during `flet build` run.
+We might ask for a detailed log if you need support.
+
 ## Logging
 
 All Flet apps output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `out.log` file. Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:
