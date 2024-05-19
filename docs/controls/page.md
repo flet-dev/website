@@ -16,6 +16,20 @@ import TabItem from '@theme/TabItem';
 
 `True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
+### `auto_update`
+
+`True` if all page controls should automatically update. If `False` you should use `update()` method
+
+```python
+def click(e):
+    btn.text += "!"
+
+page.auto_update = True
+btn = ft.FilledButton("Hello, world", on_click=click)
+
+page.add(btn)
+```
+
 ### `appbar`
 
 An [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
@@ -63,17 +77,7 @@ page.update()
 </TabItem>
 </Tabs>
 
-or to get the same result as above using `page.add()` shortcut method:
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-page.add(ft.Text("Hello!"))
-```
-
-</TabItem>
-</Tabs>
+or to get the same result as above using [`page.add()`](#add) method
 
 To remove the top most control on the page:
 
@@ -678,6 +682,14 @@ Note `view=ft.AppView.FLET_APP_HIDDEN` which hides app window on start.
 
 ## Methods
 
+### `add(*controls)`
+
+Adds controls to page
+
+```python
+page.add(ft.Text("Hello!"), ft.FilledButton("Button"))
+```
+
 ### `can_launch_url(url)`
 
 Checks whether the specified URL can be handled by some app installed on the device.
@@ -816,6 +828,7 @@ Displays the banner at the top of the page.
 
 :::note
 You can use all open_...() methods without argument if you defined this property. If you didn't defined this property method will raise `Exception`.
+:::
 
 Example:
 ```python
@@ -1086,3 +1099,7 @@ Fires when an application's native OS window changes its state: position, size, 
 * `moved` (macOS and Windows only)
 * `enterFullScreen`
 * `leaveFullScreen`
+
+## Magic methods
+
+

@@ -211,6 +211,67 @@ Every control has `visible` property which is `True` by default - control is ren
 
 Imposed Control width in virtual pixels.
 
+## Methods
+
+### `add(*controls)`
+
+:::note
+For using `add()`, `insert()`, `remove()` methods your Control must inherit this methods
+
+Current controls which inherited this methods:
+- AppBar
+- Column
+- CupertinoNavigationBar
+- MenuBar
+- NavigationBar
+- NavigationDrawer
+- NavigationRail
+- Page
+- Row
+- SearchBar
+- View
+:::
+
+Adds `controls` to control children list.
+
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+page.add(ft.Text("Hi"), ft.Text("World"))
+```
+
+</TabItem>
+</Tabs>
+
+### `insert(at: int, *controls)`
+
+Insert `controls` at `at` index.
+
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+page.insert(2, ft.Text("Hi"), ft.Text("World"))
+```
+
+</TabItem>
+</Tabs>
+
+### `remove(*controls)`
+
+Remove `controls` from control children list.
+
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+page.remove(ft.Text("Hi"), ft.Text("World"))
+```
+
+</TabItem>
+</Tabs>
+
 ## Transformations
 
 ### `offset`
@@ -297,4 +358,71 @@ ft.Image(
     border_radius=5,
     scale=Scale(scale_x=2, scale_y=0.5)
 )
+```
+
+## Magic methods
+
+### `__add__(other: Control | list[Control])`
+
+Is used when you use `+` operator.
+
+```python
+navigation_bar = ft.NavigationBar()
+page.navigation_bar = navigation_bar + ft.NavigationBarDestination(icon=ft.icons.SETTINGS, label="Settings")
+```
+
+### ``__radd__(other: Control | list[Control])``
+
+Reverse version of [`__add__()`](#__add__other-control--listcontrol).
+
+### `__iadd__(other: Control | list[Control])`
+
+Is used when you use `+=` operator.
+
+The equivalent of [`add(other)`](#addcontrols)
+
+```python
+txt = ft.Text("Test text")
+page += txt # the equivalent of page.add(txt)
+```
+
+### `__sub__(other: Control | list[Control])`
+
+Is used when you use `-` operator.
+
+```python
+navigation_bar = ft.NavigationBar(
+    destinations=[
+        ft.NavigationBarDestination(icon=ft.icons.SETTINGS, label="Settings"),
+    ]
+)
+page.navigation_bar = navigation_bar - ft.NavigationBarDestination(icon=ft.icons.SETTINGS, label="Settings")
+```
+
+### `__rsub__(other: Control | list[Control])`
+
+Reverse version of [`__sub__()`](#__sub__other-control--listcontrol)
+
+### `__isub__(other: Control | list[Control])`
+
+Is used when you use `-=` operator.
+
+The equivalent of [`remove(other)`](#removecontrols)
+
+```python
+page -= ft.Text("Test text")
+```
+
+###  `__setitem__(key: int, value: Control | list[Control])`
+
+Is used when you set item of Python object (`control[key] = ...`)
+
+:::note
+For using this magic method control must support `insert()` method
+:::
+
+The equivalent of [`insert(key, *value)`](#insertat-int-controls)
+
+```python
+page[2] = ft.Text("Hello"), ft.Text("World")
 ```
