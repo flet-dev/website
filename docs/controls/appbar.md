@@ -173,3 +173,23 @@ The opacity of the toolbar. Value ranges from `0.0` (transparent) to `1.0` (full
 
 The style to be used for the `Text` controls in the app bar's `leading` and `actions` (but not `title`). Value is an
 instance of type [`TextStyle`](/docs/reference/types/textstyle).
+
+## Methods
+
+### `add(*actions)`
+
+Add `actions` to appbar.
+
+See [`Control.add()`](/docs/controls/overview#addcontrols) for examples
+
+### `insert(at: int, *actions)`
+
+Insert `actions` at `at` index.
+
+See [`Control.insert()`](/docs/controls/overview#insertat-int-controls) for examples
+
+### `remove(*actions)`
+
+Remove `actions` from appbar.
+
+See [`Control.remove()`](/docs/controls/overview#removecontrols) for examples
