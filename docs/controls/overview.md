@@ -232,7 +232,7 @@ Current controls which inherited this methods:
 - View
 :::
 
-Adds `controls` to control children list.
+Add `controls` to control children list.
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
