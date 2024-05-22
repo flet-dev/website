@@ -57,7 +57,7 @@ def main(page: ft.Page):
         "Open Sans": "fonts/OpenSans-Regular.ttf",
     }
 
-    page.theme = Theme(font_family="Kanit")
+    page.theme = ft.Theme(font_family="Kanit")
 
     page.add(
         ft.Text("This is rendered with Kanit font"),
