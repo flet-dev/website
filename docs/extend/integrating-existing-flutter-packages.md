@@ -1,6 +1,6 @@
 ---
 title: Integrating existing Flutter packages into your Flet app
-sidebar_label: Integrating existing Flutter packages
+sidebar_label: 3rd-party Flutter packages
 ---
 
 :::info Work in progress
@@ -9,7 +9,7 @@ The guide is being updated.
 
 ## Introduction
 
-Flet controls implement many Flutter built-in widgets which could be enough to create even the most complex apps. However, not all Flutter widgets or 3rd-pary packages could be supported by Flet team or added to Flet core.
+Flet controls implement many Flutter built-in widgets which could be enough to create even the most complex apps. However, not all Flutter widgets or 3rd-party packages could be supported by Flet team or added to Flet core.
 
 Flet framework provides extensibility mechanism to build your Flet app with widgets or/and API from your own or [3rd-party Flutter packages](https://pub.dev/packages?sort=popularity).
 
@@ -19,11 +19,11 @@ To integrate custom Flutter package into Flet you need to have basic understandi
 
 ## Creating Flet extension
 
-Flet extension consists of the following parts:
+Flet extension that integrates 3rd-party Flutter package consists of the following parts:
 
-* Flet Dart package
+1. Flet Dart package
 
-* Flet Python control
+2. Flet Python control
 
 Flet Dart package contains Flutter widget ... (Feodor)
 
@@ -209,22 +209,112 @@ open build/macos/flet_spinkit_app.app
 ```
 <img src="/img/docs/extending-flet/spinkit-1.gif" className="screenshot-40" />
 
+You can find source code for this example [here](https://github.com/InesaFitsner/extend-flet-example/tree/spinkit-step-1).
 
-### Flet Control properties
+### Customise properties
 
-In the example above, Spinkit control creates a hardcoded Flutter widget which is not very useful as we want to be able to customize it. 
+In the example above, Spinkit control creates a hardcoded Flutter widget which is not very useful as we want to be able to customize its properties. 
 
-When we created Spinkit class in Python, it inherited from Flet `Control` class that has properties common for all controls such as `visible`, `disabled` and `data`, to name a few. Please see full reference of the common Control [here](TBD). 
+#### Flet Control properties
+
+When we created Spinkit class in Python, it inherited from Flet `Control` class that has properties common for all controls such as `visible`, `opacity` and `tooltip`, to name a few. Please see full reference of the common Control properties [here](/docs/controls). 
 
 To be able to use this properties for your new control you need to:
-1. Expose(?) them in the constructor of your new Python control:
+
+1. Expose(?) the properties you want to use in the constructor for your new Python control:
+
+```python
+from typing import Any, Optional
+
+from flet_core.control import Control, OptionalNumber
+
+class Spinkit(Control):
+    """
+    Spinkit Control.
+    """
+
+    def __init__(
+        self,
+        #
+        # Control
+        #
+        opacity: OptionalNumber = None,
+        tooltip: Optional[str] = None,
+        visible: Optional[bool] = None,
+        data: Any = None,
+    ):
+        Control.__init__(
+            self,
+            tooltip=tooltip,
+            opacity=opacity,
+            visible=visible,
+            data=data,
+        )
+
+    def _get_control_name(self):
+        return "spinkit"
 ```
 
+2. In `<control-name>.dart` file, use `baseControl` method to wrap Flutter widget:
+
+```dart
+import 'package:flet/flet.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+class SpinkitControl extends StatelessWidget {
+  final Control? parent;
+  final Control control;
+
+  const SpinkitControl({
+    super.key,
+    required this.parent,
+    required this.control,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return baseControl(
+        context,
+        const SpinKitRotatingCircle(
+          color: Colors.green,
+          size: 100.0,
+        ),
+        parent,
+        control);
+  }
+}
 ```
 
-added to surface, added to overlay
+3. Use Control properties in your app:
+```python
+import flet as ft
+from controls.spinkit import Spinkit
 
-### Custom properties
+
+def main(page: ft.Page):
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    page.add(Spinkit(opacity=0.5, tooltip="Spinkit tooltip"))
+
+
+ft.app(main)
+
+```
+
+You can find source code for this example [here](https://github.com/InesaFitsner/extend-flet-example/tree/spinkit-step-2).
+
+#### Flet ConstrainedControl properties
+
+There two types of controls in Flet:
+
+1. Visual Controls that are added to the surface, such as Spinkit.
+2. Controls that are added to `overlay`, such as Video, Audio or a dialog.
+
+In case new control is added to the surface, in most cases it could inherit from `ConstrainedControl` that has many additional properties s and have a lot of additional properties 
+
+#### Control-specific properties
 
 ### Debug
 
