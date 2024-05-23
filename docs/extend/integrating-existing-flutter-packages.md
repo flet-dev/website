@@ -23,11 +23,11 @@ Flet extension consists of the following parts:
 
 * Flet Dart package
 
-* Python control
+* Flet Python control
 
 Flet Dart package contains Flutter widget ... (Feodor)
 
-Python control is a Python class that you will use in your Flet program .
+Flet Python control is a Python class that you will use in your Flet program.
 
 For example, take a look at a basic [Flet extension](https://github.com/InesaFitsner/extend-flet-example) for [flutter_spinkit](https://pub.dev/packages/flutter_spinkit) package. 
 
@@ -80,11 +80,11 @@ library <package_name>;
 export "../src/create_control.dart" show createControl, ensureInitialized;
 ```
 
-It will export two methods: `createControl` method that will return your Dart (Feodor)
+It will export two methods: `createControl` method that will return your Dart (Feodor) ... 
 
 #### `create_control.dart`
 
-Flet calls createControl for all controls.... (Feodor)
+Flet calls createControl for all controls.... (Feodor) ...
 
 ```dart
 import 'package:flet/flet.dart';
@@ -138,9 +138,9 @@ class SpinkitControl extends StatelessWidget {
 
 As a proof of concept, we would like to see the hardcoded `SpinKitRotatingCircle` in our Flet program, and later we will get to customizing its properties. 
 
-### Python control
+### Flet Python control
 
-Python control is a Python class that you can create in your Flet app or as an external Python module. In the Flet Spinkit example, we created Spinkit class in `/controls/spinkit.py` file:
+Flet Python control is a Python class that you can create in your Flet app or as an external Python module. In the Flet Spinkit example, we created Spinkit class in `/controls/spinkit.py` file:
 
 ```python
 
@@ -164,11 +164,43 @@ The minumal reqirements for this class is that it has to be inherited from Flet 
 
 ### Connect your Python app and Dart package
 
-Once you have created Dart Flutter package, Flet Python control and the Python app that uses it, you can run your app and see something like this:
+Once you have created Flet Dart package and Flet Python control, create a Python program in `main.py` that uses it:
+```python
+import flet as ft
+from controls.spinkit import Spinkit
 
-[image with red square]
+def main(page: ft.Page):
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
-To be able to communicate to your Flutter package you need to create 
+    page.add(Spinkit())
+
+
+ft.app(main)
+```
+
+When we run this simple app we expect to see the hardcoded `SpinKitRotatingCircle` on the page but that's not happening yet:
+
+<img src="/img/docs/extending-flet/unknown-control.png" className="screenshot-40" />
+
+Our Flet app doesn't know about this new Flet Dart package that we created because it uses ...(Feodor).
+
+To connect your Python app and new Flet Dart package, you need to `pubspec.yaml` file on the same level as `main.py`. It should have the following contents:
+
+```
+dependencies:
+  flet_spinkit:
+    path: {absolute-path-to-flet-dart-package-folder}
+
+dependency_overrides:
+```
+
+Now you need to build the app for the platform of your choice by running `flet build` command:
+
+```
+poetry run flet build macos
+```
+
 
 ### Flet control properties
 
