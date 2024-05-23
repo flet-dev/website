@@ -138,23 +138,3 @@ The list of menu items that are the top level children of the `MenuBar`.
 ### `style`
 
 The value is an instance of [`MenuStyle`](/docs/reference/types/menustyle) class.
-
-## Methods
-
-### `add(*controls)`
-
-Add `controls` to menubar.
-
-See [`Control.add()`](/docs/controls/overview#addcontrols) for examples
-
-### `insert(at: int, *controls)`
-
-Insert `controls` at `at` index.
-
-See [`Control.insert()`](/docs/controls/overview#insertat-int-controls) for examples
-
-### `remove(*controls)`
-
-Remove `controls` from menubar.
-
-See [`Control.remove()`](/docs/controls/overview#removecontrols) for examples

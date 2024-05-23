@@ -179,24 +179,6 @@ A list of `Control`s to display after the text input field when the search view 
 
 ## Methods
 
-### `add(*controls)`
-
-Add `controls` to search bar.
-
-See [`Control.add()`](/docs/controls/overview#addcontrols) for examples
-
-### `insert(at: int, *controls)`
-
-Insert `controls` at `at` index.
-
-See [`Control.insert()`](/docs/controls/overview#insertat-int-controls) for examples
-
-### `remove(*controls)`
-
-Remove `controls` from search bar.
-
-See [`Control.remove()`](/docs/controls/overview#removecontrols) for examples
-
 ### `close_view(text)`
 
 Closes the search view. The `text` parameter (defaults to an empty string) is the text to be shown in the search bar after the search view is closed.

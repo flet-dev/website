@@ -102,26 +102,6 @@ The [color](/docs/reference/colors) used for the drop shadow to indicate `elevat
 
 The surface tint of the Material that holds the NavigationDrawer's contents.
 
-## `NavigationBar` methods
-
-### `add(*destinations)`
-
-Add `destinations` to navigation bar.
-
-See [`Control.add()`](/docs/controls/overview#addcontrols) for examples
-
-### `insert(at: int, *destinations)`
-
-Insert `destinations` at `at` index.
-
-See [`Control.insert()`](/docs/controls/overview#insertat-int-controls) for examples
-
-### `remove(*destinations)`
-
-Remove `destinations` from navigation bar.
-
-See [`Control.remove()`](/docs/controls/overview#removecontrols) for examples
-
 ## `NavigationBar` events
 
 ### `on_change`

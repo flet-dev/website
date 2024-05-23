@@ -74,26 +74,6 @@ The foreground [color](/docs/reference/colors) of the icon and title of the unse
 
 The index into `destinations` for the current selected `NavigationBarDestination` or `None` if no destination is selected.
 
-## Methods
-
-### `add(*destinations)`
-
-Add `destinations` to navigation bar.
-
-See [`Control.add()`](/docs/controls/overview#addcontrols) for examples
-
-### `insert(at: int, *destinations)`
-
-Insert `destinations` at `at` index.
-
-See [`Control.insert()`](/docs/controls/overview#insertat-int-controls) for examples
-
-### `remove(*destinations)`
-
-Remove `destinations` from navigation bar.
-
-See [`Control.remove()`](/docs/controls/overview#removecontrols) for examples
-
 ## Events
 
 ### `on_change`

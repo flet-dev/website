@@ -421,24 +421,6 @@ When set to `True` the Column will put child controls into additional columns (r
 
 ## Methods
 
-### `add(*controls)`
-
-Add `controls` to column.
-
-See [`Control.add()`](/docs/controls/overview#addcontrols) for examples
-
-### `insert(at: int, *controls)`
-
-Insert `controls` at `at` index.
-
-See [`Control.insert()`](/docs/controls/overview#insertat-int-controls) for examples
-
-### `remove(*controls)`
-
-Remove `controls` from column.
-
-See [`Control.remove()`](/docs/controls/overview#removecontrols) for examples
-
 ### `scroll_to(offset, delta, key, duration, curve)`
 
 Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
