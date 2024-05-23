@@ -179,30 +179,48 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-When we run this simple app we expect to see the hardcoded `SpinKitRotatingCircle` on the page but that's not happening yet:
+Let's run this simple app using `flet run` command. We expect to see the hardcoded `SpinKitRotatingCircle` on the page but that's not happening yet. Instead, we see this message in place of the Spinkit control:
 
 <img src="/img/docs/extending-flet/unknown-control.png" className="screenshot-40" />
 
-Our Flet app doesn't know about this new Flet Dart package that we created because it uses ...(Feodor).
+Our Flet app doesn't know yet about the new Flet Dart package that we created because it uses ...(Feodor).
 
-To connect your Python app and new Flet Dart package, you need to `pubspec.yaml` file on the same level as `main.py`. It should have the following contents:
+To connect your Python app and new Flet Dart package, you need create to `pubspec.yaml` file on the same level as `main.py`. It should have the following contents:
 
 ```
 dependencies:
   flet_spinkit:
     path: {absolute-path-to-flet-dart-package-folder}
+```
+:::info Work in progress
+This approach is subject to change and the guide is being updated.
+:::
 
-dependency_overrides:
+Now you need to build the app for the platform of your choice by running `flet build` command, for example:
+
+```
+flet build macos
 ```
 
-Now you need to build the app for the platform of your choice by running `flet build` command:
+Finally, we open the built app:
 
 ```
-poetry run flet build macos
+open build/macos/flet_spinkit_app.app
+```
+<img src="/img/docs/extending-flet/spinkit-1.gif" className="screenshot-40" />
+
+
+### Flet Control properties
+
+In the example above, Spinkit control creates a hardcoded Flutter widget which is not very useful as we want to be able to customize it. 
+
+When we created Spinkit class in Python, it inherited from Flet `Control` class that has properties common for all controls such as `visible`, `disabled` and `data`, to name a few. Please see full reference of the common Control [here](TBD). 
+
+To be able to use this properties for your new control you need to:
+1. Expose(?) them in the constructor of your new Python control:
 ```
 
-
-### Flet control properties
+```
 
 added to surface, added to overlay
 
