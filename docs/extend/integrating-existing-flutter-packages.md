@@ -213,15 +213,13 @@ You can find source code for this example [here](https://github.com/InesaFitsner
 
 ### Customise properties
 
-In the example above, Spinkit control creates a hardcoded Flutter widget which is not very useful as we want to be able to customize its properties. 
+In the example above, Spinkit control creates a hardcoded Flutter widget. Now let's customize its properties. 
 
-#### Flet Control properties
+#### Flet `Control` properties
 
 When we created Spinkit class in Python, it inherited from Flet [`Control`](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/control.py) class that has properties common for all controls such as `visible`, `opacity` and `tooltip`, to name a few. See reference for the common Control properties [here](/docs/controls). 
 
-To be able to use these properties for your new control you need to:
-
-1. Add the Control properties you want to use in the constructor for your new Python control:
+To be able to use these properties for your new control you need to add the Control properties you want to use in the constructor for your new Python control:
 
 ```python
 from typing import Any, Optional
@@ -255,7 +253,7 @@ class Spinkit(Control):
         return "spinkit"
 ```
 
-2. In `<control-name>.dart` file, use `baseControl` method to wrap Flutter widget:
+In `<control-name>.dart` file, use `baseControl` method to wrap Flutter widget:
 
 ```dart
 import 'package:flet/flet.dart';
@@ -286,7 +284,8 @@ class SpinkitControl extends StatelessWidget {
 }
 ```
 
-3. Use Control properties in your app:
+Finally, use `Control` properties in your app:
+
 ```python
 import flet as ft
 from controls.spinkit import Spinkit
@@ -305,22 +304,136 @@ ft.app(main)
 
 You can find source code for this example [here](https://github.com/InesaFitsner/extend-flet-example/tree/spinkit-step-2).
 
-#### Flet ConstrainedControl properties
+#### Flet `ConstrainedControl` properties
 
-There three types of controls in Flet:
+Generally, there are three types of controls in Flet:
 
 1. Visual Controls that are added to the surface, such as Spinkit.
 2. Popup Controls (dialogs, pickers, panels etc.).
-3. Non-visual Controls that are added to `overlay`, such as Video or Audio.
+3. Non-visual Controls or services that are added to `overlay`, such as Video or Audio.
 
 In most cases, Visual Controls could inherit from [`ConstrainedControl`](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/constrained_control.py) that has many additional properties such as `top` and `left` for its position within Stack and a bunch of animation properties.
 
-To use those properities, add them to the constructor of your Python control:
+To use those properities, inherit your control from `CostrainedControl` and add those properties to the constructor of your Python control:
+
+```python
+from typing import Any, Optional
+
+from flet_core.constrained_control import ConstrainedControl
+from flet_core.control import OptionalNumber
+
+
+class Spinkit(ConstrainedControl):
+    """
+    Spinkit Control.
+    """
+
+    def __init__(
+        self,
+        #
+        # Control
+        #
+        opacity: OptionalNumber = None,
+        tooltip: Optional[str] = None,
+        visible: Optional[bool] = None,
+        data: Any = None,
+        #
+        # ConstrainedControl
+        #
+        left: OptionalNumber = None,
+        top: OptionalNumber = None,
+        right: OptionalNumber = None,
+        bottom: OptionalNumber = None,
+    ):
+        ConstrainedControl.__init__(
+            self,
+            tooltip=tooltip,
+            opacity=opacity,
+            visible=visible,
+            data=data,
+            left=left,
+            top=top,
+            right=right,
+            bottom=bottom,
+        )
+
+    def _get_control_name(self):
+        return "spinkit"
+```
+
+In `<control-name>.dart` file, use `constrainedControl` method to wrap Flutter widget:
+
+```dart
+import 'package:flet/flet.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+class SpinkitControl extends StatelessWidget {
+  final Control? parent;
+  final Control control;
+
+  const SpinkitControl({
+    super.key,
+    required this.parent,
+    required this.control,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return constrainedControl(
+        context,
+        const SpinKitRotatingCircle(
+          color: Colors.green,
+          size: 100.0,
+        ),
+        parent,
+        control);
+  }
+}
+```
+
+Use `ConstrainedControl` properties in your app:
+
+```python
+import flet as ft
+from controls.spinkit import Spinkit
+
+
+def main(page: ft.Page):
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    page.add(
+        ft.Stack(
+            [
+                ft.Container(height=200, width=200, bgcolor=ft.colors.BLUE_100),
+                Spinkit(opacity=0.5, tooltip="Spinkit tooltip", top=0, left=0),
+            ]
+        )
+    )
+
+
+ft.app(main)
+```
+
+You can find source code for this example [here](https://github.com/InesaFitsner/extend-flet-example/tree/spinkit-step-2).
+
+#### Control-specific properties
+
+Now that you have taken full advantage of the properties Flet `Control` and `ConstrainedControl` offer, let's define the properties that are specific to the new Control you are building.
+
+In the Spinkit example, let's define its `color`, `size` and `type`.
+
+##### Color
+
+In Python class, define new `color` property:
+
 ```python
 
 ```
 
-#### Control-specific properties
+
+
 
 ### Debug
 
