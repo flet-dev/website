@@ -217,11 +217,11 @@ In the example above, Spinkit control creates a hardcoded Flutter widget which i
 
 #### Flet Control properties
 
-When we created Spinkit class in Python, it inherited from Flet `Control` class that has properties common for all controls such as `visible`, `opacity` and `tooltip`, to name a few. Please see full reference of the common Control properties [here](/docs/controls). 
+When we created Spinkit class in Python, it inherited from Flet [`Control`](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/control.py) class that has properties common for all controls such as `visible`, `opacity` and `tooltip`, to name a few. See reference for the common Control properties [here](/docs/controls). 
 
-To be able to use this properties for your new control you need to:
+To be able to use these properties for your new control you need to:
 
-1. Expose(?) the properties you want to use in the constructor for your new Python control:
+1. Add the Control properties you want to use in the constructor for your new Python control:
 
 ```python
 from typing import Any, Optional
@@ -307,12 +307,18 @@ You can find source code for this example [here](https://github.com/InesaFitsner
 
 #### Flet ConstrainedControl properties
 
-There two types of controls in Flet:
+There three types of controls in Flet:
 
 1. Visual Controls that are added to the surface, such as Spinkit.
-2. Controls that are added to `overlay`, such as Video, Audio or a dialog.
+2. Popup Controls (dialogs, pickers, panels etc.).
+3. Non-visual Controls that are added to `overlay`, such as Video or Audio.
 
-In case new control is added to the surface, in most cases it could inherit from `ConstrainedControl` that has many additional properties s and have a lot of additional properties 
+In most cases, Visual Controls could inherit from [`ConstrainedControl`](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/constrained_control.py) that has many additional properties such as `top` and `left` for its position within Stack and a bunch of animation properties.
+
+To use those properities, add them to the constructor of your Python control:
+```python
+
+```
 
 #### Control-specific properties
 
