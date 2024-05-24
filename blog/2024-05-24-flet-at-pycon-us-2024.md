@@ -7,7 +7,7 @@ author_url: https://github.com/FeodorFitsner
 author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 ---
 
-Last week we attended PyCon US in a beautiful city of Pittsburgh 🌉, PA!
+Last week we attended PyCon US in a beautiful city of Pittsburgh, PA!
 
 I've been on many conferences, but at PyCon I was amazed by the spacious venue, flawless event organization, high-quality content and welcoming community 😎, ...and good food 🍔!
 
