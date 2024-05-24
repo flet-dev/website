@@ -187,7 +187,7 @@ Our Flet app doesn't know yet about the new Flet Dart package that we created be
 
 To connect your Python app and new Flet Dart package, you need create to `pubspec.yaml` file on the same level as `main.py`. It should have the following contents:
 
-```
+```yaml
 dependencies:
   flet_spinkit:
     path: {absolute-path-to-flet-dart-package-folder}
@@ -211,7 +211,12 @@ open build/macos/flet_spinkit_app.app
 
 You can find source code for this example [here](https://github.com/InesaFitsner/extend-flet-example/tree/spinkit-step-1).
 
-### Customise properties
+:::info
+Every time you need to make changes to Python or Dart part of your extension, you need to re-run build command.
+:::
+
+
+### Customize properties
 
 In the example above, Spinkit control creates a hardcoded Flutter widget. Now let's customize its properties. 
 
@@ -594,6 +599,33 @@ var clipBehavior = Clip.values.firstWhere(
         widget.control.attrString("clipBehavior", "")!.toLowerCase(),
     orElse: () => Clip.none);
 ```
+##### Json properties
+
+For example, `shape` property for `Card`.
+
+In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/card.py):
+
+```python
+def before_update(self):
+    super().before_update()
+    self._set_attr_json("shape", self.__shape)
+
+# shape
+@property
+def shape(self) -> Optional[OutlinedBorder]:
+    return self.__shape
+
+@shape.setter
+def shape(self, value: Optional[OutlinedBorder]):
+    self.__shape = value
+```
+
+In [Dart](https://github.com/flet-dev/flet/blob/main/packages/flet/lib/src/controls/card.dart):
+
+```dart
+var shape = parseOutlinedBorder(control, "shape")
+```
+
 ##### Children
 
 For example, `content` for `AlertDialog`:
@@ -647,11 +679,6 @@ Function()? onPressed = !disabled
     }
     : null;
 ```
-
-### Debug
-
-
-
 
 ## Examples
 
