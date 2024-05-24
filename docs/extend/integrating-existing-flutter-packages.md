@@ -422,18 +422,231 @@ You can find source code for this example [here](https://github.com/InesaFitsner
 
 Now that you have taken full advantage of the properties Flet `Control` and `ConstrainedControl` offer, let's define the properties that are specific to the new Control you are building.
 
-In the Spinkit example, let's define its `color`, `size` and `type`.
+In the Spinkit example, let's define its `color` and `size`.
 
-##### Color
-
-In Python class, define new `color` property:
+In Python class, define new `color` and `size` properties:
 
 ```python
+from typing import Any, Optional
+
+from flet_core.constrained_control import ConstrainedControl
+from flet_core.control import OptionalNumber
+
+
+class Spinkit(ConstrainedControl):
+    """
+    Spinkit Control.
+    """
+
+    def __init__(
+        self,
+        #
+        # Control
+        #
+        opacity: OptionalNumber = None,
+        tooltip: Optional[str] = None,
+        visible: Optional[bool] = None,
+        data: Any = None,
+        #
+        # ConstrainedControl
+        #
+        left: OptionalNumber = None,
+        top: OptionalNumber = None,
+        right: OptionalNumber = None,
+        bottom: OptionalNumber = None,
+        #
+        # Spinkit specific
+        #
+        color: Optional[str] = None,
+        size: OptionalNumber = None,
+    ):
+        ConstrainedControl.__init__(
+            self,
+            tooltip=tooltip,
+            opacity=opacity,
+            visible=visible,
+            data=data,
+            left=left,
+            top=top,
+            right=right,
+            bottom=bottom,
+        )
+
+        self.color = color
+        self.size = size
+
+    def _get_control_name(self):
+        return "spinkit"
+
+    # color
+    @property
+    def color(self):
+        return self._get_attr("color")
+
+    @color.setter
+    def color(self, value):
+        self._set_attr("color", value)
+
+    # size
+    @property
+    def size(self):
+        return self._get_attr("size")
+
+    @size.setter
+    def size(self, value):
+        self._set_attr("size", value)
+```
+
+In `<control-name>.dart` file, use helper methods `attrColor` and `attrDouble` to access color and size values:
+
+```dart
+import 'package:flet/flet.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+class SpinkitControl extends StatelessWidget {
+  final Control? parent;
+  final Control control;
+
+  const SpinkitControl({
+    super.key,
+    required this.parent,
+    required this.control,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    var color = control.attrColor("color", context);
+    var size = control.attrDouble("size");
+
+    return constrainedControl(
+        context,
+        SpinKitRotatingCircle(
+          color: color,
+          size: size ?? 50,
+        ),
+        parent,
+        control);
+  }
+}
+```
+
+Use `color` and `size` properties in your app:
+```python
+import flet as ft
+from controls.spinkit import Spinkit
+
+
+def main(page: ft.Page):
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    page.add(
+        ft.Stack(
+            [
+                ft.Container(height=200, width=200, bgcolor=ft.colors.BLUE_100),
+                Spinkit(
+                    opacity=0.5,
+                    tooltip="Spinkit tooltip",
+                    top=0,
+                    left=0,
+                    color=ft.colors.PURPLE,
+                    size=150,
+                ),
+            ]
+        )
+    )
+
+ft.app(main)
 
 ```
 
+You can find source code for this example [here](https://github.com/InesaFitsner/extend-flet-example/tree/spinkit-step-4).
 
+#### Examples for different types of properties and events
 
+##### Enum properties
+
+For example, `clip_behaviour` for `AppBar`.
+
+In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/app_bar.py):
+
+```python
+# clip_behavior
+@property
+def clip_behavior(self) -> Optional[ClipBehavior]:
+    return self._get_attr("clipBehavior")
+
+@clip_behavior.setter
+def clip_behavior(self, value: Optional[ClipBehavior]):
+    self._set_attr(
+        "clipBehavior",
+        value.value if isinstance(value, ClipBehavior) else value,
+    )
+```
+
+In [Dart](https://github.com/flet-dev/flet/blob/main/packages/flet/lib/src/controls/app_bar.dart):
+
+```dart
+var clipBehavior = Clip.values.firstWhere(
+    (e) =>
+        e.name.toLowerCase() ==
+        widget.control.attrString("clipBehavior", "")!.toLowerCase(),
+    orElse: () => Clip.none);
+```
+##### Children
+
+For example, `content` for `AlertDialog`:
+
+In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/alert_dialog.py):
+
+```python
+    def _get_children(self):
+        children = []
+        if self.__content:
+            self.__content._set_attr_internal("n", "content")
+            children.append(self.__content)
+        return children
+```
+
+In [Dart](https://github.com/flet-dev/flet/blob/main/packages/flet/lib/src/controls/alert_dialog.dart):
+
+```dart
+    var contentCtrls =
+        widget.children.where((c) => c.name == "content" && c.isVisible);
+```
+
+##### Events
+
+For example, `on_click` event for `ElevatedButton`.
+
+In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/elevated_button.py):
+
+```python
+# on_click
+@property
+def on_click(self):
+    return self._get_event_handler("click")
+
+@on_click.setter
+def on_click(self, handler):
+    self._add_event_handler("click", handler)
+```
+
+In [Dart](https://github.com/flet-dev/flet/blob/main/packages/flet/lib/src/controls/elevated_button.dart):
+
+```dart
+Function()? onPressed = !disabled
+    ? () {
+        debugPrint("Button ${widget.control.id} clicked!");
+        if (url != "") {
+        openWebBrowser(url,
+            webWindowName: widget.control.attrString("urlTarget"));
+        }
+        widget.backend.triggerControlEvent(widget.control.id, "click");
+    }
+    : null;
+```
 
 ### Debug
 
