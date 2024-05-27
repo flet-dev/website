@@ -9,9 +9,9 @@ The guide is being updated.
 
 ## Introduction
 
-Flet controls implement many Flutter built-in widgets which could be enough to create even the most complex apps. However, not all Flutter widgets or 3rd-party packages could be supported by Flet team or added to Flet core.
+While Flet controls leverage many built-in Flutter widgets, enabling the creation of even complex applications, not all Flutter widgets or third-party packages can be directly supported by the Flet team or included within the core Flet framework.
 
-Flet framework provides extensibility mechanism to build your Flet app with widgets or/and API from your own or [3rd-party Flutter packages](https://pub.dev/packages?sort=popularity).
+To address this, the Flet framework provides an extensibility mechanism. This allows you to incorporate widgets and APIs from your own custom Flutter packages or [third-party libraries]((https://pub.dev/packages?sort=popularity)) directly into your Flet application.
 
 ### Prerequisites
 
@@ -21,11 +21,11 @@ To integrate custom Flutter package into Flet you need to have basic understandi
 
 Flet extension that integrates 3rd-party Flutter package consists of the following parts:
 
-1. Flet Dart package
+1. Flet Dart package.
 
-2. Flet Python control
+2. Flet Python control.
 
-Flet Dart package contains Flutter widget ... (Feodor)
+The Flet Dart package includes a mechanism to create Flutter widgets based on control names returned by the Control's `_get_control_name()` function. This mechanism iterates through all third-party packages and returns the first matching widget.
 
 Flet Python control is a Python class that you will use in your Flet program.
 
@@ -84,7 +84,9 @@ dependencies:
 
 #### `<package_name>.dart`
 
-A starter app containing Dart code for the package. It should have the following contents:
+Extension package should export two methods:
+* `createControl` - called to create a widget that corresponds to a control on Python side.
+* `ensureInitialized` - called once on Flet program start.
 
 ```dart
 library <package_name>;
@@ -92,11 +94,9 @@ library <package_name>;
 export "../src/create_control.dart" show createControl, ensureInitialized;
 ```
 
-It will export two methods: `createControl` method that will return your Dart (Feodor) ... 
-
 #### `create_control.dart`
 
-Flet calls createControl for all controls.... (Feodor) ...
+Flet calls `createControl` for all controls and returns the first matching widget.
 
 ```dart
 import 'package:flet/flet.dart';
@@ -124,9 +124,7 @@ void ensureInitialized() {
 
 Here you create Flutter "wrapper" widget that will build Flutter widget or API that you want to use in your Flet app.
 
-Wrapper widget connects your contr... (Feodor)
-
-connects Python control with its state and events to a Flutter widget or API. (Feodor)
+Wrapper widget passes the state of Python control down to a Flutter widget, that will be displayed on a page, and provides an API to route events from Flutter widget back to Python control.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -270,7 +268,7 @@ class Spinkit(Control):
         return "spinkit"
 ```
 
-In `<control-name>.dart` file, use `baseControl` method to wrap Flutter widget:
+In `<control-name>.dart` file, wrap your widget into `baseControl()` to magically implement all Python's `Control` properties:
 
 ```dart
 import 'package:flet/flet.dart';
@@ -325,11 +323,11 @@ You can find source code for this example [here](https://github.com/InesaFitsner
 
 Generally, there are three types of controls in Flet:
 
-1. Visual Controls that are added to the surface, such as Spinkit.
+1. Visual Controls that are added to the app/page surface, such as Spinkit.
 2. Popup Controls (dialogs, pickers, panels etc.).
 3. Non-visual Controls or services that are added to `overlay`, such as Video or Audio.
 
-In most cases, Visual Controls could inherit from [`ConstrainedControl`](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/constrained_control.py) that has many additional properties such as `top` and `left` for its position within Stack and a bunch of animation properties.
+In the most cases, Visual Controls could inherit from [`ConstrainedControl`](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/constrained_control.py) that has many additional properties such as `top` and `left` for its position within Stack and a bunch of animation properties.
 
 To use those properities, inherit your control from `CostrainedControl` and add those properties to the constructor of your Python control:
 
