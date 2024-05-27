@@ -38,12 +38,23 @@ To create a new [Dart package](https://docs.flutter.dev/packages-and-plugins/dev
 flutter create --template=package <package_name>
 ```
 
-You will see this:
+You will see this folder structure:
 ```
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+├── analysis_options.yaml
+├── lib
+│   └── <package_name>.dart
+├── pubspec.lock
+├── pubspec.yaml
+├── test
+│   └── <package_name>_test.dart
+└── <package_name>.iml
 
 ```
 
-You need to add scr folder with two files...Flet Dart package should have the following structure:
+In the `lib` folder, you need to create `scr` folder with two files: `create_control.dart` and `<control_name>.dart`:
 
 ```
 └── <package_name>
