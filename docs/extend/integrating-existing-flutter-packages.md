@@ -74,6 +74,7 @@ A yaml file containing metadata that specifies the package's dependencies.
 In your `pubspec.yaml` you should add dependency to `flet` and Flutter package for which you are creating your extension. 
 
 In the Flet Spinkit example, `pubspec.yaml` contains dependency to `flutter_spinkit`:
+
 ```yaml
 dependencies:
   flet: ^0.22.0
