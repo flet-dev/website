@@ -54,7 +54,7 @@ You will see this folder structure:
 
 ```
 
-In the `lib` folder, you need to create `scr` folder with two files: `create_control.dart` and `<control_name>.dart`:
+In the `lib` folder, you need to create `src` folder with two files: `create_control.dart` and `<control_name>.dart`:
 
 ```
 └── <package_name>
@@ -175,6 +175,7 @@ The minumal reqirements for this class is that it has to be inherited from Flet 
 ### Connect your Python app and Dart package
 
 Once you have created Flet Dart package and Flet Python control, create a Python program in `main.py` that uses it:
+
 ```python
 import flet as ft
 from controls.spinkit import Spinkit
@@ -189,11 +190,11 @@ def main(page: ft.Page):
 ft.app(main)
 ```
 
-Let's run this simple app using `flet run` command. We expect to see the hardcoded `SpinKitRotatingCircle` on the page but that's not happening yet. Instead, we see this message in place of the Spinkit control:
+Let's run this simple app with `flet run` command. We expect to see the hardcoded `SpinKitRotatingCircle` on the page but that's not happening yet. Instead, we see this message in place of the Spinkit control:
 
 <img src="/img/docs/extending-flet/unknown-control.png" className="screenshot-40" />
 
-Our Flet app doesn't know yet about the new Flet Dart package that we created because it uses ...(Feodor).
+Our Flet app doesn't know yet about the new Flet Dart package that we created.
 
 To connect your Python app and new Flet Dart package, you need create to `pubspec.yaml` file on the same level as `main.py`. It should have the following contents:
 
