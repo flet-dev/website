@@ -16,20 +16,6 @@ import TabItem from '@theme/TabItem';
 
 `True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
-### `auto_update`
-
-`True` if all page controls should automatically update. If `False` you should use `update()` method
-
-```python
-def click(e):
-    btn.text += "!"
-
-page.auto_update = True
-btn = ft.FilledButton("Hello, world", on_click=click)
-
-page.add(btn)
-```
-
 ### `appbar`
 
 An [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
