@@ -227,8 +227,8 @@ class Task(ft.Column):
 
         self.edit_view = ft.Row(
             visible=False,
-            alignment="spaceBetween",
-            vertical_alignment="center",
+            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
             controls=[
                 self.edit_name,
                 ft.IconButton(
@@ -301,7 +301,7 @@ Run the app and try to edit and delete tasks:
 
 ## Filtering list items
 
-We already have a functional ToDo app where we can create, edit, and delete tasks. To be even more productive, we want to be able to filter tasks by their status.
+We already have a functional To-Do app where we can create, edit, and delete tasks. To be even more productive, we want to be able to filter tasks by their status.
 
 Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/todo/to-do-5.py). Below we will explain the changes we've done to implement filtering.
 
