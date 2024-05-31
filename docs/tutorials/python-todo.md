@@ -311,10 +311,11 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 
 # ...
 
-class TodoApp(ft.UserControl):
+class TodoApp(ft.Column):
+    # application's root control is a Column containing all other controls
     def __init__(self):
-        self.tasks = []
-        self.new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
+        super().__init__()
+        self.new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
         self.tasks = ft.Column()
 
         self.filter = ft.Tabs(
@@ -322,37 +323,19 @@ class TodoApp(ft.UserControl):
             on_change=self.tabs_changed,
             tabs=[ft.Tab(text="all"), ft.Tab(text="active"), ft.Tab(text="completed")],
         )
-
-        self.view = ft.Column(
-            width=600,
-            controls=[
-                ft.Row(
-                    controls=[
-                        self.new_task,
-                        ft.FloatingActionButton(icon=ft.icons.ADD, on_click=self.add_clicked),
-                    ],
-                ),
-                ft.Column(
-                    spacing=25,
-                    controls=[
-                        self.filter,
-                        self.tasks,
-                    ],
-                ),
-            ],
-        )
+    # ....
 ```
 
 To display different lists of tasks depending on their statuses, we could maintain three lists with "All", "Active" and "Completed" tasks. We, however, chose an easier approach where we maintain the same list and only change a task's visibility depending on its status.
 
-In `TodoApp` class we overrided `update()` method which iterates through all the tasks and updates their `visible` property depending on the status of the task:
+In `TodoApp` class we overrided [`before_update()`](/docs/getting-started/custom-controls#before_update) method alled every time when the control is being updated. It iterates through all the tasks and updates their `visible` property depending on the status of the task:
 
 ```python
-class TodoApp(ft.UserControl):
+class TodoApp(ft.Column):
 
     # ...
 
-    def update(self):
+    def before_update(self):
         status = self.filter.tabs[self.filter.selected_index].text
         for task in self.tasks.controls:
             task.visible = (
@@ -360,28 +343,25 @@ class TodoApp(ft.UserControl):
                 or (status == "active" and task.completed == False)
                 or (status == "completed" and task.completed)
             )
-        super().update()
 ```
 
-Filtering should occur when we click on a tab or change a task status. `TodoApp.update()` method is called when Tabs selected value is changed or Task item checkbox is clicked:
+Filtering should occur when we click on a tab or change a task status. `TodoApp.before_update()` method is called when Tabs selected value is changed or Task item checkbox is clicked:
 
 ```python
-class TodoApp(ft.UserControl):
+class TodoApp(ft.Column):
 
     # ...
 
     def tabs_changed(self, e):
         self.update()
 
-class Task(ft.UserControl):
+class Task(ft.Column):
     def __init__(self, task_name, task_status_change, task_delete):
         super().__init__()
         self.completed = False
         self.task_name = task_name
         self.task_status_change = task_status_change
         self.task_delete = task_delete
-
-    def build(self):
         self.display_task = ft.Checkbox(
             value=False, label=self.task_name, on_change=self.status_changed
         )
