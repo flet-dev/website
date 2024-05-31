@@ -4,13 +4,13 @@ sidebar_label: To-Do app
 slug: python-todo
 ---
 
-In this tutorial we will show you, step-by-step, how to create a ToDo web app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [180 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI:
+In this tutorial we will show you, step-by-step, how to create a To-Do app in Python using Flet framework and then publish it as a desktop, mobile or web app. The app is a single-file console program of just [180 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-platform application with rich, responsive UI:
 
 <img src="/img/docs/tutorial/todo-complete-demo-web.gif" className="screenshot-70" />
 
 You can see the live demo [here](https://gallery.flet.dev/todo/).
 
-We chose a ToDo app for the tutorial, because it covers all of the basic concepts you would need to create any web app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and deployment options.
+We chose a To-Do app for the tutorial, because it covers all of the basic concepts you would need to create any app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and publishing options.
 
 The tutorial consists of the following steps:
 
@@ -19,19 +19,15 @@ The tutorial consists of the following steps:
 * [View, edit and delete list items](#view-edit-and-delete-list-items)
 * [Filtering list items](#filtering-list-items)
 * [Final touches](#final-touches)
-* [Deploying the app](#deploying-the-app)
+* [Publishing the app](#publishing-the-app)
 
 ## Getting started with Flet
 
-To write a Flet web app you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
+To create a multi-platform app in Python with Flet, you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
 
-Flet requires Python 3.8 or above. To create a web app in Python with Flet, you need to install `flet` module first:
+Before you can create your first Flet app, you need to [setup your development environment](/docs/getting-started/), which requires Python 3.8 or above and `flet` package.
 
-```bash
-pip install flet
-```
-
-To start, let's create a simple hello-world app.
+Once you have Flet installed, let's [create](/docs/getting-started/create-flet-app) a simple hello-world app.
 
 Create `hello.py` with the following contents:
 
@@ -50,7 +46,7 @@ Run this app and you will see a new window with a greeting:
 
 ## Adding page controls and handling events
 
-Now we're ready to create a multi-user ToDo app.
+Now we're ready to create a multi-user To-Do app.
 
 To start, we'll need a [TextField](/docs/controls/textfield) for entering a task name, and an "+" [FloatingActionButton](/docs/controls/floatingactionbutton) with an event handler that will display a [Checkbox](/docs/controls/checkbox) with a new task.
 
@@ -123,7 +119,7 @@ Run the app and you should see a page like this:
 
 ### Reusable UI components
 
-While we could continue writing our app in the `main` function, the best practice would be to create a reusable UI component. Imagine you are working on an app header, a side menu, or UI that will be a part of a larger project. Even if you can't think of such uses right now, we still recommend creating all your web apps with composability and reusability in mind.
+While we could continue writing our app in the `main` function, the best practice would be to create a [reusable UI component](/docs/getting-started/custom-controls). Imagine you are working on an app header, a side menu, or UI that will be a part of a larger project. Even if you can't think of such uses right now, we still recommend creating all your Flet apps with composability and reusability in mind.
 
 To make a reusable ToDo app component, we are going to encapsulate its state and presentation logic in a separate class: 
 
@@ -470,7 +466,7 @@ Run the app:
 
 <img src="/img/docs/tutorial/todo-app-4.png" className="screenshot-50" />
 
-## Deploying the app
+## Publishing the app
 
 Congratulations! You have created your first Python app with Flet, and it looks awesome!
 
