@@ -122,7 +122,9 @@ Defines the color and weight of the chip's outline. Value is the instance of [`B
 
 ### `click_elevation`
 
-A non-negative value which defines the elevation of the chip when clicked/pressed. Defaults to `8.0`.
+A non-negative value which defines the elevation of the chip when clicked/pressed.
+
+Defaults to `8.0`.
 
 ### `clip_behavior`
 
@@ -132,7 +134,8 @@ Defaults to `NONE`.
 
 ### `color`
 
-The [color](/docs/reference/colors) that fills the chip in various [`MaterialState`](/docs/reference/types/materialstate)s.
+The [color](/docs/reference/colors) that fills the chip in various [`ControlState`](/docs/reference/types/controlstate)
+s.
 
 ### `delete_icon_tooltip`
 

@@ -87,8 +87,10 @@ Property value is `NavigationBarLabelBehavior` enum with the following values:
 
 ### `overlay_color`
 
-The highlight [color](/docs/reference/colors) of the `NavigationBarDestination` in various [`MaterialState`](/docs/reference/types/materialstate) states. The
-following [`MaterialState`](/docs/reference/types/materialstate) values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
+
+The highlight [color](/docs/reference/colors) of the `NavigationBarDestination` in
+various [`ControlState`](/docs/reference/types/controlstate) states. The
+following [`ControlState`](/docs/reference/types/controlstate) values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
 
 ### `selected_index`
 

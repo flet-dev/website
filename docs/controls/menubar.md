@@ -50,8 +50,8 @@ def main(page: ft.Page):
         style=ft.MenuStyle(
             alignment=ft.alignment.top_left,
             bgcolor=ft.colors.RED_100,
-            mouse_cursor={ft.MaterialState.HOVERED: ft.MouseCursor.WAIT,
-                          ft.MaterialState.DEFAULT: ft.MouseCursor.ZOOM_OUT},
+            mouse_cursor={ft.ControlState.HOVERED: ft.MouseCursor.WAIT,
+                          ft.ControlState.DEFAULT: ft.MouseCursor.ZOOM_OUT},
         ),
         controls=[
             ft.SubmenuButton(
@@ -63,19 +63,19 @@ def main(page: ft.Page):
                     ft.MenuItemButton(
                         content=ft.Text("About"),
                         leading=ft.Icon(ft.icons.INFO),
-                        style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.GREEN_100}),
+                        style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN_100}),
                         on_click=handle_menu_item_click
                     ),
                     ft.MenuItemButton(
                         content=ft.Text("Save"),
                         leading=ft.Icon(ft.icons.SAVE),
-                        style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.GREEN_100}),
+                        style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN_100}),
                         on_click=handle_menu_item_click
                     ),
                     ft.MenuItemButton(
                         content=ft.Text("Quit"),
                         leading=ft.Icon(ft.icons.CLOSE),
-                        style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.GREEN_100}),
+                        style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN_100}),
                         on_click=handle_menu_item_click
                     )
                 ]
@@ -93,14 +93,14 @@ def main(page: ft.Page):
                                 content=ft.Text("Magnify"),
                                 leading=ft.Icon(ft.icons.ZOOM_IN),
                                 close_on_click=False,
-                                style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.PURPLE_200}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.PURPLE_200}),
                                 on_click=handle_menu_item_click
                             ),
                             ft.MenuItemButton(
                                 content=ft.Text("Minify"),
                                 leading=ft.Icon(ft.icons.ZOOM_OUT),
                                 close_on_click=False,
-                                style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.PURPLE_200}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.PURPLE_200}),
                                 on_click=handle_menu_item_click
                             )
                         ]

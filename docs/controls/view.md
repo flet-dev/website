@@ -94,7 +94,8 @@ A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to displ
 
 How the child Controls should be placed horizontally.
 
-Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
+Value is of type [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) and defaults
+to `CrossAxisAlignment.START`.
 
 ### `on_scroll_interval`
 
@@ -120,7 +121,8 @@ Vertical spacing between controls on the Page. Default value is 10 virtual pixel
 
 How the child Controls should be placed vertically.
 
-Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum. Default is `START`.
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) and defaults
+to `MainAxisAlignment.START`.
 
 ## Methods
 

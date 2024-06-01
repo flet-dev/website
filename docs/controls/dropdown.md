@@ -168,7 +168,9 @@ To set a different background color for the dropdown button, use `fill_color` or
 
 ### `border`
 
-Border around input. The value is [`InputBorder`](/docs/reference/types/inputborder) enum. The default is `OUTLINE`.
+Border around input.
+
+Value is of type [`InputBorder`](/docs/reference/types/inputborder) and defaults to `InputBorder.OUTLINE`.
 
 ### `border_color`
 
@@ -176,11 +178,13 @@ Border [color](/docs/reference/colors). Could be `transparent` to hide the borde
 
 ### `border_radius`
 
-Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
+Border radius is an instance of [`BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `border_width`
 
-The width of the border in virtual pixels. Default is `1`. Set to `0` to completely remove border.
+The width of the border in virtual pixels. Set to `0` to completely remove border.
+
+Defaults to `1`.
 
 ### `color`
 
@@ -280,7 +284,7 @@ Displayed on top of the input when it's empty and either (a) `label` is null or 
 
 The name of the icon to show before the input field and outside of the decoration's container.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+Value is of type [`Padding`](/docs/reference/types/padding) or a number.
 
 ### `icon_content`
 
@@ -296,7 +300,9 @@ The color of any `Icon` descendant of `icon_content` if this button is disabled.
 
 ### `icon_size`
 
-The size of the icon button which wraps `icon_content`. Defaults to `24.0`.
+The size of the icon button which wraps `icon_content`.
+
+Defaults to `24.0`.
 
 ### `item_height`
 
@@ -408,9 +414,9 @@ Fires when the control has received focus.
 
 ### `alignment`
 
-Defines the alignment of this option in it's container. Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class. 
+Defines the alignment of this option in it's container.
 
-Defaults to `alignment.center_left`.
+Value is of type [`Alignment`](/docs/reference/types/alignment) and defaults to `alignment.center_left`.
 
 ### `key`
 

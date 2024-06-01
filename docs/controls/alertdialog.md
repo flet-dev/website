@@ -83,7 +83,7 @@ The padding that surrounds each button in `actions`.
 
 Defines the horizontal layout of the actions.
 
-Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum. Default is `END`.
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) and defaults to `MainAxisAlignment.END`.
 
 ### `actions_padding`
 
@@ -101,7 +101,10 @@ If the value is `True`, an adaptive AlertDialog is created based on whether the 
 
 On iOS and macOS, a [`CupertinoAlertDialog`](/docs/controls/cupertinoalertdialog) is created, which has matching functionality and presentation as `AlertDialog`, and the graphics as expected on iOS. On other platforms, a Material AlertDialog is created.
 
-The default value is `False`. See the example of usage [here](/docs/controls/cupertinoalertdialog#cupertinoalertdialog-and-adaptive-alertdialog-example).
+See the example of
+usage [here](/docs/controls/cupertinoalertdialog#cupertinoalertdialog-and-adaptive-alertdialog-example).
+
+Defaults to `False`.
 
 ### `bgcolor`
 
@@ -110,9 +113,8 @@ The background [color](/docs/reference/colors) of the dialog's surface.
 ### `clip_behavior`
 
 Controls how the contents of the dialog are clipped (or not) to the given `shape`.
-Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Defaults to `NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `content`
 
@@ -166,9 +168,10 @@ The [color](/docs/reference/colors) used to paint a drop shadow under the dialog
 
 ### `shape`
 
-The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+The shape of the dialog.
 
-The default shape is a `RoundedRectangleBorder` with a radius of `4.0`.
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder) and defaults
+to `RoundedRectangleBorder(radius=4.0)`.
 
 ### `surface_tint_color`
 

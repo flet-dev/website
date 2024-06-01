@@ -67,8 +67,8 @@ def main(page: ft.Page):
             bgcolor="yellow",
             border=ft.border.all(2, "red"),
             border_radius=10,
-            vertical_lines=ft.border.BorderSide(3, "blue"),
-            horizontal_lines=ft.border.BorderSide(1, "green"),
+            vertical_lines=ft.BorderSide(3, "blue"),
+            horizontal_lines=ft.BorderSide(1, "green"),
             sort_column_index=0,
             sort_ascending=True,
             heading_row_color=ft.colors.BLACK12,
@@ -114,13 +114,13 @@ The background [color](/docs/reference/colors) for the table.
 
 The border around the table. 
 
-The value is an instance of [`border.Border`](/docs/reference/types/border) class.
+The value is an instance of [`Border`](/docs/reference/types/border) class.
 
 ### `border_radius`
 
 Border corners.
 
-Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
+Border radius is an instance of [`BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `checkbox_horizontal_margin`
 
@@ -130,9 +130,8 @@ Horizontal margin around the checkbox, if it is displayed.
 
 The content will be clipped (or not) according to this option. 
 
-Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
-
-Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.ANTI_ALIAS`
+if `border_radius!=None`; otherwise `ClipBehavior.HARD_EDGE`.
 
 ### `column_spacing`
 
@@ -146,7 +145,10 @@ A list of [`DataColumn`](#datacolumn) controls describing table columns.
 
 The background [color](/docs/reference/colors) for the data rows.
 
-The effective background color can be made to depend on the [`MaterialState`](/docs/reference/types/materialstate) state, i.e. if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent background color.
+The effective background color can be made to depend on the [`ControlState`](/docs/reference/types/controlstate) state,
+i.e. if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the
+row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a
+translucent background color.
 
 ### `data_row_min_height`
 
@@ -162,9 +164,9 @@ The text style for data rows. An instance of [`ft.TextStyle`](/docs/reference/ty
 
 ### `divider_thickness`
 
-The width of the divider that appears between `TableRow`s.
+The width of the divider that appears between `TableRow`s. Must be greater than or equal to zero.
 
-Must be greater than or equal to zero. This value defaults to 1.0.
+Defaults to 1.0.
 
 ### `gradient`
 
@@ -180,7 +182,9 @@ The value must be an instance of one of the following classes:
 
 The background [color](/docs/reference/colors) for the heading row.
 
-The effective background color can be made to depend on the [`MaterialState`](/docs/reference/types/materialstate) state, i.e. if the row is pressed, hovered, focused when sorted. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
+The effective background color can be made to depend on the [`ControlState`](/docs/reference/types/controlstate) state,
+i.e. if the row is pressed, hovered, focused when sorted. The color is painted as an overlay to the row. To make sure
+that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
 
 ### `heading_row_height`
 
@@ -307,7 +311,9 @@ The [color](/docs/reference/colors) for the row.
 
 By default, the color is transparent unless selected. Selected rows has a grey translucent color.
 
-The effective color can depend on the [`MaterialState`](/docs/reference/types/materialstate) state, if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
+The effective color can depend on the [`ControlState`](/docs/reference/types/controlstate) state, if the row is
+selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure
+that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
 
 ### `selected`
 

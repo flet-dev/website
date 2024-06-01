@@ -234,19 +234,25 @@ Background [color](/docs/reference/colors) of tooltips.
 
 The border around the chart. 
 
-The value is an instance of [`border.Border`](/docs/reference/types/border) class.
+Value is of type [`Border`](/docs/reference/types/border).
 
 ### `horizontal_grid_lines`
 
-Controls drawing of chart's horizontal lines. The value is the instance of [`ChartGridLines`](#chartgridlines-properties) class.
+Controls drawing of chart's horizontal lines.
+
+Value is of type [`ChartGridLines`](#chartgridlines-properties).
 
 ### `vertical_grid_lines`
 
-Controls drawing of chart's vertical lines. The value is the instance of [`ChartGridLines`](#chartgridlines-properties) class.
+Controls drawing of chart's vertical lines.
+
+Value is of type [`ChartGridLines`](#chartgridlines-properties).
 
 ### `left_axis`
 
-Configures the appearance of the left axis, its title and labels. The value is the instance of [`ChartAxis`](#chartaxis-properties) class.  
+Configures the appearance of the left axis, its title and labels.
+
+Value is of type [`ChartAxis`](#chartaxis-properties).
 
 ### `top_axis`
 
@@ -262,7 +268,9 @@ Configures the appearance of the bottom axis, its title and labels. The value is
 
 ### `baseline_y`
 
-Baseline value for Y axis. Default is `0`.
+Baseline value for Y axis.
+
+Defaults to `0`.
 
 ### `min_y`
 
@@ -297,7 +305,9 @@ The list of [`BarChartRod`](#barchartrod-properties) objects to display in the g
 
 ### `group_vertically`
 
-If set to `True` bar rods are drawn on top of each other; otherwise bar rods are drawn next to each other. Default value is `False`.
+If set to `True` bar rods are drawn on top of each other; otherwise bar rods are drawn next to each other.
+
+Defaults to `False`.
 
 ### `bars_space`
 
@@ -311,7 +321,9 @@ Optional list of [`BarChartRodStackItem`](#barchartrodstackitem-properties) obje
 
 ### `from_y`
 
-Specifies a starting position of a rod on Y axis. Default is `0`.
+Specifies a starting position of a rod on Y axis.
+
+Defaults to `0`.
 
 ### `to_y`
 
@@ -319,11 +331,15 @@ Specifies an ending position of a rod on Y axis.
 
 ### `width`
 
-The width of a rod. Default is `8`.
+The width of a rod.
+
+Defaults to `8`.
 
 ### `color`
 
-Rod [color](/docs/reference/colors). Default is `cyan`.
+Rod [color](/docs/reference/colors).
+
+Defaults to `cyan`.
 
 ### `gradient`
 
@@ -335,11 +351,15 @@ Gradient to draw rod's background. The value must be an instance of one of the f
 
 ### `border_radius`
 
-Border radius of a bar rod. Default is `4`.
+Border radius of a bar rod.
+
+Defaults to `4`.
 
 ### `border_side`
 
-Border to draw around rod. The value is the instance of [`BorderSide`](/docs/reference/types/borderside) class.
+Border to draw around rod.
+
+Value is of type [`BorderSide`](/docs/reference/types/borderside) class.
 
 ### `bg_from_y`
 
@@ -363,19 +383,27 @@ If set to `True` a tooltip is always shown on top of the bar when `BarChart.inte
 
 ### `show_tooltip`
 
-`True` (default) if a tooltip should be shown on top of hovered bar.
+Whether a tooltip should be shown on top of hovered bar.
+
+Defaults to `True`.
 
 ### `tooltip`
 
-A custom tooltip value. Default is `to_y`.
+A custom tooltip value.
+
+Defaults to `to_y`.
 
 ### `tooltip_style`
 
-A text style to display tooltip with. The value is the instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
+A text style to display tooltip with.
+
+Value is of type [`ft.TextStyle`](/docs/reference/types/textstyle).
 
 ### `tooltip_align`
 
-An align for the tooltip. The value is the instance of [`TextAlign`](/docs/reference/types/textalign) enum.
+An align for the tooltip.
+
+Value is of type [`TextAlign`](/docs/reference/types/textalign).
 
 ## `BarChartRodStackItem` properties
 
@@ -393,7 +421,9 @@ A [color](/docs/reference/colors) of stack item.
 
 ### `border_side`
 
-A border around stack item. The value is the instance of [`BorderSide`](/docs/reference/types/borderside) class.
+A border around stack item.
+
+Value is of type [`BorderSide`](/docs/reference/types/borderside).
 
 ## `ChartGridLines` properties
 
@@ -401,7 +431,9 @@ Configures the appearance of horizontal and vertical grid lines within the chart
 
 ### `interval`
 
-Interval between grid lines. Default is `1`.
+Interval between grid lines.
+
+Defaults to `1`.
 
 ### `color`
 
@@ -409,7 +441,9 @@ Interval between grid lines. Default is `1`.
 
 ### `width`
 
-Width of a grid line. Default is `1`.
+Width of a grid line.
+
+Defaults to `1`.
 
 ### `dash_pattern`
 

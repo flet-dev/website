@@ -157,10 +157,6 @@ To make the NavigationDrawer more accessible, consider choosing an icon with a s
 
 The text label that appears below the icon of this `NavigationDrawerDestination`.
 
-### `open`
-
-Set to `True` to display a NavigationDrawer.
-
 ### `selected_icon`
 
 The name of alternative icon displayed when this destination is selected.

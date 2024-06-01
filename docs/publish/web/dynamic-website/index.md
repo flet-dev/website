@@ -223,20 +223,21 @@ Every aspect of web app hosting can be additionally controlled with environment 
 
 * `FLET_FORCE_WEB_SERVER` - `true` to force running app as a web app. Automatically set on headless Linux hosts.
 * `FLET_SERVER_PORT` - TCP port to run app on. `8000` if the program is running on a Linux server or `FLET_FORCE_WEB_SERVER` is set; otherwise random port.
-* `FLET_SERVER_IP` - IP address to listen web app on, e.g. `127.0.0.1`. Default is `0.0.0.0` - bound to all server IPs.
+* `FLET_SERVER_IP` - IP address to listen web app on, e.g. `127.0.0.1`. Defaults to `0.0.0.0` - bound to all server IPs.
 * `FLET_ASSETS_DIR` - absolute path to app "assets" directory.
 * `FLET_UPLOAD_DIR` - absolute path to app "upload" directory.
 * `FLET_MAX_UPLOAD_SIZE` - max allowed size of uploaded file, in bytes. Unlimited if not specified.
 * `FLET_SECRET_KEY` - a secret key to sign temporary upload URLs.
-* `FLET_WEB_APP_PATH` - a URL path after domain name to host web app under, e.g. `/apps/myapp`. Default is `/` - host app in the root.
-* `FLET_SESSION_TIMEOUT` - session lifetime, in seconds. Default is `3600`.
-* `FLET_OAUTH_STATE_TIMEOUT` - max allowed time to complete OAuth web flow, in seconds. Default is `600`.
+* `FLET_WEB_APP_PATH` - a URL path after domain name to host web app under, e.g. `/apps/myapp`. Defaults to `/` - host
+  app in the root.
+* `FLET_SESSION_TIMEOUT` - session lifetime, in seconds. Defaults to `3600`.
+* `FLET_OAUTH_STATE_TIMEOUT` - max allowed time to complete OAuth web flow, in seconds. Defaults to `600`.
 * `FLET_WEB_RENDERER` - Flutter rendering mode: `canvaskit` (default), `html` or `auto`.
 * `FLET_WEB_USE_COLOR_EMOJI` - `true`, or `True` or `1` to load web font with colorful emojis.
 * `FLET_WEB_ROUTE_URL_STRATEGY` - `path` (default) or `hash`.
-* `FLET_WEBSOCKET_HANDLER_ENDPOINT` - custom path for WebSocket handler. Default is `/ws`.
-* `FLET_UPLOAD_HANDLER_ENDPOINT` - custom path for upload handler. Default is `/upload`.
-* `FLET_OAUTH_CALLBACK_HANDLER_ENDPOINT` - custom path for OAuth handler. Default is `/oauth_callback`.
+* `FLET_WEBSOCKET_HANDLER_ENDPOINT` - custom path for WebSocket handler. Defaults to `/ws`.
+* `FLET_UPLOAD_HANDLER_ENDPOINT` - custom path for upload handler. Defaults to `/upload`.
+* `FLET_OAUTH_CALLBACK_HANDLER_ENDPOINT` - custom path for OAuth handler. Defaults to `/oauth_callback`.
 
 ## Advanced FastAPI scenarios
 

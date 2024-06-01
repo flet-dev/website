@@ -7,5 +7,5 @@ import TabItem from '@theme/TabItem';
 
 `LabelPosition` enum has the following values:
 
-* `LEFT`
-* `RIGHT`
+### `LEFT`
+### `RIGHT`

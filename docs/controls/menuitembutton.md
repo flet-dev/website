@@ -47,21 +47,21 @@ def main(page: ft.Page):
                     ft.MenuItemButton(
                         content=ft.Text("Blue"),
                         leading=ft.Icon(ft.icons.COLORIZE),
-                        style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.BLUE}),
+                        style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.BLUE}),
                         on_click=handle_color_click,
                         on_hover=handle_on_hover,
                     ),
                     ft.MenuItemButton(
                         content=ft.Text("Green"),
                         leading=ft.Icon(ft.icons.COLORIZE),
-                        style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.GREEN}),
+                        style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN}),
                         on_click=handle_color_click,
                         on_hover=handle_on_hover,
                     ),
                     ft.MenuItemButton(
                         content=ft.Text("Red"),
                         leading=ft.Icon(ft.icons.COLORIZE),
-                        style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.RED}),
+                        style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.RED}),
                         on_click=handle_color_click,
                         on_hover=handle_on_hover,
                     )

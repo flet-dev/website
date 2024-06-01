@@ -110,7 +110,7 @@ The [color](/docs/reference/colors) used as an overlay on `color` to indicate el
 
 If this is `None`, no overlay will be applied. Otherwise this color will be composited on top of `color` with an opacity related to `elevation` and used to paint the background of the card.
 
-The default is `None`.
+Defaults to `None`.
 
 ### `variant`
 

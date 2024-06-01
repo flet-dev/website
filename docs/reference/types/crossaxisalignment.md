@@ -7,13 +7,13 @@ import TabItem from '@theme/TabItem';
 
 `CrossAxisAlignment` enum has the following values:
 
-* `START`
-* `CENTER`
-* `END`
-* `STRETCH`
-* `BASELINE`
+### `START`
+### `CENTER`
+### `END`
+### `STRETCH`
+### `BASELINE`
 
-### Example of usage
+## Usage example
 
 <img src="/img/docs/controls/column/column-horiz-alignment.png"  className="screenshot-50" />
 

@@ -58,7 +58,9 @@ ft.app(target=main)
 
 ### `animation_duration`
 
-Duration of animation in milliseconds of switching between tabs. Default is `50`.
+Duration of animation in milliseconds of switching between tabs.
+
+Defaults to `50`.
 
 ### `clip_behavior`
 
@@ -120,8 +122,9 @@ The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
-Defines the ink response focus, hover, and splash [colors](/docs/reference/colors) in various [`MaterialState`](/docs/reference/types/materialstate) states. 
-The following `MaterialState` values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
+Defines the ink response focus, hover, and splash [colors](/docs/reference/colors) in
+various [`ControlState`](/docs/reference/types/controlstate) states.
+The following `ControlState` values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
 
 ### `selected_index`
 

@@ -18,6 +18,7 @@ To build your Flet app that uses `AudioRecorder` control add `--include-packages
 ```
 flet build apk --include-packages flet_audio_recorder
 ```
+
 :::
 
 import Tabs from '@theme/Tabs';
@@ -123,27 +124,39 @@ See [`this`](https://pub.dev/packages/record#file) for a detailed overview on wh
 
 ### `auto_gain`
 
-The recorder will try to auto adjust recording volume in a limited range. Defaults to `False`.
+The recorder will try to auto adjust recording volume in a limited range.
+
+Defaults to `False`.
 
 ### `bit_rate`
 
-The audio encoding bit rate in bits per second. Defaults to `128000`.
+The audio encoding bit rate in bits per second.
+
+Defaults to `128000`.
 
 ### `cancel_echo`
 
-The recorder will try to reduce echo. Defaults to `False`.
+The recorder will try to reduce echo.
+
+Defaults to `False`.
 
 ### `channels_num`
 
-The numbers of channels for the recording. `1` = mono, `2` = stereo. Defaults to `2`.
+The numbers of channels for the recording. `1` = mono, `2` = stereo.
+
+Defaults to `2`.
 
 ### `sample_rate`
 
-The sample rate for audio in samples per second. Defaults to `44100`.   
+The sample rate for audio in samples per second.
+
+Defaults to `44100`.
 
 ### `suppress_noise`
 
-The recorder will try to negates the input noise. Defaults to `False`.
+The recorder will try to negates the input noise.
+
+Defaults to `False`.
 
 ## Methods
 
@@ -191,8 +204,8 @@ Stops recording session and release internal recorder resource. It returns a str
 
 ### `on_state_changed`
 
-Fires when audio recorder's state changes. Event's `e.data` contains one of the following states:
+Fires when audio recorder's state changes. Event's `data` contains one of the following states:
 
-* `stopped`
-* `recording`
-* `paused`
+* `"stopped"`
+* `"recording"`
+* `"paused"`

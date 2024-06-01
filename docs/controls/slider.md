@@ -96,7 +96,7 @@ If the value is `True`, an adaptive Slider is created based on whether the targe
 
 On iOS and macOS, a [`CupertinoSlider`](/docs/controls/cupertinoslider), which has matching functionality and presentation as `Slider`, and are the graphics expected on iOS. On other platforms, this creates a Material Slider.
 
-The default value is `False`.
+Defaults to `False`.
 
 ### `autofocus`
 
@@ -118,12 +118,8 @@ The "inactive" side of the slider is the side between the thumb and the maximum 
 
 ### `interaction`
 
-The allowed way for the user to interact with this slider. Value is a `SliderInteraction` enum, which has the following possible values:
-
-* `TAP_AND_SLIDE`(default) - allows interaction by tapping or sliding anywhere on the track
-* `TAP_ONLY` - allows interaction only by tapping anywhere on the track
-* `SLIDE_ONLY` - allows interaction only by sliding anywhere on the track
-* `SLIDE_THUMB` - allows interaction only by sliding the thumb.
+The allowed way for the user to interact with this slider. Value is
+a [`SliderInteraction`](/docs/reference/types/sliderinteraction) and defaults to `SliderInteraction.TAP_AND_SLIDE`.
 
 ### `label`
 
@@ -137,19 +133,19 @@ If not set, then the value indicator will not be displayed.
 
 ### `max`
 
-The maximum value the user can select.
-
-Defaults to `1.0`. Must be greater than or equal to `min`.
+The maximum value the user can select. Must be greater than or equal to `min`.
 
 If the `max` is equal to the `min`, then the slider is disabled.
+
+Defaults to `1.0`.
 
 ### `min`
 
-The minimum value the user can select.
-
-Defaults to `0.0`. Must be less than or equal to `max`.
+The minimum value the user can select. Must be less than or equal to `max`.
 
 If the `max` is equal to the `min`, then the slider is disabled.
+
+Defaults to `0.0`.
 
 ### `mouse_cursor`
 
@@ -158,11 +154,14 @@ The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
-The highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is in `HOVERED` or `DRAGGED` [`MaterialState`](/docs/reference/types/materialstate)s.
+The highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is
+in `ControlState.HOVERED` or `DRAGGED` [`ControlState`](/docs/reference/types/controlstate)s.
 
 ### `round`
 
-The number of decimals displayed on the `label` containing `value`. The default is `0` (displays value rounded to the nearest integer).
+The number of decimals displayed on the `label` containing `value`.
+
+Defaults to `0` which displays value rounded to the nearest integer.
 
 ### `secondary_active_color`
 

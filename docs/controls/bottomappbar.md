@@ -67,9 +67,7 @@ The fill [color](/docs/reference/colors) to use for the BottomAppBar. Default co
 
 The content will be clipped (or not) according to this option.
 
-Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
-
-Default is `NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `content`
 

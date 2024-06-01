@@ -7,14 +7,14 @@ import TabItem from '@theme/TabItem';
 
 `KeyboardType` enum has the following values:
 
-* `TEXT`
-* `MULTILINE`
-* `NUMBER`
-* `PHONE`
-* `DATETIME`
-* `EMAIL`
-* `URL`
-* `VISIBLE_PASSWORD`
-* `NAME`
-* `STREET_ADDRESS`
-* `NONE`
+### `TEXT`
+### `MULTILINE`
+### `NUMBER`
+### `PHONE`
+### `DATETIME`
+### `EMAIL`
+### `URL`
+### `VISIBLE_PASSWORD`
+### `NAME`
+### `STREET_ADDRESS`
+### `NONE`

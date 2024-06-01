@@ -65,11 +65,15 @@ ft.app(target=main)
 
 ### `duration`
 
-The duration, in milliseconds, of the transition from the old `content` value to the new one. Default is `1000` milliseconds.
+The duration, in milliseconds, of the transition from the old `content` value to the new one.
+
+Defaults to `1000` milliseconds.
 
 ### `reverse_duration`
 
-The duration, in milliseconds, of the transition from the new `content` value to the old one. Default is `1000` milliseconds.
+The duration, in milliseconds, of the transition from the new `content` value to the old one.
+
+Defaults to `1000` milliseconds.
 
 ### `switch_in_curve`
 

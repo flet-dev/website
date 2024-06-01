@@ -78,14 +78,13 @@ This defines the behavior and location of the snack bar.
 
 Defines where a SnackBar should appear within a page and how its location should be adjusted when the page also includes a `FloatingActionButton` or a `NavigationBar`.
 
-Property value is `SnackBarBehavior` enum with the following values:
+Value is of type [`SnackBarBehavior`](/docs/reference/types/snackbarbehavior) and defaults to `SnackBarBehavior.FIXED`.
 
-* `FIXED`
-* `FLOATING`
+**Note:**
 
-If this property is `None`, then the default is `FIXED`.
-
-If this value is `FLOATING`, the length of the bar is defined by either `width` or `margin`.
+* If `behavior=SnackBarBehavior.FLOATING`, the length of the bar is defined by either `width` or `margin`, and if both
+  are specified, `width` takes precedence over `margin`.
+* `width` and `margin` are ignored if `behavior!=SnackBarBehavior.FLOATING`.
 
 ### `bgcolor`
 

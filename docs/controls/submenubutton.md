@@ -51,7 +51,7 @@ def main(page: ft.Page):
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Blue"),
-                                style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.BLUE}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.BLUE}),
                                 on_click=handle_color_click,
                                 on_hover=handle_on_hover,
                             )
@@ -63,7 +63,7 @@ def main(page: ft.Page):
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Green"),
-                                style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.GREEN}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN}),
                                 on_click=handle_color_click,
                                 on_hover=handle_on_hover,
                             )
@@ -75,7 +75,7 @@ def main(page: ft.Page):
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Red"),
-                                style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.RED}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.RED}),
                                 on_click=handle_color_click,
                                 on_hover=handle_on_hover,
                             )

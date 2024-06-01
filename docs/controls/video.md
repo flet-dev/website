@@ -192,11 +192,13 @@ Whether the video should start playing automatically.
 
 ### `fit`
 
-The value is [`ImageFit`](/docs/reference/types/imagefit) enum. Default is `NONE`.
+Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defaults to `ImageFit.NONE`.
 
 ### `filter_quality`
 
-Filter quality of the texture used to render the video output. Value is of type [`FilterQuality`](/docs/reference/types/filterquality) enum. Defaults to `LOW`.
+Filter quality of the texture used to render the video output.
+
+Value is of type [`FilterQuality`](/docs/reference/types/filterquality) and defaults to `FilterQuality.LOW`.
 
 ### `fill_color`
 
@@ -204,7 +206,9 @@ Defines the [color](/docs/reference/colors) used to fill the video background.
 
 ### `muted`
 
-Defines whether the video player should be started in muted state. Defaults to `False`.
+Defines whether the video player should be started in muted state.
+
+Defaults to `False`.
 
 ### `resume_upon_entering_foreground_mode`
 
@@ -212,25 +216,21 @@ Whether to resume the video when application enters foreground mode. Has effect 
 
 ### `show_controls`
 
-Whether to show the video player controls. Defaults to `True`.
+Whether to show the video player controls.
+
+Defaults to `True`.
 
 ### `shuffle_playlist`
 
-Defines whether the playlist should be shuffled. Defaults to `False`.
+Defines whether the playlist should be shuffled.
+
+Defaults to `False`.
 
 ### `subtitle_configuration`
 
-Defines the subtitle configuration for the video player. Value is of type `VideoSubtitleConfiguration` which has the
-following properties:
+Defines the subtitle configuration for the video player.
 
-* `src` - the source of the subtitles (URL or local asset file)
-* `title` - the title of the subtitles
-* `language` - the language of the subtitles
-* `text_style` - the style of the subtitle text
-* `text_scale_factor` - the scale factor of the subtitles
-* `text_align` - the alignment of the subtitles
-* `padding` - the padding of the subtitles
-* `visible` - whether or not the subtitles should be visible.
+Value is of type [`VideoSubtitleConfiguration`](/docs/reference/types/videosubtitleconfiguration).
 
 ### `title`
 
@@ -238,7 +238,9 @@ Defines the name of the underlying window & process for native backend. This is 
 
 ### `volume`
 
-Defines the volume of the video player. Values ranges between `0.0` and `100.0` (default).
+Defines the volume of the video player.
+
+Value ranges between `0.0` and `100.0` (default).
 
 ### `pause_upon_entering_background_mode`
 
@@ -246,11 +248,15 @@ Whether to pause the video when application enters background mode.
 
 ### `pitch`
 
-Defines the relative pitch of the video player. Defaults to `1.0`.
+Defines the relative pitch of the video player.
+
+Defaults to `1.0`.
 
 ### `playback_rate`
 
-Defines the playback rate of the video player. Defaults to `1.0`.
+Defines the playback rate of the video player.
+
+Defaults to `1.0`.
 
 ### `playlist`
 
@@ -259,11 +265,9 @@ class instantiation. To modify it later on, use the `playlist_add(media)` and `p
 
 ### `playlist_mode`
 
-Represents the mode of playback for the `playlist`. The following values are supported:
+Represents the mode of playback for the `playlist`.
 
-* `PlaylistMode.NONE` - End playback once the end of the playlist is reached.
-* `PlaylistMode.SINGLE` - Indefinitely loop over the currently playing `VideoMedia` in the playlist.
-* `PlaylistMode.LOOP` - Loop over the `playlist` & restart it from beginning once the end is reached.
+Value is of type [`PlaylistMode`](/docs/reference/types/playlistmode).
 
 ### `wakelock`
 

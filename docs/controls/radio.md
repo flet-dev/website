@@ -101,7 +101,8 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `fill_color`
 
-The [color](/docs/reference/colors) that fills the radio, in all or specific [`MaterialState`](/docs/reference/types/materialstate) states.
+The [color](/docs/reference/colors) that fills the radio, in all or
+specific [`ControlState`](/docs/reference/types/controlstate) states.
 
 ### `focus_color`
 
@@ -130,7 +131,8 @@ The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
-The overlay [color](/docs/reference/colors) of this radio in all or specific [`MaterialState`](/docs/reference/types/materialstate) states.
+The overlay [color](/docs/reference/colors) of this radio in all or
+specific [`ControlState`](/docs/reference/types/controlstate) states.
 
 ### `splash_radius`
 

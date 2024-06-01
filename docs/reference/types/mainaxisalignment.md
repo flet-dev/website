@@ -8,14 +8,14 @@ import TabItem from '@theme/TabItem';
 
 `MainAxisAlignment` enum has the following values:
 
-* `START`
-* `END`
-* `CENTER`
-* `SPACE_BETWEEN`
-* `SPACE_AROUND`
-* `SPACE_EVENLY`
+### `START`
+### `END`
+### `CENTER`
+### `SPACE_BETWEEN`
+### `SPACE_AROUND`
+### `SPACE_EVENLY`
 
-### Example of usage
+## Usage example
 
 <img src="/img/docs/controls/column/column-alignment.png"  className="screenshot-70"/>
 

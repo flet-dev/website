@@ -410,7 +410,9 @@ Property value is `TextOverflow` enum with the following values:
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left.
+
+Defaults to `False`.
 
 ### `selectable`
 
@@ -430,7 +432,9 @@ ft.Text("$$", semantics_label="Double dollars")
 
 ### `size`
 
-Text size in virtual pixels. Default is `14`.
+Text size in virtual pixels.
+
+Defaults to `14`.
 
 ### `spans`
 
@@ -444,7 +448,7 @@ The text's style. An instance of type [`TextStyle`](/docs/reference/types/textst
 
 Text horizontal align.
 
-Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Default is `LEFT`.
+Value is of type [`TextAlign`](/docs/reference/types/textalign) and defaults to `TextAlign.LEFT`.
 
 ### `theme_style`
 
@@ -474,5 +478,5 @@ The text displayed.
 
 Font weight.
 
-Property value is [`FontWeight`](/docs/reference/types/fontweight) enum. Default is `NORMAL`.
+Value is of type [`FontWeight`](/docs/reference/types/fontweight) and defaults to `NORMAL`.
 

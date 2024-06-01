@@ -231,7 +231,8 @@ ft.app(target=main)
 
 How the child Controls should be placed horizontally.
 
-Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum. Default is `START`.
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) and defaults
+to `MainAxisAlignment.START`.
 
 ### `auto_scroll`
 
@@ -243,17 +244,21 @@ A list of Controls to display inside the Row.
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left.
+
+Defaults to `False`.
 
 ### `run_spacing`
 
-Spacing between runs when `wrap=True`. Default value is 10.
+Spacing between runs when `wrap=True`.
+
+Defaults to `10`.
 
 ### `scroll`
 
 Enables horizontal scrolling for the Row to prevent its content overflow.
 
-Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
+Value is of type [`ScrollMode`](/docs/reference/types/scrollmode).
 
 ### `spacing`
 
@@ -261,17 +266,22 @@ Spacing between controls in a row. Default value is 10 virtual pixels. Spacing i
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+Throttling in milliseconds for `on_scroll` event.
+
+Defaults to `10`.
 
 ### `tight`
 
-Specifies how much space should be occupied horizontally. Default is `False` - allocate all space to children.
+Specifies how much space should be occupied horizontally.
+
+Defaults to `False`, meaning all space is allocated to children.
 
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
+Value is of type [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) and defaults
+to `CrossAxisAlignment.START`.
 
 ### `wrap`
 

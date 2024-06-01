@@ -98,7 +98,7 @@ Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODU
 
 ### `border_radius`
 
-Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
+Border radius is an instance of [`BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `content`
 

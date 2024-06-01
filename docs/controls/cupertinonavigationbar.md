@@ -54,7 +54,7 @@ The [color](/docs/reference/colors) of the CupertinoNavigationBar itself.
 
 ### `border`
 
-Defines the border of this navigation bar. The value is an instance of [`border.Border`](/docs/reference/types/border) class.
+Defines the border of this navigation bar. The value is an instance of [`Border`](/docs/reference/types/border) class.
 
 ### `destinations`
 

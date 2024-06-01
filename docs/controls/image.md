@@ -58,7 +58,8 @@ ft.app(target=main)
 
 ### `border_radius`
 
-Clip image to have rounded corners. Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
+Clip image to have rounded corners. Border radius is an instance of [`BorderRadius`](/docs/reference/types/borderradius)
+class.
 
 ### `color`
 
@@ -66,9 +67,10 @@ If set, this [color](/docs/reference/colors) is blended with each image pixel us
 
 ### `color_blend_mode`
 
-Used to combine `color` with the image. Property value is [`BlendMode`](/docs/reference/types/blendmode) enum.
+Used to combine `color` with the image. In terms of the blend mode, color is the source and this image is the
+destination.
 
-The default is `BlendMode.COLOR`. In terms of the blend mode, color is the source and this image is the destination.
+Value is of type [`BlendMode`](/docs/reference/types/blendmode) and defaults to `BlendMode.COLOR`.
 
 ### `error_content`
 
@@ -76,21 +78,27 @@ Fallback `Control` to display if the image cannot be loaded from the source.
 
 ### `exclude_from_semantics`
 
-Whether to exclude this image from semantics. Defaults to `False`.
+Whether to exclude this image from semantics.
+
+Defaults to `False`.
 
 ### `filter_quality`
 
-The rendering quality of the image. Value is of type [`FilterQuality`](/docs/reference/types/filterquality) enum. Defaults to `LOW`.
+The rendering quality of the image.
+
+Value is of type [`FilterQuality`](/docs/reference/types/filterquality) and defaults to `FilterQuality.LOW`.
 
 ### `fit`
 
 How to inscribe the image into the space allocated during layout.
 
-The value is [`ImageFit`](/docs/reference/types/imagefit) enum. Default is `NONE`.
+Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defauls to `ImageFit.NONE`.
 
 ### `gapless_playback`
 
-Whether to continue showing the old image (`True`), or briefly show nothing (`False`), when the image provider changes. The default value is `False`.
+Whether to continue showing the old image (`True`), or briefly show nothing (`False`), when the image provider changes.
+
+Defaults to `False`.
 
 ### `height`
 
@@ -161,7 +169,7 @@ On Windows you can use PowerShell to encode string into Base64 format:
 
 How to paint any portions of the layout bounds not covered by the image.
 
-The value is [`ImageRepeat`](/docs/reference/types/imagerepeat) enum. Default is `NO_REPEAT`.
+Values is of type [`ImageRepeat`](/docs/reference/types/imagerepeat) and defaults to `ImageRepeat.NO_REPEAT`.
 
 ### `semantics_label`
 

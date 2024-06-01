@@ -151,7 +151,7 @@ Make sure not to call `update()` method within `before_update()`.
 
 ## Isolated controls
 
-Custom control has `is_isolated` property which by default is `False`. 
+Custom control has `is_isolated` property which defaults to `False`.
 
 If you set `is_isolated` to `True`, your control will be isolated from outside layout, i.e. when `update()` method is called for the parent control, the control itself will be updated but any changes to the controls' children are not included into the update digest. Isolated controls should call `self.update()` to push its changes to a Flet page.
 

@@ -84,7 +84,9 @@ The fill [color](/docs/reference/colors) to use for an AppBar. Default color is 
 
 ### `center_title`
 
-Whether the title should be centered. Default is `False`.
+Whether the title should be centered.
+
+Defaults to `False`.
 
 ### `clip_behavior`
 

@@ -378,7 +378,7 @@ Background [color](/docs/reference/colors) of the chart.
 
 ### `border`
 
-The border around the chart. The value is an instance of [`border.Border`](/docs/reference/types/border) class.
+The border around the chart. The value is an instance of [`Border`](/docs/reference/types/border) class.
 
 ### `bottom_axis`
 

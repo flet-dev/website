@@ -81,7 +81,9 @@ Most of Flet controls are based on [Material design](https://m3.material.io/).
 
 There is also a number of iOS-style controls in Flet that are called Cupertino controls. 
 
-Cupertino controls usually have a matching Material control that has [`adaptive`](/docs/controls#adaptive) property which by default is `False`. When using a Material control with `adaptive` property set to `True`, a different control will be created depending on the platform, for example:
+Cupertino controls usually have a matching Material control that has [`adaptive`](/docs/controls#adaptive) property
+which defaults to`False`. When using a Material control with `adaptive` property set to `True`, a different control will
+be created depending on the platform, for example:
 ```python
 ft.Checkbox(adaptive=True, value=True, label="Adaptive Checkbox")
 ```

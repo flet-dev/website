@@ -81,7 +81,8 @@ Defaults to `False`.
 
 ### `bar_bgcolor`
 
-Defines the background [color](/docs/reference/colors) of the search bar in all or specific [`MaterialState`](/docs/reference/types/materialstate) states.
+Defines the background [color](/docs/reference/colors) of the search bar in all or
+specific [`ControlState`](/docs/reference/types/controlstate) states.
 
 ### `bar_hint_text`
 
@@ -93,7 +94,8 @@ A `Control` to display before the text input field when the search view is close
 
 ### `bar_overlay_color`
 
-Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is in `FOCUSED`, `HOVERED`, or `PRESSED` [`MaterialState`](/docs/reference/types/materialstate) states.
+Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is
+in `FOCUSED`, `HOVERED`, or `PRESSED` [`ControlState`](/docs/reference/types/controlstate) states.
 
 ### `bar_trailing`
 
@@ -105,9 +107,7 @@ These controls can represent additional modes of searching (e.g voice search), a
 
 Enables automatic on-the-fly capitalization of entered text. 
 
-Property value is [`TextCapitalization`](/docs/reference/types/textcapitalization) enum.
-
-Default is `NONE`.
+Value is of type [`TextCapitalization`](/docs/reference/types/textcapitalization).
 
 ### `controls`
 
@@ -133,9 +133,7 @@ Defines the [TextStyle](/docs/reference/types/textstyle) of the text being edite
 
 The type of action button to use for the keyboard. 
 
-The property value is [`KeyboardType`](/docs/reference/types/keyboardtype) enum.
-
-The default is `TEXT`.
+Value is of type [`KeyboardType`](/docs/reference/types/keyboardtype) and defaults to `KeyboardType TEXT`.
 
 ### `value`
 

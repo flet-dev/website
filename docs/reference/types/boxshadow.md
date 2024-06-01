@@ -7,13 +7,35 @@ import TabItem from '@theme/TabItem';
 
 `BoxShadow` class has the following properties:
 
-* `spread_radius` - The amount the box should be inflated prior to applying the blur. Default is `0.0.`.
-* `blur_radius` - The standard deviation of the Gaussian to convolve with the shadow's shape. Default is `0.0.`.
-* `color` - [Color](/docs/reference/colors) that the shadow will be drawn with.
-* `offset` - An instance of `ft.Offset` class - the displacement of the shadow from the casting element. Positive x/y offsets will shift the shadow to the right and down, while negative offsets shift the shadow to the left and up. The offsets are relative to the position of the element that is casting it. Default is `ft.Offset(0,0)`.
-* `blur_style` - The value is [`ShadowBlurStyle`](/docs/reference/types/shadowblurstyle) enum. Defaults to `NORMAL`.
+### `blur_radius`
 
-Example:
+The standard deviation of the Gaussian to convolve with the shadow's shape.
+
+Defaults to `0.0.`.
+
+### `blur_style`
+
+Value is of type [`ShadowBlurStyle`](/docs/reference/types/shadowblurstyle) and defaults to `ShadowBlurStyle.NORMAL`.
+
+### `color`
+
+[Color](/docs/reference/colors) used to draw the shadow.
+
+### `offset`
+
+An instance of `Offset` class - the displacement of the shadow from the casting element. Positive x/y offsets will shift
+the shadow to the right and down, while negative offsets shift the shadow to the left and up. The offsets are relative
+to the position of the element that is casting it.
+
+Value is of type [`Offset`](/docs/reference/types/offset) and defaults to `Offset(0,0)`.
+
+### `spread_radius`
+
+The amount the box should be inflated prior to applying the blur.
+
+Defaults to `0.0.`.
+
+## Usage example
 
 ```python
 ft.Container(

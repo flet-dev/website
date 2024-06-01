@@ -153,9 +153,9 @@ If only `splash.png` or `icon.png` (or other supported format such as `.bmp`, `.
 * **Web (light)** - `splash_web.png` (or any supported image format). Defaults to `splash.png` and then `icon.png`.
 * **Web (dark)** - `splash_dark_web.png` (or any supported image format). Defaults to light web splash, then `splash_dark.png`, then to `splash.png` and then `icon.png`.
 
-`--splash-color` option specifies background color for a splash screen in light mode. Default is `#ffffff`.
+`--splash-color` option specifies background color for a splash screen in light mode. Defaults to `#ffffff`.
 
-`--splash-dark-color` option specifies background color for a splash screen in dark mode. Default is `#333333`.
+`--splash-dark-color` option specifies background color for a splash screen in dark mode. Defaults to `#333333`.
 
 ## Flet app entry point
 
@@ -165,12 +165,13 @@ By default, `flet build` command assumes `main.py` as the entry point of your Fl
 
 You can provide a version information for built executable or package with `--build-number` and `--build-version` arguments. This is the information that is used to distinguish one build/release from another in App Store and Google Play and is shown to the user in about dialogs.
 
-`--build-number` - an integer number (default is `1`), an identifier used as an internal version number.
+`--build-number` - an integer number (defaults to `1`), an identifier used as an internal version number.
 Each build must have a unique identifier to differentiate it from previous builds.
 It is used to determine whether one build is more recent than another, with higher numbers indicating
 more recent build.
 
-`--build-version` - a "x.y.z" string (default is `1.0.0`) used as the version number shown to users. For each new version of your app, you will provide a version number to differentiate it from previous versions.
+`--build-version` - a "x.y.z" string (defaults to `1.0.0`) used as the version number shown to users. For each new
+version of your app, you will provide a version number to differentiate it from previous versions.
 
 ## Customizing packaging template
 

@@ -49,7 +49,15 @@ ft.app(target=main)
 
 ### `autocorrect`
 
-Whether to enable autocorrection. Default is `True`.
+Whether to enable autocorrection.
+
+Defaults to `True`.
+
+### `autofill_hints`
+
+Helps the autofill service identify the type of this text input. Value can either be a single [`AutoFillHint`](/docs/reference/types/autofillhint) enum item or a list of them.
+
+More information [here](https://api.flutter.dev/flutter/cupertino/CupertinoTextField/autofillHints.html).
 
 ### `autofocus`
 
@@ -61,13 +69,15 @@ TextField background [color](/docs/reference/colors).
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background. Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODULATE` as default.
+The blend mode applied to the `color` or `gradient` background.
+
+Value is of type [`BlendMode`](/docs/reference/types/blendmode) and defaults to `BlendMode.MODULATE`.
 
 ### `border`
 
 A border to draw around input.
 
-The value is an instance of [`border.Border`](/docs/reference/types/border) class.
+Value is of type [`Border`](/docs/reference/types/border).
 
 ### `border_color`
 
@@ -75,7 +85,7 @@ Border [color](/docs/reference/colors). Could be `transparent` to hide the borde
 
 ### `border_radius`
 
-Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
+Value is of type [`BorderRadius`](/docs/reference/types/borderradius).
 
 ### `can_reveal_password`
 
@@ -87,9 +97,8 @@ The icon is displayed in the same location as `suffix` and in case both `can_rev
 
 Enables automatic on-the-fly capitalization of entered text.
 
-Property value is [`TextCapitalization`](/docs/reference/types/textcapitalization) enum.
-
-Default is `NONE`.
+Value is of type [`TextCapitalization`](/docs/reference/types/textcapitalization) and defaults
+to `TextCapitalization.NONE`.
 
 ### `clear_button_semantics_label`
 
@@ -103,7 +112,7 @@ Text [color](/docs/reference/colors).
 
 The padding for the input decoration's container.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+The value is an instance of [`Padding`](/docs/reference/types/padding) class or a number.
 
 ### `cursor_color`
 
@@ -129,7 +138,10 @@ Whether the TextField is part of a dense form (ie, uses less vertical space).
 
 Whether to show input suggestions as the user types.
 
-This flag only affects Android. On iOS, suggestions are tied directly to `autocorrect`, so that suggestions are only shown when `autocorrect` is `True`. On Android autocorrection and suggestion are controlled separately. Default is `True`.
+This flag only affects Android. On iOS, suggestions are tied directly to `autocorrect`, so that suggestions are only
+shown when `autocorrect` is `True`. On Android autocorrection and suggestion are controlled separately.
+
+Defaults to `True`.
 
 ### `filled`
 
@@ -153,21 +165,23 @@ Text [color](/docs/reference/colors) when TextField is focused.
 
 ### `gradient`
 
-Configures gradient background. The value must be an instance of one of the following classes:
+Configures gradient background. Value can be of type:
 
 * [`LinearGradient`](/docs/reference/types/lineargradient)
 * [`RadialGradient`](/docs/reference/types/radialgradient)
 * [`SweepGradient`](/docs/reference/types/sweepgradient)
 
 ### `input_filter`
+
 Provides as-you-type filtering/validation in your `TextField`. 
-The value is an instance of the [`InputFilter`](/docs/reference/types/inputfilter) class.
+
+Value is of type [`InputFilter`](/docs/reference/types/inputfilter).
 
 ### `keyboard_type`
 
-The type of keyboard to use for editing the text. The property value is [`KeyboardType`](/docs/reference/types/keyboardtype) enum.
+The type of keyboard to use for editing the text.
 
-The default is `TEXT`.
+Value is of type [`KeyboardType`](/docs/reference/types/keyboardtype) and defaults to `KeyboardType.TEXT`.
 
 ### `max_length`
 
@@ -187,7 +201,7 @@ The minimum number of lines to occupy when the content spans fewer lines.
 
 This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
 
-Default is `1`.
+Defaults to `1`.
 
 ### `multiline`
 
@@ -195,7 +209,9 @@ Default is `1`.
 
 ### `password`
 
-Whether to hide the text being edited. Default is `False`.
+Whether to hide the text being edited.
+
+Defaults to `False`.
 
 ### `placeholder_text`
 
@@ -209,13 +225,13 @@ The [TextStyle](/docs/reference/types/textstyle) to use for `placeholder_text`.
 
 Optional `Control` to place on the line before the input.
 
-### `prefix_mode`
+### `prefix_visibility_mode`
 
 Defines the visibility of the `prefix` control based on the state of text entry. Has no effect if `prefix` is not specified.
 
 The property value is [`VisibilityMode`](/docs/reference/types/visibilitymode) enum.
 
-The default is `ALWAYS`.
+Defaults to `ALWAYS`.
 
 ### `read_only`
 
@@ -261,19 +277,17 @@ This flag only affects iOS. As an example of what this does, a standard vertical
 
 Optional `Control` to place on the line after the input.
 
-### `suffix_mode`
+### `suffix_visibility_mode`
 
 Defines the visibility of the `suffix` control based on the state of text entry. Has no effect if `suffix` is not specified.
 
-The property value is [`VisibilityMode`](/docs/reference/types/visibilitymode) enum.
-
-The default is `ALWAYS`.
+Value is of type [`VisibilityMode`](/docs/reference/types/visibilitymode) and defaults to `VisibilityMode.ALWAYS`.
 
 ### `text_align`
 
 How the text should be aligned horizontally.
 
-Property value is [`TextAlign`](/docs/reference/types/textalign) enum.
+Value is of type [`TextAlign`](/docs/reference/types/textalign).
 
 The default is `LEFT`.
 
@@ -283,9 +297,10 @@ Text size in virtual pixels.
 
 ### `text_vertical_align`
 
-Defines how the text should be aligned vertically. It's value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of type [`VerticalAlignment`](/docs/reference/types/verticalalignment) enum.
+Defines how the text should be aligned vertically.
 
-The default is `CENTER`. 
+Value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of
+type [`VerticalAlignment`](/docs/reference/types/verticalalignment). Defaults to `CENTER`.
 
 ### `text_style`
 

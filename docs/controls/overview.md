@@ -195,6 +195,14 @@ Imposed Control height in virtual pixels.
 
 Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's left edge is inset from the left of the stack.
 
+### `parent`
+
+Points to the direct ancestor(parent) of this control.
+
+It defaults to `None` and will only have a value when this control is mounted (added to the page tree).
+
+The `Page` control (which is the root of the tree) is an exception - it always has `parent=None`.
+
 ### `right`
 
 Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's right edge is inset from the right of the stack.

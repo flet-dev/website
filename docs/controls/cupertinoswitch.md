@@ -40,7 +40,7 @@ def main(page: ft.Page):
         ft.Switch(
             label="Material Switch",
             value=True,
-            thumb_color={ft.MaterialState.SELECTED: ft.colors.BLUE},
+            thumb_color={ft.ControlState.SELECTED: ft.colors.BLUE},
             track_color=ft.colors.YELLOW,
             focus_color=ft.colors.PURPLE,
         ),

@@ -70,11 +70,15 @@ Specifies whether the bottom sheet can be dragged up and down and dismissed by s
 
 ### `elevation`
 
-Controls the size of the shadow below the BottomSheet. Default value is `0.0`.
+Controls the size of the shadow below the BottomSheet.
+
+Defaults to `0.0`.
 
 ### `is_scroll_controlled`
 
-Specifies if the bottom sheet contains scrollable content, such as ListView or GridView. Default is `False`.
+Specifies if the bottom sheet contains scrollable content, such as ListView or GridView.
+
+Defaults to `False`.
 
 ### `maintain_bottom_view_insets_padding`
 
@@ -84,13 +88,17 @@ Adds a padding at the bottom to avoid obstructing bottom sheet content with on-s
 
 Set to `True` to display a bottom sheet.
 
+Defaults to `False`.
+
 ### `show_drag_handle`
 
 Whether to display drag handle at the top of sheet or not.
 
 ### `use_safe_area`
 
-Specifies whether the sheet will avoid system intrusions on the top, left, and right. Defaults to `False`.
+Specifies whether the sheet will avoid system intrusions on the top, left, and right.
+
+Defaults to `False`.
 
 ## Events
 

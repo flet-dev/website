@@ -399,7 +399,9 @@ def main(page: ft.Page):
 
 ### `pwa`
 
-`True` if the application is running as Progressive Web App (PWA). Read-only.
+`True` if the application is running as Progressive Web App (PWA).
+
+Value is read-only.
 
 ### `query`
 
@@ -412,13 +414,15 @@ more information and examples.
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left.
+
+Defaults to `False`.
 
 ### `scroll`
 
 Enables a vertical scrolling for the Page to prevent its content overflow.
 
-Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
+Value is of type [`ScrollMode`](/docs/reference/types/scrollmode) and defaults to `None`.
 
 ### `session`
 
@@ -476,7 +480,7 @@ Value is an instance of the `Theme()` class - more information in the [theming](
 
 Page theme.
 
-The value is [`ThemeMode`](/docs/reference/types/thememode) enum. Default is `SYSTEM`.
+Value is of type [`ThemeMode`](/docs/reference/types/thememode) and defaults to `ThemeMode.SYSTEM`.
 
 ### `title`
 
@@ -523,7 +527,9 @@ A width of a web page or content area of a native OS window containing Flet app.
 
 ### `window_always_on_top`
 
-🖥️ Desktop only. Sets whether the window should show always on top of other windows. Default is `False`.
+🖥️ Desktop only. Sets whether the window should show always on top of other windows.
+
+Defaults to `False`.
 
 ### `window_bgcolor`
 
@@ -556,7 +562,9 @@ ft.app(target=main)
 
 ### `window_full_screen`
 
-🖥️ Desktop only. Set to `True` to switch app's native OS window to a fullscreen mode. Default is `False`.
+🖥️ Desktop only. Set to `True` to switch app's native OS window to a fullscreen mode.
+
+Defaults to `False`.
 
 ### `window_height`
 
@@ -568,7 +576,9 @@ ft.app(target=main)
 
 ### `window_maximizable`
 
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Maximize" button. Default is `True`.
+🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Maximize" button.
+
+Defaults to `True`.
 
 ### `window_maximized`
 
@@ -584,7 +594,9 @@ ft.app(target=main)
 
 ### `window_minimizable`
 
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button. Default is `True`.
+🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button.
+
+Defaults to `True`.
 
 ### `window_minimized`
 
@@ -600,7 +612,10 @@ ft.app(target=main)
 
 ### `window_movable`
 
-🖥️ Desktop only. macOS only. Set to `False` to prevent user from changing a position of a native OS window containing Flet app. Default is `True`.
+🖥️ Desktop only. macOS only. Set to `False` to prevent user from changing a position of a native OS window containing
+Flet app.
+
+Defaults to `True`.
 
 ### `window_opacity`
 
@@ -608,7 +623,9 @@ ft.app(target=main)
 
 ### `window_resizable`
 
-🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app. Default is `True`.
+🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app.
+
+Defaults to `True`.
 
 ### `window_title_bar_hidden`
 
@@ -617,7 +634,9 @@ an app window with hidden title bar.
 
 ### `window_title_bar_buttons_hidden`
 
-🖥️ Desktop only. Set to `True` to hide window action buttons when a title bar is hidden. macOS only.
+🖥️ Desktop only. Set to `True` to hide window action buttons when a title bar is hidden.
+
+Has effect on macOS only.
 
 ### `window_top`
 
@@ -646,12 +665,8 @@ from time import sleep
 
 import flet as ft
 
-
 def main(page: ft.Page):
-
-    page.add(
-        ft.Text("Hello!")
-    )
+    page.add(ft.Text("Hello!"))
 
     sleep(3)
     page.window_visible = True
@@ -759,8 +774,10 @@ Opens `url` in a new browser window.
 
 Optional method arguments:
 
-* `web_window_name` - window tab/name to open URL in: `_self` - the same browser tab, `_blank` - a new browser tab (or in external application on mobile device) or `<your name>` - a named tab.
-* `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
+* `web_window_name` - window tab/name to open URL in: [`UrlTarget.SELF`](/docs/reference/types/urltarget#self) - the
+  same browser tab, [`UrlTarget.BLANK`](/docs/reference/types/urltarget#blank) - a new browser tab (or in external
+  application on mobile device) or `<your name>` - a named tab.
+* `web_popup_window` - set to `True` to display a URL in a browser popup window. Defaults to `False`.
 * `window_width` - optional, popup window width.
 * `window_height` - optional, popup window height.
 

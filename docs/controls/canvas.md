@@ -310,7 +310,9 @@ ft.app(main)
 
 ### `resize_interval`
 
-Sampling interval in milliseconds for `on_resize` event. Default is `0` - call `on_resize` on every change.
+Sampling interval in milliseconds for `on_resize` event.
+
+Defaults to `0` - call `on_resize` immediately on every change.
 
 ### `shapes`
 
@@ -585,7 +587,9 @@ Shadow elevation.
 
 ### `transparent_occluder`
 
-`True` if the occluding object is not opaque. Default is `False`.
+`True` if the occluding object is not opaque.
+
+Defaults to `False`.
 
 ## `Text` shape properties
 
@@ -615,11 +619,13 @@ The list of [`TextSpan`](/docs/reference/types/textspan) objects to build a rich
 
 A point within a text rectangle to determine its position and rotation center.
 
-The value is of type [`Alignment`](/docs/reference/types/alignment). Default value is `ft.alignment.top_left`.
+Value is of type [`Alignment`](/docs/reference/types/alignment) and defaults to  `alignment.top_left`.
 
 ### `text_align`
 
-Text horizontal align. Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Default is `LEFT`.
+Text horizontal align.
+
+Value is of type [`TextAlign`](/docs/reference/types/textalign) and defaults to`LEFT`.
 
 ### `max_lines`
 
@@ -627,7 +633,9 @@ The maximum number of lines painted. Lines beyond this number are silently dropp
 
 ### `max_width`
 
-The maximum width of the painted text. Default is `None` - infinity.
+The maximum width of the painted text.
+
+Defaults to `None` - infinity.
 
 ### `ellipsis`
 

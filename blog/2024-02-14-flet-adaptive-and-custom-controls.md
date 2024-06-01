@@ -28,7 +28,7 @@ sudo apt install libmpv-dev mpv
 
 Adaptive controls allow writing apps with a single code base which look and behave differently depending on the platform they are running on.
 
-To the date Flet provides [11 adaptive controls](/roadmap#adaptive-and-cupertino-controls). To make control adaptive you should set its `adaptive` property to `True`.
+To the date Flet provides 11 adaptive controls. To make control adaptive you should set its `adaptive` property to `True`.
 
 In Flet 0.20.0 we introduce `adaptive` property to all container-alike controls.
 Setting `adaptive=True` on a container propagates this property to all child adaptive controls.

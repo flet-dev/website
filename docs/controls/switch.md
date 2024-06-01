@@ -140,8 +140,10 @@ The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
-The [color](/docs/reference/colors) for the switch's Material in various [`MaterialState`](/docs/reference/types/materialstate) states. The
-following [`MaterialState`](/docs/reference/types/materialstate) values are supported: `PRESSED`, `SELECTED`, `HOVERED`, `FOCUSED` and `DEFAULT` (fallback).
+The [color](/docs/reference/colors) for the switch's Material in
+various [`ControlState`](/docs/reference/types/controlstate) states. The
+following [`ControlState`](/docs/reference/types/controlstate) values are
+supported: `PRESSED`, `SELECTED`, `HOVERED`, `FOCUSED` and `DEFAULT` (fallback).
 
 ### `splash_radius`
 
@@ -149,22 +151,30 @@ The radius of the splash effect when the switch is pressed.
 
 ### `thumb_color`
 
-The [color](/docs/reference/colors) of this switch's thumb in various [`MaterialState`](/docs/reference/types/materialstate) states. The following [`MaterialState`](/docs/reference/types/materialstate) values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
+The [color](/docs/reference/colors) of this switch's thumb in
+various [`ControlState`](/docs/reference/types/controlstate) states. The
+following [`ControlState`](/docs/reference/types/controlstate) values are
+supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 ### `thumb_icon`
 
-The icon of this Switch's thumb in various [`MaterialState`](/docs/reference/types/materialstate) states. The following [`MaterialState`](/docs/reference/types/materialstate) values are
+The icon of this Switch's thumb in various [`ControlState`](/docs/reference/types/controlstate) states. The
+following [`ControlState`](/docs/reference/types/controlstate) values are
 supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 ### `track_color`
 
-The [color](/docs/reference/colors) of this switch's track in various [`MaterialState`](/docs/reference/types/materialstate) states. The following [`MaterialState`](/docs/reference/types/materialstate)
+The [color](/docs/reference/colors) of this switch's track in
+various [`ControlState`](/docs/reference/types/controlstate) states. The
+following [`ControlState`](/docs/reference/types/controlstate)
 values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 ### `track_outline_color`
 
-The outline [color](/docs/reference/colors) of this switch's track in various [`MaterialState`](/docs/reference/types/materialstate) states. The
-following [`MaterialState`](/docs/reference/types/materialstate) values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
+The outline [color](/docs/reference/colors) of this switch's track in
+various [`ControlState`](/docs/reference/types/controlstate) states. The
+following [`ControlState`](/docs/reference/types/controlstate) values are
+supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 ### `value`
 

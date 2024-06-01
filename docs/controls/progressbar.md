@@ -53,15 +53,22 @@ ft.app(target=main)
 
 ### `value`
 
-The value of this progress indicator. A value of 0.0 means no progress and 1.0 means that progress is complete. The value will be clamped to be in the range 0.0-1.0. If null, this progress indicator is indeterminate, which means the indicator displays a predetermined animation that does not indicate how much actual progress is being made.
+The value of this progress indicator. A value of `0.0` means no progress and `1.0` means that progress is complete. The
+value will be clamped to be in the range `0.0` - `1.0`.
+
+Defaults to `None`, meaning that this progress indicator is indeterminate - displays a predetermined animation that does
+not indicate how much actual progress is being made.
 
 ### `bar_height`
 
-The minimum height of the line used to draw the linear indicator. Default is 4.
+The minimum height of the line used to draw the linear indicator.
+
+Defaults to `4`.
 
 ### `border_radius`
 
-The border radius of both the indicator and the track. Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
+The border radius of both the indicator and the track. Border radius is an instance
+of [`BorderRadius`](/docs/reference/types/borderradius) class.
 
 Defaults to `border_radius.all(0)` - rectangular shape.
 
@@ -75,11 +82,11 @@ The progress indicator's [color](/docs/reference/colors).
 
 ### `semantics_label`
 
-The `Semantics.label` for this progress indicator.
+The [`Semantics.label`](/docs/controls/semantics#label) for this progress indicator.
 
 ### `semantics_value`
 
-The `Semantics.value` for this progress indicator.
+The [`Semantics.value`](/docs/controls/semantics#value) for this progress indicator.
 
 ### `tooltip`
 

@@ -98,7 +98,8 @@ The [color](/docs/reference/colors) to use for the check icon when this checkbox
 
 ### `fill_color`
 
-The [color](/docs/reference/colors) that fills the checkbox in various [`MaterialState`](/docs/reference/types/materialstate) states.
+The [color](/docs/reference/colors) that fills the checkbox in
+various [`ControlState`](/docs/reference/types/controlstate) states.
 
 ### `hover_color`
 
@@ -127,8 +128,9 @@ The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
-The [color](/docs/reference/colors) of the checkbox's overlay in various [`MaterialState`](/docs/reference/types/materialstate) states. The
-following `MaterialState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`.
+The [color](/docs/reference/colors) of the checkbox's overlay in
+various [`ControlState`](/docs/reference/types/controlstate) states. The
+following `ControlState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`.
 
 ### `semantics_label`
 

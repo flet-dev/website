@@ -121,11 +121,14 @@ ft.app(target=main)
 
 How the child Controls should be placed horizontally.
 
-Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum. Default is `START`.
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) and defaults
+to `MainAxisAlignment.START`.
 
 ### `columns`
 
-The number of virtual columns to layout children. Default is `12`.
+The number of virtual columns to layout children.
+
+Defaults to `12`.
 
 ### `controls`
 
@@ -133,18 +136,25 @@ A list of Controls to display inside the ResponsiveRow.
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left.
+
+Defaults to `False`.
 
 ### `run_spacing`
 
-Spacing between runs when row content is wrapped on multiple lines. Default value is 10.
+Spacing between runs when row content is wrapped on multiple lines.
+
+Defaults to `10`.
 
 ### `spacing`
 
-Spacing between controls in a row. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+Spacing between controls in a row in virtual pixels. It is applied only when `alignment` is set
+to `MainAxisAlignment.START`, `MainAxisAlignment.END` or `MainAxisAlignment.CENTER`.
+
+Defaults to `10`.
 
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
+Value is of type [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) and defaults to `START`.

@@ -111,7 +111,9 @@ A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to displ
 
 Defines a position for the `FloatingActionButton`.
 
-Property value is [`FloatingActionButtonLocation`](/docs/reference/types/floatingactionbuttonlocation) enum. Default is `END_FLOAT`.
+Value can be of type `OffsetValue`
+or [`FloatingActionButtonLocation`](/docs/reference/types/floatingactionbuttonlocation). Defaults
+to `FloatingActionButtonLocation.END_FLOAT`.
 
 ### `navigation_bar`
 

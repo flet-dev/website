@@ -32,19 +32,27 @@ ft.app(target=main)
 
 ### `minimum_shake_count`
 
-Number of shakes required before shake is triggered. Default is `1`.
+Number of shakes required before shake is triggered.
+
+Defaults to `1`.
 
 ### `shake_count_reset_time_ms`
 
-Time, in milliseconds, before shake count resets. Default is `3000` ms.
+Time, in milliseconds, before shake count resets.
+
+Defaults to `3000` ms.
 
 ### `shake_slop_time_ms`
 
-Minimum time between shakes, in milliseconds. Default is `500` ms.
+Minimum time between shakes, in milliseconds.
+
+Defaults to `500` ms.
 
 ### `shake_threshold_gravity`
 
-Shake detection threshold, in Gs. Default is `2.7`G.
+Shake detection threshold, in Gs.
+
+Defaults to `2.7`G.
 
 ## Events
 
