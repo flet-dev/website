@@ -178,7 +178,99 @@ Here is the code for adding the container to the page:
 
 ### Styled Controls
 
-To complete the UI portion of the program, update `color` and `size` properties for the Text, and `color` and `bgcolor` properties for the buttons. For even alignment of the buttons within the rows, we will be using `expand` property as shown on the diagram above.  
+To complete the UI portion of the program, we need to update style for result text and buttons to look similar to iPhone calculator app.
+
+For the result text, let's specify its  `color` and `size` properties:
+```python
+result = ft.Text(value="0", color=ft.colors.WHITE, size=20)
+```
+
+For the buttons, if we look again at the UI we are aiming to achieve, there are 3 types of buttons:
+1. **Digit Buttons**. They have dark grey background color and white text, size is the same for all.
+2. **Action Buttons**.  They have orange background color and white text, size is the same for all except `0` button which is twice as large.
+3. **Extra action buttons**. They have light grey background color and dark text, size is the same for all.
+
+The buttons will be used mutiple time in the program, so we will be creating custom [Styled Controls](/docs/getting-started/custom-controls#styled-controls) to reuse the code.
+
+Since all those types should inherit from `ElevatedButton` class and have common `text` and `expand` properties, let's create a parent `CalcButton` class:
+```python
+    class CalcButton(ft.ElevatedButton):
+        def __init__(self, text, expand=1):
+            super().__init__()
+            self.text = text
+            self.expand = expand
+```
+
+Now let's create child classes for all three types of buttons:
+
+```python
+    class DigitButton(CalcButton):
+        def __init__(self, text, expand=1):
+            CalcButton.__init__(self, text, expand)
+            self.bgcolor = ft.colors.WHITE24
+            self.color = ft.colors.WHITE
+
+    class ActionButton(CalcButton):
+        def __init__(self, text):
+            CalcButton.__init__(self, text)
+            self.bgcolor = ft.colors.ORANGE
+            self.color = ft.colors.WHITE
+
+    class ExtraActionButton(CalcButton):
+        def __init__(self, text):
+            CalcButton.__init__(self, text)
+            self.bgcolor = ft.colors.BLUE_GREY_100
+            self.color = ft.colors.BLACK
+```
+
+We will be using these new classes now to create rows of buttons in the Container:
+
+```python
+content=ft.Column(
+                controls=[
+                    ft.Row(controls=[result], alignment="end"),
+                    ft.Row(
+                        controls=[
+                            ExtraActionButton(text="AC"),
+                            ExtraActionButton(text="+/-"),
+                            ExtraActionButton(text="%"),
+                            ActionButton(text="/"),
+                        ]
+                    ),
+                    ft.Row(
+                        controls=[
+                            DigitButton(text="7"),
+                            DigitButton(text="8"),
+                            DigitButton(text="9"),
+                            ActionButton(text="*"),
+                        ]
+                    ),
+                    ft.Row(
+                        controls=[
+                            DigitButton(text="4"),
+                            DigitButton(text="5"),
+                            DigitButton(text="6"),
+                            ActionButton(text="-"),
+                        ]
+                    ),
+                    ft.Row(
+                        controls=[
+                            DigitButton(text="1"),
+                            DigitButton(text="2"),
+                            DigitButton(text="3"),
+                            ActionButton(text="+"),
+                        ]
+                    ),
+                    ft.Row(
+                        controls=[
+                            DigitButton(text="0", expand=2),
+                            DigitButton(text="."),
+                            ActionButton(text="="),
+                        ]
+                    ),
+                ]
+            ),
+```
 
 Since the program is too long now to be fully included in this tutorial, copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc3.py). Run the app and you should see a page like this:
 <img src="/img/docs/calc-tutorial/calc-app.png" className="screenshot-40" />
