@@ -10,7 +10,7 @@ In this tutorial we will show you, step-by-step, how to create a To-Do app in Py
 
 You can see the live demo [here](https://gallery.flet.dev/todo/).
 
-We chose a To-Do app for the tutorial, because it covers all of the basic concepts you would need to create any app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and publishing options.
+We chose a To-Do app for the tutorial, because it covers all of the basic concepts you would need to create a Flet app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and publishing options.
 
 The tutorial consists of the following steps:
 
