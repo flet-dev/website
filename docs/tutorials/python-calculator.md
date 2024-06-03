@@ -279,7 +279,7 @@ Just what we wanted!
 
 ## Reusable UI components
 
-While you can continue writing your app in the `main` function, the best practice would be to create a [reusable UI component](/docs/getting-started/custom-controls). 
+While you can continue writing your app in the `main` function, the best practice would be to create a [reusable UI component](/docs/getting-started/custom-controls#composite-controls). 
 
 Imagine you are working on an app header, a side menu, or UI that will be a part of a larger project (for example, at Flet we will be using this Calculator app in a bigger "Gallery" app that will show all the examples for Flet framework). 
 
