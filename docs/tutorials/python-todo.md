@@ -4,7 +4,7 @@ sidebar_label: To-Do app
 slug: python-todo
 ---
 
-In this tutorial we will show you, step-by-step, how to create a To-Do app in Python using Flet framework and then publish it as a desktop, mobile or web app. The app is a single-file console program of just [180 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-platform application with rich, responsive UI:
+In this tutorial we will show you, step-by-step, how to create a To-Do app in Python using Flet framework and then publish it as a desktop, mobile or web app. The app is a single-file console program of just [172 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-platform application with rich, responsive UI:
 
 <img src="/img/docs/tutorial/todo-complete-demo-web.gif" className="screenshot-70" />
 
@@ -369,7 +369,7 @@ class Task(ft.Column):
 
     def status_changed(self, e):
         self.completed = self.display_task.value
-        self.task_status_change(self)
+        self.task_status_change()
 ```
 
 Run the app and try filtering tasks by clicking on the tabs:
@@ -389,35 +389,38 @@ class TodoApp():
 
         self.items_left = ft.Text("0 items left")
 
-        self.view = ft.Column(
-            width=600,
-            controls=[
-                ft.Row([ ft.Text(value="Todos", style="headlineMedium")], alignment=ft.MainAxisAlignment.CENTER),
-                ft.Row(
-                    controls=[
-                        self.new_task,
-                        ft.FloatingActionButton(icon=ft.icons.ADD, on_click=self.add_clicked),
-                    ],
-                ),
-                ft.Column(
-                    spacing=25,
-                    controls=[
-                        self.filter,
-                        self.tasks,
-                        ft.Row(
-                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                            vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                            controls=[
-                                self.items_left,
-                                ft.OutlinedButton(
-                                    text="Clear completed", on_click=self.clear_clicked
-                                ),
-                            ],
-                        ),
-                    ],
-                ),
-            ],
-        )
+        self.width = 600
+        self.controls = [
+            ft.Row(
+                [ft.Text(value="Todos", theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM)],
+                alignment=ft.MainAxisAlignment.CENTER,
+            ),
+            ft.Row(
+                controls=[
+                    self.new_task,
+                    ft.FloatingActionButton(
+                        icon=ft.icons.ADD, on_click=self.add_clicked
+                    ),
+                ],
+            ),
+            ft.Column(
+                spacing=25,
+                controls=[
+                    self.filter,
+                    self.tasks,
+                    ft.Row(
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                        vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                        controls=[
+                            self.items_left,
+                            ft.OutlinedButton(
+                                text="Clear completed", on_click=self.clear_clicked
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        ]
 
     # ...
 
@@ -426,7 +429,7 @@ class TodoApp():
             if task.completed:
                 self.task_delete(task)
 
-    def update(self):
+    def before_update(self):
         status = self.filter.tabs[self.filter.selected_index].text
         count = 0
         for task in self.tasks.controls:
@@ -438,9 +441,7 @@ class TodoApp():
             if not task.completed:
                 count += 1
         self.items_left.value = f"{count} active item(s) left"
-        super().update()
 ```
-
 Run the app:
 
 <img src="/img/docs/tutorial/todo-app-4.png" className="screenshot-50" />
@@ -451,17 +452,17 @@ Congratulations! You have created your first Python app with Flet, and it looks 
 
 Now it's time to share your app with the world!
 
-[Follow these instructions](/docs/publish/web) to deploy your Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/publish) to publish your Flet app as a mobile, desktop or web app.
 
 ## Summary
 
 In this tutorial, you have learnt how to:
 
 * Create a simple Flet app;
-* Work with Reusable UI components;
+* Work with [Reusable UI components](/docs/getting-started/custom-controls);
 * Design UI layout using `Column` and `Row` controls;
 * Work with lists: view, edit and delete items, filtering;
-* Deploy your Flet app to the web;
+* [Publish](/docs/publish/) your Flet app to multiple platforms;
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
 
