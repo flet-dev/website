@@ -4,13 +4,13 @@ sidebar_label: To-Do app
 slug: python-todo
 ---
 
-In this tutorial we will show you, step-by-step, how to create a ToDo web app in Python using Flet framework and then share it on the internet. The app is a single-file console program of just [180 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-session, modern single-page application with rich, responsive UI:
+In this tutorial we will show you, step-by-step, how to create a To-Do app in Python using Flet framework and then publish it as a desktop, mobile or web app. The app is a single-file console program of just [172 lines (formatted!) of Python code](https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py), yet it is a multi-platform application with rich, responsive UI:
 
 <img src="/img/docs/tutorial/todo-complete-demo-web.gif" className="screenshot-70" />
 
 You can see the live demo [here](https://gallery.flet.dev/todo/).
 
-We chose a ToDo app for the tutorial, because it covers all of the basic concepts you would need to create any web app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and deployment options.
+We chose a To-Do app for the tutorial, because it covers all of the basic concepts you would need to create a Flet app: building a page layout, adding controls, handling events, displaying and editing lists, making reusable UI components, and publishing options.
 
 The tutorial consists of the following steps:
 
@@ -19,19 +19,15 @@ The tutorial consists of the following steps:
 * [View, edit and delete list items](#view-edit-and-delete-list-items)
 * [Filtering list items](#filtering-list-items)
 * [Final touches](#final-touches)
-* [Deploying the app](#deploying-the-app)
+* [Publishing the app](#publishing-the-app)
 
 ## Getting started with Flet
 
-To write a Flet web app you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
+To create a multi-platform app in Python with Flet, you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
 
-Flet requires Python 3.8 or above. To create a web app in Python with Flet, you need to install `flet` module first:
+Before you can create your first Flet app, you need to [setup your development environment](/docs/getting-started/), which requires Python 3.8 or above and `flet` package.
 
-```bash
-pip install flet
-```
-
-To start, let's create a simple hello-world app.
+Once you have Flet installed, let's [create](/docs/getting-started/create-flet-app) a simple hello-world app.
 
 Create `hello.py` with the following contents:
 
@@ -50,7 +46,7 @@ Run this app and you will see a new window with a greeting:
 
 ## Adding page controls and handling events
 
-Now we're ready to create a multi-user ToDo app.
+Now we're ready to create a multi-user To-Do app.
 
 To start, we'll need a [TextField](/docs/controls/textfield) for entering a task name, and an "+" [FloatingActionButton](/docs/controls/floatingactionbutton) with an event handler that will display a [Checkbox](/docs/controls/checkbox) with a new task.
 
@@ -96,7 +92,7 @@ def main(page: ft.Page):
         new_task.value = ""
         view.update()
 
-    new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
+    new_task = ft.TextField(hint_text="What needs to be done?", expand=True)
     tasks_view = ft.Column()
     view=ft.Column(
         width=600,
@@ -123,40 +119,40 @@ Run the app and you should see a page like this:
 
 ### Reusable UI components
 
-While we could continue writing our app in the `main` function, the best practice would be to create a reusable UI component. Imagine you are working on an app header, a side menu, or UI that will be a part of a larger project. Even if you can't think of such uses right now, we still recommend creating all your web apps with composability and reusability in mind.
+While we could continue writing our app in the `main` function, the best practice would be to create a [reusable UI component](/docs/getting-started/custom-controls). Imagine you are working on an app header, a side menu, or UI that will be a part of a larger project. Even if you can't think of such uses right now, we still recommend creating all your Flet apps with composability and reusability in mind.
 
-To make a reusable ToDo app component, we are going to encapsulate its state and presentation logic in a separate class: 
+To make a reusable To-Do app component, we are going to encapsulate its state and presentation logic in a separate class: 
 
 ```python
 import flet as ft
 
-class TodoApp(ft.UserControl):
-    def build(self):
-        self.new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
-        self.tasks = ft.Column()
-
-        # application's root control (i.e. "view") containing all other controls
-        return ft.Column(
-            width=600,
-            controls=[
-                ft.Row(
-                    controls=[
-                        self.new_task,
-                        ft.FloatingActionButton(icon=ft.icons.ADD, on_click=self.add_clicked),
-                    ],
-                ),
-                self.tasks,
-            ],
-        )
+class TodoApp(ft.Column):
+    # application's root control is a Column containing all other controls
+    def __init__(self):
+        super().__init__()
+        self.new_task = ft.TextField(hint_text="What needs to be done?", expand=True)
+        self.tasks_view = ft.Column()
+        self.width = 600
+        self.controls = [
+            ft.Row(
+                controls=[
+                    self.new_task,
+                    ft.FloatingActionButton(
+                        icon=ft.icons.ADD, on_click=self.add_clicked
+                    ),
+                ],
+            ),
+            self.tasks_view,
+        ]
 
     def add_clicked(self, e):
-        self.tasks.controls.append(ft.Checkbox(label=self.new_task.value))
+        self.tasks_view.controls.append(ft.Checkbox(label=self.new_task.value))
         self.new_task.value = ""
         self.update()
 
 
 def main(page: ft.Page):
-    page.title = "ToDo App"
+    page.title = "To-Do App"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.update()
 
@@ -185,7 +181,7 @@ page.add(app1, app2)
 
 ## View, edit and delete list items
 
-In the [previous step](#adding-page-controls-and-handling-events), we created a basic ToDo app with task items shown as checkboxes. Let's improve the app by adding "Edit" and "Delete" buttons next to a task name. The "Edit" button will switch a task item to edit mode.
+In the [previous step](#adding-page-controls-and-handling-events), we created a basic To-Do app with task items shown as checkboxes. Let's improve the app by adding "Edit" and "Delete" buttons next to a task name. The "Edit" button will switch a task item to edit mode.
 
 <img src="/img/docs/tutorial/todo-diagram-2.svg" className="screenshot" />
 
@@ -198,12 +194,11 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 To encapsulate task item views and actions, we introduced a new `Task` class:
 
 ```python
-class Task(ft.UserControl):
-    def __init__(self, task_name):
+class Task(ft.Column):
+    def __init__(self, task_name, task_delete):
         super().__init__()
         self.task_name = task_name
-
-    def build(self):
+        self.task_delete = task_delete
         self.display_task = ft.Checkbox(value=False, label=self.task_name)
         self.edit_name = ft.TextField(expand=1)
 
@@ -244,7 +239,7 @@ class Task(ft.UserControl):
                 ),
             ],
         )
-        return ft.Column(controls=[self.display_view, self.edit_view])
+        self.controls = [self.display_view, self.edit_view]
 
     def edit_clicked(self, e):
         self.edit_name.value = self.display_task.label
@@ -257,48 +252,48 @@ class Task(ft.UserControl):
         self.display_view.visible = True
         self.edit_view.visible = False
         self.update()
+
+    def delete_clicked(self, e):
+        self.task_delete(self)
 ```
 
 Additionally, we changed `TodoApp` class to create and hold `Task` instances when the "Add" button is clicked:
 
 ```python
-class TodoApp(ft.UserControl):
-    def build(self):
-        self.new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
+
+class TodoApp(ft.Column):
+    # application's root control is a Column containing all other controls
+    def __init__(self):
+        super().__init__()
+        self.new_task = ft.TextField(hint_text="What needs to be done?", expand=True)
         self.tasks = ft.Column()
-        # ...
+        self.width = 600
+        self.controls = [
+            ft.Row(
+                controls=[
+                    self.new_task,
+                    ft.FloatingActionButton(
+                        icon=ft.icons.ADD, on_click=self.add_clicked
+                    ),
+                ],
+            ),
+            self.tasks,
+        ]
 
     def add_clicked(self, e):
         task = Task(self.new_task.value, self.task_delete)
         self.tasks.controls.append(task)
         self.new_task.value = ""
         self.update()
-```
 
-For "Delete" task operation, we implemented `task_delete()` method in `TodoApp` class which accepts task control instance as a parameter:
-
-```python
-class TodoApp(ft.UserControl):
-    # ...
     def task_delete(self, task):
         self.tasks.controls.remove(task)
         self.update()
 ```
 
-Then, we passed a reference to `task_delete` method into Task constructor and called it on "Delete" button event handler:
+For "Delete" task operation, we implemented `task_delete()` method in `TodoApp` class which accepts task control instance as a parameter.
 
-```python
-class Task(ft.UserControl):
-    def __init__(self, task_name, task_delete):
-        super().__init__()
-        self.task_name = task_name
-        self.task_delete = task_delete
-
-        # ...        
-
-    def delete_clicked(self, e):
-        self.task_delete(self)
-```
+Then, we passed a reference to `task_delete` method into Task constructor and called it on "Delete" button event handler.
 
 Run the app and try to edit and delete tasks:
 
@@ -306,7 +301,7 @@ Run the app and try to edit and delete tasks:
 
 ## Filtering list items
 
-We already have a functional ToDo app where we can create, edit, and delete tasks. To be even more productive, we want to be able to filter tasks by their status.
+We already have a functional To-Do app where we can create, edit, and delete tasks. To be even more productive, we want to be able to filter tasks by their status.
 
 Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/todo/to-do-5.py). Below we will explain the changes we've done to implement filtering.
 
@@ -316,10 +311,11 @@ Copy the entire code for this step from [here](https://github.com/flet-dev/examp
 
 # ...
 
-class TodoApp(ft.UserControl):
+class TodoApp(ft.Column):
+    # application's root control is a Column containing all other controls
     def __init__(self):
-        self.tasks = []
-        self.new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
+        super().__init__()
+        self.new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
         self.tasks = ft.Column()
 
         self.filter = ft.Tabs(
@@ -327,37 +323,19 @@ class TodoApp(ft.UserControl):
             on_change=self.tabs_changed,
             tabs=[ft.Tab(text="all"), ft.Tab(text="active"), ft.Tab(text="completed")],
         )
-
-        self.view = ft.Column(
-            width=600,
-            controls=[
-                ft.Row(
-                    controls=[
-                        self.new_task,
-                        ft.FloatingActionButton(icon=ft.icons.ADD, on_click=self.add_clicked),
-                    ],
-                ),
-                ft.Column(
-                    spacing=25,
-                    controls=[
-                        self.filter,
-                        self.tasks,
-                    ],
-                ),
-            ],
-        )
+    # ....
 ```
 
 To display different lists of tasks depending on their statuses, we could maintain three lists with "All", "Active" and "Completed" tasks. We, however, chose an easier approach where we maintain the same list and only change a task's visibility depending on its status.
 
-In `TodoApp` class we overrided `update()` method which iterates through all the tasks and updates their `visible` property depending on the status of the task:
+In `TodoApp` class we overrided [`before_update()`](/docs/getting-started/custom-controls#before_update) method alled every time when the control is being updated. It iterates through all the tasks and updates their `visible` property depending on the status of the task:
 
 ```python
-class TodoApp(ft.UserControl):
+class TodoApp(ft.Column):
 
     # ...
 
-    def update(self):
+    def before_update(self):
         status = self.filter.tabs[self.filter.selected_index].text
         for task in self.tasks.controls:
             task.visible = (
@@ -365,28 +343,25 @@ class TodoApp(ft.UserControl):
                 or (status == "active" and task.completed == False)
                 or (status == "completed" and task.completed)
             )
-        super().update()
 ```
 
-Filtering should occur when we click on a tab or change a task status. `TodoApp.update()` method is called when Tabs selected value is changed or Task item checkbox is clicked:
+Filtering should occur when we click on a tab or change a task status. `TodoApp.before_update()` method is called when Tabs selected value is changed or Task item checkbox is clicked:
 
 ```python
-class TodoApp(ft.UserControl):
+class TodoApp(ft.Column):
 
     # ...
 
     def tabs_changed(self, e):
         self.update()
 
-class Task(ft.UserControl):
+class Task(ft.Column):
     def __init__(self, task_name, task_status_change, task_delete):
         super().__init__()
         self.completed = False
         self.task_name = task_name
         self.task_status_change = task_status_change
         self.task_delete = task_delete
-
-    def build(self):
         self.display_task = ft.Checkbox(
             value=False, label=self.task_name, on_change=self.status_changed
         )
@@ -394,7 +369,7 @@ class Task(ft.UserControl):
 
     def status_changed(self, e):
         self.completed = self.display_task.value
-        self.task_status_change(self)
+        self.task_status_change()
 ```
 
 Run the app and try filtering tasks by clicking on the tabs:
@@ -414,35 +389,38 @@ class TodoApp():
 
         self.items_left = ft.Text("0 items left")
 
-        self.view = ft.Column(
-            width=600,
-            controls=[
-                ft.Row([ ft.Text(value="Todos", style="headlineMedium")], alignment=ft.MainAxisAlignment.CENTER),
-                ft.Row(
-                    controls=[
-                        self.new_task,
-                        ft.FloatingActionButton(icon=ft.icons.ADD, on_click=self.add_clicked),
-                    ],
-                ),
-                ft.Column(
-                    spacing=25,
-                    controls=[
-                        self.filter,
-                        self.tasks,
-                        ft.Row(
-                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                            vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                            controls=[
-                                self.items_left,
-                                ft.OutlinedButton(
-                                    text="Clear completed", on_click=self.clear_clicked
-                                ),
-                            ],
-                        ),
-                    ],
-                ),
-            ],
-        )
+        self.width = 600
+        self.controls = [
+            ft.Row(
+                [ft.Text(value="Todos", theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM)],
+                alignment=ft.MainAxisAlignment.CENTER,
+            ),
+            ft.Row(
+                controls=[
+                    self.new_task,
+                    ft.FloatingActionButton(
+                        icon=ft.icons.ADD, on_click=self.add_clicked
+                    ),
+                ],
+            ),
+            ft.Column(
+                spacing=25,
+                controls=[
+                    self.filter,
+                    self.tasks,
+                    ft.Row(
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                        vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                        controls=[
+                            self.items_left,
+                            ft.OutlinedButton(
+                                text="Clear completed", on_click=self.clear_clicked
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        ]
 
     # ...
 
@@ -451,7 +429,7 @@ class TodoApp():
             if task.completed:
                 self.task_delete(task)
 
-    def update(self):
+    def before_update(self):
         status = self.filter.tabs[self.filter.selected_index].text
         count = 0
         for task in self.tasks.controls:
@@ -463,30 +441,28 @@ class TodoApp():
             if not task.completed:
                 count += 1
         self.items_left.value = f"{count} active item(s) left"
-        super().update()
 ```
-
 Run the app:
 
 <img src="/img/docs/tutorial/todo-app-4.png" className="screenshot-50" />
 
-## Deploying the app
+## Publishing the app
 
 Congratulations! You have created your first Python app with Flet, and it looks awesome!
 
 Now it's time to share your app with the world!
 
-[Follow these instructions](/docs/publish/web) to deploy your Flet app as a web app to Fly.io or Replit.
+[Follow these instructions](/docs/publish) to publish your Flet app as a mobile, desktop or web app.
 
 ## Summary
 
 In this tutorial, you have learnt how to:
 
 * Create a simple Flet app;
-* Work with Reusable UI components;
+* Work with [Reusable UI components](/docs/getting-started/custom-controls);
 * Design UI layout using `Column` and `Row` controls;
 * Work with lists: view, edit and delete items, filtering;
-* Deploy your Flet app to the web;
+* [Publish](/docs/publish/) your Flet app to multiple platforms;
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
 
