@@ -85,6 +85,6 @@ An animation type to transition between new and old `content`. Property value is
 
 * `FADE`
 * `ROTATION`
-* `CALE`
+* `SCALE`
 
 Defaults to `FADE`.   
