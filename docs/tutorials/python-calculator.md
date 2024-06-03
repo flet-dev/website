@@ -303,20 +303,19 @@ page.add(calc1, calc2)
 
 ## Handling events
 
-Now let's make the calculator do its job. We will be using the same event handler for all the buttons and use `data` property to differentiate between the actions depending on the button clicked. For each `ElevatedButton` control, specify `on_click=self.button_clicked` event and set `data` property equal to button's text, for example:
+Now let's make the calculator do its job. We will be using the same event handler for all the buttons and use `data` property to differentiate between the actions depending on the button clicked. For `CalcButton` class, let's specify `on_click=button_clicked` event and set `data` property equal to button's text:
 
 ```python
-ft.ElevatedButton(
-    text="AC",
-    bgcolor=ft.colors.BLUE_GREY_100,
-    color=ft.colors.BLACK,
-    expand=1,
-    on_click=self.button_clicked,
-    data="AC",
-)
+class CalcButton(ft.ElevatedButton):
+    def __init__(self, text, button_clicked, expand=1):
+        super().__init__()
+        self.text = text
+        self.expand = expand
+        self.on_click = button_clicked
+        self.data = text
 ```
 
-Below is `on_click` event handler that will reset the Text value when "AC" button is clicked:
+We will define `button_click` method in `CalculatorClass` and pass it to each button. Below is `on_click` event handler that will reset the Text value when "AC" button is clicked:
 
 ```python
 def button_clicked(self, e):
@@ -324,7 +323,7 @@ def button_clicked(self, e):
         self.result.value = "0"
 ```
 
-With similar approach, specify `on_click` event and `data` property for each button and add expected action to the `button_clicked` event handler depending on `e.control.data` value. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py).
+With similar approach, `button_click` method will handle different calculator actions depending on `data` property for each button. Copy the entire code for this step from [here](https://github.com/flet-dev/examples/blob/main/python/tutorials/calc/calc.py).
 
 Run the app and see it in the action:
 <img src="/img/docs/calc-tutorial/calc-app.gif" className="screenshot-40" />
