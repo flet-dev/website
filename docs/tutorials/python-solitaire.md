@@ -924,7 +924,8 @@ def drop(self, e: ft.DragEndEvent):
 As a final touch for foundations rules, let’s implement `doublclick` method for `on_double_tap` event of a card. It will be checking if the faced-up card fits into any of the foundations and place it there:
 ```python
    def doubleclick(self, e):
-       if self.face_up:
+       self.get_draggable_pile()
+       if self.face_up and len(self.draggable_pile == 1):
            self.move_on_top()
            for slot in self.solitaire.foundations:
                if self.solitaire.check_foundations_rules(self, slot):
@@ -983,12 +984,10 @@ def click(self, e):
     if self.slot in self.solitaire.tableau:
         if not self.face_up and self == self.slot.get_top_card():
             self.turn_face_up()
-            self.solitaire.update()
     elif self.slot == self.solitaire.stock:
         self.move_on_top()
         self.place(self.solitaire.waste)
         self.turn_face_up()
-        self.solitaire.update()
 ```
 
 That’s it! Now you can properly play solitaire, but it very difficult to win the game if you cannot pass though the waste again. Let’s implement `click()` for `on_click` event of the stock Slot to go thought the stock pile again:
@@ -1019,7 +1018,6 @@ def restart_stock(self):
         card.turn_face_down()
         card.move_on_top()
         card.place(self.stock)   
-    self.solitaire.update()
 ```
 
 For `card.place()` method to work properly with cards from Stock and Waste, we’ve added a condition to `card.get_draggable_pile()`, so that it returns the top card only and not the whole pile:
