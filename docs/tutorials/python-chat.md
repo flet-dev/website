@@ -1,6 +1,6 @@
 ---
-title: Creating realtime chat app in Python
-sidebar_label: Realtime Chat app
+title: Creating chat app in Python
+sidebar_label: Chat app
 ---
 
 In this tutorial we are going to create a trivial in-memory Chat app that will help you understand Flet framework basics. This app could be a good starting point to creating your own more complex and useful projects.
@@ -26,23 +26,15 @@ The full code for the chat app can be found [here](https://github.com/flet-dev/e
 
 It's a tradition to start with "Hello, world!" app!
 
-Flet requires Python 3.8 or above. To create a Flet app in Python, you need to install `flet` module first:
+To create a multi-platform app in Python with Flet, you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
 
-```bash
-pip install flet
-```
+Before you can create your first Flet app, you need to [setup your development environment](/docs/getting-started/), which requires Python 3.8 or above and `flet` package.
 
-:::note Upgrading Flet
-To upgrade `flet` module run:
-
-```bash
-pip install flet --upgrade
-```
-:::
+Once you have Flet installed, let's [create](/docs/getting-started/create-flet-app) a simple hello-world app.
 
 Create `hello.py` with the following contents:
 
-```python title="hello.py"
+```python
 import flet as ft
 
 def main(page: ft.Page):
@@ -62,7 +54,7 @@ To start, we want to be able to take user input (chat message) and show messages
 <img src="/img/docs/chat-tutorial/chat-layout-1.svg" className="screenshot-70" />
 
 
-To implement this layout we will be using these Flet controls:
+To implement this layout, we will be using these Flet controls:
 * [Column](/docs/controls/column) - a container to display chat messages (Text controls) vertically.
 * [Text](/docs/controls/text) - chat message displayed in the chat Column.
 * [TextField](/docs/controls/textfield) - input control used for taking new message input from the user.
@@ -87,7 +79,7 @@ def main(page: ft.Page):
         chat, ft.Row(controls=[new_message, ft.ElevatedButton("Send", on_click=send_click)])
     )
 
-ft.app(main, view=ft.AppView.WEB_BROWSER)
+ft.app(target=main)
 ```
 
 When user clicks on the "Send" button, it triggers `on_click` event which calls `send_click` method. `send_click` then adds new `Text` control to the list of Column `controls` and clears `new_message` TextField value.
@@ -101,7 +93,17 @@ Chat app now looks like this:
 
 ## Broadcasting chat messages
 
-In the previous step we have created a simple web app that takes input from the user and displays chats messages on the screen. If you open this app in two web browser tabs, it will create two app sessions. Each session will have its own list of messages.
+In the previous step we have created a simple app that takes input from the user and displays chats messages on the screen. 
+
+If you open this app in two web browser tabs, it will create two app sessions. Each session will have its own list of messages.
+
+:::note
+To open open your app in two web browser tabs locally, run the following command:
+``` 
+flet run --web <path_to_your_app>
+```
+Once it is opened, copy the url and paste it into a new tab.
+:::
 
 To build a realtime chat app, you need to somehow pass the messages between chat app sessions. When a user sends a message, it should be broadcasted to all other app sessions and displayed on their pages.
 
@@ -161,7 +163,7 @@ def main(page: ft.Page):
 
     page.add(chat, ft.Row([new_message, ft.ElevatedButton("Send", on_click=send_click)]))
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+ft.app(target=main)
 ```
 
 <img src="/img/docs/chat-tutorial/chat-2.gif" className="screenshot-100" />
@@ -265,7 +267,7 @@ You may want to show messages in a different format, like this:
 
 Chat message will now be a `Row` containing [`CircleAvatar`](/docs/controls/circleavatar) with username initials and `Column` that contains two `Text` controls: user name and message text.
 
-We will need to show quite a few chat messages in the chat app, so it makes sense to create your own reusable control. Lets create a new `ChatMessage` class that will inherit from `Row`.
+We will need to show quite a few chat messages in the chat app, so it makes sense to create your own [reusable control](/docs/getting-started/custom-controls). Lets create a new `ChatMessage` class that will inherit from `Row`.
 
 When creating an instance of `ChatMessage` class, we will pass a `Message` object as an argument and then `ChatMessage` will display itself based on `message.user_name` and `message.text`:
 
@@ -273,7 +275,7 @@ When creating an instance of `ChatMessage` class, we will pass a `Message` objec
 class ChatMessage(ft.Row):
     def __init__(self, message: Message):
         super().__init__()
-        self.vertical_alignment="start"
+        self.vertical_alignment = ft.CrossAxisAlignment.START
         self.controls=[
                 ft.CircleAvatar(
                     content=ft.Text(self.get_initials(message.user_name)),
