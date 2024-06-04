@@ -27,15 +27,11 @@ In the Part 2 (will be covered in the next tutorial) we'll be adding Appbar with
 
 ## Getting started with Flet
 
-To create a Flet web app you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
+To create a multi-platform app in Python with Flet, you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
 
-Flet requires Python 3.8 or above. To create a web app in Python with Flet, you need to install `flet` module first:
+Before you can create your first Flet app, you need to [setup your development environment](/docs/getting-started/), which requires Python 3.8 or above and `flet` package.
 
-```bash
-pip install flet
-```
-
-To start, let's create a simple hello-world app.
+Once you have Flet installed, let's [create](/docs/getting-started/create-flet-app) a simple hello-world app.
 
 Create `hello.py` with the following contents:
 
@@ -170,7 +166,7 @@ def place(card, slot):
 
 Now, if the card is not close enough, we need to bounce it back to its original position. Unfortunately, we don’t know the original position coordinates, since the card’s `top` and `left` properties were changed on `on_pan_update` event.
 
-To solve this problem, let’s create a `Solitaire` class object to remember the original position of the card when `on_pan_start` event of the card is called:
+To solve this problem, let’s create a `Solitaire` class object to keep track of the original position of the card when `on_pan_start` event of the card is called:
 ```python
 class Solitaire:
    def __init__(self):
