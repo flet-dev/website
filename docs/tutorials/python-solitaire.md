@@ -814,15 +814,14 @@ Currently, we can move any card, but only face-up cards should be moved. Let’s
 def start_drag(self, e: ft.DragStartEvent):
     if self.face_up:
         self.move_on_top()
-        self.update()
+        self.solitaire.update()
 
 def drag(self, e: ft.DragUpdateEvent):
     if self.face_up:
-        draggable_pile = self.get_draggable_pile()
-        for card in draggable_pile:
-            card.top = max(0, self.top + e.delta_y) + draggable_pile.index(card) * CARD_OFFSET
+        for card in self.draggable_pile:
+            card.top = max(0, self.top + e.delta_y) + self.draggable_pile.index(card) * CARD_OFFSET
             card.left = max(0, self.left + e.delta_x)
-            card.update()
+            card.solitaire.update()
 
 def drop(self, e: ft.DragEndEvent):
     if self.face_up:
@@ -832,7 +831,6 @@ def drop(self, e: ft.DragEndEvent):
             and abs(self.left - slot.left) < DROP_PROXIMITY
         ):
                 self.place(slot)
-                self.update()
                 return
         
         for slot in self.solitaire.foundations:
@@ -841,11 +839,9 @@ def drop(self, e: ft.DragEndEvent):
             and abs(self.left - slot.left) < DROP_PROXIMITY
         ):
                 self.place(slot)
-                self.update()
                 return
         
     self.bounce_back()
-    self.update()
 ```
 
 Now let’s specify `click` method for the `on_tap` event of the card to reveal the card if you click on a faced-down top card in a tableau pile:
@@ -854,7 +850,7 @@ def click(self, e):
     if self.slot in self.solitaire.tableau:
         if not self.face_up and self == self.slot.get_top_card():
             self.turn_face_up()
-            self.update()
+            self.solitaire.update()
 ```
 
 Let's check how it works:
@@ -872,21 +868,18 @@ def drop(self, e: ft.DragEndEvent):
         and abs(self.left - slot.left) < DROP_PROXIMITY
         ):
             self.place(slot)
-            self.update()
             return
     
-    if len(self.get_draggable_pile()) == 1:
+    if len(self.draggable_pile) == 1:
         for slot in self.solitaire.foundations:
             if (
                 abs(self.top - slot.top) < DROP_PROXIMITY
         and abs(self.left - slot.left) < DROP_PROXIMITY
         ):
                 self.place(slot)
-                self.update()
                 return
         
     self.bounce_back()
-    self.update()
 ```
 
 Then, of course, not any card can be placed to a foundation. According to the rules, a foundation should start with an Ace and then the cards of the same suite can be placed on top of it to build a pile form Ace to King.
@@ -914,21 +907,18 @@ def drop(self, e: ft.DragEndEvent):
             and abs(self.left - slot.left) < DROP_PROXIMITY
         ):
                 self.place(slot)
-                self.update()
                 return
         
-        if len(self.get_draggable_pile()) == 1:
+        if len(self.draggable_pile) == 1:
             for slot in self.solitaire.foundations:
                 if (
                     abs(self.top - slot.top) < DROP_PROXIMITY
             and abs(self.left - slot.left) < DROP_PROXIMITY
         ) and self.solitaire.check_foundations_rules(self, slot):
                     self.place(slot)
-                    self.update()
                     return
         
         self.bounce_back()
-        self.update()
 ```
 
 As a final touch for foundations rules, let’s implement `doublclick` method for `on_double_tap` event of a card. It will be checking if the faced-up card fits into any of the foundations and place it there:
@@ -939,7 +929,6 @@ As a final touch for foundations rules, let’s implement `doublclick` method fo
            for slot in self.solitaire.foundations:
                if self.solitaire.check_foundations_rules(self, slot):
                    self.place(slot)
-                   self.page.update()
                    return
 ```
 
@@ -970,21 +959,18 @@ def drop(self, e: ft.DragEndEvent):
             and abs(self.left - slot.left) < DROP_PROXIMITY
         ) and self.solitaire.check_tableau_rules(self, slot):
                 self.place(slot)
-                self.update()
                 return
         
-        if len(self.get_draggable_pile()) == 1:
+        if len(self.draggable_pile) == 1:
             for slot in self.solitaire.foundations:
                 if (
                     abs(self.top - slot.top) < DROP_PROXIMITY
             and abs(self.left - slot.left) < DROP_PROXIMITY
         ) and self.solitaire.check_foundations_rules(self, slot):
                     self.place(slot)
-                    self.update()
                     return
         
         self.bounce_back()
-        self.update()
 ```
 
 ### Stock and waste
@@ -997,7 +983,7 @@ def click(self, e):
     if self.slot in self.solitaire.tableau:
         if not self.face_up and self == self.slot.get_top_card():
             self.turn_face_up()
-            self.update()
+            self.solitaire.update()
     elif self.slot == self.solitaire.stock:
         self.move_on_top()
         self.place(self.solitaire.waste)
@@ -1033,16 +1019,22 @@ def restart_stock(self):
         card.turn_face_down()
         card.move_on_top()
         card.place(self.stock)   
-    self.update
+    self.solitaire.update()
 ```
 
 For `card.place()` method to work properly with cards from Stock and Waste, we’ve added a condition to `card.get_draggable_pile()`, so that it returns the top card only and not the whole pile:
 ```python
-def get_draggable_pile(self):
-    """returns list of cards that will be dragged together, starting with the current card"""
-    if self.slot is not None and self.slot != self.solitaire.stock and self.slot != self.solitaire.waste:
-        return self.slot.pile[self.slot.pile.index(self):]
-    return [self]
+    def get_draggable_pile(self):
+        """returns list of cards that will be dragged together, starting with the current card"""
+
+        if (
+            self.slot is not None
+            and self.slot != self.solitaire.stock
+            and self.slot != self.solitaire.waste
+        ):
+            self.draggable_pile = self.slot.pile[self.slot.pile.index(self) :]
+        else:  # slot == None when the cards are dealed and need to be place in slot for the first time
+            self.draggable_pile = [self]
 ```
 All done! The full source code for this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-rules).
 
