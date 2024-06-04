@@ -300,9 +300,9 @@ Congratulations on completing the proof of concept app for the Solitaire game! N
 
 ## Fanned card piles
 
-In the proof of concept app you have accomplished the task of dropping a card to a slot in proximity or bounce it back. If there is already a card in that slot, the new card is placed on top of it, covering it completely.
+In the proof of concept app you have accomplished the task of dropping a card into a slot in proximity or bounce it back. If there is already a card in that slot, the new card is placed on top of it, covering it completely.
 
-In the actual Solitaire game, if there is already a card in a tableau slot, you want to place the draggable card a bit lower, so that you can see the previous card too, and if there are two cards, even lower. Those are called “fanned piles”.
+In the actual Solitaire game, if there is already a card in a *tableau* slot, you want to place the draggable card a bit lower, so that you can see the previous card too, and if there are two cards, even lower. Those are called “fanned piles”.
 
 Then, we want to be able to pick a card from the fanned pile that is not the top card of the pile and drag the card together with all the cards below it:
 <img src="/img/docs/solitaire-tutorial/fanned_piles3.gif" className="screenshot-50" />
