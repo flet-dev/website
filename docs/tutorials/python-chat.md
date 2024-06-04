@@ -275,7 +275,7 @@ When creating an instance of `ChatMessage` class, we will pass a `Message` objec
 class ChatMessage(ft.Row):
     def __init__(self, message: Message):
         super().__init__()
-        self.vertical_alignment="start"
+        self.vertical_alignment = ft.CrossAxisAlignment.START
         self.controls=[
                 ft.CircleAvatar(
                     content=ft.Text(self.get_initials(message.user_name)),
