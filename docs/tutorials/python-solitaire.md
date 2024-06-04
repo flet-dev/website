@@ -493,67 +493,69 @@ If you try to drag the card from the bottom of the pile now, it will look like t
 
 To fix this problem, we need to update all the methods that work with the draggable card to work with the draggable pile instead.
 
-Let’s create `get_draggable_pile()` method that will return list of cards that need to be dragged together, starting with the card you picked:
+Let’s create `get_draggable_pile()` method that will get the list of cards that need to be dragged together, starting with the card you picked:
 ```python
-def get_draggable_pile(self):
-    """returns list of cards that will be dragged together, starting with the current card"""
-    if self.slot is not None:
-        return self.slot.pile[self.slot.pile.index(self):]
-    return [self]
+    def get_draggable_pile(self):
+        """returns list of cards that will be dragged together, starting with the current card"""
+        if self.slot is not None:
+            self.draggable_pile = self.slot.pile[self.slot.pile.index(self) :]
+        else:  # slot == None when the cards are dealed and need to be place in slot for the first time
+            self.draggable_pile = [self]
 ```
 
 Then, we’ll update `move_on_top()` method:
 ```python
-def move_on_top(self):
-    """Brings draggable card pile to the top of the stack"""
-    for card in draggable_pile:
-        self.solitaire.controls.remove(card)
-        self.solitaire.controls.append(card)
-    self.solitaire.update()
+    def move_on_top(self):
+        """Brings draggable card pile to the top of the stack"""
+
+        # for card in self.get_draggable_pile():
+        for card in self.draggable_pile:
+            self.solitaire.controls.remove(card)
+            self.solitaire.controls.append(card)
+        self.solitaire.update()
 ```
 
 Additionally, we need to update `drag()` method to go through the draggable pile and update positions of all the cards being dragged: 
 ```python
-def drag(self, e: ft.DragUpdateEvent):
-    draggable_pile = self.get_draggable_pile()
-    for card in draggable_pile:
-        card.top = max(0, self.top + e.delta_y) + draggable_pile.index(card) * CARD_OFFSET
-        card.left = max(0, self.left + e.delta_x)
-        card.update()
+    def drag(self, e: ft.DragUpdateEvent):
+        for card in self.draggable_pile:
+            card.top = (
+                max(0, self.top + e.delta_y)
+                + self.draggable_pile.index(card) * CARD_OFFSET
+            )
+            card.left = max(0, self.left + e.delta_x)
+            self.solitaire.update()
 ```
  
 Also, we need to update `place()` method to place place the draggable pile to the slot:
 ```python
-def place(self, slot):
-    """Place draggable pile to the slot"""
-    draggable_pile = self.get_draggable_pile()
+    def place(self, slot):
+        """Place draggable pile to the slot"""
+        for card in self.draggable_pile:
+            card.top = slot.top + len(slot.pile) * CARD_OFFSET
+            card.left = slot.left
 
-    for card in draggable_pile:
-        card.top = slot.top + len(slot.pile) * CARD_OFFSET
-        card.left = slot.left
+            # remove card from it's original slot, if it exists
+            if card.slot is not None:
+                card.slot.pile.remove(card)
 
-        # remove card from it's original slot, if exists
-        if card.slot is not None:
-            card.slot.pile.remove(card)
-    
-        # change card's slot to a new slot
-        card.slot = slot
+            # change card's slot to a new slot
+            card.slot = slot
 
-        # add card to the new slot's pile
-        slot.pile.append(card)
-    
-    self.solitaire.update()
+            # add card to the new slot's pile
+            slot.pile.append(card)
+
+        self.solitaire.update()
 ```
 
 Finally, if no slot in proximity is found, we need to bounce the whole pile back to its original position:
 ```python
-def bounce_back(self):
-    """Returns draggable pile to its original position"""
-    draggable_pile = self.get_draggable_pile()
-    for card in draggable_pile:
-        card.top = card.slot.top + card.slot.pile.index(card) * CARD_OFFSET
-        card.left = card.slot.left
-    self.solitaire.update()
+    def bounce_back(self):
+        """Returns draggable pile to its original position"""
+        for card in self.draggable_pile:
+            card.top = card.slot.top + card.slot.pile.index(card) * CARD_OFFSET
+            card.left = card.slot.left
+        self.solitaire.update()
 ```
 
 The full source code of this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-fanned-piles). Now we can drag and drop cards in fanned piles, which means we are ready for the real deal! 
@@ -614,7 +616,7 @@ class Card(ft.GestureDetector):
             border_radius = ft.border_radius.all(6),
             content=ft.Image(src="card_back.png"))
 ```
-All the images for the face up cards, as well as card back are stored in the “images” folder in the same directory as main.py [link to github]. 
+All the images for the face up cards, as well as card back are stored in the “images” folder in the same directory as main.py. 
 
 :::note
 For the reference to the image file to work, we need to specify the folder were it resides in the assets_dir in main.py:
@@ -752,7 +754,7 @@ def drop(self, e: ft.DragEndEvent):
         and abs(self.left - slot.left) < DROP_PROXIMITY
         ):
             self.place(slot)
-            self.update()
+            self.solitaire.update()
             return
 
     for slot in self.solitaire.foundations:
@@ -761,11 +763,10 @@ def drop(self, e: ft.DragEndEvent):
         and abs(self.left - slot.left) < DROP_PROXIMITY
         ):
             self.place(slot)
-            self.update()
+            self.solitaire.update()
             return
         
     self.bounce_back()
-    self.update()
 ```
 
 ### Reveal top cards in tableau piles
@@ -783,7 +784,7 @@ In `Card` class, create `turn_dace_up()` method:
 def turn_face_up(self):
     self.face_up = True
     self.content.content.src=f"/images/{self.rank.name}_{self.suite.name}.svg"
-    self.update()
+    self.solitaire.update()
 ```
 Finally, reveal the topmost cards in the `solitaire.deal_cards()`:
 ```python
