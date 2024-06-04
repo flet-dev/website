@@ -12,7 +12,7 @@ In this tutorial you will learn how to:
 * [Broadcast messages using built-in PubSub library](#broadcasting-chat-messages)
 * [Use AlertDialog control for accepting user name](#user-name-dialog)
 * [Enhance user interface with reusable controls](#enhancing-user-interface)
-* [Publish the app to multiple platforms](#publishing-the-app)
+* [Deploy the app as a web app](#deploying-the-app)
 
 The complete application will look like this:
 
@@ -258,7 +258,7 @@ The full code for this step can be found [here](https://github.com/flet-dev/exam
 
 Chat app that you have created in the previous step already serves its purpose of exchanging messages between users with basic login functionality. 
 
-Before moving on to [publishing your app](#publishing-the-app), we suggest adding some extra features to it that will improve user experience and make the app look more professional.
+Before moving on to [deploying your app](#deploying-the-app), we suggest adding some extra features to it that will improve user experience and make the app look more professional.
 
 ### Reusable user controls
 
@@ -267,7 +267,7 @@ You may want to show messages in a different format, like this:
 
 Chat message will now be a `Row` containing [`CircleAvatar`](/docs/controls/circleavatar) with username initials and `Column` that contains two `Text` controls: user name and message text.
 
-We will need to show quite a few chat messages in the chat app, so it makes sense to create your own reusable control. Lets create a new `ChatMessage` class that will inherit from `Row`.
+We will need to show quite a few chat messages in the chat app, so it makes sense to create your own [reusable control](/docs/getting-started/custom-controls). Lets create a new `ChatMessage` class that will inherit from `Row`.
 
 When creating an instance of `ChatMessage` class, we will pass a `Message` object as an argument and then `ChatMessage` will display itself based on `message.user_name` and `message.text`:
 
@@ -424,7 +424,7 @@ page.title = "Flet Chat"
 page.update()
 ```
 
-## Publishing the app
+## Deploying the app
 
 Congratulations! You have created your Chat app in Python with Flet, and it looks awesome!
 
