@@ -78,7 +78,7 @@ The source (local asset file or URL) of the background image in the circle. Chan
 
 The source (local asset file or URL) of the background image in the circle. Changing the background image will cause the avatar to animate to the new image. Typically used as a fallback image for `foreground_image_url`. If the CircleAvatar is to have the user's initials, use `content` instead.
 
-*Deprecated (renamed) since version 0.22.0 and will be removed in version 1.0. Use `background_image_src` instead.*
+**Deprecated (renamed) in v0.22.0 and will be removed in v0.26.0. Use `background_image_src` instead.**
 
 ### `bgcolor`
 
@@ -100,7 +100,7 @@ The source (local asset file or URL) of the foreground image in the circle. Typi
 
 The source (local asset file or URL) of the foreground image in the circle. Typically used as profile image. For fallback use `background_image_url`.
 
-*Deprecated (renamed) since version 0.22.0 and will be removed in version 1.0. Use `foreground_image_src` instead.*
+**Deprecated (renamed) in version 0.22.0 and will be removed in v0.26.0. Use `foreground_image_src` instead.**
 
 ### `max_radius`
 

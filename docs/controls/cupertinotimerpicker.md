@@ -5,6 +5,8 @@ sidebar_label: CupertinoTimerPicker
 
 A countdown timer picker in iOS style.
 
+To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -21,20 +23,18 @@ import TabItem from '@theme/TabItem';
 import time
 import flet as ft
 
+
 def main(page):
-    page.theme_mode = ft.ThemeMode.LIGHT
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     timer_picker_value_ref = ft.Ref[ft.Text]()
 
     def handle_timer_picker_change(e):
-        val = int(e.data)
-        timer_picker_value_ref.current.value = time.strftime(
-            "%H:%M:%S", time.gmtime(val)
-        )
+        # e.data is the selected time in seconds
+        timer_picker_value_ref.current.value = time.strftime("%H:%M:%S", time.gmtime(int(e.data)))
         page.update()
 
-    timer_picker = ft.CupertinoTimerPicker(
+    cupertino_timer_picker = ft.CupertinoTimerPicker(
         value=3600,
         second_interval=10,
         minute_interval=1,
@@ -47,12 +47,16 @@ def main(page):
             tight=True,
             controls=[
                 ft.Text("TimerPicker Value:", size=23),
-                ft.TextButton(
-                    content=ft.Text("00:01:10", size=23, ref=timer_picker_value_ref),
-                    style=ft.ButtonStyle(color=ft.colors.RED),
-                    on_click=lambda _: page.show_bottom_sheet(
+                ft.CupertinoButton(
+                    content=ft.Text(
+                        ref=timer_picker_value_ref,
+                        value="00:01:10",
+                        size=23,
+                        color=ft.cupertino_colors.DESTRUCTIVE_RED,
+                    ),
+                    on_click=lambda e: page.open(
                         ft.CupertinoBottomSheet(
-                            timer_picker,
+                            cupertino_timer_picker,
                             height=216,
                             padding=ft.padding.only(top=6),
                         )
@@ -61,6 +65,7 @@ def main(page):
             ],
         ),
     )
+
 
 ft.app(target=main)
 ```

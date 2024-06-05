@@ -22,8 +22,14 @@ import flet as ft
 
 
 def main(page: ft.Page):
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
     def dialog_dismissed(e):
-        print("Dismissed!")
+        page.add(ft.Text("Dialog dismissed"))
+
+    def handle_action_click(e):
+        page.add(ft.Text(f"Action clicked: {e.control.text}"))
+        page.close(cupertino_alert_dialog)
 
     cupertino_alert_dialog = ft.CupertinoAlertDialog(
         title=ft.Text("Cupertino Alert Dialog"),
@@ -31,20 +37,23 @@ def main(page: ft.Page):
         on_dismiss=dialog_dismissed,
         actions=[
             ft.CupertinoDialogAction(
-                "OK",
+                text="Yes",
                 is_destructive_action=True,
+                on_click=handle_action_click,
             ),
-            ft.CupertinoDialogAction(text="Cancel"),
+            ft.CupertinoDialogAction(
+                text="No", 
+                is_default_action=True, 
+                on_click=handle_action_click
+            ),
         ],
     )
 
-    def open_cupertino_dialog(e):
-        page.dialog = cupertino_alert_dialog
-        cupertino_alert_dialog.open = True
-        page.update()
-
     page.add(
-        ft.OutlinedButton("Open Cupertino Dialog", on_click=open_cupertino_dialog),
+        ft.CupertinoFilledButton(
+            text="Open CupertinoAlertDialog",
+            on_click=lambda e: page.open(cupertino_alert_dialog),
+        )
     )
 
 

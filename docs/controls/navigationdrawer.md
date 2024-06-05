@@ -7,6 +7,8 @@ Material Design Navigation Drawer component.
 
 Navigation Drawer is a panel that slides in horizontally from the left or right edge of a page to show primary destinations in an app. To add NavigationDrawer to the page, use [`page.drawer`](/docs/controls/page#drawer) and [`page.end_drawer`](/docs/controls/page#end_drawer) properties. Similarly, the NavigationDrawer can be added to a [`View`](/docs/controls/view#drawer). To display the drawer, set its `open` property to `True`.
 
+To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+
 ## Examples
 
 [Live example](https://flet-controls-gallery.fly.dev/navigation/navigationdrawer)
@@ -20,7 +22,18 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    page.drawer = ft.NavigationDrawer(
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    def handle_dismissal(e):
+        page.add(ft.Text("Drawer dismissed"))
+
+    def handle_change(e):
+        page.add(ft.Text(f"Selected Index changed: {e.selected_index}"))
+        # page.close(drawer)
+
+    drawer = ft.NavigationDrawer(
+        on_dismiss=handle_dismissal,
+        on_change=handle_change,
         controls=[
             ft.Container(height=12),
             ft.NavigationDrawerDestination(
@@ -42,11 +55,7 @@ def main(page: ft.Page):
         ],
     )
 
-    def show_drawer(e):
-        page.drawer.open = True
-        page.drawer.update()
-
-    page.add(ft.ElevatedButton("Show drawer", on_click=show_drawer))
+    page.add(ft.ElevatedButton("Show drawer", on_click=lambda e: page.open(drawer)))
 
 
 ft.app(main)
@@ -61,23 +70,26 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    def end_drawer_dismissed(e):
-        print("End drawer dismissed!")
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    def handle_dismissal(e):
+        page.add(ft.Text("End drawer dismissed"))
+
+    def handle_change(e):
+        page.add(ft.Text(f"Selected Index changed: {e.control.selected_index}"))
+        # page.close(end_drawer)
 
     end_drawer = ft.NavigationDrawer(
-        on_dismiss=end_drawer_dismissed,
+        position=ft.NavigationDrawerPosition.END,
+        on_dismiss=handle_dismissal,
+        on_change=handle_change,
         controls=[
-            ft.NavigationDrawerDestination(
-                icon=ft.icons.ADD_TO_HOME_SCREEN_SHARP, label="Item 1"
-            ),
+            ft.NavigationDrawerDestination(icon=ft.icons.ADD_TO_HOME_SCREEN_SHARP, label="Item 1"),
             ft.NavigationDrawerDestination(icon=ft.icons.ADD_COMMENT, label="Item 2"),
         ],
     )
 
-    def show_end_drawer(e):
-        page.show_end_drawer(end_drawer)
-
-    page.add(ft.ElevatedButton("Show end drawer", on_click=show_end_drawer))
+    page.add(ft.ElevatedButton("Show end drawer", on_click=lambda e: page.open(end_drawer)))
 
 
 ft.app(main)
@@ -106,6 +118,13 @@ The [color](/docs/reference/colors) of the selected destination indicator.
 ### `indicator_shape`
 
 The shape of the selected destination indicator. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+
+### `position`
+
+The position of this drawer.
+
+Value is of type [`NavigationDrawerPosition`](/docs/reference/types/navigationdrawerposition) and defaults
+to `NavigationDrawerPosition.START`.
 
 ### `selected_index`
 

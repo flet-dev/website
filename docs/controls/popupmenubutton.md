@@ -128,7 +128,7 @@ The [color](/docs/reference/colors) used as an overlay on color to indicate elev
 
 Called when the user dismisses/cancels the popup menu without selecting an item.
 
-*Deprecated (renamed) since version 0.22.0 and will be removed in version 1.0. Use `on_cancel` instead.*
+**Deprecated (renamed) in v0.22.0 and will be removed in v0.26.0. Use `on_cancel` instead.**
 
 ### `on_cancel`
 

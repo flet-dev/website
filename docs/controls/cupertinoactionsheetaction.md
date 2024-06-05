@@ -20,43 +20,48 @@ import TabItem from '@theme/TabItem';
 ```python
 import flet as ft
 
+
 def main(page):
-    page.theme_mode = ft.ThemeMode.LIGHT
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
+    def handle_click(e):
+        page.add(ft.Text(f"Action clicked: {e.control.content.value}"))
+        page.close(bottom_sheet)
+
     action_sheet = ft.CupertinoActionSheet(
-        title=ft.Text("Title"),
-        message=ft.Text("Message"),
+        title=ft.Row([ft.Text("Title")], alignment=ft.MainAxisAlignment.CENTER),
+        message=ft.Row([ft.Text("Description")], alignment=ft.MainAxisAlignment.CENTER),
         cancel=ft.CupertinoActionSheetAction(
             content=ft.Text("Cancel"),
-            on_click=lambda e: page.close_bottom_sheet(),
+            on_click=handle_click,
         ),
         actions=[
             ft.CupertinoActionSheetAction(
                 content=ft.Text("Default Action"),
                 is_default_action=True,
-                on_click=lambda e: print("Default clicked"),
+                on_click=handle_click,
             ),
             ft.CupertinoActionSheetAction(
                 content=ft.Text("Normal Action"),
-                on_click=lambda e: print("Normal Action clicked"),
+                on_click=handle_click,
             ),
             ft.CupertinoActionSheetAction(
                 content=ft.Text("Destructive Action"),
                 is_destructive_action=True,
-                on_click=lambda e: print("Destructive Action clicked"),
+                on_click=handle_click,
             ),
         ],
     )
 
+    bottom_sheet = ft.CupertinoBottomSheet(action_sheet)
+
     page.add(
-        ft.OutlinedButton(
-            "Open CupertinoBottomSheet containing CupertinoActionSheet",
-            on_click=lambda e: page.show_bottom_sheet(
-                ft.CupertinoBottomSheet(action_sheet)
-            ),
+        ft.CupertinoFilledButton(
+            "Open CupertinoBottomSheet",
+            on_click=lambda e: page.open(bottom_sheet),
         )
     )
+
 
 ft.app(main)
 ```

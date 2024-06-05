@@ -5,7 +5,7 @@ sidebar_label: TimePicker
 
 A Material-style time picker dialog.
 
-It is added to [`page.overlay`](/docs/controls/page#overlay) and called using its [`pick_time()`](/docs/controls/timepicker#pick_time) method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
 
 Depending on the [`time_picker_entry_mode`](/docs/controls/timepicker#time_picker_entry_mode), it will show either a Dial or an Input (hour and minute text fields) for picking a time.
 
@@ -22,37 +22,40 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-import datetime
 import flet as ft
 
-def main(page: ft.Page):
-    def change_time(e):
-        print(f"Time picker changed, value (minute) is {time_picker.value.minute}")
 
-    def dismissed(e):
-        print(f"Time picker dismissed, value is {time_picker.value}")
+def main(page: ft.Page):
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    def handle_change(e):
+        page.add(ft.Text(f"TimePicker change: {time_picker.value}"))
+
+    def handle_dismissal(e):
+        page.add(ft.Text(f"TimePicker dismissed: {time_picker.value}"))
+
+    def handle_entry_mode_change(e):
+        page.add(ft.Text(f"TimePicker Entry mode changed to {e.entry_mode}"))
 
     time_picker = ft.TimePicker(
         confirm_text="Confirm",
         error_invalid_text="Time out of range",
         help_text="Pick your time slot",
-        on_change=change_time,
-        on_dismiss=dismissed,
+        on_change=handle_change,
+        on_dismiss=handle_dismissal,
+        on_entry_mode_change=handle_entry_mode_change,
     )
 
-    page.overlay.append(time_picker)
-
-    date_button = ft.ElevatedButton(
-        "Pick time",
-        icon=ft.icons.TIME_TO_LEAVE,
-        on_click=lambda _: time_picker.pick_time(),
+    page.add(
+        ft.ElevatedButton(
+            "Pick time",
+            icon=ft.icons.TIME_TO_LEAVE,
+            on_click=lambda _: page.open(time_picker),
+        )
     )
 
-    page.add(date_button)
 
-
-ft.app(target=main)
-
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -120,9 +123,12 @@ The selected time that the picker should display. The default value is equal to 
 
 ## Methods
 
-### `pick_time()`
+### ~~`pick_time()`~~
 
 Opens a time picker dialog.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(date_picker)`](/docs/controls/page#open)
+instead.**
 
 ## Events
 

@@ -7,6 +7,8 @@ Shows a modal Material Design bottom sheet.
 
 A modal bottom sheet is an alternative to a menu or a dialog and prevents the user from interacting with the rest of the app.
 
+To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+
 ## Examples
 
 [Live example](https://flet-controls-gallery.fly.dev/dialogs/bottomsheet)
@@ -18,34 +20,27 @@ A modal bottom sheet is an alternative to a menu or a dialog and prevents the us
 ```python
 import flet as ft
 
+
 def main(page: ft.Page):
-    def bs_dismissed(e):
-        print("Dismissed!")
-
-    def show_bs(e):
-        bs.open = True
-        bs.update()
-
-    def close_bs(e):
-        bs.open = False
-        bs.update()
-
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    
+    def handle_dismissal(e):
+        page.add(ft.Text("Bottom sheet dismissed"))
     bs = ft.BottomSheet(
-        ft.Container(
-            ft.Column(
-                [
-                    ft.Text("This is sheet's content!"),
-                    ft.ElevatedButton("Close bottom sheet", on_click=close_bs),
-                ],
+        on_dismiss=handle_dismissal,
+        content=ft.Container(
+            padding=50,
+            content=ft.Column(
                 tight=True,
+                controls=[
+                    ft.Text("This is bottom sheet's content!"),
+                    ft.ElevatedButton("Close bottom sheet", on_click=lambda _: page.close(bs)),
+                ],
             ),
-            padding=10,
         ),
-        open=True,
-        on_dismiss=bs_dismissed,
     )
-    page.overlay.append(bs)
-    page.add(ft.ElevatedButton("Display bottom sheet", on_click=show_bs))
+    page.add(ft.ElevatedButton("Display bottom sheet", on_click=lambda _: page.open(bs)))
+
 
 ft.app(target=main)
 ```
@@ -58,7 +53,7 @@ The BottomSheet's background [color](/docs/reference/colors).
 
 ### `content`
 
-The content of the bottom sheet.
+The content `Control` of the bottom sheet.
 
 ### `dismissible`
 

@@ -175,6 +175,12 @@ The content will be clipped (or not) according to this option.
 Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.ANTI_ALIAS`
 if `border_radius` is not `None`; otherwise `ClipBehavior.HARD_EDGE`.
 
+### `color_filter`
+
+Applies a color filter to the container.
+
+Value is of type [`ColorFilter`](/docs/reference/types/colorfilter).
+
 ### `content`
 
 A child Control contained by the container.

@@ -69,13 +69,13 @@ Specifies whether the `SafeArea` should maintain the bottom `MediaQueryData.view
 
 For example, if there is an onscreen keyboard displayed above the SafeArea, the padding can be maintained below the obstruction rather than being consumed. This can be helpful in cases where your layout contains flexible controls, which could visibly move when opening a software keyboard due to the change in the padding value. Setting this to true will avoid the UI shift.
 
-### `~~minimum~~`
+### ~~`minimum`~~
 
 This minimum padding to apply.
 
 The greater of the minimum insets and the media padding will be applied.
 
-Deprecated (renamed) since version 0.23.0 and will be removed in version 1.0. Use `minimum_padding` instead.
+**Deprecated (renamed) in v0.23.0 and will be removed in v0.26.0. Use `minimum_padding` instead.**
 
 ### `minimum_padding`
 

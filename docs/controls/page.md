@@ -20,9 +20,11 @@ import TabItem from '@theme/TabItem';
 
 An [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
 
-### `banner`
+### ~~`banner`~~
 
 A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(banner)`](#overlay) instead.**
 
 ### `bgcolor`
 
@@ -34,9 +36,11 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 
 [`BottomAppBar`](/docs/controls/bottomappbar) control to display at the bottom of the Page. If both [`bottom_appbar`](#bottom_appbar) and [`navigation_bar`](#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
-### `bottom_sheet`
+### ~~`bottom_sheet`~~
 
 [`BottomSheet`](/docs/controls/bottomsheet) control to display.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(bottom_sheet)`](#overlay) instead.**
 
 ### `client_ip`
 
@@ -92,9 +96,11 @@ Value is an instance of the `Theme()` class - more information in the [theming](
 
 Reserved for future use.
 
-### `dialog`
+### ~~`dialog`~~
 
 An [`AlertDialog`](/docs/controls/alertdialog) control to display.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(dialog)`](#overlay) instead.**
 
 ### `drawer`
 
@@ -432,11 +438,17 @@ A simple KV storage for session data.
 
 A unique ID of user's session. This property is read-only.
 
+### ~~`snack_bar`~~
+
+A [`SnackBar`](/docs/controls/snackbar) control to display.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(snack_bar)`](#overlay) instead.**
+
 ### `spacing`
 
 Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
 
-### `splash`
+### ~~`splash`~~
 
 A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
 
@@ -465,6 +477,8 @@ ft.app(target=main)
 
 </TabItem>
 </Tabs>
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(splash)`](#overlay) instead.**
 
 ### `show_semantics_debugger`
 
@@ -700,29 +714,47 @@ Returns `True` if it is possible to verify that there is a handler available. A 
 * On recent versions of Android and iOS, this will always return `False` unless the application has been configuration to allow querying the system for launch support.
 * On web, this will always return `False` except for a few specific schemes that are always assumed to be supported (such as http(s)), as web pages are never allowed to query installed applications.
 
-### `close_banner()`
+### `close(control)`
+
+Closes the provided control.
+
+It sets the `control.open=False` and calls `update()`.
+
+### ~~`close_banner()`~~
 
 Closes active banner.
 
-### `close_bottom_sheet()`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(banner)`](#open) instead.**
+
+### ~~`close_bottom_sheet()`~~
 
 Closes active bottom sheet.
 
-### `close_dialog()`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(bottom_sheet)`](#open) instead.**
+
+### ~~`close_dialog()`~~
 
 Closes active dialog.
 
-### `close_drawer()`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(dialog)`](#open) instead.**
+
+### ~~`close_drawer()`~~
 
 Closes active drawer.
 
-### `close_end_drawer()`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(drawer)`](#open) instead.**
+
+### ~~`close_end_drawer()`~~
 
 Closes active end drawer.
 
-### `close_snack_bar()`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(end_drawer)`](#open) instead.**
 
-Closes active snack bar.
+### ~~`close_snack_bar()`~~
+
+Closes active end drawer.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(snack_bar)`](#open) instead.**
 
 ### `close_in_app_web_view()`
 
@@ -789,6 +821,12 @@ Starts OAuth flow. See [Authentication](/docs/cookbook/authentication) guide for
 
 Clears current authentication context. See [Authentication](/docs/cookbook/authentication#signing-out) guide for more information and examples.
 
+### `open(control)`
+
+Opens the provided control.
+
+Adds this control to the [`page.overlay`](#overlay), sets the `control.open=True`, then calls `update()`.
+
 ### `remove(*controls)`
 
 Removes specific controls from `page.controls` list.
@@ -825,47 +863,42 @@ page.set_clipboard("This value comes from Flet app")
 </TabItem>
 </Tabs>
 
-### `open_banner(banner: Optional[Banner])`
+
+### ~~`show_banner(banner: Banner)`~~
 
 Displays the banner at the top of the page.
 
-:::note
-You can use all open_...() methods without argument if you defined this property. If you didn't defined this property method will raise `Exception`.
-:::
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(banner)`](#open) instead.**
 
-Example:
-```python
-page.drawer = ft.NavigationDrawer(
-    controls=[
-        ft.NavigationDrawerDestination(
-            icon=ft.icons.ADD_TO_HOME_SCREEN_SHARP, label="Item 1"
-        ),
-        ft.NavigationDrawerDestination(icon=ft.icons.ADD_COMMENT, label="Item 2")
-    ]
-)
-page.open_drawer()
-```
-:::
-
-### `open_bottom_sheet(bottom_sheet: Optional[BottomSheet])`
+### ~~`show_bottom_sheet(bottom_sheet: BottomSheet)`~~
 
 Displays bottom sheet at the bottom of the page.
 
-### `open_dialog(dialog: Optional[AlertDialog])`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(bottom_sheet)`](#open) instead.**
+
+### ~~`show_dialog(dialog: AlertDialog)`~~
 
 Displays dialog.
 
-### `open_drawer(drawer: Optional[NavigationDialog])`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(dialog)`](#open) instead.**
+
+### ~~`show_drawer(drawer: NavigationDialog)`~~
 
 Displays [`drawer`](#drawer).
 
-### `open_end_drawer(drawer: Optional[NavigationDialog])`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(drawer)`](#open) instead.**
+
+### ~~`show_end_drawer(drawer: NavigationDialog)`~~
 
 Displays [`end_drawer`](#end_drawer).
 
-### `open_snack_bar(snack_bar: Optional[SnackBar])`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(end_drawer)`](#open) instead.**
 
-Displays [`snack_bar`](/docs/controls/snackbar) at the bottom of the page.
+### ~~`show_snack_bar(snack_bar: SnackBar)`~~
+
+Displays [`SnackBar`](/docs/controls/snackbar) at the bottom of the page.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(snack_bar)`](#open) instead.**
 
 ### `window_center()`
 

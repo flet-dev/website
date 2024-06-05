@@ -71,6 +71,10 @@ ft.app(target=main)
 
 ## `RadioGroup` properties
 
+### `content`
+
+The content of the RadioGroup. Typically a list of `Radio` controls nested in a container control, e.g. `Column`, `Row`.
+
 ### `value`
 
 Current value of the RadioGroup.

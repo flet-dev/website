@@ -63,6 +63,11 @@ ft.app(target=main)
 
 ## Properties
 
+### `content`
+
+The content to display. When the `content` changes, the AnimatedSwitcher will animate the transition from the
+old `content` to the new one.
+
 ### `duration`
 
 The duration, in milliseconds, of the transition from the old `content` value to the new one.

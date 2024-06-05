@@ -7,6 +7,8 @@ An iOS-style date and time picker dialog.
 
 See [`date_picker_mode`](/docs/controls/cupertinodatepicker#date_picker_mode) property for details on the available modes.
 
+To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -22,25 +24,30 @@ import TabItem from '@theme/TabItem';
 ```python
 import flet as ft
 
+
 def main(page):
-    page.theme_mode = ft.ThemeMode.LIGHT
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
+    def handle_date_change(e: ft.ControlEvent):
+        page.add(ft.Text(f"Date changed: {e.control.value.strftime('%Y-%m-%d %H:%M %p')}"))
+
+    cupertino_date_picker = ft.CupertinoDatePicker(
+        date_picker_mode=ft.CupertinoDatePickerMode.DATE_AND_TIME,
+        on_change=handle_date_change,
+    )
     page.add(
-        ft.OutlinedButton(
-            "Show CupertinoDatePicker",
-            on_click=lambda e: page.show_bottom_sheet(
+        ft.CupertinoFilledButton(
+            "Open CupertinoDatePicker",
+            on_click=lambda e: page.open(
                 ft.CupertinoBottomSheet(
-                    ft.CupertinoDatePicker(
-                        on_change=lambda e: print(e.data),
-                        date_picker_mode=ft.CupertinoDatePickerMode.DATE_AND_TIME
-                    ),
+                    cupertino_date_picker,
                     height=216,
                     padding=ft.padding.only(top=6),
                 )
             ),
         )
     )
+
 
 ft.app(main)
 ```

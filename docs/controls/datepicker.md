@@ -5,9 +5,9 @@ sidebar_label: DatePicker
 
 A Material-style date picker dialog.
 
-It is added to [`page.overlay`](/docs/controls/page#overlay) and called using its [`pick_date()`](/docs/controls/datepicker#pick_date) method.
-
 Depending on the [`date_picker_entry_mode`](/docs/controls/datepicker#date_picker_entry_mode), it will show either a Calendar or an Input (TextField) for picking a date.
+
+To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -25,29 +25,31 @@ import TabItem from '@theme/TabItem';
 import datetime
 import flet as ft
 
+
 def main(page: ft.Page):
-    def change_date(e):
-        print(f"Date picker changed, value is {date_picker.value}")
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
-    def date_picker_dismissed(e):
-        print(f"Date picker dismissed, value is {date_picker.value}")
+    def handle_change(e):
+        page.add(ft.Text(f"Date changed: {e.control.value.strftime('%Y-%m-%d')}"))
 
-    date_picker = ft.DatePicker(
-        on_change=change_date,
-        on_dismiss=date_picker_dismissed,
-        first_date=datetime.datetime(2023, 10, 1),
-        last_date=datetime.datetime(2024, 10, 1),
+    def handle_dismissal(e):
+        page.add(ft.Text(f"DatePicker dismissed"))
+
+    page.add(
+        ft.ElevatedButton(
+            "Pick date",
+            icon=ft.icons.CALENDAR_MONTH,
+            on_click=lambda e: page.open(
+                ft.DatePicker(
+                    first_date=datetime.datetime(year=2023, month=10, day=1),
+                    last_date=datetime.datetime(year=2024, month=10, day=1),
+                    on_change=handle_change,
+                    on_dismiss=handle_dismissal,
+                )
+            ),
+        )
     )
 
-    page.overlay.append(date_picker)
-
-    date_button = ft.ElevatedButton(
-        "Pick date",
-        icon=ft.icons.CALENDAR_MONTH,
-        on_click=lambda _: date_picker.pick_date(),
-    )
-
-    page.add(date_button)
 
 ft.app(target=main)
 ```
@@ -149,9 +151,12 @@ The selected date that the picker should display. The default value is equal to 
 
 ## Methods
 
-### `pick_date()`
+### ~~`pick_date()`~~
 
 Opens a date picker dialog.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(date_picker)`](/docs/controls/page#open)
+instead.**
 
 ## Events
 
