@@ -1097,12 +1097,10 @@ def winning_sequence(self):
             self.update()
     self.controls.append(ft.AlertDialog(title=ft.Text("Congratulations! You won!"), open=True))
 ```
-As you can imagine, it took me a while before I could win the game and take this video, but here it is:
+
 <img src="/img/docs/solitaire-tutorial/winning_the_game.gif" className="screenshot-50" />
 
-Wow! We did it. You can find the full source code for the Part 1 of the Solitaire game [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-final-part1). 
-
-In Part 2 we will be adding top menu with options to restart the game, view game rules and change game settings such as waste size, number of passes through the waste and card back image.
+Wow! We did it. You can find the full source code for the Solitaire game [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-final-part1). 
 
 Now, as we have a decent desktop version of the game, let’s deploy it as a web app to share with your friends and colleagues.
 
@@ -1118,12 +1116,12 @@ Now it's time to share your app with the world!
 
 In this tutorial, you have learnt how to:
 
-* Create a simple Flet app;
-* Drag and drop cards with GestureDetector;
-* Create your own classes that inherit from Flet controls;
-* Design UI layout using absolute positioning of controls in Stack;
-* Implement implicit animations;
-* Deploy your Flet app to the web;
+* [Create](/docs/getting-started/create-flet-app) a simple Flet app;
+* Drag and drop cards with [GestureDetector](/docs/controls/gesturedetector);
+* [Create your own classes](/docs/getting-started/custom-controls) that inherit from Flet controls;
+* Design UI layout using absolute positioning of controls in [Stack](/docs/controls/stack);
+* Implement [implicit animations](/docs/cookbook/animations);
+* [Deploy](/docs/publish/web/index) your Flet app to the web;
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
 
