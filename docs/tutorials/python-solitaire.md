@@ -1121,7 +1121,7 @@ In this tutorial, you have learnt how to:
 * [Create your own classes](/docs/getting-started/custom-controls) that inherit from Flet controls;
 * Design UI layout using absolute positioning of controls in [Stack](/docs/controls/stack);
 * Implement [implicit animations](/docs/cookbook/animations);
-* [Deploy](/docs/publish/web/index) your Flet app to the web;
+* [Deploy](/docs/publish/web) your Flet app to the web;
 
 For further reading you can explore [controls](/docs/controls) and [examples repository](https://github.com/flet-dev/examples/tree/main/python).
 
