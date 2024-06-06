@@ -228,7 +228,9 @@ Page name as specified in `ft.app()` call. Page name is set when Flet app is run
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+Throttling in milliseconds for `on_scroll` event.
+
+Defaults to `10`.
 
 ### `overlay`
 
@@ -249,19 +251,13 @@ page.update()
 </TabItem>
 </Tabs>
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Value is of type [`Padding`](/docs/reference/types/padding).
 
 ### `platform`
 
 Operating system the application is running on.
 
-Property value is `PagePlatform` enum with the following values:
-
-* `IOS`
-* `ANDROID`
-* `MACOS`
-* `WINDOWS`
-* `LINUX`
+Value is of type [`PagePlatform`](/docs/reference/types/pageplatform).
 
 This property can be used to create adaptive UI with different controls depending on the operating system:
 ```python
@@ -302,7 +298,9 @@ ft.app(target=main)
 
 ### `platform_brightness`
 
-The current brightness mode of the host platform: `ft.Brightness.LIGHT` or `ft.Brightness.DARK`. Read-only.
+The current brightness mode of the host platform.
+
+Value is read-only and of type [`Brightness`](/docs/reference/types/brightness).
 
 ### `pubsub`
 
@@ -428,11 +426,11 @@ Defaults to `False`.
 
 Enables a vertical scrolling for the Page to prevent its content overflow.
 
-Value is of type [`ScrollMode`](/docs/reference/types/scrollmode) and defaults to `None`.
+Value is of type [`ScrollMode`](/docs/reference/types/scrollmode).
 
 ### `session`
 
-A simple KV storage for session data.
+A simple key-value storage for session data.
 
 ### `session_id`
 
@@ -519,9 +517,8 @@ The complete web app's URL.
 
 How the child Controls should be placed vertically.
 
-Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum.
-
-For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) and defaults
+to `MainAxisAlignment.START`.
 
 ### `views`
 
@@ -724,37 +721,37 @@ It sets the `control.open=False` and calls `update()`.
 
 Closes active banner.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(banner)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(banner)`](#closecontrol) instead.**
 
 ### ~~`close_bottom_sheet()`~~
 
 Closes active bottom sheet.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(bottom_sheet)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(bottom_sheet)`](#closecontrol) instead.**
 
 ### ~~`close_dialog()`~~
 
 Closes active dialog.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(dialog)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(dialog)`](#closecontrol) instead.**
 
 ### ~~`close_drawer()`~~
 
 Closes active drawer.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(drawer)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(drawer)`](#closecontrol) instead.**
 
 ### ~~`close_end_drawer()`~~
 
 Closes active end drawer.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(end_drawer)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(end_drawer)`](#closecontrol) instead.**
 
 ### ~~`close_snack_bar()`~~
 
 Closes active end drawer.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(snack_bar)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(snack_bar)`](#closecontrol) instead.**
 
 ### `close_in_app_web_view()`
 
@@ -868,37 +865,37 @@ page.set_clipboard("This value comes from Flet app")
 
 Displays the banner at the top of the page.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(banner)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(banner)`](#opencontrol) instead.**
 
 ### ~~`show_bottom_sheet(bottom_sheet: BottomSheet)`~~
 
 Displays bottom sheet at the bottom of the page.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(bottom_sheet)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(bottom_sheet)`](#opencontrol) instead.**
 
 ### ~~`show_dialog(dialog: AlertDialog)`~~
 
 Displays dialog.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(dialog)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(dialog)`](#opencontrol) instead.**
 
 ### ~~`show_drawer(drawer: NavigationDialog)`~~
 
 Displays [`drawer`](#drawer).
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(drawer)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(drawer)`](#opencontrol) instead.**
 
 ### ~~`show_end_drawer(drawer: NavigationDialog)`~~
 
 Displays [`end_drawer`](#end_drawer).
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(end_drawer)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(end_drawer)`](#opencontrol) instead.**
 
 ### ~~`show_snack_bar(snack_bar: SnackBar)`~~
 
 Displays [`SnackBar`](/docs/controls/snackbar) at the bottom of the page.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(snack_bar)`](#open) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(snack_bar)`](#opencontrol) instead.**
 
 ### `window_center()`
 

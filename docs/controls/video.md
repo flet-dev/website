@@ -178,9 +178,9 @@ ft.app(target=main)
 
 ### `alignment`
 
-Defines the Alignment of the viewport. Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
+Defines the Alignment of the viewport.
 
-Defaults to `alignment.center`.
+Value is of type [`Alignment`](/docs/reference/types/alignment) and defaults to `alignment.center`.
 
 ### `aspect_ratio`
 
@@ -333,7 +333,6 @@ Seeks the currently playing `VideoMedia` in the `playlist` by the specified amou
 ### `stop()`
 
 Stops recording session and release internal recorder resource. It returns a string which is the location of the recorded file. On web, it returns the blob which could be opened using [`page.lauch_url()`](/docs/controls/page#launch_urlurl). On other platforms, it returns the path to the file which is the `output_path` parameter passed to `start_recording()` method.
-
 
 ## Events
 

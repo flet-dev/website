@@ -5,7 +5,7 @@ sidebar_label: CupertinoTimerPicker
 
 A countdown timer picker in iOS style.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -80,9 +80,7 @@ ft.app(target=main)
 
 Defines how the timer picker should be positioned within its parent. 
 
-Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class. 
-
-Defaults to `ft.alignment.center`.
+Value is of type [`Alignment`](/docs/reference/types/alignment) and defaults to `alignment.center`.
 
 ### `bgcolor`
 
@@ -90,27 +88,33 @@ The background [color](/docs/reference/colors) of the timer picker.
 
 ### `mode`
 
-The mode of the timer picker. Property value is `CupertinoTimerPickerMode` enum with the following values:
-
-* `HOUR_MINUTE` - shows the timer duration in hour and minute.
-* `MINUTE_SECOND` -  shows the timer duration in minute and second.
-* `HOUR_MINUTE_SECOND` (default) - shows the timer duration in hour, minute, and second.
+The mode of the timer picker. Value is of
+type [`CupertinoTimerPickerMode`](/docs/reference/types/cupertinotimerpickermode) and defaults
+to `CupertinoTimerPickerMode.HOUR_MINUTE_SECOND`.
 
 ### `item_extent`
 
-The uniform height of all children. Defaults to `32`.
+The uniform height of all children.
+
+Defaults to `32`.
 
 ### `second_interval`
 
-The granularity of the second spinner. Must be a positive integer factor of 60. Defaults to `1`.
+The granularity of the second spinner. Must be a positive integer factor of 60.
+
+Defaults to `1`.
 
 ### `minute_interval`
 
-The granularity of the minute spinner. Must be a positive integer factor of 60. Defaults to `1`.
+The granularity of the minute spinner. Must be a positive integer factor of 60.
+
+Defaults to `1`.
 
 ### `value`
 
-The initial duration in seconds of the countdown timer. Defaults to `0`.
+The initial duration in seconds of the countdown timer.
+
+Defaults to `0`.
 
 ## Events
 

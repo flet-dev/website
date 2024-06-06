@@ -11,15 +11,15 @@ A description of the style to use when drawing a shape on the canvas.
 
 ### `anti_alias`
 
-Whether to apply anti-aliasing to lines and images drawn on the canvas. Defaults to `True`.
+Whether to apply anti-aliasing to lines and images drawn on the canvas.
+
+Defaults to `True`.
 
 ### `blend_mode`
 
 A blend mode to apply when a shape is drawn or a layer is composited.
 
-Defaults to `BlendMode.SRC_OVER`.
-
-Property value is [`BlendMode`](/docs/reference/types/blendmode).
+Value is of type [`BlendMode`](/docs/reference/types/blendmode) and defaults to `BlendMode.SRC_OVER`.
 
 ### `blur_image`
 

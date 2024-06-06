@@ -5,7 +5,7 @@ sidebar_label: TimePicker
 
 A Material-style time picker dialog.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
 
 Depending on the [`time_picker_entry_mode`](/docs/controls/timepicker#time_picker_entry_mode), it will show either a Dial or an Input (hour and minute text fields) for picking a time.
 
@@ -102,20 +102,8 @@ The orientation of the dialog when displayed. Value is of type `Orientation` enu
 
 The initial mode of time entry method for the time picker dialog.
 
-Property value is `TimePickerEntryMode` enum with the following values:
-
-* `DIAL` (default)
-* `INPUT`
-* `DIAL_ONLY`
-* `INPUT_ONLY`
-
-In `DIAL` mode, user picks time from a clock dial.
-Can switch to input by activating a mode button in the dialog. 
-
-In `INPUT` mode, user can input the time by typing it into text fields.
-Can switch to dial by activating a mode button in the dialog.
-
-`DIAL_ONLY` and `INPUT_ONLY` are variants of the above that don't allow the user to change to the mode.
+Value is of type [`TimePickerEntryMode`](/docs/reference/types/timepickerentrymode) and defaults
+to `TimePickerEntryMode.DIAL`.
 
 ### `value`
 
@@ -127,7 +115,7 @@ The selected time that the picker should display. The default value is equal to 
 
 Opens a time picker dialog.
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(date_picker)`](/docs/controls/page#open)
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(date_picker)`](/docs/controls/page#opencontrol)
 instead.**
 
 ## Events
@@ -142,4 +130,7 @@ Fires when dialog is dismissed by clicking on the cancel button or outside of ti
 
 ### `on_entry_mode_change`
 
-Fires when the `time_picker_entry_mode` is changed. The event handler (`e`) is of type `TimePickerEntryModeChangeEvent` and the new entry mode could be gotten from `e.entry_mode` (value of type `TimePickerEntryMode` enum).
+Fires when the `time_picker_entry_mode` is changed.
+
+Event handler argument is of
+type [`TimePickerEntryModeChangeEvent`](/docs/reference/types/timepickerentrymodechangeevent).

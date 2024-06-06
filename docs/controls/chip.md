@@ -128,9 +128,9 @@ Defaults to `8.0`.
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+The content will be clipped (or not) according to this option.
 
-Defaults to `NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `color`
 
@@ -143,7 +143,9 @@ The text to be used for the chip's `delete_icon` tooltip. If not provided or pro
 
 ### `delete_icon`
 
-A `Control` to display to the right of the chip's `label` in case `on_delete` event is specified. Defaults to an [Icon](/docs/controls/icon) set to use `ft.icons.CANCEL`.
+A `Control` to display to the right of the chip's `label` in case `on_delete` event is specified.
+
+Defaults to an [`Icon(icons.CANCEL)`](/docs/controls/icon).
 
 ### `delete_icon_color`
 
@@ -155,11 +157,14 @@ The [color](/docs/reference/colors) used for the chip's background if it is disa
 
 ### `elevation`
 
-A non-negative value which defines the size of the shadow below the chip. Defaults to `0`.
+A non-negative value which defines the size of the shadow below the chip.
+
+Defaults to `0`.
 
 ### `label`
 
-A `Control` that represents primary content of the chip, typically a [Text](/docs/controls/text). Label is a required property.
+A `Control` that represents primary content of the chip, typically a [`Text`](/docs/controls/text). Label is a required
+property.
 
 ### `label_padding`
 
@@ -171,7 +176,9 @@ By default, this is 4 logical pixels at the beginning and the end of the label, 
 
 ### `label_style`
 
-The style to be applied to the chip's `label`. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
+The style to be applied to the chip's `label`.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `leading`
 
@@ -183,13 +190,15 @@ Typically the leading control is an [`Icon`](/docs/controls/icon) or a [`CircleA
 
 The padding between the `label` and the outside shape.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+The value is an instance of [`Padding`](/docs/reference/types/padding) class or a number.
 
 By default, this is 4 logical pixels on all sides.
 
 ### `selected`
 
-If `on_select` event is specified, `selected` property is used to determine wheather the chip is selected or not. Defaults to `False`.
+If `on_select` event is specified, `selected` property is used to determine whether the chip is selected or not.
+
+Defaults to `False`.
 
 ### `selected_color`
 
@@ -197,11 +206,13 @@ The [color](/docs/reference/colors) used for the chip's background when it is se
 
 ### `selected_shadow_color`
 
-The [color](/docs/reference/colors) used for the chip's background when the elevation is greater than 0 and the chip is selected.
+The [color](/docs/reference/colors) used for the chip's background when the elevation is greater than `0` and the chip
+is selected.
 
 ### `shadow_color`
 
-The [color](/docs/reference/colors) used for the chip's background when the elevation is greater than 0 and the chip is not selected.
+The [color](/docs/reference/colors) used for the chip's background when the elevation is greater than `0` and the chip
+is not selected.
 
 ### `shape`
 
@@ -213,7 +224,10 @@ The default shape is a `StadiumBorder`.
 
 ### `show_checkmark`
 
-If `on_select` event is specified and chip is selected, `show_checkmark` is used to determine wheather or not to show a checkmark. Defaults to `True`.
+If `on_select` event is specified and chip is selected, `show_checkmark` is used to determine whether or not to show a
+checkmark.
+
+Defaults to `True`.
 
 ### `surface_tint_color`
 
@@ -223,7 +237,7 @@ The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate 
 
 Defines how compact the control's layout will be.
 
-The value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
+Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity).
 
 ## Events
 

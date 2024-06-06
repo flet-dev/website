@@ -60,9 +60,9 @@ The menu's background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+The `content` will be clipped (or not) according to this option.
 
-Default value is `NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `content`
 
@@ -70,7 +70,9 @@ A `Control` that will be displayed instead of "more" icon.
 
 ### `elevation`
 
-The menu's elevation when opened. Defaults to `8`.
+The menu's elevation when opened.
+
+Defaults to `8`.
 
 ### `enable_feedback`
 
@@ -96,13 +98,14 @@ A collection of `PopupMenuItem` controls to display in a dropdown menu.
 
 ### `menu_position`
 
-Defines position of the popup menu relative to the button. Value can either be `PopupMenuPosition.OVER` (default) or `PopupMenuPosition.UNDER`.
+Defines position of the popup menu relative to the button.
+
+Value is of type [`PopupMenuPosition`](/docs/reference/types/popupmenuposition) and defaults
+to `PopupMenuPosition.OVER`.
 
 ### `padding`
- 
-Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
 
-Defaults to `padding.all(8.0)`.
+Value is of type [`Padding`](/docs/reference/types/padding) and defaults to `padding.all(8.0)`.
 
 ### `shadow_color`
 
@@ -110,9 +113,9 @@ The [color](/docs/reference/colors) used to paint the shadow below the menu.
 
 ### `shape`
 
-The menu's shape. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+The menu's shape.
 
-The default shape is a `CircleBorder` with a radius of `10.0`.
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder) and defaults to `CircleBorder(radius=10.0)`.
 
 ### `splash_radius`
 
@@ -150,7 +153,9 @@ A `Control` representing custom content of this menu item. If specified, then bo
 
 ### `height`
 
-The minimum height of this menu item. Defaults to `40`.
+The minimum height of this menu item.
+
+Defaults to `40`.
 
 ### `icon`
 
@@ -159,13 +164,14 @@ An icon to draw before the text label of this menu item.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
+
+Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
 
 ### `padding`
 
 The padding of this menu item. Note that the `height` value of this menu item may influence the applied padding. For example, If a `height` greater than the height of the sum of the padding and a `content` is provided, then the padding's effect will not be visible.
 
-Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding value is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 Defaults to `padding.symmetric(horizontal=12)`.
 

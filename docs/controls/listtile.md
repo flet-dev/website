@@ -97,7 +97,7 @@ On iOS and macOS, a [`CupertinoListTile`](/docs/controls/cupertinolisttile) is c
 
 If a `CupertinoListTile` is created, the following parameters are ignored: `autofocus`, `dense`, `is_three_line`, `selected` and `on_long_press` event.
 
-The default value is `False`.
+Defaults to `False`.
 
 ### `autofocus`
 
@@ -115,7 +115,7 @@ The list tile's splash [color](/docs/reference/colors) after the tile was tapped
 
 The tile's internal padding. Insets a ListTile's contents: its `leading`, `title`, `subtitle`, and `trailing` controls.
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class. If not set, `padding.symmetric(horizontal=16)` is used.
+Value is of type [`Padding`](/docs/reference/types/padding) and defaults to `padding.symmetric(horizontal=16)`.
 
 ### `dense`
 
@@ -129,7 +129,9 @@ Defaults to `True`.
 
 ### `horizontal_spacing`
 
-The horizontal gap between the `title` and the `leading`/`trailing` controls. Defaults to `16`.
+The horizontal gap between the `title` and the `leading`/`trailing` controls.
+
+Defaults to `16`.
 
 ### `hover_color`
 
@@ -147,7 +149,8 @@ If `True`, then subtitle must be non-null (since it is expected to give the seco
 
 If `False`, the list tile is treated as having one line if the subtitle is null and treated as having two lines if the subtitle is non-null.
 
-When using a Text control for title and subtitle, you can enforce line limits using [Text.max_lines](/docs/controls/text#max_lines).
+When using a Text control for title and subtitle, you can enforce line limits
+using [`Text.max_lines`](/docs/controls/text#max_lines).
 
 ### `leading`
 
@@ -157,13 +160,27 @@ A `Control` to display before the title.
 
 The [`TextStyle`](/docs/reference/types/textstyle) for the `leading` and `trailing` controls.
 
+### `min_height`
+
+The minimum height allocated for this control.
+
+If `None` or not set, default tile heights are `56.0`, `72.0`, and `88.0` for one, two, and three lines of text
+respectively.
+If [`dense`](#dense) is `True`, these defaults are changed to `48.0`, `64.0`, and `76.0`.
+
+Note that, a visual density value or a large title will also adjust the default tile heights.
+
 ### `min_leading_width`
 
-The minimum width allocated for the `leading` control. Defaults to `40`.
+The minimum width allocated for the `leading` control.
+
+Defaults to `40`.
 
 ### `min_vertical_padding`
 
-The minimum padding on the top and bottom of the `title` and `subtitle` controls. Defaults to `4`.
+The minimum padding on the top and bottom of the `title` and `subtitle` controls.
+
+Defaults to `4`.
 
 ### `mouse_cursor`
 
@@ -188,9 +205,11 @@ The tile's shape. The value is an instance of [`OutlinedBorder`](/docs/reference
 
 ### `subtitle`
 
-Additional content displayed below the title. Typically a [Text](/docs/controls/text) widget.
+Additional content displayed below the title. Typically a [`Text`](/docs/controls/text) widget.
 
-If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a maximum of two lines. For example, you can use [Text.max_lines](/docs/controls/text#max_lines) to enforce the number of lines.
+If `is_three_line` is `False`, this should not wrap. If `is_three_line` is `True`, this should be configured to take a
+maximum of two lines. For example, you can use [`Text.max_lines`](/docs/controls/text#max_lines) to enforce the number
+of lines.
 
 ### `subtitle_text_style`
 
@@ -198,10 +217,9 @@ The [`TextStyle`](/docs/reference/types/textstyle) for the `subtitle` control.
 
 ### `style`
 
-Defines the font used for the title. Value is `ListTileStyle` enum, which has two possible values: 
+Defines the font used for the title.
 
-* `LIST`(default) - uses a title font that's appropriate for a ListTile in a list
-* `DRAWER`: uses a title font that's appropriate for a ListTile that appears in a `Drawer`.
+Value is of type [`ListTileStyle`](/docs/reference/types/listtilestyle) and defaults to `ListTileStyle.LIST`.
 
 ### `text_color`
 
@@ -209,17 +227,17 @@ The [color](/docs/reference/colors) used for text. Defines the color of `Text` c
 
 ### `title`
 
-A `Control` to display as primary content of the list tile. Typically a [Text](/docs/controls/text) control. This should not wrap. To enforce the single line limit, use [Text.max_lines](/docs/controls/text#max_lines).
+A `Control` to display as primary content of the list tile.
+
+Typically a [`Text`](/docs/controls/text) control. This should not wrap. To enforce the single line limit,
+use [`Text.max_lines`](/docs/controls/text#max_lines).
 
 ### `title_alignment`
 
-Defines how `leading` and `trailing` are vertically aligned relative to the titles (`title` and `subtitle`). Value is `ListTileAlignment` enum, which has three possible values:
+Defines how `leading` and `trailing` are vertically aligned relative to the titles (`title` and `subtitle`).
 
-* `TOP` - the tops of the `leading` and `trailing` controls are placed `min_vertical_padding` below the top of `title`
-* `CENTER` - centers the `leading` and `trailing` controls relative to the titles
-* `BOTTOM` - the bottoms of the `leading` and `trailing` controls are placed `min_vertical_padding` above the bottom of `title`
-* `THREE_LINE` (default in Material3) - the top of the `leading` and `trailing` controls are placed `min_vertical_padding` below the top of the `title` if `is_three_line=True`, otherwise they're centered relative to the titles
-* `TITLE_HEIGHT` (default in Material2) - the tops of the `leading` and `trailing` controls are placed `16` units below the top of the `title` if the titles' overall height is greater than `72`, otherwise they're centered relative to the titles.
+Value is of type [`ListTileAlignment`](/docs/reference/types/listtilealignment) and defaults
+to `ListTileAlignment.THREE_LINE` in Material 3 or `ListTileAlignment.TITLE_HEIGHT` in Material 2.
 
 ### `title_text_style`
 
@@ -227,11 +245,13 @@ The [`TextStyle`](/docs/reference/types/textstyle) for the `title` control.
 
 ### `toggle_inputs`
 
-Whether clicking on a list tile should toggle the state of `Radio`, `Checkbox` or `Switch` inside the tile. Default is `False`.
+Whether clicking on a list tile should toggle the state of `Radio`, `Checkbox` or `Switch` inside the tile.
+
+Defaults to `False`.
 
 ### `trailing`
 
-A `Control` to display after the title. Typically an [Icon](/docs/controls/icon) control.
+A `Control` to display after the title. Typically an [`Icon`](/docs/controls/icon) control.
 
 ### `url`
 
@@ -245,7 +265,9 @@ Value is of type [`UrlTarget`](/docs/reference/types/urltarget) and defaults to 
 
 ### `visual_density`
 
-Defines how compact the control's layout will be. Value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
+Defines how compact the control's layout will be.
+
+Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity).
 
 ## Events
 

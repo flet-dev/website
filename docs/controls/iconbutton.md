@@ -91,11 +91,14 @@ If the value is `True`, an adaptive button is created based on whether the targe
 
 On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinobutton) is created, which matches the functionality and presentation of this button. On other platforms, a Material `IconButton` is created.
 
-The default value is `False`.
+Defaults to `False`.
 
 ### `alignment`
 
-Defines how the icon is positioned within the IconButton. Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class. Defaults to `alignment.center`.
+Defines how the icon is positioned within the IconButton. Alignment is an instance
+of [`Alignment`](/docs/reference/types/alignment) class.
+
+Defaults to `alignment.center`.
 
 ### `autofocus`
 
@@ -142,15 +145,14 @@ Icon size in virtual pixels.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
+
+Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
 
 ### `padding`
 
 Defines the padding around this button. The entire padded icon will react to input gestures.
 
-Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class. 
-
-Default value is `padding.all(8)`.
+Value is of type [`Padding`](/docs/reference/types/padding) and defaults to `padding.all(8)`.
 
 ### `selected`
 
@@ -200,7 +202,7 @@ The splash radius. Honoured only when in Material 2.
 
 ### `style`
 
-The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class.
+Value is of type [`ButtonStyle`](/docs/reference/types/buttonstyle).
 
 ### `tooltip`
 
@@ -218,7 +220,9 @@ Value is of type [`UrlTarget`](/docs/reference/types/urltarget) and defaults to 
 
 ### `visual_density`
 
-Defines how compact the control's layout will be. Value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
+Defines how compact the control's layout will be.
+
+Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity).
 
 ## Methods
 

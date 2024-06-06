@@ -84,13 +84,9 @@ ft.app(target=main)
 
 ### `affinity`
 
-Typically used to force the expansion arrow icon to the tile's leading or trailing edge. 
+Typically used to force the expansion arrow icon to the tile's `leading` or `trailing` edge.
 
-Property value is `TileAffinity` enum with supported values:
-
-* `LEADING`
-* `TRAILING`
-* `PLATFORM` (default)
+Value is of type [`TileAffinity`](/docs/reference/types/tileaffinity) and defaults to `TileAffinity.PLATFORM`.
 
 ### `bgcolor`
 
@@ -98,21 +94,21 @@ The  [color](/docs/reference/colors) to display behind the sublist when expanded
 
 ### `controls`
 
-The controls to be displayed when the tile expands. Typically `ListTile` controls.
+The controls to be displayed when the tile expands.
+
+Typically a list of [`ListTile`](/docs/controls/listtile) controls.
 
 ### `controls_padding`
 
 Defines the padding around the `controls`.
 
-Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding value is an instance of [`Padding`](/docs/reference/types/padding).
 
 ### `clip_behavior`
 
 The content will be clipped (or not) according to this option.
 
-Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
-
-Defaults to `ClipBehavior.NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `collapsed_bgcolor`
 
@@ -124,7 +120,8 @@ The icon [color](/docs/reference/colors) of tile's expansion arrow icon when the
 
 ### `collapsed_shape`
 
-The tile's border shape when the sublist is collapsed. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+The tile's border shape when the sublist is collapsed. The value is an instance
+of [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `collapsed_text_color`
 
@@ -148,13 +145,14 @@ Defaults to `True`.
 
 Defines the alignment of children, which are arranged in a column when the tile is expanded.
 
-Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
+Value is of type [`Alignment`](/docs/reference/types/alignment).
 
 ### `expanded_cross_axis_alignment`
 
 Defines the alignment of each child control within `controls` when the tile is expanded.
 
-Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `CENTER`.
+Value is of type [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) and defaults
+to `CrossAxisAlignment.CENTER`.
 
 ### `icon_color`
 
@@ -162,7 +160,9 @@ The icon [color](/docs/reference/colors) of tile's expansion arrow icon when the
 
 ### `initially_expanded`
 
-A boolean value which defines whether the tile is initially expanded or collapsed. Default value is `False`.
+A boolean value which defines whether the tile is initially expanded or collapsed.
+
+Defaults to `False`.
 
 ### `leading`
 
@@ -170,15 +170,21 @@ A `Control` to display before the title.
 
 ### `maintain_state`
 
-A boolean value which defines whether the state of the `controls` is maintained when the tile expands and collapses. Default value is `False`.
+A boolean value which defines whether the state of the `controls` is maintained when the tile expands and collapses.
+
+Defaults to `False`.
 
 ### `shape`
 
-The tile's border shape when the sublist is expanded. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+The tile's border shape when the sublist is expanded.
+
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `subtitle`
 
-Additional content displayed below the title. Typically a [Text](/docs/controls/text) widget.
+Additional content displayed below the title.
+
+Typically a [`Text`](/docs/controls/text) control.
 
 ### `text_color`
 
@@ -188,19 +194,25 @@ The [color](/docs/reference/colors) of the tile's titles when the sublist is exp
 
 Defines the tile's padding. Default value is `padding.symmetric(horizontal=16.0)`.
 
-Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding value is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 ### `title`
 
-A `Control` to display as primary content of the tile. Typically a [Text](/docs/controls/text) control.
+A `Control` to display as primary content of the tile.
+
+Typically a [`Text`](/docs/controls/text) control.
 
 ### `trailing`
 
-A `Control` to display after the title. Typically an [Icon](/docs/controls/icon) control.
+A `Control` to display after the title.
+
+Typically an [`Icon`](/docs/controls/icon) control.
 
 ### `visual_density`
 
-Defines how compact the control's layout will be. The value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
+Defines how compact the control's layout will be.
+
+Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity).
 
 ## Events
 

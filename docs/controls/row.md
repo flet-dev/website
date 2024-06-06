@@ -262,7 +262,8 @@ Value is of type [`ScrollMode`](/docs/reference/types/scrollmode).
 
 ### `spacing`
 
-Spacing between controls in a row. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+Spacing between controls in a row. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set
+to `MainAxisAlignment.START`, `MainAxisAlignment.END` or `MainAxisAlignment.CENTER`.
 
 ### `on_scroll_interval`
 

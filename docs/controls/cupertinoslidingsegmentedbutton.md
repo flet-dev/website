@@ -57,7 +57,7 @@ A list of `Control`s to display as segments inside the CupertinoSegmentedButton.
 
 ### `padding`
 
-The button's padding. Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The button's padding. Padding value is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 ### `selected_index`
 
@@ -66,7 +66,6 @@ The index (starting from 0) of the selected segment in the `controls` list.
 ### `thumb_color`
 
 The [color](/docs/reference/colors) of the button when it is not selected.
-
 
 ## Events
 

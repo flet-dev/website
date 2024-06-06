@@ -67,7 +67,8 @@ The content control of this group.
 
 ### `dispose_action`
 
-The [`AutofillGroupDisposeAction`](/docs/reference/types/autofillgroupdisposeaction) to be run when this `AutofillGroup`
-is the topmost `AutofillGroup` and it's being disposed, in order to clean up the current autofill context.
+The action to be run when this `AutofillGroup` is the topmost `AutofillGroup` and it's being disposed, in order to clean
+up the current autofill context.
 
-Defaults to `AutofillGroupDisposeAction.COMMIT`.
+Value is of type [`AutofillGroupDisposeAction`](/docs/reference/types/autofillgroupdisposeaction) and defaults
+to `AutofillGroupDisposeAction.COMMIT`.

@@ -9,7 +9,7 @@ An alert dialog informs the user about situations that require acknowledgement. 
 
 This dialog styles its title and content (typically a message) to match the standard iOS title and message dialog text style. These default styles can be overridden by explicitly defining `text_style` property.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
 
 To display action buttons that look like standard iOS dialog buttons,
 provide [`CupertinoDialogAction`](/docs/controls/cupertinodialogaction)s for the actions given to this dialog.

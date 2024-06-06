@@ -401,12 +401,9 @@ If `True`, the glyphs in the text will be positioned as if there was unlimited h
 
 ### `overflow`
 
-Property value is `TextOverflow` enum with the following values:
+Controls how text overflows.
 
-- `FADE` (default)
-- `ELLIPSIS`
-- `CLIP`
-- `VISIBLE`
+Value is of type [`TextOverflow`](/docs/reference/types/textoverflow) and defaults to `TextOverflow.FADE`.
 
 ### `rtl`
 
@@ -416,7 +413,9 @@ Defaults to `False`.
 
 ### `selectable`
 
-`True` if text should be selectable.
+Whether the text should be selectable.
+
+Defaults to `False`.
 
 ### `semantics_label`
 
@@ -442,7 +441,9 @@ The list of [`TextSpan`](/docs/reference/types/textspan) objects to build a rich
 
 ### `style`
 
-The text's style. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
+The text's style.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `text_align`
 
@@ -452,23 +453,9 @@ Value is of type [`TextAlign`](/docs/reference/types/textalign) and defaults to 
 
 ### `theme_style`
 
-Property value is `TextThemeStyle` enum with one of the following values:
+Pre-defined text style.
 
-- `DISPLAY_LARGE`
-- `DISPLAY_MEDIUM`
-- `DISPLAY_SMALL`
-- `HEADLINE_LARGE`
-- `HEADLINE_MEDIUM`
-- `HEADLINE_SMALL`
-- `TITLE_LARGE`
-- `TITLE_MEDIUM`
-- `TITLE_SMALL`
-- `LABEL_LARGE`
-- `LABEL_MEDIUM`
-- `LABEL_SMALL`
-- `BODY_LARGE`
-- `BODY_MEDIUM`
-- `BODY_SMALL`
+Value is of type [`TextThemeStyle`](/docs/reference/types/textthemestyle).
 
 ### `value`
 
@@ -478,5 +465,5 @@ The text displayed.
 
 Font weight.
 
-Value is of type [`FontWeight`](/docs/reference/types/fontweight) and defaults to `NORMAL`.
+Value is of type [`FontWeight`](/docs/reference/types/fontweight) and defaults to `FontWeight.NORMAL`.
 

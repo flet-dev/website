@@ -7,7 +7,7 @@ Shows a modal Material Design bottom sheet.
 
 A modal bottom sheet is an alternative to a menu or a dialog and prevents the user from interacting with the rest of the app.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
 
 ## Examples
 
@@ -49,7 +49,7 @@ ft.app(target=main)
 
 ### `bgcolor`
 
-The BottomSheet's background [color](/docs/reference/colors).
+The sheet's background [color](/docs/reference/colors).
 
 ### `content`
 

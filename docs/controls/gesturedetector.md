@@ -75,7 +75,9 @@ A child Control contained by the gesture detector.
 
 ### `mouse_cursor`
 
-The mouse cursor for mouse pointers that are hovering over the control. Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
+The mouse cursor for mouse pointers that are hovering over the control.
+
+Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
 
 ### `drag_interval`
 

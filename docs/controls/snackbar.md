@@ -64,13 +64,14 @@ The foreground [color](/docs/reference/colors) of action button.
 
 ### `action_overflow_threshold`
 
-The percentage (between `0.0` and `1.0`) threshold for `action`'s width before it overflows to a new line. Defaults
-to `0.25`.
+The percentage (between `0.0` and `1.0`) threshold for `action`'s width before it overflows to a new line.
 
 If the width of the snackbar's `content` is greater than this percentage of the width of the snackbar minus the width of
 its `action`, then the `action` will appear below the `content`.
 
 At a value of `0.0`, the `action` will not overflow to a new line.
+
+Defaults to `0.25`.
 
 ### `behavior`
 
@@ -92,36 +93,31 @@ SnackBar background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+The `content` will be clipped (or not) according to this option.
 
-Default value is `HARD_EDGE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.HARD_EDGE`.
 
 ### `close_icon_color`
 
-An optional color for the close icon, if `show_close_icon` is `True`.
+An optional color for the close icon, if `show_close_icon=True`.
 
 ### `content`
 
-The primary content of the snack bar. Typically a [`Text`](/docs/controls/text) control.
+The primary content of the snack bar.
+
+Typically a [`Text`](/docs/controls/text) control.
 
 ### `dismiss_direction`
 
 The direction in which the SnackBar can be dismissed.
 
-Property value is `DismissDirection` enum with the following values:
-
-* `NONE`
-* `VERTICAL`
-* `HORIZONTAL`
-* `END_TO_START`
-* `UP`
-* `DOWN`
-
-Cannot be `None`, defaults to `DOWN`.
+Value is of type [`DismissDirection`](/docs/reference/types/dismissdirection) and defaults to `DismissDirection.DOWN`.
 
 ### `duration`
 
-The number of *milliseconds* that the SnackBar stays open for. Defaults to 4000 ([4 seconds](https://api.flutter.dev/flutter/material/SnackBar/duration.html)) when not set.
+The number of *milliseconds* that the SnackBar stays open for.
+
+Defaults to `4000` ([4 seconds](https://api.flutter.dev/flutter/material/SnackBar/duration.html)).
 
 ### `elevation`
 
@@ -131,7 +127,7 @@ The z-coordinate at which to place the snack bar. This controls the size of the 
 
 Empty space to surround the snack bar.
 
-This property is only used when `behavior` is `SnackBarBehavior.FLOATING`. It can not be used if `width` is specified.
+Has effect only when `behavior=SnackBarBehavior.FLOATING` and will be ignored if `width` is specified.
 
 ### `open`
 
@@ -141,13 +137,13 @@ Set to `True` to display a SnackBar. This property is automatically set to `Fals
 
 The amount of padding to apply to the snack bar's content and optional action.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+Value is of type [`Padding`](/docs/reference/types/padding) or a number.
 
 ### `shape`
 
 The shape of the snack bar's. 
 
-The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `show_close_icon`
 
@@ -159,7 +155,9 @@ Tapping the icon will close the snack bar.
 
 The width of the snack bar.
 
-If width is specified, the snack bar will be centered horizontally in the available space. This property is only used when `behavior` is `SnackBarBehavior.FLOATING`. It can not be used if `margin` is specified.
+If width is specified, the snack bar will be centered horizontally in the available space.
+
+Has effect only when `behavior=SnackBarBehavior.FLOATING`. It can not be used if `margin` is specified.
 
 ## Events
 

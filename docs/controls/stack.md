@@ -182,8 +182,6 @@ A list of Controls to display inside the Stack. The last control in the list is 
 
 ### `fit`
 
-How to size the non-positioned `controls`. Value is of type `StackFit` enum which has the following possible values: 
+How to size the non-positioned `controls`.
 
-* `EXPAND` - The constraints passed to the stack from its parent are tightened to the biggest size allowed. For example, if the stack has loose constraints with a width in the range 10 to 100 and a height in the range 0 to 600, then the non-positioned `controls` of the stack would all be sized as 100 pixels wide and 600 high.
-* `PASS_THROUGH` - The constraints passed to the stack from its parent are passed unmodified to the non-positioned `controls`. For example, if an expanded Stack is a child of a Row, the horizontal constraints will be tight and the vertical constraints will be loose.
-* `LOOSE` (default) - The constraints passed to the stack from its parent are loosened. For example, if the stack has constraints that force it to 350x600, then this would allow the non-positioned `controls` of the stack to have any width from 0 to 350 and any height from 0 to 600.
+Value is of type [`StackFit`](/docs/reference/types/stackfit) and defaults to `StackFit.LOOSE`.

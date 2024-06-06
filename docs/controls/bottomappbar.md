@@ -75,21 +75,26 @@ A child Control contained by the BottomAppBar.
 
 ### `elevation`
 
-This property controls the size of the shadow below the BottomAppBar. Default value is `4`.
+This property controls the size of the shadow below the BottomAppBar.
+
+Defaults to `4`.
 
 ### `height`
 
-The height of the BottomAppBar. Defaults to `80.0` when in material 3.
+The height of the BottomAppBar.
+
+Defaults to `80.0` in material 3.
 
 ### `notch_margin`
 
 The margin between the `FloatingActionButton` and the BottomAppBar's notch.
 
-Will not be visible if the `shape` is not `None`.
+Can be visible only if `shape=None`.
 
 ### `padding`
 
-Empty space to inscribe inside a container decoration (background, border). Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Empty space to inscribe inside a container decoration (background, border). Padding is an instance
+of [`Padding`](/docs/reference/types/padding) class.
 
 Defaults to `padding.symmetric(vertical=12.0, horizontal=16.0)`.
 
@@ -99,10 +104,9 @@ The [color](/docs/reference/colors) of the shadow below the BottomAppBar.
 
 ### `shape`
 
-The notch that is made for the floating action button. The value is `NotchShape` enum:
+The notch that is made for the floating action button.
 
-* `CIRCULAR`
-* `AUTO`
+Value is of type [`NotchShape`](/docs/reference/types/notchshape).
 
 ### `surface_tint_color`
 
@@ -110,4 +114,4 @@ The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate 
 
 If this is `None`, no overlay will be applied. Otherwise this color will be composited on top of `bgcolor` with an opacity related to `elevation` and used to paint the BottomAppBar's background.
 
-The default is `None`.
+Defaults to `None`.

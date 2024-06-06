@@ -72,9 +72,9 @@ Button background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+The content will be clipped (or not) according to this option.
 
-Defaults to `NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `content`
 
@@ -82,11 +82,15 @@ A Control representing custom button content.
 
 ### `disabled_elevation`
 
-The button's elevation when disabled. Defaults to the same value as `elevation`.
+The button's elevation when disabled.
+
+Defaults to the same value as `elevation`.
 
 ### `elevation`
 
-The button's elevation. Defaults to `6`.
+The button's elevation.
+
+Defaults to `6`.
 
 ### `enable_feedback`
 
@@ -100,7 +104,9 @@ The [color](/docs/reference/colors) to use for filling the button when the butto
 
 ### `focus_elevation`
 
-The button's elevation when it has input focus. Defaults to `8`.
+The button's elevation when it has input focus.
+
+Defaults to `8`.
 
 ### `foreground_color`
 
@@ -108,11 +114,15 @@ The default foreground [color](/docs/reference/colors) for icons and text within
 
 ### `highlight_elevation`
 
-The button's elevation when being touched. Defaults to `12`.
+The button's elevation when being touched.
+
+Defaults to `12`.
 
 ### `hover_elevation`
 
-The button's elevation when it is enabled and being hovered. Defaults to `8`.
+The button's elevation when it is enabled and being hovered.
+
+Defaults to `8`.
 
 ### `icon`
 
@@ -122,12 +132,14 @@ Icon shown in the button.
 
 Controls the size of this button.
 
-By default, floating action buttons are non-mini and have a height and width of 56.0 logical pixels. Mini floating action buttons have a height and width of 40.0 logical pixels with a layout width and height of 48.0 logical pixels.
+By default, floating action buttons are non-mini and have a height and width of `56.0` logical pixels. Mini floating
+action buttons have a height and width of `40.0` logical pixels with a layout width and height of `48.0` logical pixels.
 
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
+
+Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
 
 ### `shape`
 

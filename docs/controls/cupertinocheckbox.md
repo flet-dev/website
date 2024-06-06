@@ -66,11 +66,13 @@ The clickable label to display on the right of a checkbox.
 
 ### `label_position`
 
-Defines on which side of the checkbox the `label` should be shown. Property value is [`LabelPosition`](/docs/reference/types/labelposition) enum. The default value is `RIGHT`.
+Defines on which side of the checkbox the `label` should be shown.
+
+Value is of type [`LabelPosition`](/docs/reference/types/labelposition) and defaults to `RIGHT`.
 
 ### `tristate`
 
-If `True` the checkbox's value can be `True`, `False`, or `None` (`null`).
+If `True` the checkbox's value can be `True`, `False`, or `None`.
 
 Checkbox displays a dash when its value is null.
 

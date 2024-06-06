@@ -62,29 +62,34 @@ The fill [color](/docs/reference/colors) to use for an AppBar. Default color is 
 
 ### `border`
 
-The border of the app bar. Renders by default a single pixel bottom border side.
+The border of the app bar.
+By default, a single pixel bottom border side is rendered.
+
+Value is of type [`Border`](/docs/reference/types/border).
 
 ### `elevation`
 
-This property controls the size of the shadow below the app bar. Default value is 4.
+This property controls the size of the shadow below the app bar.
+
+Defaults to `4`.
 
 ### `leading`
 
 A `Control` to display at the start of this app bar. Typically the leading control is an [`Icon`](/docs/controls/icon) or an [`IconButton`](/docs/controls/iconbutton).
 
-If `None` and `automatically_imply_leading` is `True`, an appropriate button will be automatically created.
+If `None` and `automatically_imply_leading = True`, an appropriate button will be automatically created.
 
 ### `middle`
 
-A `Control` to display in the middle of this app bar. Typically a title or a segmented control.
+A `Control` to display in the middle of this app bar. Typically a [`Text`](/docs/controls/text) or a segmented control.
 
 ### `padding`
 
 Defines the padding for the contents of the app bar.
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding is an instance of [`Padding`](/docs/reference/types/padding) class.
 
-If None, the app bar will adopt the following defaults:
+If `None`, the app bar will adopt the following defaults:
 
 - vertically, contents will be sized to the same height as the app bar itself minus the status bar.
 - horizontally, padding will be `16` pixels according to iOS specifications unless the leading widget is an automatically inserted back button, in which case the padding will be `0`.

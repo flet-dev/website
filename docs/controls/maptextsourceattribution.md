@@ -18,7 +18,9 @@ See [`Map`](/docs/controls/map) Control.
 
 ### `prepend_copyright`
 
-Whether to add the '©' character to the start of the `text`. Defaults to `True`.
+Whether to add the '©' character to the start of the `text`.
+
+Defaults to `True`.
 
 ### `text`
 
@@ -26,7 +28,9 @@ The text of the source attribution styled with `text_style`.
 
 ### `text_style`
 
-The style of the text. Value is of type [`TextStyle`](/docs/reference/types/textstyle).
+The style of the text.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ## Events
 

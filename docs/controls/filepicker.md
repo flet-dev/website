@@ -97,14 +97,8 @@ Works for "Save file" dialog only. Can be set to a non-empty string to provide a
 
 Allow to pick files of specific group.
 
-Property value is `FilePickerFileType` enum with the following values:
-
-* `ANY` (default) - any file
-* `IMAGE`
-* `VIDEO`
-* `MEDIA` - `VIDEO` and `IMAGE`
-* `AUDIO`
-* `CUSTOM` - only files with extensions from `allowed_extensions` list
+Value is of type [`FilePickerFileType`](/docs/reference/types/filepickerfiletype) and defaults
+to `FilePickerFileType.ANY`.
 
 ### `initial_directory`
 
@@ -114,16 +108,7 @@ Can be optionally set to an absolute path to specify where the dialog should ope
 
 Result is set when the dialog is closed.
 
-The value of this property is an instance of `FilePickerResultEvent` class:
-
-* `path` - result of "Save file" or "Get directory path" dialogs: selected file path or directory path respectively. `None` if dialog was cancelled.
-* `files` result of "Pick files" dialog: a list of `FilePickerFile` class instances. `None` if dialog was cancelled.
-
-`FilePickerFile` class properties:
-
-* `name` - file name without a path.
-* `path` - full path to a file. Works for desktop and mobile only. `None` on web.
-* `size` - file size in bytes.
+Value is of type [`FilePickerResultEvent`](/docs/reference/types/filepickerresultevent).
 
 ## Methods
 
@@ -133,8 +118,8 @@ Selects a directory and returns its absolute path.
 
 You could either set the following file picker properties or provide their values in the method call:
 
-* `dialog_title`
-* `initial_directory`
+* `dialog_title` - the title of the dialog window.
+* `initial_directory` - the initial directory where the dialog should open.
 
 ### `pick_files()`
 
@@ -142,11 +127,11 @@ Retrieves the file(s) from the underlying platform.
 
 You could either set the following file picker properties or provide their values in the method call:
 
-* `dialog_title`
-* `initial_directory`
-* `file_type`
-* `allowed_extensions`
-* `allow_multiple`
+* `dialog_title` - the title of the dialog window.
+* `initial_directory` - the initial directory where the dialog should open.
+* `file_type` - the allowed [`FilePickerFileType`](/docs/reference/types/filepickerfiletype).
+* `allowed_extensions` - the allowed file extensions. Has effect only if `file_type` is `FilePickerFileType.CUSTOM`.
+* `allow_multiple` - allow selecting multiple files.
 
 ### `save_file()`
 
@@ -158,11 +143,11 @@ This method is only available on desktop platforms (Linux, macOS & Windows).
 
 You could either set the following file picker properties or provide their values in the method call:
 
-* `dialog_title`
-* `file_name`
-* `initial_directory`
-* `file_type`
-* `allowed_extensions`
+* `dialog_title` - the title of the dialog window.
+* `file_name` - the default file name.
+* `initial_directory` - the initial directory where the dialog should open.
+* `file_type` - the allowed [`FilePickerFileType`](/docs/reference/types/filepickerfiletype).
+* `allowed_extensions` - the allowed file extensions. Has effect only if `file_type` is `FilePickerFileType.CUSTOM`.
 
 :::info
 To save a file from the web, you don't need to use the FilePicker object.
@@ -189,7 +174,6 @@ and then use `page.launch_url("/download/myfile.txt")` to open the url, for inst
 ```python
 ft.ElevatedButton("Download myfile", on_click=lambda _: page.launch_url("/download/myfile.txt"))
 ```
-
 :::
 
 ### `upload()`
@@ -200,7 +184,7 @@ Before calling upload [`pick_files()`](#pick_files) must be called, so the inter
 
 Method arguments:
 
-* `files` - a list of `FilePickerUploadFile` class instances.
+* `files` - a list of [`FilePickerUploadFile`](/docs/reference/types/filepickeruploadfile).
 
 Each list item specifies which file should be uploaded to the upload URL with `PUT` (default) or `POST` method.
 
@@ -208,7 +192,8 @@ Each list item specifies which file should be uploaded to the upload URL with `P
 * `upload_url`
 * `method` (`PUT` (default), `POST`)
 
-`upload_url` is, generally, a presigned URL (like [AWS S3 object upload URL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html)).
+`upload_url` is, generally, a pre-signed URL (
+like [AWS S3 object upload URL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html)).
 
 For built-in upload storage a signed upload URL can be generated with the following call:
 
@@ -231,14 +216,11 @@ ft.app(target=main, upload_dir="uploads")
 
 Fires when file picker dialog is closed.
 
-Event object is an instance of `FilePickerResultEvent` class. See [`FilePicker.result`](#result) for class properties.
+Event object is an instance of [`FilePickerResultEvent`](/docs/reference/types/filepickerresultevent).
+See [`FilePicker.result`](#result) for class properties.
 
 ### `on_upload`
 
 Fires when a file upload progress is updated.
 
-Event object is an instance of `FilePickerUploadEvent` class:
-
-* `file_name`
-* `progress` - a value from `0.0` to `1.0`.
-* `error`
+Event object is an instance of [`FilePickerUploadEvent`](/docs/reference/types/filepickeruploadevent).

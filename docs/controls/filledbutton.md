@@ -6,7 +6,9 @@ sidebar_label: FilledButton
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Filled buttons have the most visual impact after the [FloatingActionButton](/docs/controls/floatingactionbutton), and should be used for important, final actions that complete a flow, like **Save**, **Join now**, or **Confirm**. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
+Filled buttons have the most visual impact after the [`FloatingActionButton`](/docs/controls/floatingactionbutton), and
+should be used for important, final actions that complete a flow, like **Save**, **Join now**, or **Confirm**.
+See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
 
 <img src="/img/docs/controls/filled-button/basic-filled-buttons.png" className="screenshot-20" />
 
@@ -45,7 +47,7 @@ If the value is `True`, an adaptive Button is created based on whether the targe
 
 On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinofilledbutton) is created, which matches the functionality and presentation of this button. On other platforms, a Material `FilledButton` is created.
 
-The default value is `False`.
+Defaults to `False`.
 
 ### `autofocus`
 

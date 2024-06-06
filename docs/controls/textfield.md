@@ -370,9 +370,11 @@ The name of the icon to show before the input field and outside of the decoratio
 
 ### `input_filter`
 
-Provides as-you-type filtering/validation. Value is an instance of the [`InputFilter`](/docs/reference/types/inputfilter) class.
+Provides as-you-type filtering/validation.
 
 Similar to the `on_change` callback, the input filters are not applied when the content of the field is changed programmatically.
+
+Value is of type [`InputFilter`](/docs/reference/types/inputfilter) class.
 
 ### `keyboard_type`
 
@@ -465,7 +467,9 @@ Changes the behavior of `Enter` button in `multiline` TextField to be chat-like,
 
 ### `show_cursor`
 
-Whether the field's cursor is to be shown. Defaults to `True`.
+Whether the field's cursor is to be shown.
+
+Defaults to `True`.
 
 ### `smart_dashes_type`
 
@@ -523,9 +527,10 @@ The [`TextStyle`](/docs/reference/types/textstyle) to use for the text being edi
 
 ### `text_vertical_align`
 
-Defines how the text should be aligned vertically. It's value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of type [`VerticalAlignment`](/docs/reference/types/verticalalignment) enum.
+Defines how the text should be aligned vertically.
 
-Defaults to `CENTER`.
+Value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of
+type [`VerticalAlignment`](/docs/reference/types/verticalalignment). Defaults to `VerticalAlignment.CENTER`.
 
 ### `value`
 

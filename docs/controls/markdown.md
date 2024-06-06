@@ -127,14 +127,15 @@ Automatically open URLs in the document. Default is `False`. If registered, `on_
 
 ### `auto_follow_links_target`
 
-Where to open URL in the web mode:
+Where to open URL in the web mode
 
-* `_blank` (default) - new tab/window.
-* `_self` - the current tab/window.
+Value is of type [`UrlTarget`](/docs/reference/types/urltarget) and defaults to `UrlTarget.SELF`.
 
 ### `code_style`
 
-Code block text style. The value is an instance of [`TextStyle`](/docs/reference/types/textstyle) class.
+Code block text style.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 An example of configuring monospace font for Markdown code blocks:
 
@@ -254,7 +255,10 @@ Supported themes:
 
 ### `extension_set`
 
-Property value is `MarkdownExtensionSet` enum with the following values: `NONE` (default), `COMMON_MARK`, `GITHUB_WEB`, `GITHUB_FLAVORED`.
+The extensions to use when rendering the markdown content.
+
+Value is of type [`MarkdownExtensionSet`](/docs/reference/types/markdownextensionset) and defaults
+to `MarkdownExtensionSet.NONE`.
 
 ### `selectable`
 

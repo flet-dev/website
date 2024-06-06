@@ -45,7 +45,7 @@ If the value is `True`, an adaptive `NavigationBar` is created based on whether 
 
 On iOS and macOS, a `CupertinoNavigationBar` is created, which has matching functionality and presentation as `NavigationBar`, and the graphics as expected on iOS. On other platforms, a Material `NavigationBar` is created.
 
-The default value is `False`.
+Defaults to `False`.
 
 ### `animation_duration`
 
@@ -53,7 +53,7 @@ The transition time for each destination as it goes between selected and unselec
 
 ### `bgcolor`
 
-The [color](/docs/reference/colors) of the NavigationBar itself.
+The [color](/docs/reference/colors) of the navigation bar itself.
 
 ### `destinations`
 
@@ -63,7 +63,7 @@ The value must be a list of two or more `NavigationBarDestination` instances.
 
 ### `elevation`
 
-The elevation of the NavigationBar itself.
+The elevation of the navigation bar itself.
 
 ### `indicator_color`
 
@@ -71,7 +71,9 @@ The [color](/docs/reference/colors) of the selected destination indicator.
 
 ### `indicator_shape`
 
-The shape of the selected destination indicator. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+The shape of the selected destination indicator.
+
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `label_behavior`
 
@@ -79,18 +81,13 @@ Defines how the destinations' labels will be laid out and when they'll be displa
 
 Can be used to show all labels, show only the selected label, or hide all labels.
 
-Property value is `NavigationBarLabelBehavior` enum with the following values:
-
-* `ALWAYS_SHOW` (default) - Always shows all of the labels under each navigation bar destination, selected and unselected.
-* `ALWAYS_HIDE` - Never shows any of the labels under the navigation bar destinations, regardless of selected vs unselected.
-* `ONLY_SHOW_SELECTED` - Only shows the labels of the selected navigation bar destination. When a destination is unselected, the label will be faded out, and the icon will be centered. When a destination is selected, the label will fade in and the label and icon will slide up so that they are both centered.
+Value is of type [`NavigationBarLabelBehavior`](/docs/reference/types/navigationbarlabelbehavior) and defaults
+to `NavigationBarLabelBehavior.ALWAYS_SHOW`.
 
 ### `overlay_color`
 
-
-The highlight [color](/docs/reference/colors) of the `NavigationBarDestination` in
-various [`ControlState`](/docs/reference/types/controlstate) states. The
-following [`ControlState`](/docs/reference/types/controlstate) values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
+The highlight [color](/docs/reference/colors) of the `NavigationDestination` in various [`ControlState`](/docs/reference/types/controlstate) states.
+The following [`ControlState`](/docs/reference/types/controlstate) values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
 
 ### `selected_index`
 
@@ -122,7 +119,9 @@ The name of the icon of the destination.
 
 ### `icon_content`
 
-The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
+The icon `Control` of the destination. Used instead of `icon` property.
+
+Typically the icon is an [`Icon`](/docs/controls/icon) control.
 
 If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
 

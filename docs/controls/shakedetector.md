@@ -40,19 +40,19 @@ Defaults to `1`.
 
 Time, in milliseconds, before shake count resets.
 
-Defaults to `3000` ms.
+Defaults to `3000`.
 
 ### `shake_slop_time_ms`
 
 Minimum time between shakes, in milliseconds.
 
-Defaults to `500` ms.
+Defaults to `500`.
 
 ### `shake_threshold_gravity`
 
 Shake detection threshold, in Gs.
 
-Defaults to `2.7`G.
+Defaults to `2.7`.
 
 ## Events
 

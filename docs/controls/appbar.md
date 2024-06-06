@@ -98,9 +98,11 @@ The default [color](/docs/reference/colors) for `Text` and `Icon` controls withi
 
 ### `elevation`
 
-The app bar's elevation. Defaults to `4`.
+The app bar's elevation.
 
-Note: This effect is only visible when using the Material 2 design (when `Theme.use_material3=False`).
+Note: This effect is only visible when using the Material 2 design (`Theme.use_material3=False`).
+
+Defaults to `4`.
 
 ### `elevation_on_scroll`
 
@@ -108,7 +110,9 @@ The elevation to be used if this app bar has something scrolled underneath it.
 
 ### `exclude_header_semantics`
 
-Whether the `title` should be wrapped with header [`Semantics`](/docs/controls/semantics). Default value is `False`.
+Whether the `title` should be wrapped with header [`Semantics`](/docs/controls/semantics).
+
+Defaults to `False`.
 
 ### `force_material_transparency`
 
@@ -118,7 +122,9 @@ This will also remove the visual display of `bgcolor` and `elevation`, and affec
 
 ### `is_secondary`
 
-Whether this app bar is not being displayed at the top of the screen. Default value is `False`.
+Whether this app bar is not being displayed at the top of the screen.
+
+Defaults to`False`.
 
 ### `leading`
 
@@ -128,7 +134,9 @@ Typically the leading control is an [`Icon`](/docs/controls/icon) or an [`IconBu
 
 ### `leading_width`
 
-Defines the width of leading control. By default, the value of `leading_width` is `56.0`.
+Defines the width of leading control.
+
+Defaults to  `56.0`.
 
 ### `shadow_color`
 
@@ -160,12 +168,15 @@ If you want `title` to take all the space available, set this value to `0.0`.
 
 ### `title_text_style`
 
-The style to be used for the `Text` controls in the `title`. Value is an instance of
-type [`TextStyle`](/docs/reference/types/textstyle).
+The style to be used for the `Text` controls in the `title`.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `toolbar_height`
 
-Defines the height of the toolbar component of an AppBar. By default, the value of `toolbar_height` is `56.0`.
+Defines the height of the toolbar component of an AppBar.
+
+Defaults to `56.0`.
 
 ### `toolbar_opacity`
 
@@ -173,5 +184,6 @@ The opacity of the toolbar. Value ranges from `0.0` (transparent) to `1.0` (full
 
 ### `toolbar_text_style`
 
-The style to be used for the `Text` controls in the app bar's `leading` and `actions` (but not `title`). Value is an
-instance of type [`TextStyle`](/docs/reference/types/textstyle).
+The style to be used for the `Text` controls in the app bar's `leading` and `actions` (but not `title`).
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).

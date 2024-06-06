@@ -105,15 +105,9 @@ If non-zero value is given then widget moves in cross direction depending on whe
 
 ### `dismiss_direction`
 
-The direction in which the control can be dismissed. Specified using the `DismissDirection` enum:
+The direction in which the control can be dismissed.
 
-- `DismissDirection.NONE`
-- `DismissDirection.VERTICAL`
-- `DismissDirection.HORIZONTAL`
-- `DismissDirection.END_TO_START`
-- `DismissDirection.START_TO_END`
-- `DismissDirection.UP`
-- `DismissDirection.DOWN`
+Value is of type [`DismissDirection`](/docs/reference/types/dismissdirection).
 
 ### `dismiss_thresholds`
 
@@ -121,7 +115,8 @@ The offset threshold the item has to be dragged in order to be considered dismis
 
 Ex: a threshold of `0.4` (the default) means that the item has to be dragged _at least_ 40% in order for it to be dismissed.
 
-It is specified as a dictionary where the key is of type `DismissDirection` and the value is the threshold(fractional/decimal value between `0.0` and `1.0`).:
+It is specified as a dictionary where the key is of type [`DismissDirection`](/docs/reference/types/dismissdirection)
+and the value is the threshold(fractional/decimal value between `0.0` and `1.0`):
 
 ```python
 ft.Dismissible(
@@ -144,7 +139,8 @@ The amount of time the control will spend contracting before `on_dismiss` is cal
 ### `secondary_background`
 
 A control that is stacked behind the `content` and is exposed when the `content` has been dragged up or to the left. 
-It may only be specified when `background` has also been specified.
+
+Has no effect if `background` is not specified.
 
 ## Events
 

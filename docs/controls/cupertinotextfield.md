@@ -102,7 +102,10 @@ to `TextCapitalization.NONE`.
 
 ### `clear_button_semantics_label`
 
-The semantic label for the clear button used by screen readers. This will be used by screen reading software to identify the clear button widget. Defaults to "Clear".
+The semantic label for the clear button used by screen readers. This will be used by screen reading software to identify
+the clear button widget.
+
+Defaults to `"Clear"`.
 
 ### `color`
 
@@ -145,7 +148,7 @@ Defaults to `True`.
 
 ### `filled`
 
-If `True` the decoration's container is filled with theme fillColor.
+If `True` the decoration's container is filled with theme fill color.
 
 ### `focused_bgcolor`
 
@@ -219,7 +222,7 @@ A lighter colored placeholder hint that appears on the first line of the text fi
 
 ### `placeholder_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `placeholder_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `placeholder_text`.
 
 ### `prefix`
 
@@ -243,7 +246,9 @@ Defaults to `False`.
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left.
+
+Default is `False`.
 
 ### `selection_color`
 
@@ -259,7 +264,9 @@ Changes the behavior of `Enter` button in `multiline` TextField to be chat-like,
 
 ### `show_cursor`
 
-Whether the field's cursor is to be shown. Defaults to `True`.
+Whether the field's cursor is to be shown.
+
+Defaults to `True`.
 
 ### `smart_dashes_type`
 
@@ -287,9 +294,7 @@ Value is of type [`VisibilityMode`](/docs/reference/types/visibilitymode) and de
 
 How the text should be aligned horizontally.
 
-Value is of type [`TextAlign`](/docs/reference/types/textalign).
-
-The default is `LEFT`.
+Value is of type [`TextAlign`](/docs/reference/types/textalign) and defaults to `TextAlign.LEFT`.
 
 ### `text_size`
 
@@ -300,7 +305,7 @@ Text size in virtual pixels.
 Defines how the text should be aligned vertically.
 
 Value can either be a number ranging from `-1.0` (topmost location) to `1.0` (bottommost location) or of
-type [`VerticalAlignment`](/docs/reference/types/verticalalignment). Defaults to `CENTER`.
+type [`VerticalAlignment`](/docs/reference/types/verticalalignment). Defaults to `VerticalAlignment.CENTER`.
 
 ### `text_style`
 

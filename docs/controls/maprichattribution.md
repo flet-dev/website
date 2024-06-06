@@ -16,15 +16,21 @@ See [`Map`](/docs/controls/map) Control.
 
 ### `alignment`
 
-The alignment of the attribution. Value is of type [`AttributionAlignment`](/docs/reference/types/attributionalignment).
+The alignment of the attribution.
+
+Value is of type [`AttributionAlignment`](/docs/reference/types/attributionalignment).
 
 ### `attributions`
 
-A list of text source attributions. List items are of type [`TextSourceAttribution`](/docs/controls/maptextsourceattribution).
+A list of text source attributions.
+
+Value is a list with items of type [`TextSourceAttribution`](/docs/controls/maptextsourceattribution).
 
 ### `permanent_height`
 
-The permanent height of the attribution layer. Defaults to `24.0`.
+The permanent height of the attribution layer.
+
+Defaults to `24.0`.
 
 ### `popup_bgcolor`
 
@@ -32,4 +38,6 @@ The background [color](/docs/reference/colors) of the popup box.
 
 ### `show_flutter_map_attribution`
 
-A boolean value indicating whether to show the Flutter map attribution. Defaults to `True`.
+A boolean value indicating whether to show the Flutter map attribution.
+
+Defaults to `True`.

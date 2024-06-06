@@ -81,37 +81,41 @@ For example, on Android a tap will produce a clicking sound and a long-press wil
 
 ### `gradient`
 
-Background gradient of the tooltip. The value must be an instance of one of the following classes:
+Background gradient of the tooltip.
 
-* [`LinearGradient`](/docs/reference/types/lineargradient)
-* [`RadialGradient`](/docs/reference/types/radialgradient)
-* [`SweepGradient`](/docs/reference/types/sweepgradient)
-
+Value is of type [`Gradient`](/docs/reference/types/gradient).
 ### `height`
 
 The height of the tooltip's content.
 
 ### `margin`
 
-The empty space that surrounds the tooltip. The value is an instance of [`margin.Margin`](/docs/reference/types/margin) class or a number.
+The empty space that surrounds the tooltip.
+
+Value is of type [`Margin`](/docs/reference/types/margin) or a number.
 
 ### `padding`
 
 The amount of space by which to inset the tooltip's content.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+The value is an instance of [`Padding`](/docs/reference/types/padding) class or a number.
 
-On mobile, defaults to 16.0 logical pixels horizontally and 4.0 vertically. On desktop, defaults to 8.0 logical pixels horizontally and 4.0 vertically.
+On mobile, defaults to `16.0` logical pixels horizontally and `4.0` vertically. On desktop, defaults to `8.0` logical
+pixels horizontally and `4.0` vertically.
 
 ### `prefer_below`
 
 Whether the tooltip defaults to being displayed below the control.
+If there is insufficient space to display the tooltip in the preferred direction, the tooltip will be displayed in the
+opposite direction.
 
-Defaults to `True`. If there is insufficient space to display the tooltip in the preferred direction, the tooltip will be displayed in the opposite direction.
+Defaults to `True`.
 
 ### `shape`
 
-The shape of the tooltip. The value is [`BoxShape`](/docs/reference/types/boxshape) enum.
+The shape of the tooltip.
+
+Value is of type [`BoxShape`](/docs/reference/types/boxshape).
 
 ### `show_duration`
 
@@ -121,7 +125,7 @@ The length of time, in milliseconds, that the tooltip will be shown after a long
 
 How the message of the tooltip is aligned horizontally.
 
-Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Defaults to `LEFT`.
+Value is of type [`TextAlign`](/docs/reference/types/textalign) and defaults to `TextAlign.LEFT`.
 
 ### `text_style`
 
@@ -129,7 +133,7 @@ The [TextStyle](/docs/reference/types/textstyle) to use for the message of the t
 
 ### `vertical_offset`
 
-The vertical gap between the widget and the displayed tooltip.
+The vertical gap between the control and the displayed tooltip.
 
 ### `wait_duration`
 

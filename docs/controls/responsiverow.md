@@ -157,4 +157,5 @@ Defaults to `10`.
 
 How the child Controls should be placed vertically.
 
-Value is of type [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) and defaults to `START`.
+Value is of type [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) and defaults
+to `CrossAxisAlignment.START`.

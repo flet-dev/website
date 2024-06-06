@@ -90,9 +90,9 @@ Default value is 16. If the default value is overridden then it may be useful to
 
 Combined with `alignment` to determine the location of the label relative to the content.
 
-This value is only used if `text` is provided.
+Has effect only used if `text` is also provided.
 
-See Controls [`offset`](/docs/controls#offset) for possible values.
+Value is of type [`Offset`](/docs/controls#offset) for possible values.
 
 ### `padding`
 
@@ -100,7 +100,7 @@ The padding added to the badge's label.
 
 This value is only used if `text` is provided. Defaults to 4 pixels on the left and right.
 
-Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding value is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 ### `small_size`
 

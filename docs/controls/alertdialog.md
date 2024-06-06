@@ -9,7 +9,7 @@ An alert dialog informs the user about situations that require acknowledgement.
 An alert dialog has an optional title and an optional list of actions.
 The title is displayed above the content and the actions are displayed below the content.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -126,7 +126,7 @@ Padding around the content.
 
 If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+The value is an instance of [`Padding`](/docs/reference/types/padding) class or a number.
 
 ### `elevation`
 
@@ -144,9 +144,10 @@ Padding around the `icon`.
 
 Padding around the Dialog itself.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+The value is an instance of [`Padding`](/docs/reference/types/padding) class or a number.
 
-The default values of this property are 40 pixels horizontally and 24 pixels vertically outside of the dialog box. (`padding.symmetric(vertical=40, horizontal=24)`)
+Defaults to `padding.symmetric(vertical=40, horizontal=24)` - 40 pixels horizontally and 24 pixels vertically outside of
+the dialog box.
 
 ### `modal`
 
@@ -155,6 +156,8 @@ Whether dialog can be dismissed/closed by clicking the area outside of it.
 ### `open`
 
 Set to `True` to display a dialog.
+
+Defaults to `False`.
 
 ### `semantics_label`
 
@@ -192,7 +195,9 @@ If there is no title, no padding will be provided. Otherwise, this padding is us
 
 The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
-This property defaults to providing 24 pixels on the top, left, and right of the title. If the content is not null, then no bottom padding is provided (but see `content_padding`). If it is not set, then an extra 20 pixels of bottom padding is added to separate the title from the actions.
+Defaults to providing `24` pixels on the top, left, and right of the title. If the `content` is not `None`, then no
+bottom padding is provided (but see `content_padding`).
+If it is not set, then an extra `20` pixels of bottom padding is added to separate the title from the actions.
 
 ## Events
 

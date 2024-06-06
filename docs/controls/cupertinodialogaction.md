@@ -73,11 +73,17 @@ A Control representing custom button content.
 
 ### `is_default_action`
 
-If set to True, the button will have bold text. More than one action can have this property set to True in CupertinoAlertDialog. The default value is False.
+If set to True, the button will have bold text. More than one action can have this property set to True in
+CupertinoAlertDialog.
+
+Defaults to `False`.
 
 ### `is_destructive_action`
 
-If set to True, the button's text color will be red. Use it for actions that destroy objects, such as an delete that deletes an email etc. The default value is False.
+If set to True, the button's text color will be red. Use it for actions that destroy objects, such as an delete that
+deletes an email etc.
+
+Defaults to `False`.
 
 ### `text`
 
@@ -85,7 +91,9 @@ The text displayed on a button.
 
 ### `text_style`
 
-The text style to use for text on the button. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
+The text style to use for text on the button.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ## Events
 

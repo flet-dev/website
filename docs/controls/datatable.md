@@ -160,7 +160,7 @@ The maximum height of each row (excluding the row that contains column headings)
 
 ### `data_text_style`
 
-The text style for data rows. An instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
+The text style for data rows. An instance of [`TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `divider_thickness`
 
@@ -172,11 +172,7 @@ Defaults to 1.0.
 
 The background gradient for the table.
 
-The value must be an instance of one of the following classes:
-
-* [`LinearGradient`](/docs/reference/types/lineargradient)
-* [`RadialGradient`](/docs/reference/types/radialgradient)
-* [`SweepGradient`](/docs/reference/types/sweepgradient)
+Value is of type [`Gradient`](/docs/reference/types/gradient).
 
 ### `heading_row_color`
 
@@ -192,7 +188,7 @@ The height of the heading row.
 
 ### `heading_text_style`
 
-The text style for the heading row. An instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
+The text style for the heading row. An instance of [`TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `horizontal_lines`
 
@@ -242,7 +238,9 @@ When this is `None`, it implies that the table's sort order does not correspond 
 
 ### `vertical_lines`
 
-Set the [color](/docs/reference/colors) and width of vertical lines between columns. An instance of `ft.BorderSide` class.
+Set the [color](/docs/reference/colors) and width of vertical lines between columns.
+
+Value is of type [`BorderSide`](/docs/reference/types/borderside).
 
 ## `DataTable` events
 
@@ -253,9 +251,6 @@ Invoked when the user selects or unselects every row, using the checkbox in the 
 If this is `None`, then the `DataRow.on_select_changed` callback of every row in the table is invoked appropriately instead.
 
 To control whether a particular row is selectable or not, see `DataRow.on_select_changed`. This callback is only relevant if any row is selectable.
-
-
-
 
 ## `DataColumn`
 
@@ -288,8 +283,6 @@ This is a longer description of the column heading, for cases where the heading 
 Called when the user asks to sort the table using this column.
 
 If not set, the column will not be considered sortable.
-
-
 
 ## `DataRow`
 
@@ -343,8 +336,6 @@ A row whose `on_select_changed` callback is null is ignored for the purposes of 
 
 If a `DataCell` in the row has its `DataCell.on_tap` callback defined, that callback behavior overrides the gesture behavior of the row for that particular cell.
 
-
-
 ## `DataCell`
 
 The data for a cell of a `DataTable`.
@@ -381,28 +372,33 @@ If this is set, `on_tap` should also be set, otherwise tapping the icon will hav
 
 Called when the cell is double tapped.
 
-If non-null, tapping the cell will call this callback. If null (including `on_tap`, `on_long_press`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, tapping the cell will call this callback, else (tapping the cell will attempt to select the row (
+if `DataRow.on_select_changed` is provided).
 
 ### `on_long_press`
 
 Called if the cell is long-pressed.
 
-If non-null, tapping the cell will invoke this callback. If null (including `on_double_tap`, `on_tap`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, tapping the cell will invoke this callback, else tapping the cell will attempt to select the row (
+if `DataRow.on_select_changed` is provided).
 
 ### `on_tap`
 
 Called if the cell is tapped.
 
-If non-null, tapping the cell will call this callback. If null (including `on_double_tap`, `on_long_press`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, tapping the cell will call this callback, else tapping the cell will attempt to select the row (
+if `DataRow.on_select_changed` is provided).
 
 ### `on_tap_cancel`
 
 Called if the user cancels a tap was started on cell.
 
-If non-null, cancelling the tap gesture will invoke this callback. If null (including `on_tap`, `on_double_tap`, `on_long_press`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, cancelling the tap gesture will invoke this callback, else tapping the cell will attempt to select the
+row (if `DataRow.on_select_changed` is provided).
 
 ### `on_tap_down`
 
 Called if the cell is tapped down.
 
-If non-null, tapping the cell will call this callback. If null (including `on_tap` `on_double_tap`, `on_long_press` and `on_tap_cancel`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, tapping the cell will call this callback, else tapping the cell will attempt to select the row (
+if `DataRow.on_select_changed` is provided).

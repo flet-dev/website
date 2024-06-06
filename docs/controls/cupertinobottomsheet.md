@@ -5,7 +5,7 @@ sidebar_label: CupertinoBottomSheet
 
 An iOS-style bottom sheet.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -77,7 +77,7 @@ ft.app(main)
 
 ### `bgcolor`
 
-The BottomSheet's background [color](/docs/reference/colors).
+The sheet's background [color](/docs/reference/colors).
 
 ### `content`
 
@@ -97,7 +97,7 @@ Set to `True` to display a bottom sheet.
 
 ### `padding`
 
-The sheet's padding. The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+The sheet's padding. The value is an instance of [`Padding`](/docs/reference/types/padding) class or a number.
 
 ## Events
 

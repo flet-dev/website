@@ -147,11 +147,9 @@ Sets the playback rate. iOS and macOS have limits between 0.5 and 2x Android SDK
 
 ### `release_mode`
 
-Sets the release mode. The following values are supported:
+Sets the release mode.
 
-* `ReleaseMode.RELEASE` (default) - Releases all resources, just like calling `release()` method. In Android, the media player is quite resource-intensive, and this will let it go. Data will be buffered again when needed (if it's a remote file, it will be downloaded again). In iOS and macOS, works just like `stop()` method.
-* `ReleaseMode.LOOP` - Keeps buffered data and plays again after completion, creating a loop. Notice that calling stop method is not enough to release the resources when this mode is being used.
-* `ReleaseMode.STOP` - Stops audio playback but keep all resources intact. Use this if you intend to play again later.
+Value is of type [`ReleaseMode`](/docs/reference/types/releasemode) and defaults to `ReleaseMode.RELEASE`.
 
 ### `src`
 

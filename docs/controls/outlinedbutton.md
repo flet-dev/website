@@ -162,7 +162,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 The content will be clipped (or not) according to this option.
 
-Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `content`
 

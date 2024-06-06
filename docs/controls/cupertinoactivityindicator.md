@@ -51,4 +51,4 @@ Defines the [color](/docs/reference/colors) of the activity indicator.
 
 ### `radius`
 
-Whether a click on the `CupertinoContextMenuAction`s should produce haptic feedback.
+The radius of the activity indicator.

@@ -78,7 +78,9 @@ Value is of type [`MapLatitudeLongitudeBounds`](/docs/reference/types/maplatitud
 
 ### `tile_size`
 
-The size of each tile. Defaults to `256`.
+The size of each tile.
+
+Defaults to `256`.
 
 ### `url_template`
 

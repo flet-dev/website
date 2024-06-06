@@ -141,9 +141,9 @@ ft.app(main)
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+Whether to clip the content of this control or not.
 
-Defaults to `NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `controls`
 
@@ -151,4 +151,4 @@ The list of menu items that are the top level children of the `MenuBar`.
 
 ### `style`
 
-The value is an instance of [`MenuStyle`](/docs/reference/types/menustyle) class.
+Value is of type [`MenuStyle`](/docs/reference/types/menustyle). 

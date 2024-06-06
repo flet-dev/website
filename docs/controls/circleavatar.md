@@ -122,5 +122,7 @@ The text displayed when hovering the mouse over the button.
 
 ### `on_image_error`
 
-Fires when an error occurs while loading the `background_image_src` or `foreground_image_src`. The event data (`e.data`)
-is a string whose value is either `"background"` or `"foreground"` indicating the error's origin.
+Fires when an error occurs while loading the `background_image_src` or `foreground_image_src`.
+
+The event data (`e.data`) is a string whose value is either `"background"` or `"foreground"` indicating the error's
+origin.

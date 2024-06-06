@@ -36,7 +36,8 @@ A container for a `content` control located at a geographic coordinate `coordina
 
 Alignment of the marker relative to the normal center at `coordinates`.
 
-Values is of type [`Alignment`](/docs/reference/types/alignment) and defaults to `ft.alignment.center` if also unset by the parent `MarkerLayer`.
+Values is of type [`Alignment`](/docs/reference/types/alignment) and defaults to `alignment.center` if also unset by the
+parent `MarkerLayer`.
 
 ### `content`
 
@@ -44,7 +45,7 @@ The content to be displayed at `coordinates`.
 
 ### `coordinates`
 
-The coordinates of the marker. This will be the center of the marker, if `alignment=ft.alignment.center` (default).
+The coordinates of the marker. This will be the center of the marker, if `alignment=ft.alignment.center`.
 
 Value is of type [`MapLatitudeLongitude`](/docs/reference/types/maplatitudelongitude).
 
@@ -56,7 +57,9 @@ The height of the `content` Control.
 
 Whether to counter rotate this marker to the map's rotation, to keep a fixed orientation.
 
-When `True`, this marker will always appear upright and vertical from the user's perspective. Defaults to `False` if also unset by the parent `MarkerLayer`.
+When `True`, this marker will always appear upright and vertical from the user's perspective.
+
+Defaults to `False` if also unset by the parent `MarkerLayer`.
 
 Note: this is not used to apply a custom rotation in degrees to the marker.
 

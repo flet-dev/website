@@ -6,7 +6,7 @@ sidebar_label: ColorFilter
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Used to define an alignment relative to the center.
+Defines a color filter that can be used with [`Container.color_filter`](/docs/controls/container#color_filter).
 
 `ColorFilter` class has the following properties:
 

@@ -7,7 +7,7 @@ Material Design Navigation Drawer component.
 
 Navigation Drawer is a panel that slides in horizontally from the left or right edge of a page to show primary destinations in an app. To add NavigationDrawer to the page, use [`page.drawer`](/docs/controls/page#drawer) and [`page.end_drawer`](/docs/controls/page#end_drawer) properties. Similarly, the NavigationDrawer can be added to a [`View`](/docs/controls/view#drawer). To display the drawer, set its `open` property to `True`.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
 
 ## Examples
 
@@ -99,7 +99,7 @@ ft.app(main)
 
 ### `bgcolor`
 
-The [color](/docs/reference/colors) of the NavigationDrawer itself.
+The [color](/docs/reference/colors) of the navigation drawer itself.
 
 ### `controls`
 
@@ -109,7 +109,7 @@ The list contains `NavigationDrawerDestination` items and/or other controls such
 
 ### `elevation`
 
-The elevation of the NavigationDrawer itself.
+The elevation of the navigation drawer itself.
 
 ### `indicator_color`
 
@@ -117,7 +117,9 @@ The [color](/docs/reference/colors) of the selected destination indicator.
 
 ### `indicator_shape`
 
-The shape of the selected destination indicator. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+The shape of the selected destination indicator.
+
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `position`
 
@@ -130,7 +132,8 @@ to `NavigationDrawerPosition.START`.
 
 The index for the current selected `NavigationDrawerDestination` or null if no destination is selected.
 
-A valid selected_index is an integer between 0 and number of destinations - 1. For an invalid `selected_index`, for example, `-1`, all destinations will appear unselected.
+A valid selected_index is an integer between 0 and number of destinations - `1`. For an invalid `selected_index`, for
+example, `-1`, all destinations will appear unselected.
 
 ### `shadow_color`
 
@@ -152,7 +155,7 @@ Fires when selected destination changed.
 
 ### `on_dismiss`
 
-Fires when NavigationDrawer is dismissed by clicking outside of the panel or [programmatically](/docs/controls/page#close_drawer).
+Fires when drawer is dismissed by clicking outside of the panel or [programmatically](/docs/controls/page#closecontrol).
 
 ## `NavigationDrawerDestination` properties
 

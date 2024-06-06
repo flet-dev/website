@@ -5,7 +5,7 @@ sidebar_label: CupertinoActionSheet
 
 An iOS-style action sheet.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -85,8 +85,9 @@ An optional control to be shown below the actions but grouped separately from th
 
 ### `message`
 
-A control containing a descriptive message that provides more details about the reason for the alert. Typically a `Text` control.
+A control containing a descriptive message that provides more details about the reason for the alert. Typically
+a [`Text`](/docs/controls/text) control.
 
 ### `title`
 
-A control containing the title of the action sheet. Typically a `Text` control.
+A control containing the title of the action sheet. Typically a [`Text`](/docs/controls/text) control.

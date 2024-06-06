@@ -67,7 +67,9 @@ The fill color of the polygon.
 
 ### `coordinates`
 
-The list of coordinates (latitude and longitude) defining the polygon marker. Value is of type [`MapLatitudeLongitude`](/docs/reference/types/maplatitudelongitude).
+The list of coordinates (latitude and longitude) defining the polygon marker.
+
+Value is of type [`MapLatitudeLongitude`](/docs/reference/types/maplatitudelongitude).
 
 ### `disable_holes_border`
 
@@ -81,7 +83,9 @@ The label of the polygon.
 
 ### `label_text_style`
 
-The style of the `label`. Value is of type [`TextStyle`](/docs/reference/types/textstyle).
+The style of the `label`.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `rotate_label`
 
@@ -91,8 +95,12 @@ Defaults to `False`.
 
 ### `stroke_cap`
 
-The stroke cap style of the polygon. Value is of type [`StrokeCap`](/docs/reference/types/strokecap).
+The stroke cap style of the polygon.
+
+Value is of type [`StrokeCap`](/docs/reference/types/strokecap).
 
 ### `stroke_join`
 
-The stroke join style of the polygon. Value is of type [`StrokeJoin`](/docs/reference/types/strokejoin).
+The stroke join style of the polygon.
+
+Value is of type [`StrokeJoin`](/docs/reference/types/strokejoin).

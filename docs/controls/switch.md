@@ -95,7 +95,8 @@ If the value is `True`, an adaptive Switch is created based on whether the targe
 
 On iOS and macOS, a `CupertinoSwitch` is created, which has matching functionality and presentation as `Switch`, and the graphics as expected on iOS. On other platforms, a Material Switch is created.
 
-The default value is `False`. See the example of usage [here](/docs/controls/cupertinoswitch#cupertinoswitch-and-adaptive-switch).
+Defaults to `False`. See the example of
+usage [here](/docs/controls/cupertinoswitch#cupertinoswitch-and-adaptive-switch).
 
 ### `autofocus`
 
@@ -127,11 +128,13 @@ The clickable label to display on the right of the Switch.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
+The label's style.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `label_position`
 
-Property value is [`LabelPosition`](/docs/reference/types/labelposition) enum. The default value is `RIGHT`.
+Value is of type [`LabelPosition`](/docs/reference/types/labelposition) and defaults to `LabelPosition.RIGHT`.
 
 ### `mouse_cursor`
 
@@ -141,9 +144,9 @@ The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 ### `overlay_color`
 
 The [color](/docs/reference/colors) for the switch's Material in
-various [`ControlState`](/docs/reference/types/controlstate) states. The
-following [`ControlState`](/docs/reference/types/controlstate) values are
-supported: `PRESSED`, `SELECTED`, `HOVERED`, `FOCUSED` and `DEFAULT` (fallback).
+various [`ControlState`](/docs/reference/types/controlstate) states.
+The following [`ControlState`](/docs/reference/types/controlstate) values are
+supported: `PRESSED`, `SELECTED`, `HOVERED`, `FOCUSED` and `DEFAULT`.
 
 ### `splash_radius`
 
@@ -152,28 +155,28 @@ The radius of the splash effect when the switch is pressed.
 ### `thumb_color`
 
 The [color](/docs/reference/colors) of this switch's thumb in
-various [`ControlState`](/docs/reference/types/controlstate) states. The
-following [`ControlState`](/docs/reference/types/controlstate) values are
+various [`ControlState`](/docs/reference/types/controlstate) states.
+The following [`ControlState`](/docs/reference/types/controlstate) values are
 supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 ### `thumb_icon`
 
-The icon of this Switch's thumb in various [`ControlState`](/docs/reference/types/controlstate) states. The
-following [`ControlState`](/docs/reference/types/controlstate) values are
+The icon of this Switch's thumb in various [`ControlState`](/docs/reference/types/controlstate) states.
+The following [`ControlState`](/docs/reference/types/controlstate) values are
 supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 ### `track_color`
 
 The [color](/docs/reference/colors) of this switch's track in
-various [`ControlState`](/docs/reference/types/controlstate) states. The
-following [`ControlState`](/docs/reference/types/controlstate)
-values are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
+various [`ControlState`](/docs/reference/types/controlstate) states.
+The following [`ControlState`](/docs/reference/types/controlstate) values are
+supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 ### `track_outline_color`
 
 The outline [color](/docs/reference/colors) of this switch's track in
-various [`ControlState`](/docs/reference/types/controlstate) states. The
-following [`ControlState`](/docs/reference/types/controlstate) values are
+various [`ControlState`](/docs/reference/types/controlstate) states.
+The following [`ControlState`](/docs/reference/types/controlstate) values are
 supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
 ### `value`

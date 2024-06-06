@@ -150,7 +150,8 @@ Defaults to `0.0`.
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
+
+Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
 
 ### `overlay_color`
 
@@ -161,7 +162,7 @@ in `ControlState.HOVERED` or `DRAGGED` [`ControlState`](/docs/reference/types/co
 
 The number of decimals displayed on the `label` containing `value`.
 
-Defaults to `0` which displays value rounded to the nearest integer.
+Defaults to `0`, which displays value rounded to the nearest integer.
 
 ### `secondary_active_color`
 

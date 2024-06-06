@@ -7,7 +7,7 @@ A banner displays an important, succinct message, and provides actions for users
 
 Banners are displayed at the top of the screen, below a top app bar. They are persistent and non-modal, allowing the user to either ignore them or interact with them at any time.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#open) helper-method.
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -71,7 +71,9 @@ The [color](/docs/reference/colors) of the surface of this Banner.
 
 ### `content`
 
-The content of the Banner. Typically a [`Text`](/docs/controls/text) control.
+The content of the Banner.
+
+Typically a [`Text`](/docs/controls/text) control.
 
 ### `content_padding`
 
@@ -85,8 +87,9 @@ If the actions are trailing the content, this defaults to `padding.only(left=16.
 
 ### `content_text_style`
 
-The style to be used for the `Text` controls in the `content`. Value is an instance of
-type [`TextStyle`](/docs/reference/types/textstyle).
+The style to be used for the `Text` controls in the `content`.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `divider_color`
 
@@ -100,7 +103,8 @@ The elevation of the banner.
 
 An override to force the actions to be below the content regardless of how many there are.
 
-If this is `True`, the actions will be placed below the content. If this is `False`, the actions will be placed on the trailing side of the content if actions's length is 1 and below the content if greater than 1.
+If this is `True`, the actions will be placed below the content. If this is `False`, the actions will be placed on the
+trailing side of the content if `actions` length is `1` and below the content if greater than `1`.
 
 Defaults to `False`.
 
@@ -116,13 +120,13 @@ The amount of space by which to inset the leading control.
 
 The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
-Defaults to 16 virtual pixels.
+Defaults to `16` virtual pixels.
 
 ### `margin`
 
 The amount of space surrounding the banner. 
 
-The value is an instance of [`margin.Margin`](/docs/reference/types/margin) class or a number.
+The value is an instance of [`Margin`](/docs/reference/types/margin) class or a number.
 
 ### `open`
 

@@ -145,11 +145,11 @@ If not set, then the labels will not be displayed.
 
 ### `max`
 
-The maximum value the user can select.
-
-Defaults to `1.0`. Must be greater than or equal to `min`.
+The maximum value the user can select. Must be greater than or equal to `min`.
 
 If the `max` is equal to the `min`, then the slider is disabled.
+
+Defaults to `1.0`.
 
 ### `min`
 

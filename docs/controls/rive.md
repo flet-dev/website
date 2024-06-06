@@ -42,7 +42,7 @@ ft.app(target=main)
 
 ### `alignment`
 
-The Alignment for the animation.
+The alignment for the animation.
 
 ### `artboard`
 
@@ -50,7 +50,9 @@ The name of the artboard to use. If not specified, the default artboard of the p
 
 ### `enable_antialiasing`
 
-Whether to enable antialiasing when rendering. Defaults to `True`.
+Whether to enable antialiasing when rendering.
+
+Defaults to `True`.
 
 ### `fit`
 

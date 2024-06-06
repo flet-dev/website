@@ -50,7 +50,7 @@ The foreground [color](/docs/reference/colors) of the icon and title of the sele
 
 ### `bgcolor`
 
-The [color](/docs/reference/colors) of the CupertinoNavigationBar itself.
+The [color](/docs/reference/colors) of the navigation bar itself.
 
 ### `border`
 
@@ -64,7 +64,9 @@ The value must be a list of two or more [`NavigationBarDestination`](/docs/contr
 
 ### `icon_size`
 
-The size of all destination icons. Defaults to `30`.
+The size of all destination icons.
+
+Defaults to `30`.
 
 ### `inactive_color`
 

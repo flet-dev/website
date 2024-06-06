@@ -123,11 +123,11 @@ Defines whether the search view grows to fill the entire screen when the search 
 
 ### `header_hint_style`
 
-Defines the [TextStyle](/docs/reference/types/textstyle) of `view_hint_text`.
+Defines the [`TextStyle`](/docs/reference/types/textstyle) of `view_hint_text`.
 
 ### `header_text_style`
 
-Defines the [TextStyle](/docs/reference/types/textstyle) of the text being edited on the search view.
+Defines the [`TextStyle`](/docs/reference/types/textstyle) of the text being edited on the search view.
 
 ### `keyboard_type`
 
@@ -153,19 +153,21 @@ Defines the text to be displayed when the search bar's input field is empty.
 
 ### `view_leading`
 
-A `Control` to display before the text input field when the search view is open. This is typically an `Icon` or an `IconButton`.
+A `Control` to display before the text input field when the search view is open. Typically an `Icon` or an `IconButton`.
 
 Defaults to a back button which closes/pops the search view.
 
 ### `view_shape`
 
-Defines the shape of the search view. The value is [`BoxShape`](/docs/reference/types/boxshape) enum.
+Defines the shape of the search view.
 
-The default value is `RECTANGLE`.
+Value is of type [`BoxShape`](/docs/reference/types/boxshape) defaults to `BoxShape.RECTANGLE`.
 
 ### `view_side`
 
-Defines the color and weight of the search view's outline. The value is [`BorderSide`](/docs/reference/types/borderside) enum.
+Defines the color and weight of the search view's outline.
+
+Value is of type [`BorderSide`](/docs/reference/types/borderside).
 
 ### `view_surface_tint_color`
 
@@ -173,7 +175,9 @@ Defines the color of the search view's surface tint.
 
 ### `view_trailing`
 
-A list of `Control`s to display after the text input field when the search view is open. Defaults to a close button which closes/pops the search view.
+A list of `Control`s to display after the text input field when the search view is open.
+
+Defaults to a close button which closes/pops the search view.
 
 ## Methods
 

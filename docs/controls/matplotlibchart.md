@@ -127,8 +127,12 @@ ft.app(target=main)
 
 ### `original_size`
 
-`True` to display chart in original size. `False` (default) to display a chart that fits configured bounds.
+Whether to display chart in original size.
+
+Defaults to `False` - display a chart that fits configured bounds.
 
 ### `transparent`
 
-`True` to remove the background from the chart. `False` (default) to display a chart with background.
+Whether to remove the background from the chart.
+
+Defaults to `False` - display a chart with background.

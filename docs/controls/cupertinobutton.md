@@ -85,11 +85,15 @@ Icon [color](/docs/reference/colors).
 
 ### `min_size`
 
-The minimum size of the button. Defaults to `44.0`.
+The minimum size of the button.
+
+Defaults to `44.0`.
 
 ### `opacity_on_click`
 
-Defines the opacity of the button when it is clicked. Defaults to `0.4`. The button will have an opacity of `1.0` when it is not pressed.
+Defines the opacity of the button when it is clicked. When not pressed, the button has an opacity of `1.0`.
+
+Defaults to `0.4`.
 
 ### `padding`
 

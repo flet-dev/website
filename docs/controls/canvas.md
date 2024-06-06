@@ -324,10 +324,7 @@ The list of `Shape` objects (see below) to draw on the canvas.
 
 Fires when the size of canvas has changed.
 
-Event object `e` is an instance of `CanvasResizeEvent` class with the following fields:
-
-* `width` - a new width of the canvas.
-* `height` - a new height of the canvas.
+Event object `e` is an instance of [`CanvasResizeEvent`](/docs/reference/types/canvasresizeevent).
 
 ## `Arc` shape properties
 
@@ -337,21 +334,13 @@ It starts from `start_angle` radians around the oval up to `start_angle` + `swee
 
 [PICTURE] - https://api.flutter.dev/flutter/dart-ui/Canvas/drawArc.html
 
-### `x`
-
-The x-axis coordinate of the arc's top left point.
-
-### `y`
-
-The y-axis coordinate of the arc's top left point.
-
-### `width`
-
-Width of the rectangle containing the arc's oval.
-
 ### `height`
 
 Height of the rectangle containing the arc's oval.
+
+### `paint`
+
+A style to draw an arc with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
 
 ### `start_angle`
 
@@ -365,13 +354,30 @@ The length of the arc in radians.
 
 If `use_center` is `True`, the arc is closed back to the center, forming a circle sector. Otherwise, the arc is not closed, forming a circle segment.
 
-### `paint`
+### `width`
 
-A style to draw an arc with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
+Width of the rectangle containing the arc's oval.
+
+### `x`
+
+The x-axis coordinate of the arc's top left point.
+
+### `y`
+
+The y-axis coordinate of the arc's top left point.
 
 ## `Circle` shape properties
 
 Draws a circle.
+
+### `paint`
+
+A style to draw a circle with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint)
+class.
+
+### `radius`
+
+Circle's radius.
 
 ### `x`
 
@@ -381,27 +387,19 @@ The x-axis coordinate of the circle's center point.
 
 The y-axis coordinate of the circle's center point.
 
-### `radius`
-
-Circle's radius.
-
-### `paint`
-
-A style to draw a circle with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
-
 ## `Color` shape properties
 
 Paints the given `color` onto the canvas, applying the given `blend_mode`, with the given color being the source and the background being the destination.
-
-### `color`
-
-[Color](/docs/reference/colors) to paint onto the canvas.
 
 ### `blend_mode`
 
 Blend mode to apply.
 
-Property value is [`BlendMode`](/docs/reference/types/blendmode) enum.
+Value is of type [`BlendMode`](/docs/reference/types/blendmode).
+
+### `color`
+
+[Color](/docs/reference/colors) to paint onto the canvas.
 
 ## `Fill` shape properties
 
@@ -416,6 +414,10 @@ A style to fill the canvas with. The value of this property is the instance of [
 ## `Line` shape properties
 
 Draws a line between the given points using the given paint. The line is stroked, the value of the `Paint.style` is ignored.
+
+### `paint`
+
+A style to draw a line with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
 
 ### `x1`
 
@@ -433,13 +435,22 @@ The x-axis coordinate of the line's end point.
 
 The y-axis coordinate of the line's end point.
 
-### `paint`
-
-A style to draw a line with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
-
 ## `Oval` shape properties
 
 Draws an axis-aligned oval that fills the given axis-aligned rectangle with the given `Paint`. Whether the oval is filled or stroked (or both) is controlled by `Paint.style`.
+
+### `height`
+
+Height of the rectangle containing the oval.
+
+### `paint`
+
+A style to draw an oval with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint)
+class.
+
+### `width`
+
+Width of the rectangle containing the oval.
 
 ### `x`
 
@@ -448,18 +459,6 @@ The x-axis coordinate of the oval's top left point.
 ### `y`
 
 The y-axis coordinate of the oval's top left point.
-
-### `width`
-
-Width of the rectangle containing the oval.
-
-### `height`
-
-Height of the rectangle containing the oval.
-
-### `paint`
-
-A style to draw an oval with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
 
 ## `Path` shape properties
 
@@ -523,25 +522,42 @@ A style to draw a path with. The value of this property is the instance of [`Pai
 
 Draws a sequence of points according to the given `point_mode`.
 
+### `paint`
+
+A style to draw points with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
+
 ### `points`
 
 The list of `ft.Offset` describing points.
 
 ### `point_mode`
 
-Defines how a list of points is interpreted when drawing a set of points. The value is of type `ft.PointMode`:
+Defines how a list of points is interpreted when drawing a set of points.
 
-* `POINTS` - Draw each point separately. If the `Paint.stroke_cap` is `StrokeCap.ROUND`, then each point is drawn as a circle with the diameter of the `Paint.stroke_width`, filled as described by the `Paint` (ignoring `Paint.style`). Otherwise, each point is drawn as an axis-aligned square with sides of length `Paint.stroke_width`, filled as described by the `Paint` (ignoring `Paint.style`).`
-* `LINES` - Draw each sequence of two points as a line segment. If the number of points is odd, then the last point is ignored. The lines are stroked as described by the `Paint` (ignoring `Paint.style`).
-* `POLYGON` - Draw the entire sequence of point as one line. The lines are stroked as described by the `Paint` (ignoring `Paint.style`).
-
-### `paint`
-
-A style to draw points with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
+Value is of type [`PointMode`](/docs/reference/types/pointmode).
 
 ## `Rect` shape properties
 
 Draws a rectangle.
+
+### `border_radius`
+
+Border radius of the rectangle.
+
+Value is of type [`BorderRadius`](/docs/reference/types/borderradius).
+
+### `height`
+
+Height of the rectangle.
+
+### `paint`
+
+A style to draw a rectangle with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint)
+class.
+
+### `width`
+
+Width of the rectangle.
 
 ### `x`
 
@@ -551,31 +567,11 @@ The x-axis coordinate of the rectangle's top left point.
 
 The y-axis coordinate of the rectangle's top left point.
 
-### `width`
-
-Width of the rectangle.
-
-### `height`
-
-Height of the rectangle.
-
-### `border_radius`
-
-Border radius of the rectangle, value of type `ft.BorderRadius`.
-
-### `paint`
-
-A style to draw a rectangle with. The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
-
 ## `Shadow` shape properties
 
 Draws a shadow for a `path` representing the given material `elevation`.
 
 The `transparent_occluder` argument should be `True` if the occluding object is not opaque.
-
-### `path`
-
-The list of `Path.PathElement` objects describing the path.
 
 ### `color`
 
@@ -584,6 +580,10 @@ Shadow [color](/docs/reference/colors).
 ### `elevation`
 
 Shadow elevation.
+
+### `path`
+
+The list of `Path.PathElement` objects describing the path.
 
 ### `transparent_occluder`
 
@@ -595,41 +595,21 @@ Defaults to `False`.
 
 Draws `text` with `style` in the given point (`x`, `y`).
 
-### `x`
-
-The x-axis coordinate of the text's `alignment` point.
-
-### `y`
-
-The y-axis coordinate of the text's `alignment` point.
-
-### `text`
-
-The text to draw.
-
-### `style`
-
-A text style to draw `text` and `spans` with. The value is the instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
-
-### `spans`
-
-The list of [`TextSpan`](/docs/reference/types/textspan) objects to build a rich text paragraph.
-
 ### `alignment`
 
 A point within a text rectangle to determine its position and rotation center.
 
-Value is of type [`Alignment`](/docs/reference/types/alignment) and defaults to  `alignment.top_left`.
+Value is of type [`Alignment`](/docs/reference/types/alignment) and defaults to `alignment.top_left`.
 
-### `text_align`
+### `ellipsis`
 
-Text horizontal align.
-
-Value is of type [`TextAlign`](/docs/reference/types/textalign) and defaults to`LEFT`.
+String used to ellipsize overflowing text.
 
 ### `max_lines`
 
-The maximum number of lines painted. Lines beyond this number are silently dropped. For example, if maxLines is 1, then only one line is rendered. If `max_lines` is `None`, but ellipsis is not `None`, then lines after the first one that overflows the width constraints are dropped.
+The maximum number of lines painted. Lines beyond this number are silently dropped. For example, if `max_lines = 1`,
+then only one line is rendered. If `max_lines = None`, but `ellipsis != None`, then lines after the first one that
+overflows the width constraints are dropped.
 
 ### `max_width`
 
@@ -637,11 +617,33 @@ The maximum width of the painted text.
 
 Defaults to `None` - infinity.
 
-### `ellipsis`
-
-String used to ellipsize overflowing text.
-
 ### `rotate`
 
 Text rotation in radians. Text is rotated around the point determined by `alignment`. See code examples above.
 
+### `spans`
+
+The list of [`TextSpan`](/docs/reference/types/textspan) objects to build a rich text paragraph.
+
+### `style`
+
+A text style to draw `text` and `spans` with. The value is the instance
+of [`TextStyle`](/docs/reference/types/textstyle) class.
+
+### `text`
+
+The text to draw.
+
+### `text_align`
+
+Text horizontal align.
+
+Value is of type [`TextAlign`](/docs/reference/types/textalign) and defaults to `TextAlign.LEFT`.
+
+### `x`
+
+The x-axis coordinate of the text's `alignment` point.
+
+### `y`
+
+The y-axis coordinate of the text's `alignment` point.

@@ -160,13 +160,13 @@ ft.Stack(
 
 A border to draw above the background color.
 
-Value is of type [`Border`](/docs/reference/types/border) class.
+Value is of type [`Border`](/docs/reference/types/border).
 
 ### `border_radius`
 
 If specified, the corners of the container are rounded by this radius.
 
-Value is of type [`BorderRadius`](/docs/reference/types/borderradius) class.
+Value is of type [`BorderRadius`](/docs/reference/types/borderradius).
 
 ### `clip_behavior`
 
@@ -201,7 +201,9 @@ Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defaults to `I
 
 ### `image_opacity`
 
-Sets image opacity when blending with a background: value between `0.0` and `1.0`.
+Sets image opacity when blending with a background.
+
+Value ranges between `0.0`(fully transparent) and `1.0`(fully opaque).
 
 ### `image_repeat`
 
@@ -241,7 +243,9 @@ Value is of type [`Padding`](/docs/reference/types/padding) or a number.
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left.
+
+Defaults to `False`.
 
 ### `shadow`
 
@@ -355,13 +359,9 @@ Fires when the container is long-pressed.
 
 ### `on_tap_down`
 
-Fires when a user clicks the container with or without a long press. Event object `e` is an instance
-of `ContainerTapEvent` class with the following properties:
+Fires when a user clicks the container with or without a long press.
 
-* `local_x` - the x-coordinate of the tap relative to the container
-* `local_y` - the y-coordinate of the tap relative to the container
-* `global_x` - the x-coordinate of the tap relative to the page
-* `global_y` - the y-coordinate of the tap relative to the page
+Event object `e` is of type [`ContainerTapEvent`](/docs/reference/types/containertapevent).
 
 :::info
 If `ink` is `True`, `e` will be plain `ControlEvent` with empty `data` instead of `ContainerTapEvent`.

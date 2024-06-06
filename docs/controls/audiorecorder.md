@@ -108,19 +108,12 @@ Not all properties are supported on all platforms. Please check this [platform-f
 
 ### `audio_encoding`
 
-The audio encoder to be used for recording. The following values are supported:
+The audio encoder to be used for recording.
 
-* `AudioEncoder.AACLC` - MPEG-4 AAC Low complexity. Outputs to MPEG_4 format container. Recommended file extension: `m4a`.
-* `AudioEncoder.AACELD` - MPEG-4 AAC Enhanced Low Delay. Outputs to MPEG_4 format container. Recommended file extension: `m4a`.
-* `AudioEncoder.AACHE` - MPEG-4 High Efficiency AAC (Version 2 if available). Outputs to MPEG_4 format container. Recommended file extension: `m4a`.
-* `AudioEncoder.AMRNB` - The AMR (Adaptive Multi-Rate) narrow band speech. When used, `sample_rate` should be set to `8kHz`. Outputs to 3GP format container on Android. Recommended file extension: `3gp`.
-* `AudioEncoder.AMRWB` - The AMR (Adaptive Multi-Rate) wide band speech. When used, `sample_rate` should be set to `16kHz`. Outputs to 3GP format container on Android. Recommended file extension: `3gp`.
-* `AudioEncoder.OPUS` - Will output to MPEG_4 format container. SDK 29 on Android and SDK 11 on iOS. Recommended file extension: `opus`.
-* `AudioEncoder.FLAC` - Free Lossless Audio Codec. Recommended file extension: `flac`.
-* `AudioEncoder.WAV` (default) - Waveform Audio (pcm16bit with headers). Recommended file extension: `wav`.
-* `AudioEncoder.PCM16BITS` - Linear PCM 16 bit per sample. Recommended file extension: `pcm`.
+Value is of type [`AudioEncoder`](/docs/reference/types/audioencoder) and defaults
+to [`AudioEncoder.WAV`](/docs/reference/types/audioencoder#wav).
 
-See [`this`](https://pub.dev/packages/record#file) for a detailed overview on which platforms support which encodings.
+See [`this`](https://pub.dev/packages/record#file) for a detailed overview on the encodings supported by each platform.
 
 ### `auto_gain`
 

@@ -256,7 +256,10 @@ ft.app(target=main)
 
 ### `opacity`
 
-Makes a control partially transparent. `0.0` - control is completely transparent, not painted at all. `1.0` (default) - a control is fully painted without any transparency.
+Defines the transparency of the control.
+
+Value ranges from `0.0` (completely transparent) to `1.0` (completely opaque without any transparency) and defaults
+to `1.0`.
 
 ### `rotate`
 

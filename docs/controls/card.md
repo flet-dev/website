@@ -56,9 +56,9 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The `content` will be clipped (or not) according to this option.
 
-Default value is `ClipBehavior.NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `color`
 
@@ -82,11 +82,7 @@ Set to `True` (default) if this card represents a single semantic container, or 
 
 The empty space that surrounds the card.
 
-The value of `margin` property could be one of the following types:
-
-* `int`
-* `float`
-* [`margin.Margin`](/docs/reference/types/margin)
+Value can be one of the following types: `int`, `float`, or [`Margin`](/docs/reference/types/margin).
 
 ### `shadow_color`
 

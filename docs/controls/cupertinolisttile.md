@@ -58,7 +58,8 @@ ft.app(target=main)
 
 ### `additional_info`
 
-A `Control` to display on the right of the list tile, before `trailing`. Similar to `subtitle`, an `additional_info` is used to display additional information. Usually a [Text](/docs/controls/text) control.
+A `Control` to display on the right of the list tile, before `trailing`. Similar to `subtitle`, an `additional_info` is
+used to display additional information. Usually a [`Text`](/docs/controls/text) control.
 
 ### `bgcolor`
 
@@ -74,30 +75,39 @@ A `Control` to display before the `title`.
 
 ### `leading_size`
 
-The `leading_size` is used to constrain the width and height of `leading` control. Defaults to `30.0` if `notched=True`,
-else `28.0`.
+Used to constrain the width and height of `leading` control.
+
+Defaults to `30.0`, if `notched=True`, else `28.0`.
 
 ### `leading_to_title`
 
-The horizontal space between `leading` and `title`. Defaults to `12.0` if `notched=True`, else `16.0`.
+The horizontal space between `leading` and `title`.
+
+Defaults to `12.0`, if `notched=True`, else `16.0`.
 
 ### `notched`
 
-If `True`, list tile will be created in an "Inset Grouped" form, known from either iOS Notes or Reminders app. The default value is `False`.
+If `True`, list tile will be created in an "Inset Grouped" form, known from either iOS Notes or Reminders app.
+
+4Defaults to `False`.
 
 ### `padding`
 
 The tile's internal padding. Insets a CupertinoListTile's contents: its `leading`, `title`, `subtitle`, `additional_info` and `trailing` controls.
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 ### `subtitle`
 
-Additional content displayed below the title. Typically a [Text](/docs/controls/text) control.
+Additional content displayed below the title.
+
+Typically a [`Text`](/docs/controls/text) control.
 
 ### `title`
 
-A `Control` to display as primary content of the list tile. Typically a [Text](/docs/controls/text) control.
+A `Control` to display as primary content of the list tile.
+
+Typically a [`Text`](/docs/controls/text) control.
 
 ### `toggle_inputs`
 
@@ -105,7 +115,9 @@ Whether clicking on a list tile should toggle the state of `Radio`, `Checkbox` o
 
 ### `trailing`
 
-A `Control` to display after the title. Typically an [Icon](/docs/controls/icon) control.
+A `Control` to display after the title.
+
+Typically an [`Icon`](/docs/controls/icon) control.
 
 ### `url`
 

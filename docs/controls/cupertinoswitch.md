@@ -83,7 +83,9 @@ The clickable label to display on the right of the switch.
 
 ### `label_position`
 
-Property value is [`LabelPosition`](/docs/reference/types/labelposition) enum. The default value is `RIGHT`.
+The position of the label relative to the switch.
+
+Value is of type [`LabelPosition`](/docs/reference/types/labelposition) and defaults to `LabelPosition.RIGHT`.
 
 ### `off_label_color`
 
@@ -93,7 +95,7 @@ The [color](/docs/reference/colors) to use for the accessibility label when the 
 
 The [color](/docs/reference/colors) to use for the accessibility label when the switch is on.
 
-Defaults to `ft.cupertino_colors.WHITE`.
+Defaults to `cupertino_colors.WHITE`.
 
 ### `thumb_color`
 

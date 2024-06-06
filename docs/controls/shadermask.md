@@ -94,11 +94,13 @@ ft.app(target=main)
 
 The blend mode to use when applying the shader to the `content`.
 
-Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODULATE` as default.
+Value is of type [`BlendMode`](/docs/reference/types/blendmode) and defaults to `BlendMode.MODULATE`.
 
 ### `border_radius`
 
-Border radius is an instance of [`BorderRadius`](/docs/reference/types/borderradius) class.
+The radius of the mask.
+
+Value is of type [`BorderRadius`](/docs/reference/types/borderradius).
 
 ### `content`
 
@@ -106,8 +108,6 @@ A child `Control` to apply a shader to.
 
 ### `shader`
 
-Use gradient as a shader. The value must be an instance of one of the following classes:
+Use gradient as a shader.
 
-* [`LinearGradient`](/docs/reference/types/lineargradient)
-* [`RadialGradient`](/docs/reference/types/radialgradient)
-* [`SweepGradient`](/docs/reference/types/sweepgradient)
+Value is of type [`Gradient`](/docs/reference/types/gradient).

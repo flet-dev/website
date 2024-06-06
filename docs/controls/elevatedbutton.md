@@ -147,7 +147,7 @@ If the value is `True`, an adaptive button is created based on whether the targe
 
 On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinobutton) is created, which matches the functionality and presentation of this button. On other platforms, a Material `ElevatedButton` is created.
 
-The default value is `False`.
+Defaults to `False`.
 
 ### `autofocus`
 
@@ -159,9 +159,9 @@ Button's background [color](/docs/reference/colors).
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+The content will be clipped (or not) according to this option.
 
-Defaults to `NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `color`
 

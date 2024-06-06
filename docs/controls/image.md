@@ -92,7 +92,7 @@ Value is of type [`FilterQuality`](/docs/reference/types/filterquality) and defa
 
 How to inscribe the image into the space allocated during layout.
 
-Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defauls to `ImageFit.NONE`.
+Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defaults to `ImageFit.NONE`.
 
 ### `gapless_playback`
 

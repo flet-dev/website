@@ -154,7 +154,7 @@ ft.app(target=main)
 
 Defines how the `hint` or the selected item is positioned within this dropdown.
 
-Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
+Alignment is an instance of [`Alignment`](/docs/reference/types/alignment) class.
 
 ### `autofocus`
 
@@ -196,7 +196,7 @@ The [padding](/docs/reference/types/padding) for the input decoration's containe
 
 ### `counter_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `counter_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `counter_text`.
 
 ### `counter_text`
 
@@ -210,7 +210,9 @@ Whether the TextField is part of a dense form (ie, uses less vertical space).
 
 ### `elevation`
 
-The dropdown's elevation. Defaults to `8`.
+The dropdown's elevation.
+
+Defaults to `8`.
 
 ### `enable_feedback`
 
@@ -221,7 +223,7 @@ Defaults to `True`.
 
 ### `error_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `error_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `error_text`.
 
 ### `error_text`
 
@@ -258,7 +260,7 @@ Text [color](/docs/reference/colors) when Dropdown is focused.
 
 ### `helper_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `helper_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `helper_text`.
 
 ### `helper_text`
 
@@ -272,7 +274,7 @@ A placeholder control for the dropdown's value that is displayed when `value` is
 
 ### `hint_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `hint_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `hint_text`.
 
 ### `hint_text`
 
@@ -288,7 +290,7 @@ Value is of type [`Padding`](/docs/reference/types/padding) or a number.
 
 ### `icon_content`
 
-The control to use for the drop-down button's icon. Defaults to an `Icon(ft.icons.ARROW_DROP_DOWN)`.
+The control to use for the drop-down button's icon. Defaults to an `Icon(icons.ARROW_DROP_DOWN)`.
 
 ### `icon_enabled_color`
 
@@ -316,7 +318,7 @@ When the input field is empty and unfocused, the label is displayed on top of th
 
 ### `label_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `label`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `label`.
 
 ### `max_menu_height`
 
@@ -346,7 +348,7 @@ An icon that appears before the `prefix` or `prefix_text` and before the editabl
 
 ### `prefix_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `prefix_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `prefix_text`.
 
 ### `prefix_text`
 
@@ -368,7 +370,7 @@ An icon that appears after the editable part of the text field and after the `su
 
 ### `suffix_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `suffix_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `suffix_text`.
 
 ### `suffix_text`
 
@@ -380,7 +382,8 @@ Text size in virtual pixels.
 
 ### `text_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for text in this dropdown button and the dropdown menu that appears when you tap the button.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for text in this dropdown button and the dropdown menu that
+appears when you tap the button.
 
 ### `value`
 

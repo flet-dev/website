@@ -82,9 +82,13 @@ be used.
 
 Whether this action should receive the style of an emphasized, default action.
 
+Defaults to `False`.
+
 ### `is_destructive_action`
 
 Whether this action should receive the style of a destructive action.
+
+Defaults to `False`.
 
 ### `text`
 

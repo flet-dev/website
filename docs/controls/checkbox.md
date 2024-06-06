@@ -82,7 +82,9 @@ If the value is `True`, an adaptive Checkbox is created based on whether the tar
 
 On iOS and macOS, a [`CupertinoCheckbox`](/docs/controls/cupertinocheckbox) is created, which has matching functionality and presentation as `Checkbox`, and the graphics as expected on iOS. On other platforms, a Material Checkbox is created.
 
-The default value is `False`. See the example of usage [here](/docs/controls/cupertinocheckbox#cupertinocheckbox-and-adaptive-checkbox-example).
+See the example of usage [here](/docs/controls/cupertinocheckbox#cupertinocheckbox-and-adaptive-checkbox-example).
+
+Defaults to `False`.
 
 ### `autofocus`
 
@@ -90,7 +92,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `border`
 
-The color and width of the checkbox's border to be rendered when the checkbox's value is `False`.
+The color and width of the checkbox's border to be rendered when the checkbox's `value` is `False`.
 
 ### `check_color`
 
@@ -119,18 +121,22 @@ The label's style. An instance of type [`TextStyle`](/docs/reference/types/texts
 
 ### `label_position`
 
-Defines on which side of the checkbox the `label` should be shown. Property value is [`LabelPosition`](/docs/reference/types/labelposition) enum. The default value is `RIGHT`.
+Defines on which side of the checkbox the `label` should be shown.
+
+Value is of type [`LabelPosition`](/docs/reference/types/labelposition) and defaults to `LabelPosition.RIGHT`.
 
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
+
+Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
 
 ### `overlay_color`
 
 The [color](/docs/reference/colors) of the checkbox's overlay in
-various [`ControlState`](/docs/reference/types/controlstate) states. The
-following `ControlState` values are supported: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`.
+various [`ControlState`](/docs/reference/types/controlstate) states.
+
+This property supports the following `ControlState` values: `PRESSED`, `SELECTED`, `HOVERED` and `FOCUSED`.
 
 ### `semantics_label`
 
@@ -144,13 +150,15 @@ Defaults to `RoundedRectangleBorder(radius=2)`.
 
 ### `splash_radius`
 
-The radius of the circular Material ink response (ripple) in logical pixels. Default's to `20.0`.
+The radius of the circular Material ink response (ripple) in logical pixels.
+
+Defaults to `20.0`.
 
 ### `tristate`
 
-If `True` the checkbox's value can be `True`, `False`, or `None` (`null`).
+If `True` the checkbox's value can be `True`, `False`, or `None`.
 
-Checkbox displays a dash when its value is null.
+Checkbox displays a dash when its value is `None`.
 
 ### `value`
 

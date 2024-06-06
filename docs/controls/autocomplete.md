@@ -68,7 +68,4 @@ Defaults to `200`.
 
 Fires when a suggestion is selected.
 
-The event handler is of type `AutoCompleteSelectEvent` with the following properties:
-
-- `selection`: the selected [`AutoCompleteSuggestion`](/docs/reference/types/autocompletesuggestion) from the list of `suggestions`.
-
+Event handler is of type [`AutoCompleteSelectEvent`](/docs/reference/types/autocompleteselectevent).

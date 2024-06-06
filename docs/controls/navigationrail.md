@@ -118,7 +118,7 @@ Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder) and de
 
 ### `label_type`
 
-Defines the layout and behavior of the labels for the default, unextended NavigationRail.
+Defines the layout and behavior of the labels for the default, unextended navigation rail.
 
 When a navigation rail is extended, the labels are always shown.
 
@@ -165,7 +165,7 @@ An optional trailing control in the rail that is placed below the destinations.
 
 Its location is affected by `group_alignment`.
 
-This is commonly a list of additional options or destinations that is usually only rendered when `extended` is `True`.
+This is commonly a list of additional options or destinations that is usually only rendered when `extended=True`.
 
 ### `unselected_label_text_style`
 
@@ -215,7 +215,7 @@ The label must be provided when used with the `NavigationRail`. When `Navigation
 
 The amount of space to inset the destination item.
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 ### `selected_icon`
 
