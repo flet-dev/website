@@ -347,7 +347,7 @@ module.exports = {
         "tutorials/python-calculator",
         "tutorials/trello-clone",
         "tutorials/python-solitaire",
-        "tutorials/python-realtime-chat",
+        "tutorials/python-chat",
       ],
     },
     {
