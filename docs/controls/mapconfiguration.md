@@ -60,16 +60,42 @@ Fires when the map is initialized.
 
 Fires when a long press event occurs.
 
-Event handler argument is of type [`TapEvent`](/docs/reference/types/tapevent).
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/maptapevent).
+
+### `on_position_change`
+
+Fires when the map position changes.
+
+Event handler argument is of type [`MapPositionChangeEvent`](/docs/reference/types/mappositionchangeevent).
+
+### `on_pointer_down`
+
+Fires when a pointer down event occurs.
+
+Event handler argument is of type [`MapPointerEvent`](/docs/reference/types/mappointerevent).
+
+### `on_pointer_cancel`
+
+Fires when a pointer cancel event occurs.
+
+Event handler argument is of type [`MapPointerEvent`](/docs/reference/types/mappointerevent).
+
+### `on_pointer_up`
+
+Fires when a pointer up event occurs.
+
+Event handler argument is of type [`MapPointerEvent`](/docs/reference/types/mappointerevent).
 
 ### `on_secondary_tap`
 
 Fires when a secondary tap event occurs.
 
-Event handler argument is of type [`TapEvent`](/docs/reference/types/tapevent).
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/maptapevent).
 
 ### `on_tap`
 
 Fires when a tap event occurs.
 
-Event handler argument is of type [`TapEvent`](/docs/reference/types/tapevent).
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/maptapevent).
+
+

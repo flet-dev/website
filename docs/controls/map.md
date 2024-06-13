@@ -39,7 +39,7 @@ def main(page: ft.Page):
     marker_layer_ref = ft.Ref[map.MarkerLayer]()
     circle_layer_ref = ft.Ref[map.CircleLayer]()
 
-    def handle_tap(e: map.TapEvent):
+    def handle_tap(e: map.MapTapEvent):
         print(
             f"Name: {e.name} - coordinates: {e.coordinates} - Local: ({e.local_x}, {e.local_y}) - Global: ({e.global_x}, {e.global_y})"
         )

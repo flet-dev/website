@@ -103,7 +103,7 @@ A pointer that might cause a double tap has contacted the screen at a particular
 
 Triggered immediately after the down event of the second tap.
 
-Event handler argument is of type [`TapEvent`](/docs/reference/types/tapevent).
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/tapevent).
 
 ### `on_enter`
 
@@ -209,13 +209,13 @@ A tap with a secondary button has occurred.
 
 A pointer that might cause a tap with a secondary button has contacted the screen at a particular location.
 
-Event handler argument is of type [`TapEvent`](/docs/reference/types/tapevent).
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/tapevent).
 
 ### `on_secondary_tap_up`
 
 A pointer that will trigger a tap with a secondary button has stopped contacting the screen at a particular location.
 
-Event handler argument is of type [`TapEvent`](/docs/reference/types/tapevent).
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/tapevent).
 
 ### `on_tap`
 
@@ -225,13 +225,13 @@ A tap with a primary button has occurred.
 
 A pointer that might cause a tap with a primary button has contacted the screen at a particular location.
 
-Event handler argument is of type [`TapEvent`](/docs/reference/types/tapevent).
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/tapevent).
 
 ### `on_tap_up`
 
 A pointer that will trigger a tap with a primary button has stopped contacting the screen at a particular location.
 
-Event handler argument is of type [`TapEvent`](/docs/reference/types/tapevent).
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/tapevent).
 
 ### `on_vertical_drag_end`
 
