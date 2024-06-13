@@ -415,19 +415,31 @@ Fires when the control has received focus.
 
 ## `Option` properties
 
+Represents an item in a dropdown. Either `key` or `text` must be specified, else an `AssertionError` will be raised.
+
 ### `alignment`
 
 Defines the alignment of this option in it's container.
 
 Value is of type [`Alignment`](/docs/reference/types/alignment) and defaults to `alignment.center_left`.
 
+### `content`
+
+A `Control` to display in this option. If not specified, `text` will be used as fallback, else `text`will be ignored.
+
 ### `key`
 
-Option's key. `text` value will be used instead if `key` is not specified.
+Option's key. If not specified `text` will be used as fallback.
 
 ### `text`
 
-Option's display text. `key` value will be used instead if `text` is not specified.
+Option's display text. If not specified `key` will be used as fallback.
+
+### `text_style`
+
+Defines the style of the `text`.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ## `Option` Events
 

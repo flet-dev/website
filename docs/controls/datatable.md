@@ -154,9 +154,14 @@ translucent background color.
 
 The minimum height of each row (excluding the row that contains column headings).
 
+Defaults to `48.0` and must be less than or equal to `data_row_max_height`.
+
 ### `data_row_max_height`
 
-The maximum height of each row (excluding the row that contains column headings).
+The maximum height of each row (excluding the row that contains column headings). Set to `float("inf")` for the height
+of each row to adjust automatically with its content.
+
+Defaults to `48.0` and must be greater than or equal to `data_row_min_height`.
 
 ### `data_text_style`
 

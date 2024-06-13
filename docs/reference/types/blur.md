@@ -17,4 +17,6 @@ Vertical sigma.
 
 ### `tile_mode`
 
-Tile mode of type [`BlurTileMode`](/docs/reference/types/blurtilemode) enum.
+The tile mode for the blur.
+
+Value is of type [`BlurTileMode`](/docs/reference/types/blurtilemode).

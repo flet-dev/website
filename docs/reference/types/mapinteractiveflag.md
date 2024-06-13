@@ -7,7 +7,6 @@ import TabItem from '@theme/TabItem';
 
 `MapInteractiveFlag` enum has the following values:
 
-
 ### `ALL`
 
 Flag for all interactions.
@@ -48,3 +47,26 @@ Flag for rotation.
 
 Flag for scroll wheel zoom.
 
+## Usage Example
+
+The enum is a flag, so multiple interactions can be combined together.
+
+* Add flags, with the bitwise 'OR' (|) operator in-between:
+
+```python
+map.MapConfiguration(
+    interaction_configuration=map.MapInteractionConfiguration(
+        flags=map.MapInteractiveFlag.PINCH_ZOOM | map.MapInteractiveFlag.ROTATE
+    )
+)
+```
+
+* Remove flags from `ALL`, using the `&` and `~` operators in-between:
+
+```python
+map.MapConfiguration(
+    interaction_configuration=map.MapInteractionConfiguration(
+        flags=map.MapInteractiveFlag.ALL & ~map.MapInteractiveFlag.ROTATE
+    )
+)
+```
