@@ -57,8 +57,8 @@ async def main(page: ft.Page):
     def handle_permission_request(e):
         page.add(ft.Text(f"request_permission: {gl.request_permission()}"))
 
-    def handle_has_permission(e):
-        page.add(ft.Text(f"has_permission: {gl.has_permission()}"))
+    def handle_get_permission_status(e):
+        page.add(ft.Text(f"get_permission_status: {gl.get_permission_status()}"))
 
     def handle_get_current_position(e):
         p = gl.get_current_position()
@@ -89,8 +89,8 @@ async def main(page: ft.Page):
                     on_click=handle_permission_request,
                 ),
                 ft.OutlinedButton(
-                    "has_permission",
-                    on_click=handle_has_permission,
+                    "get_permission_status",
+                    on_click=handle_get_permission_status,
                 ),
                 ft.OutlinedButton(
                     "get_current_position",
@@ -132,48 +132,58 @@ ft.app(main)
 
 ## Methods
 
-### `get_current_position()`
+### `get_current_position(accuracy)`
 
-Returns an instance of `GeolocatorPosition` whose values are available on the platform.
-`GeolocatorPosition` contains the following data members whose default value is None:
-* `latitude`-> float
-* `longitude`-> float
-* `speed`-> float
-* `altitude`-> float
-* `timestamp`-> str
-* `accuracy`-> float
-* `altitude_accuracy`-> float
-* `heading`-> float
-* `heading_accuracy`-> float
-* `speed_accuracy`-> float
-* `floor`-> int
-* `is_mocked`-> bool
+Gets the current position of the device with the desired accuracy.
 
-### `get_last_known_position()`
+This method has the following propertied:
 
-Returns an instance of `GeolocatorPosition` whose values are available on the platform.
+* `accuracy`: value is of type [`GeolocatorPositionAccuracy`](/docs/reference/types/geolocatorpositionaccuracy) and
+  defaults to `GeolocatorPositionAccuracy.BEST`
 
-### `has_permission()`
+Returns an instance of type [`GeolocatorPosition`](/docs/reference/types/geolocatorposition).
 
-Returns an instance of `LocationPermission` with any one of the following `Enum` member name.
-* `DENIED`
-* `DENIED_FOREVER`
-* `WHILE_IN_USE`
-* `ALWAYS`
-* `UNABLE_TO_DETERMINE`
+**Note:** Depending on the availability of different location services, this can take several seconds.
+It is recommended to call the `get_last_known_position()` method first to receive a known/cached position and update it
+with the result of `get_current_position()`
+
+### `get_last_known_position(accuracy)`
+
+Gets the last known position of the device with the specified accuracy. The `accuracy` parameter is of
+type [`GeolocatorPositionAccuracy`](/docs/reference/types/geolocatorpositionaccuracy) and defaults
+to `GeolocatorPositionAccuracy.BEST`.
+
+* `accuracy`: value is of type [`GeolocatorPositionAccuracy`](/docs/reference/types/geolocatorpositionaccuracy) and
+  defaults to `GeolocatorPositionAccuracy.BEST`
+
+Returns an instance of type [`GeolocatorPosition`](/docs/reference/types/geolocatorposition).
+
+### `get_permission_status()`
+
+Gets which permission the app has been granted to access the device's location.
+
+Returns an instance of type [`GeolocatorPermissionStatus`](/docs/reference/types/geolocatorpermissionstatus).
 
 ### `request_permission()`
 
-Returns an instance of `LocationPermission` with any one of the above mentioned `Enum` member name.
+Requests the device for access to the device's location.
+
+Returns an instance of type [`GeolocatorPermissionStatus`](/docs/reference/types/geolocatorpermissionstatus).
 
 ### `is_location_service_enabled()`
 
-Checks if location service is enable and returns `bool` status.
+Checks if location service is enable.
+
+Returns a boolean value: `True` if location service is enabled, `False` otherwise.
 
 ### `open_app_settings()`
 
-Attempts to open app setting and returns `bool` status.
+Attempts to open device's app settings.
+
+Returns a boolean value: `True` if the device's settings were opened successfully, `False` otherwise.
 
 ### `open_location_settings()`
 
-Attempts to open location setting and returns `bool` status.
+Attempts to open device's location settings.
+
+Returns a boolean value: `True` if the device's settings were opened successfully, `False` otherwise.
