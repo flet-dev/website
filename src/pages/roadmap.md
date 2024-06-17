@@ -25,15 +25,15 @@ Flet 1.0 launch checklist:
 * PyPI proxy service to "inject" mobile packages while installing project dependencies with `pip`.
 * Update `flet build` command to use new runtime and PyPI proxy.
 * Non-pure Python [packages](https://github.com/flet-dev/flet/discussions/categories/packages?discussions_q=is%3Aopen+category%3APackages+sort%3Atop) for iOS and Android, with CI and hosting:
-  * `numpy`
   * :construction: `pydantic-core`
   * :construction: `cryptography`
+  * :construction: `bcrypt`
+  * `numpy`
   * `opencv-python`
   * `pillow`
   * `pandas`
   * `protobuf`
   * `pycparser`
-  * :construction: `bcrypt`
   * [more](https://github.com/flet-dev/flet/discussions/categories/packages)
 
 ### Documentation
@@ -50,20 +50,20 @@ Flet 1.0 launch checklist:
 
 ### Controls
 
-* :white_check_mark: [AudioRecorder](https://flet.dev/docs/controls/audiorecorder)
-* :white_check_mark: [Autocomplete](https://github.com/flet-dev/flet/issues/791)
-* :white_check_mark: [AutofillGroup](https://github.com/flet-dev/flet/issues/848)
-* :white_check_mark: [Lottie](https://flet.dev/docs/controls/lottie)
-* :white_check_mark: [Rive](https://github.com/flet-dev/flet/issues/89)
-* :white_check_mark: [Video](https://flet.dev/docs/controls/video)
+* :white_check_mark: [AudioRecorder](/docs/controls/audiorecorder)
+* :white_check_mark: [Autocomplete](/docs/controls/autocomplete)
+* :white_check_mark: [AutofillGroup](/docs/controls/autofillgroup)
+* :white_check_mark: [Lottie](/docs/controls/lottie)
+* :white_check_mark: [Rive](/docs/controls/rive)
+* :white_check_mark: [Video](/docs/controls/video)
+* :white_check_mark: [Geolocator](/docs/controls/geolocator)
+* :white_check_mark: [Flashlight](/docs/controls/flashlight)
+* :white_check_mark: [Map](/docs/controls/map)
+* :white_check_mark: [PermissionHandler](/docs/controls/permissionhandler)
 * :construction: [Camera](https://github.com/flet-dev/flet/issues/1281)
-* :construction: [Geolocator](https://github.com/flet-dev/flet/issues/66)
-* :construction: [Flashlight](https://github.com/flet-dev/flet/issues/3188)
-* :construction: [Map](https://github.com/flet-dev/flet/issues/1193)
-* :construction: [PermissionHandler](https://github.com/flet-dev/flet/pull/3212)
+* :construction: [Google Mobile Ads](https://github.com/flet-dev/flet/issues/286)
 * [Context menu](https://github.com/flet-dev/flet/issues/1804)
 * [DropdownMenu](https://github.com/flet-dev/flet/issues/1088)
-* [Google Mobile Ads](https://github.com/flet-dev/flet/issues/286)
 * [InAppPurchase](https://github.com/flet-dev/flet/issues/853)
 * [PlatformMenuBar](https://github.com/flet-dev/flet/issues/285) (and [#116](https://github.com/flet-dev/flet/issues/116))
 * [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
