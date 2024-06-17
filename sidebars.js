@@ -366,7 +366,7 @@ module.exports = {
       items: [
         "tutorials/python-todo",
         "tutorials/python-calculator",
-        //"tutorials/trello-clone",
+        "tutorials/trello-clone",
         "tutorials/python-solitaire",
         "tutorials/python-chat",
       ],

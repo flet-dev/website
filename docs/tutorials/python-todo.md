@@ -355,6 +355,13 @@ class TodoApp(ft.Column):
     def tabs_changed(self, e):
         self.update()
 
+    def task_status_change(self, e):
+        self.update()
+
+    def add_clicked(self, e):
+        task = Task(self.new_task.value, self.task_status_change, self.task_delete)
+    # ...
+
 class Task(ft.Column):
     def __init__(self, task_name, task_status_change, task_delete):
         super().__init__()
