@@ -121,7 +121,7 @@ The name of the icon of the destination.
 
 The icon `Control` of the destination. Used instead of `icon` property.
 
-Typically the icon is an [`Icon`](/docs/controls/icon) control.
+Typically an [`Icon`](/docs/controls/icon) control.
 
 If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
 
