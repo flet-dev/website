@@ -315,6 +315,7 @@ module.exports = {
             "controls/draggable",
             "controls/dragtarget",
             "controls/filepicker",
+            "controls/flashlight",
             "controls/fletapp",
             "controls/gesturedetector",
             "controls/hapticfeedback",

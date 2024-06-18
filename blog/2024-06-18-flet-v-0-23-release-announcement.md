@@ -14,15 +14,15 @@ We are excited to announce the release of Flet 0.23.0. It is a big release with 
 
 - [`AutoComplete`](/docs/controls/autocomplete)
 - [`AutoFillGroup`](/docs/controls/autofillgroup)
-- [`Flashlight`](/docs/controls/flaslight)
+- [`Flashlight`](/docs/controls/flashlight)
 - [`Geolocator`](/docs/controls/geolocator)
 - [`Map`](/docs/controls/map)
-- [`PermissionHandler`](/docs/controls/persmissionhandler)
+- [`PermissionHandler`](/docs/controls/permissionhandler)
 
 ## New Properties
 
 - [`Option`](/docs/controls/dropdown#option-properties): `content`, `text_style`
-- [`TextStyle`](/docs/reference/textstyle): `baseline`, `overflow`, `word_spacing`
+- [`TextStyle`](/docs/reference/types/textstyle): `baseline`, `overflow`, `word_spacing`
 
 ## Error Handling
 
@@ -97,14 +97,12 @@ solving the remaining ones.
 
 * [`SafeArea.minimum`](/docs/controls/safearea#minimum) is deprecated and has been renamed
   to [`minimum_padding`](/docs/controls/safearea#minimum_padding)
-* `MaterialState` enum is deprecated and has been renamed to [`ControlState`](/docs/reference/controlstate)
+* `MaterialState` enum is deprecated and has been renamed to [`ControlState`](/docs/reference/types/controlstate)
 * `NavigationDestination` is deprecated and has been renamed
   to [`NavigationBarDestination`](/docs/controls/navigationbar#navigationbardestination-properties)
 
-Also, the deprecation policy has been modified. While Flet is pre-v01.0, all deprecations will be removed from the API
-after the next 3 releases.
-So the above deprecations made in v0.23.0 (and all the other deprecations made in the previous versions), will be
-removed in v0.26.0.
+Also, the deprecation policy has been modified. While Flet is pre-1.0, all deprecations will be removed from the API after the next 3 releases.
+So the above deprecations made in v0.23.0 (and all the other deprecations made in the previous versions), will be removed in v0.26.0.
 
 That's it!
 

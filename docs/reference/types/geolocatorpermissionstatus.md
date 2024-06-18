@@ -6,7 +6,7 @@ sidebar_label: GeolocatorPermissionStatus
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Defines the state of a [`GeolocatorPermissionType`](/docs/reference/types/geolocatorpermissiontype).
+Represent the possible location permissions.
 
 `GeolocatorPermissionStatus` enum has the following values:
 
