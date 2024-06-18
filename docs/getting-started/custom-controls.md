@@ -131,7 +131,7 @@ Custom controls provide life-cycle "hook" methods that you may need to use for d
 
 `build()` method is called when the control is being created and assigned its `self.page`. 
 
-Override `build()` method if you need to implement logic that cannot be executed in control's constructor because it requires access to the `self.page`. For example, choose the right icon depending on `self.page.platform` for your [adaptive app](adaptive-apps#custom-adaptive-controls). 
+Override `build()` method if you need to implement logic that cannot be executed in control's constructor because it requires access to the `self.page`. For example, choose the right icon depending on `self.page.platform` for your [adaptive app](/docs/getting-started/adaptive-apps/#custom-adaptive-controls). 
 
 ### `did_mount()` 
 
