@@ -67,8 +67,8 @@ def main(page: ft.Page):
             bgcolor="yellow",
             border=ft.border.all(2, "red"),
             border_radius=10,
-            vertical_lines=ft.border.BorderSide(3, "blue"),
-            horizontal_lines=ft.border.BorderSide(1, "green"),
+            vertical_lines=ft.BorderSide(3, "blue"),
+            horizontal_lines=ft.BorderSide(1, "green"),
             sort_column_index=0,
             sort_ascending=True,
             heading_row_color=ft.colors.BLACK12,
@@ -114,13 +114,13 @@ The background [color](/docs/reference/colors) for the table.
 
 The border around the table. 
 
-The value is an instance of [`border.Border`](/docs/reference/types/border) class.
+The value is an instance of [`Border`](/docs/reference/types/border) class.
 
 ### `border_radius`
 
 Border corners.
 
-Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
+Border radius is an instance of [`BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `checkbox_horizontal_margin`
 
@@ -130,9 +130,8 @@ Horizontal margin around the checkbox, if it is displayed.
 
 The content will be clipped (or not) according to this option. 
 
-Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
-
-Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.ANTI_ALIAS`
+if `border_radius!=None`; otherwise `ClipBehavior.HARD_EDGE`.
 
 ### `column_spacing`
 
@@ -146,41 +145,47 @@ A list of [`DataColumn`](#datacolumn) controls describing table columns.
 
 The background [color](/docs/reference/colors) for the data rows.
 
-The effective background color can be made to depend on the [`MaterialState`](/docs/reference/types/materialstate) state, i.e. if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent background color.
+The effective background color can be made to depend on the [`ControlState`](/docs/reference/types/controlstate) state,
+i.e. if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the
+row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a
+translucent background color.
 
 ### `data_row_min_height`
 
 The minimum height of each row (excluding the row that contains column headings).
 
+Defaults to `48.0` and must be less than or equal to `data_row_max_height`.
+
 ### `data_row_max_height`
 
-The maximum height of each row (excluding the row that contains column headings).
+The maximum height of each row (excluding the row that contains column headings). Set to `float("inf")` for the height
+of each row to adjust automatically with its content.
+
+Defaults to `48.0` and must be greater than or equal to `data_row_min_height`.
 
 ### `data_text_style`
 
-The text style for data rows. An instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
+The text style for data rows. An instance of [`TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `divider_thickness`
 
-The width of the divider that appears between `TableRow`s.
+The width of the divider that appears between `TableRow`s. Must be greater than or equal to zero.
 
-Must be greater than or equal to zero. This value defaults to 1.0.
+Defaults to 1.0.
 
 ### `gradient`
 
 The background gradient for the table.
 
-The value must be an instance of one of the following classes:
-
-* [`LinearGradient`](/docs/reference/types/lineargradient)
-* [`RadialGradient`](/docs/reference/types/radialgradient)
-* [`SweepGradient`](/docs/reference/types/sweepgradient)
+Value is of type [`Gradient`](/docs/reference/types/gradient).
 
 ### `heading_row_color`
 
 The background [color](/docs/reference/colors) for the heading row.
 
-The effective background color can be made to depend on the [`MaterialState`](/docs/reference/types/materialstate) state, i.e. if the row is pressed, hovered, focused when sorted. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
+The effective background color can be made to depend on the [`ControlState`](/docs/reference/types/controlstate) state,
+i.e. if the row is pressed, hovered, focused when sorted. The color is painted as an overlay to the row. To make sure
+that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
 
 ### `heading_row_height`
 
@@ -188,7 +193,7 @@ The height of the heading row.
 
 ### `heading_text_style`
 
-The text style for the heading row. An instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
+The text style for the heading row. An instance of [`TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `horizontal_lines`
 
@@ -238,7 +243,9 @@ When this is `None`, it implies that the table's sort order does not correspond 
 
 ### `vertical_lines`
 
-Set the [color](/docs/reference/colors) and width of vertical lines between columns. An instance of `ft.BorderSide` class.
+Set the [color](/docs/reference/colors) and width of vertical lines between columns.
+
+Value is of type [`BorderSide`](/docs/reference/types/borderside).
 
 ## `DataTable` events
 
@@ -249,9 +256,6 @@ Invoked when the user selects or unselects every row, using the checkbox in the 
 If this is `None`, then the `DataRow.on_select_changed` callback of every row in the table is invoked appropriately instead.
 
 To control whether a particular row is selectable or not, see `DataRow.on_select_changed`. This callback is only relevant if any row is selectable.
-
-
-
 
 ## `DataColumn`
 
@@ -285,8 +289,6 @@ Called when the user asks to sort the table using this column.
 
 If not set, the column will not be considered sortable.
 
-
-
 ## `DataRow`
 
 Row configuration and cell data for a DataTable.
@@ -307,7 +309,9 @@ The [color](/docs/reference/colors) for the row.
 
 By default, the color is transparent unless selected. Selected rows has a grey translucent color.
 
-The effective color can depend on the [`MaterialState`](/docs/reference/types/materialstate) state, if the row is selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
+The effective color can depend on the [`ControlState`](/docs/reference/types/controlstate) state, if the row is
+selected, pressed, hovered, focused, disabled or enabled. The color is painted as an overlay to the row. To make sure
+that the row's InkWell is visible (when pressed, hovered and focused), it is recommended to use a translucent color.
 
 ### `selected`
 
@@ -336,8 +340,6 @@ If any row is selectable, then the table's heading row will have a checkbox that
 A row whose `on_select_changed` callback is null is ignored for the purposes of determining the state of the "all" checkbox, and its checkbox is disabled.
 
 If a `DataCell` in the row has its `DataCell.on_tap` callback defined, that callback behavior overrides the gesture behavior of the row for that particular cell.
-
-
 
 ## `DataCell`
 
@@ -375,28 +377,33 @@ If this is set, `on_tap` should also be set, otherwise tapping the icon will hav
 
 Called when the cell is double tapped.
 
-If non-null, tapping the cell will call this callback. If null (including `on_tap`, `on_long_press`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, tapping the cell will call this callback, else (tapping the cell will attempt to select the row (
+if `DataRow.on_select_changed` is provided).
 
 ### `on_long_press`
 
 Called if the cell is long-pressed.
 
-If non-null, tapping the cell will invoke this callback. If null (including `on_double_tap`, `on_tap`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, tapping the cell will invoke this callback, else tapping the cell will attempt to select the row (
+if `DataRow.on_select_changed` is provided).
 
 ### `on_tap`
 
 Called if the cell is tapped.
 
-If non-null, tapping the cell will call this callback. If null (including `on_double_tap`, `on_long_press`, `on_tap_cancel` and `on_tap_down`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, tapping the cell will call this callback, else tapping the cell will attempt to select the row (
+if `DataRow.on_select_changed` is provided).
 
 ### `on_tap_cancel`
 
 Called if the user cancels a tap was started on cell.
 
-If non-null, cancelling the tap gesture will invoke this callback. If null (including `on_tap`, `on_double_tap`, `on_long_press`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, cancelling the tap gesture will invoke this callback, else tapping the cell will attempt to select the
+row (if `DataRow.on_select_changed` is provided).
 
 ### `on_tap_down`
 
 Called if the cell is tapped down.
 
-If non-null, tapping the cell will call this callback. If null (including `on_tap` `on_double_tap`, `on_long_press` and `on_tap_cancel`), tapping the cell will attempt to select the row (if `DataRow.on_select_changed` is provided).
+If specified, tapping the cell will call this callback, else tapping the cell will attempt to select the row (
+if `DataRow.on_select_changed` is provided).

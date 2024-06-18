@@ -58,11 +58,15 @@ ft.app(target=main)
 
 ### `animation_duration`
 
-Duration of animation in milliseconds of switching between tabs. Default is `50`.
+Duration of animation in milliseconds of switching between tabs.
+
+Defaults to `50`.
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+The content will be clipped (or not) according to this option.
+
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior).
 
 ### `divider_color`
 
@@ -70,7 +74,9 @@ The [color](/docs/reference/colors) of the divider.
 
 ### `divider_height`
 
-The height of the divider. Defaults to `1.0`.
+The height of the divider.
+
+Defaults to `1.0`.
 
 ### `enable_feedback`
 
@@ -100,7 +106,9 @@ Locates the selected tab's underline relative to the tab's boundary. The `indica
 
 ### `indicator_thickness`
 
-The thickness of the indicator. Value must be greater than zero. It defaults to `3.0` when `secondary=False`, else `3.0`.
+The thickness of the indicator. Value must be greater than zero.
+
+Defaults to `3.0` when `secondary=False`, else `3.0`.
 
 ### `is_secondary`
 
@@ -120,8 +128,9 @@ The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
 
 ### `overlay_color`
 
-Defines the ink response focus, hover, and splash [colors](/docs/reference/colors) in various [`MaterialState`](/docs/reference/types/materialstate) states. 
-The following `MaterialState` values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
+Defines the ink response focus, hover, and splash [colors](/docs/reference/colors) in
+various [`ControlState`](/docs/reference/types/controlstate) states.
+The following `ControlState` values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
 
 ### `selected_index`
 
@@ -137,13 +146,8 @@ If `scrollable` is `True`, then each tab is as wide as needed for its label and 
 
 Specifies the horizontal alignment of the tabs within the Tabs control.
 
-Property value is `TabAlignment` enum with the following values:
-
-* `NONE` 
-* `START` (default, if `scrollable` is `True`)
-* `START_OFFSET`
-* `FILL` (default, if `scrollable` is `False`)
-* `CENTER`
+Value is of type [`TabAlignment`](/docs/reference/types/tabalignment) and defaults to `TabAlignment.START`,
+if `scrollable=True`, and to `TabAlignment.FILL`, if `scrollable=False`.
 
 ### `tabs`
 

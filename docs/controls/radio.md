@@ -71,6 +71,10 @@ ft.app(target=main)
 
 ## `RadioGroup` properties
 
+### `content`
+
+The content of the RadioGroup. Typically a list of `Radio` controls nested in a container control, e.g. `Column`, `Row`.
+
 ### `value`
 
 Current value of the RadioGroup.
@@ -93,7 +97,7 @@ If the value is `True`, an adaptive Radio is created based on whether the target
 
 On iOS and macOS, a [`CupertinoRadio`](/docs/controls/cupertinoradio) is created, which has matching functionality and presentation as `Radio`, and the graphics as expected on iOS. On other platforms, a Material Radio is created.
 
-The default value is `False`.
+Defaults to `False`.
 
 ### `autofocus`
 
@@ -101,7 +105,8 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `fill_color`
 
-The [color](/docs/reference/colors) that fills the radio, in all or specific [`MaterialState`](/docs/reference/types/materialstate) states.
+The [color](/docs/reference/colors) that fills the radio, in all or
+specific [`ControlState`](/docs/reference/types/controlstate) states.
 
 ### `focus_color`
 
@@ -117,20 +122,24 @@ The clickable label to display on the right of a Radio.
 
 ### `label_style`
 
-The label's style. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
+The label's style.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `label_position`
 
-Property value is [`LabelPosition`](/docs/reference/types/labelposition) enum. The default value is `RIGHT`.
+Value is of type [`LabelPosition`](/docs/reference/types/labelposition) and defaults to `LabelPosition.RIGHT`.
 
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
-The value is [`MouseCursor`](/docs/reference/types/mousecursor) enum.
+
+Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
 
 ### `overlay_color`
 
-The overlay [color](/docs/reference/colors) of this radio in all or specific [`MaterialState`](/docs/reference/types/materialstate) states.
+The overlay [color](/docs/reference/colors) of this radio in all or
+specific [`ControlState`](/docs/reference/types/controlstate) states.
 
 ### `splash_radius`
 
@@ -146,7 +155,9 @@ The value to set to containing `RadioGroup` when the radio is selected.
 
 ### `visual_density`
 
-Defines how compact the radio's layout will be. The value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum.
+Defines how compact the radio's layout will be.
+
+Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity).
 
 ## `Radio` events
 

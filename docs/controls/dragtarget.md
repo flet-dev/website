@@ -3,7 +3,7 @@ title: DragTarget
 sidebar_label: DragTarget
 ---
 
-A control that completes drag operation when a [Draggable](/docs/controls/draggable) widget is dropped.
+A control that completes drag operation when a [`Draggable`](/docs/controls/draggable) widget is dropped.
 
 When a draggable is dragged on top of a drag target, the drag target is asked whether it will accept the data the draggable is carrying. The drag target will accept incoming drag if it belongs to the same `group` as draggable. If the user does drop the draggable on top of the drag target (and the drag target has indicated that it will accept the draggable's data), then the drag target is asked to accept the draggable's data.
 
@@ -119,11 +119,9 @@ The group this target belongs to. Note that for this target to accept an incomin
 
 ### `on_accept`
 
-Fires when the user does drop an acceptable(same `group`) draggable on this target. Event handler argument is an instance of `DragTargetEvent` class with the following fields:
+Fires when the user does drop an acceptable(same `group`) draggable on this target.
 
-* `src_id` - unique control ID of draggable.
-* `x` - x component of the global position when the specific pointer event occurred on the draggable.
-* `y` - y component of the global position when the specific pointer event occurred on the draggable.
+Event handler argument is an instance of [`DragTargetEvent`](/docs/reference/types/dragtargetevent).
 
 Use `page.get_control(e.src_id)` to retrieve Control reference by its ID.
 
@@ -133,7 +131,9 @@ Fires when a draggable leaves this target.
 
 ### `on_move`
 
-Fires when a draggable moves within this target. Event handler argument is also an instance of `DragTargetEvent` class.
+Fires when a draggable moves within this target.
+
+Event handler argument is of type [`DragTargetEvent`](/docs/reference/types/dragtargetevent).
 
 ### `on_will_accept`
 

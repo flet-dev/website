@@ -5,24 +5,44 @@ sidebar_label: OutlinedBorder
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-`OutlinedBorder` class has the following implementations:
+An abstract class that can be used to create custom borders. 
 
-  * `StadiumBorder`
-  * `RoundedRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `CircleBorder`
-  * `BeveledRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
-  * `ContinuousRectangleBorder`
-    * `radius` - border radius, an instance of `BorderRadius` class or a number.
+`OutlinedBorder` has the following implementations:
 
-### Example of usage
+### `StadiumBorder`
+
+Creates a border that looks like a stadium.
+
+### `RoundedRectangleBorder`
+
+Creates a border with rounded rectangle corners. It accepts the following parameters:
+
+* `radius` - border radius, an instance of [`BorderRadius`](/docs/reference/types/borderradius) or a number.
+
+### `CircleBorder`
+
+Creates a border with a circle shape.
+
+### `BeveledRectangleBorder`
+
+Creates a border with beveled rectangle corners. It accepts the following parameters:
+
+* `radius` - border radius, an instance of [`BorderRadius`](/docs/reference/types/borderradius) or a number.
+
+### `ContinuousRectangleBorder`
+
+Creates a border with continuous rectangle corners. It accepts the following parameters:
+
+* `radius` - border radius, an instance of [`BorderRadius`](/docs/reference/types/borderradius) or a number.
+
+## Usage example
+
+<img src="/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />
 
 ```python
 import flet as ft
 
 def main(page: ft.Page):
-
     page.floating_action_button = ft.FloatingActionButton(
         content=ft.Row(
             [ft.Icon(ft.icons.ADD), ft.Text("Add")], alignment="center", spacing=5
@@ -38,4 +58,3 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<img src="/img/docs/controls/floatingactionbutton/fab-with-custom-shape.png" className="screenshot-20" />

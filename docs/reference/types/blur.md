@@ -7,13 +7,16 @@ import TabItem from '@theme/TabItem';
 
 `Blur` class has the following properties:
 
-* `sigma_x` - horizontal sigma.
-* `sigma_y` - vertical sigma.
-* `tile_mode` - `BlurTileMode` enum value, defaults to `ft.BlurTileMode.CLAMP`.
+### `sigma_x`
 
-`BlurTileMode` enum has the following values:
+Horizontal sigma.
 
-* `CLAMP`
-* `DECAL`
-* `MIRROR`
-* `REPEATED`
+### `sigma_y`
+
+Vertical sigma.
+
+### `tile_mode`
+
+The tile mode for the blur.
+
+Value is of type [`BlurTileMode`](/docs/reference/types/blurtilemode).

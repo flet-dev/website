@@ -315,7 +315,7 @@ class TodoApp(ft.Column):
     # application's root control is a Column containing all other controls
     def __init__(self):
         super().__init__()
-        self.new_task = ft.TextField(hint_text="Whats needs to be done?", expand=True)
+        self.new_task = ft.TextField(hint_text="What's needs to be done?", expand=True)
         self.tasks = ft.Column()
 
         self.filter = ft.Tabs(

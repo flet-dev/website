@@ -78,6 +78,7 @@ Creating of an iOS package, suitable for running on a device or publishing to Ap
 
 To successfully generate IPA you should provide correct values for the following arguments:
 
-* `--org` - organization name in reverse domain name notation, e.g. `com.mycompany` (default is `com.flet`). The value is combined with `--project` and used as an iOS and Android bundle ID.
+* `--org` - organization name in reverse domain name notation, e.g. `com.mycompany` (defaults to `com.flet`). The value
+  is combined with `--project` and used as an iOS and Android bundle ID.
 * `--project` - project name in C-style identifier format (lowercase alphanumerics with underscores) used to build bundle ID and as a name for bundle executable. By default, it's the name of Flet app directory.
 * `--team` - team ID to locate provisioning profile. If no team ID provided a unsigned iOS archive will be generated.

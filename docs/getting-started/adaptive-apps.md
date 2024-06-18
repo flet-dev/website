@@ -26,9 +26,9 @@ def main(page):
 
     page.navigation_bar = ft.NavigationBar(
         destinations=[
-            ft.NavigationDestination(icon=ft.icons.EXPLORE, label="Explore"),
-            ft.NavigationDestination(icon=ft.icons.COMMUTE, label="Commute"),
-            ft.NavigationDestination(
+            ft.NavigationBarDestination(icon=ft.icons.EXPLORE, label="Explore"),
+            ft.NavigationBarDestination(icon=ft.icons.COMMUTE, label="Commute"),
+            ft.NavigationBarDestination(
                 icon=ft.icons.BOOKMARK_BORDER,
                 selected_icon=ft.icons.BOOKMARK,
                 label="Bookmark",
@@ -81,7 +81,9 @@ Most of Flet controls are based on [Material design](https://m3.material.io/).
 
 There is also a number of iOS-style controls in Flet that are called Cupertino controls. 
 
-Cupertino controls usually have a matching Material control that has [`adaptive`](/docs/controls#adaptive) property which by default is `False`. When using a Material control with `adaptive` property set to `True`, a different control will be created depending on the platform, for example:
+Cupertino controls usually have a matching Material control that has [`adaptive`](/docs/controls#adaptive) property
+which defaults to`False`. When using a Material control with `adaptive` property set to `True`, a different control will
+be created depending on the platform, for example:
 ```python
 ft.Checkbox(adaptive=True, value=True, label="Adaptive Checkbox")
 ```
@@ -271,10 +273,10 @@ Below is the list of adaptive Material controls and their matching Cupertino con
 
 While Flet offers a number of [controls](#material-and-cupertino-controls) that will be adapted to a platform automatically using their [`adaptive`](/docs/controls#adaptive) property, there will be cases when you need more specific adaptive UI presentation, for example, using different icon, background color, padding etc. depending on the platform.
 
-With Flet, you can create your own reusable custom controls in Python that will inherit from a Flet control and implement specific properties you need. In the example below, we are creating a new `AdaptiveNavigationDestination` control that will be displaying different icon on iOS and Android:
+With Flet, you can create your own reusable custom controls in Python that will inherit from a Flet control and implement specific properties you need. In the example below, we are creating a new `AdaptiveNavigationBarDestination` control that will be displaying different icon on iOS and Android:
 
 ```python
-class AdaptiveNavigationDestination(ft.NavigationDestination):
+class AdaptiveNavigationBarDestination(ft.NavigationBarDestination):
     def __init__(self, ios_icon, android_icon, label):
         super().__init__()
         self._ios_icon = ios_icon
@@ -291,11 +293,11 @@ class AdaptiveNavigationDestination(ft.NavigationDestination):
         )
 ```
 
-We will use `AdaptiveNavigationDestination` in `NavigationBar`:
+We will use `AdaptiveNavigationBarDestination` in `NavigationBar`:
 
 ```python
 import flet as ft
-from adaptive_navigation_destination import AdaptiveNavigationDestination
+from adaptive_navigation_destination import AdaptiveNavigationBarDestination
 
 def main(page):
 
@@ -304,17 +306,17 @@ def main(page):
     page.navigation_bar = ft.NavigationBar(
         selected_index=2,
         destinations=[
-            AdaptiveNavigationDestination(
+            AdaptiveNavigationBarDestination(
                 ios_icon=ft.cupertino_icons.PERSON_3_FILL,
                 android_icon=ft.icons.PERSON,
                 label="Contacts",
             ),
-            AdaptiveNavigationDestination(
+            AdaptiveNavigationBarDestination(
                 ios_icon=ft.cupertino_icons.CHAT_BUBBLE_2,
                 android_icon=ft.icons.CHAT,
                 label="Chats",
             ),
-            AdaptiveNavigationDestination(
+            AdaptiveNavigationBarDestination(
                 ios_icon=ft.cupertino_icons.SETTINGS,
                 android_icon=ft.icons.SETTINGS,
                 label="Settings",

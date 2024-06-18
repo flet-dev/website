@@ -48,18 +48,18 @@ def main(page: ft.Page):
         ft.Text("Size 70, w900, selectable", size=70, weight=ft.FontWeight.W_900, selectable=True),
         ft.Text("Limit long text to 1 line with ellipsis", theme_style=ft.TextThemeStyle.HEADLINE_SMALL),
         ft.Text(
-            "Proin rutrum, purus sit amet elementum volutpat, nunc lacus vulputate orci, cursus ultrices neque dui quis purus. Ut ultricies purus nec nibh bibendum, eget vestibulum metus varius. Duis convallis maximus justo, eu rutrum libero maximus id. Donec ullamcorper arcu in sapien molestie, non pellentesque tellus pellentesque. Nulla nec tristique ex. Maecenas euismod nisl enim, a convallis arcu laoreet at. Ut at tortor finibus, rutrum massa sit amet, pulvinar velit. Phasellus diam lorem, viverra vitae leo vitae, consequat suscipit lorem.",
+            "Proin rutrum, purus sit amet elementum volutpat, nunc lacus vulputate orci, cursus ultrices neque dui quis purus. Ut ultricies purus nec nibh bibendum, eget vestibulum metus various. Duis convallis maximus justo, eu rutrum libero maximus id. Donec ullamcorper arcu in sapien molestie, non pellentesque tellus pellentesque. Nulla nec tristique ex. Maecenas euismod nisl enim, a convallis arcu laoreet at. Ut at tortor finibus, rutrum massa sit amet, pulvinar velit. Phasellus diam lorem, viverra vitae leo vitae, consequat suscipit lorem.",
             max_lines=1,
             overflow=ft.TextOverflow.ELLIPSIS,
         ),
         ft.Text("Limit long text to 2 lines and fading", theme_style=ft.TextThemeStyle.HEADLINE_SMALL),
         ft.Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Nam varius at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Name various at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
             max_lines=2,
         ),
         ft.Text("Limit the width and height of long text", theme_style=ft.TextThemeStyle.HEADLINE_SMALL),
         ft.Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Nam varius at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Name various at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
             width=700,
             height=100,
         ),
@@ -401,20 +401,21 @@ If `True`, the glyphs in the text will be positioned as if there was unlimited h
 
 ### `overflow`
 
-Property value is `TextOverflow` enum with the following values:
+Controls how text overflows.
 
-- `FADE` (default)
-- `ELLIPSIS`
-- `CLIP`
-- `VISIBLE`
+Value is of type [`TextOverflow`](/docs/reference/types/textoverflow) and defaults to `TextOverflow.FADE`.
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left.
+
+Defaults to `False`.
 
 ### `selectable`
 
-`True` if text should be selectable.
+Whether the text should be selectable.
+
+Defaults to `False`.
 
 ### `semantics_label`
 
@@ -430,7 +431,9 @@ ft.Text("$$", semantics_label="Double dollars")
 
 ### `size`
 
-Text size in virtual pixels. Default is `14`.
+Text size in virtual pixels.
+
+Defaults to `14`.
 
 ### `spans`
 
@@ -438,33 +441,21 @@ The list of [`TextSpan`](/docs/reference/types/textspan) objects to build a rich
 
 ### `style`
 
-The text's style. An instance of type [`TextStyle`](/docs/reference/types/textstyle).
+The text's style.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `text_align`
 
 Text horizontal align.
 
-Property value is [`TextAlign`](/docs/reference/types/textalign) enum. Default is `LEFT`.
+Value is of type [`TextAlign`](/docs/reference/types/textalign) and defaults to `TextAlign.LEFT`.
 
 ### `theme_style`
 
-Property value is `TextThemeStyle` enum with one of the following values:
+Pre-defined text style.
 
-- `DISPLAY_LARGE`
-- `DISPLAY_MEDIUM`
-- `DISPLAY_SMALL`
-- `HEADLINE_LARGE`
-- `HEADLINE_MEDIUM`
-- `HEADLINE_SMALL`
-- `TITLE_LARGE`
-- `TITLE_MEDIUM`
-- `TITLE_SMALL`
-- `LABEL_LARGE`
-- `LABEL_MEDIUM`
-- `LABEL_SMALL`
-- `BODY_LARGE`
-- `BODY_MEDIUM`
-- `BODY_SMALL`
+Value is of type [`TextThemeStyle`](/docs/reference/types/textthemestyle).
 
 ### `value`
 
@@ -474,5 +465,5 @@ The text displayed.
 
 Font weight.
 
-Property value is [`FontWeight`](/docs/reference/types/fontweight) enum. Default is `NORMAL`.
+Value is of type [`FontWeight`](/docs/reference/types/fontweight) and defaults to `FontWeight.NORMAL`.
 

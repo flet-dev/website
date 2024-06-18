@@ -41,7 +41,8 @@ On "Download files" page of non-pure package you will find a bunch of wheels pre
 
 <img src="/img/blog/packaging/pypi-non-pure-package.png" className="screenshot-80 screenshot-rounded" />
 
-When you run `pip install <package>` pip tries to find a wheel for your specific platform and Python version looking at wheel sufixes that include that information.
+When you run `pip install <package>` pip tries to find a wheel for your specific platform and Python version looking at
+wheel suffixes that include that information.
 
 It's a courtesy of package developer to provide pre-compiled wheels for multiple platforms. There could be missing wheels for some platforms, or no wheels at all - just `.tar.gz` under "Source distribution" with package sources.
 

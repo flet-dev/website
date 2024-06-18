@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 `ThemeMode` enum has the following values:
 
-* `SYSTEM`
-* `LIGHT`
-* `DARK`
+### `SYSTEM`
+### `LIGHT`
+### `DARK`
 

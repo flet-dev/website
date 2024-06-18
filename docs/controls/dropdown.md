@@ -154,7 +154,7 @@ ft.app(target=main)
 
 Defines how the `hint` or the selected item is positioned within this dropdown.
 
-Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
+Alignment is an instance of [`Alignment`](/docs/reference/types/alignment) class.
 
 ### `autofocus`
 
@@ -168,7 +168,9 @@ To set a different background color for the dropdown button, use `fill_color` or
 
 ### `border`
 
-Border around input. The value is [`InputBorder`](/docs/reference/types/inputborder) enum. The default is `OUTLINE`.
+Border around input.
+
+Value is of type [`InputBorder`](/docs/reference/types/inputborder) and defaults to `InputBorder.OUTLINE`.
 
 ### `border_color`
 
@@ -176,11 +178,13 @@ Border [color](/docs/reference/colors). Could be `transparent` to hide the borde
 
 ### `border_radius`
 
-Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
+Border radius is an instance of [`BorderRadius`](/docs/reference/types/borderradius) class.
 
 ### `border_width`
 
-The width of the border in virtual pixels. Default is `1`. Set to `0` to completely remove border.
+The width of the border in virtual pixels. Set to `0` to completely remove border.
+
+Defaults to `1`.
 
 ### `color`
 
@@ -192,7 +196,7 @@ The [padding](/docs/reference/types/padding) for the input decoration's containe
 
 ### `counter_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `counter_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `counter_text`.
 
 ### `counter_text`
 
@@ -206,7 +210,9 @@ Whether the TextField is part of a dense form (ie, uses less vertical space).
 
 ### `elevation`
 
-The dropdown's elevation. Defaults to `8`.
+The dropdown's elevation.
+
+Defaults to `8`.
 
 ### `enable_feedback`
 
@@ -217,7 +223,7 @@ Defaults to `True`.
 
 ### `error_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `error_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `error_text`.
 
 ### `error_text`
 
@@ -254,7 +260,7 @@ Text [color](/docs/reference/colors) when Dropdown is focused.
 
 ### `helper_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `helper_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `helper_text`.
 
 ### `helper_text`
 
@@ -268,7 +274,7 @@ A placeholder control for the dropdown's value that is displayed when `value` is
 
 ### `hint_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `hint_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `hint_text`.
 
 ### `hint_text`
 
@@ -280,11 +286,11 @@ Displayed on top of the input when it's empty and either (a) `label` is null or 
 
 The name of the icon to show before the input field and outside of the decoration's container.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+Value is of type [`Padding`](/docs/reference/types/padding) or a number.
 
 ### `icon_content`
 
-The control to use for the drop-down button's icon. Defaults to an `Icon(ft.icons.ARROW_DROP_DOWN)`.
+The control to use for the drop-down button's icon. Defaults to an `Icon(icons.ARROW_DROP_DOWN)`.
 
 ### `icon_enabled_color`
 
@@ -296,7 +302,9 @@ The color of any `Icon` descendant of `icon_content` if this button is disabled.
 
 ### `icon_size`
 
-The size of the icon button which wraps `icon_content`. Defaults to `24.0`.
+The size of the icon button which wraps `icon_content`.
+
+Defaults to `24.0`.
 
 ### `item_height`
 
@@ -310,7 +318,7 @@ When the input field is empty and unfocused, the label is displayed on top of th
 
 ### `label_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `label`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `label`.
 
 ### `max_menu_height`
 
@@ -340,7 +348,7 @@ An icon that appears before the `prefix` or `prefix_text` and before the editabl
 
 ### `prefix_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `prefix_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `prefix_text`.
 
 ### `prefix_text`
 
@@ -362,7 +370,7 @@ An icon that appears after the editable part of the text field and after the `su
 
 ### `suffix_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for `suffix_text`.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for `suffix_text`.
 
 ### `suffix_text`
 
@@ -374,7 +382,8 @@ Text size in virtual pixels.
 
 ### `text_style`
 
-The [TextStyle](/docs/reference/types/textstyle) to use for text in this dropdown button and the dropdown menu that appears when you tap the button.
+The [`TextStyle`](/docs/reference/types/textstyle) to use for text in this dropdown button and the dropdown menu that
+appears when you tap the button.
 
 ### `value`
 
@@ -406,19 +415,31 @@ Fires when the control has received focus.
 
 ## `Option` properties
 
+Represents an item in a dropdown. Either `key` or `text` must be specified, else an `AssertionError` will be raised.
+
 ### `alignment`
 
-Defines the alignment of this option in it's container. Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class. 
+Defines the alignment of this option in it's container.
 
-Defaults to `alignment.center_left`.
+Value is of type [`Alignment`](/docs/reference/types/alignment) and defaults to `alignment.center_left`.
+
+### `content`
+
+A `Control` to display in this option. If not specified, `text` will be used as fallback, else `text`will be ignored.
 
 ### `key`
 
-Option's key. `text` value will be used instead if `key` is not specified.
+Option's key. If not specified `text` will be used as fallback.
 
 ### `text`
 
-Option's display text. `key` value will be used instead if `text` is not specified.
+Option's display text. If not specified `key` will be used as fallback.
+
+### `text_style`
+
+Defines the style of the `text`.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ## `Option` Events
 

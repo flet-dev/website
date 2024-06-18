@@ -36,23 +36,28 @@ A seed color to algorithmically derive the rest of theme colors from.
 
 #### `color_scheme`
 
-An instance of [`ColorScheme`](#colorscheme-class) class that allows to customize Material colors scheme derived from `color_scheme_seed`.
+Value is of type [`ColorScheme`](#colorscheme-class) class that allows to customize Material colors scheme derived
+from `color_scheme_seed`.
 
 #### `text_theme`
 
-An instance of [`TextTheme`](#texttheme-class) class to customize text styles that contrasts with the card and canvas colors.
+Defines text styles that contrasts with the card and canvas colors.
+
+Value is of type [`TextTheme`](#texttheme-class).
 
 #### `primary_text_theme`
 
-An instance of [`TextTheme`](#texttheme-class) class describing a text theme that contrasts with the primary color.
+Describes a text theme that contrasts with the primary color.
+
+Value is of type [`TextTheme`](#texttheme-class).
 
 #### `scrollbar_theme`
 
-An instance of [`ScrollbarTheme`](#scrollbartheme-class)
+Value is of type [`ScrollbarTheme`](#scrollbartheme-class)
 
 #### `tabs_theme`
 
-An instance of [`TabsTheme`](#tabstheme-class) 
+Value is of type [`TabsTheme`](#tabstheme-class)
 
 #### `font_family`
 
@@ -64,143 +69,136 @@ True` (default) to use Material 3 design; otherwise Material 2.
 
 #### `visual_density` 
 
-Value is of [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) enum. Default is `STANDARD`.
+Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) and defaults
+to `ThemeVisualDensity.STANDARD`.
 
 #### `page_transitions`
 
-An instance of [`PageTransitionsTheme`](#pagetransitionstheme-class)
+Value is of type [`PageTransitionsTheme`](#pagetransitionstheme-class)
 
 #### `system_overlay_style`
 
-An instance of [`SystemOverlayStyle`](#systemoverlaystyle-class)
+Value is of type [`SystemOverlayStyle`](#systemoverlaystyle-class)
 
 #### `appbar_theme`
 
-An instance of [`AppBarTheme`](#appbartheme-class).
+Value is of type [`AppBarTheme`](#appbartheme-class).
 
 #### `badge_theme`
 
-An instance of [`BadgeTheme`](#badgetheme-class).
+Value is of type [`BadgeTheme`](#badgetheme-class).
 
 #### `banner_theme`
 
-An instance of [`BannerTheme`](#bannertheme-class).
+Value is of type [`BannerTheme`](#bannertheme-class).
 
 #### `bottom_appbar_theme`
 
-An instance of [`BottomAppBarTheme`](#bottomappbartheme-class).
+Value is of type [`BottomAppBarTheme`](#bottomappbartheme-class).
 
 #### `bottom_navigation_bar_theme`
 
-An instance of [`BottomNavigationBarTheme`](#bottomnavigationbartheme-class).
+Value is of type [`BottomNavigationBarTheme`](#bottomnavigationbartheme-class).
 
 #### `bottom_sheet_theme`
 
-An instance of [`BottomSheetTheme`](#bottomsheettheme-class).
+Value is of type [`BottomSheetTheme`](#bottomsheettheme-class).
 
 #### `card_theme`
 
-An instance of [`CardTheme`](#cardtheme-class).
+Value is of type [`CardTheme`](#cardtheme-class).
 
 #### `checkbox_theme`
 
-An instance of [`CheckboxTheme`](#checkboxtheme-class).
+Value is of type [`CheckboxTheme`](#checkboxtheme-class).
 
 #### `chip_theme`
 
-An instance of [`ChipTheme`](#chiptheme-class).
+Value is of type [`ChipTheme`](#chiptheme-class).
 
 #### `date_picker_theme`
 
-An instance of [`DatePickerTheme`](#datepickertheme-class).
+Value is of type [`DatePickerTheme`](#datepickertheme-class).
 
 #### `dialog_theme`
 
-An instance of [`DialogTheme`](#dialogtheme-class).
+Value is of type [`DialogTheme`](#dialogtheme-class).
 
 #### `divider_theme`
 
-An instance of [`DividerTheme`](#dividertheme-class).
+Value is of type [`DividerTheme`](#dividertheme-class).
 
 #### `expansion_tile_theme`
 
-An instance of [`ExpansionTileTheme`](#expansiontiletheme-class).
+Value is of type [`ExpansionTileTheme`](#expansiontiletheme-class).
 
 #### `list_tile_theme`
 
-An instance of [`ListTileTheme`](#listtiletheme-class).
+Value is of type [`ListTileTheme`](#listtiletheme-class).
 
 #### `navigation_bar_theme`
 
-An instance of [`NavigationBarTheme`](#navigationbartheme-class).
+Value is of type [`NavigationBarTheme`](#navigationbartheme-class).
 
 #### `navigation_drawer_theme`
 
-An instance of [`NavigationDrawerTheme`](#navigationdrawertheme-class).
+Value is of type [`NavigationDrawerTheme`](#navigationdrawertheme-class).
 
 #### `navigation_rail_theme`
 
-An instance of [`NavigationRailTheme`](#navigationrailtheme-class).
+Value is of type [`NavigationRailTheme`](#navigationrailtheme-class).
 
 #### `popup_menu_theme`
 
-An instance of [`PopupMenuTheme`](#popupmenutheme-class).
+Value is of type [`PopupMenuTheme`](#popupmenutheme-class).
 
 #### `primary_color`
 
-XX
-
 #### `primary_color_dark`
-
-XX
 
 #### `primary_color_light`
 
-XX
-
 #### `primary_swatch`
-
-XX
 
 #### `progress_indicator_theme`
 
-An instance of [`ProgressIndicatorTheme`](#progressindicatortheme-class).
+Value is of type [`ProgressIndicatorTheme`](#progressindicatortheme-class).
 
 #### `radio_theme`
 
-An instance of [`RadioTheme`](#radiotheme-class).
+Value is of type [`RadioTheme`](#radiotheme-class).
 
 #### `search_bar_theme`
 
-An instance of [`SearchBarTheme`](#searchbartheme-class).
+Value is of type [`SearchBarTheme`](#searchbartheme-class).
 
 #### `search_view_theme`
 
-An instance of [`SearchViewTheme`](#searchviewtheme-class).
+Value is of type [`SearchViewTheme`](#searchviewtheme-class).
 
 #### `segmented_button_theme`
 
-An instance of [`SegmentedButtonTheme`](#segmentedbuttontheme-class).
+Value is of type [`SegmentedButtonTheme`](#segmentedbuttontheme-class).
 
 #### `slider_theme`
 
-An instance of [`SliderTheme`](#slidertheme-class).
+Value is of type [`SliderTheme`](#slidertheme-class).
 
 #### `snackbar_theme`
 
-An instance of [`SnackBarTheme`](#snackbartheme-class).
+Value is of type [`SnackBarTheme`](#snackbartheme-class).
 
 #### `switch_theme`
 
-An instance of [`SwitchTheme`](#switchtheme-class).
+Value is of type [`SwitchTheme`](#switchtheme-class).
 
 #### `time_picker_theme`
 
-An instance of [`TimePickerTheme`](#timepickertheme-class).
+Value is of type [`TimePickerTheme`](#timepickertheme-class).
 
 #### `tooltip_theme`
 
-An instance of [`TooltipTheme`](#tooltiptheme-class).
+Value is of type [`TooltipTheme`](#tooltiptheme-class).
 
 ### `ColorScheme` class
 
@@ -396,15 +394,23 @@ Customizes the colors, thickness, and shape of scrollbars across the app.
 
 #### `thumb_visibility`
 
-Indicates that the scrollbar thumb should be visible, even when a scroll is not underway. When `False`, the scrollbar will be shown during scrolling and will fade out otherwise. When `True`, the scrollbar will always be visible and never fade out. Property value could be either a single boolean value or a dictionary with `ft.MaterialState` as keys and boolean as values.
+Indicates that the scrollbar thumb should be visible, even when a scroll is not underway. When `False`, the scrollbar
+will be shown during scrolling and will fade out otherwise. When `True`, the scrollbar will always be visible and never
+fade out. Property value could be either a single boolean value or a dictionary with `ft.ControlState` as keys and
+boolean as values.
 
 #### `thickness`
 
-The thickness of the scrollbar in the cross axis of the scrollable. Property value could be either a single float value or a dictionary with `ft.MaterialState` as keys and float as values.
+The thickness of the scrollbar in the cross axis of the scrollable. Property value could be either a single float value
+or a dictionary with `ft.ControlState` as keys and float as values.
 
 #### `track_visibility`
 
-Indicates that the scrollbar track should be visible. When `True`, the scrollbar track will always be visible so long as the thumb is visible. If the scrollbar thumb is not visible, the track will not be visible either. Defaults to `False` when `None`. If this property is `None`, then `ScrollbarTheme.track_visibility` of `Theme.scrollbar_theme` is used. If that is also `None`, the default value is `False`. Property value could be either a single boolean value or a dictionary with `ft.MaterialState` as keys and boolean as values.
+Indicates that the scrollbar track should be visible. When `True`, the scrollbar track will always be visible so long as
+the thumb is visible. If the scrollbar thumb is not visible, the track will not be visible either. Defaults to `False`
+when `None`. If this property is `None`, then `ScrollbarTheme.track_visibility` of `Theme.scrollbar_theme` is used. If
+that is also `None`, the default value is `False`. Property value could be either a single boolean value or a dictionary
+with `ft.ControlState` as keys and boolean as values.
 
 #### `radius`
 
@@ -412,15 +418,18 @@ The Radius of the scrollbar thumb's rounded rectangle corners.
 
 #### `thumb_color`
 
-Overrides the default Color of the Scrollbar thumb. The value is either a single color string or `ft.MaterialState` dictionary.
+Overrides the default Color of the Scrollbar thumb. The value is either a single color string or `ft.ControlState`
+dictionary.
 
 #### `track_color`
 
-Overrides the default Color of the Scrollbar track. The value is either a single color string or `ft.MaterialState` dictionary.
+Overrides the default Color of the Scrollbar track. The value is either a single color string or `ft.ControlState`
+dictionary.
 
 #### `track_border_color`
 
-Overrides the default Color of the Scrollbar track border. The value is either a single color string or `ft.MaterialState` dictionary.
+Overrides the default Color of the Scrollbar track border. The value is either a single color string
+or `ft.ControlState` dictionary.
 
 #### `cross_axis_margin`
 
@@ -478,7 +487,8 @@ The color of unselected tab labels.
 
 #### `overlay_color`
 
-Defines the ink response focus, hover, and splash colors. If specified, it is resolved against one of `MaterialState.FOCUSED`, `MaterialState.HOVERED`, and `MaterialState.PRESSED`.
+Defines the ink response focus, hover, and splash colors. If specified, it is resolved against one
+of `ControlState.FOCUSED`, `ControlState.HOVERED`, and `ControlState.PRESSED`.
 
 ### `PageTransitionsTheme` class
 

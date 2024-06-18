@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 ## `TextSpan` properties
 
-A span of text.
+A span of [Text](/docs/controls/text).
 
 ### `semantics_label`
 
@@ -43,7 +43,7 @@ The URL to open when the span is clicked. If registered, `on_click` event is fir
 
 ### `url_target`
 
-Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
+Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Defaults to `UrlTarget.BLANK`.
 
 ## `TextSpan` events
 

@@ -72,9 +72,8 @@ extent of the main axis + `cache_extent` after the trailing edge.
 ### `clip_behavior`
 
 The content will be clipped (or not) according to this option.
-Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
 
-Default value is `HARD_EDGE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `HARD_EDGE`.
 
 ### `controls`
 
@@ -82,11 +81,14 @@ A list of `Control`s to display inside ListView.
 
 ### `divider_thickness`
 
-If greater than `0` then Divider is used as a spacing between ListView items.
+If greater than `0` then Divider is used as a spacing between list view items.
 
 ### `first_item_prototype`
 
-`True` if the dimensions of the first item should be used as a "prototype" for all other items, i.e. their height or width will be the same as the first item. Default is `False`.
+`True` if the dimensions of the first item should be used as a "prototype" for all other items, i.e. their height or
+width will be the same as the first item.
+
+Defaults to `False`.
 
 ### `horizontal`
 
@@ -98,17 +100,21 @@ A fixed height or width (for `horizontal` ListView) of an item to optimize rende
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+Throttling in milliseconds for `on_scroll` event.
+
+Defaults to `10`.
 
 ### `padding`
 
 The amount of space by which to inset the children.
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Value is of type[`Padding`](/docs/reference/types/padding).
 
 ### `reverse`
 
-Defines whether the scroll view scrolls in the reading direction. Defaults to `False`.
+Defines whether the scroll view scrolls in the reading direction.
+
+Defaults to `False`.
 
 ### `semantic_child_count`
 

@@ -20,9 +20,11 @@ import TabItem from '@theme/TabItem';
 
 An [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
 
-### `banner`
+### ~~`banner`~~
 
 A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(banner)`](#overlay) instead.**
 
 ### `bgcolor`
 
@@ -34,9 +36,11 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 
 [`BottomAppBar`](/docs/controls/bottomappbar) control to display at the bottom of the Page. If both [`bottom_appbar`](#bottom_appbar) and [`navigation_bar`](#navigation_bar) properties are provided, `NavigationBar` will be displayed.
 
-### `bottom_sheet`
+### ~~`bottom_sheet`~~
 
 [`BottomSheet`](/docs/controls/bottomsheet) control to display.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(bottom_sheet)`](#overlay) instead.**
 
 ### `client_ip`
 
@@ -63,17 +67,7 @@ page.update()
 </TabItem>
 </Tabs>
 
-or to get the same result as above using `page.add()` shortcut method:
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-page.add(ft.Text("Hello!"))
-```
-
-</TabItem>
-</Tabs>
+or to get the same result as above using [`page.add()`](#add) method
 
 To remove the top most control on the page:
 
@@ -102,9 +96,11 @@ Value is an instance of the `Theme()` class - more information in the [theming](
 
 Reserved for future use.
 
-### `dialog`
+### ~~`dialog`~~
 
 An [`AlertDialog`](/docs/controls/alertdialog) control to display.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(dialog)`](#overlay) instead.**
 
 ### `drawer`
 
@@ -232,7 +228,9 @@ Page name as specified in `ft.app()` call. Page name is set when Flet app is run
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+Throttling in milliseconds for `on_scroll` event.
+
+Defaults to `10`.
 
 ### `overlay`
 
@@ -253,19 +251,13 @@ page.update()
 </TabItem>
 </Tabs>
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Value is of type [`Padding`](/docs/reference/types/padding).
 
 ### `platform`
 
 Operating system the application is running on.
 
-Property value is `PagePlatform` enum with the following values:
-
-* `IOS`
-* `ANDROID`
-* `MACOS`
-* `WINDOWS`
-* `LINUX`
+Value is of type [`PagePlatform`](/docs/reference/types/pageplatform).
 
 This property can be used to create adaptive UI with different controls depending on the operating system:
 ```python
@@ -306,7 +298,9 @@ ft.app(target=main)
 
 ### `platform_brightness`
 
-The current brightness mode of the host platform: `ft.Brightness.LIGHT` or `ft.Brightness.DARK`. Read-only.
+The current brightness mode of the host platform.
+
+Value is read-only and of type [`Brightness`](/docs/reference/types/brightness).
 
 ### `pubsub`
 
@@ -409,7 +403,9 @@ def main(page: ft.Page):
 
 ### `pwa`
 
-`True` if the application is running as Progressive Web App (PWA). Read-only.
+`True` if the application is running as Progressive Web App (PWA).
+
+Value is read-only.
 
 ### `query`
 
@@ -422,27 +418,35 @@ more information and examples.
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left.
+
+Defaults to `False`.
 
 ### `scroll`
 
 Enables a vertical scrolling for the Page to prevent its content overflow.
 
-Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
+Value is of type [`ScrollMode`](/docs/reference/types/scrollmode).
 
 ### `session`
 
-A simple KV storage for session data.
+A simple key-value storage for session data.
 
 ### `session_id`
 
 A unique ID of user's session. This property is read-only.
 
+### ~~`snack_bar`~~
+
+A [`SnackBar`](/docs/controls/snackbar) control to display.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(snack_bar)`](#overlay) instead.**
+
 ### `spacing`
 
 Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
 
-### `splash`
+### ~~`splash`~~
 
 A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
 
@@ -472,6 +476,8 @@ ft.app(target=main)
 </TabItem>
 </Tabs>
 
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(splash)`](#overlay) instead.**
+
 ### `show_semantics_debugger`
 
 `True` turns on an overlay that shows the accessibility information reported by the framework.
@@ -486,7 +492,7 @@ Value is an instance of the `Theme()` class - more information in the [theming](
 
 Page theme.
 
-The value is [`ThemeMode`](/docs/reference/types/thememode) enum. Default is `SYSTEM`.
+Value is of type [`ThemeMode`](/docs/reference/types/thememode) and defaults to `ThemeMode.SYSTEM`.
 
 ### `title`
 
@@ -511,9 +517,8 @@ The complete web app's URL.
 
 How the child Controls should be placed vertically.
 
-Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum.
-
-For example, `MainAxisAlignment.START`, the default, places the children at the top of a Page.
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) and defaults
+to `MainAxisAlignment.START`.
 
 ### `views`
 
@@ -533,7 +538,9 @@ A width of a web page or content area of a native OS window containing Flet app.
 
 ### `window_always_on_top`
 
-🖥️ Desktop only. Sets whether the window should show always on top of other windows. Default is `False`.
+🖥️ Desktop only. Sets whether the window should show always on top of other windows.
+
+Defaults to `False`.
 
 ### `window_bgcolor`
 
@@ -566,7 +573,9 @@ ft.app(target=main)
 
 ### `window_full_screen`
 
-🖥️ Desktop only. Set to `True` to switch app's native OS window to a fullscreen mode. Default is `False`.
+🖥️ Desktop only. Set to `True` to switch app's native OS window to a fullscreen mode.
+
+Defaults to `False`.
 
 ### `window_height`
 
@@ -578,7 +587,9 @@ ft.app(target=main)
 
 ### `window_maximizable`
 
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Maximize" button. Default is `True`.
+🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Maximize" button.
+
+Defaults to `True`.
 
 ### `window_maximized`
 
@@ -594,7 +605,9 @@ ft.app(target=main)
 
 ### `window_minimizable`
 
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button. Default is `True`.
+🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button.
+
+Defaults to `True`.
 
 ### `window_minimized`
 
@@ -610,7 +623,10 @@ ft.app(target=main)
 
 ### `window_movable`
 
-🖥️ Desktop only. macOS only. Set to `False` to prevent user from changing a position of a native OS window containing Flet app. Default is `True`.
+🖥️ Desktop only. macOS only. Set to `False` to prevent user from changing a position of a native OS window containing
+Flet app.
+
+Defaults to `True`.
 
 ### `window_opacity`
 
@@ -618,7 +634,9 @@ ft.app(target=main)
 
 ### `window_resizable`
 
-🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app. Default is `True`.
+🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app.
+
+Defaults to `True`.
 
 ### `window_title_bar_hidden`
 
@@ -627,7 +645,9 @@ an app window with hidden title bar.
 
 ### `window_title_bar_buttons_hidden`
 
-🖥️ Desktop only. Set to `True` to hide window action buttons when a title bar is hidden. macOS only.
+🖥️ Desktop only. Set to `True` to hide window action buttons when a title bar is hidden.
+
+Has effect on macOS only.
 
 ### `window_top`
 
@@ -656,12 +676,8 @@ from time import sleep
 
 import flet as ft
 
-
 def main(page: ft.Page):
-
-    page.add(
-        ft.Text("Hello!")
-    )
+    page.add(ft.Text("Hello!"))
 
     sleep(3)
     page.window_visible = True
@@ -678,6 +694,14 @@ Note `view=ft.AppView.FLET_APP_HIDDEN` which hides app window on start.
 
 ## Methods
 
+### `add(*controls)`
+
+Adds controls to page
+
+```python
+page.add(ft.Text("Hello!"), ft.FilledButton("Button"))
+```
+
 ### `can_launch_url(url)`
 
 Checks whether the specified URL can be handled by some app installed on the device.
@@ -687,25 +711,47 @@ Returns `True` if it is possible to verify that there is a handler available. A 
 * On recent versions of Android and iOS, this will always return `False` unless the application has been configuration to allow querying the system for launch support.
 * On web, this will always return `False` except for a few specific schemes that are always assumed to be supported (such as http(s)), as web pages are never allowed to query installed applications.
 
-### `close_banner()`
+### `close(control)`
+
+Closes the provided control.
+
+It sets the `control.open=False` and calls `update()`.
+
+### ~~`close_banner()`~~
 
 Closes active banner.
 
-### `close_bottom_sheet()`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(banner)`](#closecontrol) instead.**
+
+### ~~`close_bottom_sheet()`~~
 
 Closes active bottom sheet.
 
-### `close_dialog()`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(bottom_sheet)`](#closecontrol) instead.**
+
+### ~~`close_dialog()`~~
 
 Closes active dialog.
 
-### `close_drawer()`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(dialog)`](#closecontrol) instead.**
+
+### ~~`close_drawer()`~~
 
 Closes active drawer.
 
-### `close_end_drawer()`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(drawer)`](#closecontrol) instead.**
+
+### ~~`close_end_drawer()`~~
 
 Closes active end drawer.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(end_drawer)`](#closecontrol) instead.**
+
+### ~~`close_snack_bar()`~~
+
+Closes active end drawer.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(snack_bar)`](#closecontrol) instead.**
 
 ### `close_in_app_web_view()`
 
@@ -757,8 +803,10 @@ Opens `url` in a new browser window.
 
 Optional method arguments:
 
-* `web_window_name` - window tab/name to open URL in: `_self` - the same browser tab, `_blank` - a new browser tab (or in external application on mobile device) or `<your name>` - a named tab.
-* `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
+* `web_window_name` - window tab/name to open URL in: [`UrlTarget.SELF`](/docs/reference/types/urltarget#self) - the
+  same browser tab, [`UrlTarget.BLANK`](/docs/reference/types/urltarget#blank) - a new browser tab (or in external
+  application on mobile device) or `<your name>` - a named tab.
+* `web_popup_window` - set to `True` to display a URL in a browser popup window. Defaults to `False`.
 * `window_width` - optional, popup window width.
 * `window_height` - optional, popup window height.
 
@@ -769,6 +817,12 @@ Starts OAuth flow. See [Authentication](/docs/cookbook/authentication) guide for
 ### `logout()`
 
 Clears current authentication context. See [Authentication](/docs/cookbook/authentication#signing-out) guide for more information and examples.
+
+### `open(control)`
+
+Opens the provided control.
+
+Adds this control to the [`page.overlay`](#overlay), sets the `control.open=True`, then calls `update()`.
 
 ### `remove(*controls)`
 
@@ -806,31 +860,42 @@ page.set_clipboard("This value comes from Flet app")
 </TabItem>
 </Tabs>
 
-### `show_banner(banner: Banner)`
+
+### ~~`show_banner(banner: Banner)`~~
 
 Displays the banner at the top of the page.
 
-### `show_bottom_sheet(bottom_sheet: BottomSheet)`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(banner)`](#opencontrol) instead.**
+
+### ~~`show_bottom_sheet(bottom_sheet: BottomSheet)`~~
 
 Displays bottom sheet at the bottom of the page.
 
-### `show_dialog(dialog: AlertDialog)`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(bottom_sheet)`](#opencontrol) instead.**
+
+### ~~`show_dialog(dialog: AlertDialog)`~~
 
 Displays dialog.
 
-### `show_drawer(drawer: NavigationDialog)`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(dialog)`](#opencontrol) instead.**
+
+### ~~`show_drawer(drawer: NavigationDialog)`~~
 
 Displays [`drawer`](#drawer).
 
-### `show_end_drawer(drawer: NavigationDialog)`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(drawer)`](#opencontrol) instead.**
+
+### ~~`show_end_drawer(drawer: NavigationDialog)`~~
 
 Displays [`end_drawer`](#end_drawer).
 
-### `show_snack_bar(snack_bar: SnackBar)`
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(end_drawer)`](#opencontrol) instead.**
 
-Displays SnackBar at the bottom of the page.
+### ~~`show_snack_bar(snack_bar: SnackBar)`~~
 
-`snack_bar` - A [`SnackBar`](/docs/controls/snackbar) control to display at the bottom of the Page.
+Displays [`SnackBar`](/docs/controls/snackbar) at the bottom of the page.
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(snack_bar)`](#opencontrol) instead.**
 
 ### `window_center()`
 
@@ -1067,3 +1132,14 @@ Fires when an application's native OS window changes its state: position, size, 
 * `moved` (macOS and Windows only)
 * `enterFullScreen`
 * `leaveFullScreen`
+
+## Magic methods
+
+### `__contains__(control)`
+
+Checks if a control is present on the page, for example:
+
+```python
+page.add(ft.Text('Hi'))
+print(ft.Text('Hi') in page) # True
+```

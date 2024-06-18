@@ -106,7 +106,9 @@ If `False`, then the `selected_icon` is not used and will not be displayed on `s
 
 ### `style`
 
-Customizes this button's appearance. The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class. 
+Customizes this button's appearance.
+
+Value is of type [`ButtonStyle`](/docs/reference/types/buttonstyle).
 
 ## Events
 
@@ -122,11 +124,11 @@ Determines if the segment is available for selection.
 
 ### `icon`
 
-The icon (usually an `Icon`) to be displayed in the segment.
+The icon (typically an [`Icon`](/docs/controls/icon)) to be displayed in the segment.
 
 ### `label`
 
-The label (usually a `Text`) to be displayed in the segment.
+The label (usually a [`Text`](/docs/controls/text)) to be displayed in the segment.
 
 ### `tooltip`
 

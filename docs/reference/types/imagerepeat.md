@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 `ImageRepeat` enum has the following values:
 
-* `NO_REPEAT`
-* `REPEAT`
-* `REPEAT_X`
-* `REPEAT_Y`
+### `NO_REPEAT`
+### `REPEAT`
+### `REPEAT_X`
+### `REPEAT_Y`

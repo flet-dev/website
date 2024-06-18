@@ -21,52 +21,50 @@ import TabItem from '@theme/TabItem';
 ```python
 import flet as ft
 
+
 def main(page):
-    page.window_height, page.window_width = 500, 400
-
-    def close_yes_dlg(e):
-        page.close_dialog()
-        dlg.data.confirm_dismiss(True)
-
-    def close_no_dlg(e):
-        page.close_dialog()
-        dlg.data.confirm_dismiss(False)
+    def handle_dlg_action_clicked(e):
+        page.close(dlg)
+        dlg.data.confirm_dismiss(e.control.data)
 
     dlg = ft.AlertDialog(
         modal=True,
         title=ft.Text("Please confirm"),
         content=ft.Text("Do you really want to delete this item?"),
         actions=[
-            ft.TextButton("Yes", on_click=close_yes_dlg),
-            ft.TextButton("No", on_click=close_no_dlg),
+            ft.TextButton("Yes", data=True, on_click=handle_dlg_action_clicked),
+            ft.TextButton("No", data=False, on_click=handle_dlg_action_clicked),
         ],
         actions_alignment=ft.MainAxisAlignment.CENTER,
     )
 
     def handle_confirm_dismiss(e: ft.DismissibleDismissEvent):
-        if e.direction == ft.DismissDirection.END_TO_START: # right-to-left slide
-            # save current dismissible to dialog's data
+        if e.direction == ft.DismissDirection.END_TO_START:  # right-to-left slide
+            # save current dismissible to dialog's data, for confirmation in handle_dlg_action_clicked
             dlg.data = e.control
-            page.show_dialog(dlg)
-        else: # left-to-right slide
+            page.open(dlg)
+        else:  # left-to-right slide
             e.control.confirm_dismiss(True)
 
     def handle_dismiss(e):
-        lv.controls.remove(e.control)
+        e.control.parent.controls.remove(e.control)
         page.update()
 
     def handle_update(e: ft.DismissibleUpdateEvent):
-        print(f"Update - direction: {e.direction}, progress: {e.progress}, reached: {e.reached}, previous_reached: {e.previous_reached}")
+        print(
+            f"Update - direction: {e.direction}, progress: {e.progress}, reached: {e.reached}, previous_reached: {e.previous_reached}"
+        )
 
     page.add(
-        lv := ft.ListView(
+        ft.ListView(
+            expand=True,
             controls=[
                 ft.Dismissible(
                     content=ft.ListTile(title=ft.Text(f"Item {i}")),
                     dismiss_direction=ft.DismissDirection.HORIZONTAL,
                     background=ft.Container(bgcolor=ft.colors.GREEN),
                     secondary_background=ft.Container(bgcolor=ft.colors.RED),
-                    on_dismiss=handle_dismiss, 
+                    on_dismiss=handle_dismiss,
                     on_update=handle_update,
                     on_confirm_dismiss=handle_confirm_dismiss,
                     dismiss_thresholds={
@@ -76,7 +74,6 @@ def main(page):
                 )
                 for i in range(10)
             ],
-            expand=True,
         )
     )
 
@@ -108,15 +105,9 @@ If non-zero value is given then widget moves in cross direction depending on whe
 
 ### `dismiss_direction`
 
-The direction in which the control can be dismissed. Specified using the `DismissDirection` enum:
+The direction in which the control can be dismissed.
 
-- `DismissDirection.NONE`
-- `DismissDirection.VERTICAL`
-- `DismissDirection.HORIZONTAL`
-- `DismissDirection.END_TO_START`
-- `DismissDirection.START_TO_END`
-- `DismissDirection.UP`
-- `DismissDirection.DOWN`
+Value is of type [`DismissDirection`](/docs/reference/types/dismissdirection).
 
 ### `dismiss_thresholds`
 
@@ -124,7 +115,8 @@ The offset threshold the item has to be dragged in order to be considered dismis
 
 Ex: a threshold of `0.4` (the default) means that the item has to be dragged _at least_ 40% in order for it to be dismissed.
 
-It is specified as a dictionary where the key is of type `DismissDirection` and the value is the threshold(fractional/decimal value between `0.0` and `1.0`).:
+It is specified as a dictionary where the key is of type [`DismissDirection`](/docs/reference/types/dismissdirection)
+and the value is the threshold(fractional/decimal value between `0.0` and `1.0`):
 
 ```python
 ft.Dismissible(
@@ -147,7 +139,8 @@ The amount of time the control will spend contracting before `on_dismiss` is cal
 ### `secondary_background`
 
 A control that is stacked behind the `content` and is exposed when the `content` has been dragged up or to the left. 
-It may only be specified when `background` has also been specified.
+
+Has no effect if `background` is not specified.
 
 ## Events
 

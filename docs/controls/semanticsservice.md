@@ -14,9 +14,11 @@ import TabItem from '@theme/TabItem';
 
 Sends a semantic announcement with the given `message`. This should preferably be used for announcement that are not seamlessly announced by the system as a result of a UI state change.
 
-`rtl` is a boolean and indicates the text direction of the `message`. Defaults to `False`.
+`rtl` is a boolean and indicates the text direction of the `message`.
 
 The `assertiveness` level of the announcement is only supported by the web engine and has no effect on other platforms. Value is an `Assertiveness` enum and can either be `Assertiveness.ASSERTIVE` or `Assertiveness.POLITE` (default).
+
+Defaults to `False`.
 
 ### `announce_tooltip(message)`
 

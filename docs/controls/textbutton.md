@@ -150,7 +150,7 @@ If the value is `True`, an adaptive Button is created based on whether the targe
 
 On iOS and macOS, a [`CupertinoButton`](/docs/controls/cupertinobutton) is created, which matches the functionality and presentation of this button. On other platforms, a Material `TextButton` is created.
 
-The default value is `False`.
+Defaults to `False`.
 
 ### `autofocus`
 
@@ -170,7 +170,7 @@ Icon [color](/docs/reference/colors).
 
 ### `style`
 
-The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class. 
+Value is of type [`ButtonStyle`](/docs/reference/types/buttonstyle).
 
 ### `text`
 
@@ -186,7 +186,8 @@ The URL to open when the button is clicked. If registered, `on_click` event is f
 
 ### `url_target`
 
-Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
+Where to open URL in the web mode. Value is of type [`UrlTarget`](/docs/reference/types/urltarget) and defaults
+to `UrlTarget.BLANK`.
 
 ## Methods
 

@@ -301,15 +301,15 @@ def main(page: ft.Page):
     page.theme = ft.Theme(
         scrollbar_theme=ft.ScrollbarTheme(
             track_color={
-                ft.MaterialState.HOVERED: ft.colors.AMBER,
-                ft.MaterialState.DEFAULT: ft.colors.TRANSPARENT,
+                ft.ControlState.HOVERED: ft.colors.AMBER,
+                ft.ControlState.DEFAULT: ft.colors.TRANSPARENT,
             },
             track_visibility=True,
             track_border_color=ft.colors.BLUE,
             thumb_visibility=True,
             thumb_color={
-                ft.MaterialState.HOVERED: ft.colors.RED,
-                ft.MaterialState.DEFAULT: ft.colors.GREY_300,
+                ft.ControlState.HOVERED: ft.colors.RED,
+                ft.ControlState.DEFAULT: ft.colors.GREY_300,
             },
             thickness=30,
             radius=15,
@@ -373,7 +373,7 @@ ft.app(main)
 
 How the child Controls should be placed vertically.
 
-Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum.
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment).
 
 ### `auto_scroll`
 
@@ -387,7 +387,8 @@ A list of Controls to display inside the Column.
 
 How the child Controls should be placed horizontally.
 
-Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
+Value is of type [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) and defaults
+to `CrossAxisAlignment.START`.
 
 ### `on_scroll_interval`
 
@@ -405,7 +406,7 @@ Spacing between runs when `wrap=True`. Default value is 10.
 
 Enables a vertical scrolling for the Column to prevent its content overflow.
 
-Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
+Value is of type [`ScrollMode`](/docs/reference/types/scrollmode) and defaults to `ScrollMode.None`.
 
 ### `spacing`
 
@@ -413,7 +414,9 @@ Spacing between controls in a Column. Default value is 10 virtual pixels. Spacin
 
 ### `tight`
 
-Specifies how much space should be occupied vertically. Default is `False` - allocate all space to children.
+Specifies how much space should be occupied vertically.
+
+Defaults to `False` - allocate all space to children.
 
 ### `wrap`
 
@@ -473,9 +476,10 @@ ft.app(main)
 `scroll_to()` method won't work with `ListView` and `GridView` controls building their items dynamically.
 :::
 
-`duration` is scrolling animation duration in milliseconds. Defaults to 0 - no animation.
+`duration` is scrolling animation duration in milliseconds. Defaults to `0` - no animation.
 
-`curve` configures animation curve. Property value is [`AnimationCurve`](/docs/reference/types/animationcurve) enum. Defaults to `ft.AnimationCurve.EASE`.
+`curve` configures animation curve. Property value is [`AnimationCurve`](/docs/reference/types/animationcurve) enum.
+Defaults to `AnimationCurve.EASE`.
 
 ## Events
 

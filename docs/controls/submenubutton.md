@@ -51,7 +51,7 @@ def main(page: ft.Page):
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Blue"),
-                                style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.BLUE}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.BLUE}),
                                 on_click=handle_color_click,
                                 on_hover=handle_on_hover,
                             )
@@ -63,7 +63,7 @@ def main(page: ft.Page):
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Green"),
-                                style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.GREEN}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN}),
                                 on_click=handle_color_click,
                                 on_hover=handle_on_hover,
                             )
@@ -75,7 +75,7 @@ def main(page: ft.Page):
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Red"),
-                                style=ft.ButtonStyle(bgcolor={ft.MaterialState.HOVERED: ft.colors.RED}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.RED}),
                                 on_click=handle_color_click,
                                 on_hover=handle_on_hover,
                             )
@@ -115,9 +115,9 @@ The offset of the menu relative to the alignment origin determined by `MenuStyle
 
 ### `clip_behavior`
 
-Whether to clip the content of this control or not. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+Whether to clip the content of this control or not.
 
-Defaults to `HARD_EDGE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.HARD_EDGE`.
 
 ### `content`
 
@@ -135,23 +135,27 @@ If this list is empty, then the button for this menu item will be disabled.
 
 ### `leading`
 
-An optional control to display before the `content`. Typically an [`Icon`](/docs/controls/icon) control.
+An optional control to display before the `content`.
+
+Typically an [`Icon`](/docs/controls/icon) control.
 
 ### `menu_style`
 
 Customizes this menu's appearance.
 
-The value is an instance of [`MenuStyle`](/docs/reference/types/menustyle) class.
+Value is of type [`MenuStyle`](/docs/reference/types/menustyle).
 
 ### `style`
 
 Customizes this button's appearance.
 
-The value is an instance of [`ButtonStyle`](/docs/reference/types/buttonstyle) class. 
+Value is of type [`ButtonStyle`](/docs/reference/types/buttonstyle).
 
 ### `trailing`
 
-An optional control to display after the `content`. Typically an [`Icon`](/docs/controls/icon) control.
+An optional control to display after the `content`.
+
+Typically an [`Icon`](/docs/controls/icon) control.
 
 ## Events
 

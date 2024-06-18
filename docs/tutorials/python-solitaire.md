@@ -499,7 +499,7 @@ Let’s create `get_draggable_pile()` method that will get the list of cards tha
         """returns list of cards that will be dragged together, starting with the current card"""
         if self.slot is not None:
             self.draggable_pile = self.slot.pile[self.slot.pile.index(self) :]
-        else:  # slot == None when the cards are dealed and need to be place in slot for the first time
+        else:  # slot == None when the cards are dealt and need to be place in slot for the first time
             self.draggable_pile = [self]
 ```
 
@@ -567,7 +567,7 @@ Let’s take a look at the [wikipedia article about Klondike (solitaire)](https:
 > Klondike is played with a standard 52-card deck.
 
 > After shuffling, a tableau of seven fanned piles of cards is laid from left to right. From left to right, each pile contains one more card than the last. The first and left-most pile contains a single upturned card, the second pile contains two cards, the third pile contains three cards, the fourth pile contains four cards, the fifth pile contains five cards, the sixth pile contains six cards, and the seventh pile contains seven cards. The topmost card of each pile is turned face up.
-The remaining cards form the stock and are placed facedown at the upper left of the layout.
+> The remaining cards form the stock and are placed facedown at the upper left of the layout.
 
 > The four foundations (light rectangles in the upper right of the figure) are built up by suit from Ace (low in this game) to King, and the tableau piles can be built down by alternate colors.
 
@@ -923,7 +923,7 @@ def drop(self, e: ft.DragEndEvent):
 
 As a final touch for foundations rules, let’s implement `doublclick` method for `on_double_tap` event of a card. It will be checking if the faced-up card fits into any of the foundations and place it there:
 ```python
-   def doubleclick(self, e):
+   def double-click(self, e):
        self.get_draggable_pile()
        if self.face_up and len(self.draggable_pile == 1):
            self.move_on_top()
@@ -1031,7 +1031,7 @@ For `card.place()` method to work properly with cards from Stock and Waste, we�
             and self.slot != self.solitaire.waste
         ):
             self.draggable_pile = self.slot.pile[self.slot.pile.index(self) :]
-        else:  # slot == None when the cards are dealed and need to be place in slot for the first time
+        else:  # slot == None when the cards are dealt and need to be place in slot for the first time
             self.draggable_pile = [self]
 ```
 All done! The full source code for this step can be found [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-game-rules).

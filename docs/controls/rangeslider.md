@@ -145,11 +145,11 @@ If not set, then the labels will not be displayed.
 
 ### `max`
 
-The maximum value the user can select.
-
-Defaults to `1.0`. Must be greater than or equal to `min`.
+The maximum value the user can select. Must be greater than or equal to `min`.
 
 If the `max` is equal to the `min`, then the slider is disabled.
+
+Defaults to `1.0`.
 
 ### `min`
 
@@ -161,7 +161,8 @@ If the `max` is equal to the `min`, then the slider is disabled.
 
 ### `overlay_color`
 
-The highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is in `HOVERED` or `DRAGGED` [`MaterialState`](/docs/reference/types/materialstate)s.
+The highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is
+in `HOVERED` or `DRAGGED` [`ControlState`](/docs/reference/types/controlstate)s.
 
 ### `round`
 

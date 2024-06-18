@@ -7,8 +7,8 @@ import TabItem from '@theme/TabItem';
 
 `ThemeVisualDensity` enum has the following values:
 
-* `NONE`
-* `STANDARD`
-* `COMPACT`
-* `COMFORTABLE`
-* `ADAPTIVE_PLATFORM_DENSITY`
+### `NONE`
+### `STANDARD`
+### `COMPACT`
+### `COMFORTABLE`
+### `ADAPTIVE_PLATFORM_DENSITY`

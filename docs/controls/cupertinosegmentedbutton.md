@@ -61,7 +61,7 @@ The [color](/docs/reference/colors) of the button's border.
 The [color](/docs/reference/colors) used to fill the background of this control when temporarily interacting with
 through a long press or drag.
 
-Defaults to the `selected_color` at 20% opacity.
+Defaults to the `selected_color` with 20% opacity.
 
 ### `controls`
 
@@ -69,7 +69,7 @@ A list of `Control`s to display as segments inside the CupertinoSegmentedButton.
 
 ### `padding`
 
-The button's padding. Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+The button's padding. Padding value is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 ### `selected_color`
 

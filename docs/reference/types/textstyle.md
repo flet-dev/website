@@ -9,6 +9,13 @@ import TabItem from '@theme/TabItem';
 
 A style describing how to format and paint text.
 
+### `baseline`
+
+The common baseline that should be aligned between this text span and its parent text span, or, for the root text spans,
+with the line box.
+
+Value is of type [`TextBaseline`](/docs/reference/types/textbaseline).
+
 ### `bgcolor`
 
 Text background [color](/docs/reference/colors).
@@ -21,18 +28,7 @@ Text foreground [color](/docs/reference/colors).
 
 The decorations to paint near the text (e.g., an underline).
 
-The value is the instance of `ft.TextDecoration` enum:
-
-- `NONE` (default) - Do not draw a decoration.
-- `UNDERLINE` - Draw a line underneath each line of text.
-- `OVERLINE` - Draw a line above each line of text.
-- `LINE_THROUGH` - Draw a line through each line of text.
-
-The enum is a flag, so multiple decorations can be combined together, for example:
-
-```python
-style = ft.TextStyle(decoration=ft.TextDecoration.UNDERLINE | ft.TextDecoration.OVERLINE)
-```
+Value is of type [`TextDecoration`](/docs/reference/types/textdecoration).
 
 ### `decoration_color`
 
@@ -42,13 +38,8 @@ The [color](/docs/reference/colors) in which to paint the text decorations.
 
 The style in which to paint the text decorations (e.g., dashed).
 
-The value is the instance of `ft.TextDecorationStyle` enum:
-
-- `SOLID` (default) - Draw a solid line.
-- `DOUBLE` - Draw two lines.
-- `DOTTED` - Draw a dotted line.
-- `DASHED` - Draw a dashed line.
-- `WAVY` - Draw a sinusoidal line.
+Value is of type [`TextDecorationStyle`](/docs/reference/types/textdecorationstyle) and defaults
+to `TextDecorationStyle.SOLID`.
 
 ### `decoration_thickness`
 
@@ -62,12 +53,13 @@ See [`Text.font_family`](/docs/controls/text#font_family).
 
 The paint drawn as a foreground for the text.
 
-The value of this property is the instance of [`Paint`](/docs/reference/types/paint) class.
+Value is of type [`Paint`](/docs/reference/types/paint).
 
 ### `height`
 
 The height of this text span, as a multiple of the font size.
-See complete explanation [here](https://api.flutter.dev/flutter/painting/TextStyle/height.html).
+
+See detailed explanation [here](https://api.flutter.dev/flutter/painting/TextStyle/height.html).
 
 ### `italic`
 
@@ -77,14 +69,27 @@ See complete explanation [here](https://api.flutter.dev/flutter/painting/TextSty
 
 The amount of space (in logical pixels) to add between each letter. A negative value can be used to bring the letters closer.
 
+### `overflow`
+
+How visual text overflow should be handled.
+
+Value is of type [`TextOverflow`](/docs/reference/types/textoverflow).
+
 ### `shadow`
 
 The value of this property is a single instance or a list of [`BoxShadow`](/docs/reference/types/boxshadow) class instances.
 
 ### `size`
 
-The size of glyphs (in logical pixels) to use when painting the text. Default is 14.
+The size of glyphs (in logical pixels) to use when painting the text.
+
+Defaults to `14`.
 
 ### `weight`
 
-Property value is [`FontWeight`](/docs/reference/types/fontweight) enum. Default is `NORMAL`.
+Value is of type [`FontWeight`](/docs/reference/types/fontweight) and defaults to `FontWeight.NORMAL`.
+
+### `word_spacing`
+
+The amount of space (in logical pixels) to add at each sequence of white-space (i.e. between each word). A negative
+value can be used to bring the words closer.

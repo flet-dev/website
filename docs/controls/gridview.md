@@ -83,9 +83,7 @@ The ratio of the cross-axis to the main-axis extent of each child.
 
 The content will be clipped (or not) according to this option.
 
-Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
-
-Default value is `HARD_EDGE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.HARD_EDGE`.
 
 ### `controls`
 
@@ -101,17 +99,21 @@ The maximum width or height of the grid item.
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+Throttling in milliseconds for `on_scroll` event.
+
+Defaults to `10`.
 
 ### `padding`
 
 The amount of space by which to inset the children.
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding is an instance of [`Padding`](/docs/reference/types/padding).
 
 ### `reverse`
 
-Defines whether the scroll view scrolls in the reading direction. Defaults to `False`.
+Defines whether the scroll view scrolls in the reading direction.
+
+Defaults to `False`.
 
 ### `run_spacing`
 

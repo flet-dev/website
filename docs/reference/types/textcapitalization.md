@@ -7,7 +7,18 @@ import TabItem from '@theme/TabItem';
 
 `TextCapitalization` enum has the following values:
 
-* `NONE` - do not change entered text.
-* `CHARACTERS` - every entered symbol is capitalized.
-* `WORDS` - capitalize the first letter of every word.
-* `SENTENCES` - capitalize the first letter of every sentence.
+### `NONE`
+
+Do not change entered text.
+
+### `CHARACTERS`
+
+Every entered symbol is capitalized.
+
+### `WORDS`
+
+Capitalize the first letter of every word.
+
+### `SENTENCES`
+
+Capitalize the first letter of every sentence.

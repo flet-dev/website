@@ -74,4 +74,4 @@ When the `CupertinoContextMenu` is long-pressed, the menu will open and this wid
 
 ### `enable_haptic_feedback`
 
-Whether a click on the `CupertinoContextMenuAction`s should produce haptic feedback.
+Whether a click on the `actions` should produce haptic feedback.

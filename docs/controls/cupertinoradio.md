@@ -79,7 +79,9 @@ The [color](/docs/reference/colors) for the radio's border when it has the input
 
 ### `inactive_color`
 
-The [color](/docs/reference/colors) used to fill this radio when it is not selected. Default value is white.
+The [color](/docs/reference/colors) used to fill this radio when it is not selected.
+
+Defaults to `colors.WHITE`.
 
 ### `label`
 
@@ -87,7 +89,9 @@ The clickable label to display on the right of a Radio.
 
 ### `label_position`
 
-Property value is [`LabelPosition`](/docs/reference/types/labelposition) enum. The default value is `RIGHT`.
+The position of the label relative to the radio.
+
+Value is of type [`LabelPosition`](/docs/reference/types/labelposition) and defaults to `LabelPosition.RIGHT`.
 
 ### `toggleable`
 
@@ -98,7 +102,9 @@ Defaults to `False`.
 
 ### `use_checkmark_style`
 
-Defines whether the radio displays in a checkbox style or the default radio style. Defaults to `False`.
+Defines whether the radio displays in a checkbox style or the default radio style.
+
+Defaults to `False`.
 
 ### `value`
 

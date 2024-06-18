@@ -190,7 +190,8 @@ For the buttons, if we look again at the UI we are aiming to achieve, there are 
 2. **Action Buttons**.  They have orange background color and white text, size is the same for all except `0` button which is twice as large.
 3. **Extra action buttons**. They have light grey background color and dark text, size is the same for all.
 
-The buttons will be used mutiple time in the program, so we will be creating custom [Styled Controls](/docs/getting-started/custom-controls#styled-controls) to reuse the code.
+The buttons will be used multiple time in the program, so we will be creating
+custom [Styled Controls](/docs/getting-started/custom-controls#styled-controls) to reuse the code.
 
 Since all those types should inherit from `ElevatedButton` class and have common `text` and `expand` properties, let's create a parent `CalcButton` class:
 ```python

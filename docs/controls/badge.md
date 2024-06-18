@@ -30,15 +30,15 @@ def main(page: ft.Page):
     page.title = "Badge on a NavigationBar destination icon"
     page.navigation_bar = ft.NavigationBar(
         destinations=[
-            ft.NavigationDestination(
+            ft.NavigationBarDestination(
                 icon_content=ft.Badge(
                     content=ft.Icon(ft.icons.EXPLORE),
                     small_size=10,
                 ),
                 label="Explore",
             ),
-            ft.NavigationDestination(icon=ft.icons.COMMUTE, label="Commute"),
-            ft.NavigationDestination(
+            ft.NavigationBarDestination(icon=ft.icons.COMMUTE, label="Commute"),
+            ft.NavigationBarDestination(
                 icon_content=ft.Badge(content=ft.Icon(ft.icons.PHONE), text="10")
             ),
         ]
@@ -90,9 +90,9 @@ Default value is 16. If the default value is overridden then it may be useful to
 
 Combined with `alignment` to determine the location of the label relative to the content.
 
-This value is only used if `text` is provided.
+Has effect only used if `text` is also provided.
 
-See Controls [`offset`](/docs/controls#offset) for possible values.
+Value is of type [`Offset`](/docs/controls#offset) for possible values.
 
 ### `padding`
 
@@ -100,7 +100,7 @@ The padding added to the badge's label.
 
 This value is only used if `text` is provided. Defaults to 4 pixels on the left and right.
 
-Padding value is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding value is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 ### `small_size`
 

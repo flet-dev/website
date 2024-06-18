@@ -5,7 +5,8 @@ sidebar_label: View
 
 View is the top most container for all other controls.
 
-A root view is automatically created when a new user session started. From layout perspective the View represents a [Column](/docs/controls/column) control, so it has a similar behavior and shares same properties.
+A root view is automatically created when a new user session started. From layout perspective the View represents
+a [`Column`](/docs/controls/column) control, so it has a similar behavior and shares same properties.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,13 +19,12 @@ A [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
 
 ### `auto_scroll`
 
-`True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
+`True` if scrollbar should automatically move its position to the end when children updated. Must be `False`
+for `scroll_to()` to work.
 
 ### `bgcolor`
 
-Background color of the Page.
-
-A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` format (e.g. `#CC0000`) or a named color from `flet.colors` module.
+Background [color](/docs/reference/colors) of the view.
 
 ### `controls`
 
@@ -94,7 +94,8 @@ A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to displ
 
 How the child Controls should be placed horizontally.
 
-Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) enum. Default is `START`.
+Value is of type [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignment) and defaults
+to `CrossAxisAlignment.START`.
 
 ### `on_scroll_interval`
 
@@ -114,13 +115,15 @@ Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) e
 
 ### `spacing`
 
-Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only
+when `vertical_alignment` is set to `MainAxisAlignment.START`, `MainAxisAlignment.END` or `MainAxisAlignment.CENTER`.
 
 ### `vertical_alignment`
 
 How the child Controls should be placed vertically.
 
-Property value is [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) enum. Default is `START`.
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) and defaults
+to `MainAxisAlignment.START`.
 
 ## Methods
 
@@ -136,4 +139,4 @@ See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-durat
 
 Fires when scroll position is changed by a user.
 
-Event handler argument is an instance of [`OnScrollEvent`](/docs/reference/types/onscrollevent) class.
+Event handler argument is of type [`OnScrollEvent`](/docs/reference/types/onscrollevent).

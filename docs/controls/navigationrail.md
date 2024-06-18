@@ -78,7 +78,9 @@ The value must be a list of two or more `NavigationRailDestination` instances.
 
 ### `elevation`
 
-Controls the size of the shadow below the NavigationRail. Default value is `0.0`.
+Controls the size of the shadow below the NavigationRail.
+
+Defaults to `0.0`.
 
 ### `extended`
 
@@ -90,7 +92,7 @@ The rail will implicitly animate between the extended and normal state.
 
 If the rail is going to be in the extended state, then the `label_type` must be set to `none`.
 
-The default value is `False`.
+Defaults to `False`.
 
 ### `group_alignment`
 
@@ -102,7 +104,7 @@ The value must be between `-1.0` and `1.0`.
 
 If `group_alignment` is `-1.0`, then the items are aligned to the top. If `group_alignment` is `0.0`, then the items are aligned to the center. If `group_alignment` is `1.0`, then the items are aligned to the bottom.
 
-The default is `-1.0`.
+Defaults to `-1.0`.
 
 ### `indicator_color`
 
@@ -110,17 +112,18 @@ The [color](/docs/reference/colors) of the navigation rail's indicator.
 
 ### `indicator_shape`
 
-The shape of the navigation rail's indicator. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+The shape of the navigation rail's indicator.
 
-The default shape is a `StadiumBorder`.
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder) and defaults to `StadiumBorder()`.
 
 ### `label_type`
 
-Defines the layout and behavior of the labels for the default, unextended NavigationRail.
+Defines the layout and behavior of the labels for the default, unextended navigation rail.
 
 When a navigation rail is extended, the labels are always shown.
 
-Property value is `NavigationRailLabelType` enum with the following values: `NONE` (default), `ALL`, `SELECTED`.
+Value is of type [`NavigationRailLabelType`](/docs/reference/types/navigationraillabeltype) and defaults to `None` - no
+labels are shown.
 
 ### `leading`
 
@@ -134,13 +137,13 @@ This is commonly a [`FloatingActionButton`](/docs/controls/floatingactionbutton)
 
 The final width when the animation is complete for setting `extended` to `True`.
 
-The default value is `256`.
+Defaults to `256`.
 
 ### `min_width`
 
 The smallest possible width for the rail regardless of the destination's icon or label size.
 
-The default is `72`.
+Defaults to `72`.
 
 This value also defines the min width and min height of the destinations.
 
@@ -162,7 +165,7 @@ An optional trailing control in the rail that is placed below the destinations.
 
 Its location is affected by `group_alignment`.
 
-This is commonly a list of additional options or destinations that is usually only rendered when `extended` is `True`.
+This is commonly a list of additional options or destinations that is usually only rendered when `extended=True`.
 
 ### `unselected_label_text_style`
 
@@ -212,7 +215,7 @@ The label must be provided when used with the `NavigationRail`. When `Navigation
 
 The amount of space to inset the destination item.
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Padding is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 ### `selected_icon`
 

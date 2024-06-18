@@ -5,9 +5,57 @@ sidebar_label: ButtonStyle
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-`ButtonStyle` allows controlling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
+Allows controlling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
 
-Each individual style attribute could be configured for all or particular [`MaterialState`](/docs/reference/types/materialstate) of a button, such as `HOVERED`, `FOCUSED`, `DISABLED` and others. For example, you can configure a different shape, background color for a hovered state and configure fallback values for all other states.
+Each individual style attribute could be configured for all or
+particular [`ControlState`](/docs/reference/types/controlstate) of a button, such as `HOVERED`, `FOCUSED`, `DISABLED`
+and others.
+
+`ButtonStyle` class has the following properties:
+
+### `color`
+
+The color for the button's Text and Icon control descendants.
+
+### `bgcolor`
+
+The button's background fill color.
+
+### `overlay_color`
+
+The highlight color that's typically used to indicate that the button is focused, hovered, or pressed.
+
+### `shadow_color`
+
+The shadow color of the button's Material.
+
+### `surface_tint_color`
+
+The surface tint color of the button's Material.
+
+### `elevation`
+
+The elevation of the button's Material.
+
+### `animation_duration`
+
+Defines the duration in milliseconds of animated changes for shape and elevation.
+
+### `padding`
+
+The padding between the button's boundary and its child.
+
+### `side`
+
+An instance of [`BorderSide`](/docs/reference/types/borderside) class, the color and weight of the button's outline.
+
+### `shape`
+
+The shape of the button's underlying Material. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+
+## Usage example
+
+You can configure a different shape, background color for a hovered state and configure fallback values for all other states.
 
 To configure style attribute for all Material states set its value to a literal (or class instance). For example, if you set `color` property to a literal the value will be applied to all button states:
 
@@ -22,27 +70,13 @@ To configure style attribute for specific Material states set its value to a dic
 ```python
 ButtonStyle(
     color={
-        ft.MaterialState.HOVERED: ft.colors.WHITE,
-        ft.MaterialState.FOCUSED: ft.colors.BLUE,
-        ft.MaterialState.DEFAULT: ft.colors.BLACK,
+        ft.ControlState.HOVERED: ft.colors.WHITE,
+        ft.ControlState.FOCUSED: ft.colors.BLUE,
+        ft.ControlState.DEFAULT: ft.colors.BLACK,
     }
 )
 ```
 
-#### `ButtonStyle` class
-
-`ButtonStyle` class has the following properties:
-
-* `color` - The color for the button's Text and Icon control descendants.
-* `bgcolor` - The button's background fill color.
-* `overlay_color` - The highlight color that's typically used to indicate that the button is focused, hovered, or pressed.
-* `shadow_color` - The shadow color of the button's Material.
-* `surface_tint_color` - The surface tint color of the button's Material.
-* `elevation` - The elevation of the button's Material.
-* `animation_duration` - Defines the duration in milliseconds of animated changes for shape and elevation.
-* `padding` - The padding between the button's boundary and its child.
-* `side` - An instance of [`BorderSide`](/docs/reference/types/borderside) class, the color and weight of the button's outline.
-* `shape` - The shape of the button's underlying Material. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
 
 ### Various button shapes example
 
@@ -104,22 +138,22 @@ def main(page: ft.Page):
             "Styled button 1",
             style=ft.ButtonStyle(
                 color={
-                    ft.MaterialState.HOVERED: ft.colors.WHITE,
-                    ft.MaterialState.FOCUSED: ft.colors.BLUE,
-                    ft.MaterialState.DEFAULT: ft.colors.BLACK,
+                    ft.ControlState.HOVERED: ft.colors.WHITE,
+                    ft.ControlState.FOCUSED: ft.colors.BLUE,
+                    ft.ControlState.DEFAULT: ft.colors.BLACK,
                 },
-                bgcolor={ft.MaterialState.FOCUSED: ft.colors.PINK_200, "": ft.colors.YELLOW},
-                padding={ft.MaterialState.HOVERED: 20},
+                bgcolor={ft.ControlState.FOCUSED: ft.colors.PINK_200, "": ft.colors.YELLOW},
+                padding={ft.ControlState.HOVERED: 20},
                 overlay_color=ft.colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
                 animation_duration=500,
                 side={
-                    ft.MaterialState.DEFAULT: ft.BorderSide(1, ft.colors.BLUE),
-                    ft.MaterialState.HOVERED: ft.BorderSide(2, ft.colors.BLUE),
+                    ft.ControlState.DEFAULT: ft.BorderSide(1, ft.colors.BLUE),
+                    ft.ControlState.HOVERED: ft.BorderSide(2, ft.colors.BLUE),
                 },
                 shape={
-                    ft.MaterialState.HOVERED: ft.RoundedRectangleBorder(radius=20),
-                    ft.MaterialState.DEFAULT: ft.RoundedRectangleBorder(radius=2),
+                    ft.ControlState.HOVERED: ft.RoundedRectangleBorder(radius=20),
+                    ft.ControlState.DEFAULT: ft.RoundedRectangleBorder(radius=2),
                 },
             ),
         )

@@ -26,9 +26,9 @@ def main(page: ft.Page):
         active_color=ft.colors.BLACK,
         on_change=lambda e: print("Selected tab:", e.control.selected_index),
         destinations=[
-            ft.NavigationDestination(icon=ft.icons.EXPLORE, label="Explore"),
-            ft.NavigationDestination(icon=ft.icons.COMMUTE, label="Commute"),
-            ft.NavigationDestination(
+            ft.NavigationBarDestination(icon=ft.icons.EXPLORE, label="Explore"),
+            ft.NavigationBarDestination(icon=ft.icons.COMMUTE, label="Commute"),
+            ft.NavigationBarDestination(
                 icon=ft.icons.BOOKMARK_BORDER,
                 selected_icon=ft.icons.BOOKMARK,
                 label="Explore",
@@ -50,21 +50,23 @@ The foreground [color](/docs/reference/colors) of the icon and title of the sele
 
 ### `bgcolor`
 
-The [color](/docs/reference/colors) of the CupertinoNavigationBar itself.
+The [color](/docs/reference/colors) of the navigation bar itself.
 
 ### `border`
 
-Defines the border of this navigation bar. The value is an instance of [`border.Border`](/docs/reference/types/border) class.
+Defines the border of this navigation bar. The value is an instance of [`Border`](/docs/reference/types/border) class.
 
 ### `destinations`
 
 Defines the appearance of the button items that are arrayed within the navigation bar.
 
-The value must be a list of two or more [`NavigationDestination`](/docs/controls/navigationbar#navigationdestination-properties) instances.
+The value must be a list of two or more [`NavigationBarDestination`](/docs/controls/navigationbar#navigationdestination-properties) instances.
 
 ### `icon_size`
 
-The size of all destination icons. Defaults to `30`.
+The size of all destination icons.
+
+Defaults to `30`.
 
 ### `inactive_color`
 
@@ -72,7 +74,7 @@ The foreground [color](/docs/reference/colors) of the icon and title of the unse
 
 ### `selected_index`
 
-The index into `destinations` for the current selected `NavigationDestination` or `None` if no destination is selected.
+The index into `destinations` for the current selected `NavigationBarDestination` or `None` if no destination is selected.
 
 ## Events
 

@@ -7,6 +7,6 @@ import TabItem from '@theme/TabItem';
 
 `InputBorder` enum has the following values:
 
-* `OUTLINE`
-* `UNDERLINE`
-* `NONE`
+### `OUTLINE`
+### `UNDERLINE`
+### `NONE`

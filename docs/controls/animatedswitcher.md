@@ -63,28 +63,40 @@ ft.app(target=main)
 
 ## Properties
 
+### `content`
+
+The content to display. When the `content` changes, the AnimatedSwitcher will animate the transition from the
+old `content` to the new one.
+
 ### `duration`
 
-The duration, in milliseconds, of the transition from the old `content` value to the new one. Default is `1000` milliseconds.
+The duration, in milliseconds, of the transition from the old `content` value to the new one.
+
+Defaults to `1000` milliseconds.
 
 ### `reverse_duration`
 
-The duration, in milliseconds, of the transition from the new `content` value to the old one. Default is `1000` milliseconds.
+The duration, in milliseconds, of the transition from the new `content` value to the old one.
+
+Defaults to `1000` milliseconds.
 
 ### `switch_in_curve`
 
-The animation curve to use when transitioning in a new `content`. Property value is [`AnimationCurve`](/docs/reference/types/animationcurve) enum with `AnimationCurve.LINEAR` as default.
+The animation curve to use when transitioning in a new `content`.
+
+Value is of type [`AnimationCurve`](/docs/reference/types/animationcurve) and defaults
+to [`AnimationCurve.LINEAR`](/docs/reference/types/animationcurve).
 
 ### `switch_out_curve`
 
-The animation curve to use when transitioning a previous `content` out. Property value is [`AnimationCurve`](/docs/reference/types/animationcurve) enum with `AnimationCurve.LINEAR` as default.
+The animation curve to use when transitioning a previous `content` out.
+
+Value is of type [`AnimationCurve`](/docs/reference/types/animationcurve) and defaults
+to [`AnimationCurve.LINEAR`](/docs/reference/types/animationcurve).
 
 ### `transition`
 
-An animation type to transition between new and old `content`. Property value is `AnimatedSwitcherTransition` enum with the following values:
+An animation type to transition between new and old `content`.
 
-* `FADE`
-* `ROTATION`
-* `CALE`
-
-Defaults to `FADE`.   
+Value is of type [`AnimatedSwitcherTransition`](/docs/reference/types/animatedswitchertransition) and defaults
+to [`AnimatedSwitcherTransition.FADE`](/docs/reference/types/animatedswitchertransition).   

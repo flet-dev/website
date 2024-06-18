@@ -36,7 +36,9 @@ ft.app(target=main)
 
 ### `animate`
 
-Whether the animation should be played automatically. Default value is `True`.
+Whether the animation should be played automatically.
+
+Defaults to `True`.
 
 ### `background_loading`
 
@@ -44,30 +46,32 @@ Whether the animation should be loaded in the background.
 
 ### `filter_quality`
 
-The quality of the image layer. Value is of type [`FilterQuality`](/docs/reference/types/filterquality) enum. Defaults to `LOW`.
+The quality of the image layer.
+
+Value is of type [`FilterQuality`](/docs/reference/types/filterquality) and defaults to `FilterQuality.LOW`.
 
 ### `fit`
 
 How to inscribe the Lottie composition into the space allocated during layout.
 
-Property value is [`ImageFit`](/docs/reference/types/imagefit) enum.
+Value is of type [`ImageFit`](/docs/reference/types/imagefit).
 
 ### `repeat`
 
-Whether the animation should repeat in a loop. Default value is `True`.
+Whether the animation should repeat in a loop. Has no effect if `animate` is `False`.
 
-Has no effect if `animate` is `False`.
+Defaults to `True`.
 
 ### `reverse`
 
-Whether the animation should be played in reverse (from start to end and then continuously from end to start). Default
-value is `False`.
+Whether the animation should be played in reverse (from start to end and then continuously from end to start). Has no
+effect if `animate` and `repeat` are `False`.
 
-Has no effect if `animate` and `repeat` are `False`.
+Defaults to `False`.
 
 ### `src`
 
-The source of the Lottie file. Can be a URL or a local asset file. See [Image.src](/docs/controls/image#src) for more
+The source of the Lottie file. Can be a URL or a local asset file. See [`Image.src`](/docs/controls/image#src) for more
 information about assets.
 
 ### `src_base64`

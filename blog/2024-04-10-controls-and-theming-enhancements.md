@@ -64,7 +64,7 @@ Below is the complete list:
 - [`ListView`](https://flet.dev/docs/controls/listview): cache_extent, clip_behavior, semantic_child_count
 - [`NavigationBar`](https://flet.dev/docs/controls/navigationbar): animation_duration, overlay_color
 - [`NavigationDrawerDestination`](https://flet.dev/docs/controls/navigationdrawer): bgcolor
-- [`NavigationDestination`](https://flet.dev/docs/controls/navigationdestination): bgcolor
+- [`NavigationBarDestination`](https://flet.dev/docs/controls/navigationbardestination): bgcolor
 - [`NavigationRail`](https://flet.dev/docs/controls/navigationrail): selected_label_text_style,
   unselected_label_text_style
 - [`NavigationRailDestination`](https://flet.dev/docs/controls/navigationrail): indicator_color, indicator_shape
@@ -127,12 +127,12 @@ Read more on it [here](https://ndonkohenri.medium.com/access-any-controls-parent
 
 The below issues were successfully fixed:
 
-- [#2560](https://github.com/flet-dev/flet/issues/2560) - Dropdown.bgcolor was not visually respected
-- [#2740](https://github.com/flet-dev/flet/issues/2740) - CircleAvatar not working with local asset images
-- [#2781](https://github.com/flet-dev/flet/issues/2781) - 'FletSocketServer' Error raised on Linux
-- [#2826](https://github.com/flet-dev/flet/issues/2826) - PopupMenuItem.data not respected
-- [#2839](https://github.com/flet-dev/flet/issues/2839) - ExpansionTile.initially_expanded had no visual effect
-- [#2867](https://github.com/flet-dev/flet/issues/2867) - PopupMenuButton had an always-visible tooltip of "Show menu"
+- [#2560](https://github.com/flet-dev/flet/issues/2560) - `Dropdown.bgcolor` was not visually respected
+- [#2740](https://github.com/flet-dev/flet/issues/2740) - `CircleAvatar` not working with local asset images
+- [#2781](https://github.com/flet-dev/flet/issues/2781) - `'FletSocketServer'` Error raised on Linux
+- [#2826](https://github.com/flet-dev/flet/issues/2826) - `PopupMenuItem.data` not respected
+- [#2839](https://github.com/flet-dev/flet/issues/2839) - `ExpansionTile.initially_expanded` had no visual effect
+- [#2867](https://github.com/flet-dev/flet/issues/2867) - `PopupMenuButton` had an always-visible tooltip of "Show menu"
 - On some Python versions, you might have seen a RuntimeError('Event loop is closed') which usually shows up when
   closing the app's window. The Python-dev
   team [fixed](https://github.com/python/cpython/issues/109538#issuecomment-1823306415) this asyncio-related issue
@@ -156,8 +156,9 @@ directly in your console (without breaking your app).
   to [`on_cancel`](https://flet.dev/docs/controls/popupmenubutton/#on_cancel)
 - [`foreground_image_url`](https://flet.dev/docs/controls/circleavatar/#foreground_image_url)
   and [`background_image_url`](https://flet.dev/docs/controls/circleavatar/#background_image_url) properties
-  of [`CircleAvatar`](https://flet.dev/docs/controls/circleavatar/) were renamed to `foreground_image_src`
-  and `background_image_src` respectively
+  of [`CircleAvatar`](https://flet.dev/docs/controls/circleavatar/) were renamed
+  to [`foreground_image_src`](https://flet.dev/docs/controls/circleavatar/#foreground_image_src)
+  and [`background_image_src`](https://flet.dev/docs/controls/circleavatar/#background_image_src) respectively
 - `DragTargetAcceptEvent` used in the [`DragTarget.on_accept`](https://flet.dev/docs/controls/dragtarget/#on_accept) has
   been renamed to `DragTargetEvent`
 

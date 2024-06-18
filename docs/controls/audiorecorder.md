@@ -18,6 +18,7 @@ To build your Flet app that uses `AudioRecorder` control add `--include-packages
 ```
 flet build apk --include-packages flet_audio_recorder
 ```
+
 :::
 
 import Tabs from '@theme/Tabs';
@@ -107,43 +108,48 @@ Not all properties are supported on all platforms. Please check this [platform-f
 
 ### `audio_encoding`
 
-The audio encoder to be used for recording. The following values are supported:
+The audio encoder to be used for recording.
 
-* `AudioEncoder.AACLC` - MPEG-4 AAC Low complexity. Outputs to MPEG_4 format container. Recommended file extension: `m4a`.
-* `AudioEncoder.AACELD` - MPEG-4 AAC Enhanced Low Delay. Outputs to MPEG_4 format container. Recommended file extension: `m4a`.
-* `AudioEncoder.AACHE` - MPEG-4 High Efficiency AAC (Version 2 if available). Outputs to MPEG_4 format container. Recommended file extension: `m4a`.
-* `AudioEncoder.AMRNB` - The AMR (Adaptive Multi-Rate) narrow band speech. When used, `sample_rate` should be set to `8kHz`. Outputs to 3GP format container on Android. Recommended file extension: `3gp`.
-* `AudioEncoder.AMRWB` - The AMR (Adaptive Multi-Rate) wide band speech. When used, `sample_rate` should be set to `16kHz`. Outputs to 3GP format container on Android. Recommended file extension: `3gp`.
-* `AudioEncoder.OPUS` - Will output to MPEG_4 format container. SDK 29 on Android and SDK 11 on iOS. Recommended file extension: `opus`.
-* `AudioEncoder.FLAC` - Free Lossless Audio Codec. Recommended file extension: `flac`.
-* `AudioEncoder.WAV` (default) - Waveform Audio (pcm16bit with headers). Recommended file extension: `wav`.
-* `AudioEncoder.PCM16BITS` - Linear PCM 16 bit per sample. Recommended file extension: `pcm`.
+Value is of type [`AudioEncoder`](/docs/reference/types/audioencoder) and defaults
+to [`AudioEncoder.WAV`](/docs/reference/types/audioencoder#wav).
 
-See [`this`](https://pub.dev/packages/record#file) for a detailed overview on which platforms support which encodings.
+See [`this`](https://pub.dev/packages/record#file) for a detailed overview on the encodings supported by each platform.
 
 ### `auto_gain`
 
-The recorder will try to auto adjust recording volume in a limited range. Defaults to `False`.
+The recorder will try to auto adjust recording volume in a limited range.
+
+Defaults to `False`.
 
 ### `bit_rate`
 
-The audio encoding bit rate in bits per second. Defaults to `128000`.
+The audio encoding bit rate in bits per second.
+
+Defaults to `128000`.
 
 ### `cancel_echo`
 
-The recorder will try to reduce echo. Defaults to `False`.
+The recorder will try to reduce echo.
+
+Defaults to `False`.
 
 ### `channels_num`
 
-The numbers of channels for the recording. `1` = mono, `2` = stereo. Defaults to `2`.
+The numbers of channels for the recording. `1` = mono, `2` = stereo.
+
+Defaults to `2`.
 
 ### `sample_rate`
 
-The sample rate for audio in samples per second. Defaults to `44100`.   
+The sample rate for audio in samples per second.
+
+Defaults to `44100`.
 
 ### `suppress_noise`
 
-The recorder will try to negates the input noise. Defaults to `False`.
+The recorder will try to negates the input noise.
+
+Defaults to `False`.
 
 ## Methods
 
@@ -191,8 +197,8 @@ Stops recording session and release internal recorder resource. It returns a str
 
 ### `on_state_changed`
 
-Fires when audio recorder's state changes. Event's `e.data` contains one of the following states:
+Fires when audio recorder's state changes. Event's `data` contains one of the following states:
 
-* `stopped`
-* `recording`
-* `paused`
+* `"stopped"`
+* `"recording"`
+* `"paused"`

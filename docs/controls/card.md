@@ -56,9 +56,9 @@ ft.app(target=main)
 
 ### `clip_behavior`
 
-The `content` will be clipped (or not) according to this option. See [`Container.clip_behavior`](/docs/controls/container#clip_behavior) for possible values.
+The `content` will be clipped (or not) according to this option.
 
-Default value is `ClipBehavior.NONE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.NONE`.
 
 ### `color`
 
@@ -82,11 +82,7 @@ Set to `True` (default) if this card represents a single semantic container, or 
 
 The empty space that surrounds the card.
 
-The value of `margin` property could be one of the following types:
-
-* `int`
-* `float`
-* [`margin.Margin`](/docs/reference/types/margin)
+Value can be one of the following types: `int`, `float`, or [`Margin`](/docs/reference/types/margin).
 
 ### `shadow_color`
 
@@ -96,13 +92,14 @@ The [color](/docs/reference/colors) to paint the shadow below the card.
 
 The shape of the card.
 
-The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
-
-The default shape is a `RoundedRectangleBorder` with `radius=4.0`.
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder) and defaults
+to `RoundedRectangleBorder(radius=4.0)`.
 
 ### `show_border_on_foreground`
 
-Set to `True` (default) if the shape of the border should be painted in front of the `content`, or to `False` if it should instead be painted behind.
+Whether the shape of the border should be painted in front of the `content` or behind.
+
+Defaults to `True`.
 
 ### `surface_tint_color`
 
@@ -110,12 +107,10 @@ The [color](/docs/reference/colors) used as an overlay on `color` to indicate el
 
 If this is `None`, no overlay will be applied. Otherwise this color will be composited on top of `color` with an opacity related to `elevation` and used to paint the background of the card.
 
-The default is `None`.
+Defaults to `None`.
 
 ### `variant`
 
-Defines the card variant to be used. Value is of `CardVariant` enum:
+Defines the card variant to be used.
 
-* `ELEVATED` - the default variant
-* `FILLED` - the filled variant
-* `OUTLINED` - the outlined variant
+Value is of type [`CardVariant`](/docs/reference/types/cardvariant) and defaults to `CardVariant.ELEVATED`.

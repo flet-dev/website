@@ -7,6 +7,8 @@ A banner displays an important, succinct message, and provides actions for users
 
 Banners are displayed at the top of the screen, below a top app bar. They are persistent and non-modal, allowing the user to either ignore them or interact with them at any time.
 
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -22,31 +24,33 @@ import TabItem from '@theme/TabItem';
 ```python
 import flet as ft
 
-def main(page):
-    def close_banner(e):
-        page.banner.open = False
-        page.update()
 
-    page.banner = ft.Banner(
+def main(page):
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    def close_banner(e):
+        page.close(banner)
+        page.add(ft.Text("Action clicked: " + e.control.text))
+
+    action_button_style = ft.ButtonStyle(color=ft.colors.BLUE)
+    banner = ft.Banner(
         bgcolor=ft.colors.AMBER_100,
         leading=ft.Icon(ft.icons.WARNING_AMBER_ROUNDED, color=ft.colors.AMBER, size=40),
         content=ft.Text(
-            "Oops, there were some errors while trying to delete the file. What would you like me to do?"
+            value="Oops, there were some errors while trying to delete the file. What would you like me to do?",
+            color=ft.colors.BLACK,
         ),
         actions=[
-            ft.TextButton("Retry", on_click=close_banner),
-            ft.TextButton("Ignore", on_click=close_banner),
-            ft.TextButton("Cancel", on_click=close_banner),
+            ft.TextButton(text="Retry", style=action_button_style, on_click=close_banner),
+            ft.TextButton(text="Ignore", style=action_button_style, on_click=close_banner),
+            ft.TextButton(text="Cancel", style=action_button_style, on_click=close_banner),
         ],
     )
 
-    def show_banner_click(e):
-        page.banner.open = True
-        page.update()
+    page.add(ft.ElevatedButton("Show Banner", on_click=lambda e: page.open(banner)))
 
-    page.add(ft.ElevatedButton("Show Banner", on_click=show_banner_click))
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -67,7 +71,9 @@ The [color](/docs/reference/colors) of the surface of this Banner.
 
 ### `content`
 
-The content of the Banner. Typically a [`Text`](/docs/controls/text) control.
+The content of the Banner.
+
+Typically a [`Text`](/docs/controls/text) control.
 
 ### `content_padding`
 
@@ -81,8 +87,9 @@ If the actions are trailing the content, this defaults to `padding.only(left=16.
 
 ### `content_text_style`
 
-The style to be used for the `Text` controls in the `content`. Value is an instance of
-type [`TextStyle`](/docs/reference/types/textstyle).
+The style to be used for the `Text` controls in the `content`.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 ### `divider_color`
 
@@ -96,7 +103,8 @@ The elevation of the banner.
 
 An override to force the actions to be below the content regardless of how many there are.
 
-If this is `True`, the actions will be placed below the content. If this is `False`, the actions will be placed on the trailing side of the content if actions's length is 1 and below the content if greater than 1.
+If this is `True`, the actions will be placed below the content. If this is `False`, the actions will be placed on the
+trailing side of the content if `actions` length is `1` and below the content if greater than `1`.
 
 Defaults to `False`.
 
@@ -112,13 +120,13 @@ The amount of space by which to inset the leading control.
 
 The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
-Defaults to 16 virtual pixels.
+Defaults to `16` virtual pixels.
 
 ### `margin`
 
 The amount of space surrounding the banner. 
 
-The value is an instance of [`margin.Margin`](/docs/reference/types/margin) class or a number.
+The value is an instance of [`Margin`](/docs/reference/types/margin) class or a number.
 
 ### `open`
 

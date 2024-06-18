@@ -170,7 +170,9 @@ class Spinkit(Control):
 
 ```
 
-The minumal reqirements for this class is that it has to be inherited from Flet `Control` and it has to have `_get_control_name` method that will return the control name. This name should be the same as `args.control.type` we check in the `create_control.dart` file.
+The minumal requirements for this class is that it has to be inherited from Flet `Control` and it has to
+have `_get_control_name` method that will return the control name. This name should be the same as `args.control.type`
+we check in the `create_control.dart` file.
 
 ### Connect your Python app and Dart package
 
@@ -330,7 +332,8 @@ Generally, there are three types of controls in Flet:
 
 In the most cases, Visual Controls could inherit from [`ConstrainedControl`](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/constrained_control.py) that has many additional properties such as `top` and `left` for its position within Stack and a bunch of animation properties.
 
-To use those properities, inherit your control from `CostrainedControl` and add those properties to the constructor of your Python control:
+To use those properties, inherit your control from `CostrainedControl` and add those properties to the constructor of
+your Python control:
 
 ```python
 from typing import Any, Optional

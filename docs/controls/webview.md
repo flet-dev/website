@@ -42,7 +42,7 @@ ft.app(main)
 
 ### `bgcolor`
 
-Set the background color of the WebView.
+Set the background [color](/docs/reference/colors) of the WebView.
 
 ### `javascript_enabled`
 

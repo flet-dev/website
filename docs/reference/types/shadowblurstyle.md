@@ -7,8 +7,8 @@ import TabItem from '@theme/TabItem';
 
 `ShadowBlurStyle` enum has the following values:
 
-* `NORMAL`
-* `SOLID`
-* `OUTER`
-* `INNER`
+### `NORMAL`
+### `SOLID`
+### `OUTER`
+### `INNER`
 

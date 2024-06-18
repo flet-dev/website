@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 If `animate` is `None` then `LINEAR` animation with `150` milliseconds duration is enabled by default.
 
-### Example of usage
+## Usage example
 
 <img src="/img/docs/controls/container/animate-container.gif" className="screenshot-20" />
 

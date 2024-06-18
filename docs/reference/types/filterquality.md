@@ -7,10 +7,10 @@ import TabItem from '@theme/TabItem';
 
 `FilterQuality` enum has the following values:
 
-* `NONE`
-* `LOW`
-* `MEDIUM`
-* `HIGH`
+### `NONE`
+### `LOW`
+### `MEDIUM`
+### `HIGH`
 
 More details on each [here](https://api.flutter.dev/flutter/dart-ui/FilterQuality.html).
 

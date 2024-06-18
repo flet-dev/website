@@ -158,19 +158,28 @@ ft.Stack(
 
 ### `border`
 
-A border to draw above the background color. The value is an instance of [`border.Border`](/docs/reference/types/border) class.
+A border to draw above the background color.
+
+Value is of type [`Border`](/docs/reference/types/border).
 
 ### `border_radius`
 
-If specified, the corners of the container are rounded by this radius. Border radius is an instance of [`border_radius.BorderRadius`](/docs/reference/types/borderradius) class.
+If specified, the corners of the container are rounded by this radius.
+
+Value is of type [`BorderRadius`](/docs/reference/types/borderradius).
 
 ### `clip_behavior`
 
 The content will be clipped (or not) according to this option.
 
-Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.ANTI_ALIAS`
+if `border_radius` is not `None`; otherwise `ClipBehavior.HARD_EDGE`.
 
-Default is `ANTI_ALIAS` if `border_radius` is not `None`; otherwise `HARD_EDGE`.
+### `color_filter`
+
+Applies a color filter to the container.
+
+Value is of type [`ColorFilter`](/docs/reference/types/colorfilter).
 
 ### `content`
 
@@ -178,7 +187,7 @@ A child Control contained by the container.
 
 ### `gradient`
 
-Configures gradient background. The value must be an instance of one of the following classes:
+Configures gradient background. Value can be of type:
 
 * [`LinearGradient`](/docs/reference/types/lineargradient)
 * [`RadialGradient`](/docs/reference/types/radialgradient)
@@ -188,17 +197,19 @@ Configures gradient background. The value must be an instance of one of the foll
 
 How to inscribe the image into the space allocated during layout. 
 
-The value is [`ImageFit`](/docs/reference/types/imagefit) enum. Default is `NONE`.
+Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defaults to `ImageFit.NONE`.
 
 ### `image_opacity`
 
-Sets image opacity when blending with a background: value between `0.0` and `1.0`.
+Sets image opacity when blending with a background.
+
+Value ranges between `0.0`(fully transparent) and `1.0`(fully opaque).
 
 ### `image_repeat`
 
 How to paint any portions of the layout bounds not covered by the image.
 
-The value is [`ImageRepeat`](/docs/reference/types/imagerepeat) enum. Default is `NO_REPEAT`.
+Value is of type  [`ImageRepeat`](/docs/reference/types/imagerepeat) and defaults to `ImageRepeat.NO_REPEAT`.
 
 ### `image_src`
 
@@ -210,7 +221,9 @@ Sets an image encoded as Base-64 string as a container background. See [`Image.s
 
 ### `ink`
 
-`True` to produce ink ripples effect when user clicks the container. Default is `False`.
+`True` to produce ink ripples effect when user clicks the container.
+
+Defaults to `False`.
 
 ### `ink_color`
 
@@ -220,41 +233,45 @@ The splash [color](/docs/reference/colors) of the ink response.
 
 Empty space to surround the decoration and child control.
 
-The value is an instance of [`margin.Margin`](/docs/reference/types/margin) class or a number.
+Value is of type [`Margin`](/docs/reference/types/margin) class or a number.
 
 ### `padding`
 
 Empty space to inscribe inside a container decoration (background, border). The child control is placed inside this padding.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+Value is of type [`Padding`](/docs/reference/types/padding) or a number.
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left.
+
+Defaults to `False`.
 
 ### `shadow`
 
-A list of shadows cast by the container.
+Shadows cast by the container.
 
-The value of this property is a single instance or a list of [`BoxShadow`](/docs/reference/types/boxshadow) class instances.
+Value is of type [`BoxShadow`](/docs/reference/types/boxshadow) or a `List[BoxShadow]`.
 
 ### `shape`
 
-Sets the shape of the container. The value is [`BoxShape`](/docs/reference/types/boxshape) enum.
+Sets the shape of the container.
 
-The default value is `RECTANGLE`.
+Value is of type [`BoxShape`](/docs/reference/types/boxshape) and defaults to `BoxShape.RECTANGLE`.
 
 ### `theme_mode`
 
-The value is [`ThemeMode`](/docs/reference/types/thememode) enum. Default is `SYSTEM`.
-
 Setting `theme_mode` "resets" parent theme and creates a new, unique scheme for all controls inside the container. Otherwise the styles defined in container's `theme` property override corresponding styles from the parent, inherited theme.
+
+Value is of type [`ThemeMode`](/docs/reference/types/thememode) and defaults to `ThemeMode.SYSTEM`.
 
 ### `theme`
 
-The value is an instance of [`Theme`](/docs/cookbook/theming) class.
+Allows setting a nested `theme` for all controls inside the container and down the tree.
 
-Allows setting a nested `theme` for all controls inside the container and down the tree, for example:
+Value is of type [`Theme`](/docs/cookbook/theming) class.
+
+**Usage example**
 
 ```python
 import flet as ft
@@ -301,65 +318,19 @@ ft.app(main)
 
 ### `url`
 
-The URL to open when the container is clicked. If registered, `on_click` event is fired after that.
+The URL to open when the container is clicked. If provided, `on_click` event is fired after that.
 
 ### `url_target`
 
-Where to open URL in the web mode. Value is of [`UrlTarget`](/docs/reference/types/urltarget) enum. Default is `BLANK`.
+Where to open URL in the web mode.
+
+Value is of type [`UrlTarget`](/docs/reference/types/urltarget) and defaults to `UrlTarget.BLANK`.
 
 ## Events
 
 ### `on_click`
 
-Fires when a user clicks the container. Event object `e` is an instance of `ContainerTapEvent` class:
-
-```python
-class ft.ContainerTapEvent():
-    local_x: float
-    local_y: float
-    global_x: float
-    global_y: float
-```
-
-:::info
-If `ink` is `True`, `e` will be plain `ControlEvent` with empty `data` instead of `ContainerTapEvent`.
-:::
-
-A simple usage example:
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-
-    t = ft.Text()
-
-    def container_click(e: ft.ContainerTapEvent):
-        t.value = f"local_x: {e.local_x}\nlocal_y: {e.local_y}\nglobal_x: {e.global_x}\nglobal_y: {e.global_y}"
-        t.update()
-
-    page.add(
-        ft.Column(
-            [
-                ft.Container(
-                    content=ft.Text("Clickable inside container"),
-                    alignment=ft.alignment.center,
-                    bgcolor=ft.colors.GREEN_200,
-                    width=200,
-                    height=200,
-                    border_radius=10,
-                    on_click=container_click,
-                ),
-                t,
-            ],
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-        ),
-    )
-
-ft.app(target=main)
-```
+Fires when a user clicks the container. Will not be fired on long press.
 
 ### `on_hover`
 
@@ -385,3 +356,49 @@ ft.app(target=main)
 ### `on_long_press`
 
 Fires when the container is long-pressed.
+
+### `on_tap_down`
+
+Fires when a user clicks the container with or without a long press.
+
+Event handler argument is of type [`ContainerTapEvent`](/docs/reference/types/containertapevent).
+
+:::info
+If `ink` is `True`, `e` will be plain `ControlEvent` with empty `data` instead of `ContainerTapEvent`.
+:::
+
+A simple usage example:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    def on_long_press(e):
+        print("on long press")
+        page.add(ft.Text("on_long_press triggered"))
+
+    def on_click(e):
+        print("on click")
+        page.add(ft.Text("on_click triggered"))
+
+    def on_tap_down(e: ft.ContainerTapEvent):
+        print("on tap down", e.local_x, e.local_y)
+        page.add(ft.Text("on_tap_down triggered"))
+
+    c = ft.Container(
+        bgcolor=ft.colors.RED,
+        content=ft.Text("Test Long Press"),
+        height=100,
+        width=100,
+        on_click=on_click,
+        on_long_press=on_long_press,
+        on_tap_down=on_tap_down,
+    )
+    
+    page.add(c)
+
+ft.app(target=main)
+```

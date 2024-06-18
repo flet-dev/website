@@ -81,7 +81,8 @@ Defaults to `False`.
 
 ### `bar_bgcolor`
 
-Defines the background [color](/docs/reference/colors) of the search bar in all or specific [`MaterialState`](/docs/reference/types/materialstate) states.
+Defines the background [color](/docs/reference/colors) of the search bar in all or
+specific [`ControlState`](/docs/reference/types/controlstate) states.
 
 ### `bar_hint_text`
 
@@ -93,7 +94,8 @@ A `Control` to display before the text input field when the search view is close
 
 ### `bar_overlay_color`
 
-Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is in `FOCUSED`, `HOVERED`, or `PRESSED` [`MaterialState`](/docs/reference/types/materialstate) states.
+Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is
+in `FOCUSED`, `HOVERED`, or `PRESSED` [`ControlState`](/docs/reference/types/controlstate) states.
 
 ### `bar_trailing`
 
@@ -105,9 +107,7 @@ These controls can represent additional modes of searching (e.g voice search), a
 
 Enables automatic on-the-fly capitalization of entered text. 
 
-Property value is [`TextCapitalization`](/docs/reference/types/textcapitalization) enum.
-
-Default is `NONE`.
+Value is of type [`TextCapitalization`](/docs/reference/types/textcapitalization).
 
 ### `controls`
 
@@ -123,19 +123,17 @@ Defines whether the search view grows to fill the entire screen when the search 
 
 ### `header_hint_style`
 
-Defines the [TextStyle](/docs/reference/types/textstyle) of `view_hint_text`.
+Defines the [`TextStyle`](/docs/reference/types/textstyle) of `view_hint_text`.
 
 ### `header_text_style`
 
-Defines the [TextStyle](/docs/reference/types/textstyle) of the text being edited on the search view.
+Defines the [`TextStyle`](/docs/reference/types/textstyle) of the text being edited on the search view.
 
 ### `keyboard_type`
 
 The type of action button to use for the keyboard. 
 
-The property value is [`KeyboardType`](/docs/reference/types/keyboardtype) enum.
-
-The default is `TEXT`.
+Value is of type [`KeyboardType`](/docs/reference/types/keyboardtype) and defaults to `KeyboardType TEXT`.
 
 ### `value`
 
@@ -155,19 +153,21 @@ Defines the text to be displayed when the search bar's input field is empty.
 
 ### `view_leading`
 
-A `Control` to display before the text input field when the search view is open. This is typically an `Icon` or an `IconButton`.
+A `Control` to display before the text input field when the search view is open. Typically an `Icon` or an `IconButton`.
 
 Defaults to a back button which closes/pops the search view.
 
 ### `view_shape`
 
-Defines the shape of the search view. The value is [`BoxShape`](/docs/reference/types/boxshape) enum.
+Defines the shape of the search view.
 
-The default value is `RECTANGLE`.
+Value is of type [`BoxShape`](/docs/reference/types/boxshape) defaults to `BoxShape.RECTANGLE`.
 
 ### `view_side`
 
-Defines the color and weight of the search view's outline. The value is [`BorderSide`](/docs/reference/types/borderside) enum.
+Defines the color and weight of the search view's outline.
+
+Value is of type [`BorderSide`](/docs/reference/types/borderside).
 
 ### `view_surface_tint_color`
 
@@ -175,7 +175,19 @@ Defines the color of the search view's surface tint.
 
 ### `view_trailing`
 
-A list of `Control`s to display after the text input field when the search view is open. Defaults to a close button which closes/pops the search view.
+A list of `Control`s to display after the text input field when the search view is open.
+
+Defaults to a close button which closes/pops the search view.
+
+## Methods
+
+### `close_view(text)`
+
+Closes the search view. The `text` parameter (defaults to an empty string) is the text to be shown in the search bar after the search view is closed.
+
+### `open_view()`
+
+Opens the search view.
 
 ## Events
 
@@ -190,13 +202,3 @@ Fires when user presses ENTER while focus is on SearchBar.
 ### `on_tap`
 
 Fires when the search bar is tapped.
-
-## Methods
-
-### `close_view(text)`
-
-Closes the search view. The `text` parameter (defaults to an empty string) is the text to be shown in the search bar after the search view is closed.
-
-### `open_view()`
-
-Opens the search view.

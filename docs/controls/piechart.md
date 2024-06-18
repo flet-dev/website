@@ -266,16 +266,14 @@ A list of `PieChartSection` controls drawn in a circle.
 
 Fires when a chart section is hovered or clicked.
 
-Event data is an instance `ft.PieChartEvent` class with the following properties:
-
-* `type` event type such as `PointerHoverEvent`, `PointerExitEvent`, etc.
-* `section_index` - section's index or `-1` if no section hovered.
+Event data is an instance [`PieChartEvent`](/docs/reference/types/piechartevent).
 
 ## `PieChartSection` properties
 
 ### `value`
 
-Determines how much the section should occupy. This depends on sum of all sections, each section should occupy (`value` / sumValues) * 360 degrees.
+Determines how much the section should occupy. This depends on sum of all sections, each section should
+occupy (`value` / sumValues) * `360` degrees.
 
 ### `radius`
 
@@ -287,7 +285,9 @@ Background [color](/docs/reference/colors) of the section.
 
 ### `border_side`
 
-The border around section shape. The value is an instance of [`BorderSide`](/docs/reference/types/borderside) class.
+The border around section shape.
+
+Value is of type [`BorderSide`](/docs/reference/types/borderside).
 
 ### `title`
 
@@ -295,15 +295,13 @@ A title drawn at the center of the section. No title is drawn if `title` is empt
 
 ### `title_style`
 
-The style to draw `title` with. The value is an instance of [`ft.TextStyle`](/docs/reference/types/textstyle) class.
+The style to draw `title` with. The value is an instance of [`TextStyle`](/docs/reference/types/textstyle) class.
 
 ### `title_position`
 
 By default title is drawn in the middle of the section, but its position can be changed
-with `title_position` property which value must be between `0.0` and `1.0`:
-
-* `0.0` means near the center;
-* `1.0` means near the outside of the pie chart.
+with `title_position` property which value must be between `0.0` (near the center) and `1.0`(near the outside of the pie
+chart).
 
 ### `badge`
 
@@ -311,7 +309,5 @@ An optional `Control` drawn in the middle of a section.
 
 ### `badge_position`
 
-By default the badge is drawn in the middle of the section, but its position can be changed with `badge_position` property which value must be between `0.0` and `1.0`:
-
-* `0.0` means near the center;
-* `1.0` means near the outside of the pie chart.
+By default the badge is drawn in the middle of the section, but its position can be changed with `badge_position`
+property which value must be between `0.0` (near the center) and `1.0`(near the outside of the pie chart).

@@ -5,6 +5,8 @@ sidebar_label: CupertinoPicker
 
 An iOS-styled picker.
 
+To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -20,11 +22,11 @@ import TabItem from '@theme/TabItem';
 ```python
 import flet as ft
 
+
 def main(page):
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     selected_fruit_ref = ft.Ref[ft.Text]()
-
     fruits = [
         "Apple",
         "Mango",
@@ -38,16 +40,13 @@ def main(page):
         selected_fruit_ref.current.value = fruits[int(e.data)]
         page.update()
 
-    picker = ft.CupertinoPicker(
+    cupertino_picker = ft.CupertinoPicker(
         selected_index=3,
-        # item_extent=40,
         magnification=1.22,
-        # diameter_ratio=2,
         squeeze=1.2,
         use_magnifier=True,
-        # looping=False,
         on_change=handle_picker_change,
-        controls=[ft.Text(f) for f in fruits],
+        controls=[ft.Text(value=f) for f in fruits],
     )
 
     page.add(
@@ -56,11 +55,11 @@ def main(page):
             controls=[
                 ft.Text("Selected Fruit:", size=23),
                 ft.TextButton(
-                    content=ft.Text(fruits[3], size=23, ref=selected_fruit_ref),
+                    content=ft.Text(value=fruits[3], ref=selected_fruit_ref, size=23),
                     style=ft.ButtonStyle(color=ft.colors.BLUE),
-                    on_click=lambda _: page.show_bottom_sheet(
+                    on_click=lambda e: page.open(
                         ft.CupertinoBottomSheet(
-                            picker,
+                            cupertino_picker,
                             height=216,
                             padding=ft.padding.only(top=6),
                         )
@@ -69,6 +68,7 @@ def main(page):
             ],
         ),
     )
+
 
 ft.app(target=main)
 ```
@@ -100,15 +100,19 @@ The uniform height of all children. Defaults to `32`.
 
 ### `looping`
 
-If `TRUE`, children on a wheel can be scrolled in a loop. Defaults to `FALSE`.
+If `True`, children on a wheel can be scrolled in a loop.
+
+Defaults to `False`.
 
 ### `magnification`
 
 The zoomed-in rate of the magnifier, if it is used.
 
-The default value is `1.0`, which will not change anything. If the value is > `1.0`, the center item will be zoomed in by that rate, and it will also be rendered as flat, not cylindrical like the rest of the list. The item will be zoomed out if magnification < `1.0`.
+If the value is greater than `1.0`, the item in the center will be zoomed in by that rate, and it will also be rendered
+as flat, not cylindrical like the rest of the list.
+The item will be zoomed-out if magnification less than `1.0`.
 
-Must be positive.
+Defaults to `1.0` - normal.
 
 ### `off_axis_fraction`
 
