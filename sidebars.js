@@ -175,8 +175,8 @@ module.exports = {
               type: "category",
               label: "Map",
               link: {
-                type: "generated-index",
-                //ink: "controls/map",
+                type: "doc",
+                id: "controls/map",
               },
               items: [
                 "controls/mapcirclelayer",
@@ -519,6 +519,7 @@ module.exports = {
                 "reference/types/urltarget",
                 "reference/types/verticalalignment",
                 "reference/types/visibilitymode",
+                "reference/types/windoweventtype",
               ],
             },
             {
@@ -552,10 +553,15 @@ module.exports = {
                 "reference/types/scrollevent",
                 "reference/types/tapevent",
                 "reference/types/timepickerentrymodechangeevent",
+                "reference/types/windowevent",
+                "reference/types/windowresizeevent",
               ],
             },
+            "reference/types/browsercontextmenu",
+            "reference/types/window",
           ],
         },
+        "reference/icons",
       ],
     }
   ],
