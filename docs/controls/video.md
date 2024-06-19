@@ -36,7 +36,7 @@ import flet as ft
 def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.title = "TheEthicalVideo"
-    page.window_always_on_top = True
+    page.window.always_on_top = True
     page.spacing = 20
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 

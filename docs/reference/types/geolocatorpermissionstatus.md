@@ -27,7 +27,7 @@ not be shown until the user updates the permission in the app settings.
 ### `UNABLE_TO_DETERMINE`
 
 Permission status cannot be determined. This permission is only returned by
-the [`Geolocator.check_permission()`](/docs/controls/geolocator#check_permission) method on the web platform for
+the [`Geolocator.check_permission()`](/docs/controls/geolocator#get_permission_status) method on the web platform for
 browsers that did not implement the [Permission API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API).
 
 ### `WHILE_IN_USE`

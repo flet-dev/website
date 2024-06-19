@@ -85,15 +85,28 @@ The below issues were successfully fixed:
   doesn't reflect its disabled state
 * [#1753](https://github.com/flet-dev/flet/issues/1753): [`Markdown`](/docs/controls/markdown) code block not selectable
 * [#3097](https://github.com/flet-dev/flet/issues/3097): Hot-reload occurs when a file is opened
-* [#1647](https://github.com/flet-dev/flet/issues/1647): [`Container.theme_mode`](/docs/controls/container#thememode)
+* [#1647](https://github.com/flet-dev/flet/issues/1647): [`Container.theme_mode`](/docs/controls/container#theme_mode)
   not honoured when `Container.theme=None`
-* [#3064](https://github.com/flet-dev/flet/issues/3064): [`Container.on_tap_down`](/docs/controls/container#ontapdown)
+* [#3064](https://github.com/flet-dev/flet/issues/3064): [`Container.on_tap_down`](/docs/controls/container#on_tap_down)
   not called when `Container.on_click=None`
 
 Special Thanks to the dynamic Flet community for reporting all the issues they encountered. We keep working hard on
 solving the remaining ones.
 
 ## Deprecations
+
+* All the `Page.window_***` properties are now deprecated and moved to [`Page.window`](/docs/controls/page#window)
+  property, which is of type [`Window`](/docs/reference/types/window).
+  To migrate, simply use change `window_` to `window.` as seen below:
+  ```python
+  # before 
+  page.window_height = 200
+  page.on_window_event = lambda e: print(e.type)
+  
+  # now
+  page.window.height = 200
+  page.window.on_event = lambda e: print(e.type)
+  ```
 
 * [`SafeArea.minimum`](/docs/controls/safearea#minimum) is deprecated and has been renamed
   to [`minimum_padding`](/docs/controls/safearea#minimum_padding)
@@ -104,7 +117,7 @@ solving the remaining ones.
 Also, the deprecation policy has been modified. While Flet is pre-1.0, all deprecations will be removed from the API after the next 3 releases.
 So the above deprecations made in v0.23.0 (and all the other deprecations made in the previous versions), will be removed in v0.26.0.
 
-That's it!
+That's it! :)
 
 Upgrade to Flet 0.23.0, test your apps and let us know how you find the new features we added.
 If you have any questions, please join [Flet Discord server](https://discord.gg/dzWXP8SHG8) or create a new thread

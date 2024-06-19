@@ -31,7 +31,7 @@ import flet as ft
 
 
 async def main(page: ft.Page):
-    page.window_always_on_top = True
+    page.window.always_on_top = True
     page.on_error = lambda e: print(f"Page Error: {e.data}")
     page.scroll = ft.ScrollMode.ADAPTIVE
     page.appbar = ft.AppBar(title=ft.Text("Geolocator Tests"))
