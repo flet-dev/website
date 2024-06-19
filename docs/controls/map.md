@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/utility/map)
+[Live example](https://flet-controls-gallery.fly.dev/displays/map)
 
 ### Example
 
@@ -28,14 +28,11 @@ import TabItem from '@theme/TabItem';
 
 ```python
 import random
-
 import flet as ft
 import flet.map as map
 
 
 def main(page: ft.Page):
-    page.theme_mode = ft.ThemeMode.LIGHT
-
     marker_layer_ref = ft.Ref[map.MarkerLayer]()
     circle_layer_ref = ft.Ref[map.CircleLayer]()
 
@@ -142,13 +139,12 @@ def main(page: ft.Page):
                     polygons=[
                         map.PolygonMarker(
                             label="Popular Touristic Area",
-                            label_style=ft.TextStyle(
+                            label_text_style=ft.TextStyle(
                                 color=ft.colors.BLACK,
                                 size=15,
                                 weight=ft.FontWeight.BOLD,
                             ),
                             color=ft.colors.with_opacity(0.3, ft.colors.BLUE),
-                            filled=True,
                             coordinates=[
                                 map.MapLatitudeLongitude(10, 10),
                                 map.MapLatitudeLongitude(30, 15),
