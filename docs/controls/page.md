@@ -572,12 +572,12 @@ Use together with `page.bgcolor` to make a window transparent:
 import flet as ft
 
 def main(page: ft.Page):
-    page.window_bgcolor = ft.colors.TRANSPARENT
+    page.window.bgcolor = ft.colors.TRANSPARENT
     page.bgcolor = ft.colors.TRANSPARENT
-    page.window_title_bar_hidden = True
-    page.window_frameless = True
-    page.window_left = 400
-    page.window_top = 200
+    page.window.title_bar_hidden = True
+    page.window.frameless = True
+    page.window.left = 400
+    page.window.top = 200
     page.add(ft.ElevatedButton("I'm a floating button!"))
 
 ft.app(target=main)
@@ -746,7 +746,7 @@ def main(page: ft.Page):
     page.add(ft.Text("Hello!"))
 
     sleep(3)
-    page.window_visible = True
+    page.window.visible = True
     page.update()  
 
 ft.app(target=main, view=ft.AppView.FLET_APP_HIDDEN)
@@ -994,11 +994,11 @@ def main(page: ft.Page):
             confirm_dialog.open = True
             page.update()
 
-    page.window_prevent_close = True
+    page.window.prevent_close = True
     page.on_window_event = window_event
 
     def yes_click(e):
-        page.window_destroy()
+        page.window.destroy()
 
     def no_click(e):
         confirm_dialog.open = False
@@ -1150,7 +1150,7 @@ Fires when a browser or native OS window containing Flet app is resized by a use
 
 ```python
 def page_resize(e):
-    print("New page size:", page.window_width, page.window_height)
+    print("New page size:", page.window.width, page.window_height)
 
 page.on_resize = page_resize
 ```

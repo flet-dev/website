@@ -174,9 +174,9 @@ def main(page: ft.Page):
         ],
     )
 
-    page.window_width = 393
-    page.window_height = 600
-    page.window_always_on_top = False
+    page.window.width = 393
+    page.window.height = 600
+    page.window.always_on_top = False
 
     page.add(chat)
 

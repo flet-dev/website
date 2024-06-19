@@ -33,7 +33,7 @@ If a handler does not call any async methods it could be a regular sync method:
 
 ```python
 def page_resize(e):
-    print("New page size:", page.window_width, page.window_height)
+    print("New page size:", page.window.width, page.window.height)
 
 page.on_resize = page_resize
 ```
