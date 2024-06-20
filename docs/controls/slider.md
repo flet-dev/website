@@ -186,6 +186,8 @@ The currently selected value for this slider.
 
 The slider's thumb is drawn at a position that corresponds to this value.
 
+Defaults to value of `min` property.
+
 ## Events
 
 ### `on_blur`
