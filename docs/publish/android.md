@@ -141,6 +141,44 @@ adb -s <device> install <path-to-your.apk>
 
 where `<device>` can be found with `adb devices` command.
 
+### Building platform-specific APK
+
+By default, Flet builds "fat" APK which includes binaries for both `arm64-v8a` and `armeabi-v7a` architectures.
+
+If you know/control Android device your app will be distributed on you can build a smaller APK for a specific architecture.
+
+To build APK for `arm64-v8a`:
+
+```
+flet build apk --flutter-build-args=--target-platform --flutter-build-args=android-arm64
+```
+
+To build APK for `armeabi-v7a`:
+
+```
+flet build apk --flutter-build-args=--target-platform --flutter-build-args=android-arm
+```
+
+### Troubleshooting Android
+
+To run interactive commands inside simulator or device:
+
+```
+adb shell
+```
+
+To overcome "permissions denied" error while trying to browse file system in interactive Android shell:
+
+```
+su
+```
+
+To download a file from a device to your local computer:
+
+```
+adb pull <device-path> <local-path>
+```
+
 ## `flet build aab`
 
 Build an Android App Bundle (AAB) file from your app.
