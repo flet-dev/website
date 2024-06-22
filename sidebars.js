@@ -561,7 +561,6 @@ module.exports = {
             "reference/types/window",
           ],
         },
-        "reference/icons",
       ],
     }
   ],
