@@ -387,7 +387,7 @@ Supported `web_renderer` values:
 
 `True` to use italic typeface.
 
-Value is of type `bool` and default value is `False`.
+Value is of type `bool` and defaults to `False`.
 
 ### `max_lines`
 
@@ -401,7 +401,7 @@ If `False` (default) the text should break at soft line breaks.
 
 If `True`, the glyphs in the text will be positioned as if there was unlimited horizontal space.
 
-Value is of type `bool` and defaults to False.
+Value is of type `bool` and defaults to `False`.
 
 ### `overflow`
 
