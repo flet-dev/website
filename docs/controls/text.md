@@ -387,6 +387,8 @@ Supported `web_renderer` values:
 
 `True` to use italic typeface.
 
+Value is of type `bool` and defaults to `False`.
+
 ### `max_lines`
 
 An optional maximum number of lines for the text to span, wrapping if necessary. If the text exceeds the given number of lines, it will be truncated according to `overflow`.
@@ -398,6 +400,8 @@ If this is 1, text will not wrap. Otherwise, text will be wrapped at the edge of
 If `False` (default) the text should break at soft line breaks.
 
 If `True`, the glyphs in the text will be positioned as if there was unlimited horizontal space.
+
+Value is of type `bool` and defaults to `False`.
 
 ### `overflow`
 
@@ -425,6 +429,8 @@ If present, the semantics of this control will contain this value instead of the
 
 This is useful for replacing abbreviations or shorthands with the full text value:
 
+Value is of type `str`.
+
 ```python
 ft.Text("$$", semantics_label="Double dollars")
 ```
@@ -433,7 +439,7 @@ ft.Text("$$", semantics_label="Double dollars")
 
 Text size in virtual pixels.
 
-Defaults to `14`.
+Value is of type `OptionalNumber` and defaults to `14`.
 
 ### `spans`
 
@@ -460,6 +466,8 @@ Value is of type [`TextThemeStyle`](/docs/reference/types/textthemestyle).
 ### `value`
 
 The text displayed.
+
+Value is of type `str`.
 
 ### `weight`
 
