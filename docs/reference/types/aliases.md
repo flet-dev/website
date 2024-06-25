@@ -28,7 +28,7 @@ Union of `int`, `float`
 
 ### `OffsetValue`
 
-Union of `Offset`, `None`, and union of two; two valued tuples of 1st element of type `float` and 2nd of type `int`
+Union of [`Offset`](/docs/reference/types/offset), `None`, and union of two; two valued tuples of 1st element of type `float` and 2nd of type `int`
 
 ### `OptionalEventCallback`
 
@@ -52,11 +52,11 @@ Union of `dict` of `str` and [`Number`](#number), and [`Number`](#number).
 
 ### `RotateValue`
 
-Union of `int`, `float`, `Rotate` and `None`
+Union of `int`, `float`, [`Rotate`](/docs/reference/types/rotate) and `None`
 
 ### `ScaleValue`
 
-Union of `int`, `float`, `Scale` and `None`
+Union of `int`, `float`, [`Scale`](/docs/reference/types/scale) and `None`
 
 ### `Wrapper`
 
