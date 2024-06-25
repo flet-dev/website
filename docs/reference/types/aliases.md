@@ -16,11 +16,11 @@ Union of `bool`, `int`, `Animation` and `None`
 
 ### `BorderRadiusValue`
 
-Union of `int`, `float`, `BorderRadius` and `None`
+Union of `int`, `float`, [`BorderRadius`](/docs/reference/types/borderradius) and `None`
 
 ### `MarginValue`
 
-Union of `int`, `float`, `Margin` and `None`
+Union of `int`, `float`, [`Margin`](/docs/reference/types/margin) and `None`
 
 ### `Number`
 
@@ -28,11 +28,11 @@ Union of `int`, `float`
 
 ### `OffsetValue`
 
-Union of `Offset`, union of two, two valued tuples each  and `None`
+Union of `Offset`, `None`, and union of two; two valued tuples of 1st element of type `float` and 2nd of type `int`
 
 ### `OptionalEventCallback`
 
-Union of callable with single argument of type `ControlEvent` and return value of `None`, and `None`
+Union of `None` and callable with single argument of type `ControlEvent` and return value of `None`
 
 ### `OptionalNumber`
 
@@ -40,7 +40,7 @@ Union of `int`, `float` and `None`
 
 ### `OptionalString`
 
-Union of str
+Union of `str` and `None`
 
 ### `PaddingValue`
 
