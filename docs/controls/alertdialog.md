@@ -79,7 +79,7 @@ Typically this is a list of [`TextButton`](/docs/controls/textbutton) controls.
 
 The padding that surrounds each button in `actions`.
 
-Value is of type `PaddingValue`.
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 ### `actions_alignment`
 
@@ -120,7 +120,9 @@ Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaul
 
 ### `content`
 
-The (optional) content (of type `Control`) of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](/docs/controls/column) that contains the dialog's [`Text`](/docs/controls/text) message.
+The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](/docs/controls/column) that contains the dialog's [`Text`](/docs/controls/text) message.
+
+Value is of type [`Control`].
 
 ### `content_padding`
 
@@ -144,7 +146,7 @@ A control that is displayed at the top of the dialog. Typically a [`Icon`](/docs
 
 Padding around the `icon`.
 
-Value is of type `PaddingValue`.
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 ### `inset_padding`
 
@@ -173,7 +175,7 @@ The semantic label of the dialog used by accessibility frameworks to announce sc
 
 In iOS, if this label is not provided, a semantic label will be inferred from the `title` if it is not null.
 
-Value is of type `str` or `None`
+Value is of type `str`.
 
 ### `shadow_color`
 
