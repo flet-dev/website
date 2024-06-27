@@ -86,7 +86,7 @@ A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to displ
 
 Describes position of [`floating_action_button`](#floating_action_button)
 
-Value is of type [`FloatingActionButtonLocaiton`](/docs/controls/floatingactionbutton)
+Value is of type [`FloatingActionButtonLocation`](/docs/controls/floatingactionbutton)
 
 ### `fullscreen_dialog`
 
