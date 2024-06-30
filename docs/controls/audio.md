@@ -149,7 +149,7 @@ Setting balance is supported on Windows and Linux only.
 
 Sets the playback rate. iOS and macOS have limits between 0.5 and 2x Android SDK version should be 23 or higher.
 
-Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber)
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber).
 
 ### `release_mode`
 
@@ -177,7 +177,7 @@ Sets the volume (amplitude).
 
 0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
 
-Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber)
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber).
 
 ## Methods
 

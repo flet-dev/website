@@ -69,7 +69,7 @@ For example:
 badge.alignment = ft.alignment.top_left
 ```
 
-The value is of type [`Alignment`](/docs/reference/types/alignment)
+Value is of type [`Alignment`](/docs/reference/types/alignment).
 
 ### `bgcolor`
 
@@ -85,7 +85,7 @@ Value is of type `Control`.
 
 If False, label is not displayed. By default, `label_visible` is True. It can be used to create a badge that's only shown under certain conditions.
 
-Valeu is of type `bool`.
+Value is of type `bool`.
 
 ### `large_size`
 
@@ -93,7 +93,7 @@ The badge's label height if `text` is provided.
 
 If the default value is overridden then it may be useful to also override `padding` and `alignment`.
 
-Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber)  and default value is 16. 
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber)  and defaults to `16`. 
 
 ### `offset`
 
@@ -109,7 +109,7 @@ The padding added to the badge's label.
 
 This value is only used if `text` is provided. Defaults to 4 pixels on the left and right.
 
-Padding value is an instance of [`PaddingValue`](/docs/reference/types/aliases#paddingvalue)
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 ### `small_size`
 
@@ -125,7 +125,7 @@ If the text is not provided, the badge is shown as a filled circle of [`small_si
 
 If `text` is provided, the label is a StadiumBorder shaped badge with height equal to [`large_size`](#large_size).
 
-Value is of type `str`
+Value is of type `str`.
 
 ### `text_color`
 
@@ -133,4 +133,6 @@ Value is of type `str`
 
 ### `text_style`
 
-The text style to use for text in the label. The value is an instance if [`TextStyle`](/docs/reference/types/textstyle) class.
+The text style to use for text in the label.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).

@@ -158,7 +158,7 @@ A shadow is only visible and displayed if the `elevation` is greater than zero.
 
 The shape of the app bar's Material as well as its shadow.
 
-Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder)
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `surface_tint_color`
 
@@ -198,7 +198,7 @@ Value is of tye [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber)
 
 The opacity of the toolbar. Value ranges from `0.0` (transparent) to `1.0` (fully opaque).
 
-VAlue is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber) and defaults to `1.0`.
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber) and defaults to `1.0`.
 
 ### `toolbar_text_style`
 

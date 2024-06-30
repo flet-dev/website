@@ -80,7 +80,7 @@ Value is of type `int` defaults to `1000` milliseconds.
 
 The duration, in milliseconds, of the transition from the new `content` value to the old one.
 
-Value of type `int` defaults to `1000` milliseconds.
+Value is of type `int` and defaults to `1000` milliseconds.
 
 ### `switch_in_curve`
 

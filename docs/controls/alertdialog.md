@@ -95,7 +95,7 @@ Typically used to provide padding to the button bar between the button bar and t
 
 If are no actions, then no padding will be included. The padding around the button bar defaults to zero.
 
-The value of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 ### `adaptive`
 
@@ -122,7 +122,7 @@ Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaul
 
 The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](/docs/controls/column) that contains the dialog's [`Text`](/docs/controls/text) message.
 
-Value is of type [`Control`].
+Value is of type `Control`.
 
 ### `content_padding`
 
@@ -130,7 +130,7 @@ Padding around the content.
 
 If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
 
-The value of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 ### `elevation`
 
@@ -205,7 +205,7 @@ Padding around the title.
 
 If there is no title, no padding will be provided. Otherwise, this padding is used.
 
-The value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 Defaults to providing `24` pixels on the top, left, and right of the title. If the `content` is not `None`, then no
 bottom padding is provided (but see [`content_padding`](#content_padding)).

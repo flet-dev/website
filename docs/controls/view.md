@@ -105,13 +105,15 @@ to `CrossAxisAlignment.START`.
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Value is of type `int` and defaults to `10`.
+Throttling in milliseconds for `on_scroll` event.
+
+Value is of type `int` and defaults to `10`.
 
 ### `padding`
 
 A space between page contents and its edges.
 
-Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue) and defaults to `10`.
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue) and defaults to `padding.all(10)`.
 
 ### `route`
 
@@ -125,7 +127,7 @@ Enables a vertical scrolling for the Page to prevent its content overflow.
 
 Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
 
-Value is of type [`ScrollMode`](/docs/reference/types/scrollmode) and defaults to `ScrollMode.None`
+Value is of type [`ScrollMode`](/docs/reference/types/scrollmode) and defaults to `None`.
 
 ### `spacing`
 

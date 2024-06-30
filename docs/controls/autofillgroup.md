@@ -65,7 +65,7 @@ ft.app(main)
 
 The content control of this group.
 
-Value is of type `Control`
+Value is of type `Control`.
 
 ### `dispose_action`
 
