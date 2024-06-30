@@ -23,28 +23,28 @@ import flet as ft
 
 def main(page: ft.Page):
     page.add(
-        ft.AutoFillGroup(
+        ft.AutofillGroup(
             ft.Column(
                 controls=[
                     ft.TextField(
                         label="Name",
-                        autofill_hints=ft.AutoFillHint.NAME,
+                        autofill_hints=ft.AutofillHint.NAME,
                     ),
                     ft.TextField(
                         label="Email",
-                        autofill_hints=[ft.AutoFillHint.EMAIL],
+                        autofill_hints=[ft.AutofillHint.EMAIL],
                     ),
                     ft.TextField(
                         label="Phone Number",
-                        autofill_hints=[ft.AutoFillHint.TELEPHONE_NUMBER],
+                        autofill_hints=[ft.AutofillHint.TELEPHONE_NUMBER],
                     ),
                     ft.TextField(
                         label="Street Address",
-                        autofill_hints=ft.AutoFillHint.FULL_STREET_ADDRESS,
+                        autofill_hints=ft.AutofillHint.FULL_STREET_ADDRESS,
                     ),
                     ft.TextField(
                         label="Postal Code",
-                        autofill_hints=ft.AutoFillHint.POSTAL_CODE,
+                        autofill_hints=ft.AutofillHint.POSTAL_CODE,
                     ),
                 ]
             )
