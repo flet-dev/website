@@ -125,9 +125,7 @@ Value is of type `str`
 
 Enables a vertical scrolling for the Page to prevent its content overflow.
 
-Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
-
-Value is of type [`ScrollMode`](/docs/reference/types/scrollmode) and defaults to `None`.
+Value is of type [`ScrollMode`](/docs/reference/types/scrollmode).
 
 ### `spacing`
 
