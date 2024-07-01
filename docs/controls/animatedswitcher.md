@@ -68,17 +68,19 @@ ft.app(target=main)
 The content to display. When the `content` changes, the AnimatedSwitcher will animate the transition from the
 old `content` to the new one.
 
+Value is of type `Control`.
+
 ### `duration`
 
 The duration, in milliseconds, of the transition from the old `content` value to the new one.
 
-Defaults to `1000` milliseconds.
+Value is of type `int` defaults to `1000` milliseconds.
 
 ### `reverse_duration`
 
 The duration, in milliseconds, of the transition from the new `content` value to the old one.
 
-Defaults to `1000` milliseconds.
+Value is of type `int` and defaults to `1000` milliseconds.
 
 ### `switch_in_curve`
 

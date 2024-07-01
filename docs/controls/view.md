@@ -28,7 +28,7 @@ Background [color](/docs/reference/colors) of the view.
 
 ### `controls`
 
-A list of Controls to display on the Page.
+A list of `Control`s to display on the Page.
 
 For example, to add a new control to a page:
 
@@ -68,6 +68,8 @@ page.update()
   </TabItem>
 </Tabs>
 
+Value is of a list of `Control`s
+
 ### `drawer`
 
 A [`NavigationDrawer`](/docs/controls/navigationdrawer) control to display as a panel sliding from the start edge of the view.
@@ -76,19 +78,23 @@ A [`NavigationDrawer`](/docs/controls/navigationdrawer) control to display as a 
 
 A [`NavigationDrawer`](/docs/controls/navigationdrawer) control to display as a panel sliding from the end edge of the view.
 
+### `floating_action_button`
+
+A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to display on top of Page content.
+
+### `floating_action_button_location`
+
+Describes position of [`floating_action_button`](#floating_action_button)
+
+Value is of type [`FloatingActionButtonLocation`](/docs/controls/floatingactionbutton)
+
 ### `fullscreen_dialog`
 
 Whether this view is a full-screen dialog.
 
 In Material and Cupertino, being fullscreen has the effects of making the app bars have a close button instead of a back button. On iOS, dialogs transitions animate differently and are also not closeable with the back swipe gesture.
 
-### `route`
-
-View's route - not currently used by Flet framework, but can be used in a user program to update [`page.route`](/docs/controls/page#route) when a view popped.
-
-### `floating_action_button`
-
-A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to display on top of Page content.
+Value is of type `bool` and defaults to `False`.
 
 ### `horizontal_alignment`
 
@@ -99,24 +105,34 @@ to `CrossAxisAlignment.START`.
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+Throttling in milliseconds for `on_scroll` event.
+
+Value is of type `int` and defaults to `10`.
 
 ### `padding`
 
-A space between page contents and its edges. Default value is 10 pixels from each side.
+A space between page contents and its edges.
 
-Padding is an instance of [`padding.Padding`](/docs/reference/types/padding) class.
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue) and defaults to `padding.all(10)`.
+
+### `route`
+
+View's route - not currently used by Flet framework, but can be used in a user program to update [`page.route`](/docs/controls/page#route) when a view popped.
+
+Value is of type `str`
 
 ### `scroll`
 
 Enables a vertical scrolling for the Page to prevent its content overflow.
 
-Property value is an optional [`ScrollMode`](/docs/reference/types/scrollmode) enum with `None` as default.
+Value is of type [`ScrollMode`](/docs/reference/types/scrollmode).
 
 ### `spacing`
 
 Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only
 when `vertical_alignment` is set to `MainAxisAlignment.START`, `MainAxisAlignment.END` or `MainAxisAlignment.CENTER`.
+
+Value is of type [`OptionalNumber`] and defaults to `10`
 
 ### `vertical_alignment`
 

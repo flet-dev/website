@@ -106,7 +106,7 @@ ft.app(target=main)
 Not all properties are supported on all platforms. Please check this [platform-feature parity matrix](https://pub.dev/packages/record#platform-feature-parity-matrix) for more information on which properties are supported on which platforms.
 :::
 
-### `audio_encoding`
+### `audio_encoder`
 
 The audio encoder to be used for recording.
 
@@ -119,19 +119,19 @@ See [`this`](https://pub.dev/packages/record#file) for a detailed overview on th
 
 The recorder will try to auto adjust recording volume in a limited range.
 
-Defaults to `False`.
+Value is of type `bool` and defaults to `False`.
 
 ### `bit_rate`
 
 The audio encoding bit rate in bits per second.
 
-Defaults to `128000`.
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber) and defaults to `128000`.
 
 ### `cancel_echo`
 
 The recorder will try to reduce echo.
 
-Defaults to `False`.
+Value is of type `bool` defaults to `False`.
 
 ### `channels_num`
 
@@ -143,13 +143,13 @@ Defaults to `2`.
 
 The sample rate for audio in samples per second.
 
-Defaults to `44100`.
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber) and defaults to `44100`.
 
 ### `suppress_noise`
 
 The recorder will try to negates the input noise.
 
-Defaults to `False`.
+Value is of type `bool` and defaults to `False`.
 
 ## Methods
 

@@ -47,6 +47,8 @@ The index of the selected suggestion in the list of `suggestions`.
 
 This property is read-only and `None` at initialization, until a suggestion is selected for the first time.
 
+Valule is of type `int`.
+
 ### `suggestions`
 
 A list of [`AutoCompleteSuggestion`](/docs/reference/types/autocompletesuggestion) controls representing the suggestions to be displayed. 
@@ -60,7 +62,7 @@ A list of [`AutoCompleteSuggestion`](/docs/reference/types/autocompletesuggestio
 
 The maximum - visual - height of the suggestions list.
 
-Defaults to `200`.
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber) and defaults to `200`.
 
 ## Events
 

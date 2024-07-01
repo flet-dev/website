@@ -127,6 +127,8 @@ ft.app(target=main)
 
 Starts playing audio as soon as audio control is added to a page.
 
+Value is of type `bool` and defaults to `False`.
+
 :::note
 Autoplay works in desktop, mobile apps and Safari browser, but doesn't work in Chrome/Edge.
 :::
@@ -137,6 +139,8 @@ Sets the stereo balance.
 
 -1 - The left channel is at full volume; the right channel is silent. 1 - The right channel is at full volume; the left channel is silent. 0 - Both channels are at the same volume.
 
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber).
+
 :::note
 Setting balance is supported on Windows and Linux only.
 :::
@@ -144,6 +148,8 @@ Setting balance is supported on Windows and Linux only.
 ### `playback_rate`
 
 Sets the playback rate. iOS and macOS have limits between 0.5 and 2x Android SDK version should be 23 or higher.
+
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber).
 
 ### `release_mode`
 
@@ -163,11 +169,15 @@ Sets the URL to the audio file. It could be an asset URL, see [Image.src](/docs/
 
 Sets the contents of audio file encoded in base-64 format.
 
+Value is of type `str`.
+
 ### `volume`
 
 Sets the volume (amplitude).
 
 0 is mute and 1 is the max volume. The values between 0 and 1 are linearly interpolated.
+
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber).
 
 ## Methods
 
