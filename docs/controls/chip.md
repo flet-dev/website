@@ -134,7 +134,7 @@ Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaul
 
 ### `color`
 
-The [color](/docs/reference/colors) that fills the chip in various [`ControlState`](/docs/reference/types/controlstate)
+The [color](/docs/reference/colors) that fills the chip in various [`MaterialState`](/docs/reference/types/materialstate)
 s.
 
 ### `delete_icon_tooltip`
