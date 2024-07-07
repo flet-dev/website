@@ -70,13 +70,15 @@ If the value is `True`, an adaptive AppBar is created based on whether the targe
 
 On iOS and macOS, a [`CupertinoAppBar`](/docs/controls/cupertinoappbar) is created, which has matching functionality and presentation as `AppBar`, and the graphics as expected on iOS. On other platforms, a Material AppBar is created.
 
-The default value is `False`.
+Value is of type `bool` and defaults to `False`.
 
 ### `automatically_imply_leading`
 
 Controls whether we should try to imply the leading widget if null.
 
 If `True` and `leading` is null, automatically try to deduce what the leading widget should be. If `False` and `leading` is null, leading space is given to title. If leading widget is not null, this parameter has no effect.
+
+Value is of type `bool`.
 
 ### `bgcolor`
 
@@ -86,11 +88,13 @@ The fill [color](/docs/reference/colors) to use for an AppBar. Default color is 
 
 Whether the title should be centered.
 
-Defaults to `False`.
+Value is of type `bool` and defaults to `False`.
 
 ### `clip_behavior`
 
-The content will be clipped (or not) according to this option. Property value is [`ClipBehavior`](/docs/reference/types/clipbehavior) enum.
+The content will be clipped (or not) according to this option.
+
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior).
 
 ### `color`
 
@@ -102,17 +106,19 @@ The app bar's elevation.
 
 Note: This effect is only visible when using the Material 2 design (`Theme.use_material3=False`).
 
-Defaults to `4`.
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber) and defaults to `4`.
 
 ### `elevation_on_scroll`
 
 The elevation to be used if this app bar has something scrolled underneath it.
 
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber).
+
 ### `exclude_header_semantics`
 
 Whether the `title` should be wrapped with header [`Semantics`](/docs/controls/semantics).
 
-Defaults to `False`.
+Value is of type `bool` and defaults to `False`.
 
 ### `force_material_transparency`
 
@@ -120,11 +126,13 @@ Forces the app bar to be transparent (instead of Material's default type).
 
 This will also remove the visual display of `bgcolor` and `elevation`, and affect other characteristics of this app bar.
 
+Value is of type `bool`.
+
 ### `is_secondary`
 
 Whether this app bar is not being displayed at the top of the screen.
 
-Defaults to`False`.
+Value is of type `bool` and defaults to `False`.
 
 ### `leading`
 
@@ -132,11 +140,13 @@ A `Control` to display before the toolbar's title.
 
 Typically the leading control is an [`Icon`](/docs/controls/icon) or an [`IconButton`](/docs/controls/iconbutton).
 
+Value is of type `Control`.
+
 ### `leading_width`
 
 Defines the width of leading control.
 
-Defaults to  `56.0`.
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber) and defaults to `56.0`.
 
 ### `shadow_color`
 
@@ -147,6 +157,8 @@ A shadow is only visible and displayed if the `elevation` is greater than zero.
 ### `shape`
 
 The shape of the app bar's Material as well as its shadow.
+
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `surface_tint_color`
 
@@ -160,11 +172,15 @@ The primary `Control` displayed in the app bar. Typically a [`Text`](/docs/contr
 
 **Note** that, if `AppBar.adaptive=True` and the app is opened on an iOS or macOS device, this control will be automatically centered.
 
+Value is of type `Control`.
+
 ### `title_spacing`
 
 The spacing around `title` on the horizontal axis. It is applied even if there are no `leading` or `actions` controls.
 
 If you want `title` to take all the space available, set this value to `0.0`.
+
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber).
 
 ### `title_text_style`
 
@@ -176,11 +192,13 @@ Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 
 Defines the height of the toolbar component of an AppBar.
 
-Defaults to `56.0`.
+Value is of tye [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber) and defaults to `56.0`.
 
 ### `toolbar_opacity`
 
-The opacity of the toolbar. Value ranges from `0.0` (transparent) to `1.0` (fully opaque) which is the default.
+The opacity of the toolbar. Value ranges from `0.0` (transparent) to `1.0` (fully opaque).
+
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber) and defaults to `1.0`.
 
 ### `toolbar_text_style`
 

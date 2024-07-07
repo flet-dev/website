@@ -65,6 +65,8 @@ ft.app(main)
 
 The content control of this group.
 
+Value is of type `Control`.
+
 ### `dispose_action`
 
 The action to be run when this `AutofillGroup` is the topmost `AutofillGroup` and it's being disposed, in order to clean

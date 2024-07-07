@@ -79,6 +79,8 @@ Typically this is a list of [`TextButton`](/docs/controls/textbutton) controls.
 
 The padding that surrounds each button in `actions`.
 
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
+
 ### `actions_alignment`
 
 Defines the horizontal layout of the actions.
@@ -93,7 +95,7 @@ Typically used to provide padding to the button bar between the button bar and t
 
 If are no actions, then no padding will be included. The padding around the button bar defaults to zero.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 ### `adaptive`
 
@@ -104,7 +106,7 @@ On iOS and macOS, a [`CupertinoAlertDialog`](/docs/controls/cupertinoalertdialog
 See the example of
 usage [here](/docs/controls/cupertinoalertdialog#cupertinoalertdialog-and-adaptive-alertdialog-example).
 
-Defaults to `False`.
+Value is of type `bool` and defaults to `False`.
 
 ### `bgcolor`
 
@@ -120,17 +122,21 @@ Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaul
 
 The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](/docs/controls/column) that contains the dialog's [`Text`](/docs/controls/text) message.
 
+Value is of type `Control`.
+
 ### `content_padding`
 
 Padding around the content.
 
 If there is no content, no padding will be provided. Otherwise, padding of 20 pixels is provided above the content to separate the content from the title, and padding of 24 pixels is provided on the left, right, and bottom to separate the content from the other edges of the dialog.
 
-The value is an instance of [`Padding`](/docs/reference/types/padding) class or a number.
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 ### `elevation`
 
 Defines the elevation (z-coordinate) at which the dialog should appear.
+
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber).
 
 ### `icon`
 
@@ -140,11 +146,13 @@ A control that is displayed at the top of the dialog. Typically a [`Icon`](/docs
 
 Padding around the `icon`.
 
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
+
 ### `inset_padding`
 
 Padding around the Dialog itself.
 
-The value is an instance of [`Padding`](/docs/reference/types/padding) class or a number.
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 Defaults to `padding.symmetric(vertical=40, horizontal=24)` - 40 pixels horizontally and 24 pixels vertically outside of
 the dialog box.
@@ -153,17 +161,21 @@ the dialog box.
 
 Whether dialog can be dismissed/closed by clicking the area outside of it.
 
+Value is of type `bool` and defaults to `False`.
+
 ### `open`
 
 Set to `True` to display a dialog.
 
-Defaults to `False`.
+Value is of type `bool` and defaults to `False`.
 
 ### `semantics_label`
 
 The semantic label of the dialog used by accessibility frameworks to announce screen transitions when the dialog is opened and closed.
 
 In iOS, if this label is not provided, a semantic label will be inferred from the `title` if it is not null.
+
+Value is of type `str`.
 
 ### `shadow_color`
 
@@ -193,10 +205,10 @@ Padding around the title.
 
 If there is no title, no padding will be provided. Otherwise, this padding is used.
 
-The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 Defaults to providing `24` pixels on the top, left, and right of the title. If the `content` is not `None`, then no
-bottom padding is provided (but see `content_padding`).
+bottom padding is provided (but see [`content_padding`](#content_padding)).
 If it is not set, then an extra `20` pixels of bottom padding is added to separate the title from the actions.
 
 ## Events

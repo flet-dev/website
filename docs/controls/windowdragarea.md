@@ -47,8 +47,10 @@ ft.app(target=main)
 
 A control to use for dragging/maximizing/restoring app window.
 
+Value is of type `Control`.
+
 ### `maximizable`
 
 Whether double-clicking on a window drag area causes window to maximize/restore.
 
-Defaults to `True`.
+Value is of type `bool` and defaults to `True`.

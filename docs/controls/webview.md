@@ -48,13 +48,19 @@ Set the background [color](/docs/reference/colors) of the WebView.
 
 Enable or disable the JavaScript execution on the page. Note, that disabling the JavaScript execution on the page may result to unexpected web page behaviour.
 
+Value is of type `bool`.
+
 ### `prevent_link`
 
 Specify a prefix for links to prevent navigating or downloading.
 
+Value is of type `str`.
+
 ### `url`
 
 Start the WebView by loading the `url` value.
+
+Value is of type `str`.
 
 ## Events
 
