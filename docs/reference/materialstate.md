@@ -1,11 +1,11 @@
 ---
-title: ControlState
-sidebar_label: ControlState
+title: MaterialState
+sidebar_label: MaterialState
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-`ControlState` enum has the following values:
+`MaterialState` enum has the following values:
 
 ### `DEFAULT`
 
@@ -32,15 +32,15 @@ ft.Radio(fill_color=ft.colors.GREEN)
 ```
 
 To configure fill color for specific Material states set its value to a dictionary where the key is state name. For
-example, to configure different fill colors for `ControlState.HOVERED` and `ControlState.FOCUSED` states and another
+example, to configure different fill colors for `MaterialState.HOVERED` and `MaterialState.FOCUSED` states and another
 color for all other states:
 
 ```python
 ft.Radio(
     fill_color={
-        ft.ControlState.HOVERED: ft.colors.GREEN,
-        ft.ControlState.FOCUSED: ft.colors.RED,
-        ft.ControlState.DEFAULT: ft.colors.BLACK,
+        ft.MaterialState.HOVERED: ft.colors.GREEN,
+        ft.MaterialState.FOCUSED: ft.colors.RED,
+        ft.MaterialState.DEFAULT: ft.colors.BLACK,
     }
 )
 ```
