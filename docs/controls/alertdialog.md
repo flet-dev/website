@@ -152,7 +152,7 @@ Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 Padding around the Dialog itself.
 
-The value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
 
 Defaults to `padding.symmetric(vertical=40, horizontal=24)` - 40 pixels horizontally and 24 pixels vertically outside of
 the dialog box.
