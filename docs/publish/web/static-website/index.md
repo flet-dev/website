@@ -128,7 +128,7 @@ Command optional arguments:
 
 * `--pre` - allow micropip to install pre-release Python packages.
 * `-a ASSETS_DIR`, `--assets ASSETS_DIR` - path to an assets directory.
-* `--app-title APP_TITLE` - application title.
+* `--app-name APP_NAME` - application namee.
 * `--app-description APP_DESCRIPTION` - application description.
 * `--base-url BASE_URL` - base URL for the app.
 * `--web-renderer {canvaskit,html}` - web renderer to use.
