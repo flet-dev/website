@@ -16,7 +16,7 @@ def main(page: ft.Page):
     flashLight = ft.Flashlight()
     page.overlay.append(flashLight)
     page.add(
-        ft.TextButton("toggle", on_click: lambda _: flashlight.toggle())
+        ft.TextButton("toggle", on_click=lambda _: flashlight.toggle())
     )
 
 ft.app(target=main)
