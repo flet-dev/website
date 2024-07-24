@@ -197,8 +197,7 @@ Stops recording session and release internal recorder resource. It returns a str
 
 ### `on_state_changed`
 
-Fires when audio recorder's state changes. Event's `data` contains one of the following states:
+Fires when audio recorder's state changes.
 
-* `"stopped"`
-* `"recording"`
-* `"paused"`
+Event handler argument is of
+type [`AudioRecorderStateChangeEvent`](/docs/reference/types/audiorecorderstatechangeevent).

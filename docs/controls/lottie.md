@@ -5,6 +5,16 @@ sidebar_label: Lottie
 
 Displays an animation from a Lottie file (URL or local file).
 
+:::info Packaging
+To build your Flet app that uses `Lottie` control add `--include-packages flet_lottie` to `flet build` command, for
+example:
+
+```
+flet build apk --include-packages flet_lottie
+```
+
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

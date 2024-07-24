@@ -9,13 +9,14 @@ import TabItem from '@theme/TabItem';
 
 ### `alt`
 
-Whether the `Alt` (or `Option`) key was pressed.
+Whether a logical ALT modifier key was pressed, regardless of which side of the keyboard it is on. For example, `Alt`
+or `Option`.
 
 Value is of type `bool`.
 
 ### `ctrl`
 
-Whether the `Ctrl` key was pressed.
+Whether a logical CTRL modifier key is pressed, regardless of which side of the keyboard it is on. For example, `Ctrl`.
 
 Value is of type `bool`.
 
@@ -27,7 +28,8 @@ Value is of type `str`.
 
 ### `meta`
 
-Whether the `Command` key was pressed.
+Whether a logical META modifier key is pressed, regardless of which side of the keyboard it is on. For example,
+the `Command`.
 
 Value is of type `bool`.
 
@@ -82,5 +84,4 @@ def main(page: ft.Page):
     )
 
 ft.app(main)
-
 ```
