@@ -3,7 +3,8 @@ title: LocalAuthentication
 sidebar_label: LocalAuthentication
 ---
 
-A control to use the local authentication for user varification. Based on [local_auth](https://pub.dev/packages/local_auth) Flutter widget.
+A control to use the local authentication for user verification. Based on [local_auth](https://pub.dev/packages/local_auth) Flutter widget.
+LocalAuthentication supports Android, IOS, Linux, MacOS, Windows.
 
 LocalAuthentication control is non-visual and should be added to `page.overlay` list.
 
@@ -19,7 +20,7 @@ def main(page: ft.Page):
     def on_click(e):
         print(
             auth.authenticate(
-                title="title", biometricsOnly=False, useErrorDialogs=True
+                title="title", biometricsOnly=False,
             )
         )
 
@@ -37,13 +38,12 @@ ft.app(main)
 
 Title to be displayed in the authentication dialog.
 
+Won't work on Linux.
+
 ### `biometricsOnly`
 
 📱 Moblie only. Allow authentication only using Biometrics.
 
-### `useErrorDialogs`
-
-Allow the system an attempt to handle user-fixable issues encountered while authenticating. For instance, if a fingerprint reader exists on the device but there's no fingerprint registered, the plugin might attempt to take the user to settings to add one.
 
 ## Methods
 
@@ -51,16 +51,6 @@ Allow the system an attempt to handle user-fixable issues encountered while auth
 
 Authenticates the user and returns `True` or `False`.
 
-### `supported`
+### `available`
 
-Checks the devices authentication capabilities and returns dictionary where key is the type of authentication and value is boolean.
-
-Example return:
-```python
-{
-    "devicesupport" : True
-    "biometrics" : False
-    "weak" : True
-    "strong" : False
-}
-```
+Checks if Biometrics | Passcode are available to authenticate with and returns `True` or `False`
