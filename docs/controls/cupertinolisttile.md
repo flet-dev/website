@@ -89,7 +89,7 @@ Defaults to `12.0`, if `notched=True`, else `16.0`.
 
 If `True`, list tile will be created in an "Inset Grouped" form, known from either iOS Notes or Reminders app.
 
-4Defaults to `False`.
+Defaults to `False`.
 
 ### `padding`
 
