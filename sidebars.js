@@ -320,6 +320,7 @@ module.exports = {
             "controls/geolocator",
             "controls/gesturedetector",
             "controls/hapticfeedback",
+            "controls/localauthentication",
             "controls/mergesemantics",
             "controls/permissionhandler",
             "controls/rive",
