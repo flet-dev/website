@@ -348,6 +348,10 @@ Fires when an error occurs.
 
 Fires when a video completes.
 
+### `on_track_changed`
+
+Fires when a video track changes, returns an Int of track currently playing.
+
 ### `on_exit_fullscreen`
 
 Fires when the video exits fullscreen
