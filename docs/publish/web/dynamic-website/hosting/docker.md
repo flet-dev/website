@@ -3,7 +3,7 @@ title: Docker
 sidebar_label: Docker
 ---
 
-You can watch the tutorial video on Docker by following the link below or directly viewing it embedded:
+You can watch the tutorial video on Docker by following the link below:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8UY9sisKz1Q" frameborder="0" allowfullscreen></iframe>
 
@@ -17,7 +17,19 @@ When linking to the "assets" directory, use `/` instead of `/assets`.
 
 ### Sample Flet Docker Example
 
+This is the minimal docker structure that you need:
+
+```
+├── Dockerfile
+├── main.py
+├── requirements.txt
+```
+
+Optionally it's recommended that you add a ```.dockerignore``` file as well. This file is responsible for ignoring any unwanted files or directories when you're building your docker image. It's similar to ```.gitignore```.
+
 Here’s a simple example of a Flet app configured to run in Docker:
+
+First you need a main file to run your entire code as server.
 
 ```python title="main.py"
 import flet as ft
@@ -41,6 +53,30 @@ ft.app(
 )
 ```
 
+Second you need a Dockerfile file to build your entire docker image from your main python file.
+
+```Docker title="Dockerfile"
+FROM python:3-alpine
+
+WORKDIR /app
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["python", "main.py"]
+```
+
+Third you need a requirements.txt to include all the libraries that you're using in your python file.
+
+
+```requirements title="requirements.txt"
+flet
+```
+
 ### Building and Running Your Docker Container
 
 **Log in to Docker CLI:**
@@ -57,9 +93,9 @@ Enter your password when prompted
 <your-password>
 ```
 
-**Run and Test Your Docker Container:**
+**Build your docker image from your flet project:**
 
-Create a container from your image and test it:
+Create an image from your flet project.
 
 ```bash
 docker build -t <project-name> .
@@ -67,7 +103,7 @@ docker build -t <project-name> .
 
 **Run and Test Your Docker Container:**
 
-Create a container from your image and test it:
+Create a container from your image and test it.
 
 ```bash
 docker run -p 80:8000 <project-name>
