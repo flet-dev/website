@@ -33,6 +33,10 @@ Maximum allowed size (in bytes) of uploaded files.
 
 Default is unlimited.
 
+#### `FLET_CLI_NO_RICH_OUTPUT`
+
+Whether to disable rich output in the console.
+
 #### `FLET_SECRET_KEY`
 
 A secret key to sign temporary upload URLs.

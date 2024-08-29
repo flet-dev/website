@@ -194,6 +194,12 @@ Text [color](/docs/reference/colors).
 
 The [padding](/docs/reference/types/padding) for the input decoration's container.
 
+### `counter`
+
+A `Control` to place below the line as a character count.
+
+If `None` or an empty string and `counter_text` isn't specified, then nothing will appear in the counter's location.
+
 ### `counter_style`
 
 The [`TextStyle`](/docs/reference/types/textstyle) to use for `counter_text`.
@@ -202,11 +208,15 @@ The [`TextStyle`](/docs/reference/types/textstyle) to use for `counter_text`.
 
 Optional text to place below the line as a character count.
 
-If null or an empty string and counter isn't specified, then nothing will appear in the counter's location.
+If `None` or an empty string and `counter` isn't specified, then nothing will appear in the counter's location. If `counter` is specified and visible, then this `counter_text` will be ignored.
 
 ### `dense`
 
 Whether the TextField is part of a dense form (ie, uses less vertical space).
+
+### `disabled_hint_content`
+
+A placeholder `Control` for the dropdown's value that is displayed when `value` is `None` and the dropdown is disabled.
 
 ### `elevation`
 
@@ -270,7 +280,7 @@ If non-null, the text is displayed below the input decorator, in the same locati
 
 ### `hint_content`
 
-A placeholder control for the dropdown's value that is displayed when `value` is `None`.
+A placeholder `Control` for the dropdown's value that is displayed when `value` is `None`.
 
 ### `hint_style`
 
@@ -327,6 +337,15 @@ The maximum height of the dropdown menu.
 ### `options`
 
 A list of `Option` controls representing items in this dropdown.
+
+### `options_fill_horizontally`
+
+Whether the dropdown's inner contents to horizontally fill its parent.
+By default this button's inner width is the minimum size of its content. 
+
+If `True`, the inner width is expanded to fill its surrounding container.
+
+Value is of type `bool` and defaults to `False`.
 
 ### `padding`
 

@@ -200,6 +200,10 @@ Filter quality of the texture used to render the video output.
 
 Value is of type [`FilterQuality`](/docs/reference/types/filterquality) and defaults to `FilterQuality.LOW`.
 
+::: note
+Android was reported to show blurry images when using `FilterQuality.HIGH`. Prefer the usage of `FilterQuality.MEDIUM` on this platform.
+:::
+
 ### `fill_color`
 
 Defines the [color](/docs/reference/colors) used to fill the video background.

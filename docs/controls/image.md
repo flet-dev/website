@@ -86,7 +86,7 @@ Defaults to `False`.
 
 The rendering quality of the image.
 
-Value is of type [`FilterQuality`](/docs/reference/types/filterquality) and defaults to `FilterQuality.LOW`.
+Value is of type [`FilterQuality`](/docs/reference/types/filterquality) and defaults to `FilterQuality.MEDIUM`.
 
 ### `fit`
 

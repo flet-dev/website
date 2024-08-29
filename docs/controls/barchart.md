@@ -277,6 +277,52 @@ of [`ChartAxis`](#chartaxis-properties) class.
 
 Background [color](/docs/reference/colors) of tooltips.
 
+### `tooltip_border_side`
+
+The tooltip border side.
+
+### `tooltip_direction`
+
+Controls showing tooltip on top or bottom, default is auto.
+
+### `tooltip_fit_inside_horizontally`
+
+Forces the tooltip to shift horizontally inside the chart, if overflow happens.
+
+Value is of type `bool`.
+
+### `tooltip_fit_inside_vertically`
+
+Forces the tooltip to shift vertically inside the chart, if overflow happens.
+
+Value is of type `bool`.
+
+### `tooltip_horizontal_offset`
+
+Applies horizontal offset for showing tooltip.
+
+Defaults to `0`.
+
+### `tooltip_margin`
+
+Applies a bottom margin for showing tooltip on top of rods.
+
+### `tooltip_max_content_width`
+
+Restricts the tooltip's width.
+
+### `tooltip_padding`
+
+Applies a padding for showing contents inside the tooltip.
+
+### `tooltip_rounded_radius`
+
+Sets a rounded radius for the tooltip.
+
+### `tooltip_rotate_angle`
+
+The rotation angle of the tooltip.
+
 ### `vertical_grid_lines`
 
 Controls drawing of chart's vertical lines.

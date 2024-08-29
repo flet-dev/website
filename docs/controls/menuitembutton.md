@@ -93,6 +93,12 @@ ft.app(main)
 
 ## Properties
 
+### `autofocus`
+
+Whether this button should automatically request focus.
+
+Defaults to `False`.
+
 ### `clip_behavior`
 
 Whether to clip the content of this control or not.
@@ -122,6 +128,18 @@ Defaults to `True`.
 An optional control to display before the `content`.
 
 Typically an [`Icon`](/docs/controls/icon) control.
+
+### `overflow_axis`
+
+The direction in which the menu item expands.
+
+If the menu item button is a descendent of `MenuBar`, then this property is ignored.
+
+Value is of type [`Axis`](/docs/reference/types/axis).
+
+### `semantic_label`
+
+A string that describes the button's action to assistive technologies.
 
 ### `style`
 

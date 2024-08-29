@@ -235,14 +235,14 @@ import flet as ft
 def main(page: ft.Page):
     page.title = "MyApp"
 
-    def event(e):
+    def handle_window_event(e):
         if e.data == "close":
             page.dialog = confirm_dialog
             confirm_dialog.open = True
             page.update()
 
     page.window.prevent_close = True
-    page.window.on_event = window_event
+    page.window.on_event = handle_window_event
 
     def yes_click(e):
         page.window.destroy()
@@ -278,9 +278,3 @@ Brings app window to the foreground (on top of other windows).
 Fires when app window changes its state: position, size, maximized, minimized, etc.
 
 Event handler argument is of type [`WindowEvent`](/docs/reference/types/windowevent).
-
-### `on_resized`
-
-Fires when the app window is resized.
-
-Event handler argument is of type [`WindowResizeEvent`](/docs/reference/types/windowresizeevent).

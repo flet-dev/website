@@ -153,6 +153,10 @@ Value is of type `bool` and defaults to `False`.
 
 ## Methods
 
+### `cancel_recording()`
+
+Stops and discards/deletes the file/blob.
+
 ### `get_input_devices()`
 
 Returns a dictionary whose values are the input devices available on the platform.

@@ -104,6 +104,12 @@ Value is an instance of the `Theme()` class - more information in the [theming](
 
 `True` if Flutter client of Flet app is running in debug mode.
 
+### `decoration`
+
+The background decoration.
+
+Value is of type [`BoxDecoration`](/docs/reference/types/boxdecoration).
+
 ### `design`
 
 Reserved for future use.
@@ -1065,7 +1071,7 @@ Event handler argument is of type [`PageMediaData`](/docs/reference/types/pageme
 
 Fires when brightness of app host platform has changed.
 
-### `on_resize`
+### ~~`on_resize`~~
 
 Fires when a browser or native OS window containing Flet app is resized by a user, for example:
 
@@ -1082,6 +1088,8 @@ page.on_resize = page_resize
 </TabItem>
 </Tabs>
 
+Event handler argument is of type [`WindowResizeEvent`](/docs/reference/types/windowresizeevent).
+
 **Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.on_resized`](#on_resized) instead.**
 
 ### `on_resized`
@@ -1097,6 +1105,8 @@ def page_resized(e):
 
 page.on_resized = page_resized
 ```
+
+Event handler argument is of type [`WindowResizeEvent`](/docs/reference/types/windowresizeevent).
 
 </TabItem>
 </Tabs>

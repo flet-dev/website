@@ -73,7 +73,7 @@ def main(page: ft.Page):
             sort_ascending=True,
             heading_row_color=ft.colors.BLACK12,
             heading_row_height=100,
-            data_row_color={"hovered": "0x30FF0000"},
+            data_row_color={ft.ControlState.HOVERED: "0x30FF0000"},
             show_checkbox_column=True,
             divider_thickness=0,
             column_spacing=200,
@@ -178,6 +178,12 @@ Defaults to 1.0.
 The background gradient for the table.
 
 Value is of type [`Gradient`](/docs/reference/types/gradient).
+
+### `heading_row_alignment`
+
+The alignment of the heading row.
+
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment).
 
 ### `heading_row_color`
 

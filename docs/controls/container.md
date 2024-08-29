@@ -92,14 +92,13 @@ ft.app(main)
 
 Align the child control within the container.
 
-Alignment is an instance of [`alignment.Alignment`](/docs/reference/types/alignment) class.
+Value is of type [`Alignment`](/docs/reference/types/alignment).
 
 ### `animate`
 
 Enables container "implicit" animation that gradually changes its values over a period of time.
 
-The value is of [`AnimationValue`](/docs/reference/types/animationvalue) type.
-
+Value is of type [`AnimationValue`](/docs/reference/types/animationvalue).
 
 ### `bgcolor`
 
@@ -107,7 +106,9 @@ Defines the background [color](/docs/reference/colors) of the container.
 
 ### `blend_mode`
 
-The blend mode applied to the `color` or `gradient` background of the container. Property value is [`BlendMode`](/docs/reference/types/blendmode) enum with `MODULATE` as default.
+The blend mode applied to the `color` or `gradient` background of the container. 
+
+Value is of type [`BlendMode`](/docs/reference/types/blendmode) and defaults to `BlendMode.MODULATE`.
 
 ### `blur`
 
@@ -173,7 +174,7 @@ Value is of type [`BorderRadius`](/docs/reference/types/borderradius).
 The content will be clipped (or not) according to this option.
 
 Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.ANTI_ALIAS`
-if `border_radius` is not `None`; otherwise `ClipBehavior.HARD_EDGE`.
+if `border_radius` is not `None`; otherwise `ClipBehavior.NONE`.
 
 ### `color_filter`
 
@@ -185,39 +186,71 @@ Value is of type [`ColorFilter`](/docs/reference/types/colorfilter).
 
 A child Control contained by the container.
 
+### `decoration`
+
+The background decoration.
+
+Value is of type [`BoxDecoration`](/docs/reference/types/boxdecoration).
+
+### `foreground_decoration`
+
+The foreground decoration.
+
+Value is of type [`BoxDecoration`](/docs/reference/types/boxdecoration).
+
 ### `gradient`
 
-Configures gradient background. Value can be of type:
+Defines the gradient background of the container.
 
-* [`LinearGradient`](/docs/reference/types/lineargradient)
-* [`RadialGradient`](/docs/reference/types/radialgradient)
-* [`SweepGradient`](/docs/reference/types/sweepgradient)
+Value is of type [`Gradient`](/docs/reference/types/gradient).
 
-### `image_fit`
+### `ignore_interactions`
+
+Whether to ignore all interactions with this container and its descendants.
+
+Defaults to `False`.
+
+### `image`
+
+An image to paint above the `bgcolor` or `gradient`. If `shape=BoxShape.CIRCLE` then this image is clipped to the circle's boundary; if `border_radius` is not `None`then the image is clipped to the given radii.
+
+Value is of type [`DecorationImage`](/docs/reference/types/decorationimage).
+
+### ~~`image_fit`~~
 
 How to inscribe the image into the space allocated during layout. 
 
 Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defaults to `ImageFit.NONE`.
 
-### `image_opacity`
+**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.fit`](#image) instead.**
+
+### ~~`image_opacity`~~
 
 Sets image opacity when blending with a background.
 
 Value ranges between `0.0`(fully transparent) and `1.0`(fully opaque).
 
-### `image_repeat`
+**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.opacity`](#image) instead.**
+
+### ~~`image_repeat`~~
 
 How to paint any portions of the layout bounds not covered by the image.
 
-Value is of type  [`ImageRepeat`](/docs/reference/types/imagerepeat) and defaults to `ImageRepeat.NO_REPEAT`.
+Value is of type [`ImageRepeat`](/docs/reference/types/imagerepeat) and defaults to `ImageRepeat.NO_REPEAT`.
 
-### `image_src`
+**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.repeat`](#image) instead.**
+
+### ~~`image_src`~~
 
 Sets an image as a container background. See [`Image.src`](/docs/controls/image#src) for more details.
 
-### `image_src_base64`
+**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.src`](#image) instead.**
+
+### ~~`image_src_base64`~~
 
 Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](/docs/controls/image#src_base64) for more details.
+
+**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.src_base64`](#image) instead.**
 
 ### `ink`
 

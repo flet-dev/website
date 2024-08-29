@@ -137,6 +137,12 @@ Sets cursor width.
 
 Whether the TextField is part of a dense form (ie, uses less vertical space).
 
+### `enable_scrible`
+
+Whether iOS 14 Scribble features are enabled. Has effect only on iPads.
+
+Defaults to `True`.
+
 ### `enable_suggestions`
 
 Whether to show input suggestions as the user types.
@@ -168,11 +174,15 @@ Text [color](/docs/reference/colors) when TextField is focused.
 
 ### `gradient`
 
-Configures gradient background. Value can be of type:
+Configures gradient background. 
 
-* [`LinearGradient`](/docs/reference/types/lineargradient)
-* [`RadialGradient`](/docs/reference/types/radialgradient)
-* [`SweepGradient`](/docs/reference/types/sweepgradient)
+Value is of type [`Gradient`](/docs/reference/types/gradient).
+
+### `image`
+
+An image to paint above the `bgcolor` or `gradient`.
+
+Value is of type [`DecorationImage`](/docs/reference/types/decorationimage).
 
 ### `input_filter`
 
@@ -210,6 +220,18 @@ Defaults to `1`.
 
 `True` if TextField can contain multiple lines of text.
 
+### `obscuring_character`
+
+Character to use when obscuring text if `password` is `True`.
+
+Defaults to `•`.
+
+### `padding`
+
+The padding around the text entry area between the `prefix` and `suffix` or the clear button when `clear_button_mode` is not `VisibilityMode.NEVER`.
+
+Value is of type [`Padding`](/docs/reference/types/padding) and defaults to padding of `7` pixels on all sides.
+
 ### `password`
 
 Whether to hide the text being edited.
@@ -232,9 +254,7 @@ Optional `Control` to place on the line before the input.
 
 Defines the visibility of the `prefix` control based on the state of text entry. Has no effect if `prefix` is not specified.
 
-The property value is [`VisibilityMode`](/docs/reference/types/visibilitymode) enum.
-
-Defaults to `ALWAYS`.
+Value is of type [`VisibilityMode`](/docs/reference/types/visibilitymode) and defaults to `VisibilityMode.ALWAYS`.
 
 ### `read_only`
 
@@ -249,6 +269,12 @@ Defaults to `False`.
 `True` to set text direction to right-to-left.
 
 Default is `False`.
+
+### `scroll_padding`
+
+Defines the paddint surrounding this field when scrolled.
+
+Value is of type [`Padding`](/docs/reference/types/padding) and defaults to padding of `20` pixels on all sides.
 
 ### `selection_color`
 
@@ -331,6 +357,10 @@ Fires when the control has lost focus.
 
 Fires when the typed input for the TextField has changed.
 
+### `on_click`
+
+Fires when the control is clicked.
+
 ### `on_focus`
 
 Fires when the control has received focus.
@@ -338,3 +368,5 @@ Fires when the control has received focus.
 ### `on_submit`
 
 Fires when user presses ENTER while focus is on TextField.
+
+

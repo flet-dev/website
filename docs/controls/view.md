@@ -68,7 +68,13 @@ page.update()
   </TabItem>
 </Tabs>
 
-Value is of a list of `Control`s
+Value is of a list of `Control`s.
+
+### `decoration`
+
+The background decoration.
+
+Value is of type [`BoxDecoration`](/docs/reference/types/boxdecoration).
 
 ### `drawer`
 
@@ -87,6 +93,12 @@ A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to displ
 Describes position of [`floating_action_button`](#floating_action_button)
 
 Value is of type [`FloatingActionButtonLocation`](/docs/controls/floatingactionbutton)
+
+### `foreground_decoration`
+
+The foreground decoration.
+
+Value is of type [`BoxDecoration`](/docs/reference/types/boxdecoration).
 
 ### `fullscreen_dialog`
 

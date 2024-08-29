@@ -264,6 +264,12 @@ The padding for the input decoration's container.
 
 The value is an instance of [`padding.Padding`](/docs/reference/types/padding) class or a number.
 
+### `counter`
+
+A `Control` to place below the line as a character count.
+
+If `None` or an empty string and `counter_text` isn't specified, then nothing will appear in the counter's location.
+
 ### `counter_style`
 
 The [`TextStyle`](/docs/reference/types/textstyle) to use for `counter_text`.
