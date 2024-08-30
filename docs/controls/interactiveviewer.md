@@ -115,16 +115,16 @@ Value is of type `bool` and defaults to `False`.
 
 Fires when the user ends a pan or scale gesture.
 
-Value is of type [`InteractiveViewerInteractionEndEvent`](/docs/reference/types/interactiveviewerinteractionendevent).
+Event handler argument is of type [`InteractiveViewerInteractionEndEvent`](/docs/reference/types/interactiveviewerinteractionendevent).
 
 ### `on_interaction_start`
 
 Fires when the user begins a pan or scale gesture.
 
-Value is of type [`InteractiveViewerInteractionStartEvent`](/docs/reference/types/interactiveviewerinteractionstartevent).
+Event handler argument is of type [`InteractiveViewerInteractionStartEvent`](/docs/reference/types/interactiveviewerinteractionstartevent).
 
 ### `on_interaction_update`
 
 Fires when the user updates a pan or scale gesture.
 
-Value is of type [`InteractiveViewerInteractionUpdateEvent`](/docs/reference/types/interactiveviewerinteractionupdateevent).
+Event handler argument is of type [`InteractiveViewerInteractionUpdateEvent`](/docs/reference/types/interactiveviewerinteractionupdateevent).

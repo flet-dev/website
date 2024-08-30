@@ -378,6 +378,12 @@ module.exports = {
     {
       type: "category",
       label: "Reference",
+      link: {
+        type: "generated-index",
+        description:
+          "Below is a list of all available Flet references:",
+        slug: "/reference",
+      },
       items: [
         "reference/colors",
         {
@@ -424,7 +430,11 @@ module.exports = {
                 "reference/types/duration",
                 "reference/types/filepickerfile",
                 "reference/types/filepickeruploadfile",
+                "reference/types/geolocatorandroidsettings",
+                "reference/types/geolocatorapplesettings",
                 "reference/types/geolocatorposition",
+                "reference/types/geolocatorsettings",
+                "reference/types/geolocatorwebsettings",
                 "reference/types/gradient",
                 "reference/types/inputfilter",
                 "reference/types/lineargradient",
@@ -488,6 +498,7 @@ module.exports = {
                 "reference/types/filterquality",
                 "reference/types/floatingactionbuttonlocation",
                 "reference/types/fontweight",
+                "reference/types/geolocatoractivitytype",
                 "reference/types/geolocatorpermissionstatus",
                 "reference/types/gradienttilemode",
                 "reference/types/imagefit",
@@ -567,6 +578,7 @@ module.exports = {
                 "reference/types/dragupdateevent",
                 "reference/types/filepickerresultevent",
                 "reference/types/filepickeruploadevent",
+                "reference/types/geolocatorpositionchangeevent",
                 "reference/types/hoverevent",
                 "reference/types/keyboardevent",
                 "reference/types/interactiveviewerinteractionendevent",
