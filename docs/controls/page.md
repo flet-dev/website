@@ -990,19 +990,16 @@ def main(page: ft.Page):
 
     def window_event(e):
         if e.data == "close":
-            page.dialog = confirm_dialog
-            confirm_dialog.open = True
-            page.update()
+            page.open(confirm_dialog)
 
     page.window.prevent_close = True
-    page.on_window_event = window_event
+    page.window.on_event = window_event
 
     def yes_click(e):
         page.window.destroy()
 
     def no_click(e):
-        confirm_dialog.open = False
-        page.update()
+        page.close(confirm_dialog)
 
     confirm_dialog = ft.AlertDialog(
         modal=True,
