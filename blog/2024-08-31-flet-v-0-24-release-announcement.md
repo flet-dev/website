@@ -144,8 +144,32 @@ In the above code, we subscribe multiple callbacks to the [`Container.on_tap_dow
 From Flet version 0.24.0 going forward, one event = one callback. Meaning only the lastly subscribed callback will get executed ("3" is printed out)
 So, if you still want the final output to resemble the first one you can simply create one callback which calls the others:
 
-Upgrade to Flet 0.23.0, test your apps and let us know how you find the new features we added.
+```python
+
+def main(page: ft.Page):
+    #....
+  
+    def print_all(e):
+            print_one(e)
+            print_two(e)
+            print_three(e)
+    
+    c = ft.Container(
+            bgcolor=ft.colors.random_color(),
+            width=300,
+            height=300,
+            on_tap_down=print_all,
+        )
+
+    # OR
+    c.on_tap_down = print_all
+```
+
+## Conclusion
+As you can see, we made a lot of changes in this release and as usual, your feedback is highly welcomed!
+
+Upgrade to Flet 0.24.0, test your apps and let us know how you find the new features we added.
 If you have any questions, please join [Flet Discord server](https://discord.gg/dzWXP8SHG8) or create a new thread
 on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).
 
-Happy Flet-ing!
+Happy Flet-ing! 👾
