@@ -62,7 +62,7 @@ def main(page: ft.Page):
 
     page.add( ft.Stack([c, gd1], width=1000, height=500))
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

@@ -44,7 +44,7 @@ def main(page: ft.Page):
         sleep(0.1)
         page.update()
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

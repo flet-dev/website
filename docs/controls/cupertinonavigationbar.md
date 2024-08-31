@@ -38,7 +38,7 @@ def main(page: ft.Page):
     page.add(ft.SafeArea(ft.Text("Body!")))
 
 
-ft.app(target=main)
+ft.app(main)
 
 ```
 

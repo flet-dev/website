@@ -43,7 +43,7 @@ if __name__ == "__main__":
         page.add(app)
         page.update()
  
-    flet.app(target=main, view=flet.WEB_BROWSER)
+    flet.app(main, view=flet.WEB_BROWSER)
 ```
 
 In terms of layout we can consider the app to consist of a header (`appbar`) and below that a collapsible navigation panel, next to which is the active view consisting of either a board, settings, members or whatever else we may choose. Something like this...
@@ -282,7 +282,7 @@ if __name__ == "__main__":
         page.update()
         app = TrelloApp(page)
  
-    flet.app(target=main, assets_dir="../assets", view=flet.WEB_BROWSER)
+    flet.app(main, assets_dir="../assets", view=flet.WEB_BROWSER)
 ```
 
 ## Application Logic

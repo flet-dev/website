@@ -66,7 +66,7 @@ def main(page: ft.Page):
     page.add(pagelet)
 
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

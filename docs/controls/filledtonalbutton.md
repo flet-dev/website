@@ -34,7 +34,7 @@ def main(page: ft.Page):
         ft.FilledTonalButton("Button with icon", icon="add"),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 

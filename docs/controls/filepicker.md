@@ -56,7 +56,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -207,7 +207,7 @@ Second argument is a URL time-to-live in seconds.
 To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
 
 ```python
-ft.app(target=main, upload_dir="uploads")
+ft.app(main, upload_dir="uploads")
 ```
 
 ## Events

@@ -59,7 +59,7 @@ def main(page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 By setting just `page.adaptive = True` you can make you app looking awesome on both iOS and Android devices:
@@ -327,7 +327,7 @@ def main(page):
     page.update()
 
 
-ft.app(target=main)
+ft.app(main)
 ```
 Now the NavigationBar and icons within it will look like different on Android and iOS:
 

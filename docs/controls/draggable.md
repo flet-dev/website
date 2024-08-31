@@ -117,7 +117,7 @@ def main(page: Page):
     )
 
 
-flet.app(target=main)
+flet.app(main)
 ```
   </TabItem>
 </Tabs>

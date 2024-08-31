@@ -34,7 +34,7 @@ import flet as ft
 def main(page: ft.Page):
     page.add(ft.Text(value="Hello, world!"))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 Run this app and you will see a new window with a greeting:
@@ -81,7 +81,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 Run the app and you should see a page like this:
@@ -146,7 +146,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 Run the app and you should see a page like this:

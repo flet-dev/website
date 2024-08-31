@@ -33,7 +33,7 @@ def main(page: ft.Page):
         ft.Text("Press any key with a combination of CTRL, ALT, SHIFT and META keys...")
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 <img src="/img/docs/getting-started/keyboard-shortcuts.png" className="screenshot-100" />
 

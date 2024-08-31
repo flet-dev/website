@@ -58,7 +58,7 @@ def main(page: ft.Page):
 
     page.add(ft.Column([ ft.Text("Spacing between items"), gap_slider]), col)
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -125,7 +125,7 @@ def main(page: ft.Page):
         ft.Container(content=col, bgcolor=ft.colors.AMBER_100),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -182,7 +182,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -240,7 +240,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

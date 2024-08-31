@@ -79,7 +79,7 @@ page.update()
 </TabItem>
 </Tabs>
 
-or to get the same result as above using [`page.add()`](#add) method
+or to get the same result as above using [`page.add()`](#addcontrols) method
 
 To remove the top most control on the page:
 
@@ -103,6 +103,12 @@ Value is an instance of the `Theme()` class - more information in the [theming](
 ### `debug`
 
 `True` if Flutter client of Flet app is running in debug mode.
+
+### `decoration`
+
+The background decoration.
+
+Value is of type [`BoxDecoration`](/docs/reference/types/boxdecoration).
 
 ### `design`
 
@@ -173,11 +179,11 @@ def main(page: ft.Page):
       ft.Text("This is Open Sans font example", font_family="Open Sans")
     )
 
-ft.app(target=main, assets_dir="assets")
+ft.app(main, assets_dir="assets")
 ```
 
 :::note
-At the moment only [**static**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#standard_or_static_fonts) fonts are supported, i.e. fonts containing only one spacific width/weight/style combination, for example "Open Sans Regular" or "Roboto Bold Italic".
+At the moment only [**static**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#standard_or_static_fonts) fonts are supported, i.e. fonts containing only one specific width/weight/style combination, for example "Open Sans Regular" or "Roboto Bold Italic".
 
 [**Variable**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#variable_fonts) fonts support is still [work in progress](https://github.com/flutter/flutter/issues/33709).
 
@@ -200,35 +206,19 @@ Property value is [`CrossAxisAlignment`](/docs/reference/types/crossaxisalignmen
 
 ### `locale_configuration`
 
-A locale configuration for the app. Value is an instance of `LocaleConfiguration` class which has the following
-properties:
+A locale configuration for the app. 
 
-* `supported_locales` - a list of `Locale`s that the app plans to support. If the provided value is `None` or list is
-  empty, this property internally defaults to `[Locale("en", "US")]` (American English locale) by default.
-* `current_locale` - the current `Locale` of the app. If the provided locale is not present in `supported_locales`, then
-  this property will be set to `supported_locales[0]` (the first item of the list).
-
-`Locale` class has the following properties:
-
-* `language_code` - the language code of the locale.
-* `country_code` - the country code of the locale.
-* `script_code` - the script code of the locale.
+Value is of type [`LocaleConfiguration`](/docs/reference/types/localeconfiguration).
 
 ### `media`
 
 Provides details about app media (screen, window). See [MediaQueryData](https://api.flutter.dev/flutter/widgets/MediaQueryData-class.html) in Flutter docs for more info.
 
-The value of this property is an instance of `PageMediaData` class with the following fields:
-
-* `padding` (of [`Padding`](/docs/reference/types/padding) type) - The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
-* `view_padding` (of [`Padding`](/docs/reference/types/padding) type) - The parts of the display that are partially obscured by system UI, typically by the hardware display "notches" or the system status bar.
-* `view_insets` (of [`Padding`](/docs/reference/types/padding) type) - The parts of the display that are completely obscured by system UI, typically by the device's keyboard.
+Value is of type [`PageMediaData`](/docs/reference/types/pagemediadata).
 
 :::note
-In the most cases you should be fine by wrapping your content into [`SafeArea`](/docs/controls/safearea) control.
+In most cases you should be fine by wrapping your content into [`SafeArea`](/docs/controls/safearea) control.
 :::
-
-🎬 [Watch this video](https://www.youtube.com/watch?v=ceCo8U0XHqw) explaining `padding`, `view_padding` and `view_insets`.
 
 ### `name`
 
@@ -305,7 +295,7 @@ def main(page):
     print("Default platform:", page.platform)
 
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### `platform_brightness`
@@ -469,20 +459,24 @@ A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/doc
 from time import sleep
 import flet as ft
 
+
 def main(page: ft.Page):
+    progress_bar = ft.ProgressBar(visible=False)
+    page.overlay.append(progress_bar)
+
     def button_click(e):
-        page.splash = ft.ProgressBar()
-        btn.disabled = True
+        progress_bar.visible = True
+        e.control.disabled = True
         page.update()
         sleep(3)
-        page.splash = None
-        btn.disabled = False
+        progress_bar.visible = False
+        e.control.disabled = False
         page.update()
 
-    btn = ft.ElevatedButton("Do some lengthy task!", on_click=button_click)
-    page.add(btn)
+    page.add(ft.ElevatedButton("Do some lengthy task!", on_click=button_click))
 
-ft.app(target=main)
+
+ft.app(main)
 ```
 
 </TabItem>
@@ -502,7 +496,7 @@ Value is an instance of the `Theme()` class - more information in the [theming](
 
 ### `theme_mode`
 
-Page theme.
+The page's theme mode.
 
 Value is of type [`ThemeMode`](/docs/reference/types/thememode) and defaults to `ThemeMode.SYSTEM`.
 
@@ -580,7 +574,7 @@ def main(page: ft.Page):
     page.window.top = 200
     page.add(ft.ElevatedButton("I'm a floating button!"))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 **Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.bgcolor`](#window) instead.**
@@ -749,7 +743,7 @@ def main(page: ft.Page):
     page.window.visible = True
     page.update()  
 
-ft.app(target=main, view=ft.AppView.FLET_APP_HIDDEN)
+ft.app(main, view=ft.AppView.FLET_APP_HIDDEN)
 ```
 
 Note `view=ft.AppView.FLET_APP_HIDDEN` which hides app window on start.
@@ -825,7 +819,9 @@ Closes active end drawer.
 
 ### `close_in_app_web_view()`
 
-📱 Mobile only. Closes in-app web view opened with `launch_url()`.
+Closes in-app web view opened with `launch_url()`.
+
+📱 Mobile only. 
 
 ### `error(message)`
 
@@ -856,7 +852,7 @@ upload_url = page.get_upload_url("dir/filename.ext", 60)
 To enable built-in upload storage provide `upload_dir` argument to `flet.app()` call:
 
 ```python
-ft.app(target=main, upload_dir="uploads")
+ft.app(main, upload_dir="uploads")
 ```
 
 ### `go(route)`
@@ -988,17 +984,17 @@ import flet as ft
 def main(page: ft.Page):
     page.title = "MyApp"
 
-    def window_event(e):
+    def handle_window_event(e):
         if e.data == "close":
             page.open(confirm_dialog)
 
     page.window.prevent_close = True
-    page.window.on_event = window_event
+    page.window.on_event = handle_window_event
 
-    def yes_click(e):
+    def handle_yes(e):
         page.window.destroy()
 
-    def no_click(e):
+    def handle_no(e):
         page.close(confirm_dialog)
 
     confirm_dialog = ft.AlertDialog(
@@ -1006,15 +1002,15 @@ def main(page: ft.Page):
         title=ft.Text("Please confirm"),
         content=ft.Text("Do you really want to exit this app?"),
         actions=[
-            ft.ElevatedButton("Yes", on_click=yes_click),
-            ft.OutlinedButton("No", on_click=no_click),
+            ft.ElevatedButton("Yes", on_click=handle_yes),
+            ft.OutlinedButton("No", on_click=handle_no),
         ],
         actions_alignment=ft.MainAxisAlignment.END,
     )
 
     page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### ~~`window_to_front()`~~
@@ -1031,64 +1027,7 @@ Triggers when app lifecycle state changes.
 
 You can use this event to know when the app becomes active (brought to the front) to update UI with the latest information. This event works on iOS, Android, all desktop platforms and web.
 
-Event details is an object of `ft.AppLifecycleStateChangeEvent` type.
-It contains `state` field of `AppLifecycleState` enum type which could have one of the following values:
-
-#### `AppLifecycleState.SHOW`
-
-The application is shown.
-
-On mobile platforms, this is usually just before the application replaces another application in the foreground.
-
-On desktop platforms, this is just before the application is shown after being minimized or otherwise made to show at least one view of the application.
-
-On the web, this is just before a window (or tab) is shown.
-
-#### `AppLifecycleState.RESUME`
-
-The application gains input focus. Indicates that the application is entering a state where it is visible, active, and accepting user input.
-
-#### `AppLifecycleState.HIDE`
-
-The application is hidden.
-
-On mobile platforms, this is usually just before the application is replaced by another application in the foreground.
-
-On desktop platforms, this is just before the application is hidden by being minimized or otherwise hiding all views of the application.
-
-On the web, this is just before a window (or tab) is hidden.
-
-#### `AppLifecycleState.INACTIVE`
-
-The application loses input focus.
-
-On mobile platforms, this can be during a phone call or when a system dialog is visible.
-
-On desktop platforms, this is when all views in an application have lost input focus but at least one view of the application is still visible.
-
-On the web, this is when the window (or tab) has lost input focus.
-
-#### `AppLifecycleState.PAUSE`
-
-The application is paused.
-
-On mobile platforms, this happens right before the application is replaced by another application.
-
-On desktop platforms and the web, this function is not called.
-
-#### `AppLifecycleState.DETACH`
-
-The application has exited, and detached all host views from the engine.
-
-This callback is only called on iOS and Android.
-
-#### `AppLifecycleState.RESTART`
-
-The application is resumed after being paused.
-
-On mobile platforms, this happens just before this application takes over as the active application.
-
-On desktop platforms and the web, this function is not called.
+Event handler argument is of type [`AppLifecycleStateChangeEvent`](/docs/reference/types/applifecyclestatechangeevent).
 
 ### `on_close`
 
@@ -1108,23 +1047,15 @@ Fires when unhandled exception occurs.
 
 ### `on_keyboard_event`
 
-Fires when a keyboard key is pressed. Event object `e` is an instance of `KeyboardEvent` class:
+Fires when a keyboard key is pressed. 
 
-```python
-@dataclass
-class ft.KeyboardEvent:
-    key: str
-    shift: bool
-    ctrl: bool
-    alt: bool
-    meta: bool
-```
-
-Check a [simple usage example](https://github.com/flet-dev/examples/blob/main/python/controls/page/keyboard-events.py).
+Event handler argument is of type [`KeyboardEvent`](/docs/reference/types/keyboardevent).
 
 ### `on_login`
 
-Fires upon successful or failed OAuth authorization flow. See [Authentication](/docs/cookbook/authentication#checking-authentication-results) guide for more information and examples.
+Fires upon successful or failed OAuth authorization flow. 
+
+See [Authentication](/docs/cookbook/authentication#checking-authentication-results) guide for more information and examples.
 
 ### `on_logout`
 
@@ -1132,13 +1063,15 @@ Fires after `page.logout()` call.
 
 ### `on_media_change`
 
-Fires when `page.media` has changed. Event object is an instance of `PageMediaData` class described in [`page.media` section](#media).
+Fires when `page.media` has changed. 
+
+Event handler argument is of type [`PageMediaData`](/docs/reference/types/pagemediadata).
 
 ### `on_platform_brigthness_change`
 
 Fires when brightness of app host platform has changed.
 
-### `on_resize`
+### ~~`on_resize`~~
 
 Fires when a browser or native OS window containing Flet app is resized by a user, for example:
 
@@ -1155,35 +1088,46 @@ page.on_resize = page_resize
 </TabItem>
 </Tabs>
 
+Event handler argument is of type [`WindowResizeEvent`](/docs/reference/types/windowresizeevent).
+
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.on_resized`](#on_resized) instead.**
+
+### `on_resized`
+
+Fires when a browser or native OS window containing Flet app is resized by a user, for example:
+
+<Tabs groupId="language">
+  <TabItem value="python" label="Python" default>
+
+```python
+def page_resized(e):
+    print("New page size:", page.window.width, page.window_height)
+
+page.on_resized = page_resized
+```
+
+Event handler argument is of type [`WindowResizeEvent`](/docs/reference/types/windowresizeevent).
+
+</TabItem>
+</Tabs>
+
 ### `on_route_change`
 
 Fires when page route changes either programmatically, by editing application URL or using browser Back/Forward buttons.
 
-Event object `e` is an instance of `RouteChangeEvent` class:
-
-```python
-class RouteChangeEvent(ft.ControlEvent):
-    route: str     # a new page root
-```
+Event handler argument is of type [`RouteChangeEvent`](/docs/reference/types/routechangeevent).
 
 ### `on_scroll`
 
 Fires when page's scroll position is changed by a user.
 
-Event handler argument is an instance of [`OnScrollEvent`](/docs/reference/types/onscrollevent) class.
+Event handler argument is of type [`OnScrollEvent`](/docs/reference/types/onscrollevent).
 
 ### `on_view_pop`
 
 Fires when the user clicks automatic "Back" button in [`AppBar`](/docs/controls/appbar) control.
 
-Event object `e` is an instance of `ViewPopEvent` class:
-
-```python
-class ViewPopEvent(ft.ControlEvent):
-    view: ft.View
-```
-
-where `view` is an instance of [`View`](/docs/controls/view) control that contains the AppBar.
+Event handler argument is of type [`ViewPopEvent`](/docs/reference/types/viewpopevent).
 
 ### ~~`on_window_event`~~
 
@@ -1191,7 +1135,7 @@ Fires when an application's native OS window changes its state: position, size, 
 
 Event handler argument is of type [`WindowEvent`](/docs/reference/types/windowevent).
 
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.on_event()`](#window) instead.**
+**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.on_event`](#window) instead.**
 
 ## Magic methods
 
@@ -1200,6 +1144,14 @@ Event handler argument is of type [`WindowEvent`](/docs/reference/types/windowev
 Checks if a control is present on the page, for example:
 
 ```python
-page.add(ft.Text('Hi'))
-print(ft.Text('Hi') in page) # True
+import flet as ft
+
+
+def main(page: ft.Page):
+    hello = ft.Text("Hello, World!")
+    page.add(hello)
+    print(hello in page)  # True
+    
+    
+ft.app(main)
 ```

@@ -46,7 +46,7 @@ def main(page: ft.Page):
         count += 1
         page.update()
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

@@ -55,6 +55,6 @@ def main(page: ft.Page):
 
     page.add(ft.Text("Just a text!"))
 
-ft.app(target=main)
+ft.app(main)
 ```
 

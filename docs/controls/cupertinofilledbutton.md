@@ -29,7 +29,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 

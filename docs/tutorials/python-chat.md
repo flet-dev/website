@@ -40,7 +40,7 @@ import flet as ft
 def main(page: ft.Page):
     page.add(ft.Text(value="Hello, world!"))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 Run this app and you will see a new window with a greeting:
@@ -79,7 +79,7 @@ def main(page: ft.Page):
         chat, ft.Row(controls=[new_message, ft.ElevatedButton("Send", on_click=send_click)])
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 When user clicks on the "Send" button, it triggers `on_click` event which calls `send_click` method. `send_click` then adds new `Text` control to the list of Column `controls` and clears `new_message` TextField value.
@@ -163,7 +163,7 @@ def main(page: ft.Page):
 
     page.add(chat, ft.Row([new_message, ft.ElevatedButton("Send", on_click=send_click)]))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 <img src="/img/docs/chat-tutorial/chat-2.gif" className="screenshot-100" />

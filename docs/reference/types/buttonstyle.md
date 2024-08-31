@@ -7,19 +7,51 @@ import TabItem from '@theme/TabItem';
 
 Allows controlling all visual aspects of a button, such as shape, foreground, background and shadow colors, content padding, border width and radius.
 
-Each individual style attribute could be configured for all or
+Most of these style attributes could be configured for all or
 particular [`ControlState`](/docs/reference/types/controlstate) of a button, such as `HOVERED`, `FOCUSED`, `DISABLED`
 and others.
 
 `ButtonStyle` class has the following properties:
 
-### `color`
+### `alignment`
 
-The color for the button's Text and Icon control descendants.
+The alignment of the button's content.
+
+Value is of type [`Alignment`](/docs/reference/types/alignment).
+
+### `animation_duration`
+
+Defines the duration in milliseconds of animated changes for shape and elevation.
 
 ### `bgcolor`
 
 The button's background fill color.
+
+### `color`
+
+The color for the button's Text and Icon control descendants.
+
+### `elevation`
+
+The elevation of the button's Material.
+
+### `enable_feedback`
+
+Whether detected gestures should provide acoustic and/or haptic feedback.
+
+Value is of type `bool`.
+
+### `icon_color`
+
+The icon's [color](/docs/reference/colors) inside the button. If not set or `None`, then the `color` will be used.
+
+### `icon_size`
+
+The icon's size inside of the button.
+
+### `mouse_cursor`
+
+The cursor to be displayed when the mouse pointer enters or is hovering over the button.
 
 ### `overlay_color`
 
@@ -33,25 +65,33 @@ The shadow color of the button's Material.
 
 The surface tint color of the button's Material.
 
-### `elevation`
-
-The elevation of the button's Material.
-
-### `animation_duration`
-
-Defines the duration in milliseconds of animated changes for shape and elevation.
-
 ### `padding`
 
-The padding between the button's boundary and its child.
+The padding between the button's boundary and its content.
+
+Value is of type [`Padding`](/docs/reference/types/padding).
+
+### `shape`
+
+The shape of the button's underlying Material.
+
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `side`
 
 An instance of [`BorderSide`](/docs/reference/types/borderside) class, the color and weight of the button's outline.
 
-### `shape`
+### `text_style`
 
-The shape of the button's underlying Material. The value is an instance of [`OutlinedBorder`](/docs/reference/types/outlinedborder) class.
+The text style of the button's `Text` control descendants.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
+
+### `visual_density`
+
+Defines how compact the button's layout will be.
+
+Value is of type [`VisualDensity`](/docs/reference/types/visualdensity).
 
 ## Usage example
 
@@ -119,7 +159,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Styled button example
@@ -159,6 +199,6 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 

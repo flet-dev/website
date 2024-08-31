@@ -56,7 +56,7 @@ def main(page: ft.Page):
 
     page.add(ft.Row([save_to_favourites, open_in_maps]))
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -94,7 +94,7 @@ def main(page: ft.Page):
 
     page.add(title, ft.Row(amenity_chips))
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

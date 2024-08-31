@@ -30,7 +30,7 @@ def main(page):
         greetings,
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 In the very beginning of `main()` method we create three controls which we are going to use in button's `on_click` handler: two `TextField` for first and last names and a `Column` - container for greeting messages. We create controls with all their properties set and in the end of `main()` method, in `page.add()` call, we use their references (variables).
@@ -105,7 +105,7 @@ def main(page):
         ft.Column(ref=greetings),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 Now we can clearly see in `page.add()` the structure of the page and all the controls it's built of.

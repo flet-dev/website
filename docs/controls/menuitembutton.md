@@ -82,7 +82,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
 
   </TabItem>
@@ -92,6 +92,12 @@ ft.app(target=main)
 <img src="/img/docs/controls/menu-item-button/menu-item-button.gif" className="screenshot-20" />
 
 ## Properties
+
+### `autofocus`
+
+Whether this button should automatically request focus.
+
+Defaults to `False`.
 
 ### `clip_behavior`
 
@@ -122,6 +128,18 @@ Defaults to `True`.
 An optional control to display before the `content`.
 
 Typically an [`Icon`](/docs/controls/icon) control.
+
+### `overflow_axis`
+
+The direction in which the menu item expands.
+
+If the menu item button is a descendent of `MenuBar`, then this property is ignored.
+
+Value is of type [`Axis`](/docs/reference/types/axis).
+
+### `semantic_label`
+
+A string that describes the button's action to assistive technologies.
 
 ### `style`
 

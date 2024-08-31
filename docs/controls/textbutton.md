@@ -29,7 +29,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -56,7 +56,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -85,7 +85,7 @@ def main(page: ft.Page):
 
     page.add(b, t)
 
-ft.app(target=main)
+ft.app(main)
 
 ```
   </TabItem>
@@ -132,7 +132,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 
 ```
 

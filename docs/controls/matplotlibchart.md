@@ -41,7 +41,7 @@ def main(page: ft.Page):
     page.add(MatplotlibChart(fig, expand=True))
 
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Line chart
@@ -88,7 +88,7 @@ def main(page: ft.Page):
 
     page.add(MatplotlibChart(fig, expand=True))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ## Properties
@@ -122,7 +122,7 @@ def main(page: ft.Page):
     ax.legend(title="Colors")
     chart1.update()
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### `original_size`

@@ -42,7 +42,7 @@ def main(page: ft.Page):
     page.add(ft.ElevatedButton("Display bottom sheet", on_click=lambda _: page.open(bs)))
 
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ## Properties

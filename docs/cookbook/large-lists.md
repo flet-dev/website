@@ -16,7 +16,7 @@ def main(page: ft.Page):
     page.scroll = "always"
     page.update()
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+ft.app(main, view=ft.AppView.WEB_BROWSER)
 ```
 
 Run the program and notice that it's not just it takes a couple of seconds to initially load and render all text lines on a page, but scrolling is slow and laggy too:
@@ -42,7 +42,7 @@ def main(page: ft.Page):
         lv.controls.append(ft.Text(f"Line {i}"))
     page.add(lv)
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+ft.app(main, view=ft.AppView.WEB_BROWSER)
 ```
 
 Now the scrolling is smooth and fast enough to follow mouse movements:
@@ -83,7 +83,7 @@ def main(page: ft.Page):
         )
     page.update()
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+ft.app(main, view=ft.AppView.WEB_BROWSER)
 ```
 
 <img src="/img/docs/getting-started/row-wrap-as-grid.png" className="screenshot-50" />
@@ -120,7 +120,7 @@ def main(page: ft.Page):
         )
     page.update()
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+ft.app(main, view=ft.AppView.WEB_BROWSER)
 ```
 
 <img src="/img/docs/getting-started/grid-view.png" className="screenshot-50" />
@@ -152,6 +152,6 @@ def main(page: ft.Page):
     # send the rest to a page
     page.update()
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+ft.app(main, view=ft.AppView.WEB_BROWSER)
 ```
 <img src="/img/docs/getting-started/sending-page-updates-in-batches.png" className="screenshot-50" />

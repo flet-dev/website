@@ -57,7 +57,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Rotation animation
@@ -93,7 +93,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Scale animation
@@ -128,7 +128,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Offset animation
@@ -164,7 +164,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Reveal!", on_click=animate),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Position animation
@@ -204,7 +204,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Animate!", on_click=animate_container),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Animated container
@@ -233,7 +233,7 @@ def main(page: ft.Page):
 
     page.add(c, ft.ElevatedButton("Animate container", on_click=animate_container))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Animated content switcher
@@ -271,7 +271,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Animation end callback

@@ -34,7 +34,7 @@ def main(page):
   
   page.add(ft.Text("Select your favorite color:"), cg, b, t)
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -62,7 +62,7 @@ def main(page):
   
   page.add(ft.Text("Select your favorite color:"), cg, t)
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

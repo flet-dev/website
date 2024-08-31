@@ -37,7 +37,7 @@ import flet as ft
 def main(page: ft.Page):
     page.add(ft.Text(value="Hello, world!"))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 Run this app and you will see a new window with a greeting:
@@ -65,7 +65,7 @@ def main(page: ft.Page):
 
     page.add(new_task, ft.FloatingActionButton(icon=ft.icons.ADD, on_click=add_clicked))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 Run the app and you should see a page like this:
@@ -110,7 +110,7 @@ def main(page: ft.Page):
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.add(view)
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 Run the app and you should see a page like this:
@@ -162,7 +162,7 @@ def main(page: ft.Page):
     # add application's root control to the page
     page.add(todo)
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 :::note

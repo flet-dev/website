@@ -75,7 +75,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -174,11 +174,21 @@ A boolean value which defines whether the state of the `controls` is maintained 
 
 Defaults to `False`.
 
+### `min_tile_height`
+
+The minimum height of the tile.
+
 ### `shape`
 
 The tile's border shape when the sublist is expanded.
 
 Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
+
+### `show_trailing_icon`
+
+Whether to show the trailing icon (be it the default icon or the custom `trailing`, if specified and visible).
+
+Defaults to `True`.
 
 ### `subtitle`
 

@@ -31,11 +31,19 @@ import flet as ft
 
 
 async def main(page: ft.Page):
-    page.window.always_on_top = True
-    page.on_error = lambda e: print(f"Page Error: {e.data}")
     page.scroll = ft.ScrollMode.ADAPTIVE
     page.appbar = ft.AppBar(title=ft.Text("Geolocator Tests"))
-    gl = ft.Geolocator()
+
+    def handle_position_change(e):
+        page.add(ft.Text(f"New position: {e.latitude} {e.longitude}"))
+
+    gl = ft.Geolocator(
+        location_settings=ft.GeolocatorSettings(
+            accuracy=ft.GeolocatorPositionAccuracy.LOW
+        ),
+        on_position_change=handle_position_change,
+        on_error=lambda e: page.add(ft.Text(f"Error: {e.data}")),
+    )
     page.overlay.append(gl)
 
     settings_dlg = lambda handler: ft.AlertDialog(
@@ -45,82 +53,79 @@ async def main(page: ft.Page):
             "You are about to be redirected to the location/app settings. "
             "Please locate this app and grant it location permissions."
         ),
-        actions=[
-            ft.TextButton(
-                text="OK",
-                on_click=handler,
-            ),
-        ],
+        actions=[ft.TextButton(text="Take me there", on_click=handler)],
         actions_alignment=ft.MainAxisAlignment.CENTER,
     )
 
-    def handle_permission_request(e):
-        page.add(ft.Text(f"request_permission: {gl.request_permission()}"))
+    async def handle_permission_request(e):
+        p = await gl.request_permission_async(wait_timeout=60)
+        page.add(ft.Text(f"request_permission: {p}"))
 
-    def handle_get_permission_status(e):
-        page.add(ft.Text(f"get_permission_status: {gl.get_permission_status()}"))
+    async def handle_get_permission_status(e):
+        p = await gl.get_permission_status_async()
+        page.add(ft.Text(f"get_permission_status: {p}"))
 
-    def handle_get_current_position(e):
-        p = gl.get_current_position()
+    async def handle_get_current_position(e):
+        p = await gl.get_current_position_async()
         page.add(ft.Text(f"get_current_position: ({p.latitude}, {p.longitude})"))
 
-    def handle_get_last_known_position(e):
-        p = gl.get_last_known_position()
+    async def handle_get_last_known_position(e):
+        p = await gl.get_last_known_position_async()
         page.add(ft.Text(f"get_last_known_position: ({p.latitude}, {p.longitude})"))
 
-    def handle_location_service_enabled(e):
-        page.add(
-            ft.Text(f"is_location_service_enabled: {gl.is_location_service_enabled()}")
-        )
+    async def handle_location_service_enabled(e):
+        p = await gl.is_location_service_enabled_async()
+        page.add(ft.Text(f"is_location_service_enabled: {p}"))
 
-    def handle_open_location_settings(e):
-        page.close_dialog()
-        page.add(ft.Text(f"open_location_settings: {gl.open_location_settings()}"))
+    async def handle_open_location_settings(e):
+        p = await gl.open_location_settings_async()
+        page.close(location_settings_dlg)
+        page.add(ft.Text(f"open_location_settings: {p}"))
 
-    def handle_open_app_settings(e):
-        page.close_dialog()
-        page.add(ft.Text(f"open_app_settings: {gl.open_app_settings()}"))
+    async def handle_open_app_settings(e):
+        p = await gl.open_app_settings_async()
+        page.close(app_settings_dlg)
+        page.add(ft.Text(f"open_app_settings: {p}"))
+
+    location_settings_dlg = settings_dlg(handle_open_location_settings)
+    app_settings_dlg = settings_dlg(handle_open_app_settings)
 
     page.add(
         ft.Row(
-            [
+            wrap=True,
+            controls=[
                 ft.OutlinedButton(
-                    "request_permission",
+                    "Request Permission",
                     on_click=handle_permission_request,
                 ),
                 ft.OutlinedButton(
-                    "get_permission_status",
+                    "Get Permission Status",
                     on_click=handle_get_permission_status,
                 ),
                 ft.OutlinedButton(
-                    "get_current_position",
+                    "Get Current Position",
                     on_click=handle_get_current_position,
                 ),
                 ft.OutlinedButton(
-                    "get_last_known_position",
+                    "Get Last Known Position",
                     visible=False if page.web else True,
                     on_click=handle_get_last_known_position,
                 ),
                 ft.OutlinedButton(
-                    "is_location_service_enabled",
+                    "Is Location Service Enabled",
                     on_click=handle_location_service_enabled,
                 ),
                 ft.OutlinedButton(
-                    "open_location_settings",
+                    "Open Location Settings",
                     visible=False if page.web else True,
-                    on_click=lambda e: page.show_dialog(
-                        settings_dlg(handle_open_location_settings)
-                    ),
+                    on_click=lambda e: page.open(location_settings_dlg),
                 ),
                 ft.OutlinedButton(
-                    "open_app_settings",
+                    "Open App Settings",
                     visible=False if page.web else True,
-                    on_click=lambda e: page.show_dialog(
-                        settings_dlg(handle_open_app_settings)
-                    ),
+                    on_click=lambda e: page.open(app_settings_dlg),
                 ),
             ],
-            wrap=True,
         )
     )
 
@@ -130,16 +135,23 @@ ft.app(main)
   </TabItem>
 </Tabs>
 
+## Properties
+
+### `location_settings`
+
+Value is of type [`GeolocatorSettings`](/docs/reference/types/geolocatorsettings).
+
 ## Methods
 
-### `get_current_position(accuracy)`
+### `get_current_position(accuracy, location_settings)`
 
-Gets the current position of the device with the desired accuracy.
+Gets the current position of the device with the desired accuracy and settings.
 
-This method has the following propertied:
+This method has the following properties:
 
 * `accuracy`: value is of type [`GeolocatorPositionAccuracy`](/docs/reference/types/geolocatorpositionaccuracy) and
-  defaults to `GeolocatorPositionAccuracy.BEST`
+  defaults to `GeolocatorPositionAccuracy.BEST`.
+* `location_settings`: value is of type [`GeolocatorSettings`](/docs/reference/types/geolocatorsettings). If not specified, then the [`location_settings`](#location_settings) property is used.
 
 Returns an instance of type [`GeolocatorPosition`](/docs/reference/types/geolocatorposition).
 
@@ -147,14 +159,9 @@ Returns an instance of type [`GeolocatorPosition`](/docs/reference/types/geoloca
 It is recommended to call the `get_last_known_position()` method first to receive a known/cached position and update it
 with the result of `get_current_position()`
 
-### `get_last_known_position(accuracy)`
+### `get_last_known_position()`
 
-Gets the last known position of the device with the specified accuracy. The `accuracy` parameter is of
-type [`GeolocatorPositionAccuracy`](/docs/reference/types/geolocatorpositionaccuracy) and defaults
-to `GeolocatorPositionAccuracy.BEST`.
-
-* `accuracy`: value is of type [`GeolocatorPositionAccuracy`](/docs/reference/types/geolocatorpositionaccuracy) and
-  defaults to `GeolocatorPositionAccuracy.BEST`
+Gets the last known position of the device with the specified accuracy. The accuracy can be defined using the [`location_settings`](#location_settings) property.
 
 Returns an instance of type [`GeolocatorPosition`](/docs/reference/types/geolocatorposition).
 
@@ -187,3 +194,15 @@ Returns a boolean value: `True` if the device's settings were opened successfull
 Attempts to open device's location settings.
 
 Returns a boolean value: `True` if the device's settings were opened successfully, `False` otherwise.
+
+## Events
+
+### `on_error`
+
+Fires when an error occurs.
+
+### `on_position_change`
+
+Fires when the position of the device changes.
+
+Event handler argument is of type [`GeolocatorPositionChangeEvent`](/docs/reference/types/geolocatorpositionchangeevent).

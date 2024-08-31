@@ -41,7 +41,7 @@ import flet as ft
 def main(page: ft.Page):
     page.add(ft.Text(value="Hello, world!"))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 Run this app and you will see a new window with a greeting:
@@ -74,7 +74,7 @@ def main(page: ft.Page):
  
    page.add(ft.Stack(controls=[card], width=1000, height=500))
  
-ft.app(target=main)
+ft.app(main)
 ```
 
 Run the app to see the the card added to the stack:
@@ -110,7 +110,7 @@ def main(page: ft.Page):
  
    page.add(ft.Stack(controls=[card], width=1000, height=500))
  
-ft.app(target=main)
+ft.app(main)
 ```
 
 Now you can see the card moving:
@@ -454,7 +454,7 @@ def main(page: ft.Page):
  
    page.add(solitaire)
  
-ft.app(target=main)
+ft.app(main)
 ```
 
 You can find the full source code for this step [here](https://github.com/flet-dev/examples/tree/main/python/tutorials/solitaire/solitaire-classes). It works exactly the same way as the proof of concept app, but re-written with the new classes to be ready for adding more complex functionality to it. 
@@ -621,7 +621,7 @@ All the images for the face up cards, as well as card back are stored in the “
 :::note
 For the reference to the image file to work, we need to specify the folder were it resides in the assets_dir in main.py:
 ```python
-ft.app(target=main, assets_dir="images")
+ft.app(main, assets_dir="images")
 ```
 :::
 

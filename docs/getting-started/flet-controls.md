@@ -21,7 +21,7 @@ def main(page: ft.Page):
     page.controls.append(t)
     page.update()
 
-ft.app(target=main)
+ft.app(main)
 ```
 <img src="/img/docs/getting-started/controls-text.png" className="screenshot-50" />
 
@@ -99,7 +99,7 @@ def main(page):
     new_task = ft.TextField(hint_text="What's needs to be done?", width=300)
     page.add(ft.Row([new_task, ft.ElevatedButton("Add", on_click=add_clicked)]))
 
-ft.app(target=main)
+ft.app(main)
 ```
 <img src="/img/docs/getting-started/simple-ToDo.png" className="screenshot-50" />
 
@@ -187,7 +187,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 <img src="/img/docs/getting-started/getting-user-input-event-handlers.png" className="screenshot-50" />
@@ -215,7 +215,7 @@ def main(page):
 
     page.add(txt_name, ft.ElevatedButton("Say hello!", on_click=btn_click))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 <img src="/img/docs/getting-started/getting-user-input-textbox.png" className="screenshot-50" />
@@ -241,7 +241,7 @@ def main(page):
     todo_check = ft.Checkbox(label="ToDo: Learn how to use ski", value=False, on_change=checkbox_changed)
     page.add(todo_check, output_text)
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 <img src="/img/docs/getting-started/getting-user-input-checkbox.png" className="screenshot-50" />
@@ -269,7 +269,7 @@ def main(page: ft.Page):
     )
     page.add(color_dropdown, submit_btn, output_text)
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 <img src="/img/docs/getting-started/getting-user-input-dropdown.png" className="screenshot-50" />

@@ -61,7 +61,7 @@ def main(page):
     page.add(a1, a2, a3, a4, a5)
 
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
