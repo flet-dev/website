@@ -181,7 +181,7 @@ def main(page: ft.Page):
     page.add(chat)
 
 
-ft.app(target=main)
+ft.app(main)
 
 ``` 
 
@@ -251,7 +251,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### `opacity`

@@ -16,6 +16,8 @@ import TabItem from '@theme/TabItem';
 
 ### `FOCUS`
 
+### `HIDE`
+
 ### `LEAVE_FULL_SCREEN`
 
 ### `MAXIMIZE`
@@ -35,6 +37,8 @@ import TabItem from '@theme/TabItem';
 (macOS and Windows only)
 
 ### `RESTORE`
+
+### `SHOW`
 
 ### `UNMAXIMIZE`
 

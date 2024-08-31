@@ -31,7 +31,7 @@ def main(page: ft.Page):
         ft.Checkbox(adaptive=True, label="Adaptive Checkbox", value=True),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

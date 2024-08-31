@@ -49,7 +49,7 @@ def main(page: ft.Page):
 
     page.add(t)
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -121,6 +121,18 @@ Defaults to `False`.
 
 The [color](/docs/reference/colors) of selected tab labels.
 
+### `label_padding`
+
+The padding around the tab label.
+
+Value is of type [`Padding`](/docs/reference/types/padding).
+
+### `label_text_style`
+
+The text style of the tab labels.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
+
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
@@ -132,6 +144,12 @@ Defines the ink response focus, hover, and splash [colors](/docs/reference/color
 various [`ControlState`](/docs/reference/types/controlstate) states.
 The following `ControlState` values are supported: `PRESSED`, `HOVERED` and `FOCUSED`.
 
+### `padding`
+
+The padding around the Tabs control.
+
+Value is of type [`Padding`](/docs/reference/types/padding).
+
 ### `selected_index`
 
 The index of currently selected tab.
@@ -141,6 +159,12 @@ The index of currently selected tab.
 Whether this tab bar can be scrolled horizontally.
 
 If `scrollable` is `True`, then each tab is as wide as needed for its label and the entire Tabs controls is scrollable. Otherwise each tab gets an equal share of the available space.
+
+### `splash_border_radius`
+
+Defines the clipping radius of splashes that extend outside the bounds of the tab.
+
+Value is of type [`BorderRadius`](/docs/reference/types/borderradius).
 
 ### `tab_alignment`
 
@@ -157,11 +181,21 @@ A list of `Tab` controls.
 
 The [color](/docs/reference/colors) of unselected tab labels.
 
+### `unselected_label_text_style`
+
+The text style of the unselected tab labels.
+
+Value is of type [`TextStyle`](/docs/reference/types/textstyle).
+
 ## `Tabs` events
 
 ### `on_change`
 
 Fires when `selected_index` changes.
+
+### `on_click`
+
+Fires when a tab is clicked.
 
 ## `Tab` properties
 

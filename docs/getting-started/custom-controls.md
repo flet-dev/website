@@ -32,7 +32,7 @@ def main(page: ft.Page):
 
     page.add(MyButton(text="OK"), MyButton(text="Cancel"))
 
-ft.app(target=main)
+ft.app(main)
 
 ```
 <img src="/img/docs/custom-controls/styled-controls.png" className="screenshot-20" />
@@ -67,7 +67,7 @@ def main(page: ft.Page):
         MyButton(text="Cancel", on_click=cancel_clicked),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ## Composite controls
@@ -116,7 +116,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 <img src="/img/docs/custom-controls/composite-controls.gif" className="screenshot-60" />

@@ -95,7 +95,7 @@ def main(page: ft.Page):
     page.on_login = on_login
     page.add(ft.ElevatedButton("Login with GitHub", on_click=login_click))
 
-ft.app(target=main, port=8550, view=ft.WEB_BROWSER)
+ft.app(main, port=8550, view=ft.WEB_BROWSER)
 ```
 
 :::caution
@@ -124,7 +124,7 @@ We used `http://localhost:8550/oauth_callback` as a redirect URL while registeri
 Notice it has a fixed port `8550`. To run your Flet app on a fixed port use `port` argument in `flet.app` call:
 
 ```python
-ft.app(target=main, port=8550)
+ft.app(main, port=8550)
 ```
 
 ### Scope
@@ -218,7 +218,7 @@ def main(page: Page):
     page.on_logout = on_logout
     page.add(login_button, logout_button)
 
-flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
+flet.app(main, port=8550, view=flet.WEB_BROWSER)
 ```
 
 ## Accessing user details
@@ -441,7 +441,7 @@ def main(page: Page):
     page.on_login = on_login
     page.add(ElevatedButton("Login with LinkedIn", on_click=login_click))
 
-flet.app(target=main, port=8550, view=flet.WEB_BROWSER)
+flet.app(main, port=8550, view=flet.WEB_BROWSER)
 ```
 
 Mandatory provider settings:

@@ -53,7 +53,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 <img src="/img/docs/getting-started/drag-and-drop-number.gif"className="screenshot-50" />
@@ -165,7 +165,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 <img src="/img/docs/getting-started/drag-and-drop-number-3.gif"className="screenshot-50" />

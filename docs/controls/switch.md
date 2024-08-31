@@ -39,7 +39,7 @@ def main(page):
     b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(c1, c2, c3, c4, b, t)
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+ft.app(main, view=ft.AppView.WEB_BROWSER)
 ```
   </TabItem>
 </Tabs>
@@ -70,7 +70,7 @@ def main(page: ft.Page):
     c = ft.Switch(label="Light theme", on_change=theme_changed)
     page.add(c)
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

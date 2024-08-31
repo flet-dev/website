@@ -95,7 +95,7 @@ async def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -153,6 +153,10 @@ Value is of type `bool` and defaults to `False`.
 
 ## Methods
 
+### `cancel_recording()`
+
+Stops and discards/deletes the file/blob.
+
 ### `get_input_devices()`
 
 Returns a dictionary whose values are the input devices available on the platform.
@@ -197,8 +201,7 @@ Stops recording session and release internal recorder resource. It returns a str
 
 ### `on_state_changed`
 
-Fires when audio recorder's state changes. Event's `data` contains one of the following states:
+Fires when audio recorder's state changes.
 
-* `"stopped"`
-* `"recording"`
-* `"paused"`
+Event handler argument is of
+type [`AudioRecorderStateChangeEvent`](/docs/reference/types/audiorecorderstatechangeevent).

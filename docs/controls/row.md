@@ -57,7 +57,7 @@ def main(page: ft.Page):
 
     page.add(ft.Column([ ft.Text("Spacing between items"), gap_slider]), row)
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -121,7 +121,7 @@ def main(page: ft.Page):
         row,
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -172,7 +172,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -220,7 +220,7 @@ def main(page: ft.Page):
         row_with_vertical_alignment(ft.CrossAxisAlignment.END),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

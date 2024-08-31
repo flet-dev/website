@@ -27,7 +27,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Disabled button", disabled=True),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 
@@ -55,7 +55,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 
@@ -84,7 +84,7 @@ def main(page: ft.Page):
 
     page.add(b, t)
 
-ft.app(target=main)
+ft.app(main)
 ```
 
   </TabItem>
@@ -130,7 +130,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
   </TabItem>
@@ -243,7 +243,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### `on_long_press`

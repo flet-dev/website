@@ -36,7 +36,7 @@ def main(page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ## Properties

@@ -54,7 +54,7 @@ def main(page: ft.Page):
 
     page.add(st)
 
-ft.app(target=main)
+ft.app(main)
 ```
 
   </TabItem>
@@ -87,7 +87,7 @@ def main(page):
         )
     )
 
-ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+ft.app(main, view=ft.AppView.WEB_BROWSER)
 ```
 
   </TabItem>
@@ -158,7 +158,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
   </TabItem>

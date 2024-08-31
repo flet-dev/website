@@ -65,7 +65,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Pre-defined theme text styles
@@ -97,7 +97,7 @@ def main(page: ft.Page):
         ft.Text("Body Small", theme_style=ft.TextThemeStyle.BODY_SMALL),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Font with variable weight
@@ -135,7 +135,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ### Rich text basics
@@ -356,7 +356,7 @@ def main(page: ft.Page):
         ft.Text("This text is rendered with Consolas font", font_family="Consolas")
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 There is one limitation though - system fonts cannot be used in a Flet web app with "CanvasKit" renderer.
@@ -372,7 +372,7 @@ You can explicitly set what renderer to use when running a Flet program:
 
 ```python
 # ...
-ft.app(target=main, view=ft.AppView.WEB_BROWSER, web_renderer=ft.WebRenderer.HTML)
+ft.app(main, view=ft.AppView.WEB_BROWSER, web_renderer=ft.WebRenderer.HTML)
 ```
 
 Now, when you run the same program you'll see "Consolas" font is used.

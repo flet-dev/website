@@ -56,7 +56,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Animate!", on_click=animate),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

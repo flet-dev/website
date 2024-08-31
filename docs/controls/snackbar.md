@@ -41,7 +41,7 @@ def main(page):
 
     page.add(ft.ElevatedButton("Open SnackBar", on_click=on_click))
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

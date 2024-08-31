@@ -25,7 +25,7 @@ def main(page: ft.Page):
 
     page.add(ft.Text("Program body"))
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ## Properties

@@ -25,7 +25,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Vibrate", on_click=lambda _: hf.vibrate()),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
 
 ## Methods

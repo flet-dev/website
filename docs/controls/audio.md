@@ -45,7 +45,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Stop playing", on_click=lambda _: audio1.pause()),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -116,7 +116,7 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -159,7 +159,7 @@ Value is of type [`ReleaseMode`](/docs/reference/types/releasemode) and defaults
 
 ### `src`
 
-Sets the URL to the audio file. It could be an asset URL, see [Image.src](/docs/controls/image#src) for more information about assets.
+Sets the URL to the audio file. It could be an asset URL, see [`Image.src`](/docs/controls/image#src) for more information about assets.
 
 :::note
 [Here](https://github.com/bluefireteam/audioplayers/blob/main/troubleshooting.md#supported-formats--encodings) is a list of supported audio formats.
@@ -220,7 +220,7 @@ Method arguments:
 
 Fires as soon as audio duration is available (it might take a while to download or buffer it).
 
-Event's `e.data` contains audio duration in milliseconds.
+Event handler argument is of type [`AudioDurationChangeEvent`](/docs/reference/types/audiodurationchangeevent).
 
 ### `on_loaded`
 
@@ -230,16 +230,14 @@ Fires when an audio is loaded/buffered.
 
 Fires when audio position is changed. Will continuously update the position of the playback every 1 second if the status is playing. Can be used for a progress bar.
 
+Event handler argument is of type [`AudioPositionChangeEvent`](/docs/reference/types/audiopositionchangeevent).
+
 ### `on_seek_complete`
 
 Fires on seek completions. An event is going to be sent as soon as the audio seek is finished.
 
 ### `on_state_changed`
 
-Fires when audio player state changes. Event's `e.data` contains one of the following states:
+Fires when audio player state changes. 
 
-* `stopped`
-* `playing`
-* `paused`
-* `completed`
-* `disposed` 
+Event handler argument is of type [`AudioStateChangeEvent`](/docs/reference/types/audiostatechangeevent).

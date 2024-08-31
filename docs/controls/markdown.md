@@ -105,7 +105,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(target=main)
+ft.app(main)
 ````
 
   </TabItem>
@@ -131,7 +131,7 @@ Where to open URL in the web mode
 
 Value is of type [`UrlTarget`](/docs/reference/types/urltarget) and defaults to `UrlTarget.SELF`.
 
-### `code_style`
+### ~~`code_style`~~
 
 Code block text style.
 
@@ -156,102 +156,19 @@ An example of configuring monospace font for Markdown code blocks:
     )
 ```
 
+**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`code_style_sheet.code_text_style`](#code_style_sheet) instead.**
+
+### `code_style_sheet`
+
+The styles to use when displaying the code blocks.
+
+Value is of type [`MarkdownStyleSheet`](/docs/reference/types/markdownstylesheet).
+
 ### `code_theme`
 
 A syntax highlighting theme for code blocks.
 
-Supported themes:
-
-* `a11y-dark`
-* `a11y-light`
-* `agate`
-* `an-old-hope`
-* `androidstudio`
-* `arduino-light`
-* `arta`
-* `ascetic`
-* `atelier-cave-dark`
-* `atelier-cave-light`
-* `atelier-dune-dark`
-* `atelier-dune-light`
-* `atelier-estuary-dark`
-* `atelier-estuary-light`
-* `atelier-forest-dark`
-* `atelier-forest-light`
-* `atelier-heath-dark`
-* `atelier-heath-light`
-* `atelier-lakeside-dark`
-* `atelier-lakeside-light`
-* `atelier-plateau-dark`
-* `atelier-plateau-light`
-* `atelier-savanna-dark`
-* `atelier-savanna-light`
-* `atelier-seaside-dark`
-* `atelier-seaside-light`
-* `atelier-sulphurpool-dark`
-* `atelier-sulphurpool-light`
-* `atom-one-dark-reasonable`
-* `atom-one-dark`
-* `atom-one-light`
-* `brown-paper`
-* `codepen-embed`
-* `color-brewer`
-* `darcula`
-* `dark`
-* `default`
-* `docco`
-* `dracula`
-* `far`
-* `foundation`
-* `github-gist`
-* `github` (default)
-* `gml`
-* `googlecode`
-* `gradient-dark`
-* `grayscale`
-* `gruvbox-dark`
-* `gruvbox-light`
-* `hopscotch`
-* `hybrid`
-* `idea`
-* `ir-black`
-* `isbl-editor-dark`
-* `isbl-editor-light`
-* `kimbie.dark`
-* `kimbie.light`
-* `lightfair`
-* `magula`
-* `mono-blue`
-* `monokai-sublime`
-* `monokai`
-* `night-owl`
-* `nord`
-* `obsidian`
-* `ocean`
-* `paraiso-dark`
-* `paraiso-light`
-* `pojoaque`
-* `purebasic`
-* `qtcreator_dark`
-* `qtcreator_light`
-* `railscasts`
-* `rainbow`
-* `routeros`
-* `school-book`
-* `shades-of-purple`
-* `solarized-dark`
-* `solarized-light`
-* `sunburst`
-* `tomorrow-night-blue`
-* `tomorrow-night-bright`
-* `tomorrow-night-eighties`
-* `tomorrow-night`
-* `tomorrow`
-* `vs`
-* `vs2015`
-* `xcode`
-* `xt256`
-* `zenburn`
+Value is of type [`MarkdownCodeTheme`](/docs/reference/types/markdowncodetheme) and defaults to `MarkdownCodeTheme.GITHUB`.
 
 ### `extension_set`
 
@@ -260,9 +177,37 @@ The extensions to use when rendering the markdown content.
 Value is of type [`MarkdownExtensionSet`](/docs/reference/types/markdownextensionset) and defaults
 to `MarkdownExtensionSet.NONE`.
 
+### `fit_content`
+
+Whether to allow the widget to fit the child content.
+
+Value is of type `bool` and defaults to `True`.
+
+### `img_error_content`
+
+The `Control` to display when an image fails to load.
+
+### `md_style_sheet`
+
+The styles to use when displaying the markdown.
+
+Value is of type [`MarkdownStyleSheet`](/docs/reference/types/markdownstylesheet).
+
 ### `selectable`
 
 Whether rendered text is selectable or not.
+
+### `shrink_wrap`
+
+Whether the extent of the scroll view in the scroll direction should be determined by the contents being viewed.
+
+Value is of type `bool` and defaults to `True`.
+
+### `soft_line_break`
+
+The soft line break is used to identify the spaces at the end of aline of text and the leading spaces in the immediately following the line of text.
+
+Value is of type `bool` and defaults to `False`.
 
 ### `value`
 
@@ -292,5 +237,15 @@ def main(page: ft.Page):
         ),
     )
 
-ft.app(target=main)
+ft.app(main)
 ```
+
+### `on_selection_change`
+
+Fires when the text selection changes.
+
+Event handler argument is of type [`MarkdownSelectionChangeEvent`](/docs/reference/types/markdownselectionchangeevent).
+
+### `on_tap_text`
+
+Fires when some text is clicked/tapped.

@@ -3,7 +3,9 @@ title: SearchBar
 sidebar_label: SearchBar
 ---
 
-A Material Design search bar. It visually looks like a `TextField` with the difference that, tapping on it opens a search view.
+A Material Design search bar. It visually looks like a `TextField`.
+
+To open the search view when the search bar is tapped, call the [`open_view()`](#open_view) method in the [`on_tap`](#on_tap) event handler.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -35,6 +37,7 @@ def main(page):
 
     def handle_tap(e):
         print(f"handle_tap")
+        anchor.open_view()
 
     anchor = ft.SearchBar(
         view_elevation=4,
@@ -64,7 +67,7 @@ def main(page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>

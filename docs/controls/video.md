@@ -169,7 +169,7 @@ def main(page: ft.Page):
     )
 
 
-ft.app(target=main)
+ft.app(main)
 ```
   </TabItem>
 </Tabs>
@@ -199,6 +199,10 @@ Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defaults to `I
 Filter quality of the texture used to render the video output.
 
 Value is of type [`FilterQuality`](/docs/reference/types/filterquality) and defaults to `FilterQuality.LOW`.
+
+::: note
+Android was reported to show blurry images when using `FilterQuality.HIGH`. Prefer the usage of `FilterQuality.MEDIUM` on this platform.
+:::
 
 ### `fill_color`
 
@@ -343,6 +347,14 @@ Fires when the video enters fullscreen
 ### `on_error`
 
 Fires when an error occurs.
+
+### `on_completed`
+
+Fires when a video completes.
+
+### `on_track_changed`
+
+Fires when a video track changes, returns an Int of track currently playing.
 
 ### `on_exit_fullscreen`
 

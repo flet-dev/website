@@ -140,7 +140,7 @@ A tooltip control:
 
 <img src="/img/docs/controls/tooltip/custom-tooltip.gif" className="screenshot-30"/>
 
-`Tooltip` [docs](/docs/controls/tooltip), [example](https://github.com/flet-dev/examples/blob/main/python/controls/tooltip/custom-tooltip.py).
+`Tooltip` [docs](/docs/reference/types/tooltip), [example](https://github.com/flet-dev/examples/blob/main/python/controls/tooltip/custom-tooltip.py).
 
 ### HapticFeedback
 
