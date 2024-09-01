@@ -186,12 +186,6 @@ Value is of type [`ColorFilter`](/docs/reference/types/colorfilter).
 
 A child Control contained by the container.
 
-### `decoration`
-
-The background decoration.
-
-Value is of type [`BoxDecoration`](/docs/reference/types/boxdecoration).
-
 ### `foreground_decoration`
 
 The foreground decoration.
