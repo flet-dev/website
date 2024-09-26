@@ -178,7 +178,7 @@ ft.app(main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/map/map-example.gif" className="screenshot-50" />
+<img src="/img/docs/controls/map/map-example.png" className="screenshot-50" />
 
 ## `Map` Properties
 

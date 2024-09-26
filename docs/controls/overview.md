@@ -211,6 +211,10 @@ Effective inside [`Stack`](/docs/controls/stack) only. The distance that the chi
 
 Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's top edge is inset from the top of the stack.
 
+### `tooltip`
+
+The `tooltip` property (available in almost all controls) now supports both strings and [`Tooltip`](/docs/reference/types/tooltip.md) objects.
+
 ### `visible`
 
 Every control has `visible` property which is `True` by default - control is rendered on the page. Setting `visible` to `False` completely prevents control (and all its children if any) from rendering on a page canvas. Hidden controls cannot be focused or selected with a keyboard or mouse and they do not emit any events.

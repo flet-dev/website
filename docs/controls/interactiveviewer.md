@@ -7,7 +7,7 @@ Allows users to pan, zoom, and rotate the provided `content`.
 
 ## Examples
 
-[Live example](https://flet-controls-gallery.fly.dev/animation/interactiveviewer)
+[Live example](https://flet-controls-gallery.fly.dev/utility/interactiveviewer)
 
 ### Basic Example
 
