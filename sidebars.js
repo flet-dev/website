@@ -166,7 +166,6 @@ module.exports = {
             slug: "controls/information-displays",
           },
           items: [
-            "controls/badge",
             "controls/canvas",
             "controls/circleavatar",
             "controls/cupertinoactivityindicator",
@@ -418,6 +417,7 @@ module.exports = {
                 "reference/types/alignment",
                 "reference/types/animation",
                 "reference/types/autocompletesuggestion",
+                "reference/types/badge",
                 "reference/types/blur",
                 "reference/types/border",
                 "reference/types/borderradius",
