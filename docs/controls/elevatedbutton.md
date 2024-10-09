@@ -155,7 +155,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-Button's background [color](/docs/reference/colors).
+Button's background [color](/docs/reference/colors). If both `bgcolor` and `style.bgcolor` are provided, `bgcolor` value will be used.
 
 ### `clip_behavior`
 
@@ -165,7 +165,7 @@ Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaul
 
 ### `color`
 
-Button's text [color](/docs/reference/colors).
+Button's text [color](/docs/reference/colors). If both `color` and `style.color` are provided, `color` value will be used.
 
 ### `content`
 
@@ -173,7 +173,7 @@ A Control representing custom button content.
 
 ### `elevation`
 
-Button's elevation.
+Button's elevation. If both `elevation` and `style.elevation` are provided, `elevation` value will be used.
 
 ### `icon`
 
