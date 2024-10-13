@@ -9,14 +9,14 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 
 Flet packaging for iOS and Android has been relying on Kivy and it was super annoying when your app depends on Python binary packages, such as Numpy or Pillow. You needed to compile those packages yourself using Kivy command line tools. It was really frustrating and even hopeless if Kivy didn't have "recipes" for some packages, like Pydantic.
 
-Kivy no more! We've just published Flet 0.25.0.dev3514 pre-release with the improved `flet build` command which does not use Kivy! Flet is now using its own Python runtime "meticulously crafted in-house".
+Kivy no more! We've just published Flet 0.25.0.dev3519 pre-release with the improved `flet build` command which does not use Kivy! Flet is now using its own Python runtime "meticulously crafted in-house".
 
 Flet packaging implementation for iOS and Androind adheres to strict specifications defined in [PEP 730](https://peps.python.org/pep-0730/) (iOS) and [PEP 738](https://peps.python.org/pep-0738/) (Android) which were implemented and released in Python 3.13 (and back-ported to Python 3.12). When pypi.org supports wheel tags for iOS and Android and 3rd-party Python package maintainers start uploading their mobile packages Flet will be compatible with them and you'll be able to use them in your Flet app.
 
 ## Installing pre-release
 
 ```
-pip install flet==0.25.0.dev3514
+pip install flet==0.25.0.dev3519
 ```
 
 :::note
@@ -28,7 +28,7 @@ For testing purposes we suggest installing Flet pre-release in a dedicated Pytho
 To build your app with `flet build` command and pre-release version of Flet make sure your `requirements.txt` either contains exact version specifier:
 
 ```
-flet==0.25.0.dev3514
+flet==0.25.0.dev3519
 ```
 
 or `--pre` flag before `flet` dependency:
@@ -85,7 +85,7 @@ pip uninstall flet-desktop-light --yes
 Install full Flet desktop client:
 
 ```
-pip install flet-desktop==0.25.0.dev3514
+pip install flet-desktop==0.25.0.dev3519
 ```
 
 ## Permissions
