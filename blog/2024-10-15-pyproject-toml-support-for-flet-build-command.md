@@ -14,7 +14,7 @@ Today, we are excited to announce another Flet pre-release which now allows conf
 ## Installing pre-release
 
 ```
-pip install flet==0.25.0.dev3519
+pip install flet==0.25.0.dev3526
 ```
 
 :::note
@@ -26,7 +26,7 @@ For testing purposes we suggest installing Flet pre-release in a dedicated Pytho
 To build your app with `flet build` command and pre-release version of Flet make sure your `requirements.txt` either contains exact version specifier:
 
 ```
-flet==0.25.0.dev3519
+flet==0.25.0.dev3526
 ```
 
 or `--pre` flag before `flet` dependency:
@@ -48,7 +48,7 @@ description = "My first Flet project"
 authors = [
   {name = "John Smith", email = "john@email.com"}
 ]
-dependencies = ["flet==0.25.0.dev3519"]
+dependencies = ["flet==0.25.0.dev3526"]
 ```
 
 :::note
@@ -72,7 +72,7 @@ authors = ["John Smith <john@email.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-flet = "0.25.0.dev3519"
+flet = "0.25.0.dev3526"
 ```
 
 `project.name` (or `tool.poetry.name`) corresponds to `--project` option of `flet build` command and it will be the name of app bundle or executable. The value of `project.name` will be "slugified" where all non-alphanumeric values are replaced with dashes `-`.
@@ -96,7 +96,7 @@ List project dependencies in `project.dependencies` section. The value is an arr
 ```
 [project]
 dependencies = [
-  "flet==0.25.0.dev3519",
+  "flet==0.25.0.dev3526",
   "numpy"
 ]
 ```
@@ -295,6 +295,6 @@ dir = "" # --template-dir
 ref = "" # --template-ref
 ```
 
-That's it! Upgrade to Flet 0.25.0.dev3519, give this new feature and try and let us know what you think!
+That's it! Upgrade to Flet 0.25.0.dev3526, give this new feature and try and let us know what you think!
 
 Cheers!
