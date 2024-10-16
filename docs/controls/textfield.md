@@ -372,7 +372,7 @@ Background [color](/docs/reference/colors) of TextField when hovered. Will not b
 
 ### `icon`
 
-The name of the icon to show before the input field and outside of the decoration's container.
+The icon to show before the input field and outside of the decoration's container. Can be a `Control` or an icon name.
 
 ### `input_filter`
 
@@ -439,7 +439,7 @@ The `prefix` appears after the `prefix_icon`, if both are specified.
 
 ### `prefix_icon`
 
-An icon that appears before the `prefix` or `prefix_text` and before the editable part of the text field, within the decoration's container.
+An icon that appears before the `prefix` or `prefix_text` and before the editable part of the text field, within the decoration's container. Can be a `Control` or an icon name.
 
 ### `prefix_style`
 
@@ -507,7 +507,7 @@ The `suffix` appears before the `suffix_icon`, if both are specified.
 
 ### `suffix_icon`
 
-An icon that appears after the editable part of the text field and after the `suffix` or `suffix_text`, within the decoration's container.
+An icon that appears after the editable part of the text field and after the `suffix` or `suffix_text`, within the decoration's container. Can be a `Control` or an icon name.
 
 ### `suffix_style`
 
