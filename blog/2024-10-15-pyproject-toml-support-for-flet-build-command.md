@@ -1,6 +1,6 @@
 ---
 slug: pyproject-toml-support-for-flet-build-command
-title: pyproject.toml support for flet build command'
+title: pyproject.toml support for flet build command
 author: Feodor Fitsner
 author_title: Flet founder and developer
 author_url: https://github.com/FeodorFitsner
