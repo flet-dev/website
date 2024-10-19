@@ -385,7 +385,7 @@ def main(page: ft.Page):
 
 ft.app(main)
 ```
-![ContainerHover GIF]("/img/docs/controls/container/hover-container.gif")
+![ContainerHover GIF](/img/docs/controls/container/hover-container.gif)
 
 ### `on_long_press`
 
