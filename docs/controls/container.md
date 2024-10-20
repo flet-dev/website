@@ -156,6 +156,7 @@ ft.Stack(
     ]
 )
 ```
+<img src="/img/docs/controls/container/blur-container.PNG" className="screenshot-20" />
 
 ### `border`
 
