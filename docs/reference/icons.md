@@ -3,13 +3,10 @@ title: Icons
 sidebar_label: Icons
 ---
 
-### Material A-Z Icon Index
-[A](#abc)  [B](#baby_changing_station)  [C](#cabin)  [D](#dangerous)  [E](#earbuds)  [F](#face)  [G](#gamepad)  [H](#hail)  [I](#icecream)  [J](#javascript)  [K](#kayaking)  [L](#label)  [M](#macro_off)  [N](#nat)  [O](#offline_bolt)  [P](#padding)  [Q](#qr_code)  [R](#radar)  [S](#safety_check)  [T](#tab)  [U](#umbrella)  [V](#vaccines)  [W](#wallet)  [X](#xmark)  [Y](#yard)  [Z](#zoom_in)
-
-### Cupertino A-Z  Icon Index
-[A](#add-1)  [B](#back)  [C](#calendar)  [D](#decrease_indent)  [E](#ear)  [F](#film)  [G](#gamecontroller)  [H](#hammer)  [I](#increase_indent)   J [K](#keyboard-1)  [L](#lab_flask)  [M](#macwindow)  [N](#news)  [O](#option)  [P](#padlock)  [Q](#qrcode)  [R](#radiowaves_left)  [S](#scissors)  [T](#table)  [U](#uiwindow_split_2x1)  [V](#videocam-1)  [W](#wand_rays)  [X](#xmark)   Y [Z](#zoom_in-1)
-
 ## Material Icons
+
+**A-Z Icon Index**
+[A](#abc)  [B](#baby_changing_station)  [C](#cabin)  [D](#dangerous)  [E](#earbuds)  [F](#face)  [G](#gamepad)  [H](#hail)  [I](#icecream)  [J](#javascript)  [K](#kayaking)  [L](#label)  [M](#macro_off)  [N](#nat)  [O](#offline_bolt)  [P](#padding)  [Q](#qr_code)  [R](#radar)  [S](#safety_check)  [T](#tab)  [U](#umbrella)  [V](#vaccines)  [W](#wallet)  [X](#xmark)  [Y](#yard)  [Z](#zoom_in)
 
 The following icons are available through the `icons` module:
 
@@ -17664,6 +17661,9 @@ The following icons are available through the `icons` module:
 #### `ZOOM_OUT_SHARP`
 
 ## Cupertino Icons
+
+**A-Z  Icon Index**
+[A](#add-1)  [B](#back)  [C](#calendar)  [D](#decrease_indent)  [E](#ear)  [F](#film)  [G](#gamecontroller)  [H](#hammer)  [I](#increase_indent)   J [K](#keyboard-1)  [L](#lab_flask)  [M](#macwindow)  [N](#news)  [O](#option)  [P](#padlock)  [Q](#qrcode)  [R](#radiowaves_left)  [S](#scissors)  [T](#table)  [U](#uiwindow_split_2x1)  [V](#videocam-1)  [W](#wand_rays)  [X](#xmark)   Y [Z](#zoom_in-1)
 
 The following icons are available through the `cupertino_icons` module:
 
