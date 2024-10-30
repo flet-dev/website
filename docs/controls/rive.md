@@ -36,7 +36,7 @@ ft.app(main)
   </TabItem>
 </Tabs>
 
-<img src="/img/docs/controls/rive/basic-rive.png" className="screenshot-40"/>
+<img src="/img/docs/controls/rive/basic-rive.gif" className="screenshot-40"/>
 
 ## Properties
 
