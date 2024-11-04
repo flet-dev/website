@@ -169,11 +169,11 @@ The [name of the icon](/docs/reference/icons) or `Control` of the destination.
 
 Example with icon name:
 ```
-icon=ft.Icon(ft.Icons.BOOKMARK)
+icon=ft.Icons.BOOKMARK
 ```
 Example with Control:
 ```
-icon=ft.Icons.BOOKMARK
+icon=ft.Icon(ft.Icons.BOOKMARK)
 ```
 
 If `selected_icon` is provided, this will only be displayed when the destination is not selected.
@@ -195,14 +195,14 @@ The [name](/docs/reference/icons) of alternative icon or `Control` displayed whe
 
 Example with icon name:
 ```
-selected_icon=ft.Icon(ft.Icons.BOOKMARK)
+selected_icon=ft.Icons.BOOKMARK
 ```
 Example with Control:
 ```
-selected_icon=ft.Icons.BOOKMARK
+selected_icon=ft.Icon(ft.Icons.BOOKMARK)
 ```
 
-If this icon is not provided, the NavigationRail will display `icon` in either state.
+If this icon is not provided, the NavigationDrawer will display `icon` in either state.
 
 ### ~~`selected_icon_content`~~
 
