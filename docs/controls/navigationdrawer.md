@@ -182,7 +182,7 @@ If `selected_icon` is provided, this will only be displayed when the destination
 
 The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
 
-**Deprecated in v0.25.0 and will be removed in v0.26.0. Use [`icon`](#icon)
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`icon`](#icon)
 instead.**
 
 ### `label`
@@ -208,5 +208,5 @@ If this icon is not provided, the NavigationDrawer will display `icon` in either
 
 An alternative icon `Control` displayed when this destination is selected.
 
-**Deprecated in v0.25.0 and will be removed in v0.26.0. Use [`selected_icon`](#selected_icon)
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`selected_icon`](#selected_icon)
 instead.**

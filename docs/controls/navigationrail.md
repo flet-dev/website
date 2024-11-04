@@ -201,7 +201,7 @@ To make the NavigationRail more accessible, consider choosing an icon with a str
 
 The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
 
-**Deprecated in v0.25.0 and will be removed in v0.26.0. Use [`icon`](#icon)
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`icon`](#icon)
 instead.**
 
 ### `indicator_color`
@@ -247,5 +247,5 @@ If this icon is not provided, the NavigationRail will display `icon` in either s
 
 An alternative icon `Control` displayed when this destination is selected.
 
-**Deprecated in v0.25.0 and will be removed in v0.26.0. Use [`selected_icon`](#selected_icon)
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`selected_icon`](#selected_icon)
 instead.**

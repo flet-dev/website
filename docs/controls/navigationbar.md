@@ -143,7 +143,6 @@ The text label that appears below the icon of this `NavigationBarDestination`.
 
 ### `selected_icon`
 
-
 The [name](/docs/reference/icons) of alternative icon or `Control` displayed when this destination is selected. 
 
 Example with icon name:
