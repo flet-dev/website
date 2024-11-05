@@ -28,7 +28,7 @@ def main(page: ft.Page):
         page.add(ft.Text("Drawer dismissed"))
 
     def handle_change(e):
-        page.add(ft.Text(f"Selected Index changed: {e.selected_index}"))
+        page.add(ft.Text(f"Selected Index changed: {e.control.selected_index}"))
         # page.close(drawer)
 
     drawer = ft.NavigationDrawer(
