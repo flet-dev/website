@@ -396,6 +396,15 @@ Optional text `prefix` to place on the line before the input.
 
 The [name of the icon](/docs/reference/icons) or `Control` to use for the drop-down select button's icon. Defaults to an `Icon(ft.Icons.ARROW_DROP_DOWN)`.
 
+Example with icon name:
+```
+icon=ft.Icons.BOOKMARK
+```
+Example with Control:
+```
+icon=ft.Icon(ft.Icons.BOOKMARK)
+```
+
 ### `select_icon_enabled_color`
 
 The color of any `Icon` descendant of `select_icon` if this button is enabled.
