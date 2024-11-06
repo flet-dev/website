@@ -9,7 +9,7 @@ An alert dialog informs the user about situations that require acknowledgement.
 An alert dialog has an optional title and an optional list of actions.
 The title is displayed above the content and the actions are displayed below the content.
 
-To open this control, simply call the [`page.open()`](/docs/controls/page#opencontrol) helper-method.
+To open this control, simply call the [`page.show_dialog()`](/docs/controls/page#opencontrol) helper-method.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -37,7 +37,7 @@ def main(page: ft.Page):
     )
 
     def handle_close(e):
-        page.close(dlg_modal)
+        page.close_dialog()
         page.add(ft.Text(f"Modal dialog closed with action: {e.control.text}"))
 
     dlg_modal = ft.AlertDialog(
@@ -55,8 +55,8 @@ def main(page: ft.Page):
     )
 
     page.add(
-        ft.ElevatedButton("Open dialog", on_click=lambda e: page.open(dlg)),
-        ft.ElevatedButton("Open modal dialog", on_click=lambda e: page.open(dlg_modal)),
+        ft.ElevatedButton("Open dialog", on_click=lambda e: page.show_dialog(dlg)),
+        ft.ElevatedButton("Open modal dialog", on_click=lambda e: page.show_dialog(dlg_modal)),
     )
 
 
