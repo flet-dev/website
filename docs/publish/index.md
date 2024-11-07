@@ -100,13 +100,13 @@ flet build <target_platform> --output <path-to-output-dir>
 
 When you run `flet build <target_platform>` command it:
 
-* Creates a new Flutter project in a temp directory from https://github.com/flet-dev/flet-build-template template. Flutter app will contain a packaged Python app in the assets and use `flet` and `serious_python` packages to run Python app and render its UI respectively. The project is ephemeral and deleted upon completion.
+* Creates a new Flutter project in `{flet_app_directory}/build/flutter` directory from https://github.com/flet-dev/flet-build-template template. Flutter app will contain a packaged Python app in the assets and use `flet` and `serious_python` packages to run Python app and render its UI respectively. The project is ephemeral and deleted upon completion.
 * Copies custom icons and splash images (see below) from `assets` directory into a Flutter project.
 * Generates icons for all platforms using [`flutter_launcher_icons`](https://pub.dev/packages/flutter_launcher_icons) package.
 * Generates splash screens for web, iOS and Android targets using [`flutter_native_splash`](https://pub.dev/packages/flutter_native_splash) package.
-* Packages Python app using `package` command of [`serious_python`](https://pub.dev/packages/serious_python) package. All python files in the current directory and sub-directories recursively will be compiled to `.pyc` files. All files, except `build` directory will be added to a package asset.
+* Packages Python app using `package` command of [`serious_python`](https://pub.dev/packages/serious_python) package. `package` command installs pure and binary Python packages from https://pypi.org and https://pypi.flet.dev for selected platform. If configured, `.py` files of installed packages and/or application will be compiled to `.pyc` files. All files, except `build` directory will be added to a package asset.
 * Runs `flutter build <target_platform>` command to produce an executable or an install package.
-* Copies build results to `build/<target_platform>` directory.
+* Copies build results to `{flet_app_directory}/build/<target_platform>` directory.
 
 ## Including optional controls
 
@@ -114,18 +114,43 @@ If your app uses the following controls their packages must be added to a build 
 
 * [`Audio`](/docs/controls/audio) control implemented in `flet_audio` package.
 * [`AudioRecorder`](/docs/controls/audiorecorder) control implemented in `flet_audio_recorder` package.
+* [`Flashlight`](/docs/controls/flashlight) control implemented in `flet_flashlight` package.
+* [`Geolocator`](/docs/controls/geolocator) control implemented in `flet_geolocator` package.
 * [`Lottie`](/docs/controls/lottie) control implemented in `flet_lottie` package.
+* [`Map`](/docs/controls/map) control implemented in `flet_map` package.
+* [`PermissionHandler`](/docs/controls/permissionhandler) control implemented in `flet_permission_handler` package.
 * [`Rive`](/docs/controls/rive) control implemented in `flet_rive` package.
 * [`Video`](/docs/controls/video) control implemented in `flet_video` package.
 * [`WebView`](/docs/controls/webview) control implemented in `flet_webview` package.
 
 Use `--include-packages <package_1> <package_2> ...` option to add Flutter packages with optional
-Flet controls.
+Flet controls or use `tool.flet.flutter.dependencies` section in `pyproject.toml`.
 
 For example, to build your Flet app with `Video` and `Audio` controls add `--include-packages flet_video flet_audio` to your `flet build` command:
 
 ```
 flet build apk --include-packages flet_video flet_audio
+```
+
+or the same in `pyproject.toml`:
+
+```toml
+flutter.dependencies = ["flet_video", "flet_audio"]
+```
+
+or an alternative syntax with versions:
+
+```toml
+[tool.flet.flutter.dependencies]
+flet_video = "1.0.0"
+flet_audio = "2.0.0"
+```
+
+or with path to the package on your disk:
+
+```toml
+[tool.flet.flutter.dependencies.my_package]
+path = "/path/to/my_package"
 ```
 
 ## Icons
@@ -157,9 +182,125 @@ If only `splash.png` or `icon.png` (or other supported format such as `.bmp`, `.
 
 `--splash-dark-color` option specifies background color for a splash screen in dark mode. Defaults to `#333333`.
 
-## Flet app entry point
+Configuring splash settings in `pyproject.toml`:
 
-By default, `flet build` command assumes `main.py` as the entry point of your Flet application, i.e. the file with `ft.app(main)` at the end. A different entry point could be specified with `--module-name` argument.
+```toml
+[tool.flet.splash]
+color = "#FFFF00" # --splash-color
+dark_color = "#8B8000" # --splash-dark-color
+web = false # --no-web-splash
+ios = false # --no-ios-splash
+android = false # --no-android-splash
+```
+
+## Entry point
+
+By default, `flet build` command assumes `main.py` as the entry point of your Flet application, i.e. the file with `ft.app(main)` at the end. A different entry point could be specified with `--module-name` argument or in `pyproject.toml`:
+
+```toml
+[tool.flet]
+app.module = "main"
+```
+
+## Compilation and cleanup
+
+`flet build` command is not compiling app `.py` files into `.pyc` by default which allows you to avoid (or defer?) discovery of any syntax errors in your app and successfully complete the packaging.
+
+You can enable the compilation and cleanup with the following new options:
+
+* `--compile-app` - compile app's `.py` files.
+* `--compile-packages` - compile installed packages' `.py` files.
+* `--cleanup-on-compile` - remove unnecessary files upon successful compilation.
+
+Configuring compilation in `pyproject.toml`:
+
+```toml
+[tool.flet]
+compile.app = true # --compile-app
+compile.packages = true # --compile-packages
+compile.cleanup = true # --cleanup-on-compile
+```
+
+## Permissions
+
+`flet build` command allows granular control over permissions, features and entitlements embedded into `AndroidManifest.xml`, `Info.plist` and `.entitlements` files.
+
+See platform guides for setting specific [iOS](/docs/publish/ios), [Android](/docs/publish/android) and [macOS](/docs/publish/macos) permissions.
+
+### Cross-platform permissions
+
+There are pre-defined permissions that mapped to `Info.plist`, `*.entitlements` and `AndroidManifest.xml` for respective platforms.
+
+Setting cross-platform permissions:
+
+```
+flet build --permissions permission_1 permission_2 ...
+```
+
+Supported permissions:
+
+* `location`
+* `camera`
+* `microphone`
+* `photo_library`
+
+#### iOS mapping to `Info.plist` entries
+
+* `location`
+  * `NSLocationWhenInUseUsageDescription = This app uses location service when in use.`
+  * `NSLocationAlwaysAndWhenInUseUsageDescription = This app uses location service.`
+* `camera`
+  * `NSCameraUsageDescription = This app uses the camera to capture photos and videos.`
+* `microphone`
+  * `NSMicrophoneUsageDescription = This app uses microphone to record sounds.`
+* `photo_library`
+  * `NSPhotoLibraryUsageDescription = This app saves photos and videos to the photo library.`
+
+#### macOS mapping to entitlements
+
+* `location`
+  * `com.apple.security.personal-information.location = True`
+* `camera`
+  * `com.apple.security.device.camera = True`
+* `microphone`
+  * `com.apple.security.device.audio-input = True`
+* `photo_library`
+  * `com.apple.security.personal-information.photos-library = True`
+
+#### Android mappings
+
+* `location`
+  * permissions:
+    * `android.permission.ACCESS_FINE_LOCATION": True`
+    * `android.permission.ACCESS_COARSE_LOCATION": True`
+    * `android.permission.ACCESS_BACKGROUND_LOCATION": True`
+  * features:
+    * `android.hardware.location.network": False`
+    * `android.hardware.location.gps": False`
+* `camera`
+  * permissions:
+    * `android.permission.CAMERA": True`
+  * features:
+    * `android.hardware.camera": False`
+    * `android.hardware.camera.any": False`
+    * `android.hardware.camera.front": False`
+    * `android.hardware.camera.external": False`
+    * `android.hardware.camera.autofocus": False`
+* `microphone`
+  * permissions:
+    * `android.permission.RECORD_AUDIO": True`
+    * `android.permission.WRITE_EXTERNAL_STORAGE": True`
+    * `android.permission.READ_EXTERNAL_STORAGE": True`
+* `photo_library`
+  * permissions:
+    * `android.permission.READ_MEDIA_VISUAL_USER_SELECTED": True`
+
+Configuring cross-platform permissions in `pyproject.toml`:
+
+```toml
+[tool.flet]
+permissions = ["camera", "microphone"]
+```
 
 ## Versioning
 
@@ -173,6 +314,22 @@ more recent build.
 `--build-version` - a "x.y.z" string (defaults to `1.0.0`) used as the version number shown to users. For each new
 version of your app, you will provide a version number to differentiate it from previous versions.
 
+Configuring display version and version number in `pyproject.toml`:
+
+```toml
+[project]
+name = "my_app"
+version = "1.0.0"
+description = "My Flet app"
+authors = [
+  {name = "John Smith", email = "john@email.com"}
+]
+dependencies = ["flet==0.25.0"]
+
+[tool.flet]
+build_number = 1
+```
+
 ## Customizing packaging template
 
 To create a temporary Flutter project `flet build` uses [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) template stored in https://github.com/flet-dev/flet-build-template repository.
@@ -184,6 +341,15 @@ You can customize that template to suit your specific needs and then use it with
 For Git repositories you can checkout specific branch/tag/commit with `--template-ref` option.
 
 `--template-dir` option specifies a relative path to a cookiecutter template in a repository given by `--template` option. When `--template` option is not used, this option specifies path relative to the `<user-directory>/.cookiecutters/flet-build-template`.
+
+Configuring template in `pyproject.toml`:
+
+```toml
+[tool.flet.template]
+path = "gh:some-github/repo" # --template
+dir = "" # --template-dir
+ref = "" # --template-ref
+```
 
 ## Extra args to `flutter build` command
 
@@ -201,17 +367,29 @@ To pass an option with a value:
 flet build ipa --flutter-build-args=--export-method --flutter-build-args=development
 ```
 
+Configuring Flutter build extra args:
+
+```toml
+[tool.flet]
+flutter.build_args = [
+    "--some-flutter-arg-1",
+    "--some-flutter-arg-2"
+]
+```
+
 ## Verbose logging
 
 `--verbose` or `-vv` option allows to see the output of all commands during `flet build` run.
 We might ask for a detailed log if you need support.
 
-## Logging
+## Console output
 
-All Flet apps output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `out.log` file. Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:
+All Flet apps output to `stdout` and `stderr` (e.g. all `print()` statements or `sys.stdout.write()` calls, Python `logging` library) is now redirected to `console.log` file with a full path to it stored in `FLET_APP_CONSOLE` environment variable.
+
+Writes to that file are unbuffered, so you can retrieve a log in your Python program at any moment with a simple:
 
 ```python
-with open("out.log", "r") as f:
+with open(os.getenv("FLET_APP_CONSOLE"), "r") as f:
     log = f.read()
 ```
 

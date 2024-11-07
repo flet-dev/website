@@ -188,3 +188,46 @@ This command builds release version. 'release' builds don't support debugging an
 ### Splash screen
 
 By default, generated Android app will be showing a splash screen with an image from `assets` directory (see below) or Flet logo. You can disable splash screen for Android app with `--no-android-splash` option.
+
+## Permissions
+
+Setting Android permissions and features:
+
+```
+flet build --android-permissions permission=True|False ... --android-features feature_name=True|False
+```
+
+For example:
+
+```
+flet build \
+    --android-permissions android.permission.READ_EXTERNAL_STORAGE=True \
+      android.permission.WRITE_EXTERNAL_STORAGE=True \
+    --android-features android.hardware.location.network=False
+```
+
+Default Android permissions:
+
+* `android.permission.INTERNET`
+
+Default permissions can be disabled with `--android-permissions` option and `False` value, for example:
+
+```
+flet build --android-permissions android.permission.INTERNET=False
+```
+
+Default Android features:
+
+* `android.software.leanback=False` (`False` means it's written in manifest as `android:required="false"`)
+* `android.hardware.touchscreen=False`
+
+Configuring permissions and features in `pyproject.toml` (notice quotes `"` around key names):
+
+```toml
+[tool.flet.android.permission] # --android-permissions
+"android.permission.CAMERA" = true
+"android.permission.CAMERA" = true
+
+[tool.flet.android.feature] # --android-features
+"android.hardware.camera" = false
+```

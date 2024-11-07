@@ -82,3 +82,24 @@ To successfully generate IPA you should provide correct values for the following
   is combined with `--project` and used as an iOS and Android bundle ID.
 * `--project` - project name in C-style identifier format (lowercase alphanumerics with underscores) used to build bundle ID and as a name for bundle executable. By default, it's the name of Flet app directory.
 * `--team` - team ID to locate provisioning profile. If no team ID provided a unsigned iOS archive will be generated.
+
+## Permissions
+
+Setting iOS permissions which are written into `Info.plist` file:
+
+```
+flet build --info-plist permission_1=True|False|description permission_2=True|False|description ...
+```
+
+For example:
+
+```
+flet build --info-plist NSLocationWhenInUseUsageDescription="This app uses location service when in use."
+```
+
+Configuring iOS permissions in `pyproject.toml`:
+
+```toml
+[tool.flet.ios.info] # --info-plist
+NSCameraUsageDescription = "This app uses the camera to ..."
+```
