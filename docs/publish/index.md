@@ -21,24 +21,22 @@ The following matrix shows which OS you should run `flet build` command on in or
 
 ### Flutter SDK
 
-Flutter SDK 3.16 or above must be installed and the path to both `flutter` and `dart` commands must be added to `PATH` environment variable.
+Flutter SDK 3.24 or above must be installed and the path to both `flutter` and `dart` commands must be added to `PATH` environment variable.
 
-On macOS we recommend installing Flutter SDK with ["Download and install" approach](https://docs.flutter.dev/get-started/install/macos/desktop?tab=download).
+Follow official [Flutter installation guide](https://docs.flutter.dev/get-started/install) for your platform.
 
-On Linux we recommend installing Flutter SDK with [Method 2: Manual installation](https://docs.flutter.dev/get-started/install/linux#method-2-manual-installation) (do not install Flutter with `snap`).
-
-Pay attention to Flutter's own requirements for every platform, such as XCode and Cocopods on macOS, Visual Studio 2022 on Windows or additional tools and libraries on Linux.
+> Pay attention to Flutter's own requirements for every platform, such as XCode and Cocopods on macOS, Visual Studio 2022 on Windows or additional tools and libraries on Linux.
 
 ## Project structure
 
-`flet build` command assumes the following Flet project structure.
+`flet build` command assumes the following minimal Flet project structure.
 
 ```
 /assets/
     icon.png
 main.py
-requirements.txt
 pyproject.toml
+requirements.txt
 ```
 
 `main.py` is the entry point of your Flet application with `ft.app(main)` at the end. A different entry point could be specified with `--module-name` argument.
@@ -47,22 +45,21 @@ pyproject.toml
 
 If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) is provided it will be used as a source image to generate all icons and splash screens for all platforms. See section below for more information about icons and splashes.
 
-`requirements.txt` is a standard pip file that contains the list of Python requirements for your Flet app. If this file is not provided only `flet` dependency will be installed during packaging.
+`pyproject.toml` contains the application metadata, lists its dependencies and controls build process.
+
+`requirements.txt` can also be used to list app requirements. It is optional though and if both `pyproject.toml` and `requirements.txt` exist the latter will be ignored.
+
+The list of project dependencies should contain at least `flet` package. 
 
 :::caution No pip freeze
-
 Do not use `pip freeze > requirements.txt` command to create `requirements.txt` for the app that
 will be running on mobile. As you run `pip freeze` command on a desktop `requirements.txt` will have
 dependencies that are not intended to work on a mobile device, such as `watchdog`.
 
 Hand-pick `requirements.txt` to have only direct dependencies required by your app, plus `flet`. 
-
 :::
 
-`pyproject.toml` can also be used by `flet build` command to get the list project dependencies.
-However, if both `requirements.txt` and `pyproject.toml` exist then `pyproject.toml` will be ignored.
-
-The easiest way to start with that structure is to use `flet create` command:
+The easiest way to start with the right project structure is to use `flet create` command:
 
 ```
 flet create myapp
@@ -70,9 +67,12 @@ flet create myapp
 
 where `myapp` is a target directory.
 
-:::warning pyproject.toml
-Reading dependencies from `pyproject.toml` is not yet supported ([issue](https://github.com/flet-dev/serious-python/issues/52)), please use `requirements.txt` instead.
-:::
+`flet create` app template puts `main.py` and `assets` into `src` directory which path is controlled by `tool.flet.app.path` setting in `pyproject.toml`:
+
+```toml
+[tool.flet.app]
+path = "src"
+```
 
 ## How it works
 
