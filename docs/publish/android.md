@@ -9,100 +9,54 @@ Flet CLI provides `flet build apk` and `flet build aab` commands that allow pack
 
 ## Prerequisites
 
-# Native Python packages
+### Binary Python packages
 
-Native Python packages (vs "pure" Python packages written in Python only) are packages that partially written in C, Rust or other languages producing native code. Example packages are `numpy`, `cryptography`, `lxml`, `pydantic`.
+Binary Python packages (vs "pure" Python packages written in Python only) are packages that partially written in C, Rust or other languages producing native code. Example packages are `numpy`, `cryptography`, or `pydantic`.
 
-When packaging Flet app for Android with `flet build` command such packages cannot be installed from PyPI, because there are no wheels (`.whl`) for Android platform.
+Flet provides an alternative index https://pypi.flet.dev to host Python binary wheels (`.whl` files downloaded by pip) for iOS and Android platforms.
 
-Therefore, you have to compile native packages for Android on your computer before running `flet build` command.
+The following packages are currently available for Android:
+
+| Name          | Version      |
+|---------------|--------------|
+| aiohttp       | 3.9.5 |
+| argon2-cffi-bindings | 21.2.0 | 
+| bcrypt | 4.2.0 | 
+| bitarray | 2.9.2 | 
+| blis | 1.0.0 | 
+| Brotli | 1.1.0 | 
+| cffi | 1.17.1 | 
+| contourpy | 1.3.0 | 
+| cryptography | 43.0.1 | 
+| kiwisolver | 1.4.7 | 
+| lru-dict | 1.3.0
+| MarkupSafe | 2.1.5 | 
+| matplotlib | 3.9.2 | 
+| numpy | 2.1.1 | 
+| numpy | 1.26.4 | 
+| opencv-python | 4.10.0.84 | 
+| pandas | 2.2.2 | 
+| pillow | 10.4.0 | 
+| pydantic-core | 2.23.3 | 
+| time-machine | 2.16.0 | 
+| websockets | 13.0.1 | 
+| yarl | 1.11.1
 
 :::warning Work in progress
-We are actively working on automating the process described below - it's #1 item in our backlog.
+New packages can be built with creating a recipe in [Mobile Forge](https://github.com/flet-dev/mobile-forge) project. For now, Flet team is authoring those recipes for you, but when the process is polished and fully-automated you'll be able to send a PR and test the compiled package right away.
+
+If you don't yet see a package at https://pypi.flet.dev you can request it in [Flet discussions - Packages](https://github.com/flet-dev/flet/discussions/categories/packages). Please do not request pure Python packages. Go to package's "Download files" section at https://pypi.org and make sure it contains binary platform-specific wheels.
 :::
 
-Flet uses [Kivy for Android](https://github.com/kivy/python-for-android) to build Python and native Python packages for Android.
+### Android SDK
 
-To build your own Python distributive with custom native packages and use it with `flet build` command you need to use `p4a` tool provided by Kivy for Android.
+To build the app for the Android platform, the `flet build` command requires the Android SDK to be installed on your machine.
 
-`p4a` command-line tool can be run on macOS and Linux (WSL on Windows).
+The official way to install the Android SDK and Java is by installing Android Studio.
 
-To get Android SDK install Android Studio.
-
+:::note
 On macOS Android SDK will be located at `$HOME/Library/Android/sdk`.
-
-Install Temurin8 to get JRE 1.8 required by `sdkmanager` tool:
-
-```bash
-brew install --cask temurin8
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home
-```
-
-Set the following environment variables:
-
-```bash
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-export NDK_VERSION=25.2.9519653
-export SDK_VERSION=android-33
-```
-
-Add path to `sdkmanager` to `PATH`:
-
-```bash
-export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
-```
-
-Install Android SDK and NDK from https://developer.android.com/ndk/downloads/ or with Android SDK Manager:
-
-```bash
-echo "y" | sdkmanager --install "ndk;$NDK_VERSION" --channel=3
-echo "y" | sdkmanager --install "platforms;$SDK_VERSION"
-```
-
-Create new Python virtual environment:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-Install `p4a` from Flet's fork - it has pinned Python 3.11.6 which is compatible with the rest of the code produced by `flet build`:
-
-```
-pip3 install git+https://github.com/flet-dev/python-for-android.git@3.11.6
-```
-
-Install `cython`:
-
-```
-pip install --upgrade cython
-```
-
-Run `p4a` with `--requirements` including your custom Python libraries separated with comma, like `numpy` in the following example:
-
-```
-p4a create --requirements numpy --arch arm64-v8a --arch armeabi-v7a --arch x86_64 --sdk-dir $ANDROID_SDK_ROOT --ndk-dir $ANDROID_SDK_ROOT/ndk/$NDK_VERSION --dist-name mydist
-```
-
-*Choose No to "Do you want automatically install prerequisite JDK? [y/N]".*
-
-**NOTE:** The library you want to build with `p4a` command should have a recipe in [this folder](https://github.com/kivy/python-for-android/tree/develop/pythonforandroid/recipes). You can [submit a request](https://github.com/kivy/python-for-android/issues) to make a recipe for the library you need or create your own recipe and submit a PR.
-
-When `p4a` command completes a Python distributive with your custom libraries will be located at:
-
-```
-$HOME/.python-for-android/dists/mydist
-```
-
-In the terminal where you run `flet build apk` command to build your Flet Android app run the following command to store distributive full path in `SERIOUS_PYTHON_P4A_DIST` environment variable:
-
-```bash
-export SERIOUS_PYTHON_P4A_DIST=$HOME/.python-for-android/dists/mydist
-```
-
-Build your app by running `flet build apk` command to build `.apk`.
-
-You app's bundle now includes custom Python libraries.
+:::
 
 ## `flet build apk`
 
@@ -141,22 +95,15 @@ adb -s <device> install <path-to-your.apk>
 
 where `<device>` can be found with `adb devices` command.
 
-### Building platform-specific APK
+### Building platform-specific APKs
 
 By default, Flet builds "fat" APK which includes binaries for both `arm64-v8a` and `armeabi-v7a` architectures.
 
-If you know/control Android device your app will be distributed on you can build a smaller APK for a specific architecture.
+You can configure Flet to split fat APK into smaller APKs for each platformby using `--split-per-abi` option or by setting `split_per_abi` in `pyproject.toml`:
 
-To build APK for `arm64-v8a`:
-
-```
-flet build apk --flutter-build-args=--target-platform --flutter-build-args=android-arm64
-```
-
-To build APK for `armeabi-v7a`:
-
-```
-flet build apk --flutter-build-args=--target-platform --flutter-build-args=android-arm
+```toml
+[tool.flet.android]
+split_per_abi = true
 ```
 
 ### Troubleshooting Android
@@ -189,9 +136,16 @@ This command builds release version. 'release' builds don't support debugging an
 
 By default, generated Android app will be showing a splash screen with an image from `assets` directory (see below) or Flet logo. You can disable splash screen for Android app with `--no-android-splash` option.
 
+Configuring splash in `pyproject.toml`:
+
+```toml
+[tool.flet.splash]
+android = false
+```
+
 ## Permissions
 
-Setting Android permissions and features:
+Configuring Android permissions and features to be written into `AndroidManifest.xml`:
 
 ```
 flet build --android-permissions permission=True|False ... --android-features feature_name=True|False
@@ -230,4 +184,23 @@ Configuring permissions and features in `pyproject.toml` (notice quotes `"` arou
 
 [tool.flet.android.feature] # --android-features
 "android.hardware.camera" = false
+```
+
+## Meta-data
+
+Configuring Android app meta-data to be written into `AndroidManifest.xml`:
+
+```
+flet build --android-meta-data name_1=value_1 name_2=value_2 ...
+```
+
+Default Android meta-data:
+
+* `io.flutter.embedding.android.EnableImpeller=false`
+
+Configuring meta-data in `pyproject.toml` (notice quotes `"` around key names):
+
+```toml
+[tool.flet.android.meta_data]
+"com.google.android.gms.ads.APPLICATION_ID" = "ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"
 ```
