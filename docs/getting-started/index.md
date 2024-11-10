@@ -73,6 +73,40 @@ You can read more about Python `venv` module [here](https://docs.python.org/3/li
 
 Now you are ready to [create your first Flet app](create-flet-app).
 
+## UV
+
+Another way to setup a virtual environment for your Flet project is using [uv](https://docs.astral.sh/uv/).
+
+Once you have uv [installed](https://docs.astral.sh/uv/getting-started/installation/), run the following command in your terminal:
+```bash
+uv init first-flet-app
+```
+
+This command will create a new directory called first-flet-app with the following structure:
+```
+first-flet-app/
+├── pyproject.toml
+├── README.md
+├── uv.lock
+├── hello.py
+├── .gitignore
+├── .python-version
+```
+Now you can add Flet dependency to your project:  
+```
+cd first-flet-app
+uv add flet
+```
+
+To check what version of Flet was installed:
+```
+uv run flet --version
+```
+:::note
+When [creating](create-flet-app) and [running](running-app) Flet app using Poetry, you'll need to use `uv run` before each command!
+:::
+
+
 ## Poetry
 
 Another way to setup a virtual environment for your Flet project is using [Poetry](https://python-poetry.org/docs/).
