@@ -1,84 +1,75 @@
----
-id: introduction
-title: Introduction
-slug: /
----
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-## What is Flet?
-
-Flet is a framework that allows building web, desktop and mobile applications in Python without prior experience in frontend development.
-
-You can build a UI for your program with Flet [controls](/docs/controls) which are based on [Flutter](https://flutter.dev) by Google. Flet goes beyond merely wrapping Flutter widgets. It adds its own touch by combining smaller widgets, simplifying complexities, implementing UI best practices, and applying sensible defaults. This ensures that your applications look stylish and polished without requiring additional design efforts on your part.
-
-## Flet app example
-
-Create a sample "Counter" app:
-
-```python title="counter.py"
 import flet as ft
+import random
 
 def main(page: ft.Page):
-    page.title = "Flet counter example"
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.title = "Pregunta importante"
+    page.window.width = 400
+    page.window.height = 300
+    page.window.resizable = False
 
-    txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
+    margen_inferior = 100
+    margen_lateral = 120
+    movimiento_minimo = 50 
 
-    def minus_click(e):
-        txt_number.value = str(int(txt_number.value) - 1)
+    def mover_boton_no(e):
+        max_top = page.height - margen_inferior
+        max_left = page.width - margen_lateral
+
+        top_actual = btn_no.top
+        left_actual = btn_no.left
+
+        nuevo_top, nuevo_left = top_actual, left_actual
+        while abs(nuevo_top - top_actual) < movimiento_minimo \
+            or abs(nuevo_left - left_actual) < movimiento_minimo:
+            nuevo_top = random.randint(0, int(max_top))
+            nuevo_left = random.randint(0, int(max_left))
+
+        btn_no.top = nuevo_top
+        btn_no.left = nuevo_left
         page.update()
 
-    def plus_click(e):
-        txt_number.value = str(int(txt_number.value) + 1)
+    def mostrar_respuesta(e):
+        page.dialog = ft.AlertDialog(
+            title=ft.Text("¡Sabía que dirías que sí! 🥰"),
+            actions=[ft.ElevatedButton("Cerrar", 
+                            on_click=lambda e: page.window.close())]
+        )
+        page.dialog.open = True
         page.update()
+
+
+    btn_si = ft.ElevatedButton("Sí", on_click=mostrar_respuesta, width=100)
+    btn_no = ft.ElevatedButton("No", width=100, on_hover=mover_boton_no)
+
+    stack = ft.Stack(
+        [
+            btn_si,
+            btn_no,
+        ],
+        width=400,
+        height=300,
+    )
+
+
+    btn_si.top = 100
+    btn_si.left = 50
+
+    btn_no.top = 100
+    btn_no.left = 200
+
 
     page.add(
-        ft.Row(
+        ft.Column(
             [
-                ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
-                txt_number,
-                ft.IconButton(ft.icons.ADD, on_click=plus_click),
+                ft.Text("¿Quieres ser mi novia?", 
+                        size=30, 
+                        weight=ft.FontWeight.BOLD),
+                stack,
             ],
             alignment=ft.MainAxisAlignment.CENTER,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            spacing=20,
         )
     )
 
-ft.app(main)
-```
-
-To run the app install `flet` module ([create a new Flet environment](/docs/getting-started)):
-
-```bash
-pip install flet
-```
-
-and [run the program](/docs/getting-started/running-app):
-
-```bash
-flet run counter.py
-```
-
-The app will be started in a native OS window - what a nice alternative to Electron!
-
-<div className="row">
-  <div className="col col--6" style={{textAlign: 'center'}}>
-    <h3>macOS</h3>
-    <img src="/img/docs/getting-started/flet-counter-macos.png" className="screenshot-70" />
-  </div>
-  <div className="col col--6" style={{textAlign: 'center'}}>
-    <h3>Windows</h3>
-    <img src="/img/docs/getting-started/flet-counter-windows.png"className="screenshot-60" />
-  </div>  
-</div>
-
-Now, run your app as a web app:
-
-```
-flet run --web counter.py
-```
-
-A new browser window or tab will be opened:
-
-<img src="/img/docs/getting-started/flet-counter-safari.png" className="screenshot-50" />
+ft.app(target=main) 
