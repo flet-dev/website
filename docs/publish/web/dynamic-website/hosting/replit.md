@@ -21,7 +21,7 @@ disableGuessImports = true
 
   <img src="/img/docs/hosting-replit/replit-disable-guess-imports.png" className="screenshot-60 screenshot-rounded"/>
 
-* On "Tools" pane click "Packages" and search for `flet` package and click "Install" button.
+* On "Tools" pane click "Dependencies" and search for `flet` package and click "Install" button.
 * Open `main.py` on "Files" pane and copy-paste your app.
 * Modify call to `ft.app()` and include `view=ft.AppView.WEB_BROWSER` parameter:
 

@@ -156,6 +156,7 @@ ft.Stack(
     ]
 )
 ```
+<img src="/img/docs/controls/container/blur-container.PNG" className="screenshot-20" />
 
 ### `border`
 
@@ -379,6 +380,8 @@ def main(page: ft.Page):
 
 ft.app(main)
 ```
+
+<img src="/img/docs/controls/container/hover-container.gif" className="screenshot-20" />
 
 ### `on_long_press`
 

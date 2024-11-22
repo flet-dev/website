@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="python" label="Python" default>
 
 ```python
-page.theme = theme.Theme(color_scheme_seed="green")
+page.theme = ft.Theme(color_scheme_seed="green")
 page.update()
 ```
 
