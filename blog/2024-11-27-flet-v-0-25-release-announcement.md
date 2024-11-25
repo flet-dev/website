@@ -8,7 +8,7 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-Hey Flet developers, we’ve got something exciting to share — Flet 0.25.0 has officially dropped!
+Hey Flet developers, we’ve got something exciting to share — Flet 0.25.0 is officially released!
 
 The biggest news? We’ve ditched Kivy for iOS and Android packaging. No more dealing with frustrating Python binary dependencies — Flet now uses its own custom Python runtime, so your app builds are easier than ever. Plus, we’ve added loads of new features like better permissions control, faster rebuilds, and even a lightweight Linux client that skips the bloat.
 
