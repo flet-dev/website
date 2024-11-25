@@ -32,7 +32,7 @@ If you don't yet see a package at https://pypi.flet.dev you can request it in [F
 
 Packaging behavior was changed too:
 
-- The packaging is not trying to replace `flet` dependency with `flet-runtime`, `flet-embed` or `flet-pyodide`, but install all dependencies "as is" from `requirements.txt` or `pyproject.toml` - thanks to the new Flet packages structure (link).
+- The packaging is not trying to replace `flet` dependency with `flet-runtime`, `flet-embed` or `flet-pyodide`, but install all dependencies "as is" from `requirements.txt` or `pyproject.toml` - thanks to the [new Flet packages structure](#new-python-packages-structure).
 - If the binary package for target platform is not found the packaging won't be trying to compile it from source distribution, but will fail instead with a meaningful error.
 
 ### Python 3.12
