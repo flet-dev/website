@@ -8,7 +8,7 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-Hey Flet developers, we’ve got something exciting to share — Flet 0.25.0 has officially dropped!
+Hey Flet developers, we’ve got something exciting to share — Flet 0.25.0 is officially released!
 
 The biggest news? We’ve ditched Kivy for iOS and Android packaging. No more dealing with frustrating Python binary dependencies — Flet now uses its own custom Python runtime, so your app builds are easier than ever. Plus, we’ve added loads of new features like better permissions control, faster rebuilds, and even a lightweight Linux client that skips the bloat.
 
@@ -28,7 +28,7 @@ Flet packaging implementation for iOS and Androind adheres to strict specificati
 
 New packages can be built with creating a recipe in [Mobile Forge](https://github.com/flet-dev/mobile-forge) project. For now, Flet team is authoring those recipes for you, but when the process is polished and fully-automated you'll be able to send a PR and test the compiled package right away.
 
-If you don't yet see a package at https://pypi.flet.dev you can request it in [Flet discussions - Packages](https://github.com/flet-dev/flet/discussions/categories/packages). Please do not request pure Python packages. Go to package's "Download files" section at https://pypi.org and make sure it contains binary platform-specific wheels.
+If you don't yet see a package you require at https://pypi.flet.dev, you can request it in [Flet discussions - Packages](https://github.com/flet-dev/flet/discussions/categories/packages). Please do not request pure Python packages. Go to package's "Download files" section at https://pypi.org and make sure it contains binary platform-specific wheels.
 
 Packaging behavior was changed too:
 
@@ -71,7 +71,7 @@ flet build \
 
 ### Control over app compilation and cleanup
 
-`flet build` command is no longer compiling app `.py` files into `.pyc` by default which allows you to avoid (defer?) discovery of any syntax errors in your app and complete the packaging.
+`flet build` command is no longer compiling app `.py` files into `.pyc` by default which allows you to defer discovery of any syntax errors in your app and complete the packaging.
 
 You can control the compilation and cleanup with the following new options:
 
@@ -187,7 +187,7 @@ pip install 'flet[all]' --upgrade
 
 ## "Light" client for Linux
 
-A lightweight desktop client, without Audio and Video controls, is now installed on Linux by default. It improves initial user experience as user doesn't need to immediately deal with `gstreamer` (audio) and `mpv` (video) dependencies right away and Flet "just works".
+A lightweight desktop client, without Audio and Video controls, is now installed on Linux by default. It improves initial user experience as user doesn't need to immediately deal with `gstreamer` (audio) and `mpv` (video) dependencies and Flet "just works".
 
 Once user got some Flet experience and wants to use Video and Audio controls in their application they can install gstreamer and/or mpv and replace Flet desktop with a full version.
 
