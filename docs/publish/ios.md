@@ -24,27 +24,30 @@ The following packages are currently available for iOS:
 | Name          | Version      |
 |---------------|--------------|
 | aiohttp       | 3.9.5 |
-| argon2-cffi-bindings | 21.2.0 | 
-| bcrypt | 4.2.0 | 
-| bitarray | 2.9.2 | 
-| blis | 1.0.0 | 
-| Brotli | 1.1.0 | 
-| cffi | 1.17.1 | 
-| contourpy | 1.3.0 | 
-| cryptography | 43.0.1 | 
-| kiwisolver | 1.4.7 | 
-| lru-dict | 1.3.0
-| MarkupSafe | 2.1.5 | 
-| matplotlib | 3.9.2 | 
-| numpy | 2.1.1 | 
-| numpy | 1.26.4 | 
-| opencv-python | 4.10.0.84 | 
-| pandas | 2.2.2 | 
-| pillow | 10.4.0 | 
-| pydantic-core | 2.23.3 | 
-| time-machine | 2.16.0 | 
-| websockets | 13.0.1 | 
-| yarl | 1.11.1
+| argon2-cffi-bindings | 21.2.0 |
+| bcrypt | 4.2.0 |
+| bitarray | 2.9.2 |
+| blis | 1.0.0 |
+| Brotli | 1.1.0 |
+| cffi | 1.17.1 |
+| contourpy | 1.3.0 |
+| cryptography | 43.0.1 |
+| google-crc32 | 1.6.0 |
+| grpcio | 1.67.1 |
+| kiwisolver | 1.4.7 |
+| lru-dict | 1.3.0 |
+| lxml | 5.3.0 |
+| MarkupSafe | 2.1.5 |
+| matplotlib | 3.9.2 |
+| numpy | 2.1.1 |
+| numpy | 1.26.4 |
+| opencv-python | 4.10.0.84 |
+| pandas | 2.2.2 |
+| pillow | 10.4.0 |
+| pydantic-core | 2.23.3 |
+| time-machine | 2.16.0 |
+| websockets | 13.0.1 |
+| yarl | 1.11.1 |
 
 :::warning Work in progress
 New packages can be built with creating a recipe in [Mobile Forge](https://github.com/flet-dev/mobile-forge) project. For now, Flet team is authoring those recipes for you, but when the process is polished and fully-automated you'll be able to send a PR and test the compiled package right away.

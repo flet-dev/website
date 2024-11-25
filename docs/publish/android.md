@@ -20,27 +20,30 @@ The following packages are currently available for Android:
 | Name          | Version      |
 |---------------|--------------|
 | aiohttp       | 3.9.5 |
-| argon2-cffi-bindings | 21.2.0 | 
-| bcrypt | 4.2.0 | 
-| bitarray | 2.9.2 | 
-| blis | 1.0.0 | 
-| Brotli | 1.1.0 | 
-| cffi | 1.17.1 | 
-| contourpy | 1.3.0 | 
-| cryptography | 43.0.1 | 
-| kiwisolver | 1.4.7 | 
-| lru-dict | 1.3.0
-| MarkupSafe | 2.1.5 | 
-| matplotlib | 3.9.2 | 
-| numpy | 2.1.1 | 
-| numpy | 1.26.4 | 
-| opencv-python | 4.10.0.84 | 
-| pandas | 2.2.2 | 
-| pillow | 10.4.0 | 
-| pydantic-core | 2.23.3 | 
-| time-machine | 2.16.0 | 
-| websockets | 13.0.1 | 
-| yarl | 1.11.1
+| argon2-cffi-bindings | 21.2.0 |
+| bcrypt | 4.2.0 |
+| bitarray | 2.9.2 |
+| blis | 1.0.0 |
+| Brotli | 1.1.0 |
+| cffi | 1.17.1 |
+| contourpy | 1.3.0 |
+| cryptography | 43.0.1 |
+| google-crc32 | 1.6.0 |
+| grpcio | 1.67.1 |
+| kiwisolver | 1.4.7 |
+| lru-dict | 1.3.0 |
+| lxml | 5.3.0 |
+| MarkupSafe | 2.1.5 |
+| matplotlib | 3.9.2 |
+| numpy | 2.1.1 |
+| numpy | 1.26.4 |
+| opencv-python | 4.10.0.84 |
+| pandas | 2.2.2 |
+| pillow | 10.4.0 |
+| pydantic-core | 2.23.3 |
+| time-machine | 2.16.0 |
+| websockets | 13.0.1 |
+| yarl | 1.11.1 |
 
 :::warning Work in progress
 New packages can be built with creating a recipe in [Mobile Forge](https://github.com/flet-dev/mobile-forge) project. For now, Flet team is authoring those recipes for you, but when the process is polished and fully-automated you'll be able to send a PR and test the compiled package right away.
@@ -67,9 +70,16 @@ This command builds release version. 'release' builds don't support debugging an
 * https://developer.android.com/guide/app-bundle
 * https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split
 
-### Splash screen
+### Building platform-specific APKs
 
-By default, generated Android app will be showing a splash screen with an image from `assets` directory (see below) or Flet logo. You can disable splash screen for Android app with `--no-android-splash` option.
+By default, Flet builds "fat" APK which includes binaries for both `arm64-v8a` and `armeabi-v7a` architectures.
+
+You can configure Flet to split fat APK into smaller APKs for each platformby using `--split-per-abi` option or by setting `split_per_abi` in `pyproject.toml`:
+
+```toml
+[tool.flet.android]
+split_per_abi = true
+```
 
 ### Installing APK to a device
 
@@ -95,44 +105,27 @@ adb -s <device> install <path-to-your.apk>
 
 where `<device>` can be found with `adb devices` command.
 
-### Building platform-specific APKs
-
-By default, Flet builds "fat" APK which includes binaries for both `arm64-v8a` and `armeabi-v7a` architectures.
-
-You can configure Flet to split fat APK into smaller APKs for each platformby using `--split-per-abi` option or by setting `split_per_abi` in `pyproject.toml`:
-
-```toml
-[tool.flet.android]
-split_per_abi = true
-```
-
-### Troubleshooting Android
-
-To run interactive commands inside simulator or device:
-
-```
-adb shell
-```
-
-To overcome "permissions denied" error while trying to browse file system in interactive Android shell:
-
-```
-su
-```
-
-To download a file from a device to your local computer:
-
-```
-adb pull <device-path> <local-path>
-```
-
 ## `flet build aab`
 
 Build an Android App Bundle (AAB) file from your app.
 
 This command builds release version. 'release' builds don't support debugging and are suitable for deploying to app stores. App bundle is the recommended way to publish to the Play Store as it improves your app size.
 
-### Splash screen
+## Signing Android bundle
+
+TBD
+
+```toml
+[tool.flet.android.signing]
+# store and key passwords can be passed with `--android-signing-key-store-password`
+# and `--android-signing-key-password` options or
+# FLET_ANDROID_SIGNING_KEY_STORE_PASSWORD
+# and FLET_ANDROID_SIGNING_KEY_PASSWORD environment variables.
+key_store = "path/to/store.jks" # --android-signing-key-store
+key_alias = "upload"
+```
+
+## Splash screen
 
 By default, generated Android app will be showing a splash screen with an image from `assets` directory (see below) or Flet logo. You can disable splash screen for Android app with `--no-android-splash` option.
 
@@ -203,4 +196,41 @@ Configuring meta-data in `pyproject.toml` (notice quotes `"` around key names):
 ```toml
 [tool.flet.android.meta_data]
 "com.google.android.gms.ads.APPLICATION_ID" = "ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"
+```
+
+## Deep linking
+
+You can configure deep-linking settings for Android app with the following `flet build` options:
+
+* `--deep-linking-scheme` - deep linking URL scheme to configure for Android builds, i.g. "https" or "myapp".
+* `--deep-linking-host` - deep linking URL host.
+
+The same can be configured in `pyproject.toml`:
+
+```toml
+[tool.flet.android.deep_linking]
+scheme = "https"
+host = "mydomain.com"
+```
+
+See [Deep linking](https://docs.flutter.dev/ui/navigation/deep-linking) section in Flutter docs for more information and complete setup guide.
+
+## Troubleshooting Android
+
+To run interactive commands inside simulator or device:
+
+```
+adb shell
+```
+
+To overcome "permissions denied" error while trying to browse file system in interactive Android shell:
+
+```
+su
+```
+
+To download a file from a device to your local computer:
+
+```
+adb pull <device-path> <local-path>
 ```
