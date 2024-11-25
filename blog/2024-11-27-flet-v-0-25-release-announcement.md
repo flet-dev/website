@@ -71,7 +71,7 @@ flet build \
 
 ### Control over app compilation and cleanup
 
-`flet build` command is no longer compiling app `.py` files into `.pyc` by default which allows you to avoid (defer?) discovery of any syntax errors in your app and complete the packaging.
+`flet build` command is no longer compiling app `.py` files into `.pyc` by default which allows you to defer discovery of any syntax errors in your app and complete the packaging.
 
 You can control the compilation and cleanup with the following new options:
 
