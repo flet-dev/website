@@ -212,6 +212,36 @@ pip install flet-desktop
 
 * Refactor `Badge` Control to a Dataclass; added new `badge` property to all controls ([#4077](https://github.com/flet-dev/flet/pull/4077)).
 
+Below is how to migrate:
+
+```python
+# before
+    page.navigation_bar = ft.NavigationBar(
+        destinations=[
+            ft.NavigationBarDestination(
+                icon_content=ft.Badge(
+                    content=ft.Icon(ft.icons.PHONE),
+                    text=10,
+                ),
+                label="Calls",
+            ),
+        ]
+    )
+
+# after
+    page.navigation_bar = ft.NavigationBar(
+        destinations=[
+            ft.NavigationBarDestination(
+                  icon=ft.Icon(
+                        ft.Icons.PHONE,
+                        badge="10",
+                    ),
+                label="Calls",
+            ),
+        ]
+    )
+```
+
 ## Other changes
 
 * Added `{value_length}`, `{max_length}`, and `{symbols_left}` placeholders to `TextField.counter_text` ([#4403](https://github.com/flet-dev/flet/pull/4403)).
