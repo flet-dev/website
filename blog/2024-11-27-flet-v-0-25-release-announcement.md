@@ -18,7 +18,7 @@ Let’s dive into all the cool stuff Flet 0.25.0 has to offer! 🚀
 
 Flet packaging for iOS and Android has been relying on Kivy and it was super annoying when your app depends on Python binary packages, such as Numpy or Pillow. You needed to compile those packages yourself using Kivy command line tools. It was really frustrating and even hopeless if Kivy didn't have "recipes" for some packages, like Pydantic.
 
-Kivy no more! We've just published Flet 0.25.0.dev3519 pre-release with the improved `flet build` command which does not use Kivy! Flet is now using its own Python runtime "meticulously crafted in-house".
+Flet does not depend on Kivy anymore and uses its own Python runtime "meticulously crafted in-house".
 
 Flet packaging implementation for iOS and Androind adheres to strict specifications defined in [PEP 730](https://peps.python.org/pep-0730/) (iOS) and [PEP 738](https://peps.python.org/pep-0738/) (Android) which were implemented and released in Python 3.13 (and back-ported to Python 3.12). When pypi.org supports wheel tags for iOS and Android and 3rd-party Python package maintainers start uploading their mobile packages Flet will be compatible with them and you'll be able to use them in your Flet app.
 
@@ -37,7 +37,7 @@ Packaging behavior was changed too:
 
 ### Python 3.12
 
-Packaged Flet app runs on Python 3.12.6 runtime for all platforms.
+Packaged Flet app runs on Python 3.12.7 runtime on all platforms.
 
 ### Permissions
 
@@ -45,44 +45,20 @@ New `flet build` command allows granular control over permissions, features and 
 
 No more hard-coded permissions in those files!
 
-#### iOS
-
-Setting iOS permissions:
-
-```
-flet build --info-plist permission_1=True|False|description permission_2=True|False|description ...
-```
-
-For example:
+For example, setting permissions for iOS bundle:
 
 ```
 flet build --info-plist NSLocationWhenInUseUsageDescription=This app uses location service when in use.
 ```
 
-#### macOS
+or the same in `pyproject.toml` (read about `pyproject.toml` support below):
 
-Setting macOS entitlements:
-
-```
-flet build --macos-entitlements name_1=True|False name_2=True|False ...
-```
-
-Default macOS entitlements:
-
-* `com.apple.security.app-sandbox = False`
-* `com.apple.security.cs.allow-jit = True`
-* `com.apple.security.network.client = True`
-* `com.apple.security.network.server" = True`
-
-#### Android
-
-Setting Android permissions and features:
-
-```
-flet build --android-permissions permission=True|False ... --android-features feature_name=True|False
+```toml
+[tool.flet.ios.info] # --info-plist
+NSCameraUsageDescription = "This app uses the camera to ..."
 ```
 
-For example:
+An example of setting Android permissions and features:
 
 ```
 flet build \
@@ -91,43 +67,11 @@ flet build \
     --android-features android.hardware.location.network=False
 ```
 
-Default Android permissions:
-
-* `android.permission.INTERNET`
-
-Default permissions can be disabled with `--android-permissions` option and `False` value, for example:
-
-```
-flet build --android-permissions android.permission.INTERNET=False
-```
-
-Default Android features:
-
-* `android.software.leanback=False` (`False` means it's written in manifest as `android:required="false"`)
-* `android.hardware.touchscreen=False`
-
-#### Cross-platform permission groups
-
-There are pre-defined permissions that mapped to `Info.plist`, `*.entitlements` and `AndroidManifest.xml` for respective platforms.
-
-Setting cross-platform permissions:
-
-```
-flet build --permissions permission_1 permission_2 ...
-```
-
-Supported permissions:
-
-* `location`
-* `camera`
-* `microphone`
-* `photo_library`
-
-TBD: links to mappings
+[Read more about permissions in the docs](/docs/publish#permissions).
 
 ### Control over app compilation and cleanup
 
-`flet build` command is not longer compiling app `.py` files into `.pyc` by default which allows you to avoid (defer?) discovery of any syntax errors in your app and complete the packaging.
+`flet build` command is no longer compiling app `.py` files into `.pyc` by default which allows you to avoid (defer?) discovery of any syntax errors in your app and complete the packaging.
 
 You can control the compilation and cleanup with the following new options:
 
@@ -137,7 +81,7 @@ You can control the compilation and cleanup with the following new options:
 
 ### Signing Android bundles
 
-Added new options for signing Android builds:
+We also added new options for signing Android builds:
 
 * `--android-signing-key-store` - path to an upload keystore `.jks` file for Android apps.
 * `--android-signing-key-store-password` - Android signing store password.
@@ -152,7 +96,7 @@ There is a new `--deep-linking-url` option to configure deep linking for iOS and
 
 ### Faster re-builds
 
-Ephemeral Flutter app created by `flet build` command is not re-created all the time in a temp directory, but cached in `build/flutter` directory which gives faster re-builds, improves packaging troubleshooting and does not pollute temp directory.
+Ephemeral Flutter app created by `flet build` command is no longer being re-created on every build in a temp directory, but cached in `build/flutter` directory which gives faster re-builds, improves packaging troubleshooting and does not pollute user temp directory.
 
 ### Split APKs per ABI
 
@@ -164,8 +108,8 @@ Flet developers have been asking where to store application data, such as upload
 
 This release introduce two environment variables that are available in your Flet apps:
 
-* `FLET_APP_DATA` - directory for storing application data that is preserved between app updates. That directory is already pre-created.
-* `FLET_APP_TEMP` - directory for temporary application files, i.e. cache. That directory is already pre-created.
+* `FLET_APP_DATA` - directory for storing application data that is preserved between app updates. That directory is already pre-created and its location depends on the platform the app is running on.
+* `FLET_APP_TEMP` - directory for temporary application files, i.e. cache. That directory is already pre-created and its location depends on the platform the app is running on.
 
 For example, data folder path can be read in your app as:
 
@@ -180,11 +124,70 @@ os.getenv("FLET_APP_DATA")
 
 It's inconvenient and bulky to carry all `flet build` settings as command line options.
 
-You will be able to store project and build settings in `[tool.flet]` section of `pyproject.toml`.
+In Flet 0.25.0 release is now possible to configure `flet build`, `flet run`, and `flet publish` settings in `pyproject.toml`!
+
+Flet adds `tool.flet` section and sub-sections to `pyproject.toml`. Here's the minimal version of `pyproject.toml` you can put into root folder of your app:
+
+```toml
+[project]
+name = "my_app"
+version = "1.0.0"
+description = "My first Flet project"
+authors = [
+  {name = "John Smith", email = "john@email.com"}
+]
+dependencies = ["flet"]
+```
+
+You can also generate a starting `pyproject.toml` (and other files) for your project with `flet create` command.
+
+
+## New Python packages structure
+
+We re-factored Flet Python packages and removed `flet-core`, `flet-runtime`, `flet-embed` or`flet-pyodide` packages.
+
+The new structure avoids rewriting pip dependencies while installing `flet` package on various platforms. There was a problem of detecting the correct `flet` package to install (`flet-runtime`, `flet-embed` or`flet-pyodide`?) if `flet` was not a direct dependency in user's app.
+
+New Flet packages:
+
+* `flet` - required for minimal Flet setup, app entry point for various platforms with core logic and controls. Installed on all platforms.
+* `flet-cli` - contains Flet CLI commands. Installed on desktop only.
+* `flet-desktop` - contains pre-built Flet "client" app binary for macOS, Windows and Linux. By default installed on macOS and Windows desktops only. 
+* `flet-desktop-light` - contains a light-weight version (without Audio and Video controls) of Flet "client" for Linux. By default installed on Linux desktops only. 
+* `flet-web` - contains Flet web "client" and FastAPI integration. Installed on desktop only.
+
+Packaged Flet app contains only `flet` package now.
+
+### `flet` package extras
+
+`flet` package defines the following extras that can be specified when installing Flet with pip, uv, poetry and other package manager:
+
+* `flet[all]` - installs `flet`, `flet-cli`, `flet-desktop` and `flet-web`. Recommended for development.
+* `flet[cli]` - installs `flet` and `flet-cli`. Can be used in CI environment for packaging only.
+* `flet[web]` - installs `flet` and `flet-web`. Used for deploying Flet web apps.
+* `flet[desktop]` - installs `flet` and `flet-desktop`. Used for desktop-only development.
+
+### New Flet install and upgrade commands
+
+Starting from this release the development version of `flet` package should be installed with the following command:
+
+```
+pip install 'flet[all]'
+```
+
+Ugrading `flet` package:
+
+```
+pip install 'flet[all]' --upgrade
+```
+
+:::note
+`pip install flet` still works too, but it will install `flet` package only and dependent packages will be installed on demand. For example, when you run any `flet` CLI command `flet-cli` will be installed, or when you run `flet run` command `flet-desktop` package will be installed.
+:::
 
 ## "Light" client for Linux
 
-A light-weight desktop client, without Audio and Video controls, is not installed on Linux by default. It improves initial user experience as user doesn't need to immediately deal with gstreamer (audio) and mpv (video) dependencies right away and Flet "just works".  
+A lightweight desktop client, without Audio and Video controls, is now installed on Linux by default. It improves initial user experience as user doesn't need to immediately deal with `gstreamer` (audio) and `mpv` (video) dependencies right away and Flet "just works".
 
 Once user got some Flet experience and wants to use Video and Audio controls in their application they can install gstreamer and/or mpv and replace Flet desktop with a full version.
 
@@ -197,7 +200,7 @@ pip uninstall flet-desktop-light --yes
 Install full Flet desktop client:
 
 ```
-pip install flet-desktop==0.25.0.dev3519
+pip install flet-desktop
 ```
 
 ## New controls
