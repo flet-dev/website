@@ -187,7 +187,7 @@ pip install 'flet[all]' --upgrade
 
 ## "Light" client for Linux
 
-A lightweight desktop client, without Audio and Video controls, is now installed on Linux by default. It improves initial user experience as user doesn't need to immediately deal with `gstreamer` (audio) and `mpv` (video) dependencies right away and Flet "just works".
+A lightweight desktop client, without Audio and Video controls, is now installed on Linux by default. It improves initial user experience as user doesn't need to immediately deal with `gstreamer` (audio) and `mpv` (video) dependencies and Flet "just works".
 
 Once user got some Flet experience and wants to use Video and Audio controls in their application they can install gstreamer and/or mpv and replace Flet desktop with a full version.
 
