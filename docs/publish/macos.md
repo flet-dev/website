@@ -13,6 +13,24 @@ The command can be run on macOS only.
 
 Creates a macOS application bundle from your Flet app.
 
+## Bundle architecture
+
+By default, `flet build macos` command builds universal app bundle that works on both Apple Silicon and older Intel processors. Therefore, packaging utility will try to download Python binary wheels for both `arm64` and `x86_64` platforms. Recent releases
+of some popular packages do not include `x86_64` wheels anymore, so the entire packaging operation will fail.
+
+You can limit the build command to a specific architecture only, by using `--arch` option. For example, to build macOS app bundle that works on Apple Silicon only use the following command:
+
+```
+flet build macos --arch arm64
+```
+
+The same can be configured in `pyproject.toml`:
+
+```toml
+[tool.flet.macos]
+build_arch = "arm64"
+```
+
 ## Permissions
 
 Setting macOS entitlements which are written and `.entitlements` files:
