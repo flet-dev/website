@@ -40,6 +40,7 @@ The following packages are currently available for Android:
 | opencv-python | 4.10.0.84 |
 | pandas | 2.2.2 |
 | pillow | 10.4.0 |
+| protobuf | 5.28.3 |
 | pydantic-core | 2.23.3 |
 | time-machine | 2.16.0 |
 | websockets | 13.0.1 |
