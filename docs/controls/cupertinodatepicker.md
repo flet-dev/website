@@ -62,10 +62,6 @@ ft.app(main)
 
 The background [color](/docs/reference/colors) of the date picker.
 
-### `current_date`
-
-The date representing today. It will be highlighted in the day grid.
-
 ### `date_order`
 
 The order in which the columns inside this picker are displayed.

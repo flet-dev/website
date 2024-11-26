@@ -28,7 +28,7 @@ def main(page: ft.Page):
         page.add(ft.Text("Drawer dismissed"))
 
     def handle_change(e):
-        page.add(ft.Text(f"Selected Index changed: {e.selected_index}"))
+        page.add(ft.Text(f"Selected Index changed: {e.control.selected_index}"))
         # page.close(drawer)
 
     drawer = ft.NavigationDrawer(
@@ -38,19 +38,19 @@ def main(page: ft.Page):
             ft.Container(height=12),
             ft.NavigationDrawerDestination(
                 label="Item 1",
-                icon=ft.icons.DOOR_BACK_DOOR_OUTLINED,
-                selected_icon_content=ft.Icon(ft.icons.DOOR_BACK_DOOR),
+                icon=ft.Icons.DOOR_BACK_DOOR_OUTLINED,
+                selected_icon=ft.Icon(ft.Icons.DOOR_BACK_DOOR),
             ),
             ft.Divider(thickness=2),
             ft.NavigationDrawerDestination(
-                icon_content=ft.Icon(ft.icons.MAIL_OUTLINED),
+                icon=ft.Icon(ft.Icons.MAIL_OUTLINED),
                 label="Item 2",
-                selected_icon=ft.icons.MAIL,
+                selected_icon=ft.Icons.MAIL,
             ),
             ft.NavigationDrawerDestination(
-                icon_content=ft.Icon(ft.icons.PHONE_OUTLINED),
+                icon=ft.Icon(ft.Icons.PHONE_OUTLINED),
                 label="Item 3",
-                selected_icon=ft.icons.PHONE,
+                selected_icon=ft.Icons.PHONE,
             ),
         ],
     )
@@ -84,8 +84,8 @@ def main(page: ft.Page):
         on_dismiss=handle_dismissal,
         on_change=handle_change,
         controls=[
-            ft.NavigationDrawerDestination(icon=ft.icons.ADD_TO_HOME_SCREEN_SHARP, label="Item 1"),
-            ft.NavigationDrawerDestination(icon=ft.icons.ADD_COMMENT, label="Item 2"),
+            ft.NavigationDrawerDestination(icon=ft.Icons.ADD_TO_HOME_SCREEN_SHARP, label="Item 1"),
+            ft.NavigationDrawerDestination(icon=ft.Icon(ft.Icons.ADD_COMMENT), label="Item 2"),
         ],
     )
 
@@ -165,15 +165,25 @@ The [color](/docs/reference/colors) of this destination.
 
 ### `icon`
 
-The name of the icon of the destination.
+The [name of the icon](/docs/reference/icons) or `Control` of the destination. 
 
-### `icon_content`
+Example with icon name:
+```
+icon=ft.Icons.BOOKMARK
+```
+Example with Control:
+```
+icon=ft.Icon(ft.Icons.BOOKMARK)
+```
+
+If `selected_icon` is provided, this will only be displayed when the destination is not selected.
+
+### ~~`icon_content`~~
 
 The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
 
-If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
-
-To make the NavigationDrawer more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`icon`](#icon)
+instead.**
 
 ### `label`
 
@@ -181,10 +191,22 @@ The text label that appears below the icon of this `NavigationDrawerDestination`
 
 ### `selected_icon`
 
-The name of alternative icon displayed when this destination is selected.
+The [name](/docs/reference/icons) of alternative icon or `Control` displayed when this destination is selected. 
 
-### `selected_icon_content`
+Example with icon name:
+```
+selected_icon=ft.Icons.BOOKMARK
+```
+Example with Control:
+```
+selected_icon=ft.Icon(ft.Icons.BOOKMARK)
+```
+
+If this icon is not provided, the NavigationDrawer will display `icon` in either state.
+
+### ~~`selected_icon_content`~~
 
 An alternative icon `Control` displayed when this destination is selected.
 
-If this icon is not provided, the NavigationDrawer will display `icon_content` in either state.
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`selected_icon`](#selected_icon)
+instead.**

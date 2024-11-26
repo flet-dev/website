@@ -7,10 +7,10 @@ import TabItem from '@theme/TabItem';
 
 `Axis` enum has the following values:
 
-### `HORIZONTAL`
+#### `HORIZONTAL`
 
 Left and right.
 
-### `VERTICAL`
+#### `VERTICAL`
 
 Up and down.

@@ -6,6 +6,11 @@ sidebar_label: MapPointerDeviceType
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::caution Deprecation
+This type is deprecated since Flet version 0.25.0 and will be removed in Flet version 0.28.0.
+Use the [`PointerDeviceType`](/docs/reference/types/pointerdevicetype) instead.
+:::
+
 `MapPointerDeviceType` enum has the following values:
 
 ### `TOUCH`

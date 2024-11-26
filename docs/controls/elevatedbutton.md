@@ -8,6 +8,8 @@ import TabItem from '@theme/TabItem';
 
 Elevated buttons are essentially filled tonal buttons with a shadow. To prevent shadow creep, only use them when absolutely necessary, such as when the button requires visual separation from a patterned background. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
 
+`ElevatedButton` has alias `Button` that can be used interchangebly.
+
 ## Examples
 
 [Live example](https://flet-controls-gallery.fly.dev/buttons/elevatedbutton)
@@ -24,7 +26,7 @@ def main(page: ft.Page):
     page.title = "Basic elevated buttons"
     page.add(
         ft.ElevatedButton(text="Elevated button"),
-        ft.ElevatedButton("Disabled button", disabled=True),
+        ft.Button("Disabled button", disabled=True),
     )
 
 ft.app(main)

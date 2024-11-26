@@ -212,7 +212,7 @@ Value is of [`AnimationValue`](/docs/reference/types/animationvalue) type.
 
 ### `bar_groups`
 
-The list of `BarChartGroup` to draw.
+The list of [`BarChartGroup`](/docs/reference/types/barchartgroup) to draw.
 
 ### `baseline_y`
 
@@ -233,7 +233,7 @@ Value is of type [`Border`](/docs/reference/types/border).
 ### `bottom_axis`
 
 Configures the appearance of the bottom axis, its title and labels. The value is the instance
-of [`ChartAxis`](#chartaxis-properties) class.
+of [`ChartAxis`](/docs/reference/types/chartaxis) class.
 
 ### `groups_space`
 
@@ -243,7 +243,7 @@ A gap between bar groups.
 
 Controls drawing of chart's horizontal lines.
 
-Value is of type [`ChartGridLines`](#chartgridlines-properties).
+Value is of type [`ChartGridLines`](/docs/reference/types/chartgridlines).
 
 ### `interactive`
 
@@ -253,7 +253,7 @@ Enables automatic tooltips when hovering chart bars.
 
 Configures the appearance of the left axis, its title and labels.
 
-Value is of type [`ChartAxis`](#chartaxis-properties).
+Value is of type [`ChartAxis`](/docs/reference/types/chartaxis).
 
 ### `max_y`
 
@@ -266,12 +266,12 @@ Configures the minimum displayed value for Y axis.
 ### `right_axis`
 
 Configures the appearance of the right axis, its title and labels. The value is the instance
-of [`ChartAxis`](#chartaxis-properties) class.
+of [`ChartAxis`](/docs/reference/types/chartaxis) class.
 
 ### `top_axis`
 
 Configures the appearance of the top axis, its title and labels. The value is the instance
-of [`ChartAxis`](#chartaxis-properties) class.
+of [`ChartAxis`](/docs/reference/types/chartaxis) class.
 
 ### `tooltip_bgcolor`
 
@@ -327,7 +327,7 @@ The rotation angle of the tooltip.
 
 Controls drawing of chart's vertical lines.
 
-Value is of type [`ChartGridLines`](#chartgridlines-properties).
+Value is of type [`ChartGridLines`](/docs/reference/types/chartgridlines).
 
 ## `BarChart` events
 
@@ -336,201 +336,3 @@ Value is of type [`ChartGridLines`](#chartgridlines-properties).
 Fires when a bar is hovered or clicked.
 
 Event handler receives an instance of [`BarChartEvent`](/docs/reference/types/barchartevent).
-
-## `BarChartGroup` properties
-
-### `bar_rods`
-
-The list of [`BarChartRod`](#barchartrod-properties) objects to display in the group.
-
-### `bars_space`
-
-The gap between bar rods.
-
-### `group_vertically`
-
-If set to `True` bar rods are drawn on top of each other; otherwise bar rods are drawn next to each other.
-
-Defaults to `False`.
-
-### `x`
-
-Group position on X axis.
-
-## `BarChartRod` properties
-
-### `bg_color`
-
-An optional [color](/docs/reference/colors) of a background behind a rod.
-
-### `bg_from_y`
-
-An optional starting position of a background behind a rod.
-
-### `bg_gradient`
-
-An optional gradient to draw a background with.
-
-### `bg_to_y`
-
-An optional ending position of a background behind a rod.
-
-### `border_radius`
-
-Border radius of a bar rod.
-
-Defaults to `4`.
-
-### `border_side`
-
-Border to draw around rod.
-
-Value is of type [`BorderSide`](/docs/reference/types/borderside) class.
-
-### `color`
-
-Rod [color](/docs/reference/colors).
-
-Defaults to `colors.CYAN`.
-
-### `from_y`
-
-Specifies a starting position of a rod on Y axis.
-
-Defaults to `0`.
-
-### `gradient`
-
-Gradient to draw rod's background. The value must be an instance of one of the following classes:
-
-* [`LinearGradient`](/docs/reference/types/lineargradient)
-* [`RadialGradient`](/docs/reference/types/radialgradient)
-* [`SweepGradient`](/docs/reference/types/sweepgradient)
-
-### `rod_stack_items`
-
-Optional list of [`BarChartRodStackItem`](#barchartrodstackitem-properties) objects to draw a stacked bar.
-
-### `selected`
-
-If set to `True` a tooltip is always shown on top of the bar when `BarChart.interactive` is set to `False`.
-
-### `show_tooltip`
-
-Whether a tooltip should be shown on top of hovered bar.
-
-Defaults to `True`.
-
-### `to_y`
-
-Specifies an ending position of a rod on Y axis.
-
-### `tooltip`
-
-A custom tooltip value.
-
-Defaults to `to_y`.
-
-### `tooltip_align`
-
-An align for the tooltip.
-
-Value is of type [`TextAlign`](/docs/reference/types/textalign).
-
-### `tooltip_style`
-
-A text style to display tooltip with.
-
-Value is of type [`TextStyle`](/docs/reference/types/textstyle).
-
-### `width`
-
-The width of a rod.
-
-Defaults to `8`.
-
-## `BarChartRodStackItem` properties
-
-### `border_side`
-
-A border around stack item.
-
-Value is of type [`BorderSide`](/docs/reference/types/borderside).
-
-### `color`
-
-A [color](/docs/reference/colors) of stack item.
-
-### `from_y`
-
-The starting position for a stack item inside a bar rod.
-
-### `to_y`
-
-The ending position for a stack item inside a bar rod.
-
-## `ChartGridLines` properties
-
-Configures the appearance of horizontal and vertical grid lines within the chart.
-
-### `color`
-
-[Color](/docs/reference/colors) of a grid line.
-
-### `dash_pattern`
-
-Defines dash effect of the line. The value is a circular list of dash offsets and lengths. For example, the
-list `[5, 10]` would result in dashes 5 pixels long followed by blank spaces 10 pixels long. By default, a solid line is
-drawn.
-
-### `interval`
-
-Interval between grid lines.
-
-Defaults to `1`.
-
-### `width`
-
-Width of a grid line.
-
-Defaults to `1`.
-
-## `ChartAxis` properties
-
-Configures chart axis.
-
-### `labels`
-
-The list of [`ChartAxisLabel`](#chartaxislabel-properties) objects to set custom axis labels for only specific values.
-
-### `labels_interval`
-
-The interval between automatic labels.
-
-### `labels_size`
-
-Width or height of labels area.
-
-### `show_labels`
-
-`True` to display labels along the axis. If `labels` is empty then automatic labels are displayed.
-
-### `title`
-
-A `Control` to display as axis title.
-
-### `title_size`
-
-Width or height of title area.
-
-## `ChartAxisLabel` properties
-
-Configures a custom label for specific value.
-
-### `label`
-
-A `Control` to draw as a label.
-
-### `value`
-
-A value to draw label for.

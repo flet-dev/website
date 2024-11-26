@@ -33,13 +33,13 @@ def main(page: ft.Page):
                 icon=ft.icons.FAVORITE_BORDER, selected_icon=ft.icons.FAVORITE, label="First"
             ),
             ft.NavigationRailDestination(
-                icon_content=ft.Icon(ft.icons.BOOKMARK_BORDER),
-                selected_icon_content=ft.Icon(ft.icons.BOOKMARK),
+                icon=ft.Icon(ft.icons.BOOKMARK_BORDER),
+                selected_icon=ft.Icon(ft.icons.BOOKMARK),
                 label="Second",
             ),
             ft.NavigationRailDestination(
                 icon=ft.icons.SETTINGS_OUTLINED,
-                selected_icon_content=ft.Icon(ft.icons.SETTINGS),
+                selected_icon=ft.Icon(ft.icons.SETTINGS),
                 label_content=ft.Text("Settings"),
             ),
         ],
@@ -183,15 +183,26 @@ Fires when selected destination changed.
 
 ### `icon`
 
-The name of the icon of the destination.
+The [name of the icon](/docs/reference/icons) or `Control` of the destination. 
+Example with icon name:
+```
+icon=ft.Icons.BOOKMARK
+```
+Example with Control:
+```
+icon=ft.Icon(ft.Icons.BOOKMARK)
+```
 
-### `icon_content`
+If `selected_icon` is provided, this will only be displayed when the destination is not selected.
+
+To make the NavigationRail more accessible, consider choosing an icon with a stroked and filled version, such as `ft.Icons.CLOUD` and `ft.Icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
+
+### ~~`icon_content`~~
 
 The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
 
-If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
-
-To make the NavigationRail more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`icon`](#icon)
+instead.**
 
 ### `indicator_color`
 
@@ -219,10 +230,22 @@ Padding is an instance of [`Padding`](/docs/reference/types/padding) class.
 
 ### `selected_icon`
 
-The name of alternative icon displayed when this destination is selected.
+The [name](/docs/reference/icons) of alternative icon or `Control` displayed when this destination is selected. 
 
-### `selected_icon_content`
+Example with icon name:
+```
+selected_icon=ft.Icons.BOOKMARK
+```
+Example with Control:
+```
+selected_icon=ft.Icon(ft.Icons.BOOKMARK)
+```
+
+If this icon is not provided, the NavigationRail will display `icon` in either state.
+
+### ~~`selected_icon_content`~~
 
 An alternative icon `Control` displayed when this destination is selected.
 
-If this icon is not provided, the NavigationRail will display `icon_content` in either state.
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`selected_icon`](#selected_icon)
+instead.**

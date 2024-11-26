@@ -294,27 +294,46 @@ Displayed on top of the input when it's empty and either (a) `label` is null or 
 
 ### `icon`
 
-The name of the icon to show before the input field and outside of the decoration's container.
+The [name of the icon](/docs/reference/icons) or `Control` to show before the input field and outside of the decoration's container.
 
-Value is of type [`Padding`](/docs/reference/types/padding) or a number.
+Example with icon name:
+```
+icon=ft.Icons.BOOKMARK
+```
+Example with Control:
+```
+icon=ft.Icon(ft.Icons.BOOKMARK)
+```
 
-### `icon_content`
+### ~~`icon_content`~~
 
 The control to use for the drop-down button's icon. Defaults to an `Icon(icons.ARROW_DROP_DOWN)`.
 
-### `icon_enabled_color`
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`icon`](#select_icon)
+instead.**
+
+### ~~`icon_enabled_color`~~
 
 The color of any `Icon` descendant of `icon_content` if this button is enabled.
 
-### `icon_disabled_color`
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`select_icon_enabled_color`](#select_icon_enabled_color)
+instead.**
+
+### ~~`icon_disabled_color`~~
 
 The color of any `Icon` descendant of `icon_content` if this button is disabled.
 
-### `icon_size`
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`select_icon_enabled_color`](#select_icon_enabled_color)
+instead.**
+
+### ~~`icon_size`~~
 
 The size of the icon button which wraps `icon_content`.
 
 Defaults to `24.0`.
+
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`icon`](#icon)
+instead.**
 
 ### `item_height`
 
@@ -372,6 +391,33 @@ The [`TextStyle`](/docs/reference/types/textstyle) to use for `prefix_text`.
 ### `prefix_text`
 
 Optional text `prefix` to place on the line before the input.
+
+### `select_icon`
+
+The [name of the icon](/docs/reference/icons) or `Control` to use for the drop-down select button's icon. Defaults to an `Icon(ft.Icons.ARROW_DROP_DOWN)`.
+
+Example with icon name:
+```
+icon=ft.Icons.BOOKMARK
+```
+Example with Control:
+```
+icon=ft.Icon(ft.Icons.BOOKMARK)
+```
+
+### `select_icon_enabled_color`
+
+The color of any `Icon` descendant of `select_icon` if this button is enabled.
+
+### `select_icon_disabled_color`
+
+The color of any `Icon` descendant of `select_icon` if this button is disabled.
+
+### `select_icon_size`
+
+The size of the icon button which wraps `select_icon`.
+
+Defaults to `24.0`.
 
 ### `suffix`
 

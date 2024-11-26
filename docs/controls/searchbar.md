@@ -164,7 +164,7 @@ Defaults to a back button which closes/pops the search view.
 
 Defines the shape of the search view.
 
-Value is of type [`BoxShape`](/docs/reference/types/boxshape) defaults to `BoxShape.RECTANGLE`.
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `view_side`
 

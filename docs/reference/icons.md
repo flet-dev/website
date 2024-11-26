@@ -3,7 +3,32 @@ title: Icons
 sidebar_label: Icons
 ---
 
+## Methods
+
+### `random()`
+
+Returns a random icon, with optional exclusions and weights.
+
+**Method Parameters:**
+* `exclude` - A list of icons members to exclude from the random selection.
+* `weights` - A dictionary mapping icon members to their respective weights for weighted random selection.
+
+## Example
+    
+```python
+>>> import flet as ft
+>>> ft.Icons.ABC
+>>> ft.CupertinoIcons.BACK
+>>> ft.Icons.random()
+>>> ft.CupertinoIcons.random()
+>>> ft.Icons.random(exclude=[ft.Icons.FAVORITE, ft.Icons.SCHOOL], weights={ft.Icons.SCHOOL: 150, ft.Icons.ADJUST: 5})
+>>> ft.CupertinoIcons.random(exclude=[ft.CupertinoIcons.CAMERA, ft.CupertinoIcons.TABLE], weights={ft.CupertinoIcons.TABLE: 150, ft.CupertinoIcons.PENCIL: 5})
+```
+
 ## Material Icons
+
+**A-Z Icon Index**
+[A](#abc)  [B](#baby_changing_station)  [C](#cabin)  [D](#dangerous)  [E](#earbuds)  [F](#face)  [G](#gamepad)  [H](#hail)  [I](#icecream)  [J](#javascript)  [K](#kayaking)  [L](#label)  [M](#macro_off)  [N](#nat)  [O](#offline_bolt)  [P](#padding)  [Q](#qr_code)  [R](#radar)  [S](#safety_check)  [T](#tab)  [U](#umbrella)  [V](#vaccines)  [W](#wallet)  [X](#xmark)  [Y](#yard)  [Z](#zoom_in)
 
 The following icons are available through the `icons` module:
 
@@ -17659,6 +17684,9 @@ The following icons are available through the `icons` module:
 
 ## Cupertino Icons
 
+**A-Z  Icon Index**
+[A](#add-1)  [B](#back)  [C](#calendar)  [D](#decrease_indent)  [E](#ear)  [F](#film)  [G](#gamecontroller)  [H](#hammer)  [I](#increase_indent)   J [K](#keyboard-1)  [L](#lab_flask)  [M](#macwindow)  [N](#news)  [O](#option)  [P](#padlock)  [Q](#qrcode)  [R](#radiowaves_left)  [S](#scissors)  [T](#table)  [U](#uiwindow_split_2x1)  [V](#videocam-1)  [W](#wand_rays)  [X](#xmark)   Y [Z](#zoom_in-1)
+
 The following icons are available through the `cupertino_icons` module:
 
 #### `ADD`
@@ -20304,5 +20332,3 @@ The following icons are available through the `cupertino_icons` module:
 #### `ZOOM_OUT`
 
 #### `ZZZ`
-
-

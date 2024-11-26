@@ -11,6 +11,12 @@ Absolute path to app "assets" directory.
 
 Defaults to `assets`.
 
+#### `FLET_CLI_SKIP_FLUTTER_DOCTOR`
+
+Whether to skip running `flutter doctor` when a build fails. 
+
+Default is `False`.
+
 #### `FLET_FORCE_WEB_SERVER`
 
 Set to `true` to force running app as a web app. Automatically set on headless Linux hosts.
@@ -36,6 +42,8 @@ Default is unlimited.
 #### `FLET_CLI_NO_RICH_OUTPUT`
 
 Whether to disable rich output in the console.
+
+Default is `False`.
 
 #### `FLET_SECRET_KEY`
 

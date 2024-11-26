@@ -12,6 +12,10 @@ import TabItem from '@theme/TabItem';
 
 Gives the rotation in clockwise radians.
 
-Value is of type `float`.
+Value is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber).
 
 ### `alignment`
+
+Defines the alignment of the rotation.
+
+Value is of type [`Alignment`](/docs/reference/types/alignment).

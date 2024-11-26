@@ -156,6 +156,7 @@ ft.Stack(
     ]
 )
 ```
+<img src="/img/docs/controls/container/blur-container.PNG" className="screenshot-20" />
 
 ### `border`
 
@@ -185,12 +186,6 @@ Value is of type [`ColorFilter`](/docs/reference/types/colorfilter).
 ### `content`
 
 A child Control contained by the container.
-
-### `decoration`
-
-The background decoration.
-
-Value is of type [`BoxDecoration`](/docs/reference/types/boxdecoration).
 
 ### `foreground_decoration`
 
@@ -385,6 +380,8 @@ def main(page: ft.Page):
 
 ft.app(main)
 ```
+
+<img src="/img/docs/controls/container/hover-container.gif" className="screenshot-20" />
 
 ### `on_long_press`
 

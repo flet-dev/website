@@ -60,6 +60,13 @@ ft.app(main)
 
 ## Properties
 
+### `barrier_color`
+
+The [color](/docs/reference/colors) of the modal barrier that darkens everything below the date picker.
+
+If `None`, the [`DialogTheme.barrier_color`](/docs/cookbook/theming#dialogtheme-class) is used. 
+If it is also `None`, then `Colors.BLACK_54` is used.
+
 ### `cancel_text`
 
 The text that is displayed on the cancel button. Defaults to `"Cancel"`.
