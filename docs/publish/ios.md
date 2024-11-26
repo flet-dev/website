@@ -13,72 +13,107 @@ The command can be run on macOS only.
 
 ## Prerequisites
 
-### Native Python packages
+### Binary Python packages
 
-Native Python packages (vs "pure" Python packages written in Python only) are packages that partially written in C, Rust or other languages producing native code. Example packages are `numpy`, `cryptography`, `lxml`, `pydantic`.
+Binary Python packages (vs "pure" Python packages written in Python only) are packages that partially written in C, Rust or other languages producing native code. Example packages are `numpy`, `cryptography`, or `pydantic`.
 
-When packaging Flet app for iOS with `flet build` command such packages cannot be installed from PyPI, because there are no wheels (`.whl`) for iOS platform.
+Flet provides an alternative index https://pypi.flet.dev to host Python binary wheels (`.whl` files downloaded by pip) for iOS and Android platforms.
 
-Therefore, you have to compile native packages for iOS on your computer before running `flet build` command.
+The following packages are currently available for iOS:
+
+| Name          | Version      |
+|---------------|--------------|
+| aiohttp       | 3.9.5 |
+| argon2-cffi-bindings | 21.2.0 |
+| bcrypt | 4.2.0 |
+| bitarray | 2.9.2 |
+| blis | 1.0.0 |
+| Brotli | 1.1.0 |
+| cffi | 1.17.1 |
+| contourpy | 1.3.0 |
+| cryptography | 43.0.1 |
+| google-crc32 | 1.6.0 |
+| grpcio | 1.67.1 |
+| kiwisolver | 1.4.7 |
+| lru-dict | 1.3.0 |
+| lxml | 5.3.0 |
+| MarkupSafe | 2.1.5 |
+| matplotlib | 3.9.2 |
+| numpy | 2.1.1 |
+| numpy | 1.26.4 |
+| opencv-python | 4.10.0.84 |
+| pandas | 2.2.2 |
+| pillow | 10.4.0 |
+| protobuf | 5.28.3 |
+| pydantic-core | 2.23.3 |
+| time-machine | 2.16.0 |
+| websockets | 13.0.1 |
+| yarl | 1.11.1 |
 
 :::warning Work in progress
-We are actively working on automating the process described below - it's #1 item in our backlog.
+New packages can be built with creating a recipe in [Mobile Forge](https://github.com/flet-dev/mobile-forge) project. For now, Flet team is authoring those recipes for you, but when the process is polished and fully-automated you'll be able to send a PR and test the compiled package right away.
+
+If you don't yet see a package at https://pypi.flet.dev you can request it in [Flet discussions - Packages](https://github.com/flet-dev/flet/discussions/categories/packages). Please do not request pure Python packages. Go to package's "Download files" section at https://pypi.org and make sure it contains binary platform-specific wheels.
 :::
-
-Flet uses [Kivy for iOS](https://github.com/kivy/kivy-ios) to build Python and native Python packages for iOS.
-
-To build your own Python distributive with custom native packages and use it with `flet build` command you need to use `toolchain` tool provided by Kivy for iOS.
-
-`toolchain` command-line tool can be run on macOS only.
-
-Start with creating a new Python virtual environment and installing `kivy-ios` package from Flet's fork as described [here](https://github.com/flet-dev/python-for-ios?tab=readme-ov-file#installation--requirements):
-
-```
-pip install git+https://github.com/flet-dev/python-for-ios.git
-```
-
-Run `toolchain` command with the list of packages you need to build, for example to build `numpy`:
-
-```
-toolchain build numpy
-```
-
-**NOTE:** The library you want to build with `toolchain` command should have a recipe in [this folder](https://github.com/kivy/kivy-ios/tree/master/kivy_ios/recipes). You can [submit a request](https://github.com/kivy/kivy-ios/issues) to make a recipe for the library you need or create your own recipe and submit a PR.
-
-You can also install package that don't require compilation with `pip`:
-
-```
-toolchain pip install flask
-```
-
-This case you don't need to include that package into `requirements.txt` of your Flet app.
-
-When `toolchain` command is finished you should have everything you need in `dist` directory.
-
-Get the full path to `dist` directory by running `realpath dist` command.
-
-In the terminal where you run `flet build ipa` command to build your Flet iOS app run the following command to
-store `dist` full path in `SERIOUS_PYTHON_IOS_DIST` environment variable:
-
-```bash
-export SERIOUS_PYTHON_IOS_DIST="<full-path-to-dist-directory>"
-```
-
-Build your app by running `flet build ipa` command.
-
-You app's bundle now includes custom Python libraries.
 
 ## `flet build ipa`
 
 Build an iOS archive bundle and IPA for distribution (macOS host only).
 
-:::warning Work in progress
-Creating of an iOS package, suitable for running on a device or publishing to AppStore is, in general, a complex process with a lot of moving parts. Let us know if it worked or didn't work for your particular case and there are some changes required into Flutter project template. 
-:::
-
-To successfully generate IPA you should provide correct values for the following arguments:
+To successfully generate "runnable" IPA you should provide correct values for the following arguments:
 
 * `--org` - organization name in reverse domain name notation, e.g. `com.mycompany` (defaults to `com.flet`). The value
   is combined with `--project` and used as an iOS and Android bundle ID.
 * `--project` - project name in C-style identifier format (lowercase alphanumerics with underscores) used to build bundle ID and as a name for bundle executable. By default, it's the name of Flet app directory.
 * `--team` - team ID to locate provisioning profile. If no team ID provided a unsigned iOS archive will be generated.
+
+You can also configure these settings in `pyproject.toml`:
+
+```toml
+[project]
+name = "my-app"
+
+[tool.flet]
+org = "com.mycompany"
+
+[tool.flet.ios]
+team = "team_id"
+```
+
+## Permissions
+
+Setting iOS permissions which are written into `Info.plist` file:
+
+```
+flet build --info-plist permission_1=True|False|description permission_2=True|False|description ...
+```
+
+For example:
+
+```
+flet build --info-plist NSLocationWhenInUseUsageDescription="This app uses location service when in use."
+```
+
+Configuring iOS permissions in `pyproject.toml`:
+
+```toml
+[tool.flet.ios.info] # --info-plist
+NSCameraUsageDescription = "This app uses the camera to ..."
+```
+
+## Deep linking
+
+You can configure deep-linking settings for iOS bundle with the following `flet build` options:
+
+* `--deep-linking-scheme` - deep linking URL scheme to configure for iOS and Android builds, i.g. "https" or "myapp".
+* `--deep-linking-host` - deep linking URL host.
+
+The same can be configured in `pyproject.toml`:
+
+```toml
+[tool.flet.ios.deep_linking]
+scheme = "https"
+host = "mydomain.com"
+```
+
+See [Deep linking](https://docs.flutter.dev/ui/navigation/deep-linking) section in Flutter docs for more information and complete setup guide.
