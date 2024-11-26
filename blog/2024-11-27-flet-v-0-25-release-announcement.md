@@ -10,7 +10,7 @@ tags: [releases]
 
 Hey Flet developers, we’ve got something exciting to share — Flet 0.25.0 is officially released!
 
-The biggest news? We’ve ditched Kivy for iOS and Android packaging. No more dealing with frustrating Python binary dependencies — Flet now uses its own custom Python runtime, so your app builds are easier than ever. Plus, we’ve added loads of new features like better permissions control, faster rebuilds, and even a lightweight Linux client that skips the bloat.
+The biggest news? No more Kivy for iOS and Android packaging. No more dealing with frustrating Python binary dependencies — Flet now uses its own custom Python runtime, so your app builds are easier than ever. Plus, we’ve added loads of new features like better permissions control, faster rebuilds, and even a lightweight Linux client that skips the bloat.
 
 Let’s dive into all the cool stuff Flet 0.25.0 has to offer! 🚀
 
@@ -48,14 +48,14 @@ No more hard-coded permissions in those files!
 For example, setting permissions for iOS bundle:
 
 ```
-flet build --info-plist NSLocationWhenInUseUsageDescription=This app uses location service when in use.
+flet build --info-plist NSLocationWhenInUseUsageDescription="This app uses location service when in use."
 ```
 
 or the same in `pyproject.toml` (read about `pyproject.toml` support below):
 
 ```toml
 [tool.flet.ios.info] # --info-plist
-NSCameraUsageDescription = "This app uses the camera to ..."
+NSLocationWhenInUseUsageDescription = "This app uses location service when in use."
 ```
 
 An example of setting Android permissions and features:
@@ -98,6 +98,8 @@ There is a new `--deep-linking-url` option to configure deep linking for iOS and
 
 Ephemeral Flutter app created by `flet build` command is no longer being re-created on every build in a temp directory, but cached in `build/flutter` directory which gives faster re-builds, improves packaging troubleshooting and does not pollute user temp directory.
 
+You can use `--clear-cache` option to do a clean build though.
+
 ### Split APKs per ABI
 
 `flet build` now provides the built-in `--split-per-abi` option to split the APKs per ABIs.
@@ -108,8 +110,8 @@ Flet developers have been asking where to store application data, such as upload
 
 This release introduce two environment variables that are available in your Flet apps:
 
-* `FLET_APP_DATA` - directory for storing application data that is preserved between app updates. That directory is already pre-created and its location depends on the platform the app is running on.
-* `FLET_APP_TEMP` - directory for temporary application files, i.e. cache. That directory is already pre-created and its location depends on the platform the app is running on.
+* `FLET_APP_STORAGE_DATA` - directory for storing application data that is preserved between app updates. That directory is already pre-created and its location depends on the platform the app is running on.
+* `FLET_APP_STORAGE_TEMP` - directory for temporary application files, i.e. cache. That directory is already pre-created and its location depends on the platform the app is running on.
 
 For example, data folder path can be read in your app as:
 
@@ -117,8 +119,12 @@ For example, data folder path can be read in your app as:
 import os
 
 # it's `None` when running the app in web mode
-os.getenv("FLET_APP_DATA")
+data_dir = os.getenv("FLET_APP_STORAGE_DATA")
 ```
+
+:::note
+`flet run` command creates data and temp directories and sets `FLET_APP_STORAGE_DATA` and `FLET_APP_STORAGE_TEMP` to their paths.
+:::
 
 ## `pyproject.toml` support
 
@@ -281,6 +287,7 @@ Below is how to migrate:
 * Fixed button's `bgcolor`, `color` and `elevation` ([#4126](https://github.com/flet-dev/flet/pull/4126)).
 * Fixed scrolling issues on Windows ([#4145](https://github.com/flet-dev/flet/pull/4145)).
 * Skip running flutter doctor on windows if `no_rich_output` is `True` ([#4108](https://github.com/flet-dev/flet/pull/4108)).
+* Fixed `TextField` freezes on Linux Mint #4422](https://github.com/flet-dev/flet/pull/4422)).
 
 ## Conclusion
 

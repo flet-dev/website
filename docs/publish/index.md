@@ -112,6 +112,7 @@ When you run `flet build <target_platform>` command it:
 
 If your app uses the following controls their packages must be added to a build command:
 
+* Ad controls (`BannerAd` and `InterstitialAd`) implemented in `flet_ads` package.
 * [`Audio`](/docs/controls/audio) control implemented in `flet_audio` package.
 * [`AudioRecorder`](/docs/controls/audiorecorder) control implemented in `flet_audio_recorder` package.
 * [`Flashlight`](/docs/controls/flashlight) control implemented in `flet_flashlight` package.
