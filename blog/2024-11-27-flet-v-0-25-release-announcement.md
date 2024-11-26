@@ -14,6 +14,20 @@ The biggest news? No more Kivy for iOS and Android packaging. No more dealing wi
 
 Let’s dive into all the cool stuff Flet 0.25.0 has to offer! 🚀
 
+## How to upgrade
+
+Run the following command to upgrade Flet:
+
+```
+pip install 'flet[all]' --upgrade
+```
+
+:::note
+`[all]` is an "extra" specifier which tells pip to install all `flet` package dependencies. See [New Python packages structure](#new-python-packages-structure) section below for the explanation.
+:::
+
+Bump `flet` package version to `0.25.0` (or remove it at all to use the latest) in `requirements.txt` or `pyproject.toml`.
+
 ## New packaging
 
 Flet packaging for iOS and Android has been relying on Kivy and it was super annoying when your app depends on Python binary packages, such as Numpy or Pillow. You needed to compile those packages yourself using Kivy command line tools. It was really frustrating and even hopeless if Kivy didn't have "recipes" for some packages, like Pydantic.
