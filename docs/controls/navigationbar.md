@@ -23,11 +23,11 @@ def main(page: ft.Page):
     page.title = "NavigationBar Example"
     page.navigation_bar = ft.NavigationBar(
         destinations=[
-            ft.NavigationBarDestination(icon=ft.icons.EXPLORE, label="Explore"),
-            ft.NavigationBarDestination(icon=ft.icons.COMMUTE, label="Commute"),
+            ft.NavigationBarDestination(icon=ft.Icons.EXPLORE, label="Explore"),
+            ft.NavigationBarDestination(icon=ft.Icons.COMMUTE, label="Commute"),
             ft.NavigationBarDestination(
-                icon=ft.icons.BOOKMARK_BORDER,
-                selected_icon=ft.icons.BOOKMARK,
+                icon=ft.Icons.BOOKMARK_BORDER,
+                selected_icon=ft.Icons.BOOKMARK,
                 label="Explore",
             ),
         ]
@@ -115,17 +115,27 @@ The [color](/docs/reference/colors) of this destination.
 
 ### `icon`
 
-The name of the icon of the destination.
+The [name of the icon](/docs/reference/icons) or `Control` of the destination. 
 
-### `icon_content`
+Example with icon name:
+```
+icon=ft.Icons.BOOKMARK
+```
+Example with Control:
+```
+icon=ft.Icon(ft.Icons.BOOKMARK)
+```
 
-The icon `Control` of the destination. Used instead of `icon` property.
+If `selected_icon` is provided, this will only be displayed when the destination is not selected.
 
-Typically an [`Icon`](/docs/controls/icon) control.
+To make the NavigationBar more accessible, consider choosing an icon with a stroked and filled version, such as `ft.Icons.CLOUD` and `ft.Icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
 
-If `selected_icon_content` is provided, this will only be displayed when the destination is not selected.
+### ~~`icon_content`~~
 
-To make the NavigationBar more accessible, consider choosing an icon with a stroked and filled version, such as `icons.CLOUD` and `icons.CLOUD_QUEUE`. The icon should be set to the stroked version and `selected_icon` to the filled version.
+The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
+
+**Deprecated in v0.25.0 and will be removed in v0.26.0. Use [`icon`](#icon)
+instead.**
 
 ### `label`
 
@@ -133,10 +143,22 @@ The text label that appears below the icon of this `NavigationBarDestination`.
 
 ### `selected_icon`
 
-The name of alternative icon displayed when this destination is selected.
+The [name](/docs/reference/icons) of alternative icon or `Control` displayed when this destination is selected. 
 
-### `selected_icon_content`
+Example with icon name:
+```
+selected_icon=ft.Icons.BOOKMARK
+```
+Example with Control:
+```
+selected_icon=ft.Icon(ft.Icons.BOOKMARK)
+```
+
+If this icon is not provided, the NavigationBar will display `icon` in either state.
+
+### ~~`selected_icon_content`~~
 
 An alternative icon `Control` displayed when this destination is selected.
 
-If this icon is not provided, the NavigationBar will display `icon_content` in either state.
+**Deprecated in v0.25.0 and will be removed in v0.26.0. Use [`selected_icon`](#selected_icon)
+instead.**
