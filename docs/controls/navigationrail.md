@@ -26,20 +26,20 @@ def main(page: ft.Page):
         # extended=True,
         min_width=100,
         min_extended_width=400,
-        leading=ft.FloatingActionButton(icon=ft.icons.CREATE, text="Add"),
+        leading=ft.FloatingActionButton(icon=ft.Icons.CREATE, text="Add"),
         group_alignment=-0.9,
         destinations=[
             ft.NavigationRailDestination(
-                icon=ft.icons.FAVORITE_BORDER, selected_icon=ft.icons.FAVORITE, label="First"
+                icon=ft.Icons.FAVORITE_BORDER, selected_icon=ft.Icons.FAVORITE, label="First"
             ),
             ft.NavigationRailDestination(
-                icon=ft.Icon(ft.icons.BOOKMARK_BORDER),
-                selected_icon=ft.Icon(ft.icons.BOOKMARK),
+                icon=ft.Icon(ft.Icons.BOOKMARK_BORDER),
+                selected_icon=ft.Icon(ft.Icons.BOOKMARK),
                 label="Second",
             ),
             ft.NavigationRailDestination(
-                icon=ft.icons.SETTINGS_OUTLINED,
-                selected_icon=ft.Icon(ft.icons.SETTINGS),
+                icon=ft.Icons.SETTINGS_OUTLINED,
+                selected_icon=ft.Icon(ft.Icons.SETTINGS),
                 label_content=ft.Text("Settings"),
             ),
         ],

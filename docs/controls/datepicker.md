@@ -38,7 +38,7 @@ def main(page: ft.Page):
     page.add(
         ft.ElevatedButton(
             "Pick date",
-            icon=ft.icons.CALENDAR_MONTH,
+            icon=ft.Icons.CALENDAR_MONTH,
             on_click=lambda e: page.open(
                 ft.DatePicker(
                     first_date=datetime.datetime(year=2023, month=10, day=1),

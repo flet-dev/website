@@ -81,9 +81,9 @@ class Task(ft.Row):
         super().__init__()
         self.text_view = ft.Text(text)
         self.text_edit = ft.TextField(text, visible=False)
-        self.edit_button = ft.IconButton(icon=ft.icons.EDIT, on_click=self.edit)
+        self.edit_button = ft.IconButton(icon=ft.Icons.EDIT, on_click=self.edit)
         self.save_button = ft.IconButton(
-            visible=False, icon=ft.icons.SAVE, on_click=self.save
+            visible=False, icon=ft.Icons.SAVE, on_click=self.save
         )
         self.controls = [
             ft.Checkbox(),

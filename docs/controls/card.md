@@ -26,7 +26,7 @@ def main(page):
                 content=ft.Column(
                     [
                         ft.ListTile(
-                            leading=ft.Icon(ft.icons.ALBUM),
+                            leading=ft.Icon(ft.Icons.ALBUM),
                             title=ft.Text("The Enchanted Nightingale"),
                             subtitle=ft.Text(
                                 "Music by Julie Gable. Lyrics by Sidney Stein."

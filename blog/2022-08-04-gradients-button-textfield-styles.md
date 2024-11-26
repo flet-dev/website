@@ -311,8 +311,8 @@ def main(page: ft.Page):
 
     page.add(
         ft.IconButton(
-            icon=ft.icons.BATTERY_1_BAR,
-            selected_icon=ft.icons.BATTERY_FULL,
+            icon=ft.Icons.BATTERY_1_BAR,
+            selected_icon=ft.Icons.BATTERY_FULL,
             on_click=toggle_icon_button,
             selected=False,
             style=ft.ButtonStyle(color={"selected": ft.Colors.GREEN, "": ft.Colors.RED}),

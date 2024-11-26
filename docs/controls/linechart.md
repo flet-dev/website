@@ -209,7 +209,7 @@ def main(page: ft.Page):
         s.toggle = not s.toggle
         chart.update()
 
-    page.add(ft.IconButton(ft.icons.REFRESH, on_click=toggle_data), chart)
+    page.add(ft.IconButton(ft.Icons.REFRESH, on_click=toggle_data), chart)
 
 ft.app(main)
 ```

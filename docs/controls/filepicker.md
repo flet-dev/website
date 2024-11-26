@@ -46,7 +46,7 @@ def main(page: ft.Page):
             [
                 ft.ElevatedButton(
                     "Pick files",
-                    icon=ft.icons.UPLOAD_FILE,
+                    icon=ft.Icons.UPLOAD_FILE,
                     on_click=lambda _: pick_files_dialog.pick_files(
                         allow_multiple=True
                     ),

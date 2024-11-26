@@ -47,7 +47,7 @@ def main(page: ft.Page):
                 controls=[
                     ft.SubmenuButton(
                         content=ft.Text("B"),
-                        leading=ft.Icon(ft.icons.COLORIZE),
+                        leading=ft.Icon(ft.Icons.COLORIZE),
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Blue"),
@@ -59,7 +59,7 @@ def main(page: ft.Page):
                     ),
                     ft.SubmenuButton(
                         content=ft.Text("G"),
-                        leading=ft.Icon(ft.icons.COLORIZE),
+                        leading=ft.Icon(ft.Icons.COLORIZE),
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Green"),
@@ -71,7 +71,7 @@ def main(page: ft.Page):
                     ),
                     ft.SubmenuButton(
                         content=ft.Text("R"),
-                        leading=ft.Icon(ft.icons.COLORIZE),
+                        leading=ft.Icon(ft.Icons.COLORIZE),
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Red"),

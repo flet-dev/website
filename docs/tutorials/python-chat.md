@@ -377,7 +377,7 @@ Here is how you can implement this layout:
             [
                 new_message,
                 ft.IconButton(
-                    icon=ft.icons.SEND_ROUNDED,
+                    icon=ft.Icons.SEND_ROUNDED,
                     tooltip="Send message",
                     on_click=send_message_click,
                 ),

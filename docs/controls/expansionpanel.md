@@ -59,7 +59,7 @@ def main(page: ft.Page):
         exp.content = ft.ListTile(
             title=ft.Text(f"This is in Panel {i}"),
             subtitle=ft.Text(f"Press the icon to delete panel {i}"),
-            trailing=ft.IconButton(ft.icons.DELETE, on_click=handle_delete, data=exp),
+            trailing=ft.IconButton(ft.Icons.DELETE, on_click=handle_delete, data=exp),
         )
 
         panel.controls.append(exp)

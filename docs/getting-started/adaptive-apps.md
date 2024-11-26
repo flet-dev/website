@@ -26,11 +26,11 @@ def main(page):
 
     page.navigation_bar = ft.NavigationBar(
         destinations=[
-            ft.NavigationBarDestination(icon=ft.icons.EXPLORE, label="Explore"),
-            ft.NavigationBarDestination(icon=ft.icons.COMMUTE, label="Commute"),
+            ft.NavigationBarDestination(icon=ft.Icons.EXPLORE, label="Explore"),
+            ft.NavigationBarDestination(icon=ft.Icons.COMMUTE, label="Commute"),
             ft.NavigationBarDestination(
-                icon=ft.icons.BOOKMARK_BORDER,
-                selected_icon=ft.icons.BOOKMARK,
+                icon=ft.Icons.BOOKMARK_BORDER,
+                selected_icon=ft.Icons.BOOKMARK,
                 label="Bookmark",
             ),
         ],
@@ -308,17 +308,17 @@ def main(page):
         destinations=[
             AdaptiveNavigationBarDestination(
                 ios_icon=ft.cupertino_icons.PERSON_3_FILL,
-                android_icon=ft.icons.PERSON,
+                android_icon=ft.Icons.PERSON,
                 label="Contacts",
             ),
             AdaptiveNavigationBarDestination(
                 ios_icon=ft.cupertino_icons.CHAT_BUBBLE_2,
-                android_icon=ft.icons.CHAT,
+                android_icon=ft.Icons.CHAT,
                 label="Chats",
             ),
             AdaptiveNavigationBarDestination(
                 ios_icon=ft.cupertino_icons.SETTINGS,
-                android_icon=ft.icons.SETTINGS,
+                android_icon=ft.Icons.SETTINGS,
                 label="Settings",
             ),
         ],

@@ -159,7 +159,7 @@ Value is of type [`ReleaseMode`](/docs/reference/types/releasemode) and defaults
 
 ### `src`
 
-Sets the URL to the audio file. It could be an asset URL, see [`Image.src`](/docs/controls/image#src) for more information about assets.
+The audio source. Can be a URL or a local [asset file](/docs/cookbook/assets).
 
 :::note
 [Here](https://github.com/bluefireteam/audioplayers/blob/main/troubleshooting.md#supported-formats--encodings) is a list of supported audio formats.

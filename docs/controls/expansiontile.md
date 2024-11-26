@@ -34,9 +34,9 @@ def main(page: ft.Page):
         )
         if e.control.trailing:
             e.control.trailing.name = (
-                ft.icons.ARROW_DROP_DOWN
-                if e.control.trailing.name == ft.icons.ARROW_DROP_DOWN_CIRCLE
-                else ft.icons.ARROW_DROP_DOWN_CIRCLE
+                ft.Icons.ARROW_DROP_DOWN
+                if e.control.trailing.name == ft.Icons.ARROW_DROP_DOWN_CIRCLE
+                else ft.Icons.ARROW_DROP_DOWN_CIRCLE
             )
             page.update()
 
@@ -53,7 +53,7 @@ def main(page: ft.Page):
         ft.ExpansionTile(
             title=ft.Text("ExpansionTile 2"),
             subtitle=ft.Text("Custom expansion arrow icon"),
-            trailing=ft.Icon(ft.icons.ARROW_DROP_DOWN),
+            trailing=ft.Icon(ft.Icons.ARROW_DROP_DOWN),
             collapsed_text_color=ft.Colors.GREEN,
             text_color=ft.Colors.GREEN,
             on_change=handle_expansion_tile_change,

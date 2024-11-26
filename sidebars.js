@@ -166,6 +166,20 @@ module.exports = {
             slug: "controls/information-displays",
           },
           items: [
+            {
+              type: "category",
+              label: "Ads",
+              link: {
+                type: "generated-index",
+                description:
+                  "The following ads controls are available:",
+                slug: "/ads",
+              },
+              items: [
+                "controls/bannerad",
+                "controls/interstitialad",
+              ],
+            },
             "controls/canvas",
             "controls/circleavatar",
             "controls/cupertinoactivityindicator",
@@ -458,7 +472,6 @@ module.exports = {
                 "reference/types/localeconfiguration",
                 "reference/types/margin",
                 "reference/types/markdowncodetheme",
-                "reference/types/mapconfiguration",
                 "reference/types/mapinteractionconfiguration",
                 "reference/types/maplatitudelongitude",
                 "reference/types/maplatitudelongitudebounds",
@@ -483,8 +496,11 @@ module.exports = {
                 {
                   type: "category",
                   label: "Theme",
+                  link: {
+                    type: "doc",
+                    id: "reference/types/theme",
+                  },
                   items: [
-                    "reference/types/theme",
                     "reference/types/appbartheme",
                     "reference/types/badgetheme",
                     "reference/types/bannertheme",

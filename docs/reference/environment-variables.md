@@ -5,6 +5,16 @@ sidebar_label: Environment variables
 
 Below is the list of useful environment variables and their default values:
 
+#### `FLET_APP_STORAGE_DATA`
+
+A directory for the storage of persistent application data that is preserved between app updates. 
+It is already pre-created and its location depends on the platform the app is running on.
+
+#### `FLET_APP_STORAGE_TEMP`
+
+A directory for the storage of temporary application files, i.e. cache. 
+It is already pre-created and its location depends on the platform the app is running on.
+
 #### `FLET_ASSETS_DIR`
 
 Absolute path to app "assets" directory.

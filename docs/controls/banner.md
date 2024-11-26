@@ -35,7 +35,7 @@ def main(page):
     action_button_style = ft.ButtonStyle(color=ft.Colors.BLUE)
     banner = ft.Banner(
         bgcolor=ft.Colors.AMBER_100,
-        leading=ft.Icon(ft.icons.WARNING_AMBER_ROUNDED, color=ft.Colors.AMBER, size=40),
+        leading=ft.Icon(ft.Icons.WARNING_AMBER_ROUNDED, color=ft.Colors.AMBER, size=40),
         content=ft.Text(
             value="Oops, there were some errors while trying to delete the file. What would you like me to do?",
             color=ft.Colors.BLACK,

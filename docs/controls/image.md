@@ -116,29 +116,8 @@ A semantic description of the image. Used to provide a description of the image 
 
 ### `src`
 
-Image URL. This could be an external URL, e.g. `https://picsum.photos/200/200` or internal URL to reference app assets, e.g. `/my-image.png`.
-
-You can specify `assets_dir` in `flet.app()` call to set the location of assets that should be available to the application. `assets_dir` could be a relative to your `main.py` directory or an absolute path. For example, consider the following program structure:
-
-```
-/assets
-   /images/my-image.png
-main.py
-```
-
-You can access your images in the application as following:
-
-```python {5,9}
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(ft.Image(src=f"/images/my-image.png"))
-
-flet.app(
-    main,
-    assets_dir="assets"
-)
-```
+The image source. 
+This could be an external URL or a local [asset file](/docs/cookbook/assets).
 
 ### `src_base64`
 

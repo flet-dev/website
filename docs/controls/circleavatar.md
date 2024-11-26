@@ -36,11 +36,11 @@ def main(page):
     )
     # avatar with icon, aka icon with inverse background
     a3 = ft.CircleAvatar(
-        content=ft.Icon(ft.icons.ABC),
+        content=ft.Icon(ft.Icons.ABC),
     )
     # avatar with icon and custom colors
     a4 = ft.CircleAvatar(
-        content=ft.Icon(ft.icons.WARNING_ROUNDED),
+        content=ft.Icon(ft.Icons.WARNING_ROUNDED),
         color=ft.Colors.YELLOW_200,
         bgcolor=ft.Colors.AMBER_700,
     )

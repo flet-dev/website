@@ -240,7 +240,7 @@ Below is how to migrate:
         destinations=[
             ft.NavigationBarDestination(
                 icon_content=ft.Badge(
-                    content=ft.Icon(ft.icons.PHONE),
+                    content=ft.Icon(ft.Icons.PHONE),
                     text=10,
                 ),
                 label="Calls",

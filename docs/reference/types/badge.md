@@ -34,18 +34,18 @@ def main(page: ft.Page):
         destinations=[
             ft.NavigationBarDestination(
                 icon_content=ft.Icon(
-                    ft.icons.EXPLORE,
+                    ft.Icons.EXPLORE,
                     badge=ft.Badge(small_size=10),
                 ),
                 label="Explore",
             ),
             ft.NavigationBarDestination(
-                icon=ft.icons.COMMUTE,
+                icon=ft.Icons.COMMUTE,
                 label="Commute",
             ),
             ft.NavigationBarDestination(
                 icon_content=ft.Icon(
-                    ft.icons.PHONE,
+                    ft.Icons.PHONE,
                     badge="10",
                 )
             ),

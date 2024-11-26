@@ -40,7 +40,7 @@ def main(page: ft.Page):
             bgcolor=ft.CupertinoColors.SYSTEM_TEAL,
             content=ft.Row(
                 [
-                    ft.Icon(name=ft.icons.FAVORITE, color="pink"),
+                    ft.Icon(name=ft.Icons.FAVORITE, color="pink"),
                     ft.Text("ElevatedButton+adaptive"),
                 ],
                 tight=True,
