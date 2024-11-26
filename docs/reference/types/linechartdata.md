@@ -93,7 +93,7 @@ Value is of type [`BoxShadow`](/docs/reference/types/boxshadow).
 
 ### `selected_below_line`
 
-A vertical line drawn between selected line point and the bottom adge of the chart. The value is either `True` - draw a line with default style, `False` - do not draw a line under selected point, or an instance of [`ChartPointLine`](#chartpointline-properties) class to specify line style to draw.
+A vertical line drawn between selected line point and the bottom adge of the chart. The value is either `True` - draw a line with default style, `False` - do not draw a line under selected point, or an instance of [`ChartPointLine`](/docs/reference/types/chartpointline) class to specify line style to draw.
 
 ### `selected_point`
 

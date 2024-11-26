@@ -36,10 +36,6 @@ Value is of type [`BannerTheme`](/docs/reference/types/bannertheme).
 
 Value is of type [`BottomAppBarTheme`](/docs/reference/types/bottomappbartheme).
 
-#### `bottom_navigation_bar_theme`
-
-Value is of type [`BottomNavigationBarTheme`](/docs/reference/types/bottomnavigationbartheme).
-
 #### `bottom_sheet_theme`
 
 Value is of type [`BottomSheetTheme`](/docs/reference/types/bottomsheettheme).

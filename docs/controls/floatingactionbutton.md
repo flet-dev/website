@@ -28,11 +28,11 @@ def main(page: ft.Page):
     page.auto_scroll = True
     page.scroll = ft.ScrollMode.HIDDEN
     page.appbar = ft.AppBar(
-        title=ft.Text("Floating Action Button", weight=ft.FontWeight.BOLD, color=ft.colors.BLACK87),
-        actions=[ft.IconButton(ft.icons.MENU, tooltip="Menu", icon_color=ft.colors.BLACK87)],
-        bgcolor=ft.colors.BLUE,
+        title=ft.Text("Floating Action Button", weight=ft.FontWeight.BOLD, color=ft.Colors.BLACK87),
+        actions=[ft.IconButton(ft.icons.MENU, tooltip="Menu", icon_color=ft.Colors.BLACK87)],
+        bgcolor=ft.Colors.BLUE,
         center_title=True,
-        color=ft.colors.WHITE,
+        color=ft.Colors.WHITE,
     )
 
     # keeps track of the number of tiles already added
@@ -49,7 +49,7 @@ def main(page: ft.Page):
         page.open(ft.SnackBar(ft.Text("Tile was added successfully!")))
         count += 1
 
-    page.floating_action_button = ft.FloatingActionButton(icon=ft.icons.ADD, on_click=fab_pressed, bgcolor=ft.colors.LIME_300)
+    page.floating_action_button = ft.FloatingActionButton(icon=ft.icons.ADD, on_click=fab_pressed, bgcolor=ft.Colors.LIME_300)
     page.add(ft.Text("Press the FAB to add a tile!"))
 
 

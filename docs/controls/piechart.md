@@ -17,8 +17,8 @@ Draws a pie chart.
 import flet as ft
 
 def main(page: ft.Page):
-    normal_border = ft.BorderSide(0, ft.colors.with_opacity(0, ft.colors.WHITE))
-    hovered_border = ft.BorderSide(6, ft.colors.WHITE)
+    normal_border = ft.BorderSide(0, ft.Colors.with_opacity(0, ft.Colors.WHITE))
+    hovered_border = ft.BorderSide(6, ft.Colors.WHITE)
 
     def on_chart_event(e: ft.PieChartEvent):
         for idx, section in enumerate(chart.sections):
@@ -31,25 +31,25 @@ def main(page: ft.Page):
         sections=[
             ft.PieChartSection(
                 25,
-                color=ft.colors.BLUE,
+                color=ft.Colors.BLUE,
                 radius=80,
                 border_side=normal_border,
             ),
             ft.PieChartSection(
                 25,
-                color=ft.colors.YELLOW,
+                color=ft.Colors.YELLOW,
                 radius=65,
                 border_side=normal_border,
             ),
             ft.PieChartSection(
                 25,
-                color=ft.colors.PINK,
+                color=ft.Colors.PINK,
                 radius=60,
                 border_side=normal_border,
             ),
             ft.PieChartSection(
                 25,
-                color=ft.colors.GREEN,
+                color=ft.Colors.GREEN,
                 radius=70,
                 border_side=normal_border,
             ),
@@ -76,13 +76,13 @@ def main(page: ft.Page):
     normal_radius = 50
     hover_radius = 60
     normal_title_style = ft.TextStyle(
-        size=16, color=ft.colors.WHITE, weight=ft.FontWeight.BOLD
+        size=16, color=ft.Colors.WHITE, weight=ft.FontWeight.BOLD
     )
     hover_title_style = ft.TextStyle(
         size=22,
-        color=ft.colors.WHITE,
+        color=ft.Colors.WHITE,
         weight=ft.FontWeight.BOLD,
-        shadow=ft.BoxShadow(blur_radius=2, color=ft.colors.BLACK54),
+        shadow=ft.BoxShadow(blur_radius=2, color=ft.Colors.BLACK54),
     )
 
     def on_chart_event(e: ft.PieChartEvent):
@@ -101,28 +101,28 @@ def main(page: ft.Page):
                 40,
                 title="40%",
                 title_style=normal_title_style,
-                color=ft.colors.BLUE,
+                color=ft.Colors.BLUE,
                 radius=normal_radius,
             ),
             ft.PieChartSection(
                 30,
                 title="30%",
                 title_style=normal_title_style,
-                color=ft.colors.YELLOW,
+                color=ft.Colors.YELLOW,
                 radius=normal_radius,
             ),
             ft.PieChartSection(
                 15,
                 title="15%",
                 title_style=normal_title_style,
-                color=ft.colors.PURPLE,
+                color=ft.Colors.PURPLE,
                 radius=normal_radius,
             ),
             ft.PieChartSection(
                 15,
                 title="15%",
                 title_style=normal_title_style,
-                color=ft.colors.GREEN,
+                color=ft.Colors.GREEN,
                 radius=normal_radius,
             ),
         ],
@@ -148,13 +148,13 @@ def main(page: ft.Page):
     normal_radius = 100
     hover_radius = 110
     normal_title_style = ft.TextStyle(
-        size=12, color=ft.colors.WHITE, weight=ft.FontWeight.BOLD
+        size=12, color=ft.Colors.WHITE, weight=ft.FontWeight.BOLD
     )
     hover_title_style = ft.TextStyle(
         size=16,
-        color=ft.colors.WHITE,
+        color=ft.Colors.WHITE,
         weight=ft.FontWeight.BOLD,
-        shadow=ft.BoxShadow(blur_radius=2, color=ft.colors.BLACK54),
+        shadow=ft.BoxShadow(blur_radius=2, color=ft.Colors.BLACK54),
     )
     normal_badge_size = 40
     hover_badge_size = 50
@@ -164,9 +164,9 @@ def main(page: ft.Page):
             ft.Icon(icon),
             width=size,
             height=size,
-            border=ft.border.all(1, ft.colors.BROWN),
+            border=ft.border.all(1, ft.Colors.BROWN),
             border_radius=size / 2,
-            bgcolor=ft.colors.WHITE,
+            bgcolor=ft.Colors.WHITE,
         )
 
     def on_chart_event(e: ft.PieChartEvent):
@@ -185,7 +185,7 @@ def main(page: ft.Page):
                 40,
                 title="40%",
                 title_style=normal_title_style,
-                color=ft.colors.BLUE,
+                color=ft.Colors.BLUE,
                 radius=normal_radius,
                 badge=badge(ft.icons.AC_UNIT, normal_badge_size),
                 badge_position=0.98,
@@ -194,7 +194,7 @@ def main(page: ft.Page):
                 30,
                 title="30%",
                 title_style=normal_title_style,
-                color=ft.colors.YELLOW,
+                color=ft.Colors.YELLOW,
                 radius=normal_radius,
                 badge=badge(ft.icons.ACCESS_ALARM, normal_badge_size),
                 badge_position=0.98,
@@ -203,7 +203,7 @@ def main(page: ft.Page):
                 15,
                 title="15%",
                 title_style=normal_title_style,
-                color=ft.colors.PURPLE,
+                color=ft.Colors.PURPLE,
                 radius=normal_radius,
                 badge=badge(ft.icons.APPLE, normal_badge_size),
                 badge_position=0.98,
@@ -212,7 +212,7 @@ def main(page: ft.Page):
                 15,
                 title="15%",
                 title_style=normal_title_style,
-                color=ft.colors.GREEN,
+                color=ft.Colors.GREEN,
                 radius=normal_radius,
                 badge=badge(ft.icons.PEDAL_BIKE, normal_badge_size),
                 badge_position=0.98,

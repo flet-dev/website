@@ -26,22 +26,22 @@ def main(page: ft.Page):
         ft.Text(
             "Size 40, w100",
             size=40,
-            color=ft.colors.WHITE,
-            bgcolor=ft.colors.BLUE_600,
+            color=ft.Colors.WHITE,
+            bgcolor=ft.Colors.BLUE_600,
             weight=ft.FontWeight.W_100,
         ),
         ft.Text(
             "Size 50, Normal",
             size=50,
-            color=ft.colors.WHITE,
-            bgcolor=ft.colors.ORANGE_800,
+            color=ft.Colors.WHITE,
+            bgcolor=ft.Colors.ORANGE_800,
             weight=ft.FontWeight.NORMAL,
         ),
         ft.Text(
             "Size 60, Bold, Italic",
             size=50,
-            color=ft.colors.WHITE,
-            bgcolor=ft.colors.GREEN_700,
+            color=ft.Colors.WHITE,
+            bgcolor=ft.Colors.GREEN_700,
             weight=ft.FontWeight.BOLD,
             italic=True,
         ),
@@ -154,7 +154,7 @@ def main(page: ft.Page):
             spans=[
                 ft.TextSpan(
                     "here goes italic",
-                    ft.TextStyle(italic=True, size=20, color=ft.colors.GREEN),
+                    ft.TextStyle(italic=True, size=20, color=ft.Colors.GREEN),
                     spans=[
                         ft.TextSpan(
                             "bold and italic",
@@ -185,7 +185,7 @@ def main(page: ft.Page):
                     "underlined red wavy",
                     ft.TextStyle(
                         decoration=ft.TextDecoration.UNDERLINE,
-                        decoration_color=ft.colors.RED,
+                        decoration_color=ft.Colors.RED,
                         decoration_style=ft.TextDecorationStyle.WAVY,
                     ),
                     on_enter=lambda e: print(f"Entered span: {e.control.uid}"),
@@ -219,7 +219,7 @@ def main(page: ft.Page):
     )
 
     def highlight_link(e):
-        e.control.style.color = ft.colors.BLUE
+        e.control.style.color = ft.Colors.BLUE
         e.control.update()
 
     def unhighlight_link(e):
@@ -272,7 +272,7 @@ def main(page: ft.Page):
                                 size=40,
                                 weight=ft.FontWeight.BOLD,
                                 foreground=ft.Paint(
-                                    color=ft.colors.BLUE_700,
+                                    color=ft.Colors.BLUE_700,
                                     stroke_width=6,
                                     stroke_join=ft.StrokeJoin.ROUND,
                                     style=ft.PaintingStyle.STROKE,
@@ -288,7 +288,7 @@ def main(page: ft.Page):
                             ft.TextStyle(
                                 size=40,
                                 weight=ft.FontWeight.BOLD,
-                                color=ft.colors.GREY_300,
+                                color=ft.Colors.GREY_300,
                             ),
                         ),
                     ],
@@ -318,7 +318,7 @@ def main(page: ft.Page):
                         weight=ft.FontWeight.BOLD,
                         foreground=ft.Paint(
                             gradient=ft.PaintLinearGradient(
-                                (0, 20), (150, 20), [ft.colors.RED, ft.colors.YELLOW]
+                                (0, 20), (150, 20), [ft.Colors.RED, ft.Colors.YELLOW]
                             )
                         ),
                     ),

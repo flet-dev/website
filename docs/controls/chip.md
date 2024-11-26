@@ -41,8 +41,8 @@ def main(page: ft.Page):
     save_to_favourites = ft.Chip(
         label=ft.Text("Save to favourites"),
         leading=ft.Icon(ft.icons.FAVORITE_BORDER_OUTLINED),
-        bgcolor=ft.colors.GREEN_200,
-        disabled_color=ft.colors.GREEN_100,
+        bgcolor=ft.Colors.GREEN_200,
+        disabled_color=ft.Colors.GREEN_100,
         autofocus=True,
         on_click=save_to_favorites_clicked,
     )
@@ -50,7 +50,7 @@ def main(page: ft.Page):
     open_in_maps = ft.Chip(
         label=ft.Text("9 min walk"),
         leading=ft.Icon(ft.icons.MAP_SHARP),
-        bgcolor=ft.colors.GREEN_200,
+        bgcolor=ft.Colors.GREEN_200,
         on_click=open_google_maps,
     )
 
@@ -85,8 +85,8 @@ def main(page: ft.Page):
         amenity_chips.append(
             ft.Chip(
                 label=ft.Text(amenity),
-                bgcolor=ft.colors.GREEN_200,
-                disabled_color=ft.colors.GREEN_100,
+                bgcolor=ft.Colors.GREEN_200,
+                disabled_color=ft.Colors.GREEN_100,
                 autofocus=True,
                 on_select=amenity_selected,
             )

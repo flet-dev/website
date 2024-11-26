@@ -27,7 +27,7 @@ def main(page: ft.Page):
     page.add(
         ft.Placeholder(
             expand=True,
-            color=ft.colors.random_color()  # random material color
+            color=ft.Colors.random_color()  # random material color
         )
     )
 

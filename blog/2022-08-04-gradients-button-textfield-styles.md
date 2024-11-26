@@ -148,18 +148,18 @@ def main(page: ft.Page):
             "Styled button 1",
             style=ft.ButtonStyle(
                 color={
-                    ft.MaterialState.HOVERED: ft.colors.WHITE,
-                    ft.MaterialState.FOCUSED: ft.colors.BLUE,
-                    ft.MaterialState.DEFAULT: ft.colors.BLACK,
+                    ft.MaterialState.HOVERED: ft.Colors.WHITE,
+                    ft.MaterialState.FOCUSED: ft.Colors.BLUE,
+                    ft.MaterialState.DEFAULT: ft.Colors.BLACK,
                 },
-                bgcolor={ft.MaterialState.FOCUSED: ft.colors.PINK_200, "": ft.colors.YELLOW},
+                bgcolor={ft.MaterialState.FOCUSED: ft.Colors.PINK_200, "": ft.Colors.YELLOW},
                 padding={ft.MaterialState.HOVERED: 20},
-                overlay_color=ft.colors.TRANSPARENT,
+                overlay_color=ft.Colors.TRANSPARENT,
                 elevation={"pressed": 0, "": 1},
                 animation_duration=500,
                 side={
-                    ft.MaterialState.DEFAULT: BorderSide(1, ft.colors.BLUE),
-                    ft.MaterialState.HOVERED: BorderSide(2, ft.colors.BLUE),
+                    ft.MaterialState.DEFAULT: BorderSide(1, ft.Colors.BLUE),
+                    ft.MaterialState.HOVERED: BorderSide(2, ft.Colors.BLUE),
                 },
                 shape={
                     ft.MaterialState.HOVERED: RoundedRectangleBorder(radius=20),
@@ -247,16 +247,16 @@ def main(page: ft.Page):
     page.add(
         ft.TextField(
             text_size=30,
-            cursor_color=ft.colors.RED,
-            selection_color=ft.colors.YELLOW,
-            color=ft.colors.PINK,
-            bgcolor=ft.colors.BLACK26,
+            cursor_color=ft.Colors.RED,
+            selection_color=ft.Colors.YELLOW,
+            color=ft.Colors.PINK,
+            bgcolor=ft.Colors.BLACK26,
             filled=True,
-            focused_color=ft.colors.GREEN,
-            focused_bgcolor=ft.colors.CYAN_200,
+            focused_color=ft.Colors.GREEN,
+            focused_bgcolor=ft.Colors.CYAN_200,
             border_radius=30,
-            border_color=ft.colors.GREEN_800,
-            focused_border_color=ft.colors.GREEN_ACCENT_400,
+            border_color=ft.Colors.GREEN_800,
+            focused_border_color=ft.Colors.GREEN_ACCENT_400,
             max_length=20,
             capitalization="characters",
         )
@@ -283,9 +283,9 @@ def main(page: ft.Page):
             ],
             border_radius=30,
             filled=True,
-            border_color=ft.colors.TRANSPARENT,
-            bgcolor=ft.colors.BLACK12,
-            focused_bgcolor=ft.colors.BLUE_100,
+            border_color=ft.Colors.TRANSPARENT,
+            bgcolor=ft.Colors.BLACK12,
+            focused_bgcolor=ft.Colors.BLUE_100,
         )
     )
 
@@ -315,7 +315,7 @@ def main(page: ft.Page):
             selected_icon=ft.icons.BATTERY_FULL,
             on_click=toggle_icon_button,
             selected=False,
-            style=ft.ButtonStyle(color={"selected": ft.colors.GREEN, "": ft.colors.RED}),
+            style=ft.ButtonStyle(color={"selected": ft.Colors.GREEN, "": ft.Colors.RED}),
         )
     )
 

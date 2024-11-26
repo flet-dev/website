@@ -44,7 +44,7 @@ def main(page: ft.Page):
             marker_layer_ref.current.markers.append(
                 map.Marker(
                     content=ft.Icon(
-                        ft.icons.LOCATION_ON, color=ft.cupertino_colors.DESTRUCTIVE_RED
+                        ft.icons.LOCATION_ON, color=ft.CupertinoColors.DESTRUCTIVE_RED
                     ),
                     coordinates=e.coordinates,
                 )
@@ -54,8 +54,8 @@ def main(page: ft.Page):
                 map.CircleMarker(
                     radius=random.randint(5, 10),
                     coordinates=e.coordinates,
-                    color=ft.colors.random_color(),
-                    border_color=ft.colors.random_color(),
+                    color=ft.Colors.random_color(),
+                    border_color=ft.Colors.random_color(),
                     border_stroke_width=4,
                 )
             )
@@ -129,8 +129,8 @@ def main(page: ft.Page):
                         map.CircleMarker(
                             radius=10,
                             coordinates=map.MapLatitudeLongitude(16, 24),
-                            color=ft.colors.RED,
-                            border_color=ft.colors.BLUE,
+                            color=ft.Colors.RED,
+                            border_color=ft.Colors.BLUE,
                             border_stroke_width=4,
                         ),
                     ],
@@ -140,11 +140,11 @@ def main(page: ft.Page):
                         map.PolygonMarker(
                             label="Popular Touristic Area",
                             label_text_style=ft.TextStyle(
-                                color=ft.colors.BLACK,
+                                color=ft.Colors.BLACK,
                                 size=15,
                                 weight=ft.FontWeight.BOLD,
                             ),
-                            color=ft.colors.with_opacity(0.3, ft.colors.BLUE),
+                            color=ft.Colors.with_opacity(0.3, ft.Colors.BLUE),
                             coordinates=[
                                 map.MapLatitudeLongitude(10, 10),
                                 map.MapLatitudeLongitude(30, 15),
@@ -157,9 +157,9 @@ def main(page: ft.Page):
                     polylines=[
                         map.PolylineMarker(
                             border_stroke_width=3,
-                            border_color=ft.colors.RED,
-                            gradient_colors=[ft.colors.BLACK, ft.colors.BLACK],
-                            color=ft.colors.with_opacity(0.6, ft.colors.GREEN),
+                            border_color=ft.Colors.RED,
+                            gradient_colors=[ft.Colors.BLACK, ft.Colors.BLACK],
+                            color=ft.Colors.with_opacity(0.6, ft.Colors.GREEN),
                             coordinates=[
                                 map.MapLatitudeLongitude(10, 10),
                                 map.MapLatitudeLongitude(30, 15),

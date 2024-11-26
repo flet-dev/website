@@ -36,18 +36,18 @@ def main(page: ft.Page):
         ft.Container(
             ft.Stack(
                 [
-                    ft.Text("1", color=ft.colors.WHITE),
-                    ft.Text("2", color=ft.colors.WHITE, right=0),
-                    ft.Text("3", color=ft.colors.WHITE, right=0, bottom=0),
-                    ft.Text("4", color=ft.colors.WHITE, left=0, bottom=0),
-                    ft.Text("5", color=ft.colors.WHITE, left=40, top=35),
+                    ft.Text("1", color=ft.Colors.WHITE),
+                    ft.Text("2", color=ft.Colors.WHITE, right=0),
+                    ft.Text("3", color=ft.Colors.WHITE, right=0, bottom=0),
+                    ft.Text("4", color=ft.Colors.WHITE, left=0, bottom=0),
+                    ft.Text("5", color=ft.Colors.WHITE, left=40, top=35),
                 ]
             ),
             border_radius=8,
             padding=5,
             width=100,
             height=100,
-            bgcolor=ft.colors.BROWN_700,
+            bgcolor=ft.Colors.BROWN_700,
         )
     )
 

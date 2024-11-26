@@ -34,7 +34,7 @@ def main(page: ft.Page):
                 ft.LineChartDataPoint(13, 1.8),
             ],
             stroke_width=8,
-            color=ft.colors.LIGHT_GREEN,
+            color=ft.Colors.LIGHT_GREEN,
             curved=True,
             stroke_cap_round=True,
         ),
@@ -47,8 +47,8 @@ def main(page: ft.Page):
                 ft.LineChartDataPoint(12, 2.6),
                 ft.LineChartDataPoint(13, 3.9),
             ],
-            color=ft.colors.PINK,
-            below_line_bgcolor=ft.colors.with_opacity(0, ft.colors.PINK),
+            color=ft.Colors.PINK,
+            below_line_bgcolor=ft.Colors.with_opacity(0, ft.Colors.PINK),
             stroke_width=8,
             curved=True,
             stroke_cap_round=True,
@@ -61,7 +61,7 @@ def main(page: ft.Page):
                 ft.LineChartDataPoint(10, 1.3),
                 ft.LineChartDataPoint(13, 2.5),
             ],
-            color=ft.colors.CYAN,
+            color=ft.Colors.CYAN,
             stroke_width=8,
             curved=True,
             stroke_cap_round=True,
@@ -80,7 +80,7 @@ def main(page: ft.Page):
                 ft.LineChartDataPoint(13, 1.8),
             ],
             stroke_width=4,
-            color=ft.colors.with_opacity(0.5, ft.colors.LIGHT_GREEN),
+            color=ft.Colors.with_opacity(0.5, ft.Colors.LIGHT_GREEN),
             stroke_cap_round=True,
         ),
         ft.LineChartData(
@@ -92,8 +92,8 @@ def main(page: ft.Page):
                 ft.LineChartDataPoint(12, 2.6),
                 ft.LineChartDataPoint(13, 3.9),
             ],
-            color=ft.colors.with_opacity(0.5, ft.colors.PINK),
-            below_line_bgcolor=ft.colors.with_opacity(0.2, ft.colors.PINK),
+            color=ft.Colors.with_opacity(0.5, ft.Colors.PINK),
+            below_line_bgcolor=ft.Colors.with_opacity(0.2, ft.Colors.PINK),
             stroke_width=4,
             curved=True,
             stroke_cap_round=True,
@@ -106,7 +106,7 @@ def main(page: ft.Page):
                 ft.LineChartDataPoint(10, 3.3),
                 ft.LineChartDataPoint(13, 4.5),
             ],
-            color=ft.colors.with_opacity(0.5, ft.colors.CYAN),
+            color=ft.Colors.with_opacity(0.5, ft.Colors.CYAN),
             stroke_width=4,
             stroke_cap_round=True,
         ),
@@ -115,7 +115,7 @@ def main(page: ft.Page):
     chart = ft.LineChart(
         data_series=data_1,
         border=ft.Border(
-            bottom=ft.BorderSide(4, ft.colors.with_opacity(0.5, ft.colors.ON_SURFACE))
+            bottom=ft.BorderSide(4, ft.Colors.with_opacity(0.5, ft.Colors.ON_SURFACE))
         ),
         left_axis=ft.ChartAxis(
             labels=[
@@ -155,7 +155,7 @@ def main(page: ft.Page):
                             "SEP",
                             size=16,
                             weight=ft.FontWeight.BOLD,
-                            color=ft.colors.with_opacity(0.5, ft.colors.ON_SURFACE),
+                            color=ft.Colors.with_opacity(0.5, ft.Colors.ON_SURFACE),
                         ),
                         margin=ft.margin.only(top=10),
                     ),
@@ -167,7 +167,7 @@ def main(page: ft.Page):
                             "OCT",
                             size=16,
                             weight=ft.FontWeight.BOLD,
-                            color=ft.colors.with_opacity(0.5, ft.colors.ON_SURFACE),
+                            color=ft.Colors.with_opacity(0.5, ft.Colors.ON_SURFACE),
                         ),
                         margin=ft.margin.only(top=10),
                     ),
@@ -179,7 +179,7 @@ def main(page: ft.Page):
                             "DEC",
                             size=16,
                             weight=ft.FontWeight.BOLD,
-                            color=ft.colors.with_opacity(0.5, ft.colors.ON_SURFACE),
+                            color=ft.Colors.with_opacity(0.5, ft.Colors.ON_SURFACE),
                         ),
                         margin=ft.margin.only(top=10),
                     ),
@@ -187,7 +187,7 @@ def main(page: ft.Page):
             ],
             labels_size=32,
         ),
-        tooltip_bgcolor=ft.colors.with_opacity(0.8, ft.colors.BLUE_GREY),
+        tooltip_bgcolor=ft.Colors.with_opacity(0.8, ft.Colors.BLUE_GREY),
         min_y=0,
         max_y=4,
         min_x=0,
@@ -239,7 +239,7 @@ def main(page: ft.Page):
                 ft.LineChartDataPoint(11, 4),
             ],
             stroke_width=5,
-            color=ft.colors.CYAN,
+            color=ft.Colors.CYAN,
             curved=True,
             stroke_cap_round=True,
         )
@@ -257,7 +257,7 @@ def main(page: ft.Page):
                 ft.LineChartDataPoint(11, 3.44),
             ],
             stroke_width=5,
-            color=ft.colors.CYAN,
+            color=ft.Colors.CYAN,
             curved=True,
             stroke_cap_round=True,
         )
@@ -265,12 +265,12 @@ def main(page: ft.Page):
 
     chart = ft.LineChart(
         data_series=data_1,
-        border=ft.border.all(3, ft.colors.with_opacity(0.2, ft.colors.ON_SURFACE)),
+        border=ft.border.all(3, ft.Colors.with_opacity(0.2, ft.Colors.ON_SURFACE)),
         horizontal_grid_lines=ft.ChartGridLines(
-            interval=1, color=ft.colors.with_opacity(0.2, ft.colors.ON_SURFACE), width=1
+            interval=1, color=ft.Colors.with_opacity(0.2, ft.Colors.ON_SURFACE), width=1
         ),
         vertical_grid_lines=ft.ChartGridLines(
-            interval=1, color=ft.colors.with_opacity(0.2, ft.colors.ON_SURFACE), width=1
+            interval=1, color=ft.Colors.with_opacity(0.2, ft.Colors.ON_SURFACE), width=1
         ),
         left_axis=ft.ChartAxis(
             labels=[
@@ -298,7 +298,7 @@ def main(page: ft.Page):
                             "MAR",
                             size=16,
                             weight=ft.FontWeight.BOLD,
-                            color=ft.colors.with_opacity(0.5, ft.colors.ON_SURFACE),
+                            color=ft.Colors.with_opacity(0.5, ft.Colors.ON_SURFACE),
                         ),
                         margin=ft.margin.only(top=10),
                     ),
@@ -310,7 +310,7 @@ def main(page: ft.Page):
                             "JUN",
                             size=16,
                             weight=ft.FontWeight.BOLD,
-                            color=ft.colors.with_opacity(0.5, ft.colors.ON_SURFACE),
+                            color=ft.Colors.with_opacity(0.5, ft.Colors.ON_SURFACE),
                         ),
                         margin=ft.margin.only(top=10),
                     ),
@@ -322,7 +322,7 @@ def main(page: ft.Page):
                             "SEP",
                             size=16,
                             weight=ft.FontWeight.BOLD,
-                            color=ft.colors.with_opacity(0.5, ft.colors.ON_SURFACE),
+                            color=ft.Colors.with_opacity(0.5, ft.Colors.ON_SURFACE),
                         ),
                         margin=ft.margin.only(top=10),
                     ),
@@ -330,7 +330,7 @@ def main(page: ft.Page):
             ],
             labels_size=32,
         ),
-        tooltip_bgcolor=ft.colors.with_opacity(0.8, ft.colors.BLUE_GREY),
+        tooltip_bgcolor=ft.Colors.with_opacity(0.8, ft.Colors.BLUE_GREY),
         min_y=0,
         max_y=6,
         min_x=0,
@@ -400,7 +400,7 @@ A list of [`LineChartData`](/docs/reference/types/linechartdata) controls drawn 
 
 Controls drawing of chart's horizontal lines.
 
-Value is of type [`ChartGridLine`](/docs/reference/types/chartgridline)s.
+Value is of type [`ChartGridLines`](/docs/reference/types/chartgridlines).
 
 ### `interactive`
 
@@ -514,7 +514,7 @@ Value is of type [`ChartAxis`](/docs/reference/types/chartaxis).
 
 Controls drawing of chart's vertical lines.
 
-Value is of type [`ChartGridLine`](/docs/reference/types/chartgridline)s.
+Value is of type [`ChartGridLines`](/docs/reference/types/chartgridlines).
 
 ## Events
 

@@ -72,7 +72,7 @@ Use `--route-url-strategy` argument to change URL strategy.
 
 ### Web renderer
 
-You can change default "canvaskit" web renderer ([more about renderers here](/docs/controls/text#using-system-fonts)) to "html" with `--web-renderer` option:
+You can change default "canvaskit" web renderer ([more about renderers here](/docs/cookbook/fonts) to "html" with `--web-renderer` option:
 
 ```
 flet build web --web-renderer html
@@ -204,7 +204,7 @@ flet publish <your-flet-app.py> --route-url-strategy hash
 
 ### Web renderer
 
-You can change default "canvaskit" web renderer ([more about renderers here](/docs/controls/text#using-system-fonts)) to "html" with `--web-renderer` option:
+You can change default "canvaskit" web renderer ([more about renderers here](/docs/reference/types/webrenderer)) to "html" with `--web-renderer` option:
 
 ```
 flet publish <your-flet-app.py> --web-renderer html

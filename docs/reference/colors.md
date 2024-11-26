@@ -24,7 +24,7 @@ Named colors are the Material Design [theme colors](https://m3.material.io/style
 They can either be set with a string value or using the `Colors` or `CupertinoColors` enums.
 
 ```
-c1 = ft.Container(bgcolor=ft.colors.YELLOW)
+c1 = ft.Container(bgcolor=ft.Colors.YELLOW)
 c2 = ft.Container(bgcolor='yellow')
 ```
 
@@ -34,7 +34,7 @@ c2 = ft.Container(bgcolor='yellow')
 
 [Live Example](https://flet-controls-gallery.fly.dev/colors/themecolors)
 
-There are 30 named theme colors in [`Theme.color_scheme`](/docs/cookbook/theming#colorscheme-class) that are are generated based on the `color_scheme_seed` property. The default seed color value is "blue".
+There are 30 named theme colors in [`Theme.color_scheme`](/docs/reference/types/colorscheme) that are are generated based on the `color_scheme_seed` property. The default seed color value is "blue".
 
 ```
 # example for generating page theme colors based on the seed color
@@ -46,8 +46,8 @@ Any of the 30 colors can be overridden, in which case they will have an absolute
 ```
 page.theme = ft.Theme(
     color_scheme=ft.ColorScheme(
-        primary=ft.colors.GREEN,
-        primary_container=ft.colors.GREEN_200
+        primary=ft.Colors.GREEN,
+        primary_container=ft.Colors.GREEN_200
         # ...
     ),
 )
@@ -76,8 +76,8 @@ Palette colors can be used for setting individual controls color property or as 
 You can specify opacity for any color (hex value or named) using `with_opacity` method. Opacity value should be between `0.0` (completely transparent) and `1.0` (not transparent).
 
 ```python
-color = ft.colors.with_opacity(0.5, ft.colors.PRIMARY)
-color = ft.colors.with_opacity(0.5, '#ff6666')
+color = ft.Colors.with_opacity(0.5, ft.Colors.PRIMARY)
+color = ft.Colors.with_opacity(0.5, '#ff6666')
 ```
 
 Another way to specify opacity for string value:
@@ -105,7 +105,7 @@ Most Flet controls have default colors defined by the `color_scheme` that can be
 If the color is defined on the control level, it will be used.
 
 ```python
-c = ft.Container(width=100, height=100, bgcolor=ft.colors.GREEN_200)
+c = ft.Container(width=100, height=100, bgcolor=ft.Colors.GREEN_200)
 ```
 
 Not every Flet control has a color property that can be set on the control level. For example, `FilledButton` always has a default "primary" color defined by the nearest ancestor's `theme`.
@@ -130,9 +130,9 @@ def main(page: ft.Page):
         ft.Container(
             width=200,
             height=200,
-            border=ft.border.all(1, ft.colors.BLACK),
+            border=ft.border.all(1, ft.Colors.BLACK),
             content=ft.FilledButton("Primary color"),
-            theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.colors.YELLOW))
+            theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.Colors.YELLOW))
         )
     )
 

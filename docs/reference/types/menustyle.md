@@ -55,7 +55,7 @@ or class instance).
 For example, if you set `bgcolor` property to a literal the value will be applied to all menu states:
 
 ```python
-ft.MenuStyle(bgcolor=ft.colors.RED)
+ft.MenuStyle(bgcolor=ft.Colors.RED)
 ```
 
 To configure style attribute for specific Material states set its value to a dictionary where the key is state name. 
@@ -65,9 +65,9 @@ For example, to configure different background colors for `HOVERED` and `FOCUSED
 ```python
 ft.MenuStyle(
     bgcolor={
-        ft.ControlState.HOVERED: ft.colors.WHITE,
-        ft.ControlState.FOCUSED: ft.colors.BLUE,
-        ft.ControlState.DEFAULT: ft.colors.BLACK,
+        ft.ControlState.HOVERED: ft.Colors.WHITE,
+        ft.ControlState.FOCUSED: ft.Colors.BLUE,
+        ft.ControlState.DEFAULT: ft.Colors.BLACK,
     }
 )
 ```

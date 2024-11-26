@@ -45,7 +45,7 @@ More information on Radial gradient [here](https://api.flutter.dev/flutter/paint
 ```python
 Container(
     gradient=ft.RadialGradient(
-       colors=[ft.colors.YELLOW, ft.colors.BLUE],
+       colors=[ft.Colors.YELLOW, ft.Colors.BLUE],
     ),
     width=150,
     height=150,

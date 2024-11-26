@@ -164,7 +164,7 @@ Here is the code for adding the container to the page:
     page.add(
         ft.Container(
             width=350,
-            bgcolor=ft.colors.BLACK,
+            bgcolor=ft.Colors.BLACK,
             border_radius=ft.border_radius.all(20),
             padding=20,
             content=ft.Column(
@@ -182,7 +182,7 @@ To complete the UI portion of the program, we need to update style for result te
 
 For the result text, let's specify its  `color` and `size` properties:
 ```python
-result = ft.Text(value="0", color=ft.colors.WHITE, size=20)
+result = ft.Text(value="0", color=ft.Colors.WHITE, size=20)
 ```
 
 For the buttons, if we look again at the UI we are aiming to achieve, there are 3 types of buttons:
@@ -208,20 +208,20 @@ Now let's create child classes for all three types of buttons:
     class DigitButton(CalcButton):
         def __init__(self, text, expand=1):
             CalcButton.__init__(self, text, expand)
-            self.bgcolor = ft.colors.WHITE24
-            self.color = ft.colors.WHITE
+            self.bgcolor = ft.Colors.WHITE24
+            self.color = ft.Colors.WHITE
 
     class ActionButton(CalcButton):
         def __init__(self, text):
             CalcButton.__init__(self, text)
-            self.bgcolor = ft.colors.ORANGE
-            self.color = ft.colors.WHITE
+            self.bgcolor = ft.Colors.ORANGE
+            self.color = ft.Colors.WHITE
 
     class ExtraActionButton(CalcButton):
         def __init__(self, text):
             CalcButton.__init__(self, text)
-            self.bgcolor = ft.colors.BLUE_GREY_100
-            self.color = ft.colors.BLACK
+            self.bgcolor = ft.Colors.BLUE_GREY_100
+            self.color = ft.Colors.BLACK
 ```
 
 We will be using these new classes now to create rows of buttons in the Container:

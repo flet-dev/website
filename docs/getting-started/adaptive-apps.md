@@ -21,7 +21,7 @@ def main(page):
         actions=[
             ft.IconButton(ft.cupertino_icons.ADD, style=ft.ButtonStyle(padding=0))
         ],
-        bgcolor=ft.colors.with_opacity(0.04, ft.cupertino_colors.SYSTEM_BACKGROUND),
+        bgcolor=ft.Colors.with_opacity(0.04, ft.CupertinoColors.SYSTEM_BACKGROUND),
     )
 
     page.navigation_bar = ft.NavigationBar(
@@ -35,7 +35,7 @@ def main(page):
             ),
         ],
         border=ft.Border(
-            top=ft.BorderSide(color=ft.cupertino_colors.SYSTEM_GREY2, width=0)
+            top=ft.BorderSide(color=ft.CupertinoColors.SYSTEM_GREY2, width=0)
         ),
     )
 

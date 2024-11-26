@@ -29,14 +29,14 @@ def main(page: ft.Page):
         alignment=ft.alignment.center,
         width=200,
         height=200,
-        bgcolor=ft.colors.GREEN,
+        bgcolor=ft.Colors.GREEN,
     )
     c2 = ft.Container(
         ft.Text("Bye!", size=50),
         alignment=ft.alignment.center,
         width=200,
         height=200,
-        bgcolor=ft.colors.YELLOW,
+        bgcolor=ft.Colors.YELLOW,
     )
     c = ft.AnimatedSwitcher(
         c1,

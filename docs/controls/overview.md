@@ -125,9 +125,9 @@ class Message(ft.Container):
                 ft.Text(body),
             ],
         )
-        self.border = ft.border.all(1, ft.colors.BLACK)
+        self.border = ft.border.all(1, ft.Colors.BLACK)
         self.border_radius = ft.border_radius.all(10)
-        self.bgcolor = ft.colors.GREEN_200
+        self.bgcolor = ft.Colors.GREEN_200
         self.padding = 10
         self.expand = True
         self.expand_loose = True

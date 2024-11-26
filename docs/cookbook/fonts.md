@@ -30,7 +30,7 @@ ft.app(main)
 ```
 ## Importing Fonts
 Font can be imported from external resource by providing an absolute URL or 
-from application assets directory (see [Assets Guide](/docs/guides/assets)).
+from application assets directory (see [Assets Guide](/docs/cookbook/assets)).
 
 This is done by setting the page's [`fonts`](/docs/controls/page#fonts) property.
 

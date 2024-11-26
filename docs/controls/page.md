@@ -521,8 +521,8 @@ Use together with `page.bgcolor` to make a window transparent:
 import flet as ft
 
 def main(page: ft.Page):
-    page.window.bgcolor = ft.colors.TRANSPARENT
-    page.bgcolor = ft.colors.TRANSPARENT
+    page.window.bgcolor = ft.Colors.TRANSPARENT
+    page.bgcolor = ft.Colors.TRANSPARENT
     page.window.title_bar_hidden = True
     page.window.frameless = True
     page.window.left = 400

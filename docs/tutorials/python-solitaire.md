@@ -69,7 +69,7 @@ def main(page: ft.Page):
    card = ft.GestureDetector(
        left=0,
        top=0,
-       content=ft.Container(bgcolor=ft.colors.GREEN, width=70, height=100),
+       content=ft.Container(bgcolor=ft.Colors.GREEN, width=70, height=100),
    )   
  
    page.add(ft.Stack(controls=[card], width=1000, height=500))
@@ -105,7 +105,7 @@ def main(page: ft.Page):
        on_pan_update=drag,
        left=0,
        top=0,
-       content=ft.Container(bgcolor=ft.colors.GREEN, width=70, height=100),
+       content=ft.Container(bgcolor=ft.Colors.GREEN, width=70, height=100),
    )   
  
    page.add(ft.Stack(controls=[card], width=1000, height=500))
@@ -142,7 +142,7 @@ card = ft.GestureDetector(
     on_pan_end=drop,
     left=0,
     top=0,
-    content=ft.Container(bgcolor=ft.colors.GREEN, width=70, height=100),
+    content=ft.Container(bgcolor=ft.Colors.GREEN, width=70, height=100),
 )
 ```
 
@@ -217,7 +217,7 @@ Eventually, we’ll need 52 cards to play the game. For our proof of concept, le
        on_pan_end=drop,
        left=100,
        top=0,
-       content=ft.Container(bgcolor=ft.colors.YELLOW, width=70, height=100),
+       content=ft.Container(bgcolor=ft.Colors.YELLOW, width=70, height=100),
    )
 
    controls = [slot, card1, card2]

@@ -52,7 +52,7 @@ def main(page):
                         ref=timer_picker_value_ref,
                         value="00:01:10",
                         size=23,
-                        color=ft.cupertino_colors.DESTRUCTIVE_RED,
+                        color=ft.CupertinoColors.DESTRUCTIVE_RED,
                     ),
                     on_click=lambda e: page.open(
                         ft.CupertinoBottomSheet(

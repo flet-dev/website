@@ -51,7 +51,7 @@ def main(page: ft.Page):
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Blue"),
-                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.BLUE}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.Colors.BLUE}),
                                 on_click=handle_color_click,
                                 on_hover=handle_on_hover,
                             )
@@ -63,7 +63,7 @@ def main(page: ft.Page):
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Green"),
-                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.Colors.GREEN}),
                                 on_click=handle_color_click,
                                 on_hover=handle_on_hover,
                             )
@@ -75,7 +75,7 @@ def main(page: ft.Page):
                         controls=[
                             ft.MenuItemButton(
                                 content=ft.Text("Red"),
-                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.colors.RED}),
+                                style=ft.ButtonStyle(bgcolor={ft.ControlState.HOVERED: ft.Colors.RED}),
                                 on_click=handle_color_click,
                                 on_hover=handle_on_hover,
                             )
@@ -91,7 +91,7 @@ def main(page: ft.Page):
         ft.Container(
             ref=bg_container,
             expand=True,
-            bgcolor=ft.colors.SURFACE,
+            bgcolor=ft.Colors.SURFACE,
             content=ft.Text("Choose a bgcolor from the menu", style=ft.TextThemeStyle.HEADLINE_LARGE),
             alignment=ft.alignment.center,
         )

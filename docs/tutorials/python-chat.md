@@ -215,7 +215,7 @@ def on_message(message: Message):
         chat.controls.append(ft.Text(f"{message.user}: {message.text}"))
     elif message.message_type == "login_message":
         chat.controls.append(
-            ft.Text(message.text, italic=True, color=ft.colors.BLACK45, size=12)
+            ft.Text(message.text, italic=True, color=ft.Colors.BLACK45, size=12)
         )
     page.update()
 ```
@@ -279,7 +279,7 @@ class ChatMessage(ft.Row):
         self.controls=[
                 ft.CircleAvatar(
                     content=ft.Text(self.get_initials(message.user_name)),
-                    color=ft.colors.WHITE,
+                    color=ft.Colors.WHITE,
                     bgcolor=self.get_avatar_color(message.user_name),
                 ),
                 ft.Column(
@@ -297,19 +297,19 @@ class ChatMessage(ft.Row):
 
     def get_avatar_color(self, user_name: str):
         colors_lookup = [
-            ft.colors.AMBER,
-            ft.colors.BLUE,
-            ft.colors.BROWN,
-            ft.colors.CYAN,
-            ft.colors.GREEN,
-            ft.colors.INDIGO,
-            ft.colors.LIME,
-            ft.colors.ORANGE,
-            ft.colors.PINK,
-            ft.colors.PURPLE,
-            ft.colors.RED,
-            ft.colors.TEAL,
-            ft.colors.YELLOW,
+            ft.Colors.AMBER,
+            ft.Colors.BLUE,
+            ft.Colors.BROWN,
+            ft.Colors.CYAN,
+            ft.Colors.GREEN,
+            ft.Colors.INDIGO,
+            ft.Colors.LIME,
+            ft.Colors.ORANGE,
+            ft.Colors.PINK,
+            ft.Colors.PURPLE,
+            ft.Colors.RED,
+            ft.Colors.TEAL,
+            ft.Colors.YELLOW,
         ]
         return colors_lookup[hash(user_name) % len(colors_lookup)]
 
@@ -330,7 +330,7 @@ Instances of `ChatMessage` will be created instead of plain `Text` chat messages
         if message.message_type == "chat_message":
             m = ChatMessage(message)
         elif message.message_type == "login_message":
-            m = ft.Text(message.text, italic=True, color=ft.colors.BLACK45, size=12)
+            m = ft.Text(message.text, italic=True, color=ft.Colors.BLACK45, size=12)
         chat.controls.append(m)
         page.update()
 ```
@@ -368,7 +368,7 @@ Here is how you can implement this layout:
     page.add(
         ft.Container(
             content=chat,
-            border=ft.border.all(1, ft.colors.OUTLINE),
+            border=ft.border.all(1, ft.Colors.OUTLINE),
             border_radius=5,
             padding=10,
             expand=True,

@@ -30,9 +30,9 @@ def main(page):
     cg = ft.RadioGroup(
         content=ft.Column(
             [
-                ft.CupertinoRadio(value="red", label="Red - Cupertino Radio", active_color=ft.colors.RED, inactive_color=ft.colors.RED),
-                ft.Radio(value="green", label="Green - Material Radio", fill_color=ft.colors.GREEN),
-                ft.Radio(value="blue", label="Blue - Adaptive Radio", adaptive=True, active_color=ft.colors.BLUE),
+                ft.CupertinoRadio(value="red", label="Red - Cupertino Radio", active_color=ft.Colors.RED, inactive_color=ft.Colors.RED),
+                ft.Radio(value="green", label="Green - Material Radio", fill_color=ft.Colors.GREEN),
+                ft.Radio(value="blue", label="Blue - Adaptive Radio", adaptive=True, active_color=ft.Colors.BLUE),
             ]
         )
     )

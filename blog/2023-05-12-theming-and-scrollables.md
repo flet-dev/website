@@ -76,14 +76,14 @@ You can even use [Material Theme Builder](https://m3.material.io/theme-builder#/
 ```python
 page.theme = ft.Theme(
     color_scheme=ft.ColorScheme(
-        primary=ft.colors.GREEN,
-        primary_container=ft.colors.GREEN_200
+        primary=ft.Colors.GREEN,
+        primary_container=ft.Colors.GREEN_200
         # ...
     ),
 )
 ```
 
-See [`ColorScheme` class](/docs/cookbook/theming#colorscheme-class) for more details.
+See [`ColorScheme` class](/docs/reference/types/colorscheme) for more details.
 
 ## Nested themes
 
@@ -101,33 +101,33 @@ import flet as ft
 def main(page: ft.Page):
     # Yellow page theme with SYSTEM (default) mode
     page.theme = ft.Theme(
-        color_scheme_seed=ft.colors.YELLOW,
+        color_scheme_seed=ft.Colors.YELLOW,
     )
 
     page.add(
         # Page theme
         ft.Container(
             content=ft.ElevatedButton("Page theme button"),
-            bgcolor=ft.colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.SURFACE_VARIANT,
             padding=20,
             width=300,
         ),
 
         # Inherited theme with primary color overridden
         ft.Container(
-            theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.colors.PINK)),
+            theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.Colors.PINK)),
             content=ft.ElevatedButton("Inherited theme button"),
-            bgcolor=ft.colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.SURFACE_VARIANT,
             padding=20,
             width=300,
         ),
 
         # Unique always DARK theme
         ft.Container(
-            theme=ft.Theme(color_scheme_seed=ft.colors.INDIGO),
+            theme=ft.Theme(color_scheme_seed=ft.Colors.INDIGO),
             theme_mode=ft.ThemeMode.DARK,
             content=ft.ElevatedButton("Unique theme button"),
-            bgcolor=ft.colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.SURFACE_VARIANT,
             padding=20,
             width=300,
         ),
@@ -142,21 +142,21 @@ ft.app(main)
 
 You can now customize the look and fill of scrollbars in your application (or a particular scroillbar with [nested themes](#nested-themes)).
 
-It could be done via [`page.theme.scrollbar_theme`](/docs/cookbook/theming#scrollbartheme-class) property, for example:
+It could be done via [`page.theme.scrollbar_theme`](/docs/reference/types/scrollbartheme) property, for example:
 
 ```python
 page.theme = ft.Theme(
     scrollbar_theme=ft.ScrollbarTheme(
         track_color={
-            ft.MaterialState.HOVERED: ft.colors.AMBER,
-            ft.MaterialState.DEFAULT: ft.colors.TRANSPARENT,
+            ft.MaterialState.HOVERED: ft.Colors.AMBER,
+            ft.MaterialState.DEFAULT: ft.Colors.TRANSPARENT,
         },
         track_visibility=True,
-        track_border_color=ft.colors.BLUE,
+        track_border_color=ft.Colors.BLUE,
         thumb_visibility=True,
         thumb_color={
-            ft.MaterialState.HOVERED: ft.colors.RED,
-            ft.MaterialState.DEFAULT: ft.colors.GREY_300,
+            ft.MaterialState.HOVERED: ft.Colors.RED,
+            ft.MaterialState.DEFAULT: ft.Colors.GREY_300,
         },
         thickness=30,
         radius=15,
@@ -177,7 +177,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.theme = ft.Theme(
-        text_theme=ft.TextTheme(body_medium=ft.TextStyle(color=ft.colors.GREEN))
+        text_theme=ft.TextTheme(body_medium=ft.TextStyle(color=ft.Colors.GREEN))
     )
 
     page.add(ft.Text("Hello, green world!"))
@@ -189,23 +189,23 @@ ft.app(main)
 
 Apparently, `Body Medium` is used by `Text` control as a default style.
 
-See [`TextTheme` class](/docs/cookbook/theming#texttheme-class) for more details.
+See [`TextTheme` class](/docs/reference/types/texttheme) for more details.
 
 ## Tabs theming
 
-You can now control the look and feel of `Tabs` control. In this release `Tabs` adds a bunch of new properties and there is a new [`page.theme.tabs_theme`](/docs/cookbook/theming#tabstheme-class) property to style all tabs in your app:
+You can now control the look and feel of `Tabs` control. In this release `Tabs` adds a bunch of new properties and there is a new [`page.theme.tabs_theme`](/docs/reference/types/tabstheme) property to style all tabs in your app:
 
 ```python
 page.theme = ft.Theme(
     tabs_theme=ft.TabsTheme(
-        divider_color=ft.colors.BLUE,
-        indicator_color=ft.colors.RED,
+        divider_color=ft.Colors.BLUE,
+        indicator_color=ft.Colors.RED,
         indicator_tab_size=True,
-        label_color=ft.colors.GREEN,
-        unselected_label_color=ft.colors.AMBER,
+        label_color=ft.Colors.GREEN,
+        unselected_label_color=ft.Colors.AMBER,
         overlay_color={
-            ft.MaterialState.FOCUSED: ft.colors.with_opacity(0.2, ft.colors.GREEN),
-            ft.MaterialState.DEFAULT: ft.colors.with_opacity(0.2, ft.colors.PINK),
+            ft.MaterialState.FOCUSED: ft.Colors.with_opacity(0.2, ft.Colors.GREEN),
+            ft.MaterialState.DEFAULT: ft.Colors.with_opacity(0.2, ft.Colors.PINK),
         },
     )
 )
@@ -213,7 +213,7 @@ page.theme = ft.Theme(
 
 <img src="/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />
 
-See [`TabsTheme` class](/docs/cookbook/theming#tabstheme-class) for more details.
+See [`TabsTheme` class](/docs/reference/types/tabstheme) for more details.
 
 ## Other changes
 

@@ -39,7 +39,7 @@ def main(page: ft.Page):
                     shader=ft.RadialGradient(
                         center=ft.alignment.center,
                         radius=2.0,
-                        colors=[ft.colors.WHITE, ft.colors.PINK],
+                        colors=[ft.Colors.WHITE, ft.Colors.PINK],
                         tile_mode=ft.GradientTileMode.CLAMP,
                     ),
                 )
@@ -73,7 +73,7 @@ def main(page: ft.Page):
                     shader=ft.LinearGradient(
                         begin=ft.alignment.top_center,
                         end=ft.alignment.bottom_center,
-                        colors=[ft.colors.BLACK, ft.colors.TRANSPARENT],
+                        colors=[ft.Colors.BLACK, ft.Colors.TRANSPARENT],
                         stops=[0.5, 1.0],
                     ),
                     border_radius=10,

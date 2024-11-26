@@ -78,7 +78,7 @@ def main(page):
                     foreground_image_url="https://avatars.githubusercontent.com/u/5041459?s=88&v=4"
                 ),
                 ft.Container(
-                    content=ft.CircleAvatar(bgcolor=ft.colors.GREEN, radius=5),
+                    content=ft.CircleAvatar(bgcolor=ft.Colors.GREEN, radius=5),
                     alignment=ft.alignment.bottom_left,
                 ),
             ],
@@ -112,18 +112,18 @@ def main(page: ft.Page):
         ft.Container(
             ft.Stack(
                 [
-                    ft.Container(width=20, height=20, bgcolor=ft.colors.RED, border_radius=5),
+                    ft.Container(width=20, height=20, bgcolor=ft.Colors.RED, border_radius=5),
                     ft.Container(
                         width=20,
                         height=20,
-                        bgcolor=ft.colors.YELLOW,
+                        bgcolor=ft.Colors.YELLOW,
                         border_radius=5,
                         right=0,
                     ),
                     ft.Container(
                         width=20,
                         height=20,
-                        bgcolor=ft.colors.BLUE,
+                        bgcolor=ft.Colors.BLUE,
                         border_radius=5,
                         right=0,
                         bottom=0,
@@ -131,7 +131,7 @@ def main(page: ft.Page):
                     ft.Container(
                         width=20,
                         height=20,
-                        bgcolor=ft.colors.GREEN,
+                        bgcolor=ft.Colors.GREEN,
                         border_radius=5,
                         left=0,
                         bottom=0,
@@ -141,7 +141,7 @@ def main(page: ft.Page):
                             ft.Container(
                                 width=20,
                                 height=20,
-                                bgcolor=ft.colors.PURPLE,
+                                bgcolor=ft.Colors.PURPLE,
                                 border_radius=5,
                             )
                         ],
@@ -154,7 +154,7 @@ def main(page: ft.Page):
             padding=5,
             width=100,
             height=100,
-            bgcolor=ft.colors.BLACK,
+            bgcolor=ft.Colors.BLACK,
         )
     )
 

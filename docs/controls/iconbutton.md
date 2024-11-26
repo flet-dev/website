@@ -185,7 +185,7 @@ def main(page: ft.Page):
             selected_icon=ft.icons.BATTERY_FULL,
             on_click=toggle_icon_button,
             selected=False,
-            style=ft.ButtonStyle(color={"selected": ft.colors.GREEN, "": ft.colors.RED}),
+            style=ft.ButtonStyle(color={"selected": ft.Colors.GREEN, "": ft.Colors.RED}),
         )
     )
 

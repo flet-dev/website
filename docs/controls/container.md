@@ -35,7 +35,7 @@ def main(page: ft.Page):
                     margin=10,
                     padding=10,
                     alignment=ft.alignment.center,
-                    bgcolor=ft.colors.AMBER,
+                    bgcolor=ft.Colors.AMBER,
                     width=150,
                     height=150,
                     border_radius=10,
@@ -45,7 +45,7 @@ def main(page: ft.Page):
                     margin=10,
                     padding=10,
                     alignment=ft.alignment.center,
-                    bgcolor=ft.colors.GREEN_200,
+                    bgcolor=ft.Colors.GREEN_200,
                     width=150,
                     height=150,
                     border_radius=10,
@@ -56,7 +56,7 @@ def main(page: ft.Page):
                     margin=10,
                     padding=10,
                     alignment=ft.alignment.center,
-                    bgcolor=ft.colors.CYAN_200,
+                    bgcolor=ft.Colors.CYAN_200,
                     width=150,
                     height=150,
                     border_radius=10,
@@ -151,7 +151,7 @@ ft.Stack(
             width=50,
             height=50,
             bgcolor="#44CCCCCC",
-            border=ft.border.all(2, ft.colors.BLACK),
+            border=ft.border.all(2, ft.Colors.BLACK),
         ),
     ]
 )
@@ -307,33 +307,33 @@ import flet as ft
 def main(page: ft.Page):
     # Yellow page theme with SYSTEM (default) mode
     page.theme = ft.Theme(
-        color_scheme_seed=ft.colors.YELLOW,
+        color_scheme_seed=ft.Colors.YELLOW,
     )
 
     page.add(
         # Page theme
         ft.Container(
             content=ft.ElevatedButton("Page theme button"),
-            bgcolor=ft.colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.SURFACE_VARIANT,
             padding=20,
             width=300,
         ),
 
         # Inherited theme with primary color overridden
         ft.Container(
-            theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.colors.PINK)),
+            theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.Colors.PINK)),
             content=ft.ElevatedButton("Inherited theme button"),
-            bgcolor=ft.colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.SURFACE_VARIANT,
             padding=20,
             width=300,
         ),
         
         # Unique always DARK theme
         ft.Container(
-            theme=ft.Theme(color_scheme_seed=ft.colors.INDIGO),
+            theme=ft.Theme(color_scheme_seed=ft.Colors.INDIGO),
             theme_mode=ft.ThemeMode.DARK,
             content=ft.ElevatedButton("Unique theme button"),
-            bgcolor=ft.colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.SURFACE_VARIANT,
             padding=20,
             width=300,
         ),
@@ -419,7 +419,7 @@ def main(page: ft.Page):
         page.add(ft.Text("on_tap_down triggered"))
 
     c = ft.Container(
-        bgcolor=ft.colors.RED,
+        bgcolor=ft.Colors.RED,
         content=ft.Text("Test Long Press"),
         height=100,
         width=100,

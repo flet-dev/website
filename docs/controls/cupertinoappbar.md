@@ -25,7 +25,7 @@ def main(page: ft.Page):
 
     page.appbar = ft.CupertinoAppBar(
         leading=ft.Icon(ft.icons.PALETTE),
-        bgcolor=ft.colors.SURFACE_VARIANT,
+        bgcolor=ft.Colors.SURFACE_VARIANT,
         trailing=ft.Icon(ft.icons.WB_SUNNY_OUTLINED),
       middle=ft.Text("CupertinoAppBar Example"),
     )

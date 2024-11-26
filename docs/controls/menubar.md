@@ -42,14 +42,14 @@ def main(page: ft.Page):
     page.appbar = ft.AppBar(
         title=ft.Text("Menus", ref=appbar_text_ref),
         center_title=True,
-        bgcolor=ft.colors.BLUE,
+        bgcolor=ft.Colors.BLUE,
     )
 
     menubar = ft.MenuBar(
         expand=True,
         style=ft.MenuStyle(
             alignment=ft.alignment.top_left,
-            bgcolor=ft.colors.RED_300,
+            bgcolor=ft.Colors.RED_300,
             mouse_cursor={
                 ft.ControlState.HOVERED: ft.MouseCursor.WAIT,
                 ft.ControlState.DEFAULT: ft.MouseCursor.ZOOM_OUT,
@@ -66,7 +66,7 @@ def main(page: ft.Page):
                         content=ft.Text("About"),
                         leading=ft.Icon(ft.icons.INFO),
                         style=ft.ButtonStyle(
-                            bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN_100}
+                            bgcolor={ft.ControlState.HOVERED: ft.Colors.GREEN_100}
                         ),
                         on_click=handle_menu_item_click,
                     ),
@@ -74,7 +74,7 @@ def main(page: ft.Page):
                         content=ft.Text("Save"),
                         leading=ft.Icon(ft.icons.SAVE),
                         style=ft.ButtonStyle(
-                            bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN_100}
+                            bgcolor={ft.ControlState.HOVERED: ft.Colors.GREEN_100}
                         ),
                         on_click=handle_menu_item_click,
                     ),
@@ -82,7 +82,7 @@ def main(page: ft.Page):
                         content=ft.Text("Quit"),
                         leading=ft.Icon(ft.icons.CLOSE),
                         style=ft.ButtonStyle(
-                            bgcolor={ft.ControlState.HOVERED: ft.colors.GREEN_100}
+                            bgcolor={ft.ControlState.HOVERED: ft.Colors.GREEN_100}
                         ),
                         on_click=handle_menu_item_click,
                     ),
@@ -103,7 +103,7 @@ def main(page: ft.Page):
                                 close_on_click=False,
                                 style=ft.ButtonStyle(
                                     bgcolor={
-                                        ft.ControlState.HOVERED: ft.colors.PURPLE_200
+                                        ft.ControlState.HOVERED: ft.Colors.PURPLE_200
                                     }
                                 ),
                                 on_click=handle_menu_item_click,
@@ -114,7 +114,7 @@ def main(page: ft.Page):
                                 close_on_click=False,
                                 style=ft.ButtonStyle(
                                     bgcolor={
-                                        ft.ControlState.HOVERED: ft.colors.PURPLE_200
+                                        ft.ControlState.HOVERED: ft.Colors.PURPLE_200
                                     }
                                 ),
                                 on_click=handle_menu_item_click,

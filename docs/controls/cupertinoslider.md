@@ -43,8 +43,8 @@ def main(page):
         ft.CupertinoSlider(
             divisions=5,
             max=100,
-            active_color=ft.colors.PURPLE,
-            thumb_color=ft.colors.PURPLE,
+            active_color=ft.Colors.PURPLE,
+            thumb_color=ft.Colors.PURPLE,
             on_change_start=handle_change_start,
             on_change_end=handle_change_end,
             on_change=handle_change,

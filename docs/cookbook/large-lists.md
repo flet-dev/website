@@ -76,8 +76,8 @@ def main(page: ft.Page):
                 width=100,
                 height=100,
                 alignment=ft.alignment.center,
-                bgcolor=ft.colors.AMBER_100,
-                border=ft.border.all(1, ft.colors.AMBER_400),
+                bgcolor=ft.Colors.AMBER_100,
+                border=ft.border.all(1, ft.Colors.AMBER_400),
                 border_radius=ft.border_radius.all(5),
             )
         )
@@ -113,8 +113,8 @@ def main(page: ft.Page):
             ft.Container(
                 ft.Text(f"Item {i}"),
                 alignment=ft.alignment.center,
-                bgcolor=ft.colors.AMBER_100,
-                border=ft.border.all(1, ft.colors.AMBER_400),
+                bgcolor=ft.Colors.AMBER_100,
+                border=ft.border.all(1, ft.Colors.AMBER_400),
                 border_radius=ft.border_radius.all(5),
             )
         )

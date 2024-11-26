@@ -28,7 +28,7 @@ def main(page: ft.Page):
     page.add(
         ft.CupertinoListTile(
             additional_info=ft.Text("Wed Jan 24"),
-            bgcolor_activated=ft.colors.AMBER_ACCENT,
+            bgcolor_activated=ft.Colors.AMBER_ACCENT,
             leading=ft.Icon(name=ft.cupertino_icons.GAME_CONTROLLER),
             title=ft.Text("CupertinoListTile not notched"),
             subtitle=ft.Text("Subtitle"),
