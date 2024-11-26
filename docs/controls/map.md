@@ -70,17 +70,17 @@ def main(page: ft.Page):
         ft.Text("Click anywhere to add a Marker, right-click to add a CircleMarker."),
         map.Map(
             expand=True,
+            on_init=lambda e: print(f"Initialized Map"),
+            on_tap=handle_tap,
+            on_secondary_tap=handle_tap,
+            on_long_press=handle_tap,
+            on_event=handle_event,
             configuration=map.MapConfiguration(
                 initial_center=map.MapLatitudeLongitude(15, 10),
                 initial_zoom=4.2,
                 interaction_configuration=map.MapInteractionConfiguration(
                     flags=map.MapInteractiveFlag.ALL
                 ),
-                on_init=lambda e: print(f"Initialized Map"),
-                on_tap=handle_tap,
-                on_secondary_tap=handle_tap,
-                on_long_press=handle_tap,
-                on_event=handle_event,
             ),
             layers=[
                 map.TileLayer(
@@ -186,19 +186,94 @@ ft.app(main)
 
 A `MapConfiguration` object that defines the initial state of the map and its interaction configuration.
 
-Value is of type [`MapConfiguration`](/docs/controls/mapconfiguration).
+Value is of type [`MapConfiguration`](/docs/reference/types/mapconfiguration).
 
 ### `layers`
 
 A list of layers to be displayed on the map.
 
-The following layers are available:
+Value is of type [`MapLayer`](/docs/reference/types/maplayer).
 
-- [`CircleLayer`](/docs/controls/mapcirclelayer)
-- [`MarkerLayer`](/docs/controls/mapmarkerlayer)
-- [`PolygonLayer`](/docs/controls/mappolygonlayer)
-- [`PolylineLayer`](/docs/controls/mappolylinelayer)
-- [`RichAttribution`](/docs/controls/maprichattribution)
-- [`SimpleAttribution`](/docs/controls/mapsimpleattribution)
-- [`TileLayer`](/docs/controls/maptilelayer)
+## Events
+
+### `on_event`
+
+Fires when any map events occurs.
+
+Event handler argument is of type [`MapEvent`](/docs/reference/types/mapevent).
+
+### `on_hover`
+
+Fires when a hover event occurs.
+
+Event handler argument is of type [`MapHoverEvent`](/docs/reference/types/maphoverevent).
+
+### `on_init`
+
+Fires when the map is initialized.
+
+### `on_long_press`
+
+Fires when a long press event occurs.
+
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/maptapevent).
+
+### `on_position_change`
+
+Fires when the map position changes.
+
+Event handler argument is of type [`MapPositionChangeEvent`](/docs/reference/types/mappositionchangeevent).
+
+### `on_pointer_down`
+
+Fires when a pointer down event occurs.
+
+Event handler argument is of type [`MapPointerEvent`](/docs/reference/types/mappointerevent).
+
+### `on_pointer_cancel`
+
+Fires when a pointer cancel event occurs.
+
+Event handler argument is of type [`MapPointerEvent`](/docs/reference/types/mappointerevent).
+
+### `on_pointer_up`
+
+Fires when a pointer up event occurs.
+
+Event handler argument is of type [`MapPointerEvent`](/docs/reference/types/mappointerevent).
+
+### `on_secondary_tap`
+
+Fires when a secondary tap event occurs.
+
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/maptapevent).
+
+### `on_tap`
+
+Fires when a tap event occurs.
+
+Event handler argument is of type [`MapTapEvent`](/docs/reference/types/maptapevent).
+
+
+
+## Methods
+
+### `rotate_from`
+
+### `reset_rotation`
+
+
+### `zoom_in`
+
+
+### `zoom_out`
+
+
+### `zoom_to`
+
+
+### `move_to`
+
+
+### `center_on`
 

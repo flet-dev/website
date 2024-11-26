@@ -108,6 +108,13 @@ usage [here](/docs/controls/cupertinoalertdialog#cupertinoalertdialog-and-adapti
 
 Value is of type `bool` and defaults to `False`.
 
+### `barrier_color`
+
+The [color](/docs/reference/colors) of the modal barrier that darkens everything below the dialog.
+
+If `None`, the [`DialogTheme.barrier_color`](/docs/cookbook/theming#dialogtheme-class) is used. 
+If it is also `None`, then `Colors.BLACK_54` is used.
+
 ### `bgcolor`
 
 The background [color](/docs/reference/colors) of the dialog's surface.

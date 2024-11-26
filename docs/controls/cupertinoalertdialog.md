@@ -108,6 +108,13 @@ The (optional) set of actions that are displayed at the bottom of the dialog.
 
 Typically this is a list of [`CupertinoDialogAction`](/docs/controls/cupertinodialogaction) controls.
 
+### `barrier_color`
+
+The [color](/docs/reference/colors) of the modal barrier that darkens everything below the dialog.
+
+If `None`, the [`DialogTheme.barrier_color`](/docs/cookbook/theming#dialogtheme-class) is used. 
+If it is also `None`, then `Colors.BLACK_54` is used.
+
 ### `content`
 
 The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](/docs/controls/column) that contains the dialog's [`Text`](/docs/controls/text) message.

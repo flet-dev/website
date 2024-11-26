@@ -20,7 +20,8 @@ c1 = ft.Container(bgcolor='#ff0000')
 
 ### Named colors
 
-Named colors are the Material Design [theme colors](https://m3.material.io/styles/color/the-color-system/color-roles) and [colors palettes](https://m2.material.io/design/color/the-color-system.html#color-usage-and-palettes). They can be set with a string value or using flet.colors module.
+Named colors are the Material Design [theme colors](https://m3.material.io/styles/color/the-color-system/color-roles) and [colors palettes](https://m2.material.io/design/color/the-color-system.html#color-usage-and-palettes). 
+They can either be set with a string value or using the `Colors` or `CupertinoColors` enums.
 
 ```
 c1 = ft.Container(bgcolor=ft.colors.YELLOW)
@@ -37,7 +38,7 @@ There are 30 named theme colors in [`Theme.color_scheme`](/docs/cookbook/theming
 
 ```
 # example for generating page theme colors based on the seed color
-page.theme = Theme(color_scheme_seed='green')
+page.theme = Theme(color_scheme_seed=ft.Colors.GREEN)
 page.update()
 ```
 
@@ -125,21 +126,42 @@ Flet will check for the nearest ancestor that has `theme` defined, and will take
 import flet as ft
 
 def main(page: ft.Page):          
-    
-    container = ft.Container(
-        width=200,
-        height=200,
-        border=ft.border.all(1, ft.colors.BLACK),
-        content=ft.FilledButton("Primary color"),
-        theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.colors.YELLOW))
+    page.add(
+        ft.Container(
+            width=200,
+            height=200,
+            border=ft.border.all(1, ft.colors.BLACK),
+            content=ft.FilledButton("Primary color"),
+            theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.colors.YELLOW))
+        )
     )
-    
-    page.add(container)
 
 ft.app(main)   
 ```
 
 If control's color property, control-specific theme or nearest ancestor's theme is not specified, the nearest ancestor will be the page and the colors from the default page `color_scheme` will be used.  
+
+## Methods
+
+### `random()`
+
+Returns a random color, with optional exclusions and weights.
+
+**Method Parameters:**
+* `exclude` - A list of icons members to exclude from the random selection.
+* `weights` - A dictionary mapping icon members to their respective weights for weighted random selection.
+
+## Example
+    
+```python
+>>> import flet as ft
+>>> ft.Icons.ABC
+>>> ft.CupertinoIcons.BACK
+>>> ft.Icons.random()
+>>> ft.CupertinoIcons.random()
+>>> ft.Icons.random(exclude=[ft.Icons.FAVORITE, ft.Icons.SCHOOL], weights={ft.Icons.SCHOOL: 150, ft.Icons.ADJUST: 5})
+>>> ft.CupertinoIcons.random(exclude=[ft.CupertinoIcons.CAMERA, ft.CupertinoIcons.TABLE], weights={ft.CupertinoIcons.TABLE: 150, ft.CupertinoIcons.PENCIL: 5})
+```
 
 ## Material Colors
 

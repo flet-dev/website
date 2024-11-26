@@ -18,6 +18,14 @@ Union of `bool`, `int`, `Animation` and `None`
 
 Union of `int`, `float`, [`BorderRadius`](/docs/reference/types/borderradius) and `None`
 
+### `ColorValue`
+
+Union of `str`, [`Colors`](/docs/reference/colors#material-colors), [`CupertinoColors`](/docs/reference/colors#cupertino-colors)
+
+### `DurationValue`
+
+Union of `int` (milliseconds) and [`Duration`](/docs/reference/types/duration)
+
 ### `MarginValue`
 
 Union of `int`, `float`, [`Margin`](/docs/reference/types/margin) and `None`

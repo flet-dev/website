@@ -5,7 +5,7 @@ sidebar_label: TextStyle
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A style describing how to format and paint text.
+A style describing how to format and paint text. It has the following properties:
 
 ### `baseline`
 

@@ -18,7 +18,7 @@ Value is of type [`MapLatitudeLongitude`](/docs/reference/types/maplatitudelongi
 
 The kind of input device for which the event was generated.
 
-Value is of type [`MapPointerDeviceType`](/docs/reference/types/mappointerdevicetype).
+Value is of type [`PointerDeviceType`](/docs/reference/types/pointerdevicetype).
 
 ### `global_x`
 

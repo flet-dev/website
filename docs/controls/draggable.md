@@ -124,6 +124,23 @@ flet.app(main)
 
 ## Properties
 
+### `axis`
+
+The axis to restrict this draggable's movement.
+
+When axis is set to `Axis.HORIZONTAL`, this control can only be dragged horizontally. 
+When axis is set to `Axis.VERTICAL`, this control can only be dragged vertically.
+
+Value is of type [`Axis`](/docs/reference/types/axis) and defaults to `None` - no restriction.
+
+### `affinity`
+
+Controls how this control competes with other gestures to initiate a drag.
+If set to `None`, this widget initiates a drag as soon as it recognizes a tap down gesture, regardless of any directionality. 
+If set to `Axis.HORIZONTAL` or `Axis.VERTICAL`, then this control will compete with other horizontal (or vertical, respectively) gestures.
+
+Value is of type [`Axis`](/docs/reference/types/axis).
+
 ### `content`
 
 `Draggable` control displays [`content`](#content) when zero drags are under way.
@@ -144,6 +161,15 @@ If this is `None`, then this widget will always display `content` (and so the dr
 
 A group this draggable belongs to. For [`DragTarget`](/docs/controls/dragtarget) to accept incoming drag
 both `Draggable` and `DragTarget` must be in the same `group`.
+
+### `max_simultaneous_drags`
+
+The number of simultaneous drags to support.
+
+- Set this to `0` if you want to prevent the draggable from actually being dragged.
+- Set this to `1` if you want to only allow the drag source to have one item dragged at a time. In this case, consider supplying an "empty" widget for `content_when_dragging` to create the illusion of actually moving `content`.
+
+Defaults to `None` - no limit.
 
 ## `Events`
 

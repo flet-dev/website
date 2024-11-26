@@ -47,6 +47,12 @@ ft.app(main)
 
 ## Properties
 
+### `animate_cursor_opacity`
+
+Whether the cursor will animate from fully transparent to fully opaque during each cursor blink.
+
+Defaults to `True` on iOS platforms and `False` on Android platforms.
+
 ### `autocorrect`
 
 Whether to enable autocorrection.
@@ -107,6 +113,18 @@ the clear button widget.
 
 Defaults to `"Clear"`.
 
+### `clear_button_visibility_mode`
+
+Defines the visibility of the clear button based on the state of text entry. Will appear only if no `suffix` is provided.
+
+Value is of type [`VisibilityMode`](/docs/reference/types/visibilitymode) and defaults to `VisibilityMode.NEVER`.
+
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option.
+
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.HARD_EDGE`.
+
 ### `color`
 
 Text [color](/docs/reference/colors).
@@ -119,15 +137,17 @@ The value is an instance of [`Padding`](/docs/reference/types/padding) class or 
 
 ### `cursor_color`
 
-The [color](/docs/reference/colors) of TextField cursor.
+The cursor's [color](/docs/reference/colors).
 
 ### `cursor_height`
 
-Sets cursor height.
+The cursor's height.
 
 ### `cursor_radius`
 
-Sets cursor radius.
+The radius of the cursor's corners.
+
+By default, the cursor has no radius.
 
 ### `cursor_width`
 
@@ -136,6 +156,24 @@ Sets cursor width.
 ### `dense`
 
 Whether the TextField is part of a dense form (ie, uses less vertical space).
+
+### `enable_ime_personalized_learning`
+
+Whether to enable that the IME update personalized data such as typing history and user dictionary data.
+
+Has effect only on Android devices.
+
+Defaults to `True`.
+
+### `enable_interactive_selection`
+
+Whether to enable user interface affordances for changing the text selection.
+
+For example, setting this to true will enable features such as long-pressing the text field to select text and show the cut/copy/paste menu, and tapping to move the text caret.
+
+When `False`, the user cannot adjust the text selection, copy text, and paste clipboard content into the text field.
+
+Defaults to true.
 
 ### `enable_scrible`
 
@@ -155,6 +193,14 @@ Defaults to `True`.
 ### `filled`
 
 If `True` the decoration's container is filled with theme fill color.
+
+### `fit_parent_size`
+
+Whether the field's height should expand to fill its parent.
+
+When `True`, the `min_lines` and `max_lines` properties are ignored.
+
+Defaults to `False`.
 
 ### `focused_bgcolor`
 
@@ -190,6 +236,14 @@ Provides as-you-type filtering/validation in your `TextField`.
 
 Value is of type [`InputFilter`](/docs/reference/types/inputfilter).
 
+### `keyboard_brightness`
+
+The appearance of the keyboard.
+
+Has effect only on iOS devices.
+
+Value is of type [`Brightness`](/docs/reference/types/brightness) and defaults to `Brightness.LIGHT`.
+
 ### `keyboard_type`
 
 The type of keyboard to use for editing the text.
@@ -202,17 +256,19 @@ Limits a maximum number of characters that can be entered into CupertinoTextFiel
 
 ### `max_lines`
 
-The maximum number of lines to show at one time, wrapping if necessary.
-
+The maximum number of lines to show at one time, wrapping if necessary. 
 This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
 
 If this is `1` (the default), the text will not wrap, but will scroll horizontally instead.
 
+Has no effect when `fit_parent_size` is `True`.
+
 ### `min_lines`
 
-The minimum number of lines to occupy when the content spans fewer lines.
-
+The minimum number of lines to occupy when the content spans fewer lines. 
 This affects the height of the field itself and does not limit the number of lines that can be entered into the field.
+
+Has no effect when `fit_parent_size` is `True`.
 
 Defaults to `1`.
 
@@ -305,6 +361,12 @@ This flag only affects iOS versions 11 and above. As an example of what this doe
 Whether to allow the platform to automatically format quotes.
 
 This flag only affects iOS. As an example of what this does, a standard vertical double quote character will be automatically replaced by a left or right double quote depending on its position in a word. Default is `True`.
+
+### `strut_style`
+
+The strut style used for the vertical layout.
+
+Value is of type [`StrutStyle`](/docs/reference/types/strutstyle).
 
 ### `suffix`
 
