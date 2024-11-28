@@ -50,12 +50,14 @@ Note that disabling the JavaScript execution on the page may result to unexpecte
 
 Value is of type `bool`.
 
-### `javascript_enabled`
+### ~~`javascript_enabled`~~
 
 Enable or disable the JavaScript execution on the page. 
 Note that disabling the JavaScript execution on the page may result to unexpected web page behaviour.
 
 Value is of type `bool`.
+
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`enable_javascript`](#enable_javascript) instead.**
 
 ### `prevent_link`
 
