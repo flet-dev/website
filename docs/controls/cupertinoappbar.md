@@ -24,9 +24,9 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
 
     page.appbar = ft.CupertinoAppBar(
-        leading=ft.Icon(ft.icons.PALETTE),
-        bgcolor=ft.colors.SURFACE_VARIANT,
-        trailing=ft.Icon(ft.icons.WB_SUNNY_OUTLINED),
+        leading=ft.Icon(ft.Icons.PALETTE),
+        bgcolor=ft.Colors.SURFACE_VARIANT,
+        trailing=ft.Icon(ft.Icons.WB_SUNNY_OUTLINED),
       middle=ft.Text("CupertinoAppBar Example"),
     )
     page.add(ft.Text("Body!"))

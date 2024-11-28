@@ -8,6 +8,8 @@ import TabItem from '@theme/TabItem';
 
 Elevated buttons are essentially filled tonal buttons with a shadow. To prevent shadow creep, only use them when absolutely necessary, such as when the button requires visual separation from a patterned background. See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for more info.
 
+`ElevatedButton` has alias `Button` that can be used interchangebly.
+
 ## Examples
 
 [Live example](https://flet-controls-gallery.fly.dev/buttons/elevatedbutton)
@@ -24,7 +26,7 @@ def main(page: ft.Page):
     page.title = "Basic elevated buttons"
     page.add(
         ft.ElevatedButton(text="Elevated button"),
-        ft.ElevatedButton("Disabled button", disabled=True),
+        ft.Button("Disabled button", disabled=True),
     )
 
 ft.app(main)
@@ -108,9 +110,9 @@ def main(page: ft.Page):
             width=150,
             content=ft.Row(
                 [
-                    ft.Icon(name=ft.icons.FAVORITE, color="pink"),
-                    ft.Icon(name=ft.icons.AUDIOTRACK, color="green"),
-                    ft.Icon(name=ft.icons.BEACH_ACCESS, color="blue"),
+                    ft.Icon(name=ft.Icons.FAVORITE, color="pink"),
+                    ft.Icon(name=ft.Icons.AUDIOTRACK, color="green"),
+                    ft.Icon(name=ft.Icons.BEACH_ACCESS, color="blue"),
                 ],
                 alignment=ft.MainAxisAlignment.SPACE_AROUND,
             ),
@@ -155,7 +157,7 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `bgcolor`
 
-Button's background [color](/docs/reference/colors).
+Button's background [color](/docs/reference/colors). If both `bgcolor` and `style.bgcolor` are provided, `bgcolor` value will be used.
 
 ### `clip_behavior`
 
@@ -165,7 +167,7 @@ Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaul
 
 ### `color`
 
-Button's text [color](/docs/reference/colors).
+Button's text [color](/docs/reference/colors). If both `color` and `style.color` are provided, `color` value will be used.
 
 ### `content`
 
@@ -173,7 +175,7 @@ A Control representing custom button content.
 
 ### `elevation`
 
-Button's elevation.
+Button's elevation. If both `elevation` and `style.elevation` are provided, `elevation` value will be used.
 
 ### `icon`
 

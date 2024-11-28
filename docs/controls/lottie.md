@@ -81,9 +81,7 @@ Defaults to `False`.
 
 ### `src`
 
-The source of the Lottie file. Can be a URL or a local asset file. See [`Image.src`](/docs/controls/image#src) for more
-information about assets.
-
+The source of the Lottie file. Can be a URL or a local [asset file](/docs/cookbook/assets).
 ### `src_base64`
 
 The base64 encoded string of the Lottie file. Either this or `src` must be provided. If both are provided, `src_base64` will be prioritized/used.

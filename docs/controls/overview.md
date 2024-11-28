@@ -68,6 +68,9 @@ Flet controls have the following properties:
     * [`Tabs`](/docs/controls/tabs)
     * [`View`](/docs/controls/view)
 
+### `badge`
+
+The `badge` property (available in almost all controls) supports both strings and [`Badge`](/docs/reference/types/badge.md) objects.
 
 ### `bottom`
 
@@ -122,9 +125,9 @@ class Message(ft.Container):
                 ft.Text(body),
             ],
         )
-        self.border = ft.border.all(1, ft.colors.BLACK)
+        self.border = ft.border.all(1, ft.Colors.BLACK)
         self.border_radius = ft.border_radius.all(10)
-        self.bgcolor = ft.colors.GREEN_200
+        self.bgcolor = ft.Colors.GREEN_200
         self.padding = 10
         self.expand = True
         self.expand_loose = True
@@ -207,13 +210,12 @@ The `Page` control (which is the root of the tree) is an exception - it always h
 
 Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's right edge is inset from the right of the stack.
 
-### `top`
-
-Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's top edge is inset from the top of the stack.
-
 ### `tooltip`
 
 The `tooltip` property (available in almost all controls) now supports both strings and [`Tooltip`](/docs/reference/types/tooltip.md) objects.
+### `top`
+
+Effective inside [`Stack`](/docs/controls/stack) only. The distance that the child's top edge is inset from the top of the stack.
 
 ### `visible`
 

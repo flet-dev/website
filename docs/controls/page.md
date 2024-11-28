@@ -136,63 +136,18 @@ A [`FloatingActionButton`](/docs/controls/floatingactionbutton) control to displ
 
 Defines a position for the `FloatingActionButton`.
 
-Property value is [`FloatingActionButtonLocation`](/docs/reference/types/floatingactionbuttonlocation) enum. Default is `END_FLOAT`.
+Value is of type [`FloatingActionButtonLocation`](/docs/reference/types/floatingactionbuttonlocation) enum.
+Default is `FloatingActionButtonLocation.END_FLOAT`.
 
 ### `fonts`
 
-Allows importing custom fonts and use them with [`Text.font_family`](/docs/controls/text#font_family) or apply to the entire app via `theme.font_family`.
+Defines the custom fonts to be used in the application.
 
-The following font formats can be used with Flet:
+Value is a dictionary, in which the keys represent the font family name used for reference and the values
+- **Key**: The font family name used for reference.
+- **Value**: The font source, either an absolute URL or a relative path to a local asset. The following font file formats are supported `.ttc`, `.ttf` and `.otf`.
 
-* `.ttc`
-* `.ttf`
-* `.otf`
-
-The value of `fonts` property is a dictionary where key is the font family name to refer that font and the value is the URL of the font file to import.
-
-Font can be imported from external resource by providing an absolute URL or from application assets by providing relative URL and `assets_dir`.
-
-Specify `assets_dir` in `flet.app()` call to set the location of assets that should be available to the application. `assets_dir` could be a relative to your `main.py` directory or an absolute path. For example, consider the following program structure:
-
-```
-/assets
-   /fonts
-       /OpenSans-Regular.ttf
-main.py
-```
-
-Now, the following program loads "Kanit" font from GitHub and "Open Sans" from the assets. "Kanit" is set as a default app font and "Open Sans" is used for a specific Text control:
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.fonts = {
-        "Kanit": "https://raw.githubusercontent.com/google/fonts/master/ofl/kanit/Kanit-Bold.ttf",
-        "Open Sans": "/fonts/OpenSans-Regular.ttf"
-    }
-
-    page.theme = Theme(font_family="Kanit")
-
-    page.add(
-      ft.Text("This is rendered with Kanit font"),
-      ft.Text("This is Open Sans font example", font_family="Open Sans")
-    )
-
-ft.app(main, assets_dir="assets")
-```
-
-:::note
-At the moment only [**static**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#standard_or_static_fonts) fonts are supported, i.e. fonts containing only one specific width/weight/style combination, for example "Open Sans Regular" or "Roboto Bold Italic".
-
-[**Variable**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide#variable_fonts) fonts support is still [work in progress](https://github.com/flutter/flutter/issues/33709).
-
-However, if you need to use a variable font in your app you can create static "instantiations" at specific weights using [**fonttools**](https://pypi.org/project/fonttools/), then use those:
-
-    fonttools varLib.mutator ./YourVariableFont-VF.ttf wght=140 wdth=85
-
-To explore available font features (e.g. possible options for `wght`) use [**Wakamai Fondue**](https://wakamaifondue.com/beta/) online tool.
-:::
+Usage example [here](/docs/cookbook/fonts#importing-fonts).
 
 ### `height`
 
@@ -566,8 +521,8 @@ Use together with `page.bgcolor` to make a window transparent:
 import flet as ft
 
 def main(page: ft.Page):
-    page.window.bgcolor = ft.colors.TRANSPARENT
-    page.bgcolor = ft.colors.TRANSPARENT
+    page.window.bgcolor = ft.Colors.TRANSPARENT
+    page.bgcolor = ft.Colors.TRANSPARENT
     page.window.title_bar_hidden = True
     page.window.frameless = True
     page.window.left = 400

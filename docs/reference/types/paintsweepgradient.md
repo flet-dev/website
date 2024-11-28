@@ -57,7 +57,7 @@ cv.Path(
     ft.Paint(
         gradient=ft.PaintSweepGradient(
             (60, 280),
-            colors=[ft.colors.YELLOW, ft.colors.BLUE],
+            colors=[ft.Colors.YELLOW, ft.Colors.BLUE],
             start_angle=0,
             end_angle=math.pi * 2,
         ),

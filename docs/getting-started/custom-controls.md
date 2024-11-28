@@ -17,8 +17,8 @@ To create a styled control, you need to create a new class in Python that inheri
 class MyButton(ft.ElevatedButton)
     def __init__(self, text):
         super().__init__()
-        self.bgcolor = ft.colors.ORANGE_300
-        self.color = ft.colors.GREEN_800
+        self.bgcolor = ft.Colors.ORANGE_300
+        self.color = ft.Colors.GREEN_800
         self.text = text     
 ```
 Your control has a constructor to customize properties and events and pass custom data. Note that you must call `super().__init__()` in your own constructor to have access to the properties and methods of the Flet control from which you inherit.
@@ -49,8 +49,8 @@ import flet as ft
 class MyButton(ft.ElevatedButton):
     def __init__(self, text, on_click):
         super().__init__()
-        self.bgcolor = ft.colors.ORANGE_300
-        self.color = ft.colors.GREEN_800
+        self.bgcolor = ft.Colors.ORANGE_300
+        self.color = ft.Colors.GREEN_800
         self.text = text
         self.on_click = on_click
 
@@ -81,9 +81,9 @@ class Task(ft.Row):
         super().__init__()
         self.text_view = ft.Text(text)
         self.text_edit = ft.TextField(text, visible=False)
-        self.edit_button = ft.IconButton(icon=ft.icons.EDIT, on_click=self.edit)
+        self.edit_button = ft.IconButton(icon=ft.Icons.EDIT, on_click=self.edit)
         self.save_button = ft.IconButton(
-            visible=False, icon=ft.icons.SAVE, on_click=self.save
+            visible=False, icon=ft.Icons.SAVE, on_click=self.save
         )
         self.controls = [
             ft.Checkbox(),

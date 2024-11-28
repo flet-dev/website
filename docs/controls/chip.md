@@ -30,7 +30,7 @@ import flet as ft
 def main(page: ft.Page):
     def save_to_favorites_clicked(e):
         e.control.label.value = "Saved to favorites"
-        e.control.leading = ft.Icon(ft.icons.FAVORITE_OUTLINED)
+        e.control.leading = ft.Icon(ft.Icons.FAVORITE_OUTLINED)
         e.control.disabled = True
         page.update()
 
@@ -40,17 +40,17 @@ def main(page: ft.Page):
 
     save_to_favourites = ft.Chip(
         label=ft.Text("Save to favourites"),
-        leading=ft.Icon(ft.icons.FAVORITE_BORDER_OUTLINED),
-        bgcolor=ft.colors.GREEN_200,
-        disabled_color=ft.colors.GREEN_100,
+        leading=ft.Icon(ft.Icons.FAVORITE_BORDER_OUTLINED),
+        bgcolor=ft.Colors.GREEN_200,
+        disabled_color=ft.Colors.GREEN_100,
         autofocus=True,
         on_click=save_to_favorites_clicked,
     )
 
     open_in_maps = ft.Chip(
         label=ft.Text("9 min walk"),
-        leading=ft.Icon(ft.icons.MAP_SHARP),
-        bgcolor=ft.colors.GREEN_200,
+        leading=ft.Icon(ft.Icons.MAP_SHARP),
+        bgcolor=ft.Colors.GREEN_200,
         on_click=open_google_maps,
     )
 
@@ -77,7 +77,7 @@ def main(page: ft.Page):
     def amenity_selected(e):
         page.update()
 
-    title = ft.Row([ft.Icon(ft.icons.HOTEL_CLASS), ft.Text("Amenities")])
+    title = ft.Row([ft.Icon(ft.Icons.HOTEL_CLASS), ft.Text("Amenities")])
     amenities = ["Washer / Dryer", "Ramp access", "Dogs OK", "Cats OK", "Smoke-free"]
     amenity_chips = []
 
@@ -85,8 +85,8 @@ def main(page: ft.Page):
         amenity_chips.append(
             ft.Chip(
                 label=ft.Text(amenity),
-                bgcolor=ft.colors.GREEN_200,
-                disabled_color=ft.colors.GREEN_100,
+                bgcolor=ft.Colors.GREEN_200,
+                disabled_color=ft.Colors.GREEN_100,
                 autofocus=True,
                 on_select=amenity_selected,
             )

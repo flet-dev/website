@@ -3,6 +3,28 @@ title: Icons
 sidebar_label: Icons
 ---
 
+## Methods
+
+### `random()`
+
+Returns a random icon, with optional exclusions and weights.
+
+**Method Parameters:**
+* `exclude` - A list of icons members to exclude from the random selection.
+* `weights` - A dictionary mapping icon members to their respective weights for weighted random selection.
+
+## Example
+    
+```python
+>>> import flet as ft
+>>> ft.Icons.ABC
+>>> ft.CupertinoIcons.BACK
+>>> ft.Icons.random()
+>>> ft.CupertinoIcons.random()
+>>> ft.Icons.random(exclude=[ft.Icons.FAVORITE, ft.Icons.SCHOOL], weights={ft.Icons.SCHOOL: 150, ft.Icons.ADJUST: 5})
+>>> ft.CupertinoIcons.random(exclude=[ft.CupertinoIcons.CAMERA, ft.CupertinoIcons.TABLE], weights={ft.CupertinoIcons.TABLE: 150, ft.CupertinoIcons.PENCIL: 5})
+```
+
 ## Material Icons
 
 **A-Z Icon Index**

@@ -150,7 +150,7 @@ def main(page: ft.Page):
                 message="This is a complex tooltip",
                 padding=20,
                 border_radius=10,
-                text_style=ft.TextStyle(size=20, color=ft.colors.WHITE),
+                text_style=ft.TextStyle(size=20, color=ft.Colors.WHITE),
                 gradient=ft.LinearGradient(
                     begin=ft.alignment.top_left,
                     end=ft.alignment.Alignment(0.8, 1),

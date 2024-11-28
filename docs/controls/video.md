@@ -124,7 +124,7 @@ def main(page: ft.Page):
             expand=True,
             playlist=sample_media[0:2],
             playlist_mode=ft.PlaylistMode.LOOP,
-            fill_color=ft.colors.BLUE_400,
+            fill_color=ft.Colors.BLUE_400,
             aspect_ratio=16/9,
             volume=100,
             autoplay=False,

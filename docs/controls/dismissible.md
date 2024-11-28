@@ -62,8 +62,8 @@ def main(page):
                 ft.Dismissible(
                     content=ft.ListTile(title=ft.Text(f"Item {i}")),
                     dismiss_direction=ft.DismissDirection.HORIZONTAL,
-                    background=ft.Container(bgcolor=ft.colors.GREEN),
-                    secondary_background=ft.Container(bgcolor=ft.colors.RED),
+                    background=ft.Container(bgcolor=ft.Colors.GREEN),
+                    secondary_background=ft.Container(bgcolor=ft.Colors.RED),
                     on_dismiss=handle_dismiss,
                     on_update=handle_update,
                     on_confirm_dismiss=handle_confirm_dismiss,

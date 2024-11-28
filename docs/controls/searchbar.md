@@ -41,7 +41,7 @@ def main(page):
 
     anchor = ft.SearchBar(
         view_elevation=4,
-        divider_color=ft.colors.AMBER,
+        divider_color=ft.Colors.AMBER,
         bar_hint_text="Search colors...",
         view_hint_text="Choose a color from the suggestions...",
         on_change=handle_change,
@@ -164,7 +164,7 @@ Defaults to a back button which closes/pops the search view.
 
 Defines the shape of the search view.
 
-Value is of type [`BoxShape`](/docs/reference/types/boxshape) defaults to `BoxShape.RECTANGLE`.
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
 
 ### `view_side`
 

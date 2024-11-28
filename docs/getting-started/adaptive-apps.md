@@ -21,21 +21,21 @@ def main(page):
         actions=[
             ft.IconButton(ft.cupertino_icons.ADD, style=ft.ButtonStyle(padding=0))
         ],
-        bgcolor=ft.colors.with_opacity(0.04, ft.cupertino_colors.SYSTEM_BACKGROUND),
+        bgcolor=ft.Colors.with_opacity(0.04, ft.CupertinoColors.SYSTEM_BACKGROUND),
     )
 
     page.navigation_bar = ft.NavigationBar(
         destinations=[
-            ft.NavigationBarDestination(icon=ft.icons.EXPLORE, label="Explore"),
-            ft.NavigationBarDestination(icon=ft.icons.COMMUTE, label="Commute"),
+            ft.NavigationBarDestination(icon=ft.Icons.EXPLORE, label="Explore"),
+            ft.NavigationBarDestination(icon=ft.Icons.COMMUTE, label="Commute"),
             ft.NavigationBarDestination(
-                icon=ft.icons.BOOKMARK_BORDER,
-                selected_icon=ft.icons.BOOKMARK,
+                icon=ft.Icons.BOOKMARK_BORDER,
+                selected_icon=ft.Icons.BOOKMARK,
                 label="Bookmark",
             ),
         ],
         border=ft.Border(
-            top=ft.BorderSide(color=ft.cupertino_colors.SYSTEM_GREY2, width=0)
+            top=ft.BorderSide(color=ft.CupertinoColors.SYSTEM_GREY2, width=0)
         ),
     )
 
@@ -308,17 +308,17 @@ def main(page):
         destinations=[
             AdaptiveNavigationBarDestination(
                 ios_icon=ft.cupertino_icons.PERSON_3_FILL,
-                android_icon=ft.icons.PERSON,
+                android_icon=ft.Icons.PERSON,
                 label="Contacts",
             ),
             AdaptiveNavigationBarDestination(
                 ios_icon=ft.cupertino_icons.CHAT_BUBBLE_2,
-                android_icon=ft.icons.CHAT,
+                android_icon=ft.Icons.CHAT,
                 label="Chats",
             ),
             AdaptiveNavigationBarDestination(
                 ios_icon=ft.cupertino_icons.SETTINGS,
-                android_icon=ft.icons.SETTINGS,
+                android_icon=ft.Icons.SETTINGS,
                 label="Settings",
             ),
         ],

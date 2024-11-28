@@ -33,7 +33,7 @@ def main(page):
                         ),
                         ft.ListTile(title=ft.Text("One-line dense list tile"), dense=True),
                         ft.ListTile(
-                            leading=ft.Icon(ft.icons.SETTINGS),
+                            leading=ft.Icon(ft.Icons.SETTINGS),
                             title=ft.Text("One-line selected list tile"),
                             selected=True,
                         ),
@@ -44,7 +44,7 @@ def main(page):
                         ft.ListTile(
                             title=ft.Text("One-line with trailing control"),
                             trailing=ft.PopupMenuButton(
-                                icon=ft.icons.MORE_VERT,
+                                icon=ft.Icons.MORE_VERT,
                                 items=[
                                     ft.PopupMenuItem(text="Item 1"),
                                     ft.PopupMenuItem(text="Item 2"),
@@ -52,10 +52,10 @@ def main(page):
                             ),
                         ),
                         ft.ListTile(
-                            leading=ft.Icon(ft.icons.ALBUM),
+                            leading=ft.Icon(ft.Icons.ALBUM),
                             title=ft.Text("One-line with leading and trailing controls"),
                             trailing=ft.PopupMenuButton(
-                                icon=ft.icons.MORE_VERT,
+                                icon=ft.Icons.MORE_VERT,
                                 items=[
                                     ft.PopupMenuItem(text="Item 1"),
                                     ft.PopupMenuItem(text="Item 2"),
@@ -63,11 +63,11 @@ def main(page):
                             ),
                         ),
                         ft.ListTile(
-                            leading=ft.Icon(ft.icons.SNOOZE),
+                            leading=ft.Icon(ft.Icons.SNOOZE),
                             title=ft.Text("Two-line with leading and trailing controls"),
                             subtitle=ft.Text("Here is a second title."),
                             trailing=ft.PopupMenuButton(
-                                icon=ft.icons.MORE_VERT,
+                                icon=ft.Icons.MORE_VERT,
                                 items=[
                                     ft.PopupMenuItem(text="Item 1"),
                                     ft.PopupMenuItem(text="Item 2"),

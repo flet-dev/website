@@ -56,7 +56,7 @@ def main(page):
                 ft.Text("Selected Fruit:", size=23),
                 ft.TextButton(
                     content=ft.Text(value=fruits[3], ref=selected_fruit_ref, size=23),
-                    style=ft.ButtonStyle(color=ft.colors.BLUE),
+                    style=ft.ButtonStyle(color=ft.Colors.BLUE),
                     on_click=lambda e: page.open(
                         ft.CupertinoBottomSheet(
                             cupertino_picker,

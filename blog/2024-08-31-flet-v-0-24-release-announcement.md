@@ -126,7 +126,7 @@ def main(page: ft.Page):
     def print_three(e):
         print("3")
     c = ft.Container(
-        bgcolor=ft.colors.random_color(),
+        bgcolor=ft.Colors.random_color(),
         width=300,
         height=300,
     )
@@ -155,7 +155,7 @@ def main(page: ft.Page):
             print_three(e)
     
     c = ft.Container(
-            bgcolor=ft.colors.random_color(),
+            bgcolor=ft.Colors.random_color(),
             width=300,
             height=300,
             on_tap_down=print_all,

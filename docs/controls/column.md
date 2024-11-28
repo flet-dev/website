@@ -34,7 +34,7 @@ def main(page: ft.Page):
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
-                    bgcolor=ft.colors.AMBER,
+                    bgcolor=ft.Colors.AMBER,
                     border_radius=ft.border_radius.all(5),
                 )
             )
@@ -85,7 +85,7 @@ def main(page: ft.Page):
                     alignment=ft.alignment.center,
                     width=30,
                     height=30,
-                    bgcolor=ft.colors.AMBER,
+                    bgcolor=ft.Colors.AMBER,
                     border_radius=ft.border_radius.all(5),
                 )
             )
@@ -122,7 +122,7 @@ def main(page: ft.Page):
                 width_slider,
             ]
         ),
-        ft.Container(content=col, bgcolor=ft.colors.AMBER_100),
+        ft.Container(content=col, bgcolor=ft.Colors.AMBER_100),
     )
 
 ft.app(main)
@@ -150,7 +150,7 @@ def main(page: ft.Page):
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
-                    bgcolor=ft.colors.AMBER_500,
+                    bgcolor=ft.Colors.AMBER_500,
                 )
             )
         return items
@@ -161,7 +161,7 @@ def main(page: ft.Page):
                 ft.Text(str(align), size=10),
                 ft.Container(
                     content=ft.Column(items(3), alignment=align),
-                    bgcolor=ft.colors.AMBER_100,
+                    bgcolor=ft.Colors.AMBER_100,
                     height=400,
                 ),
             ]
@@ -207,7 +207,7 @@ def main(page: ft.Page):
                     alignment=ft.alignment.center,
                     width=50,
                     height=50,
-                    bgcolor=ft.colors.AMBER_500,
+                    bgcolor=ft.Colors.AMBER_500,
                 )
             )
         return items
@@ -222,7 +222,7 @@ def main(page: ft.Page):
                         alignment=ft.MainAxisAlignment.START,
                         horizontal_alignment=align,
                     ),
-                    bgcolor=ft.colors.AMBER_100,
+                    bgcolor=ft.Colors.AMBER_100,
                     width=100,
                 ),
             ]
@@ -301,15 +301,15 @@ def main(page: ft.Page):
     page.theme = ft.Theme(
         scrollbar_theme=ft.ScrollbarTheme(
             track_color={
-                ft.ControlState.HOVERED: ft.colors.AMBER,
-                ft.ControlState.DEFAULT: ft.colors.TRANSPARENT,
+                ft.ControlState.HOVERED: ft.Colors.AMBER,
+                ft.ControlState.DEFAULT: ft.Colors.TRANSPARENT,
             },
             track_visibility=True,
-            track_border_color=ft.colors.BLUE,
+            track_border_color=ft.Colors.BLUE,
             thumb_visibility=True,
             thumb_color={
-                ft.ControlState.HOVERED: ft.colors.RED,
-                ft.ControlState.DEFAULT: ft.colors.GREY_300,
+                ft.ControlState.HOVERED: ft.Colors.RED,
+                ft.ControlState.DEFAULT: ft.Colors.GREY_300,
             },
             thickness=30,
             radius=15,

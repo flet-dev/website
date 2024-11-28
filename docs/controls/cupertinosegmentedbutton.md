@@ -26,7 +26,7 @@ def main(page):
     page.add(
         ft.CupertinoSegmentedButton(
             selected_index=1,
-            selected_color=ft.colors.RED_400,
+            selected_color=ft.Colors.RED_400,
             on_change=lambda e: print(f"selected_index: {e.data}"),
             controls=[
                 ft.Text("One"),

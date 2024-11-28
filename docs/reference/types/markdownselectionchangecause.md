@@ -5,6 +5,9 @@ sidebar_label: MarkdownSelectionChangeCause
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`TextSelectionChangeCause`](/docs/reference/types/textselectionchangecause)
+instead.**
+
 `MarkdownSelectionChangeCause` enum has the following values:
 
 ### `DOUBLE_TAP`

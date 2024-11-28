@@ -425,7 +425,7 @@ def main(page: ft.Page):
     page.add(
         ft.Stack(
             [
-                ft.Container(height=200, width=200, bgcolor=ft.colors.BLUE_100),
+                ft.Container(height=200, width=200, bgcolor=ft.Colors.BLUE_100),
                 Spinkit(opacity=0.5, tooltip="Spinkit tooltip", top=0, left=0),
             ]
         )
@@ -563,13 +563,13 @@ def main(page: ft.Page):
     page.add(
         ft.Stack(
             [
-                ft.Container(height=200, width=200, bgcolor=ft.colors.BLUE_100),
+                ft.Container(height=200, width=200, bgcolor=ft.Colors.BLUE_100),
                 Spinkit(
                     opacity=0.5,
                     tooltip="Spinkit tooltip",
                     top=0,
                     left=0,
-                    color=ft.colors.PURPLE,
+                    color=ft.Colors.PURPLE,
                     size=150,
                 ),
             ]

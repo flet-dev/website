@@ -26,22 +26,22 @@ def main(page: ft.Page):
         ft.Text(
             "Size 40, w100",
             size=40,
-            color=ft.colors.WHITE,
-            bgcolor=ft.colors.BLUE_600,
+            color=ft.Colors.WHITE,
+            bgcolor=ft.Colors.BLUE_600,
             weight=ft.FontWeight.W_100,
         ),
         ft.Text(
             "Size 50, Normal",
             size=50,
-            color=ft.colors.WHITE,
-            bgcolor=ft.colors.ORANGE_800,
+            color=ft.Colors.WHITE,
+            bgcolor=ft.Colors.ORANGE_800,
             weight=ft.FontWeight.NORMAL,
         ),
         ft.Text(
             "Size 60, Bold, Italic",
             size=50,
-            color=ft.colors.WHITE,
-            bgcolor=ft.colors.GREEN_700,
+            color=ft.Colors.WHITE,
+            bgcolor=ft.Colors.GREEN_700,
             weight=ft.FontWeight.BOLD,
             italic=True,
         ),
@@ -154,7 +154,7 @@ def main(page: ft.Page):
             spans=[
                 ft.TextSpan(
                     "here goes italic",
-                    ft.TextStyle(italic=True, size=20, color=ft.colors.GREEN),
+                    ft.TextStyle(italic=True, size=20, color=ft.Colors.GREEN),
                     spans=[
                         ft.TextSpan(
                             "bold and italic",
@@ -185,7 +185,7 @@ def main(page: ft.Page):
                     "underlined red wavy",
                     ft.TextStyle(
                         decoration=ft.TextDecoration.UNDERLINE,
-                        decoration_color=ft.colors.RED,
+                        decoration_color=ft.Colors.RED,
                         decoration_style=ft.TextDecorationStyle.WAVY,
                     ),
                     on_enter=lambda e: print(f"Entered span: {e.control.uid}"),
@@ -219,7 +219,7 @@ def main(page: ft.Page):
     )
 
     def highlight_link(e):
-        e.control.style.color = ft.colors.BLUE
+        e.control.style.color = ft.Colors.BLUE
         e.control.update()
 
     def unhighlight_link(e):
@@ -272,7 +272,7 @@ def main(page: ft.Page):
                                 size=40,
                                 weight=ft.FontWeight.BOLD,
                                 foreground=ft.Paint(
-                                    color=ft.colors.BLUE_700,
+                                    color=ft.Colors.BLUE_700,
                                     stroke_width=6,
                                     stroke_join=ft.StrokeJoin.ROUND,
                                     style=ft.PaintingStyle.STROKE,
@@ -288,7 +288,7 @@ def main(page: ft.Page):
                             ft.TextStyle(
                                 size=40,
                                 weight=ft.FontWeight.BOLD,
-                                color=ft.colors.GREY_300,
+                                color=ft.Colors.GREY_300,
                             ),
                         ),
                     ],
@@ -318,7 +318,7 @@ def main(page: ft.Page):
                         weight=ft.FontWeight.BOLD,
                         foreground=ft.Paint(
                             gradient=ft.PaintLinearGradient(
-                                (0, 20), (150, 20), [ft.colors.RED, ft.colors.YELLOW]
+                                (0, 20), (150, 20), [ft.Colors.RED, ft.Colors.YELLOW]
                             )
                         ),
                     ),
@@ -342,46 +342,7 @@ Text foreground [color](/docs/reference/colors).
 
 ### `font_family`
 
-System or custom font family to render text with. Check [`page.fonts`](/docs/controls/page#fonts) for instructions on how to import and use custom fonts in your application.
-
-#### Using system fonts
-
-You can use the fonts installed on your computer, e.g. "Consolas", "Arial", "Verdana", "Tahoma", etc. For example:
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(
-        ft.Text("This text is rendered with Consolas font", font_family="Consolas")
-    )
-
-ft.app(main)
-```
-
-There is one limitation though - system fonts cannot be used in a Flet web app with "CanvasKit" renderer.
-
-Flet web app can render its UI with one of these renderers:
-
-- **HTML renderer** - uses a combination of HTML elements, CSS, Canvas elements, and SVG elements. This renderer has a smaller download size.
-- **CanvasKit renderer** - this renderer is fully consistent with Flutter mobile and desktop, has faster performance with higher widget density, but adds about 2MB in download size.
-
-By default, Flet uses `CanvasKit` renderer for both desktop and mobile browsers.
-
-You can explicitly set what renderer to use when running a Flet program:
-
-```python
-# ...
-ft.app(main, view=ft.AppView.WEB_BROWSER, web_renderer=ft.WebRenderer.HTML)
-```
-
-Now, when you run the same program you'll see "Consolas" font is used.
-
-Supported `web_renderer` values:
-
-- `canvaskit` (default) - prioritizing performance and pixel-perfect consistency on both desktop and mobile browsers.
-- `html` - optimizing download size over performance on both desktop and mobile browsers.
-- `auto` - optimizing for download size on mobile browsers and optimizing for performance on desktop browsers.
+System or custom font family to render text with. See [`Fonts`](/docs/controls/page#fonts) cookbook guide for instructions on how to import and use custom fonts in your application.
 
 ### `italic`
 

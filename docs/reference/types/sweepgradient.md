@@ -52,7 +52,7 @@ Container(
         center=ft.alignment.center,
         start_angle=0.0,
         end_angle=math.pi * 2,
-       colors=[ft.colors.YELLOW, ft.colors.BLUE],
+       colors=[ft.Colors.YELLOW, ft.Colors.BLUE],
     ),
     width=150,
     height=150,

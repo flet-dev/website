@@ -225,7 +225,7 @@ Supported permissions:
 
 ## Control over app compilation and cleanup
 
-`flet build` command is not longer compiling app `.py` files into `.pyc` by default which allows you to avoid (defer?) discovery of any syntax errors in your app and complete the packaging.
+`flet build` command is no longer compiling app `.py` files into `.pyc` by default which allows you to avoid (defer?) discovery of any syntax errors in your app and complete the packaging.
 
 You can control the compilation and cleanup with the following new options:
 
@@ -250,8 +250,8 @@ Flet developers have been asking where to store application data, such as upload
 
 This release introduce two environment variables that are available in your Flet apps:
 
-* `FLET_APP_DATA` - directory for storing application data that is preserved between app updates. That directory is already pre-created.
-* `FLET_APP_TEMP` - directory for temporary application files, i.e. cache. That directory is already pre-created.
+* `FLET_APP_STORAGE_DATA` - directory for storing application data that is preserved between app updates. That directory is already pre-created.
+* `FLET_APP_STORAGE_TEMP` - directory for temporary application files, i.e. cache. That directory is already pre-created.
 
 For example, data folder path can be read in your app as:
 
@@ -259,16 +259,12 @@ For example, data folder path can be read in your app as:
 import os
 
 # it's `None` when running the app in web mode
-os.getenv("FLET_APP_DATA")
+data_dir = os.getenv("FLET_APP_STORAGE_DATA")
 ```
 
-To make it work in development mode define those variables to suitable locations on your drive, for example:
-
-```
-export FLET_APP_DATA=/path/to/my-app/data
-export FLET_APP_TEMP=$TMPDIR
-flet run my-app
-```
+:::note
+`flet run` command creates data and temp directories and sets `FLET_APP_STORAGE_DATA` and `FLET_APP_STORAGE_TEMP` to their paths.
+:::
 
 ## Deep linking configuration
 

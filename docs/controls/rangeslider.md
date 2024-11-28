@@ -30,9 +30,9 @@ def main(page: ft.Page):
         start_value=10,
         divisions=10,
         end_value=20,
-        inactive_color=ft.colors.GREEN_300,
-        active_color=ft.colors.GREEN_700,
-        overlay_color=ft.colors.GREEN_100,
+        inactive_color=ft.Colors.GREEN_300,
+        active_color=ft.Colors.GREEN_700,
+        overlay_color=ft.Colors.GREEN_100,
         label="{value}%",
     )
 
