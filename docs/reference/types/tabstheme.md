@@ -46,3 +46,22 @@ The color of unselected tab labels.
 Defines the ink response focus, hover, and splash colors. If specified, it is resolved against one
 of `ControlState.FOCUSED`, `ControlState.HOVERED`, and `ControlState.PRESSED`.
 
+## Example
+    
+```python
+page.theme = ft.Theme(
+    tabs_theme=ft.TabsTheme(
+        divider_color=ft.Colors.BLUE,
+        indicator_color=ft.Colors.RED,
+        indicator_tab_size=True,
+        label_color=ft.Colors.GREEN,
+        unselected_label_color=ft.Colors.AMBER,
+        overlay_color={
+            ft.MaterialState.FOCUSED: ft.Colors.with_opacity(0.2, ft.Colors.GREEN),
+            ft.MaterialState.DEFAULT: ft.Colors.with_opacity(0.2, ft.Colors.PINK),
+        },
+    )
+)
+```
+
+<img src="/img/blog/theme-scrolling/tabs-theme.png"  className="screenshot-60" />

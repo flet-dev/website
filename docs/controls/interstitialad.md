@@ -3,100 +3,10 @@ title: InterstitialAd
 sidebar_label: InterstitialAd
 ---
 
-Displays an interstitial ad.
+Full-screen ads that cover the interface of an app until closed by the user. 
+They're best used at natural pauses in the flow of an app's execution, such as in between levels of a game or just after completing a task.
 
-:::info Packaging
-To build your Flet app that uses `InterstitialAd` control add `--include-packages flet_ads` to `flet build` command, for
-example:
-
-```
-flet build apk --include-packages flet_ads
-```
-:::
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-## Examples
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-import flet.ads as ads
-
-
-def main(page: ft.Page):
-    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-
-    id_interstitial = (
-        "ca-app-pub-3940256099942544/1033173712"
-        if page.platform == ft.PagePlatform.ANDROID
-        else "ca-app-pub-3940256099942544/4411468910"
-    )
-
-    id_banner = (
-        "ca-app-pub-3940256099942544/6300978111"
-        if page.platform == ft.PagePlatform.ANDROID
-        else "ca-app-pub-3940256099942544/2934735716"
-    )
-
-    def handle_interstitial_close(e):
-        nonlocal iad
-        print("InterstitialAd closed")
-        page.overlay.remove(e.control)
-        page.overlay.append(iad := get_new_interstitial_ad())
-        page.update()
-
-    def get_new_interstitial_ad():
-        return ads.InterstitialAd(
-            unit_id=id_interstitial,
-            on_load=lambda e: print("InterstitialAd loaded"),
-            on_error=lambda e: print("InterstitialAd error", e.data),
-            on_open=lambda e: print("InterstitialAd opened"),
-            on_close=handle_interstitial_close,
-            on_impression=lambda e: print("InterstitialAd impression"),
-            on_click=lambda e: print("InterstitialAd clicked"),
-        )
-
-    def display_new_banner_ad():
-        page.add(
-            ft.Container(
-                content=ads.BannerAd(
-                    unit_id=id_banner,
-                    on_click=lambda e: print("BannerAd clicked"),
-                    on_load=lambda e: print("BannerAd loaded"),
-                    on_error=lambda e: print("BannerAd error", e.data),
-                    on_open=lambda e: print("BannerAd opened"),
-                    on_close=lambda e: print("BannerAd closed"),
-                    on_impression=lambda e: print("BannerAd impression"),
-                    on_will_dismiss=lambda e: print("BannerAd will dismiss"),
-                ),
-                width=320,
-                height=50,
-                bgcolor=ft.colors.TRANSPARENT,
-            )
-        )
-
-    page.overlay.append(iad := get_new_interstitial_ad())
-    page.appbar = ft.AppBar(
-        adaptive=True,
-        title=ft.Text("Mobile Ads Playground"),
-        bgcolor=ft.colors.LIGHT_BLUE_300,
-    )
-    page.add(
-        ft.OutlinedButton("Show InterstitialAd", on_click=lambda e: iad.show()),
-        ft.OutlinedButton("Show BannerAd", on_click=lambda e: display_new_banner_ad()),
-    )
-
-
-ft.app(main)
-```
-
-  </TabItem>
-</Tabs>
-<img src="/img/docs/controls/ads/ads.gif" className="screenshot-20" />
+See [this](/docs/controls/ads) for more information.
 
 ## Properties
 
@@ -104,4 +14,45 @@ ft.app(main)
 
 The ad unit ID to be used for the ad.
 
+## Methods
+
+### `show()`
+
+Shows the interstitial ad. The interstitial ad must be added to the [`page.overlay`](/docs/controls/page#overlay) before calling this method.
+
+:::note 
+Interstitial ads require user input to be dismissed. They can't be dismissed programmatically.
+
+Also, interstitial ads can only be shown once. Subsequent calls to show will trigger `on_error`. 
+To show an `InterstitialAd` again, you need to create a new instance. ([example](/docs/controls/ads#examples))
+:::
+
 ## Events
+
+### `on_click`
+
+Fires when the ad is clicked.
+
+### `on_close`
+
+Fires when the full screen view has been closed. 
+
+You can resume anything paused while handling `on_open`.
+
+### `on_error`
+
+Fires when an error occurs on the ad.
+
+### `on_impression`
+
+Fires when an impression occurs on the ad.
+
+### `on_load`
+
+Fires when the ad is loaded.
+
+### `on_open`
+
+Fires when the ad is clicked. A full screen view/overlay (e.g. a browser window) is presented in response to the user clicking on an ad. 
+
+You may want to pause animations and time sensitive interactions.

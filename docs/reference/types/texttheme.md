@@ -7,6 +7,8 @@ import TabItem from '@theme/TabItem';
 
 Customizes [`Text`](/docs/controls/text) styles.
 
+Material 3 design [defines](http://localhost:3000/docs/controls/text#pre-defined-theme-text-styles) 5 groups of text styles with 3 sizes in each group: "Display", "Headline", "Title", "Label" and "Body" which are used across Flet controls. 
+
 `TextTheme` class has the following properties:
 
 #### `body_large`
@@ -88,3 +90,20 @@ Value is of type [`TextStyle`](/docs/reference/types/textstyle).
 Smallest of the title styles.
 
 Value is of type [`TextStyle`](/docs/reference/types/textstyle).
+
+## Examples
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    page.theme = ft.Theme(
+        text_theme=ft.TextTheme(body_medium=ft.TextStyle(color=ft.Colors.GREEN))
+    )
+
+    page.add(ft.Text("Hello, green world!"))  # Text uses Body Medium style by default
+
+ft.app(main)
+```
+
+<img src="/img/blog/theme-scrolling/text-theme.png"  className="screenshot-50" />

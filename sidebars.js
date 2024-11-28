@@ -170,10 +170,8 @@ module.exports = {
               type: "category",
               label: "Ads",
               link: {
-                type: "generated-index",
-                description:
-                  "The following ads controls are available:",
-                slug: "/ads",
+                type: "doc",
+                id: "controls/ads",
               },
               items: [
                 "controls/bannerad",
@@ -421,8 +419,8 @@ module.exports = {
           type: "category",
           label: "Types",
           link: {
-            type: "doc",
-            id: "reference/types/index",
+            type: "generated-index",
+            slug: "/types"
           },
           items: [
             {
@@ -636,6 +634,8 @@ module.exports = {
                 "reference/types/visibilitymode",
                 "reference/types/visualdensity",
                 "reference/types/webrenderer",
+                "reference/types/webviewloglevelseverity",
+                "reference/types/webviewrequestmethod",
                 "reference/types/windoweventtype",
               ],
             },
@@ -685,6 +685,9 @@ module.exports = {
                 "reference/types/tapevent",
                 "reference/types/timepickerentrymodechangeevent",
                 "reference/types/viewpopevent",
+                "reference/types/webviewconsolemessageevent",
+                "reference/types/webviewjavascriptevent",
+                "reference/types/webviewscrollevent",
                 "reference/types/windowevent",
                 "reference/types/windowresizeevent",
               ],

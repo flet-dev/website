@@ -64,3 +64,28 @@ The preferred smallest size the scrollbar thumb can shrink to when the total scr
 
 Whether the Scrollbar should be interactive and respond to dragging on the thumb, or tapping in the track area. When `False`, the scrollbar will not respond to gesture or hover events, and will allow to click through it. Defaults to `True` when `None`, unless on Android, which will default to `False` when `None`.
 
+## Example
+
+```python
+page.theme = ft.Theme(
+    scrollbar_theme=ft.ScrollbarTheme(
+        track_color={
+            ft.MaterialState.HOVERED: ft.Colors.AMBER,
+            ft.MaterialState.DEFAULT: ft.Colors.TRANSPARENT,
+        },
+        track_visibility=True,
+        track_border_color=ft.Colors.BLUE,
+        thumb_visibility=True,
+        thumb_color={
+            ft.MaterialState.HOVERED: ft.Colors.RED,
+            ft.MaterialState.DEFAULT: ft.Colors.GREY_300,
+        },
+        thickness=30,
+        radius=15,
+        main_axis_margin=5,
+        cross_axis_margin=10,
+    )
+)
+```
+
+<img src="/img/docs/controls/column/column-scroll-to.png"  className="screenshot-60" />
