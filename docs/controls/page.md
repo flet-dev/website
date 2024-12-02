@@ -20,12 +20,6 @@ import TabItem from '@theme/TabItem';
 
 An [`AppBar`](/docs/controls/appbar) control to display at the top of the Page.
 
-### ~~`banner`~~
-
-A [`Banner`](/docs/controls/banner) control to display at the top of the Page.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(banner)`](#overlay) instead.**
-
 ### `bgcolor`
 
 Background color of the Page.
@@ -35,12 +29,6 @@ A color value could be a hex value in `#ARGB` format (e.g. `#FFCC0000`), `#RGB` 
 ### `bottom_appbar`
 
 [`BottomAppBar`](/docs/controls/bottomappbar) control to display at the bottom of the Page. If both [`bottom_appbar`](#bottom_appbar) and [`navigation_bar`](#navigation_bar) properties are provided, `NavigationBar` will be displayed.
-
-### ~~`bottom_sheet`~~
-
-[`BottomSheet`](/docs/controls/bottomsheet) control to display.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(bottom_sheet)`](#overlay) instead.**
 
 ### `browser_context_menu`
 
@@ -113,12 +101,6 @@ Value is of type [`BoxDecoration`](/docs/reference/types/boxdecoration).
 ### `design`
 
 Reserved for future use.
-
-### ~~`dialog`~~
-
-An [`AlertDialog`](/docs/controls/alertdialog) control to display.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(dialog)`](#overlay) instead.**
 
 ### `drawer`
 
@@ -393,51 +375,9 @@ A simple key-value storage for session data.
 
 A unique ID of user's session. This property is read-only.
 
-### ~~`snack_bar`~~
-
-A [`SnackBar`](/docs/controls/snackbar) control to display.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(snack_bar)`](#overlay) instead.**
-
 ### `spacing`
 
 Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
-
-### ~~`splash`~~
-
-A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-from time import sleep
-import flet as ft
-
-
-def main(page: ft.Page):
-    progress_bar = ft.ProgressBar(visible=False)
-    page.overlay.append(progress_bar)
-
-    def button_click(e):
-        progress_bar.visible = True
-        e.control.disabled = True
-        page.update()
-        sleep(3)
-        progress_bar.visible = False
-        e.control.disabled = False
-        page.update()
-
-    page.add(ft.ElevatedButton("Do some lengthy task!", on_click=button_click))
-
-
-ft.app(main)
-```
-
-</TabItem>
-</Tabs>
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(splash)`](#overlay) instead.**
 
 ### `show_semantics_debugger`
 
@@ -503,214 +443,6 @@ A class with properties/methods/events to control app's native OS window.
 
 Value is of type [`Window`](/docs/reference/types/window).
 
-### ~~`window_always_on_top`~~
-
-🖥️ Desktop only. Sets whether the window should show always on top of other windows.
-
-Defaults to `False`.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.always_on_top`](#window) instead.**
-
-### ~~`window_bgcolor`~~
-
-🖥️ Desktop only. Sets background color of an application window.
-
-Use together with `page.bgcolor` to make a window transparent:
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.window.bgcolor = ft.Colors.TRANSPARENT
-    page.bgcolor = ft.Colors.TRANSPARENT
-    page.window.title_bar_hidden = True
-    page.window.frameless = True
-    page.window.left = 400
-    page.window.top = 200
-    page.add(ft.ElevatedButton("I'm a floating button!"))
-
-ft.app(main)
-```
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.bgcolor`](#window) instead.**
-
-### ~~`window_focused`~~
-
-🖥️ Desktop only. Set to `True` to focus a native OS window with a Flet app.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.focused`](#window) instead.**
-
-### ~~`window_frameless`~~
-
-🖥️ Desktop only. Set to `True` to make app window frameless.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.frameless`](#window) instead.**
-
-### ~~`window_full_screen`~~
-
-🖥️ Desktop only. Set to `True` to switch app's native OS window to a fullscreen mode.
-
-Defaults to `False`.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.full_screen`](#window) instead.**
-
-### ~~`window_height`~~
-
-🖥️ Desktop only. Get or set the height of a native OS window containing Flet app.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.height`](#window) instead.**
-
-### ~~`window_left`~~
-
-🖥️ Desktop only. Get or set a horizontal position of a native OS window - a distance in virtual pixels from the left edge of the screen.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.left`](#window) instead.**
-
-### ~~`window_maximizable`~~
-
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Maximize" button.
-
-Defaults to `True`.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.maximizable`](#window) instead.**
-
-### ~~`window_maximized`~~
-
-🖥️ Desktop only. `True` if a native OS window containing Flet app is maximized; otherwise `False`. Set this property to `True` to programmatically maximize the window and set it to `False` to unmaximize it.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.maximized`](#window) instead.**
-
-### ~~`window_max_height`~~
-
-🖥️ Desktop only. Get or set the maximum height of a native OS window containing Flet app.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.max_height`](#window) instead.**
-
-### ~~`window_max_width`~~
-
-🖥️ Desktop only. Get or set the maximum width of a native OS window containing Flet app.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.max_width`](#window) instead.**
-
-### ~~`window_minimizable`~~
-
-🖥️ Desktop only. Set to `False` to hide/disable native OS window's "Minimize" button.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.minimizable`](#window) instead.**
-
-Defaults to `True`.
-
-### ~~`window_minimized`~~
-
-🖥️ Desktop only. `True` if a native OS window containing Flet app is minimized; otherwise `False`. Set this property to `True` to programmatically minimize the window and set it to `False` to restore it.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.minimized`](#window) instead.**
-
-### ~~`window_min_height`~~
-
-🖥️ Desktop only. Get or set the minimum height of a native OS window containing Flet app.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.min_height`](#window) instead.**
-
-### ~~`window_min_width`~~
-
-🖥️ Desktop only. Get or set the minimum width of a native OS window containing Flet app.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.min_width`](#window) instead.**
-
-### ~~`window_movable`~~
-
-🖥️ Desktop only. macOS only. Set to `False` to prevent user from changing a position of a native OS window containing
-Flet app.
-
-Defaults to `True`.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.movable`](#window) instead.**
-
-### ~~`window_opacity`~~
-
-🖥️ Desktop only. Sets the opacity of a native OS window. The value must be between `0.0` (fully transparent) and `1.0` (fully opaque).
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.opacity`](#window) instead.**
-
-### ~~`window_resizable`~~
-
-🖥️ Desktop only. Set to `False` to prevent user from resizing a native OS window containing Flet app.
-
-Defaults to `True`.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.resizable`](#window) instead.**
-
-### ~~`window_title_bar_hidden`~~
-
-🖥️ Desktop only. Set to `True` to hide window title bar. See [`WindowDragArea`](/docs/controls/windowdragarea) control that allows moving
-an app window with hidden title bar.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.title_bar_hidden`](#window) instead.**
-
-### ~~`window_title_bar_buttons_hidden`~~
-
-🖥️ Desktop only. Set to `True` to hide window action buttons when a title bar is hidden.
-
-Has effect on macOS only.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.title_bar_buttons_hidden`](#window) instead.**
-
-### ~~`window_top`~~
-
-🖥️ Desktop only. Get or set a vertical position of a native OS window - a distance in virtual pixels from the top edge of the screen.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.top`](#window) instead.**
-
-### ~~`window_prevent_close`~~
-
-🖥️ Desktop only. Set to `True` to intercept the native close signal. Could be used together with [`page.on_window_event (close)`](#on_window_event) event handler and [`page.window_destroy()`](#window_destroy) to implement app exit confirmation logic - see [`page.window_destroy()`](#window_destroy) for code example.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.prevent_close`](#window) instead.**
-
-### ~~`window_progress_bar`~~
-
-🖥️ Desktop only. The value from `0.0` to `1.0` to display a progress bar on Task Bar (Windows) or Dock (macOS) application button.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.progress_bar`](#window) instead.**
-
-### ~~`window_skip_task_bar`~~
-
-🖥️ Desktop only. Set to `True` to hide application from the Task Bar (Windows) or Dock (macOS).
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.skip_task_bar`](#window) instead.**
-
-### ~~`window_visible`~~
-
-🖥️ Desktop only. Set to `True` to make application window visible. Used when the app is starting with a hidden window.
-
-The following program starts with a hidden window and makes it visible in 3 seconds:
-
-```python
-from time import sleep
-
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(ft.Text("Hello!"))
-
-    sleep(3)
-    page.window.visible = True
-    page.update()  
-
-ft.app(main, view=ft.AppView.FLET_APP_HIDDEN)
-```
-
-Note `view=ft.AppView.FLET_APP_HIDDEN` which hides app window on start.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.visible`](#window) instead.**
-
-### ~~`window_width`~~
-
-🖥️ Desktop only. Get or set the width of a native OS window containing Flet app.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.width`](#window) instead.**
-
 ## Methods
 
 ### `add(*controls)`
@@ -735,42 +467,6 @@ Returns `True` if it is possible to verify that there is a handler available. A 
 Closes the provided control.
 
 It sets the `control.open=False` and calls `update()`.
-
-### ~~`close_banner()`~~
-
-Closes active banner.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(banner)`](#closecontrol) instead.**
-
-### ~~`close_bottom_sheet()`~~
-
-Closes active bottom sheet.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(bottom_sheet)`](#closecontrol) instead.**
-
-### ~~`close_dialog()`~~
-
-Closes active dialog.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(dialog)`](#closecontrol) instead.**
-
-### ~~`close_drawer()`~~
-
-Closes active drawer.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(drawer)`](#closecontrol) instead.**
-
-### ~~`close_end_drawer()`~~
-
-Closes active end drawer.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(end_drawer)`](#closecontrol) instead.**
-
-### ~~`close_snack_bar()`~~
-
-Closes active end drawer.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.close(snack_bar)`](#closecontrol) instead.**
 
 ### `close_in_app_web_view()`
 
@@ -895,99 +591,6 @@ page.set_clipboard("This value comes from Flet app")
 </TabItem>
 </Tabs>
 
-### ~~`show_banner(banner: Banner)`~~
-
-Displays the banner at the top of the page.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(banner)`](#opencontrol) instead.**
-
-### ~~`show_bottom_sheet(bottom_sheet: BottomSheet)`~~
-
-Displays bottom sheet at the bottom of the page.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(bottom_sheet)`](#opencontrol) instead.**
-
-### ~~`show_dialog(dialog: AlertDialog)`~~
-
-Displays dialog.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(dialog)`](#opencontrol) instead.**
-
-### ~~`show_drawer(drawer: NavigationDialog)`~~
-
-Displays [`drawer`](#drawer).
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(drawer)`](#opencontrol) instead.**
-
-### ~~`show_end_drawer(drawer: NavigationDialog)`~~
-
-Displays [`end_drawer`](#end_drawer).
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(end_drawer)`](#opencontrol) instead.**
-
-### ~~`show_snack_bar(snack_bar: SnackBar)`~~
-
-Displays [`SnackBar`](/docs/controls/snackbar) at the bottom of the page.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(snack_bar)`](#opencontrol) instead.*
-
-### ~~`window_center()`~~
-
-🖥️ Desktop only. Move app's native OS window to a center of the screen.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.center()`](#window) instead.**
-
-### ~~`window_close()`~~
-
-🖥️ Desktop only. Closes application window.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.close()`](#window) instead.**
-
-### ~~`window_destroy()`~~
-
-🖥️ Desktop only. Forces closing app's native OS window. This method could be used with `page.window_prevent_close = True` to implement app exit confirmation:
-
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.title = "MyApp"
-
-    def handle_window_event(e):
-        if e.data == "close":
-            page.open(confirm_dialog)
-
-    page.window.prevent_close = True
-    page.window.on_event = handle_window_event
-
-    def handle_yes(e):
-        page.window.destroy()
-
-    def handle_no(e):
-        page.close(confirm_dialog)
-
-    confirm_dialog = ft.AlertDialog(
-        modal=True,
-        title=ft.Text("Please confirm"),
-        content=ft.Text("Do you really want to exit this app?"),
-        actions=[
-            ft.ElevatedButton("Yes", on_click=handle_yes),
-            ft.OutlinedButton("No", on_click=handle_no),
-        ],
-        actions_alignment=ft.MainAxisAlignment.END,
-    )
-
-    page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))
-
-ft.app(main)
-```
-
-### ~~`window_to_front()`~~
-
-🖥️ Desktop only. Brings application window to a foreground.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.to_front()`](#window) instead.**
-
 ## Events
 
 ### `on_app_lifecycle_state_change`
@@ -1040,30 +643,9 @@ Event handler argument is of type [`PageMediaData`](/docs/reference/types/pageme
 
 Fires when brightness of app host platform has changed.
 
-### ~~`on_resize`~~
-
-Fires when a browser or native OS window containing Flet app is resized by a user, for example:
-
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-def page_resize(e):
-    print("New page size:", page.window.width, page.window_height)
-
-page.on_resize = page_resize
-```
-
-</TabItem>
-</Tabs>
-
-Event handler argument is of type [`WindowResizeEvent`](/docs/reference/types/windowresizeevent).
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.on_resized`](#on_resized) instead.**
-
 ### `on_resized`
 
-Fires when a browser or native OS window containing Flet app is resized by a user, for example:
+Fires when a user resizes a browser or native OS window containing Flet app, for example:
 
 <Tabs groupId="language">
   <TabItem value="python" label="Python" default>
@@ -1097,14 +679,6 @@ Event handler argument is of type [`OnScrollEvent`](/docs/reference/types/onscro
 Fires when the user clicks automatic "Back" button in [`AppBar`](/docs/controls/appbar) control.
 
 Event handler argument is of type [`ViewPopEvent`](/docs/reference/types/viewpopevent).
-
-### ~~`on_window_event`~~
-
-Fires when an application's native OS window changes its state: position, size, maximized, minimized, etc.
-
-Event handler argument is of type [`WindowEvent`](/docs/reference/types/windowevent).
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`Page.window.on_event`](#window) instead.**
 
 ## Magic methods
 
