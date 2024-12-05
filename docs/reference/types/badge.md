@@ -67,7 +67,7 @@ ft.app(main)
 
 Aligns the label relative to the content of the badge.
 
-The alignment positions the label in similar way content of a container is positioned using its [`alignment`](/docs/controls/container#alignment), except that the badge alignment is resolved as if the label was a [`large_size`](/docs/controls/badge#large_size) square and `offset` is added to the result.
+The alignment positions the label in similar way content of a container is positioned using its [`alignment`](/docs/controls/container#alignment), except that the badge alignment is resolved as if the label was a [`large_size`](#large_size) square and `offset` is added to the result.
 
 This value is only used if `text` property is provided.
 
@@ -85,7 +85,7 @@ Background [color](/docs/reference/colors) of the label.
 
 ### `label_visible`
 
-If False, label is not displayed. By default, `label_visible` is True. It can be used to create a badge that's only shown under certain conditions.
+If `False`, the `label` is not displayed. By default, `label_visible` is True. It can be used to create a badge only shown under certain conditions.
 
 Value is of type `bool`.
 
@@ -123,7 +123,7 @@ Vaue is of type [`OptionalNumber`](/docs/reference/types/aliases#optionalnumber)
 
 The text shown on badge's label, typically 1 to 4 characters.
 
-If the text is not provided, the badge is shown as a filled circle of [`small_size`](/docs/controls/badge#small_size) diameter. 
+If the text is not provided, the badge is shown as a filled circle of [`small_size`](#small_size) diameter. 
 
 If `text` is provided, the label is a StadiumBorder shaped badge with height equal to [`large_size`](#large_size).
 

@@ -790,6 +790,20 @@ Get the last text value saved to a clipboard on a client side.
 
 ### `get_control(id)`
 
+Get a control by its `id`.
+
+Example:
+
+```python
+import flet as ft
+
+def main(page: ft.Page):
+    x = ft.IconButton(ft.Icons.ADD)
+    page.add(x)
+    print(type(page.get_control(x.uid)))
+
+ft.app(main)
+```
 
 ### `get_upload_url(file_name, expires)`
 

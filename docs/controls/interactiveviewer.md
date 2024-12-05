@@ -32,7 +32,6 @@ def main(page: ft.Page):
 
 
 ft.app(main)
-
 ```
 
 ## Properties
@@ -108,6 +107,38 @@ Value is of type `float` and defaults to `200.0`.
 Whether scrolling up/down on a trackpad should cause scaling instead of panning.
 
 Value is of type `bool` and defaults to `False`.
+
+## Methods
+
+### `pan`
+
+Pans the `InteractiveViewer` by a specific amount.
+
+It has the following parameters:
+- `dx`: The number of pixels to pan on the x-axis.
+- `dy`: The number of pixels to pan on the y-axis.
+- 
+### `reset`
+
+Resets the `InteractiveViewer` to its initial state. By default, the reset happens with no animation (immediately).
+
+It has the following parameters:
+- `animation_duration`: Animates the reset with the given duration. Value is of type [`DurationValue`](/docs/reference/types/aliases#durationvalue).
+
+### `restore_state`
+
+Restores the state of the `InteractiveViewer` previously saved using `save_state`.
+
+### `save_state`
+
+Saves the current state of the `InteractiveViewer`, which can be restored later using `restore_state`.
+
+### `zoom`
+
+Zooms in or out to a specific level.
+
+It has the following parameters:
+- `factor`: The zoom factor. Values below `1` will zoom out, values above `1` will zoom in.
 
 ## Events
 
