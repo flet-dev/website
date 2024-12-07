@@ -45,7 +45,7 @@ ft.Container(
     shadow=ft.BoxShadow(
         spread_radius=1,
         blur_radius=15,
-        color=ft.Colors.BLUE_GREY_300,
+        color=ft.colors.BLUE_GREY_300,
         offset=ft.Offset(0, 0),
         blur_style=ft.ShadowBlurStyle.OUTER,
     )
