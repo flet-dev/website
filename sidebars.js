@@ -414,6 +414,7 @@ module.exports = {
           ],
         },
         "reference/environment-variables",
+        "reference/binary-packages-android-ios",
         "reference/icons",
         {
           type: "category",
