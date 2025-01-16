@@ -15,7 +15,7 @@ Changes:
 * Extensibility
 * Flutter 3.27
 * Installing Flutter, JDK, Android SDK
-
+* Using Flet built with `flet build` in `flet run`.
 
 ## How to upgrade
 
