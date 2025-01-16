@@ -31,6 +31,29 @@ pip install 'flet[all]' --upgrade
 
 Bump `flet` package version to `0.25.0` (or remove it at all to use the latest) in `requirements.txt` or `pyproject.toml`.
 
+## Flet extensions
+
+Flet extensions that used to be a part of Flet repository, now have been moved to separate repos and published on pypi:
+
+[flet-ads](https://pypi.org/project/flet-ads/)
+[flet-audio](https://pypi.org/project/flet-audio/)
+[flet-audio-recorder](https://pypi.org/project/flet-audio-recorder/)
+[flet-flashlight](https://pypi.org/project/flet-flashlight/)
+[flet-geolocator](https://pypi.org/project/flet-geolocator/)
+[flet-lottie](https://pypi.org/project/flet-lottie/)
+[flet-map](https://pypi.org/project/flet-map/)
+[flet-permission-handler](https://pypi.org/project/flet-permission-handler/)
+[flet-rive](https://pypi.org/project/flet-rive/)
+[flet-video](https://pypi.org/project/flet-video/)
+[flet-webview](https://pypi.org/project/flet-webview/)
+
+## Custom extensions
+
+create with extension template
+from pypi
+from GitHub
+from file system
+
 ## Other changes
 
 TBD
