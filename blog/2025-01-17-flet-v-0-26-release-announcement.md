@@ -10,6 +10,13 @@ tags: [releases]
 
 Hello!
 
+Changes:
+
+* Extensibility
+* Flutter 3.27
+* Installing Flutter, JDK, Android SDK
+
+
 ## How to upgrade
 
 Run the following command to upgrade Flet:
