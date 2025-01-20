@@ -8,6 +8,9 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Hello!
 
 Changes:
@@ -49,7 +52,14 @@ Flet extensions that used to be a part of Flet repository, now have been moved t
 
 ## Custom extensions
 
-create with extension template
+Flet now makes it easy to create and build project with your custom controls based on Flutter widgets.
+
+Create new virtual enviroment and then [install Flet](/docs/getting-started/#python-venv-module) there.
+
+Create new Flet project from template:
+```
+flet create --template extension --project-name my-project
+```
 from pypi
 from GitHub
 from file system
