@@ -56,10 +56,26 @@ Flet now makes it easy to create and build project with your custom controls bas
 
 Create new virtual enviroment and then [install Flet](/docs/getting-started/#python-venv-module) there.
 
+### Create Flet extension project
+
 Create new Flet project from template:
 ```
 flet create --template extension --project-name my-project
 ```
+### Build your app for macos
+
+When in the folder where your pyproject.tolm for the app is, run flet build command:
+```
+cd examples/my_project_example
+flet build macos
+```
+
+Open the app and see the new custom Flet Control
+```
+open build/macos/my-project-example.app
+```
+
+
 from pypi
 from GitHub
 from file system
