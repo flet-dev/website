@@ -36,43 +36,46 @@ Bump `flet` package version to `0.25.0` (or remove it at all to use the latest) 
 
 ## Flet extensions
 
-Flet extensions that used to be a part of Flet repository, now have been moved to separate repos and published on pypi:
+Flet controls based on 3rd-party Flutter packages that used to be a part of Flet repository, now have been moved to separate repos and published on pypi:
 
-[flet-ads](https://pypi.org/project/flet-ads/)
-[flet-audio](https://pypi.org/project/flet-audio/)
-[flet-audio-recorder](https://pypi.org/project/flet-audio-recorder/)
-[flet-flashlight](https://pypi.org/project/flet-flashlight/)
-[flet-geolocator](https://pypi.org/project/flet-geolocator/)
-[flet-lottie](https://pypi.org/project/flet-lottie/)
-[flet-map](https://pypi.org/project/flet-map/)
-[flet-permission-handler](https://pypi.org/project/flet-permission-handler/)
-[flet-rive](https://pypi.org/project/flet-rive/)
-[flet-video](https://pypi.org/project/flet-video/)
-[flet-webview](https://pypi.org/project/flet-webview/)
+* [flet-ads](https://pypi.org/project/flet-ads/)
+* [flet-audio](https://pypi.org/project/flet-audio/)
+* [flet-audio-recorder](https://pypi.org/project/flet-audio-recorder/)
+* [flet-flashlight](https://pypi.org/project/flet-flashlight/)
+* [flet-geolocator](https://pypi.org/project/flet-geolocator/)
+* [flet-lottie](https://pypi.org/project/flet-lottie/)
+* [flet-map](https://pypi.org/project/flet-map/)
+* [flet-permission-handler](https://pypi.org/project/flet-permission-handler/)
+* [flet-rive](https://pypi.org/project/flet-rive/)
+* [flet-video](https://pypi.org/project/flet-video/)
+* [flet-webview](https://pypi.org/project/flet-webview/)
+
+To use a Flet extension in your project, you need to install it first, for example:
+```
+pip install 'flet[all]' flet-audio
+```
 
 ## Custom extensions
 
-Flet now makes it easy to create and build projects with your custom controls based on Flutter widgets or Flutter external packages:
+Flet now makes it easy to create and build projects with your custom controls based on Flutter widgets or Flutter 3rd-party packages:
 
-1. Create new virtual enviroment and then [install Flet](/docs/getting-started/#python-venv-module) there.
+1. Create new virtual enviroment and [install Flet](/docs/getting-started/#python-venv-module) there.
 
-2. Create Flet new extension project from template:
+2. Create new Flet extension project from template:
 
 ```
 flet create --template extension --project-name my-project
 ```
 
-A project with new MyProject control will be created. Thw control is just a Text Flutter widget with two properties.  
+A project with new MyProject control will be created. The control is just a Flutter Text widget with two properties.  
 
-3. Build your app
+3. Build your app.
 
-Flet project created from extension template has examples/my_project_example folder with the example app.
+Flet project created from extension template has `examples/my_project_example` folder with the example app.
 
-When in the folder where your pyproject.toml for the app is, run flet build command.
+When in the folder where your `pyproject.toml` for the app is, run `flet build` command, for example, for macos:
 
-For macos:
 ```
-cd examples/my_project_example
 flet build macos
 ```
 
@@ -80,19 +83,53 @@ Open the app and see the new custom Flet Control
 ```
 open build/macos/my-project-example.app
 ```
+<img src="/img/blog/extensions/example.png" className="screenshot-30" />
 
-Once the project was built once, you can make changes to your python files and run it without re-building.
+4. Run your app.
+
+Once the project was built for desktop once, you can make changes to your python files and run it without re-building.
 
 First, install dependencies from pyproject.toml:
 ```
 pip install .
 ```
 
-Now, you can make changes and run your app:
+Now, you can make changes to your `main.py`:
 ```
-flet run src/main.py
-```
+import flet as ft
 
+from my_project import MyProject
+
+
+def main(page: ft.Page):
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    page.add(
+        ft.Container(
+            height=150,
+            width=300,
+            alignment=ft.alignment.center,
+            bgcolor=ft.Colors.PINK_200,
+            content=MyProject(
+                tooltip="My new pink Control tooltip",
+                value="My new pink Flet Control",
+            ),
+        ),
+    )
+
+ft.app(main)
+```
+ and run your app:
+```
+flet run
+```
+<img src="/img/blog/extensions/example_pink.png" className="screenshot-30" />
+
+Read more about how to customise your extension [here](/docs/extend/integrating-existing-flutter-packages).
+
+In extension guide:
+how to install extension from:
 from pypi
 from GitHub
 from file system
