@@ -34,7 +34,7 @@ A project with new FletSpinkit control will be created. The control is just a Fl
 
 Flet project created from extension template has `examples/flet_spinkit_example` folder with the example app.
 
-When in the folder where your `pyproject.toml` for the app is, run `flet build` command, for example, for macos:
+When in the folder where your `pyproject.toml` for the app is (`examples/flet_spinkit_example`), run `flet build` command, for example, for macos:
 
 ```
 flet build macos
