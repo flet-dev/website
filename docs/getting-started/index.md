@@ -61,9 +61,31 @@ You can create virtual environment by running the following commands in your ter
 Once you activated virtual environment, you'll see that your prompt now shows `(.venv)` prefix.
 
 Now you can install the latest version of Flet in `.venv` virtual environment:
-```
-pip install flet
-```
+<Tabs groupId="os">
+  <TabItem value="mac" label="macOS" default>
+
+    ```
+    pip install 'flet[all]'
+    ```
+
+  </TabItem>
+
+  <TabItem value="linux" label="Linux" default>
+
+    ```
+    pip install flet[all]
+    ```
+
+  </TabItem>
+
+  <TabItem value="windows" label="Windows">
+    ```
+    pip install flet[all]
+    ```
+
+  </TabItem>
+
+</Tabs>
 To check what version of Flet was installed:
 ```
 flet --version

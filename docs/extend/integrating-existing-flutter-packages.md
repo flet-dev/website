@@ -1,6 +1,6 @@
 ---
-title: Integrating existing Flutter packages into your Flet app
-sidebar_label: 3rd-party Flutter packages
+title: Creating Flet extension for existing Flutter package
+sidebar_label: User extensions
 ---
 
 :::info Work in progress
@@ -17,8 +17,36 @@ To address this, the Flet framework provides an extensibility mechanism. This al
 
 To integrate custom Flutter package into Flet you need to have basic understanding of how to create Flutter apps and packages in Dart language and have Flutter development environment configured. See [Flutter Getting Started](https://docs.flutter.dev/get-started/install) for more information about Flutter and Dart.
 
-## Creating Flet extension
+## Creating Flet extension from template
 
+Flet now makes it easy to create and build projects with your custom controls based on Flutter widgets or Flutter 3rd-party packages. In the example below, we will be creating a custom Flet extension based on the [flutter_spinkit](https://pub.dev/packages/flutter_spinkit) package.
+
+1. Create new virtual enviroment and [install Flet](/docs/getting-started/#python-venv-module) there.
+
+2. Create new Flet extension project from template:
+
+```
+flet create --template extension --project-name flet-spinkit
+```
+A project with new FletSpinkit control will be created. The control is just a Flutter Text widget with two properties, which we will customize later.
+
+3. Build your app.
+
+Flet project created from extension template has `examples/flet_spinkit_example` folder with the example app.
+
+When in the folder where your `pyproject.toml` for the app is, run `flet build` command, for example, for macos:
+
+```
+flet build macos
+```
+
+Open the app and see the new custom Flet Control
+```
+open build/macos/flet-spinkit-example.app
+```
+<img src="/img/blog/extensions/example.png" className="screenshot-30" />
+
+## Flet extension structure
 Flet extension that integrates 3rd-party Flutter package consists of the following parts:
 
 1. Flet Dart package.
