@@ -52,19 +52,25 @@ Flet extensions that used to be a part of Flet repository, now have been moved t
 
 ## Custom extensions
 
-Flet now makes it easy to create and build project with your custom controls based on Flutter widgets.
+Flet now makes it easy to create and build projects with your custom controls based on Flutter widgets or Flutter external packages:
 
-Create new virtual enviroment and then [install Flet](/docs/getting-started/#python-venv-module) there.
+1. Create new virtual enviroment and then [install Flet](/docs/getting-started/#python-venv-module) there.
 
-### Create Flet extension project
+2. Create Flet new extension project from template:
 
-Create new Flet project from template:
 ```
 flet create --template extension --project-name my-project
 ```
-### Build your app for macos
 
-When in the folder where your pyproject.tolm for the app is, run flet build command:
+A project with new MyProject control will be created. Thw control is just a Text Flutter widget with two properties.  
+
+3. Build your app
+
+Flet project created from extension template has examples/my_project_example folder with the example app.
+
+When in the folder where your pyproject.toml for the app is, run flet build command.
+
+For macos:
 ```
 cd examples/my_project_example
 flet build macos
@@ -75,6 +81,17 @@ Open the app and see the new custom Flet Control
 open build/macos/my-project-example.app
 ```
 
+Once the project was built once, you can make changes to your python files and run it without re-building.
+
+First, install dependencies from pyproject.toml:
+```
+pip install .
+```
+
+Now, you can make changes and run your app:
+```
+flet run src/main.py
+```
 
 from pypi
 from GitHub
