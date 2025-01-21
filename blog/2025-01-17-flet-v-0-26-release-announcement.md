@@ -34,7 +34,7 @@ pip install 'flet[all]' --upgrade
 
 Bump `flet` package version to `0.25.0` (or remove it at all to use the latest) in `requirements.txt` or `pyproject.toml`.
 
-## Flet extensions
+## Built-in extensions
 
 Flet controls based on 3rd-party Flutter packages that used to be a part of Flet repository, now have been moved to separate repos and published on pypi:
 
@@ -50,12 +50,12 @@ Flet controls based on 3rd-party Flutter packages that used to be a part of Flet
 * [flet-video](https://pypi.org/project/flet-video/)
 * [flet-webview](https://pypi.org/project/flet-webview/)
 
-To use a Flet extension in your project, you need to install it first, for example:
+To use a built-in Flet extension in your project, you need to install it first, for example:
 ```
 pip install 'flet[all]' flet-audio
 ```
 
-## Custom extensions
+## User extensions
 
 Flet now makes it easy to create and build projects with your custom controls based on Flutter widgets or Flutter 3rd-party packages:
 

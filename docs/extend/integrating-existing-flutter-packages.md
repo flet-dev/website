@@ -1,6 +1,6 @@
 ---
 title: Integrating existing Flutter packages into your Flet app
-sidebar_label: 3rd-party Flutter packages
+sidebar_label: User extensions
 ---
 
 :::info Work in progress
