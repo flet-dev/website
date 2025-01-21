@@ -15,7 +15,17 @@ module.exports = {
     heroTitle: 'Build multi-platform apps in Python powered by Flutter',
     heroSubTitle: 'Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.',
   },
+  themes: [
+    'docusaurus-theme-github-codeblock'
+  ],
   themeConfig: {
+    // github codeblock theme configuration
+    codeblock: {
+      showGithubLink: true,
+      githubLinkLabel: 'View on GitHub',
+      showRunmeLink: false,
+      runmeLinkLabel: 'Checkout via Runme'
+    },
     docs: {
       sidebar: {
         hideable: true,
