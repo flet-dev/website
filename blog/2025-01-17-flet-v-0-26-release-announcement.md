@@ -11,14 +11,9 @@ tags: [releases]
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Hello!
-
-Changes:
-
-* Extensibility
-* Flutter 3.27
-* Installing Flutter, JDK, Android SDK
-* Using Flet built with `flet build` in `flet run`.
+Flet 0.26.0 release is out with the revised extensibility approach!
+Packages are moved to ...
+No need to use --include-packages - just add python dependencies.
 
 ## How to upgrade
 
@@ -130,19 +125,44 @@ flet run
 
 Read more about how to customise your extension [here](/docs/extend/integrating-existing-flutter-packages).
 
-In extension guide:
-how to install extension from:
-from pypi
-from GitHub
-from file system
+## Development environment configuration
+
+To enhance the developer experience with the `flet build` command, Flet 0.26.0 ensures that the correct versions of Flutter SDK, Java (JDK), and Android SDK are installed. If any of these are missing or outdated, it automatically installs them for you.
+
+You still need to install Visual Studio 2022 yourself if you're building a Flet app for Windows, or Xcode if you're building for iOS or macOS.
+
+In the next releases we are going to introduce automatic configuration and startup of Android and iOS emulators.
+
+## Flutter 3.27
+
+Flet has been migrated to Flutter SDK 3.27. See [this pull request](https://github.com/flet-dev/flet/pull/4703) for new and updated control properties.
 
 ## Other changes
 
-TBD
+* Optional on-demand creation of `ListView.controls` ([#3931](https://github.com/flet-dev/flet/issues/3931))
+* Reset `InteractiveViewer` tranformations ([#4391](https://github.com/flet-dev/flet/issues/4391))
+* Passthrough of mouse events from main window to other applications ([#1438](https://github.com/flet-dev/flet/issues/1438))
+* Implemented `Window.ignore_mouse_events` ([#4465](https://github.com/flet-dev/flet/pull/4465))
+* Adding Google/Android TV platform support ([#4581](https://github.com/flet-dev/flet/pull/4581))
+* Remove `Optional[]` from predefined typing `*Value`s ([#4702](https://github.com/flet-dev/flet/pull/4702))
+* Throttle `InteractiveViewer` update events ([#4704](https://github.com/flet-dev/flet/pull/4704))
+* Remove v0.26.0-related deprecations ([#4456](https://github.com/flet-dev/flet/issues/4456))
 
 ## Bug fixes
 
-TBD
+* Fixed: Update project_dependencies.py ([#4459](https://github.com/flet-dev/flet/pull/4459))
+* Fixed: `SafeArea` object has no attribute `_SafeArea__minimum` ([#4500](https://github.com/flet-dev/flet/pull/4500))
+* Fixed: Tooltip corruption in `Segment` and `BarChartRod` on `update()` ([#4525](https://github.com/flet-dev/flet/pull/4525))
+* Fixed: Setting `CheckBox.border_side.stroke_align` to an Enum fails ([#4526](https://github.com/flet-dev/flet/pull/4526))
+* Fixed: `ControlState` should be resolved based on user-defined order ([#4556](https://github.com/flet-dev/flet/pull/4556))
+* Fixed: broken `Dismissible.dismiss_direction` ([#4557](https://github.com/flet-dev/flet/pull/4557))
+* Fixed: Fix Rive not updating ([#4582](https://github.com/flet-dev/flet/pull/4582))
+* Fixed: `DatePicker` regression with first and last dates ([#4661](https://github.com/flet-dev/flet/pull/4661))
+* `flet build` command: Copy `flutter-packages`, support for platform-specific dependencies ([#4667](https://github.com/flet-dev/flet/pull/4667))
+* Fixed: `CupertinoBottomSheet` applies a red color and yellow underline to `Text`  content ([#4673](https://github.com/flet-dev/flet/pull/4673))
+* Fixed: setting `ButtonTheme` displays a grey screen ([#4731](https://github.com/flet-dev/flet/pull/4731))
+* Fixed: `Textfield` input border color considers user-specified `border_color` property ([#4735](https://github.com/flet-dev/flet/pull/4735))
+* Fixed: make `Tooltip.message` a required parameter ([#4736](https://github.com/flet-dev/flet/pull/4736))
 
 ## Conclusion
 
