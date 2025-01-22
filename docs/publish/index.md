@@ -27,14 +27,15 @@ Flutter SDK is installed into `$HOME/flutter/{version}` directory.
 
 ## Project structure
 
-`flet build` command assumes the following minimal Flet project structure.
+`flet build` command assumes the following minimal Flet project structure:
 
 ```
-/assets/
-    icon.png
-main.py
-pyproject.toml
-requirements.txt
+├── README.md
+├── pyproject.toml
+└── src
+    ├── assets
+    │   └── icon.png
+    └── main.py
 ```
 
 `main.py` is the entry point of your Flet application with `ft.app(main)` at the end. A different entry point could be specified with `--module-name` argument.
@@ -43,11 +44,35 @@ requirements.txt
 
 If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) is provided it will be used as a source image to generate all icons and splash screens for all platforms. See section below for more information about icons and splashes.
 
-`pyproject.toml` contains the application metadata, lists its dependencies and controls build process.
+`pyproject.toml` contains the application metadata, lists its dependencies and controls build process. The list of project dependencies should contain at least `flet` package:
 
-`requirements.txt` can also be used to list app requirements. It is optional though and if both `pyproject.toml` and `requirements.txt` exist the latter will be ignored.
+```toml title="pyproject.toml"
+[project]
+name = "myapp"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Flet developer", email = "you@example.com" }
+]
+dependencies = [
+  "flet"
+]
 
-The list of project dependencies should contain at least `flet` package. 
+[tool.flet]
+org = "com.mycompany"
+product = "MyApp"
+company = "My Company"
+copyright = "Copyright (C) 2025 by My Company"
+
+[tool.flet.app]
+path = "src"
+```
+
+:::note
+Though `requirements.txt` can also be used to list app requirements Flet recommends using `pyproject.toml` for new projects. If both `pyproject.toml` and `requirements.txt` exist the latter will be ignored.
+:::
 
 :::caution No pip freeze
 Do not use `pip freeze > requirements.txt` command to create `requirements.txt` for the app that
@@ -64,13 +89,6 @@ flet create myapp
 ```
 
 where `myapp` is a target directory.
-
-`flet create` app template puts `main.py` and `assets` into `src` directory which path is controlled by `tool.flet.app.path` setting in `pyproject.toml`:
-
-```toml
-[tool.flet.app]
-path = "src"
-```
 
 ## How it works
 
