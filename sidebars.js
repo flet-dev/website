@@ -98,7 +98,7 @@ module.exports = {
       // },
       items: [
         "extend/built-in-extensions",
-        "extend/integrating-existing-flutter-packages"
+        "extend/user-extensions"
       ],
     },
     {
