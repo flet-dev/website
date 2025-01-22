@@ -135,12 +135,12 @@ After creating new Flet project from extension template, you will see the follow
 
 In the `src` folder, the are two parts:
 
-### Python
+### Python part
 
-`flet_spinkit`, which contains python files. `flet_spinkit.py` contains a Python `FletSpinkit` class that you will use in your Flet program.
+`src/flet_spinkit` folder contains python files. `flet_spinkit.py` contains a Python `FletSpinkit` class that you will use in your Flet program.
 
-### Flutter
-`flutter/flet_spinkit` folder contains dart files which provide a mechanism to create Flutter widgets based on control names returned by the Control's `_get_control_name()` function. This mechanism iterates through all third-party packages and returns the first matching widget.
+### Flutter part
+`src/flutter/flet_spinkit` folder contains dart files which provide a mechanism to create Flutter widgets based on control names returned by the Control's `_get_control_name()` function. This mechanism iterates through all third-party packages and returns the first matching widget.
 
 #### `pubspec.yaml`
 
@@ -173,12 +173,14 @@ Here you create Flutter "wrapper" widget that will build Flutter widget or API t
 
 Wrapper widget passes the state of Python control down to a Flutter widget, that will be displayed on a page, and provides an API to route events from Flutter widget back to Python control.
 
+In the template example, Flutter Text widget is created. Let's replace it with `SpinKitRotatingCircle`:
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class SpinkitControl extends StatelessWidget {
-  const SpinkitControl({
+class FletSpinkitControl extends StatelessWidget {
+  const FletSpinkitControl({
     super.key,
   });
 
@@ -194,6 +196,8 @@ class SpinkitControl extends StatelessWidget {
 ```
 
 As a proof of concept, we would like to see the hardcoded `SpinKitRotatingCircle` in our Flet program, and later we will get to customizing its properties. 
+
+<img src="/img/docs/extending-flet/spinki1.gif" className="screenshot-40" />
 
 ### Flet Python control
 
@@ -220,6 +224,8 @@ class Spinkit(Control):
 The minumal requirements for this class is that it has to be inherited from Flet `Control` and it has to
 have `_get_control_name` method that will return the control name. This name should be the same as `args.control.type`
 we check in the `create_control.dart` file.
+
+
 
 ### Connect your Python app and Dart package
 
