@@ -21,11 +21,9 @@ The following matrix shows which OS you should run `flet build` command on in or
 
 ### Flutter SDK
 
-Flutter SDK 3.24 or above must be installed and the path to both `flutter` and `dart` commands must be added to `PATH` environment variable.
+If the correct version of the Flutter SDK is not found in the `PATH`, it will be automatically installed during the first run when building a Flet app for any platform.
 
-Follow official [Flutter installation guide](https://docs.flutter.dev/get-started/install) for your platform.
-
-> Pay attention to Flutter's own requirements for every platform, such as XCode and Cocopods on macOS, Visual Studio 2022 on Windows or additional tools and libraries on Linux.
+Flutter SDK is installed into `$HOME/flutter/{version}` directory.
 
 ## Project structure
 
