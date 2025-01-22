@@ -101,53 +101,45 @@ build/macos/flet-spinkit-example.app/Contents/MacOS/flet-spinkit-example --debug
 ```
 
 ## Flet extension structure
-Flet extension that integrates 3rd-party Flutter package consists of the following parts:
 
-1. Flet Dart package.
+After creating new Flet project from extension template, you will see the following folder structure:
 
-2. Flet Python control.
-
-The Flet Dart package includes a mechanism to create Flutter widgets based on control names returned by the Control's `_get_control_name()` function. This mechanism iterates through all third-party packages and returns the first matching widget.
-
-Flet Python control is a Python class that you will use in your Flet program.
-
-For example, take a look at a basic [Flet extension](https://github.com/InesaFitsner/extend-flet-example) for [flutter_spinkit](https://pub.dev/packages/flutter_spinkit) package. 
-
-### Flet Dart package
-
-To create a new [Dart package](https://docs.flutter.dev/packages-and-plugins/developing-packages#dart), run the following command:
 ```
-flutter create --template=package <package_name>
-```
-
-You will see this folder structure:
-```
-├── CHANGELOG.md
 ├── LICENSE
 ├── README.md
-├── analysis_options.yaml
-├── lib
-│   └── <package_name>.dart
-├── pubspec.lock
-├── pubspec.yaml
-├── test
-│   └── <package_name>_test.dart
-└── <package_name>.iml
-
+├── examples
+│   └── flet_spinkit_example
+│       ├── README.md
+│       ├── pyproject.toml
+│       └── src
+│           └── main.py
+├── pyproject.toml
+└── src
+    ├── flet_spinkit
+    │   ├── __init__.py
+    │   └── flet_spinkit.py
+    └── flutter
+        └── flet_spinkit
+            ├── CHANGELOG.md
+            ├── LICENSE
+            ├── README.md
+            ├── lib
+            │   ├── flet_spinkit.dart
+            │   └── src
+            │       ├── create_control.dart
+            │       └── flet_spinkit.dart
+            └── pubspec.yaml
 ```
 
-In the `lib` folder, you need to create `src` folder with two files: `create_control.dart` and `<control_name>.dart`:
+`src` folder contains the new Flet extension (Control) files and `examples/flet-spinkit` folder contains the app that uses it. 
 
-```
-└── <package_name>
-    ├── lib
-    │   ├── <package_name>.dart
-    │   └── src
-    │       ├── create_control.dart
-    │       └── <control_name>.dart
-    └── pubspec.yaml
-        
-```
+In the `src` folder, the are two folders:
+
+### Python
+`flet_spinkit`, which contains python files. `flet_spinkit.py` contains a Python `FletSpinkit` class that you will use in your Flet program.
+
+### Flutter
+`flutter/flet_spinkit` folder contains dart files which provide a mechanism to create Flutter widgets based on control names returned by the Control's `_get_control_name()` function. This mechanism iterates through all third-party packages and returns the first matching widget.
 
 #### `pubspec.yaml`
 
