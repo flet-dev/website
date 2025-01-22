@@ -76,7 +76,7 @@ Flet project created from extension template has `examples/my_project_example` f
 When in the folder where your `pyproject.toml` for the app is, run `flet build` command, for example, for macos:
 
 ```
-flet build macos
+flet build macos -v
 ```
 
 Open the app and see the new custom Flet Control

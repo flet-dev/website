@@ -44,7 +44,61 @@ Open the app and see the new custom Flet Control
 ```
 open build/macos/flet-spinkit-example.app
 ```
-<img src="/img/blog/extensions/example.png" className="screenshot-30" />
+<img src="/img/docs/extending-flet/example.png" className="screenshot-30" />
+
+4. Run your app.
+
+Once the project was built for desktop once, you can make changes to your python files and run it without re-building.
+
+First, install dependencies from pyproject.toml:
+```
+pip install .
+```
+Now you can make changes to your example app main.py:
+```
+import flet as ft
+
+from flet_spinkit import FletSpinkit
+
+
+def main(page: ft.Page):
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    page.add(
+        ft.Container(
+            height=150,
+            width=300,
+            alignment=ft.alignment.center,
+            bgcolor=ft.Colors.PINK_200,
+            content=FletSpinkit(
+                tooltip="My new PINK FletSpinkit Control tooltip",
+                value="My new PINK FletSpinkit Flet Control",
+            ),
+        ),
+    )
+
+
+ft.app(main)
+```
+ and run:
+```
+flet run
+```
+<img src="/img/docs/extending-flet/example-pink.png" className="screenshot-30" />
+
+5. Re-build your app.
+
+When you make any changes to python or dart files and need to re-build, there is a [known issue](https://github.com/flet-dev/flet/issues/4754) that Flet would build with cached files and your changes will not be included. As a temporary solution, you need to clear cache before re-building: 
+```
+pip cache purge
+flet build macos -v
+```
+
+If you need to debug, run this command:
+```
+build/macos/flet-spinkit-example.app/Contents/MacOS/flet-spinkit-example --debug
+```
 
 ## Flet extension structure
 Flet extension that integrates 3rd-party Flutter package consists of the following parts:
