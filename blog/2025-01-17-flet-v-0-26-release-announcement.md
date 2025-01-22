@@ -64,7 +64,7 @@ Flet now makes it easy to create and build projects with your custom controls ba
 flet create --template extension --project-name my-project
 ```
 
-A project with new MyProject control will be created. The control is just a Flutter Text widget with two properties.  
+A project with new MyProject control will be created. The control is just a Flutter Text widget with text property.  
 
 3. Build your app.
 

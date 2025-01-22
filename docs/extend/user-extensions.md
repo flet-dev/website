@@ -133,79 +133,54 @@ After creating new Flet project from extension template, you will see the follow
 
 `src` folder contains the new Flet extension (Control) files and `examples/flet-spinkit` folder contains the app that uses it. 
 
-In the `src` folder, the are two folders:
+In the `src` folder, the are two parts:
 
-### Python
-`flet_spinkit`, which contains python files. `flet_spinkit.py` contains a Python `FletSpinkit` class that you will use in your Flet program.
+### Python part
 
-### Flutter
-`flutter/flet_spinkit` folder contains dart files which provide a mechanism to create Flutter widgets based on control names returned by the Control's `_get_control_name()` function. This mechanism iterates through all third-party packages and returns the first matching widget.
+`src/flet_spinkit` folder contains python files. `flet_spinkit.py` contains a Python `FletSpinkit` class that you will use in your Flet program.
+
+### Flutter part
+`src/flutter/flet_spinkit` folder contains dart files which provide a mechanism to create Flutter widgets based on control names returned by the Control's `_get_control_name()` function. This mechanism iterates through all third-party packages and returns the first matching widget.
 
 #### `pubspec.yaml`
 
 A yaml file containing metadata that specifies the package's dependencies.
 
-In your `pubspec.yaml` you should add dependency to `flet` and Flutter package for which you are creating your extension. 
+In your `pubspec.yaml` there is already a dependency to `flet` created from template. You need to add there a dependency to Flutter package for which you are creating your extension. 
 
-In the Flet Spinkit example, `pubspec.yaml` contains dependency to `flutter_spinkit`:
+For the Flet Spinkit example, `pubspec.yaml` should contain dependency to`flet` and `flutter_spinkit`:
 
 ```yaml
 dependencies:
-  flet: ^0.22.0
+  flet: ^0.26.0
   flutter_spinkit: ^5.2.1
   
 ```
 
-#### `<package_name>.dart`
+#### `flet_spinkit.dart`
 
-Extension package should export two methods:
+Two methods are exported:
 * `createControl` - called to create a widget that corresponds to a control on Python side.
 * `ensureInitialized` - called once on Flet program start.
-
-```dart
-library <package_name>;
-
-export "../src/create_control.dart" show createControl, ensureInitialized;
-```
 
 #### `create_control.dart`
 
 Flet calls `createControl` for all controls and returns the first matching widget.
 
-```dart
-import 'package:flet/flet.dart';
-
-import 'spinkit.dart';
-
-CreateControlFactory createControl = (CreateControlArgs args) {
-  switch (args.control.type) {
-    case "spinkit":
-      return SpinkitControl(
-        parent: args.parent,
-        control: args.control,
-      );
-    default:
-      return null;
-  }
-};
-
-void ensureInitialized() {
-  // nothing to initialize
-}
-```
-
-#### `<control-name>.dart`
+#### `src/flet_spinkit.dart`
 
 Here you create Flutter "wrapper" widget that will build Flutter widget or API that you want to use in your Flet app.
 
 Wrapper widget passes the state of Python control down to a Flutter widget, that will be displayed on a page, and provides an API to route events from Flutter widget back to Python control.
 
+In the template example, Flutter Text widget is created. Let's replace it with `SpinKitRotatingCircle`:
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class SpinkitControl extends StatelessWidget {
-  const SpinkitControl({
+class FletSpinkitControl extends StatelessWidget {
+  const FletSpinkitControl({
     super.key,
   });
 
@@ -221,6 +196,8 @@ class SpinkitControl extends StatelessWidget {
 ```
 
 As a proof of concept, we would like to see the hardcoded `SpinKitRotatingCircle` in our Flet program, and later we will get to customizing its properties. 
+
+<img src="/img/docs/extending-flet/spinki1.gif" className="screenshot-40" />
 
 ### Flet Python control
 
@@ -247,6 +224,8 @@ class Spinkit(Control):
 The minumal requirements for this class is that it has to be inherited from Flet `Control` and it has to
 have `_get_control_name` method that will return the control name. This name should be the same as `args.control.type`
 we check in the `create_control.dart` file.
+
+
 
 ### Connect your Python app and Dart package
 
