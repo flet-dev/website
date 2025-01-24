@@ -5,7 +5,7 @@ title: Getting started
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Before you can create your first Flet app you need to setup your development environment which requires Python 3.8 or above and `flet` package.
+Before you can create your first Flet app you need to setup your development environment which requires Python 3.9 or above and `flet` package.
 
 We recommend installing Flet in a virtual environment which can be done in a number of different ways.
 
