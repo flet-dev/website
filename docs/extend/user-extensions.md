@@ -256,7 +256,7 @@ dependencies = [
   "flet>=0.26.0",
 ]
 ```
-* **Pypi dependency**  
+* **PyPi dependency**  
 
 Name of the package published on pypi.org, for example:
 ```
