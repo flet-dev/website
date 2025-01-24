@@ -8,12 +8,13 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+The Flet 0.26.0 release is here, featuring a significant update to the extensibility approach!
 
-Flet 0.26.0 release is out with the revised extensibility approach!
-Packages are moved to ...
-No need to use --include-packages - just add python dependencies.
+In summary, a Flet extension is now a single Python package that bundles both Python and Flutter code. This package can be part of your Flet project or hosted in a public Git repository or PyPI.
+
+Built-in Flet extensions, such as `Audio`, `Video`, and `Map`, have been moved to their own repositories. You’re welcome to fork these extensions to create your own or contribute to Flet! These extensions have been published to PyPI, making them easy to include in your Flet app. To use them, simply add the desired extensions to the `dependencies` section of your `pyproject.toml` file.
+
+For more details, see below.
 
 ## How to upgrade
 
@@ -166,9 +167,7 @@ Flet has been migrated to Flutter SDK 3.27. See [this pull request](https://gith
 
 ## Conclusion
 
-Flet 0.25.0 is a huge release and your feedback is highly welcomed!
-
-Upgrade to Flet 0.25.0, test your apps and let us know how you find the new features we added.
+Upgrade to Flet 0.26.0, test your apps and let us know how you find the new features we added.
 
 If you have any questions, please join [Flet Discord server](https://discord.gg/dzWXP8SHG8) or create a new thread
 on [Flet GitHub discussions](https://github.com/flet-dev/flet/discussions).
