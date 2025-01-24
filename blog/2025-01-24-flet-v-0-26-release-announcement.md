@@ -103,6 +103,10 @@ In the next releases we are going to introduce automatic configuration and start
 
 Flet has been migrated to Flutter SDK 3.27. See [this pull request](https://github.com/flet-dev/flet/pull/4703) for new and updated control properties.
 
+## Python 3.9
+
+Flet 0.26.0 requires Python 3.9 or later. Python 3.8 has reached [EOL](https://devguide.python.org/versions/).
+
 ## Other changes
 
 * Optional on-demand creation of `ListView.controls` ([#3931](https://github.com/flet-dev/flet/issues/3931))

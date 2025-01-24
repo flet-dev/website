@@ -12,7 +12,7 @@ Install [Flet](https://play.google.com/store/apps/details?id=com.appveyor.flet) 
 
 <a href='https://play.google.com/store/apps/details?id=com.appveyor.flet'><img alt='Get it on Google Play' src='/img/docs/getting-started/testing-on-android/google-play-badge.png' width='300'/></a>
 
-To get started on your computer you need Python 3.8 or greater installed.
+To get started on your computer you need Python 3.9 or greater installed.
 
 :::caution Important
 Your Android device and computer must be connected to the same Wi-Fi or local network.
