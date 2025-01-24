@@ -3,10 +3,6 @@ title: Creating Flet extension for existing Flutter package
 sidebar_label: User extensions
 ---
 
-:::info Work in progress
-The guide is being updated.
-:::
-
 ## Introduction
 
 While Flet controls leverage many built-in Flutter widgets, enabling the creation of complex applications, not all Flutter widgets or third-party packages can be directly supported by the Flet team or included within the core Flet framework.
@@ -100,7 +96,16 @@ flet run
 
 5. Re-build your app.
 
-When you make any changes to your package and need to re-build, there is a [known issue](https://github.com/flet-dev/flet/issues/4754) that Flet would build with cached files and your changes will not be included. As a temporary solution, you need to clear cache before re-building: 
+:::info Known issue
+There is a [known issue](https://github.com/flet-dev/flet/issues/4754) that Flet would build with cached files and your changes will not be included. As a temporary solution, you need to clear cache before re-building: 
+
+```
+pip cache purge
+```
+
+:::
+
+When you make any changes to your package, you need to re-build: 
 
 ```
 pip cache purge
@@ -493,7 +498,7 @@ Re-build and run:
 
 <img src="/img/docs/extending-flet/spinkit3.gif" className="screenshot-20" />
 
-You can find source code for this example [here](TBD).
+You can find source code for this example [here](https://github.com/flet-dev/flet-spinkit).
 
 #### Examples for different types of properties and events
 
