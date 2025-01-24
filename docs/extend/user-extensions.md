@@ -352,15 +352,17 @@ In the FletSpinkit example, let's define its `color` and `size`.
 In Python class, define new `color` and `size` properties:
 
 ```python
+from enum import Enum
 from typing import Any, Optional
 
-from flet_core.constrained_control import ConstrainedControl
-from flet_core.control import OptionalNumber
+from flet.core.constrained_control import ConstrainedControl
+from flet.core.control import OptionalNumber
+from flet.core.types import ColorEnums, ColorValue
 
 
-class Spinkit(ConstrainedControl):
+class FletSpinkit(ConstrainedControl):
     """
-    Spinkit Control.
+    FletSpinkit Control.
     """
 
     def __init__(
@@ -380,9 +382,9 @@ class Spinkit(ConstrainedControl):
         right: OptionalNumber = None,
         bottom: OptionalNumber = None,
         #
-        # Spinkit specific
+        # FletSpinkit specific
         #
-        color: Optional[str] = None,
+        color: Optional[ColorValue] = None,
         size: OptionalNumber = None,
     ):
         ConstrainedControl.__init__(
@@ -401,16 +403,17 @@ class Spinkit(ConstrainedControl):
         self.size = size
 
     def _get_control_name(self):
-        return "spinkit"
+        return "flet_spinkit"
 
     # color
     @property
-    def color(self):
-        return self._get_attr("color")
+    def color(self) -> Optional[ColorValue]:
+        return self.__color
 
     @color.setter
-    def color(self, value):
-        self._set_attr("color", value)
+    def color(self, value: Optional[ColorValue]):
+        self.__color = value
+        self._set_enum_attr("color", value, ColorEnums)
 
     # size
     @property
@@ -429,11 +432,11 @@ import 'package:flet/flet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class SpinkitControl extends StatelessWidget {
+class FletSpinkitControl extends StatelessWidget {
   final Control? parent;
   final Control control;
 
-  const SpinkitControl({
+  const FletSpinkitControl({
     super.key,
     required this.parent,
     required this.control,
@@ -443,15 +446,13 @@ class SpinkitControl extends StatelessWidget {
   Widget build(BuildContext context) {
     var color = control.attrColor("color", context);
     var size = control.attrDouble("size");
+    Widget myControl = SpinKitRotatingCircle(
+      color: color,
+      size: size ?? 100,
+    );
 
-    return constrainedControl(
-        context,
-        SpinKitRotatingCircle(
-          color: color,
-          size: size ?? 50,
-        ),
-        parent,
-        control);
+
+    return constrainedControl(context, myControl, parent, control);
   }
 }
 ```
@@ -460,7 +461,8 @@ Use `color` and `size` properties in your app:
 
 ```python
 import flet as ft
-from controls.spinkit import Spinkit
+
+from flet_spinkit import FletSpinkit
 
 
 def main(page: ft.Page):
@@ -471,21 +473,25 @@ def main(page: ft.Page):
         ft.Stack(
             [
                 ft.Container(height=200, width=200, bgcolor=ft.Colors.BLUE_100),
-                Spinkit(
+                FletSpinkit(
                     opacity=0.5,
                     tooltip="Spinkit tooltip",
                     top=0,
                     left=0,
-                    color=ft.Colors.PURPLE,
+                    color=ft.Colors.YELLOW,
                     size=150,
                 ),
             ]
         )
     )
 
-ft.app(main)
 
+ft.app(main)
 ```
+
+Re-build and run:
+
+<img src="/img/docs/extending-flet/spinkit3.gif" className="screenshot-20" />
 
 You can find source code for this example [here](TBD).
 
