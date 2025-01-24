@@ -397,7 +397,7 @@ class Spinkit(ConstrainedControl):
         self._set_attr("size", value)
 ```
 
-In `<control-name>.dart` file, use helper methods `attrColor` and `attrDouble` to access color and size values:
+In `src/flet_spinkit.dart` file, use helper methods `attrColor` and `attrDouble` to access color and size values:
 
 ```dart
 import 'package:flet/flet.dart';
@@ -469,7 +469,7 @@ You can find source code for this example [here](TBD).
 
 For example, `clip_behaviour` for `AppBar`.
 
-In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/app_bar.py):
+In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet/src/flet/core/app_bar.py):
 
 ```python
 # clip_behavior
@@ -498,7 +498,7 @@ var clipBehavior = Clip.values.firstWhere(
 
 For example, `shape` property for `Card`.
 
-In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/card.py):
+In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet/src/flet/core/card.py):
 
 ```python
 def before_update(self):
@@ -525,7 +525,7 @@ var shape = parseOutlinedBorder(control, "shape")
 
 For example, `content` for `AlertDialog`:
 
-In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/alert_dialog.py):
+In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet/src/flet/core/alert_dialog.py):
 
 ```python
     def _get_children(self):
@@ -547,7 +547,7 @@ In [Dart](https://github.com/flet-dev/flet/blob/main/packages/flet/lib/src/contr
 
 For example, `on_click` event for `ElevatedButton`.
 
-In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet-core/src/flet_core/elevated_button.py):
+In [Python](https://github.com/flet-dev/flet/blob/main/sdk/python/packages/flet/src/flet/core/elevated_button.py):
 
 ```python
 # on_click
