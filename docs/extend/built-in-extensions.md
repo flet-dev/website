@@ -17,7 +17,7 @@ Flet controls based on 3rd-party Flutter packages that used to be a part of Flet
 * [flet-video](https://pypi.org/project/flet-video/)
 * [flet-webview](https://pypi.org/project/flet-webview/)
 
-To use a built-in Flet extension in your project, add it to the `dependencies` secion of your `pyproject.toml` file, for example:
+To use a built-in Flet extension in your project, add it to the `dependencies` section of your `pyproject.toml` file, for example:
 
 ```
 dependencies = [
