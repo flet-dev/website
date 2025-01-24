@@ -30,6 +30,7 @@ Flet now makes it easy to create and build projects with your custom controls ba
 ```
 flet create --template extension --project-name flet-spinkit
 ```
+
 A project with new FletSpinkit control will be created. The control is just a Flutter Text widget with text property, which we will customize later.
 
 3. Build your app.
@@ -42,21 +43,26 @@ When in the folder where your `pyproject.toml` for the app is (`examples/flet_sp
 flet build macos -v
 ```
 
-Open the app and see the new custom Flet Control
+Open the app and see the new custom Flet Control:
+
 ```
 open build/macos/flet-spinkit-example.app
 ```
+
 <img src="/img/docs/extending-flet/example.png" className="screenshot-30" />
 
-4. Run your app.
+4. Change your app.
 
 Once the project was built for desktop once, you can make changes to your python files and run it without re-building.
 
 First, install dependencies from pyproject.toml:
+
 ```
 pip install .
 ```
+
 Now you can make changes to your example app main.py:
+
 ```
 import flet as ft
 
@@ -83,21 +89,26 @@ def main(page: ft.Page):
 
 ft.app(main)
 ```
- and run:
+
+and run:
+
 ```
 flet run
 ```
+
 <img src="/img/docs/extending-flet/example-pink.png" className="screenshot-30" />
 
 5. Re-build your app.
 
-When you make any changes to python or dart files and need to re-build, there is a [known issue](https://github.com/flet-dev/flet/issues/4754) that Flet would build with cached files and your changes will not be included. As a temporary solution, you need to clear cache before re-building: 
+When you make any changes to your package and need to re-build, there is a [known issue](https://github.com/flet-dev/flet/issues/4754) that Flet would build with cached files and your changes will not be included. As a temporary solution, you need to clear cache before re-building: 
+
 ```
 pip cache purge
 flet build macos -v
 ```
 
 If you need to debug, run this command:
+
 ```
 build/macos/flet-spinkit-example.app/Contents/MacOS/flet-spinkit-example --debug
 ```
@@ -109,14 +120,17 @@ For the example purposes we will be integrating [flutter_spinkit](https://pub.de
 1. Add dependency.
 
 Go to `src/flutter/flet_spinkit` folder and run this command to add dependency to `flutter_spinkit` to `pubspec.yaml`:
+
 ```
 flutter pub add flutter_spinkit
 ```
+
 Read more information about using Flutter packages [here](https://docs.flutter.dev/packages-and-plugins/using-packages).
 
 2. Modify `dart` file. 
 
 In the `src/flutter/flet_spinkit/lib/src/flet_spinkit.dart` file, add import statement and replace Text widget with `SpinKitRotatingCircle` widget:
+
 ```dart
 import 'package:flet/flet.dart';
 import 'package:flutter/material.dart';
@@ -146,13 +160,15 @@ class FletSpinkitControl extends StatelessWidget {
 ```
 
 3. Rebuild your example app. 
+
 Go to `examples/flet_spinkit_example`, clear cache and rebuild your app:
+
 ```
 pip cache purge
 flet build macos -v
 ```
 
-4. Open or run your app:
+4. Run your app:
 
 <img src="/img/docs/extending-flet/spinkit1.gif" className="screenshot-30" />
 
@@ -193,7 +209,7 @@ Flet extension consists of:
 
 ### Package
 
-Package is the component that will be used in your app. It contists of two parts: python and flutter.
+Package is the component that will be used in your app. It contists of two parts: Python and Flutter.
 
 #### Python
  
@@ -238,34 +254,39 @@ Python program that uses Flet Python control.
 ##### pyproject.toml
 
 Here you specify dependency to your package, which can be:
+
 * **Path dependency** 
 
 Absolute path to your Flet extension folder, for example:
+
 ```
 dependencies = [
   "flet-spinkit @ file:///Users/user-name/projects/flet-spinkit",
   "flet>=0.26.0",
 ]
 ```
+
 * **Git dependency**
 
 Link to git repository, for example:
+
 ```
 dependencies = [
   "flet-ads @ git+https://github.com/flet-dev/flet-ads.git",
   "flet>=0.26.0",
 ]
 ```
+
 * **PyPi dependency**  
 
 Name of the package published on pypi.org, for example:
+
 ```
 dependencies = [
   "flet-ads",
   "flet>=0.26.0",
 ]
 ```
-
 
 ## Customize properties
 
@@ -276,8 +297,11 @@ In the example above, Spinkit control creates a hardcoded Flutter widget. Now le
 Generally, there are two types of controls in Flet:
 
 1. Visual controls that are added to the app/page surface, such as FletSpinkit.
+
 2. Non-visual controls that can be:
+
     * popup controls (dialogs, pickers, panels etc.).
+
     * services that are added to `overlay`, such as Video or Audio.
 
 Flet `Control` class has properties common for all controls such as `visible`, `opacity` and `tooltip`, to name a few. 
@@ -316,6 +340,7 @@ def main(page: ft.Page):
 
 ft.app(main)
 ```
+
 <img src="/img/docs/extending-flet/spinkit2.gif" className="screenshot-30" />
 
 ### Control-specific properties
@@ -432,6 +457,7 @@ class SpinkitControl extends StatelessWidget {
 ```
 
 Use `color` and `size` properties in your app:
+
 ```python
 import flet as ft
 from controls.spinkit import Spinkit
