@@ -49,7 +49,7 @@ Flet controls based on 3rd-party Flutter packages that used to be a part of Flet
 
 To use a built-in Flet extension in your project, you need to install it first, for example:
 ```
-pip install 'flet[all]' flet-audio
+pip install flet-audio
 ```
 
 ### User extensions
@@ -123,7 +123,7 @@ flet run
 ```
 <img src="/img/blog/extensions/example_pink.png" className="screenshot-30" />
 
-Read more about how to customise your extension [here](/docs/extend/integrating-existing-flutter-packages).
+Read more about how to customise your extension [here](/docs/extend/user-extensions).
 
 ## Development environment configuration
 
