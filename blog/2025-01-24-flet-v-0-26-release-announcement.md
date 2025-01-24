@@ -89,7 +89,7 @@ open build/macos/my-project-example.app
 
 <img src="/img/blog/extensions/example.png" className="screenshot-30" />
 
-Read more about how to customise your extension [here](/docs/extend/integrating-existing-flutter-packages).
+Read more about how to customise your extension [here](/docs/extend/user-extensions).
 
 ## Development environment configuration
 
