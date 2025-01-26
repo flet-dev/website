@@ -133,7 +133,7 @@ Usage example [here](/docs/cookbook/fonts#importing-fonts).
 
 ### `height`
 
-A height of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+A height of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resized`](#on_resized) handler.
 
 ### `horizontal_alignment`
 
@@ -435,7 +435,7 @@ The first view is a "root" view which cannot be popped.
 
 ### `width`
 
-A width of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resize`](#on_resize) handler.
+A width of a web page or content area of a native OS window containing Flet app. This property is read-only. It's usually being used inside [`page.on_resized`](#on_resized) handler.
 
 ### `window`
 

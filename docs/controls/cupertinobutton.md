@@ -125,6 +125,18 @@ Value is of type [`UrlTarget`](/docs/reference/types/urltarget) and defaults to 
 
 ## Events
 
+### `on_blur`
+
+Fires when the button loses focus.
+
 ### `on_click`
 
 Fires when a user clicks the button.
+
+### `on_focus`
+
+Fires when the button receives focus.
+
+### `on_long_press`
+
+Fires when a user long-presses the button.
