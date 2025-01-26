@@ -11,11 +11,22 @@ We recommend installing Flet in a virtual environment which can be done in a num
 
 ## Prerequisites
 
+### macOS
+
+Flet supports macOS 11 (Big Sur) or later.
+
+### Windows
+
+Flet supports 64-bit version of Microsoft Windows 10 or later.
+
 ### Linux
 
-If installing Flet on Linux, there are additional [prerequisites](/docs/publish/linux#prerequisites).
+Flet supports Debian Linux 11 or later and Ubuntu Linux 20.04 LTS or later.
 
-### WSL
+There are additional [prerequisites](/docs/publish/linux#prerequisites) when developing and running Flet apps on Linux.
+
+<details>
+  <summary>Windows Subsystem for Linux (WSL)</summary>
 
 Flet apps can be run on WSL 2 (Windows Subsystem for Linux 2). If you are getting `cannot open display` error [following this guide](https://github.com/microsoft/wslg/wiki/Diagnosing-%22cannot-open-display%22-type-issues-with-WSLg) for troubleshooting.
 
@@ -43,7 +54,9 @@ sudo apt install libmpv-dev libmpv2
 sudo ln -s /usr/lib/x86_64-linux-gnu/libmpv.so /usr/lib/libmpv.so.1
 ```
 
-## Python venv module
+</details>
+
+## Virtual environment
 
 You can create virtual environment by running the following commands in your terminal:
 
@@ -123,32 +136,27 @@ Now you are ready to [create your first Flet app](create-flet-app).
 
 Another way to setup a virtual environment for your Flet project is using [Poetry](https://python-poetry.org/docs/).
 
-Once you have Poetry [installed](https://python-poetry.org/docs/#installation), run the following command in your terminal:
+:::note Poetry 2.0
+All Poetry examples in Flet docs is for Poetry 2.0 as it supports standard `[project]` section in `pyproject.toml`.
+:::
+
+Once you have Poetry [installed](https://python-poetry.org/docs/#installation), run the following commands in your terminal:
 
 ```
-poetry new first-flet-app
+mkdir my-app
+cd my-app
+poetry init --dev-dependency='flet[all]' --python='>=3.9' --no-interaction
 ```
 
-This command will create a new directory called first-flet-app with the following structure:
+This command will create `pyproject.toml` in `my-app` directory.
+
+Run the following command to install Flet and other dependencies:
 
 ```
-first-flet-app/
-├── pyproject.toml
-├── README.md
-├── first-flet-app/
-│   └── __init__.py
-└── tests/
-    └── __init__.py
+poetry install --no-root
 ```
 
-Now you can add Flet dependency to your project:
-
-```
-cd first-flet-app
-poetry add flet
-```
-
-To check what version of Flet was installed:
+Make sure Flet CLI has been installed and can be run:
 
 ```
 poetry run flet --version
