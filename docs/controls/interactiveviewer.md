@@ -72,6 +72,12 @@ Changes the deceleration behavior after a gesture. Must be greater than `0`.
 
 Value is of type `float` and defaults to `0.0000135`.
 
+### `interaction_update_interval`
+
+The interval (in milliseconds) at which the `on_interaction_update` event is fired.
+
+Value is of type `int` and defaults to `0`.
+
 ### `max_scale`
 
 The maximum allowed scale. Must be greater than or equal to `min_scale`.

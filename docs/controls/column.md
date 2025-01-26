@@ -392,11 +392,21 @@ to `CrossAxisAlignment.START`.
 
 ### `on_scroll_interval`
 
-Throttling in milliseconds for `on_scroll` event. Default is `10`.
+Throttling in milliseconds for `on_scroll` event. 
+
+Defaults to `10`.
 
 ### `rtl`
 
-`True` to set text direction to right-to-left. Default is `False`.
+`True` to set text direction to right-to-left. 
+
+Defaults to `False`.
+
+### `run_alignment`
+
+How the runs should be placed in the cross-axis when `wrap=True`.
+
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) and defaults to `MainAxisAlignment.START`.
 
 ### `run_spacing`
 
@@ -410,7 +420,10 @@ Value is of type [`ScrollMode`](/docs/reference/types/scrollmode) and defaults t
 
 ### `spacing`
 
-Spacing between controls in a Column. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
+Spacing between the `controls`. 
+It is applied only when `alignment` is set to `MainAxisAlignment.START`, `MainAxisAlignment.END` or `MainAxisAlignment.CENTER`.
+
+Default value is `10` virtual pixels. 
 
 ### `tight`
 

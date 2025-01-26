@@ -87,7 +87,7 @@ The [color](/docs/reference/colors) to use when this switch is on.
 
 The [color](/docs/reference/colors) to use on the track when this switch is on.
 
-If `track_color` returns a non-null color in the `selected` state, it will be used instead of this color.
+If `track_color` returns a non-null color in the `SELECTED` state, it will be used instead of this color.
 
 ### `adaptive`
 
@@ -114,13 +114,21 @@ The [color](/docs/reference/colors) to be used when it is being hovered over by 
 
 The [color](/docs/reference/colors) to use on the thumb when this switch is off.
 
-If `thumb_color` returns a non-null color in the default state, it will be used instead of this color.
+Defaults to colors defined in the [material design specification](https://m3.material.io/components/switch/specs).
+
+If `thumb_color` returns a non-null color in the `DEFAULT` state, it will be used instead of this color.
+
+### `inactive_thumb_image`
+
+An image to use on the thumb of this switch when the switch is off. Can be a local file path or URL.
 
 ### `inactive_track_color`
 
 The [color](/docs/reference/colors) to use on the track when this switch is off.
 
-If `track_color` returns a non-null color in the default state, it will be used instead of this color.
+Defaults to colors defined in the [material design specification](https://m3.material.io/components/switch/specs).
+
+If `track_color` returns a non-null color in the `DEFAULT` state, it will be used instead of this color.
 
 ### `label`
 
@@ -179,6 +187,11 @@ various [`ControlState`](/docs/reference/types/controlstate) states.
 The following [`ControlState`](/docs/reference/types/controlstate) values are
 supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
 
+### `track_outline_width`
+
+The outline width of this switch's track in all or specific [`ControlState`](/docs/reference/types/controlstate) states. 
+The following states are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
+
 ### `value`
 
 Current value of the Switch.
@@ -196,3 +209,5 @@ Fires when the state of the Switch is changed.
 ### `on_focus`
 
 Fires when the control has received focus.
+
+Event handler argument is of type [`OnFocusEvent`](/docs/reference/types/onfocusevent).

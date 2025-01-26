@@ -100,6 +100,14 @@ A `Control` to display before the text input field when the search view is close
 Defines the highlight [color](/docs/reference/colors) that's typically used to indicate that the search bar is
 in `FOCUSED`, `HOVERED`, or `PRESSED` [`ControlState`](/docs/reference/types/controlstate) states.
 
+### `bar_scroll_padding`
+
+Configures the padding around a Scrollable when the text field scrolls into view.
+
+If the bar's text field is partially off-screen or covered (e.g., by the keyboard), it scrolls into view, ensuring it is positioned at the specified distance from the Scrollable edges.
+
+Value is of type [`Padding`](/docs/reference/types/padding).
+
 ### `bar_trailing`
 
 A `Control` to display after the text input field when the search view is close. 

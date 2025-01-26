@@ -117,7 +117,15 @@ If it is also `None`, then `Colors.BLACK_54` is used.
 
 ### `content`
 
-The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. Typically this is a [`Column`](/docs/controls/column) that contains the dialog's [`Text`](/docs/controls/text) message.
+The (optional) content of the dialog is displayed in the center of the dialog in a lighter font. 
+
+Typically this is a [`Column`](/docs/controls/column) that contains the dialog's [`Text`](/docs/controls/text) message.
+
+### `inset_animation`
+
+The animation style to be used when the system keyboard intrudes into the space that the dialog is placed in.
+
+Value is of type [`AnimationStyle`](/docs/reference/types/animationstyle).
 
 ### `modal`
 

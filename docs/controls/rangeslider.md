@@ -159,6 +159,12 @@ Defaults to `0.0`. Must be less than or equal to `max`.
 
 If the `max` is equal to the `min`, then the slider is disabled.
 
+### `mouse_cursor`
+
+The cursor for a mouse pointer entering or hovering over this control. It's value can be made to depend on the slider's [`ControlState`](/docs/reference/types/controlstate).
+
+Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
+
 ### `overlay_color`
 
 The highlight [color](/docs/reference/colors) that's typically used to indicate that the range slider thumb is

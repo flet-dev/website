@@ -142,6 +142,8 @@ Icon [color](/docs/reference/colors).
 
 Icon size in virtual pixels.
 
+Defaults to `24`.
+
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.

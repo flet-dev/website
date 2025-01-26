@@ -25,7 +25,7 @@ def main(page: ft.Page):
 
     page.appbar = ft.CupertinoAppBar(
         leading=ft.Icon(ft.Icons.PALETTE),
-        bgcolor=ft.Colors.SURFACE_VARIANT,
+        bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
         trailing=ft.Icon(ft.Icons.WB_SUNNY_OUTLINED),
       middle=ft.Text("CupertinoAppBar Example"),
     )
@@ -41,6 +41,14 @@ ft.app(main)
 <img src="/img/docs/controls/cupertino-appbar/cupertino-appbar.png" className="screenshot-40"/>
 
 ## Properties
+
+### `automatic_background_visibility`
+
+Whether the navigation bar should appear transparent when content is scrolled under it.
+
+If `False`, the navigation bar will display its `bgcolor`.
+
+Defaults to `True`.
 
 ### `automatically_imply_leading`
 
@@ -67,11 +75,29 @@ By default, a single pixel bottom border side is rendered.
 
 Value is of type [`Border`](/docs/reference/types/border).
 
+### `brightness`
+
+The brightness of the specified `bgcolor`.
+
+Setting this value changes the style of the system status bar. It is typically used to increase the contrast ratio of the system status bar over `bgcolor`.
+
+If `None` (the default), it's value will be inferred from the relative luminance of the `bgcolor`.
+
+Value is of type [`Brightness`](/docs/reference/types/brightness).
+
 ### `elevation`
 
 This property controls the size of the shadow below the app bar.
 
 Defaults to `4`.
+
+### `enable_background_filter_blur`
+
+Whether to have a blur effect when a non-opaque `bgcolor` is used.
+
+This will only be respected when `automatic_background_visibility` is `False` or until content scrolls under the navbar.
+
+Defaults to `True`.
 
 ### `leading`
 
