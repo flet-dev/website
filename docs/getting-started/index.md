@@ -167,3 +167,36 @@ Now you are ready to [create your first Flet app](create-flet-app).
 :::note
 When [creating](create-flet-app) and [running](running-app) Flet app using Poetry, you'll need to use `poetry run` before each command!
 :::
+
+## uv
+
+**uv** is "An extremely fast Python package and project manager, written in Rust."
+
+[Install `uv`](https://github.com/astral-sh/uv?tab=readme-ov-file#installation) and run the following commands in your terminal:
+
+```
+mkdir my-app
+cd my-app
+uv init
+```
+
+This command will create `pyproject.toml` in `my-app` directory.
+
+Run the following command to add Flet as dependency:
+
+```
+uv add 'flet[all]' --dev
+```
+
+Make sure Flet CLI has been installed and can be run:
+
+```
+uv run flet --version
+```
+
+Now you are ready to [create your first Flet app](create-flet-app). 
+
+:::note
+When [creating](create-flet-app) and [running](running-app) Flet app using uv, you'll need to use `uv run` before each command!
+:::
+
