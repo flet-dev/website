@@ -145,7 +145,7 @@ print(plain_text)
   * [`Image.gapless_playback`](/docs/controls/image#gapless_playback)
 * [`on_animation_end` callback](/docs/cookbook/animations#animation-end-callback) to chain animations.
 * [`Container.clip_behavior` property](/docs/controls/container#clip_behavior).
-* [`page.window_bgcolor`](/docs/controls/page#window_bgcolor) to make cool transparent app window:
+* [`page.window.bgcolor`](/docs/reference/types/window#bgcolor) to make cool transparent app window:
 
 ```python
 import flet as ft
@@ -166,7 +166,7 @@ ft.app(target=main)
     * `web_popup_window` - set to `True` to display a URL in a browser popup window. Default is `False`.
     * `window_width` - optional, popup window width.
     * `window_height` - optional, popup window height.
-* [`page.window_to_front()`](/docs/controls/page#window_to_front)
+* [`page.window.to_front()`](/docs/reference/types/window#to_front)
 * [`page.close_in_app_web_view()`](/docs/controls/page#close_in_app_web_view)
 
 

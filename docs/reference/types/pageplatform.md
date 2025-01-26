@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 ### `ANDROID`
 
+### `ANDROID_TV`
+
 ### `IOS`
 
 ### `LINUX`

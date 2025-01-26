@@ -24,9 +24,15 @@ Whether this subtree represents a checkbox or similar widget with a "checked" st
 
 The `Control` to annotate.
 
+### `current_value_length`
+
+The current number of characters that have been entered into an editable text field.
+
 ### `decreased_value`
 
 The value that the semantics node represents when it is decreased.
+
+### `exclude_semantics`
 
 ### `expanded`
 
@@ -43,6 +49,10 @@ Whether the node currently holds input focus.
 ### `header`
 
 Whether this subtree represents a header.
+
+### `heading_level`
+
+The heading level in the DOM document structure.
 
 ### `hidden`
 
@@ -73,6 +83,10 @@ Whether this subtree should be considered a live region.
 ### `max_value_length`
 
 The maximum number of characters that can be entered into an editable text field.
+
+### `mixed`
+
+Whether this subtree represents a checkbox or similar control with a "half-checked" state or similar, and whether it is currently in this half-checked state.
 
 ### `multiline`
 
@@ -155,6 +169,12 @@ Fires when the cursor is moved forward by one character.
 ### `on_paste`
 
 Fires when the current content of the clipboard is pasted. 
+
+### `on_set_text`
+
+Fires when a user wants to replace the current text in the text field with a new text.
+
+Voice access users can trigger this handler by speaking type `<text>` to their Android devices.
 
 ### `on_scroll_down`
 

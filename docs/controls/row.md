@@ -248,6 +248,12 @@ A list of Controls to display inside the Row.
 
 Defaults to `False`.
 
+### `run_alignment`
+
+How the runs should be placed in the cross-axis when `wrap=True`.
+
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment) and defaults to `MainAxisAlignment.START`.
+
 ### `run_spacing`
 
 Spacing between runs when `wrap=True`.

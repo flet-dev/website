@@ -109,15 +109,6 @@ to `TimePickerEntryMode.DIAL`.
 
 The selected time that the picker should display. The default value is equal to the current time.
 
-## Methods
-
-### ~~`pick_time()`~~
-
-Opens a time picker dialog.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(date_picker)`](/docs/controls/page#opencontrol)
-instead.**
-
 ## Events
 
 ### `on_change`

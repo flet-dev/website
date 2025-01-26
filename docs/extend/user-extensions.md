@@ -3,10 +3,6 @@ title: Creating Flet extension for existing Flutter package
 sidebar_label: User extensions
 ---
 
-:::info Work in progress
-The guide is being updated.
-:::
-
 ## Introduction
 
 While Flet controls leverage many built-in Flutter widgets, enabling the creation of complex applications, not all Flutter widgets or third-party packages can be directly supported by the Flet team or included within the core Flet framework.
@@ -30,6 +26,7 @@ Flet now makes it easy to create and build projects with your custom controls ba
 ```
 flet create --template extension --project-name flet-spinkit
 ```
+
 A project with new FletSpinkit control will be created. The control is just a Flutter Text widget with text property, which we will customize later.
 
 3. Build your app.
@@ -42,21 +39,26 @@ When in the folder where your `pyproject.toml` for the app is (`examples/flet_sp
 flet build macos -v
 ```
 
-Open the app and see the new custom Flet Control
+Open the app and see the new custom Flet Control:
+
 ```
 open build/macos/flet-spinkit-example.app
 ```
+
 <img src="/img/docs/extending-flet/example.png" className="screenshot-30" />
 
-4. Run your app.
+4. Change your app.
 
 Once the project was built for desktop once, you can make changes to your python files and run it without re-building.
 
 First, install dependencies from pyproject.toml:
+
 ```
 pip install .
 ```
+
 Now you can make changes to your example app main.py:
+
 ```
 import flet as ft
 
@@ -83,21 +85,35 @@ def main(page: ft.Page):
 
 ft.app(main)
 ```
- and run:
+
+and run:
+
 ```
 flet run
 ```
+
 <img src="/img/docs/extending-flet/example-pink.png" className="screenshot-30" />
 
 5. Re-build your app.
 
-When you make any changes to python or dart files and need to re-build, there is a [known issue](https://github.com/flet-dev/flet/issues/4754) that Flet would build with cached files and your changes will not be included. As a temporary solution, you need to clear cache before re-building: 
+:::info Known issue
+There is a [known issue](https://github.com/flet-dev/flet/issues/4754) that Flet would build with cached files and your changes will not be included. As a temporary solution, you need to clear cache before re-building: 
+
+```
+pip cache purge
+```
+
+:::
+
+When you make any changes to your package, you need to re-build: 
+
 ```
 pip cache purge
 flet build macos -v
 ```
 
 If you need to debug, run this command:
+
 ```
 build/macos/flet-spinkit-example.app/Contents/MacOS/flet-spinkit-example --debug
 ```
@@ -109,14 +125,17 @@ For the example purposes we will be integrating [flutter_spinkit](https://pub.de
 1. Add dependency.
 
 Go to `src/flutter/flet_spinkit` folder and run this command to add dependency to `flutter_spinkit` to `pubspec.yaml`:
+
 ```
 flutter pub add flutter_spinkit
 ```
+
 Read more information about using Flutter packages [here](https://docs.flutter.dev/packages-and-plugins/using-packages).
 
 2. Modify `dart` file. 
 
 In the `src/flutter/flet_spinkit/lib/src/flet_spinkit.dart` file, add import statement and replace Text widget with `SpinKitRotatingCircle` widget:
+
 ```dart
 import 'package:flet/flet.dart';
 import 'package:flutter/material.dart';
@@ -146,13 +165,15 @@ class FletSpinkitControl extends StatelessWidget {
 ```
 
 3. Rebuild your example app. 
+
 Go to `examples/flet_spinkit_example`, clear cache and rebuild your app:
+
 ```
 pip cache purge
 flet build macos -v
 ```
 
-4. Open or run your app:
+4. Run your app:
 
 <img src="/img/docs/extending-flet/spinkit1.gif" className="screenshot-30" />
 
@@ -193,7 +214,7 @@ Flet extension consists of:
 
 ### Package
 
-Package is the component that will be used in your app. It contists of two parts: python and flutter.
+Package is the component that will be used in your app. It contists of two parts: Python and Flutter.
 
 #### Python
  
@@ -238,34 +259,39 @@ Python program that uses Flet Python control.
 ##### pyproject.toml
 
 Here you specify dependency to your package, which can be:
+
 * **Path dependency** 
 
 Absolute path to your Flet extension folder, for example:
+
 ```
 dependencies = [
   "flet-spinkit @ file:///Users/user-name/projects/flet-spinkit",
   "flet>=0.26.0",
 ]
 ```
+
 * **Git dependency**
 
 Link to git repository, for example:
+
 ```
 dependencies = [
   "flet-ads @ git+https://github.com/flet-dev/flet-ads.git",
   "flet>=0.26.0",
 ]
 ```
+
 * **PyPi dependency**  
 
 Name of the package published on pypi.org, for example:
+
 ```
 dependencies = [
   "flet-ads",
   "flet>=0.26.0",
 ]
 ```
-
 
 ## Customize properties
 
@@ -276,8 +302,11 @@ In the example above, Spinkit control creates a hardcoded Flutter widget. Now le
 Generally, there are two types of controls in Flet:
 
 1. Visual controls that are added to the app/page surface, such as FletSpinkit.
+
 2. Non-visual controls that can be:
+
     * popup controls (dialogs, pickers, panels etc.).
+
     * services that are added to `overlay`, such as Video or Audio.
 
 Flet `Control` class has properties common for all controls such as `visible`, `opacity` and `tooltip`, to name a few. 
@@ -316,6 +345,7 @@ def main(page: ft.Page):
 
 ft.app(main)
 ```
+
 <img src="/img/docs/extending-flet/spinkit2.gif" className="screenshot-30" />
 
 ### Control-specific properties
@@ -327,15 +357,17 @@ In the FletSpinkit example, let's define its `color` and `size`.
 In Python class, define new `color` and `size` properties:
 
 ```python
+from enum import Enum
 from typing import Any, Optional
 
-from flet_core.constrained_control import ConstrainedControl
-from flet_core.control import OptionalNumber
+from flet.core.constrained_control import ConstrainedControl
+from flet.core.control import OptionalNumber
+from flet.core.types import ColorEnums, ColorValue
 
 
-class Spinkit(ConstrainedControl):
+class FletSpinkit(ConstrainedControl):
     """
-    Spinkit Control.
+    FletSpinkit Control.
     """
 
     def __init__(
@@ -355,9 +387,9 @@ class Spinkit(ConstrainedControl):
         right: OptionalNumber = None,
         bottom: OptionalNumber = None,
         #
-        # Spinkit specific
+        # FletSpinkit specific
         #
-        color: Optional[str] = None,
+        color: Optional[ColorValue] = None,
         size: OptionalNumber = None,
     ):
         ConstrainedControl.__init__(
@@ -376,16 +408,17 @@ class Spinkit(ConstrainedControl):
         self.size = size
 
     def _get_control_name(self):
-        return "spinkit"
+        return "flet_spinkit"
 
     # color
     @property
-    def color(self):
-        return self._get_attr("color")
+    def color(self) -> Optional[ColorValue]:
+        return self.__color
 
     @color.setter
-    def color(self, value):
-        self._set_attr("color", value)
+    def color(self, value: Optional[ColorValue]):
+        self.__color = value
+        self._set_enum_attr("color", value, ColorEnums)
 
     # size
     @property
@@ -404,11 +437,11 @@ import 'package:flet/flet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class SpinkitControl extends StatelessWidget {
+class FletSpinkitControl extends StatelessWidget {
   final Control? parent;
   final Control control;
 
-  const SpinkitControl({
+  const FletSpinkitControl({
     super.key,
     required this.parent,
     required this.control,
@@ -418,23 +451,23 @@ class SpinkitControl extends StatelessWidget {
   Widget build(BuildContext context) {
     var color = control.attrColor("color", context);
     var size = control.attrDouble("size");
+    Widget myControl = SpinKitRotatingCircle(
+      color: color,
+      size: size ?? 100,
+    );
 
-    return constrainedControl(
-        context,
-        SpinKitRotatingCircle(
-          color: color,
-          size: size ?? 50,
-        ),
-        parent,
-        control);
+
+    return constrainedControl(context, myControl, parent, control);
   }
 }
 ```
 
 Use `color` and `size` properties in your app:
+
 ```python
 import flet as ft
-from controls.spinkit import Spinkit
+
+from flet_spinkit import FletSpinkit
 
 
 def main(page: ft.Page):
@@ -445,23 +478,27 @@ def main(page: ft.Page):
         ft.Stack(
             [
                 ft.Container(height=200, width=200, bgcolor=ft.Colors.BLUE_100),
-                Spinkit(
+                FletSpinkit(
                     opacity=0.5,
                     tooltip="Spinkit tooltip",
                     top=0,
                     left=0,
-                    color=ft.Colors.PURPLE,
+                    color=ft.Colors.YELLOW,
                     size=150,
                 ),
             ]
         )
     )
 
-ft.app(main)
 
+ft.app(main)
 ```
 
-You can find source code for this example [here](TBD).
+Re-build and run:
+
+<img src="/img/docs/extending-flet/spinkit3.gif" className="screenshot-20" />
+
+You can find source code for this example [here](https://github.com/flet-dev/flet-spinkit).
 
 #### Examples for different types of properties and events
 

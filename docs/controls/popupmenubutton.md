@@ -127,12 +127,6 @@ The [color](/docs/reference/colors) used as an overlay on color to indicate elev
 
 ## `PopupMenuButton` Events
 
-### ~~`on_cancelled`~~
-
-Called when the user dismisses/cancels the popup menu without selecting an item.
-
-**Deprecated (renamed) in v0.22.0 and will be removed in v0.26.0. Use `on_cancel` instead.**
-
 ### `on_cancel`
 
 Called when the user dismisses/cancels the popup menu without selecting an item.
