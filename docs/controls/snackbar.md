@@ -5,45 +5,15 @@ sidebar_label: SnackBar
 
 A lightweight message with an optional action which briefly displays at the bottom of the screen.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## Examples
 
 [Live example](https://flet-controls-gallery.fly.dev/dialogs/snackbar)
 
 ### SnackBar with dynamic message
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
-
-
-class Data:
-    def __init__(self) -> None:
-        self.counter = 0
-
-
-d = Data()
-
-
-def main(page):
-
-    def on_click(e):
-        snack_bar = ft.SnackBar(ft.Text(f"Hello {d.counter}"))
-        page.open(snack_bar)
-        d.counter += 1
-        page.update()
-
-    page.add(ft.ElevatedButton("Open SnackBar", on_click=on_click))
-
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/main/python/controls/snack-bar/simple-snack.py
 ```
-  </TabItem>
-</Tabs>
 
 <img src="/img/docs/controls/snackbar/snackbar-with-custom-content.gif" className="screenshot-40"/>
 

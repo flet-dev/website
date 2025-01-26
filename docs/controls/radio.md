@@ -132,7 +132,7 @@ Value is of type [`LabelPosition`](/docs/reference/types/labelposition) and defa
 
 ### `mouse_cursor`
 
-The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+The cursor for a mouse pointer entering or hovering over this control.
 
 Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
 
