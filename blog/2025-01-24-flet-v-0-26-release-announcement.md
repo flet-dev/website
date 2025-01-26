@@ -66,14 +66,14 @@ Flet now makes it easy to create and build projects with your custom controls ba
 2. Create new Flet extension project from template:
 
 ```
-flet create --template extension --project-name my-project
+flet create --template extension --project-name my-control
 ```
 
-A project with new MyProject control will be created. The control is just a Flutter Text widget with a single `text` property.
+A project with new MyControl control will be created. The control is just a Flutter Text widget with a single `text` property.
 
 3. Build your app.
 
-Flet project created from extension template has `examples/my_project_example` folder with the example app.
+Flet project created from extension template has `examples/my_control_example` folder with the example app.
 
 When in the folder where your `pyproject.toml` for the app is, run `flet build` command, for example, for macOS:
 
@@ -84,7 +84,7 @@ flet build macos -v
 Run the app and see the new custom Flet Control:
 
 ```
-open build/macos/my-project-example.app
+open build/macos/my-control-example.app
 ```
 
 <img src="/img/blog/extensions/example.png" className="screenshot-30" />
