@@ -56,10 +56,29 @@ ft.app(main)
 
 ## Properties
 
+### `anti_alias`
+
+Whether to paint the image with anti-aliasing.
+
+Anti-aliasing alleviates the sawtooth artifact when the image is rotated.
+
 ### `border_radius`
 
-Clip image to have rounded corners. Border radius is an instance of [`BorderRadius`](/docs/reference/types/borderradius)
-class.
+Clip image to have rounded corners. 
+
+Value is of type [`BorderRadius`](/docs/reference/types/borderradius).
+
+### `cache_width`
+
+The size at which the image should be decoded.
+ 
+The image will, however, be rendered to the constraints of the layout regardless of this parameter. 
+
+### `cache_height`
+
+The size at which the image should be decoded.
+
+The image will, however, be rendered to the constraints of the layout regardless of this parameter.
 
 ### `color`
 

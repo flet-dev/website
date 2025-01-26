@@ -108,7 +108,7 @@ solving the remaining ones.
   page.window.on_event = lambda e: print(e.type)
   ```
 
-* [`SafeArea.minimum`](/docs/controls/safearea#minimum) is deprecated and has been renamed
+* `SafeArea.minimum` is deprecated and has been renamed
   to [`minimum_padding`](/docs/controls/safearea#minimum_padding)
 * `MaterialState` enum is deprecated and has been renamed to [`ControlState`](/docs/reference/types/controlstate)
 * `NavigationDestination` is deprecated and has been renamed

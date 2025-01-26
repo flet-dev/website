@@ -97,7 +97,8 @@ module.exports = {
       //   id: "create/create-flet-app",
       // },
       items: [
-        "extend/integrating-existing-flutter-packages"
+        "extend/built-in-extensions",
+        "extend/user-extensions"
       ],
     },
     {

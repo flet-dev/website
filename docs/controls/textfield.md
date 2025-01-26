@@ -278,7 +278,28 @@ The [`TextStyle`](/docs/reference/types/textstyle) to use for `counter_text`.
 
 Optional text to place below the line as a character count.
 
-If null or an empty string and counter isn't specified, then nothing will appear in the counter's location.
+For dynamic update, it supports the following placeholders:
+
+- `{value_length}`: the length of the textfield's value
+- `{max_length}`: the maximum length of the field, defined by [`max_length`](#max_length). Defaults to `"None"` if
+  `max_length` is not specified.
+- `{symbols_left}`: the number of symbols/letters left to reach the field's [`max_length`](#max_length). Defaults to
+  `"None"` if `max_length` is not specified.
+
+Example:
+
+```python
+ft.TextField(
+    hint_text="Custom counter text",
+    counter_text="{value_length} chars / {max_length} max chars / {symbols_left} symbols left",
+    max_length=10,
+)
+
+ft.TextField(
+    hint_text="Counter text isn't shown by default",
+    max_length=20,
+),
+```
 
 ### `cursor_color`
 

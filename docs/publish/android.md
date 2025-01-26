@@ -9,21 +9,19 @@ Flet CLI provides `flet build apk` and `flet build aab` commands that allow pack
 
 ## Prerequisites
 
+### Android SDK
+
+Java (JDK) and Android SDK will be automatically installed on the first run of `flet build` command.
+
+JDK is installed into `$HOME/java/{version}` directory.
+
+If you have Android Studio installed Flet CLI will locate and use Android SDK coming with the studio; otherwise Android SDK will be installed to `$HOME/Android/sdk` directory.
+
 ### Android wheels for binary Python packages
 
 Binary Python packages (vs "pure" Python packages written in Python only) are packages that partially written in C, Rust or other languages producing native code. Example packages are `numpy`, `cryptography`, or `pydantic-core`.
 
 Make sure all non-pure (binary) packages used in your Flet app have [pre-built wheels for Android](/docs/reference/binary-packages-android-ios).
-
-### Android SDK
-
-To build the app for the Android platform, the `flet build` command requires the Android SDK to be installed on your machine.
-
-The official way to install the Android SDK and Java is by installing Android Studio.
-
-:::note
-On macOS Android SDK will be located at `$HOME/Library/Android/sdk`.
-:::
 
 ## `flet build apk`
 
