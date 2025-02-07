@@ -46,7 +46,11 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `active_color`
 
-The [color](/docs/reference/colors) used to fill checkbox when it is checked.
+The [color](/docs/reference/colors) used to fill checkbox when it is checked/selected.
+
+If `fill_color` returns a non-null color in the `SELECTED` state, it will be used instead of this color.
+
+Defaults to `Colors.PRIMARY`.
 
 ### `border_side`
 
@@ -70,10 +74,6 @@ The following states are supported: `DEFAULT`, `SELECTED`, `HOVERED`, `FOCUSED`,
 ### `focus_color`
 
 The [color](/docs/reference/colors) used for the checkbox's border shadow when it has the input focus.
-
-### `inactive_color`
-
-The [color](/docs/reference/colors) used for checkbox's border when the checkbox is inactive.
 
 ### `label`
 
