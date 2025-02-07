@@ -30,7 +30,7 @@ def main(page: ft.Page):
         leading_width=40,
         title=ft.Text("AppBar Example"),
         center_title=False,
-        bgcolor=ft.Colors.SURFACE_VARIANT,
+        bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
         actions=[
             ft.IconButton(ft.Icons.WB_SUNNY_OUTLINED),
             ft.IconButton(ft.Icons.FILTER_3),
