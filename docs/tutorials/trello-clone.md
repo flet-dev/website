@@ -26,15 +26,11 @@ With the proximate goal of creating the MVP of our clone, let's start by definin
 Here, in the `main.py` module we'll add this code and then continue to define the `TrelloApp` class. 
 
 ```python
-import flet
-from flet import (
-    Page,
-    colors
-)
+import flet as ft
  
 if __name__ == "__main__":
  
-    def main(page: Page):
+    def main(page: ft.Page):
  
         page.title = "Flet Trello clone"
         page.padding = 0
@@ -43,7 +39,7 @@ if __name__ == "__main__":
         page.add(app)
         page.update()
  
-    flet.app(main, view=flet.WEB_BROWSER)
+    ft.app(main, view=flet.WEB_BROWSER)
 ```
 
 In terms of layout we can consider the app to consist of a header (`appbar`) and below that a collapsible navigation panel, next to which is the active view consisting of either a board, settings, members or whatever else we may choose. Something like this...
@@ -53,40 +49,29 @@ In terms of layout we can consider the app to consist of a header (`appbar`) and
 So the class for the app itself could look something like this... 
 
 ```python
-from flet import (
-    Container,
-    Icon,
-    Page,
-    Text,
-    AppBar,
-    PopupMenuButton,
-    PopupMenuItem,
-    colors,
-    icons,
-    margin
-)
+import flet as ft
  
 class TrelloApp:
-    def __init__(self, page: Page):
+    def __init__(self, page: ft.Page):
         self.page = page
         self.appbar_items = [
-            PopupMenuItem(text="Login"),
-            PopupMenuItem(),  # divider
-            PopupMenuItem(text="Settings")
+            ft.PopupMenuItem(text="Login"),
+            ft.PopupMenuItem(),  # divider
+            ft.PopupMenuItem(text="Settings")
         ]
-        self.appbar = AppBar(
-            leading=Icon(icons.GRID_GOLDENRATIO_ROUNDED),
+        self.appbar = ft.AppBar(
+            leading=ft.Icon(ft.Icons.GRID_GOLDENRATIO_ROUNDED),
             leading_width=100,
-            title=Text("Trolli",size=32, text_align="start"),
+            title=ft.Text("Trolli",size=32, text_align="start"),
             center_title=False,
             toolbar_height=75,
-            bgcolor=colors.LIGHT_BLUE_ACCENT_700,
+            bgcolor=ft.Colors.LIGHT_BLUE_ACCENT_700,
             actions=[
-                Container(
-                    content=PopupMenuButton(
+                ft.Container(
+                    content=ft.PopupMenuButton(
                         items=self.appbar_items
                     ),
-                    margin=margin.only(left=50, right=25)
+                    margin=ft.margin.only(left=50, right=25)
                 )
             ],
         )
@@ -95,42 +80,31 @@ class TrelloApp:
 ```
 
 
-In a new file (`app_layout.py`) we can define a layout for our app in a class which will inherit from the `Row` control and in which the navigation rail along with a toggle button to collapse and expand it, and the main content area are laid out. But rather than define the navigation sidebar in that module, we'll place that in its own `sidebar.py` module. We'll also build the sidebar class as a `UserControl` so that it can be updated independently of the `AppLayout` class. 
+In a new file (`app_layout.py`) we can define a layout for our app in a class which will inherit from the `Row` control and in which the navigation rail along with a toggle button to collapse and expand it, and the main content area are laid out. But rather than define the navigation sidebar in that module, we'll place that in its own `sidebar.py` module. 
 
 ```python
-from flet import (
-    Control,
-    Column,
-    Container,
-    IconButton,
-    Page,
-    Row,
-    Text,
-    IconButton,
-    colors,
-    icons,
-)
+import flet as ft
 from sidebar import Sidebar
  
  
-class AppLayout(Row):
+class AppLayout(ft.Row):
     def __init__(
         self,
         app,
-        page: Page,
+        page: ft.Page,
         *args,
         **kwargs
     ):
         super().__init__(*args, **kwargs)
         self.app = app
         self.page = page
-        self.toggle_nav_rail_button = IconButton(
-            icon=icons.ARROW_CIRCLE_LEFT, icon_color=colors.BLUE_GREY_400, selected=False,
-            selected_icon=icons.ARROW_CIRCLE_RIGHT, on_click=self.toggle_nav_rail)
+        self.toggle_nav_rail_button = ft.IconButton(
+            icon=ft.Icons.ARROW_CIRCLE_LEFT, icon_color=ft.Colors.BLUE_GREY_400, selected=False,
+            selected_icon=ft.Icons.ARROW_CIRCLE_RIGHT, on_click=self.toggle_nav_rail)
         self.sidebar = Sidebar(self, page)
-        self._active_view: Control = Column(controls=[
-            Text("Active View")
-        ], alignment="center", horizontal_alignment="center")
+        self._active_view: Control = ft.Column(controls=[
+            ft.Text("Active View")
+        ], alignment=ft.MainAxisAlignmnet.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
         self.controls = [self.sidebar,
                          self.toggle_nav_rail_button, self.active_view]
  
@@ -154,84 +128,77 @@ class AppLayout(Row):
 And here is the `Sidebar.py` file.
 
 ```python
-from flet import (
-    UserControl,
-    Column,
-    Container,
-    Row,
-    Text,
-    NavigationRail,
-    NavigationRailDestination,
-    alignment,
-    border_radius,
-    colors,
-    icons,
-    padding,
-    margin,
-)
+import flet as ft
  
- 
-class Sidebar(UserControl):
- 
-    def __init__(self, app_layout, page):
-        super().__init__()
+class Sidebar(ft.Container):
+
+    def __init__(self, app_layout, store: DataStore):
+        self.store: DataStore = store
         self.app_layout = app_layout
-        self.page = page
+        self.nav_rail_visible = True
         self.top_nav_items = [
-            NavigationRailDestination(
-                label_content=Text("Boards"),
+            ft.NavigationRailDestination(
+                label_content=ft.Text("Boards"),
                 label="Boards",
-                icon=icons.BOOK_OUTLINED,
-                selected_icon=icons.BOOK_OUTLINED
+                icon=ft.Icons.BOOK_OUTLINED,
+                selected_icon=ft.Icons.BOOK_OUTLINED,
             ),
-            NavigationRailDestination(
-                label_content=Text("Members"),
+            ft.NavigationRailDestination(
+                label_content=ft.Text("Members"),
                 label="Members",
-                icon=icons.PERSON,
-                selected_icon=icons.PERSON
+                icon=ft.Icons.PERSON,
+                selected_icon=ft.Icons.PERSON,
             ),
- 
         ]
-        self.top_nav_rail = NavigationRail(
+
+        self.top_nav_rail = ft.NavigationRail(
             selected_index=None,
-            label_type="all",
+            label_type=ft.NavigationRailLabelType.ALL,
             on_change=self.top_nav_change,
             destinations=self.top_nav_items,
-            bgcolor=colors.BLUE_GREY,
+            bgcolor=ft.Colors.BLUE_GREY,
             extended=True,
-            expand=True
+            height=110,
         )
- 
-    def build(self):
-        self.view = Container(
-            content=Column([
-                Row([
-                    Text("Workspace"),
-                ]),
-                # divider
-                Container(
-                    bgcolor=colors.BLACK26,
-                    border_radius=border_radius.all(30),
-                    height=1,
-                    alignment=alignment.center_right,
-                    width=220
-                ),
-                self.top_nav_rail,
-                # divider
-                Container(
-                    bgcolor=colors.BLACK26,
-                    border_radius=border_radius.all(30),
-                    height=1,
-                    alignment=alignment.center_right,
-                    width=220
-                ),
-            ], tight=True),
-            padding=padding.all(15),
-            margin=margin.all(0),
+
+        self.toggle_nav_rail_button = ft.IconButton(ft.Icons.ARROW_BACK)
+
+        super().__init__(
+            content=ft.Column(
+                [
+                    ft.Row(
+                        [
+                            ft.Text("Workspace"),
+                        ],
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    ),
+                    # divider
+                    ft.Container(
+                        bgcolor=ft.Colors.BLACK26,
+                        border_radius=ft.border_radius.all(30),
+                        height=1,
+                        alignment=ft.alignment.center_right,
+                        width=220,
+                    ),
+                    self.top_nav_rail,
+                    # divider
+                    ft.Container(
+                        bgcolor=ft.Colors.BLACK26,
+                        border_radius=ft.border_radius.all(30),
+                        height=1,
+                        alignment=ft.alignment.center_right,
+                        width=220,
+                    ),
+                ],
+                tight=True,
+            ),
+            padding=ft.padding.all(15),
+            margin=ft.margin.all(0),
             width=250,
-            bgcolor=colors.BLUE_GREY,
+            # expand=True,
+            bgcolor=ft.Colors.BLUE_GREY,
+            visible=self.nav_rail_visible,
         )
-        return self.view
  
     def top_nav_change(self, e):
         self.top_nav_rail.selected_index = e.control.selected_index
@@ -241,12 +208,12 @@ class Sidebar(UserControl):
 
 If we run the main app with 
 ```
-flet main.py -d
+flet run
 ```
-we can see the result and get hot reloading when we make any style changes. For example, try adding `alignment="center"` to the first row in the container like this…
+we can see the result and get hot reloading when we make any style changes. For example, try adding `alignment=ft.MainAxisAlignment.CENTE` to the first row in the container like this…
 ```python
-content=Column([
-        Row([Text("Workspace")], alignment="center")
+content=ft.Column([
+        ft.Row([ft.Text("Workspace")], alignment=ft.MainAxisAlignment.CENTER)
 ```
 
 If you save the file you should be able to see the change in your app window. 
@@ -268,17 +235,18 @@ We'll also add a new font in an *assets* directory, which is specified in the na
 ```python
 if __name__ == "__main__":
  
-    def main(page: Page):
+    def main(page: ft.Page):
  
         page.title = "Flet Trello clone"
         page.padding = 0
-        page.theme = theme.Theme(
+        page.theme = ft.Theme(
             font_family="Verdana")
+        page.theme_mode = ft.ThemeMode.LIGHT
         page.theme.page_transitions.windows = "cupertino"
         page.fonts = {
             "Pacifico": "/Pacifico-Regular.ttf"
         }
-        page.bgcolor = colors.BLUE_GREY_200
+        page.bgcolor = ft.Colors.BLUE_GREY_200
         page.update()
         app = TrelloApp(page)
  
@@ -296,74 +264,116 @@ First up, we will add views to correspond to the sidebar navigation destinations
 ```python
 self.members_view = Text("members view")
 
-self.all_boards_view = Column([
-    Row([
-        Container(
-            Text(value="Your Boards", style="headlineMedium"),
-            expand=True,
-            padding=padding.only(top=15)),
-        Container(
-            TextButton(
-                "Add new board",
-                icon=icons.ADD,
-                on_click=self.app.add_board,
-                style=ButtonStyle(
-                    bgcolor={
-                        "": colors.BLUE_200,
-                        "hovered": colors.BLUE_400
-                    },
-                    shape={
-                        "": RoundedRectangleBorder(radius=3)
-                    }
+self.all_boards_view = ft.Column(
+    [
+        ft.Row(
+            [
+                ft.Container(
+                    ft.Text(
+                        value="Your Boards",
+                        theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM,
+                    ),
+                    expand=True,
+                    padding=ft.padding.only(top=15),
+                ),
+                ft.Container(
+                    ft.TextButton(
+                        "Add new board",
+                        icon=ft.Icons.ADD,
+                        on_click=self.app.add_board,
+                        style=ft.ButtonStyle(
+                            bgcolor={
+                                ft.ControlState.DEFAULT: ft.Colors.BLUE_200,
+                                ft.ControlState.HOVERED: ft.Colors.BLUE_400,
+                            },
+                            shape={
+                                ft.ControlState.DEFAULT: ft.RoundedRectangleBorder(
+                                    radius=3
+                                )
+                            },
+                        ),
+                    ),
+                    padding=ft.padding.only(right=50, top=15),
+                ),
+            ]
+        ),
+        ft.Row(
+            [
+                ft.TextField(
+                    hint_text="Search all boards",
+                    autofocus=False,
+                    content_padding=ft.padding.only(left=10),
+                    width=200,
+                    height=40,
+                    text_size=12,
+                    border_color=ft.Colors.BLACK26,
+                    focused_border_color=ft.Colors.BLUE_ACCENT,
+                    suffix_icon=ft.Icons.SEARCH,
                 )
-            ),
-
-            padding=padding.only(right=50, top=15))
-    ]),
-    Row([
-        TextField(hint_text="Search all boards", autofocus=False, content_padding=padding.only(left=10),
-                    width=200, height=40, text_size=12,
-                    border_color=colors.BLACK26, focused_border_color=colors.BLUE_ACCENT, suffix_icon=icons.SEARCH)
-    ]),
-    Row([Text("No Boards to Display")])
-], expand=True)
+            ]
+        ),
+        ft.Row([ft.Text("No Boards to Display")]),
+    ],
+    expand=True,
+)
 
 ```
 Since we are working in an imperative paradigm and have no explicit state management tool such as redux or the like, we will need a method to 'rehydrate' the view that shows all the boards so that its current state reflects changes made in other entities (namely the sideboard).
 
 ```python
 def hydrate_all_boards_view(self):
-    self.all_boards_view.controls[-1] = Row([
-        Container(
-            content=Row([
-                Container(
-                    content=Text(value=b.name), data=b, expand=True, on_click=self.board_click),
-                Container(
-                    content=PopupMenuButton(
-                        items=[
-                            PopupMenuItem(
-                                content=Text(value="Delete", style="labelMedium",
-                                                text_align="center"),
-                                on_click=self.app.delete_board, data=b),
-                            PopupMenuItem(),
-                            PopupMenuItem(
-                                content=Text(value="Archive", style="labelMedium",
-                                                text_align="center"),
-                            )
-                        ]
-                    ),
-                    padding=padding.only(right=-10),
-                    border_radius=border_radius.all(3)
-                )], alignment="spaceBetween"),
-            border=border.all(1, colors.BLACK38),
-            border_radius=border_radius.all(5),
-            bgcolor=colors.WHITE60,
-            padding=padding.all(10),
-            width=250,
-            data=b
-        ) for b in self.store.get_boards()
-    ], wrap=True)
+    self.all_boards_view.controls[-1] = ft.Row(
+        [
+            ft.Container(
+                content=ft.Row(
+                    [
+                        ft.Container(
+                            content=ft.Text(value=b.name),
+                            data=b,
+                            expand=True,
+                            on_click=self.board_click,
+                        ),
+                        ft.Container(
+                            content=ft.PopupMenuButton(
+                                items=[
+                                    ft.PopupMenuItem(
+                                        content=ft.Text(
+                                            value="Delete",
+                                            theme_style=ft.TextThemeStyle.LABEL_MEDIUM,
+                                            text_align=ft.TextAlign.CENTER,
+                                        ),
+                                        on_click=self.app.delete_board,
+                                        data=b,
+                                    ),
+                                    ft.PopupMenuItem(),
+                                    ft.PopupMenuItem(
+                                        content=ft.Text(
+                                            value="Archive",
+                                            theme_style=ft.TextThemeStyle.LABEL_MEDIUM,
+                                            text_align=ft.TextAlign.CENTER,
+                                        ),
+                                    ),
+                                ]
+                            ),
+                            padding=ft.padding.only(right=-10),
+                            border_radius=ft.border_radius.all(3),
+                        ),
+                    ],
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                ),
+                border=ft.border.all(1, ft.Colors.BLACK38),
+                border_radius=ft.border_radius.all(5),
+                bgcolor=ft.Colors.WHITE60,
+                padding=ft.padding.all(10),
+                width=250,
+                data=b,
+            )
+            for b in self.store.get_boards()
+        ],
+        wrap=True,
+    )
     self.sidebar.sync_board_destinations()
+
 ```
 
 ### Syncing Navigation Panel
@@ -372,22 +382,23 @@ Next up we need a visually distinct section of the navigation panel to display b
 We'll now have a change handler for each of the top and bottom nav rails. 
 
 ```python
-self.top_nav_rail = NavigationRail(
+self.top_nav_rail = ft.NavigationRail(
     selected_index=None,
-    label_type="all",
+    label_type=ft.NavigationRailLabelType.ALL,
     on_change=self.top_nav_change,
     destinations=self.top_nav_items,
-    bgcolor=colors.BLUE_GREY,
+    bgcolor=ft.Colors.BLUE_GREY,
     extended=True,
-    height=110
+    height=110,
 )
-self.bottom_nav_rail = NavigationRail(
+
+self.bottom_nav_rail = ft.NavigationRail(
     selected_index=None,
-    label_type="all",
+    label_type=ft.NavigationRailLabelType.ALL,
     on_change=self.bottom_nav_change,
     extended=True,
     expand=True,
-    bgcolor=colors.BLUE_GREY,
+    bgcolor=ft.Colors.BLUE_GREY,
 )
 
 ...
@@ -398,26 +409,25 @@ def sync_board_destinations(self):
     for i in range(len(boards)):
         b = boards[i]
         self.bottom_nav_rail.destinations.append(
-            NavigationRailDestination(
-                label_content=TextField(
+            ft.NavigationRailDestination(
+                label_content=ft.TextField(
                     value=b.name,
                     hint_text=b.name,
                     text_size=12,
                     read_only=True,
                     on_focus=self.board_name_focus,
                     on_blur=self.board_name_blur,
-                    border="none",
+                    border=ft.InputBorder.NONE,
                     height=50,
                     width=150,
-                    text_align="start",
-                    data=i
+                    text_align=ft.TextAlign.START,
+                    data=i,
                 ),
                 label=b.name,
-                selected_icon=icons.CHEVRON_RIGHT_ROUNDED,
-                icon=icons.CHEVRON_RIGHT_OUTLINED
+                selected_icon=ft.Icons.CHEVRON_RIGHT_ROUNDED,
+                icon=ft.Icons.CHEVRON_RIGHT_OUTLINED,
             )
         )
-    self.view.update()
       
 ```
 Now we can add new boards and they appear in our navigation rail. 
@@ -432,8 +442,8 @@ There are several ways we could achieve this such as having every view present i
 In the `main.py` module let's wire up a handler to the `page.on_route_change` event. 
 
 ```python
-Class TrelloApp:
-    def __init__(self, page: Page, user=None):
+Class TrelloApp(AppLayout):
+    def __init__(self, page: ft.Page, user=None):
  	… 
         self.page.on_route_change = self.route_change
 	…
@@ -441,51 +451,48 @@ Class TrelloApp:
  
     def initialize(self):
         self.page.views.append(
-            View(
+            ft.View(
                 "/",
-                [
-                    self.appbar,
-                    self.layout
-                ],
-                padding=padding.all(0),
-                bgcolor=colors.BLUE_GREY_200
+                [self.appbar, self],
+                padding=ft.padding.all(0),
+                bgcolor=ft.Colors.BLUE_GREY_200,
             )
         )
         self.page.update()
-        # create an initial board for demonstration
-        self.create_new_board("My First Board")
+        # create an initial board for demonstration if no boards
+        if len(self.boards) == 0:
+            self.create_new_board("My First Board")
         self.page.go("/")
  
     def route_change(self, e):
-        troute = TemplateRoute(self.page.route)
+        troute = ft.TemplateRoute(self.page.route)
         if troute.match("/"):
             self.page.go("/boards")
         elif troute.match("/board/:id"):
             if int(troute.id) > len(self.store.get_boards()):
                 self.page.go("/")
                 return
-            self.layout.set_board_view(int(troute.id))
+            self.set_board_view(int(troute.id))
         elif troute.match("/boards"):
-            self.layout.set_all_boards_view()
+            self.set_all_boards_view()
         elif troute.match("/members"):
-            self.layout.set_members_view()
+            self.set_members_view()
         self.page.update()
 ```
 
 While here, we'll also change our initialization method so that the app starts with a pre-made board for demonstration purposes. Within that method note that we add a flet `View` object to the page. The page maintains a list of Views as top level containers for other Controls in order to track navigation history. We'll need to add the corresponding `set_***_view` methods to the `layout.py` module as well. Here is the `set_board_view` method for example...
 
 ```python
- def set_board_view(self, i):
-        self.active_view = self.store.get_boards()[i]
-        self.sidebar.bottom_nav_rail.selected_index = i
-        self.sidebar.top_nav_rail.selected_index = None
-        self.sidebar.update()
-        self.page.update()
+def set_board_view(self, i):
+    self.active_view = self.store.get_boards()[i]
+    self.sidebar.bottom_nav_rail.selected_index = i
+    self.sidebar.top_nav_rail.selected_index = None
+    self.page.update()
 ```
 
 Now, if we fire up the project in a web browser with the 
 ```
-flet main.py -d -w
+flet run -dw
 ``` 
 command (_-d_ flag for hot reloading, and _-w_ flag for web) we can add some boards and reach them by clicking or entering `board/{i}`, where *i* is the zero indexed board, as the url.
 
@@ -499,15 +506,16 @@ Next, we should include the ability to change the name of a board. In contrast t
 ```python
 def board_name_focus(self, e):
     e.control.read_only = False
-    e.control.border = "outline"
-    e.control.update()
+    e.control.border = ft.InputBorder.OUTLINE
+    self.page.update()
 
 def board_name_blur(self, e):
-    self.store.update_board(self.store.get_boards()[e.control.data], {
-        'name': e.control.value})
+    self.store.update_board(
+        self.store.get_boards()[e.control.data], {"name": e.control.value}
+    )
     self.app_layout.hydrate_all_boards_view()
     e.control.read_only = True
-    e.control.border = "none"
+    e.control.border = ft.InputBorder.NONE
     self.page.update()
 
 ```
@@ -517,8 +525,8 @@ This makes for a very intuitive way to change a board name without unnecessary d
 Let's also quickly stub a login procedure which will be more fully realized in a future instalment. For now, we'll simply add the following login method and wire it up to the login `PopupMenuItem` on_click event. 
 
 ```python
-def login(self, e):
 
+def login(self, e):
     def close_dlg(e):
         if user_name.value == "" or password.value == "":
             user_name.error_text = "Please provide username"
@@ -526,31 +534,33 @@ def login(self, e):
             self.page.update()
             return
         else:
-            print("name and password: ", user_name.value, password.value)
             user = User(user_name.value, password.value)
             if user not in self.store.get_users():
                 self.store.add_user(user)
             self.user = user_name.value
             self.page.client_storage.set("current_user", user_name.value)
 
-        dialog.open = False
-        self.appbar_items[0] = PopupMenuItem(
-            text=f"{self.page.client_storage.get('current_user')}'s Profile")
+        self.page.close(dialog)
+        self.appbar_items[0] = ft.PopupMenuItem(
+            text=f"{self.page.client_storage.get('current_user')}'s Profile"
+        )
         self.page.update()
-    user_name = TextField(label="User name")
-    password = TextField(label="Password", password=True)
-    dialog = AlertDialog(
-        title=Text("Please enter your login credentials"),
-        content=Column([
-            user_name,
-            password,
-            ElevatedButton(text="Login", on_click=close_dlg),
-        ], tight=True),
+
+    user_name = ft.TextField(label="User name")
+    password = ft.TextField(label="Password", password=True)
+    dialog = ft.AlertDialog(
+        title=ft.Text("Please enter your login credentials"),
+        content=ft.Column(
+            [
+                user_name,
+                password,
+                ft.ElevatedButton(text="Login", on_click=close_dlg),
+            ],
+            tight=True,
+        ),
         on_dismiss=lambda e: print("Modal dialog dismissed!"),
     )
-    self.page.dialog = dialog
-    dialog.open = True
-    self.page.update()
+    self.page.open(dialog)
 ```
 
 ## Drag and Drop
@@ -564,32 +574,51 @@ Next, we'll wrap the `board_list` view in a `DragTarget` object, all of which we
 Now the composition of the view should look something like this.
 
 ```python
-self.view = Draggable(
-    group="lists",
-    content=DragTarget(
+self.view = ft.DragTarget(
+    group="items",
+    content=ft.Draggable(
         group="lists",
-        content=Container(
-            content=Column([
-                self.header,
-                self.new_item_field,
-                TextButton(content=Row([Icon(icons.ADD), Text("add card", color=colors.BLACK38)], tight=True),
-                           on_click=self.add_item_handler),
-                self.items,
-                self.end_indicator
-            ], spacing=4, tight=True, data=self.title),
-            width=250,
-            border=border.all(2, colors.BLACK12),
-            border_radius=border_radius.all(5),
-            bgcolor=self.color if (
-                self.color != "") else colors.BACKGROUND,
-            padding=padding.only(
-                bottom=10, right=10, left=10, top=5)
+        content=ft.DragTarget(
+            group="lists",
+            content=self.inner_list,
+            data=self,
+            on_accept=self.list_drag_accept,
+            on_will_accept=self.list_will_drag_accept,
+            on_leave=self.list_drag_leave,
         ),
-        data=self,
-        on_accept=self.list_drag_accept,
-        on_will_accept=self.list_will_drag_accept,
-        on_leave=self.list_drag_leave
-    )
+    ),
+    data=self,
+    on_accept=self.item_drag_accept,
+    on_will_accept=self.item_will_drag_accept,
+    on_leave=self.item_drag_leave,
+)
+self.inner_list = ft.Container(
+    content=ft.Column(
+        [
+            self.header,
+            self.new_item_field,
+            ft.TextButton(
+                content=ft.Row(
+                    [
+                        ft.Icon(ft.Icons.ADD),
+                        ft.Text("add card", color=ft.Colors.BLACK38),
+                    ],
+                    tight=True,
+                ),
+                on_click=self.add_item_handler,
+            ),
+            self.items,
+            self.end_indicator,
+        ],
+        spacing=4,
+        tight=True,
+        data=self.title,
+    ),
+    width=250,
+    border=ft.border.all(2, ft.Colors.BLACK12),
+    border_radius=ft.border_radius.all(5),
+    bgcolor=self.color if (self.color != "") else ft.Colors.BACKGROUND,
+    padding=ft.padding.only(bottom=10, right=10, left=10, top=5),
 )
 
 ```
@@ -599,22 +628,20 @@ with the event handlers defined thus.
 ```python
 def list_drag_accept(self, e):
     src = self.page.get_control(e.src_id)
-    l = self.board.board_lists
+    l = self.board.content.controls
     to_index = l.index(e.control.data)
     from_index = l.index(src.content.data)
     l[to_index], l[from_index] = l[from_index], l[to_index]
-    self.inner_list.border = border.all(2, colors.BLACK12)
-    self.board.update()
-    self.update()
-
+    self.inner_list.border = ft.border.all(2, ft.Colors.BLACK12)
+    self.page.update()
 
 def list_will_drag_accept(self, e):
-    self.inner_list.border = border.all(2, colors.BLACK)
+    if e.data == "true":
+        self.inner_list.border = ft.border.all(2, ft.Colors.BLACK)
     self.update()
 
-
 def list_drag_leave(self, e):
-    self.inner_list.border = border.all(2, colors.BLACK12)
+    self.inner_list.border = ft.border.all(2, ft.Colors.BLACK12)
     self.update()
 
 ```
@@ -631,36 +658,46 @@ We'll make sure that every time a new `item` is added to the `board_list` it wil
 The `item.py` module will now need its view wrapped by `Draggable` and `DragTarget` and assigned to the "items" group as seen below together with event handlers.
 
 ```python
-def build(self):
 
-    self.view = Draggable(
+self.view = ft.Draggable(
+    group="items",
+    content=ft.DragTarget(
         group="items",
-        content=DragTarget(
-            group="items",
-            content=self.card_item,
-            on_accept=self.drag_accept,
-            on_leave=self.drag_leave,
-            on_will_accept=self.drag_will_accept,
-        ),
-        data=self
-    )
-    return self.view
+        content=self.card_item,
+        on_accept=self.drag_accept,
+        on_leave=self.drag_leave,
+        on_will_accept=self.drag_will_accept,
+    ),
+    data=self,
+)
+self.card_item = ft.Card(
+    content=ft.Row(
+        [
+            ft.Container(
+                content=ft.Checkbox(label=f"{self.item_text}", width=200),
+                border_radius=ft.border_radius.all(5),
+            )
+        ],
+        width=200,
+        wrap=True,
+    ),
+    elevation=1,
+    data=self.list,
+)
 
 def drag_accept(self, e):
     src = self.page.get_control(e.src_id)
 
     # skip if item is dropped on itself
-    if (src.content.content == e.control.content):
-        print("skip")
+    if src.content.content == e.control.content:
         self.card_item.elevation = 1
         self.list.set_indicator_opacity(self, 0.0)
         e.control.update()
         return
 
     # item dropped within same list but not on self
-    if (src.data.list == self.list):
-        self.list.add_item(chosen_control=src.data,
-                            swap_control=self)
+    if src.data.list == self.list:
+        self.list.add_item(chosen_control=src.data, swap_control=self)
         self.card_item.elevation = 1
         e.control.update()
         return
@@ -671,62 +708,75 @@ def drag_accept(self, e):
     src.data.list.remove_item(src.data)
     self.list.set_indicator_opacity(self, 0.0)
     self.card_item.elevation = 1
-    e.control.update()
+    self.page.update()
 
 def drag_will_accept(self, e):
-    self.list.set_indicator_opacity(self, 1.0)
+    if e.data == "true":
+        self.list.set_indicator_opacity(self, 1.0)
     self.card_item.elevation = 20 if e.data == "true" else 1
-    e.control.update()
+    self.page.update()
 
 def drag_leave(self, e):
     self.list.set_indicator_opacity(self, 0.0)
     self.card_item.elevation = 1
-    e.control.update()
+    self.page.update()
 ```
  
 We need somewhere to house the logic that will decide on how and when to modify the items owned by a `board_list` object based on a drag event. There are surely design pattern militants out there that will find several dozen unholy violations of the sacred order of clean software design in the following approach but for this size of application, simply overloading the `add_item` method to take optional keyword args when called from different places, as seen below, seems to me like a perfectly workable approach. 
 
 ```python
-def add_item(self, item: str = None, chosen_control: Draggable = None swap_control: Draggable = None):
+def add_item(
+    self,
+    item: str | None = None,
+    chosen_control: ft.Draggable | None = None,
+    swap_control: ft.Draggable | None = None,
+):
 
     controls_list = [x.controls[1] for x in self.items.controls]
-    to_index = controls_list.index(
-        swap_control) if swap_control in controls_list else None
-    from_index = controls_list.index(
-        chosen_control) if chosen_control in controls_list else None
-    control_to_add = Column([
-        Container(
-            bgcolor=colors.BLACK26,
-            border_radius=border_radius.all(30),
-            height=3,
-            alignment=alignment.center_right,
-            width=200,
-            opacity=0.0
-        )
-    ])
+    to_index = (
+        controls_list.index(swap_control) if swap_control in controls_list else None
+    )
+    from_index = (
+        controls_list.index(chosen_control)
+        if chosen_control in controls_list
+        else None
+    )
+    control_to_add = ft.Column(
+        [
+            ft.Container(
+                bgcolor=ft.Colors.BLACK26,
+                border_radius=ft.border_radius.all(30),
+                height=3,
+                alignment=ft.alignment.center_right,
+                width=200,
+                opacity=0.0,
+            )
+        ]
+    )
 
     # rearrange (i.e. drag drop from same list)
-    if ((from_index is not None) and (to_index is not None)):
-        self.items.controls.insert(
-            to_index, self.items.controls.pop(from_index))
+    if (from_index is not None) and (to_index is not None):
+        self.items.controls.insert(to_index, self.items.controls.pop(from_index))
         self.set_indicator_opacity(swap_control, 0.0)
 
     # insert (drag from other list to middle of this list)
-    elif (to_index is not None):
-        new_item = Item(self, item)
+    elif to_index is not None:
+        new_item = Item(self, self.store, item)
         control_to_add.controls.append(new_item)
         self.items.controls.insert(to_index, control_to_add)
 
     # add new (drag from other list to end of this list, or use add item button)
     else:
-        new_item = Item(self, item) if item else Item(
-            self, self.new_item_field.value)
+        new_item = (
+            Item(self, self.store, item)
+            if item
+            else Item(self, self.store, self.new_item_field.value)
+        )
         control_to_add.controls.append(new_item)
         self.items.controls.append(control_to_add)
         self.store.add_item(self.board_list_id, new_item)
         self.new_item_field.value = ""
 
-    self.view.update()
     self.page.update()
 ```
 
@@ -742,24 +792,23 @@ The only final bit of logic we need to add is some page resizing to ensure that 
 We'll add a resize method to `board.py` module.
 ```python
 def resize(self, nav_rail_extended, width, height):
-    self.list_wrap.width = (
-        width - 310) if nav_rail_extended else (width - 50)
-    self.view.height = height
-    self.list_wrap.update()
-    self.view.update()
+    self.board_lists.width = (width - 310) if nav_rail_extended else (width - 50)
+    self.height = height
+    self.update()
 ```
 and wire up this `page.on_resize` handler in the `app_layout.py` module.
 ```python
 def page_resize(self, e=None):
     if type(self.active_view) is Board:
-        self.active_view.resize(self.sidebar.visible,
-                                self.page.width, self.page.height)
+        self.active_view.resize(
+            self.sidebar.visible, self.page.width, self.page.height
+        )
     self.page.update()
 ```
 
 ## Deploying as Web App
 
-When you run `flet main.py` the Flet web server a.k.a _Fletd_ is started in order to send updates to the Flutter based UI. The communication between both the server and the UI, and the server and your client code, happens in WebSockets. Therefore, you should make sure that wherever you deploy your app there is sufficient WebSockets support. For this tutorial, we'll deploy to [fly.io](https://fly.io/), which offers up to 3 VMs and 3GB storage on its free tier. If you are more accustomed to AWS services (or someone else is paying :smile:), you could consider adapting this deployment strategy to Fargate.
+When you execute `flet run` the Flet web server a.k.a _Fletd_ is started in order to send updates to the Flutter based UI. The communication between both the server and the UI, and the server and your client code, happens in WebSockets. Therefore, you should make sure that wherever you deploy your app there is sufficient WebSockets support. For this tutorial, we'll deploy to [fly.io](https://fly.io/), which offers up to 3 VMs and 3GB storage on its free tier. If you are more accustomed to AWS services (or someone else is paying :smile:), you could consider adapting this deployment strategy to Fargate.
 
 Once you have [installed the flyctl command line utility](https://fly.io/docs/hands-on/install-flyctl/), and created an account you can authenticate by running
 ```
