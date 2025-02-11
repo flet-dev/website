@@ -85,8 +85,7 @@ In a new file (`app_layout.py`) we can define a layout for our app in a class wh
 ```python
 import flet as ft
 from sidebar import Sidebar
- 
- 
+
 class AppLayout(ft.Row):
     def __init__(
         self,
