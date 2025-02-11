@@ -250,7 +250,7 @@ if __name__ == "__main__":
         page.update()
         app = TrelloApp(page)
  
-    flet.app(main, assets_dir="../assets", view=flet.WEB_BROWSER)
+    ft.app(main, assets_dir="../assets", view=flet.WEB_BROWSER)
 ```
 
 ## Application Logic
@@ -262,7 +262,7 @@ You can run the app now but apart from a nicer font for the name, it still does 
 First up, we will add views to correspond to the sidebar navigation destinations. We need a view to display all boards and a view to display a Members pane which, for now, will simply be a placeholder until a future tutorial. We'll add these views as controls to the `app_layout.py` module. 
 
 ```python
-self.members_view = Text("members view")
+self.members_view = ft.Text("members view")
 
 self.all_boards_view = ft.Column(
     [
