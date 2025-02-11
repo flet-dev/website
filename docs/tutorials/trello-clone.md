@@ -210,7 +210,7 @@ If we run the main app with
 ```
 flet run
 ```
-we can see the result and get hot reloading when we make any style changes. For example, try adding `alignment=ft.MainAxisAlignment.CENTE` to the first row in the container like this…
+we can see the result and get hot reloading when we make any style changes. For example, try adding `alignment=ft.MainAxisAlignment.CENTER` to the first row in the container like this…
 ```python
 content=ft.Column([
         ft.Row([ft.Text("Workspace")], alignment=ft.MainAxisAlignment.CENTER)
