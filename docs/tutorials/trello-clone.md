@@ -39,7 +39,7 @@ if __name__ == "__main__":
         page.add(app)
         page.update()
  
-    ft.app(main, view=flet.WEB_BROWSER)
+    ft.app(main)
 ```
 
 In terms of layout we can consider the app to consist of a header (`appbar`) and below that a collapsible navigation panel, next to which is the active view consisting of either a board, settings, members or whatever else we may choose. Something like this...
@@ -194,7 +194,6 @@ class Sidebar(ft.Container):
             padding=ft.padding.all(15),
             margin=ft.margin.all(0),
             width=250,
-            # expand=True,
             bgcolor=ft.Colors.BLUE_GREY,
             visible=self.nav_rail_visible,
         )
@@ -249,7 +248,7 @@ if __name__ == "__main__":
         page.update()
         app = TrelloApp(page)
  
-    ft.app(main, assets_dir="../assets", view=flet.WEB_BROWSER)
+    ft.app(main, assets_dir="../assets")
 ```
 
 ## Application Logic
