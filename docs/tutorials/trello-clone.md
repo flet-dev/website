@@ -26,6 +26,7 @@ With the proximate goal of creating the MVP of our clone, let's start by definin
 Here, in the `main.py` module we'll add this code and then continue to define the `TrelloApp` class. 
 
 ```python
+
 import flet as ft
  
 if __name__ == "__main__":
@@ -40,6 +41,7 @@ if __name__ == "__main__":
         page.update()
  
     ft.app(main)
+
 ```
 
 In terms of layout we can consider the app to consist of a header (`appbar`) and below that a collapsible navigation panel, next to which is the active view consisting of either a board, settings, members or whatever else we may choose. Something like this...
@@ -49,6 +51,7 @@ In terms of layout we can consider the app to consist of a header (`appbar`) and
 So the class for the app itself could look something like this... 
 
 ```python
+
 import flet as ft
  
 class TrelloApp:
@@ -83,52 +86,54 @@ class TrelloApp:
 In a new file (`app_layout.py`) we can define a layout for our app in a class which will inherit from the `Row` control and in which the navigation rail along with a toggle button to collapse and expand it, and the main content area are laid out. But rather than define the navigation sidebar in that module, we'll place that in its own `sidebar.py` module. 
 
 ```python
+
 import flet as ft
 from sidebar import Sidebar
 
+
 class AppLayout(ft.Row):
-    def __init__(
-        self,
-        app,
-        page: ft.Page,
-        *args,
-        **kwargs
-    ):
+    def __init__(self, app, page: ft.Page, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.app = app
         self.page = page
         self.toggle_nav_rail_button = ft.IconButton(
-            icon=ft.Icons.ARROW_CIRCLE_LEFT, icon_color=ft.Colors.BLUE_GREY_400, selected=False,
-            selected_icon=ft.Icons.ARROW_CIRCLE_RIGHT, on_click=self.toggle_nav_rail)
+            icon=ft.Icons.ARROW_CIRCLE_LEFT,
+            icon_color=ft.Colors.BLUE_GREY_400,
+            selected=False,
+            selected_icon=ft.Icons.ARROW_CIRCLE_RIGHT,
+            on_click=self.toggle_nav_rail,
+        )
         self.sidebar = Sidebar(self, page)
-        self._active_view: Control = ft.Column(controls=[
-            ft.Text("Active View")
-        ], alignment=ft.MainAxisAlignmnet.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
-        self.controls = [self.sidebar,
-                         self.toggle_nav_rail_button, self.active_view]
- 
+        self._active_view: Control = ft.Column(
+            controls=[ft.Text("Active View")],
+            alignment=ft.MainAxisAlignmnet.CENTER,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+        )
+        self.controls = [self.sidebar, self.toggle_nav_rail_button, self.active_view]
+
     @property
     def active_view(self):
         return self._active_view
- 
+
     @active_view.setter
     def active_view(self, view):
         self._active_view = view
         self.update()
- 
+
     def toggle_nav_rail(self, e):
         self.sidebar.visible = not self.sidebar.visible
         self.toggle_nav_rail_button.selected = not self.toggle_nav_rail_button.selected
         self.page.update()
+
 ```
-
-
 
 And here is the `Sidebar.py` file.
 
 ```python
+
 import flet as ft
- 
+
+
 class Sidebar(ft.Container):
 
     def __init__(self, app_layout, store: DataStore):
@@ -197,7 +202,7 @@ class Sidebar(ft.Container):
             bgcolor=ft.Colors.BLUE_GREY,
             visible=self.nav_rail_visible,
         )
- 
+
     def top_nav_change(self, e):
         self.top_nav_rail.selected_index = e.control.selected_index
         self.update()
@@ -210,8 +215,11 @@ flet run
 ```
 we can see the result and get hot reloading when we make any style changes. For example, try adding `alignment=ft.MainAxisAlignment.CENTER` to the first row in the container like this…
 ```python
-content=ft.Column([
-        ft.Row([ft.Text("Workspace")], alignment=ft.MainAxisAlignment.CENTER)
+
+content = ft.Column(
+    ft.Row([ft.Text("Workspace")], alignment=ft.MainAxisAlignment.CENTER)
+)
+
 ```
 
 If you save the file you should be able to see the change in your app window. 
@@ -231,24 +239,23 @@ Here is the updated main function. We need to instantiate the `InMemoryStore` cl
 We'll also add a new font in an *assets* directory, which is specified in the named argument to the app function.
 
 ```python
+
 if __name__ == "__main__":
- 
+
     def main(page: ft.Page):
- 
+
         page.title = "Flet Trello clone"
         page.padding = 0
-        page.theme = ft.Theme(
-            font_family="Verdana")
+        page.theme = ft.Theme(font_family="Verdana")
         page.theme_mode = ft.ThemeMode.LIGHT
         page.theme.page_transitions.windows = "cupertino"
-        page.fonts = {
-            "Pacifico": "/Pacifico-Regular.ttf"
-        }
+        page.fonts = {"Pacifico": "/Pacifico-Regular.ttf"}
         page.bgcolor = ft.Colors.BLUE_GREY_200
         page.update()
         app = TrelloApp(page)
- 
+
     ft.app(main, assets_dir="../assets")
+
 ```
 
 ## Application Logic
@@ -260,6 +267,7 @@ You can run the app now but apart from a nicer font for the name, it still does 
 First up, we will add views to correspond to the sidebar navigation destinations. We need a view to display all boards and a view to display a Members pane which, for now, will simply be a placeholder until a future tutorial. We'll add these views as controls to the `app_layout.py` module. 
 
 ```python
+
 self.members_view = ft.Text("members view")
 
 self.all_boards_view = ft.Column(
@@ -319,6 +327,7 @@ self.all_boards_view = ft.Column(
 Since we are working in an imperative paradigm and have no explicit state management tool such as redux or the like, we will need a method to 'rehydrate' the view that shows all the boards so that its current state reflects changes made in other entities (namely the sideboard).
 
 ```python
+
 def hydrate_all_boards_view(self):
     self.all_boards_view.controls[-1] = ft.Row(
         [
@@ -380,6 +389,7 @@ Next up we need a visually distinct section of the navigation panel to display b
 We'll now have a change handler for each of the top and bottom nav rails. 
 
 ```python
+
 self.top_nav_rail = ft.NavigationRail(
     selected_index=None,
     label_type=ft.NavigationRailLabelType.ALL,
@@ -440,13 +450,13 @@ There are several ways we could achieve this such as having every view present i
 In the `main.py` module let's wire up a handler to the `page.on_route_change` event. 
 
 ```python
-Class TrelloApp(AppLayout):
+
+class TrelloApp(AppLayout):
     def __init__(self, page: ft.Page, user=None):
- 	… 
+        ...
         self.page.on_route_change = self.route_change
-	…
- 
- 
+        ...
+
     def initialize(self):
         self.page.views.append(
             ft.View(
@@ -461,7 +471,7 @@ Class TrelloApp(AppLayout):
         if len(self.boards) == 0:
             self.create_new_board("My First Board")
         self.page.go("/")
- 
+
     def route_change(self, e):
         troute = ft.TemplateRoute(self.page.route)
         if troute.match("/"):
@@ -476,6 +486,7 @@ Class TrelloApp(AppLayout):
         elif troute.match("/members"):
             self.set_members_view()
         self.page.update()
+
 ```
 
 While here, we'll also change our initialization method so that the app starts with a pre-made board for demonstration purposes. Within that method note that we add a flet `View` object to the page. The page maintains a list of Views as top level containers for other Controls in order to track navigation history. We'll need to add the corresponding `set_***_view` methods to the `layout.py` module as well. Here is the `set_board_view` method for example...
@@ -486,6 +497,7 @@ def set_board_view(self, i):
     self.sidebar.bottom_nav_rail.selected_index = i
     self.sidebar.top_nav_rail.selected_index = None
     self.page.update()
+
 ```
 
 Now, if we fire up the project in a web browser with the 
@@ -507,6 +519,7 @@ def board_name_focus(self, e):
     e.control.border = ft.InputBorder.OUTLINE
     self.page.update()
 
+
 def board_name_blur(self, e):
     self.store.update_board(
         self.store.get_boards()[e.control.data], {"name": e.control.value}
@@ -515,6 +528,7 @@ def board_name_blur(self, e):
     e.control.read_only = True
     e.control.border = ft.InputBorder.NONE
     self.page.update()
+
 
 ```
 
@@ -559,6 +573,7 @@ def login(self, e):
         on_dismiss=lambda e: print("Modal dialog dismissed!"),
     )
     self.page.open(dialog)
+
 ```
 
 ## Drag and Drop
@@ -624,6 +639,7 @@ self.inner_list = ft.Container(
 with the event handlers defined thus.
 
 ```python
+
 def list_drag_accept(self, e):
     src = self.page.get_control(e.src_id)
     l = self.board.content.controls
@@ -683,6 +699,7 @@ self.card_item = ft.Card(
     data=self.list,
 )
 
+
 def drag_accept(self, e):
     src = self.page.get_control(e.src_id)
 
@@ -708,21 +725,25 @@ def drag_accept(self, e):
     self.card_item.elevation = 1
     self.page.update()
 
+
 def drag_will_accept(self, e):
     if e.data == "true":
         self.list.set_indicator_opacity(self, 1.0)
     self.card_item.elevation = 20 if e.data == "true" else 1
     self.page.update()
 
+
 def drag_leave(self, e):
     self.list.set_indicator_opacity(self, 0.0)
     self.card_item.elevation = 1
     self.page.update()
+
 ```
  
 We need somewhere to house the logic that will decide on how and when to modify the items owned by a `board_list` object based on a drag event. There are surely design pattern militants out there that will find several dozen unholy violations of the sacred order of clean software design in the following approach but for this size of application, simply overloading the `add_item` method to take optional keyword args when called from different places, as seen below, seems to me like a perfectly workable approach. 
 
 ```python
+
 def add_item(
     self,
     item: str | None = None,
@@ -735,9 +756,7 @@ def add_item(
         controls_list.index(swap_control) if swap_control in controls_list else None
     )
     from_index = (
-        controls_list.index(chosen_control)
-        if chosen_control in controls_list
-        else None
+        controls_list.index(chosen_control) if chosen_control in controls_list else None
     )
     control_to_add = ft.Column(
         [
@@ -776,6 +795,7 @@ def add_item(
         self.new_item_field.value = ""
 
     self.page.update()
+
 ```
 
 And with these changes, we should be able to drag lists around within the board and also drag items between different lists. 
@@ -789,19 +809,21 @@ The only final bit of logic we need to add is some page resizing to ensure that 
 
 We'll add a resize method to `board.py` module.
 ```python
+
 def resize(self, nav_rail_extended, width, height):
     self.board_lists.width = (width - 310) if nav_rail_extended else (width - 50)
     self.height = height
     self.update()
+
 ```
 and wire up this `page.on_resize` handler in the `app_layout.py` module.
 ```python
+
 def page_resize(self, e=None):
     if type(self.active_view) is Board:
-        self.active_view.resize(
-            self.sidebar.visible, self.page.width, self.page.height
-        )
+        self.active_view.resize(self.sidebar.visible, self.page.width, self.page.height)
     self.page.update()
+
 ```
 
 ## Deploying as Web App
