@@ -255,6 +255,7 @@ module.exports = {
             "controls/cupertinoswitch",
             "controls/cupertinotextfield",
             "controls/dropdown",
+            "controls/dropdownm2",
             "controls/radio",
             "controls/rangeslider",
             "controls/searchbar",
