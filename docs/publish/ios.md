@@ -37,7 +37,158 @@ Make sure all non-pure (binary) packages used in your Flet app have [pre-built w
 
 ## `flet build ipa`
 
-Build an iOS archive bundle and IPA for distribution (macOS host only).
+Build an iOS app archive (`.ipa`) for testing and distribution (macOS host only).
+
+To generate an `.ipa `file for testing on your device or uploading to App Store Connect for distribution, you will need:
+
+* **Apple Developer Program** subscription with access to App Store Connect.
+* **Application Indentifier**.
+* **Signing Certificate**.
+* **Provisioning Profile**.
+
+## Application Identifier
+
+An **Application Identifier (App ID)** is a unique string that identifies your app within the Apple ecosystem. It is required to sign and distribute an iOS app and is used for various services like **Push Notifications, App Groups, iCloud, and In-App Purchases**.
+
+An App ID consists of two parts:
+
+1. **Team ID** – A unique 10-character string assigned by Apple to your developer account.
+2. **Bundle ID** – A reverse domain-style identifier for your app (e.g., `com.example.myapp`).
+
+Example of a full App ID:
+
+```
+TeamID.com.example.myapp
+```
+
+### Creating a new App ID
+
+1. Visit [Apple Developer Portal](https://developer.apple.com/account/resources/identifiers/list).
+2. Sign in with your **Apple Developer Account**.
+3. Click the **"+"** button to add a new identifier.
+4. Select **"App IDs"** and click **Continue**.
+5. **Enter a Description** – This is just for reference (e.g., "MyApp Identifier").
+6. **Choose the App ID Type:**
+   - Select **"App"** for a standard iOS/macOS app.
+   - If you need an identifier for services like Apple Pay or Passbook, select the appropriate option.
+7. **Bundle ID** – Choose:
+   - **Explicit Bundle ID** (`com.example.myapp`) – Recommended for most apps.
+   - **Wildcard Bundle ID** (`com.example.*`) – Allows multiple apps to use the same identifier (rarely used).
+8. **Enable App Services** – Check the boxes for any services your app needs (e.g., Push Notifications, Sign in with Apple, etc.).
+9. Click **Continue** and **Register**.
+
+Now you have **Bundle ID** and **Team ID** that must be used to sign iOS bundle.
+
+The next step is creating a **Certificate** and a **Provisioning Profile** to install and distribute your app.
+
+## Signing Certificate
+
+### Generating a Certificate Signing Request (CSR)
+
+Before creating a development or distribution certificate, you need a **CSR (Certificate Signing Request)**.
+
+1. **Open Keychain Access** on your Mac (`Command ⌘ + Space`, then search for "Keychain Access").
+2. In the top menu, go to **Keychain Access → Certificate Assistant → Request a Certificate From a Certificate Authority…**
+3. Fill in:
+   - **User Email Address:** Your Apple Developer email.
+   - **Common Name:** A descriptive name (e.g., "My App Distribution").
+   - **CA Email Address:** Leave this blank.
+   - **Request is for:** Select "**Saved to disk**".
+4. Click **Continue**, choose a location to save the `.certSigningRequest` file, and click **Save**.
+
+### Creating a Certificate in Apple Developer Portal
+
+1. Go to [Apple Developer Certificates Page](https://developer.apple.com/account/resources/certificates/list).
+2. Click the **"+"** button to create a new certificate.
+3. Select **"Apple Distribution"** (for App Store & Ad Hoc) or **"Apple Development"** (for development) and click **Continue**.
+4. Upload the **CSR file** you created earlier and click **Continue**.
+5. Apple will generate the certificate. Click **Download** to get the `.cer` file.
+6. Double-click the downloaded `.cer` file to install it in **Keychain Access**.
+7. Open **Keychain Access** app and ensure the certificate is installed under **"login"** keychain. The name of development certificate usually starts with **"Apple development:"** and the name of distribution certificate starts with **"Apple distribution:"**.
+
+## Provisioning Profile
+
+A **Provisioning Profile** is a file that allows an iOS app to run on physical devices and be distributed through the App Store or internally. It links your **App ID**, **Developer/Distribution Certificate**, and **Registered Devices**.
+
+There are different types of provisioning profiles:
+
+- **Development Profile** – Used for testing on physical devices.
+- **Ad Hoc Profile** – Used for distributing an app outside the App Store to specific devices.
+- **App Store Profile** – Used for submitting an app to the App Store.
+- **Enterprise Profile** – Used for internal distribution within an organization.
+
+### Creating a new Provisioning Profile
+
+**Step 1: Go to Apple Developer Portal**
+
+1. Visit [Apple Developer Portal](https://developer.apple.com/account/resources/profiles/list).
+2. Sign in with your **Apple Developer Account**.
+
+**Step 2: Create a New Provisioning Profile**
+
+1. Click the **"+"** button to add a new provisioning profile.
+2. Choose the **type of profile**:
+   - Select **"iOS App Development"** for testing on devices.
+   - Select **"Ad Hoc"** for distributing to specific devices.
+   - Select **"App Store"** for submitting an app to the App Store.
+   - Select **"In-House"** (Enterprise accounts only) for internal distribution.
+3. Click **Continue**.
+
+**Step 3: Select an App ID**
+
+1. Choose the **App ID** that matches your app.
+2. Click **Continue**.
+
+**Step 4: Select a Distribution Certificate**
+
+1. Choose the **iOS Distribution Certificate** or **Development Certificate** (depending on the profile type).
+2. Click **Continue**.
+
+**Step 5: Select Registered Devices (For Development & Ad Hoc)**
+
+1. If you selected **Development** or **Ad Hoc**, choose the devices that can run the app.
+2. Click **Continue**.
+
+**Step 6: Name and Generate the Profile**
+
+1. Enter a **Profile Name** (e.g., "MyApp Development Profile").
+2. Click **Generate**.
+3. Click **Download** to get the `.mobileprovision` file.
+
+### Installing Provisioning Profile
+
+Provisioning profiles are stored in `~/Library/MobileDevice/Provisioning Profiles` directory.
+
+To install downloaded provisioning profile just copy it to `~/Library/MobileDevice/Provisioning\ Profiles` directory with a new `{UUID}.mobileprovision` name.
+
+Run the following command to get profile UUID:
+
+```bash
+profile_uuid=$(security cms -D -i ~/Downloads/{profile-name}.mobileprovision | xmllint --xpath "string(//key[.='UUID']/following-sibling::string[1])" -)
+echo $profile_uuid
+```
+
+Run this command to copy profile to `~/Library/MobileDevice/Provisioning Profiles` with a new name `{UUID}.mobileprovision`:
+
+```bash
+cp ~/Downloads/{profile-name}.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/${profile_uuid}.mobileprovision
+```
+
+:::warning
+If copied profile is getting disappeared from `~/Library/MobileDevice/Provisioning Profiles` directory make sure `XCode` process is not running on background.
+:::
+
+Finally, you can use this command to list all installed provisioning profiles, with their names and UUIDs:
+
+```bash
+for profile in ~/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision; do security cms -D -i "$profile" | grep -E -A1 '<key>(Name|UUID)</key>' | sed -n 's/.*<string>\(.*\)<\/string>/\1/p' | paste -d ' | ' - -; done
+```
+
+## Configuring build
+
+To can either pass .ipa build options via `flet build` command line or configure in `pyproject.toml`.
+
+### Command line
 
 To successfully generate "runnable" IPA you should provide correct values for the following arguments:
 
@@ -45,6 +196,8 @@ To successfully generate "runnable" IPA you should provide correct values for th
   is combined with `--project` and used as an iOS and Android bundle ID.
 * `--project` - project name in C-style identifier format (lowercase alphanumerics with underscores) used to build bundle ID and as a name for bundle executable. By default, it's the name of Flet app directory.
 * `--team` - team ID to locate provisioning profile. If no team ID provided a unsigned iOS archive will be generated.
+
+### `pyproject.toml`
 
 You can also configure these settings in `pyproject.toml`:
 
@@ -58,6 +211,14 @@ org = "com.mycompany"
 [tool.flet.ios]
 team = "team_id"
 ```
+
+## Deploying app to an Apple device for testing
+
+Apple Configurator
+
+## Uploading app to App Store Connect for distribution
+
+Transporter
 
 ## Permissions
 
