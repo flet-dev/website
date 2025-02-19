@@ -175,7 +175,7 @@ cp ~/Downloads/{profile-name}.mobileprovision ~/Library/MobileDevice/Provisionin
 ```
 
 :::warning
-If copied profile is getting disappeared from `~/Library/MobileDevice/Provisioning Profiles` directory make sure `XCode` process is not running on background.
+If the copied profile disappears from the `~/Library/MobileDevice/Provisioning Profiles` directory, ensure that the Xcode process is not running in the background.
 :::
 
 Finally, you can use this command to list all installed provisioning profiles, with their names and UUIDs:
@@ -192,14 +192,33 @@ To can either pass .ipa build options via `flet build` command line or configure
 
 To successfully generate "runnable" IPA you should provide correct values for the following arguments:
 
-* `--org` - organization name in reverse domain name notation, e.g. `com.mycompany` (defaults to `com.flet`). The value
-  is combined with `--project` and used as an iOS and Android bundle ID.
+* `--ios-export-method` - specifies how the app should be packaged when exporting an `.ipa` file. Default is `debugging`. Can be one of the following:
+  * `debugging` (or deprecated `development`) - used for debugging and testing on development devices.
+  * `release-testing` (or deprecated `ad-hoc`) - used for distributing the app outside the App Store to specific registered devices.
+  * `app-store-connect` (or deprecated `app-store`) - used for submitting the app to the App Store.
+  * `enterprise` - used for internal distribution within an organization (requires an enterprise account).
+* `--ios-provisioning-profile` - provisioning profile name or UUID that used to sign and export an iOS app.
+* `--ios-signing-certificate` - certificate name, SHA-1 hash, or automatic selector to use for signing iOS app bundle. Automatic selectors allow Xcode to pick the newest installed certificate of a particular type. The available automatic selectors are "Apple Development", "Apple Distribution", "Developer ID Application", "iOS Developer", "iOS Distribution", "Mac App Distribution", and "Mac Developer".
+* `--ios-team-id` - developer team ID to export iOS app.
+* `--bundle-id` - bundle ID for the application, e.g. "com.mycompany.app-name" - used as an iOS, Android, macOS and Linux bundle ID.
+* `--org` - organization name in reverse domain name notation, e.g. `com.mycompany` (defaults to `com.flet`). The value is combined with `--project` and used as an iOS and Android bundle ID.
 * `--project` - project name in C-style identifier format (lowercase alphanumerics with underscores) used to build bundle ID and as a name for bundle executable. By default, it's the name of Flet app directory.
-* `--team` - team ID to locate provisioning profile. If no team ID provided a unsigned iOS archive will be generated.
+
+:::note Development package
+To build `.ipa` for testing on your developer device you need to provide `--ios-provisioning-profile` option only. `flet build` will assume `debugging` as an export method and automatically choose the most recent "Apple Development" certificate in your keychain. Team ID is not required.
+:::
+
+:::info Bundle ID or Org?
+You can specify either `--bundle-id`, `--org`, or both.
+* If only the `--bundle-id` is provided and "--org" is not, the organization name is derived from the bundle ID by extracting the part before the last dot.
+* If only `--org` is specified and the "--bundle-id" is not, the bundle ID is generated as `{org}.{project_name}`.
+:::
 
 ### `pyproject.toml`
 
-You can also configure these settings in `pyproject.toml`:
+You can also configure package export and signing settings in `pyproject.toml`.
+
+Project name and org:
 
 ```toml
 [project]
@@ -207,18 +226,134 @@ name = "my-app"
 
 [tool.flet]
 org = "com.mycompany"
+```
 
+or bundle ID:
+
+```toml
+[tool.flet]
+bundle_id = "com.mycompany.example-app"
+```
+
+Both `org` and `bundle_id` could be platform-specific, for example:
+
+```toml
 [tool.flet.ios]
-team = "team_id"
+bundle_id = "com.mycompany.example-app-ios"
+
+[tool.flet.android]
+bundle_id = "com.mycompany.example-app-android"
+```
+
+To configure iOS signing settings that will be globally applied to all export methods:
+
+```toml
+[tool.flet.ios]
+provisioning_profile = "release-testing com.mycompany.example-app"
+signing_certificate = "Apple Distribution"
+team_id = "ABCDEFE234"
+export_options = { uploadSymbols = false }
+```
+
+To configure signing settings per export methods:
+
+```toml
+[tool.flet.ios.export_methods."debugging"]
+provisioning_profile = "debugging com.mycompany.example-app"
+signing_certificate = "Apple Development"
+
+[tool.flet.ios.export_methods."release-testing"]
+provisioning_profile = "release-testing com.mycompany.example-app"
+team_id = "ABCDEFE234"
+signing_certificate = "Apple Distribution"
+export_options = { uploadSymbols = false }
+
+[tool.flet.ios.export_methods."app-store-connect"]
+provisioning_profile = "app-store-connect com.mycompany.example-app"
+team_id = "ABCDEFE234"
+signing_certificate = "Apple Distribution"
+export_options = { uploadSymbols = true }
+```
+
+With the settings above you can run `flet build` command with just `--ios-export-method` provided, for example:
+
+```bash
+flet build ipa --ios-export-method release-testing
 ```
 
 ## Deploying app to an Apple device for testing
 
-Apple Configurator
+Apple Configurator for macOS allows you to install `.ipa` files on iOS devices without using the App Store.
+
+Follow these steps to deploy an `.ipa` file to your device:
+
+**Step 1: Install Apple Configurator**
+
+1. Install [Apple Configurator](https://apps.apple.com/ca/app/apple-configurator/id1037126344?mt=12) from App Store.
+
+**Step 2: Connect the iOS Device**
+
+1. Connect the **iPhone** or **iPad** to your Mac using a USB cable.
+2. Unlock the device and **Trust** the computer if prompted.
+
+**Step 3: Open Apple Configurator**
+
+1. Launch **Apple Configurator** on your Mac.
+2. The connected device should appear in the main window.
+
+**Step 4: Add the `.ipa` File**
+
+1. Drag and drop the `.ipa` file onto the connected device in Apple Configurator.
+2. Alternatively, click **Add → Apps**, then choose the `.ipa` file from your Mac.
+
+**Step 5: Install the App**
+
+1. Click **Prepare** or **Install** to begin the deployment.
+2. Apple Configurator will install the app on the device.
+
+**Step 6: Trust the Developer Profile (For Ad Hoc or Enterprise Apps)**
+
+If the `.ipa` is installed from an **Ad Hoc or Enterprise profile**, you may need to manually trust the developer:
+1. On the iOS device, go to **Settings → General → VPN & Device Management**.
+2. Under **Developer App**, select your **Developer Profile**.
+3. Tap **Trust** and confirm.
 
 ## Uploading app to App Store Connect for distribution
 
-Transporter
+**Transporter** is a macOS app that allows you to upload `.ipa` files to **App Store Connect** for distribution.
+
+**Step 1: Install Transporter**
+
+1. Install [Transporter](https://apps.apple.com/us/app/transporter/id1450874784) from App Store.
+
+**Step 2: Prepare the `.ipa` File**
+
+1. Ensure your `.ipa` file is built with either **app-store-connect** or **release-testing** export methods.
+
+**Step 3: Open Transporter and Sign In**
+
+1. Launch **Transporter** on your Mac.
+2. Sign in with your **Apple Developer Account** (the same one used for App Store Connect).
+
+**Step 4: Upload the `.ipa` File**
+
+1. Drag and drop the `.ipa` file into the Transporter window.
+2. Alternatively, click **Add App**, then choose the `.ipa` file from your Mac.
+3. Click `...` button next to "Deliver" and choose "Verify".
+4. Wait for Transporter to **verify** the file.
+3. Click **"Deliver"** to start the upload.
+
+**Step 5: Check Upload Status**
+
+1. Once the upload is complete, Transporter will display a **success message**.
+2. If there are errors, review them and correct any issues before retrying the upload.
+
+**Step 6: Confirm in App Store Connect**
+
+1. Go to [App Store Connect](https://appstoreconnect.apple.com/).
+2. Navigate to **Apps → Your App → TestFlight or App Store Version**.
+3. The uploaded build should appear under **Processing** (this may take a few minutes to an hour).
+4. Once processing is complete, you can **submit the app for review**.
 
 ## Permissions
 
