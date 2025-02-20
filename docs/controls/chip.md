@@ -276,7 +276,7 @@ The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate 
 
 Defines how compact the control's layout will be.
 
-Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity).
+Value is of type [`VisualDensity`](/docs/reference/types/visualdensity).
 
 ## Events
 

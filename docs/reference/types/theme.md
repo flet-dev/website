@@ -255,4 +255,4 @@ Value is of type `bool` and defaults to `True`.
 
 #### `visual_density` 
 
-Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity) and defaults to `ThemeVisualDensity.STANDARD`.
+Value is of type [`VisualDensity`](/docs/reference/types/visualdensity).

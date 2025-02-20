@@ -211,42 +211,6 @@ An image to paint above the `bgcolor` or `gradient`. If `shape=BoxShape.CIRCLE` 
 
 Value is of type [`DecorationImage`](/docs/reference/types/decorationimage).
 
-### ~~`image_fit`~~
-
-How to inscribe the image into the space allocated during layout. 
-
-Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defaults to `ImageFit.NONE`.
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.fit`](#image) instead.**
-
-### ~~`image_opacity`~~
-
-Sets image opacity when blending with a background.
-
-Value ranges between `0.0`(fully transparent) and `1.0`(fully opaque).
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.opacity`](#image) instead.**
-
-### ~~`image_repeat`~~
-
-How to paint any portions of the layout bounds not covered by the image.
-
-Value is of type [`ImageRepeat`](/docs/reference/types/imagerepeat) and defaults to `ImageRepeat.NO_REPEAT`.
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.repeat`](#image) instead.**
-
-### ~~`image_src`~~
-
-Sets an image as a container background. See [`Image.src`](/docs/controls/image#src) for more details.
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.src`](#image) instead.**
-
-### ~~`image_src_base64`~~
-
-Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](/docs/controls/image#src_base64) for more details.
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.src_base64`](#image) instead.**
-
 ### `ink`
 
 `True` to produce ink ripples effect when user clicks the container.

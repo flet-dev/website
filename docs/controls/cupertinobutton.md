@@ -71,12 +71,6 @@ Button's text [color](/docs/reference/colors).
 
 The background [color](/docs/reference/colors) of the button when it is disabled.
 
-### ~~`disabled_color`~~
-
-The background [color](/docs/reference/colors) of the button when it is disabled.
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`disabled_bgcolor`](#disabled_bgcolor) instead.**
-
 ### `content`
 
 A Control representing custom button content.

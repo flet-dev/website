@@ -39,13 +39,13 @@ ft.app(main)
 
 ## Properties
 
-### `disabled_color`
-
-The background [color](/docs/reference/colors) of the button when it is disabled.
-
 ### `content`
 
 A Control representing custom button content.
+
+### `disabled_bgcolor`
+
+The background [color](/docs/reference/colors) of the button when it is disabled.
 
 ### `icon`
 

@@ -627,7 +627,6 @@ module.exports = {
                 "reference/types/textoverflow",
                 "reference/types/textthemestyle",
                 "reference/types/thememode",
-                "reference/types/themevisualdensity",
                 "reference/types/tileaffinity",
                 "reference/types/timepickerentrymode",
                 "reference/types/tooltiptriggermode",
