@@ -8,9 +8,13 @@ author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
 tags: [releases]
 ---
 
+Flet 0.27.0 is now released with exciting new features and improvements!
 
-
-The Flet 0.27.0 release is here, featuring a significant update to the extensibility approach!
+* **iOS packaging & signing updates** – ensures compliance with App Store Connect verification requirements.
+* **Reduced startup delay** – faster initial launch for desktop applications.
+* **Faster incremental re-builds** – enhances development efficiency with quicker iteration times.
+* **Enhanced Dropdown control** – improved functionality and user experience.
+* **Bug fixes & stability improvements** – various fixes to enhance overall performance and reliability.
 
 Keep reading for further details.
 
@@ -28,9 +32,37 @@ pip install 'flet[all]' --upgrade
 
 Bump `flet` package version to `0.27.0` (or remove it at all to use the latest) in your `pyproject.toml`.
 
+## iOS packaging revamped
+
+* 3rd-party Flet app dependencies (aka "site packages", such as "numpy", "pandas", "flet", etc.) are now packed inside a framework into a "bundle" to make XCode sign all files and pass App Store Connect verification.
+* Additional `flet build` options to correctly sign iOS packages.
+* Extensive step-by-step documentation for packaging and deploying iOS apps. [Check it out!](/docs/publish/ios)
+
+## Enhanced startup performance for desktop apps
+
+Currently, when packaging for macOS, Windows, and Linux, third-party Flet app dependencies (e.g., numpy, pandas, flet, etc.), also known as **site packages**, are bundled inside the app.zip artifact. This can cause a startup delay, sometimes significant, as the app needs to extract the artifact to the user’s file system before launching.
+
+With Flet 0.27.0, site packages are now copied in an **unpacked state** directly into the application bundle instead of being compressed into app.zip. This change significantly reduces the first launch time.
+
+## Faster incremental re-builds
+
+If certain parts of build configuration has not been changed.
+
 ## Pyodide 0.27.2
 
-TBD
+Pyodide 0.27.2 is based on Python 3.12 and has some serious performance improvments to foreign function interface (FFI).
+
+Flet now supports Python 3.12 across all packaging platforms.
+
+The next stop is Python 3.13!
+
+## 💥 Breaking changes
+
+`flet build` command:
+- `--team` option renamed to `--ios-team-id`.
+- `--include-packages` has been removed. Just add extension package into `dependencies` section of your `pyproject.toml` file: https://flet.dev/docs/extend/built-in-extensions
+- `--cleanup-on-compile` removed and two new options added to separate cleanup of app and 3rd-party site packages: `--cleanup-app` and `--cleanup-packages`. Two additional options: `--cleanup-app-files` and `--cleanup-package-files` work together with `--cleanup-*` and allow specifying lists of globs to exclude from app and site packages.
+- `tool.flet.build_arch` renamed to `tool.flet.target_arch`.
 
 ## Other changes
 
