@@ -5,7 +5,7 @@ sidebar_label: TextButtonTheme
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Customizes the appearance of [`TextButton`](/docs/controls/Textbutton) across the app.
+Customizes the appearance of [`TextButton`](/docs/controls/textbutton) across the app.
 
 `TextButtonTheme` class has the following properties:
 

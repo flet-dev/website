@@ -5,7 +5,7 @@ sidebar_label: IconButtonTheme
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Customizes the appearance of [`IconButton`](/docs/controls/Iconbutton) across the app.
+Customizes the appearance of [`IconButton`](/docs/controls/iconbutton) across the app.
 
 `IconButtonTheme` class has the following properties:
 
