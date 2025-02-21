@@ -8,7 +8,7 @@ A material design button for selecting from a list of items.
 A dropdown lets the user select from a number of items. The dropdown shows the currently selected item as well as an arrow that opens a menu for selecting another item.
 
 :::info
-Since version 0.27.0, Flet uses [DropdownMenu](https://api.flutter.dev/flutter/material/DropdownMenu) flutter widget for [Dropdown](/docs/controls/dropdown) control, which is a Material 3 version of previously used DropdownButton.
+Since version 0.27.0, Flet uses [DropdownMenu](https://api.flutter.dev/flutter/material/DropdownMenu-class.html) flutter widget for [Dropdown](/docs/controls/dropdown) control, which is a Material 3 version of previously used DropdownButton.
 
 Some properties of previous Dropdown implementation are not available in the new version and were "stubbed" - they will not break your program but don't do anything. See the list of deprecated properties [here](/docs/controls/dropdown/#deprecated-dropdown-properties-and-events).
 
