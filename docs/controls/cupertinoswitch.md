@@ -67,7 +67,7 @@ ft.app(main)
 
 ### ~~`active_color`~~
 
-::: warning
+:::warning
 This property is deprecated since `v0.26.0` and will be removed in `v0.29.0`. Use `active_track_color` instead.
 :::
 
@@ -141,7 +141,7 @@ supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback)
 
 ### ~~`track_color`~~
 
-::: warning
+:::warning
 This property is deprecated since `v0.26.0` and will be removed in `v0.29.0`. Use `inactive_track_color` instead.
 :::
 

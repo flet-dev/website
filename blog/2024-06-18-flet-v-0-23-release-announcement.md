@@ -21,7 +21,7 @@ We are excited to announce the release of Flet 0.23.0. It is a big release with 
 
 ## New Properties
 
-- [`Option`](/docs/controls/dropdown#option-properties): `content`, `text_style`
+- [`Option`](/docs/controls/dropdown#dropdownoption-properties): `content`, `text_style`
 - [`TextStyle`](/docs/reference/types/textstyle): `baseline`, `overflow`, `word_spacing`
 
 ## Error Handling

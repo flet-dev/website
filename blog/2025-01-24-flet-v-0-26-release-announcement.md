@@ -61,7 +61,7 @@ dependencies = [
 
 Flet now makes it easy to create and build projects with your custom controls based on Flutter widgets or Flutter 3rd-party packages:
 
-1. Create new virtual enviroment and [install Flet](/docs/getting-started/#python-venv-module) there.
+1. Create new virtual enviroment and [install Flet](/docs/getting-started/#virtual-environment) there.
 
 2. Create new Flet extension project from template:
 

@@ -70,26 +70,38 @@ Previous version of Dropdown control is available as [`DropdownM2`](/docs/contro
 
 ## 💥 Breaking changes
 
-`flet build` command:
+### `flet build` command
+
 - `--team` option renamed to `--ios-team-id`.
 - `--include-packages` has been removed. Just add extension package into `dependencies` section of your `pyproject.toml` file: https://flet.dev/docs/extend/built-in-extensions
 - `--cleanup-on-compile` removed and two new options added to separate cleanup of app and 3rd-party site packages: `--cleanup-app` and `--cleanup-packages`. Two additional options: `--cleanup-app-files` and `--cleanup-package-files` work together with `--cleanup-*` and allow specifying lists of globs to exclude from app and site packages.
 - `tool.flet.build_arch` renamed to `tool.flet.target_arch`.
 
+### Removed `v0.24.0` Deprecations
+
+The following items, deprecated in Flet 0.24.0, have been removed: https://flet.dev/blog/flet-v-0-24-release-announcement#deprecations
+
+### `CupertinoCheckbox.inactive_color` property
+
+The `inactive_color` property of the [`CupertinoCheckbox`](/docs/controls/cupertinocheckbox) has been removed in favor of [`fill_color`](/docs/controls/cupertinocheckbox#fill_color).
+
 ## Other changes
 
+The full list of changes can be found in the [CHANGELOG](https://github.com/flet-dev/flet/blob/main/CHANGELOG.md).
+
+### New features
+
 * feat: `ReorderableListView` Control ([#4865](https://github.com/flet-dev/flet/pull/4865))
-* Implement `Container.dark_theme` property ([#4857](https://github.com/flet-dev/flet/issues/4857))
+* feat: Implement `Container.dark_theme` property ([#4857](https://github.com/flet-dev/flet/issues/4857))
 * Upgrade to Pyodide 0.27 for `httpx` Support ([#4840](https://github.com/flet-dev/flet/issues/4840))
 * Remove `CupertinoCheckbox.inactive_color` in favor of `fill_color` ([#4837](https://github.com/flet-dev/flet/issues/4837))
-* `flet build`: use Provisioning Profile to sign iOS app archive (`.ipa`), deprecate `--team` option ([#4869](https://github.com/flet-dev/flet/issues/4869))
+* feat: `flet build`: use Provisioning Profile to sign iOS app archive (`.ipa`), deprecate `--team` option ([#4869](https://github.com/flet-dev/flet/issues/4869))
 * feat: `flet doctor` CLI command ([#4803](https://github.com/flet-dev/flet/pull/4803))
 * feat: implement button themes (for `ElevatedButton`, `OutlinedButton`, `TextButton`, `FilledButton`, `IconButton `) ([#4872](https://github.com/flet-dev/flet/pull/4872))
-* `ControlEvent.data` should be of type `Optional[str]` and default to `None` ([#4786](https://github.com/flet-dev/flet/issues/4786))
-* `flet build`: add `--source-packages` to allow installing certain Python packages from source distros ([#4762](https://github.com/flet-dev/flet/issues/4762))
-* disable markup for flet-cli stdout logs ([#4796](https://github.com/flet-dev/flet/pull/4796))
+* feat: `ControlEvent.data` should be of type `Optional[str]` and default to `None` ([#4786](https://github.com/flet-dev/flet/issues/4786))
+* feat: `flet build`: add `--source-packages` to allow installing certain Python packages from source distros ([#4762](https://github.com/flet-dev/flet/issues/4762))
 
-## Bug fixes
+### Bug fixes
 
 * Fixed: Disable rich's Markup for stdout logs ([#4795](https://github.com/flet-dev/flet/issues/4795))
 * Fixed: Setting `SearchBar.bar_border_side` isn't visually honoured ([#4767](https://github.com/flet-dev/flet/issues/4767))
@@ -99,6 +111,7 @@ Previous version of Dropdown control is available as [`DropdownM2`](/docs/contro
 * Fixed: Transforming scale renders a grey screen ([#4759](https://github.com/flet-dev/flet/issues/4759))
 * Fixed: UnicodeDecodeError when using accented characters in manifest.json ([#4713](https://github.com/flet-dev/flet/issues/4713))
 * Fixed: Implement `SearchBar.blur()` to programmatically unfocus the bar ([#4827](https://github.com/flet-dev/flet/issues/4827))
+* Fixed: Disable markup for flet-cli stdout logs ([#4796](https://github.com/flet-dev/flet/pull/4796))
 
 ## Conclusion
 
