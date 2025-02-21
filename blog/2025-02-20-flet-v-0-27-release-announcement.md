@@ -1,10 +1,7 @@
 ---
 slug: flet-v-0-27-release-announcement
 title: Flet v0.27.0 Release Announcement
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [releases]
 ---
 
@@ -16,7 +13,7 @@ Flet 0.27.0 is now released with exciting new features and improvements!
 * **Enhanced Dropdown control** – improved functionality and user experience.
 * **Bug fixes & stability improvements** – various fixes to enhance overall performance and reliability.
 
-Keep reading for further details.
+<!-- truncate -->
 
 ## How to upgrade
 

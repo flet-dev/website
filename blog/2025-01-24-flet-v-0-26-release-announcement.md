@@ -1,10 +1,7 @@
 ---
 slug: flet-v-0-26-release-announcement
 title: Flet v0.26.0 Release Announcement
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [releases]
 ---
 
@@ -14,7 +11,7 @@ In summary, a Flet extension is now a single Python package that bundles both Py
 
 Built-in Flet extensions, such as `Audio`, `Video`, and `Map`, have been moved to their own repositories. You’re welcome to fork these extensions to create your own or contribute to Flet! These extensions have been published to PyPI, making them easy to include in your Flet app. To use them, simply add the desired extensions to the `dependencies` section of your `pyproject.toml` file.
 
-For more details, see below.
+<!-- truncate -->
 
 ## How to upgrade
 

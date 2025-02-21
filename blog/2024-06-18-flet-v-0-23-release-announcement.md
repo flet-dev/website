@@ -1,14 +1,13 @@
 ---
 slug: flet-v-0-23-release-announcement
 title: Flet v0.23.0 Release Announcement
-author: Henri Ndonko
-author_title: Flet Contributor and Maintainer
-author_url: https://github.com/ndonkoHenri
-author_image_url: https://avatars.githubusercontent.com/u/98978078?v=4
+authors: henri
 tags: [releases]
 ---
 
 We are excited to announce the release of Flet 0.23.0. It is a big release with many new features and bug fixes.
+
+<!-- truncate -->
 
 ## New Controls
 

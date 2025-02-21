@@ -1,15 +1,14 @@
 ---
 slug: pyproject-toml-support-for-flet-build-command
 title: pyproject.toml support for flet build command
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 ---
 
 The number of options for `flet build` command grew substantially over the time and it's been inconvenient to carry all these settings in a command line.
 
 Today, we are excited to announce another Flet pre-release which now allows configuring app build settings in `pyproject.toml`!
+
+<!-- truncate -->
 
 ## Installing pre-release
 

@@ -1,10 +1,7 @@
 ---
 slug: drag-and-drop-release
 title: 'New release: Drag and Drop, absolute positioning and clickable container'
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [release]
 ---
 
