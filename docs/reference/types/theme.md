@@ -7,19 +7,6 @@ import TabItem from '@theme/TabItem';
 
 `Theme` class has the following properties:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### `appbar_theme`
 
 Value is of type [`AppBarTheme`](/docs/reference/types/appbartheme).
@@ -39,6 +26,15 @@ Value is of type [`BottomAppBarTheme`](/docs/reference/types/bottomappbartheme).
 #### `bottom_sheet_theme`
 
 Value is of type [`BottomSheetTheme`](/docs/reference/types/bottomsheettheme).
+
+#### ~~`button_theme`~~
+
+:::warning
+This property is deprecated since `v0.27.0` and will be removed in `v0.30.0`. 
+Use `elevated_button_theme`, `outlined_button_theme`, `text_button_theme`, `filled_button_theme` or `icon_button_theme` instead.
+:::
+
+Value is of type [`ButtonTheme`](/docs/reference/types/buttontheme).
 
 #### `canvas_color`
 
@@ -71,6 +67,10 @@ Value is of type [`ColorValue`](/docs/reference/types/aliases#colorvalue).
 Value is of type [`ColorScheme`](/docs/reference/types/colorscheme) class that allows to customize Material colors scheme derived
 from `color_scheme_seed`.
 
+#### `elevated_button_theme`
+
+Value is of type [`ElevatedButtonTheme`](/docs/reference/types/elevatedbuttontheme).
+
 #### `date_picker_theme`
 
 Value is of type [`DatePickerTheme`](/docs/reference/types/datepickertheme).
@@ -99,6 +99,10 @@ Value is of type [`DividerTheme`](/docs/reference/types/dividertheme).
 
 Value is of type [`ExpansionTileTheme`](/docs/reference/types/expansiontiletheme).
 
+#### `filled_button_theme`
+
+Value is of type [`FilledButtonTheme`](/docs/reference/types/filledbuttontheme).
+
 #### `focus_color`
 
 Value is of type [`ColorValue`](/docs/reference/types/aliases#colorvalue).
@@ -119,6 +123,10 @@ Value is of type [`ColorValue`](/docs/reference/types/aliases#colorvalue).
 
 Value is of type [`ColorValue`](/docs/reference/types/aliases#colorvalue).
 
+#### `icon_button_theme`
+
+Value is of type [`IconButtonTheme`](/docs/reference/types/iconbuttontheme).
+
 #### `indicator_color`
 
 Value is of type [`ColorValue`](/docs/reference/types/aliases#colorvalue).
@@ -138,6 +146,10 @@ Value is of type [`NavigationDrawerTheme`](/docs/reference/types/navigationdrawe
 #### `navigation_rail_theme`
 
 Value is of type [`NavigationRailTheme`](/docs/reference/types/navigationrailtheme).
+
+#### `outlined_button_theme`
+
+Value is of type [`OutlinedButtonTheme`](/docs/reference/types/outlinedbuttontheme).
 
 #### `page_transitions`
 
@@ -228,6 +240,10 @@ Value is of type [`SwitchTheme`](/docs/reference/types/switchtheme).
 #### `tabs_theme`
 
 Value is of type [`TabsTheme`](/docs/reference/types/tabstheme)
+
+#### `text_button_theme`
+
+Value is of type [`TextButtonTheme`](/docs/reference/types/textbuttontheme).
 
 #### `text_theme`
 

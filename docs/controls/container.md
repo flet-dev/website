@@ -187,6 +187,12 @@ Value is of type [`ColorFilter`](/docs/reference/types/colorfilter).
 
 A child Control contained by the container.
 
+### `dark_theme`
+
+Allows setting a nested `theme` to be used when in dark theme mode for all controls inside the container and down the tree.
+
+Value is of type [`Theme`](/docs/cookbook/theming).
+
 ### `foreground_decoration`
 
 The foreground decoration.
@@ -261,7 +267,7 @@ Value is of type [`ThemeMode`](/docs/reference/types/thememode) and defaults to 
 
 Allows setting a nested `theme` for all controls inside the container and down the tree.
 
-Value is of type [`Theme`](/docs/cookbook/theming) class.
+Value is of type [`Theme`](/docs/cookbook/theming).
 
 **Usage example**
 
