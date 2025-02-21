@@ -132,6 +132,7 @@ module.exports = {
             "controls/page",
             "controls/pagelet",
             "controls/placeholder",
+            "controls/reorderablelistview",
             "controls/responsiverow",
             "controls/row",
             "controls/safearea",
