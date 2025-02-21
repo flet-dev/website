@@ -58,6 +58,16 @@ Flet now supports Python 3.12 across all packaging platforms.
 
 The next stop is Python 3.13!
 
+## Enhanced `Dropdown` control.
+
+Since version 0.27.0, Flet uses [DropdownMenu](https://api.flutter.dev/flutter/material/DropdownMenu) flutter widget for [Dropdown](/docs/controls/dropdown) control, which is a Material 3 version of previously used DropdownButton. Additionally to enhanced look and feel, it allows filter the list based on the text input or search one item in the menu list.
+
+<img src="/img/docs/controls/dropdown/dropdown-search.gif" className="screenshot-20"/>
+ 
+Some properties of previous Dropdown implementation are not available in the new version and were "stubbed" - they will not break your program but don't do anything. See the list of deprecated properties [here](/docs/controls/dropdown/#deprecated-dropdown-properties-and-events).
+
+Previous version of Dropdown control is available as [`DropdownM2`](/docs/controls/dropdownm2) control and will be deprecated in Flet 0.30.0.
+
 ## 💥 Breaking changes
 
 `flet build` command:
@@ -68,7 +78,6 @@ The next stop is Python 3.13!
 
 ## Other changes
 
-* `DropdownMenu` control ([#1088](https://github.com/flet-dev/flet/issues/1088))
 * feat: `ReorderableListView` Control ([#4865](https://github.com/flet-dev/flet/pull/4865))
 * Implement `Container.dark_theme` property ([#4857](https://github.com/flet-dev/flet/issues/4857))
 * Upgrade to Pyodide 0.27 for `httpx` Support ([#4840](https://github.com/flet-dev/flet/issues/4840))
