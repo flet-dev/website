@@ -32,11 +32,11 @@ pip install 'flet[all]' --upgrade
 
 Bump `flet` package version to `0.27.0` (or remove it at all to use the latest) in your `pyproject.toml`.
 
-## iOS packaging revamped
+## Revamped iOS Packaging
 
-* 3rd-party Flet app dependencies (aka "site packages", such as "numpy", "pandas", "flet", etc.) are now packed inside a framework into a "bundle" to make XCode sign all files and pass App Store Connect verification.
-* Additional `flet build` options to correctly sign iOS packages.
-* Extensive step-by-step documentation for packaging and deploying iOS apps. [Check it out!](/docs/publish/ios)
+* Third-party Flet app dependencies (also known as “site packages” like `numpy`, `pandas`, `flet`, etc.) are now bundled inside a framework, ensuring Xcode signs all files correctly and passes App Store Connect verification.
+* New `flet build` options for proper iOS package signing.
+* Comprehensive step-by-step documentation for packaging and deploying iOS apps. [Learn more!](/docs/publish/ios)
 
 ## Enhanced startup performance for desktop apps
 
@@ -46,7 +46,9 @@ With Flet 0.27.0, site packages are now copied in an **unpacked state** directly
 
 ## Faster incremental re-builds
 
-If certain parts of build configuration has not been changed.
+If certain parts of the build configuration remain unchanged, the `flet build` command attempts to skip or optimize specific build pipeline steps (such as re-installing Flet app dependencies), reducing the overall completion time for consecutive builds.
+
+Faster builds mean happier developers! 😄
 
 ## Pyodide 0.27.2
 
