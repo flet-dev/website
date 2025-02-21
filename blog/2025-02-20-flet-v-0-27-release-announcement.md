@@ -60,7 +60,7 @@ The next stop is Python 3.13!
 
 ## Enhanced `Dropdown` control.
 
-Since version 0.27.0, Flet uses [DropdownMenu](https://api.flutter.dev/flutter/material/DropdownMenu) flutter widget for [Dropdown](/docs/controls/dropdown) control, which is a Material 3 version of previously used DropdownButton. Additionally to enhanced look and feel, it allows filter the list based on the text input or search one item in the menu list.
+Since version 0.27.0, Flet uses [DropdownMenu](https://api.flutter.dev/flutter/material/DropdownMenu-class.html) flutter widget for [Dropdown](/docs/controls/dropdown) control, which is a Material 3 version of previously used DropdownButton. Additionally to enhanced look and feel, it allows filter the list based on the text input or search one item in the menu list.
 
 <img src="/img/docs/controls/dropdown/dropdown-search.gif" className="screenshot-30"/>
  
