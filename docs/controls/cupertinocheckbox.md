@@ -44,17 +44,32 @@ ft.app(main)
 
 True if the control will be selected as the initial focus. If there is more than one control on a page with autofocus set, then the first one added to the page will get focus.
 
+### `active_color`
+
+The [color](/docs/reference/colors) used to fill checkbox when it is checked/selected.
+
+If `fill_color` returns a non-null color in the `SELECTED` state, it will be used instead of this color.
+
+Defaults to `Colors.PRIMARY`.
+
+### `border_side`
+
+Defines the checkbox's border sides in all or specific [`ControlState`](/docs/reference/types/controlstate) states.
+
+The following states are supported: `DEFAULT`, `PRESSED`, `SELECTED`, `HOVERED`, `FOCUSED`, `DISABLED` and `ERROR`.
+
 ### `check_color`
 
 The [color](/docs/reference/colors) to use for the check icon when this checkbox is checked.
 
-### `active_color`
+### `fill_color`
 
-The [color](/docs/reference/colors) used to fill checkbox when it is checked.
+The [color](/docs/reference/colors) used to fill the checkbox in all or specific [`ControlState`](/docs/reference/types/controlstate) states.
 
-### `inactive_color`
+The following states are supported: `DEFAULT`, `SELECTED`, `HOVERED`, `FOCUSED`, and `DISABLED`.
 
-The [color](/docs/reference/colors) used for checkbox's border when the checkbox is inactive.
+`active_color` is used as fallback color when the checkbox is in the `SELECTED` state, 
+`CupertinoColors.WHITE` at 50% opacity is used as fallback color when the checkbox is in the `DISABLED` state, and `CupertinoColors.WHITE` otherwise.
 
 ### `focus_color`
 
@@ -69,6 +84,24 @@ The clickable label to display on the right of a checkbox.
 Defines on which side of the checkbox the `label` should be shown.
 
 Value is of type [`LabelPosition`](/docs/reference/types/labelposition) and defaults to `RIGHT`.
+
+### `mouse_cursor`
+
+The cursor for a mouse pointer entering or hovering over this control.
+
+Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
+
+### `semantics_label`
+
+The semantic label for the checkbox that will be announced by screen readers.
+
+This is announced by assistive technologies (e.g TalkBack/VoiceOver) and not shown on the UI.
+
+### `shape`
+
+The shape of the checkbox.
+
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder) and defaults to `RoundedRectangleBorder(radius=4)`.
 
 ### `tristate`
 

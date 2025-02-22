@@ -59,6 +59,15 @@ ft.app(main)
 
 `True` if scrollbar should automatically move its position to the end when children updated. Must be `False` for `scroll_to()` method to work.
 
+Defaults to `False`.
+
+### `build_controls_on_demand`
+
+Whether the `controls` should be built lazily/on-demand, i.e. only when they are about to become visible. 
+This is particularly useful when dealing with a large number of controls.
+
+Defaults to `True`.
+
 ### `cache_extent`
 
 Items that fall in the cache area (area before or after the visible area that are about to become visible when the user
@@ -73,7 +82,7 @@ extent of the main axis + `cache_extent` after the trailing edge.
 
 The content will be clipped (or not) according to this option.
 
-Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `HARD_EDGE`.
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.HARD_EDGE`.
 
 ### `controls`
 

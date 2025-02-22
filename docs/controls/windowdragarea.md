@@ -5,7 +5,7 @@ sidebar_label: WindowDragArea
 
 A control for drag to move, maximize and restore application window.
 
-When you have hidden the title bar with [`page.window.title_bar_hidden`](/docs/controls/page#window_title_bar_hidden),
+When you have hidden the title bar with [`page.window.title_bar_hidden`](/docs/reference/types/window#title_bar_hidden),
 you can add this control to move the window position.
 
 import Tabs from '@theme/Tabs';

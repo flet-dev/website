@@ -132,7 +132,7 @@ Value is of type [`LabelPosition`](/docs/reference/types/labelposition) and defa
 
 ### `mouse_cursor`
 
-The cursor to be displayed when a mouse pointer enters or is hovering over this control.
+The cursor for a mouse pointer entering or hovering over this control.
 
 Value is of type [`MouseCursor`](/docs/reference/types/mousecursor).
 
@@ -157,7 +157,7 @@ The value to set to containing `RadioGroup` when the radio is selected.
 
 Defines how compact the radio's layout will be.
 
-Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity).
+Value is of type [`VisualDensity`](/docs/reference/types/visualdensity).
 
 ## `Radio` events
 

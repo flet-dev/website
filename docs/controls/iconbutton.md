@@ -142,6 +142,8 @@ Icon [color](/docs/reference/colors).
 
 Icon size in virtual pixels.
 
+Defaults to `24`.
+
 ### `mouse_cursor`
 
 The cursor to be displayed when a mouse pointer enters or is hovering over this control.
@@ -222,7 +224,7 @@ Value is of type [`UrlTarget`](/docs/reference/types/urltarget) and defaults to 
 
 Defines how compact the control's layout will be.
 
-Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity).
+Value is of type [`VisualDensity`](/docs/reference/types/visualdensity).
 
 ## Methods
 

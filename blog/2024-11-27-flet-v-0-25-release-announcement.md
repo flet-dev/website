@@ -1,10 +1,7 @@
 ---
 slug: flet-v-0-25-release-announcement
 title: Flet v0.25.0 Release Announcement
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [releases]
 ---
 
@@ -13,6 +10,8 @@ Hey Flet developers, we’ve got something exciting to share — Flet 0.25.0 is 
 The biggest news? No more Kivy for iOS and Android packaging. No more dealing with frustrating Python binary dependencies — Flet now uses its own custom Python runtime, so your app builds are easier than ever. Plus, we’ve added loads of new features like better permissions control, faster rebuilds, and even a lightweight Linux client that skips the bloat.
 
 Let’s dive into all the cool stuff Flet 0.25.0 has to offer! 🚀
+
+<!-- truncate -->
 
 ## How to upgrade
 

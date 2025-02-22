@@ -187,6 +187,12 @@ Value is of type [`ColorFilter`](/docs/reference/types/colorfilter).
 
 A child Control contained by the container.
 
+### `dark_theme`
+
+Allows setting a nested `theme` to be used when in dark theme mode for all controls inside the container and down the tree.
+
+Value is of type [`Theme`](/docs/cookbook/theming).
+
 ### `foreground_decoration`
 
 The foreground decoration.
@@ -210,42 +216,6 @@ Defaults to `False`.
 An image to paint above the `bgcolor` or `gradient`. If `shape=BoxShape.CIRCLE` then this image is clipped to the circle's boundary; if `border_radius` is not `None`then the image is clipped to the given radii.
 
 Value is of type [`DecorationImage`](/docs/reference/types/decorationimage).
-
-### ~~`image_fit`~~
-
-How to inscribe the image into the space allocated during layout. 
-
-Value is of type [`ImageFit`](/docs/reference/types/imagefit) and defaults to `ImageFit.NONE`.
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.fit`](#image) instead.**
-
-### ~~`image_opacity`~~
-
-Sets image opacity when blending with a background.
-
-Value ranges between `0.0`(fully transparent) and `1.0`(fully opaque).
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.opacity`](#image) instead.**
-
-### ~~`image_repeat`~~
-
-How to paint any portions of the layout bounds not covered by the image.
-
-Value is of type [`ImageRepeat`](/docs/reference/types/imagerepeat) and defaults to `ImageRepeat.NO_REPEAT`.
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.repeat`](#image) instead.**
-
-### ~~`image_src`~~
-
-Sets an image as a container background. See [`Image.src`](/docs/controls/image#src) for more details.
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.src`](#image) instead.**
-
-### ~~`image_src_base64`~~
-
-Sets an image encoded as Base-64 string as a container background. See [`Image.src_base64`](/docs/controls/image#src_base64) for more details.
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`image.src_base64`](#image) instead.**
 
 ### `ink`
 
@@ -297,7 +267,7 @@ Value is of type [`ThemeMode`](/docs/reference/types/thememode) and defaults to 
 
 Allows setting a nested `theme` for all controls inside the container and down the tree.
 
-Value is of type [`Theme`](/docs/cookbook/theming) class.
+Value is of type [`Theme`](/docs/cookbook/theming).
 
 **Usage example**
 
@@ -314,7 +284,7 @@ def main(page: ft.Page):
         # Page theme
         ft.Container(
             content=ft.ElevatedButton("Page theme button"),
-            bgcolor=ft.Colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
             padding=20,
             width=300,
         ),
@@ -323,7 +293,7 @@ def main(page: ft.Page):
         ft.Container(
             theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.Colors.PINK)),
             content=ft.ElevatedButton("Inherited theme button"),
-            bgcolor=ft.Colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
             padding=20,
             width=300,
         ),
@@ -333,7 +303,7 @@ def main(page: ft.Page):
             theme=ft.Theme(color_scheme_seed=ft.Colors.INDIGO),
             theme_mode=ft.ThemeMode.DARK,
             content=ft.ElevatedButton("Unique theme button"),
-            bgcolor=ft.Colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
             padding=20,
             width=300,
         ),

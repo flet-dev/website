@@ -22,3 +22,5 @@
 /docs/guides/python/colors /docs/reference/colors
 /docs/cli/* /docs/reference/cli/:splat
 /docs/guides/python/* /docs/cookbook/:splat
+
+/docs/extend/integrating-existing-flutter-packages /docs/extend/user-extensions

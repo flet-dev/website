@@ -22,7 +22,7 @@ import TOCInline from '@theme/TOCInline';
 
 To create a multi-platform app in Python with Flet, you don't need to know HTML, CSS or JavaScript, but you do need a basic knowledge of Python and object-oriented programming.
 
-Before you can create your first Flet app, you need to [setup your development environment](/docs/getting-started/), which requires Python 3.8 or above and `flet` package.
+Before you can create your first Flet app, you need to [setup your development environment](/docs/getting-started/), which requires Python 3.9 or above and `flet` package.
 
 Once you have Flet installed, let's [create](/docs/getting-started/create-flet-app) a simple hello-world app.
 

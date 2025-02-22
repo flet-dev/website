@@ -116,7 +116,7 @@ def main(page: ft.Page):
             ft.View(
                 "/",
                 [
-                    ft.AppBar(title=ft.Text("Flet app"), bgcolor=ft.Colors.SURFACE_VARIANT),
+                    ft.AppBar(title=ft.Text("Flet app"), bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST),
                     ft.ElevatedButton("Visit Store", on_click=lambda _: page.go("/store")),
                 ],
             )
@@ -126,7 +126,7 @@ def main(page: ft.Page):
                 ft.View(
                     "/store",
                     [
-                        ft.AppBar(title=ft.Text("Store"), bgcolor=ft.Colors.SURFACE_VARIANT),
+                        ft.AppBar(title=ft.Text("Store"), bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST),
                         ft.ElevatedButton("Go Home", on_click=lambda _: page.go("/")),
                     ],
                 )

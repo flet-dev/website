@@ -1,10 +1,7 @@
 ---
 slug: controls-and-theming-enhancements
 title: Controls and theming enhancements
-author: Henri Ndonko
-author_title: Flet Contributor and Maintainer
-author_url: https://github.com/ndonkoHenri
-author_image_url: https://avatars.githubusercontent.com/u/98978078?v=4
+authors: henri
 tags: [releases]
 ---
 

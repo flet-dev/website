@@ -114,7 +114,9 @@ True if the control will be selected as the initial focus. If there is more than
 
 ### `border_side`
 
-Defines the color and weight of the chip's outline. Value is the instance of [`BorderSide`](/docs/reference/types/borderside) class.
+Defines the color and weight of the chip's outline. 
+
+Value is of type [`BorderSide`](/docs/reference/types/borderside).
 
 ### `check_color`
 
@@ -134,8 +136,13 @@ Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaul
 
 ### `color`
 
-The [color](/docs/reference/colors) that fills the chip in various [`ControlState`](/docs/reference/types/controlstate)
-s.
+The [color](/docs/reference/colors) that fills the chip in various [`ControlState`](/docs/reference/types/controlstate)s.
+
+### `delete_drawer_animation_style`
+
+The animation style for the `delete_icon`'s animations.
+
+Value is of type [`AnimationStyle`](/docs/reference/types/animationstyle).
 
 ### `delete_icon_tooltip`
 
@@ -151,6 +158,13 @@ Defaults to an [`Icon(icons.CANCEL)`](/docs/controls/icon).
 
 [Color](/docs/reference/colors) of the `delete_icon`.
 
+### `delete_icon_size_constraints`
+
+The size constraints for the `delete_icon` control. 
+When unspecified, it defaults to a minimum size of chip height or label height (whichever is greater) and a padding of 8.0 pixels on all sides.
+
+Value is of type [`BoxConstraints`](/docs/reference/types/boxconstraints).
+
 ### `disabled_color`
 
 The [color](/docs/reference/colors) used for the chip's background if it is disabled.
@@ -160,6 +174,12 @@ The [color](/docs/reference/colors) used for the chip's background if it is disa
 A non-negative value which defines the size of the shadow below the chip.
 
 Defaults to `0`.
+
+### `enable_animation_style`
+
+The animation style for the enable and disable animations.
+
+Value is of type [`AnimationStyle`](/docs/reference/types/animationstyle).
 
 ### `label`
 
@@ -186,6 +206,19 @@ A `Control` to display to the left of the chip's `label`.
 
 Typically the leading control is an [`Icon`](/docs/controls/icon) or a [`CircleAvatar`](/docs/controls/circleavatar).
 
+### `leading_drawer_animation_style`
+
+The animation style for the `leading` control's animations.
+
+Value is of type [`AnimationStyle`](/docs/reference/types/animationstyle).
+
+### `leading_size_constraints`
+
+The size constraints for the `leading` control. 
+When unspecified, it defaults to a minimum size of chip height or label height (whichever is greater) and a padding of 8.0 pixels on all sides.
+
+Value is of type [`BoxConstraints`](/docs/reference/types/boxconstraints).
+
 ### `padding`
 
 The padding between the `label` and the outside shape.
@@ -199,6 +232,12 @@ By default, this is 4 logical pixels on all sides.
 If `on_select` event is specified, `selected` property is used to determine whether the chip is selected or not.
 
 Defaults to `False`.
+
+### `select_animation_style`
+
+The animation style for the select and unselect animations.
+
+Value is of type [`AnimationStyle`](/docs/reference/types/animationstyle).
 
 ### `selected_color`
 
@@ -237,7 +276,7 @@ The [color](/docs/reference/colors) used as an overlay on `bgcolor` to indicate 
 
 Defines how compact the control's layout will be.
 
-Value is of type [`ThemeVisualDensity`](/docs/reference/types/themevisualdensity).
+Value is of type [`VisualDensity`](/docs/reference/types/visualdensity).
 
 ## Events
 
