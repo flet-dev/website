@@ -106,7 +106,7 @@ class AppLayout(ft.Row):
         self.sidebar = Sidebar(self, page)
         self._active_view: Control = ft.Column(
             controls=[ft.Text("Active View")],
-            alignment=ft.MainAxisAlignmnet.CENTER,
+            alignment=ft.MainAxisAlignment.CENTER,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         )
         self.controls = [self.sidebar, self.toggle_nav_rail_button, self.active_view]
