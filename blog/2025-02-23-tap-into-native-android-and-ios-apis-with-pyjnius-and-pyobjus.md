@@ -10,6 +10,8 @@ tags: [releases]
 
 When building mobile apps with Flet, you may need to interact directly with platform-specific APIs. Whether it’s accessing system information, managing Bluetooth devices, or working with user preferences, **Pyjnius** and **Pyobjus** by Kivy provide a seamless way to bridge Python with Java (for Android) and Objective-C (for iOS).
 
+You can now integrate both Pyjnius and Pyobjus into your Flet apps! 🚀
+
 <!-- truncate -->
 
 ## Pyjnius for Android
