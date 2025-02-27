@@ -17,6 +17,8 @@ Take a look at [Drag-and-Drop example](https://github.com/flet-dev/examples/blob
 
 Explore [`Draggable`](/docs/controls/draggable) and [`DragTarget`](/docs/controls/dragtarget) controls, their properties and events.
 
+<!-- truncate -->
+
 ## Absolute positioning inside Stack
 
 All visible controls now have `left` `top`, `right` and `bottom` properties to let them be absolutely positioned inside [`Stack`](/docs/controls/stack), for example:

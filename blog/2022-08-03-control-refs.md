@@ -50,6 +50,8 @@ When more and mode controls and event handlers added it becomes challenging to k
 
 Is `first_name` a TextField, does it have autofocus set? Is greetings a `Row` or a `Column`?
 
+<!-- truncate -->
+
 ## `Ref` class
 
 Flet provides `Ref` utility class which allows to define a reference to the control, use that reference in event handlers and set the reference to a real control later, while building a tree. The idea comes from [React](https://reactjs.org/docs/refs-and-the-dom.html).

@@ -15,6 +15,8 @@ The following font formats are supported:
 
 Use [`page.fonts`](/docs/controls/page#fonts) property to import fonts.
 
+<!-- truncate -->
+
 Set `page.fonts` property to a dictionary where key is the font family name to refer that font and the value is the URL of the font file to import:
 
 ```python

@@ -11,6 +11,8 @@ Flutter offers [multiple approaches](https://docs.flutter.dev/development/ui/ani
 
 We are starting with "implicit" animations which allows you to animate a control property by setting a target value; whenever that target value changes, the control animates the property from the old value to the new one.
 
+<!-- truncate -->
+
 ## Demo time
 
 <div style={{fontSize: "1.1rem", textAlign: "center", padding: "1rem" }}>

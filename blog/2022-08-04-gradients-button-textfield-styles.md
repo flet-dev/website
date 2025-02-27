@@ -11,6 +11,8 @@ We've just released [Flet 0.1.46](https://pypi.org/project/flet/0.1.46/) adding 
 * Extensive styling for buttons, TextField and Dropdown controls
 * ...and more
 
+<!-- truncate -->
+
 ## Gradient backgrounds
 
 ### Linear gradient

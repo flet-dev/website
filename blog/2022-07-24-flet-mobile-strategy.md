@@ -11,6 +11,8 @@ New Flet developers are constantly asking if there is a way to package Flet prog
 
 In this post I would like to share our vision for Flet going mobile and provide a roadmap.
 
+<!-- truncate -->
+
 ## Server-Driven UI
 
 Flet is a Server-driven UI (SDUI) framework. SDUI is an emerging technology which is the best described in [Technology Radar post](https://www.thoughtworks.com/en-ca/radar/techniques/server-driven-ui):

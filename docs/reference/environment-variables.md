@@ -83,7 +83,7 @@ random port.
 
 #### `FLET_SERVER_UDS_PATH` 
 
-The Unix Domain Socket (UDS) path for the Flet server. It enables inter-process communication on Unix-based systems, with its value being a socket file path in the format flet_<pid>.sock.
+The Unix Domain Socket (UDS) path for the Flet server. It enables inter-process communication on Unix-based systems, with its value being a socket file path in the format `flet_<pid>.sock`.
 
 #### `FLET_SESSION_TIMEOUT`
 

@@ -13,6 +13,8 @@ We've just released [Flet 0.4.0](https://pypi.org/project/flet/) with a super ex
 
 You can quickly build awesome single-page applications (SPA) entirely in Python and host them everywhere! No HTML, CSS or JavaScript required!
 
+<!-- truncate -->
+
 ## Quick Flet with Pyodide demo
 
 Install the latest Flet package:

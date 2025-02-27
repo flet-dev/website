@@ -24,6 +24,8 @@ ft.ResponsiveRow([
 ])
 ```
 
+<!-- truncate -->
+
 `ResponsiveRow` is "responsive" because it can adapt the size of its children to a changing screen (page, window) size. `col` property in the example above is a constant number which means the child will span 6 columns for any screen size.
 
 If `ResponsiveRow`'s child doesn't have `col` property specified it spans the maximum number of columns.

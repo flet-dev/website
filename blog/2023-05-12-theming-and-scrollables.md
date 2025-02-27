@@ -14,6 +14,8 @@ The release also introduces theming improvements:
 * [Scrollbar theming](#scrollbar-theme)
 * [Tabs theming](#tabs-theming)
 
+<!-- truncate -->
+
 ## Controlling scroll position
 
 Scrollable controls (`Page`, `View`, `Column`, `Row`, `ListView` and `GridView`) introduce `scroll_to()` method to change their scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.

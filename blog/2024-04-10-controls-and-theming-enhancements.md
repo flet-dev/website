@@ -9,6 +9,8 @@ One month after the release of Flet 0.21.0, we are excited to announce the relea
 
 This release comes with a lot of enhancements, bug fixes, and deprecations:
 
+<!-- truncate -->
+
 ## Enhancements
 
 This was one of the main concerns while coming up with this release. Two types of enhancements were made:

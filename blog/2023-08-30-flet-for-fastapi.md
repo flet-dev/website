@@ -13,6 +13,8 @@ We've just released Flet 0.10.0 with FastAPI support!
 
 On the other hand, seasoned FastAPI developers can use Flet to easily add interactive, real-time dashboards and admin UI to their existing or new FastAPI services.
 
+<!-- truncate -->
+
 ## A minimal app example
 
 ```python

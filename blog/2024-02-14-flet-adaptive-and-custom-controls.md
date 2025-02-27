@@ -13,6 +13,8 @@ We just released Flet 0.20.0 with the focus on:
 2) Extending Flet apps with 3rd-party Flutter packages.
 3) New controls: [`Video`](/docs/controls/video) (yay!), [`AudioRecorder`](/docs/controls/audiorecorder) and a bunch of `Cupertino`-like controls. Flet now includes 97 built-in controls!
 
+<!-- truncate -->
+
 :::warning
 Flet 0.20.0 includes a new [`Video`](/docs/controls/video) control. While macOS and Windows already include all required media libraries to test Flet apps on Linux, the [libmpv](https://mpv.io/) package must be installed. On Ubuntu/Debian in can be installed with:
 

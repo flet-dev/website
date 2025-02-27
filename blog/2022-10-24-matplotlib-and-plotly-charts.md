@@ -32,6 +32,8 @@ Check the docs for Matplotlib and Plotly charting controls:
 
 Explore [Flet chart examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts).
 
+<!-- truncate -->
+
 Learn Python libraries by examples:
 
 * [Matplotlib gallery](https://matplotlib.org/stable/gallery/index.html)

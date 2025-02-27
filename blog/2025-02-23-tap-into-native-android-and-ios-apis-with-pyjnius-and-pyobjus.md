@@ -1,11 +1,8 @@
 ---
 slug: tap-into-native-android-and-ios-apis-with-Pyjnius-and-pyobjus
 title: Tap into native Android and iOS APIs with Pyjnius and Pyobjus
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
-tags: [releases]
+author: feodor
+tags: [news]
 ---
 
 When building mobile apps with Flet, you may need to interact directly with platform-specific APIs. Whether it’s accessing system information, managing Bluetooth devices, or working with user preferences, **Pyjnius** and **Pyobjus** by Kivy provide a seamless way to bridge Python with Java (for Android) and Objective-C (for iOS).

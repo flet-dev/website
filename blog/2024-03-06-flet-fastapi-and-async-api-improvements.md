@@ -11,6 +11,8 @@ Flet 0.21.0 further improves web apps development experience as well as using as
 
 Here's what's new in Flet 0.21.0:
 
+<!-- truncate -->
+
 ## FastAPI with Uvicorn replaces built-in web server
 
 From very beginning of Flet life to serve web apps there was a built-in web server written in Go
