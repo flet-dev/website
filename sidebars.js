@@ -363,6 +363,7 @@ module.exports = {
         "cookbook/authentication",
         "cookbook/assets",
         "cookbook/fonts",
+        "cookbook/read-and-write-files",
         "cookbook/client-storage",
         "cookbook/session-storage",
         "cookbook/encrypting-sensitive-data",

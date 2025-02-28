@@ -165,5 +165,7 @@ In the above examples, simple styled `MyButton` doesn't need to be isolated, but
 class Task(ft.Row):
     def __init__(self, text):
         super().__init__()
-        self.isolated = True
+    
+    def is_isolated(self):
+        return True
 ``` 
