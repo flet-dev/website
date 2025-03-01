@@ -46,8 +46,8 @@ For example:
 ```python
 import os
 
-app_app_data_path = os.getenv("FLET_APP_STORAGE_DATA")
-my_file_path = os.path.join(app_app_data_path, "test_file.txt")
+app_data_path = os.getenv("FLET_APP_STORAGE_DATA")
+my_file_path = os.path.join(app_data_path, "test_file.txt")
 
 with open(my_file_path, "r") as f:
     file_content = f.read()
@@ -61,7 +61,7 @@ Also, you can use the [`os`](https://docs.python.org/3/library/os.html) module (
 Below is an example that showcases a basic Counter application, whose value persists across app launches. 
 This is made possible by writing the counter value to a file in the app's data storage directory and reading it when the app launches.
 
-<img src="/img/docs/cookbook/read-and-write-files/counter.png" className="screenshot-50" />
+<img src="https://github.com/user-attachments/assets/50b2a905-ee71-4fda-bfd6-9737bb348579" className="screenshot-50" />
 
 ```python
 import os
