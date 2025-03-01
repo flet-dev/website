@@ -49,7 +49,7 @@ import os
 app_app_data_path = os.getenv("FLET_APP_STORAGE_DATA")
 my_file_path = os.path.join(app_app_data_path, "test_file.txt")
 
-with open(counter_file_path, "r") as f:
+with open(my_file_path, "r") as f:
     file_content = f.read()
     print(file_content)
 ```
