@@ -61,7 +61,9 @@ Also, you can use the [`os`](https://docs.python.org/3/library/os.html) module (
 Below is an example that showcases a basic Counter application, whose value persists across app launches. 
 This is made possible by writing the counter value to a file in the app's data storage directory and reading it when the app launches.
 
-<img src="https://github.com/user-attachments/assets/50b2a905-ee71-4fda-bfd6-9737bb348579" className="screenshot-50" />
+<video controls width="100%">
+  <source src="https://github.com/ndonkoHenri/flet-storage-cookbook/raw/refs/heads/main/video-demo.mp4" type="video/mp4"/>
+</video>
 
 ```python
 import os
@@ -163,6 +165,7 @@ ft.app(main)
 
 - `Counter` class is a custom control, which is a subclass/extension of the `Text` control. More information [here](/docs/getting-started/custom-controls).
 - [`FLET_APP_CONSOLE`](/docs/reference/environment-variables/#flet_app_console) is an environment variable that points to the application's console log file (`console.log`) which contains the app's [console output](https://flet.dev/docs/publish#console-output) (ex: `print()` statements). Its value is set in production mode.
+- If you have an android emulator or physical device, you can download and install this [apk](https://github.com/ndonkoHenri/flet-storage-cookbook/releases). 
 - Follow [this](/docs/publish) guide to package your app for all platforms.
 
 
