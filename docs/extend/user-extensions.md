@@ -9,7 +9,7 @@ While Flet controls leverage many built-in Flutter widgets, enabling the creatio
 
 To address this, the Flet framework provides an extensibility mechanism. This allows you to incorporate widgets and APIs from your own custom Flutter packages or [third-party libraries](https://pub.dev/packages?sort=popularity) directly into your Flet application.
 
-In this guide, you will learn how to create Flet extension from template and then customize it to integrate 3rd-party Flutter package into your Flet app.
+In this guide, you will learn how to create Flet extension from template and then customize it to integrate 3rd-party Flutter package into your Flet app or share it with community.
 
 ### Prerequisites
 
@@ -51,10 +51,14 @@ open build/macos/flet-spinkit-example.app
 
 Once the project was built for desktop once, you can make changes to your python files and run it without re-building.
 
-First, install dependencies from pyproject.toml:
+First, if you are not using uv, install dependencies from pyproject.toml:
 
 ```
 pip install .
+```
+or
+```
+poetry install
 ```
 
 Now you can make changes to your example app main.py:
@@ -96,19 +100,9 @@ flet run
 
 5. Re-build your app.
 
-:::info Known issue
-There is a [known issue](https://github.com/flet-dev/flet/issues/4754) that Flet would build with cached files and your changes will not be included. As a temporary solution, you need to clear cache before re-building: 
+When you make any changes to your flutter package, you need to re-build: 
 
 ```
-pip cache purge
-```
-
-:::
-
-When you make any changes to your package, you need to re-build: 
-
-```
-pip cache purge
 flet build macos -v
 ```
 
@@ -120,7 +114,7 @@ build/macos/flet-spinkit-example.app/Contents/MacOS/flet-spinkit-example --debug
 
 ## Integrate 3rd-party Flutter package
 
-For the example purposes we will be integrating [flutter_spinkit](https://pub.dev/packages/flutter_spinkit) package into our Flet app.
+Let's integrate [flutter_spinkit](https://pub.dev/packages/flutter_spinkit) package into our Flet app.
 
 1. Add dependency.
 
@@ -169,7 +163,6 @@ class FletSpinkitControl extends StatelessWidget {
 Go to `examples/flet_spinkit_example`, clear cache and rebuild your app:
 
 ```
-pip cache purge
 flet build macos -v
 ```
 
@@ -183,7 +176,11 @@ After creating new Flet project from extension template, you will see the follow
 
 ```
 ├── LICENSE
+├── mkdocs.yml
 ├── README.md
+├── docs
+│   └── index.md
+│   └── FletSpinkit.md
 ├── examples
 │   └── flet_spinkit_example
 │       ├── README.md
@@ -211,6 +208,7 @@ After creating new Flet project from extension template, you will see the follow
 Flet extension consists of:
 * **package**, located in `src` folder
 * **example app**, located in `examples/flet-spinkit_example` folder
+* **docs**, located in `docs` folder
 
 ### Package
 
@@ -292,6 +290,30 @@ dependencies = [
   "flet>=0.26.0",
 ]
 ```
+
+### Docs
+
+If you are planning to share your extension with community, you can easily generate documenation from your source code using [mkdocs](https://www.mkdocs.org/).
+
+Flet extension comes with `docs` folder containing initial files for your documentation and `mkdocs.yml`.
+
+Run the following command to see how your docs look locally:
+
+```
+mkdocs serve
+```
+
+Open http://127.0.0.1:8000 in your browser. If you click on `FletSpinkit` link in your left menu, you will see the documentation generated from docstrings:
+
+[SCREENSHOT]
+
+Once your documentation is ready, if your package is hosted on GitHub, your can run the following command to host your documentation on GitHub pages:
+
+```
+mkdocs gh-deploy
+```
+
+You may find [this guide](https://realpython.com/python-project-documentation-with-mkdocs/#step-5-build-your-documentation-with-mkdocs) helpful to get started with mkdocs.
 
 ## Customize properties
 
