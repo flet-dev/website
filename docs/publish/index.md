@@ -210,6 +210,46 @@ ios = false # --no-ios-splash
 android = false # --no-android-splash
 ```
 
+## Boot screen
+
+Boot screen is shown while the archive with Python app is being unpacked to a device file system.
+It's shown after splash screen and before startup screen. App archive does not include 3rd-party site packages.
+If the archive is small and its unpacking is fast you can keep that screen disabled (default).
+
+To enable boot screen in `pyproject.toml` for all target platforms:
+
+```toml
+[tool.flet.app.boot_screen]
+show = true
+message = "Preparing the app for its first launch…"
+```
+
+Boot screen can be enabled for specific platforms only or its message customized. For example, enabling it for Android only:
+
+```toml
+[tool.flet.android.app.boot_screen]
+show = true
+```
+
+## Startup screen
+
+Startup screen is shown while the archive with 3rd-party site packages (Android only) is being unpacked and Python app is starting. Startup screen is shown after boot screen.
+
+To enable startup screen in `pyproject.toml` for all target platforms:
+
+```toml
+[tool.flet.app.startup_screen]
+show = true
+message = "Starting up the app…"
+```
+
+Startup screen can be enabled for specific platforms only or its message customized. For example, enabling it for Android only:
+
+```toml
+[tool.flet.android.app.startup_screen]
+show = true
+```
+
 ## Entry point
 
 By default, `flet build` command assumes `main.py` as the entry point of your Flet application, i.e. the file with `ft.app(main)` at the end. A different entry point could be specified with `--module-name` argument or in `pyproject.toml`:
