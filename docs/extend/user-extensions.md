@@ -303,9 +303,9 @@ Run the following command to see how your docs look locally:
 mkdocs serve
 ```
 
-Open http://127.0.0.1:8000 in your browser. If you click on `FletSpinkit` link in your left menu, you will see the documentation generated from docstrings:
+Open http://127.0.0.1:8000 in your browser:
 
-[SCREENSHOT]
+<img src="/img/docs/extending-flet/mkdocs.png" className="screenshot-50" />
 
 Once your documentation is ready, if your package is hosted on GitHub, your can run the following command to host your documentation on GitHub pages:
 
