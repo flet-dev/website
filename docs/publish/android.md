@@ -100,44 +100,50 @@ android = false
 
 ## Android SDK version settings
 
-1. minSdkVersion
-	•	Defines the minimum Android version (API level) your app can run on.
-	•	If a device has a lower version than minSdkVersion, your app won’t install or run on that device.
-	•	Increasing this value means dropping support for older devices.
+### `min_sdk_version`
+
+* Defines the minimum Android version (API level) your app can run on.
+* If a device has a lower version than `min_sdk_version`, your app won’t install or run on that device.
+* Increasing this value means dropping support for older devices.
+
+Configuring in `pyproject.toml`:
 
 ```toml
 [tool.flet.android]
 min_sdk_version = 21
 ```
-If minSdkVersion = 21, your app will not install on Android 4.4 (API 19) or lower.
 
-Default is 21.
+If `min_sdk_version` = `21`, your app will not install on Android 4.4 (API 19) or lower.
 
-2. targetSdkVersion
-	•	Defines the Android version your app is optimized for.
-	•	Your app can run on higher Android versions but will behave as if it’s running on targetSdkVersion unless explicitly adapted.
-	•	Google Play requires you to update this regularly to meet new Android requirements.
+Default is `21`.
+
+### `target_sdk_version`
+
+* Defines the Android version your app is optimized for.
+* Your app can run on higher Android versions but will behave as if it’s running on `targetSdkVersion` unless explicitly adapted.
+* Google Play requires you to update this regularly to meet new Android requirements.
+
+Configuring in `pyproject.toml`:
 
 ```toml
 [tool.flet.android]
 target_sdk_version = 34
 ```
 
-If targetSdkVersion = 34, your app will run on Android 14 and above with the latest system behaviors.
-	•	On newer Android versions, some strict security and API changes may apply automatically.
+If `targetSdkVersion` = `34`, your app will run on Android 14 and above with the latest system behaviors. On newer Android versions, some strict security and API changes may apply automatically.
 
 Default `target_sdk_version` is `35`.
 
-Key Differences
+#### Key differences
 
-| Feature           | `minSdkVersion` | `targetSdkVersion` |
+| Feature           | `min_sdk_version` | `target_sdk_version` |
 |------------------|-----------------|------------------|
 | Defines...      | **Minimum Android version** required to install & run the app | **Optimized Android version** for best compatibility |
 | Impact          | Lowering it allows **more devices** to install the app | Raising it allows access to **newer Android features** |
 | If set too low | App may not support modern APIs & security | App might not follow latest Android restrictions |
 | If set too high | App won't install on older devices | No major downside (except adapting to new behaviors) |
 
-Example:
+Configuring both settings in `pyproject.toml`:
 
 ```toml
 [tool.flet.android]
@@ -225,6 +231,8 @@ host = "mydomain.com"
 See [Deep linking](https://docs.flutter.dev/ui/navigation/deep-linking) section in Flutter docs for more information and complete setup guide.
 
 ## Manifest application element properties
+
+Adding custom properties to `<application>` element in `AndroidManifest.xml`:
 
 ```toml
 [tool.flet.android.manifest_application]
