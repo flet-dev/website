@@ -1,54 +1,75 @@
----
-title: Create a new Flet app
----
+import 'package:flutter/material.dart';
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+void main() {
+  runApp(ECRealApp());
+}
 
-Create a new directory (or directory with `pyproject.toml` already exists if initialized with `poetry` or `uv`) and switch into it.
+class ECRealApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'EC Real Calculator',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: ECRealHomePage(),
+    );
+  }
+}
 
-To create a new "minimal" Flet app run the following command:
+class ECRealHomePage extends StatefulWidget {
+  @override
+  _ECRealHomePageState createState() => _ECRealHomePageState();
+}
 
-<Tabs groupId="language">
-  <TabItem value="venv" label="venv" default>
-```
-flet create
-```
-  </TabItem>
-  <TabItem value="uv" label="uv">
-```
-uv run flet create
-```
-  </TabItem>
-  <TabItem value="poetry" label="poetry">
-```
-poetry run flet create
-```
-  </TabItem>
-</Tabs>
+class _ECRealHomePageState extends State<ECRealHomePage> {
+  TextEditingController ecController = TextEditingController();
+  TextEditingController vwcController = TextEditingController();
+  String resultado = "EC Real: ";
 
-The command will create the following directory structure:
+  void calcularECReal() {
+    double? ecBulk = double.tryParse(ecController.text);
+    double? vwc = double.tryParse(vwcController.text);
 
-```
-├── README.md
-├── pyproject.toml
-├── src
-│   ├── assets
-│   │   └── icon.png
-│   └── main.py
-└── storage
-    ├── data
-    └── temp
-```
+    if (ecBulk != null && vwc != null) {
+      double fatorCorrecao = 0.995 * (vwc / (100 - vwc)) + 3.889;
+      double ecReal = ecBulk * fatorCorrecao;
+      setState(() {
+        resultado = "EC Real: ${ecReal.toStringAsFixed(2)} µS/cm";
+      });
+    } else {
+      setState(() {
+        resultado = "Erro: Insira valores numéricos";
+      });
+    }
+  }
 
-:::note
-1. Original `pyproject.toml` created by `uv init` or `poetry init` will be replaced with the one from Flet app template.
-2. In case you encounter the error `Error creating the project from a template: 'git' is not installed.`, it means that you don't have _Git_ installed. Please visit [git-scm.com/downloads](https://git-scm.com/downloads) and install the latest version of _Git_. To verify your installation, type `git` in the terminal.
-Please note that _Git_ is not the same as _GitHub CLI_ which is not an alternative for use with Flet.
-:::
-
-`src/main.py` contains Flet program. It has `main()` function where you would add UI elements ([controls](flet-controls)) to a page or a window. The application ends with a blocking `ft.app()` function which initializes Flet app and [runs](running-app) `main()`.
-
-You can find more information about `flet create` command [here](/docs/reference/cli/create).
-
-Now let's see Flet in action by [running the app](running-app)!
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Calculadora de EC Real")),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: ecController,
+              decoration: InputDecoration(labelText: "EC medida no substrato (µS/cm)"),
+              keyboardType: TextInputType.number,
+            ),
+            TextField(
+              controller: vwcController,
+              decoration: InputDecoration(labelText: "Umidade volumétrica (VWC %)"),
+              keyboardType: TextInputType.number,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: calcularECReal,
+              child: Text("Calcular EC Real"),
+            ),
+            SizedBox(height: 20),
+            Text(resultado, style: TextStyle(fontSize: 20)),
+          ],
+        ),
+      ),
+    );
+  }
+}
