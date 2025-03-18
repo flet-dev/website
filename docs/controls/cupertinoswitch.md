@@ -30,9 +30,25 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupe
 
 ## Properties
 
-### `active_color`
+### ~~`active_color`~~
+
+:::warning
+This property is deprecated since `v0.26.0` and will be removed in `v0.29.0`. Use `active_track_color` instead.
+:::
 
 The [color](/docs/reference/colors) to use for the track when the switch is on.
+
+Defaults to `CupertinoColors.SYSTEM_GREEN`.
+
+### `active_thumb_image`
+
+An image to use on the thumb of this switch when the switch is on. Can be a local file path or URL.
+
+### `active_track_color`
+
+The [color](/docs/reference/colors) to use on the track when this switch is on.
+
+Defaults to `CupertinoColors.SYSTEM_GREEN`.
 
 ### `autofocus`
 
@@ -41,6 +57,22 @@ True if the control will be selected as the initial focus. If there is more than
 ### `focus_color`
 
 The [color](/docs/reference/colors) to use for the focus highlight for keyboard interactions.
+
+### `inactive_thumb_color`
+
+The [color](/docs/reference/colors) to use on the thumb when this switch is off.
+
+If `None`, defaults to `thumb_color`, or `CupertinoColors.WHITE` if `thumb_color` is also `None`.
+
+### `inactive_thumb_image`
+
+An image to use on the thumb of this switch when the switch is off. Can be a local file path or URL.
+
+### `inactive_track_color`
+
+The [color](/docs/reference/colors) to use on the track when this switch is off.
+
+Defaults to `CupertinoColors.SECONDARY_SYSTEM_FILL`.
 
 ### `label`
 
@@ -66,9 +98,34 @@ Defaults to `cupertino_colors.WHITE`.
 
 The [color](/docs/reference/colors) of the switch's thumb.
 
-### `track_color`
+### `thumb_icon`
+
+The icon of this Switch's thumb in various [`ControlState`](/docs/reference/types/controlstate) states.
+The following [`ControlState`](/docs/reference/types/controlstate) values are
+supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
+
+### ~~`track_color`~~
+
+:::warning
+This property is deprecated since `v0.26.0` and will be removed in `v0.29.0`. Use `inactive_track_color` instead.
+:::
 
 The [color](/docs/reference/colors) to use for the track when the switch is off.
+
+Defaults to `CupertinoColors.SECONDARY_SYSTEM_FILL`.
+
+### `track_outline_color`
+
+The outline [color](/docs/reference/colors) of this switch's track in
+various [`ControlState`](/docs/reference/types/controlstate) states.
+The following [`ControlState`](/docs/reference/types/controlstate) values are
+supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
+
+### `track_outline_width`
+
+The outline width of this switch's track in all or specific [`ControlState`](/docs/reference/types/controlstate) states. 
+The following states are supported: `SELECTED`, `HOVERED`, `DISABLED`, `FOCUSED` and `DEFAULT` (fallback).
+
 
 ### `value`
 
@@ -83,6 +140,10 @@ Fires when the control has lost focus.
 ### `on_change`
 
 Fires when the state of the switch is changed.
+
+### `on_image_error`
+
+Fires when the image (`active_thumb_image` or `inactive_thumb_image`) fails to load.
 
 ### `on_focus`
 

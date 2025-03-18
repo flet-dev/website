@@ -156,15 +156,6 @@ The selected date that the picker should display.
 
 Defaults to `current_date`.
 
-## Methods
-
-### ~~`pick_date()`~~
-
-Opens a date picker dialog.
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.open(date_picker)`](/docs/controls/page#opencontrol)
-instead.**
-
 ## Events
 
 ### `on_change`

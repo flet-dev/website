@@ -1,10 +1,7 @@
 ---
 slug: navigation-and-routing
 title: Navigation and Routing
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [release]
 ---
 
@@ -23,6 +20,8 @@ Well, it took [more efforts](https://github.com/flet-dev/flet/pull/95/files) tha
 <img src="/img/docs/navigation-routing/routing-app-example.gif" className="screenshot-60" />
 
 Explore [source code](https://github.com/flet-dev/examples/blob/main/python/apps/routing-navigation/building-views-on-route-change.py) of the example above.
+
+<!-- truncate -->
 
 ## Page route
 

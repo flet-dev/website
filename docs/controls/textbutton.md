@@ -73,6 +73,12 @@ True if the control will be selected as the initial focus. If there is more than
 
 A Control representing custom button content.
 
+### `clip_behavior`
+
+The content will be clipped (or not) according to this option.
+
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior) and defaults to `ClipBehavior.HARD_EDGE`.
+
 ### `icon`
 
 Icon shown in the button.

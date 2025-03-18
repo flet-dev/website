@@ -9,21 +9,19 @@ Flet CLI provides `flet build apk` and `flet build aab` commands that allow pack
 
 ## Prerequisites
 
+### Android SDK
+
+Java (JDK) and Android SDK will be automatically installed on the first run of `flet build` command.
+
+JDK is installed into `$HOME/java/{version}` directory.
+
+If you have Android Studio installed Flet CLI will locate and use Android SDK coming with the studio; otherwise Android SDK will be installed to `$HOME/Android/sdk` directory.
+
 ### Android wheels for binary Python packages
 
 Binary Python packages (vs "pure" Python packages written in Python only) are packages that partially written in C, Rust or other languages producing native code. Example packages are `numpy`, `cryptography`, or `pydantic-core`.
 
 Make sure all non-pure (binary) packages used in your Flet app have [pre-built wheels for Android](/docs/reference/binary-packages-android-ios).
-
-### Android SDK
-
-To build the app for the Android platform, the `flet build` command requires the Android SDK to be installed on your machine.
-
-The official way to install the Android SDK and Java is by installing Android Studio.
-
-:::note
-On macOS Android SDK will be located at `$HOME/Library/Android/sdk`.
-:::
 
 ## `flet build apk`
 
@@ -98,6 +96,59 @@ Configuring splash in `pyproject.toml`:
 ```toml
 [tool.flet.splash]
 android = false
+```
+
+## Android SDK version settings
+
+### `min_sdk_version`
+
+* Defines the minimum Android version (API level) your app can run on.
+* If a device has a lower version than `min_sdk_version`, your app won’t install or run on that device.
+* Increasing this value means dropping support for older devices.
+
+Configuring in `pyproject.toml`:
+
+```toml
+[tool.flet.android]
+min_sdk_version = 21
+```
+
+If `min_sdk_version` = `21`, your app will not install on Android 4.4 (API 19) or lower.
+
+Default is `21`.
+
+### `target_sdk_version`
+
+* Defines the Android version your app is optimized for.
+* Your app can run on higher Android versions but will behave as if it’s running on `targetSdkVersion` unless explicitly adapted.
+* Google Play requires you to update this regularly to meet new Android requirements.
+
+Configuring in `pyproject.toml`:
+
+```toml
+[tool.flet.android]
+target_sdk_version = 34
+```
+
+If `targetSdkVersion` = `34`, your app will run on Android 14 and above with the latest system behaviors. On newer Android versions, some strict security and API changes may apply automatically.
+
+Default `target_sdk_version` is `35`.
+
+#### Key differences
+
+| Feature           | `min_sdk_version` | `target_sdk_version` |
+|------------------|-----------------|------------------|
+| Defines...      | **Minimum Android version** required to install & run the app | **Optimized Android version** for best compatibility |
+| Impact          | Lowering it allows **more devices** to install the app | Raising it allows access to **newer Android features** |
+| If set too low | App may not support modern APIs & security | App might not follow latest Android restrictions |
+| If set too high | App won't install on older devices | No major downside (except adapting to new behaviors) |
+
+Configuring both settings in `pyproject.toml`:
+
+```toml
+[tool.flet.android]
+min_sdk_version = 21
+target_sdk_version = 34
 ```
 
 ## Permissions
@@ -178,6 +229,16 @@ host = "mydomain.com"
 ```
 
 See [Deep linking](https://docs.flutter.dev/ui/navigation/deep-linking) section in Flutter docs for more information and complete setup guide.
+
+## Manifest application element properties
+
+Adding custom properties to `<application>` element in `AndroidManifest.xml`:
+
+```toml
+[tool.flet.android.manifest_application]
+usesCleartextTraffic = "true"
+requestLegacyExternalStorage = "true"
+```
 
 ## Troubleshooting Android
 

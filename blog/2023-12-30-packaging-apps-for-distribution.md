@@ -1,15 +1,14 @@
 ---
 slug: packaging-apps-for-distribution
 title: Packaging apps for distribution
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [releases]
 ---
 
 Dear friends! In the final post of this year I would like to thank you all for your contributions
 to Flet project whether it's spreading a word, submitting pull request, joining Discord discussion or a even sending an annoying bug report!
+
+<!-- truncate -->
 
 With your fantastic support we achieved a lot in year 2023:
 

@@ -97,6 +97,12 @@ The amount of space surrounding the banner.
 
 The value is an instance of [`Margin`](/docs/reference/types/margin) class or a number.
 
+### `min_action_bar_height`
+
+The optional minimum action bar height.
+
+Defaults to `52`.
+
 ### `open`
 
 Set to `True` to display a banner.

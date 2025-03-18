@@ -1,16 +1,15 @@
 ---
 slug: flet-charts
 title: Flet Charts
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [releases]
 ---
 
 Last year we introduced support for [Matplotlib and Plotly charts](/blog/matplotlib-and-plotly-charts). Both libraries are able to export charts as SVG images which are then displayed in a Flet app. However, such charts, while serving the purpose of visualization, are lacking interactivity and animation.
 
 Today we are releasing [Flet 0.5.2](https://pypi.org/project/flet/) with built-in charts 📊 based on the awesome [fl_chart](https://pub.dev/packages/fl_chart) library!
+
+<!-- truncate -->
 
 Three new chart controls have been introduced:
 

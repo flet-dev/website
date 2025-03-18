@@ -1,10 +1,7 @@
 ---
 slug: fun-with-animations
 title: Fun with animations
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [release]
 ---
 
@@ -13,6 +10,8 @@ Despite Flet release debuting animations support was released some time ago, we'
 Flutter offers [multiple approaches](https://docs.flutter.dev/development/ui/animations) for creating animations such "implicit", "explicit", "tween", "stagered", "pre-canned" animations as well as displaying animation scenes prepared in Rive and Lottie editors.
 
 We are starting with "implicit" animations which allows you to animate a control property by setting a target value; whenever that target value changes, the control animates the property from the old value to the new one.
+
+<!-- truncate -->
 
 ## Demo time
 

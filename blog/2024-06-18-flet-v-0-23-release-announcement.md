@@ -1,14 +1,13 @@
 ---
 slug: flet-v-0-23-release-announcement
 title: Flet v0.23.0 Release Announcement
-author: Henri Ndonko
-author_title: Flet Contributor and Maintainer
-author_url: https://github.com/ndonkoHenri
-author_image_url: https://avatars.githubusercontent.com/u/98978078?v=4
+authors: henri
 tags: [releases]
 ---
 
 We are excited to announce the release of Flet 0.23.0. It is a big release with many new features and bug fixes.
+
+<!-- truncate -->
 
 ## New Controls
 
@@ -21,7 +20,7 @@ We are excited to announce the release of Flet 0.23.0. It is a big release with 
 
 ## New Properties
 
-- [`Option`](/docs/controls/dropdown#option-properties): `content`, `text_style`
+- [`Option`](/docs/controls/dropdown#dropdownoption-properties): `content`, `text_style`
 - [`TextStyle`](/docs/reference/types/textstyle): `baseline`, `overflow`, `word_spacing`
 
 ## Error Handling
@@ -108,7 +107,7 @@ solving the remaining ones.
   page.window.on_event = lambda e: print(e.type)
   ```
 
-* [`SafeArea.minimum`](/docs/controls/safearea#minimum) is deprecated and has been renamed
+* `SafeArea.minimum` is deprecated and has been renamed
   to [`minimum_padding`](/docs/controls/safearea#minimum_padding)
 * `MaterialState` enum is deprecated and has been renamed to [`ControlState`](/docs/reference/types/controlstate)
 * `NavigationDestination` is deprecated and has been renamed

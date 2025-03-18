@@ -1,10 +1,7 @@
 ---
 slug: file-picker-and-uploads
 title: File picker and uploads
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [release]
 ---
 
@@ -23,6 +20,8 @@ File picker allows opening three dialogs:
 * **Pick files** - one or multiple, any files or only specific types.
 * **Save file** - choose directory and file name.
 * **Get directory** - select directory.
+
+<!-- truncate -->
 
 When running Flet app in a browser only "Pick files" option is available and it's used for uploads only as it, obviously, doesn't return a full path to a selected file.
 

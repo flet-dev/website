@@ -1,10 +1,7 @@
 ---
 slug: flet-mobile-update
 title: Flet mobile update
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [news]
 ---
 
@@ -13,6 +10,8 @@ This post is a continuation of [Flet mobile strategy](/blog/flet-mobile-strategy
 Our original approach to Flet running on a mobile device was Server-Driven UI. Though SDUI has its own benefits (like bypassing App Store for app updates) it doesn't work in all cases, requires web server to host Python part of the app and, as a result, adds latency which is not great for user actions requiring nearly instance UI response, like drawing apps.
 
 I've been thinking on how to make Python runtime embedded into Flutter iOS or Android app to run user Python program. No doubt, it's technically possible as Kivy and BeeWare projects do that already.
+
+<!-- truncate -->
 
 ## Current Flet architecture
 

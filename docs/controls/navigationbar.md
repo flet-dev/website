@@ -116,7 +116,7 @@ To make the NavigationBar more accessible, consider choosing an icon with a stro
 
 The icon `Control` of the destination. Typically the icon is an [`Icon`](/docs/controls/icon) control. Used instead of `icon` property.
 
-**Deprecated in v0.25.0 and will be removed in v0.26.0. Use [`icon`](#icon)
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`icon`](#icon)
 instead.**
 
 ### `label`
@@ -142,5 +142,5 @@ If this icon is not provided, the NavigationBar will display `icon` in either st
 
 An alternative icon `Control` displayed when this destination is selected.
 
-**Deprecated in v0.25.0 and will be removed in v0.26.0. Use [`selected_icon`](#selected_icon)
+**Deprecated in v0.25.0 and will be removed in v0.28.0. Use [`selected_icon`](#selected_icon)
 instead.**

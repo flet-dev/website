@@ -79,9 +79,16 @@ Defines the height of the app window.
 
 ### `icon`
 
-Sets the icon of the app window.
+The icon of the app window.
 
 **Has effect on Windows only.**
+
+### `ignore_mouse_events`
+
+Whether the app window should ignore mouse events, passing them to the window below it. 
+If this window has focus, it will still receive keyboard events.
+
+Defaults to `False`.
 
 ### `left`
 

@@ -1,10 +1,7 @@
 ---
 slug: gradients-button-textfield-styles
 title: Beautiful gradients, button styles and TextField rounded corners in a new Flet release
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [release]
 ---
 
@@ -13,6 +10,8 @@ We've just released [Flet 0.1.46](https://pypi.org/project/flet/0.1.46/) adding 
 * Gradient backgrounds in Container
 * Extensive styling for buttons, TextField and Dropdown controls
 * ...and more
+
+<!-- truncate -->
 
 ## Gradient backgrounds
 

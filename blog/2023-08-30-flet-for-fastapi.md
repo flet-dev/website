@@ -1,10 +1,7 @@
 ---
 slug: flet-for-fastapi
 title: Flet for FastAPI
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [releases]
 ---
 
@@ -15,6 +12,8 @@ We've just released Flet 0.10.0 with FastAPI support!
 [FastAPI](https://fastapi.tiangolo.com/) coupled with Uvicorn, Hypercorn, Gunicorn or other web server replaces built-in Flet web server (Fletd) to reliably run production Flet workloads.
 
 On the other hand, seasoned FastAPI developers can use Flet to easily add interactive, real-time dashboards and admin UI to their existing or new FastAPI services.
+
+<!-- truncate -->
 
 ## A minimal app example
 

@@ -38,6 +38,20 @@ If `True`, more than one segment can be selected. When selecting a segment, the 
 
 If `False`(the default), only one segment may be selected at a time. When a segment is selected, any previously selected segment will be unselected.
 
+### `direction`
+
+The orientation of the button's `segments`. 
+
+Value is of type [`Axis`](/docs/reference/types/axis) and defaults to `Axis.HORIZONTAL`.
+
+### `padding`
+
+Defines the button's size and padding. If specified, the button expands to fill its parent's space with this padding.
+
+When `None`, the button adopts its intrinsic content size.
+
+Value is of type [`PaddingValue`](/docs/reference/types/aliases#paddingvalue).
+
 ### `segments`
 
 A required parameter that describes the segments in the button. It's a list of `Segment` objects.

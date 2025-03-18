@@ -1,10 +1,7 @@
 ---
 slug: flet-versioning-and-pre-releases
 title: Flet versioning and pre-releases
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [news]
 ---
 
@@ -15,6 +12,8 @@ The development model with one pull request per release didn't work well for the
 From now on we'll be breaking releases into multiple pull requests with one feature/bugfix per PR.
 
 Every PR merged into `main` branch will be publishing pre-release (developmental release) package to [pypi.org](https://pypi.org/project/flet/) having version format of `X.Y.Z.devN`.
+
+<!-- truncate -->
 
 ## Installing pre-releases
 

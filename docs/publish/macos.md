@@ -9,6 +9,24 @@ Flet CLI provides `flet build macos` command that allows packaging Flet app into
 The command can be run on macOS only.
 :::
 
+## Prerequisites
+
+### Rosetta 2
+
+Flutter requires [Rosetta 2](https://support.apple.com/en-us/HT211861) on Apple silicon:
+
+```
+sudo softwareupdate --install-rosetta --agree-to-license
+```
+
+### Xcode
+
+[Xcode](https://developer.apple.com/xcode/) 15 or later to compile native Swift or ObjectiveC code.
+
+### CocoaPods
+
+[CocoaPods](https://cocoapods.org/) 1.16 to compile and enable Flutter plugins.
+
 ## `flet build macos`
 
 Creates a macOS application bundle from your Flet app.

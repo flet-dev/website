@@ -103,6 +103,46 @@ When a child Control is placed into a [`Column`](/docs/controls/column) or a [`R
 
 For more information and examples about `expand` property see "Expanding children" sections in [`Column`](/docs/controls/column#expanding-children) or [`Row`](/docs/controls/row#expanding-children).
 
+Here is an example of expand being used in action for both [`Column`](/docs/controls/column) and [`Row`](/docs/controls/row):
+
+```pyhton
+import flet as ft
+
+def main(page: ft.Page):
+    page.spacing = 0
+    page.padding = 0
+    page.add(
+        ft.Column(
+            controls=[
+                ft.Row(
+                    [
+                        ft.Card(
+                            content=ft.Text("Card_1"),
+                            color=ft.Colors.ORANGE_300,
+                            expand=True,
+                            height=page.height,
+                            margin=0,
+                        ),
+                        ft.Card(
+                            content=ft.Text("Card_2"),
+                            color=ft.Colors.GREEN_100,
+                            expand=True,
+                            height=page.height,
+                            margin=0,
+                        ),
+                    ],
+                    expand=True,
+                    spacing=0,
+                ),
+            ],
+            expand=True,
+            spacing=0,
+        ),
+    )
+
+ft.app(main)
+```
+
 ### `expand_loose`
 
 Effective only if `expand` is `True`. 

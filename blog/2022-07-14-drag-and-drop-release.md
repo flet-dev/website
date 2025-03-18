@@ -1,10 +1,7 @@
 ---
 slug: drag-and-drop-release
 title: 'New release: Drag and Drop, absolute positioning and clickable container'
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [release]
 ---
 
@@ -19,6 +16,8 @@ Making drag-and-drop in Flet is a real joy - thanks to a smart drag-and-drop imp
 Take a look at [Drag-and-Drop example](https://github.com/flet-dev/examples/blob/main/python/controls/drag-and-drop/drag-drop-colors.py).
 
 Explore [`Draggable`](/docs/controls/draggable) and [`DragTarget`](/docs/controls/dragtarget) controls, their properties and events.
+
+<!-- truncate -->
 
 ## Absolute positioning inside Stack
 

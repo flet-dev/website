@@ -12,7 +12,7 @@ Install [Flet](https://apps.apple.com/app/flet/id1624979699) app to your iOS dev
 
 <a href="https://apps.apple.com/app/flet/id1624979699" target="_blank"><img src="/img/docs/getting-started/testing-on-ios/qr-code.jpg" className="screenshot-30" /></a>
 
-To get started on your computer you need Python 3.8 or greater installed.
+To get started on your computer you need Python 3.9 or greater installed.
 
 :::caution Important
 Your iOS device and computer must be connected to the same Wi-Fi or local network.

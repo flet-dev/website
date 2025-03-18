@@ -35,6 +35,12 @@ The background [color](/docs/reference/colors) of the timer picker.
 
 A list of controls representing items in this picker.
 
+### `default_selection_overlay_bgcolor`
+
+The default background [color](/docs/reference/colors) of the `selection_overlay`.
+
+Defaults to `CupertinoColors.TERTIARY_SYSTEM_FILL`.
+
 ### `diameter_ratio`
 
 Relative ratio between this picker's height and the simulated cylinder's diameter.
@@ -68,6 +74,12 @@ How much the wheel is horizontally off-center, as a fraction of its width.
 ### `selected_index`
 
 The index (starting from 0) of the selected item in the `controls` list.
+
+### `selection_overlay`
+
+A control overlaid on the picker to highlight the selected entry, centered and matching the height of the center row. 
+
+Defaults to a rounded rectangle in iOS 14 style with `default_selection_overlay_bgcolor` as background color.
 
 ### `squeeze`
 

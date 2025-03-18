@@ -1,10 +1,7 @@
 ---
 slug: flet-mobile-strategy
 title: Flet Mobile Strategy
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [product]
 ---
 
@@ -13,6 +10,8 @@ Flet project has received a lot of attention recently and we would like to thank
 New Flet developers are constantly asking if there is a way to package Flet program to an `.apk` file to deploy to Android devices or `.ipa` to deploy to iOS.
 
 In this post I would like to share our vision for Flet going mobile and provide a roadmap.
+
+<!-- truncate -->
 
 ## Server-Driven UI
 

@@ -1,10 +1,7 @@
 ---
 slug: using-custom-fonts-in-flet-app
 title: Using custom fonts in a Flet app
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [how-to]
 ---
 
@@ -17,6 +14,8 @@ The following font formats are supported:
 * `.otf`
 
 Use [`page.fonts`](/docs/controls/page#fonts) property to import fonts.
+
+<!-- truncate -->
 
 Set `page.fonts` property to a dictionary where key is the font family name to refer that font and the value is the URL of the font file to import:
 

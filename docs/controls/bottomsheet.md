@@ -23,9 +23,21 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/bott
 
 ## Properties
 
+### `animation_style`
+
+The sheet's animation style.
+
+Value is of type [`AnimationStyle`](/docs/reference/types/animationstyle).
+
 ### `bgcolor`
 
 The sheet's background [color](/docs/reference/colors).
+
+### `clip_behavior`
+
+The sheet's clip behavior.
+
+Value is of type [`ClipBehavior`](/docs/reference/types/clipbehavior).
 
 ### `content`
 
@@ -61,9 +73,21 @@ Set to `True` to display a bottom sheet.
 
 Defaults to `False`.
 
+### `shape`
+
+Defines the shape of the bottom sheet.
+
+Value is of type [`OutlinedBorder`](/docs/reference/types/outlinedborder).
+
 ### `show_drag_handle`
 
 Whether to display drag handle at the top of sheet or not.
+
+### `size_constraints`
+
+The size constraints to apply to the bottom sheet.
+
+Value is of type [`BoxConstraints`](/docs/reference/types/boxconstraints).
 
 ### `use_safe_area`
 

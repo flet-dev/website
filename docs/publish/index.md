@@ -21,22 +21,21 @@ The following matrix shows which OS you should run `flet build` command on in or
 
 ### Flutter SDK
 
-Flutter SDK 3.24 or above must be installed and the path to both `flutter` and `dart` commands must be added to `PATH` environment variable.
+If the correct version of the Flutter SDK is not found in the `PATH`, it will be automatically installed during the first run when building a Flet app for any platform.
 
-Follow official [Flutter installation guide](https://docs.flutter.dev/get-started/install) for your platform.
-
-> Pay attention to Flutter's own requirements for every platform, such as XCode and Cocopods on macOS, Visual Studio 2022 on Windows or additional tools and libraries on Linux.
+Flutter SDK is installed into `$HOME/flutter/{version}` directory.
 
 ## Project structure
 
-`flet build` command assumes the following minimal Flet project structure.
+`flet build` command assumes the following minimal Flet project structure:
 
 ```
-/assets/
-    icon.png
-main.py
-pyproject.toml
-requirements.txt
+├── README.md
+├── pyproject.toml
+└── src
+    ├── assets
+    │   └── icon.png
+    └── main.py
 ```
 
 `main.py` is the entry point of your Flet application with `ft.app(main)` at the end. A different entry point could be specified with `--module-name` argument.
@@ -45,11 +44,35 @@ requirements.txt
 
 If only `icon.png` (or other supported format such as `.bmp`, `.jpg`, `.webp`) is provided it will be used as a source image to generate all icons and splash screens for all platforms. See section below for more information about icons and splashes.
 
-`pyproject.toml` contains the application metadata, lists its dependencies and controls build process.
+`pyproject.toml` contains the application metadata, lists its dependencies and controls build process. The list of project dependencies should contain at least `flet` package:
 
-`requirements.txt` can also be used to list app requirements. It is optional though and if both `pyproject.toml` and `requirements.txt` exist the latter will be ignored.
+```toml title="pyproject.toml"
+[project]
+name = "myapp"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Flet developer", email = "you@example.com" }
+]
+dependencies = [
+  "flet"
+]
 
-The list of project dependencies should contain at least `flet` package. 
+[tool.flet]
+org = "com.mycompany"
+product = "MyApp"
+company = "My Company"
+copyright = "Copyright (C) 2025 by My Company"
+
+[tool.flet.app]
+path = "src"
+```
+
+:::note
+Though `requirements.txt` can also be used to list app requirements Flet recommends using `pyproject.toml` for new projects. If both `pyproject.toml` and `requirements.txt` exist the latter will be ignored.
+:::
 
 :::caution No pip freeze
 Do not use `pip freeze > requirements.txt` command to create `requirements.txt` for the app that
@@ -66,13 +89,6 @@ flet create myapp
 ```
 
 where `myapp` is a target directory.
-
-`flet create` app template puts `main.py` and `assets` into `src` directory which path is controlled by `tool.flet.app.path` setting in `pyproject.toml`:
-
-```toml
-[tool.flet.app]
-path = "src"
-```
 
 ## How it works
 
@@ -192,6 +208,46 @@ dark_color = "#8B8000" # --splash-dark-color
 web = false # --no-web-splash
 ios = false # --no-ios-splash
 android = false # --no-android-splash
+```
+
+## Boot screen
+
+Boot screen is shown while the archive with Python app is being unpacked to a device file system.
+It's shown after splash screen and before startup screen. App archive does not include 3rd-party site packages.
+If the archive is small and its unpacking is fast you can keep that screen disabled (default).
+
+To enable boot screen in `pyproject.toml` for all target platforms:
+
+```toml
+[tool.flet.app.boot_screen]
+show = true
+message = "Preparing the app for its first launch…"
+```
+
+Boot screen can be enabled for specific platforms only or its message customized. For example, enabling it for Android only:
+
+```toml
+[tool.flet.android.app.boot_screen]
+show = true
+```
+
+## Startup screen
+
+Startup screen is shown while the archive with 3rd-party site packages (Android only) is being unpacked and Python app is starting. Startup screen is shown after boot screen.
+
+To enable startup screen in `pyproject.toml` for all target platforms:
+
+```toml
+[tool.flet.app.startup_screen]
+show = true
+message = "Starting up the app…"
+```
+
+Startup screen can be enabled for specific platforms only or its message customized. For example, enabling it for Android only:
+
+```toml
+[tool.flet.android.app.startup_screen]
+show = true
 ```
 
 ## Entry point

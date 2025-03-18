@@ -74,12 +74,6 @@ ft.app(main)
 
 The source (local asset file or URL) of the background image in the circle. Changing the background image will cause the avatar to animate to the new image. Typically used as a fallback image for `foreground_image_src`. If the CircleAvatar is to have the user's initials, use `content` instead.
 
-### ~~`background_image_url`~~
-
-The source (local asset file or URL) of the background image in the circle. Changing the background image will cause the avatar to animate to the new image. Typically used as a fallback image for `foreground_image_url`. If the CircleAvatar is to have the user's initials, use `content` instead.
-
-**Deprecated (renamed) in v0.22.0 and will be removed in v0.26.0. Use `background_image_src` instead.**
-
 ### `bgcolor`
 
 The [color](/docs/reference/colors) with which to fill the circle. Changing the background color will cause the avatar to animate to the new color.
@@ -95,12 +89,6 @@ Typically a `Text` control. If the CircleAvatar is to have an image, use `backgr
 ### `foreground_image_src`
 
 The source (local asset file or URL) of the foreground image in the circle. Typically used as profile image. For fallback use `background_image_src`.
-
-### ~~`foreground_image_url`~~
-
-The source (local asset file or URL) of the foreground image in the circle. Typically used as profile image. For fallback use `background_image_url`.
-
-**Deprecated (renamed) in version 0.22.0 and will be removed in v0.26.0. Use `foreground_image_src` instead.**
 
 ### `max_radius`
 

@@ -179,12 +179,6 @@ The background gradient for the table.
 
 Value is of type [`Gradient`](/docs/reference/types/gradient).
 
-### `heading_row_alignment`
-
-The alignment of the heading row.
-
-Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment).
-
 ### `heading_row_color`
 
 The background [color](/docs/reference/colors) for the heading row.
@@ -268,6 +262,12 @@ To control whether a particular row is selectable or not, see `DataRow.on_select
 Column configuration for a `DataTable`.
 
 One column configuration must be provided for each column to display in the table.
+
+### `heading_row_alignment`
+
+Defines the horizontal layout of the label and sort indicator in the heading row.
+
+Value is of type [`MainAxisAlignment`](/docs/reference/types/mainaxisalignment).
 
 ### `label`
 

@@ -1,10 +1,7 @@
 ---
 slug: flet-packaging-update
 title: Flet packaging update
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [releases]
 ---
 
@@ -16,6 +13,8 @@ bundle (.apk, .ipa, .exe, .app) contains your Python program, Python interpreter
 If your program uses only Python standard library then packaging process is relatively easy - Flet zips your code and combines Flutter app together with Python interpreter and standard library both compiled for the target platform: Android or iOS.
 
 However, problems may arise when your Flet program uses third-party packages, with thousands of them published on PyPI or Conda.
+
+<!-- truncate -->
 
 There are two kinds of third-party packages:
 

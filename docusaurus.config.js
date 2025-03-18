@@ -113,6 +113,14 @@ module.exports = {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/flet',
             },
+            {
+              label: 'X',
+              href: 'https://x.com/fletdev',
+            },
+            {
+              label: 'Blusky',
+              href: 'https://bsky.app/profile/fletdev.bsky.social',
+            },
           ],
         },
         {

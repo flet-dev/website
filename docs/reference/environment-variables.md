@@ -5,6 +5,12 @@ sidebar_label: Environment variables
 
 Below is the list of useful environment variables and their default values:
 
+#### `FLET_APP_CONSOLE` 
+
+The path to the application's console log file (`console.log`) in the temporary storage directory.
+
+Its value is set in production mode.
+
 #### `FLET_APP_STORAGE_DATA`
 
 A directory for the storage of persistent application data that is preserved between app updates. 
@@ -20,6 +26,17 @@ It is already pre-created and its location depends on the platform the app is ru
 Absolute path to app "assets" directory.
 
 Defaults to `assets`.
+
+#### `FLET_CLI_NO_RICH_OUTPUT`
+
+Whether to disable rich output in the console.
+
+Default is `"false"`.
+
+#### `FLET_PLATFORM` 
+
+The platform on which the application is running. 
+Its value is one of the following: `"android"`, `"ios"`, `"linux"`, `"macos"`, `"windows"` or `"fuchsia"`.
 
 #### `FLET_CLI_SKIP_FLUTTER_DOCTOR`
 
@@ -49,12 +66,6 @@ Maximum allowed size (in bytes) of uploaded files.
 
 Default is unlimited.
 
-#### `FLET_CLI_NO_RICH_OUTPUT`
-
-Whether to disable rich output in the console.
-
-Default is `False`.
-
 #### `FLET_SECRET_KEY`
 
 A secret key to sign temporary upload URLs.
@@ -69,6 +80,10 @@ Defaults to `0.0.0.0` - bound to all server IPs.
 
 TCP port to run app on. `8000` if the program is running on a Linux server or `FLET_FORCE_WEB_SERVER` is set; otherwise
 random port.
+
+#### `FLET_SERVER_UDS_PATH` 
+
+The Unix Domain Socket (UDS) path for the Flet server. It enables inter-process communication on Unix-based systems, with its value being a socket file path in the format `flet_<pid>.sock`.
 
 #### `FLET_SESSION_TIMEOUT`
 
@@ -102,3 +117,7 @@ Set to `True`, `true` or `1` to load web font with colorful emojis.
 
 The URL strategy of the web application: `path` (default) or `hash`.
 
+## Setting Boolean values
+
+The boolean `True` is represented by one of the following string values: `"true"`, `"1"` or `"yes"`. 
+Any other value will be interpreted as `False`.

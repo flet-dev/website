@@ -131,33 +131,6 @@ Where to open URL in the web mode
 
 Value is of type [`UrlTarget`](/docs/reference/types/urltarget) and defaults to `UrlTarget.SELF`.
 
-### ~~`code_style`~~
-
-Code block text style.
-
-Value is of type [`TextStyle`](/docs/reference/types/textstyle).
-
-An example of configuring monospace font for Markdown code blocks:
-
-```python
-    page.fonts = {
-        "Roboto Mono": "RobotoMono-VariableFont_wght.ttf",
-    }
-
-    page.add(
-        Markdown(
-            table,
-            selectable=True,
-            extension_set="gitHubWeb",
-            code_theme="atom-one-dark",
-            code_style=TextStyle(font_family="Roboto Mono"),
-            on_tap_link=lambda e: page.launch_url(e.data),
-        )
-    )
-```
-
-**Deprecated in v0.24.0 and will be removed in v0.27.0. Use [`code_style_sheet.code_text_style`](#code_style_sheet) instead.**
-
 ### `code_style_sheet`
 
 The styles to use when displaying the code blocks.

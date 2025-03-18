@@ -1,10 +1,7 @@
 ---
 slug: standalone-flet-web-apps-with-pyodide
 title: Standalone Flet web apps with Pyodide
-author: Feodor Fitsner
-author_title: Flet founder and developer
-author_url: https://github.com/FeodorFitsner
-author_image_url: https://avatars0.githubusercontent.com/u/5041459?s=400&v=4
+authors: feodor
 tags: [releases]
 ---
 
@@ -15,6 +12,8 @@ We've just released [Flet 0.4.0](https://pypi.org/project/flet/) with a super ex
 <img src="/img/blog/pyodide/pyodide-logo.png" className="screenshot-50" />
 
 You can quickly build awesome single-page applications (SPA) entirely in Python and host them everywhere! No HTML, CSS or JavaScript required!
+
+<!-- truncate -->
 
 ## Quick Flet with Pyodide demo
 
