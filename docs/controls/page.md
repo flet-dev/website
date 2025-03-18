@@ -345,21 +345,6 @@ A unique ID of user's session. This property is read-only.
 
 Vertical spacing between controls on the Page. Default value is 10 virtual pixels. Spacing is applied only when `alignment` is set to `start`, `end` or `center`.
 
-<<<<<<< HEAD
-### ~~`splash`~~
-
-A `Control` that will be displayed on top of Page contents. [`ProgressBar`](/docs/controls/progressbar) or [`ProgressRing`](/docs/controls/progressring) could be used as an indicator for some lengthy operation, for example:
-
-
-```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/page/splash-test.py
-```
-
-
-**Deprecated in v0.23.0 and will be removed in v0.26.0. Use [`page.overlay.append(splash)`](#overlay) instead.**
-
-=======
->>>>>>> main
 ### `show_semantics_debugger`
 
 `True` turns on an overlay that shows the accessibility information reported by the framework.
@@ -669,3 +654,4 @@ def main(page: ft.Page):
     
 ft.app(main)
 ```
+ß
