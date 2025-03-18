@@ -14,28 +14,12 @@ import TabItem from '@theme/TabItem';
 
 ### Basic example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
 
-def main(page: ft.Page):
-    page.add(
-        ft.AutoComplete(
-            suggestions=[
-                ft.AutoCompleteSuggestion(key="one 1", value="One"),
-                ft.AutoCompleteSuggestion(key="two 2", value="Two"),
-                ft.AutoCompleteSuggestion(key="three 3", value="Three"),
-            ],
-            on_select=lambda e: print(e.control.selected_index, e.selection),
-        )
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/auto-complete/auto-complete-example.py
 ```
-  </TabItem>
-</Tabs>
+
 
 <img src="/img/docs/controls/autocomplete/autocomplete-example.gif" className="screenshot-40"/>
 
