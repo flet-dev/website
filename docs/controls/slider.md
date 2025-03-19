@@ -16,69 +16,30 @@ import TabItem from '@theme/TabItem';
 
 ### Basic sliders
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
 
-def main(page):
-    page.add(
-        ft.Text("Default slider:"),
-        ft.Slider(),
-        ft.Text("Default disabled slider:"),
-        ft.Slider(disabled=True))
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/slider/slider-basic.py
 ```
-  </TabItem>
-</Tabs>
+
 
 ### Sliders with values
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
 
-def main(page):
-    page.add(
-        ft.Text("Slider with value:"),
-        ft.Slider(value=0.3),
-        ft.Text("Slider with a custom range and label:"),
-        ft.Slider(min=0, max=100, divisions=10, label="{value}%"))
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/slider/slider-values.py
 ```
-  </TabItem>
-</Tabs>
 
 <img src="/img/docs/controls/slider/slider-with-custom-content.gif" className="screenshot-30"/>
 
 ### Slider with `on_change` event
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-def main(page):
-
-    def slider_changed(e):
-        t.value = f"Slider changed to {e.control.value}"
-        page.update()
-
-    t = ft.Text()
-    page.add(
-        ft.Text("Slider with 'on_change' event:"),
-        ft.Slider(min=0, max=100, divisions=10, label="{value}%", on_change=slider_changed), t)
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/slider/slider-with-change.py
 ```
-  </TabItem>
-</Tabs>
+
 
 <img src="/img/docs/controls/slider/slider-with-change-event.gif" className="screenshot-30"/>
 
