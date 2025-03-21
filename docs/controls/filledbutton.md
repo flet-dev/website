@@ -18,26 +18,11 @@ See [Material 3 buttons](https://m3.material.io/components/buttons/overview) for
 
 ### Filled button
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-
-def main(page: ft.Page):
-    page.title = "Basic filled buttons"
-    page.add(
-        ft.FilledButton(text="Filled button"),
-        ft.FilledButton("Disabled button", disabled=True),
-        ft.FilledButton("Button with icon", icon="add"),
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/filled-button/filled-button-example.py
 ```
-  </TabItem>
 
-</Tabs>
 
 ## Properties
 

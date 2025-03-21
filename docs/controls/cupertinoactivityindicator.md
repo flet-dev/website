@@ -14,28 +14,12 @@ import TabItem from '@theme/TabItem';
 
 ### Basic Example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-def main(page):
-    page.theme_mode = ft.ThemeMode.LIGHT
-
-    page.add(
-        ft.CupertinoActivityIndicator(
-            radius=50,
-            color=ft.Colors.RED,
-            animating=True,
-        )
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-information-displays/cupertino-activity-indicator-example.py
 ```
 
-  </TabItem>
-</Tabs>
+
 
 <img src="/img/docs/controls/cupertino-activity-indicator/basic-cupertino-activity-indicator.png" className="screenshot-40"/>
 

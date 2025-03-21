@@ -16,34 +16,13 @@ import TabItem from '@theme/TabItem';
 
 ### Basic textfields
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
 ```python
-import flet as ft
-
-def main(page: ft.Page):
-
-    page.add(
-        ft.TextField(
-            label="Material",
-        ),
-        ft.CupertinoTextField(
-            placeholder_text="Placeholder",
-        ),
-        ft.TextField(
-            adaptive=True,
-            label="Adaptive",
-        ),
-    )
-
-
-ft.app(main)
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-input-and-selections/cupertino-textfield-example.py
 ```
-  </TabItem>
-</Tabs>
 
-<img src="/img/docs/controls/cupertinotextfield/basic-cupertino-textfield.png" className="screenshot-40"/>
+
+<img src="/img/docs/controls/cupertinotextfield/cupertino-textfield-basic.png" className="screenshot-40"/>
 
 ## Properties
 
