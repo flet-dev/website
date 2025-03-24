@@ -18,7 +18,7 @@ To open this control, simply call the [`page.open()`](/docs/controls/page#openco
 <img src="/img/docs/controls/bottom-sheet/bottom-sheet-sample.gif" className="screenshot-30"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/bottom-sheet/modal-bottom-sheet.py
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/dialogs-alerts-panels/bottom-sheet/modal-bottom-sheet.py
 ```
 
 ## Properties

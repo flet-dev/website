@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/alert-dialog/dialogs.py
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/dialogs-alerts-panels/alert-dialog/dialogs.py
 ```
 
 <img src="/img/docs/controls/alertdialog/alertdialog-with-custom-content.gif" className="screenshot-50" />

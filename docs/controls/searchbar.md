@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/range-slider/range-slider-with-event.py
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/search-bar/search-bar-example.py
 ```
 
 

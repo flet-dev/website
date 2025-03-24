@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/banner/banner-test.py
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/dialogs-alerts-panels/banner/banner-test.py
 ```
 
 

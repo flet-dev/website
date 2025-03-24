@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/appbar/bottom-appbar.py
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/navigation/bottom-app-bar/bottom-appbar.py
 ```
 
 

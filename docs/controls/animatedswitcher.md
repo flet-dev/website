@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/animation/animated-switcher.py
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/animations/animated-switcher.py
 ```
 
 
