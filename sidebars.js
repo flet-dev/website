@@ -81,6 +81,7 @@ module.exports = {
                     "publish/web/dynamic-website/hosting/fly-io",
                     "publish/web/dynamic-website/hosting/replit",
                     "publish/web/dynamic-website/hosting/self-hosting",
+                    "publish/web/dynamic-website/hosting/docker",
                   ],
                 }
               ],
