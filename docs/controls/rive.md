@@ -14,27 +14,12 @@ import TabItem from '@theme/TabItem';
 
 ### Basic Example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
 
-def main(page):
-    page.add(
-        ft.Rive(
-            "https://cdn.rive.app/animations/vehicles.riv",
-            placeholder=ft.ProgressBar(),
-            width=300,
-            height=200,
-        )
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/animation/rive-basic.py
 ```
 
-  </TabItem>
-</Tabs>
 
 <img src="/img/docs/controls/rive/basic-rive.gif" className="screenshot-40"/>
 

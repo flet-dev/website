@@ -19,26 +19,12 @@ secondary color mapping. See [Material 3 buttons](https://m3.material.io/compone
 
 ### Filled tonal button
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
-
-```python
-import flet as ft
 
 
-def main(page: ft.Page):
-    page.title = "Basic filled tonal buttons"
-    page.add(
-        ft.FilledTonalButton(text="Filled tonal button"),
-        ft.FilledTonalButton("Disabled button", disabled=True),
-        ft.FilledTonalButton("Button with icon", icon="add"),
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/filled-tonal-button/filled-tonal-button-example.py
 ```
-  </TabItem>
 
-</Tabs>
 
 ## Properties
 

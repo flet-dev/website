@@ -14,47 +14,11 @@ import TabItem from '@theme/TabItem';
 
 ### Basic Example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-def main(page):
-    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
-
-    page.add(
-        ft.CupertinoContextMenu(
-            enable_haptic_feedback=True,
-            content=ft.Image("https://picsum.photos/200/200"),
-            actions=[
-                ft.CupertinoContextMenuAction(
-                    text="Action 1",
-                    is_default_action=True,
-                    trailing_icon=ft.Icons.CHECK,
-                    on_click=lambda e: print("Action 1"),
-                ),
-                ft.CupertinoContextMenuAction(
-                    text="Action 2",
-                    trailing_icon=ft.Icons.MORE,
-                    on_click=lambda e: print("Action 2"),
-                ),
-                ft.CupertinoContextMenuAction(
-                    text="Action 3",
-                    is_destructive_action=True,
-                    trailing_icon=ft.Icons.CANCEL,
-                    on_click=lambda e: print("Action 3"),
-                ),
-            ],
-        )
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-dialogs-alerts-panels/cupertino-context-menu-example.py
 ```
 
-  </TabItem>
-</Tabs>
 
 <img src="/img/docs/controls/cupertino-context-menu/basic-cupertino-context-menu.gif" className="screenshot-40"/>
 

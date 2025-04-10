@@ -16,60 +16,11 @@ import TabItem from '@theme/TabItem';
 
 ### Basic Example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-
-def main(page):
-    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-
-    def handle_click(e):
-        page.add(ft.Text(f"Action clicked: {e.control.content.value}"))
-        page.close(bottom_sheet)
-
-    action_sheet = ft.CupertinoActionSheet(
-        title=ft.Row([ft.Text("Title")], alignment=ft.MainAxisAlignment.CENTER),
-        message=ft.Row([ft.Text("Description")], alignment=ft.MainAxisAlignment.CENTER),
-        cancel=ft.CupertinoActionSheetAction(
-            content=ft.Text("Cancel"),
-            on_click=handle_click,
-        ),
-        actions=[
-            ft.CupertinoActionSheetAction(
-                content=ft.Text("Default Action"),
-                is_default_action=True,
-                on_click=handle_click,
-            ),
-            ft.CupertinoActionSheetAction(
-                content=ft.Text("Normal Action"),
-                on_click=handle_click,
-            ),
-            ft.CupertinoActionSheetAction(
-                content=ft.Text("Destructive Action"),
-                is_destructive_action=True,
-                on_click=handle_click,
-            ),
-        ],
-    )
-
-    bottom_sheet = ft.CupertinoBottomSheet(action_sheet)
-
-    page.add(
-        ft.CupertinoFilledButton(
-            "Open CupertinoBottomSheet",
-            on_click=lambda e: page.open(bottom_sheet),
-        )
-    )
-
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-dialogs-alerts-panels/cupertino-action-sheet-example.py
 ```
 
-  </TabItem>
-</Tabs>
 
 <img src="/img/docs/controls/cupertino-action-sheet/basic-cupertino-action-sheet.png" className="screenshot-40"/>
 

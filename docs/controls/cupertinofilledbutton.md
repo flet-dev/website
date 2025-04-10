@@ -14,26 +14,11 @@ An iOS-style button with filled with background color.
 
 ### Basic Example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(
-        ft.CupertinoFilledButton(
-            content=ft.Text("CupertinoFilled"),
-            opacity_on_click=0.3,
-            on_click=lambda e: print("CupertinoFilledButton clicked!"),
-        ),
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-buttons/cupertino-filled-button-example.py
 ```
-  </TabItem>
 
-</Tabs>
 
 <img src="/img/docs/controls/cupertino-filled-button/cupertino-filled-button.png" className="screenshot-20" />
 

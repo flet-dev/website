@@ -15,34 +15,8 @@ When a `minimum_padding` is specified, the greater of the minimum padding or the
 
 [Live example](https://flet-controls-gallery.fly.dev/layout/safearea)
 
-```python
-import flet as ft
-
-class State:
-    counter = 0
-
-def main(page: ft.Page):
-    state = State()
-
-    def add_click(e):
-        state.counter += 1
-        counter.value = str(state.counter)
-        counter.update()
-
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.Icons.ADD, on_click=add_click
-    )
-    page.add(
-        ft.SafeArea(
-            ft.Container(
-                counter := ft.Text("0", size=50),
-                alignment=ft.alignment.center,
-            ),
-            expand=True,
-        )
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/safe-area/safe-area-example.py
 ```
 
 ## Properties

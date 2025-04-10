@@ -12,24 +12,13 @@ import TabItem from '@theme/TabItem';
 
 ### Selectable Text controls
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
 
-def main(page: ft.Page):
-    page.add(
-        ft.SelectionArea(
-            content=ft.Column([ft.Text("Selectable text"), ft.Text("Also selectable")])
-        )
-    )
-    page.add(ft.Text("Not selectable"))
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/selection-area/selection-area-example.py
 ```
-  </TabItem>
-</Tabs>
+
+<img src="/img/docs/controls/selection-area/selection-area.gif" className="screenshot-40"/>
 
 ## Properties
 

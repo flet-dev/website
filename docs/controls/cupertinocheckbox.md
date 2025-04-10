@@ -14,27 +14,11 @@ import TabItem from '@theme/TabItem';
 
 ### CupertinoCheckbox and adaptive CheckBox example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(
-        ft.CupertinoCheckbox(label="Cupertino Checkbox", value=True),
-        ft.Checkbox(label="Material Checkbox", value=True),
-        ft.Container(height=20),
-        ft.Text(
-            "Adaptive Checkbox shows as CupertinoCheckbox on macOS and iOS and as Checkbox on other platforms:"
-        ),
-        ft.Checkbox(adaptive=True, label="Adaptive Checkbox", value=True),
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-input-and-selections/cupertino-checkbox-example.py
 ```
-  </TabItem>
-</Tabs>
+
 
 <img src="/img/docs/controls/cupertinocheckbox/cupertinocheckbox.png" className="screenshot-70" />
 
