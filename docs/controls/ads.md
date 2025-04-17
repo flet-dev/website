@@ -6,12 +6,16 @@ sidebar_label: Ads
 Displays ads in your app. Only available for mobile (Android and iOS) platforms.
 
 :::info Packaging
-To build your Flet app that uses ads control add `[tool.flet.flutter.dependencies]` section to your `pyproject.toml` file, for
+To build your Flet app that uses ads control add `flet-ads` to `dependencies` key of the `[project]` section of your `pyproject.toml` file, for
 example:
 
 ```toml
-[tool.flet.flutter.dependencies]
-flet_ads = "0.1.0"
+[project]
+...
+dependencies = [
+  "flet==0.27.6",
+  "flet-ads==0.1.0",
+]
 ```
 :::
 
@@ -48,11 +52,16 @@ Remember to replace these values with your own when you're ready to package your
 The following are to be done when packaging an app that makes use of one of the above ad controls.
 
 ### Include Ads package
-Add `[tool.flet.flutter.dependencies]` to the `pyproject.toml` configuration file, for example:
+Add `flet-ads` to `dependencies` key of the `[project]` section of your `pyproject.toml` configuration file, for example:
 
 ```toml
-[tool.flet.flutter.dependencies]
-flet_ads = "0.1.0"
+[project]
+...
+dependencies = [
+  ...
+  "flet-ads==0.1.0",
+  ...
+]
 ```
 
 ### Specify AdMob app ID
