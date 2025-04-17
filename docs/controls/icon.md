@@ -16,28 +16,11 @@ import TabItem from '@theme/TabItem';
 
 ### Icons of different colors and sizes
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(
-        ft.Row(
-            [
-                ft.Icon(name=ft.Icons.FAVORITE, color=ft.Colors.PINK),
-                ft.Icon(name=ft.Icons.AUDIOTRACK, color=ft.Colors.GREEN_400, size=30),
-                ft.Icon(name=ft.Icons.BEACH_ACCESS, color=ft.Colors.BLUE, size=50),
-                ft.Icon(name="settings", color="#c1c1c1"),
-            ]
-        )
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/icon/icons-example.py
 ```
-  </TabItem>
-</Tabs>
+
 
 <img src="/img/docs/controls/icon/custom-icons.png" className="screenshot-20" />
 

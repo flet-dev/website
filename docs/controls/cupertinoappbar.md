@@ -14,29 +14,12 @@ import TabItem from '@theme/TabItem';
 
 ### Basic Example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.theme_mode = ft.ThemeMode.LIGHT
-
-    page.appbar = ft.CupertinoAppBar(
-        leading=ft.Icon(ft.Icons.PALETTE),
-        bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
-        trailing=ft.Icon(ft.Icons.WB_SUNNY_OUTLINED),
-      middle=ft.Text("CupertinoAppBar Example"),
-    )
-    page.add(ft.Text("Body!"))
-
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-navigation/cupertino-appbar-example.py
 ```
 
-  </TabItem>
-</Tabs>
+
 
 <img src="/img/docs/controls/cupertino-appbar/cupertino-appbar.png" className="screenshot-40"/>
 

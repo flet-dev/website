@@ -56,31 +56,23 @@ A list of Controls to display on the Page.
 
 For example, to add a new control to a page:
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+
 
 ```python
 page.controls.append(ft.Text("Hello!"))
 page.update()
 ```
 
-</TabItem>
-</Tabs>
 
 or to get the same result as above using [`page.add()`](#addcontrols) method
 
 To remove the top most control on the page:
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
 ```python
 page.controls.pop()
 page.update()
 ```
-
-</TabItem>
-</Tabs>
 
 ### `dark_theme`
 
@@ -179,16 +171,13 @@ A list of `Control`s displayed as a stack on top of main page contents.
 
 A space between page contents and its edges. Default value is 10 pixels from each side. To set zero padding:
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+
 
 ```python
 page.padding = 0
 page.update()
 ```
 
-</TabItem>
-</Tabs>
 
 Value is of type [`Padding`](/docs/reference/types/padding).
 
@@ -208,31 +197,8 @@ def main(page: ft.Page):
 ```
 
 You can also set this property for testing purposes:
-```python
-import flet as ft
-
-
-def main(page):
-    def set_android(e):
-        page.platform = ft.PagePlatform.ANDROID
-        page.update()
-        print("New platform:", page.platform)
-
-    def set_ios(e):
-        page.platform = "ios"
-        page.update()
-        print("New platform:", page.platform)
-
-    page.add(
-        ft.Switch(label="Switch A", adaptive=True),
-        ft.ElevatedButton("Set Android", on_click=set_android),
-        ft.ElevatedButton("Set iOS", on_click=set_ios),
-    )
-
-    print("Default platform:", page.platform)
-
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/page/set-platform.py
 ```
 
 ### `platform_brightness`
@@ -399,16 +365,12 @@ Value is of type [`ThemeMode`](/docs/reference/types/thememode) and defaults to 
 
 A title of browser or native OS window, for example:
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+
 
 ```python
 page.title = "My awesome app"
 page.update()
 ```
-
-</TabItem>
-</Tabs>
 
 ### `url`
 
@@ -581,15 +543,12 @@ See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-durat
 
 Set clipboard data on a client side (user's web browser or a desktop), for example:
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
 ```python
 page.set_clipboard("This value comes from Flet app")
 ```
 
-</TabItem>
-</Tabs>
+
 
 ## Events
 
@@ -647,8 +606,7 @@ Fires when brightness of app host platform has changed.
 
 Fires when a user resizes a browser or native OS window containing Flet app, for example:
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
+
 
 ```python
 def page_resized(e):
@@ -659,8 +617,6 @@ page.on_resized = page_resized
 
 Event handler argument is of type [`WindowResizeEvent`](/docs/reference/types/windowresizeevent).
 
-</TabItem>
-</Tabs>
 
 ### `on_route_change`
 
@@ -698,3 +654,4 @@ def main(page: ft.Page):
     
 ft.app(main)
 ```
+ß

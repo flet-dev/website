@@ -20,46 +20,11 @@ import TabItem from '@theme/TabItem';
 
 ### CupertinoSwitch and adaptive Switch
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import logging
-import flet as ft
-import asyncio
-
-logging.basicConfig(level=logging.DEBUG)
-
-
-def main(page: ft.Page):
-    page.add(
-        ft.CupertinoSwitch(
-            label="Cupertino Switch",
-            value=True,
-        ),
-        ft.Switch(
-            label="Material Switch",
-            value=True,
-            thumb_color={ft.ControlState.SELECTED: ft.Colors.BLUE},
-            track_color=ft.Colors.YELLOW,
-            focus_color=ft.Colors.PURPLE,
-        ),
-        ft.Container(height=20),
-        ft.Text(
-            "Adaptive Switch shows as CupertinoSwitch on macOS and iOS and as Switch on other platforms:"
-        ),
-        ft.Switch(
-            adaptive=True,
-            label="Adaptive Switch",
-            value=True,
-        ),
-    )
-
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-input-and-selections/cupertino-switch-example.py
 ```
-  </TabItem>
-</Tabs>
+
 
 <img src="/img/docs/controls/cupertinoswitch/cupertino-switch.gif" className="screenshot-70"/>
 

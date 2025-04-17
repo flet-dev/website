@@ -5,15 +5,17 @@ sidebar_label: WebView
 
 Easily load web pages while allowing user interaction.
 
-:::info Work in progress
-This control is supported on iOS, Android, MacOS and Web platforms only; Linux and Windows versions are in the development.
-:::
-
 :::info Packaging
-To build your Flet app that uses `WebView` control add `--include-packages flet_webview` to `flet build` command, for example:
+To build your Flet app that uses ads control add `flet-webview` to `dependencies` key of the `[project]` section of your `pyproject.toml` file, for
+example:
 
-```
-flet build apk --include-packages flet_webview
+```toml
+[project]
+...
+dependencies = [
+  "flet==0.27.6",
+  "flet-webview==0.1.0",
+]
 ```
 :::
 
@@ -21,20 +23,8 @@ flet build apk --include-packages flet_webview
 
 A simple implementation that loads the [flet.dev](https://flet.dev) website:
 
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    wv = ft.WebView(
-        url="https://flet.dev",
-        on_page_started=lambda _: print("Page started"),
-        on_page_ended=lambda _: print("Page ended"),
-        on_web_resource_error=lambda e: print("Page error:", e.data),
-        expand=True,
-    )
-    page.add(wv)
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/web-view/web-view-example.py
 ```
 
 ## Properties

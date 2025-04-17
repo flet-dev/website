@@ -20,27 +20,12 @@ import TabItem from '@theme/TabItem';
 
 ## Examples
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(
-        ft.Lottie(
-            src='https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json',
-            reverse=False,
-            animate=True
-        )
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/animation/lottie-basic.py
 ```
 
-  </TabItem>
-</Tabs>
-<img src="/img/docs/controls/lottie/lottie-animation.gif" className="screenshot-20" />
+<img src="/img/docs/controls/lottie/lottie-animation-2.gif" className="screenshot-20" />
 
 ## Properties
 

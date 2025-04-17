@@ -15,26 +15,8 @@ Navigation bars offer a persistent and convenient way to switch between primary 
 
 <img src="/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
 
-```python
-import flet as ft
-
-def main(page: ft.Page):
-
-    page.title = "NavigationBar Example"
-    page.navigation_bar = ft.NavigationBar(
-        destinations=[
-            ft.NavigationBarDestination(icon=ft.Icons.EXPLORE, label="Explore"),
-            ft.NavigationBarDestination(icon=ft.Icons.COMMUTE, label="Commute"),
-            ft.NavigationBarDestination(
-                icon=ft.Icons.BOOKMARK_BORDER,
-                selected_icon=ft.Icons.BOOKMARK,
-                label="Explore",
-            ),
-        ]
-    )
-    page.add(ft.Text("Body!"))
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/navigation/navigation-bar/navigation-bar-sample.py
 ```
 
 ## `NavigationBar` properties

@@ -198,20 +198,8 @@ Whether to make the app window visible. Used when the app is starting with a hid
 
 The following program starts with a hidden window and makes it visible in 3 seconds:
 
-```python
-from time import sleep
-
-import flet as ft
-
-def main(page: ft.Page):
-    page.add(ft.Text("Hello!"))
-
-    sleep(3)
-    
-    page.window.visible = True
-    page.update()  
-
-ft.app(main, view=ft.AppView.FLET_APP_HIDDEN)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/page/window-hidden-on-start.py
 ```
 
 Note `view=ft.AppView.FLET_APP_HIDDEN` which hides app window on start.
@@ -236,39 +224,8 @@ Forces closing app window.
 
 This method could be used with `page.window.prevent_close = True` to implement app exit confirmation:
 
-```python
-import flet as ft
-
-def main(page: ft.Page):
-    page.title = "MyApp"
-
-    def handle_window_event(e):
-        if e.data == "close":
-            page.open(confirm_dialog)
-
-    page.window.prevent_close = True
-    page.window.on_event = handle_window_event
-
-    def yes_click(e):
-        page.window.destroy()
-
-    def no_click(e):
-        page.close(confirm_dialog)
-
-    confirm_dialog = ft.AlertDialog(
-        modal=True,
-        title=ft.Text("Please confirm"),
-        content=ft.Text("Do you really want to exit this app?"),
-        actions=[
-            ft.ElevatedButton("Yes", on_click=yes_click),
-            ft.OutlinedButton("No", on_click=no_click),
-        ],
-        actions_alignment=ft.MainAxisAlignment.END,
-    )
-
-    page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/page/app-exit-confirm-dialog.py
 ```
 
 ### `to_front()`

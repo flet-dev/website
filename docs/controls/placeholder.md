@@ -16,26 +16,11 @@ import TabItem from '@theme/TabItem';
 
 ### Basic example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-
-def main(page: ft.Page):
-    page.add(
-        ft.Placeholder(
-            expand=True,
-            color=ft.Colors.random_color()  # random material color
-        )
-    )
-
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/placeholder/placeholder-example.py
 ```
-  </TabItem>
-</Tabs>
+
 
 <img src="/img/docs/controls/placeholder/basic-example.png" className="screenshot-100"/>
 

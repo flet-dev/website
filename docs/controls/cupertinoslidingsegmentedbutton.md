@@ -14,36 +14,13 @@ import TabItem from '@theme/TabItem';
 
 ### Basic Example
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-import flet as ft
-
-def main(page):
-    page.theme_mode = ft.ThemeMode.LIGHT
-
-    page.add(
-        ft.CupertinoSlidingSegmentedButton(
-            selected_index=1,
-            thumb_color=ft.Colors.BLUE_400,
-            on_change=lambda e: print(f"selected_index: {e.data}"),
-            padding=ft.padding.symmetric(0, 10),
-            controls=[
-                ft.Text("One"),
-                ft.Text("Two"),
-                ft.Text("Three"),
-            ],
-        ),
-    )
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-buttons/cupertino-sliding-segmented-button.py
 ```
 
-  </TabItem>
-</Tabs>
 
-<img src="/img/docs/controls/cupertino-sliding-segmented-button/basic-cupertino-sliding-segmented-button.gif" className="screenshot-40"/>
+<img src="/img/docs/controls/cupertino-sliding-segmented-button/cupertino-sliding-segmented-button.gif" className="screenshot-40"/>
 
 ## Properties
 
