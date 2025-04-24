@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/progress-ring/progress-ring.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/progress-ring/progress-ring.py
 ```
 
 

@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/window-drag-area/no-frame-window.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/window-drag-area/no-frame-window.py
 ```
 
 

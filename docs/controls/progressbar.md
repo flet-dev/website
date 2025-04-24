@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/progress-bar/progress-bar.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/progress-bar/progress-bar.py
 ```
 
 <img src="/img/docs/controls/progress-bar/progress-bar-example.gif" className="screenshot-30"/>

@@ -15,7 +15,7 @@ An icon button which displays a menu when clicked.
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/popup-menu-button/popup-button-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/popup-menu-button/popup-button-example.py
 ```
 
 

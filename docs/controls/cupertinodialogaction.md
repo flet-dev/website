@@ -16,7 +16,7 @@ A button typically used in a [CupertinoAlertDialog](/docs/controls/cupertinoaler
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-dialogs-alerts-panels/cupertino-alert-dialog-simple.py
+https://github.com/flet-dev/examples/blob/main/python/controls/cupertino/cupertino-dialogs-alerts-panels/cupertino-alert-dialog-simple.py
 ```
 
 

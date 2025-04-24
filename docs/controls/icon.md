@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/icon/icons-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/icon/icons-example.py
 ```
 
 

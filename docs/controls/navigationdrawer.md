@@ -18,7 +18,7 @@ To open this control, simply call the [`page.open()`](/docs/controls/page#openco
 <img src="/img/docs/controls/navigationdrawer/navigation-drawer-start.gif" className="screenshot-60"/>
 
 ```python
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/navigation/navigation-drawer/nav-drawer-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/navigation/navigation-drawer/nav-drawer-example.py
 ```
 
 ### NavigationDrawer sliding from the right edge of a page
@@ -26,7 +26,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/navi
 <img src="/img/docs/controls/navigationdrawer/navigation-drawer-end.gif" className="screenshot-60"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/navigation/navigation-drawer/nav-drawer-end.py
+https://github.com/flet-dev/examples/blob/main/python/controls/navigation/navigation-drawer/nav-drawer-end.py
 ```
 
 ## `NavigationDrawer` properties

@@ -27,7 +27,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/permission-handler/permission-handler-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/permission-handler/permission-handler-example.py
 ```
 
 

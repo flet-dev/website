@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 ### Basic dropdown
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/dropdownM2/basic-dropdown.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/dropdownM2/basic-dropdown.py
 ```
 
 <img src="/img/docs/controls/dropdown/basic-dropdown.gif" className="screenshot-30"/>
@@ -34,7 +34,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/dropdownM2/dropdown-label-and-hint.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/dropdownM2/dropdown-label-and-hint.py
 ```
 
 
@@ -44,7 +44,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/dropdownM2/dropdown-on-change-event.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/dropdownM2/dropdown-on-change-event.py
 ```
 
 
@@ -54,7 +54,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/dropdownM2/dropdown-change-items.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/dropdownM2/dropdown-change-items.py
 ```
 
 

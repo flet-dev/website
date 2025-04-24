@@ -14,7 +14,7 @@ Draws a line chart.
 <img src="/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/line-chart/line-chart-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/line-chart/line-chart-example.py
 ```
 
 ### LineChart 2
@@ -22,7 +22,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/char
 <img src="/img/docs/controls/charts/linechart-sample-2.gif" className="screenshot-50"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/line-chart/line-chart-single-toggle.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/line-chart/line-chart-single-toggle.py
 ```
 
 ## Properties

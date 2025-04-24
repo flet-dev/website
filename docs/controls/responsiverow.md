@@ -58,7 +58,7 @@ ft.ResponsiveRow([
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/responsive-row/responsive-layout.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/responsive-row/responsive-layout.py
 ```
 
 

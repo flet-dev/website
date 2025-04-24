@@ -12,7 +12,7 @@ Allows users to pan, zoom, and rotate the provided `content`.
 ### Basic Example
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/interactive-viewer/interactive-viewer-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/interactive-viewer/interactive-viewer-example.py
 ```
 
 ## Properties

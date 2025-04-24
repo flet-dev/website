@@ -14,7 +14,7 @@ The following example is based on [original example from Plotly docs](https://pl
 <img src="/img/docs/controls/charts/plotly-linechart.png" className="screenshot-60"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/plotly-chart/plotly-linechart.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/plotly-chart/plotly-linechart.py
 ```
 
 ### Bar chart
@@ -24,7 +24,7 @@ The following example is based on [original example from Plotly docs](https://pl
 <img src="/img/docs/controls/charts/plotly-barchart.png" className="screenshot-60"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/plotly-chart/plotly-barchart.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/plotly-chart/plotly-barchart.py
 ```
 
 ### Pie chart
@@ -34,7 +34,7 @@ The following example is based on [original example from Plotly docs](https://pl
 <img src="/img/docs/controls/charts/plotly-piechart.png" className="screenshot-60"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/plotly-chart/plotly-piechart.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/plotly-chart/plotly-piechart.py
 ```
 
 ### Box chart
@@ -44,7 +44,7 @@ The following example is based on [original example from Plotly docs](https://pl
 <img src="/img/docs/controls/charts/plotly-boxchart.png" className="screenshot-70"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/plotly-chart/plotly-boxchart.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/plotly-chart/plotly-boxchart.py
 ```
 
 ## Properties

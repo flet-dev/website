@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 <img src="/img/docs/controls/column/column-spacing.gif" className="screenshot-50"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/column/column-spacing.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/column/column-spacing.py
 ```
 
 
@@ -29,7 +29,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layo
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/column/column-wrap.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/column/column-wrap.py
 ```
 
 ### Column vertical alignments
@@ -38,7 +38,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layo
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/column/column-alignment.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/column/column-alignment.py
 ```
 
 ### Column horizontal alignments
@@ -47,7 +47,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layo
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/column/column-horiz-alignment.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/column/column-horiz-alignment.py
 ```
 
 ### Infinite scroll list
@@ -55,7 +55,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layo
 The following example demonstrates adding of list items on-the-fly, as user scroll to the bottom, creating the illusion of infinite list:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/column/column-infinite-list.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/column/column-infinite-list.py
 ```
 
 ### Scrolling column programmatically
@@ -65,7 +65,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layo
 The following example demonstrates various `scroll_to()` options as well as defines a custom scrollbar theme:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/column/column-scroll-misc.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/column/column-scroll-misc.py
 ```
 
 ## Properties

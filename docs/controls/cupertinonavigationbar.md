@@ -16,7 +16,7 @@ Navigation bars offer a persistent and convenient way to switch between primary 
 <img src="/img/docs/controls/cupertino-navigation-bar/cupertino-navbar.png" className="screenshot-40"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-navigation/cupertino-navigation-bar-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/cupertino/cupertino-navigation/cupertino-navigation-bar-example.py
 ```
 
 ## Properties

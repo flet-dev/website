@@ -13,7 +13,7 @@ button, but goes up to the parent, similar to event bubbling in HTML/JS.
 ## Example
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/transparent-pointer/transparent-pointer-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/transparent-pointer/transparent-pointer-example.py
 ```
 
 ## Properties

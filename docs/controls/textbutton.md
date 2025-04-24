@@ -16,7 +16,7 @@ Text buttons are used for the lowest priority actions, especially when presentin
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/text-button/basic-text-buttons.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/text-button/basic-text-buttons.py
 ```
 
 
@@ -26,7 +26,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/text-button/text-buttons-with-icons.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/text-button/text-buttons-with-icons.py
 ```
 
 
@@ -36,7 +36,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/text-button/text-button-with-click-event.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/text-button/text-button-with-click-event.py
 ```
 
 
@@ -47,7 +47,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/text-button/text-buttons-with-custom-content.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/text-button/text-buttons-with-custom-content.py
 
 ```
 

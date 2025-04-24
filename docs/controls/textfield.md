@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/text-field/basic-textfields.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/text-field/basic-textfields.py
 ```
 
 
@@ -28,7 +28,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/text-field/textfield-with-on-change.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/text-field/textfield-with-on-change.py
 ```
 
 
@@ -38,7 +38,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/text-field/password.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/text-field/password.py
 ```
 
 
@@ -48,7 +48,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/text-field/multiline-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/text-field/multiline-example.py
 ```
 
 
@@ -58,7 +58,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/text-field/underlined-borderless-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/text-field/underlined-borderless-example.py
 ```
 
 
@@ -68,7 +68,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/text-field/prefix-suffix.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/text-field/prefix-suffix.py
 ```
 
 

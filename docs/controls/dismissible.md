@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/dismissable/dismissable-listview.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/dismissable/dismissable-listview.py
 ```
 
 <img src="/img/docs/controls/dismissible/dismissible-listview.gif" className="screenshot-40"/>

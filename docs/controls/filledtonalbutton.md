@@ -22,7 +22,7 @@ secondary color mapping. See [Material 3 buttons](https://m3.material.io/compone
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/filled-tonal-button/filled-tonal-button-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/filled-tonal-button/filled-tonal-button-example.py
 ```
 
 

@@ -24,7 +24,7 @@ dependencies = [
 A simple implementation that loads the [flet.dev](https://flet.dev) website:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/web-view/web-view-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/web-view/web-view-example.py
 ```
 
 ## Properties

@@ -19,7 +19,7 @@ used.
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/circle-avatar/avatar-test.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/circle-avatar/avatar-test.py
 ```
 
 

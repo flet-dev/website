@@ -14,7 +14,7 @@ Text is a control for displaying text.
 <img src="/img/docs/controls/text/custom-text-styles.gif" className="screenshot-40"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/text/text-custom-styles.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/text/text-custom-styles.py
 ```
 
 ### Pre-defined theme text styles
@@ -22,7 +22,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/info
 <img src="/img/docs/controls/text/predefined-text-styles.png" className="screenshot-40" />
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/text/text-theme-styles.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/text/text-theme-styles.py
 ```
 
 ### Font with variable weight
@@ -30,7 +30,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/info
 <img src="/img/docs/controls/text/variable-weight-font.gif" className="screenshot-50" />
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/text/variable-weight-font.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/text/variable-weight-font.py
 ```
 
 ### Rich text basics
@@ -38,7 +38,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/info
 <img src="/img/docs/controls/text/richtext.png" className="screenshot-70" />
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/text/richtext.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/text/richtext.py
 ```
 
 ### Rich text with borders and stroke
@@ -46,7 +46,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/info
 <img src="/img/docs/controls/text/richtext-borders-stroke.png" className="screenshot-50" />
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/text/richtext-borders-stroke.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/text/richtext-borders-stroke.py
 ```
 
 ### Rich text with gradient
@@ -54,7 +54,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/info
 <img src="/img/docs/controls/text/richtext-gradient.png" className="screenshot-50" />
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/text/richtext-gradient.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/text/richtext-gradient.py
 ```
 
 ## Properties

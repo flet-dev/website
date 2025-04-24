@@ -19,7 +19,7 @@ It can be used as part of a [MenuBar](/docs/controls/menubar), or as a standalon
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/submenu-button/submentu-button-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/submenu-button/submentu-button-example.py
 ```
 
 

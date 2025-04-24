@@ -31,14 +31,14 @@ Autoplay works in desktop, mobile apps and Safari browser, but doesn't work in C
 :::
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/audio/audio-autoplay.py
+https://github.com/flet-dev/examples/blob/main/python/controls/audio/audio-autoplay.py
 ```
 
 ### Audio with playback controls
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/audio/audio-player.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/audio/audio-player.py
 ```
 
 

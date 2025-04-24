@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/autofill-group/autofill-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/autofill-group/autofill-example.py
 ```
 
 <img src="/img/docs/controls/autofillgroup/autofillgroup-example.gif" className="screenshot-40"/>

@@ -25,7 +25,7 @@ sudo apt-get install zenity
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/file-picker/file-picker-all-modes.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/file-picker/file-picker-all-modes.py
 ```
 
 

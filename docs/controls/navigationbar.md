@@ -16,7 +16,7 @@ Navigation bars offer a persistent and convenient way to switch between primary 
 <img src="/img/docs/controls/navigation-bar/navigation-bar-sample.gif" className="screenshot-40"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/navigation/navigation-bar/navigation-bar-sample.py
+https://github.com/flet-dev/examples/blob/main/python/controls/navigation/navigation-bar/navigation-bar-sample.py
 ```
 
 ## `NavigationBar` properties

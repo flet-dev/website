@@ -198,7 +198,7 @@ def main(page: ft.Page):
 
 You can also set this property for testing purposes:
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/page/set-platform.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/page/set-platform.py
 ```
 
 ### `platform_brightness`
