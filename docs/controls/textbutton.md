@@ -35,7 +35,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 ### Text button with `click` event
 
 
-```python
+```python reference
 https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/text-button/text-button-with-click-event.py
 ```
 

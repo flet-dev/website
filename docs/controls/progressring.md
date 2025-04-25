@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 [Live example](https://flet-controls-gallery.fly.dev/displays/progressring)
 
 
-```python
+```python reference
 https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/progress-ring/progress-ring.py
 ```
 

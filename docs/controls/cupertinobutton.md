@@ -15,7 +15,7 @@ An iOS-style button.
 ### Basic Example
 
 
-```python
+```python reference
 https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-buttons/cupertino-button-example.py
 ```
 
