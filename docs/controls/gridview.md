@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 ### Photo gallery
 
-<img src="/img/docs/controls/gridview/photo-gallery.png" className="screenshot-50"/>
+<img src="/img/docs/controls/gridview/grid-view-example.png" className="screenshot-50"/>
 
 
 

@@ -18,40 +18,16 @@ import TabItem from '@theme/TabItem';
 
 [Live example](https://flet-controls-gallery.fly.dev/layout/listview)
 
-### Auto-scrolling ListView
+### Auto-scrolling ListView with Toggle
 
-<Tabs groupId="language">
-  <TabItem value="python" label="Python" default>
 
-```python
-from time import sleep
-import flet as ft
 
-def main(page: ft.Page):
-    page.title = "Auto-scrolling ListView"
-
-    lv = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
-
-    count = 1
-
-    for i in range(0, 60):
-        lv.controls.append(ft.Text(f"Line {count}"))
-        count += 1
-
-    page.add(lv)
-
-    for i in range(0, 60):
-        sleep(1)
-        lv.controls.append(ft.Text(f"Line {count}"))
-        count += 1
-        page.update()
-
-ft.app(main)
+```python reference
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/list-view/listview-toggle-scroll.py
 ```
-  </TabItem>
-</Tabs>
 
-<img src="/img/docs/controls/listview/custom-listview.gif" className="screenshot-40"/>
+
+<img src="/img/docs/controls/listview/auto-scroll-listview.gif" className="screenshot-40"/>
 
 ## Properties
 

@@ -23,7 +23,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layo
 ```
 
 
-<img src="/img/docs/controls/pagelet/pagelet-example.png" className="screenshot-30"/>
+<img src="/img/docs/controls/pagelet/pagelet-light-example.png" className="screenshot-30"/>
 
 ## Properties
 
