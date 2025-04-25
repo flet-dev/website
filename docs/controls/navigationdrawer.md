@@ -17,7 +17,7 @@ To open this control, simply call the [`page.open()`](/docs/controls/page#openco
 
 <img src="/img/docs/controls/navigationdrawer/navigation-drawer-start.gif" className="screenshot-60"/>
 
-```python
+```python reference
 https://github.com/flet-dev/examples/blob/main/python/controls/navigation/navigation-drawer/nav-drawer-example.py
 ```
 

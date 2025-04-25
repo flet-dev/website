@@ -23,7 +23,7 @@ https://github.com/flet-dev/examples/blob/main/python/controls/cupertino/cuperti
 ```
 
 
-<img src="/img/docs/controls/cupertino-timer-picker/cupertino-timer-picker-example.gif" className="screenshot-50" />
+<img src="/img/docs/controls/cupertino-timer-picker/cupertino-time-picker-example.gif" className="screenshot-50" />
 
 ## Properties
 

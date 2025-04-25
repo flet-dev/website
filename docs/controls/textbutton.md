@@ -53,7 +53,7 @@ https://github.com/flet-dev/examples/blob/main/python/controls/buttons/text-butt
 
   
 
-<img src="/img/docs/controls/text-button/text-buttons-custom-example.png" className="screenshot-40" />
+<img src="/img/docs/controls/text-button/text-button-custom-example.png" className="screenshot-40" />
 
 ## Properties
 

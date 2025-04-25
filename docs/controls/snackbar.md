@@ -12,7 +12,7 @@ A lightweight message with an optional action which briefly displays at the bott
 ### SnackBar with dynamic message
 
 ```python reference
-https://github.com/flet-dev/examples/blob/main/python/controls/snack-bar/simple-snack.py
+https://github.com/flet-dev/examples/blob/main/python/controls/dialogs-alerts-panels/snack-bar/simple-snack.py
 ```
 
 <img src="/img/docs/controls/snackbar/snackbar-with-custom-content.gif" className="screenshot-40"/>

@@ -20,7 +20,7 @@ https://github.com/flet-dev/examples/blob/main/python/controls/navigation/bottom
 ```
 
 
-<img src="/img/docs/controls/bottom-app-bar/bottom-app-bar.png" className="screenshot-40"/>
+<img src="/img/docs/controls/bottom-app-bar/bottom-appbar.png" className="screenshot-40"/>
 
 ## Properties
 

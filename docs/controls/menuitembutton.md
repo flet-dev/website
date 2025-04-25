@@ -22,7 +22,7 @@ https://github.com/flet-dev/examples/blob/main/python/controls/buttons/menu-item
 ```
 
 
-<img src="/img/docs/controls/menu-item-button/menu-item-button.gif" className="screenshot-20" />
+<img src="/img/docs/controls/menu-item-button/menu-item-button.gif" className="screenshot-40" />
 
 ## Properties
 

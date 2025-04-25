@@ -25,7 +25,9 @@ https://github.com/flet-dev/examples/blob/main/python/controls/information-displ
 
 ### Markdown with code syntax highlight
 
-[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/markdown/markdown-code-highlight.py)
+````python reference
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/markdown/markdown-code-highligh.py
+````
 
 <img src="/img/docs/controls/markdown/markdown-highlight.png" className="screenshot-60"/>
 

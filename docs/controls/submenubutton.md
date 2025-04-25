@@ -23,7 +23,7 @@ https://github.com/flet-dev/examples/blob/main/python/controls/buttons/submenu-b
 ```
 
 
-<img src="/img/docs/controls/submenu-button/submenu-button-example.gif" className="screenshot-20" />
+<img src="/img/docs/controls/submenu-button/submenu-button-example.gif" className="screenshot-40" />
 
 ## Properties
 
