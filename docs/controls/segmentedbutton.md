@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/segmented-button/segmented-button-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/segmented-button/segmented-button-example.py
 ```
 
 <img src="/img/docs/controls/segmented-button/segmented-button-example.gif" className="screenshot-40" />

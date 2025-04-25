@@ -17,7 +17,7 @@ Outlined buttons pair well with filled buttons to indicate an alternative, secon
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/outlined-button/basic-outlined-buttons.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/outlined-button/basic-outlined-buttons.py
 ```
 
 
@@ -28,7 +28,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/outlined-button/outlined-buttons-with-icons.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/outlined-button/outlined-buttons-with-icons.py
 ```
 
 
@@ -39,7 +39,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/outlined-button/outlined-button-with-click-event.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/outlined-button/outlined-button-with-click-event.py
 ```
 
 
@@ -51,7 +51,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/outlined-button/outlined-buttons-with-custom-content.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/outlined-button/outlined-buttons-with-custom-content.py
 ```
 
 

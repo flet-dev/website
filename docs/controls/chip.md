@@ -22,7 +22,7 @@ An alternative to assist chips are buttons, which should appear persistently and
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/chip/chip-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/chip/chip-example.py
 ```
 
 
@@ -34,7 +34,7 @@ Filter chips are chips with `on_select` event specified. They use tags or descri
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/chip/chip-filter-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/chip/chip-filter-example.py
 ```
 
 

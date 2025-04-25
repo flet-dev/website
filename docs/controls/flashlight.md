@@ -18,7 +18,7 @@ flet build apk --include-packages flet_flashlight
 ## Example
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/flashlight/flashlight-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/flashlight/flashlight-example.py
 ```
 
 ## Methods

@@ -18,7 +18,7 @@ navigation.
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/menu-item-button/menu-item-button-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/menu-item-button/menu-item-button-example.py
 ```
 
 

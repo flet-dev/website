@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/divider/divider-horiz.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/divider/divider-horiz.py
 ```
 
 

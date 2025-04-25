@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/animation/lottie-basic.py
+https://github.com/flet-dev/examples/blob/main/python/controls/animation/lottie-basic.py
 ```
 
 <img src="/img/docs/controls/lottie/lottie-animation-2.gif" className="screenshot-20" />

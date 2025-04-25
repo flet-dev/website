@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/tabs/tabs-simple.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/tabs/tabs-simple.py
 ```
 
 
@@ -83,7 +83,7 @@ Defaults to `3.0` when `secondary=False`, else `3.0`.
 <img src="/img/docs/controls/tabs/nested-tabs.gif" className="screenshot-60"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/tabs/nested-tabs.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/tabs/nested-tabs.py
 ```
 
 ### `is_secondary`

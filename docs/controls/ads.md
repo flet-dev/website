@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/ads/ads-basic-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/ads/ads-basic-example.py
 ```
 
 <img src="/img/docs/controls/ads/ads.gif" className="screenshot-20" />

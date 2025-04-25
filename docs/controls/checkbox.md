@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/checkbox/checkbox-basic.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/checkbox/checkbox-basic.py
 ```
 
 
@@ -26,7 +26,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/checkbox/checkbox-with-event.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/checkbox/checkbox-with-event.py
 ```
 
 

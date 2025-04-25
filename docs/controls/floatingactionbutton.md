@@ -17,7 +17,7 @@ Floating action button is usually set to `page.floating_action_button`, but can 
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/floating-action-button/floating-action-button.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/floating-action-button/floating-action-button.py
 ```
 
 

@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-input-and-selections/cupertino-textfield-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/cupertino/cupertino-input-and-selections/cupertino-textfield-example.py
 ```
 
 

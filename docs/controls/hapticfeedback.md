@@ -12,7 +12,7 @@ It is non-visual and should be added to `page.overlay` list.
 ### Haptic feedback sample
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/haptic-feedback/haptic-feedback-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/haptic-feedback/haptic-feedback-example.py
 ```
 
 ## Methods

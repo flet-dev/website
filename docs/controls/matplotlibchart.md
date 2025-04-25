@@ -14,7 +14,7 @@ The following example is based on [original example from Matplotlib docs](https:
 <img src="/img/docs/controls/charts/matplotlib-barchart.png" className="screenshot-60"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/matplotlib-chart/mpl-barchart-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/matplotlib-chart/mpl-barchart-example.py
 ```
 
 ### Line chart
@@ -24,7 +24,7 @@ The following example is based on [original example from Matplotlib docs](https:
 <img src="/img/docs/controls/charts/matplotlib-linechart.png" className="screenshot-60"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/matplotlib-chart/mpl-linechart-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/matplotlib-chart/mpl-linechart-example.py
 ```
 
 ## Properties

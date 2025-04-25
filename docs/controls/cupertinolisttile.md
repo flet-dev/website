@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupertino/cupertino-layout/cupertino-list-tile-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/cupertino/cupertino-layout/cupertino-list-tile-example.py
 ```
 
 

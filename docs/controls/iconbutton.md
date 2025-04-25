@@ -19,7 +19,7 @@ Icon buttons are commonly used in the toolbars, but they can be used in many oth
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/icon-button/icon-buttons.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/icon-button/icon-buttons.py
 ```
 
 
@@ -29,7 +29,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/icon-button/icon-button-with-click-event.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/icon-button/icon-button-with-click-event.py
 ```
 
 

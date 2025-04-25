@@ -14,7 +14,7 @@ Draws a bar chart.
 <img src="/img/docs/controls/charts/barchart-sample-1.png" className="screenshot-50"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/bar-chart/barchart-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/bar-chart/barchart-example.py
 ```
 
 ### BarChart 2
@@ -22,7 +22,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/char
 <img src="/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/bar-chart/barchart-with-event.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/bar-chart/barchart-with-event.py
 ```
 
 ## `BarChart` properties

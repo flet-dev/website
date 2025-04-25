@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 
 ````python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/markdown/markdown-basic.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/markdown/markdown-basic.py
 ````
 
 
@@ -105,7 +105,7 @@ Fires when a link within Markdown document is clicked/tapped. `data` property of
 The following example opens markdown URLs in a new window:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/markdown/markdown-event-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/markdown/markdown-event-example.py
 ```
 
 ### `on_selection_change`

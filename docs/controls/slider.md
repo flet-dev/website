@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/slider/slider-basic.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/slider/slider-basic.py
 ```
 
 
@@ -28,7 +28,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/slider/slider-values.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/slider/slider-values.py
 ```
 
 <img src="/img/docs/controls/slider/slider-with-custom-content.gif" className="screenshot-30"/>
@@ -37,7 +37,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/inpu
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/input-and-selections/slider/slider-with-change.py
+https://github.com/flet-dev/examples/blob/main/python/controls/input-and-selections/slider/slider-with-change.py
 ```
 
 

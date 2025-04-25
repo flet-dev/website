@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/image/images-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/image/images-example.py
 ```
 
 
@@ -109,7 +109,7 @@ This could be an external URL or a local [asset file](/docs/cookbook/assets).
 Displays an image from Base-64 encoded string, for example:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/information-displays/image/image-base64.py
+https://github.com/flet-dev/examples/blob/main/python/controls/information-displays/image/image-base64.py
 ```
 
 Use `base64` command (Linux, macOS, WSL) to convert file to Base64 format, for example:

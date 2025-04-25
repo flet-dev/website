@@ -18,7 +18,7 @@ Elevated buttons are essentially filled tonal buttons with a shadow. To prevent 
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/elevated-button/basic-elevated-buttons.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/elevated-button/basic-elevated-buttons.py
 ```
 
 
@@ -28,7 +28,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/elevated-button/elevated-buttons-with-icons.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/elevated-button/elevated-buttons-with-icons.py
 ```
 
 
@@ -38,7 +38,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/elevated-button/elevated-button-with-click-event.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/elevated-button/elevated-button-with-click-event.py
 ```
 
 
@@ -49,7 +49,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/butt
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/buttons/elevated-button/elevated-buttons-with-custom-content.py
+https://github.com/flet-dev/examples/blob/main/python/controls/buttons/elevated-button/elevated-buttons-with-custom-content.py
 ```
 
 

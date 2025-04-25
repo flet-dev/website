@@ -199,7 +199,7 @@ Whether to make the app window visible. Used when the app is starting with a hid
 The following program starts with a hidden window and makes it visible in 3 seconds:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/page/window-hidden-on-start.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/page/window-hidden-on-start.py
 ```
 
 Note `view=ft.AppView.FLET_APP_HIDDEN` which hides app window on start.
@@ -225,7 +225,7 @@ Forces closing app window.
 This method could be used with `page.window.prevent_close = True` to implement app exit confirmation:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/page/app-exit-confirm-dialog.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/page/app-exit-confirm-dialog.py
 ```
 
 ### `to_front()`

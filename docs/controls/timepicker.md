@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/dialogs-alerts-panels/time-picker/time-picker-basic.py
+https://github.com/flet-dev/examples/blob/main/python/controls/dialogs-alerts-panels/time-picker/time-picker-basic.py
 ```
 
 

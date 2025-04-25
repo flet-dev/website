@@ -28,7 +28,7 @@ The sample also shows that GestureDetector can have a child control (blue contai
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/gesture-detector/draggable-containers.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/gesture-detector/draggable-containers.py
 ```
 
 

@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/placeholder/placeholder-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/placeholder/placeholder-example.py
 ```
 
 

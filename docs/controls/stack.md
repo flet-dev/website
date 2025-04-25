@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/stack/image-title.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/stack/image-title.py
 ```
 
 
@@ -32,7 +32,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layo
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/stack/avatar-with-status.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/stack/avatar-with-status.py
 ```
 
 
@@ -42,7 +42,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layo
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/stack/absolute-positioned.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/stack/absolute-positioned.py
 ```
 
 

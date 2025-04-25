@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/container/clickable-container.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/container/clickable-container.py
 ```
 
 
@@ -61,7 +61,7 @@ The value of this property could be one of the following:
 For example:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/container/container-blur.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/container/container-blur.py
 ```
 <img src="/img/docs/controls/container/container-blur.gif" className="screenshot-40" />
 
@@ -179,7 +179,7 @@ Value is of type [`Theme`](/docs/cookbook/theming).
 **Usage example**
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/container/nested-themes-switch.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/container/nested-themes-switch.py
 ```
 
 <img src="/img/docs/controls/container/container-theme.gif"  className="screenshot-60" />
@@ -207,7 +207,7 @@ Fires when a mouse pointer enters or exists the container area. `data` property 
 A simple example of a container changing its background color on mouse hover:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/container/simple-hover.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/container/simple-hover.py
 ```
 
 <img src="/img/docs/controls/container/hover-container.gif" className="screenshot-20" />
@@ -229,6 +229,6 @@ If `ink` is `True`, `e` will be plain `ControlEvent` with empty `data` instead o
 A simple usage example:
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/container/container-click-events.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/container/container-click-events.py
 ```
 <img src="/img/docs/controls/container/container-click-events.gif"  className="screenshot-60" />

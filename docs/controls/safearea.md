@@ -16,7 +16,7 @@ When a `minimum_padding` is specified, the greater of the minimum padding or the
 [Live example](https://flet-controls-gallery.fly.dev/layout/safearea)
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/layout/safe-area/safe-area-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/layout/safe-area/safe-area-example.py
 ```
 
 ## Properties

@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/shader-mask/shader-mask-single-image.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/shader-mask/shader-mask-single-image.py
 ```
 
 
@@ -30,7 +30,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/util
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/shader-mask/shader-mask-gradient.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/shader-mask/shader-mask-gradient.py
 ```
 
 

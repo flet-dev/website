@@ -14,7 +14,7 @@ Draws a pie chart.
 <img src="/img/docs/controls/charts/piechart-sample-1.gif" className="screenshot-30"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/pie-chart/piechart-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/pie-chart/piechart-example.py
 ```
 
 ### PieChart 2
@@ -22,7 +22,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/char
 <img src="/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/pie-chart/piechart-with-titles.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/pie-chart/piechart-with-titles.py
 ```
 
 ### PieChart 3
@@ -30,7 +30,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/char
 <img src="/img/docs/controls/charts/piechart-sample-3.gif" className="screenshot-30"/>
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/charts/pie-chart/piechart-with-icons.py
+https://github.com/flet-dev/examples/blob/main/python/controls/charts/pie-chart/piechart-with-icons.py
 ```
 
 ## Properties

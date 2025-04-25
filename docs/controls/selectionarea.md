@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 
 ```python reference
-https://github.com/flet-dev/examples/blob/example-polishing/python/controls/utility/selection-area/selection-area-example.py
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/selection-area/selection-area-example.py
 ```
 
 <img src="/img/docs/controls/selection-area/selection-area.gif" className="screenshot-40"/>
