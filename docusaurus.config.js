@@ -118,7 +118,7 @@ module.exports = {
               href: 'https://x.com/fletdev',
             },
             {
-              label: 'Blusky',
+              label: 'Bluesky',
               href: 'https://bsky.app/profile/fletdev.bsky.social',
             },
           ],

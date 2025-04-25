@@ -32,7 +32,7 @@ sudo apt-get install zenity
 
 ## Using file picker in your app
 
-It is recommended to add file picker to [`page.overlay.controls`](/docs/controls/page#overlay) collection, so it doesn't affect the layout of your app. Despite file picker has 0x0 size it is still considered as a control when put into `Row` or `Column`.
+It is recommended to add file picker to [`page.overlay`](/docs/controls/page#overlay) collection, so it doesn't affect the layout of your app. Despite file picker has 0x0 size it is still considered as a control when put into `Row` or `Column`.
 
 ```python
 import flet as ft
