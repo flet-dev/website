@@ -20,7 +20,7 @@ https://github.com/flet-dev/examples/blob/example-polishing/python/controls/cupe
 ```
 
 
-<img src="/img/docs/controls/cupertino-button/cupertino-buttons.png" className="screenshot-20" />
+<img src="/img/docs/controls/cupertino-button/cupertino-buttons.png" className="screenshot-40" />
 
 ## Properties
 

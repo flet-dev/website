@@ -24,7 +24,7 @@ dependencies = [
   "flet-audio-recorder==0.1.0",
 ]
 ```
-
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

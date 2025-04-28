@@ -337,7 +337,6 @@ module.exports = {
             "controls/interactiveviewer",
             "controls/mergesemantics",
             "controls/permissionhandler",
-            "controls/rive",
             "controls/selectionarea",
             "controls/semantics",
             "controls/semanticsservice",
