@@ -6,13 +6,19 @@ sidebar_label: Map
 Used to display a map with various layers.
 
 :::info Packaging
-To build your Flet app that uses `Map` control add `--include-packages flet_map` to `flet build` command, for example:
+To build your Flet app that uses `Map` control add `flet-map` to `dependencies` key of the `[project]` section of your `pyproject.toml` file, for
+example:
 
+```toml
+[project]
+...
+dependencies = [
+  "flet==0.27.6",
+  "flet-map==0.1.0",
+]
 ```
-flet build apk --include-packages flet_map
-```
-
 :::
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

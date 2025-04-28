@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 ### Adding a pink glow around image edges
 
-<img src="/img/docs/controls/shader-mask/shader-mask-radial-glow.png" className="screenshot-20" />
+<img src="/img/docs/controls/shader-mask/shader-mask-radial-glow.png" className="screenshot-50" />
 
 
 ```python reference

@@ -8,10 +8,16 @@ A control to use FlashLight. Works on iOS and Android. Based on [torch_light](ht
 Flashlight control is non-visual and should be added to `page.overlay` list.
 
 :::info Packaging
-To build your Flet app that uses `Flashlight` control add `--include-packages flet_flashlight` to `flet build` command, for example:
+To build your Flet app that uses `FlashLight` control add `flet-flashlight` to `dependencies` key of the `[project]` section of your `pyproject.toml` file, for
+example:
 
-```
-flet build apk --include-packages flet_flashlight
+```toml
+[project]
+...
+dependencies = [
+  "flet==0.27.6",
+  "flet-flashlight==0.1.0",
+]
 ```
 :::
 

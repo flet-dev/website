@@ -10,11 +10,16 @@ Based on the [permission_handler](https://pub.dev/packages/permission_handler) D
 PermissionHandler control is non-visual and should be added to [`page.overlay`](/docs/controls/page#overlay) list.
 
 :::info Packaging
-To build your Flet app that uses `PermissionHandler` control, add `--include-packages flet_permission_handler`
-to `flet build` command, for example:
+To build your Flet app that uses `PermissionHandler` control add `flet-permission-handler` to `dependencies` key of the `[project]` section of your `pyproject.toml` file, for
+example:
 
-```
-flet build apk --include-packages flet_permission_handler
+```toml
+[project]
+...
+dependencies = [
+  "flet==0.27.6",
+  "flet-premission-handler==0.1.0",
+]
 ```
 :::
 

@@ -9,10 +9,16 @@ Based on the [geolocator](https://pub.dev/packages/geolocator) Dart/Flutter pack
 Geolocator control is non-visual and should be added to `page.overlay` list.
 
 :::info Packaging
-To build your Flet app that uses `Geolocator` control add `--include-packages flet_geolocator` to `flet build` command, for example:
+To build your Flet app that uses `Geolocator` control add `flet-geolocator` to `dependencies` key of the `[project]` section of your `pyproject.toml` file, for
+example:
 
-```
-flet build apk --include-packages flet_geolocator
+```toml
+[project]
+...
+dependencies = [
+  "flet==0.27.6",
+  "flet-geolocator==0.1.0",
+]
 ```
 :::
 
