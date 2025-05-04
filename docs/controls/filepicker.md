@@ -21,26 +21,21 @@ sudo apt-get install zenity
 
 [Live example](https://flet-controls-gallery.fly.dev/utility/filepicker)
 
-### Pick multiple files
+### All dialog modes
 
+<img src="/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-70" />
 
 ```python reference
 https://github.com/flet-dev/examples/blob/main/python/controls/utility/file-picker/file-picker-all-modes.py
 ```
 
-
-
-### All dialog modes
-
-<img src="/img/docs/controls/file-picker/file-picker-all-modes-demo.png" className="screenshot-70" />
-
-[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-all-modes.py)
-
 ### Upload multiple files
 
 <img src="/img/docs/controls/file-picker/file-picker-multiple-uploads.png" className="screenshot-40" />
 
-[Source code](https://github.com/flet-dev/examples/blob/main/python/controls/file-picker/file-picker-upload-progress.py)
+```python reference
+https://github.com/flet-dev/examples/blob/main/python/controls/utility/file-picker/file-picker-upload-progress.py
+```
 
 ## Properties
 
