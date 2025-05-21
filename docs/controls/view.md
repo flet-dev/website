@@ -26,6 +26,16 @@ for `scroll_to()` to work.
 
 Background [color](/docs/reference/colors) of the view.
 
+### `can_pop`
+
+This property controls whether the view can be uncoditionally removed from navigation either
+programmatically, say by modifying `page.views` list, or when a user uses device back button.
+
+By default, `can_pop` is `True` which means the view will be removed with no questions asked.
+However, if you set `View.can_pop` to `False` then you can add `View.on_confirm_pop` event handler where you can open an alert dialog to confirm or do other checks and then call `View.confirm_pop(True|False)` method to either allow or prevent view from removal.
+
+Another use case is setting `page.views[0].canPop = False` for root view to prevent closing the app with hardware back button on Android.
+
 ### `controls`
 
 A list of `Control`s to display on the Page.
@@ -155,6 +165,10 @@ to `MainAxisAlignment.START`.
 
 ## Methods
 
+### `confirm_pop(allow: bool)`
+
+Either allow or cancel view removal from the navigation. Used together with `View.can_pop` property and `View.on_confirm_pop` event.
+
 ### `scroll_to(offset, delta, key, duration, curve)`
 
 Moves scroll position to either absolute `offset`, relative `delta` or jump to the control with specified `key`.
@@ -162,6 +176,10 @@ Moves scroll position to either absolute `offset`, relative `delta` or jump to t
 See [`Column.scroll_to()`](/docs/controls/column#scroll_tooffset-delta-key-duration-curve) for method details and examples.
 
 ## Events
+
+### `on_confirm_pop`
+
+Fires when a view is about to be removed from the navigation. Allows to ask user for confirmation or do other checks and either allow or cancel removal of a view by calling `View.confirm_pop(True | False)` method. This event is fired if `View.can_pop` set to `False`.
 
 ### `on_scroll`
 
