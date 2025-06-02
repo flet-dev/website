@@ -19,7 +19,7 @@ On the other hand, seasoned FastAPI developers can use Flet to easily add intera
 
 ```python
 import flet as ft
-import flet_fastapi
+import flet.fastapi as flet_fastapi
 
 async def main(page: ft.Page):
     await page.add_async(
@@ -34,7 +34,7 @@ It's a simple app that just outputs "Hello, Flet!" on a web page.
 To run the app install Flet for FastAPI and Uvicorn:
 
 ```
-pip install flet-fastapi
+pip install flet
 pip install uvicorn
 ```
 
