@@ -1,7 +1,7 @@
 ---
 slug: tap-into-native-android-and-ios-apis-with-Pyjnius-and-pyobjus
 title: Tap into native Android and iOS APIs with Pyjnius and Pyobjus
-author: feodor
+authors: feodor
 tags: [news]
 ---
 
