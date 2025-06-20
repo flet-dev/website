@@ -24,13 +24,12 @@ After nearly five months of work, **today we’re releasing the Flet 1.0 Alpha �
 
 <!-- truncate -->
 
-## What’s new for developers in Flet 1.0
+## What’s new for developers
 
 Flet 1.0 introduces major changes that simplify how you build, run, and scale apps. Some are improvements, some are breaking — all are focused on giving you a faster, more flexible developer experience.
 
 * **Declarative approach to building Flet apps** - alongside the traditional imperative style.
 * **Auto-update** - forget calling `.update()` after every control change.
-* **Single-threaded async UI model** - similar to JavaScript, or Flutter. Breaking change - read below how it affects your existing Flet app.
 * **Services** - persistent, non-UI components that live across UI rebuilds and navigation. Existing controls such as Audio, FilePicker, Clipboard were re-written as services.
 * **Complete WASM (WebAssembly) support for web apps** - faster download and performance on modern browsers.
 * **Offline (no-CDN) mode for web apps** - Flutter resources and Pyodide are bundled with the app.
@@ -45,17 +44,18 @@ TBD
 
 TBD
 
-### Single-threaded async UI model
-
-TBD
-
 ### Services
 
-TBD
+FilePicker
+HapticFeedback
+SemanticsService
+ShakeDetector
 
 ### WebAssembly support
 
 TBD
+
+`page.wasm` - [example]
 
 ### Offline mode for web apps
 
@@ -65,7 +65,135 @@ TBD
 
 TBD
 
-## Architectural changes in Flet 1.0
+### Other changes and improvements
+
+#### Storage paths
+
+`page.storage_paths`
+
+#### Event handlers without `e`
+
+Simple event handlers can now omit `e` parameter, for example both of these work:
+
+```py
+button_1.on_click = lambda: print("Clicked!")
+button_2.on_click = lambda e: print("Clicked!", e)
+```
+
+or
+
+```py
+def increment():
+   print("Increment clicked")
+
+inc_btn.on_click = increment
+```
+
+#### `Control.before_event(e)` hook
+
+The method is called before calling any event handler.
+
+It receives an instance of `ControlEvent` as parameter and should return either `True` or `False`. Returning `False` cancels event handler. Example implementation in `Page` class:
+
+```py
+    def before_event(self, e: ControlEvent):
+        if isinstance(e, RouteChangeEvent):
+            if self.route == e.route:
+                return False
+            self.query()
+        return super().before_event(e)
+``` 
+
+#### `ft.context.page` works in all event handlers
+
+It's now possible to get a reference to a current `Page` instance in any part of Flet program.
+
+## Breaking changes
+
+Flet 1.0 is a major release and includes breaking changes — for good reason!
+
+The Flet team maintains a list of known breaking changes in [this issue](https://github.com/flet-dev/flet/issues/5238).
+
+If you discover something else that’s broken or incorrect, please submit a new issue or discussion. Once confirmed, we’ll update the list.
+
+Below is a summary of the most significant and impactful breaking changes:
+
+### Single-threaded async UI model
+
+Flet 1.0 adopts a single-threaded async UI model, similar to JavaScript or Flutter:
+
+* Blocking calls like time.sleep() will freeze the UI
+* Use async def event handlers and await asyncio.sleep(...) instead
+* For CPU-bound tasks, offload them to threads using asyncio.to_thread(...)
+
+This design makes concurrency more predictable and better suited for the browser and mobile platforms.
+
+control's sync methods have gone.
+all control methods are `_async` now and only set-like fire-and-forget methods have sync counterparts.
+
+[Examples]
+
+### `Page` split
+
+`Page` split into `Page` and `PageView`.
+
+To support multi-view
+
+### Dialogs
+
+`page.show_dialog()`
+
+### Drawers
+
+Remove `page.drawer` and `page.end_drawer`
+NavigationDrawer: `position` property instead of page.drawer and page.end_drawer
+
+### Control ID is integer
+
+`e.target` is a number now, not a string.
+
+### FilePicker
+
+Service
+API re-worked
+
+### HapticFeedback
+
+Service
+
+# SemanticsService
+
+Service
+
+# ShakeDetector
+
+Service
+
+### Clipboard
+
+`page.set_clipboard()` -> `page.clipboard.set_async()`
+
+`page.get_clipboard()` -> `page.clipboard.get_async()`
+
+### Client storage
+
+`page.client_storage` changed to `page.shared_preferences`
+
+shared_preferences
+
+### UrlLauncher
+
+TBD
+
+### Scrollables
+
+ScrollableControl: `on_scroll_interval` renamed to `scroll_interval`
+
+### Buttons
+
+All buttons: no text property, use content instead
+
+## Architectural changes
 
 Flet 1.0 is not just a feature release — it's a ground-up rewrite designed to address technical debt, improve maintainability, and unlock long-term performance and flexibility. Here are some of the most impactful architectural changes:
 
@@ -102,3 +230,51 @@ Flet 1.0 is not just a feature release — it's a ground-up rewrite designed to 
   - No more base64 encoding for transferring binary data (e.g., images, files)
 
 - Control property names in Dart now **exactly match their Python counterparts**, making it easier to debug and extend across both runtimes.
+
+## Trying Flet 1.0 Alpha
+
+We are releasing Flet 1.0 Alpha as `0.70.0.devXXX` (link to PyPI).
+
+:::info
+Going forward Flet 1.0 will be called `v1` and Flet 0.x will be called `v0`.
+
+`main` branch of Flet repository will have Flet 1.0 and `v0` branch will have Flet 0.x.
+:::
+
+:::caution
+Make sure you are installing Flet pre-release to a new virtual environment.
+:::
+
+To install Flet v1 Alpha:
+
+```
+pip install flet==0.70.0.devXXX
+```
+
+or add `flet==0.70.0.devXXX` to dependencies of your Python project.
+
+### `flet build`
+
+To make `flet build` work with Flet 1.0 Alpha specify exact version of `flet` and all extension packages in `dependencies` section of your `pyproject.toml`:
+
+```
+dependencies=[
+  "flet==0.70.0.devXXX",
+  "flet-audio==0.2.0.devXXX",
+  "flet-video==0.2.0.devXXX",
+  ...
+]
+```
+
+Extensions for Flet v1 will have version `0.2.x` and above and Flet v0 extensions will have version `0.1.x`.
+
+## Roadmap to Flet 1.0
+
+* Flet 0.70 aka "**Flet 1.0 Alpha**" - this release. Generated docs are not yet included. We may release a few Flet 0.71, 0.72, 0.73, etc. to fix things.
+* Flet 0.80 aka "**Flet 1.0 Beta**" - docs generated from sources are ready. All extensions are working and documented. Integration tests are available.
+* Flet 0.90 aka "**Flet 1.0 RC**" - website landing page is updated, API complete and frozen.
+* Flet 1.0 aka "**Flet 1.0 RTM**" - final release! :tada:
+
+## Conslusion
+
+TBD
