@@ -38,38 +38,144 @@ Flet 1.0 introduces major changes that simplify how you build, run, and scale ap
 
 ### Declarative approach
 
-TBD
+Flet 1.0 introduces a **declarative/reactive approach** to building UIs in Flet. Developers can now mix **imperative** and **declarative** patterns in the same app, enabling more flexible and functional UI code.
+
+#### Basic declarative Flet app example
+
+```py
+from dataclasses import dataclass
+
+import flet as ft
+
+
+@dataclass
+class AppState:
+    count: int
+
+    def increment(self):
+        self.count += 1
+
+
+def main(page: ft.Page):
+    state = AppState(count=0)
+
+    page.floating_action_button = ft.FloatingActionButton(
+        icon=ft.Icons.ADD, on_click=state.increment
+    )
+    page.add(
+        ft.ControlBuilder(
+            state,
+            lambda state: ft.SafeArea(
+                ft.Center(ft.Text(value=f"{state.count}", size=50)),
+                expand=True,
+            ),
+            expand=True,
+        )
+    )
+
+
+ft.run(main)
+```
+
+More declarative examples:
+
+* [Edit form](https://github.com/flet-dev/examples/blob/v1/python/apps/declarative/edit-form.py)
+* [Progress bar with yield](https://github.com/flet-dev/examples/blob/v1/python/apps/declarative/progress-with-yield.py)
+* 🚀 [Reactive ToDo app](https://github.com/flet-dev/examples/blob/v1/python/apps/todo/todo-reactive.py)
+
+🚧 Documentation is in progress 🚧
 
 ### Auto-update
 
-TBD
+`Control.update()` is now automatically called once its event handler method is finished.
+Most of Flet apps will now work without explicit `update()` calls.
+
+Use `yield` inside long-running event handlers to refresh UI, for example:
+
+```
+async def button_click():
+  progress.value = "Something started"
+  yield
+  await asyncio.sleep(3)
+  progress.value = "Something finished"
+```
+
+🚧 Documentation is in progress 🚧
 
 ### Services
 
-FilePicker
-HapticFeedback
-SemanticsService
-ShakeDetector
+"Service" is a persistent, non-visual control that can "survive" page updates and navigation transitions.
+
+Some of the existing controls were re-implemented as services (breaking change):
+
+* `Audio` ([extension](https://pypi.org/project/flet-audio/))
+* `AudioRecorder` ([extension](https://pypi.org/project/flet-audio-recorder/))
+* `FilePicker`
+* `Flashlight` ([extension](https://pypi.org/project/flet-flashlight/))
+* `Geolocator` ([extension](https://pypi.org/project/flet-geolocator/))
+* `HapticFeedback`
+* `InterstitialAd` ([extension](https://pypi.org/project/flet-ads/))
+* `PermissionHandler` ([extension](https://pypi.org/project/flet-permission-handler/))
+* `SemanticsService`
+* `ShakeDetector`
+
+Service instances must be added to `page.services` list to work.
 
 ### WebAssembly support
 
-TBD
+Flet 1.0 web apps use WebAssembly (WASM) by default on [selected browsers](https://docs.flutter.dev/platform-integration/web/wasm#learn-more-about-browser-compatibility). 
 
-`page.wasm` - [example]
+Built-in Flet web client and Flet apps built with `flet build web` are now include both Dart2JS (with CanvasKit as a renderer) and WebAssembly (with SKWASM renderer) targets.
+
+🚧 Documentation is in progress 🚧
 
 ### Offline mode for web apps
 
+Flet 1.0 has "no-CDN" mode which allows bundling the following resources along with your app instead of loading them from external CDNs:
+
+* CanvasKit
+* SkWASM
+* Pyodide
+* Fonts
+
+To enable no-CDN during runtime:
+
 TBD
+
+To enable no-CDN for `flet build`:
+
+`--no-cdn`, TBD
+
+🚧 Documentation is in progress 🚧
 
 ### Embedding Flet web apps
 
-TBD
+You can now embed a Flet web app into any HTML element within an existing web page.
+
+It's also possible to render multiple views of the same app in different HTML elements.
+
+🚧 Documentation is in progress 🚧
 
 ### Other changes and improvements
 
 #### Storage paths
 
-`page.storage_paths`
+There is a new `page.storage_paths` multi-platform API based on [path_provider](https://pub.dev/packages/path_provider) for finding commonly used locations on the filesystem:
+
+```py
+get_application_cache_directory_async(self) -> str
+get_application_documents_directory_async(self) -> str
+get_application_support_directory_async(self) -> str
+get_downloads_directory_async(self) -> Optional[str]
+get_external_cache_directories_async(self) -> Optional[List[str]]
+get_external_storage_directories_async(self) -> Optional[List[str]]
+get_library_directory_async(self) -> str
+get_external_cache_directory_async(self) -> Optional[str]
+get_temporary_directory_async(self) -> str
+get_console_log_filename_async(self) -> str
+```
+
+🚧 Documentation is in progress 🚧
 
 #### Event handlers without `e`
 
@@ -104,7 +210,7 @@ It receives an instance of `ControlEvent` as parameter and should return either 
         return super().before_event(e)
 ``` 
 
-#### `ft.context.page` works in all event handlers
+#### `ft.context.page` works everywhere
 
 It's now possible to get a reference to a current `Page` instance in any part of Flet program.
 
@@ -120,78 +226,93 @@ Below is a summary of the most significant and impactful breaking changes:
 
 ### Single-threaded async UI model
 
-Flet 1.0 adopts a single-threaded async UI model, similar to JavaScript or Flutter:
+Flet 1.0 adopts a single-threaded async UI model, similar to JavaScript or Flutter. This design makes concurrency more predictable and better suited for the browser and mobile platforms.
 
-* Blocking calls like time.sleep() will freeze the UI
-* Use async def event handlers and await asyncio.sleep(...) instead
-* For CPU-bound tasks, offload them to threads using asyncio.to_thread(...)
+* Blocking calls like `time.sleep()` will freeze the UI. Instead of `time.sleep()` use `async def` event handlers and using `await asyncio.sleep()` for delays.
+* Switch to async APIs whenever possible.
+* For CPU-bound tasks, offload them to threads using `asyncio.to_thread(...)`.
 
-This design makes concurrency more predictable and better suited for the browser and mobile platforms.
+🚧 Example with CPU-bound method updating progress bar 🚧
+
+### Async control methods
 
 control's sync methods have gone.
 all control methods are `_async` now and only set-like fire-and-forget methods have sync counterparts.
 
-[Examples]
+TBD
 
 ### `Page` split
 
 `Page` split into `Page` and `PageView`.
 
-To support multi-view
+To support Flet embedding with multi-views.
+
+🚧 Documentation is in progress 🚧
 
 ### Dialogs
 
-`page.show_dialog()`
+To display a dialog, banner, snack bar, drawer, or any similar popup control, use `page.show_dialog(dialog_control)` instead of `page.open()`.
+
+To close the topmost popup, use `page.pop_dialog()`.
 
 ### Drawers
 
-Remove `page.drawer` and `page.end_drawer`
-NavigationDrawer: `position` property instead of page.drawer and page.end_drawer
+`page.drawer` and `page.end_drawer` were removed.
+
+Use `NavigationDrawer.position` property and then `page.show_dialog()` to display drawer instead of `page.drawer` and `page.end_drawer`.
+
+### FilePicker
+
+FilePicker is now a service and must be added to `page.services` list to work.
+
+API re-worked to provide async methods immediatly returning dialog results without using "result" event handlers.
+
+```py
+files: list[FilePickerFile] = await file_picker.pick_files_async(allow_multiple=True)
+file_name: str = await file_picker.save_file_async()
+dir_name: str = await file_picker.get_directory_path_async()
+```
+
+Full examples:
+
+* [All dialogs](https://github.com/flet-dev/examples/blob/v1/python/controls/utility/file-picker/file-picker-all-modes.py)
+* [Upload](https://github.com/flet-dev/examples/blob/v1/python/controls/utility/file-picker/file-picker-upload-progress.py)
+
+### HapticFeedback
+
+`HapticFeedback` is now a Service and must be added to `page.services` to work.
+
+# SemanticsService
+
+`SemanticsService` is now a Service and must be added to `page.services` to work.
+
+# ShakeDetector
+
+`ShakeDetector` is now a Service and must be added to `page.services` to work.
+
+### Clipboard
+
+Instead of `page.set_clipboard()` use `page.clipboard.set_async()`.
+
+Instead of `page.get_clipboard()` use `page.clipboard.get_async()`.
+
+### Client storage
+
+"Client storage" is now "Shared Preferences".
+
+`page.client_storage` property renamed to `page.shared_preferences`.
+
+### Scrollables
+
+In scrollable controls `on_scroll_interval` property renamed to `scroll_interval`.
+
+### Buttons
+
+All buttons: no `text` property, use `content` instead.
 
 ### Control ID is integer
 
 `e.target` is a number now, not a string.
-
-### FilePicker
-
-Service
-API re-worked
-
-### HapticFeedback
-
-Service
-
-# SemanticsService
-
-Service
-
-# ShakeDetector
-
-Service
-
-### Clipboard
-
-`page.set_clipboard()` -> `page.clipboard.set_async()`
-
-`page.get_clipboard()` -> `page.clipboard.get_async()`
-
-### Client storage
-
-`page.client_storage` changed to `page.shared_preferences`
-
-shared_preferences
-
-### UrlLauncher
-
-TBD
-
-### Scrollables
-
-ScrollableControl: `on_scroll_interval` renamed to `scroll_interval`
-
-### Buttons
-
-All buttons: no text property, use content instead
 
 ## Architectural changes
 
