@@ -8,6 +8,8 @@ Flet controls based on 3rd-party Flutter packages that used to be a part of Flet
 * [flet-ads](https://pypi.org/project/flet-ads/)
 * [flet-audio](https://pypi.org/project/flet-audio/)
 * [flet-audio-recorder](https://pypi.org/project/flet-audio-recorder/)
+* [flet-charts](https://pypi.org/project/flet-charts/)
+* [flet-datatable2](https://pypi.org/project/flet-datatable2/)
 * [flet-flashlight](https://pypi.org/project/flet-flashlight/)
 * [flet-geolocator](https://pypi.org/project/flet-geolocator/)
 * [flet-lottie](https://pypi.org/project/flet-lottie/)
