@@ -36,7 +36,7 @@ This command builds release version. 'release' builds don't support debugging an
 
 By default, Flet builds "fat" APK which includes binaries for both `arm64-v8a` and `armeabi-v7a` architectures.
 
-You can configure Flet to split fat APK into smaller APKs for each platformby using `--split-per-abi` option or by setting `split_per_abi` in `pyproject.toml`:
+You can configure Flet to split fat APK into smaller APKs for each platform by using `--split-per-abi` option or by setting `split_per_abi` in `pyproject.toml`:
 
 ```toml
 [tool.flet.android]
