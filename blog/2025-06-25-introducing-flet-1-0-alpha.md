@@ -7,18 +7,13 @@ tags: [news]
 
 Flet has been in the making for over three years, steadily gaining traction and building a vibrant user community. As more developers adopt Flet for real-world projects, one thing has become clear: people are ready to commit — but they also want to see the same commitment from us.
 
-Releasing **Flet 1.0** isn’t just about a version number. It’s about signaling stability, maturity, and long-term vision. A stable API, comprehensive documentation, better testing, and a refreshed website — these are the foundational pieces developers need to confidently build serious apps on Flet.
+Releasing **Flet 1.0** isn’t just about a version number. It’s about signaling stability, maturity, and long-term vision. A stable API, comprehensive documentation, better testing and clearly communicated roadmap — these are the foundational pieces developers need to confidently build serious apps on Flet.
 
 But **Flet 1.0 isn’t just the next incremental release. It’s a complete re-architecture**.
 
 The first versions of Flet inherited design decisions from Pglet — a web-based framework with a focus on multi-language support. While that served as a useful starting point, Flet has since evolved into a Python-centric framework for building cross-platform apps — web, desktop, and mobile.
 
-With that evolution came growing pains: technical debt, architectural misfits, and increasing complexity. Rather than patch over the cracks, we made a bold decision: to rewrite Flet from the ground up. It’s always risky to rewrite, but there’s no better time than now — before 1.0 — while the user base is still manageable and we can afford to break things in the name of long-term simplicity and maintainability.
-
-The goals were clear:
-* Make the developer experience smoother for both app and extension authors
-* Clean up the architecture to support future growth
-* Lay a solid foundation for stability and long-term support
+With that evolution came technical debt, architectural misfits, and increasing complexity. Rather than patch over the cracks, we made a bold decision: to rewrite Flet from the ground up. It’s always risky to rewrite, but there’s no better time than now — before 1.0 — while the user base is still manageable and we can afford to break things in the name of long-term simplicity and maintainability.
 
 After nearly five months of work, **today we’re releasing the Flet 1.0 Alpha — a technical preview of what’s coming.**
 
