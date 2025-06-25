@@ -304,113 +304,6 @@ It receives an instance of `ControlEvent` as parameter and should return either 
 
 It's now possible to get a reference to a current `Page` instance in any part of Flet program.
 
-## Breaking changes
-
-Flet 1.0 is a major release and includes breaking changes — for good reason!
-
-The Flet team maintains a list of known breaking changes in [this issue](https://github.com/flet-dev/flet/issues/5238).
-
-If you discover something else that’s broken or incorrect, please submit a new issue or discussion. Once confirmed, we’ll update the list.
-
-Below is a summary of the most significant and impactful breaking changes:
-
-### Single-threaded async UI model
-
-Flet 1.0 adopts a single-threaded async UI model, similar to JavaScript or Flutter. This design makes concurrency more predictable and better suited for the browser and mobile platforms.
-
-* Blocking calls like `time.sleep()` will freeze the UI. Instead of `time.sleep()` use `async def` event handlers and using `await asyncio.sleep()` for delays.
-* Switch to async APIs whenever possible.
-* For CPU-bound tasks, offload them to threads using `asyncio.to_thread(...)`.
-
-🚧 Example with CPU-bound method updating progress bar 🚧
-
-### Async control methods
-
-All controls' get- and set- methods are async now.
-
-Methods that do not return any results have fire-and-forget sync wrappers.
-
-🚧 Documentation is in progress 🚧
-
-### `ft.run()` replaces `ft.app()`
-
-Method arguments stay the same. A new `before_main` argument added (see above).
-
-### `Page` split
-
-`Page` split into `Page` and `PageView`.
-
-To support Flet embedding with multi-views.
-
-It's not a breaking-change per-se if you just continue to use `page` instance methods or properties.
-
-🚧 Documentation is in progress 🚧
-
-### Dialogs
-
-To display a dialog, banner, snack bar, drawer, or any similar popup control, use `page.show_dialog(dialog_control)` instead of `page.open()`.
-
-To close the topmost popup, use `page.pop_dialog()`.
-
-### Drawers
-
-`page.drawer` and `page.end_drawer` were removed.
-
-Use `NavigationDrawer.position` property and then `page.show_dialog()` to display drawer instead of `page.drawer` and `page.end_drawer`.
-
-### FilePicker
-
-FilePicker is now a service and must be added to `page.services` list to work.
-
-API re-worked to provide async methods immediatly returning dialog results without using "result" event handlers.
-
-```py
-files: list[FilePickerFile] = await file_picker.pick_files_async(allow_multiple=True)
-file_name: str = await file_picker.save_file_async()
-dir_name: str = await file_picker.get_directory_path_async()
-```
-
-Full examples:
-
-* [All dialogs](https://github.com/flet-dev/examples/blob/v1/python/controls/utility/file-picker/file-picker-all-modes.py)
-* [Upload](https://github.com/flet-dev/examples/blob/v1/python/controls/utility/file-picker/file-picker-upload-progress.py)
-
-### HapticFeedback
-
-`HapticFeedback` is now a Service and must be added to `page.services` to work.
-
-# SemanticsService
-
-`SemanticsService` is now a Service and must be added to `page.services` to work.
-
-# ShakeDetector
-
-`ShakeDetector` is now a Service and must be added to `page.services` to work.
-
-### Clipboard
-
-Instead of `page.set_clipboard()` use `page.clipboard.set_async()`.
-
-Instead of `page.get_clipboard()` use `page.clipboard.get_async()`.
-
-### Client storage
-
-"Client storage" is now "Shared Preferences".
-
-`page.client_storage` property renamed to `page.shared_preferences`.
-
-### Scrollables
-
-In scrollable controls `on_scroll_interval` property renamed to `scroll_interval`.
-
-### Buttons
-
-All buttons: no `text` property, use `content` instead.
-
-### Control ID is integer
-
-`e.target` is a number now, not a string.
-
 ## The new Architeccture
 
 Flet 1.0 is not just a feature release — it's a ground-up rewrite designed to address technical debt, improve maintainability, and unlock long-term performance and flexibility. Here are some of the most impactful architectural changes:
@@ -448,6 +341,105 @@ Flet 1.0 is not just a feature release — it's a ground-up rewrite designed to 
   - No more base64 encoding for transferring binary data (e.g., images, files)
 
 - Control property names in Dart now **exactly match their Python counterparts**, making it easier to debug and extend across both runtimes.
+
+## Breaking changes
+
+Flet 1.0 is a major release and includes breaking changes — for good reason!
+
+The Flet team maintains a list of known breaking changes in [this issue](https://github.com/flet-dev/flet/issues/5238).
+
+If you discover something else that’s broken or incorrect, please submit a new issue or discussion. Once confirmed, we’ll update the list.
+
+Below is a summary of the most significant and impactful breaking changes:
+
+### Single-threaded async UI model
+
+Flet 1.0 adopts a single-threaded async UI model, similar to JavaScript or Flutter. This design makes concurrency more predictable and better suited for the browser and mobile platforms.
+
+* Blocking calls like `time.sleep()` will freeze the UI. Instead of `time.sleep()` use `async def` event handlers and using `await asyncio.sleep()` for delays.
+* Switch to async APIs whenever possible.
+* For CPU-bound tasks, offload them to threads using `asyncio.to_thread(...)`.
+
+🚧 Example with CPU-bound method updating progress bar 🚧
+
+### Async control methods
+
+All controls' get- and set- methods are async now.
+
+Methods that do not return any results have fire-and-forget sync wrappers.
+
+🚧 Documentation is in progress 🚧
+
+### `ft.run()` replaces `ft.app()`
+
+`target` argument renamed to `main` and the rest of method arguments stays the same. A new `before_main` argument added (see above).
+
+### `Page` split
+
+`Page` split into `Page` and `PageView`.
+
+To support Flet embedding with multi-views.
+
+It's not a breaking-change per-se if you just continue to use `page` instance methods or properties.
+
+🚧 Documentation is in progress 🚧
+
+### Dialogs
+
+To display a dialog, banner, snack bar, drawer, or any similar popup control, use `page.show_dialog(dialog_control)` instead of `page.open()`.
+
+To close the topmost popup, use `page.pop_dialog()`.
+
+### Drawers
+
+`page.drawer` and `page.end_drawer` were removed.
+
+:::note
+We might re-introduce this in the future, to fix displaying of the top menu icon button as in this [example](https://api.flutter.dev/flutter/material/Scaffold/endDrawer.html).
+:::
+
+Use `NavigationDrawer.position` property and then `page.show_dialog()` to display drawer instead of `page.drawer` and `page.end_drawer`.
+
+### FilePicker
+
+FilePicker is now a service and must be added to `page.services` list to work.
+
+API re-worked to provide async methods immediatly returning dialog results without using "result" event handlers.
+
+```py
+files: list[FilePickerFile] = await file_picker.pick_files_async(allow_multiple=True)
+file_name: str = await file_picker.save_file_async()
+dir_name: str = await file_picker.get_directory_path_async()
+```
+
+Full examples:
+
+* [All dialogs](https://github.com/flet-dev/examples/blob/v1/python/controls/utility/file-picker/file-picker-all-modes.py)
+* [Upload](https://github.com/flet-dev/examples/blob/v1/python/controls/utility/file-picker/file-picker-upload-progress.py)
+
+### Clipboard
+
+Instead of `page.set_clipboard()` use `page.clipboard.set_async()`.
+
+Instead of `page.get_clipboard()` use `page.clipboard.get_async()`.
+
+### Client storage
+
+"Client storage" is now "Shared Preferences".
+
+`page.client_storage` property renamed to `page.shared_preferences`.
+
+### Scrollables
+
+In scrollable controls `on_scroll_interval` property renamed to `scroll_interval`.
+
+### Buttons
+
+All buttons: no `text` property, use `content` instead.
+
+### Control ID is integer
+
+`e.target` is a number now, not a string.
 
 ## Trying Flet 1.0 Alpha
 
