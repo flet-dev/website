@@ -24,17 +24,17 @@ After nearly five months of work, **today we’re releasing the Flet 1.0 Alpha �
 
 <!-- truncate -->
 
-## What’s new for developers
+## What’s new
 
 Flet 1.0 introduces major changes that simplify how you build, run, and scale apps. Some are improvements, some are breaking — all are focused on giving you a faster, more flexible developer experience.
 
 * **Declarative approach to building Flet apps** - alongside the traditional imperative style.
-* **Auto-update** - forget calling `.update()` after every control change.
-* **Services** - persistent, non-UI components that live across UI rebuilds and navigation. Existing controls such as Audio, FilePicker, Clipboard were re-written as services.
+* **Auto-update** - automatic page updates after event handler completion.
+* **Services** - persistent, non-UI components that live across UI rebuilds and navigation. Existing controls such as `Audio`, `FilePicker`, `Clipboard` were re-written as services.
 * **Complete WASM (WebAssembly) support for web apps** - faster download and performance on modern browsers.
 * **Offline (no-CDN) mode for web apps** - Flutter resources and Pyodide are bundled with the app.
 * **Embedding Flet apps into existing web page** - render Flet app into an HTML element on any web page.
-* **Multiple FletApp controls in a single web app** - ???
+* **Enhanced Extensions API** - to export services along with controls, with a room for future customizations like splash and loading screens.
 
 ### Declarative approach
 
@@ -138,13 +138,15 @@ Flet 1.0 has "no-CDN" mode which allows bundling the following resources along w
 * Pyodide
 * Fonts
 
-To enable no-CDN during runtime:
+To enable no-CDN during runtime either add `no_cdn=True` to `ft.run()` (it's a new `ft.app()`) call:
 
-TBD
+```py
+ft.run(main, no_cdn=True)
+```
 
-To enable no-CDN for `flet build`:
+or set `FLET_WEB_NO_CDN` environment variable to `1`, `true` or `yes`.
 
-`--no-cdn`, TBD
+To enable no-CDN for `flet build` add `--no-cdn` argument.
 
 🚧 Documentation is in progress 🚧
 
@@ -156,7 +158,100 @@ It's also possible to render multiple views of the same app in different HTML el
 
 🚧 Documentation is in progress 🚧
 
+### Enhanced Extensions API
+
+The new extensions API allows exporting from your Flutter package of both control and service widgets. Technically, an extension is a class now rather than a method which will allow us to add more hooks into it like custom spash and loading screens.
+
+For example, `flet-ads` extension before has just one `createControl` method:
+
+```dart title="create_control.dart"
+import 'package:flet/flet.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import 'banner.dart';
+import 'interstitial.dart';
+
+CreateControlFactory createControl = (CreateControlArgs args) {
+  switch (args.control.type) {
+    case "banner_ad":
+      return BannerAdControl(
+          parent: args.parent, control: args.control, backend: args.backend);
+    case "interstitial_ad":
+      return InterstitialAdControl(
+          parent: args.parent, control: args.control, backend: args.backend);
+    default:
+      return null;
+  }
+};
+
+void ensureInitialized() {
+  if (isMobilePlatform()) {
+    MobileAds.instance.initialize();
+  }
+}
+```
+
+and for Flet v1 it has two methods `createWidget` and `createService`:
+
+```dart title="extension.dart"
+import 'package:flet/flet.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import 'banner.dart';
+import 'interstitial.dart';
+
+class Extension extends FletExtension {
+  @override
+  void ensureInitialized() {
+    if (isMobilePlatform()) {
+      MobileAds.instance.initialize();
+    }
+  }
+
+  @override
+  FletService? createService(Control control) {
+    switch (control.type) {
+      case "InterstitialAd":
+        return InterstitialAdService(control: control);
+      default:
+        return null;
+    }
+  }
+
+  @override
+  Widget? createWidget(Key? key, Control control) {
+    switch (control.type) {
+      case "BannerAd":
+        return BannerAdControl(control: control);
+      default:
+        return null;
+    }
+  }
+}
+```
+
+This change is breaking.
+
+🚧 Documentation is in progress 🚧
+
 ### Other changes and improvements
+
+### `ft.run` with `before_main`
+
+A new `before_main` arg added to `ft.run()` (replaces `ft.app()`). `before_main` is a hook that allows to reliable configure page-level event handlers before Flutter client starts sending events. `before_main` is a function that accepts one parameter: `page: ft.Page`
+
+Example usage:
+
+```py
+def config(page: ft.Page):
+  page.on_resize = lambda e: print("Page resized!")
+
+def main(page: ft.Page):
+  page.add(ft.Text("Hello!"))
+
+ft.run(main, before_main=config)
+```
 
 #### Storage paths
 
@@ -236,16 +331,23 @@ Flet 1.0 adopts a single-threaded async UI model, similar to JavaScript or Flutt
 
 ### Async control methods
 
-control's sync methods have gone.
-all control methods are `_async` now and only set-like fire-and-forget methods have sync counterparts.
+All controls' get- and set- methods are async now.
 
-TBD
+Methods that do not return any results have fire-and-forget sync wrappers.
+
+🚧 Documentation is in progress 🚧
+
+### `ft.run()` replaces `ft.app()`
+
+Method arguments stay the same. A new `before_main` argument added (see above).
 
 ### `Page` split
 
 `Page` split into `Page` and `PageView`.
 
 To support Flet embedding with multi-views.
+
+It's not a breaking-change per-se if you just continue to use `page` instance methods or properties.
 
 🚧 Documentation is in progress 🚧
 
@@ -314,11 +416,11 @@ All buttons: no `text` property, use `content` instead.
 
 `e.target` is a number now, not a string.
 
-## Architectural changes
+## The new Architeccture
 
 Flet 1.0 is not just a feature release — it's a ground-up rewrite designed to address technical debt, improve maintainability, and unlock long-term performance and flexibility. Here are some of the most impactful architectural changes:
 
-#### Simplified Python control implementation
+### Simplified Python control implementation
 
 - Controls are now implemented as Python **dataclasses**, bringing:
   - Automatic constructor generation
@@ -328,25 +430,25 @@ Flet 1.0 is not just a feature release — it's a ground-up rewrite designed to 
 
 - This significantly reduces boilerplate and makes adding new controls trivial — often zero-maintenance.
 
-#### Strong typing and IDE support
+### Strong typing and IDE support
 
 - Event handlers are now **strongly typed**, improving both runtime safety and developer ergonomics.
 - All controls include **docstrings**, enabling rich auto-generated API documentation with **Docusaurus**.
 
-#### Smarter UI diffing
+### Smarter UI diffing
 
 - A new **diffing algorithm** powers efficient updates to the UI tree.
 - It’s optimized for both **imperative** and **declarative** Flet programming styles.
 - This results in faster rebuilds and fewer unnecessary redraws.
 
-#### Dart runtime modernization
+### Dart runtime modernization
 
 - Replaced the old Redux-based state management with **InheritedWidget** + **Provider**.
 - The internal control hierarchy on the Dart side now mirrors the Python control tree, enabling **more efficient traversal and updates**.
 
-#### Binary protocol for performance
+### Binary protocol for performance
 
-- A new **binary serialization protocol** replaces the JSON-based message format:
+- A new **binary serialization protocol** (MessagePack) replaces the JSON-based message format:
   - Significantly reduces traffic size
   - No more base64 encoding for transferring binary data (e.g., images, files)
 
@@ -396,6 +498,10 @@ Extensions for Flet v1 will have version `0.2.x` and above and Flet v0 extension
 * Flet 0.90 aka "**Flet 1.0 RC**" - website landing page is updated, API complete and frozen.
 * Flet 1.0 aka "**Flet 1.0 RTM**" - final release! :tada:
 
-## Conslusion
+## Conclusion
 
-TBD
+Flet 1.0 Alpha marks the beginning of a new chapter for the framework — one focused on performance, maintainability, and developer experience. It introduces a streamlined architecture, a powerful declarative programming model, and a reimagined extension system — all while laying the groundwork for a stable and scalable 1.0 release.
+
+This is a technical preview, and while it's not production-ready yet, we invite you to try it out, share your feedback, and help us shape the future of Flet.
+
+We’re incredibly excited about what’s coming next — and we’re just getting started.
