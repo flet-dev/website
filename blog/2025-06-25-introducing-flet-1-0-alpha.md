@@ -87,7 +87,7 @@ Most of Flet apps will now work without explicit `update()` calls.
 
 Use `yield` inside long-running event handlers to refresh UI, for example:
 
-```
+```py
 async def button_click():
   progress.value = "Something started"
   yield
@@ -269,7 +269,7 @@ get_console_log_filename_async(self) -> str
 
 #### Event handlers without `e`
 
-Simple event handlers can now omit `e` parameter, for example both of these work:
+Event handlers can now omit `e` parameter, for example both of these work:
 
 ```py
 button_1.on_click = lambda: print("Clicked!")
