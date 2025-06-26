@@ -443,7 +443,7 @@ All buttons: no `text` property, use `content` instead.
 
 ## Trying Flet 1.0 Alpha
 
-We are releasing Flet 1.0 Alpha as `0.70.0.devXXX` (link to PyPI).
+We are releasing Flet 1.0 Alpha as [0.70.0.dev5066](https://pypi.org/project/flet/0.70.0.dev5066/).
 
 :::info
 Going forward Flet 1.0 will be called `v1` and Flet 0.x will be called `v0`.
@@ -458,10 +458,10 @@ Make sure you are installing Flet pre-release to a new virtual environment.
 To install Flet v1 Alpha:
 
 ```
-pip install flet==0.70.0.devXXX
+pip install flet==0.70.0.dev5066
 ```
 
-or add `flet==0.70.0.devXXX` to dependencies of your Python project.
+or add `flet==0.70.0.dev5066` to dependencies of your Python project.
 
 ### `flet build`
 
@@ -469,9 +469,9 @@ To make `flet build` work with Flet 1.0 Alpha specify exact version of `flet` an
 
 ```
 dependencies=[
-  "flet==0.70.0.devXXX",
-  "flet-audio==0.2.0.devXXX",
-  "flet-video==0.2.0.devXXX",
+  "flet==0.70.0.dev5066",
+  "flet-audio==0.2.0.dev5066",
+  "flet-video==0.2.0.dev5066",
   ...
 ]
 ```
