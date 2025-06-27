@@ -437,6 +437,10 @@ In scrollable controls `on_scroll_interval` property renamed to `scroll_interval
 
 All buttons: no `text` property, use `content` instead.
 
+### Charts
+
+Chart controls have been moved to a separate package [flet-charts](https://pypi.org/project/flet-charts/).
+
 ### Control ID is integer
 
 `e.target` is a number now, not a string.
@@ -458,7 +462,7 @@ Make sure you are installing Flet pre-release to a new virtual environment.
 To install Flet v1 Alpha:
 
 ```
-pip install flet==0.70.0.dev5066
+pip install 'flet[all]==0.70.0.dev5066'
 ```
 
 or add `flet==0.70.0.dev5066` to dependencies of your Python project.
