@@ -304,7 +304,7 @@ It receives an instance of `ControlEvent` as parameter and should return either 
 
 It's now possible to get a reference to a current `Page` instance in any part of Flet program.
 
-## The new Architeccture
+## The new Architecture
 
 Flet 1.0 is not just a feature release — it's a ground-up rewrite designed to address technical debt, improve maintainability, and unlock long-term performance and flexibility. Here are some of the most impactful architectural changes:
 
