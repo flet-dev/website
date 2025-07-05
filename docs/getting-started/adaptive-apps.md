@@ -19,7 +19,7 @@ def main(page):
         leading=ft.TextButton("New", style=ft.ButtonStyle(padding=0)),
         title=ft.Text("Adaptive AppBar"),
         actions=[
-            ft.IconButton(ft.cupertino_icons.ADD, style=ft.ButtonStyle(padding=0))
+            ft.IconButton(ft.CupertinoIcons.ADD, style=ft.ButtonStyle(padding=0))
         ],
         bgcolor=ft.Colors.with_opacity(0.04, ft.CupertinoColors.SYSTEM_BACKGROUND),
     )
@@ -307,17 +307,17 @@ def main(page):
         selected_index=2,
         destinations=[
             AdaptiveNavigationBarDestination(
-                ios_icon=ft.cupertino_icons.PERSON_3_FILL,
+                ios_icon=ft.CupertinoIcons.PERSON_3_FILL,
                 android_icon=ft.Icons.PERSON,
                 label="Contacts",
             ),
             AdaptiveNavigationBarDestination(
-                ios_icon=ft.cupertino_icons.CHAT_BUBBLE_2,
+                ios_icon=ft.CupertinoIcons.CHAT_BUBBLE_2,
                 android_icon=ft.Icons.CHAT,
                 label="Chats",
             ),
             AdaptiveNavigationBarDestination(
-                ios_icon=ft.cupertino_icons.SETTINGS,
+                ios_icon=ft.CupertinoIcons.SETTINGS,
                 android_icon=ft.Icons.SETTINGS,
                 label="Settings",
             ),
