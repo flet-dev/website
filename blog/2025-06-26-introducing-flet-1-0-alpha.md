@@ -465,7 +465,7 @@ Make sure you are installing Flet pre-release to a new virtual environment.
 To install Flet v1 Alpha:
 
 ```
-pip install 'flet[all]==0.70.0.dev5089'
+pip install --pre 'flet[all]==0.70.0.dev5089'
 ```
 
 or add `flet==0.70.0.dev5089` to dependencies of your Python project.
