@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 Customizes [`Text`](/docs/controls/text) styles.
 
-Material 3 design [defines](http://localhost:3000/docs/controls/text#pre-defined-theme-text-styles) 5 groups of text styles with 3 sizes in each group: "Display", "Headline", "Title", "Label" and "Body" which are used across Flet controls. 
+Material 3 design [defines](/docs/controls/text#pre-defined-theme-text-styles) 5 groups of text styles with 3 sizes in each group: "Display", "Headline", "Title", "Label" and "Body" which are used across Flet controls. 
 
 `TextTheme` class has the following properties:
 
