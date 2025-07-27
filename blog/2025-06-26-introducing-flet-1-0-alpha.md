@@ -450,7 +450,7 @@ Chart controls have been moved to a separate package [flet-charts](https://pypi.
 
 ## Trying Flet 1.0 Alpha
 
-We are releasing Flet 1.0 Alpha as [0.70.0.dev5089](https://pypi.org/project/flet/0.70.0.dev5089/).
+We are releasing Flet 1.0 Alpha as [0.70.0.devXXXX](https://pypi.org/project/flet/#history).
 
 :::info
 Going forward Flet 1.0 will be called `v1` and Flet 0.x will be called `v0`.
@@ -462,13 +462,19 @@ Going forward Flet 1.0 will be called `v1` and Flet 0.x will be called `v0`.
 Make sure you are installing Flet pre-release to a new virtual environment.
 :::
 
-To install Flet v1 Alpha:
+To install Flet v1 Alpha with pip:
 
 ```
-pip install --pre 'flet[all]==0.70.0.dev5089'
+pip install --pre 'flet[all]>=0.70.0.dev0'
 ```
 
-or add `flet==0.70.0.dev5089` to dependencies of your Python project.
+or install with uv:
+
+```
+uv add 'flet[all]>=0.70.0.dev0' --prerelease=allow
+```
+
+or add `flet >=0.70.0.dev0` to dependencies of your Python project.
 
 ### `flet build`
 
@@ -476,9 +482,9 @@ To make `flet build` work with Flet 1.0 Alpha specify exact version of `flet` an
 
 ```
 dependencies=[
-  "flet==0.70.0.dev5089",
-  "flet-audio==0.2.0.dev5066",
-  "flet-video==0.2.0.dev5066",
+  "flet >=0.70.0.dev0",
+  "flet-audio >=0.2.0.dev0",
+  "flet-video >=0.2.0.dev0",
   ...
 ]
 ```
