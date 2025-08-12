@@ -67,9 +67,9 @@ Support for [variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CS
 
 However, to use variable fonts, you can create static instances at specific weights using [fonttools](https://pypi.org/project/fonttools/), e.g.:
 
-    ```bash
-    fonttools varLib.mutator ./YourVariableFont-VF.ttf wght=140 wdth=85
-    ```
+ ```bash
+ fonttools varLib.mutator ./YourVariableFont-VF.ttf wght=140 wdth=85
+ ```
 
 To explore available font features (e.g. possible options for `wght`) use [Wakamai Fondue](https://wakamaifondue.com/beta/) online tool.
 
