@@ -273,23 +273,91 @@ No! Flet supports both current, imperative, and the new, declarative, approaches
 
 ### Where are `StateView`, `ControlBuilder` controls?
 
-TBD
+They are gone! They were in-spot prototypes for the entire "declarative approach" concept. Mixing declrative and imperative styles in the same app was giving issues.
 
-### Do I need to call `update()`?
+### Do I need to call `update()` in declarative app?
 
-TBD
+No! In declarative app a component is a unit of update. Whenever component parameters or state change it's automatically re-renders.
 
 ### How to access `page` instance?
 
-TBD
+Use `ft.context`:
+
+```py
+print(ft.context.page.web)
+```
 
 ### How to call control method?
 
-TBD
+Use `ft.Ref` to get a reference to a control:
+
+```py
+@dataclass
+class State:
+    txt_name: ft.Ref[ft.TextField] = field(default_factory=lambda: ft.Ref())
+
+@ft.component
+def App(state):
+    return ft.TextField(ref=state.txt_name)
+```
 
 ### How to use a `TextField` or other input control?
 
-TBD
+Recommended approach is use so-called "controlled" inputs, where controls keep their state in app's state:
+
+```py
+from dataclasses import dataclass
+from typing import cast
+
+import flet as ft
+
+
+@dataclass
+@ft.observable
+class Form:
+    name: str = ""
+
+    def set_name(self, value):
+        self.name = value
+
+    async def submit(self, e: ft.Event[ft.Button]):
+        e.page.show_dialog(
+            ft.AlertDialog(
+                title="Hello",
+                content=ft.Text(f"Hello, {self.name}!"),
+            )
+        )
+
+    async def reset(self):
+        self.name = ""
+
+
+@ft.component
+def App():
+    form, _ = ft.use_state(Form())
+
+    return [
+        ft.TextField(
+            label="Your name",
+            value=form.name,
+            on_change=lambda e: form.set_name(e.control.value),
+        ),
+        ft.Row(
+            cast(
+                list[ft.Control],
+                [
+                    ft.FilledButton("Submit", on_click=form.submit),
+                    ft.FilledTonalButton("Reset", on_click=form.reset),
+                ],
+            )
+        ),
+    ]
+
+
+ft.run(lambda page: page.render(App))
+```
+
+Here, the `value` of TextField is stored/taken from `state.name` and it's being updated with the new value in `on_change` handler.
 
 ## Call to action
 
