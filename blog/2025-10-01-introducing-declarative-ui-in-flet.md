@@ -3,6 +3,7 @@ slug: introducing-declarative-ui-in-flet
 title: Introducing Declarative UI in Flet
 authors: feodor
 tags: [news]
+toc_max_heading_level: 2
 ---
 
 The goal of Flet 1.0 is not just "facelifting" the framework, but to enable Python developers writing real production-grade apps that scale from a few screens to hundreds of pages, views, dialogs.
@@ -181,7 +182,9 @@ class Counter(Component):
         return Row(...)
 ```
 
-Here, `count` is a field that holds the current counter state. So, hooks is basically a smart way to add state and behavior into functional, stateless-looking components. The idea is not unique to Flet and was borrowed from React.
+Here, `count` is a field that holds the current counter state.
+
+Hooks is basically a smart way to add state and behavior into functional, stateless-looking components. The idea is not unique to Flet and was borrowed from React.
 
 Flet offers the following built-in hooks:
 
@@ -194,14 +197,108 @@ Flet offers the following built-in hooks:
 
 Observable is what makes declarative approach really easy to understand and use to first-comers compared to a pure React. You can find observable in frameworks such SolidJS, SwiftUI, Jetpack Compose.
 
-TBD
+An observable is a reactive data holder that keeps your UI in sync automatically — whenever its value changes, the corresponding parts of the UI update instantly and efficiently.
+
+Two ways to make a class observable:
+
+Inherit from `ft.Observable`:
+
+```py
+@dataclass
+class CounterState(ft.Observable):
+    count: int
+```
+
+Apply `ft.observable` decorator:
+
+```py
+@dataclass
+@ft.observable
+class CounterState:
+    count: int
+```
+
+Observables fit nice into Flet declarative approach:
+
+* Component accepting observable as a parameter is automatically re-rendered when observable updates.
+* `use_state` and `use_context` hooks referencing observables triggers component re-render when observable updates.
+
+Example:
+
+```py
+import asyncio
+from dataclasses import dataclass
+
+import flet as ft
+
+@dataclass
+@ft.observable
+class AppState:
+    counter: float
+
+    async def start_counter(self):
+        self.counter = 0
+        for _ in range(0, 10):
+            self.counter += 0.1
+            await asyncio.sleep(0.5)
+
+
+@ft.component
+def App():
+    state, _ = ft.use_state(AppState(counter=0))
+
+    return [
+        ft.ProgressBar(state.counter),
+        ft.Button("Run!", on_click=state.start_counter),
+    ]
+
+ft.run(lambda page: page.render(App))
+```
+
+Here, `AppState` is observable state and whenever its `counter` property updated `App` component is re-rendered.
+
+Compared to a pure React observable makes your life easier as it allows to use mutable state while React assumes immutable state which should be entirily changed to cause re-render.
+
+Also, to increase performance, multiple updates to Observable properties are coalesced, causing a fewer UI updates when control is yielded to a UI loop.
 
 ## Examples
 
-https://github.com/flet-dev/flet/tree/main/sdk/python/examples/apps/declarative
+[Flet declarative examples](https://github.com/flet-dev/flet/tree/main/sdk/python/examples/apps/declarative) will help you get started.
+
+## FAQ
+
+### Do I need to rewrite my existing Flet apps in declarative style?
+
+No! Flet supports both current, imperative, and the new, declarative, approaches.
+
+### Where are `StateView`, `ControlBuilder` controls?
+
+TBD
+
+### Do I need to call `update()`?
+
+TBD
+
+### How to access `page` instance?
+
+TBD
+
+### How to call control method?
+
+TBD
+
+### How to use a `TextField` or other input control?
+
+TBD
 
 ## Call to action
 
-Try declarative approach and let us know what you think
+Try the new Flet declarative approach in the most recent [0.70.0.dev](https://pypi.org/project/flet/#history) releases and let us know what you think!
 
-Flet 1.0 Beta release
+While we are updating Flet docs to talk more about declarative programming with Flet we encourage you to check [React introduction](https://react.dev/learn) and try [Tic-Tac-Toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe). I know, it's not Python, but there is a pretty trivial JavaScript code.
+
+We made a similar [declarative Tic-Tac-Toe](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/tic-tac-toe.py) Flet app which you can compare with its React counterpart while following the tutorial.
+
+The next stop is Flet 1.0 Beta release. It's almost there. We are working on the new docs (you can follow the progress at their new home [here](https://docs.flet.dev)), add more integration tests, polishing this and that.
+
+Happy fletting!
