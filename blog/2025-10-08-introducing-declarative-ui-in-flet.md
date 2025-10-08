@@ -282,9 +282,11 @@ For better performance, multiple updates to observable properties are coalesced,
 
 ## Examples
 
-We prepared a [bunch of examples](https://github.com/flet-dev/flet/tree/main/sdk/python/examples/apps/declarative) to get you started with declarative UI in Flet: from the most trivial [Counter](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/counter.py) and a classic [To-Do](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/todo.py) to games like [Tic-Tac-Toe](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/tic-tac-toe.py), [Minesweeper](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/minesweeper.py) and [Solitaire](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/tutorials/solitaire_declarative/solitare-final/main.py).
+Explore the [declarative examples collection](https://github.com/flet-dev/flet/tree/main/sdk/python/examples/apps/declarative) to see the new approach in action — from the simple [Counter](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/counter.py) and classic [To-Do](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/todo.py) to games like [Tic-Tac-Toe](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/tic-tac-toe.py), [Minesweeper](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/minesweeper.py), and [Solitaire](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/tutorials/solitaire_declarative/solitaire-final/main.py).
 
-<img src="/img/blog/declarative-ui/minesweeper.png" className="screenshot-40 screenshot-rounded" />
+For a deeper dive, walk through the [Declarative vs Imperative CRUD app cookbook](https://docs.flet.dev/cookbook/declarative-vs-imperative-crud-app/#observables-your-source-of-truth).
+
+<img src="/img/blog/declarative-ui/minesweeper.png" alt="Minesweeper game built with declarative Flet components" className="screenshot-40 screenshot-rounded" />
 
 ## FAQ
 
