@@ -6,11 +6,11 @@ tags: [news]
 toc_max_heading_level: 2
 ---
 
-The goal of Flet 1.0 is not just "facelifting" the framework, but to enable Python developers writing real production-grade apps that scale from a few screens to hundreds of pages, views, dialogs.
+The goal of Flet 1.0 is not just to give the framework a facelift, but to enable Python developers to build production-grade apps that scale from a few screens to hundreds of pages, views, and dialogs.
 
-While we were "dogfooding" Flet to ourselves and writing Flet apps, such as Flet app for mobiles or control gallery, it become clear it's increasingly hard to build a more complex app with the current "imperative" approach.
+While dogfooding Flet — building our own apps like "Flet" mobile app and the Control Gallery — we realized the current imperative approach makes complex apps increasingly difficult to deliver.
 
-In Flet 1.0 we introduce, along with existing imperative, the new declrative approach of writing scalable apps inspired by frameworks such as React, SwiftUI and Jetpack Compose.
+In Flet 1.0, we introduce, alongside the existing imperative style, a new declarative approach for writing scalable apps inspired by frameworks such as React, SwiftUI, and Jetpack Compose.
 
 <!-- truncate -->
 
@@ -28,9 +28,9 @@ right_column.visible = True
 right_column.controls.append(ft.Text("Complete!"))
 ```
 
-Flet has been a proponent of imperative UI from the beginning and we still believe imperative UI is a valid and straightforward approach, good for small apps and which can be easily understood by developers without frontend experience.
+Flet has championed imperative UI from the beginning, and we still believe it is a valid and straightforward approach — especially for small apps or developers without frontend experience.
 
-The problem with imperative approach though is that app's state, logic and UI are all kept together. You have to constantly synchronize app state and all UI elements that depend on this state, e.g. add a new user to a `list` - add a corresponding `ft.Row` control displaying that user record. When your app grows the number of places which should be syncronized with the state grows exponentially.
+The problem with the imperative approach, though, is that the app's state, logic, and UI all live in the same place. You constantly have to synchronize the app state and every UI element that depends on it. Add a new user to a `list`? You also have to add a corresponding `ft.Row` to display that record. As your app grows, the number of spots that must stay synchronized grows exponentially.
 
 ## What is declarative UI
 
@@ -42,7 +42,7 @@ In other words, your UI becomes a *pure expression of state*: whenever the state
 UI = f(state)
 ```
 
-This makes code simpler, predictable, and easier to reason about.
+This makes the code simpler, more predictable, and easier to reason about.
 
 ## Declarative Hello World
 
@@ -57,9 +57,9 @@ def App():
 ft.run(lambda page: page.render(App))
 ```
 
-Your app must be declarative from "top to bottom", similar to async apps - it should be async all the way. There is a new bootstrap method for that `page.render()`.
+Your app must be declarative from top to bottom, similar to how async code needs to remain async all the way. The new `page.render()` bootstrap method makes that possible.
 
-For clarity, without lambdas, the code could be re-written as:
+For clarity, without using lambdas, the code can be rewritten as:
 
 ```py
 @ft.component
@@ -69,10 +69,10 @@ def App():
 def main(page: ft.Page):
     page.render(App)
 
-ft.run(main) # as before
+ft.run(main)  # as before
 ```
 
-This app does nothing interesting - it just displays the same message and does not respond to user actions in anyway.
+This app does nothing fancy — it simply displays the message and does not respond to user actions in any way.
 
 ## Declarative Counter
 
@@ -97,15 +97,15 @@ ft.run(lambda page: page.render(App))
 
 [SCREENSHOT]
 
-There are new things you may notice: `@component` decorator and `use_state()` method (aka "hook") - we will explain them later.
+You may notice a couple of new ideas here: the `@component` decorator and the `use_state()` hook — we explain both shortly.
 
-The point of this example is that there is `App` function, which is "component", that returns a new UI (`Row`) every time app's state changed. 
+The takeaway is that the `App` function is a component that returns a fresh UI (`Row`) every time the app's state changes.
 
 ## Components
 
 In Flet's declarative approach, a component is simply a **reusable function** that describes a piece of UI as a function of state.
 
-You can think of it as a self-contained unit that takes inputs (properties, data, event handlers) and returns Flet controls — like `Column`, `Text`, `Button`, etc. Every time its inputs or internal state change, the component re-builds its UI, and Flet automatically updates only the changed parts.
+You can think of it as a self-contained unit that takes inputs (properties, data, event handlers) and returns Flet controls — like `Column`, `Text`, `Button`, etc. Every time its inputs or internal state change, the component rebuilds its UI, and Flet automatically updates only the changed parts.
 
 Example:
 
@@ -118,7 +118,7 @@ def Counter(value, on_increment):
     ])
 ```
 
-You use `@component` decorator to mark a function as a "component".
+Use the `@component` decorator to mark a function as a component.
 
 ### Controls vs Components
 
@@ -168,11 +168,11 @@ def Counter():
 
 Here:
 
-* The `Counter()` component looks like a simple function.
-* But `use_state(0)` gives it persistent state.
-* When `set_count()` is called, Flet re-runs the component, re-rendering only what changed.
+* The `Counter()` component reads like a simple function.
+* `use_state(0)` gives it persistent state.
+* When `set_count()` is called, Flet re-runs the component and re-renders only what changed.
 
-To better understand what hooks are (in OOP analogy), imagine the `Counter` is a class, not a function. Then in a pseudo-code the example above could be re-written like:
+To better understand what hooks are (in an OOP analogy), imagine the `Counter` is a class, not a function. In pseudo-code the example above becomes:
 
 ```py
 class Counter(Component):
@@ -184,22 +184,22 @@ class Counter(Component):
 
 Here, `count` is a field that holds the current counter state.
 
-Hooks is basically a smart way to add state and behavior into functional, stateless-looking components. The idea is not unique to Flet and was borrowed from React.
+Hooks are a smart way to add state and behavior to functional, stateless-looking components. The idea is not unique to Flet; we borrowed it from React.
 
 Flet offers the following built-in hooks:
 
 * `use_state` - Store local state across rebuilds.
 * `use_effect` - Run side effects when something changes.
 * `use_context` - Access shared data or services.
-* `use_memo` - Memoize computed values.*
+* `use_memo` - Memoize computed values.
 
 ## Observable
 
-Observable is what makes declarative approach really easy to understand and use to first-comers compared to a pure React. You can find observable in frameworks such SolidJS, SwiftUI, Jetpack Compose.
+Observables make the declarative UI approachable for newcomers compared to a purely React-style model. You can find observables in frameworks such as SolidJS, SwiftUI, and Jetpack Compose.
 
 An observable is a reactive data holder that keeps your UI in sync automatically — whenever its value changes, the corresponding parts of the UI update instantly and efficiently.
 
-Two ways to make a class observable:
+There are two ways to make a class observable:
 
 Inherit from `ft.Observable`:
 
@@ -218,10 +218,10 @@ class CounterState:
     count: int
 ```
 
-Observables fit nice into Flet declarative approach:
+Observables fit nicely into Flet's declarative approach:
 
-* Component accepting observable as a parameter is automatically re-rendered when observable updates.
-* `use_state` and `use_context` hooks referencing observables triggers component re-render when observable updates.
+* A component that accepts an observable parameter automatically re-renders when that observable updates.
+* `use_state` and `use_context` hooks that reference observables trigger a re-render when the observable changes.
 
 Example:
 
@@ -255,11 +255,11 @@ def App():
 ft.run(lambda page: page.render(App))
 ```
 
-Here, `AppState` is observable state and whenever its `counter` property updated `App` component is re-rendered.
+Here, `AppState` is observable state, and whenever its `counter` property updates, the `App` component re-renders.
 
-Compared to a pure React observable makes your life easier as it allows to use mutable state while React assumes immutable state which should be entirily changed to cause re-render.
+Compared to a pure React model, an observable makes life easier by allowing mutable state, while React assumes immutable state that must be replaced entirely to trigger a re-render.
 
-Also, to increase performance, multiple updates to Observable properties are coalesced, causing a fewer UI updates when control is yielded to a UI loop.
+For better performance, multiple updates to observable properties are coalesced, resulting in fewer UI updates when control returns to the UI loop.
 
 ## Examples
 
@@ -269,17 +269,17 @@ Also, to increase performance, multiple updates to Observable properties are coa
 
 ### Do I need to rewrite my existing Flet apps in declarative style?
 
-No! Flet supports both current, imperative, and the new, declarative, approaches.
+No! Flet supports both the current imperative approach and the new declarative approach.
 
-### Where are `StateView`, `ControlBuilder` controls?
+### Where are the `StateView` and `ControlBuilder` controls?
 
-They are gone! They were in-spot prototypes for the entire "declarative approach" concept. Mixing declrative and imperative styles in the same app was giving issues.
+They are gone! They were in-place prototypes for the broader declarative concept. Mixing declarative and imperative styles in the same app caused issues.
 
-### Do I need to call `update()` in declarative app?
+### Do I need to call `update()` in a declarative app?
 
-No! In declarative app a component is a unit of update. Whenever component parameters or state change it's automatically re-renders.
+No! In a declarative app a component is the unit of update. Whenever a component's parameters or state change, it re-renders automatically.
 
-### How to access `page` instance?
+### How do I access the `page` instance?
 
 Use `ft.context`:
 
@@ -287,9 +287,9 @@ Use `ft.context`:
 print(ft.context.page.web)
 ```
 
-### How to call control method?
+### How do I call a control method?
 
-Use `ft.Ref` to get a reference to a control:
+Use an `ft.Ref` to get a reference to a control:
 
 ```py
 @dataclass
@@ -301,9 +301,9 @@ def App(state):
     return ft.TextField(ref=state.txt_name)
 ```
 
-### How to use a `TextField` or other input control?
+### How do I use a `TextField` or other input control?
 
-Recommended approach is use so-called "controlled" inputs, where controls keep their state in app's state:
+The recommended approach is to use "controlled" inputs, where controls keep their state in the app's state:
 
 ```py
 from dataclasses import dataclass
@@ -357,16 +357,16 @@ def App():
 ft.run(lambda page: page.render(App))
 ```
 
-Here, the `value` of TextField is stored/taken from `state.name` and it's being updated with the new value in `on_change` handler.
+Here, the `value` of `TextField` is stored in `state.name`, and the `on_change` handler keeps it in sync.
 
 ## Call to action
 
-Try the new Flet declarative approach in the most recent [0.70.0.dev](https://pypi.org/project/flet/#history) releases and let us know what you think!
+Try the new Flet declarative approach in the latest [0.70.0.dev](https://pypi.org/project/flet/#history) releases and let us know what you think!
 
-While we are updating Flet docs to talk more about declarative programming with Flet we encourage you to check [React introduction](https://react.dev/learn) and try [Tic-Tac-Toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe). I know, it's not Python, but there is a pretty trivial JavaScript code.
+While we update the docs to cover declarative programming in more depth, we encourage you to check the [React introduction](https://react.dev/learn) and try the [Tic-Tac-Toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe). It's not Python, but the JavaScript is simple to follow.
 
-We made a similar [declarative Tic-Tac-Toe](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/tic-tac-toe.py) Flet app which you can compare with its React counterpart while following the tutorial.
+We built a similar [declarative Tic-Tac-Toe](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/tic-tac-toe.py) Flet app that you can compare with its React counterpart as you work through the tutorial.
 
-The next stop is Flet 1.0 Beta release. It's almost there. We are working on the new docs (you can follow the progress at their new home [here](https://docs.flet.dev)), add more integration tests, polishing this and that.
+The next stop is the Flet 1.0 Beta release. We're almost there — new docs (you can follow their progress [here](https://docs.flet.dev)), more integration tests, and plenty of polish are underway.
 
-Happy fletting!
+Happy Fletting!
