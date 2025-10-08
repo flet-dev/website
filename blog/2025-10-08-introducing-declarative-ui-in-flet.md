@@ -159,6 +159,7 @@ Components let you group logic, reuse UI patterns, and define your own higher-le
 Example:
 
 ```py
+@ft.component
 def Greeting(name):
     return ft.Text(f"Hello, {name}!")
 ```
@@ -190,6 +191,8 @@ Here:
 * The `Counter()` component reads like a simple function.
 * `use_state(0)` gives it persistent state.
 * When `set_count()` is called, Flet re-runs the component and re-renders only what changed.
+
+That persistence is crucial: ordinary local variables are re-created on every render, so their values would disappear. Hook state survives re-renders, giving your functional components memory without resorting to globals or classes.
 
 To better understand what hooks are (in an OOP analogy), imagine the `Counter` is a class, not a function. In pseudo-code the example above becomes:
 
