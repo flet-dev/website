@@ -263,7 +263,7 @@ For better performance, multiple updates to observable properties are coalesced,
 
 ## Examples
 
-[Flet declarative examples](https://github.com/flet-dev/flet/tree/main/sdk/python/examples/apps/declarative) will help you get started.
+We prepared a [bunch of examples](https://github.com/flet-dev/flet/tree/main/sdk/python/examples/apps/declarative) to get you started with declrative UI in Flet: from the most trivial [Counter](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/counter.py) and a classic [To-Do](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/todo.py) to games like [Tic-Tac-Toe](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/tic-tac-toe.py), [Minesweeper](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/minesweeper.py) and [Solitare](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/tutorials/solitaire_declarative/solitare-final/main.py).
 
 ## FAQ
 
