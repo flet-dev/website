@@ -6,11 +6,32 @@ tags: [news]
 toc_max_heading_level: 2
 ---
 
-The goal of Flet 1.0 is not just to give the framework a facelift, but to enable Python developers to build production-grade apps that scale from a few screens to hundreds of pages, views, and dialogs.
+Flet 1.0 is about more than a facelift. Our goal is to help Python developers build production-grade apps that scale from a handful of screens to hundreds of pages, views, and dialogs.
 
-While dogfooding Flet — building our own apps like "Flet" mobile app and the Control Gallery — we realized the current imperative approach makes complex apps increasingly difficult to deliver.
+Dogfooding Flet — building our own products like the Flet mobile app and the Control Gallery — made it clear that the imperative approach becomes hard to manage as apps grow.
 
-In Flet 1.0, we introduce, alongside the existing imperative style, a new declarative approach for writing scalable apps inspired by frameworks such as React, SwiftUI, and Jetpack Compose.
+That’s why Flet 1.0 introduces a declarative approach alongside the existing imperative API, drawing inspiration from frameworks such as React, SwiftUI, and Jetpack Compose.
+
+Here's a quick look at a counter app written declaratively:
+
+```py
+import flet as ft
+
+@ft.component
+def App():
+    count, set_count = ft.use_state(0)
+
+    return ft.Row(
+        controls=[
+            ft.Text(value=f"{count}"),
+            ft.Button("Add", on_click=lambda: set_count(count + 1)),
+        ],
+    )
+
+ft.run(lambda page: page.render(App))
+```
+
+Keep reading to see how it works and how you can start using it today.
 
 <!-- truncate -->
 
@@ -94,8 +115,6 @@ def App():
 
 ft.run(lambda page: page.render(App))
 ```
-
-[SCREENSHOT]
 
 You may notice a couple of new ideas here: the `@component` decorator and the `use_state()` hook — we explain both shortly.
 
@@ -263,7 +282,9 @@ For better performance, multiple updates to observable properties are coalesced,
 
 ## Examples
 
-We prepared a [bunch of examples](https://github.com/flet-dev/flet/tree/main/sdk/python/examples/apps/declarative) to get you started with declrative UI in Flet: from the most trivial [Counter](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/counter.py) and a classic [To-Do](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/todo.py) to games like [Tic-Tac-Toe](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/tic-tac-toe.py), [Minesweeper](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/minesweeper.py) and [Solitare](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/tutorials/solitaire_declarative/solitare-final/main.py).
+We prepared a [bunch of examples](https://github.com/flet-dev/flet/tree/main/sdk/python/examples/apps/declarative) to get you started with declarative UI in Flet: from the most trivial [Counter](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/counter.py) and a classic [To-Do](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/todo.py) to games like [Tic-Tac-Toe](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/tic-tac-toe.py), [Minesweeper](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/apps/declarative/minesweeper.py) and [Solitaire](https://github.com/flet-dev/flet/blob/main/sdk/python/examples/tutorials/solitaire_declarative/solitare-final/main.py).
+
+<img src="/img/blog/declarative-ui/minesweeper.png" className="screenshot-40 screenshot-rounded" />
 
 ## FAQ
 
