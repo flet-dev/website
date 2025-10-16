@@ -18,7 +18,7 @@ example:
 ...
 dependencies = [
   "flet==0.27.6",
-  "flet-premission-handler==0.1.0",
+  "flet-permission-handler==0.1.0",
 ]
 ```
 :::
