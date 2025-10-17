@@ -96,7 +96,7 @@ activity = activity_host.mActivity
 
 Heck, you can basically call any Android API using Pyjnius - endless posibilities!
 
-Check complete [Flet Pyjnius example](https://github.com/flet-dev/python-package-tests/tree/main/Pyjnius).
+Check complete [Flet Pyjnius example](https://github.com/flet-dev/python-package-tests/tree/main/pyjnius).
 
 For more Pyjnius examples and API refer to the [Pyjnius Documentation](https://Pyjnius.readthedocs.io/en/latest/quickstart.html).
 
