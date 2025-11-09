@@ -51,4 +51,4 @@ Please note that _Git_ is not the same as _GitHub CLI_ which is not an alternati
 
 You can find more information about `flet create` command [here](/docs/reference/cli/create).
 
-Now let's see Flet in action by [running the app](running-app)!
+Now let's see Flet in action by [running the app](/docs/getting-started/running-app)!
