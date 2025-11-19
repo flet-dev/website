@@ -38,3 +38,7 @@ Configures gradient paint. Value is an instance of one of the following classes:
 * [`PaintLinearGradient`](/docs/reference/types/paintlineargradient)
 * [`PaintRadialGradient`](/docs/reference/types/paintradialgradient)
 * [`PaintSweepGradient`](/docs/reference/types/paintsweepgradient)
+
+### `stroke_width`
+
+The stroke width to use for the line.
