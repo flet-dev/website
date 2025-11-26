@@ -61,13 +61,11 @@ When dialog is closed `FilePicker.on_result` event handler is called which event
 * `path` - "Save file" and "Get directory" dialogs, a full path to a file or directory or `None` if dialog was cancelled.
 
 ```python
-import flet as ft
-
 def on_dialog_result(e: ft.FilePickerResultEvent):
     print("Selected files:", e.files)
     print("Selected file or directory:", e.path)
 
-file_picker = ft.FilePicker(on_result=on_dialog_result)
+selected_file = file_picker.on_result=file_selection
 ```
 
 The last result is always available in `FilePicker.result` property.
