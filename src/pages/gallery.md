@@ -117,7 +117,7 @@ export const GalleryCard = ({title, liveUrl, sourcesUrl, description, imageUrl})
     <GalleryCard
       title="Seven Spell"
       imageUrl="seven-spell.png"
-      description="Create as many 3+ letter words as you can using the same 7 letters given to all users""
+      description="Create as many 3+ letter words as you can using the same letters given to all users"
       liveUrl="https://ss.lshss.app/"
       sourcesUrl="https://github.com/vihutuo/seven_spell" 
       />
