@@ -1,5 +1,5 @@
 ---
-slug: iflet-debug-the-new-cli-for-testing-flet-apps-on-mobile-devices
+slug: flet-debug-the-new-cli-for-testing-flet-apps-on-mobile-devices
 title: 'flet debug: the new CLI for testing Flet apps on mobile devices'
 authors: feodor
 tags: [news]
