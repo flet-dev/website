@@ -200,3 +200,14 @@ Now you are ready to [create your first Flet app](create-flet-app).
 When [creating](create-flet-app) and [running](running-app) Flet app using uv, you'll need to use `uv run` before each command!
 :::
 
+:::warning
+On Windows, Flet apps may exit silently if `uv` uses **symbolic links** to manage the virtual environment. Flet requires **hardlink** (default) or **copy** mode to correctly locate its binary dependencies.
+
+If you encounter this issue, force the link mode to `copy` in your `pyproject.toml`:
+
+```toml
+[tool.uv]
+link-mode = "copy" #or "hardlink"
+```
+:::
+
