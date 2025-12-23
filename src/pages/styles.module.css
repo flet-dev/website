@@ -33,6 +33,11 @@ html[data-theme='dark'] .bkg {
     /* padding: 1rem; */
     text-align: center;
   }
+
+  .heroBanner .hero__title {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 
 .buttons {
@@ -49,14 +54,23 @@ html[data-theme='dark'] .bkg {
   width: 100%;
 }
 
+.featuresSection h2 {
+  font-size: 2.2rem;
+  font-weight: 500;;
+  color: #333;
+}
+
 .feature h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 500;
   text-align: center;
   margin: 1rem 0;
+  color: #333;
 }
 
 .feature p {
   text-align: center;
+  color: #555;
 }
 
 .featureImage {

@@ -5,14 +5,14 @@ const { themes } = require('prism-react-renderer');
 
 module.exports = {
   title: 'Flet',
-  tagline: 'Build multi-platform apps in Python powered by Flutter.',
+  tagline: 'Build multi-platform apps in Python',
   url: 'https://flet.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'flet-dev', // Usually your GitHub org/user name.
   projectName: 'flet', // Usually your repo name.
   customFields: {
-    heroTitle: 'Build multi-platform apps in Python powered by Flutter',
+    heroTitle: 'Build multi-platform apps in Python',
     heroSubTitle: 'Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.',
   },
   themes: [
@@ -51,7 +51,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
+          to: 'https://docs.flet.dev',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -94,11 +94,11 @@ module.exports = {
           items: [
             {
               label: 'Introduction',
-              to: 'docs',
+              to: 'https://docs.flet.dev',
             },
             {
               label: 'Controls reference',
-              to: 'docs/controls',
+              to: 'https://docs.flet.dev/controls',
             }
           ],
         },
@@ -183,35 +183,4 @@ module.exports = {
       },
     ],
   ],
-  // plugins: [
-  //   [
-  //     '@docusaurus/plugin-client-redirects',
-  //     {
-  //       //fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
-  //       //toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
-  //       redirects: [
-  //         // /docs/oldDoc -> /docs/newDoc
-  //         {
-  //           to: '/docs',
-  //           from: '/docs',
-  //         },
-  //         // Redirect from multiple old paths to the new path
-  //         // {
-  //         //   to: '/docs/newDoc2',
-  //         //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
-  //         // },
-  //       ],
-  //       // createRedirects(existingPath) {
-  //       //   if (existingPath.includes('/community')) {
-  //       //     // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
-  //       //     return [
-  //       //       existingPath.replace('/community', '/docs/team'),
-  //       //       existingPath.replace('/community', '/docs/support'),
-  //       //     ];
-  //       //   }
-  //       //   return undefined; // Return a falsy value: no redirect created
-  //       // },
-  //     },
-  //   ],
-  // ],
 };
