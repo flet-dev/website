@@ -68,6 +68,18 @@ html[data-theme='dark'] .bkg {
   color: #333;
 }
 
+html[data-theme='dark'] .featuresSection h2 {
+  color: #e6e6e6;
+}
+
+html[data-theme='dark'] .feature h3 {
+  color: #e6e6e6;
+}
+
+html[data-theme='dark'] .feature p {
+  color: #a7a7a7;
+}
+
 .feature p {
   text-align: center;
   color: #555;
