@@ -16,7 +16,7 @@ const features = [
     imageUrl: 'img/pages/home/single-code-base.svg',
     description: (
       <>
-        Your app will equally look great on iOS, Android, Windows, Linux, macOS and web.
+        Your app will look equally great on iOS, Android, Windows, Linux, macOS and web.
       </>
     ),
   },
