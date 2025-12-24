@@ -13,7 +13,7 @@ module.exports = {
   projectName: 'flet', // Usually your repo name.
   customFields: {
     heroTitle: 'Build multi-platform apps in Python',
-    heroSubTitle: 'Flet enables developers to easily build realtime web, mobile and desktop apps in Python. No frontend experience required.',
+    heroSubTitle: 'Easily build realtime web, mobile and desktop apps in pure Python. No frontend experience required.',
   },
   themes: [
     'docusaurus-theme-github-codeblock'
