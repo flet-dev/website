@@ -23,6 +23,10 @@ slug: roadmap
 * End-to-end UI tests for Flet apps.
 * Test suite for binary Python packages.
 
+### AI
+
+* MCP server for Flet.
+
 ### Community
 
 * Attending [PyCon US 2026](https://us.pycon.org/2026/).
