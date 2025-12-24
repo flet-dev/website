@@ -79,7 +79,7 @@ const features = [
     imageUrl: 'img/pages/home/extensible.svg',
     description: (
       <>
-        Easily wrap any of thousands of Flutter packages to use with Flet or built new controls in pure Python using built-in UI primitives.
+        Easily wrap any of thousands of Flutter packages to use with Flet or build new controls in pure Python using built-in UI primitives.
       </>
     ),
   },
