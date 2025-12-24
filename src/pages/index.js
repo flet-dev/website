@@ -25,7 +25,7 @@ const features = [
     imageUrl: 'img/pages/home/python.svg',
     description: (
       <>
-        Build cross-platform app without knowledge of Dart, Swift, Kotlin, HTML or JavaScript - only Python!
+        Build a cross-platform app without knowledge of Dart, Swift, Kotlin, HTML or JavaScript - only Python!
       </>
     ),
   },
