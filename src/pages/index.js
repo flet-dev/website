@@ -12,61 +12,83 @@ import CodeBlock from '@theme/CodeBlock';
 
 const features = [
   {
-    title: <>From idea to app in minutes</>,
-    imageUrl: 'img/pages/home/feature-bolt.svg',
+    title: <>Single code base for any device</>,
+    imageUrl: 'img/pages/home/single-code-base.svg',
     description: (
       <>
-        An internal tool or a dashboard for your team, weekend project, data entry form, kiosk app or high-fidelity prototype
-        - Flet is an ideal framework to quickly hack a great-looking interactive apps to serve a group of users.
+        Your app will look equally great on iOS, Android, Windows, Linux, macOS and web.
       </>
     ),
   },
   {
-    title: <>Simple architecture</>,
-    imageUrl: 'img/pages/home/feature-house.svg',
+    title: <>Build an entire app in Python</>,
+    imageUrl: 'img/pages/home/python.svg',
     description: (
       <>
-        No more complex architecture with JavaScript frontend, REST API backend, database, cache, etc.
-        With Flet you just write a monolith stateful app in Python only and get multi-user, realtime Single-Page Application (SPA).
+        Build a cross-platform app without knowledge of Dart, Swift, Kotlin, HTML or JavaScript - only Python!
       </>
     ),
   },
   {
-    title: <>Batteries included</>,
-    imageUrl: 'img/pages/home/feature-battery.svg',
+    title: <>150+ built-in controls and services</>,
+    imageUrl: 'img/pages/home/controls.svg',
     description: (
       <>
-        To start developing with Flet, you just need your favorite IDE or text editor.
-        No SDKs, no thousands of dependencies, no complex tooling - Flet has built-in web server with assets hosting and desktop clients.
+        Beautiful UI widgets with Material and Cupertino design: layout, navigation, dialogs, charts - Flet uses Flutter to render UI.
       </>
     ),
   },
   {
-    title: <>Powered by Flutter</>,
-    imageUrl: 'img/pages/home/feature-flutter.svg',
+    title: <>50+ Python packages for iOS and Android</>,
+    imageUrl: 'img/pages/home/python-packages.svg',
     description: (
       <>
-        Flet UI is built with <a href="https://flutter.dev">Flutter</a>, so your app looks professional and can be delivered to any platform.
-        Flet simplifies Flutter model by combining smaller "widgets" into ready-to-use "controls" with imperative programming model.
+        Numpy, pandas, pydantic, cryptography, opencv, pillow and other popular libraries.
       </>
     ),
   },
   {
-    title: <>Speaks your language</>,
-    imageUrl: 'img/pages/home/feature-language.svg',
+    title: <>Full web support</>,
+    imageUrl: 'img/pages/home/web-support.svg',
     description: (
       <>
-        Flet is language-agnostic, so anyone on your team could develop Flet apps in their favorite language. <a href="/docs">Python</a> is already supported, Go, C# and others are <a href="/roadmap">coming next</a>.
+        Flet apps run natively in modern browsers using WebAssembly and Pyodide, with no server required. Prefer server-side? Deploy as a Python web app with real-time UI updates.
       </>
     ),
   },
   {
-    title: <>Deliver to any device</>,
-    imageUrl: 'img/pages/home/feature-mobile.svg',
+    title: <>Built-in packaging</>,
+    imageUrl: 'img/pages/home/packaging.svg',
     description: (
       <>
-        Deploy Flet app as a web app and view it in a browser. Package it as a standalone desktop app for Windows, macOS and Linux.
-        Install it on mobile as <a href="https://web.dev/what-are-pwas/">PWA</a> or view via Flet app for iOS and Android.
+        Build standalone executables or bundles for iOS, Android, Windows, Linux, macOS and web. Instantly deploy to App Store and Google Play.
+      </>
+    ),
+  },
+  {
+    title: <>Test on iOS and Android</>,
+    imageUrl: 'img/pages/home/test-on-ios-android.svg',
+    description: (
+      <>
+        Test your project on your own mobile device with Flet App. See your app updates as you make changes.
+      </>
+    ),
+  },
+  {
+    title: <>Extensible</>,
+    imageUrl: 'img/pages/home/extensible.svg',
+    description: (
+      <>
+        Easily wrap any of thousands of Flutter packages to use with Flet or build new controls in pure Python using built-in UI primitives.
+      </>
+    ),
+  },
+  {
+    title: <>Accessible</>,
+    imageUrl: 'img/pages/home/accessible.svg',
+    description: (
+      <>
+        Flet is built with Flutter which has solid accessibility foundations on Android, iOS, web, and desktop.
       </>
     ),
   },
@@ -98,9 +120,8 @@ function Home() {
         <div className="container margin-bottom--lg">
           <div className={clsx('flet-hero', styles.heroBanner)}>
             <div className="row">
-              <div className="col  col--6">
-                {/* <h2>It's amazing how little code you need to get amazing results!</h2> */}
-                <img src="img/pages/home/flet-home.png" style={{ width: '100%' }}></img>
+              <div className="col col--6">
+                <img src="img/pages/home/flet-home.png" style={{ width: '90%', marginTop: '1.5rem' }}></img>
               </div>
               <div className="col col--6">
                 <h1 className="hero__title">{siteConfig.customFields.heroTitle}</h1>
@@ -108,7 +129,7 @@ function Home() {
                 <div className={styles.buttons}>
                   <Link
                     className={styles.indexCtasGetStartedButton}
-                    to={useBaseUrl('docs/')}>
+                    to={useBaseUrl('https://docs.flet.dev')}>
                     Get Started
                   </Link>
                 </div>
@@ -116,8 +137,8 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="container text--center">
-          <h2>Main features</h2>
+        <div className={clsx('container', 'text--center', styles.featuresSection)}>
+          <h2>Flet awesome features</h2>
           {features && features.length > 0 && (
             <section className={styles.features}>
               <div className="container">

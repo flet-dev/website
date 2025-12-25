@@ -44,15 +44,15 @@
 }
 
 .flet-hero h1 {
-  color: #008dfb;
-  font-size: 46px;
-  font-weight: 700;
+  color: rgb(14, 165, 230);
+  font-size: 60px;
+  font-weight: 600;
   margin-top: 2rem;
 }
 
 .hero__subtitle {
   color: #555;
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 400;
 }
 
@@ -60,9 +60,10 @@
 
   /* For mobile phones: */
   .flet-hero h1 {
-    font-size: 38px;
+    font-size: 60px;
     font-weight: 500;
-    margin-top: 1rem;
+    margin: 1rem;
+    text-align: center;
   }
 
   .hero__subtitle {

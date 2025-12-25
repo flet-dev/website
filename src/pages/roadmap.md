@@ -5,7 +5,7 @@ slug: roadmap
 
 # Roadmap
 
-## 2025
+## 2026
 
 ### Flet 1.0
 
@@ -13,33 +13,23 @@ slug: roadmap
 * **Enhanced Developer Experience (DX):** Control documentation is generated directly from source code, preventing discrepancies between docs, comments, and examples. Provides accurate IDE assistance.
 * **Optimized Communication:** A binary protocol between Python and Dart eliminates unnecessary base64-to-bytes conversions, reducing CPU overhead and improving memory efficiency.
 
-Flet 0.90 will be released as a preparatory step for Flet 1.0, introducing major changes, including breaking updates.
-
 ### Website
 
 * **Ecosystem:** Community gallery for apps, extensions and educational materials (videos, tutorials, talks, etc.).
+* FletPad for playground and sharing Flet apps.
 
 ### Testing
 
-* Test suite for Flet controls.
-* Test suite for non-pure Python modules.
+* End-to-end UI tests for Flet apps.
+* Test suite for binary Python packages.
 
-### Controls
+### AI
 
-* :white_check_mark: [Google Mobile Ads](https://github.com/flet-dev/flet/issues/286)
-* :white_check_mark: [DropdownMenu](https://github.com/flet-dev/flet/issues/1088)
-* :construction: [Camera](https://github.com/flet-dev/flet/issues/1281)
-* [DataTable2](https://github.com/flet-dev/flet/issues/4576)
-* [Context menu](https://github.com/flet-dev/flet/issues/1804)
-* [InAppPurchase](https://github.com/flet-dev/flet/issues/853)
-* [PlatformMenuBar](https://github.com/flet-dev/flet/issues/285) (and [#116](https://github.com/flet-dev/flet/issues/116))
-* [SliverAppBar](https://github.com/flet-dev/flet/issues/1843)
-* [TreeView](https://github.com/flet-dev/flet/issues/961)
-* [Sms](https://github.com/flet-dev/flet/issues/3195)
+* MCP server for Flet.
 
 ### Community
 
-* Presenting poster at [PyCon US 2025](https://us.pycon.org/2025/)
+* Attending [PyCon US 2026](https://us.pycon.org/2026/).
 
 ### Packaging
 
