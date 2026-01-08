@@ -194,6 +194,14 @@ Fires when the control has lost focus.
 
 Fires when a user clicks the button.
 
+### `on_long_press`
+
+Fires when the button is long-pressed.
+
 ### `on_focus`
 
 Fires when the control has received focus.
+
+### `on_hover`
+
+Fires  when the button is hovered.
