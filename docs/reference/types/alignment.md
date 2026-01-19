@@ -21,47 +21,45 @@ Represents the vertical distance from the center.  It's value ranges between `-1
 
 <img src="/img/docs/controls/container/container-alignments-diagram.png" className="screenshot-40" />
 
-### `top_left`
+### `TOP_LEFT`
 
 Represents the top left corner and is equivalent to `Alignment(-1.0, -1.0)`.
 
-### `top_center`
+### `TOP_CENTER`
 
 Represents the top center and is equivalent to `Alignment(0.0, -1.0)`.
 
-### `top_right`
+### `TOP_RIGHT`
 
 Represents the top right corner and is equivalent to `Alignment(1.0, -1.0)`.
 
-### `center_left`
+### `CENTER_LEFT`
 
 Represents the center left and is equivalent to `Alignment(-1.0, 0.0)`.
 
-### `center`
+### `CENTER`
 
 Represents the center and is equivalent to `Alignment(0.0, 0.0)`.
 
-### `center_right`
+### `CENTER_RIGHT`
 
 Represents the center right and is equivalent to `Alignment(1.0, 0.0)`.
 
-### `bottom_left`
+### `BOTTOM_LEFT`
 
 Represents the bottom left corner and is equivalent to `Alignment(-1.0, 1.0)`.
 
-### `bottom_center`
+### `BOTTOM_CENTER`
 
 Represents the bottom center and is equivalent to `Alignment(0.0, 1.0)`.
 
-### `bottom_right`
+### `BOTTOM_RIGHT`
 
 Represents the bottom right corner and is equivalent to `Alignment(1.0, 1.0)`.
 
 ## Usage example
 
 ```python
-container_1.alignment = ft.alignment.center
-container_2.alignment = ft.alignment.top_left
+container_1.alignment = ft.Alignment.CENTER
+container_2.alignment = ft.Alignment.TOP_LEFT
 container_3.alignment = ft.Alignment(-0.5, -0.5)
-```
-<img src="/img/docs/controls/container/containers-alignments.png" className="screenshot-50" />
