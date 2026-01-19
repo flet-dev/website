@@ -80,7 +80,7 @@ flet build \
     --android-features android.hardware.location.network=False
 ```
 
-[Read more about permissions in the docs](/docs/publish#permissions).
+[Read more about permissions in the docs](https://docs.flet.dev/publish/#permissions).
 
 ### Control over app compilation and cleanup
 

@@ -58,7 +58,7 @@ dependencies = [
 
 Flet now makes it easy to create and build projects with your custom controls based on Flutter widgets or Flutter 3rd-party packages:
 
-1. Create new virtual enviroment and [install Flet](/docs/getting-started/#virtual-environment) there.
+1. Create new virtual enviroment and [install Flet](https://docs.flet.dev/getting-started/installation/#virtual-environment) there.
 
 2. Create new Flet extension project from template:
 
@@ -86,7 +86,7 @@ open build/macos/my-control-example.app
 
 <img src="/img/blog/extensions/example.png" className="screenshot-30" />
 
-Read more about how to customise your extension [here](/docs/extend/user-extensions).
+Read more about how to customise your extension [here](https://docs.flet.dev/extend/user-extensions/).
 
 ## Development environment configuration
 

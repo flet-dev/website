@@ -136,7 +136,7 @@ Flet 1.0 has "no-CDN" mode which allows bundling the following resources along w
 * Pyodide
 * Fonts
 
-To enable no-CDN during runtime either add `no_cdn=True` to `ft.run()` (it's a new `ft.app()`) call:
+To enable no-CDN during runtime either add `no_cdn=True` to `ft.run()` (it's a new `ft.run()`) call:
 
 ```py
 ft.run(main, no_cdn=True)
@@ -237,7 +237,7 @@ This change is breaking.
 
 ### `ft.run` with `before_main`
 
-A new `before_main` arg added to `ft.run()` (replaces `ft.app()`). `before_main` is a hook that allows to reliable configure page-level event handlers before Flutter client starts sending events. `before_main` is a function that accepts one parameter: `page: ft.Page`
+A new `before_main` arg added to `ft.run()` (replaces `ft.run()`). `before_main` is a hook that allows to reliable configure page-level event handlers before Flutter client starts sending events. `before_main` is a function that accepts one parameter: `page: ft.Page`
 
 Example usage:
 
@@ -373,7 +373,7 @@ Methods that do not return any results have fire-and-forget sync wrappers.
 
 🚧 Documentation is in progress 🚧
 
-### `ft.run()` replaces `ft.app()`
+### `ft.run()` replaces `ft.run()`
 
 `target` argument renamed to `main` and the rest of method arguments stays the same. A new `before_main` argument added (see above).
 
