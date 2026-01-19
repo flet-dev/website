@@ -32,7 +32,7 @@ def main(page):
         greetings,
     )
 
-ft.app(target=main)
+ft.run(main)
 ```
 
 In the very beginning of `main()` method we create three controls which we are going to use in button's `on_click` handler: two `TextField` for first and last names and a `Column` - container for greeting messages. We create controls with all their properties set and in the end of `main()` method, in `page.add()` call, we use their references (variables).
@@ -109,11 +109,11 @@ def main(page):
         ft.Column(ref=greetings),
     )
 
-ft.app(target=main)
+ft.run(main)
 ```
 
 Now we can clearly see in `page.add()` the structure of the page and all the controls it's built of.
 
 Yes, the logic becomes a little bit more verbose as you need to add `.current.` to access ref's control, but it's a matter of personal preference :)
 
-[Give Flet a try](/docs) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+[Give Flet a try](https://docs.flet.dev/) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!

@@ -17,19 +17,19 @@ Three new chart controls have been introduced:
 
 <img src="/img/docs/controls/charts/linechart-sample-1.gif" className="screenshot-50"/>
 
-[Docs](/docs/controls/linechart) · [Examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
+[Docs](https://docs.flet.dev/charts/line_chart/) · [Examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
 
 ## BarChart
 
 <img src="/img/docs/controls/charts/barchart-sample-2.gif" className="screenshot-50"/>
 
-[Docs](/docs/controls/barchart) · [Examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
+[Docs](https://docs.flet.dev/charts/bar_chart/) · [Examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
 
 ## PieChart
 
 <img src="/img/docs/controls/charts/piechart-sample-2.gif" className="screenshot-30"/>
 
-[Docs](/docs/controls/piechart) · [Examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
+[Docs](https://docs.flet.dev/charts/pie_chart/) · [Examples](https://github.com/flet-dev/examples/tree/main/python/controls/charts)
 
 :::note
 We spent a lot of time studying `fl_chart` library while trying to implement most of its features in a Flet way. However, if you see anything missing in Flet, but available in a library please [submit a new feature request](https://github.com/flet-dev/flet/issues).

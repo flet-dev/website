@@ -27,7 +27,7 @@ a part of Flet distribution anymore.
 
 Using FastAPI means there is no more communication overhead as web server is a part of Flet app.
 Also, you don't need to do any additional steps to host your app in production with FastAPI -
-you just use the same `ft.app(main)` command to run your app.
+you just use the same `ft.run(main)` command to run your app.
 
 :::warning Breaking change
 
@@ -57,7 +57,7 @@ import flet as ft
 def main(page: ft.Page):
     page.add(ft.Text("Hello ASGI!"))
 
-app = ft.app(main, export_asgi_app=True)
+app = ft.run(main, export_asgi_app=True)
 ```
 
 and then run with Hypercorn as:
@@ -113,7 +113,7 @@ def main(page: ft.Page):
         ft.ElevatedButton("Call async handler", on_click=handler_async)
     )
 
-ft.app(main)
+ft.run(main)
 ```
 
 In the example above a click on one button is handled by a "blocking" handler while a click
@@ -163,7 +163,7 @@ class Countdown(ft.Text):
 def main(page: ft.Page):
     page.add(Countdown(120), Countdown(60))
 
-ft.app(main)
+ft.run(main)
 ```
 
 Notice the usage of `self.page.run_task(self.update_timer)` to start a new task.
@@ -218,7 +218,7 @@ The following app lifecycle transitions are recognized:
 * `RESTART`
 
 :::note
-Read more about each [lifecycle state](/docs/controls/page#on_app_lifecycle_state_change).
+Read more about each [lifecycle state](https://docs.flet.dev/controls/page/#flet.Page.on_app_lifecycle_state_change).
 :::
 
 Here's a small example of how this event can be used: 
@@ -235,7 +235,7 @@ def main(page: ft.Page):
     page.on_app_lifecycle_state_change = app_lifecycle_change
     page.add(ft.Text("Hello World"))
 
-ft.app(target=main)
+ft.run(main)
 ```
 
 Flet 0.21.0 release has some breaking changes. Upgrade to it, test your apps and let us know how it worked for you.

@@ -13,7 +13,7 @@ The following font formats are supported:
 * `.ttf`
 * `.otf`
 
-Use [`page.fonts`](/docs/controls/page#fonts) property to import fonts.
+Use [`page.fonts`](https://docs.flet.dev/controls/page/#flet.Page.fonts) property to import fonts.
 
 <!-- truncate -->
 
@@ -63,7 +63,7 @@ def main(page: ft.Page):
         ft.Text("This is Open Sans font example", font_family="Open Sans"),
     )
 
-ft.app(target=main, assets_dir="assets")
+ft.run(main, assets_dir="assets")
 ```
 
 <img src="/img/blog/using-custom-fonts-in-flet-app/custom-fonts-example.png" className="screenshot-50" />
@@ -80,5 +80,5 @@ However, if you need to use a variable font in your app you can create static "i
 
 To explore available font features (e.g. possible options for `wght`) use [Wakamai Fondue](https://wakamaifondue.com/beta/) online tool.
 
-[Give Flet a try](/docs) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
+[Give Flet a try](https://docs.flet.dev/) and [let us know](https://discord.gg/dzWXP8SHG8) what you think!
 

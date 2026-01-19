@@ -7,7 +7,7 @@ tags: [releases]
 
 import Card from '@site/src/components/card';
 
-We've just released [Flet 0.4.0](https://pypi.org/project/flet/) with a super exciting new feature - [packaging Flet apps into a standalone static website](/docs/publish/web/static-website) that can be run entirely in the browser! The app can be published to any free hosting for static websites such as GitHub Pages or Cloudflare Pages. Thanks to [Pyodide](https://pyodide.org/en/stable/) - a Python port to WebAssembly!
+We've just released [Flet 0.4.0](https://pypi.org/project/flet/) with a super exciting new feature - [packaging Flet apps into a standalone static website](https://docs.flet.dev/publish/web/static-website/) that can be run entirely in the browser! The app can be published to any free hosting for static websites such as GitHub Pages or Cloudflare Pages. Thanks to [Pyodide](https://pyodide.org/en/stable/) - a Python port to WebAssembly!
 
 <img src="/img/blog/pyodide/pyodide-logo.png" className="screenshot-50" />
 
@@ -53,7 +53,7 @@ def main(page: ft.Page):
         )
     )
 
-ft.app(main)
+ft.run(main)
 ```
 
 Run a brand-new `flet publish` command to publish Flet app as a static website:
@@ -94,7 +94,7 @@ export const ImageCard = ({title, href, imageUrl}) => (
   </section>
 </div>
 
-[Check the guide](/docs/publish/web/static-website) for more information about publishing Flet apps as standalone websites.
+[Check the guide](https://docs.flet.dev/publish/web/static-website/) for more information about publishing Flet apps as standalone websites.
 
 ## Built-in Fletd server in Python
 
@@ -122,7 +122,7 @@ The implementation was also required to support Pyodide (we can't run Go web ser
 
 ### 💥 Breaking changes
 
-* Default routing scheme changed from "hash" to "path" (no `/#/` at the end of app URL). Use `ft.app(main, route_url_strategy="hash")` to get original behavior.
+* Default routing scheme changed from "hash" to "path" (no `/#/` at the end of app URL). Use `ft.run(main, route_url_strategy="hash")` to get original behavior.
 * OAuth authentication is not supported anymore in standalone desktop Flet apps.
 
 ## Async support
@@ -137,10 +137,10 @@ import flet as ft
 async def main(page: ft.Page):
     await page.add_async(ft.Text("Hello, async world!"))
 
-ft.app(main)
+ft.run(main)
 ```
 
-[Read the guide](/docs/getting-started/async-apps) for more information about writing async Flet apps.
+[Read the guide](https://docs.flet.dev/cookbook/async-apps/) for more information about writing async Flet apps.
 
 ## Conclusion
 
