@@ -24,3 +24,4 @@
 /docs/guides/python/* /docs/cookbook/:splat
 
 /docs/extend/integrating-existing-flutter-packages /docs/extend/user-extensions
+/docs/*  https://docs.flet.dev  301!
