@@ -97,8 +97,8 @@ module.exports = {
               to: 'https://docs.flet.dev',
             },
             {
-              label: 'Controls reference',
-              to: 'https://docs.flet.dev/controls',
+              label: 'API Reference',
+              to: 'https://docs.flet.dev/api-reference',
             }
           ],
         },
