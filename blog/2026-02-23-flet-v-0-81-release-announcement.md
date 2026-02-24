@@ -327,6 +327,12 @@ More info:
 * Fix `AlertDialog` and `CupertinoAlertDialog` barrier color updates ([#6097](https://github.com/flet-dev/flet/issues/6097)).
 * Fix `ControlEvent` runtime type hints ([#6102](https://github.com/flet-dev/flet/issues/6102)).
 
+## `Flet` app update on mobile stores
+
+An updated `Flet` app for testing on mobile devices is coming to the App Store and Google Play soon.
+
+For now, see the current mobile testing guide: https://docs.flet.dev/getting-started/testing-on-mobile/
+
 ## Conclusion
 
 Flet 0.81.0 is focused on practical app-building features: richer UI controls, stronger system integration, and smoother build workflows.
