@@ -27,34 +27,22 @@ If you use pip:
 pip install 'flet[all]' --upgrade
 ```
 
-If you use uv with `pyproject.toml`:
+If you use uv with `pyproject.toml` and want to upgrade everything:
 
 ```bash
-uv add "flet>=0.81.0"
-uv add --group dev "flet-cli>=0.81.0" "flet-desktop>=0.81.0" "flet-web>=0.81.0"
-uv sync
+uv sync --upgrade
 ```
 
-For existing projects, update `pyproject.toml` constraints, for example:
-
-```toml
-dependencies = [
-    "flet>=0.81.0"
-]
-
-[dependency-groups]
-dev = [
-    "flet-cli>=0.81.0",
-    "flet-desktop>=0.81.0",
-    "flet-web>=0.81.0",
-]
-```
-
-Then run:
+If you want to upgrade only Flet packages:
 
 ```bash
-uv sync
+uv sync --upgrade-package flet \
+  --upgrade-package flet-cli \
+  --upgrade-package flet-desktop \
+  --upgrade-package flet-web
 ```
+
+On Linux, your project might use `flet-desktop-light` instead of `flet-desktop`. In that case, upgrade `flet-desktop-light` package instead.
 
 ## Camera
 

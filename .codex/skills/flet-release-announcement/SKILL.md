@@ -64,26 +64,19 @@ Always include both flows:
 pip install 'flet[all]' --upgrade
 ```
 
-- uv + `pyproject.toml` with dependency groups:
+- uv + `pyproject.toml`:
 ```bash
-uv add "flet>=<version>"
-uv add --group dev "flet-cli>=<version>" "flet-desktop>=<version>" "flet-web>=<version>"
-uv sync
+uv sync --upgrade
 ```
 
-Also provide a `pyproject.toml` snippet when relevant:
-```toml
-dependencies = [
-    "flet>=<version>"
-]
-
-[dependency-groups]
-dev = [
-    "flet-cli>=<version>",
-    "flet-desktop>=<version>",
-    "flet-web>=<version>",
-]
+```bash
+uv sync --upgrade-package flet \
+  --upgrade-package flet-cli \
+  --upgrade-package flet-desktop \
+  --upgrade-package flet-web
 ```
+
+On Linux, mention that some setups use `flet-desktop-light` instead of `flet-desktop`; in that case `--upgrade-package flet-desktop-light` should be used.
 
 7. Verify before handoff
 - Title and slug align with repo naming conventions.
