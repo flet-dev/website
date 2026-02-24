@@ -10,9 +10,9 @@ Flet 0.81.0 is now available with new controls, better platform integration, and
 Highlights in this release:
 
 * New controls: `Camera`, `CodeEditor`, `PageView`, color pickers, `RotatedBox`.
-* Advanced visual transitions with `Hero` animations and Matrix4 transforms.
+* Advanced visual transitions with `Hero` animations and `Matrix4` transforms.
 * Better app packaging with `flet build ios-simulator` and `flet build --artifact`.
-* Clipboard APIs for images and files.
+* `Clipboard` APIs for images and files.
 * Web `FilePicker` support for direct file content (`with_data=True`).
 * Platform locale info and locale change events.
 * New `LayoutControl.on_size_change` event for size-aware UI.
@@ -44,7 +44,7 @@ uv sync --upgrade-package flet \
 
 On Linux, your project might use `flet-desktop-light` instead of `flet-desktop`. In that case, upgrade `flet-desktop-light` package instead.
 
-## Camera
+## `Camera`
 
 `Camera` is a new control for live camera preview, image capture, video recording, and frame streaming.
 
@@ -74,7 +74,7 @@ More info:
 * Docs: https://docs.flet.dev/camera/
 * Issue: [#6190](https://github.com/flet-dev/flet/issues/6190)
 
-## CodeEditor
+## `CodeEditor`
 
 `CodeEditor` brings an embedded source editor into Flet apps.
 
@@ -106,7 +106,7 @@ More info:
 * Docs: https://docs.flet.dev/codeeditor/
 * Issue: [#6162](https://github.com/flet-dev/flet/issues/6162)
 
-## PageView
+## `PageView`
 
 `PageView` provides swipe-based paging with viewport control and programmatic navigation.
 
@@ -183,7 +183,7 @@ More info:
 * Docs: https://docs.flet.dev/colorpickers/
 * Issue: [#6109](https://github.com/flet-dev/flet/issues/6109)
 
-## Hero animations
+## `Hero` animations
 
 `Hero` animations add shared-element transitions between routes.
 
@@ -198,9 +198,9 @@ More info:
 * Docs: https://docs.flet.dev/controls/hero/
 * Issue: [#6157](https://github.com/flet-dev/flet/issues/6157)
 
-## Matrix4 transforms and RotatedBox
+## `Matrix4` transforms and `RotatedBox`
 
-This release adds Matrix4-based transforms to `LayoutControl.transform` and introduces `RotatedBox`.
+This release adds `Matrix4`-based transforms to `LayoutControl.transform` and introduces `RotatedBox`.
 
 Together, they cover both advanced transform pipelines and layout-aware quarter-turn rotation. This helps when building rich interactions, visual effects, and precise UI compositions.
 
@@ -232,8 +232,8 @@ ft.run(main)
 
 More info:
 
-* LayoutControl docs: https://docs.flet.dev/controls/layoutcontrol/
-* RotatedBox docs: https://docs.flet.dev/controls/rotatedbox/
+* `LayoutControl` docs: https://docs.flet.dev/controls/layoutcontrol/
+* `RotatedBox` docs: https://docs.flet.dev/controls/rotatedbox/
 * Issue: [#6198](https://github.com/flet-dev/flet/issues/6198)
 
 ## Build workflow updates: iOS simulator target and artifact naming
@@ -256,11 +256,11 @@ More info:
 * Artifact name docs: https://docs.flet.dev/publish/#artifact-name
 * Issues: [#6188](https://github.com/flet-dev/flet/issues/6188), [#6074](https://github.com/flet-dev/flet/issues/6074)
 
-## Clipboard, FilePicker, locales, and size-aware layouts
+## `Clipboard`, `FilePicker`, locales, and size-aware layouts
 
 This release improves app integration with operating systems and browsers:
 
-* Clipboard can now get/set images and files.
+* `Clipboard` can now get/set images and files.
 * Web `FilePicker` can return picked file content as `bytes` with `with_data=True`.
 * Platform locales and locale change events are available.
 * `LayoutControl.on_size_change` helps build size-aware UI logic.
@@ -302,10 +302,10 @@ ft.run(main)
 
 More info:
 
-* Clipboard docs: https://docs.flet.dev/services/clipboard/
-* FilePicker docs: https://docs.flet.dev/services/filepicker/
+* `Clipboard` docs: https://docs.flet.dev/services/clipboard/
+* `FilePicker` docs: https://docs.flet.dev/services/filepicker/
 * Locale type docs: https://docs.flet.dev/types/locale/
-* LayoutControl docs: https://docs.flet.dev/controls/layoutcontrol/
+* `LayoutControl` docs: https://docs.flet.dev/controls/layoutcontrol/
 * Issues: [#6141](https://github.com/flet-dev/flet/issues/6141), [#6199](https://github.com/flet-dev/flet/issues/6199), [#6191](https://github.com/flet-dev/flet/issues/6191), [#6099](https://github.com/flet-dev/flet/issues/6099)
 
 ## Improvements
