@@ -23,6 +23,7 @@ If inputs are missing, infer from open files and recent release posts.
 - Keep writing practical and concise.
 - Avoid excessive emoji and unnecessary bold formatting.
 - Lead with substantial features; keep long tail in "Other changes and bug fixes".
+- Format GitHub issue/PR references as Markdown link labels like `[#6190](https://github.com/.../issues/6190)`, not bare URLs.
 
 ## Workflow
 

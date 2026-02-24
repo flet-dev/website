@@ -72,7 +72,7 @@ ft.run(main)
 More info:
 
 * Docs: https://docs.flet.dev/camera/
-* Issue: https://github.com/flet-dev/flet/issues/6190
+* Issue: [#6190](https://github.com/flet-dev/flet/issues/6190)
 
 ## CodeEditor
 
@@ -104,7 +104,7 @@ ft.run(main)
 More info:
 
 * Docs: https://docs.flet.dev/codeeditor/
-* Issue: https://github.com/flet-dev/flet/issues/6162
+* Issue: [#6162](https://github.com/flet-dev/flet/issues/6162)
 
 ## PageView
 
@@ -151,7 +151,7 @@ ft.run(main)
 More info:
 
 * Docs: https://docs.flet.dev/controls/pageview/
-* Issue: https://github.com/flet-dev/flet/issues/6158
+* Issue: [#6158](https://github.com/flet-dev/flet/issues/6158)
 
 ## Color pickers
 
@@ -181,7 +181,7 @@ ft.run(main)
 More info:
 
 * Docs: https://docs.flet.dev/colorpickers/
-* Issue: https://github.com/flet-dev/flet/issues/6109
+* Issue: [#6109](https://github.com/flet-dev/flet/issues/6109)
 
 ## Hero animations
 
@@ -196,7 +196,7 @@ They solve abrupt navigation changes by visually connecting matching elements ac
 More info:
 
 * Docs: https://docs.flet.dev/controls/hero/
-* Issue: https://github.com/flet-dev/flet/issues/6157
+* Issue: [#6157](https://github.com/flet-dev/flet/issues/6157)
 
 ## Matrix4 transforms and RotatedBox
 
@@ -234,7 +234,7 @@ More info:
 
 * LayoutControl docs: https://docs.flet.dev/controls/layoutcontrol/
 * RotatedBox docs: https://docs.flet.dev/controls/rotatedbox/
-* Issue: https://github.com/flet-dev/flet/issues/6198
+* Issue: [#6198](https://github.com/flet-dev/flet/issues/6198)
 
 ## Build workflow updates: iOS simulator target and artifact naming
 
@@ -254,7 +254,7 @@ More info:
 
 * iOS simulator build: https://docs.flet.dev/publish/ios/#flet-build-ios-simulator
 * Artifact name docs: https://docs.flet.dev/publish/#artifact-name
-* Issues: https://github.com/flet-dev/flet/issues/6188, https://github.com/flet-dev/flet/issues/6074
+* Issues: [#6188](https://github.com/flet-dev/flet/issues/6188), [#6074](https://github.com/flet-dev/flet/issues/6074)
 
 ## Clipboard, FilePicker, locales, and size-aware layouts
 
@@ -306,7 +306,7 @@ More info:
 * FilePicker docs: https://docs.flet.dev/services/filepicker/
 * Locale type docs: https://docs.flet.dev/types/locale/
 * LayoutControl docs: https://docs.flet.dev/controls/layoutcontrol/
-* Issues: https://github.com/flet-dev/flet/issues/6141, https://github.com/flet-dev/flet/issues/6199, https://github.com/flet-dev/flet/issues/6191, https://github.com/flet-dev/flet/issues/6099
+* Issues: [#6141](https://github.com/flet-dev/flet/issues/6141), [#6199](https://github.com/flet-dev/flet/issues/6199), [#6191](https://github.com/flet-dev/flet/issues/6191), [#6099](https://github.com/flet-dev/flet/issues/6099)
 
 ## Improvements
 
