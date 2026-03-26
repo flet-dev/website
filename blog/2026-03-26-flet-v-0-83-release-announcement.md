@@ -5,14 +5,14 @@ authors: feodor
 tags: [releases]
 ---
 
-Flet 0.83.0 is here with major performance gains, a reworked packaging pipeline, and better project transparency — all part of our push toward a rock-solid 1.0.
+Flet 0.83.0 is here with major performance gains, a reworked packaging pipeline, and better project transparency - all part of our push toward a rock-solid 1.0.
 
 Highlights in this release:
 
 * Up to 6.7× faster control diffing for both imperative and declarative apps.
 * Smarter `.update()` logic that eliminates redundant updates.
 * Declarative field validation with `Annotated` types.
-* Desktop binaries and build templates moved from PyPI to GitHub Releases — smaller installs, pinned versions.
+* Desktop binaries and build templates moved from PyPI to GitHub Releases - smaller installs, pinned versions.
 * Better release traceability with milestones and pre-releases on GitHub.
 
 <!-- truncate -->
@@ -42,17 +42,17 @@ uv sync --upgrade-package flet \
 
 ## Faster control diffing
 
-Every time your app calls `page.update()` or rebuilds a declarative component, Flet computes a diff — the set of property changes to send to Flutter. In 0.83.0 we overhauled this mechanism for both programming styles, and the results are dramatic.
+Every time your app calls `page.update()` or rebuilds a declarative component, Flet computes a diff - the set of property changes to send to Flutter. In 0.83.0 we overhauled this mechanism for both programming styles, and the results are dramatic.
 
 ### Imperative apps
 
-**Before:** every `page.update()` walked through *all* properties of every control and compared them to the previous snapshot — even properties you never touched. If your control has 20 properties and you changed one, Flet still compared all 20.
+**Before:** every `page.update()` walked through *all* properties of every control and compared them to the previous snapshot - even properties you never touched. If your control has 20 properties and you changed one, Flet still compared all 20.
 
 **After:** a new `Prop` descriptor tracks which properties were actually written since the last diff. When you set `button.text = "Click me"`, only `text` is flagged as dirty. On the next `page.update()`, Flet sends only the dirty properties to Flutter and skips the rest. Think of it like only checking the light switches you actually flipped, instead of walking through every room in the house.
 
 ### Declarative apps
 
-**Before:** when a component rebuilt, Flet compared every field of the new control tree against the old one — including nested value objects like `Alignment`, `BorderRadius`, and `BoxDecoration`. Since these objects were recreated on every build, they always looked "new" even when nothing changed.
+**Before:** when a component rebuilt, Flet compared every field of the new control tree against the old one - including nested value objects like `Alignment`, `BorderRadius`, and `BoxDecoration`. Since these objects were recreated on every build, they always looked "new" even when nothing changed.
 
 **After:** ~150 data types now use a new `@value` decorator that makes them comparable by content rather than identity. Combined with a two-pass diff that first checks structural changes and then compares only fields that actually differ, the diff skips unchanged subtrees entirely.
 
@@ -71,7 +71,7 @@ More info:
 
 ## Smarter `.update()` logic
 
-In previous versions, Flet automatically called `page.update()` at the end of every event handler. If your handler already called `.update()` explicitly — say, to show a spinner before starting work — the framework would fire a second, redundant update at the end. This double-update could cause visual glitches or wasted work.
+In previous versions, Flet automatically called `page.update()` at the end of every event handler. If your handler already called `.update()` explicitly - say, to show a spinner before starting work - the framework would fire a second, redundant update at the end. This double-update could cause visual glitches or wasted work.
 
 0.83.0 tracks whether `.update()` was called during handler execution. If it was, the automatic update at the end is skipped. This also means that apps migrated "as is" from Flet 0.28.3 (where there was no auto-update) will behave as expected without changes.
 
@@ -106,7 +106,7 @@ Starting with 0.83.0, the desktop client is downloaded on first run from GitHub 
 What this means for you:
 
 * **Faster installs.** `pip install flet` downloads a small wheel instead of a platform-specific binary.
-* **One package.** The separate `flet-desktop-light` package is gone — choose the "light" or "full" flavor via `FLET_DESKTOP_FLAVOR` env var or `[tool.flet]` in `pyproject.toml`. On Linux the "light" flavor is used by default if not specified.
+* **One package.** The separate `flet-desktop-light` package is gone - choose the "light" or "full" flavor via `FLET_DESKTOP_FLAVOR` env var or `[tool.flet]` in `pyproject.toml`. On Linux the "light" flavor is used by default if not specified.
 * **Air-gapped setups.** Set `FLET_CLIENT_URL` to point at a local mirror if your environment can't reach GitHub.
 
 More info:
@@ -117,9 +117,9 @@ More info:
 
 The `flet-build-template` and `flet-app-templates` repositories have been consolidated into the main Flet monorepo and are now distributed as zip archives attached to each GitHub Release.
 
-When you run `flet build` or `flet create`, the CLI downloads the template zip that matches your installed Flet version. **Versions are pinned** — even for pre-releases — so you always get templates compatible with your Flet version. No more mismatches between the framework and the build template.
+When you run `flet build` or `flet create`, the CLI downloads the template zip that matches your installed Flet version. **Versions are pinned** - even for pre-releases - so you always get templates compatible with your Flet version. No more mismatches between the framework and the build template.
 
-For stable releases, the `flet` Flutter package is published to pub.dev as usual. For pre-releases, the build template references the exact commit SHA via a Git dependency — so `flet build` always compiles against the precise Flutter code that matches your Python package.
+For stable releases, the `flet` Flutter package is published to pub.dev as usual. For pre-releases, the build template references the exact commit SHA via a Git dependency - so `flet build` always compiles against the precise Flutter code that matches your Python package.
 
 More info:
 
@@ -129,8 +129,8 @@ More info:
 
 We've improved how you can track what's in each release:
 
-* **Pre-releases on GitHub.** Every dev build now creates a [GitHub Release](https://github.com/flet-dev/flet/releases) (e.g., `v0.83.0.dev6045`). You can browse pre-releases to see exactly which fixes and features landed in each build — no more guessing whether your bug fix is in the latest dev version.
-* **Milestones on issues and PRs.** Issues and pull requests are now assigned to [milestones](https://github.com/flet-dev/flet/milestones?state=closed). Want to know when your issue was fixed? Check the milestone — it tells you the release version.
+* **Pre-releases on GitHub.** Every dev build now creates a [GitHub Release](https://github.com/flet-dev/flet/releases) (e.g., `v0.83.0.dev6045`). You can browse pre-releases to see exactly which fixes and features landed in each build - no more guessing whether your bug fix is in the latest dev version.
+* **Milestones on issues and PRs.** Issues and pull requests are now assigned to [milestones](https://github.com/flet-dev/flet/milestones?state=closed). Want to know when your issue was fixed? Check the milestone - it tells you the release version.
 
 ## Road to 1.0
 
@@ -138,7 +138,7 @@ We're working hard to make Flet a scalable, sustainable framework, and 0.83.0 re
 
 **Everything is automated.** Our CI pipeline handles building, testing, packaging, and publishing end-to-end. Every push to `main` triggers a full build of all platform binaries, runs the test suite, executes `flet build` for all targets, and publishes dev releases to GitHub and pub.dev. There are no manual steps.
 
-**Comprehensive integration testing.** We now run 200+ integration tests on macOS across 12 parallel test suites — covering core controls, Material and Cupertino widgets, services, themes, extensions, and example apps. A full run takes about 85 minutes and catches regressions before they reach you. Integration suites for other platforms are coming!
+**Comprehensive integration testing.** We now run 200+ integration tests on macOS across 12 parallel test suites - covering core controls, Material and Cupertino widgets, services, themes, extensions, and example apps. A full run takes about 85 minutes and catches regressions before they reach you. Integration suites for other platforms are coming!
 
 **New documentation is coming.** We're moving back to Docusaurus for the Flet docs, which will bring a better reading experience, improved search, and easier contribution workflow. Stay tuned.
 
@@ -153,7 +153,7 @@ We're working hard to make Flet a scalable, sustainable framework, and 0.83.0 re
 
 ## Conclusion
 
-Flet 0.83.0 is a release about foundations: faster internals, cleaner packaging, and better tooling. These are the kinds of improvements that compound — every future release builds on a faster, more reliable base.
+Flet 0.83.0 is a release about foundations: faster internals, cleaner packaging, and better tooling. These are the kinds of improvements that compound - every future release builds on a faster, more reliable base.
 
 Try it in your apps and share feedback in [GitHub Discussions](https://github.com/flet-dev/flet/discussions) or on [Discord](https://discord.gg/dzWXP8SHG8).
 
