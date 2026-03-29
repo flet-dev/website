@@ -144,12 +144,12 @@ We're working hard to make Flet a scalable, sustainable framework, and 0.83.0 re
 
 ## Other changes and bug fixes
 
-* Customizable scrollbars ([#6315](https://github.com/flet-dev/flet/issues/6315)).
-* Scrollable `ExpansionPanelList` ([#6313](https://github.com/flet-dev/flet/issues/6313)).
-* `SharedPreferences` now supports `int`, `float`, `bool`, and `list[str]` types ([#6300](https://github.com/flet-dev/flet/issues/6300)).
-* Align Python defaults with Dart defaults across all packages ([#6326](https://github.com/flet-dev/flet/issues/6326)).
-* Fix `ReorderableListView` event deserialization for `on_reorder_start`/`on_reorder_end` ([#6299](https://github.com/flet-dev/flet/issues/6299)).
-* Skip micropip load for apps with `pyproject.toml` ([#6303](https://github.com/flet-dev/flet/issues/6303)).
+* Customizable scrollbars ([#6282](https://github.com/flet-dev/flet/issues/6282)).
+* Scrollable `ExpansionPanelList` ([#6294](https://github.com/flet-dev/flet/issues/6294)).
+* `SharedPreferences` now supports `int`, `float`, `bool`, and `list[str]` types ([#6267](https://github.com/flet-dev/flet/issues/6267)).
+* Align Python defaults with Dart defaults across all packages ([#6330](https://github.com/flet-dev/flet/issues/6330)).
+* Fix `ReorderableListView` event deserialization for `on_reorder_start`/`on_reorder_end` ([#6315](https://github.com/flet-dev/flet/issues/6315)).
+* Skip micropip load for apps with `pyproject.toml` ([#6300](https://github.com/flet-dev/flet/issues/6300)).
 
 ## Conclusion
 
